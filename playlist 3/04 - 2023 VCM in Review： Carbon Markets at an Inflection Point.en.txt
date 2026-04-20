@@ -1,0 +1,1488 @@
+good afternoon again everyone and
+welcome back to the first webinar of
+this year from msci carbon markets so
+for many of you who have been following
+our webinar since we were Trove research
+thank you so much for your continued
+support at we transform into msci carbon
+markets for those of you who just join
+us for the first time we host a webinar
+series on a quarterly basis to review
+key development in the voluntary carbon
+markets and share Cur ated Insight from
+our team and you will hear more about
+what the msci carbon markets platform
+has to offer in a minute before we start
+I'd like to introduce our speakers today
+the today webinar will be hosted by me
+and mend we are joined by the fer and
+former CEO of tro research now the
+managing director and head of msci
+carbon markets guy Turner we also Joy by
+our hate of carbon Market Market
+analytics Peter
+fagerman our senior associate hna
+Hernandez and Felix Hart and our
+associate analyst Jamie Lambert and Deli
+Stringer some basic uh housekeeping
+rules before we begin our attendees will
+be automatically muted if you have any
+question during this presentation please
+use the Q&A function at the bottom of
+your window the slides from today's
+webinar together with the recording of
+the session will be published on our
+website by the end of the
+week for the structure of the webinar
+today we will start by having a look at
+some key developments in the vcm in last
+year and then we'll look at some key
+points to explore our main question
+today whether this year could be an
+inflection point for the cbor markets
+following the presentation we will
+launch an audience poll giving you the
+opportunity to share your thoughts on
+what the price of carbon credits will be
+at the end of this year and then we will
+wrap up with the webinar uh with the Q&A
+session at the end of the webinar so now
+to get started I will hand over to our
+heads of carbon markets Sky Turner to
+speak a little bit about our new home at
+msci and what we've been working on in
+the past few months over to you
+guy thanks um and uh good afternoon
+everybody good morning good evening
+wherever you are in the world um this is
+the first as I'm said this is the first
+webinar of our series our quely webinar
+series with our new from our new home at
+msci and I think the first thing you'll
+notice is our backgrounds have uh been
+transformed from our beloved purple to I
+think a more optimistic uh green fields
+and wind farm background and so so I
+hope that's enjoyable uh to the viewers
+just uh also conscious that there may be
+some people on the call who may not know
+who msci is uh it is one of the world's
+largest uh suppliers of fin of data to
+the financial markets um being in
+existence over 45 years over 5,000
+employees 30 locations and 6 and a half
+thousand clients and has a very strong
+pedigree in and supporting uh funds and
+asset owners through index analysis and
+data a range of analytics products real
+assets and uh for several years now has
+been the leading provider of ESG data to
+the uh to the financial markets you
+providing a whole range of of screening
+tools and and supporting data and the
+ourselves we sit within um you know and
+connected to that ESG research business
+uh and sort of that's where the sort of
+the the logic of us uh joining msci
+started msci has a has a very strong
+background in climate data and Tool
+tools uh ranging and supporting a number
+of decisions for investors and
+corporates managing transition risk
+through uh data on emissions emissions
+intensity fossil reserves and revenues
+uh policy analysis and then also on the
+tech side the green opportunities the
+transition uh the transition will throw
+up opportunities and we do a lot of
+modeling and research and data provision
+around that um alignment with one and a
+half degree pathways through uh looking
+at the commitments that organizations
+are setting implied temperature rise um
+and uh and sort of screening tools to
+help investors sort of make allocation
+decisions on that and then finally
+physical risk so climate risk presents
+itself in a number of ways there is the
+transition risk as we move away from
+fossil-based assets to to cleaner
+Technologies but also the very obvious
+and and more immediate physical risk
+um in in in affecting many different
+organizations and uh my colleagues do
+some fantastic work uh providing models
+and tools to enable investors to
+understand the uh the scope of those
+risks that they are that they're exposed
+to and overall the the company covers
+over 18,000 public companies and
+Sovereign bonds four and a half over
+4,000 um active equity and debt funds
+and a million real estate properties and
+and 50,000 funds so we come to good home
+um and uh you will hear a lot more about
+the synergies and new opportunities that
+we can bring to the
+world for those who don't know Carbon
+markets and msci carbon markets uh and
+the previous Trove business we've been
+in existence uh for over three years and
+uh really our our role is to provide
+ultimate transparency and and
+predictability on where the global
+carbon Market is and will head we have
+launched a whole range of new tools and
+data products over the last year um we
+have uh teams of experts and and and
+data sort of databases in in policy area
+uh all the credits projects and
+transactions that that that that Supply
+the carbon credits as you'll hear um
+from my ex from our colleagues on this
+webinar carbon credit prices we we we
+track that um like a hawk and um both at
+an aggregated level and a project level
+we have ai tools that that um that
+calculate the uh inferred carbon price
+of of all projects in the
+market climate commitments this is where
+we work very closely with our colleagues
+looking at the uh the the footprint of
+companies what they're committing to and
+what that will mean for corporate
+climate action and their use of carbon
+credits uh a big initiative that we
+launched last year a new product was our
+credit Integrity scoring we score well
+over four and a half thousand projects
+uh in a in a with over 20 different sub
+criteria and um and that sheds an that
+is sheds increasingly useful light on
+how the market is is transacting where
+preferences are and how that correlates
+with prices and our forecasting team uh
+have their own very well-developed
+crystal ball based on a lot of cost
+modeling and and geospatial modeling uh
+to look at where the opportunities for
+reducing carbon most cost effectively
+outside Supply chains lies and then on
+the bottom we have new new model and
+products around carbon dioxide removals
+nature-based Solutions uh Corsa and the
+aviation Market that we'll hear more
+about in the call and a geospatial
+platform that shows developers where in
+the world projects can be developed at
+least cost so a lot of activity we've
+nearly up to 100 staff now and uh ready
+to take on the challenges of the new
+year so just very quickly why are we
+here well uh the concern really is
+around climate change as you know this
+last year was one of the warmest years
+if not so it was the warmest year on
+record we are very close to the 1 and a
+half degree threshold above
+pre-industrial levels already uh uh we
+have calculated that um in 30 months
+time we will be at that limit of one and
+a half degrees C and very close to 2° C
+in 190 months time so time is running
+out and the carbon markets play an
+important role in trying to mobilize
+Capital to solve this this huge problem
+interestingly our fire tracking service
+looks at the risk of fires affecting
+emission credit issuances from projects
+around the world and in spite of this
+new um world that we're in in in heat uh
+only 133% of carbon projects actually
+recorded emissions from fires in
+2023 um which was an increase on
+previous years but not as much as you
+would expect part of the reason for that
+is the location of these projects uh
+being in in more humid areas where the
+the risk of fire is
+less um so that is really why we're here
+and let's see how we can try and solve
+this uh this huge
+problem so companies are responding to
+that challenge uh we track regularly the
+number of commitments that companies are
+Mak making the number of companies now
+signing up to sbti either having set an
+approved Target at 1 and a half degree
+or two degrees has been increasing but
+so is the number of firms looking to set
+one in total now we have nearly 7,000
+firms in the S spti system uh roughly
+half those committed another half um
+having set the targets now there those
+can be broken down in a number of ways
+and if my animation will whoops will
+work um there's a group of those with
+Net Zero targets and within the sbti
+framework some 2,700 companies have
+either committed to setting one or have
+set one now those firms range in size
+small to large uh but together they do
+cover a large chunk of emissions so 2.4
+gigatons of scope 1 2 and three
+emissions for those that have set a net
+zero Target under sbti and nearly 12
+gigatons in ter for for firms that are
+committed to set a net zero
+Target now that that 12 14 gigatons is a
+substantial chunk of the 55 gigatons of
+global greenhouse gas Emissions on an
+annual basis if that is achieved it's a
+big if it will make a serious dent in
+and hopefully a dent in World emissions
+and that is that is the challenge for
+those companies and we'll look later on
+in this presentation um about the role
+that carbon credits can um can perform
+but mitigation and reduction is the most
+important thing in town now if you look
+beyond the sbti and and Net Zero um
+there we track within msvi all listed
+companies in the world over n and a half
+thousand firms and as of Q4 last year
+some 52% of listed companies had some
+form of client Li Target uh of those 37%
+had self declared Net Zero targets and
+uh 19% had an sbti approved Target so
+those numbers have been increasing
+you've seen some sort of slight rate of
+change sort of not um not diminishing
+the the absolute increase is still
+growing uh although at a slower rate
+certainly for the non sbti companies um
+but it's an upward Trend and that is
+quite a powerful Trend to to to look to
+and um one of the things we do is make
+sure that those companies are well
+informed in terms of their options and
+accessing the carbon
+market and I'll hand over to my
+colleague Jamie who'll tell you a bit
+more about what's going on on the supply
+side great thank you guy and hello
+everyone in 2023 issurance is recorded
+the lowest annual total in three years
+after falling 25% year on year
+the slowdown in this credit Supply was
+largely due to nature-based and
+renewable energy projects issuing their
+lowest annual amounts in five and four
+years
+respectively in contrast Energy
+Efficiency projects issued 63 megatons
+last year and were the only major
+project type to increase Supply uh year
+on year near doubling 2022 volumes uh in
+the main this was driven by Supply from
+cookstove projects in particular despite
+current issuances tailing off further
+this year potential potential issuances
+tracked by our project pipeline has
+almost doubled in the past 12 months and
+now stands at over one gigaton a year um
+but back to the credits that have been
+issued this
+year it appears that the credits that
+were issued have been gradually getting
+younger uh or of a more recent relative
+vintage the weighted average age of a
+credit being issued has come down by
+almost two and a half years since 2021
+to 2.7 years in 2023 with roughly a
+third of credits issued within two years
+of their claimed emissions reductions
+occurring much of this has been driven
+by the decrease in credits being issued
+by older renewable energy projects as I
+alluded to on the previous
+slide now to take a look at the demand
+for these credits we saw retirements
+rallied in Q4 recording the second
+highest quarter on record despite a
+Slowdown in corporate activity in midy
+year a momentum that appears to have
+been carried into the new year as we
+have seen 14 megatons of credits retired
+as of Y yesterday in January and uh this
+is already the second highest January to
+date and may even surpass the 17 Megaton
+Mark set in January
+2022 although the final quarter
+typically sees corporate use Spike 2023
+saw 36 megatons of credits retired in
+December alone setting a new monthly
+High almost 25% above the previous High
+recorded in December
+21 unprecedented use of red plus and
+non-co2 gas credits in December
+contribut at almost 2/3 of the month's
+volume and in a few minutes Felix will
+dive deeper into the firms behind
+this we can see that retirements have
+been relatively flat since 2021 uh as
+Falls in certain project types like
+renewable energy and nature restoration
+have been closely offset by year-on-year
+growth in red plus and non CO2
+gases now if you take a look beneath the
+chart here here's the total demand for
+credits uh where we include credit
+cancellations which refer to credit use
+in a compliance Market um as opposed to
+voluntary retirements uh total demand
+here has also been flat uh with the
+further exclusion of retirements for
+crypto back in 2022 and 2021 we can
+actually see total demand increasing
+marginally year on year growing 2% on
+2022 now looking at the standards used
+by retirees the largest four Registries
+namely Vera gold standard ACR and C
+continue to dominate the market
+providing more than 90% of the credits
+retired last year retirements from these
+big four Registries actually increased
+last year up 6% while in contrast total
+retirements across the next 10 most
+prominent Registries fell back slightly
+last year this isn't putting off
+innovation in standard setting though
+with another 20 standards currently in
+the process of applying for iic
+accreditation hopefully increased
+competition and specialization among
+Registries will help to drive up their
+integrity and not simply add to bio
+confusion there remain a relatively
+large number of Legacy projects
+developed under the clean development
+mechanism which was first set up as part
+of the Kyoto
+Protocol most of these projects are
+quite old and many are considered to be
+relatively low Integrity there was an
+end of 20123 deadline for these projects
+to be transferred to operate under
+article six of the Paris agreement for
+which just over a thousand projects
+submitted an
+application our analysis in this webinar
+broadly focuses only on the CDM project
+that have been marked as eligible for
+use within country's ndc's under the
+Paris agreement of which there were just
+2.8 megatons retired last year usage of
+the remaining CDM credits that are
+ineligible for Count's ndc's saw a sharp
+decline last year down by 2/3 to just
+four
+megatons continuing this theme let's
+quickly take a look at the distribution
+of age across
+retirements so first uh we can see that
+in 2023 corporates retired credits that
+were on average 5 to 6 years old
+a metric that has remained fairly stable
+year onye and of the 180 million credits
+retired last year almost 60% had
+vintages more recent than
+2017 although the share of older credits
+continues to account for more than 10%
+of total credit
+demand and in a year of prevalent Market
+scrutiny although we haven't seen much
+change in credit age we have seen a
+subtle Improvement in the Integrity of
+credits being
+bought using our integrity scores of
+nearly 5,000 projects we can see a
+decrease in the proportion of
+retirements of very low quality credits
+represented by our DNE ratings and
+increase in higher Integrity A or B
+rated compared to
+2022 it is hard to unpick exact drivers
+of this at aggregate level but this in
+part reflects shift away from Project
+types that are on average lower quality
+such as renewable
+projects very highest quality projects
+represented by a ratings remain a low
+proportion of overall retirements given
+only 150 projects at currently rated is
+n I'll now hand over to Felix to take us
+through the key companies driving this
+demand thank you Jamie um yes so last
+year three quarters of the retirements
+that Jamie's just been talking about can
+be attributed to just four sectors um
+based on publicly disclosed retirements
+from carbon credit Registries the blue
+text shows the market share last year in
+terms of volume retired alongside the
+change from 2022 in absolute terms
+fossil fuels extended exp position of
+the top of the leaderboard driven
+largely by Shell's increased
+activity now on the right of the table
+we show the weighted average Integrity
+of credits retired by each sector using
+our carbon credit Integrity assessments
+on the balance waiting with scores out
+of five when we look at the average
+Integrity scores it's encouraging to see
+that the quality of credits reti
+increased or stayed the same in all the
+three sectors and as Jamie was saying on
+the previous Slide the weighted average
+Integrity score of all retirements
+jumped up from 2.9 to 3.1 last year this
+is all giving a strong signal that
+buyers are looking for Quality now let's
+have a look at some of those retirees
+and the changing Market
+shape firstly if we just focus on the
+year-on-year change in publicly
+disclosed retirements 133% of 20122
+retirements were by companies who
+totally exited the market last year I.E
+the levers in comparison 20% of 2023
+retirements were by companies who did
+not disclose retiring any credits the
+year before I.E the joiners
+and while the market is still dominated
+by a relatively select VI the
+concentration of power in the top 10 has
+reduced from 28 to 23% making the market
+less susceptible to the changing
+sustainability strategies of a few big
+hitters going back a year our top 10
+disclosed retirees in 2022 were led by
+Delta Airlines they were also our
+largest retiree in 2021 and 2020 did
+they make it four years in a row let's
+have a look so five dropped out to the
+top 10 including Delta Airlines who
+almost completely exited the market last
+year taking about 15 million credits
+with it the other five stayed in the top
+10 with shell and Volkswagen increasing
+their retirements last year to take the
+top two spots on the right we can also
+see the volume and type of carbon
+credits they
+retired last year's top 10 was completed
+by three companies who were in the top
+10 top 20 previously and two companies
+who had never before disclosed retiring
+a carbon Credit in any year so despite
+some companies stepping back last year
+the market can take confidence in the
+fact that the joiners outweigh Del
+levers as well as a greater distribution
+of retirements outside the top 10
+subscribers have access to all of our
+carbon credit retire information to see
+who has retired what type of credits
+when and how
+many aside from traditional carbon
+credit retirements another Avenue for
+corporates to take climate action that
+generated a lot of interest last year is
+the na CDR Market these are high
+permanence engineered carbon removals
+such as biochar and direct air capture
+and they typically command a higher
+price than other project types due to
+their widely accepted higher quality and
+higher
+durability many CDR transactions are not
+for registered carbon credits but are
+instead direct agreements between buyer
+and seller without third party
+certification so tracking transactions
+therefore allows us to see the types of
+CDR projects receiving investment on the
+left chart as well as the transaction
+type on the right a recently released
+CDR tracker contains all this
+information including the buyers and
+sellers in each transaction and the
+price paid last year the number of
+transactions fell slightly year on-year
+but we can see by the right hand chart
+that the quantity of credits represented
+by those transactions Rose significantly
+to 5.4 million and looking at
+transaction types I think it's notable
+that last year a much greater proportion
+of CDR transactions were as part of a
+Ford offtake agreement the dark purple
+bar rather than a non-binding memorandum
+of understanding the black bar we see in
+2022 so it's clear that interest in
+investment in CDR is increasing and we
+expect this trend to continue with
+demand signals often existing outside of
+the established
+Registries having looked at retirements
+in CDR in depth I next want to look at
+the market
+Surplus we Define the Surplus is the
+difference between the number of credits
+issued and those that have been retired
+or cancelled thereby showing us the
+credits available on the market market
+Surplus has increased over time as
+credit issuances have exceeded
+retirements and reached 922 Million by
+the end of last year which is an
+increase of 10% year on year that's not
+the full story as we see on the next
+Slide the pace of surplus growth is
+slowing particularly in Q3 and
+Q4 and if we break out the nature-based
+credits shown in green we see that the
+Surplus actually shrunk for those credit
+types in Q3 and Q4 as a large volume of
+red plus credits in particular were
+retired the surface change in all other
+in all other project types completes the
+picture with the pink energy efficiency
+credit seen the greatest Surplus growth
+last year driven by the large number of
+insurances that Jamie covered earlier of
+course Surplus at an aggregated project
+type level is only part of the story
+factors such as vintage year project
+start date and project country can help
+explain why some credits remain in the
+Surplus or some are retired on our
+platform users have the ability to dig
+deeper into all those factors and more
+to get a better understanding of supply
+and demand so now I'll hand over to
+Peter to talk about the all important
+pricing data
+in summary weaker price trends across
+the carbon credit Market in 2022 and
+earlier in 23 largely continued into the
+fourth quarter as can be seen in the
+graph which shows the volume weighted
+average by month at the aggregate level
+for all reported prices the declining
+Trend in 2022 was sustained into the
+first half of 23 although relatively
+stable at an average of
+$6.60 but then dropped 23% in Q3 to $520
+and another 7% in Q4 to
+$4.90 on the next slide ignoring volumes
+and just looking at the unweighted or
+simple averages the price level was
+higher last year by a little over a
+dollar although with the same pattern
+stable in the first half at
+$760 but weaker in the second half at
+$640 consequently based on the average
+price over the course of the year the
+market was only 16% lower in 2022
+compared to 23 versus 28% on a volume
+weighted
+basis in the next slide we show the
+price data by project type for last year
+as you can see in the quarterly numbers
+on the rightand side of the slide all of
+the project types were lower in Q4 this
+resulted in ful year price declines as
+well for each project type with red plus
+Energy Efficiency and renewable energy
+all down approximately
+55% nature restoration lower by
+27% and non-co2 gas by
+133% the paths over the year and in
+particular recent Trends were a bit more
+mixed nature restoration the light green
+line which hit lows for the year in
+October at approximately
+$740 subsequently staged a recovery to
+$11.90 in December which in fact has
+continued into January averaging $1350
+in the first two weeks of the new year
+this recovery was largely off the back
+of a number of stronger North American
+ifm prices averaging $20 in ARR prices
+averaging 10 a somewhat bullish signal
+is that this rally occurred on heavy
+volume particularly in December where we
+saw highs for the year in both ARR and
+ifm at the other end of the price
+distribution is renewable energy the gry
+line which has been steadily declining
+from over $4 at the beginning of last
+year but flattened out in the last three
+months bouncing around $2 on
+increasingly lighter volume Energy
+Efficiency the pink line and red plus
+the bright green line which were both
+subject to increased media and academic
+scrutiny early in the year also
+sustained weaker prices but with some
+intermittent recoveries both fell from
+their highs in January over $10 to
+approximately the same level around $630
+in Q2 then staged to recovery to
+$925 for Energy Efficiency and $725 for
+red Plus in Q3 but once again sold off
+in Q4 ending the year again at basically
+the same level around
+$465 like with nature restoration this
+sell off occurred on very heavy volume
+particularly Energy Efficiency where we
+observed highs for the year and activity
+throughout the fourth quarter especially
+in December non-co2 gases the purple
+line are the most volatile on a week-
+toe basis among all the project types
+reported to msci carbon markets after
+starting the year at
+$528 the the monthly average cycle
+between lows of$ three to4 dollar and
+highs of6 to7 doar in the first Nine
+Months of the Year this pattern
+continued in the fourth quarter where
+after hitting a $1.99 low for the year
+in October prices rebounded to an
+average of $435 in the last two months
+which was in fact just about the average
+for the year
+one interesting aspect of this graph is
+the distribution of prices at the end of
+the year typically there is a fair
+amount of dispersion in prices between
+project types this would be very clear
+in a Time series of weekly data but is
+also somewhat in evidence here with just
+monthly data however in the last two
+months outside of nature restoration
+which ended the year at its typical
+premium to the market and renewable
+energy which was at its typical discount
+the other three project types red plus
+Energy Efficiency and non-co2 gas
+converged around the same price level at
+$465 by the end of the year suggesting
+the market is not distinguishing between
+these project types which could possibly
+be a sign of the weak Market
+environment it's important to note that
+these prices are at the aggregate level
+and don't take into account the
+heterogeneity of projects even within a
+given project type or other drivers such
+as vintage registry regions transaction
+size co- benefits Etc with Each of which
+can have a material effect on individual
+prices there's not enough time in this
+webinar to show price Dynamics based on
+these factors however we did want to
+show the impact of one factor which will
+assuredly become increasingly critical
+on a systematic basis as the carbon
+credit Market matures the environmental
+Integrity or quality of a project given
+the breadth and depth of the msci carbon
+Market ratings of nearly 5,000 projects
+across all project types we mapped the
+ratings to our price data to see if
+there was any structure to credit prices
+consistent with perceived quality at
+least is reflected in our ratings this
+slide shows unweighted monthly average
+prices grouped into three broad
+categories of the msci carbon Market
+ratings high medium and
+low even though again at an aggregate
+Market level in other words without
+accounting for other price factors we
+found it extremely interesting to
+observe that higher rated credits were
+priced at a positive spread to lower
+rated credits on a consistent basis for
+almost all of the period between 2022
+and 23 high quality credits were an
+average pric $2 higher than medium
+quality credits which were on average
+$320 above low quality credits as you
+can see on the right there is some
+convergence in the last few months
+between lower and medium quality credits
+this is partly due to a rise in prices
+for a number number of lowquality nature
+restoration credits in terms of the
+prices and as well some small-size red
+plus credits but perhaps also suggests
+that the market may not be
+distinguishing quality for low and
+medium rated credits in a weak price
+environment and finally on the last
+slide we show the value of the primary
+Market in based on retirement volumes
+dropped by 23% from near nearly 1.5
+billion in 2022 to 1.1 billion last year
+mainly of course due to the decline in
+prices as Retirement values in total
+were flat were relatively flat and now I
+will W ask you to welcome my colleague
+Deli who will review main policy
+developments thanks Peter hi everyone
+there were several uh important policy
+developments in 2023 in terms of
+headwinds there have been important
+developments on what companies can and
+cannot publicly claim in the eyes of
+some Regulators in September the
+European Parliament and commission
+reached an initial agreement that would
+amend EU consumer protection rules to
+prohibit carbon neutral claims based on
+the use of carbon credits claims such as
+carbon neutral and reduced climate
+impact would be banned if they're based
+on carbon offsetting however it does not
+ban the use of credits as such or
+prohibit advertising investments in
+carbon credit projects providing these
+aren't misleading
+last week MEPS voted to adopt this
+directive but it still needs approval
+from the Council of ministers before it
+becomes law there's not been much detail
+on the claims that companies can make as
+of yet but the green claims directive
+due to be voted on in March 24 could
+provide Clarity on uh what Claims can be
+made whilst we see a shift towards
+regulation of claims it does open up the
+floor to Alternative claims such as that
+under the vcmi its claims code aims to
+help companies to make credible claims
+on the use of credits to make a claim
+companies must meet four foundational
+criteria then select a claim to make be
+it platinum gold or silver and retire
+CCP eligible credits in accordance with
+the claim these claims relate to firms
+achieving their Net Zero pathway and
+compensating a portion of their residual
+emissions the percentages for gold and
+silver were adjusted by the vcmi in the
+fourth quarter of 23 from 60 to 50 and
+from 20 to 10
+respectively companies must then report
+credit use and undergo thirdparty
+verification in November 23 the vcmi
+also published additional claims
+guidance which included a scope 3
+flexibility claim similar to the bronze
+claim that we saw in the original draft
+guidance it allows up to 50% of
+company's unabated scope three emissions
+to be met with credits the scope 3 claim
+could provide an on-ramp for companies
+that may struggle to meet the vcmi
+criteria IIA however others say that for
+making flexibility claims um conditions
+for making flexibility claims are too
+lenient and the time frame for their
+retirement too long an updated version
+of the guidance is due to be published
+in the second quarter of this year on to
+the next slide in terms of Crosswinds
+most
+regulations are well intentioned aiming
+to improve transparency liquidity and
+integrity of carbon trading and the
+underlying credit
+in the interim this may cause some
+turbulence as Market participants
+navigate the new requirements but in the
+longer term greater regulation should
+improve Clarity in the vcm promoting
+growth and
+scalability in terms of taxes and
+benefit sharing Arrangements several
+countries including Zimbabwe Colombia
+and Mexico pronos proposed or announced
+regulations Zimbabwe's regulation is
+particularly stringent as it requires
+developers to pay a 30% Levy on Project
+Revenue whilst the aim with the
+regulation is to help the market in the
+near time in the near term we think this
+may cause some
+disruption in terms of Tailwinds
+countries including Indonesia and
+Malaysia propos fch carbon trading
+platforms which would be open to
+international buyers and sellers in
+Singapore companies can now use
+international carbon credits for up to
+5% of their carbon tax obligations this
+will likely increase demand for
+voluntary credits on Accounting in
+disclosure the tcfd has served its
+purpose and has now been disbanded its
+reporting framework has been
+incorporated into the isbb standard
+which many Regulators will use to adopt
+requirements for companies to report
+climate risk and risk management since
+the tcfd launched in 2017 disclosure
+standards for companies to disclose
+climate risk and risk management
+strategies have evolved they are
+providing clearer guidance for how a
+company should disclose credit
+retirement and use towards targets
+on quality in July the ICBC published
+its category level assessment framework
+for the core carbon principles including
+criteria for additionality and
+permanence so it's now moving towards
+its implementation phase it's being used
+by category and multi-stakeholder
+working groups to assess the categories
+of carbon credits the category working
+group will decide which categories will
+be fast-tracked for CCP labels and which
+need further assessment by the
+multi-stakeholder groups now over to our
+intern National policy expert
+hanana 2023 ended with important
+achievements in cup 28 in Dubai such as
+the mention of the need to transition
+away from fossil fuels in the final tax
+commitments to accelerating investments
+in renewable energy and reducing methane
+emissions in parallel carbon markets
+found their footing in spite of the fell
+negotiations on article six several
+joint initiatives announced aimed to
+unlock capital and promote both scale
+and integrity for the market the US
+state department the Rockefeller
+foundation and the bessos Earth fond
+launched the framework for the energy
+transition accelerator and announced it
+is planned to be up and running by April
+this year the ETA and aims to harness
+carbon markets to accelerate fossil fuel
+phase out in developing countries six
+organizations across the voluntary
+carbon Market ecosystem including the
+Integrity Council for the volun carbon
+market and the voluntary carbon markets
+Integrity initiative announced they plan
+to establish an endtoend Integrity
+framework for the procurement and use of
+high integrity carbon credits this aims
+to harmonize their existing guidance
+additionally six of the largest carbon
+crediting programs announced a
+collaboration to establish Shar
+principles for quantifying and
+accounting for emissions reductions and
+removals this collaboration among
+standards signals an effort to enhance
+consistency and transparency with the
+aim of increasing confidence in carbon
+markets on the other hand the agreement
+reached at cop 28 fail to include the
+most important steps for
+operationalizing a new international
+carbon markets under the Paris agreement
+the main disagreements on both article
+6.2 Cooperative approach and the 6.4
+governed UNF Z mechanism centered around
+Integrity concerns when article 6.2 the
+EU proposed introducing more unfc
+oversight on the credits used for
+bilateral trading for example by
+aligning accepted methodologies with the
+6.4 mechanism this was opposed by the US
+UK and others article 62 is already
+operational from what was agreed on
+charmer Shake but there are still
+uncertainties around issues such as
+revoking authorizations and if proposals
+like the one from the EU could be r
+provide during the next cup therefore
+article 6.2 transactions proceed but
+with caution from the parents agreement
+crediting mechanism laid on laid out on
+article 6.4 this agreement centered
+around the supervisor part's
+recommendation on the methodology
+assessment for example Baseline
+safeguards and additional requirements
+for removals the technical work is
+expected to continue in 2024 and
+discussions will roll over to to cup 29
+the two key meetings to watch for on
+article 6 developments are the article
+6.4 supervisory party meeting happening
+in February and the pre-up discussions
+at the bond conference at the beginning
+of June the good news is that these
+issues mirror those in the vcm where
+many have been working hard to resolve
+them for several years to close on
+article six here's an overview from our
+article six transactions tracker as you
+can see in the chart article 6.2 deals
+continue to advance at a steady Pace by
+the end of the year we also saw the
+first transaction of authorized
+International transfer medication
+outcomes commonly known as
+itos almost 2,000 itos were transferred
+from Thailand to Switzerland and are
+planed to be used to fulfill
+compensations obligations under the
+Swiss CO2 act Integrity concerts on
+article 6. two are increasing in the
+absence of a final rule book
+participating countries should ensure
+that their actions stand up to
+International scrutiny and could pass
+future tests of high integrity
+Additionally the lack of agreements on
+article 6.4 is not stopping BCM
+preparations Vera and gold standard are
+now tagging projects that have been
+authorized by the host country to be
+correspondingly adjusted the main
+application of correspond fing
+adjustments in the near term is expected
+to be for international Aviation under
+corcia where the first compliance p
+period is scheduled to begin in
+2024 back to you
+guy uh thanks Mana um and and deline so
+we we titled this talk as um could we be
+at an inflection point in the market in
+2024 um I think the truth is that there
+could be a number of inflection points
+that um will change the direction of the
+market during the year 2023 was a very
+uh interesting year there was a lot of
+turbulence the um the media Spotlight on
+uh on the market had a profound effect
+and Peter showed the the effect on
+prices volumes Jamie mentioned the um uh
+highlighted the continued appetite for
+corporates to use carbon credits for for
+various purposes but but Peter showed
+the effect that I think a lot of that
+media scrutiny had had on prices so
+looking forwards we see five key points
+that could affect the direction of the
+market in the following year the first
+which has been alluded to by juano and
+deline is potential new sources of
+demand Coria uh the international
+Aviation scheme really sort of kicks off
+this year it was the first year under
+phase one um 126 countries and we
+calculate uh potentially needing up to
+200 million tons of credits the point's
+been made on the vcmi and companies are
+already starting to trial those new
+claims
+codes uh the science-based targets
+initiative has been working on its
+Beyond value chain mitigation guidance
+and more compliance markets um are
+likely to sort of see the light of day
+this year as was mentioned earlier
+Singapore 5% of the carbon tax can be
+offset this year with use of carbon
+credits Mexico starts its cap and trade
+scheme this year and the EU has um
+passed rules on carbon dioxide removal
+certification scheme which gives should
+give support and investment
+opportunities for the removal space in
+Europe European Union is also looking at
+an industrial carbon management strategy
+to support carbon capture and storage um
+in as part of a much broader sort of
+decarbonization strategy uh in the
+industrial sector so a number of sort of
+pockets of demand bubbling up the second
+is the quality initiatives that have
+been alluded to before they're moving
+from planning into implementation during
+the year so the Integrity Council CCP
+will become eligible in um first half of
+this year vcmi finalizing its guidance
+um Vera and gold standard updating their
+governance and methodologies the uh the
+red plus um new red plus methodology
+which um was published in Q4 last year
+um and will start to be rolled out this
+year and then applied retrospectively to
+um existing projects and again has been
+mentioned the collaboration between some
+of the major organizations um designing
+uh the uh the Frameworks um for what
+good quality looks like all of this year
+is sort of characterized by an
+implementation emphasis we've been
+talking ever since cop 26 you know
+there's been a lot of talk now I think
+we're going to be moving into
+action the um the third sort of
+inflection point that we characterize is
+the growth in jurisdictional
+approaches um Vera's Consolidated uh red
+methodology is being uh is now sort of
+being implemented across the world there
+are 20 jurisdictional Pro programs
+across five uh five
+continents um there's a there's the
+tropical forest Credit in Integrity
+guidelines which is um which is
+supporting a number of initiatives in
+developing countries um the energy
+transition um work the ETA that was uh
+mentioned earlier launches in April this
+year supported by some very wealthy
+benefactors um it was announced uh in
+cop 27 but it's taken you know a number
+of years to uh to take rote Chile
+Dominican Republic and giant Nigeria are
+all going to Pilot ETA credits in 2024
+but the key thing about jurisdictional
+approaches is their size if these
+projects and programs can be um
+implemented at national scale they have
+to be sort of matched on demand and
+Supply you know one of the um pivot
+Points could be
+where governments sort of on the supply
+side want to engage in transformational
+projects and then they need to find the
+buyers now I think it's a question mark
+whether those will be funded directly by
+donor governments or donor institutions
+and how much will be taken up by the
+corporate sector and um and and how that
+affects demand for project-based credits
+in the in the conventional carbon
+Market um there is growing interest in
+soil and blue carbon at a jurisdictional
+uh level the world Bank engagement road
+map highlighted this and you have a
+number of countries sort of triing and
+and looking to participate in this on
+the supply side Bahamas Antiga Manan uh
+all all wanting to sort of take it
+forwards so some really interesting um
+really interesting developments there um
+increase increasing Clarity for
+corporates and claims and disclosures
+this was mentioned throughout the talk
+so far um what you can see is the number
+of the Le leading um authorities making
+progress and cementing disclosure
+requirements so the issb has has really
+sort of clarified that um the EU UK
+Australia and Singapore all working
+towards um uh greater transparency on
+disclosure what is more equivocal is the
+second column on the right this is the
+claims Guidance the EU and the UK are
+perhaps leading thinking on this the UK
+advertising standards Authority and the
+EU consumer protection laws sort of
+taking Center Stage but the US Australia
+and Singapore not far behind and we will
+look to see where those come out as
+deline mentioned um the UK laws are
+really designed to sort of protect
+consumers and not get in the way of
+companies doing the right thing and I
+think that's been sort of
+mischaracterized in in some media
+reporting um so there's there's some
+whichever way those land I think it's
+going to be important to keep on top of
+and our policy team do a great job in
+making sure that all of our clients are
+fully aware of the implications of those
+developments um the final one which is
+is a bit vager but is sort of difficult
+to ignore is the geopolitical landscape
+uh that we're going to be faced with in
+2024 more than half the world's GDP is
+under an election cycle this year more
+human beings will vote in Democratic
+elections this year than in any here
+here in the world's history what will
+that mean I think it can be interpreted
+in a number of ways you actually sort of
+combined that with some populist
+movements in the in in certain countries
+like the US um there could be in certain
+scenarios uh a change in how
+environmental and climate sort of
+priorities are seen by governments that
+could um sort of paradoxically open the
+door for more corporate action if
+Government change the the role that you
+know the the intentions of um of the
+state to deal with climate and the
+climate continues to get sort of to to
+sort of um need addressing which it does
+then the are the responsibility perhaps
+Falls more on investors and corporates
+to pick up the Baton and as as was said
+earlier the you know the the the Fallout
+of um the lack of agreement on article
+six um sort of puts the ball back in the
+cord of the voluntary market and all the
+great work that the institutions have
+been doing behind the scenes for several
+years now to try and thrash through the
+technicalities of how we Define a credit
+make sure it's high quality and present
+it to the corporate so they can be
+confident in using it and making the
+appropriate claims so a mixed picture on
+the geospace on the geopolitical front
+but something definitely to be aware
+of so the final piece of this uh this
+webinar is uh
+where do we think prices are going to be
+and we'll we'll open the poll up for our
+usual um Vox pop but just quickly where
+did we end up compared to where we would
+thought we end up well 2023 was sort of
+characterized throughout the year as as
+I think a one of optimism um and uh you
+know you can see the the price the
+probability like the distributions of
+prices for the different project types
+renewable energy clean cooking red plus
+and nature
+restoration and then the solid the
+turquoise lines at the end about where
+the year ended up so renewable energy
+credits as Peter showed instead of
+hitting a two $2 average but there was
+some optimism earlier in the year that
+prices would be considerably higher um
+clean cooking similarly on the left hand
+side um red plus sort of yes in the
+bottom quartile of expectations but
+nature restoration um again as Peter
+showed uh you know really showing the
+value of the voluntary Market in in um
+in a TR ing Capital to sort of higher
+value projects but perhaps other
+mechanisms government regulation or pure
+sort of um conventional project Finance
+in the private markets cannot do so one
+of the I think this is sort of very
+characteristic of the nature Restoration
+in the CDR market in terms of sources of
+capital so that's where we ended up last
+year uh let's um if I hand over to am uh
+do you want to take control on this one
+now
+yes um thank you guys so I will now
+launch the poll um so that you can ship
+in and tell us what do you think uh what
+is the price of carbon credits uh will
+be for different types of the credits so
+there should be a poll launching uh in
+front of your screen right now you need
+to scroll through to see there are four
+credit uh credit types so what do you
+think the price will be in the at the
+end of this
+year right is we can see the results
+being uh coming
+in and we'll
+see what people think okay nature
+restoration again nature restoration
+looking pretty
+bullish um we give it a few more minutes
+for you to give it a thought and share
+with
+us yeah and I think you know the point
+that I made earlier about what can the
+voluntary carbon Market do that other
+routs to finance can't is sort of really
+where you see the pockets of value so
+renewable energy has a has a significant
+other particularly grid connected
+renewable energy wind and solar Hydro
+they have you know substantial sources
+of lines of capital to support those
+projects um
+uh Energy Efficiency as well um you know
+with the exception of like maybe cook
+stoves um you know Pure Energy
+Efficiency buildings transports um
+industrial Energy Efficiency you know
+there are other mechanisms available to
+to support those so if there is a
+differential in price I really think it
+does Focus the mind of the market on
+what is it that this Market is good at
+and where does it add
+value
+yeah
+so while we we're going to end the poll
+and I think
+um as we're working on uh our team
+working on uh sharing the result maybe
+we can go to some of the questions
+submitted by the audience today guy
+there's one of the very controversial
+question you probably hear all the time
+is that what is your thought on if the
+market will punish companies that buying
+offset uh without do or but doing very
+little in terms of when it's come to
+their carbon emissions they're doing
+very little work but they buying a lot
+of offsets so do you think the market
+will punish this kind of company what is
+your thought on this um I think it
+depends I don't um you know if I
+characterize uh two potential sort of
+corporates one where you know they're
+not making an effort to reduce emissions
+and they've tried to sort of source um
+perhap low Integrity credits then I
+think that company could end up for um
+you know in being scrutinized another
+company showing and demonstrably showing
+it's on track with its you know scope
+one and two and hopefully scope three
+emissions and in addition to that is
+using sort of high quality carbon
+credits you know that company should be
+applauded uh for um for doing both
+reducing emissions and in fact the
+research that we published last year
+that showed that the companies using
+carbon credits were also on average
+decarbonizing quicker um you know showed
+that that is possible um and uh you know
+I think everyone hopes that that is the
+route that the majority of companies
+will take but we will be launching more
+tools uh uh uh this year to help unpick
+which companies are walking the talk and
+which companies are just talking the
+talk great thank you so
+much so
+maybe one
+more question from uh the audience
+before we take a look yeah sure yes so
+uh this could probably be Jamie So Jamie
+there's a question about what's the
+outlook for issuance next year do you
+expect them to grow again so
+issuance sure uh yeah thank you great
+question um so as I as I shared earlier
+uh issuance have been coming down year
+on year year uh this year driven largely
+by fewer insurances from nature-based
+renewable projects however I think we
+expect Supply from nature projects
+probably to pick up again in the near
+future as potential issuances of this
+project type which are projects that are
+pursuing registration um so those are in
+the pipeline currently um they can't
+issue yet but that capacity has doubled
+in the past year um demonstrating
+there's still clear activity going on uh
+Upstream between developers and
+investors um and in fact we saw this
+exact exact thing happen uh in the
+supply from Energy Efficiency projects I
+mentioned that they've they've doubled
+this year um and if we look back at the
+pipeline in
+2022 this tripled in terms of energy uh
+efficiency credit capacity so we saw
+those then come out with much higher
+insurances after so although they're
+they're tailing off at the moment in
+terms of Supply I think the growth in
+the pipeline and further Upstream is
+still really strong um
+I think also just to add a little bit
+more on the the nature side of it as
+well we've started tracking the
+jurisdictional red programs that are
+part of art trees um and with their kind
+of broad geographical scope we we expect
+there'll be quite enormous potential
+coming from those somewhere down the
+line and we'll be we're currently
+modeling kind of the projected issuances
+from those uh and we'll hopefully be
+sharing that analysis from those models
+to subscribers soon um and just finally
+to add to that as well I think when it
+comes to issuances in Supply it's worth
+considering all of the factors that are
+at play here um like you have price um
+is a huge one and then also remember
+this is really in the hands of
+developers at the end of the day when
+these issuances occur um and we also
+still have quite a significant Surplus
+due to supply dwarfing demand for the
+last last few years as well um so I
+think Supply will will will probably
+pick up again but the timing of which is
+is very much in the balance so keep an
+eye on it um and we'll continue to share
+that with subscribers in our monthly and
+webinars with with everyone else thank
+you very much jimie so now let's um
+let's having a look of the result from
+the poll um so we've got results in at
+$2 sorry um renewable energy uh really
+just picking up I think the year end
+position to about
+$2 70% plus a little and then like a
+little pocket between seven and 10 maybe
+that's for a certain sort of um project
+type um but you know on renewable energy
+you know bear in mind that no you know
+the the standards of um Vera and and
+gold standard now the methodology say
+that you know that that that um all in
+except least developed countries you
+know new projects of this of Ren
+renewable energy projects you know
+shouldn't shouldn't be eligible for
+carbon credit so that's probably so
+reflective of that that new position um
+uh clean cooking you know there are some
+down at 03 0 to3 7 to 104 the 5.1 uh
+where we ended up last week actually
+looks like some arithmetic mean of um of
+the clean cooking distribution so maybe
+uh again uh you know there's still some
+some optimists out there but again
+there's probably pocket pockets of
+certain types of projects red plus um
+ended up 5'7 last year there's some
+pretty you know some PE missed at 0o to
+three but again uh you know a good sort
+of um sort of 50% of the market thinks
+that red plus could be above
+$7 um on average maybe around sort of
+where it is but probably some room for
+improvement if those baselines and the
+Integrity assessment work that
+organizations like ourselves do I think
+comes through it could sort of drive a
+separation between you know the zero to
+three price points and those that you
+know command a much higher
+price and nature
+restoration uh you know a pretty good
+distribution around 11 to 14 so you know
+potentially some um some uplift from the
+uh year end point at
+$10 uh you know uh 25 75 75% of people
+on this call think that nature
+restoration should be higher than $10 um
+uh where it ended last year
+so I think this maybe talks to sort of
+to some degree to Peter's point about
+the fragmentation of the market and
+these these four categories that that we
+we ask on are are really very aggregated
+and um you know hide a hide a much sort
+of broader disparition in terms of
+project type and location um but it is
+you know we uh um it's the simple way of
+presenting it at this time so I think I
+know that to me says uh the market is is
+is more optimistic in 2024 than where it
+ended in uh 2023 would you like to go
+over a little bit of what we looking for
+uh to launch new feature by the end of
+this quarter for carbon Ms platform yeah
+absolutely uh and thank you all for for
+for for staying with us um we've got a
+lot of things coming out in the next
+month we're going to be launching the
+corser and Aviation module as we
+highlighted that's a sort of core sort
+of new source of demand and um
+particularly problematic for a lot of
+airlines um a new article six Price
+Forecast so we touched on corresponding
+adjustments but how how much will they
+cost who's going to price those when the
+market isn't trading uh liquidly at the
+moment well we're issuing a a very
+comple comprehensive model uh that will
+sort of show which um how uh you know
+the prices that countries and um those
+looking to secure corresponding
+adjustments should be looking to pay for
+those credits um the addition of aqs uh
+Australia carbon credit units is being
+added to the platform and we are going
+to be launching our G spatial cook stove
+development model which will show at a
+very granular level the areas of
+countries which are most appropriate to
+develop those projects and a lot more we
+will have more webinars end of January
+which is for clients we've got a nature
+based Solutions webinar um in February
+March and April we will be covering CDR
+Market with a view to looking at biochar
+red plus and um and then our next
+quarterly webinar in review so lots
+happening on front um and more to come
+on that basis I bid you um a great
+2024 and um we have a lot of work to
+do thank you and so exciting year for
+the carbon markets and for the msci
+carbon markets platform as well all the
+slides and recording from this webinar
+will be available on our website by the
+end of the week and please follow us on
+LinkedIn and sign up to our newsletter
+so that you get notification and get up
+to dat about our next event uh until we
+meet you again at the next webinar thank
+you so much for joining us today thank
+you

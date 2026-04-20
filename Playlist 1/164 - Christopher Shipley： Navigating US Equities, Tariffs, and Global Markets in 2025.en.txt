@@ -1,0 +1,737 @@
+[Music]
+Hello and welcome to the Enterprising
+Investor, the flagship investment
+podcast for CFA Institute. I'm Mike
+Wahberg and I'm joined today by Chris
+Shipley. Chris is a senior vice
+president and co-chief investment
+officer of Fort Washington Investment
+Adviserss where he oversees about $90
+billion in client assets. Prior to Fort
+Washington, Chris spent 23 years at
+Northern Trust Asset Management in
+Chicago, where he headed up both
+fundamental equities and strategy at
+different points along the way. He joins
+me from Cincinnati today to share his
+views on the curious case of US equities
+in 2025. Welcome to the show, Chris.
+Thanks for having me. Great to be here.
+>> So, Chris, my my my intro was a bit
+tongue and cheek, but it has been both a
+bumpy and at times confusing, I say,
+ride for US equities this year. Uh let's
+start with the tensions in the Middle
+East, something US stocks have largely
+shrugged off. Why do you think that is?
+>> Yeah, it's a good question and one where
+I think we found ourselves in this
+position many times over the last 20
+years of wondering why US equities are
+not reacting more to what's happened in
+the Middle East. But it feels like we've
+really been conditioned over that period
+of time to focus predominantly on the
+transmission mechanism back to the US
+economy, which is oil prices. And of
+course over that time as the US economy
+has become more and more
+servicesoriented
+the level of the oil price has mattered
+less and our access to oil is far less
+dependent on the Middle East now that we
+have much something much closer to
+energy independence. And so ultimately
+when we look at what's been happening in
+the Middle East, I think it's fair to
+say that the US market has responded
+rationally in recognizing that the
+economic implications or the
+implications on corporate profits are
+going to be relatively modest from
+what's been transpiring so long as it
+remains confined to the region. Specific
+to this example, I think when we look at
+the optionality for Iran from a response
+perspective to what's been transpiring,
+their options are limited. And the
+concern is that they might block the
+Straits of Hormuz is really not on the
+table when you consider that something
+like 45% of China's oil flows through
+the straits and with China as an ally,
+they would really be hurting an ally far
+more than they would be hurting the
+United States or others in the West. So
+ultimately, I think the market very
+quickly sniffed out that this would not
+be a significant uh macroeconomic event
+for the United States or for much of the
+world. And as a result, it did not have
+a meaningful impact on asset prices.
+>> Right. And and as of today, we're at uh
+July 8th, we're recording here. Um we're
+we're still in ceasefire zone. How do
+you how do you see that playing out? You
+think that ceasefire sticks or or where
+do we go from here?
+>> Yeah, hard to say. And and I I won't
+profess to be an expert on on Middle
+East politics or or the likely outcomes
+there, but I do think it's fair to say
+that Iran really didn't have an option
+other than a ceasefire given that the
+vast majority of their defense systems
+were taken down. And so it was in their
+best interest to call a ceasefire
+because anything they could do
+offensively was limited and anything
+they had defensively was largely put out
+of service. So the question ultimately
+will be whether or not they are using
+this as an opportunity to regroup and
+rebuild and rearm or if this is a
+genuine ceasefire. But I think as we
+learn that over time I think it's fair
+to say that again the market is going to
+be predominantly focused on that that
+transmission mechanism which is oil
+prices.
+>> Yeah. And it's it's interesting. I I
+pulled the oil price up here just to go
+back a year or so and it is quite
+remarkable. I mean, we definitely had,
+you know, the Israel attacked Iran June
+13th. Um, and it spike it spiked to its
+high just under 74 bucks June 19th. And
+then the US strikes on June 22nd and the
+24th was the ceasefire. It it it bumped
+back down again as low as just under 65
+bucks and it's sitting around $68 today.
+So that at those levels, we're kind of
+in the range and actually lower than we
+were for most of 2024. So it really has,
+you know, to your point about energy
+independence, even the even the oil
+price hasn't doesn't really matter
+anymore with with fracking in the US and
+and the exposure there and very little
+trade between US and these countries.
+It's quite remarkable. So another trend
+you you've identified is the the
+underperformance of US equities versus
+the rest of the world this year. What do
+what do you see as as the key drivers
+there, Chris? So there there's a few
+factors at play, but I think that if you
+go back to the immediate aftermath of
+this trade conflict that was initiated
+by the United States, it's fair to say
+that we had a bit of a sell America
+trade where you saw a weakening of
+equities, you saw a weakening of bonds,
+and you saw a weakening of the US
+dollar. And that's a pretty unusual
+situation for those things all to be
+happening together, particularly for a
+country that has the reserve currency
+like the United States. Uh-huh.
+>> And so ultimately when we look through
+that lens and look at what was
+occurring, it was not shocking
+necessarily to see that outcome. But
+when you think about the real
+implications of this and the other
+factors that were leading into this,
+which include the negative sentiment
+toward growth stocks in the wake of what
+was happening with the announcement out
+of DeepSeek on the back of two very
+strong years of outperformance of the US
+market as it relates to the MAG7
+contribution and the 25% back-to-back
+gains we saw in the United States, we
+really had a bit of a rotation going on
+out of growth and into value. And it's
+important to remember that when you
+compare the United States to the rest of
+the world, and I'll use Europe as an
+example, you're really not just
+comparing different regional exposures,
+you're comparing different factor
+exposures, specifically growth versus
+value. So when you look at the United
+States today, it's 32% tech, whereas the
+MCI Europe is more like 7%. And if you
+take tech and comm services together,
+you're north of 40% of the US market and
+more like 11% in Europe. And I think we
+could argue that the US communication
+services sector is much closer to real
+tech than what you have in Europe.
+Whereas you look at the other side of
+the coin, you have financials
+industrials which are together maybe 23%
+of the S&P but over 40% of the MSEI
+Europe. Even the Russell 1000 value
+index within the US has more tech than
+the Msei Europe index. And so again,
+when you compare the S&P 500 to Europe,
+you're really comparing growth to value.
+These are all multinational companies
+selling products around the world. But
+the US is where the tech is and it's
+where the growth is more broadly. So
+when we say that the US is either
+outperforming or underperforming or if
+we look at it on a valuation basis and
+we say that the US is currently trading
+on a PE basis at a better than 50%
+premium to Europe which is significantly
+above its 10-year median premium that it
+carries at more like 25%. What we're
+really saying is that growth is
+expensive to value. And you can see that
+when you look at the Russell 1000 value,
+which again looks much more like Europe
+in terms of its sectoral composition,
+that index is trading at maybe a 10%
+premium to its long-term average
+relative to Europe. So, it's really not
+that the US is expensive per se as a
+result of it being the US. It's really
+the mega cap tech trade that's expensive
+because the Russell 1000 value isn't
+expensive versus its own history. Even
+the eco weighted S&P 500 isn't that
+expensive versus its own history. It's
+really been a story of the increasing
+dominance of mega cap tag within the S&P
+and the influence that that's had on the
+relative performance as growth goes in
+and out of favor depending on market
+sentiment.
+>> Right. And and having yields backing up
+this year hasn't really helped helped
+that trade. Right. I mean you you always
+see value outperform when when when
+yields are higher.
+>> Correct. Yeah. Because growth stocks are
+the long duration equities.
+>> Exactly. So those those further out for
+the for those on on the on the podcast
+that that aren't familiar. Yeah. The
+further out you have to discount those
+cash flows back uh the more expensive it
+becomes when when yields are higher. So
+so you take it on the chin when in
+growth in these periods. And you've seen
+these, you know, this happen throughout
+various different cycles in the last, I
+would say the four last sort of 15
+years, but really it's really been only
+happening a couple of times in the last
+5 years really where you saw uh value
+kind of get a little bit of a run and
+part of the help from that was was from
+uh rates rates rising on the back of
+inflation uh concerns there. Um which
+actually gives me a good segue here now
+that I think about it. I do want to talk
+about tariffs. I want to talk I want to
+talk about inflation. I want
+>> Everybody wants to talk about tariffs.
+Yeah, let's talk about tariffs. I mean,
+you you know, you know, Chris, I'm
+sitting here in Vancouver. Tariffs h
+have been a very large and then, you
+know, a much less right now, knock on
+wood, of a topic in Canada after the
+reversals from early April uh on
+Canadian goods or or on some of them
+anyways. But, uh we've seen these rapid
+policy changes causing some whiplash in
+both economist models and and in the
+markets as well. So, let's talk growth
+and inflation. What are you thinking
+about tariffs there as you look at Fort
+Washington's US equities or or elsewhere
+in the portfolio? What where do you see
+that? How do you see that transmitting
+through through markets and your
+portfolio?
+>> Yeah, sure. So it's it's clearly been a
+bit of a wild ride as you've noted on
+the tariff front and obviously
+liberation day included a far more
+draconian set of tariffs than the market
+had been bracing for which if
+implemented as outlined would have
+undoubtedly had a very material negative
+economic consequence on not just the US
+but candidly global economies.
+Therefore, the degree to which we saw
+the market pull back in our view wasn't
+irrational, particularly since given the
+starting point of valuations where the
+market was, even at the lows that we got
+to, we were still pricing in less than a
+50% chance of a substantive recession.
+In other words, the market was applying
+a base case that did include a material
+scaling back of the tariffs versus
+originally articulated back on April
+2nd, even at the market lows. Now the
+subsequent delayed implementation which
+has now been extended all the way out to
+August 1st and possibly beyond that.
+>> You had a dialing back of the rhetoric.
+You also had the courts in the US
+questioning the president's ability to
+implement these broad-based tariffs
+under the emergency authorization.
+And that's given the market far more
+confidence that again these base case
+odds of a significant scaling back were
+improving allowing for the the beginning
+of a recovery in stocks. And now, of
+course, we have at fresh all-time highs
+here where the market has really taken
+even a bad case scenario off the table,
+let alone that worst case. But it's been
+interesting to watch some of the the
+developments, including the deal with
+Vietnam where I think 20% was higher
+than I think most would have assumed
+given the importance that they're likely
+to play in moving productive capacity
+away from China. And you've subsequently
+had the threats to Japan and South Korea
+of 25% beginning August 1st, clearly
+designed to bring them to the
+negotiating table. But all the while,
+you've had Treasury Secretary Besson,
+which continues to speak to tariff
+revenue of around 300 billion annually,
+which is only 10% on our import run rate
+of just over three trillion. So some
+countries will be higher. China,
+apparently Vietnam, maybe Canada and
+Mexico end up in far better shape. But
+ultimately, if we're looking at this as
+a 10% tariff, that does seem pretty
+manageable. And from the US perspective,
+could actually be the sweet spot of
+generating substantial revenue with
+minimal economic consequences. When you
+do the math on it and you kind of play
+it out and you look at US GDP north of
+$30 trillion, you've got imports that
+are thus roughly 10% of GDP. So if you
+had a 10% trade weighted tariff, that's
+less than 1% of GDP. And that impact is
+mitigated to the end to the end
+consumer. If that tariff ultimately ends
+up being shared amongst the exporter,
+the importer and then ultimately the
+consumer. And if you take that 10%, you
+divide it by three and you say that each
+are going to take roughly 3%. That's not
+going to be overly consequential to
+consumer spending, inflation, or even
+corporate margin. So in other words, I
+think the market is more or less sniff
+this out again and become comfortable
+with the pathway from here. It's not to
+say that it's not going to be a bumpy
+ride for a bit, but I think that the
+destination at the end of that ride
+seems pretty manageable. The biggest
+concern I think I have at this point is
+that the court decision does weaken the
+bargaining position of the US and some
+countries may choose to wait out the
+legal proceedings in the US before
+offering major concessions and those
+court proceedings presumably won't be
+wrapped up by August 1st suggesting that
+we could see higher tariffs for some at
+least for some period of time and that
+could spook markets and and again hit
+corporate and consumer confidence which
+are somewhat fragile just given all the
+volatility this year. Yeah, I guess that
+that really puts uh the US in a bit of a
+you know an impaired bargaining position
+really with uh with that risk sort of
+being out there.
+>> Yeah, I think that's right. Um but
+again, I think when we look at some of
+the deals that have been transpiring, I
+it does seem as if they're even coming
+in a bit higher than we would have
+expected even from that somewhat
+weakened bargaining position. So, we'll
+have to see how this plays out, but I
+think ultimately the market is right in
+assuming that this is not going to be
+overly consequential. But again, that
+presupposes that again that that the
+president is not truly intent on
+reshaping global manufacturing and
+redomiciling productive capacity to the
+US or pushing it into friendlier hands
+because at the end of the day,
+relatively small tariffs or small tariff
+differentials between countries are
+unlikely to serve as a sufficient stick
+to really encourage a dramatic re
+reorientation of one's sourcing or
+manufacturing. particularly if you think
+that the next administration isn't going
+to share that philosophy or at least
+share it with the same enthusiasm.
+>> Right. So, so given this I mean the
+implications again sort of coming from
+the Canadian view and then just looking
+outside of the US the a lot of the the
+pain there was you know there's a lot of
+pain in the US markets in post April 2nd
+but you the the the impact on the ground
+for for the rest of the world will be
+different right so if you have a large
+exporting nation like Canada or other
+other big you know big exporters around
+like like like Vietnam sort of the the
+implications for them uh are different
+uh it's it's a it's a bigger impact on
+them I guess is what I'm trying to say
+than kind of 10% of GDP. So so how do
+you think about about that in terms of
+your global equity exposure? Um h how is
+this reflecting you know being reflected
+in global markets at this viewpoint and
+and and is is this affecting your your
+allocation decisions within Fort
+Washington? Like how whether how
+attractive I guess is a long way of
+asking how attractive is global relative
+to us um as as this sort of works its
+way out. Yeah, we've certainly been more
+heavily weighted toward the United
+States and I would say that the recent
+underperformance that we've seen only
+solidifies that view for us. Ultimately,
+I think that there's going to be a fair
+number of people that look at the
+outperformance of areas like Europe and
+ultimately look at what they own by
+shifting capital away from the United
+States and start to ask themselves why
+they're there. And candidly, when you
+look at the US market versus Europe,
+again, the US market cap is something
+like five or 6x that of Europe. And so,
+it doesn't take a dramatic amount of
+capital moving out of the United States
+into some of these other regions to have
+a pretty dramatic impact on performance.
+And so, ultimately, my suspicion is is
+that there will be a growing
+appreciation again for the growth
+opportunity in the United States,
+particularly as you contemplate the
+implications of AI and how that's going
+to play through in the in the global
+economy in the coming years. So, we
+still have a positive outlook toward the
+United States. I would say that the
+point that you make on these other
+exporting nations and the potential
+challenges that they have, there was an
+article in the South China Morning Post
+talking about how Walmart and other
+large retailers are trying to get the
+exporters in China to take 50 to to two
+to 50% to 2/3 of the tariff on
+themselves. And so, the US does have a
+pretty strong bargaining position uh
+from that respect. So ultimately, I do
+think that there's going to be some pain
+felt around the world and the US will
+feel some, but I still think that the
+long-term opportunities in the United
+States are are better than we see in
+many other parts of the world.
+>> Yeah, fair point. I I'm I'm just looking
+at the uh at the yields now, Chris,
+thinking about this from yesterday. Uh
+Trump announced yesterday, so July 7th
+was yesterday. Um this extension to
+August 1st, um some updates on trade
+trade deals that he's negotiating. and
+we saw US treasuries pop kind of across
+the curve really with this deadline
+getting pushed out. Looking back to
+April 2nd, you know, many argued that
+the the reversal wasn't caused by uh
+concerns around market performance, but
+more so around the fact that US
+treasuries were were had had really
+backed up um something like 50 beeps at
+that point. These this the curve is up
+sort of two to seven basis points from
+two to 30 years. How important is this
+do you think as a predictor of both
+markets and policy in your view? Do you
+think this this will the the the yield
+curve is going to have an material
+impact on on the administration's
+decision-m?
+>> I think to an extent. I think that there
+was clearly when you go back to the
+aftermath of of April 2nd and the
+initiation of that 90-day pause, I think
+it's fair to say that that that decision
+was predominantly a result of Treasury
+Secretary Bess said calling the
+president and suggesting that things
+were getting uncomfortable in the
+Treasury market and that the volatility
+that we were seeing there and the
+unusual behavior that I mentioned
+earlier that that was a cause for
+concern and could ultimately prove to be
+more destabilizing and I think was
+probably the catalyst for that 90-day
+extension or that 90-day delay. When it
+comes to the level of rates more
+broadly, clearly the administration is
+focused on it. We certainly hear plenty
+out of the president in terms of his
+opinions on where short rates ought to
+be. The question ultimately is what is
+the implications on long-term interest
+rates from what happens to short rates.
+I think if if the if the president was
+successful in bullying the Fed into
+lowering short-term rates when it seemed
+like inflation wasn't fully addressed,
+then that could actually have the
+opposite effect on long-term rates. And
+as we know, much more of the economy
+today in the United States is influenced
+by the long end of the curve than the
+short end of the curve as as debt has
+tended to be termed out. And of course,
+we have the implications on housing
+which are driven very much by what
+happens at the long end of the curve.
+the Wall Street Journal just this week.
+And perhaps the most alarming statistic
+that I saw in there, which is which is
+not necessarily new information, but an
+interesting way to frame it is that at
+today's prices, meaning the combination
+of of home prices and high interest
+rates, that you buyers need to have
+$127,000
+in income in order to be able to afford
+the median priced home in this country,
+which is up from 79,000 in 2021. So
+that's a dramatic change in
+affordability in the United States. And
+and if you look at the affordability
+statistics, they haven't been this bad
+since the 1980s when we started tracking
+the series. And so ultimately, clearly
+we have an affordability issue in the
+United States that has really blocked
+out first-time home buyers in
+particular. And interest rates are going
+to have to be part of the solution there
+at some point or you're going to have to
+have a corrective mechanism in home
+prices coming down. But clearly
+something has to change over time in
+order to reimagine that that
+affordability dynamic in the United
+States.
+So besides uh home affordability, is
+there is there anything else, Chris,
+that's keeping you up at night these
+days or or or conversely or or both,
+maybe any opportunities that you're
+specifically excited about?
+>> Well, I think at the end of the day,
+when we're sitting at comfortably above
+22 times forward earnings on the S&P
+500, there's a low margin of safety. And
+so the market is susceptible to bad
+news. And that bad news could come from
+some kind of exogenous geopolitical
+event. It could come from Washington. It
+could come from what happens in the
+broader economy. We have done a fair
+amount of damage as I mentioned earlier
+to consumer and business psychology. And
+to what degree that plays through as we
+look at the um as we look out over the
+balance of this year, we'll have to see.
+But we know that the bottom third of
+Americans are struggling economically.
+Now, one would argue and and perhaps
+many economists would that that part of
+the economy is usually struggling. So,
+this isn't necessarily new information
+either. But when it comes down to the
+the ability of the consumer to absorb
+these tariffs if they are ultimately
+passed along and in what form and
+whether or not that leads to either
+substitutions or just people lessening
+the amount that they're spending that
+does have implications economically and
+it doesn't feel like the market is
+currently priced for a slowdown in
+either what happens in the employment
+markets or in the broader economy. So I
+do think that we have to be just
+conscious of the fact that we have a low
+margin of safety. We learned that
+earlier this year with the nearly 20%
+correction that we had from similar
+levels.
+>> It's a funny time to be priced for
+perfection, right?
+>> That's right. That's right. There seems
+like there's a lot going on to be to be
+so sanguin when it comes to the the
+opportunities. I think one of the
+interesting things that we'll be
+watching very closely in the coming uh
+months and years is when we look at AI
+and the implications that it has. If you
+think about this as being orders of
+beneficiary where you have the first
+order beneficiaries which is the AI
+infrastructure trade like the Nvidas of
+the world. Then you have the second
+order beneficiaries which is those that
+are selling access to that AI compute
+which is the hyperscalers like Amazon,
+Microsoft, Google. And then you have the
+third uh order beneficiaries which is I
+I guess I'd call the application layer
+where you have software that's being
+written and then sold to exploit the
+benefits of AI. And then you have the
+fourth layer which is not yet seeing the
+benefits in a consequential way but we
+know is on the come is the traditional
+economy companies that are going to be
+putting AI to use to improve either
+their efficiency or create new
+opportunities in their existing
+businesses and the degree to which that
+transform those businesses of which
+there's going to be winners and no doubt
+losers um will be really the determinant
+of of not only absolute gains but
+certainly relative gains and I do think
+it's going to be interesting to watch
+and again I I mentioned my positive view
+toward the United States but to the
+degree that we end up commoditizing the
+the LLMs and so forth that maybe
+ultimately this fourth order beneficiary
+which is going to be far more than just
+the US that maybe that is the next leg
+of growth for the the market and the
+economy more broadly. But when we think
+about again the market and I mentioned
+earlier that the S&P on an equal
+weighted basis is trading roughly in
+line with its 10-year median valuation.
+There are still plenty of stocks to buy.
+there are still plenty of of industries
+that you can own and not feel like
+you're paying exorbitant valuations. And
+so I do think that that provides a
+little bit of comfort that there's more
+room to be had there. The other area
+that I think is probably going to see
+some increasing attention is small caps
+where small caps as a percentage of the
+total US equity market I don't think
+have ever been lower than they are right
+now. The valuations have certainly
+disconnected to the downside as have
+fundamentals candidly. But as we look
+forward and if you do think that there's
+going to be an interesting in an
+interest in broading out performance and
+and interest in broading out portfolios,
+I do think that there's an opportunity
+there where again thinking about the
+size of that index, you have several
+names in the S&P 500 that are larger
+than the entire Russell 2000. So it
+doesn't take a lot of capital changing
+hands in order to have pretty dramatic
+influences on performance. And so we do
+think that there's some opportunities
+brewing there as well. So, small caps
+and and areas outside of uh a big tech.
+Sounds good. Um coming to the end of our
+our chat today. Unfortunately, Chris,
+I've got a two-parter here for you that
+I ask everybody, which is what was your
+first job in the industry? And if you
+could go back and take yourself for
+coffee on your first day, what key piece
+of advice would you offer yourself?
+>> Well, my first job in the industry was
+right out of undergrad working at All
+State in their equity investment group
+in North Brook, Illinois. and I was 22
+years old and I was very fortunate I
+felt in order to land a job in an equity
+investment group at that time. Granted
+it was 1997 and you know even a guy like
+me could find a job in this business
+back in 1997 is those were good years.
+Um, but the one thing I did then that
+that I guess I'm I'm very happy that I
+did was I really despite my young age, I
+forced myself to really think outside
+the box from an operational perspective
+as to how we were running the business
+and and I actually taught myself how to
+program in Visual Basic and I automated
+a whole bunch of the back office
+processes that we use for report writing
+and so forth and and using new
+technologies and and really made a name
+for myself early on and andworked very
+very well in order to leverage that into
+one of the PMS that left there and
+joined my predecessor firm from here and
+brought me with. And so it was really it
+was really that networking and and not
+being afraid to challenge the existing
+status quo why things were done a
+certain way because oftentimes a fresh
+set of eyes can make all the difference
+in in seeing things that that have just
+been done a certain way because that's
+just the way they were done.
+>> I've been speaking today with Chris
+Shipley, senior vice president and
+co-chief investment officer of Port
+Washington Investment Advisors. Thanks
+for chatting with me today, Chris.
+Thanks for having me.
+>> I'm Mike Wald and this is Bean, the
+enterprising investor.
+[Music]

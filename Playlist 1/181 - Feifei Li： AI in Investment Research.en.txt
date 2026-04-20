@@ -1,0 +1,598 @@
+[Music]
+hello and welcome to the enterprising
+investor of the flagship investment
+podcast for CFA Institute I'm Mike
+Walberg and I'm joined today by Dr fay F
+Lee Dr Lee spent 17 years with Rob
+arnot's asset management firm research
+Affiliates running research in that
+investment management before wrapping up
+in 2022 as CIO for the company's $120
+billion of AUM it is on her work as CIO
+of kavout algo Financial though that
+we're going to focus our time today
+kavout is developing an AI tool to help
+the investment research process I'm
+looking forward to hearing how it works
+and what it means for the future of
+research welcome to the show fa thank
+you Mike Fai maybe start us off with a
+bit of your background before you
+pivoted to fintech oh absolutely so I'm
+always a invest myself I graduated from
+China you know chinai University with by
+bachelor's degree in financial economics
+and I came to this country I studied at
+the University of California Los Angeles
+to get my PhD in finance after that I
+joined the research Affiliates which is
+a Newport Beach Southern California
+based asset manager where I basically
+applied my knowledge from school to
+stocks to asset classes as you mentioned
+you know before I left the research
+Affiliates I was serving as a chief
+investment officer of their equity
+strategy leading the research and
+strategy design that support the
+company's systematic active strategy as
+well a smart beta indexes so what
+prompted the change over to looking at
+AI in
+fintech sure the answer will involve
+like several aspects I think you know
+first of all I had a great time at
+research Affiliates when I joined
+research Affiliates it was a startup
+company and I have learned so much I had
+a great ride together with a company on
+the other hand you know research
+Affiliates is very famous for its value
+investing you know Rob is a big believer
+of by low cell High which I think is a
+very legit investment approach as well
+but on the other hand you know when I
+look at how the investment landscape is
+evolving over time especially I think
+pandemic really changed the
+participation of stock market investors
+prior to pandemic you know us
+is a institutional dominated space US
+Stock Market and from pandemic you know
+the retail investors started occupying a
+very big share you know the trading
+activity from retailers can be more than
+like oneir or sometimes 40% of the total
+market trading volume that does change
+the market dynamics and I believe you
+know the the the bull bear Market the
+cycle has been changed as well so in
+order to harvest you know the premium
+coming from value investing you need
+patience you have to wait for the entire
+business cycle to come out to get your
+premium on the other hand you know the
+cycle becomes much longer much more
+prolonged versus the history so now you
+can have 10 years bull markets if you
+only stick to Value investing is my
+personal belief that you could leave
+lots of other opportunities on the table
+and a artificial intelligence is uh
+basically developing really really fast
+and there are ways you can utilize those
+new technology new techniques to create
+you know better investment outcome for
+for the investors so tell us a bit about
+what invest GPT is and kind of what it's
+trying to do okay sure in the like very
+short summary I think invested GPT is
+just a artificial intelligence-based
+research solution for the investment
+Community I personally I view that as a
+my research assistant you know it's AI
+research assistant which can help me
+gather information pretty effortlessly
+from the ocean of data filings documents
+and one step further invest GPT can also
+conduct analysis which help me to form
+my own portfolio so I want to get into
+kind of the nuts and bolts of kind of
+what it looks like but off the top can
+you describe a bit like who are the
+users for this oh sure there are
+actually I think three types of users
+you know what we look into the questions
+users really come up we guess we could
+classify them into three different
+groups one the first type is a
+information collector it's more like
+myself you know I'm a old school Buy and
+Hold investor I have a very long-term
+orientation and I don't trade very much
+but I love to get information let's say
+macroeconomic data such as inflation
+such as election such as federal policy
+international trade or even geopolitical
+tensions and I want to understand the
+impact of of those events on the markets
+on the sectors or even on individual
+stocks so investor GPT does a fantastic
+job to collect those information and
+summarize for me so it's really helped
+me to digest information in a most
+speedy way the second type basically are
+Traders you know individual Traders
+retail
+Traders they love to get a financial
+information of a company they love to
+see the ratios or technical
+indicators they also use our sorting and
+screening tool often you know to come up
+with a I think their own list of stocks
+for trade
+considerations and the most uh frequent
+question we got asked from this type of
+investors are price targets you know
+what's your prediction of Apple stock
+price in the months or in the quarter or
+by the end of 2024 so we get those type
+of question very often I know they are
+interested in trading those stocks so if
+I could interrupt just quickly fa so
+because I'm just thinking about the data
+for this so you ask a question of invest
+GPT it goes away comes back and says
+here's what will happen to the S&P 500
+given the out look for interest rates
+for the next year or here's the Target
+price for stock XYZ what's the basis for
+that data like how do you verify what it
+is and and if everybody's asking the
+same question in the prompt in the same
+way they're all going to get the same
+answer so how do you use it to get an
+answer that's different than
+consensus so that's actually a great
+question it's also something we are
+working on to improve right now the
+invest GPT basically I think is the
+outcome of Mer in several very powerful
+searching engines and also utilizing
+large language models such as GPT to
+provide a mement related information
+right so basically our answers often
+come from you know searching results of
+course we also have a supplemented the
+GPT tool with financial data and we use
+agentic Tech to keep information up to
+dat so from there we get you know
+financial analyst to focus etc etc so
+you can get consensus you can get brok
+Bren down by analyst that kind of thing
+correct yes there you would be able to
+access consensus you know get press
+release of what other people are saying
+but we are also developing internally
+about our AI based forus model so in the
+near future hopefully we can roll out
+that particular component basically give
+people a model based our own model based
+Focus gotcha so you've got sort of the
+general knowledge Seekers you've got the
+day trader the DI wires do you see a
+institutional interest in this either
+sell-side analysts or or buy side yeah
+absolutely so that's a third type of
+users I can see those are analyst from
+both buy side and sell side I think
+those analyst often tasks to write
+reports for stocks for sectors so
+invested GPT actually offers them a
+really solid ground a great base to
+start their own
+writing we had Morning Star CEO Canal
+kapor on the show a few months ago go
+and he described how they were using AI
+to replicate their analyst work so
+effectively scaling the research process
+they undertake to apply those scores but
+to more funds you know in theoretically
+infinite number of funds I guess do you
+see this Consulting role being affected
+by this type of tool like you're
+describing stock selection maybe asset
+allocation but you know fund reviews and
+sort of asset manager assessment so I I
+would say artificial intelligence is
+impacting our day-to-day life on the
+investment side for sure it will replace
+certain work but I would say it will
+start first replacing the very manual
+very labor intensive and a time
+consuming work I recall you know those
+are easiest to be replaced as well when
+I was working as an intern at a large
+Bank in China and also at a
+International Accounting company during
+my college Years I remember I was asked
+to manually input data from hard copies
+to the computer to spreadsheet so this
+type of work will be eliminated
+eliminated in the future I think thanks
+to the development of natural language
+processing technology and this won't be
+missed at least you know I didn't feel I
+have learned much from those experience
+other than improving maybe my keyboard
+skill a little bit yeah I still have
+nightmares about my Investment Banking
+days you know sitting with six annual
+reports in front of you from three
+different companies and you're modeling
+up some m&a strategies or you know
+potential model merge models for these
+guys and inputting five years of data
+for each of the yeah it was a disaster
+it was took so much time yeah and uh
+yeah definitely I can see that being a
+benefit here but yeah likewise likewise
+yes and I would say even some level of
+simple screen based on let's say
+well-known Quant factors or technical
+indicators uh those type of job you used
+to be done by very Junior research
+analyst and now it can also be done by
+AI tool such hours if you go to invested
+GPT you can actually create a screen for
+stocks based on let's say one two or
+even three layers for example you can
+ask the invest gpp to give you large
+technology stocks with a positive return
+over past uh 12 month price to earning
+ratio below 40 earnings per share below
+20% Etc then you will be able to get a
+list right so this type of work is also
+will be replaced by AI but I think the
+good part is analysts can shift their
+focus away from things that are
+relatively repetitive and give them
+little room to grow into things much
+more challenging and intellectually
+interesting you know for example I I
+think you know lots of when I was
+working for example when I was working
+in the institutional space I certainly
+know lots of companies are trying to
+Define their own signals which is
+associated with future outperformance of
+certain stock but those information are
+proprietary and there's no way we can
+Cod it up because that are those
+institutions secret sources and the
+other part is about you know
+customization you know large
+institutional investors like to Define
+their own starting universe they have
+certain concerns on the ESG front you
+know environmental social governance
+considerations so the data to calculate
+those Matrix can be inaccessible to the
+public so you cannot really depend on
+more like a relative general purpose
+investment chatbot to perform this type
+of jobs and also you know there are
+complicated methods to construct and
+rebalance portfolio often this involves
+weight determination more thoughtful
+sophisticated uh rebalancing technology
+you know recently I had a publication on
+financial analyst the journal about
+rebalancing about how to limit your
+turnover but focus on the trades which
+have greatest impact on the portfolio
+performance those type of thing cannot
+be done by a chatbot either it requires
+lots of thinking behind it actually
+analysts research analysts researchers
+can really apply their knowledge to be
+more creative and come up with new new
+Solutions yeah and then for the those
+listening here that are interested in
+that called smart rebalancing and F
+worked on that with Rob Arnette and uh
+johani then then ma might be saying that
+person's name wrong my apologies if I
+have massacred that but uh yeah that's
+an interesting piece and if we have time
+today maybe we could talk a little bit
+more about that but it's
+uh so what you're describing is what I'm
+hearing anyways is it's it's the it's
+create the check invest GPT or AI in
+general as you see it is allowing us to
+kind of go up a level and think more
+more about the drivers find better
+signals as opposed to trying to you know
+get in the weeds and I mean you do have
+your traders who are looking for
+technical signals and I guess those
+would be those users but for those who
+want to you know figure out new ways to
+screen quickly then it would come handy
+come in handy for that another thing I
+guess I was thinking about it as as you
+were describing it is just the ability
+to look through a portfolio as well
+obviously given you know geopolitical
+pressures that are happening clients are
+always wanting to know you know Russia
+invades Ukraine they want to know what
+is your exposure direct or indirect to
+either of those countries give
+intentions to the Middle East right now
+clients a lot of clients are wanting to
+know exposures and to the various
+different countries and players in that
+area I guess I imagine that something
+like invest GPT might be able to
+relatively quickly find those exposures
+across a portfolio is that do you think
+that would that that's the case today or
+something it's working towards yeah so
+that's actually our model today could
+offer you some partial answer already so
+basically if you ask the let's say the
+pension gensous impact on certain
+sectors it will be able to give it to
+you and also you could search you know
+with let's say with Apple stock suffer
+from the tension between you know us
+China relationship but you could have
+get answer as well and we I think we
+recently launched a small module called
+the docu quest which exploit large data
+science technology not only writing
+style natural language processing but
+also other machine learning technique
+and applied to company's Financial
+findings with the Securities and
+Exchange Commission along with the price
+releases and other company documents so
+because of that users can ask a very
+detail oriented question about a company
+and receive relatively precise answers
+and that would actually cover the
+question you just raised about uh you
+know because we could understand Apple's
+product the revenue distribution as well
+as the revenue distribution across
+geopolitical regions or countries right
+so to a degree you would be able to get
+get that information so I I've been
+watching Silicon Valley on my streaming
+service lately and so it's it's top of
+mind for me they're in in that in that
+series they they're trying to explain
+their product to their potential
+customers and the customers keep coming
+back it's it has an AI element to it and
+their customers keep saying well
+Terminator and everybody dies and they
+jump to the end and for listeners on
+this podcast I've raised this question
+before we had the the head of risk
+management for fact set on several
+months ago now but this idea that when
+you remove those highly manual and
+entrylevel rules
+that the risk potentially is that that
+the junior people never get the
+experience to become the senior people
+and ask those questions what what do you
+think about that well I think you know
+Junior people well lose the opportunity
+to do certain work but the the work
+could be nothing to learn from not much
+to learn from at least in my opinion I
+think it's actually much better for
+junior people to focus their attention
+and the learning on things are much more
+creative right when we talk about lock
+large language model is pretty much
+based on history so what has happened
+has a huge impact on those models but
+what hasn't happened yet will have a
+huge impact on our future I I think
+analyst can really shift their attention
+to something much more creative much
+more productive much more impactful for
+the investment community and for you
+know entire just Society what do you
+think that are the natural limits on
+something like this like what what do
+you think it will never be able to
+replace in terms of human um judgment
+well right now I think is a still far
+away from replacing human judgment and
+at least on the investment front I I
+would say m I'm approach is always
+preferred you know man and the Machine
+approach you do need a machine to
+improve your productivity and efficiency
+on the other hand you do need the man
+the portfolio manager or the financial
+provider or someone with the knowledge
+with the expertise
+to monitor the outcome to understand
+whether you know the output is legit so
+human judgment in my opinion at this
+stage is very very important but you
+know machine can learn things on their
+own right now I think we limit their
+structure so even when we talk about
+Quant model you know we introduce
+machine learning elements we allow non
+parametric form kind of prediction model
+to be developed but still you have to
+specify
+your basic framework and structure so
+that's the job for the model creator for
+the portfolio manager I think we still
+have lots of control over it and I don't
+know in the far away future I I do think
+is a possibility I mean Terminators may
+come to terminate human beings but I
+think right now I see all the positive
+aspects of AI and I think we should
+embrace what's happening and be part of
+it and hopefully do something good for
+society when they get here we'll have
+high sharp ratios on our portfolios so
+we'll go out happy right yes yes that's
+will be bullet bulletproof yeah W what
+do you see as the biggest opportunity
+overall in Ai and what do you think
+investers and users of AI are getting
+wrong about it I think artificial
+intelligence will have a huge impact on
+lots of aspects of investment but while
+we stick to the most basic the part
+which we can really articulate with
+rules with logic I think AI will
+basically penetrate from those parts
+first like I said you know the manual
+data input process and as a portfolio
+manager as a former portfolio manager I
+also notice you know in the PST
+portfolio construction process uh we
+also have lots of people who check the
+quality of portfolio right to do quality
+assurance to do data quality assurance
+and those things ser a very formula you
+could actually specify what are the red
+flags you would like to capture so
+that's a part machine will do a better
+job as long as we code it up and have it
+done in a much more systematic way it
+also actually reduce the risk of you
+know one analyst to leave the job nobody
+has a domain knowledge about what has
+been done previously so I I think that's
+where technology really kicks in and
+helps a lot and the part you know human
+creativity and intelligence is too
+important is H what we cannot learn from
+the history is what we don't really know
+iic we need people continuously working
+on that part and have more
+breakthroughs well I have you here I'd
+be remiss if I didn't ask you to give us
+a little bit of a bonus pack here on
+your smart rebalancing article that you
+did it was came out in just in April a
+few months ago there so can you just
+give us a sort of a back of the envelope
+what your findings were on that research
+and prioritizing transactions and how to
+how to balance rebalance in a in a in a
+Smart Way sure it's it's actually a
+relatively technical paper I would say
+it's not about fascinating signals which
+give you 20% outperformance over a
+culated benchmark right it is much more
+about in the portfolio construction
+process or in the portfolio engineering
+part of the the word what can you do to
+reduce cost where as still maintaining
+the efficacy of the portfolio so the
+motivation of doing that paper is uh we
+you know as a practitioner we Al often
+observe the investment outcome from a
+life
+portfolio is different from the paper
+portfolio documented in the academic
+literature and the Gap you know the
+direction of the Gap is almost the
+predictable you know life portfolio
+always underperform a paper portfolio so
+we know it's largely d by you know
+trading cost discontinuous trading and
+you know other Market frictions but on
+the other hand you know how do we
+address those problems so when I was
+working at research aids with my
+colleagues we do notice smart beta
+Factor strategies have those
+implementation short for and we actually
+have delegated a team just to work on
+the portfolio construction approach and
+we basically found you know you could
+actually limit your turnover limit your
+trading you know if a stock let's say
+you do value investing you trade stocks
+based on price to earnings ratios and
+the price moves a lot is a noisy signal
+so you don't want to trade back to your
+target weight all the time because lots
+of Trades would be costly and not really
+generating good outcome for your
+portfolio so while you focus on
+portfolio turn over you should really
+focus on the trades offer strongest
+impact of the overall portfolio
+characteristic so the biggest signals
+the best potential payoff trades focus
+on those and prioritize those correct
+correct yeah prioritize on the stocks
+with let's say biggest move in price to
+earnings ratios right if move into a
+higher region you want to eliminate the
+stock moving to lower region you want to
+buy more of the stock but not really on
+every tiny change
+especially both directions so The
+Highest Potential performance impact is
+a criteria you should determine your
+your your focus of the trade gotcha well
+thank you for that fa we're coming to
+the end of our chat here unfortunately
+so we'll hit you with the two-part final
+question here what was your first job in
+the industry and if you could go back
+and take yourself for coffee on your
+first day what key piece of advice would
+you offer yourself so I still remember
+the first day I entered the office of
+research affiliat I was full of
+excitement about applying my school
+learned knowledge into a real life
+portfolio I think it was a great start
+for me if I look back you know 24 years
+ago what kind I could do better with
+today's knowledge with the basically a
+growth from like a fresh graduate school
+student to a more experienced uh
+portfolio manager I I would say I would
+maybe spend more time to learn what I
+didn't know I think I was very committed
+into using my knowledge to make things
+better but I could actually spend more
+time to expand my knowledge so I think
+that's a part if I look back I could do
+better you know while you are doing a
+good job at your position you could
+think about what you could get what you
+could Equip to yourself in order to grow
+out of your position I I think that
+would be my advice I've been speaking
+today with Dr fay F Lee Chief investment
+officer for kavout algo Financial maker
+of the invest GPT tool and author of the
+recent financial analyst Journal article
+smart rebalancing thanks so much for
+coming on the show today thanks Mike
+it's a great honor to have a chat with
+audience thank you I'm Mike Wahlberg and
+this is Bean the enterprising investor
+[Music]

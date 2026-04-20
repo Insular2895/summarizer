@@ -1,0 +1,170 @@
+[Music]
+collateral management transformation
+includes operational efficiencies data
+standardization
+and innovative technological
+implementation at ista our collateral
+initiatives focus
+on helping our members and their
+counterparties and clients best adapt
+and implement changes to meet regulatory
+demands
+decrease operational counterparty and
+liquidity risk with process improvement
+projects
+and improve data standardization with
+the common domain model
+i'm amy caruso head of collateral
+initiatives at isda and i'm joined by
+karen mcgonnell
+assistant general counsel at also it is
+in 2017 isa published the collateral
+blueprint
+this document details the 17 steps to
+optimal collateral management
+in 2019 as this collateral initiatives
+team conducted member outreach and a
+member survey
+the member outreach picked up where the
+collateral blueprint left off and we
+identified four topics where we could
+focus
+efforts to help the industry improve
+their collateral management
+operational efficiencies four priorities
+that were identified were custodial
+onboarding for segregated accounts
+portfolio reconciliation and dispute
+resolution
+digitizing documentation and
+streamlining that digital data to
+collateral management operating systems
+and automating collateral settlement
+isda has developed a user guide
+documents on each of the topics
+including an overview of the topic with
+data from our is the member survey
+a summary of key challenges and
+opportunities for improvements
+use cases a sample implementation plan
+and an interactive cost benefit analysis
+tool
+digitizing credit support annex
+documents and being able to streamline
+that digital data
+to operating systems for efficient
+onboarding and collateral management
+processing
+is a growing opportunity to create
+operational alpha
+and decrease counterparty risk isla is
+supporting this digitization process
+through initiatives such as the clause
+library and
+is the create which allows users to
+negotiate
+and capture structured data relating to
+their credit support documents
+check our website for more information
+on these initiatives
+in the is the member survey we asked
+what did the lack of digitization of
+legal documents
+cost your firm and resources three
+percent said they didn't know
+thirty percent said up to one million
+dollars
+four percent said between one million
+and five million dollars
+two percent said between five million
+and twenty million dollars
+and one percent said 20 million dollars
+and above
+is the members were also asked to rank
+the top two
+issues that digitization of legal
+documents could solve at their firm
+in order of most prevalent to least
+prevalent answers
+we had improved the negotiation process
+and time to onboard
+eliminate and reduce manual input to
+collateral management systems
+from legal documents decreasing
+operational risk
+driving standardization of terms
+throughout internal and external systems
+and technology
+and digitized csa data will improve the
+ability to conduct pre-trade collateral
+analytics and optimization
+and ready access to important
+information in default scenario
+those two answers were tied
+and in july of 2020 is it conducted
+another survey
+that focused on the value and scope of
+is this strategy to digitize its
+intellectual property and make it
+available to market participants in
+various formats
+and we asked is the members to choose
+all the benefits of standard digital
+versions that is the source contact
+so they could answer more than once 86
+said convenient access to content 71
+said time and resource saving 71
+said standard data mode for is the terms
+across systems such as ftml and cdm
+66 said certainly of having an
+authorized version
+and 37 stated budget savings
+from this data along with the input from
+vendor buy side and sell side subject
+matter experts
+we developed a document that can assist
+if the members improve their digital
+documentation strategy
+the goal of this document is to help
+members assess their strategy
+build a business case for improvement
+and guide firms through their
+implementation
+we have a list of opportunities for
+improvements such as
+negotiation process standardization data
+project ownership and accountability
+and technology
+and in an effort to inspire the is the
+membership to implement process
+improvements
+we shared a sample use case
+we also included a sample project plan
+and task list
+to help firms plan their project
+implementation
+and last but not least based on the
+survey data we recognized that firms
+needed to better assess
+their current deployment of resources
+and costs in support of a business case
+for future improvement
+while each firm will be a bit different
+we developed an interactive
+cost benefit analysis form that allows
+the user
+to enter their projected costs and
+likely resource savings
+overall our goal is to help is the
+members improve their collateral
+management processing by decreasing
+operational counterparty and liquidity
+risk and this one document is focused on
+how to
+develop and implement a digital
+documentation strategy
+to download the document go to the
+hyperlink on this page
+and for more information please contact
+me amy caruso
+head of collateral initiatives at isda

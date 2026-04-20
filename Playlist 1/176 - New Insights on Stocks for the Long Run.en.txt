@@ -1,0 +1,2008 @@
+[Music]
+hello everyone I'm Mark Franklin
+President and chief executive of CFA
+Institute I'm honored to welcome you and
+our esteemed panel to this Lively
+discussion for those of us in the
+investment industry we've long been
+familiar with Jeremy seagull's St for
+the long run thesis seagull made the
+case in the 90s that stocks are the best
+long-term investment of course off years
+and volatility are always inevitable but
+according to the theory stocks will
+outperform bonds when examined over
+longtime
+Horizons this thesis serves as a
+foundation to Modern Finance portfolio
+Theory how we construct portfolios and
+allocate assets indeed the foundation of
+what we do in a recent issue of our
+financial analyst Journal Professor
+Edward mcor introduced new data that was
+not available in the early 90s and he
+endeavored to reexamine the leld theory
+his resulting article sparked widespread
+discussion throughout the investment
+industry a debate that has been
+incredibly thought-provoking and
+stimulating to observe so we were Keen
+to explore this new research alongside
+seagull's theory in more detail today
+the CFA Institute research resarch and
+policy Center is thrilled to bring
+together Financial luminaries Robert
+arnau Elroy Dimson and Roger ibbitson
+alongside Jeremy seagull and Edward
+mccorey to debate and discuss the theory
+and how this new data uncovered in the
+faj article impacts conventional
+approaches the discussion will be
+moderated by Larry seagull of the CFA
+Institute Research Foundation I know you
+will find the conversation engaging and
+practical I'm personally thrilled to to
+take it in discussions such as these
+make us better practitioners I hope
+you'll leave this event feeling inspired
+enabled and educated I encourage you to
+keep an eye out for additional content
+to follow on our enterprising investor
+blog and on our Flagship podcast of
+course I also encourage you to read the
+original works by seagull mcor and the
+additional luminaries who have
+contributed their thoughts to our
+various channels over the years I'd like
+to extend my deep thanks to everyone who
+made possible this event as well as our
+participants in today's discussion your
+contributions to our industry are
+invaluable it's a great honor to be here
+it was five long years in the archives
+making the honor that much sweeter want
+to thank the CFA Institute for
+organizing this panel I want to thank
+the editors of the journal William Gman
+and Louie uh Garcia Fu for indispensable
+guidance as that paper moved through the
+review
+process just not to my fellow panel
+members I'm going to be speaking to the
+viewers more than you on this talk here
+we go in a bit I'll review what I did
+and what I think it means but first
+viewers need to understand the two huge
+advantages that I enjoyed first I came
+very late to the party that meant I
+could stand on the shoulders of people
+like Roger and Elroy most important I
+had the benefit of work done by Richard
+Siller at New York University he sent a
+team of researchers out to scour the
+archives for newspapers published before
+the Civil War he had a hunch that
+widespread stock and bond trading in the
+US went way way back and if it did he
+would find price quotes in those old
+newspapers he was right he piled over a
+100 stock series dozens of bond series
+entered these in a spreadsheet and there
+it was waiting for me okay right from
+the beginning I had all the names of the
+Securities of consequence and all the
+price series for those stocks and
+bonds but no dividends and no share
+counts now my second huge Advantage came
+from being retired let me explain
+when Jeremy formulated his stocks for
+the long run thesis in the early 90s he
+was definitely not retired he saw an
+opportunity to contribute to theoretical
+work on the equity premium by
+lengthening the data
+Series so he consults Sydney Homer's
+history of interest rates there in table
+38 Homer provides a 100-year series of
+bond yields apply the formula for Price
+appreciation
+and B Jeremy has Bond returns back to
+1802 and can proceed to the theoretical
+work now I'm retired and I'm reading
+homor too mostly out of
+curiosity my question becomes where did
+holer get those Shields
+oh Frederick Mullen nice chart
+here showing the bonds uh uh used uh in
+the uh index I see there hah Hill
+Massachusetts we play them and track
+Tiny Bird Back in
+1970 smaller yet 100 years
+before why is Tiny hfield setting The
+Benchmark interest rate for the late
+19th century now why does m have so few
+Bonds in his index at any given time so
+again I'm retired leading me to ask
+where did McCully get these bond prices
+oh Joseph G Martin the Boston stock
+broker active through about
+1900 H look at at Martin and I see that
+mol has only used a fraction of the
+bonds there it occurs to me to compare
+the yields on the bonds mcau left out to
+the yields on those he included w
+the ones left out had higher
+use now came the big Discovery figured
+for consistency I better calculate
+yields my way on the bonds that mcau did
+include they're
+higher you know what mcau was not
+reporting an average yield on her
+portfolio as Homer thought McColly was
+eyeballing the yield
+range and finding what he thought would
+be the absolute minimum conceivable
+yield um you know uh at that particular
+time and that's why Jeremy's Bond
+returns are so low after the Civil War
+they were based on an artificially
+depressed hypothetical
+construction and one more story about
+being retired that allowed me to sit
+there at home typing
+dividend New York Bank 1930 dividend
+Bank of Pennsylvania
+1950 and so one day I find a book by
+Thomas SCD active in New York City from
+1819 possibly the first person in the
+world to self-identify as an accountant
+to promote his practice he would publish
+a list of all the large Banks first in
+New York City then Philadelphia and
+elsewhere with the share accounts and
+with the
+dividends jackpot I already had many
+dividends from Henry vnum pores history
+of the railroads and canals of the
+United States of
+America now I had share counts and
+dividends from goded I had the Boston
+share counts in dividends from
+Martin and I was on the downhill slope
+to getting all the
+dividends I'll spare you the fascinating
+details on how I got the last 20 % let
+me summarize what I
+did I built from scratch a
+capitalization weighted total return
+with dividends stock series from 1792 to
+187 I improveed the existing stock
+series from 1871 to
+1897 link those to the same post 1897
+series that Jeremy uses down to the
+present also o built a bond return
+series from 1792 through
+1925 this is the first time we've had a
+bond return series based on observed
+prices for broad portfolio of federal
+Municipal and corporate bonds as these
+became available I link that new series
+to Rogers long bond series down to the
+present again the same one that Jeremy
+uses what does the new record
+show sometimes times stocks beat
+bonds sometimes bonds beat stocks
+sometimes they perform about the same
+and those three statements hold
+regardless of holding
+period now to finish up let me
+anticipate an
+objection the panic of
+1837 was a bad bad time in the stock
+market for some markets like
+Philadelphia it was almost as bad as the
+crash of
+1929 the largest single stock of that
+error the Second Bank of the USA
+accounted for about as much of total US
+market
+capitalization as The Magnificent Seven
+do today call it
+30% it fails spectacularly plunging from
+a120 per share to $150 and never recover
+Imagine The Magnificent 7 collapsing 99%
+next
+month Jeremy sources had omitted the
+Second Bank of the United States it did
+not trade in New York so it is also
+admitted from Rogers 19th century
+history the True Dimensions of how
+poorly stocks had performed prior to the
+Civil War were not visible before the
+new record was
+assembled to which you might object as
+follows
+Professor why should i k about Market
+history from 200 years ago everything
+was so different no way these stories
+are relevant to investing
+today I saw that one come the paper
+includes a brief supporting account
+using the International Record compiled
+by Elroy Brian Taylor and others it
+shows also many occasions where bonds
+beat stocks now as before over periods
+decades in length the International
+Record likewise shows how you can lose
+money in stocks over 20 and 30e holding
+periods it's not just Japan after
+1989 and by the way I excluded periods
+where a nation lost to war or got
+invaded or occupied those results are
+for intact nations in peace time and
+that is why you should pay attention to
+200-year-old us data it replicates the
+international data which US investors
+might otherwise dismiss on grounds of
+American
+exceptionalism and the international
+data replicates the 19th century us data
+which you might otherwise dismiss as too
+old together they establish that
+sometimes stocks beat bonds other times
+not
+Larry well thank you for that ask
+exploration of History I've done a
+little of that myself and was nowhere
+nearly as diligent but I'm not
+retired
+and if if I ever retire I may choose a
+different path to occupy my time so
+thank you for doing that uh let's move
+immediately to Jeremy and who will
+respond thank
+you there we go stocks for long run it
+did come out with the sixth
+edition and
+um this is what all you and I'm proud to
+be included as saying the iconic chart
+from there stocks bonds treasury bills
+gold and the dollar um that's a dollar
+relative to
+inflation and up on the
+uh upper left
+you can see the compound annual real
+returns
+um uh I do take the period the early
+period up to the coals and then take the
+period uh you know basically to um 1940
+when the depreciation of the dollar
+became very significant in there divided
+into those uh three periods um uh here
+we see that uh
+uh the equity risk premium is about
+three and a half%
+here um on bonds uh uh over 4% on on on
+treasury bills going
+forward
+um you also have uh uh the period uh
+that um bonds did extremely well from
+1981 until uh just the year after the
+pandemic and you can see that slope is
+the same as stocks and of course it has
+a lower base but is the same in stocks I
+remember when
+rob you WR an article Rob or you texted
+people and saying hey stocks don't
+always beat bonds 40 Years of from 81 to
+2021 I think that they were virtually
+the same and I agreed uh on that
+course yeah um I if you don't don't
+like the earlier data I also have um the
+real
+returns Benchmark to the Kohl's
+Foundation 6827 1309 minus 2 if you
+don't like that we can go to the
+ibbitson period I
+mean in just you know who
+first Benchmark for all of us the long
+run real returns and if you want to take
+a look over here
+at uh 1802 to
+2023 um the 1871 from the Kohl's
+Foundation I do do understand that uh Ed
+made a few changes in the koh's
+foundation but uh I think he said they
+were virtually the same uh as that so 68
+I get 68 he gets of course much less in
+the earlier period this is running all
+the way through 1802 to 23 18 71 and
+then
+1925 and then bonds bonds keep on going
+down I'm going to talk about that the
+bills go down except the last period um
+the dollar inflation goes up during that
+period
+um think I have the same thing over here
+yeah this is this is your this is your
+iconic chart am I right Ed um uh I can I
+can only hope Jeremy that some
+is that that get soic um uh so in the
+earlier period as he says he says it's
+back and forth
+um uh bonds do much better in the
+earlier period stocks do
+worse then there's that period where uh
+decisive now that is where interest
+rates went from three you know 3% to 16%
+and then uh 16% to a half a percent
+um by the way and if I'm right I mean
+you don't ex you do do not have the last
+two or three years in your data Series
+where bonds have done very badly as we
+know um that that is that is correct the
+uh the published chart there stops at
+December 2019 yeah I mean even in the uh
+in the long-term chart if I can go back
+there uh you can see the turn down in
+bonds which is really quite substantial
+by the way my even my 200 year series
+went down from like 35 to 33 just there
+as a result of what's happened to bonds
+over the last two three years um and you
+could check that uh you could check that
+out so I mean if if you're just um to me
+I you know I still see superiority in
+stocks uh chopping off the earlier
+period and chopping off uh even the
+middle period um as we had as we had
+said um I also think this is a a very
+interesting um graph that is in Ed's
+work uh the correlation between uh bonds
+and
+stocks um and you can see it's gone down
+now um from being very high and down and
+that is because we are basically going
+from bonds that have a lot of
+equity risk in them uh you could call
+them junk bonds or whatever Down To What
+We Now call the risk-free asset what I
+was trying to do in my book was yes I
+was not trying to get a diversified
+portfolio of all the bonds I was trying
+to get the lowest bond that represented
+the safest risk-free asset because that
+is how
+Finance treats the equity risk premium
+and I think that when you when you see
+this the you know how low the the
+coration goes it's because you're going
+from a bonds that are very stock very
+much more stock likee and and you know
+much more riskier uh and quer we should
+have returns that are close to bonds to
+um uh the risk-free
+rat um and by the way I I I I here's a
+three-year rolling correlation over the
+last 90
+years of stock and bond returns you can
+see how it's turned up recently uh I let
+me say that I think that one of the most
+ignored of all
+factors in what is the determination on
+the bond is its correlation with risk
+assets I mean we talk about the FED we
+talk about real growth um you know and
+and other liquidity problems but is it a
+good hedge or not and of course it is
+not surprising that the period of lowest
+interest rates in the US in fact lowest
+in the world history when I believe the
+10 got down to 57 basis points occurred
+when we had extraordinary negative
+correlations between stock and bonds and
+they were negative beta assets and
+viewed as extremely good Hedges against
+stocks and if if bonds are not viewed as
+good Hedges against stocks as they
+weren't in the 70s or in the 80s um they
+will get higher yields just because they
+don't diversify your portfolio as well
+so a lot of the the bond return you know
+what what determines long-term Bond
+returns is it's it's con perception on
+hedge um if you don't inflation risk is
+the worst risk for bonds geopolitical
+risk is is as as a negative beta makx
+bonds negative beta the pandemic they
+went up during that negative beta
+Financial collapse you know 2008 78 that
+does negative data but if inflation is
+one of the problems you do not have a
+good hedge and you're going to have
+higher yields um it's not just a Fisher
+equation effect it's also a correlation
+effect uh I'm going to hold this because
+later on we might talk about dividend
+yields in the long run so I'm going to
+just hold this in a bance and go just to
+some points that I think are important
+um oops
+um I didn't want to steal
+Elroy Equity premium is pretty
+persistent around the
+world at about three three and a half
+percent even though some countries have
+much lower rates on bonds at stocks but
+then they have lower rates on bonds
+generally um and and by the way um as as
+Elroy shows in his International um uh
+you know the US does not have the
+highest hour returns from 1900 to the
+present that's 123 years um so you know
+there there is an exceptionalism of some
+sort but not complete we have to admit
+no one has satisfactory explained the
+magnitude of the equity premium PR ever
+since the famous mea Prescott work it
+should be much lower but there should be
+one but it is what it is and it's seems
+to be pretty persistent as as I can tell
+as I said the episode 81 to 2021 is
+extremely unique bond yields went from
+16 to
+0.5% are we ever going to see that again
+who knows what we'll see again but that
+is why you had a you know the the the
+bond yield during those 40 years was
+something like seven standard deviations
+above its um mean while stocks were
+actually above their mean but I think
+only about a half and so they the two
+equal um just let me tell you looking
+forward I see the 10 to tenure tips is
+now two stocks are 20 times earnings
+which to me is a 5% real yield cresto
+that's a 3% Equity risk premium and that
+is very near the historical average so
+maybe a little bit shaded uh from the
+historical average but not very
+much uh just looking today at stocks and
+tips uh as the the comparison so um
+that's the end of uh my presentation
+I'll I'll quickly get back to
+my my iconic graph so listen Ed you you
+go into the weeds and you did a great
+service for our profession a
+absolutely the question is and I know
+you try to answer about whether the
+early period really matters or not I
+mean that that period from 81 to 2021 is
+extraordinary unique and of course bonds
+way underperformed getting into there
+bills might be the better smoother way
+of looking at uh you know how you do INF
+fixed income relative that and also
+again uh I was trying to get the
+risk-free rate I was getting the lowest
+bonds uh around not a portfolio of uh
+all bonds which certainly if uh you have
+a risky uh portfolio you do will do do
+uh relatively um better in but yeah you
+you should lower the earlier yeah I
+would like to comment first I'm going to
+up in some of detail about the the post
+U 1981 perod that chair will address
+that had had brought up as being uh a
+client in the equity RIS I don't believe
+it is as chy said jery said it well but
+I'm going to cover it in far more detail
+uh the also Al though as far as these
+correlations between stops and bonds
+that's a pretty complicated situation
+and what the correlation should be uh
+both the stocks and bonds have an
+inflation component that would make them
+positively correlator but uh uh but
+basically in any kind of Crisis there's
+a movement of stocks to bonds make them
+negatively
+correla also when there's a big change
+in yields it doesn't necessarily affect
+the stock market the same way as it
+affects the Bob market so you have
+uh again uh a big impact so if inflation
+pops up quickly really hurts the bomb
+Market but but that's being in real
+terms done pick up what's really going
+out in the economy at the same way
+so I gotta say though basically what I'm
+saying is is in concurrence with Jeremy
+said it's just uh elaborating down a bit
+as far as thought I will say though I
+I'll say R because he's just off there
+he has done great service and and and he
+did uh will gsman and L Pang and I put
+together the data back
+1815 and uh but we did res that the N
+exact exchange so they didn't pick up be
+other markets that had picked up and we
+did not get all the dividends um beta so
+uh and then we about other sources and
+that's much appreciated
+I have a question for go
+ahead um I I just wanted to Echo you you
+can see that the depreciation of the
+dollar against inflation almost all
+occurred since
+1940 um and has had no real effect on
+the stock returns um as one would expect
+because they're claims on real assets
+bonds get get hurt I mean yes investors
+try to get that premium eventually in it
+um but the net is uh unless you have
+tips is still uh you know the paper
+money uh return uh will get hit in
+inflation under those circumstances so
+that th those that that's a hedge that
+stock provides that I uh that bonds
+bonds do not in my
+opinion an next speaker at Rob not what
+I'd like to do
+is to talk about a few things firstly
+semantics um the words risk premium are
+used to describe differences in return
+between stocks and bonds or stocks and
+cash um really the risk premium should
+be an expected excess return the actual
+excess return will be the starting risk
+premium plus or minus whatever was
+unexpected by the
+market and excess returns should be used
+for realized excess returns um one of
+the reasons that this is important is
+that um a lot of the discussion of risk
+premium relates to past excess returns
+which include exogenous shocks which
+include oneoff changes and
+valuations second observation is um and
+I'm working on a short piece that maybe
+I'll submit to faj as a perspectives
+piece
+that it should never have been called a
+risk premium uh it's a fear premium it's
+a premium related to people being afraid
+of downside risk in theory a risk
+premium should never be negative the
+expectational risk premium should never
+be negative that's not to say excess
+returns can never be negative that would
+be foolish but with fear of missing out
+let's take today's magnificent 7 as an
+example the fury premium can be negative
+people can view cash as a riskier
+holding relative to long-term
+expectations than um holding Magnificent
+Seven a fear premium also just as an
+aside would have led Finance Theory to
+expect a size effect smaller stocks are
+a little scarier there's less known
+about them a value effect a momentum
+effect from fear of missing out indeed
+most anomalies would have been
+anticipated and would never have been
+viewed as an affront to efficient
+markets because a fear premium is
+inherently at odds with an efficient
+market third observation is that the
+most power uh excuse me uh third
+observation is we should never mistake
+revaluation Alpha for a source of
+sustainable future returns revaluation
+Alpha is a big part of recent returns a
+huge part of short-term returns by which
+I mean anything 10 years or shorter and
+a startlingly large part of even
+relatively long-term
+returns uh finally I uh think we should
+observe that long horizon mean reversion
+is a very reliable Force at work in all
+aspects of the capital markets and
+profit margins and growth rates and
+valuation multiples and in
+returns uh looking at uh ads uh newly
+iconic stock Bond graph we can see that
+there are long periods of back and forth
+returns decisive stock market
+superiority during upwards of half a
+century and uh fluctuating Advantage
+subsequently it's hard to look at this
+and draw any reliable conclusions as to
+uh the notion that a substantial risk
+premium 3 to 5% which is larger than
+Finance Theory would suggest is sensible
+that a large risk premium is a
+reasonable expectation for the long-term
+investor unless you have anomalous
+circumstances where stock market yield
+is abnormally high and bond re yields
+are abnormally
+low this is a another version of that
+same graph I wrote a piece in the faj
+entitled dividends and the Three Dwarfs
+back in
+2003 and um one thing that really struck
+me was that for the entire 19th century
+100% of the stock market return was from
+dividends everything else and
+so now that was also 100% of the real
+return because there was no inflation we
+were on a gold standard there's another
+really remarkable period and uh Jeremy
+Drew attention to the astonishing
+results for bonds as yields plunged from
+uh 1982 to
+2021 but there's an equally astonishing
+period for stocks a half century I
+mentioned that revaluation Alpha should
+never be disregarded because it can be
+massively important stocks beat bonds by
+8% per anom for a half
+century but only 4% of that uh remains
+after you take out the Sevenfold rise in
+price to Dividend ratios a revaluation
+Alpha the dividend yield went from 8% at
+the end of 1949 to 1.1% at the end of
+1999 if you take out the drop in uh bond
+yields now it drops to 3% so over this
+half century stupendous period for
+equities only three out of the 8% still
+exists after you take out revaluation
+Alpha now three is still a great excess
+return and as Jeremy points out that's
+in line with the very long-term historic
+Norms so we can also look at the
+question of growth itself do earnings
+and dividends grow with GDP there's a
+common view widely held in Academia that
+earnings should grow with headline GDP
+and indeed they should earnings and
+dividends uh uh if GDP grows tfold a
+capitalist economy earnings and
+dividends will grow tenfold but not per
+share macroeconomic growth consists of
+growth in existing Enterprises and
+creation of new Enterprises and you
+can't invest the same Dollar in both the
+result is that growth of earnings and
+dividends on exist listing um uh stocks
+grow slower than GDP um uh Bill
+Bernstein and I wrote a paper called the
+2% delution back in 2003 which explored
+this and we found that real growth in
+earnings and dividends um generally
+around the world um uh courtesy of
+elroy's data uh tend to grow about 2%
+slower than GDP and this makes sense
+because growth of productivity will fuel
+real growth in return on labor and
+return on Capital which in a healthy
+economy ought to be roughly
+parasuit I would also draw attention to
+um the fact that uh just a moment let me
+change this a bit the fact that real
+earnings growth averaged about 2% a year
+until the last quarter
+Century the last quarter Century it
+doubled more than doubled that so we
+have e extraordinary growth in real
+earnings and that real earnings um base
+tends to mean revert this is a graph um
+uh that comes out of um uh work that I
+did with Cliff Asus back in 03 and what
+we found was that uh when earnings are
+way above when real earnings are way
+above their 10-year average subsequent
+earnings tend to mean revert so the
+yearend 2023 level real earnings were
+six
+67% above the 10-year
+average that's huge that's in line with
+the all-time extremes and earnings do
+tend to mean revert so this would lead
+to a reasonable expectation that
+earnings growth in the coming decade
+would likely be a good deal slower than
+what we've been used to we also find
+that the Schiller PE cyclically adjusted
+PE ratio is a wonderful predictor of
+long-term real returns I like to do the
+Schiller PE on the log scale cuz going
+from 5 to 10 or 10 to 20 or 20 to 40 has
+roughly the same impact um uh in terms
+of expectational returns and sure enough
+if you do it on a log scale you find
+that the next 10year real return is is
+very much a factor with um uh roughly um
+30 excuse me roughly uh 60% correlation
+between the starting Shiller PE rate
+ratio and the subsequent 10year
+return another way to look at that same
+relationship is to plot the Schiller PE
+ratio the blue uh and against it to plot
+the 10-year subsequent stock market
+returns and you can see these are
+beautifully correlated highly predictive
+so people dismiss the Schiller PE ratio
+only when it's at extremes I also would
+draw attention to the regression line
+which suggests that when we were an
+emerging economy back in the late 19th
+century the normal Schiller PE ratio was
+about 13 now just based on a simple line
+of best fed it should be around 21 and
+so mean reversion inv valuations would
+tend to point to uh lower
+forward-looking returns as well we can
+go long periods of time without a new
+high in stock prices meaning that for
+these long periods of time all you get
+in in terms of real return is the yield
+that's all you get and there are also um
+uh uh long longish periods of time
+excuse me uh there are also periods of
+time when valuations do move
+stupendously creating a surge of returns
+and then a new Plateau relative to bonds
+assuming the short data is right and I
+did not plug in EDS data for this
+assuming the short data is right you get
+long periods of time where bonds
+actually beat that I I cherry-picked
+here I looked for the period of time
+from
+1802 um uh to uh the last date where you
+hadn't beat bonds and of course you beat
+Bonds in the late late 19th century and
+early 20th century on up to the peak in
+two in
+1929 but in point of fact you could go
+all the way forward to 1946 and you have
+not beat bonds if the schw data is right
+so that concludes my formal remarks um
+uh there's some additional information
+if questions come
+up um I have some comments that's
+okay
+um okay first of all Rob and I have gone
+back and forth on the earnings growth
+issue for how many years
+Rob oh about a quarter Century yeah a
+quarter Century okay
+um the earnings
+growth
+is do the faster earnings growth of the
+last quarter Century or half century or
+however you want to put it is due to the
+substitution of
+BuyBacks for dividends and the
+substitution of capital investment for
+dividends the dividend yield has gone
+way down as pointed out it was nearly
+100% now firms use dividends to finance
+growth and therefore earnings growth
+should be faster so I I do not regard
+the faster earnings growth as uh you
+know something that has to mean
+revert um and in fact if I can I I can
+share again that was that screen because
+I was anticipating Rob might talk about
+this issue let's see if I could um get
+it yeah if you if you go down
+now
+so here is you know reported earnings
+growth real dividend yields dividend
+yields real capital gains real stocks
+and and the payout
+ratio and we could we could break it in
+many different points but you can see
+that for instance from 1871 let's just
+use the Kohl's time here because that's
+really where we have you know the best
+earnings at least earnings um you know
+was 66% from 1871 1945 was was even
+earlier went down to
+48.3% um and you can see that the you
+know the real dividend growth and the
+real earnings per share growth also Rose
+during that area as as it
+should during that period um so it's not
+a matter of mean reversion it's a matter
+of firms financing their growth uh in
+different ways and using um their
+earnings for buying back shares which of
+course increases growth rate of
+shares of price of shares and of course
+reduces the dividend yield in a pure
+theoretical Model A firm that you know
+let's say a firm with 10% dividend
+paying out all its thing the 10p ratio
+10% dividend 10% uh return uh if it
+stead takes the 10% buys back its share
+it'll have zero dividend and it'll have
+earnings growth of 10
+percent per year even though organically
+it is not growing at
+all uh and will give give exactly the
+same return I'm sure we've all you know
+talked about this in finance courses
+when we teach finance that that isn't
+now we could talk about why you know
+that might not be the case in the real
+world but uh I I you know certainly
+theoretically if you shift from dividend
+yield to BuyBacks or financing your own
+growth you will increase the dividend in
+fact I I believe Schiller himself about
+I don't know 10 years ago shifted to a
+total return Cape raaco because he
+recognized himself that the faster
+earnings growth was was distorting his
+10-year average that he had on the cape
+and that lowered the overvaluation
+didn't eliminate the overvaluation but
+lowered the uh overvaluation of that um
+second point I I would like to make
+should PE ratios be the same now as they
+were in 1871 or before I say no of
+course not um I say they should be
+higher I say they should be higher
+because transactions costs are lower the
+ability to get a perfectly
+Diversified uh uh risk return portfolio
+uh is almost Costless today while it was
+very Costless costly to do so earlier
+higher liquidity higher price the 5%
+real return I see now forward is
+probably what the the 65% real return on
+the index was for almost everyone else
+before and by the way one could also say
+the same of bonds bonds have gotten much
+more liquid I mean we're actually going
+from riskier bonds to
+unrisd just like a a higher PE ratio
+would build build in a capital gain for
+the stocks now I'm I'm just saying that
+that is
+Justified and that does that's why I
+have a lower real return I don't have
+6.8% I have five but I don't believe
+it's due to mean reversion I believe
+it's just to the fact that you have a
+higher evaluation that's it let me just
+give a one 30 second response here um I
+I've been arguing with with Rob or out
+this too because the BuyBacks youve had
+many back and forth letter and the other
+letter
+the and so forth especially with the
+work that I've done with Philip straw
+and that basically what happened I let
+the payout the they out ratios are
+essentially the same uh as they have
+been historically it's just been a big
+switch from living in yotes to buy back
+so i' leave it at that by the way I
+would not disagree with anything either
+of you said uh I would disagree with the
+magnitude of impact that that can have
+if you've got a Shiller earnings yield
+today of
+three um uh Jeremy you talk about an
+earnings yield of five uh that's based
+on earnings that are 60 7% above the
+10year average uh real earnings and uh
+so that's a dangerous number to use if
+you use the Schiller earnings yield of
+three even if 100% of that flows through
+to real growth um you add in the the um
+uh the yield itself excuse me um that
+that gives you a 3% real return expected
+uh even if you capture 100% of that
+which historically you don't so I I
+think we would agree at the margin I
+think we would agree that um the points
+you raise are correct I would quibble
+with whether that makes more than about
+a 1% difference in long-term expected
+returns we've gobbled up you're
+basically saying earnings are way above
+Trend even cor you say earnings are way
+above Trend even correcting for BuyBacks
+is that correct Rob well BuyBacks are
+whether you pay out dividends or pay out
+money for BuyBacks the earnings are what
+they
+are but you I I think you think margins
+and earnings are just too high I mean
+and and um will mean revert downward um
+I I'm not sure I'm agnostic on that but
+why don't we continue this in the
+freefor all at the end Elroy
+Dimson is going to Dr now J M like you
+for inviting me so it's a long long
+journey just upstairs in my n so they
+computer uh I'm enjoying uh interacting
+with you and I I I'm enjoying being
+sandwish between uh Roger offering
+comments and Roger's presentation which
+comes next because as you'll see um
+Roger have quite an influence on what I
+and my co-authors did so what I'm going
+to do is uh uh share uh my my screen
+with
+you okay well than thank you for passing
+the opportunity to me to to share some
+of my thoughts uh a lot of this goes
+back to work which was inspired by some
+of the people that Ed introduced and in
+particular as I said uh to uh Rob's uh
+sorry Ro ion's uh initial
+research um together with my two
+colleagues the three of us uh spent a
+career at l the business school my other
+two colleagues with Paul Marsh Mike
+stormson but we um produced a uh number
+of uh pieces of work which culminated in
+303 years ago a book which we called
+Triumph of the optimists and this I
+think is a good starting point for us
+because the optimists for us were the
+people who invested in Risky Assets in
+stocks and shares uh not the cautious
+individuals that government securities
+like government bonds and treasury
+rules and the 20th century which is what
+we focus on was the one in which the
+optimists
+won and even when we wrote this book we
+warned about the fact that uh outside of
+that period it was our guess that uh
+investors uh in the stock market may not
+have done quite so well it turned out
+they didn't do so well in the 21st
+Century so far and we owe a huge debt to
+Ed to encouraging us to pursue ideas
+which Jeremy seagel had started with but
+looking back uh to seeing whether the uh
+uh excellent performance during the 20th
+century actually was typical of the
+stock market as a
+whole so we thought we were writing a
+book which would focus on the equity
+risk premium but discovered a lots of
+other questions that one could put to
+the data uh and we ended up each year
+producing uh an update this is the
+current update we tolded the global
+investment returns yearbook uh and we
+look at uh both updates to our long-term
+data uh
+and P persuading the data to give us
+answers to other contemporary uh issues
+so different essays in each year
+I'd like to go back to the charts we
+were looking at earlier but here's the
+US chart starting in
+1900 uh Equity is doing incredibly well
+government bonds doing much better than
+treasury bills but way behind equities
+uh and you can see also the impact of
+the exchange rate against the US dollar
+which on Miss chart is just a flat
+line we had already done some work on
+the UK and the UK is remarkably similar
+he is doing incredibly well government
+BS doing nowhere near as well although
+in the end beating treasury bills and
+the exchange rate against the dollar
+revealing that the pound lost a little
+bit of value uh in real terms compared
+to US
+currency but the natural question was
+whether the patent was Universal and the
+work that we did took us into drawing on
+series that of being compiled by people
+who were uh inspired by ion and
+singfield for their own country we were
+one of them but it turned out lots of
+other people were doing the same thing
+this was at the days of communicating by
+sending documents over the internet but
+not the days of putting together uh uh
+large scale uh data sets embracing
+different countries and that's what we
+took on for
+ourselves so you'll see here that say
+equ is beat bonds beat bills in two
+countries what about other
+countries well we collected together uh
+initially uh in the year 2000 uh we we
+ended up with 10 countries but that has
+grown over time uh and uh today it
+stands at uh 23 countries for which we
+have dat the beginning in 1900 and G
+through to
+2023 uh and for all but two of them it's
+an unbroken history there is a gap in
+the middle uh for um Russia and China
+where uh we can't link those two
+together so we've got data which is uh
+fairly self-explanatory except a few
+abbreviations which are worth explaining
+to those viewers who are unfamiliar with
+the iso abbreviation so the left we have
+aut which is Austria um and towards the
+right we have a us which is uh Australia
+right beside the United States
+and what I want to show you first of all
+is what the total returns were on
+equities so we look at complete returns
+capital appreciation plus the thrown off
+income and you can see here what the
+annualized geometric mean returns were
+for each country going across the botom
+it's Austria Italy Belgium Germany
+France Spain and then we got one or two
+abbreviations in there the first one is
+EMG which is in emerging um and we've
+got a number of others that are come to
+at other points so everywhere equities
+beat
+inflation we also up to government bonds
+government bonds generally beat
+inflation those gray bars are above the
+zero line but in some cases they got
+left behind for all of these countries
+our data covers
+124 years from 1900 to 2023 including
+Austria on the extreme left where there
+was an impact of a terrible
+hyperinflation but we do leave out two
+years for Germany uh ger Germany which
+is uh the fourth one along
+which uh there is a year in which there
+was a uh complete 100% right off and we
+can't fit that on the charts so um all
+other countries we have a a record which
+is spanning the 424 year
+period and then we collected treasury
+bills or in earlier years the nearest
+equivalent treasury bills and you can
+see on the extreme left the adverse
+impact of inflation on Austria but you
+can see uh treasury bills sometimes were
+on the right side of zero sometimes on
+the wrong side of zero so they gave a
+real return which was just just positive
+but not very
+exciting uh it's worth looking at
+particular countries the United States
+did very well it gave you from eator
+6.5% annualized real return for the
+adjusting to
+inflation there's my country I showed
+you the previous chart Great Britain uh
+the United Kingdom gave you a return of
+5.4% if we looked at the world excluding
+the United States wxu
+the return was considerably lower than
+the
+world than the United States was so
+there's a big gap between the two and if
+you look at the world this is a market
+cat weighted in dep uh in common
+currency for the world the difference in
+the first charts that I showed you
+previously the line plots and this one
+is the line plots were in local currency
+adjusted for local inflation on this
+chart we've moved into the US dollar
+because for these uh uh groupings like
+the world excluding the USA or the world
+or indeed Emerging Markets we need
+common currency and so all of these
+countries are also shown in dollar terms
+if I say of the longterm currencies and
+uh and relative utation move hand in
+hand this chart would look very similar
+if it were done in terms of local
+currency so what does the risk premium
+look like uh for the world's portfolio
+you would have got a
+5.1% a year compound return from
+equities well above that you would have
+got on government bonds and so the risk
+premium was
+3.3% and if we look at the risk premium
+the way that professors of finance
+profer that is look at the risk premium
+compared to treasury bills rather than
+compared to the return on government
+bonds uh the risk premium was
+4.6% so the risk premium is an important
+number uh and that's what we'll dig into
+a little bit more but the US performance
+was
+exceptional and so there are two ways of
+addressing the fact that uh the US was
+exceptional one is to look at longer
+periods of time and that's what a has
+pioneered and we'll look a little bit at
+that as well um and the other
+alternative is to uh look at different
+countries it's difficult to get a wide
+range of countries with good quality
+indices G back very much before
+1900 let me show you just little um if
+we look at us equities and government
+bonds we can look at comparison between
+the two the two sources that I highlight
+there are Global Financial data and the
+Imon Marsh ston series I described and
+the Shaded area is the equity premium
+relative to bonds if we add in the extra
+data which uh we've got from the Ed M's
+work the equity premium shrinks to being
+small we Rec mildly
+negative uh and so in a review paper
+which I be paing with David Chambers
+anti and Paul R Mari our estimate is
+that the every premium looking back is
+of the order of about 2 and a half% over
+223 years
+uh and that's the Epal data Beyond
+looking at particular countries but also
+looking at the longer period I'll pool
+is that okay just a quick observation um
+uh when Peter Bernstein and I uh did the
+paper in 2002 on the RIS premium we came
+to the conclusion that while the excess
+return over the imits and span through
+that date was about 5% that a lot of
+that was revaluation Alpha as we've
+discussed earlier and we came to about a
+2 and
+1/2% reasonable expectation will risk
+premium as the norm over that same span
+which would be roughly the same as the
+observed after you take away revaluation
+Alpha um and uh so Elroy I find it I I
+find it um wonderfully
+reassuring that you're finding over two
+over two centuries is uh that um the
+norm is about two and a half percent it
+doesn't solve the risk premium puzzle
+the risk premium itself fear premium
+should be smaller than that if it's a
+risk premium if it's a fear premium
+maybe it explains it
+better I actually one comment that when
+we started doing this for the textbooks
+including those by my colleague dick Bey
+were talking about risk premium of
+something of the order of about
+8% uh and by the time we had uh done a
+bit more work we've roughly halfed that
+we were down s of 4% or so and now we've
+done a bit more work and we it's
+2% uh it's the most important number in
+finance really don't know what it
+is I
+I re remember that the equity risk
+premium is used in many of the formulas
+is the
+arithmetic Equity risk free which is
+substantially higher than the geometric
+that you uh and I have produced in our
+excellent point um by by by several
+percentage points I would also like to
+mention that um uh by
+again extending it back to Ed's bonds of
+the earlier period are we getting the
+risk-free rate which is what we
+economists want to compare it to now You
+could argue there really weren't any
+risk-free bonds but um as I as I
+mentioned and I think as mentions that
+those Bonds were extremely riskier with
+a lot of equity like qualities so
+naturally you would find a lower um
+Equity risk premium using those bonds as
+you would let's say today's government
+bonds or looking
+forward then that's respond to that
+because we we we now take them the UK
+data also back 20800
+and I can show that to you later on
+depending on how the discussion
+goes okay question that I'd like to
+raise either now we're running out of
+time on this segment or later is how
+risky were those early bonds and where
+did the risk come from was it Sovereign
+risk I mean I know the US government was
+not uh particularly powerful or solvent
+in the late 1700s and early 1800s or are
+we picking up some corporate risk I I
+just don't know that much about the
+bonds that were used I would interject
+the observation that survivorship bias
+Also may be to some extent missing from
+that earlier data whether it's bonds
+that default or stocks that go bust um
+uh there would be a propensity or a
+tendency to include stocks that were
+survivors and bonds that were survivors
+with some obvious major
+exceptions anybody actually taking uh if
+the bonds come from
+indices uh and and they have been
+yielded in indices there can be really a
+potential Distortion because uh they
+don't pick up the individual Bond
+changes we like a double A index and
+something with com in the double a
+single a and drops out of that index
+that index uh that doesn't show not only
+the results but doesn't show the change
+in quality that Tak by so I'm pretty
+sure that the bond returns have a a
+stronger survival bius the equi terms
+actually um I I would imagine that
+certainly in the later periods they do
+if you think in car by we turn any
+measures of it until we noways we can
+measure both corly because we measure by
+the individual bonds but when you
+basically create B Industries and in
+creating returns for B industries that
+can be big consortion on corporate bonds
+that could default and that's why it's
+so important to actually try to get the
+default free Bonds in here and of course
+that's what we're also really interested
+in when I talk about the equity premium
+that's there some as equities compared
+to a defa three
+Bond I think right but Ed you should
+take take the podium here okay you know
+Roger uh completely correct in what he
+just said in fact it's in a footnote in
+his 1976 paper and uh I can uh I can
+verify that uh his corporate bond
+measure in the
+sbbi suffers exactly from that problem
+uh it a separate I admit that I admit
+that that in you admitted that in 1976
+for Kev six uh when I went back and
+collected actual corporate bond prices
+1929 to
+1938 uh with you know not taking them
+out until after they got defaulted and
+downgraded it did lower the returns
+relative to Rogers index but keep in
+mind in my older data there really
+aren't much in the way of corporate
+bonds until
+1857 and the chart in the paper is an
+aggregate of federal Municipal and
+corporate it's only 1897 to
+1925 where I have a pure corporate bond
+index and uh where
+um again observed on prices with
+defaults included Etc
+Larry uh could I just interject for a
+second I me Ed why why you said why do
+you have a 90 or 85 to 90% correlation
+between stocks and bonds in that very
+early period I mean that that doesn't
+sound like a
+risk-free type of instrument that we
+deal with today
+and last but most definitely not least
+is Roger
+ion all right so this is uh I guess this
+is we've been calling things ionic but
+from my perspective I guess this is my
+ionic
+chart it actually was first developed
+back in the early 1970s when we were
+putting the St together I I actually was
+working in the I was a PhD student at
+the University of Chicago and I was
+working in the investment alus maning
+the bond portfol actually the university
+and and and and Fisher and Lori uh had
+put together the stock returns with the
+center for research and security crises
+that and this was the 70 early 70s but
+the C La had only upda the thing till
+their dated till 1968 so people are
+always asking me when when are you going
+to get the updates and and they never
+really came that regularity at that time
+later I became AC director this but that
+beeding it up that that but uh
+ultimately what we did is we do stfi
+producer on Dat sense there and uh and
+and the whole purpose was to B the stock
+market but also there's so much
+discussion about risk premiums the
+equity risk premium because the cap
+pricing model had come out in the
+uh around
+1965 and and uh so every and and it
+talked about an in equity risk we didn't
+have a measure the same time we did they
+have measure the Arizon premium on on
+bonds and and we put in corporate bonds
+uh not as good of a measure I might say
+but we put in corporate bonds and Pi try
+to pick up a default spr so we want to
+pick up all these different exp because
+people were talking about all the time
+that there was not a measure of what
+these penguins were so this is our first
+temp the first we've continued on and at
+that time we basically were checked
+extrapolated on and make a forecast of
+the stock market people what what happen
+at 2,000 speciic with the doll pretty
+correct I that um but anyway to see that
+that's in the chart with a dollar and
+the stock market rast to over
+$14,000 that
+10.3% compounding great you uh so far
+most of us have talking about this
+realter you could convert all these
+things into par by that inflation number
+went up 17 times if you divide every one
+of these numbers by 17 you would get the
+compound um the compound valuation at
+the end of the period uh in real term
+then if you take the 98 rud of that
+obviously we can't do that I can't do
+that live for you but but we could we
+could easily conver all these things to
+real with that present thatly so I I
+will say though you know they rough kind
+of real terms let take this inflation
+which is compound annual returns here
+take these inflation numbers 2.9 and
+subtracted from the subtle numbers and
+you'll get uh you'll get the the uh
+return in real
+terms of these things this is this is
+compound this is geometric Mass so it's
+not exactly you can't exactly subract
+well it's pretty close anyway um the
+equity risk you can
+see and it's uh converted bills it's
+like 7% of that's very so head St very a
+number that's quite a bit
+larger than we've been talking about
+today uh it certainly El has pointed out
+I doubt that there's a lot of
+survivorship there and the fact that the
+US has been one of the best performing
+economies and one of the best performing
+stock markets and and and the century uh
+the 20th century uh with and then and
+and that per since the beginning of the
+20th century it's been much better than
+the 19th century I guess so so uh that
+necessary usually Le projections going
+forward but I will know these Equity
+resp of period have been quite
+high so uh when you got an
+idea by the way and I I I there two ways
+to talk about the up SPI we talk about
+the realized Equity risk prum and the
+expected Equity risk premum we're using
+the term Equity risk prum we sort of use
+them interchangeably but the course
+realized that expected are different and
+um
+and but you know the way what certain
+what ways we get an idea of the
+expectation is to look at the pants
+that's why we're so interested with the
+p like do it tell them something about
+the
+future this that chart just basically
+show you the volatility of of stocks
+large cap stocks versus long-term
+current bonds they're on the same scale
+there so pretty clear uh that stocks are
+riskier than bonds although what's
+happened actually is
+that oh really up until about the middle
+of World War II stocks were really misty
+you were very risty during the
+Depression we were very listy during the
+war and we didn't know what was going to
+happen and then the risk set settle down
+meanwhile the bond market risk is much
+riskier today than it was in the early
+periods so if you're just going to talk
+about rest this the POS reg everything
+thing um you might think that the stand
+perhaps should be lower compared to
+bonds any than that it was historically
+these are default free but I'm not
+saying you should compare it to a
+longterm F like that then you do look at
+the long-term fond which Sher this has
+been part of the
+discussion this is
+the summary of yields off from US
+Government conss from 1926 to 2023 for
+the last 98 years well the yields
+actually follow not quite random uh
+process here I guess uh they peaked out
+in
+1981 at at over 13
+% and and then they B after to that and
+so got them in two different hour the
+post 1981 is a bad of falling B yields
+until very recently and we had the last
+couple years we had
+her sharp Rising yields but they some B
+inflation like B moves and so forth um
+but these two vars are very different
+from each other and they uh they give us
+idea about how we should look at the
+equity risk
+premium so here I'll give you the actual
+numbers two different period the First
+Column is the old period the old 98 M
+period and and we we speak about the
+dividends and capital
+gain the yields and capital gains the I
+I'll focus on the first two well just
+the longterm share but you look at the
+longterm uh both of the earlier perod
+1926 and
+1981 you can see the total return of
+starts with 9.14 compared that with 1181
+in the later period the stocks actually
+had higher returns in the later period
+than the earlier period um but if we
+compare them to the total retired of
+bonds well bonds had a 298 versus an 805
+so
+in the LA last period if you compare you
+want to say well this is the equity the
+realized premium over bonds that was
+quite small but that was only
+376 376 bases points in last per where
+it was taking 914 minus 298 it's up six
+616 so so it has been argued has been
+argued in fact by ADV the gloring in
+particular and arguing that well that
+premium was so high in the 2681 period
+and then was so low after that well
+that's true but you shouldn't be looking
+at the realized return total Returns on
+bonds especially because you want to go
+back to origin the expectation in bonds
+you actually have an expectation the
+yield of a bond especially if a of all
+three with the yield Over the Horizon is
+the expectation of a badly return Over
+the Horizon and so what's different
+about the two periods of course is
+during the 2681 period you had a in
+capital loss and at 82 only three perod
+had capital G so if you compare now just
+the difference between
+the uh toal Return of the bond yield for
+the earlier period 914 vers is 450 well
+that difference is
+and and the compared to the yield in the
+latter period 1181 byus
+568 so that's over 6% it's 13
+so it's if anything the last period has
+been a better
+period for Equity risk tram vure uh not
+it's that it's actually higher over the
+over the latter period so uh this is
+what a one of the big charts have been
+shows repeatedly about how different
+those two periods are but what's so
+different really is the behavior of the
+bond market not to be able to stock
+market um that stock market is basically
+Equity risk being as has sced up so I
+guess um to summarize this whole thing
+certainly in the in the US market and
+Equity risk bring in has been strongly
+positive over the 0 98 years um of
+course it's not positive every year
+that's where risk is all about and there
+certainly periods and even extended
+periods when you can uh do worse in the
+stock market but essentially since 19 25
+26 you can certainly have done better
+with the US
+marting in stocks versus bond
+and it's been even more true I would say
+in more recent periods uh yes you've
+done very well in the bond market if you
+could have bought those high yields and
+and and picked up the decline in yelds
+and the capital appreciation that with
+it but but that's not really a forward
+eff risk payment which Rob said we
+should be interested in so I'll agree
+with Rob on that I don't agree with Rob
+often I gu on a lot of point I certainly
+agree with Rob on that point that we
+forward at the with premium and and this
+is the way we should be able to appr
+measure if if I could uh interject a
+couple of quick comments um Roger uh one
+is um uh the capital gain portion of
+this exhibit um I think should correctly
+be disaggregated into capital gain from
+underlying structural growth and capital
+gain from
+revaluation and if you do that you get a
+richer understanding of the sources of
+the total returns and the gains that are
+structural um it's okay to extrapolate
+those the gains that are
+revaluation it's a little more dangerous
+to do that um the other observation I'd
+make is that um uh you say that Bond
+returns uh can be forecast um because
+the yield is the return
+um stock the
+expected yeah yes the expected return on
+stocks can also be estimated uh in the
+case of bonds you can estimate the
+nominal return with Precision in the
+case of stocks you can estimate the real
+return with some Precision um the real
+return would be the current yield plus
+an extrapolation of long-term historical
+growth rates um uh and plus or minus any
+any uh mean reversion in valuations and
+I'm perfectly okay saying mean reversion
+is historically reliable but I'm
+perfectly content to toss it out and say
+yield plus historical long-term growth
+is a reasonable um real return
+expectation so the big unknown is the
+inflation component so for bonds easy to
+forecast long-term nominal returns
+that's your expected return and for
+stocks easy to forecast long-term real
+returns uh
+so I I don't think it's actually leasing
+the forecast longterm real Returns on
+the stock market there very a lot of
+structural changes we've been talking
+about for example the um you know I what
+one of the structural you mentioned is
+that that the expansion of the price
+earning show price yeah whatever
+whatever ratio I talk about in the stock
+market that's been expansion and I of
+course have written of that several
+other bols on that how
+and certainly I admit that there has
+been expan in being um the racious in
+the stock market um but part of the
+reason of that about dividence anyway is
+is we've discussed before that BuyBacks
+have replaced evidence for the most part
+they're really a much more flexible way
+of paying on your money because you can
+pay it out when you want you don't have
+to worry about the strong signal some up
+terms of about the Tye GID like
+disaster you can
+uh if you you can pay out your buy buy
+your BuyBacks when it's convenient for
+you and whatever except you you want to
+like in histor said tax aspects you was
+to do and so forth so so BuyBacks a I
+think are a natural replacement to to
+dividends and yes I'm splitting it up
+there ter of dividends and fact things
+but but uh the Dividends are totally
+different today uh they're much today
+and and in the 19th century of course
+the dividends were nearly High basically
+most of the insecurities were issued at
+par at
+a I'm talking about and so they look
+like bonds I remember collecting the
+data when will gsman and Ling Pang and I
+put together on 19 cury it together we
+were some first because how that it
+because everything being priced around
+other
+um but but when you PR something at 100
+we keep it say there that happens is
+they out almost
+all of div and that that keep sh tce 100
+that's um that General ship SP going on
+so well we pay out almost everything to
+now we paying out almost nothing
+in and good shift was on through this
+but through all these shifts
+there has been a ring Bas and it's I
+guess it's just I don't disagree with
+that it's just a matter of how big it is
+question and have there interpretations
+how big it is or how we might
+measure say Roger could you stop sharing
+I want to share one screen to put uh
+come back to your point that real
+returns for stocks are
+hard so um you mentioned uh hard to
+forecast Equity returns and on a
+short-term basis that's very true the
+cape ratio is a weak predictor of
+oneyear returns as everyone knows it's a
+mediocre predictor of five-year returns
+it's a damn good predictor of 10 years
+returns and it's a remarkable predictor
+of 20-year returns so I think you can
+forecast long-term returns with some
+accuracy um from current valuation
+levels um um we should reasonably expect
+um
+uh significantly lower long-term future
+returns I would also draw attention to
+the fact that we have had outsize growth
+and earnings in the last quarter Century
+uh the period of time that Jeremy uh
+notes that we've been debating these
+topics I don't disagree that um uh
+BuyBacks are a big part of the return I
+view it as a something you can see that
+in the different slopes for the bonds uh
+for the earnings and the dividend the
+dividend slope and the earning slope
+from the beginning of the Schiller data
+um is near
+identical um just a tiny tiny bit slower
+on the bond on the dividend side uh
+subsequent to that uh the slopes have
+diverged and a big chunk of that is um
+BuyBacks BuyBacks are overstated as a
+source of return because bu BuyBacks are
+often announced and then don't happen so
+one of the things we like to look at is
+um BuyBacks defined as net reduction in
+outstanding stock float over a rolling
+fiveyear span and if you do that you
+find that BuyBacks are a very real
+phenomenon but they're they're smaller
+than uh what most people think um I
+don't think it makes sense to expect uh
+earnings growth to be
+abnormally to remain abnormally large
+because what has happened here is that
+earnings have gone to uh a historic
+unprecedented historic Peak relative to
+the 10year average so the the cape uh uh
+earnings um are far behind current
+earnings and that is
+historically um strongly predictive of
+mean reversion in earnings so um I do
+think that there are interesting
+um reasons to believe that the natural
+relationship between dividends and
+BuyBacks is has indeed fundamentally
+changed yeah I I would like to
+say I would not use just the reduction
+in shares because normally growing firms
+will issue more Equity over time so that
+b basically um
+you know you could have BuyBacks that
+actually keep the equity
+constant um and that is a buyback
+because firms can if they you know a
+growing firm can increase its debt and
+its Equity by floating secondary offers
+well I guess they now call it follow on
+offerings uh so I think I'm a little bit
+weary uh Rob of your definition of
+reduction in shares because there
+normally is an upward trend towards of
+shares
+itself yeah that's that's the natural
+dilution of a growing economy and that's
+the reason that earnings per share
+cannot on a long-term basis uh uh keep
+Pace with real GDP growth the uh
+possible exception to that is if
+BuyBacks become so pervasive that um
+they offset entirely offset new share
+issuance and IPOs maybe just say
+forication would never AR advocated
+should match real GDP it's always been
+per capital and I up topic many times
+that we
+talk a lot of people in Academia think
+that earnings and dividends should grow
+with GDP um I was not referring to you I
+was referring to uh others who've made
+that case her share earnings and
+dividends generally won't keep Pace with
+GDP growth uh say also though on this
+whole thing I want to say something
+about uh I think it's unfortunate that
+people have talked about the economy so
+much in terms of real GDP growth and
+they ignore population growth it sort of
+distorted our old view of which
+countries are growing which countries
+aren't they may be growing in population
+but they're not growing in in in income
+and so for countries with 3% population
+growth per anom um and if their GDP is
+growing
+3% the average person there is stuck in
+Squall or
+unchanged but this is typically even in
+the newspapers today the way everything
+is s about and newscasters everybody
+else since they talk about growth and
+this because they injust translation I
+want to go back to the fact gr that I do
+think we've had some net reduction in I
+mean BuyBacks have been so
+strong that over most of the past uh or
+many of the past 20 years we've had
+reduction in share count so it has been
+strong I mean I I go back to a simple
+example a firm earning 10% on its
+earnings pay all out of dividends
+earnings per share will be totally flat
+a non non-growing company same
+non-growing company just buys back a
+share its earnings per share growth is
+10% per year per year um you know I
+don't know I I you can't get around that
+math in my opinion
+uh Larry yeah yeah ahead um can um if I
+may I'd like to uh take us back to the
+history all right so the point of this
+chart and by the way if we took it out
+through
+2022 the correlation would already be
+back up to minus .17 right as I show in
+mind yeah yeah the point of this chart
+and of several companion charts in the
+paper is to get across to notion of
+nonstationarity that everything changes
+nothing stands still um you know through
+the first uh let's see D D D D D D first
+uh through about uh uh
+1871 uh these are TR these are treasury
+bonds these are state government bonds
+and the correlation is very very high
+now if you want to say that yeah I know
+these us Bonds were called treasuries
+but they really weren't then you know
+Elroy may have some data uh for the
+200-year series that he is preparing uh
+I don't think you can call the British
+consoles from 1800 to the present
+anything other than the Criterion
+risk-free long duration instrument so if
+the correlation with consoles in the
+1800s looks like like the 20th century
+us ones your point holds if the consoles
+to correlation to UK equities in the
+1800s looks like my chart then I'm going
+to suggest that my interpretation BS and
+my interpretation is it's not stationary
+the correlations are not stationary the
+standard deviations are not stationary
+the equity premium is not stationary the
+equity premium comes in go
+and uh uh one more thing Larry I don't
+know if we really can do this in the
+time remaining uh you know the viewers
+may know that we're missing Hank Bess
+binder uh who was injured uh and could
+not attend today may be able to get his
+stuff into the print version uh I had a
+useful reply to it and if you'll give me
+the microphone for three and a half
+minutes I think I can get it
+across before you do that I still it
+show even with the hookup that we have
+in the last two or three years it's a
+downward movement which of course
+implies a lower return because it's a
+better hedge in in any equilibrium
+pricing model that you have and it you
+know becomes more like what you would
+expect from the risk-free rate and
+therefore you would expect uh under
+those circumstances a bigger Equity risk
+premium in the later years than you
+would in the earlier years
+or it fluctuates so well it fluctuates I
+know but the trend is definitely down
+even with the hookup recently Larry I I
+do think we should also spend some time
+in in the remaining minutes talking
+about the predictability of stocks
+because I think what Rob has shared is
+wrong and if it's wrong viewers should
+hear an alternative
+interpretation I'll stop sharing well we
+have a lot of stuff on the table here
+and I I think that rather than trying to
+summarize Hank BM Bender's work in his
+absence I think oh well you you have a
+very uh a good point why don't you do
+this so the the Del is this that if we
+draw a line from a starting point to an
+ending
+value and we then look at how a f fer is
+doing or an index is doing it's above
+beneath it it look to it reverts to the
+me but we didn't know what that mean is
+going to be beforehand so what Rob is
+talking about is knowing uh something
+about uh earnings and keep is there a
+clue as to uh uh what You' been expect
+to happen that's very difficult to
+operationalize um we've tried doing this
+for all the countries that we have dated
+for there are no decent earnings figures
+for any countries apart from the United
+States if you are a long-term historian
+so we've looked at the cyclically
+adjusted price dividends not the
+cyclically adjusted price earnings
+ratio and uh if you update that as you
+go through time and you don't know what
+the performance that you're going to see
+as a long-term record will look like
+then capd which is very similar to
+cap doesn't help you it doesn't enable
+you to predict what going to happen to
+stock prices uh there's only one
+exception I think where it looks though
+there may have been some
+predictability and that is quite
+anomalous it's Britain in
+19745 where stock prices half and then
+recovered and then doubled or in a very
+short period um but that a size um there
+does appear to be the kind of
+predictability that Rob is now nodding
+his head I think in agreement with me
+that he was uh putting forward out there
+um I'm nodding my head because price to
+dividends uh is um uh
+capd is empirically a little less
+powerful than capap perhaps because of
+shifts in different dividend payout
+preferences payouts versus BuyBacks
+payouts versus retain and
+reinvest um but I'm also nodding my head
+because uh uh that us history that I
+used is a remarkably benign history
+we've had apart from attacks on the
+World Trade Center and and Pearl Harbor
+we've we've had two centuries excuse me
+a century and a half with no Wars on our
+own soil and uh that's a uh remarkable
+history almost unmatched in the world
+and that makes a huge
+difference by the way five minutes more
+group discussion and we're going to wrap
+this up quick question for Elroy yeah uh
+Elroy I believe you have a slide you
+showed that you finished with a slide of
+200 years of uh US History uh that
+you're putting together I think you have
+a slide of 200 years of UK history split
+by Century ah so I nobody would ever ask
+I have to lower my electronic hands I
+will have to share my screen if I'm able
+to um and uh this is the same study in
+which we have uh the 20th and a bit of
+21st century and on the top row the 19th
+century here this is the same study
+coming up uh to the UK here's the uh 100
+years and little bit we've had of this
+Cally uh and here's what we can do if we
+bring in uh the earlier periods and in
+this particular case the Dimson Mar ston
+and the Global Financial data series uh
+end up being remarkably
+similar and so this is making a
+comparison of uh Equity returns with uh
+Government Bond returns where they are
+genuinely defol
+free the Survivor bias that we have here
+it's a different sort of Survivor bias
+this the Survivor bias of a country
+which didn't have any of the excitement
+of almost all the campus around the
+world not even the excitement of 19th
+century uh United States so um uh you
+see there that 2 and a half% or so as
+the equity premium based on good quality
+data for the United Kingdom looks very
+similar are these the longer term bonds
+are these old Bond Marg what kind of
+bonds are we talking about these UK
+government bonds which for quite a long
+B of this additional first row 1800 to
+1899 uh were peret
+ual so they probably I'm just suggesting
+that may be part of the uh maybe it
+might be underestimated because of a big
+GRE I guess
+start F
+so um generally the bond returns longer
+bonds have higher returns and shorter
+Tre bonds well who who knows how we
+should think about the maturity or
+Horizon Trum when these Horizon this in
+but he the reason the reason I asked
+Elroy to put this slide back up was it
+niely
+capsulate independent of any data that I
+collected how nonstationary the equity
+premium is even over Century long
+periods 100 basis points in change in
+one century 500 basis points in the
+other uh I think it's time to stop
+estimating stop giving Point estimates
+of the equity premium I think we do the
+investor Community a disservice on that
+uh end I think it's time to start you
+know emphasizing how much it
+fluctuates
+lar well I I think that that uh comment
+summarizes very nicely your own work and
+the tone of the conver ation which has
+been remarkably civilized I want to
+thank everyone for
+behaving and I believe that unless we
+have a brief comment from someone at
+this time um we should
+close I I just want to thank uh uh you
+Larry for including me with this AUST
+company and uh I want to thank every
+everybody for a very fun conversation
+and exchange of
+ideas I I would apologize to you Larry
+you are hoping we would really beat each
+other up and you w be very disappointed
+that we have expressed appreciation for
+what our colleag M yeah it was I think
+most of us appreciate that um uh there's
+a lot of uncertainty in in pretty much
+all of the assertions we might choose to
+make and um uh uh none of us has a a uh
+crystal ball that can tell us
+unequivocally the
+future that being on this panel so thank
+you too thank you all thanks everybody a
+good time was had by all

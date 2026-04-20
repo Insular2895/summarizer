@@ -1,0 +1,772 @@
+1
+00:00:00,160 --> 00:00:05,520
+Look, let's be honest with each other.
+
+2
+00:00:02,399 --> 00:00:08,639
+Um, for years, the prevailing wisdom in
+
+3
+00:00:05,520 --> 00:00:12,160
+AI has been deceptively simple. Toddler
+
+4
+00:00:08,639 --> 00:00:15,040
+logic. More is better. More data, more
+
+5
+00:00:12,160 --> 00:00:17,359
+parameters, more compute power. We've
+
+6
+00:00:15,040 --> 00:00:19,760
+been told, "Shovel internet text into
+
+7
+00:00:17,359 --> 00:00:22,320
+the gaping m of a neural network and it
+
+8
+00:00:19,760 --> 00:00:25,279
+will emerge Athenaike, wise, and
+
+9
+00:00:22,320 --> 00:00:27,920
+helpful." But here in 2026, that
+
+10
+00:00:25,279 --> 00:00:30,080
+approach is a spectacular failure. It's
+
+11
+00:00:27,920 --> 00:00:32,160
+like trying to become a gourmet chef by
+
+12
+00:00:30,080 --> 00:00:34,000
+eating everything in a grocery store.
+
+13
+00:00:32,160 --> 00:00:36,079
+Cleaning supplies, checkout candy.
+
+14
+00:00:34,000 --> 00:00:38,000
+You'll be full. You still won't know how
+
+15
+00:00:36,079 --> 00:00:40,399
+to cook. And you might think bleach
+
+16
+00:00:38,000 --> 00:00:42,320
+tastes interesting. Chasing data volume
+
+17
+00:00:40,399 --> 00:00:44,399
+alone is a fool's errand down a
+
+18
+00:00:42,320 --> 00:00:46,399
+dangerous path. These massive,
+
+19
+00:00:44,399 --> 00:00:49,120
+indiscriminately trained models are
+
+20
+00:00:46,399 --> 00:00:50,960
+masters of confident nonsense. They can
+
+21
+00:00:49,120 --> 00:00:53,360
+sound plausible. They can sound
+
+22
+00:00:50,960 --> 00:00:55,600
+authoritative. And they can be utterly,
+
+23
+00:00:53,360 --> 00:00:57,840
+fundamentally wrong.
+
+24
+00:00:55,600 --> 00:01:00,399
+Experts call this hallucination, which
+
+25
+00:00:57,840 --> 00:01:02,960
+means the AI is making things up, like a
+
+26
+00:01:00,399 --> 00:01:05,680
+child explaining where the cookies went.
+
+27
+00:01:02,960 --> 00:01:07,680
+So, what is this empathy gap? It's the
+
+28
+00:01:05,680 --> 00:01:10,479
+chasm between what a model knows and
+
+29
+00:01:07,680 --> 00:01:12,400
+what a user actually needs. A large
+
+30
+00:01:10,479 --> 00:01:14,960
+language model can ingest the entirety
+
+31
+00:01:12,400 --> 00:01:17,600
+of Wikipedia. It can ingest thousands of
+
+32
+00:01:14,960 --> 00:01:19,840
+books. It can ingest the chaotic mess of
+
+33
+00:01:17,600 --> 00:01:22,400
+the public internet. It can tell you the
+
+34
+00:01:19,840 --> 00:01:24,880
+capital of Burkina Faso. It can tell you
+
+35
+00:01:22,400 --> 00:01:26,479
+the molecular weight of caffeine. But it
+
+36
+00:01:24,880 --> 00:01:28,720
+can't learn how to be patient with a
+
+37
+00:01:26,479 --> 00:01:30,479
+confused student. It can't learn how to
+
+38
+00:01:28,720 --> 00:01:32,720
+offer encouragement to a struggling
+
+39
+00:01:30,479 --> 00:01:34,880
+artist. It can't learn how to provide
+
+40
+00:01:32,720 --> 00:01:37,600
+clear, simple steps to someone who is
+
+41
+00:01:34,880 --> 00:01:40,960
+already overwhelmed. Raw data is devoid
+
+42
+00:01:37,600 --> 00:01:43,840
+of intent, tone, and context. It teaches
+
+43
+00:01:40,960 --> 00:01:46,479
+facts, but not how to care. A tool that
+
+44
+00:01:43,840 --> 00:01:49,360
+doesn't care about its users goals is
+
+45
+00:01:46,479 --> 00:01:52,000
+ultimately a bad tool. This gap births
+
+46
+00:01:49,360 --> 00:01:54,159
+the most frustrating problems. Ask for a
+
+47
+00:01:52,000 --> 00:01:56,960
+simple recipe and you get a culinary
+
+48
+00:01:54,159 --> 00:01:59,360
+dissertation. The model isn't malicious,
+
+49
+00:01:56,960 --> 00:02:01,439
+it's clueless. It learned patterns from
+
+50
+00:01:59,360 --> 00:02:04,240
+professional cooking websites, not a
+
+51
+00:02:01,439 --> 00:02:07,520
+tired parents reality. The data taught
+
+52
+00:02:04,240 --> 00:02:10,160
+complexity, not utility. The empathy gap
+
+53
+00:02:07,520 --> 00:02:12,800
+also drives bias. If your data comes
+
+54
+00:02:10,160 --> 00:02:15,520
+from a world full of systemic biases,
+
+55
+00:02:12,800 --> 00:02:17,840
+spoiler, it does. Your model will learn
+
+56
+00:02:15,520 --> 00:02:20,720
+and amplify them, and it will sound
+
+57
+00:02:17,840 --> 00:02:23,120
+perfectly objective doing it. It's an
+
+58
+00:02:20,720 --> 00:02:25,840
+engine that laers prejudice into the
+
+59
+00:02:23,120 --> 00:02:28,720
+appearance of fact. Empathy is the
+
+60
+00:02:25,840 --> 00:02:31,280
+bridge across this gap. It makes us ask,
+
+61
+00:02:28,720 --> 00:02:33,440
+who are we building this for? So, how do
+
+62
+00:02:31,280 --> 00:02:35,840
+you actually practice this empathy in a
+
+63
+00:02:33,440 --> 00:02:38,400
+concrete way? You can't just write
+
+64
+00:02:35,840 --> 00:02:41,120
+import empathy in your code. Stop
+
+65
+00:02:38,400 --> 00:02:43,840
+designing for a vague mythical user.
+
+66
+00:02:41,120 --> 00:02:46,720
+Start designing for specific people.
+
+67
+00:02:43,840 --> 00:02:48,879
+This is where user personas come in. A
+
+68
+00:02:46,720 --> 00:02:51,599
+persona is not just a demographic
+
+69
+00:02:48,879 --> 00:02:54,640
+profile. It's a short narrative sketch
+
+70
+00:02:51,599 --> 00:02:58,000
+of a target user complete with a name, a
+
+71
+00:02:54,640 --> 00:03:00,400
+job, a core goal, a primary frustration.
+
+72
+00:02:58,000 --> 00:03:03,200
+It's a simple act of fiction grounded in
+
+73
+00:03:00,400 --> 00:03:06,000
+reality. And it is a shockingly powerful
+
+74
+00:03:03,200 --> 00:03:07,920
+tool for focusing a development team.
+
+75
+00:03:06,000 --> 00:03:10,319
+You are no longer building a generic
+
+76
+00:03:07,920 --> 00:03:13,680
+chatbot. You are building a tool for
+
+77
+00:03:10,319 --> 00:03:15,920
+Maria. Maria, a high school biology
+
+78
+00:03:13,680 --> 00:03:18,560
+teacher who needs creative, safe lab
+
+79
+00:03:15,920 --> 00:03:21,519
+ideas she can explain to 15year-olds in
+
+80
+00:03:18,560 --> 00:03:23,120
+under 5 minutes. Let's make this real.
+
+81
+00:03:21,519 --> 00:03:25,599
+Imagine you're fine-tuning a coding
+
+82
+00:03:23,120 --> 00:03:28,319
+assistant. Instead of one generic model,
+
+83
+00:03:25,599 --> 00:03:30,319
+be guided by a few key personas. Maria
+
+84
+00:03:28,319 --> 00:03:33,440
+the teacher, David the student coder,
+
+85
+00:03:30,319 --> 00:03:36,720
+Priya the data scientist. David, a
+
+86
+00:03:33,440 --> 00:03:38,879
+19-year-old CS student new to Python. He
+
+87
+00:03:36,720 --> 00:03:41,680
+needs clear step-by-step explanations
+
+88
+00:03:38,879 --> 00:03:43,920
+with lots of comments. He's terrified of
+
+89
+00:03:41,680 --> 00:03:46,560
+looking dumb in front of his professor.
+
+90
+00:03:43,920 --> 00:03:48,640
+Priya, a senior data scientist with a
+
+91
+00:03:46,560 --> 00:03:50,720
+decade of experience. The traditional
+
+92
+00:03:48,640 --> 00:03:53,680
+approach to fine-tuning often resembles
+
+93
+00:03:50,720 --> 00:03:55,920
+a massive oneshot cannon. Teams spend
+
+94
+00:03:53,680 --> 00:03:58,000
+weeks preparing a gigantic data set,
+
+95
+00:03:55,920 --> 00:04:00,560
+load it up, press the go button on a
+
+96
+00:03:58,000 --> 00:04:02,640
+cluster of GPUs for days and then
+
+97
+00:04:00,560 --> 00:04:05,519
+anxiously wait to see what comes out the
+
+98
+00:04:02,640 --> 00:04:07,519
+other end. It's slow, it's expensive,
+
+99
+00:04:05,519 --> 00:04:10,159
+and if the result is bad, it's
+
+100
+00:04:07,519 --> 00:04:12,080
+incredibly demoralizing. The design
+
+101
+00:04:10,159 --> 00:04:14,480
+thinking approach, however, treats
+
+102
+00:04:12,080 --> 00:04:16,720
+fine-tuning less like a cannon and more
+
+103
+00:04:14,480 --> 00:04:19,280
+like sculpting. You don't try to get it
+
+104
+00:04:16,720 --> 00:04:21,440
+perfect on the first try. Instead, you
+
+105
+00:04:19,280 --> 00:04:24,240
+embrace the idea of a low-fidelity
+
+106
+00:04:21,440 --> 00:04:26,960
+prototype. You start small, you start
+
+107
+00:04:24,240 --> 00:04:28,800
+fast, you start messy. Your first
+
+108
+00:04:26,960 --> 00:04:31,919
+fine-tuning run shouldn't use your
+
+109
+00:04:28,800 --> 00:04:34,400
+entire painstakingly curated data set.
+
+110
+00:04:31,919 --> 00:04:37,199
+Instead, take a small but representative
+
+111
+00:04:34,400 --> 00:04:39,759
+sample, your golden examples, and run a
+
+112
+00:04:37,199 --> 00:04:41,520
+quick, cheap training cycle. The goal
+
+113
+00:04:39,759 --> 00:04:44,000
+here is not to create a finished
+
+114
+00:04:41,520 --> 00:04:46,000
+product. The goal is to learn. This
+
+115
+00:04:44,000 --> 00:04:48,240
+first prototype will almost certainly
+
+116
+00:04:46,000 --> 00:04:51,040
+have flaws. It will misunderstand
+
+117
+00:04:48,240 --> 00:04:53,680
+prompts. It will adopt the wrong tone.
+
+118
+00:04:51,040 --> 00:04:56,720
+It will hallucinate wildly. But here's
+
+119
+00:04:53,680 --> 00:04:59,120
+the key. You treat these failures not as
+
+120
+00:04:56,720 --> 00:05:02,000
+bugs in the code, but as flaws in the
+
+121
+00:04:59,120 --> 00:05:04,639
+design. You analyze the bad outputs and
+
+122
+00:05:02,000 --> 00:05:06,880
+ask design- ccentric questions. Why did
+
+123
+00:05:04,639 --> 00:05:09,280
+the model get this so wrong? Was the
+
+124
+00:05:06,880 --> 00:05:11,840
+instruction unclear? Is our example for
+
+125
+00:05:09,280 --> 00:05:14,479
+a polite tone actually coming across as
+
+126
+00:05:11,840 --> 00:05:16,160
+robotic? For far too long, the AI
+
+127
+00:05:14,479 --> 00:05:18,639
+community has been obsessed with the
+
+128
+00:05:16,160 --> 00:05:21,039
+wrong report card. We measure our models
+
+129
+00:05:18,639 --> 00:05:23,600
+with abstract standardized benchmarks
+
+130
+00:05:21,039 --> 00:05:25,280
+and watch loss curves creep downwards,
+
+131
+00:05:23,600 --> 00:05:27,680
+celebrating when our line is slightly
+
+132
+00:05:25,280 --> 00:05:30,160
+lower than someone else's. This is like
+
+133
+00:05:27,680 --> 00:05:32,160
+judging a chef's skill based only on the
+
+134
+00:05:30,160 --> 00:05:34,479
+final weight of the food they produce.
+
+135
+00:05:32,160 --> 00:05:36,400
+It's a metric, sure, but it tells you
+
+136
+00:05:34,479 --> 00:05:38,240
+absolutely nothing about whether the
+
+137
+00:05:36,400 --> 00:05:40,479
+food is delicious, nutritious, even
+
+138
+00:05:38,240 --> 00:05:42,880
+edible. These old metrics are not
+
+139
+00:05:40,479 --> 00:05:45,039
+useless. They can tell you if your model
+
+140
+00:05:42,880 --> 00:05:47,840
+is learning something, but they are
+
+141
+00:05:45,039 --> 00:05:49,600
+dangerously incomplete. They tell us
+
+142
+00:05:47,840 --> 00:05:51,759
+nothing about whether the model is
+
+143
+00:05:49,600 --> 00:05:54,639
+useful, trustworthy, pleasant to
+
+144
+00:05:51,759 --> 00:05:57,039
+interact with. To build models that
+
+145
+00:05:54,639 --> 00:05:59,600
+truly serve people, we need to invent
+
+146
+00:05:57,039 --> 00:06:02,000
+and adopt new human focused measures of
+
+147
+00:05:59,600 --> 00:06:04,560
+success. This starts with creating a
+
+148
+00:06:02,000 --> 00:06:06,560
+custom alignment score for your project.
+
+149
+00:06:04,560 --> 00:06:08,479
+This isn't a single number, but a
+
+150
+00:06:06,560 --> 00:06:10,960
+composite score derived from several
+
+151
+00:06:08,479 --> 00:06:13,120
+qualitative assessments. You get a panel
+
+152
+00:06:10,960 --> 00:06:15,600
+of human raiders, people who represent
+
+153
+00:06:13,120 --> 00:06:18,479
+your user personas, to evaluate the
+
+154
+00:06:15,600 --> 00:06:20,000
+model's output on real world tasks. They
+
+155
+00:06:18,479 --> 00:06:22,080
+don't just rate it as correct or
+
+156
+00:06:20,000 --> 00:06:23,280
+incorrect. They rate it on multiple
+
+157
+00:06:22,080 --> 00:06:25,680
+axes.
+
+158
+00:06:23,280 --> 00:06:27,199
+Did it successfully complete the task?
+
+159
+00:06:25,680 --> 00:06:29,680
+Was the tone appropriate for the
+
+160
+00:06:27,199 --> 00:06:32,160
+situation? Was the information presented
+
+161
+00:06:29,680 --> 00:06:34,800
+clearly? Did it build trust or create
+
+162
+00:06:32,160 --> 00:06:36,560
+confusion? This provides a rich
+
+163
+00:06:34,800 --> 00:06:38,560
+multi-dimensional view of performance
+
+164
+00:06:36,560 --> 00:06:41,520
+that a simple accuracy score could never
+
+165
+00:06:38,560 --> 00:06:43,680
+capture. So here is the bottom line and
+
+166
+00:06:41,520 --> 00:06:46,160
+I need every engineer, every product
+
+167
+00:06:43,680 --> 00:06:50,319
+manager and every team lead to hear
+
+168
+00:06:46,160 --> 00:06:52,639
+this. Stop chasing raw data. Just stop.
+
+169
+00:06:50,319 --> 00:06:54,800
+That habit, the reflexive instinct to
+
+170
+00:06:52,639 --> 00:06:57,840
+solve a problem by finding a bigger data
+
+171
+00:06:54,800 --> 00:07:00,479
+set is holding us back. It is the single
+
+172
+00:06:57,840 --> 00:07:03,360
+greatest obstacle to building AI that is
+
+173
+00:07:00,479 --> 00:07:05,759
+genuinely helpful, reliable, and aligned
+
+174
+00:07:03,360 --> 00:07:08,240
+with human values. We have to change
+
+175
+00:07:05,759 --> 00:07:10,479
+this core behavior. We must treat the
+
+176
+00:07:08,240 --> 00:07:12,720
+large language model not as a passive
+
+177
+00:07:10,479 --> 00:07:15,440
+database to be filled, but as a product
+
+178
+00:07:12,720 --> 00:07:17,280
+to be designed, a partner to be trained.
+
+179
+00:07:15,440 --> 00:07:19,759
+The work is not done when the training
+
+180
+00:07:17,280 --> 00:07:22,720
+run starts. That is when the real work
+
+181
+00:07:19,759 --> 00:07:25,039
+of refinement and guidance begins. Here
+
+182
+00:07:22,720 --> 00:07:28,720
+is how you can start this shift today
+
+183
+00:07:25,039 --> 00:07:30,720
+with five clear actionable steps. First,
+
+184
+00:07:28,720 --> 00:07:33,440
+before you write a single line of tuning
+
+185
+00:07:30,720 --> 00:07:36,800
+code, create two or three simple user
+
+186
+00:07:33,440 --> 00:07:40,080
+personas. Give them names and problems.
+
+187
+00:07:36,800 --> 00:07:43,199
+Second, forget bulk data. Instead,
+
+188
+00:07:40,080 --> 00:07:45,199
+gather or write a small set of 50 to 100
+
+189
+00:07:43,199 --> 00:07:47,280
+golden examples that perfectly
+
+190
+00:07:45,199 --> 00:07:50,639
+demonstrate the desired behavior for
+
+191
+00:07:47,280 --> 00:07:53,440
+those personas. Third, run a fast,
+
+192
+00:07:50,639 --> 00:07:55,759
+low-fidelity fine-tune using only those
+
+193
+00:07:53,440 --> 00:07:55,759
+examples.
+

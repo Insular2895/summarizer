@@ -1,0 +1,914 @@
+Hello everyone and welcome to the
+sustainability story podcast. On this
+episode, we explore critical
+sustainability issues and global trends
+shaping our industry. I'm Nicole
+Garrick, director of global industry
+standards at CFA Institute and one of
+three co-hosts. Today's episode will
+zero in on the topic that's set to
+impact asset managers across Europe and
+beyond, and that's the proposed changes
+to the EU's sustainable finance
+disclosure regulation or SFDR. Joining
+me today is Simone Ruez Burgot, head of
+sustainable finance policy research at
+MSCI issue research. Simone leads
+research and methodology development at
+Msei, empowering clients to navigate
+sustainable finance and climate related
+regulations. With two decades of
+experience in sustainable finance and
+climate strategy, spanning both private
+and public sectors, Simone brings a
+wealth of experience to our
+conversation. So Simone, thank you so
+much for being here and I look forward
+to our discussion.
+>> It's a pleasure, Nicole. Thanks for
+having me.
+>> Yes, thank you. To get us started, I'd
+love to hear more about your personal
+sustainability story. So, can you share
+with our audience how you first became
+interested in sustainable finance and
+what inspired you to focus on EU policy
+research? Yes. So, I was born in a small
+town, university town in Germany in
+Fryberg in the Black Forest. And the one
+particular feature of this town is that
+it has more bikes, bicycles than it has
+inhabitants.
+And it's also the cradle of the solar
+industry. So with that background and
+with two parents being both biologists,
+I was quite sensitive to the topic of
+planetary boundaries and related
+environmental challenges. But I also
+felt a need to earn a living. So I
+decided to become an economist, trained
+as an economist and then I moved over to
+work in Brussels at the EU Commission
+for an internship and followed by some
+say at the ECB, the European Central
+Bank before I went back in fact to
+Brussels to work on carbon market
+topics. And it just fascinated me to
+have this sort of public policy steering
+based and the market-based instrument
+with that emissions trading and to see
+the change this can have. And that's
+where it started off really with my
+passion for green finance,
+sustainability and then five years ago I
+joined MCI in this role.
+>> Great. Thank you so much for sharing
+your uh journey into sustainable finance
+and it's inspiring to see how your
+parents really uh shaped your thinking
+in and environmental challenges growing
+up and you were able to develop a career
+really marrying your economics
+background as well as with your
+environmental interests. So it's very
+inspiring.
+So now let's turn to our main topic, the
+sustainable finance disclosure
+regulation or as I mentioned SFDR, which
+we will be calling it throughout this
+podcast. And so for our listeners that
+may not be familiar with SFDR, it's been
+in effect in the EU since 2021. And it
+requires investment products to
+communicate how sustainability risks,
+sustainability objectives and
+characteristics and adverse impacts are
+addressed. And the intent was really to
+increase transparency
+and allow investors to better compare
+products. However, even though the EU
+legislators did not really set out to
+create a formal fund classification
+system, the rules led to this de facto
+classification system where products
+became known uh as article 8 or article
+9 labels. And so this has resulted in
+really some significant complexity,
+confusion, and different interpretation
+issues among retail investors.
+And so Simone, we have this new proposal
+that was introduced in November, and it
+really aims to address some of these
+challenges by really clarifying product
+categories and minimum standards. And
+drawing on your experiences with in
+asset management and sustainability data
+and the engagements that you've had with
+EU regulators, what do you see as the
+core issues the commission is trying to
+solve for with SFDR 2.0 and where do you
+think uh if anywhere um do they accept
+any trade-offs or imperfections to get
+there? [snorts]
+>> Yes, thank you. I I guess most of the
+market was waiting for this proposal
+since since a while. Um it's also
+typical in an EU context of legislation
+and and law making that you have every
+few years a revision to the mother
+legislation to keep a breast with recent
+developments with market with changes in
+the market. We have seen the UK come
+forward with labels and the EU
+essentially has started with a
+disclosure regime which has quickly
+moved into as you described it a
+labeling quasi labeling regime. And so I
+think since I took over about four years
+ago on this topic really on SFDR and the
+principal adverse impact indicators
+which is data points we offer to assess
+how sustainable investments fare on a
+range of harm indicators that has
+quickly become clear that we we um might
+might see some change. So the whole last
+year we were already engaging with the
+regulators. There was a consultation and
+then when the proposal came out um there
+was even a leaked version and then the
+proposal came and it was a quite a
+change to the leaked version. So there
+was a lot of commotion last year and I
+think the market has now had some time
+to assess the proposal and also the
+responses that I've seen from our
+clients has been rather positive on
+where you know we might have seen some
+challenges in understanding what
+different products mean very broad
+classification between the article 8 and
+nine and overall spanning over 50% of
+the market so quite a success in terms
+of capturing a large market share for
+the sort of sustainable or
+environmentally minded products. You can
+you can think of this as a real success.
+It's the it's a leading market globally
+for sustainability products. But then is
+it so clear what a sustainable product
+is? And I think this is where this whole
+initiative is now looking at can we
+provide more clarity, more comparability
+across different products. And so this
+is the the main aim is really improving
+usability, comparability and then also
+the credibility of of sustainable
+investments. So you could see that there
+is the strong market demand for more
+well-defined categories of sustainable
+investment products and this is now
+being served by this this proposal. It's
+a proposal. It could still change quite
+dramatically. We'll have to see how it
+plays out in the negotiation between the
+different EU institutions, council,
+parliament and commission. But I I think
+what is now more or less the market
+expectation is that a formalization of
+these labels would help direct capital
+flows um increase transparency and then
+also strengthen investor confidence in
+this market.
+>> Great. Thank you for the clarification
+on that. So when we think about the
+shift from article 8 and article 9
+labels toward clearer product categories
+defined in this, can you provide uh what
+you see as the most significant
+implications of this move and which
+aspects might still need further
+clarification from the regulators? Yes.
+So I think an an aspect that was coming
+on repeatedly put forward is that there
+is a lot of complexity on the disclosure
+side. So one one thing is the labels but
+another thing is the disclosures and how
+they were implemented. We had both
+entity level reports. So where you had
+to actually report across all your
+assets at firm level that was not easy
+to do. It was not always clear how to do
+it and then there were data issues. So
+altogether there was a lot of emphasis
+from the market to revise and simplify
+reporting requirements and that is
+something they are doing here now. So
+first they replace the article 8 and
+nine categories with three new
+sustainability related categories.
+Second, they simplify reporting
+obligations by removing the entity level
+report, but also supposedly
+in the future with the delegated act
+that is still expected next year, they
+would also much simplify the product
+level reports. And then thirdly, there's
+also some alignment with existing
+regulation such as the corporate
+sustainability reporting directive and
+the related standards, but also the EU
+taxonomy and then the ESMA which is a
+regulatory authority fund name
+guidelines which were coming in last
+year and sitting on top of the SFDR
+requirements requiring certain
+exclusions of certain activities based
+on the name of a fund and and so these
+are the different elements of the
+proposal but I think overall the that's
+really an aim to to simplify clarify and
+then also align more closely with other
+regulation which makes sense because
+SFDR was one of the first regulations of
+the entire package that was part of the
+EU green action plan in 2018 and the
+other pieces came later and so there is
+a need to readjust realign
+with what has happened in the last years
+in these other related disclosure and
+classification regimes.
+>> So I know you spoke to the aligning with
+the other EU policies such as CSD and
+CSRD and ESMA's guidelines. What about
+interoperability between other global
+product categorizations such as the SDR
+or other global proposals that are on
+the table in other jurisdictions? Do we
+see interoperability among those as
+well?
+>> Yeah, I think there is an a clear
+understanding also emphasized by the
+many consultations we we have had and
+where I think most of the market has
+just said don't make it too different
+from each other. We have CSRD. We have
+the ISSB standards. We have different
+markets with different sustainable
+finance disclosure and categorization
+regimes. The UK was interesting because
+it basically introduced first the labels
+then the disclosures while the EU did
+exactly the opposite. Um Australia has
+just consulted last year on a on a
+similar categorization. And what you can
+see emerge from all these is that you
+have very similar building blocks. And I
+think this is a clear there's a clear
+understanding that there needs to be
+some common ground to allow for a
+product to be cross marketed in
+different markets but also to be not
+seeing hurdles add it. You'll always see
+differences in the implementation but
+from what is emerging is that there are
+these three building blocks. One is a
+sustainability category which comes with
+certain minimum percentage thresholds
+for what should be what should be
+covered from from a portfolio fund. in
+the EU is 70%, I think in the UK it's
+slightly higher but it's all in that
+category of twothird of the product
+should follow the same criteria. Then
+you have another category which is a
+transition category which makes a lot of
+sense if we think about certain sectors
+that are just emission heavy and that
+need to transit out of the their current
+business model into lower carbon or
+lower emitting activities. that is then
+a transition category which comes with
+credible transition targets,
+science-based pathways etc. So there are
+measures to allow you as a investor to
+assess whether or not the p path that
+the company's on is actually making
+sense and sufficiently ambitious. And
+the third category is uh related to ESG.
+Again it's a bit differently formulated
+in each markets. In the EU they call it
+ESG basics. can also think of ESG
+integration where you essentially focus
+on financially relevant sustainability
+risks that are um typically expressed by
+you still keep your you still keep an
+exposure to all the sectors in the
+market but you choose the best
+performers on a variety of metrics
+related to environment social and
+governance indicators and then I think
+there is an additional category which
+was also added here which sort of sits
+across all the others or at least across
+sustainability and transition in the EU
+that's the impact category which allows
+impact products to differentiate
+themselves from the rest of the market
+by coming forward with theory of change,
+intentionality and measurable progress.
+And so all in all, I think this is
+building blocks we're seeing in each
+market. Then when it comes to the
+implementation, do you have to apply for
+your label or is it a default label and
+you basically have to just disclose what
+you do or is it in other markets it
+might be that the hurdle is higher
+because the regulator has more
+restrictive understanding while the
+rules are principal based which we have
+seen in the UK where everybody thought
+it's actually easy and it wasn't and
+then in other markets the regime is too
+new or not yet implemented so it's too
+early to tell which is it's I think the
+case in in Australia for instance
+But what we're seeing is that everywhere
+countries are all the jurisdictions in
+the world are somehow working on
+something that is similar to what the EU
+has started to put in place a few years
+back. And I think this is interesting as
+the EU is a little bit hesitating on the
+way forward. Should we include more
+companies or fewer companies? Do we do
+too much? Do we need to do more burden
+reduction? I think it's interesting to
+see that other jurisdictions are copying
+the EU's base rules and making their own
+rules out of it. sometimes much more
+market oriented and practiceoriented and
+the EU again now in these revisions can
+copy some of the improvements that we
+have seen in other markets which I think
+they are doing right now looking very
+closely especially at what's happening
+in the UK.
+>> Yeah. No, I I agree with you and that
+interoperability among the different
+jurisdictions is very important
+especially for asset managers, global
+asset managers that are creating
+products and designing strategies that
+they're going to cross market to
+different jurisdictions and um and it's
+good to see that the revised SFDR has
+looked into you know what SRD in the UK
+has put forth and others to help shape
+the new guidance and um you know rules.
+for their product classification.
+>> So just one additional thought I I think
+that there is clearly a a bit of maybe a
+tension to the regulator needs to
+address and that is the one between
+rigor and ambition and sort of telling
+the market what sustainability really
+means from their angle to make it easier
+maybe on the supervisory side to do the
+checks. Is it implemented in the right
+way? Is it what we expect? Does it meet
+consumer needs and expectations towards
+do you want this to remain a broad
+market that can accommodate accommodate
+different strategies or do you want this
+to become a very niche market that is
+super green but maybe only meets the
+needs of a very small subset of clients
+and that is the the dichotomy the
+tension that every policy maker every
+market will have and needs to navigate.
+uh maybe half of the fund uh universe in
+the EU is now coal sustainable and that
+might decrease with the new categories
+as they increase robustness of the
+categories but I think we also don't
+want to end up in a market where we have
+just the assets that are covered by the
+current EU taxonomy which is much
+smaller subset covered so there is this
+sort of you want it to be right but you
+don't want it to be zero
+>> exactly
+>> I think that's that's where everyone has
+to has to handle it
+>> you raised an important point regarding
+funds that won't be categorized if they
+lack robustness or ambition to meet the
+criteria for the proposed categories.
+It's likely many EU sustainable products
+will end up in the ESG basic category if
+they fail to meet the requirements of
+the transition or sustainable categories
+such as the 70% threshold for holdings
+aligned with transition or
+sustainability objectives and the
+exclusion criteria. And there's also the
+question of how disclosure will appear
+for those uncatategories funds, meaning
+those that don't fall under the ESU
+basics, sustainable or transition
+categories.
+And ESMA issued guidelines back in May
+of 2024 with criteria for funds using
+ESG or sustainability related terms in
+their names. So it's worth considering
+whether this guidance will remain or
+will be revised in light of the new SFDR
+2.0 proposal.
+So how I understand this so I'm a member
+of the ESMA working group um on
+sustainable finance since since its
+inception I think three years ago and
+they we had long discussions always on
+this topic with um the work the working
+group is composed of different members
+from academia NOS's but also finance and
+data providers and and corporates and in
+that group we we have had these
+discussions back and forth but I think
+an important element now is that most
+likely the the SFDR to zero if the
+labels are sufficiently robust From a
+regulator's perspective, from
+supervisor's perspective, the ESMA fund
+name rules will be repealed, replaced by
+these new rules which are very much
+building on the ESMA fund name
+configuration. And when we look at how
+the ESMA fund name rules which were
+introduced last year, came into effect
+which were introduced two years ago now
+and came into effect um for all existing
+products in May last year. So in that
+period was about 12 months we have seen
+a lot of changes in the fund names
+according to our analysis,400
+funds have changed the name. ESMA has
+just released an analysis of their own
+from December that shows that in the
+subset they analyzed 4,000 funds.
+Twothird changed the name and a half
+changed the policy. So kept the name but
+changed the policy. Wow.
+>> And in fact a lot of the fund names Yes.
+It's interesting and and a lot of the
+funds that changed the name had already
+some fossil fuel exclusions, which is
+the most impactful addition from the
+fund name guidelines that you had to get
+out of the fossil fuel based on certain
+revenue thresholds for coal, oil, and
+gas. And those that didn't have that had
+a relatively high exposure or say a
+normal exposure if they track a
+benchmark it's just the benchmark sector
+weight they were more reluctant to
+change policy and were more more likely
+to change the name. Now as smart thinks
+of this as a success successful strategy
+we have also done an analysis at MEI
+where we looked at the name changes so
+the,400 funds that changed the name and
+a lot of them have stick to the exactly
+same strategy as they had before. So
+they didn't move away from their
+sustainability focus or ESG tilt or
+whatever they did before. So they kept
+the same strategy which means they
+didn't withdraw from a sustainability
+strategy but they just didn't want to
+have that large of a tracking error.
+They didn't want to kick out all the
+fossil fuel investments. So if you track
+a benchmark and you want to make sure
+your performance continues to be
+accessible compared to that benchmark,
+it's not so easy to just go out. And I
+think that's an a factor we need to
+consider and it will be coming back
+because now with the SFDR labels they
+choose exactly the same exclusion
+categories even adding on top of these
+revenue weighted exposures to fossil
+fuels plans to expand fossil fuels or
+plans to or no no plans to phase out
+coal. So there are additional criteria
+where the data is not as established as
+it is for the fossil fuel revenue
+exposure. So we'll really have to see
+how this plays out and how much of a you
+know how much of a restriction it is
+perceived to be by the market. So if at
+the end all the products change their
+name I don't think you can call it a
+success. Ideally they do not change the
+name but make their strategies more
+robust right. So that should be the
+objective I think in the end.
+>> Yeah. No thank you for providing that
+insight based on your consultation
+experience with asthma. So many of our
+listeners are keen to learn about the
+practical steps for implementation.
+So for asset managers preparing for SFDR
+2.0,
+what should they prioritize over the
+next 12 to 18 months to ensure
+compliance especially regarding the
+substantiation of claims and exclusions,
+data quality and product level uh
+documentation? And what do you see maybe
+as some of the main challenges arising?
+Yeah, I think much advice is to not
+overdo it in the first months and to
+watch a little bit what's unfolding now.
+I think it's 12 to 18 months at least.
+We would expect this to only enter into
+force in 2028. So, we have quite some
+time ahead. What definitely makes sense
+right now is to emphasize data, good
+data. There is clear reference also to
+the use of estimates. to assess that you
+when you don't have the data make sure
+you you have something else in place
+cover it no gaps governance robust
+governance of the processes traceability
+and substantiation because one thing of
+the sorry substantiation of the
+sustainability claims because I think
+one thing is pretty clear even so it
+might look to some as a backtracking in
+terms of simplification disclosure
+reduction burden reduction whatever
+policy maybe not being the policy makers
+not being super involved or not as pushy
+at least on the need to be green or to
+greening your investment processes. I
+think the supervisors are still
+expecting you to walk the talk and and
+more so I think the robustness of the
+claims and also related disclosures will
+be will be even more important going
+forward and I wouldn't wait for the
+implementation of this change to look at
+governance and robustness of claims. I
+think this is something you should do
+now. So there is this emphasis also on
+the disclosure side. you have no entity
+level disclosures potentially when this
+new rule is in force. However, until
+then there is still at least two periods
+where we would expect the disclosures to
+happen and on the product level there is
+going to be more emphasis on saying how
+do you do the harm assessment. This was
+just a consideration so you had to
+consider it but nobody told you you had
+to disclose it and few I mean some did
+but not all and the disclosures were not
+comparable. So the comparability will be
+more in front. So you will want to you
+will want to be sure you have something
+that is stands the test of scrutiny for
+both from a supervisor and your
+investment community. So your you know
+your clients and that is the challenge I
+think that's what you what you will have
+to focus on. So it's it's really this
+wait and see on the one side but make
+sure you have your back covered on the
+other side.
+Yeah, and you made a good point on that
+now the entity level PIS are no longer
+applicable and it's be more looking at
+it from a product standpoint. So I think
+that would help with some of the
+compliance costs and complexity of a lot
+of the data that's needed at that entity
+level that maybe wasn't used as much or
+as helpful as it would be if it was
+looking at it from a product standpoint.
+And when it comes to assessing harm, I
+think one change we'll see on the
+assessing harm is that it will be more
+flexible which indicators you use. So
+you will probably see a higher reliance
+by asset managers on indicatorbased
+approaches and that aligns quite well
+with the tools and data sets that analy
+so data providers have. But at the same
+time you'll have the regulator come
+forward with a new list of adverse
+impact indicators. And so while they
+become voluntary to use, you could also
+use other suitable indicators. They will
+still be sort of a big thing because the
+regulator has basically signed them off.
+You can be sure if you use them, it's
+easier to basically make your your
+claim. So I think they will not
+disappear, but the list is expected to
+become a lot smaller, more focused on
+data availability. And I suppose there's
+going to be some more consultation,
+interaction with the market to see what
+what indicators are are best making
+sense. And I think given that there is
+already an overlap between the adverse
+impact indicators and the exclusion
+coming from the principle so from the
+Paris benchmarks or the PABS notably
+when it comes to controversial weapons
+when it comes to fossil fuel exposures
+there is probably going to be redundancy
+that will be removed with the revised
+PIS focusing especially on those
+indicators that are not covered already
+by the PABS that would be my expectation
+whether it will play out this way or not
+we'll have to see Interestingly, it's
+not ESMA who will come forward with the
+delegated act or the technical criteria
+for assessing sustainability, harm,
+transition, impact, etc. But it will be
+the commission and we expect that to
+happen sometimes next year. Most likely
+by the end of the year, we will have a
+delegated act that will then allow us
+also to start our work on the data
+inventory and making sure we have what
+is required for asset managers to report
+on.
+So, one common critique of SFDR is that
+it blurred the line between products
+with sustainability characteristics and
+those that had genuine impact. And uh in
+our research that we've done and
+guidance that CFNsuit has put forward,
+we had two different papers on labeled
+how to build a better fund
+classification system and our impact
+investing guidance for designing listed
+equity strategies that generate real
+world outcomes. And we we showed that
+the regul uh the regulation grouped
+products by their sustainability
+characteristics
+rather than by intentionality and
+contribution and impact measurement and
+outcomes which really are are
+cornerstones for impact investing. So do
+you believe that SFDR 2.0 meaningfully
+accommodates impact strategies and
+creates more of a clearer framework for
+impact investing? and what do you think
+credible impact would look like under
+these new categories?
+>> Yes, thanks for that and also sharing
+your paper. I think you make some really
+important points in there and and one of
+course is around the question of
+engagement and how how close you get to
+the companies you invest in and I think
+this is if you ask me what the framework
+is for impact investing I would say it's
+not really a framework they put forward
+here but they leave the door open and
+the delegated act will bring the
+framework so I think there is a big
+relief from the impact investing
+community which is is not our typical
+clients I have to add but I I I know
+that There is a lot of sort of interest
+of this community to be able to
+differentiate the products. They spend a
+lot of time building and that's
+possible. So there is this explicit
+recognition of impact permitted
+recognized approach for products
+pursuing either sustainability or
+transition objective which means it's no
+longer shoehorned into an article 89
+disclosure box where it was never really
+you know comfortable sitting. And so
+that's that's really a big conceptual
+change. And then I think on the question
+of the framework and how it's going to
+play out there is three elements that
+will be key here. Uh one is the the way
+that the theory of change and the
+intentionality is formulated. So that
+has to be a really clear articulation of
+an intended impact goal. Then also the
+question about contribution. So how your
+investment activity contributes to the
+to the outcome and then measuring
+progress. And that's going to be part of
+the new disclosures and we'll have to
+see how they are asking for this uh
+whether it's sufficiently clear and
+sufficiently detailed because one of the
+other maybe conflicting aims is of
+course to reduce the reporting bring it
+down to just I think it's three pages
+for impact two pages for transitional
+sustainability. So there is a
+recognition that impact may need more
+more room to be described and there is a
+clear understanding that also for the
+sustainability category and the spec
+sorry specifically for the transition
+category that engagement is necessary
+and that it should be well documented.
+So I think for these two areas
+transition and impact you would see a
+big emphasis from the regulator to to
+showcase your engagement with the
+companies you invested in. I was happy
+to see that impact products aren't
+limited to the sustainable category and
+that they can also fall under the
+transition category since much of the
+impact really arises from companies
+actively working toward becoming more
+sustainable. For example, those highly
+emitting companies are now lowering
+their emissions. And engagement was
+emphasized in the transition label,
+which I agree is a way for investors to
+influence and really contribute to the
+company's change. Credible engagement
+strategies
+should feature specific milestones
+and have measurable indicators to track
+progress on those sustainable outcomes.
+Also important is monitoring transition
+plans and disclosing science-based
+targets are highly relevant for the
+transition category.
+>> And of course for us as a I mean MSI
+also has some some indexes. So we have a
+lot of passive investor clients and of
+course for them it's also important to
+to see that the that climate aligned
+benchmarks are another road because
+there you wouldn't be able to do the
+engagement that you might do on an
+active fund, right? So you have both
+both recognized both investment
+strategies as are are fine for a reg in
+that current context of the proposal at
+least.
+>> Yeah.
+>> So now let's shift more on to some of
+the risks. So what risk do you see with
+SFDR 2.0? So, for example, could there
+be unintended consequences such as
+potentially oversimplified labels or
+inconsistent market adoption or
+different confusion between the
+different types of labeled products? I
+think it's a good question and one that
+probably is almost impossible to answer
+now because we will see a lot of the
+details only coming down in the
+delegated act and that that is just the
+first part and the second part is then
+really the application the supervisory
+practice because you might well see that
+the categories are nearly identical from
+one market to another yet the
+supervisory implementation differs
+greatly and we've seen this on SFDR even
+within the EU where no market handle it
+the same way and to give you one example
+is the use of estimates. So ESMA would
+say you need to make sure you have no
+gaps. You don't assume no address impact
+just because a company doesn't report
+their emissions. So you need estimates.
+And the next is is another country and I
+won't name names here. But that would
+say no way we don't you don't use
+estimates. It's not it's not allowed.
+And the next saying well we we are
+totally fine with estimates. So I think
+that sort of practice changes and you
+know the commission might say in the
+proposal supervisors shouldn't do gold
+plating. There is no room for that here.
+But there are such small nuances in the
+way that supervisors interpret the
+rules. It's just very difficult to say
+it's goldplating or it's simply national
+preferences or you may call it
+differently but I think that will be an
+important test of practice and that is
+of course the same from jurisdiction to
+jurisdiction comparing the EU and the
+UK. it will be practical matter of of
+convergence over time I think as well as
+the supervisors talk to each other and
+making sure the market associations like
+uh USF is is doing their their role to
+it and I think they've done a fantastic
+job also with a good podcast and uh just
+trying to get supervisors and and
+regulators to be more sensitive to these
+differences in market implementation and
+the impact it has on capital allocation.
+Okay. So, we're almost out of time, but
+I'd like to end with kind of your
+opinion and view on some of the
+forward-looking future landscape. So,
+when we look five years from now, how
+will we know whether SFDR 2.0 has worked
+or been successful, what do you expect
+to see? Would you expect to see changes
+in product design, data usage, investor
+behavior, or capital allocation as a
+success?
+>> Yes. So we we recently had our advisory
+panel where we have 15 of our largest
+clients or 15 clients, not the largest
+one but just a good variety of regional
+and type of of institutions and one one
+was just sticking to my head which was
+saying when we were discussing how many
+adverse impact indicators do we need and
+they were saying well basically we need
+five because five is something I can
+explain to my retail clients and they
+will remember maybe it's even three just
+there but I think that's the test of
+success for SFTR is that I can actually
+explain it to my neighbor, my father,
+the man on the street. It's easy. It's
+understandable. It sticks. And article 8
+n just the names don't really lend
+themselves to such a conversation.
+People don't understand what it means.
+So I think recognizability,
+ease of access, comparability, let allow
+me to compare different products and I
+understand what it means. and SFDR could
+now go many directions but I think this
+is really the litmus test in the end is
+can I can I explain it to someone who is
+not working in finance who's not exposed
+to these topics who doesn't understand
+all these abbreviations but wants to
+make a change wants to invest
+sustainably and maybe without you know
+losing out in the long term but clearly
+having a robust return and a sustainable
+return I think that mix is anyway what
+we're seeing now the whole conversation
+with all This backtracking by policy
+makers is now fostering centering so
+much on what is actually financially
+material. How can we explain this in a
+simple way to our board that
+sustainability counts, that
+sustainability matters, that it makes a
+difference to your baseline performance
+and that this is where we put a lot of
+time in our studies and research now at
+MCI as well as to explain that
+sustainability is a factor in financial
+performance and should be understood as
+such.
+Your last statement is an important one
+to repeat that sustainability is a
+factor in financial performance and
+should be considered as such. So Simone,
+thank you so much for joining us today
+and for sharing your thoughtful insights
+on SFDR 2.0. you helped clarify what
+this redesign is really trying to
+accomplish for moving beyond article 8
+and nine framework toward clear more
+credible product categories. I think a
+key takeaway is that while the framework
+may be evolving and expectations around
+transparency and comparability and
+robustness are really increasing. So,
+we'll certainly be keeping a close eye
+on how this develops and I look forward
+to continuing the conversation with you
+as FTR 2.0 moves closer to
+implementation.
+>> Thank you, Nicole. It has been a
+pleasure.
+>> Thank you so much.
+[music]

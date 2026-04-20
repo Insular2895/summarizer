@@ -1,0 +1,3458 @@
+[Music]
+welcome to Capital decanted in this show
+we say goodbye to tired Market takes and
+superficial sound bites because here
+instead of skimming the surface we Dive
+Into the Heart of capital allocation
+striking the perfect balance and
+exposing the subtleties that reveal the
+Topic's true Essence prepare to have
+your perspectives challenged as we open
+up the issues that resonate with the
+hearts and minds of those shaping
+Capital allocation we've Enlisted the
+wisdom of visionary leaders in the
+industry and just like a meticulously
+crafted wine will allow their insights
+to breathe unfurling their hidden depths
+and Transforming Our
+[Music]
+understanding this is season 1 episode
+13 of capital decanted blockchain
+Computing I'm John Bowman and I'm
+Christy townend and we are your hosts
+first a huge thank you to our season 1
+title sponsor Franklin Templeton
+Alternatives with over 40 years of alt
+investing and 260 billion of assets
+under management they've assembled and
+offer specialist investment managers
+across six different asset classes
+private debt hedge funds real estate
+infrastructure private equity and
+venture capital and of course all of
+them operate with the client first
+mentality that has always defined
+Franklin Templeton to prioritize
+investment outcomes now listeners if
+you've been listening for several
+episodes you'll know that we've been
+cycling through many of those
+alternative managers across those six
+different asset classes and rightfully
+so we have Roger B who is Executive Vice
+President and head of Franklin Templeton
+digital assets with us today at halftime
+so make sure you stick with us for that
+interesting conversation so thanks again
+Franklin Templeton Alternatives Christie
+I'm pumped about this one really excited
+the research I think just unlocked and
+unveiled a lot for me a lot of aha
+moments and I'm really looking forward
+to learning along with you and the
+listeners so I want to start with a
+quote that all of you will recognize and
+that is this time it's different and
+that was famously uttered by Sir John
+Templeton but it's often represented as
+the most dangerous four words in
+investing but I want to suggest to you
+with all due respect to those of you
+that position it that way that in even
+more dangerous version is a five-word
+adaptation that says something along the
+lines of
+this time is never different because
+frankly sometimes it is there are
+moments in history where everything
+changes social economic financial and
+technological foundations quake and the
+aftershocks are Monumental and to think
+otherwise that we live in some
+incremental modestly upward sloping
+autopilot civilization well that's the
+thinking of someone who hasn't studied
+history or invested very long for that
+matter and certainly one that is never
+going to capture Innovative
+breakthroughs or revolutions the role of
+the investor as we all know is to try to
+identify when things are in fact going
+to be different particularly when the
+majority of investors disagree now I
+should be clear the large majority of
+the time and the reason people I think
+often exclaim it this way is that most
+of the time it is in fact not different
+and we don't want to be Chicken Little
+or chasing waterfalls pick your metaphor
+every time new tech products are
+launched but what we're trying to
+suggest is that too much dogma and
+clinging too much to nostalgia can
+sometimes cause career misses that are
+really hard to come back from so with
+that in mind today we want to challenge
+both the crypto Skeptics as well as the
+crypto Bros and gals to join a more
+important debate a more significant
+thought exercise so we are an equally
+opportunity offending show here
+everybody's going to be a bit challenged
+here we're not taking sides we're trying
+to raise the Gaze of everyone involved
+Capital decanted exists as we often say
+to preach balance and object it and we
+want to you might say rewire and
+disaggregate our thinking and then
+rebuild it back with a broader
+conversation and here's what we mean by
+that so often the magic beans and the
+rat poison crowd if you've heard of that
+are reacting to one specific application
+of blockchain computing and that of
+course is digital currencies crypto and
+by the way I think the large majority of
+us will condemn garbage meme coins and
+absurd nfts but even if you want to hate
+on bitcoin and some of you do I still
+think you're missing the point and
+taking a reductionist view of the
+subject that we're going to try to
+tackle today in fact I tend to be with
+Jenny Johnson who is the CEO of Franklin
+Templeton when she states that Bitcoin
+is the biggest distraction from the true
+story The transformational Power of
+blockchains themselves frankly I'll
+speak for myself here the whole digital
+gold libertarian unbanked crypto
+opportunity to me is a sideshow that
+gets in the way of the real question
+it's not that there's not hope there I
+just think it's a small subset of the
+real story which is is blockchain
+technology the next Computing Paradigm
+to me conflating the use cases or not of
+cryptocurrencies today with the efficacy
+of blockchain networks overall would be
+like back in 1999 disavowing the future
+potential of the internet because you
+didn't like eoys so that particular use
+case may or may not pan out and of
+course etoys did not but its particular
+failure said nothing on the usefulness
+of an infrastructure that now of course
+allows for electronic Commerce
+communication connectivity it's changed
+our lives completely so don't get caught
+up in one particular application and
+make a decision on the future based upon
+that so today we're neither arguing that
+blockchain Computing is in fact that
+next Paradigm or not we're certainly not
+Authorities on the subject I think
+Christy is going to say much the same
+today but we do want to better equip us
+to to assess particularly unemotionally
+the conditions and environments that
+typically exist in these type of
+technological cycles and I hope that
+will help us develop a conviction one
+way or another on the subject we want to
+get away from the intellectually lazy
+and stubborn arguments over this coin or
+that coin as I said this is much less
+about trading these digital financial
+securities and much more about a new
+Computing movement is what we really
+want to debate so here's what we're
+going to do today's episode I'm going to
+walk through some of the theories around
+technological super cycles and there are
+traditional elements and phases and I'm
+going to use the help of some brilliant
+economists and thought leaders that have
+spent a lot of time thinking about this
+and along the way what I'm going to try
+to do is weave in examples and anecdotes
+from previous Tech revolutions that some
+of you might be familiar with to help us
+better understand and bring to life how
+this typically plays out I'm also going
+to include some of the conventional
+wisdom around why blockchain Computing
+maybe huge emphasis on might or may show
+signs and hints of being that next one
+then Christie is going to warn us about
+hype and fomo which is a critical
+element of being a good investor she'll
+spend some time identifying thematic
+catalysts that might alter or should
+alter your investment thesis and of
+course the unique nature that we need to
+keep in mind on VC or early stage
+investing and finally we're going to
+invite into Studio a massive source for
+this episode one of my very favorite
+tech experts and probably I think
+generally considered today today's
+foremost authority on blockchains Chris
+Dixon partner and founder of the crypto
+practice at a16z or most of you might
+know as inre and horrorwitz Chris by the
+way released a book on Tech revolutions
+called read write own building the next
+era of the internet which I read in
+preparation and I would highly commend
+really challenging and exciting read so
+we're going to do something a little bit
+different a little programming note
+first of all is that as we begun
+preparing ing for this it was clear that
+we wanted to Deep dive into these
+technological super cycles and then
+identify and wrestle with whether some
+of what blockchain Computing offers
+might be a sign that that could be the
+next one and in order to do that as we
+thought about who we could pair with
+Chris it became apparent that we just
+wanted to dive much deeper with Chris
+Dixon so unlike our traditional pattern
+of interviewing two guests we are just
+interviewing Chris today so I will be
+doing that myself and then we'll be
+bringing Chris back in for the last
+setep So speaking of my co-host and
+partner in crime Christie before we get
+started Bitcoin blockchain and Bubbles
+oh my what is your starting point on
+this whole space as an investor and
+frankly it's future promise as an
+investor before we dive a bit deeper
+here this one's always been really hard
+for me because to your point earlier
+just so much of the passionate discourse
+and even memes around this discussions
+in this space focus more on the digital
+currency side versus on the blockchain
+side so I think that that always gets a
+little bit wrapped up and there are some
+people who are very passionate as well
+so it is very hard to have any
+thoughtful discussion of push back with
+some people but I do appreciate that on
+the institutional side investors are
+much more likely to have these
+conversations particularly as the price
+of Bitcoin increases hilariously in my
+opinion so on bitcoin itself obviously
+people who want to go out there and
+learn how the market works it helps to
+have a small position in it to play
+around with it honestly it helps for
+institions in some instances to hedge
+their digital security risk if you will
+and ransomware risk so I've heard of
+organizations doing it for that reason
+but I have yet to hear about a fullscale
+institutional jump in on this side and
+with good reason because I think with
+Bitcoin and even with blockchain to an
+extent if you have processes that are
+centralized for the most part whether
+that be a centralized data Clearing
+House or a centralized currency through
+the United States of America those
+things are really hard to dislodge from
+our Society particularly when you get
+the government involved in stuff so I'm
+always a little hesitant to as somebody
+who loves technology to just be like
+this is going to change the world
+because while the libertarian side of me
+loves the idea of decentralization the
+pragmatic side of me is is it really
+better than a more centralized system
+and in some instances I could say yes
+but in a lot I just the idea of it is
+exciting but when you have for example a
+blockchain that takes up the same amount
+of energy as a small country you run a
+fou of your ESG practices or your energy
+practices and then there really is this
+throttling to the growth prospects just
+through these kind of random points in
+the chain that you wouldn't necessarily
+expect so it's exciting on one hand some
+random person just threw a paper out
+there and created a currency and now
+people trade in it that's wild and the
+technology itself is interesting as well
+just in the proofing and ability to be
+decentralized but the execution of it I
+still think is going to be really hard
+in a world with 7 billion people and a
+$156 trillion do global economy so long
+with way of saying I love the idea of
+the technology but I'm really hesitant
+to say that it's going to be truly
+transformative in a very quick period of
+time well you said a lot of important
+things there first of all we need to be
+careful I said it a moment ago too but
+the shiny new object chasing as we'll
+talk about at length most of these
+things become Pretenders most shiny new
+objects are not the next Computing
+Paradigm by definition so we got to be
+very careful you also said is
+decentralized better than centralized I
+don't think we know yet I think there's
+some advantages and disadvantages and
+speaking of disadvantages you
+highlighted one that at least
+historically despite recent transitions
+have been huge drains on energy speed is
+also one that you give up in a
+blockchain Computing Network so we'll
+talk much more about advantages and
+disadvantages all of these paradigms
+come with them initial tradeoffs and I
+think you're right to be pointing that
+out that is what we're here to assess
+today is exactly that so let's jump in
+as I said I want to zoom out a bit
+before we Zoom back in a little bit of a
+round round trip up and back and talk a
+little bit about technological Cycles
+because I think it's important context
+for a debate on is this the next one so
+first of all super Cycles generally have
+a long history in the halls of Academia
+and economic and social theory I would
+guess most of you learned something in
+undergrad or graduate school perhaps the
+most famous super cycle theories you
+might recognize way back in the recesses
+of your brain are the technically
+inspired Elliot wave or the technologic
+grounded kadav wave and again we're
+going to talk a little bit more about
+condre adav in a moment he was a Soviet
+Economist who by the way christe I saw
+was executed for his evangelism of the
+topic so that's not a good omen for this
+episode so we should watch our backs
+here but despite the general dismissal
+of these thinkers and longwave Theory
+generally no one can deny with the
+benefit of history that when the gods if
+you will periodically align geop
+political Tailwinds and technological
+breakthroughs extended periods of
+economic fatality wealth creation and
+capital market returns can occur as I
+said earlier things are different
+sometimes it's rare but they do change
+so think about Han Dynasty paper the
+British Navy the steam engine
+electrification and more recently a
+subject we'll talk a lot about today the
+internet are a few examples of these
+types of changes these transitions
+shouldn't be likened to Market timing
+opportunities that demand asset
+allocation tweaks around the edges but
+these are tectonic shifts of the global
+economic crust that alter history and
+reset what we consider to be normaly so
+Joseph shumpeter an Austrian Economist
+further developed kriat of's Theory to
+apply them to business cycles and I
+bring him up because we will all be
+familiar with the phrase that he coined
+creative destruction one that we talk
+about all the time it's become
+synonymous with Progressive
+breakthroughs that replace and make
+obsolete old Innovations so we'll be
+referring back to shumer again
+momentarily because he has inspired a
+few of our go-to economists that we'll
+mention today in the last half century
+as the global economy has deepened its
+Reliance think post-world war on its
+addiction to Silicon as the
+technological cycle has really sped up
+and technological platforms have become
+the most powerful of these disruptive
+Cycles they've reshaped not just
+economic booms and Buffs but the very
+rhythm in which businesses and consumers
+conduct their lives so think of the
+personal computer in the late 70s and '
+80s the worldwide web in the 90s the
+smartphone in the 2000s these are
+largely agreed to be the last three
+revolutionary platform changes so before
+we turn to attempting to identify that
+next cycle is it blockchain Computing is
+that the next cycle we first need to ask
+what history can teach us about the
+typical shapes and behavior and
+conditions of these past Cycles so we
+can help identify one when we see it
+coming and as I've hinted a few times I
+want to consult with a few modern
+oracles and authorities that are worth
+paying attention to on this subject that
+might give us a mental map of how these
+Paradigm shifts usually play out so the
+first one and probably the only of the
+few I'll mention that I would guess the
+majority of you won't recognize it was
+the one I didn't recognize and I'm going
+to spend most of my time here because I
+think not only has she influenced some
+of the others but because we are
+familiar with her I think it's worth
+spending a little bit deeper evaluation
+of her work so carat Perez is a British
+Venezuelan scholar who researches the
+concept of what she calls technoeconomic
+Paradigm shifts big mouthful which is in
+her words the theory of great surges and
+as you might expect she was heavily
+influenced by both sher's business
+cycles and kriat of's longrun economic
+waves Perez has spent her career
+studying all the major technolog IC
+Innovation since the Industrial
+Revolution and their interaction and
+influence on Capital markets her sumal
+work if you're interested was published
+in 2003 so just again thinking through
+your mark of History that's right after
+the doc bust and it was called
+technological revolutions and financial
+capital and I've listed that in the show
+notes and by the way she apparently
+despite her now being over 80 years old
+I think is working on a sequel called
+the social shaping of technological
+revolutions which also sounds very
+interesting so anyway the centerpiece of
+her original work that I want to dive
+deep on is a curve it's a really helpful
+visual that she calls the perz
+technological surge cycle and it has
+four phases this cycle eruption frenzy
+Synergy and maturity so according to
+Perez the first two phases eruption and
+frenzy are defined by fervor as hype
+outpaces sensibility gobs of Venture
+Capital Money pour in and Retail
+narratives take on grandiose conclusions
+we've all seen that movie before and you
+can hear the rhyme of sher's work here
+creative destruction catalyzes these
+Savage and nasty battles between old and
+new paradigms and think of the scorn and
+the ridicule and the hater mentality
+we're experiencing now in crypto and
+blockchain that chrisy just alluded to
+so that is not abnormal and we're also
+going to weave in some of these dotcom
+bubble histories and lessons as we
+progress by the way through this Perez
+cycle and I think perhaps the most
+iconic moment in the frenzy phase as she
+calls it of web 1.0 was the January 2000
+Super Bowl where companies dominated the
+multi-million dollar advertising for the
+big game now if you're not old enough to
+remember this or if you haven't seen
+these or if it's just been a while
+frankly for entertainment you need to
+Google some of these spots from what is
+now dubb the do Bowl as they range from
+the absolutely hilarious to the
+completely ridiculous so just a few that
+might just tickle your memory here there
+was the electronic Data Systems or or
+EDS Cowboy cat herters there was the
+when I grow up I want to be monster.com
+ad the famous dancing chimpanzee at
+erade and most notoriously the sock
+puppet campaign from the company that
+perhaps most infamously embodies the
+whole era pets.com this stuff is so good
+it belongs in a museum so history by the
+way you might be thinking does repeat
+itself sometimes it's more than Rhymes
+it actually repeats itself especially
+with the so-called Super Bowl test which
+is becoming I think a sign of the top in
+many ways think about the 2022 Super
+Bowl which just like the do Bowl has now
+been dubbed the crypto Bowl for the
+exact same reason go back and Google
+these the terribly cheesy future favors
+the brave crypto.com ad with Matt Damon
+that just has not aged very well at all
+there was the bouncing QR Code by
+coinbase which by the way Christy I
+thought was very clever as an ' 80s guy
+I thought that one was really good but
+then of course with the benefit of
+hindsight the most cringeworthy of them
+all Larry Davids the next big thing for
+none other than FTX and we know the
+story there so just like for the dotc
+bubble crypto fervor wasn't just a
+episodic spending spree at the Super
+Bowl there was all kinds of things going
+on in that same period a couple years
+ago think about the likes of Steph Curry
+and Justin Bieber joining the board 8
+Yacht Club whose nfts reached $1 to2
+million each and not to be outdone by
+board Apes a few crypto punks surpass 10
+million of value on sales of these nfts
+and sticking with the nft theme most
+famously the be digital painting sold
+for an astonishing $69 million and all
+the while these are the nft examples but
+we had several multi-billion dollar
+market caps for meme coins that have no
+real purpose things like Dogecoin and
+this is what I think fans the flame of
+some of the nonsense and the anger that
+is understandable but I think the point
+here the reason I'm raising all this is
+that none of this is surprising to the
+cycle this is the pattern Perez claims
+is expected all this frenzy leads to the
+inevitable and we've quoted this before
+but F Scott Fitzgerald the famous author
+wrote in his Memoirs quote the
+restlessness reached hysteria that leads
+as Perez says to the popping of the
+bubble the proceeding collapse is
+certainly violent and painful if you've
+been around more than a minute it
+results in losses for all stakeholders
+but it's also a necessary turning point
+for the latter two stages of Perez's
+curve to be enabled most importantly at
+this point Pretenders and nefarious
+actors began to be exposed during the
+crash valuations reset aggressively and
+the fundraising spets really shut down
+and get much more Discerning so the big
+and somewhat counterintuitive
+contribution here from Perez that I
+really want to underscore is that smack
+dab in the middle of her surge cycle is
+effectively that quote as she says
+nothing important happens without a
+crash end quote so this painful Turning
+Point postc crash is what boomerangs you
+might say the stain power of a new
+platform shift without a crash you're
+probably looking at a pretender that
+lacks a true disruptive punch so let's
+go back to the with this crash lesson in
+mind let's take a look at the dot crash
+with Perez's lens on January 14th 2000
+the Dow Jones which peaked just under
+12,000 and a level it would not return
+to for more than six years Tech heavy
+NASDAQ even worse peaked on March 10th a
+couple months later at a little over
+5,000 and I'm going to say this slowly
+because I think it shocks a lot of
+people a level it would not reach again
+until March 2015 that's 15 years later
+before it recovered to the March 2000
+levels just let that sink in from that
+March 2000 Peak all the way down to the
+trough it reached on October 9th the
+NASDAQ would lose nearly 80% 80% of its
+value put that into a little bit more
+perspective One Source I looked at
+claimed that $ 1.7 trillion US dollar of
+losses were incurred during these seven
+months by investors in ill fed.com that
+had negative cash flows and by the way
+while we're confessing at least while I
+start confessing one of the more
+notorious ones web van still chastens
+and humbles me Christie to this day I
+had all of our PMS in this IPO as a
+young zealous analyst and for a few
+months I must say I felt very smart the
+market kept skyrocketed to8 billion
+after going public only to go defunct a
+little over a year later so I still got
+nightmares about that one but all of us
+have those stories as I said it does
+make you a better investor because it's
+still haunt you and orbits in the back
+of your mind when you look at these hype
+Cycles so compare that to today those do
+I think very visceral drops and crashes
+and wealth destruction compare that to
+today Bitcoin and the larger crypto
+indices have famously had several
+violent Cycles peaking in 2014 2018
+2022 and then each then suffering 80% or
+more Corrections these currencies wild
+swings I want to be clear again where we
+started this episode certainly don't
+reflect the Enterprise values of much of
+the underlying infrastructure but given
+they are symbolic and Al so much of the
+founders wealth is tied up foolishly or
+not on the token side it has begun to
+cleanse the system of the fraud and the
+husters and a lot of the get-rich quick
+schemes that always are part of the
+early stages as Perez says of these
+Cycles so think of one coin and Genesis
+Global and Celsius and three arrows
+terraform binance and of course we've
+already mentioned it the granddaddy of
+them all FTX just a few examples this is
+high octane creative destruction say the
+least and I would venture to say there's
+probably more to come it's not
+completely cleansed out but as Perez
+argues these speculative Manas don't
+just characterize Tech revolutions they
+often enable them so think about it all
+the money that poured into tech
+companies and the first half decade of
+the internet era built out the
+infrastructure and economic Foundation
+that would allow the internet to mature
+in a tangible physical way so in the
+late '90s more specifically telecom
+companies raised over $2 trillion in cap
+Capital to lay over 80 million miles of
+fiber optic cable it's just astounding
+now after the bubble burst there was
+severe overcapacity in bandwidth for
+internet usage I remember they were
+basically shuttering writing off
+mothballing all of this stuff it would
+never be used now the Silver Lining
+however is that the fact that the tracks
+had already been laid enabled the next
+wave of companies over that next decade
+in the 2000s to deliver new internet
+services and business models very
+cost-effectively by 2004 the cost of
+bandwidth had fallen more than 90%
+despite internet usage doubling every
+few years so that was because there was
+plenty of cheap capacity that encouraged
+developers and Builders and accelerated
+Mass adoption so in the greatest of
+ironies oddly Amazon and Google probably
+don't exist without Worldcom and Global
+Crossing or at least it would have taken
+them much much longer to realize the
+broad adoption that we know Amazon and
+Google have and decades earlier this
+same lesson applies to to other networks
+that were built and they thrived off the
+backs of speculative fervor the
+railroads the electric grid the highway
+system they were all overbuilt they were
+all overfunded only to later produce
+massive improvements in human
+civilization's quality of living Chris
+Dixon today's guest is instructive here
+from his book read WR known he says
+quote blockchains need big Investments
+too they require tooling and
+infrastructure and the networks and
+applications that are built on top of
+them require Capital to fuel growth big
+Tech corporate networks spent tens of
+billions of dollars to scale to billions
+of users blockchain networks that intend
+to compete with them will require
+similar sums and the crescendo of the
+quote a little exuberance whether
+rational or irrational goes a long way
+end quote and I think Dixon is hitting
+on Perez's whole point she argues that
+the crash is indispensable it must
+happen if disruption and wholesale
+innovation has any chance to endure it
+enables it's a pre requisite you might
+say for her third and fourth phases
+which she calls Synergy and ultimately
+maturity and these phases are
+characterized by creative construction
+notice the play on sher's words there
+this is where sustainable use cases
+crystallize and revenue and profit
+models emerge the scorn that we talked
+about already a few times also begins to
+mutate a bit into large scale acceptance
+as the excess is largely washed out and
+more productive Nar narratives around
+the new paradigm become common place so
+Christie just mentioned institutional
+adoption is early absolutely true but
+are there signs that blockchain and
+crypto have crossed that Rubicon and
+started to become a little bit more
+acceptable maybe you might look at the
+sec's approval of the Bitcoin spot ETF
+couple weeks ago at the time of this
+recording the state of Wisconsin one of
+the most reputable and admired public
+pensions in the United States invested
+100 million in crypto
+new regulatory regimes in Singapore Hong
+Kong Japan and the UK the EU have all
+been stood up so who knows but certainly
+these are promising signs at least for
+those that are considering this next
+Paradigm is in fact blockchain so that's
+Perez's work and by the way I'm really
+excited about her new book to continue
+that discussion so that's the big one I
+spent the most time there second just
+quickly the Gartner hype cycle developed
+by the research and advisory firm many
+of course you know Gartner they've
+created a very similar graphical
+representation of the maturity adoption
+and social application of emerging
+Technologies they use five phases in
+contrast to Perez's 4 and I'm not going
+to spend a lot of time here because it
+largely Echoes her work but I do like
+the clever naming conventions of Gartner
+that I think will reinforce our
+discussion so far so Gartner's five
+phases are the following first is
+technology trigger so this is a
+technological breakthrough captures the
+interest of the media and the public
+with stories and proofs of concept but
+very little commercial viability okay
+this is the eruption in pere's language
+then there's the peak of inflated
+expectation early publicity produces a
+few success stories but often
+accompanied by scores of failures so
+this is getting to the bubble of
+expectations then of course that bubble
+bursts and Gartner's third phase is the
+trough of disillusionment I love that
+cynicism and anger rise as experiments
+and implantation fail to deliver
+producers of Technology shake out or
+fail so this is the burst this is the
+prick of the bubble fourth following the
+bubble popping the slope of
+Enlightenment instances of how the
+technology can actually benefit the
+Enterprise start to emerge and become
+more widely understood and then Fifth
+and finally the plateau of productivity
+mainstream adoption starts to take off
+and the criteria for assessing provider
+viability much more defined and
+measurable around real things like
+revenue and profit so that all seems to
+make sense at the core and that's
+Gartner very helpful certainly drafting
+off of much of Perez's work so chrisy I
+want to pause here and just get to you
+before I move to our last influential
+Sage that I'm going to touch on in this
+opening introduction as you think about
+those curves and you can use either
+Perez or Gartner's language or your own
+language where do you think you would
+put blockchain Computing on these graphs
+if you had to plot it's climb up to the
+summit where would it be do you think
+using their rubric I think this one's
+hard because blockchain itself divorced
+from the broader cryptocurrency story
+doesn't necessarily benefit the masses
+in the way that say other technological
+Cycles have say for example the internet
+or whatever else I don't think that
+people have seen quite the application
+side of what it can do for them as a
+everyday human if you will so it's hard
+from that perspective I do think that
+because it is tied to cryptocurrency in
+so many instances I think we've
+definitely hit the trough of
+disillusionment with possibly some green
+shoots coming out of this to the SL of
+Enlightenment as corporations and
+industries are starting to think of B2B
+ways to incorporate blockchains into
+their workflow or into their processes
+amongst each other whether that be for
+example moving to a quicker settlement
+or potentially using it for settlement
+of Securities or whatever else there
+have been quite a few broader industry
+specific potential uses for the
+technology itself but within that again
+I think it's one of those technologies
+that just really hard because there
+isn't necessarily that story for the
+masses so yeah I would say definitely
+we've hit the trough of disillusionment
+especially when you add the crypto part
+to it and then possibly with some slopes
+of Enlightenment but I will also say on
+the cryptocurrency side it's very
+difficult because now you have
+governments who are like oh we're going
+to make our own cryptocurrency which I
+think is so the antithesis of what
+crypto was always meant to be so again I
+think it's hard to divorce those two
+stories from each other but I do still
+think that there's probably application
+within businesses and spe specific
+industry sections what about you I'd
+agree with that again rightly or wrongly
+I think Financial coins digital
+cryptocurrency is ahead in this cycle
+for all the reasons you suggested I
+don't think a lot of people understand
+yet the application of blockchain
+computing the use cases I think a lot of
+that as I said is because people can't
+get past the poster child of Bitcoin and
+they stop there and they make a
+determination they have a view and then
+they stop looking I think we're going to
+try to unveil much more of the much
+larger story Beyond cryptocurrencies
+today which is the whole point of this
+episode but I think you're right I do
+think these three vicious and ugly
+Cycles in cryptocurrency have perhaps
+turned a corner and we just have to see
+where it ends up I'm really hopeful that
+the broader Computing story catches up
+because as I said I think that's the
+real headline here so we shall see but
+the last of the Visionary sources on
+Cycles I want to touch on so we've
+talked a little bit about how Cycles
+work the stages that these paradigms go
+through I want to go to one more source
+which perhaps will help us determine how
+to spot the next cycle and maybe more
+precisely where they will come from so
+Clayton Christensen I'm sure you've all
+heard of this gentleman was labeled the
+most influential management thinker of
+our time by The Economist I didn't know
+this chrisy but actually he grew up
+right here in Salt Lake City I didn't
+realize that but he became a
+distinguished professor and most of us
+know him as an author out of Harvard
+Business School and of course his most
+famous work was the innovators dilemma
+brilliant classic book which introduced
+the idea of disruptive innovation which
+by the way that phrase is now ubiquitous
+in Silicon Valley in boardrooms and
+graduate programs around the world but
+the book argues that the organizational
+strategy of firms operating in
+established mature markets is not and
+might I even say never an effective
+environment or petri dish for new and
+disruptive Technologies and why is that
+well Christensen argued that it isn't
+because Executives of monopolies or
+category Killers make bad decisions or
+they've got their head in the sand but
+it's actually because they make good
+decisions the same decisions that they
+made in order to make their companies
+successful so why is that what do I mean
+by that well let's think about this
+first disruptive products whenever they
+come are often simpler and cheaper and
+therefore they generally promise the
+supporting creative organization lower
+margins and profits at least for some
+period of time second disruptive
+Technologies similarly are first
+commercialized in emerging or
+insignificant markets around the edges
+it's the first movers and therefore
+they're really not worth the investment
+or attention that total addressable
+Market is Tiny at first and third
+customers of their own products their
+own customers of their incumbent
+products either don't want or they don't
+know they want a substitute so they're
+usually quite content so in some these
+leaders find themselves simply acting
+rationally and continuing down the path
+they've been on a disruptive technology
+is initially embraced by the least
+profitable customers in a market so why
+would those Executives Chase it it's
+just psychologically rational so in this
+vein I'll just confess a little bit
+maybe perhaps on behalf of all of us
+it's easy in this vein to caricature
+Blockbuster or Barnes and Noble or pick
+your disrupted disintermediated old
+bricks and mortar model that the bubble
+blew up but honestly those leaders were
+simply acting rationally there was
+bluntly no responsible way for
+Blockbuster to compete with Netflix from
+BS & Noble to compete with Amazon they
+had to ride it out their business models
+could not transition it couldn't have
+worked and I think this is a little bit
+counterintuitive how most of us think
+about the past and those that have been
+competed out but this is what
+Christensen is really identifying The
+innovator's Dilemma is that in every
+company there is a disincentive to go
+after new markets and paradoxically the
+rationale and the sound leader of the
+successful company will Doom themselves
+in the long run because when they act
+rationally ultimately they will not find
+that new market so again our guest today
+Dixon puts it this way I love this quote
+the reason incumbents with is that the
+next big thing often starts out looking
+like a toy the first telephone in the
+1870s he goes on could only carry voice
+short distances so Western Union
+famously passed on acquiring the phone
+because it simply couldn't see how the
+device could possibly be useful to its
+primary customers of businesses and
+railroads now of course they missed how
+rapidly telephones and the underlying
+infrastructure would improve but there
+it is Century later the same thing
+happened with the computer Evolution
+that we're spending a lot of time on
+today IBM for example laughed off many
+computer manufacturers like digital
+equipment and data General because IBM
+quite enjoyed their super computer
+dominance why would they cannibalize
+their own business in turn deck and data
+General ignored PCS in the 1970s
+allowing Dell and Compact and Microsoft
+to control the PC ecosystem and on Q
+what did those three that same Trio
+completely Miss in the next cycle the
+smartphone Revolution so it's not that
+they don't learn they usually just can't
+pivot that foundationally the business
+model is too rooted in their existing
+product set technology always gets
+better at a faster rate than users needs
+increase and the innovator's Dilemma it
+atrophies the creativity and the courage
+of the incoming so therefore we
+shouldn't be surprised that most still
+view crypto and tokens as novelty and as
+you might say sophomoric that's the
+pattern at these early stages they look
+like toys and frankly I think as we've
+already hinted a lot of this still is
+novelty and sophomore we're working
+through that system as Perez's cycle
+suggests there's a British physicist
+that has a great quote here his name is
+Freeman Dyson and he says this quote
+when the Great Innovation appears it
+will almost certainly be in a muddled
+incomplete and confusing form to the
+discoverer himself it will only be half
+understood to everybody else it will be
+a mystery for any speculation which does
+not at first glance look crazy there is
+no hope end quote sounds similar to
+Dixon's point on the next big thing
+always starting out looking like a toy
+but here's the thing again we're here to
+both challenge you to think a bit bigger
+but we're also here to caution you that
+we have to be careful with this just
+like in most of the time it isn't
+different as we started the whole
+episode with in this case some toys do
+stay toys in fact most toys in this
+context never get very far in their
+attempt to scale Perez's surge or
+Gartner's hype cycle so how do you
+distinguish the Duds from the truly
+disruptive Dixon goes on to argue and
+I'm excited to ask him about this in our
+conversation to elaborate a bit more he
+says that technological platform break
+breakthroughs are just not inherently
+disruptive that's just the table Stakes
+the product has to be disruptive has to
+be counterposed however what really
+distinguishes them is that they must
+benefit as well from riding exponential
+forces that cause them to improve at
+surprising rates again going back to the
+telephone and the roads and the internet
+it shocked everybody how quickly this
+caught on exponential growth Dixon
+States comes from stronger forces that
+create compounding effects and platform
+app feedback loops for really the new
+paradigm to come you must have this
+perfect storm of counterposition product
+or service again that's the disruptive
+part coupled with a generational
+coalesence of Technical and social
+Innovation all of this needs to come
+together so timing here and frankly
+christe you might even say a bit of luck
+is also a very big deal history's
+littered with brilliant inventors and
+Founders and even great products that
+were disruptive in their inherent nature
+but they were simply before their time
+think of Fairchild semiconductor they
+invented the integrated circuit they had
+certainly a ride of success but it
+wasn't until Intel caught the PC wave a
+couple decades later that things really
+took off General magic I don't know if
+many of you are familiar with this but
+they created a touchscreen technology as
+early as the mid 90s by the way there's
+a fascinating documentary on General
+magic they licens this touchscreen
+technology to several other companies
+that launch failed products the world
+unfortunately would have to wait another
+decade before processing power and app
+developers could support a true
+touchscreen device that of course we
+know as the iPhone artificial
+intelligence of course the hottest thing
+uh since sliced bread uh has actually
+been around since the 40s predictive
+processing neural networks these are not
+new things but of course they remain
+largely nent into the last few years
+until Nvidia allowed us for sufficient
+commercial computing power to harness it
+in in corporate and Now consumer
+applications and may I say and maybe
+this is just my therapist talking that
+web van or lyos or even pets.com wasn't
+wrong because you could look at
+instacart and door Dash and chewy today
+they were just 20 years just slightly
+early as Mark andreon famously said
+there are no bad Innovations only early
+ones so that rubs my ego more than
+anything that I had it right I was just
+two decades too early with web van oh
+well I'm not sure that's right but there
+you go so let me try to bring this all
+together as I close and hand off to
+Christie the thread that runs through
+all of these Cycles particularly at
+their inflection points is first when
+the excess and overinvestment and hype
+pop it destroys wealth it causes a lot
+of pain we shouldn't mindlessly ignore
+that we shouldn't treat it as just
+academic There's real lives that are
+changed and lots of wealth destruction
+and perhaps finding more socially
+virtuous approaches to discovering new
+Computing par igms is a worthwhile
+debate and conversation but certainly
+beyond the scope of today's episode
+however that dark winter we've been
+describing is often followed by a
+glorious Dawn that unleashes a
+generation of opportunity a
+transformation that far outweighs the
+momentary Affliction of the crash in
+fact as we learned from Perez and
+Dixon's history it's a necessary and
+beneficial process that cleans out the
+system resets the cycle on a path of
+Economic and Enterprise formation so if
+you play that logic out and this is
+really important and maybe uncomfortable
+depending on where you find yourself on
+this subject maybe the most important
+thing I'm going to say that was an
+epiphany to me this logic as you take it
+to its extended place it exposes a lot
+of irony and I might even say cognitive
+dissonance in the common debate and
+fear-mongering because if the do crash
+with all of its spectacle and theater
+eventually portended the most important
+technological advancement of the century
+perhaps in the history of humankind what
+are we really saying when we ask if
+crypto is the next.com bubble and I'll
+pause for effect there oddly blockchain
+Bulls hear me out blockchain Bulls they
+should be saying I certainly hope it's
+the next.com bubble hopefully I will do
+this with a little bit more humility and
+wisdom and intellectual honesty and not
+be a cowboy and full of Hubers about it
+and at the same time the condescending
+Bears condescending Bears listen you
+know the get off lawn magic bean types
+condescending Bears they should be
+hoping this is not anything like the
+bubble because if it is they risk
+missing yet another super cycle of
+innovation so it's a bit of a reverse of
+roles we have this debate is this
+another doc bubble but I'd ask yourself
+what are you really asking based upon
+history so you need to come to your own
+conclusion this is me talking I don't
+know if this is the beginning of the
+next Computing platform shift these
+platforms have largely been on a 10 to
+15E cycle since the post World War time
+frame so mobile is about that age now or
+do if you think that this is the typical
+pattern You could argue that the next
+one is bound to come soon you could
+certainly come to the conclusion that
+we've exhausted this rapid computer age
+for now and even if we haven't you could
+argue that blockchain is not the one but
+you do need to be honest and do some
+deep research with an open mind at least
+to write it off completely now we're
+going to spend some time with Chris
+discussing some of the parent advantages
+blockchain networks offer and this was
+what christe was getting at I don't
+think these are widely understood they
+haven't caught on they haven't even
+created the I would say divisive debate
+that crypto has yet and I do think they
+objectively extend and solve for some of
+the weaknesses of the current
+proliferation of network architectures
+even if I'm not convinced it's the next
+Paradigm yet but just consider a few of
+the advantages of a blockchain network
+versus the network architecture most of
+us work on today they're more secure and
+at the same time more transparent part
+of the reason they're more secure is
+that the code itself the software itself
+makes and keeps the promises inherently
+rather than relying on a single leader
+or a corporate board Facebook Twitter to
+not change the rules of the network or
+the community it's tied up in the
+software nobody can change the Bitcoin
+code no matter how much they don't like
+it there's no leader there's no board
+third perhaps most exciting the value
+extraction between creators Founders and
+investors is much more Equitable versus
+the take rates now that offer very
+little to content creators so you create
+content on any of the social networks
+today you get nothing with the exception
+of YouTube Take rates very low the
+corporation takes all of that and
+blockchain allows for much more
+Equitable sharing and incentive of
+creators fourth the token infrastructure
+allows for incentive alignment not
+cryptocurrency but the token technology
+allows for especially early stage
+Builders and content developers and
+investors to be incentivized to have
+alignment and then Fifth and finally
+blockchains have what is called
+composability that's a name you hear a
+lot in these circles and what that means
+is that theoretically they can be
+interoperable versus the traditional
+walled Gardens that we see in most
+corporate networks today you're either
+on one network or another and you can't
+take assets from one to another one
+doesn't talk to another Etc so we'll
+just discuss what that means for use
+cases of how these advantages might
+manifest themselves Chris but I do think
+this is worth a lot more Discovery than
+most of us have given it credit for so
+from an investment standpoint you got to
+be really careful here I'm just going to
+end by echoing what chrisy said just as
+in the doc boom much of the stuff being
+created now is probably going to fail
+that's just how this stuff works the
+large majority will go away most of this
+stuff is eoys in new clothes and I've
+heard Chris talk about Chris Dixon that
+is talk about the 2008 test when you
+think about early stage technology
+investing I think this is a really cool
+exercise just imagine this with me if
+you had tried in 2008 to prognosticate
+the future killer app the day the iPhone
+dropped think about what you would have
+probably said I know it's hard to do
+given what we know now but you probably
+would have predicted more convenient
+mobile extensions of what we already did
+on our PC which would have been by the
+way revolutionary in itself don't get me
+wrong email on your phone text on your
+phone Facebook on your phone but no one
+if we're completely honest with
+ourselves would have imagined that you
+would have parlay the GPS capability
+into hailing taxis with Uber or lft or
+transform the embedded camera into a
+social sharing Enterprise with Tik Tok
+or SnapChat so in the same sense we
+should expect therefore that most of the
+groundbreaking uses of blockchain are
+also not even in our imagination yet all
+the more reason we need proper
+incentives for Builders and developers
+to create great stuff that ultimately
+will surprise us and change us and
+improve our lives so while I hesitate to
+give advice a wise approach given where
+we are in this cycle is probably to
+segment the market out into the various
+categories of applications and models
+and just choose a couple opportunities
+in each knowing that you're probably
+going to be wrong on most of them that's
+how early stage investing works you can
+decide the taxonomy for yourself but
+some of those categories might be smart
+contract platforms dii applications
+social networks intellectual property or
+creative outcomes gaming and yes one of
+them of course could be currencies and
+nfts but just remember that's just one
+it is not the only one and frankly it's
+perhaps a less interesting play than the
+larger opportunity here which is what we
+are encouraging you to think so I'm
+going to stop there Christie I'm excited
+to hear about some lessons you might
+have with all of that cycle mumbo jumbo
+and history in mind how should we think
+about this as investors well I was going
+to jokingly just start with the let's go
+to the Moon moonshot YOLO let's do it
+Fam I'm obviously joking and
+interestingly this one's a hard subject
+in particular because I'll start by
+saying I don't have a ton of context in
+terms of what other institutions are
+doing because while I know a lot of
+endowments in particular I wouldn't say
+a lot but a fair amount of Institutions
+out there are moving into this space and
+investing in the crypto itself or in
+some of the technology around it itself
+a lot of organizations still mostly are
+exposed through their Venture portfolios
+and so while people are still trying to
+feel out and understand the marketplace
+itself and how to underwrite it and how
+to think about it there is obviously the
+confusion of is it an asset is it a
+currency I think everyone has pretty
+much decided that it is in fact not a
+currency it can be used as one but it is
+more so a quote unquote store of value
+on the crypto side at least and then in
+terms of block blockchain since so much
+of it is B2B it's hard to necessarily do
+a direct investment of any kind and th I
+do get the sense that most people again
+are still invested in this wave through
+their Venture portfolio which I think is
+a good thing I think that that's a great
+way to get exposure I think it's a great
+way to mitigate having to figure out
+exactly where we are in the hype cycle
+because I think that a lot of times you
+can hear through experts who are
+investing in it at this time people like
+Chris who are actually in the day-to-day
+to have a better understanding of where
+we are possibly and that but with all of
+that said I love technology my dad is an
+entrepreneur I love reading about it my
+husband I think I've mentioned before as
+a director of AI applied machine
+learning for a healthcare firm so this
+is something that I absolutely love to
+talk about I love to think about but I
+also tend to be skeptical of hype as you
+guys probably have already assumed and
+to me the antidote to bad Investments or
+to fomo or to running into technology or
+some sort of technological quote unquote
+Innovation is not by looking at people's
+fun unless it informs whether or not you
+think we are in a bubble but to not look
+at what other people are doing
+necessarily but to really dig into new
+tech and understand the offering in that
+broader context much like I believe
+Chris is saying in many instances and to
+me I think one of the most important
+things you can ask yourself just at the
+onset is who's making money off of this
+who are the players who are the people
+and how do they make money because I
+think the economist in me or the
+undergrad Economist in me excuse me is
+always going to wonder what the
+incentives are and how people are going
+to respond to those so I think on the
+crypto side of it that's always been
+difficult for me because it does feel as
+though the whole point of it is adoption
+and beyond that there's no real
+profitability there's no real product
+there's no real use case except for that
+the people who created the coin or the
+people who got in early on the coin can
+then go in and use the coin and that is
+how they're going to end up becoming
+wealthy and that kind of mimics other
+parts of our Marketplace so it's not
+necessarily a bad thing it's just on
+that side you really have to understand
+that the people who are pushing for it
+really do need adoption to be able to
+use it to be able to unload it beyond
+that in the blockchain since again you
+have the broader use case right now is
+being is for government coins which is a
+whole new level of dystopia in my mind
+but more excitingly for internal B2B
+industry specific use cases and so then
+I look at that and I think okay well
+it's really hard to make money off of
+that because I think the bulk of that is
+going to go to the organizations that
+get together and create these that's not
+to say that there isn't any money in it
+at all it's just as of right now I am
+creative enough to think of all of the
+ways that we could make money and I can
+think of a lot of the instances of okay
+yeah we can make legal contracts but how
+the heck are you going to sue somebody
+if something goes wrong it doesn't work
+within our current contract right now if
+somebody takes money out of your bank
+account you have legal recourse to go to
+Wells Fargo or your bank you have legal
+recourse to find that money in some
+instances if you wire it out of the
+country you're out of luck sometimes but
+if somebody actually steals that money
+does something there's somebody you can
+hold liable on the other end in crypto
+that sometimes doesn't happen and that's
+honestly one of the the biggest reasons
+I know some organizations that are
+trading in this stuff but I would never
+mention them publicly because it does
+open them up to security risk absolutely
+it does open them up to becoming targets
+of things because whether we like it or
+not there is a level still built into
+the system of people being concerned
+about the security from that standpoint
+so no organization is ever going to
+discuss about how they took out a $50
+million Bitcoin ETF position just by
+virtue of being worried that somebody on
+the other side of the world is going to
+take advantage of them somehow so going
+back to how I think about things in
+context I then Wonder
+how does it actually work for example
+the legal recourse for example the how
+do people actually access it is it a
+benefit to them or is it going to help
+my 95-year old Grammy as she sits in her
+house or is it built more towards
+younger people and if so could there be
+a more mass adoption does it make sense
+in the context of all of our offerings
+again I think on the crypto side it's
+really hard to displace the US dollar
+especially with a constrained currency
+for example that has a constrained cap
+on how much it can make I mean as we
+know when you constrain your currency
+you create all sorts of panics and
+monetary policy issues on that end so
+again I struggle with the whole there's
+going to be this Mass adoption on the
+Bitcoin side and then I also have no
+idea how I would possibly explain a
+blockchain to my grammy and how that
+would benefit her and you don't
+necessarily have to it's just these are
+the things that I think about so then as
+I go down the list how does the supply
+chain work what are the inputs who's
+making it what are the legal
+requirements what are the technological
+requirements can people understand those
+in a way that makes sense are they
+transparent on some level what are its
+limits and what is it displacing I think
+AI is a really interesting one for me on
+this point because people think that AI
+is going to be this Panacea of it's
+going to take everyone's job and we're
+all doomed but then if you look at it as
+of right now it's really good at
+strategy games like go and chess but if
+you ask it what's the best stock to pick
+tomorrow I mean that takes so many
+thousands of inputs that it's not
+necessarily an easily solvable strategy
+issue just by throwing data at it and
+you also need the data for example
+another huge issue to the mass adoption
+on that side so does it make sense our
+current practices too ingrained are we
+too ingrained in the way that we
+centralize a lot of our current
+processes are we too ingrained in the
+way that we use our current money does
+it really make people's lives better I
+think I keep coming back down to that
+one that's going to be a huge one that
+I'll go over in a moment but what are
+the regulatory headwinds what are some
+of the weird consequences good or bad
+that might come from the adoption of
+this technology and then I think I put
+all of that together and build what I
+would call a mosaic of knowledge to help
+inform those ision and within that I
+think one of the most powerful resources
+that I have built personally is just a
+highly diverse weird in some instances
+but awesome group of friends and peers
+across Industries people who have been
+operators people who are technical
+experts people who have other outside
+Investments and the ability to go to
+them and seek out dissent and Heretics
+and seek out people who are leaning into
+the technology people who are working on
+it and really figure out what are its
+limits what are its selling points
+because I think that honestly having the
+those secondary and tertiary views on
+things are really what help you build a
+better picture in your mind versus just
+being oh I can't explain it to my grammy
+so obviously no one's going to care
+about it if I had stopped at step two
+then I don't think I can explain social
+media to her at this point so I think
+that that's a bad way of looking at it
+but once you built a good understanding
+and you talk to people and you really
+understand where we're going it's the
+importance of also understanding
+Catalyst for change so what could
+possibly displace this in the future
+what kind of headlines would you look
+forward to see that this is being Mass
+adopted and to pay attention to those
+and to me I think the most important
+thing you could do here is you have to
+read original Source material you have
+to find original resources you have to
+find actual people who are in there and
+don't just read the headlines don't just
+read that some that so and so is putting
+$ hundred million dos don't just read
+that there's a new Bitcoin ETF because
+the headline doesn't matter it's the
+adoption it's the how people react to it
+it's the is this really a catalyst for
+adoption or is it a catalyst for just
+more financialization or is it just a
+cool point that was going to be a flash
+in the pan really think about who does
+the headline impact and then go read the
+story read the research read the
+Academia posts read the people who are
+in there read Chris's book go out there
+and talk to people I think will give you
+the best understanding versus just oh so
+and so is putting $50 million into this
+new technology so then I think the last
+point that I'll make is given that so
+much of this is in the VC space as John
+said as Chris said I believe in his book
+and as many others have said we're going
+to lose money in VC you're going to
+expect to lose money I mean you're going
+to expect to hit a huge home run but you
+expect to have a lot of losses and
+that's okay so I think it's very lazy
+when investors just look at the losses
+or look at the wash out if you will and
+say oh this is a bad investment or this
+is a bad thing to go into or obviously
+it's failed because I think that while
+we have seen FTX while we have seen a
+lot of bad investment in the space I do
+think that any Tech cycle is going to
+have that and it's supposed to so I just
+really hesitate to say that just because
+we're this weird point where maybe I
+don't necessarily see the application
+and maybe it's not going to broadly help
+the masses that doesn't mean that there
+isn't some pain point that this could
+solve for others and that could actually
+be adopted by the masses and one last
+thing that I will and then I'll end with
+this and this is just me and getting
+older and shaking my fist at Clouds I
+guess but with a lot of the
+technological advances that we're
+looking at right now I am very curious
+about how they do help the masses how
+they do help people more broadly because
+if you look at railroads I can see how
+that totally helped people the Advent of
+the telephone the Advent of the internet
+even the Advent of social media bringing
+people together I definitely understand
+the benefits of that but once you get
+into okay does crypto really help people
+I can't answer that yet same with
+blockchain and even with AI right now we
+are seeing some like very dystopian
+narratives coming out of that so when I
+look at the is it profitable will it
+really change things you do have to
+wonder if you're changing things for the
+better or if you're just changing things
+for the sake of changing them and moving
+profits more to corporations and making
+it that much more difficult for people
+to live so because I think to the extent
+that you do that you will run into more
+populism and more issues with people
+being really worried about how they feed
+their families and how they're going to
+make it in the world so just being
+thoughtful of the endgame for the
+technology itself does the exit make
+sense does it make sense within the
+tchack that we have built as a society
+does it hurt people and I'm not saying
+that necessarily you have to make
+investment decisions based off that but
+just be really honest and open with
+yourself when you're going into those
+that there could be some regulatory or
+other issues and headwinds that truly
+come in to ultimately make it a
+difficult investment so with that I'll
+turn it back over to you John those are
+such good points Christie I would remind
+us everything first looks like a toy
+Dixon's point so use cases and value are
+pretty elusive at this stage so none of
+us should feel embarrassed or cynical
+about not being clear yet what the
+benefit is I also would say the whole
+purpose of this episode is not to fall
+into the Trap of zooming in on bitcoin
+and what's the benefit there and
+therefore missing the much broader story
+of blockchain computing which to me is
+the much more interesting opportunity
+will Bitcoin ever be accepted at
+Starbucks in some sense who cares to me
+that's a minor part of this story
+avoiding the financialization story to
+use your word I think is such a good
+point because the whole point of
+blockchain computing if you look at the
+early stage stuff is to to avoid the
+corporate ownership of all this stuff
+that's the problem with today's networks
+is that Facebook and Twitter and all
+these networks they own it all and
+blockchain networks as you said earlier
+they decentralize it they put ownership
+and control and value extraction in the
+hands of those that are actually
+contributing not corporations so I think
+there's some advantages that could come
+from that and the last thing I'll say is
+I love your granny test but I'd also say
+when Granny goes to watch a movie she
+doesn't know nor care how that in ual
+property was developed whether it was a
+single person with the very value
+extracting Studio or whether it was more
+of a blockchain shared created
+intellectual property Universe if she's
+on Facebook she could not tell you well
+at least my granny couldn't if they were
+alive how the network works underneath
+of the user application and she frankly
+probably do care so if a social network
+ran on a blockchain and really
+incentivized content providers and still
+had the same interaction and products
+usability I'm not sure granny would care
+so I think you're absolutely right all
+this stuff needs to play out and the
+value and I think the warning about
+virtuous use is it not is it just a good
+investment but it's actually good for
+the world the last few have been
+smartphones you didn't mention but I'd
+also say that has been too so we'll see
+we'll see so we have exhausted that
+topic I think from chrisy I standpoint I
+think that's a perfect opening to invite
+Chris in to help us better understand
+these use cases he's going to have a lot
+better idea in helping us imagine where
+this might go but first as I promis I
+want to invite Roger bon in who is head
+of digital assets for Franklin Templeton
+so stick around for halftime and we'll
+be right back with Chris
+[Music]
+Dixon welcome back to Capital decanted
+and I am joined as promised now by Roger
+Bon Roger is Executive Vice President
+and head of Ft digital assets Franklin
+Templeton digital assets that is Roger
+welcome to Capital decanted well thanks
+for having me and listeners as I've
+mentioned we are taking a bit of a tour
+through all of the Ft Alternatives
+managers and just delighted to speak a
+little bit about digital assets on this
+episode Roger why don't for those of us
+that aren't as familiar with what you
+guys do in the space and the asset class
+tell us a little bit about the business
+and the types of strategies that you
+guys employ thanks for that look there's
+several things that we're doing at
+Franklin Templeton as it relates to
+digital assets and I'll break those
+apart real simply I think we came name
+to the space specifically because we
+were looking at how we might be able to
+utilize public blockchain infrastructure
+in operating just Asset Management
+distributed Ledger technology is another
+word choices used for blockchain
+technology and we knew that asset
+management was filled full lots of
+ledgers so there might be something to
+be doing here that we can be attentive
+to so as we found a use case for using
+blockchain inside of the transfer agency
+transaction recordkeeping system wrapped
+around a mutual fund itself we began to
+have a lot of understanding ings about
+potential future use cases outside of
+asset management for these public
+blockchains so really the journeys have
+been threefold one is building some
+infrastructure within the organization
+that we could deliver some tried andr
+products and strategies we have a
+onchain money fund known as Benji
+specifically that we have been working
+very collaboratively with the SEC for a
+period of time and we've been building
+infrastructure around offering that
+product to customers and clients and
+then this idea that these public
+blockchains and the tokens that they
+represent some tokenomics for the
+blockchain value that may be acur due to
+projects like ours that are built on
+these blockchain rails means that
+there's probably just this giant new
+potentially asset that can be blended
+into client portfolios over time so
+we've been building advice it's a
+rapidly dynamically moving environment
+what is a digital asset needs to be
+filtered in order to focus in on what
+are the real Capital growing
+opportunities where there's value and so
+we've been building a pretty deep and
+robust investment team understanding and
+filtering and offering advice around
+portfolios of digital assets and
+cryptocurrencies that can be woven into
+and alongside of portfolios for clients
+who see this future network investing
+opportunity come alongside of their
+asset allocations and really the last
+thing that we've been doing is all of
+these blockchains are representative of
+networks and we are operating nodes on
+those networks we want to be part of the
+networks definition if you operate a
+node on these networks wrapped into
+understanding it more we think that's an
+important lens
+for us to offer advice the fact that
+we're not only just building on
+blockchain Technologies and have an
+understanding of that but we also
+operate nodes and the networks all that
+comes together for this idea that
+there's advice inside of this burgeoning
+space that we intend to offer for our
+Global clients well really interesting
+set of activities that I'm sure
+listeners will find very interesting to
+pursue more Roger maybe just speaking of
+the SEC obviously listeners would be
+most familiar with the recent news on
+ETF approval but how should the aage
+client think about including digital
+assets from a portfolio context is this
+for everybody are there certain client
+profiles you would suggest would be a
+better fit for incorporating this asset
+class into their long-term retirement
+asset pool or institutional Capital pool
+I think there's a really thematic thing
+going on here there are business models
+that are being created as a result of
+all of this telecommunication piping and
+computer hardware and software and these
+are investments specifically in network
+they're not investment platforms they're
+investments in protocols and again we've
+seen really interesting and we think
+lots of use cases for these public
+blockchains and these are innovations
+that are going to continue to come
+forward so there's going to be a number
+of different investment opportunities
+but for sure there's a thematic story
+going on here and that's important
+because I think some of these themes
+play into other things that are
+happening thematic investment things
+that are happening everybody knows magic
+words of the last uh year chat gbt and
+AI introductions blockchain techn
+technologies will synchronize with AI
+now all of this is like a lot of
+immature markets pretty volatile space
+so there are things that be attended to
+do and to begin to layer in Investments
+but these are long-term opportunities
+and you need to be patient inside of
+that these aren't necessar incom
+producing opportunities but what we have
+seen is when you weave at least the
+historical risk adjusted returns of
+these assets alongside of others it
+helps create better outcomes but it's
+not going to be substituting I think
+what it's really complimentary most is
+actually in those high tech investment
+part of an Investor's portfolio these
+blockchain networks are complimentary
+and maybe subject to to some of those
+other Tech related Investments that are
+also similar type so that's how we're
+talking with people and we're talking to
+those who are interested in investing
+now for long-term benefit Roger I think
+you said it well I'll underscore this
+idea of patience and long-termism for
+the benefit of ultimately investor
+outcom so well put Roger real pleasure
+to talk to you I'll be it briefly and
+thanks for the great work you're doing
+at FT assets and listeners I'd encourage
+you to check it out and we will be right
+back with the rest of our program stay
+[Music]
+tuned well welcome back to cap decanted
+and as promised I am just delighted now
+to be joined in Studio by Chris Dixon
+founder and managing partner of a16z
+crypto and author of his new book which
+we'll talk about at length read write
+and own Chris thanks so much for joining
+us thanks for having me John you bet so
+the listeners have heard quite a bit on
+the history of networking Computing some
+of the bursts and the bubbles and the
+cycles that you also outline really well
+in your book and I know very much has
+defined the trajectory of your career I
+thought we could get to some of the
+specifics of this era this blockchain
+network era in a few moments Chris but I
+thought we would maybe retrospect a bit
+first to kind of put this in context
+because I know you like me still have
+some scars and some visceral memories of
+those early 2000s and I think it's
+helpful for the listeners to think about
+both maybe the similarities and the
+differences as lessons for how we
+contextualize and put into and frame
+what we're going through now so I maybe
+want to start with a chart that you have
+in your book which is a somewhat famous
+exhibit from Gartner that they called
+the hype cycle and it walks through
+these technological cycles of innovation
+trigger and peak of expectations trough
+of disillusionment I love that one scope
+of Enlightenment and eventually plateau
+of productivity so Chris when you think
+about these transformational platform
+shs as you're assessing new ones that
+are coming down the pike and calling
+your name constantly what conditions do
+you look for to determine whether this
+is truly the next big wave so it's a
+great question so the Gartner hype cycle
+are very closely related is car the
+historian carot Perez has an analogous
+framework where you have this period of
+I think she calls it eruption and then
+disillusionment and both of these track
+both the technology and the financial
+cycles and obviously none of this is
+physics doesn't always happen this way
+but there's some deep truth to it I
+think the key thing if you just step
+back and you ask yourself look at the
+world today versus the world 40 years
+ago what's different you go watch a
+movie I use the example in the book the
+TV show Friends which I believe ran from
+like 97 to 2003 so whatever 20 something
+years ago if you watch that show The
+World Isn't that different in terms of
+washing machines and the cars and the
+buildings but there's one giant
+difference which is smartphones and the
+internet they have the internet actually
+I went back and looked there's one
+episode in the history of friends in
+seven years where the internet occurs
+and it's one of the characters does
+online dating and they all make fun of
+him because he's a nerd because it was
+such a unusual behavior back then and of
+course half the plots wouldn't even make
+sense today because you just text
+somebody and clear it up instantly some
+confusion so there's this giant change
+working backwards why did phones change
+and not washing machines or cars or
+maybe cars are changing now with Tesla
+and the fundamental answer is you have
+these exponentially growing forces that
+under Computing and specifically people
+talk about Moors law mors law is this
+idea that it generally means this idea
+that semiconductors get faster double
+every two years or so in performance I
+argue and talk about in the book I think
+of course that's important the fact that
+the physical constraints on
+semiconductors allow you to do that
+matters but there's really a better way
+to think about it is an economic
+phenomenon which is with computers you
+have somebody invents a computer like a
+PC a Mainframe computer an AI system
+today I would call a computer
+smartphones the internet in some ways is
+a computer and then what happens is
+someone builds the infrastructure and
+then someone else builds applications on
+top of it and what happens is as the
+applications become more popular that
+then funnels money into the system
+people pay for things and that in turn
+makes the infrastructure better and the
+improving infrastructure in turn makes
+the apps better so to give an example
+think about your iPhone today versus
+your iPhone 2007 when the iPhone came
+out the phone itself has gotten much
+better the camera the chip but also the
+apps you Uber and Twitter and everything
+else and what happened is iPhone first
+came out people played around with some
+apps I was involved in this period and
+then people came up with some really
+good apps like Instagram and Snapchat
+and Uber and those then made the phone
+more popular that gave Apple more money
+they invested more money and so you
+ended up with this exponential feedback
+grou social products networks like the
+internet the web email those are social
+products social products too have
+exponential forces the more people that
+use them the more useful they get email
+is useful because everybody else is on
+email and if you're the first person on
+email someone said to me the other day
+Alexander Bell was the greatest salesman
+in history because how the hell do you
+sell the first cell phone who are you
+going to call so anything with a network
+effect has these forces so to your
+question I think you have to look at the
+underlying forces and understand if
+you're sitting there in 2003 and the
+internet crash has happened and you're
+in this trough of disillusionment one
+way to look at it is okay this thing was
+overhyped and it's over the other is
+wait a second there are these forces
+that are still continuing to grow for
+example Broadband penetration in 2003
+was growing
+I have a section in the book about it is
+actually was quite controversial and in
+fact there were I cited in the book Pew
+research had a study where they asked
+Americans if they wanted broadband and
+the majority said no and why' they say
+no they said no because basically at the
+time you used the internet for email and
+maybe to check travel websites or
+something what those Skeptics didn't see
+was you'd have this feedback loop as you
+got Broadband entrepreneurs built
+YouTube and video sites and all sorts of
+other applications for broadband and
+then once you had the applications that
+then funded more broadband and so to me
+that's what I think about in my business
+if you're in technology if you're an
+entrepreneur if you're an investor you
+need to look around for these
+exponential forces and this is really a
+lot of the themes of my book so I think
+one exponential force is moris Law and I
+call the platform app feedback loop
+where applications reinforce
+infrastructure another important forces
+are these Network social forces Network
+effects as networks get bigger they get
+more useful another very important Force
+which I think is less understood is what
+I call software composability which I
+think accounts for the fact that 99% of
+the software in the world is open source
+software which really surprises a lot of
+people that the vast majority of
+operating systems in the world is Linux
+which is a community of random people
+and they beat out all of these giant
+companies why is that again I think it's
+this exponential Force called software
+composability which I could talk about
+but I have whole section in the book on
+it so that's what I think about I'm
+always on the lookout for where are
+these forces and where are they being
+underestimated and as an investor an
+entrepreneur how can I do something
+that's on the right side of those forces
+not on the wrong side by the way Ai and
+all the stuff here the first neural
+network paper was in in 1943 it was an
+80-year history why is it now broken out
+now a lot of it's basically comes down
+to the fact that you can now run these
+models at many many orders of magnitude
+greater size due to the growth of
+improvement of gpus which in turn by the
+way why do we have great gpus video
+games so it's this very interesting
+somewhat securious history there that
+led to these really impressive systems
+today so there's an element of these
+forces need to converge you can have
+pieces of some forces that share the
+appropriate conditions and the
+environments and I'm just going back to
+that visceral moment again which hurts
+because I pick these scabs once in a
+while Chris and I think about when I
+pitched as a 24 year old web van and I'd
+like to think in my better moments of
+therapy I was just 20 years too early
+maybe that's up for discussion over a
+beer one day but the point with that is
+that online shopping certainly online
+grocery shopping and delivery was not a
+bad idea instacart's a 1010 billion do
+public company exactly so I come back
+it's easy to look at microcomputers PCS
+web 10 mobile you just described in
+detail and maybe now blockchain you
+would argue but there's a whole lot that
+swung and missed in between so how do
+you think about whether you're too early
+or whether this is a masquerader as the
+next era and distinguishing that from a
+real live shift it's a great question so
+timing I think there's two questions
+there's what will happen in Computing
+and when will it happen and I think the
+first question in some sense is easier
+than the second question and then what
+will happen I mean look in my career my
+partner Mark andri likes to say he's
+slightly tongue and cheek but there's no
+bad ideas there's only early ideas to
+your web band point and I can't tell you
+how many times I've seen people write
+off categories of software and then they
+end up working later on I mean AI is a
+great example I had an AI startup in
+2008 and you didn't say the word AI it
+was embarrassing because it had been so
+overhyped there was an AI Financial
+bubble in the 1980s go look it up on
+Wikipedia it's been so overhyped and
+then of course eventually it worked so
+look I think there are things that don't
+have exponential forces behind them some
+things for example the physical world
+that people get excited about and try to
+apply these software Computing paradigms
+onto them so 3D printing maybe or
+something where people try to look at it
+like a Computing movement but in fact
+it's just much more constrained and
+there's only so many ways to build a
+bridge you can't have a Moors law of
+bridges physics does matter here and it
+just turns out that the natural world
+allows you to pack with a lot of
+ingenuity a lot more semiconductors on a
+chip in a way that other fields don't so
+that does matter but also these
+exponential forces matter so in my
+career I haven't seen anything that I
+would call a serious topic with serious
+software people working on it that
+didn't eventually work I think it's
+almost always a question of timing and I
+feel the same way about blockchains and
+I do about by the way virtual reality
+metaverse all these things that are now
+in the trough disillusionment I just
+think it's a matter of time before they
+come back and in fact let's just take VR
+I know it's not our main topic here but
+there easy things to predict and hard
+things to predict the easy thing to
+predict with VR is those headsets are
+going to get smaller better resolution
+better performance better software
+that's inevitable and the harder
+question is then in that world how
+popular is it what do people do with it
+but certain things we just know we know
+that these things are going to get a lot
+better and probably more popular result
+and cheaper and everything else and so
+the more Nuance question then is
+figuring out the timing so there's this
+weird interaction psychological outcome
+of an interaction between maybe peak of
+expectations and trough of dissolution
+because you get this very divisive
+strong language and disagreement the
+haters and the Believers and that's
+where things we all know these quotes
+rat poison and magic beans it comes out
+Chris is that type of ranker and
+disagreement and frustration pretty
+typical of this stage of the cycle and
+does it actually tell you where you
+could be in the cycle when you see this
+reaching a fever pitch there was some
+very strong negativity in the early
+2000s around the internet I you think
+that it's different now generally I mean
+you're starting to see this ranker
+against AI now from creative people who
+there was a movie that used AI art in
+the poster and there was this big
+Twitter protest so I think my reading is
+there always been cynics and haters but
+I guess two things one is Tech is just
+on a much bigger stage today it's not oh
+those nerds in Silicon Valley it's I
+think it's like seven of the top 10
+companies by market cap or Tech we used
+to be the Pirates now we're the Navy
+it's just a different Dynamic number one
+and number two I think there's a
+political element that's now entered
+Tech as a sense I get that you'll see
+there some partisanship and I'm not
+particularly political and don't want to
+get deep into Political topics but just
+in the same way that you'd have I don't
+know if you remember with covid at
+beginning there was debates on masks and
+at some point it became this tribal
+battle between two sides I think a
+little bit of that is especially in
+crypto there's certain people
+particularly I would say anti-business
+people on the left who have decided to
+make it an issue so that's added another
+dimension so I think there's always been
+some of it it's a bigger stage now and
+there's also just the general
+politicization of everything tribalism
+that seems to have happened for whatever
+reasons I'll leave that to smarter
+people to figure out why but everything
+seems to be political these days in some
+sense indeed yes perhaps the sound bite
+of the hour is right there it's
+interesting you had this great quote
+from clay Christianson in your book who
+I know you're a fan of and it's
+something like incumbents off and whiff
+at new technologies because the next big
+thing often looks like a toy the one
+thing in common of all these Cycles is
+that there's a lot of creative
+destruction a lot of rationalization a
+lot of failures as we all figure this
+out business models take shape and
+ultimately profitability use cases
+ultimately emerge but what Clay's point
+is getting at is that often the stain
+power rests with those that are
+counterposing and innovators rather than
+the institutions can you talk a little
+bit about why that is yeah so I think
+his ideas are extremely important and I
+cite them a lot I think there's a few
+points he makes the first one my version
+of it is the next big thing starts out
+looking like a toy and he has a famous
+chart where the demands of the market is
+this line that's only going up a little
+bit and then the quality of the products
+is going up much faster and so when the
+quality is below it's dismissed so early
+PCS the time the market was for
+computers were big main frames for
+business and those were the people that
+paid for computers so you come out with
+a PC and it's this is just a crappy
+Mainframe now what the Skeptics didn't
+see among other things was that those
+PCS would get much much better and that
+goes back to the exponential forces
+point you have these very powerful
+exponential forces things that are toys
+can in a very short amount of time be
+much more than that so in some ways that
+idea is a reframing of the exponential
+forces idea the second important thing
+that Christensen talks about I think is
+that often these so-called dis uped
+Technologies are misaligned
+business-wise with the incumbent
+business model so I think an interesting
+example is people often look at
+something like Sears the retailer as a
+example of a company that was killed by
+the internet or sort of killed by the
+internet they actually owned I think it
+was Prodigy so there were three big
+internet providers in the 1980s believe
+it or not it was CompuServe Prodigy and
+AOL I mean big they had millions of
+customers not billions but Sears I think
+it was in the 80s they bought believe it
+was Prodigy so they saw the internet
+coming it would be like someone buying
+open AI a couple of years ago it was
+like the hot thing and you saw it coming
+and you bought it so you would think
+okay these guys were on top of it so why
+did they get crushed so badly by the way
+I think if you go back and look at the
+history of the internet a lot of like
+Barnes & Noble had very early with
+Barnes & noble.com a whole bunch of
+cases like this where incumbents saw it
+coming the problem was for seers to
+truly respond to Amazon they would have
+had to shut down their store because
+they had a cost structure that just
+didn't fit with the internet so what
+happened in reality is all these
+companies did see it coming but really
+really struggled to reshape their
+business model in light of this new
+technology where the optimal strategy
+was just in the case of Amazon until
+recently at least was to have no stores
+and to just have robotic fulfillment
+senders and all those other kinds of
+things that Amazon did so to me the kind
+of two key ideas with Christensen is one
+look for exponential forces look for
+things that seem like toys if there's an
+exponential Force are toys that remain
+toys okay so the difference between toys
+that remain toys and toys that don't are
+these forces that drive it and the
+second thing is especially if you're in
+my job and you're doing startup
+investing look for things where the
+business models of the startups are
+misaligned with the incumbent business
+models because when they're aligned it's
+a very interesting question today with
+AI you have ai you have blockchains I
+would argue AI incredibly powerful
+incredibly important technology all the
+excitement that people talk about I
+think is Justified that said when you
+look at it through the lens of an
+entrepreneur or an investor I would
+argue it's a sustaining technology it's
+not disruptive in the sense that it's
+fully aligned with the business models
+of the incumbents Adobe ads has a new
+button in Photoshop that's generated
+Phil Google cloud and Amazon web
+services will have a new cloud service
+that's you know llms and other things
+like that take your existing Enterprise
+business software and add a new module
+add new features if you're Facebook you
+can now use Instagram to generate better
+images better filters
+so it's different than the internet and
+the internet came along and just these
+existing cost structures didn't make
+sense now maybe I'm wrong maybe there
+will be new technology as nuanced and
+things change and maybe there'll be new
+disruptive things that pop out of it but
+at the moment it looks more sustaining
+which doesn't mean there's not a million
+opportunities it's just they're
+different types of opportunities and you
+have to be nuanced whereas blockchains
+and tokens are definitely truly
+disruptive in the sense that it's a
+radically different way to build
+networks this is a thesis of my book to
+build internet services and those
+internet services have a very different
+economic model than the internet
+services of the incumbents and if these
+blockchain networks continue to grow it
+will be very very hard for the
+incumbents to respond to it without
+making really dramatic measures because
+it is truly disruptive let's use that as
+a segue to shift to this next era that
+you describe in the book I will say
+though just before we leave these
+institutional powerhouses that maybe are
+reluctant to shift I still miss Chris
+those just Sublime social EXP explosions
+that were Friday night at the
+Blockbuster I do think we lost something
+when we went to Netflix
+but yeah I'm a big reader and I still
+love independent bookstores I don't know
+how long that business model will
+survive I think there's definitely all
+these technology movements have pros and
+cons so let's use your mental maps of
+this hype cycle and some of the
+intersecting forces as our backdrop for
+your new book and particularly the way
+that you have articulated blockchain
+networking's role in the future
+structure your book which is really
+interesting it's the title of the book
+but you structure it around this
+trajectory of read write and own which
+is largely a reflection of web 1.0 2.0
+and 3.0 so can you walk us through how
+that has evolved so really this is a
+book about networks and let me just
+explain that is that I took this for
+granted so I go out and talk to lots of
+people about these topics and in talking
+to them I realized they'd ask me what
+blockchains like what do they use them
+for I'm like well it's a new way to
+build networks and they would say well
+why would you want to build networks and
+then I said oh wow I need to do some
+more explaining here because to give you
+background if you're in my business so
+I've spent my entire career on the
+internet meaning I was an internet
+entrepreneur and an internet investor
+and if that's your job and a lot of my
+friends that's been their job we're
+basically in the network business
+because the thing you do with the
+Internet is you build networks so the
+way to think of it is the internet
+itself is a network of computers
+Internet Protocol networks these
+physical devices and then on top of that
+is our other networks the worldwide web
+is a nwork Network email is a network
+Facebook is a network Twitter is a
+network Uber is a network if you're an
+entrepreneur in the 2000s as I was
+you're trying to build a network if
+you're an investor like me you're trying
+to invest in networks basically almost
+all of the apps you look at on your
+phone they are networks they have very
+importantly what are called Network
+effects Network effects means they get
+more useful the more people use them in
+Warren Buffett terminology that's a mode
+a network effect and I would argue it's
+the most powerful mode in the world it's
+far more powerful than the classic
+Michael Porter 5 coures and we can go
+into a whole bunch of reasons why so
+this is important background and part of
+why I wrote the book is I realized in
+having these conversations about
+blockchains that people didn't have that
+prerequisite knowledge if they weren't
+internet people and I felt I finally
+came to the conclusion I just can't
+explain this topic in an hour I need a
+book so that's the motivation and I go
+through all of this I hope in pretty
+clear straightforward language in this
+book this is interesting to people they
+don't fully understand what I'm saying I
+think I explained it all in the book
+okay so the internets and network and
+networks The Thing You Do if you're an
+entrepreneur and investor on the
+Internet is you try to build or invest
+in networks and basically there are
+three ways to build networks the first
+way or what I call protocol networks
+sometimes they're called protocols and
+that was how the early internet was
+built and the most prominent protocol
+networks are email and the worldwide web
+and protocol networks have a bunch of
+features but the most Salient ones here
+would be that one they're Community
+controlled there's no company or person
+who controls the worldwide web it's
+effectively controlled by this large
+commun community of users software
+developers and others who use that
+system and as a result for example that
+means that there are what we call in the
+internet business take rates there are
+no take rates take rate is the
+percentage of money flowing through a
+network taken by the network operator so
+for example on your iPhone if you make a
+payment in an app Apple takes 30%
+Facebook takes 100% they run ads they
+make hundred billion dollars in Revenue
+they don't share any of that Revenue
+with creators the protocol networks
+there is no one in the middle they don't
+take any rent they don't charge anything
+there's no one to charge that's very
+important and I think that led to a lot
+of the success of the 90s internet
+because if you were Larry Page or Jeff
+Bezos or somebody building a website you
+knew if you built that website that you
+really owned it that if somebody paid
+you money or whatever you would get that
+money so in the same way that property
+rights in the offline world if you
+provide an incentive to build things the
+protocol networks provided a very strong
+incentive to build around it to build
+websites to build email newsletter
+services or whatever it might be and
+then in the thousands and that I call
+the read era the 90s era read era
+because this is not my terminology the
+read era the idea is common term in the
+internet World read era because most of
+the 90s internet was about consuming
+information reading information in the
+2000s you had the crash and then you had
+this rebuilding period I was part of
+that I was an entrepreneur people called
+that the read write era they also called
+it the web 2 era it was called read
+write because the idea was that the
+entrepreneurs in that era were motivated
+by the idea that the internet could be
+more than a passive way to consume media
+it could be a two-way medium it could
+not only democratize the consumption of
+information but the publishing of
+information so that was the rise of
+blogging Facebook Twitter Youtube was
+social media as we know today so that
+was a readr era it was a great thing
+billions of people now have access to
+free internet services I'm very Pro
+internet but there was a downside which
+is the dominant networks of that era
+were architected differently than the
+dominant networks of the 990s instead of
+protocol networks we got what I call
+corporate networks so if you look at a
+network like Twitter or Facebook they're
+very different than email in the web and
+that there is a company sitting in the
+middle that has complete control and
+they control the economics and they use
+that control to their advantage they
+control who has access they control the
+algorithms they control all sorts of
+things they control what developers can
+access those systems so my core belief
+is that in the 2000s it was this good
+news bad news the good news is we got
+very powerful systems the internet
+became much more powerful many more
+people have access we had the rise of
+broadband and mobile of course which
+accelerated all of that the bad news is
+we handed over control to a small set of
+companies that have Network effects
+Network effects are naturally
+Consolidated meaning that the more
+people that use service the more
+valuable it gets and you're eventually
+you have situation today where you
+essentially have five companies that
+control 95% plus of all the money and
+traffic on the internet and I believe
+all the trends show that will get even
+more Consolidated and AI will accelerate
+that consolidation so that's the core
+issue the internet is at serious risk of
+becoming radio and TV in the 60s and 70s
+or something where you have three
+channels so when blockchains came along
+and started to grow in functionality I
+was interested in them because
+blockchains are a new way to create
+networks Bitcoin is a network ethereum
+is a network bitcoin's not a ledger when
+you hear people say it's a ledger that's
+just a very unhelpful way to think about
+it it's a network it's a network that
+lets you move Bitcoins around you may or
+may not think that's a useful network
+but that's what it is it's a network and
+Bitcoin pioneered this idea that you
+could have this new kind of network
+which I believe and this is why I got
+involved in the space blockchain
+networks combine the best feature I
+believe of the two prior kinds of
+networks they combine the advanced
+functionality of corporate networks with
+the societal benefits of protocol
+networks so the book is structured at
+the beginning of it as an explanation of
+these phenomenon and then a history
+going through protocol networks
+corporate networks explains what
+blockchains are and then explains the
+benefits of blockchains but the core
+idea is thesis antithesis synthesis it's
+protocol networks gave us the rise of
+this amazing thing then you had this
+counterforce of these corporate networks
+and blockchain networks are the of Both
+Worlds and the reason I call it read
+write own is that one of the most
+Salient features of blockchain networks
+is they enable digital ownership it's
+give you an example you can build a
+social network people have built and
+there are some growing social networks
+built on blockchains that function the
+way that something like Twitter
+functions in terms of you download an
+app and you use it feels like that and
+has the same kind of experience the big
+difference is the user owns his or her
+identity and his or her followers so
+what that means is if you don't like
+what the provider is doing they're
+changing the algorithm or changing the
+economics you can switch in the same way
+you can switch browsers or you can
+switch email clients protocol networks
+let you switch as well if you use
+substack to send emails to your
+newsletter readers and they do something
+you don't like you can switch to
+whatever MailChimp or something why can
+you switch because protocol networks let
+you own those email addresses there's
+not some company that controls it the
+way that Twitter or Facebook controls it
+so blockchain networks the core feature
+is ownership users own the things they
+care about and because users own the
+things they care about that lets them
+switch and it reduces the power of the
+network operators and the software
+providers and ultimately changes the
+economics of these systems very
+important by the way I go through this
+in detail so I have a section on take
+rates I have a section on network
+governance a section on all these things
+and really walk through how it works
+today how these new systems work and so
+forth so Chris you talked about these
+are my words not yours but the Holy
+Grail of OTE being this network economy
+Network economics scale that increases
+the value with each marginal user you
+also talked with that great example of
+the iPhone this pouring octane into the
+tank as far as the app software Loop to
+get to that Network economics is there
+an equivalent and you touched on it
+maybe it's take rate maybe it's
+ownership of content maybe it's a little
+bit of both what is the corollary or
+self-reinforcing Loop for a blockchain
+network to get to those Network
+economies so blockchains also have a
+network effect it's in the networks as
+do protocol networks the difference is
+that blockchain networks like protocol
+networks there's a network effect but it
+doesn't acre to a company there's not a
+company that controls that it accr to a
+community so email has a network effect
+meaning the more people that use email
+the more valuable it gets but there
+isn't a company that controls that it's
+the community of all email users benefit
+as that community grows and blockchains
+are similar in that way in terms of the
+forces there's a few of them one is
+blockchains they computers they
+Technologies and so there's
+infrastructure and that infrastructure
+has gotten significantly better over the
+years so specifically just a brief
+history of blockchain so you had Bitcoin
+2008 which is this very specific
+application it's this Bitcoin service
+digital gold the big next thing that
+happened in 2015 was ethereum and
+ethereum took that idea and generalized
+it and said it's a blockchain but it
+also has an app store quote unquote
+anyone can write software for the
+ethereum blockchain you just sit down
+write some code upload it to the
+blockchain and it runs that code and
+that made it a generalized computer now
+the problem with ethereum in 2015 is to
+run a piece of code might cost you $10
+you have to pay for it it's like a
+shared Mainframe computer of the old
+days so that just was very prohibitive
+and meant the only applications people
+ran where things were sometimes they
+cost $100 so what applications can you
+run at $100 it turned out to be people
+trading and speculating today there are
+systems on ethereum for example what are
+called layer 2os l2s where pretty
+regularly you have sub Penny transaction
+costs so that has followed blockchain
+price performance has followed its own
+Wars law so that's one important
+expenditure for
+the second is it's a network and so it's
+a social product the more people that
+use ethereum the more application
+developers that build for it the more
+useful it gets so that's very important
+so the ethereum community is probably
+about if you look at wallets like
+metamask 30 million users and these are
+people that are really using it for
+games and social networks and other
+things nft collecting and you know
+that's a lot of people it's tiny by
+today's internet scale less than 1% of
+the users but as that grows as more
+applications are built Etc it could ride
+a similar exponential Force other so one
+of the things we haven't talked yet
+about that I want to shift to is a key
+mechanism that blockchain networks
+introduce which is this idea of a token
+and we've alluded to cryptocurrency
+which is just one form of a token as
+you're very clear to talk about I think
+this gets back to the ranker and the
+divisiveness Chris and part of the
+reason I really wanted to have you on is
+that I find you refreshingly vocal is
+not a blind euphoric Force but somebody
+that actually can separate the wheat and
+the chaff you know the computer versus
+the casino is the language that you use
+so this is way more than unicorns on an
+nft and garbage coins help us understand
+the effective role the important role of
+a token as you mentioned look there's
+plenty of people who abuse this
+technology and I think in a well
+functioning regulatory environment those
+people would be stopped unfortunately
+that's not happening right now I think
+probably even though there's been
+regulatory crackdowns I think it's
+basically been on the good actors and
+the Bad actors there's probably more
+scams and other kinds of a bad behavior
+than ever because of I think very
+misguided regulatory enforcement so yes
+I think there are Financial aspects to
+this technology and that definitely
+attracts Bad actors and there are
+definitely misuses of it so I'm not by
+any means saying everything is good here
+let me explain though there are
+productive uses for tokens and done
+right they're very powerful so I think
+ethereum is a good example the way to
+think of ethereum is is this computer
+running in the sky that runs on top of a
+network of other computers and I go
+through this in the book probably won't
+go through it in detail now because it's
+a little bit complicated but think of it
+as a virtual computer if you're a
+software developer you can upload things
+to ethereum and you think of it as a
+single computer but in fact it's a
+computer that runs there's 30,000 what
+are called validators that every second
+or so come together and vote on the
+state of the computer so physically it's
+running on this network but it acts as a
+single computer those validators that
+run the network have to pay for
+bandwidth and electricity so they need a
+business model right you need a way to
+pay for the hosting of this computer so
+how do you have a business model for
+someone running an internet service one
+way is you have a company behind it and
+that's what Google and Facebook do but
+the problem with that is all the things
+the problems with Google and Facebook
+they use the fact that it's running on
+their computer to start extracting the
+money and the control as someone said
+cloud is just another way of saying
+someone else's computer every time
+you're on the cloud you're on someone
+else's computer and what these companies
+have learned to do is to exploit the
+fact that you're on their computer they
+take your data they take your money with
+ethereum you're saying okay what's
+another way to pay for hosting that's
+not giving all the control away to these
+companies and that's where the token
+comes comes in so the way ethereum works
+is if you want to run some software on
+the system you have to pay what's called
+gas gas is a small fee for using
+computational resources on the system
+and you pay with that through the token
+and then in turn that money that you pay
+is then distributed out to those
+validators to those hosting providers so
+it's a business model for an internet
+service that doesn't require having a
+big company behind it that's one of the
+core ideas here how do you have a
+community of people own a Network that
+has expenses that has Opex without
+handing control over to a company so
+this is one of the very clever ideas
+that was originally pioneered in Bitcoin
+and furthered in ethereum so that's
+where the token comes in you need a way
+to pay for stuff and by the way ethereum
+has cash flow one of the frustrating
+myths about this whole Space is that
+these are magic beans they're
+unproductive assets it would take 10
+minutes of research to figure out that
+ethereum has cash flow there's a PE you
+can value it on a PE ratio in the last
+12 months last time I checked which was
+maybe a month ago ethereum generated
+about A2 billion doll worth of fees
+people pay $2 billion in aggregate to
+access the network and that money is in
+turn some of that spent in the
+validators for the pay for hosting costs
+and some of it is burnt which means it
+uses it to destroy ether and lower the
+supply of the tokens it's a little sort
+of micro economy pretty straightforward
+to go do traditional financial analysis
+of it and the token has that purpose now
+the problem comes is you have FTX and
+other kinds of Bad actors who take those
+tokens put them on a website hype them
+up people don't understand what they're
+for and then create thousands of copies
+and other versions that don't actually
+have a purpose and hype them up and then
+consumers come along and some of them
+fall for these things and if you're a
+scammer you're attracted to this it
+takes work to go and understand how
+ethereum works and distinguish it from a
+scam or something like this so what
+we've been saying for a very long time
+for many years long before FTX and all
+these other things is that we need
+regulation around this that allows for
+the productive side but eliminates the
+scams and I hope that eventually that
+will happen it hasn't happened so far
+generally and this is whether it's AI or
+blockchains I think one of my core
+arguments would be that the right way to
+think about tech policy is to go really
+understand the technology understand
+what positive societal benefits are
+understand what the drawbacks are and
+then craft a policy that maximizes the
+good and minimizes the bad a big part of
+why I wrote this book is I felt like the
+positive side of blockchains had not
+been explained so I would argue that
+that's what we should be thinking about
+as opposed to having these political
+food fights and yelling at each other
+and all the other things that's going on
+which unfortunately just don't think the
+level of discussion around this has been
+particularly productive if you look at
+critiques of my book I don't think I've
+seen a single actual critique of someone
+who read it and critique the arguments
+it's all bad homonym it's just a very
+emotionally politically charged
+environment where there's not I think a
+lot of real engagement on the topics it
+is indeed yeah and hopefully at Capital
+decanted at least we're attempting to
+strike that balance of intellectual
+honesty but also being objective as
+you're exhorting us to be Chris you
+talked a little bit about the two
+billion of cash flow these are real
+business models in a lot of cases but
+also you're in the business of venture
+capital you're in the business of
+seeding early stage businesses so by
+definition there's a little bit of
+betting on a Founder betting on an idea
+betting on a business model as a VC
+investor how do you think about valuing
+some of these Enterprises so you don't
+get caught up in again going back to the
+old days extrapolating clicks into an
+Enterprise Value from web 1.0 I do
+mostly early stage investing and early
+stage investing I'd love to tell you
+that whether it's crypto or not I'd love
+to tell you it's rational and there's
+spreadsheets involved but having done
+startup investing for a long time inside
+and outside a lot of it's just supply
+and demand and you'll have three people
+in idea and they'll get a $50 million
+valuation and that's pretty common in
+silen Valley and and on the one hand it
+sounds crazy on the other hand there's a
+lot of data that shows that if you're
+good at it that can work as an
+investment model so a lot of it's early
+stage it's more based on the team and
+the idea and the valuations are pretty
+unscientific my assumption with all of
+this stuff is eventually everything will
+end up being PE ratios and I think this
+is the core Assumption of all venture
+capital is that in the very long term
+everything will be something that trades
+on something like a value to earnings
+ratio I think as you get later we have a
+growth fund at the firm and they are
+very focused on operating margins and
+they do real deep cash flow analysis and
+things like that as you go earlier you
+get a little bit less quantitative is
+kind it works and I have a couple
+chapters in the book on this the thing I
+describe with the theorum our assumption
+is in the end if these blockchain
+networks work they'll have a real use
+they'll power the next generation of
+social networks and games and financial
+services and payments and all these
+other kinds of things and there'll be
+real money flowing through the network
+will take some portion of that money and
+that will somehow then acrew back to the
+Token holders and ultimately in the long
+term there'll be people valuing those on
+some traditional Financial measures of
+priced earnings and growth rate and all
+the other kinds of things but that could
+be 20 years away so you're working
+backwards and you're saying who are the
+people who are Visionary enough to think
+about this Step One is build great
+products step two is make those products
+popular and step three is capture value
+from that popularity so let's bring that
+to life a little bit for perhaps the
+Layman or consumer that is listening you
+spend one of the final chapters I think
+bringing to life some use cases
+applications Chris you can choose defi
+or game or networks or tokens whatever
+you want but maybe give us a couple real
+life examples so just to give some
+context in the book so the book the
+first section is history of the internet
+and the second section is explanation of
+blockchains and why they matter and then
+the third people have criticized me and
+others for being abstract so in the
+third section I take seven topics and
+try to go really concrete as to what
+people are building with blockchains and
+why they have a positive benefit one I
+mentioned before is social networks
+where the key thing with social networks
+understand today is there are the top
+five social networks generated 150
+billion in Revenue last year and
+basically all of that money went to the
+social networks whereas why do you go to
+Instagram and Tik Tok do you go to see
+content created by Instagram and Tik Tok
+no you go to see content created by
+other people but these networks have
+figured out a way to get people to do
+all of the work for them but yet not
+give them any of the money I go through
+it in the book some of them have these
+Creator reward programs but it's sub 1%
+of the revenue so it's really immaterial
+so one very powerful and important new
+application with blockchains and people
+are building these things are social
+networks where the economics are truly
+peer-to-peer so the people doing the
+work get paid for doing the work so
+that's one I think there's a bunch of
+interesting stuff involving AI so take
+deep fakes as an example which is going
+to be a growing problem which is do you
+know if this video is real do you know
+if this person is real is this a bot
+talking to me the right way to solve
+that problem is with cryptography and
+blockchains the right way to solve that
+is we need a system on the internet for
+saying this is a real person this is a
+real piece of content this is the New
+York Times and the New York Times
+attests this content is real this
+cryptographic code represents Joe Biden
+and this piece of content was signed by
+him as being authentic what's the
+mechanism for doing that and where do
+you store that signature that's a very
+interesting use case for a blockchain
+and if you don't do it with a blockchain
+you're going to have Facebook and Google
+do it and you're going to just give them
+even more power someone needs to provide
+that function and I would argue the best
+way to do that would be a blockchain and
+not another service provided by Facebook
+and Google there's a bunch of of I think
+interesting ideas one of my favorite
+ideas I'll just mention is called
+collaborative storytelling and the idea
+is if you think of systems like
+Wikipedia where you have a crowd of
+people coming together creating a
+crowdsource encyclopedia what some of
+these new blockchain based startups are
+working on is this idea that you could
+have a crowd of people come together and
+create a narrative universe so the next
+Marvel or the next Harry Potter could be
+created by a fan Community Who develops
+the idea develops the characters
+develops the storylines and then in
+proportion to their contribution to that
+idea get rewarded with tokens so get
+rewarded with the economic benefits and
+so if that narrative world gets licensed
+to be make a movie or probably in a
+couple years you'll just be able to make
+a movie with generative Ai and you'll
+make comics and you'll make games the
+people that contributed creatively get
+paid for that I think that's especially
+interesting in a world we may be
+entering soon where a lot of the
+existing business models for Creative
+people may go away because of AI so in
+that world we need new ways to make sure
+those people get paid and I think that's
+the really powerful on I have a chapter
+on that search is about to go away that
+search business model so the model today
+if you're a News website or you're a
+cooking website or just you run a
+website so the way it works today is you
+allow Google to crawl your website and
+to index you and to Show snippets of
+your website in the search results you
+do that with the assumption that they'll
+send you some amount of traffic back
+that's the Covenant of the internet
+today and they send you traffic back and
+then you as a website either have ads or
+subscriptions that's the relationship
+ship we have today between search
+engines and the rest of the internet
+that's about to change because I if
+you've used chat gbt or Claude or meta
+AI or whatever you say hey what's a
+recipe for this and it just shows you
+the recipe you don't need to click
+through anymore so what's going to
+happen to all these people who depend on
+those clicks so that's another I have
+another chapter on the on this which is
+I think what you need is new business
+models for Content providers at the same
+time by the way those content providers
+are like how are these AI systems able
+to give that answer because crawled
+those content providers and those people
+are not getting paid for that I think
+for example a really interesting idea is
+you get these content providers together
+and they together set terms and say you
+can use our data and you can give
+answers but if you make some amount of
+money off of it we need to get a portion
+of that crowdsource key line Pi yeah and
+the way to do that is is with
+blockchains blockchains are collective
+bargaining machines it's a way to get a
+group of small players together and
+mediate the economic relationship with
+bigger players maybe I'll ask you to
+close with I mentioned it earlier
+partially in Jess but the nft world is
+probably the most misunderstood part of
+the whole token environment but there is
+powerful technology underlying the
+caricatures that we often hear about
+this but what would be a use case for
+nfts so nft is just a token that's not
+fungible it's not interchangeable so
+when I mentioned these social networks
+where your identity is portable and you
+control it that's an nftd so I have C
+Dixon on Twitter if you go to Twitter C
+Dixon that's my handl on Twitter but I
+don't own that handle and Elon Musk
+could take it away tomorrow even though
+I've built over 15 years whereas my
+website I own c.org I own that in the
+case of blockchainbased social networks
+as an example via an nft you own your
+identity you own your followers there
+are a bunch of people making video games
+where if you collect magic swords and
+outfits and things those are nfts you
+own them you can take them keep them
+move them from one game to another in
+the collaborative storytelling idea I
+was describing to you the characters and
+the stories these are all I own a piece
+of this character I invented through an
+nft so nft is just a mechanism of
+ownership it gets made fun of and things
+because people can flate it they can
+flate the technology of nft with
+specific instantiations of the
+technology some of the Avatar stuff and
+the pfp stuff board apes and things some
+people don't like that and then they
+think that's what nfts are could be like
+in the 90s confusing certain websites
+you don't like with the general concept
+of a website the original vision of the
+web was let's have a sea of information
+connected by hyperlinks but that would
+quickly get overwhelming and so there
+was this very clever idea which is let's
+segment it encapsulate it into these
+websites the vision of blockchains is
+let's have an internet where people can
+own things nfts are just a way to
+encapsulate and simplify that concept of
+ownership that's ultimately what it is
+the other thing by the way there's a
+whole movement now around for example
+real world assets where you take an
+obvious one is stable coins stable coins
+are tokens that represent dollars for
+example they're actually backed by a
+dollar in a bank somewhere and you can
+redeem them and people are doing that
+with other things run nfts where you can
+have a legal contract or a piece of Ip
+or some other kinds of thing so it's
+just a very general concept like a
+website and the NFC standard was
+finalized in 2020 I mean that's the
+other thing to keep in mind it's
+four-year-old technology so I think
+people are getting ahead of themselves
+thinking that we fully explored this
+very generalized concept last question
+Chris just as we leave as a VC investor
+again we hear about the things you say
+yes to but you say no to a whole lot too
+in the read write own era I know we can
+clear see you're excited about a lot but
+what keeps you up at night what worries
+you about this new phase of build the
+main thing I think this is true not just
+in blockchain but in AI is there's just
+a very very heavy push back on the
+regulatory side so that's what we spent
+a lot of our time on AI there's a
+serious attempt to effectively ban open
+source Ai and we think it's really
+regulatory capture of big companies and
+I think some other the things happening
+in blockchains and that's just different
+than tech 20 years ago where it was just
+under the radar ignored there were
+obviously regulations around the
+internet but they were very positive it
+wasn't nearly as contentious so honestly
+that's the main thing I think otherwise
+there's a lot of smart people working on
+this stuff there's a lot of momentum I
+think otherwise there's the usual lots
+of blocking and tackling kind of things
+but to me that's really the only
+existential risk is just that we get the
+wrong policies and we end up with a gray
+area industry that's not fulfilling its
+potential well for the listeners just
+yesterday we're recording this on May
+17th just yesterday a couple of
+colleagues of Chris wrote an opad in the
+Wall Street Journal on just that subject
+so I'd commend that to you and of course
+the book we've been talking at length
+about read write own by Chris Dixon
+Chris I am so grateful as are the
+listeners for your time with us we're
+going to have to leave it there and
+listeners stay tuned for the last s
+great thank you
+[Music]
+John welcome back to Capital decanted
+and the last sip well Christie you've
+listened to the conversation with Chris
+Dixon I really feel like we learned and
+sat at his feet on the history of
+platform Computing it was so interesting
+that really should be a class honestly
+in undergrad for those that want to
+pursue investing because I think it's
+become more and more of a foundational
+part of how to think about the world not
+just technology but how to think about
+the world but I'm most interested
+Christie in determining whether you
+learned anything new as far as use cases
+particularly your granny test is
+anything in there that Chris talked
+about change your view so we can get
+away from the Bitcoin endless debates to
+something much more interesting which is
+blockchain use cases so would love to
+hear from you so a couple of things
+after listening through that I
+completely agree with you on his
+thoughtfulness and inside as an investor
+I found it really interesting and
+insightful and in particular a couple of
+points that I completely agreed with him
+on and began to say in our earlier part
+that we recorded before but the idea
+that context matters and that
+understanding I believe he called them
+exponential forces but to me I just call
+it context and how anytime that you're
+not just looking for something that fits
+a specific thing or that has a lot of
+buzz you do really have to look at
+things that have that specific tailwind
+and I also appreciated that about a
+third of the way into the interview I
+think it was 24 or 25 minutes in he
+mentioned that he talked to a lot of
+people and it was this throwaway line
+but I think that it is actually one of
+the most insightful things you can do in
+terms of understanding the broader
+context and those exponential forces
+because it's just like any Market it's
+too much for any one human to have their
+pulse on every single factoid one of my
+favorite comments was there's been a lot
+of ideas that have been pinging around
+in my mind about what's truly disruptive
+versus what's a sustaining technology
+and I think he brought it up in terms of
+AI which I really appreciated and he
+mentioned that AI it seems like it's
+being pushed as more of a disruptive
+technology and in fact it's sustaining
+so I think he actually from pointing
+that out made me less cynical in some
+ways because I think the cynical if you
+will comes from the idea that Ai and
+some of these neurot techn IES are going
+to just help sustain business models of
+these top five Giants or however the Big
+10 and Tech indefinitely but actually he
+brought in a lot of history and context
+and reminded me that there have been a
+lot of periods of consolidation whether
+it be in radio and TV now in Tech that
+does over time get eroded by disruptive
+Technologies potentially like web 3 like
+blockchain this idea of people owning
+their own content again versus it being
+Consolidated within a corporate Network
+so I actually I came away from that
+being much more I don't know I don't
+have rose-colored glasses about the
+future but it feels much less dystopian
+to me if you will and putting it in the
+context of the granny test is y my
+granny may not understand it but at the
+same time I think that absolutely
+business models will come and go whether
+old people get it or not myself included
+and it's interesting it was interesting
+to have that context so what were your
+thoughts yeah I think granny would love
+the next Marvel Cinematic Universe
+created through blockchain that would be
+really cool I love those ideas I think
+you're right I think if you read his
+book I mean there's no doubt that while
+Chris and a16z were early investors in
+some of these big corporate networks
+he's very concerned morally and socially
+about the monopolistic nature and very
+much the premise of the book is going
+back in taking what was advantageous in
+the old protocol networks combining them
+what has been so socially helpful on the
+corporate networks and creating The Best
+of Both Worlds Network model and
+architecture so I had a couple
+Reflections or observations that were a
+bit of paradoxes or tension the more I
+thought about it and I don't think we
+talked about it with Chris or even in
+our intro but one of them is about AI as
+well chrisy to your point which is one
+of the things that Chris has talked
+about is that blockchain could finally
+create kind of a golden age for creators
+as you just alluded to as we talked at
+length about it allows for creators to
+be compensated properly or to
+participate properly versus the current
+corporate networks where all the take
+rates go to the owner of the network so
+creative folks intellectual property is
+better protected these assets are ones
+that belong to the owner of the creative
+Endeavor and yet AI is potentially a
+technology that could be working against
+that my son and daughter-in-law as you
+know are in advertising and a lot of
+their digital artwork and digital
+creations and art they are extremely
+concerned about some of the AI tools
+that just steal and mop up and slightly
+adapt and really leave the creators in
+the dust and so there's this weird irony
+is that in one sense one force AI even
+if it is sustaining is working against
+creators and yet blockchain Network
+Technologies could actually create a
+golden age and how those two kind of
+play out I'm sure I'm being particularly
+extreme in the way I'm posing these two
+forces against each other but there are
+elements that are at odds and I think
+how that plays out will just be
+interesting to watch the other one is
+one that as a dad I think about a lot
+and you mentioned it it was early in our
+discussion in the intro which is
+sometimes technological innovation isn't
+always good for society and I think
+sometimes we need to think about that
+the ecosystem I think sometimes fails to
+pause and just say okay yes this might
+save some money but is it good for
+humans is it good for civilization ation
+and we've all seen the research watch
+the documentaries again I think about
+this with our children with phones all
+the time a lot of this web 3 world and
+what the implications that's had on
+depression suicide rates social
+capabilities is this all good and how do
+we at least govern what will be the
+ability to live your life inside of a
+virtual world and rely less and less on
+human interaction and I'm not saying
+that blockchain networks are the epitome
+of that but they are one part of this
+larger recipe that is creating ease and
+convenience and excuses and opportunity
+to live ultimately by yourself and just
+as a digital Avatar instead of a real
+person so I would just caution us to
+always be thinking about that again I'm
+not pointing fingers at any technology
+in particular but we sometimes let this
+ball start rolling and don't really stop
+to think should it really continue to go
+at this pace and inevitably speed up so
+those were my two cautions not to bring
+downers but I think that episode was a
+whole lot of fun I learned a ton and
+those were just a couple yellow flags
+I'd throw in along the way John advises
+everyone out there to go touch some
+grass it's actually a great advice
+exactly indeed go to the beach unplug
+the phone it is healthy all right fun
+question we're excited about this one
+Christie if you were on the proverbial
+island or speaking of your dystopian
+comment if the apocalypse was upon us
+what would be your last meal your go-to
+food so this one's actually tough for me
+because as many of our friends and
+listeners out there know I am 8 months
+pregnant and so what my body craves is
+so weird right now and if I went off of
+today it would be crispix at 2 a.m. and
+a random hodgepodge of things peanut
+butter and jelly sandwiches on toasted
+bread but I think that if I were to be
+more realistic I have a horrible Sweet
+Tooth and I know any meal I'm a Texan so
+probably steak potatoes and then Blue
+Bell
+cookie twostep which is an ice cream
+mashup of amazingness that Bluebell
+created and it's chocolate chip cookie
+dough and cookies and cream ice cream
+all mixed into one and it sounds weird
+but it's so good so yeah I definitely no
+matter what there would be some cookie
+toep so thanks Blue Bell for creating
+that what's yours John that is so Texas
+it is unel Texas last meal so I'm going
+to do a three course meal my three
+course meal delivered on that island
+would be I would start with a Sherie
+plate I'm a huge cheese and crackers and
+Fine Meats fan that is my go-to that is
+often our Friday evening sunset on the
+deck meal so start with a chery in the
+strangest of ways my main course would
+be a big bowl of guacamole love me some
+guacamole wait with chips or just
+spooning it no not spooning it that's a
+good point I should clarify yes with
+good chips my wife's guacamole is on
+unbelievable so that would be the main
+course and then I would finish with
+another one of my wife's Specialties
+which I've often said is the best
+tasting thing I've ever had in my mouth
+which is her strawberry rhubarb pie
+unbelievable so there's my sweet tooth
+finish the Strong finish so chuder board
+big bowl of big vat of guac and finish
+it off pallet cleanser strawberry
+rhubarb and then the comet can hit I was
+going to say after that yeah I feel like
+that would be perfectly rounded out meal
+you got I mean you got protein you got
+vegetables and you got the dessert so
+that sounds amazing Bucket List complete
+at that point Bucket List complete check
+I mean hopefully we don't have to worry
+about the end of the world anytime soon
+but so overall I think we're pretty
+cheap dates I think that's become
+clear I don't know those shakery boards
+can get expensive that is true inflation
+has hit shakery hard all right well that
+was a very long episode I appreciate if
+you're still listening that you hung
+with us I hope you learned as much as we
+did there was just so much tackle as we
+think about what could be uh really a
+transformative next Computing Paradigm
+so hope you enjoyed it we certainly did
+and we will see you next time on Capital
+decant

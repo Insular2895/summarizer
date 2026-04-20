@@ -1,0 +1,367 @@
+hello and welcome to isa's webinar on
+initial margin
+documentation this is our first webinar
+on this topic and we're going to be
+covering an overview of new initial
+margin documentation that isda has
+published in 2018 and
+2019 my name is Mark new I'm senior
+Council for the Americas at isda and I'm
+joined by Doug Donahue who's a partner
+at link laters so the initial margin
+regulatory requirements phase in over
+time they're going to be applying to a
+broader and broader scope of firms based
+on the size of their uncleared
+derivatives
+portfolios and as they come into scope
+of the initial margin requirements they
+will need to enter into new initial
+margin
+documents the first phase was in
+2016 and isda published phase one
+versions of the initial margin documents
+which were based on the New York York
+law 1994 credit support Annex and the
+1995 English Law Credit support
+deed and they were intended for use by
+the largest derivatives dealer firms who
+were coming into scope of initial margin
+in
+2016 but actually what we saw in
+practice was that those documents
+continued to be used by entities in
+phases 2 and three so 2017 and
+2018 uh but as we approach phase 4 in
+2019 and Phase 5 in 2020
+more buy side firms are expected to come
+into scope of the initial margin
+requirements which is really changing
+the types of firms that will'll have to
+enter into these
+documents so in 2018 uh Isa worked on a
+number of new versions We sometimes
+refer to those as the Next Generation
+versions of the initial margin documents
+really focused on that broader range of
+entities coming into scope in phases
+four and five and those were published
+at the end of 2018 and additional dos
+have been published in
+2019 and in this series of webinars
+we're going to be providing an
+introduction to the key features of
+these new documents really focusing on
+those new Provisions that were put into
+the Next Generation
+documents how these reg IM documents fit
+into the is the architecture as complex
+and that complexity is driven um in
+large part by the regulatory
+requirements of IM which have
+necessitated some really fundamental
+changes to the way we expect and know um
+is the documentation to work in my
+experience it's it's really key to get
+your head around these fundamental
+changes in order to be able to build
+kind of a knowledge base around the reg
+IM documentation so with that in mind
+and really looking to um build a strong
+foundation for everyone the first place
+we want to start is with with
+terminology so some of the terminology
+that you'll hear um when dealing with
+the regim documentation is um you might
+not be surprised Reg
+um and really what people are referring
+to there is initial margin that is
+required by the relevant regulations
+you'll also also hear the term
+negotiated IIA negotiated IIA refers to
+um initial margin or independent amount
+that's where the IIA comes from that is
+negotiated by the parties meaning there
+is no regulatory requirement for the
+parties to exchange it but they've
+negotiated for credit or other reasons
+that it must be exchanged um then we
+have VM and VM refers to both negotiated
+variation margin and any variation
+margin that's required by the
+regulations in addition to that you'll
+hear people refer to different types of
+Trades and in many cases what they're
+really referring to is when those trades
+were entered into and you'll hear the
+term Legacy trades and that will apply
+in the context of regim to trades that
+were entered into prior to the regim
+compliance date and when you hear the
+term in scope trades that will apply to
+transactions that are entered into after
+the reg reg IM compl the relevant reg
+compliance date and therefore in scope
+of the reg requirements as between the
+two
+parties so before we get into the
+documents that have been published to
+deal with those new trades that Doug
+just described uh here is just a little
+bit of background on the evolution uh to
+how we got here because this really
+helps people to put in context the new
+documents and understand where the
+provisions came from so as I mentioned a
+few moments ago uh the the phase one
+documents were based on the uh form of
+1994 New York law CSA and 1995 English
+law
+CSD and these were both documents based
+on a security interest approach um but
+they by themselves didn't contemplate
+posting to a um third party custodian in
+a segregated account which as we'll see
+is of critical importance for reg IM
+terms then in 2011 uh is the published
+SE amendments that could allow those
+earlier documents to be used with a
+segregated account at a third party
+custodian and that was intended for
+voluntary segregation that the parties
+wanted to do uh principally for uh
+credit reasons to ensure that a party
+posting
+collateral um wouldn't lose that
+collateral if the party receiving it
+were to enter into insolvency
+proceedings then uh we flip forward to
+2016 and the publication of the first
+documents for regulatory initial margin
+uh the phase one documents and these of
+course comply with the regulations and
+so they require the parties to post into
+a segregated account and make a number
+of other changes uh to the earlier
+documents to allow for reg compliance
+and we'll be going into those in later
+webinars and then in
+2018 um those Phase 1 documents were
+updated for the Next Generation versions
+uh to reflect the broader scope of
+entities coming into scope in phases
+four and five of the initial margin
+requirements in 2019 we added some
+additional documents um what we call the
+collateral transfer agreement and
+security agreement approach and this was
+introduced to address a potential
+conflict of law issues where the parties
+are using custodians in a different
+jurisdiction from the governing law of
+their uh contra ual agreements and again
+we'll be going into this in more detail
+in a later
+webinar now this is only really a flavor
+of the documents that have been uh
+published to date um and on the next
+slide we show in more detail the
+specific documents that are
+available um and you'll see under phase
+one there are documents under New York
+law Japanese law and English law um
+there are also specific documents that
+is the co-published with clear stream
+and Euro CLE uh for those specific um
+offerings um the Next Generation
+documents from 2018 and 2019 uh were
+very much based on those earlier forms
+so again we have a form of New York law
+CSA English law CSD uh we have clear
+stream and Euro clear agreements and
+then we have what we call the bank
+custodian collateral transfer agreement
+and security agreement that I mentioned
+uh just a moment
+ago um but this isn't the uh full story
+that there are in fact additional uh is
+the documents um dealing with some local
+law issues uh particularly uh French law
+and uh some Japanese law collateral
+issues which are also
+available um and importantly for regim
+uh the is the documentation isn't the
+end of the story uh parties will also
+need to enter into documents with their
+custodian and these will typically be uh
+either trip party uh agreements meaning
+both parties and the cust Ian will be
+party to those agreements and in this
+case there isn't a single industry form
+that's used um but each custodian will
+have their own form of agreement that
+the parties will negotiate with each
+other and with the
+custodian and if the parties are using a
+central Securities depository like clear
+stream or Euro clear um then there will
+be membership documentation to be
+entered into by the parties with the
+particular Central Securities
+depository so overall you know the
+message is there are number of new
+agreements that parties will need to
+become familiar with and we're going to
+Now cover um some of the specific issues
+for the isda
+documents so the illustration that we
+have in front of us now really
+highlights one of the key fundamental
+differences um that that
+drive uh one how the regim documentation
+is set up and and two really the
+architecture around um regim
+documentation how it into the overall is
+the architecture that we'll go through
+so on this slide really the key
+takeaways are that at all times both
+party a and party B are posting regim
+those amounts are not netted and they
+are both posted um to a thirdparty
+custodian in this case party a custodian
+and party B
+custodian now that that as as you'll see
+that will have a big impact on
+architecture and some some other key
+decisions and choices will be making um
+when you start negotiating your IM
+documentation a number of other uh key
+differences um that you'll see in the
+regim documentation from you know the
+9495 and some of the other historical
+documentation that Mark went through is
+the way in which uh the parties
+calculate regim so the the the the
+regulatory requirements are that you
+calculate IM in one of two ways either
+through an approved model or on the
+basis of the um pres regulatory
+prescribed table
+or also known as grits um the other
+question that will come into play when
+you're documenting your um reg IM
+relationships is what transactions are
+in
+scope um we'll also have to determine or
+or deal with uh the fact that there are
+two-way collateral flows and the impact
+that that will have on again
+architecture and other decisions we make
+um we'll need to keep in mind that IM
+needs to be segregated with an
+independent custodian at all times so as
+Mark mentioned that will mean that
+you're not only negotiating is the
+published documentation but you'll also
+have to consider uh bespoke custodial
+documentation and then finally um in the
+what's provided for in the 2018
+documents because as as Mark also
+mentioned earlier those documents were
+really built for um a broader segment of
+the market coming into scope for
+regulatory initial margin is those
+documents provide a couple of hardwired
+options um that allow you to customize
+um within the three options the
+interaction between regulatory initial
+margin and negotiated
+IIA uh those all five of these um items
+actually will be covered in future
+webinars in much more
+detail so we thought um the last thing
+that we wanted to go through during this
+webinar was really um the illustration
+you have in front of you now and it
+covers a few things uh it'll cover both
+architecture and cover transactions so
+first we wanted to to put this
+illustration up because it gives people
+a good sense we think of what sort of
+architecture they'll be thinking about
+um when they come into scope for
+regulatory initial margin so no longer
+will parties who are in scope who have
+trading relationships that are in scope
+for regulatory initial margin have a
+single CSA under there is the master
+agreement they will at a minimum have
+two csas and potentially more than two
+the illustration here has three
+csas one variation margin CSA which can
+also house negotiated IIA and then two
+oneway regulatory initial margin
+csas uh and that is very common through
+phases one through three and we expect
+to be common uh in phases four and five
+um the other thing to highlight on this
+slide is the two types of Trades we have
+so we have both Legacy trades and in
+scope trades and as we discussed before
+Legacy trades or transactions that were
+entered into prior to the regulatory
+initial margin compliance date and as a
+result as you see on the the
+illustration in front of you the Legacy
+trades are margined in your VM CSA um
+meaning they are not subject to the
+regulatory initial margin uh
+requirements unless the parties agree
+that they want them to be uh the other
+type of trade you have here are in scope
+trade and those are trades that are
+entered into and I continue to use the
+term entered into uh intentionally
+because that has some meaning under the
+regulation it's not simply the day on
+which uh a trade is executed it the the
+analysis can be more complicated than
+that uh I just wanted to note that for
+people but in scope trades or trades
+that are entered into um on or after the
+reg the relevant regim compliance date
+as you will see have both regim
+collateral flows to the IM CSA and the
+imcd in our example as well as a VM and
+negotiated IIA collateral flow to your
+existing um CSA VM CSA and I really want
+to put a put an underline under that
+point because that um will mean that you
+will have a single transaction that is
+margined under multiple csas so not only
+is that something that um everyone on
+the legal side will have to get
+comfortable with because it's new but
+it's also something that institutions
+will need to understand um on a much
+broader basis because this will impact
+stakeholders Beyond legal in particular
+um this will be this will have an impact
+on the operational groups and colateral
+management as it will likely cause there
+to be multiple collateral calls which
+people will need to be able to process
+on a daily
+basis thanks Doug so that takes us to
+the end of this first webinar I hope
+we've given you an overview of the new
+docs and also given you some signposts
+for things to look out for and that will
+be covered in in future webinars on
+these topics
+uh if you do have any further questions
+regarding the material here please do
+contact us at is
+thealis da.org uh the address is showing
+on your screen there and thanks very
+much for listening

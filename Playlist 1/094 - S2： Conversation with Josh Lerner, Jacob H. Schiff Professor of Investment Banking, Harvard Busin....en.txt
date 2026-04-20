@@ -1,0 +1,943 @@
+[Music]
+welcome to educational Alpha I'm Bill
+Kelly CEO of Kai Association and your
+host bringing you on the ground
+conversations with Business Leaders
+Educators and Industry colleagues from
+around the globe educational Alpha is
+sponsored by I Capital the financial
+technology company with the mission to
+power the world's alternative investment
+Marketplace part innovator part Ed
+educator and part Navigator of the
+Alternatives industry I Capital offers
+intuitive scalable digital solutions
+that have transformed how private market
+and hedge fund Investments are bought
+and sold with ey Capital financial
+advisors wealth managers and asset
+managers around the world now have
+access to everything they need to
+deliver the return and diversification
+potential of alternatives to high net
+worth investors to learn more visit I
+cap
+.c welcome back to season 2 of
+educational Alpha in our first episode
+of the Season we sit down with Josh
+larner a renowned professor at Harvard
+Business School and an economics and
+private Equity expert they explore the
+complex world of private Equity
+discussing its Evolution the blend of
+public and private markets and the
+future of investment
+strategies Josh shares his journey into
+private equity and provides a deep dive
+into commitment strategies manager
+selection and the influence of
+generative AI in the industry join us as
+we explore these intricate topics and
+uncover valuable insights with one of
+the leading Minds in the
+field Josh learner welcome to
+educational Alpha thank you so much
+we're going to talk about context on
+many subjects not the least of which is
+private Equity but when it comes to the
+two of us I went back and checked my
+email this morning and I joined K just
+about 10 years ago and in 2014 so almost
+10 years ago to the day we gave you the
+2014 Kaa research award and you were
+early and often contributing to our
+curriculum we still talk with you quite
+a bit throughout the Kaya and promod in
+terms of the curriculum but but thank
+you for all that you do first and
+foremost for giving back it's a pleasure
+it's a great organization thank you so
+you've done a lot you're of quoted and
+out in the public markets public markets
+mean speaking about the private markets
+but I guess to put it simply you're a
+professor at HBS and an economist and I
+don't think I could ever get into HBS
+but at least once a season I try to have
+one of the learner from the leafy Campus
+of Harvard come on I had Randy Cohen
+last season who's become a good friend
+and now I'm starting off season two with
+Josh learner but maybe you've
+accomplished a lot maybe you could just
+try to sum up how you ended up with
+where you are today and then we'll move
+into the wonderful world of private
+Equity that sounds great like presumably
+many academics sort of stumbled into
+this area but had been in college got
+very interested in issues around
+Innovation policy and in particular how
+ideas got developed and evolved and what
+governments could do to address them and
+ended up subsequently at in Washington
+and brookington Capitol Hill at the time
+was obviously date me but there was a
+lot of work about things like Japan as
+number one but at the same time there
+was also a lot of policy Innovation
+going on in terms of things like the B
+act which facilitated the creation of
+university-based startups the small
+business Innovation research program
+that funded a lot of early startups of
+that era I got the awareness that not
+only were we pretty clueless when it
+came to public policy but also when it
+came to even understanding how the
+private sector institutions that funded
+entrepreneurial businesses really worked
+our understanding was pretty limited so
+I ended up coming up to Harvard and with
+the studying in the economics department
+but with the support of the business
+school which engaged in a little bit of
+venture capital of its own did uh thesis
+looking at the early days of the Venture
+industry and how it was evolving ended
+up making my way to HBS after graduation
+and soon thereafter in addition to doing
+the usual thing of publishing various
+articles he also introduced an MBA class
+here called venture capital and private
+equity which three decades later is
+still chugging along going strong and
+needless to say the focus of what we do
+in the class is evolved over time but
+the interest on the part of students in
+in the private Capital Market has
+remained strong also due we have a
+private Capital Research Institute which
+is a nonprofit as well as co-running
+with my frequent co-author Victoria IAS
+the private Capital project here at
+Harvard a lot there and congratulations
+on not so much a great career which it
+speaks for itself but being willing to
+help educate the rest of the world and
+there's a signature line Josh and I have
+used a lot on this platform and
+elsewhere which is it's not easy being
+an allocated we're going to talk about
+commitment strategy which I think used
+to be a simple arithmetical exercise
+it's become so much more complicated and
+you've done some Recent research on that
+as well but before we get there you've
+seen the development of this Market
+maybe from a vantage point that's
+different than most of ours and in a St
+I've used before I began my career in
+the early 1980s and prequin through the
+economist had a chart about the number
+of GPS in the private Equity space and
+back in the early 1980s there were two
+dozen of them in the entire world that's
+it and I think you could almost argue it
+wasn't until getting into the 2 time
+frame in the GFC when really private
+Equity accelerated so it's still on the
+one hand you could say it's 40 years old
+but I don't think it's anywhere near
+maturity so maybe talk about where we
+are in the lifespan of private equity
+and if you have any stats just to size
+the market sometimes it's hard to
+determine in terms of invested Capital
+dry powder Etc but any stat you can have
+the size it might be a good place to
+store it is as you say hard to put a
+number on it just because it is
+transitory capital and of course in many
+cases particularly on the private Equity
+side we see the $1 of investment being
+leveraged with debt as well which
+expands the reach of the private Equity
+groups similarly on the Venture side
+even for every dollar Venture fund is
+put in increasingly it's been matched by
+things like mutual funds hedge funds
+Sovereign wealth funds and others going
+direct as well it is challenging putting
+a number on it one number that we use
+our revised textbook just simply because
+they told us we need a number was to
+look at the portfolios of us Pension
+funds while certainly there is a lot
+more private equity in the portfolio
+today than was the case 10 20 or
+especially 30 years ago but when you
+look at the portfolios today for every
+$1 of private Equity there's still
+around 8 public equities which of course
+is very different from what you see from
+let's say an endowment like
+where the ratio would be the reverse
+there'd be more in private equities than
+in public equities so in one sense it's
+much more than there used to be and
+there's really been this exponential
+growth particularly as you say since the
+global financial crisis but at the same
+time it Still Remains relatively small
+Visa Visa public Equity Holdings the
+flip side of your question is of course
+a much tougher one which is what's it
+going to be like in another 10 years in
+particular is this thing going to
+continue to grow at the same rate almost
+certainly probably not that there was
+going to be some sort of saturation but
+to what extent are we going to see
+continued expansion some sort of
+plateauing and certainly there are
+examples of acid classes where
+institutions herded in and then pulled
+out subsequently for instance when you
+look at the enthusiasm for oil and gas
+exploration in 1970s followed by a
+withdrawal from that asset class that's
+a harder question to answer of course I
+don't really have a crystal ball but I
+remain you know and we were very hedged
+in our textbook revision to say well
+here are a bunch of different scenarios
+and we're not going to choose between
+them nonetheless I think that if you
+were looking for reasons for optimism
+you'd really point to really the process
+of governance and value creation
+associated with private Equity ownership
+and the difficulty that many
+corporations have had to really try to
+be able to clone that within the context
+of a publicly traded organization so
+Josh not to beat this up but I just want
+to follow up in that for a second if I
+look at where we are in private equity
+and then overlay the theme of
+democratization coming to the four and
+fund X+1 is going to have more wealth
+management assets and X plus2 is going
+to have more mass affluent I just saw
+over the weekend the Seca is again
+fiddling with the definition of
+accredited invest
+perhaps making it more as opposed to
+less accessible in terms of access to
+the private markets but ultimately it
+seems like the average person on the
+street is going to have more as opposed
+to less access and if that's the case I
+wonder if the demarcation between public
+and private Equity will be so bright if
+I think about some of the the areas
+around less versus more regulation less
+versus more concentration of a
+shareholder base less versus more access
+I think about a blockchain distributed
+ledge of digital assets and more
+regulation do you see the distinction
+between private Equity here and public
+Equity here being so much of a black and
+white 10 years from now I think you can
+make a few observations one of which is
+that certainly there has been a degree
+of blurring we can think about mutual
+funds investing in private Equity we can
+think about the extended hold periods in
+both Venture and later stage investing
+where companies that once would have
+gone public have stayed with than
+private Equity portfolios the sharp line
+or the sharp delineation between public
+and private seems to be increasingly
+blurry certainly you can make a case
+that in the old days if we worked for
+IBM we had some interest in the IBM
+pension fund and they did a mixture of
+private markets as well as public
+markets there was a sense that this was
+long-term money and that as a result it
+made sense to invest in illiquid stuff
+as part of it in the world we are today
+where everyone's managing their own or
+most people are managing their own 401ks
+you can say well we also have long-term
+money now that we want to hold for
+decades until we want to do it shouldn't
+it make sense in the same way to have
+some access to private markets to
+complement the public market Holdings I
+think the challenge of course is the
+implementation this is an area where
+we're still at the early Innings on and
+I think there's clearly several
+challenges one of which is really
+creating a attractive product that does
+fair and does well for the individual
+investors we know that not all but
+certainly some of the things that have
+been offered to give medium upper middle
+class investors a taste of private
+Equity have suffered either from adverse
+selection in terms of what's been
+offered or else too high fee structures
+and so forth and then the second side is
+really this issue around Regulatory
+Compliance that you hinted at that in a
+way blockchain is an amazing technology
+but if you're running a private Equity
+Group the last thing you want to do is
+have a situation where ownership
+interests are suddenly being distributed
+among people that you don't know where
+there's all sorts of danger of
+non-compliance so the very things that
+make blockchain so liquid and attractive
+may run a foul of some of the regulatory
+considerations and as a result there's a
+room for evolution and Innovation there
+as well so I think that from a high
+level case the answer is undoubtedly yes
+but clearly there is still work to do to
+figure out how to do this in a way
+that's both good for the ultimate
+beneficiaries the semi High net worth
+individuals which doesn't run a foul of
+the rather complex and challenging
+regulatory environment and if we have
+time at the end we'll come back to this
+a little bit on G of AI and what that
+means in the process I think you gave a
+talk on this recently but we'll park
+that for the moment you also have come
+out with some recent views in one of the
+journals on a commitment strategy I
+don't want to ever say that was simple
+but there used to be maybe a little bit
+of a process that you could follow and
+if you had vintage year diversification
+and going through the J curve and One
+Fund while you had distributions on the
+other and you could have a slight over
+commitment and be peace in the valley
+you could have cash coming in cash
+coming out
+Howard Marx had a famous memo he wrote
+back in ' 06 you can't eat irr you also
+can't eat nav so I think institutions
+like Harvard and every other allocator
+out there needs to have some form of
+liquidity coming their way but it seems
+like liquidity has frozen up to some
+degree and I just saw recently I think
+this is November December paper the
+BlackRock put out and we still have
+across all private markets $4 trillion
+of dry powder I was surprised that
+number was still are very high so
+there's still a lot of money in the
+sidelines waiting to get in so a wordy
+lead in Josh but how should we be
+thinking about or how should an
+allocator be thinking about a commitment
+strategy in this Brave New World let's
+start with the point that you hinted at
+but it's worth underscoring which is
+that traditionally the industry has been
+pretty laidback around these kinds of
+issues that certainly for much of a
+history of private Equity investing for
+the typical instit ution the private
+Equity slice was quite small relative to
+everything else and there was a sense
+that put money in you get money out and
+that things take care of them take care
+of themselves in the sense that there
+was an analytic approach it really is
+Benchmark really was what's often
+referred to as the Takahashi Alexander
+model over and named after two people at
+the Yale investment office at the time
+who came up with it which basic Al
+provided what you might describe as a
+deterministic way of saying what is the
+expected pattern we're going to see in
+terms of draw downs and payouts from a
+fund what is the mix of funds we have
+and then using that to project out what
+the likely cash flow situations are
+going to be and it would basically gave
+you an answer which was great at one
+level but also had some pretty serious
+limitations and one of those is of
+course that the world does not adhere to
+the tendency we know what actually
+happens is sometimes things are much
+better sometimes things are worse but
+the one thing that's certain is we're
+probably not going to be right along
+that expected line this model didn't
+really give an easy way to think about
+the range of outcomes and what would be
+the likely exposure and so forth in
+addition it really relied on a few very
+simple parameters and certainly as a
+limited partner often you had more
+information about this fund being
+relatively overvalued or undervalued or
+we anticipate some sort of slowdown in
+terms of distributions over the next 18
+months and the like so what we've been
+inspired to do in our article in the
+journal portfolio management this summer
+highlighted was saying how do you apply
+a more probabilistic approach to looking
+that and in particular essentially going
+back in time and looking at so if you
+had let's say 30 private Equity Funds
+different vintage years and so forth
+could you go and say let's do a series
+of random draws of 30 funds that look
+like that in terms of the mix between
+Venture and buyout between how mature
+they are and then what the different
+vintage years were and how Bunch
+together they were and then see how
+those evolved over time and do that
+again and again for thousands of times
+until you get a sense of what the range
+of outcomes are one of the added things
+about this approach and so essentially
+then it allow one not to Simply say we
+expect to have $5 million of positive
+cash flow next year but say in only 10%
+of the cases will we have negative cash
+flows while in 90% of the cases we will
+fall between minus one half and plus
+eight million in terms of cash flow so
+it allows one to take more of a
+probabilistic view it also allows one to
+incorporate things that you might want
+to look at such just saying what if
+today we're really like 2006 and we're
+about to fall off a cliff what if we
+think that the Venture portfolios are
+overvalued by 50% and there's going to
+be an adjustment there and then having
+made those things look at what the range
+of outcomes evolves there I don't think
+it's the last word along these lines but
+particularly in ear like today where a
+lot of acid owners are now suddenly in a
+situation where they're saying we got a
+lot of money tied up in private equity
+and we really need to have more of a fix
+of what's going on it provides direction
+for thinking through how to address some
+of these challenges of really looking
+into the future and trying to understand
+not what certainly is going to happen
+but what are the range of different
+outcomes that are likely to evolve you
+mentioned earlier the ratio of of public
+to private Equity is 8 to1 and if you
+think about part of a liquidity scenario
+at least in the past was a viable Public
+Market that could receive these exits
+we're certainly not there today but if
+you think about all of this money coming
+in to private equity and there four
+trillion dollars of dry powder to be
+deployed could strategic exits become
+the viable or do we need to have
+functioning public markets if we are
+going to have tracked valuations in the
+private Equity space because the exit is
+a big part this really brings us to a
+paradox which is an interesting one
+which is on one hand you can say it's
+virtually any private Equity or private
+Capital Market in the world typically
+more exits have been done through trade
+sales than have been done through
+IPOs but at the same time the IPO route
+seems to be something that's of vital
+importance and seems to be correlated
+with the success of the private Capital
+markets and you might say why is that I
+think a lot of it comes down to the that
+the public markets really provide a sort
+of sense of where the pricing is whether
+we're thinking about a restructuring
+mature company or a young Venture
+company valuations are incredibly
+subjective in some sense that unless
+you're dealing with a buyout for a
+totally mature metal bending firm where
+it's just an annuity going forward
+there's going to be a lot of judgment
+associated with valuations and having
+that bright signal associated with
+public markets does does a lot to help
+confidence both on the part of Sellers
+and acquirers in terms of this so I do
+feel that if history is any guide that
+having a healthy public Equity Market
+despite the fact that most exits don't
+go through it is actually really
+important as part of the
+process it's hard to take the other side
+of that but I do Wonder Josh though I
+don't want to say all the good ideas
+have been taken but it seems like an
+algorithm's already thought about a
+missing Gap in the consumer mix of
+things the consumer wants and with a
+specific brand that the Millennials fall
+in love with there'll be a space for
+that but maybe it's a flash in the pan
+but I do Wonder perhaps about a lot of
+these traditional Finance traditional
+business model public companies want
+sustainability themselves in terms of
+their business model and they have blind
+spots in their offering and I wonder if
+some of these same public companies will
+be attaching on missing pieces through
+the private market so maybe it's not a
+direct IPO but might be public markets
+become the consumer of missing pieces to
+their makeup it's probably fair to say
+that a situation we saw in the 1990s
+where we had a huge number of very young
+companies going public sometimes only 18
+months after their first Venture
+financing they were going into the
+public markets was not really the
+optimal either because we saw not only
+is being a public company then costly
+but now is of course much more costly in
+terms of the compliance with sarban
+Oxley and the various other regulatory
+considerations there but also just many
+of those companies weren't really What's
+the phrase ready for prime time that the
+management teams just didn't have the
+sophistication and the systems in place
+to really be able to deal with the under
+the spotlight of being publicly traded
+and we can point to many many cases
+along those lines so certainly the
+notion that this is something that's
+important to have but is not a one-size
+fits-all thing or that everyone should
+aspire to go public remains a very fair
+point getting back to something I think
+you mentioned a moment ago based on some
+of this recent research I think you
+wrote it down maybe I didn't hear
+correctly you talk about a random draw
+in terms of these GPS and trying to
+model it manager selection matters
+hugely or maybe that is the only thing
+that matters to some degree and I this
+is what gives The gales and the Harvard
+such a big Edge because they've been at
+this a long time and not all GPS were
+created equal so when you're doing
+research like you've done how do you
+factor that in because the dispersion is
+very very wide and if you're going to be
+in this space certainly before and after
+fees you've got to make sure you have
+that GP that's up in that top quartile
+at least well above the median which
+could be thousands of basis points away
+from what might be the random draw so
+how do you think about that when you
+have to do a holistic research study
+like you did with this commitment
+strategy what you're raising is an
+incredibly important point which is that
+from thinking about things from the
+public market context we're used to
+thinking about indexes and benchmarks
+and so forth and indeed we know that
+looked over the longer term there's a
+lot of bunching that happens in terms of
+public fund managers that one year the
+value investor May outperform in the
+next year the growth investor may but if
+you look over the long Hall the inter
+quartile range between the 75th and 25th
+percentile across public fund managers
+is really quite modest while in private
+Equity we know there's just an
+incredible dispersion that's there and
+in a way that sort of pushes us it
+really underscores how private Equity is
+really different in the public markets
+and how just looking at Central
+Tendencies is likely to be somewhat
+misleading one illustration of that from
+the recent work that antonet sha and I
+did with State Street was looking at the
+fate of direct Investments whether
+co-investments or other kinds of
+Investments alongside private Equity
+Funds that become so popular among LPS
+and one of the things you might expect
+is that given that these Investments
+don't have the 2 and2 haircut that
+typically the fees associated with
+direct Investments Investments are much
+lower that you'd have a huge amount of
+outperformance there but in point of
+fact they really the performance of the
+co-investments after fees is really not
+that much different than that of fund
+Investments even though you've had much
+less of a haircut which of course
+suggests that there's some element of
+adverse selection or that somehow the
+portfolio that is co-invested does not
+map the one that essentially is
+undertaken in terms of the funds as a
+whole and what you see is perhaps not
+surprisingly that the LPS who are really
+good at choosing managers in our
+outperform are also very good at
+choosing co-investments as well even if
+you look at not just the absolute
+performance of the co-investments but
+actually look at the performance
+relative to the funds themselves so I
+think that goes to underscore this point
+that our instinct to think about the
+central tendency or The Benchmark is
+probably exactly the wrong way to think
+about this industry and when really
+needs to think about the heterogenea
+managers and how that fits into one's
+decision making maybe tied into that
+Josh the entry point matters a lot too
+to a very large degree and then what
+does Private Equity really even mean are
+you talking about buyout growth early
+stage late stage VC but now and you
+mentioned co-invest direct and maybe
+secondary so maybe just picking
+secondaries as one example it would seem
+that that could be an interesting entry
+point there's maybe a lot of merchandise
+that's been marked down access to maybe
+a manager that you could not get access
+to in the first place you're reasonably
+along the J curve great transparency
+into the portfolio companies it's not to
+Lead You In One Direction or the other
+or adopt my thought process but what do
+you see as interesting entry points in
+the private markets as you sit here
+today this will air in the beginning of
+2024 and every vintage year brings new
+opportunities new challenges new risks
+where do you see the most value for
+somebody an allocator that's trying to
+build out a private markets allocation
+of course if I really knew the answer
+I'd be in my yacht floating somewhere
+warm rather than in my office at Harvard
+I think that the challenge is really one
+of figuring out the stuff that is as you
+say provides a Fresh Approach but at the
+same time isn't really that widely
+recognized yet and I think historically
+secondaries have done great because
+has been documented both among the
+practitioner and the academic literature
+there is a sense in which the buyers
+have typically gotten somewhat of a
+discount and if you can get private
+Equity returns but get it at a three or
+4 per discount you're probably going to
+do pretty well for yourself going
+forward plus you've had the advantage
+that they're more mature portfolios so
+you haven't had the long J curve it's
+been much shorter in terms of the
+liquidity to take on the challenge is of
+course that in that case at least the
+news is out that we've seen this huge
+inflows into the secondary markets the
+natural worry is as you have more and
+more funds competing for the space to
+what extent does that buyer discount
+start getting competed away just simply
+because one has so much of the
+proverbial money chasing deals I think
+that's a question we probably won't be
+able to answer for a few years but it
+does give some plus and in general one
+of the challenges of investing in this
+area today is that it's become harder to
+create and hold on to a good idea when
+you think about the endowments like
+Harvard and Yale who got into investing
+in venture capital in the early 70s it
+really wasn't to a decade afterwards
+that corporate Pension funds wandered in
+there in another two decades before
+public Pension funds and international
+investors even longer they had a long
+lead time to be able to really monetize
+that Insight without a lot of
+competition when you look more recently
+like for instance when Harvard and other
+endowments went into doing forestry
+Investments I think it's within 18
+months some intermediaries where
+marketing saying you can be just like
+the endowments and do forestry
+investment so we live in a world today
+which has a lot more transparency and as
+a result it's harder to hold on to
+really good ideas for a long time before
+you get that flood of money coming in in
+terms of competition so I think the one
+thing that is clear is that it's not
+easy and probably if your goal in life
+is to sleep well in the evening it's
+probably not great that it sort of is
+really where a lot of the opportunities
+are likely to be ones where there is not
+just simply opportunity but also a fair
+amount of risk as well just sticking
+with that transparency theme you
+mentioned a moment ago but taking it in
+a slightly different direction the
+transparency between LP and GP these
+things go in waves and in cycles and
+ultimately what they both one is more
+return and profit versus less but how
+they get there over what time frame
+there can be maybe a slight reset of
+those alignment of interests and and we
+talked a lot of LPS and GPS as you do as
+well and GPL Le secondaries and nav
+based loans and there seems to be and
+then even regulation there's now case
+about private Market regulation the lp
+seem to have one View and the GP seem to
+have another in terms of alignment of
+Interest how are we doing as an industry
+and is just something more either the
+GPS can maybe put themselves in the
+shoes of the lp or the lp can maybe
+understand motivations of the GP or is
+that just the way the world goes
+around well I think you've hit on
+perhaps the biggest question of them all
+there's not easy answer if there were
+people would have figured out already
+but I do think there are things that
+there is certainly room for improvement
+and as you pointed to some of the
+Innovations perhaps facilitated
+alignment and others of which may have
+actually introduced more misalignment
+and as a result posed some concerns
+Victoria and I did write a book right
+before covid called patient Capital
+which basically made the argument that
+made a bunch of suggestions for things
+that both LPS and GPS could be doing to
+really focus more on long-term
+opportunities in a way that would not
+only benefit returns but also we'd
+argued benefit society as a whole just
+simply because we do have so many
+intractable problems which it seems that
+Public Funding alone is relatively
+unable to solve and where the
+application of some of the skill set of
+the private sector could make a lot of
+difference I don't think the book has
+exactly changed the world but hopefully
+there are a few thoughtful people who
+have looked at it and we planted some
+seeds that will hopefully bear fruit in
+the years to come well I'll take a
+closer look and maybe the listeners can
+too I don't think it's solvable but
+understanding the motivations and the
+challenges of the other person usually
+get us back to a safe place and Bogle
+talked about the GP serving two masters
+and they do they've got shareholders in
+some cases business partners and others
+and then a client they've got a couple
+of fiduciary duties that have different
+calls at different points in time just
+being EX exceedingly transparent about
+that is maybe a good way to do business
+Josh maybe in the remaining minutes I
+know you've done some recent thought
+about genit of AI and what that means
+either within the investment process
+what it might mean inside of a portfolio
+company for a VC or private Equity GP
+but what is the current state of play I
+sometimes feel everybody's talking about
+it but I do think it's a bit of the
+camel's nose in the tent too the
+adoption of it still has some
+limitations you have to have a
+controlled data set otherwise
+hallucinations become a very real world
+so closing on a current and future topic
+for discussion and maybe for Value
+creation it's a great issue as you sort
+of alluded to we recently had a session
+with the hyd business school private
+Capital project and the our nonprofit
+private Capital Research Institute to
+look at exactly this question with
+academic and practitioner perspectives I
+think one thing we can say going in is
+that when we look at the history of
+these kinds of disruptive Tech
+Technologies one thing we see is that
+diffusion process is not overnight that
+it takes time to figure out how to use
+this stuff and I think we can already
+see with AI some of the same evidence of
+the same thing that as powerful as large
+language models are and some of the
+assorted tools figuring out how to use
+them particularly get humans and
+machines to work together is by no means
+simple and it's probably not something
+that's going to take place in 12 months
+or 18 months but is really a decade long
+process secondly I think that there's
+certainly it's fair to say that the
+process is probably going to be one that
+entails that is going to have a very
+real effect on the industry that when we
+think about everything from trying to do
+due diligence on a company which is
+operating in different countries and
+where information is in lots of
+different languages to even thinking
+about the mix of companies and saying
+this is traditionally a company we might
+like a lot because it's a very stable
+cash flow business what is the potential
+of AI really disrupting the business
+model there are going to be a lot of
+changes taking place that being said
+there is a lot of stuff to figure out
+certainly one complicated thing has to
+do with the privacy or the ability to
+reuse data that if you use the almost
+all the groups we talk to are trying to
+figure out ways to essentially create
+private llms to make sure that you don't
+get leakage of confidential information
+to other people secondly there's the
+issue of how do you figure out to use
+this when you know that there are some
+degree of accuracy problems I love this
+email I got from somebody the other day
+who was like I just asked for a
+bibliography on co-investments and the
+first three papers were people by like
+team jenkinson and antonet Shore and
+myself and were completely Reas were the
+right papers to look at and the next
+half dozen papers were completely made
+papers that sounded extremely good and
+they sounded really interesting to read
+but unfortunately didn't exist in
+reality yet had very precise citations
+that chat GPT had produced so in a
+situation it's one thing which have a
+little bit of amusement about an
+academic subject it's another thing
+where you're making decisions of
+hundreds of millions or billions of
+dollars of limited Partner money where
+you're not quite sure about the accuracy
+of what you're getting and then there's
+just the question of of saying these
+groups have traditional ways of doing
+things which have worked very well and
+how do you integrate the human processes
+and the human dynamics with the
+information and the insights that can be
+generated from artificial intelligence
+so will it make a difference I think
+99.99% confidence yes is it going to be
+simple and easy and quick 99% confidence
+probably not just given these kinds of
+issues and challenges and maybe to
+complicate it even more we as
+practitioners you as an academic myself
+as an educator to some degree too we're
+trying to figure this out in real time
+and the regulator sitting back with the
+benefit of 2020 hindsight and they're
+going to be codifying regulation four or
+five years from now on decisions we made
+here today and I think I want to
+underscore a point you made Josh about
+privacy and who owns this data we have
+gdpr in the EUR Zone we don't have a
+definition of privacy here and ethics in
+a CFA or aaya program doesn't even
+contemplate some things that could be
+done with genitor AI so we really have
+to be very very careful very very
+thoughtful Embrace these tools as value
+adding tools but really recognize that
+we're in Uncharted Territory here so I
+think it's an important reminder and a
+good way to put a Capstone on this
+conversation well I've really enjoyed
+the chance to kick around these issues
+they're fascinating ones more questions
+and answers that's what makes good
+conversation so thank you absolutely so
+as I said at the beginning Josh it was
+2014 when I had the great pleasure of
+giving you an award for research
+excellence and hopefully I won't have to
+wait a decade for that to happen again
+and I think you are right at the
+epicenter some very interesting
+challenging and opportunistic events and
+I think you're in a great spot so
+hopefully we'll have you back sooner
+rather than later but thanks for all you
+do thanks again really appreciate
+it
+thank you for listening to educational
+Alpha I'm your host Bill Kelly learn
+more about the kai Association And
+subscribe to the show at ca.org that's
+c.org see you next
+[Music]
+time

@@ -1,0 +1,275 @@
+[Music]
+Hi, I'm Adam Danis. Welcome to MBA Asks
+the Expert, a series where we discuss a
+timely and important issue with a
+mortgage industry leader. Today I'm here
+with Lender Price Chief Strategy Officer
+Paul Orlando for part three of our
+ongoing series with Lender Price. In
+parts one and two, we discussed margin
+pricing engines in artificial
+intelligence. Today it's mortgage
+technologies impact on cost reduction
+and ROI.
+Paul, thank you for joining us today.
+>> Glad to be here and uh looking forward
+to our discussion today, Adam.
+>> Likewise. So, let's jump in. Market
+conditions are still tough out there,
+which means efficiency has become more
+critical than ever for mortgage lenders.
+In your view, what are the most
+significant cost and efficiency
+challenges lenders are facing today? And
+how can modern technology like lender
+price help address these issues?
+I definitely agree that costs have been
+increasing and there was a recent uh
+Freddy Mack study that said over the
+last 3 years costs have increased
+approximately 35%.
+The interesting thing is if you dive
+deeper into that study there was a
+significant difference between the top
+performers and the bottom performers.
+The study showed that the top performers
+were originating at a cost of about
+$6,900.
+The middle performers at $,100 or
+$11,600
+and the bottom performers were at
+$16,500.
+So, as you said, costs are increasing,
+but there is a difference in how people
+do things. So, what is it that the top
+performers are doing that the bottom
+performers are not? And I I think
+they're focusing a lot on outdated
+processes and outdated technology in
+order to look for ways to drive their
+costs down.
+People companies need to review their
+processes from end to end and look for
+for duplicate processes within the
+systems and look to eliminate them as
+much as possible.
+uh lender price as a modern pricing
+engine is helping to do that by coming
+in at a lower price point than some of
+the older systems that are out there.
+Our systems are able to quickly adapt to
+the changing market and we're able to
+put out new features and functionalities
+uh within a very short time and in some
+cases we can even deploy them within the
+same day. Our microservices design helps
+us in order to be able to create new
+features and functionality and then be
+able to deploy the those features
+with without impacting anything else in
+the system. Another good example is is
+new fields can be added within the same
+day and rules can be written against
+those so that people can quickly adapt
+to new products that they want to offer.
+>> That was a great way of breaking it down
+for us, Paul. I I like that. So, when
+evaluating the ROI of a tech investment,
+what key metrics or outcomes should
+leadership teams focus on, you know,
+beyond just that bottom line savings?
+>> Yeah, when you're looking at ROI on a
+potential product, I think you need to
+look at both the hard cost and the
+intangible savings that you're going to
+get. The hard dollar costs are easy. How
+much does the new software cost versus
+the old one? Am I going to be able to
+sunset the old one quickly? What are my
+implementation costs? And on the savings
+sides, what process improvements am I
+going to be uh benefiting from? And how
+quickly can I do that? As you continue
+to look at the uh intangible items,
+you can look at different things like
+does my pricing engine allow me to
+deploy new rate changes quickly
+in a rising rate environment. You want
+to be able to make sure that if the
+market is changing and moving up that
+you you can deploy new pricing
+instantaneously.
+So that way you're not going to be
+affected by people locking loans with
+you at those lower prices.
+Conversely, if rates are dropping, you
+want to be able to get your prices out
+there as quick as possible so that you
+can pull in as much of that new business
+as possible.
+One of our applications, our base price
+solution, allows you to pull in brand
+new uh pricing and download it into the
+system in under five minutes. In some
+cases, other systems are requiring as
+much as 30 to 60 minutes to be able to
+do that same thing. Another example
+would be a point of sale solution.
+If you're looking at your point of sales
+solutions, you want to make sure that
+they're easy to use and they're keeping
+the client updated as to what's going
+on. The better experience that client
+has, the more likely that they're going
+to refer people to you and thus you'll
+be able to increase your overall volume
+while also doing it at a lower price.
+Yeah, I agree with you that it's more
+than just the bottom line savings and
+especially given the volatility in
+mortgage rates right now and the fact
+that they're still elevated but you know
+they will come down at some point um
+hopefully. So adopting new technology is
+one thing but realizing its full value
+is another. How have modern pricing
+engines such as lender price helped
+reduce manual errors and improve
+turnaround times for lenders and loan
+originators?
+So, one of the things that companies
+often do is is they buy this new
+software and it has all sorts of things
+that it can do for them, but they focus
+only on one small piece of it and that's
+what they deploy. And that's where
+they're losing out because there's a lot
+of other benefits that can be taken
+advantage of. And those benefits, you're
+already paying for them. So why not take
+advantage and reduce your total cost of
+ownership as you're looking at it? And
+it also will provide a better experience
+for your clients as you look at using
+all those new things. Uh lender price
+while being a modern product and pricing
+engine, we have so many more things to
+offer with inside the system. A perfect
+example of that is pipeline monitoring.
+One of the areas where people lose money
+is is that loans change throughout the
+origination process. If their product
+and pricing engine is not keeping track
+of those changes, then there's a chance
+that they're either going to be closing
+on an ineligible product or that the
+LLPAS could have changed on that product
+and they didn't realize it. Our pipeline
+monitoring constantly looks at the the
+application, what's going on, and it'll
+alert you to the fact that a change has
+taken place that's going to impact the
+pricing on the loan.
+Another tool that we have is something
+called AYA. AI is one of the hottest
+topics out there in the marketplace
+today. And our AY product which is
+artificial intelligent
+loan assistant
+uh is something that
+our originators can use in order to help
+them figure out what is the best
+solution for their individual clients.
+We have different things like near miss
+evaluations as well as ineligible
+product evaluation.
+With that the loan officer can say I
+want this ineligible product. what do I
+have to do in order to make it uh a
+valid product? Our system goes out,
+looks at their specific guidelines and
+comes back and says, "These are the
+changes that you would have to make in
+order to achieve that. Would you like us
+to update the search criteria
+accordingly?" we can make those changes,
+push that data back into their loan
+origination system, and they're able to
+get that product that was previously
+listed as ineligible.
+>> That's very interesting, Paul, and seems
+like there's some very useful tools
+Glender Price has in its toolkit. No pun
+intended there. So, finally, last
+question. You know, I've really enjoyed
+this conversation. Looking ahead, what
+emerging technologies or capabilities do
+you believe will be most critical to
+achieving sustainable growth and that
+long-term cost efficiency for the
+mortgage industry?
+>> I think two areas that people are
+focusing on right now. One is artificial
+intelligence. What can you do with that?
+Where can you insert it into your
+systems? And where can you do that uh
+without creating additional risk for the
+loan origination process? The other is
+workflow automation. And when you're
+looking at workflow automation and AI,
+there's a potential that you could
+reduce your current manual processes by
+80 to 90%. There's several companies out
+there today that are offering tools that
+automate this part of the workflow
+process where people can utilize data
+and documents, have the information
+evaluated by the system and
+automatically either clear conditions or
+create uh benefits from a post-closing
+perspective. E-closing is a perfect
+example of that.
+e-closing really came in, you know,
+started to build uh acceptance during
+the pandemic. And as a part of that,
+what you're able to do is you're able to
+take those documents that are locked
+down and the data that created them,
+which is also locked down within your
+loan origination system, and you're able
+to compare them without having to have a
+human do a stare and compare on them.
+This allows you to quickly figure out if
+the documents coming in are accurate and
+if there's any issues that need to be
+addressed. On the lender price side, we
+make it easy for our clients to make
+changes on the fly. If they want to
+introduce a new product, a feature, or
+an LLPA, they can go right into the
+system, make that change, and publish
+it, and that system is now live for
+their clients. We also use something
+called NLP, natural language processing.
+And this allows anybody to be able to
+just type a sentence and the system will
+take that sentence and turn it into a
+rule that can be used for their various
+products.
+When you invest in companies that focus
+on making your processes quicker,
+easier, and more automated, that's where
+you're going to uh improve your overall
+cost of ownership and drive down the the
+cost of origination.
+>> That's a good closing point there, Paul.
+And you've given our viewers a lot of
+valuable information today. I appreciate
+you chatting with me on this important
+topic. Thank you for talking to me
+today.
+>> Thank you for having me. And I enjoyed
+speaking with you as well.
+[Music]
+[Applause]
+[Music]

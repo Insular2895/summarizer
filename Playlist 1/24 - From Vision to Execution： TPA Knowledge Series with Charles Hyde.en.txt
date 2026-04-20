@@ -1,0 +1,511 @@
+[Music]
+Hey everyone, uh Aaron Philbeck here at
+Kai Association. Uh I am pleased to be
+joined by Charles Hyde who is the head
+of asset allocation for New Zealand's
+superanuation fund. And uh Charles was
+uh both part of the original total
+portfolio approach uh paper that we
+released last year as well as uh
+participated in this follow-up uh piece
+as well. So really excited to uh dive
+into a conversation with you Charles and
+thanks for uh spending some time with
+me.
+>> No, great to be with you. Thanks for
+inviting me.
+>> Great. Well uh so Charles in this second
+paper that we we uh are working on uh
+together uh we've taken the the
+conceptual framework that we introduced
+in the first TPA paper and are much more
+focused on uh the practicalities of how
+you transition uh from a strategic asset
+allocation framework to a total
+portfolio approach uh framework. So
+trying to get into some of the
+nitty-gritty of what that looks like. So
+maybe just a first question for you is
+around that transition uh from your seat
+and how that started at uh NZ Super and
+I guess in your mind what is the most
+important first step for those who are
+trying to make that transition from SAA
+over to TPA.
+>> Yeah, sure. Um so we set out on our
+journey uh way back in 2010 um when we
+adopted a reference portfolio and and
+that was really for us I think the most
+important um catalyst um towards
+adopting a total portfolio approach and
+in indeed in many ways the the
+foundation of it. So um we had we
+adopted a reference portfolio and at
+that time the board um agreed that it
+made sense for the board to focus going
+forward on um on governance and for
+management to take ownership of the
+investing. And that might sound kind of
+simple and obvious but um you know a lot
+of places don't have that clarity um of
+you know division of labor if you like
+between governance and management and
+and that great clarity that we have um
+and and that was put in place at that
+time that we adopted the reference
+portfolio which is a governance
+mechanism um has really been the
+foundation of our total portfolio
+approach. You know, it gave great
+clarity to us as to who owns what, but
+it also importantly gave management the
+flexibility to take an approach to um
+building a portfolio and managing it
+that is different from from what um
+would you you would typically see out
+there um under that rubric of the um SAA
+approach. It gave it allowed us to be um
+more dynamic in terms of the way that we
+managed the portfolio. we didn't have to
+engage with the board uh with every
+investment decision along the way. Um
+and it also freed us from some of the
+constraints um of the SAA approach. So
+we weren't tied to using the kind of
+classical standard asset class
+definitions that you would see um in an
+SAA. And it it also allowed us to um
+get away from that idea of having a
+fixed cycle um of of asset allocation
+reviews, you know, every year or two
+years or or whatever it is. It allowed
+us to kind of to to return to the
+allocations on a much more frequent
+basis. So So that was the beginning of
+our um of our total portfolio journey.
+Um but you know that was as I said 15
+years ago. It's certainly um by no means
+the end of our journey. It's been very
+much a a work in progress um over a long
+period of time. Uh there have been some
+meaningful um um changes to the way that
+we've done things since then. Uh you
+know we adopted a a risk budgeting um
+approach in um 2014 or so which was a a
+big step forward. And so you know going
+back to to that that um split between
+governance and management our board
+retained two key investment decisions.
+One is the structure of the reference
+portfolio um you know what what
+combination of um asset classes should
+we have in that and they also own the
+sizing of our um active risk budget that
+management has to use to uh build a
+better portfolio. So um yeah you know
+we've we've I guess done done a lot of
+things along the way to enhance um
+collaboration and you know maximize if
+you like the efficiency with which we
+share information within the fund and um
+you know more more generally um trying
+to to build a culture that that
+underpins that um that need to to have
+strong collaboration um across the teams
+u within the fund. And and lastly, you
+know, one of the um one of the bigger
+projects that we've been working on over
+the last few years is building out our
+capability um around
+um providing the decision makers with
+timely um quality information about the
+different assets in our portfolio and
+their relative attractiveness so that we
+can maintain that competitive tension in
+the portfolio through time.
+So, so Charles, there's a lot there and
+I want to I want to come back on a
+couple of those points, but uh you know,
+your your comment on kind of the
+accountability and and the governance
+structure that's put in place, I think
+was one of the biggest aha moments for
+us as we were going through this second
+study of that implementation phase. And
+it seemed like no matter uh what type of
+organization or what type of portfolio
+you were managing, if you truly wanted
+to go from that SAA framework to a TPA
+framework, it really started with that
+governance and the accountability and to
+use your phrase uh division of labor
+between the governing body and the
+investment team. Uh so, you know,
+reinforces I think a lot of what uh what
+you just said. I want to talk a little
+bit about that kind of trade-off of of
+flexibility that is afforded to the
+investment team uh by the governing body
+with uh risk management and you know in
+some ways it's liberating to uh you know
+have the board you know kind of take a
+hands-off approach to the day-to-day
+management. you no longer have the
+prescriptive asset classes that you
+mentioned um and you you can operate in
+a much more fluid environment instead of
+those regular reset periods that you
+mentioned. But on the other hand, uh it
+it kind of removes uh some of those risk
+management components that naturally
+come with an SAA type of framework. So
+could you talk a little bit through how
+you think about risk management with a
+reference portfolio as a guide versus a
+more prescriptive SAA type of asset
+allocation that's being effectively
+handed to you uh by that governing body?
+>> Yeah. So um so I think in in many ways
+you know we ask similar questions to to
+probably most other funds out there when
+it comes to thinking about risk
+management. It's just that we go about
+it in a different way. So yeah our
+reference portfolio is the foundation of
+our portfolio mostly because it sets the
+risk profile of our portfolio. The
+purpose of the reference portfolio at
+its simplest is to convey to management
+what the board's risk appetite is and
+and and we management are required to
+manage the portfolio um at a risk level
+that's consistent with that reference
+portfolio.
+So um but I guess I would say one of as
+far as the reference portfolio part of
+it is concerned because obviously for
+for us um asset allocation has two
+pieces. one is the design of the
+reference portfolio and the other is our
+active risk budgeting uh that we do and
+and that's where we get into a more
+granular asset allocation work which is
+more akin you might say to an SAA
+approach but as far as the reference
+portfolio is concerned I I guess for us
+you know we we have um by design kept
+our reference portfolio very simple it
+only has two asset classes global
+equities and global fixed income uh with
+with a for allocation to New Zealand
+equities within that um equity
+allocation. And so um it's it's simple
+but um that has the advantage I think of
+bringing greater clarity to our risk
+conversations. Uh we're not getting kind
+of burdened down by the complexity of of
+um of a portfolio that uh looks more
+like what you would have say in an SAA
+approach. And so um for for us you know
+we we come to that reference portfolio
+asking um how do we ensure um that that
+reference portfolio is fit for purpose
+in terms of meeting our mandate. So you
+know we have a mandate which is given to
+us by the government. We are a sovereign
+wealth fund and so our primary purpose
+uh as I said the reference portfolio is
+a um an expression of the board's risk
+appetite. So our primary purpose as far
+as risk management goes for the
+reference portfolio is to ensure that we
+minimize the risks of not meeting our
+mandate. So yes, the usual kinds of risk
+questions which are about, you know, um
+how big of a left tail uh return can you
+withstand um or are you willing to
+withstand um how big of draw down um are
+you willing to tolerate? Those um are
+very important questions for us. But
+equally we are focused on well how how
+low of a return over the medium to long
+term is the board willing to tolerate.
+So, so for us not taking on enough risk
+is is a risk in itself. Uh because you
+know if we only um have a small
+allocation to equities in that reference
+portfolio, you know, we're more or less
+locking in a low return over the long
+term and that doesn't really square with
+our mandate which requires us to
+maximize return without undue risk. So,
+you know, we're taking a very balanced
+approach to thinking about risk. It's
+about you know how much equity risk can
+we take on without um getting into
+uncomfortable territory uh in terms of
+draw downs but also you know what what's
+the lower limit on on how much equity
+risk we're able to take without um
+undermining our ability to deliver on
+our mandates. So it it it is very much
+um a balancing act and we actually
+survey our board um with very direct
+questions um as to these various aspects
+of risk um uh around the reference
+portfolio to to try to get a sense from
+them as to where their risk tolerance
+lies. And obviously the board changes
+over time. You get new members coming
+on, others rolling off. Um and even for
+those that have been on the board for
+some time, you know that they are
+actually quite difficult questions to
+answer. Um if someone asks you what what
+your minimum uh what's the minimum
+return that you're willing um to
+generate over a period of time. Um but
+but they are the the the um really the
+cornerstone questions that we ask
+ourselves when it comes to thinking
+about reference portfolio. The other
+thing that's probably worth mentioning
+is that while we while we design the
+reference portfolio as a separate
+exercise, we don't do that in isolation
+of the portfolio that we're running. So
+so there are certain design features of
+that reference portfolio that actually
+um will flow on to affect the actual
+portfolio that that we are running in
+the fund. So for example um in the past
+we have always um hedged the portfolio
+uh to mirror the hedging policy in the
+reference portfolio. Well that that
+brings liquidity considerations to bear
+in the actual portfolio and so we have
+them in mind when we're setting um say
+the hedge ratio or the the the currency
+exposure of the uh reference portfolio.
+So it's a it's a holistic approach that
+we bring. Um we are designing a
+reference portfolio. It is our
+benchmark. Um so you know it's as I said
+it's a governance um mechanism but we
+don't do it um in ignorance of of what
+some of the flow on effects of those
+decisions um will be. And so as I
+mentioned earlier the risk budgeting um
+that we uh do uh which is to say taking
+the risk budget that the board have
+given us which um is currently a 4%
+tracking error relative to the reference
+portfolio. That's the other key asset
+allocation exercise that we engage in
+and that's at a much more granular
+level. Um and it takes into account you
+know the goodly constraints um obviously
+the size of the disposal that we have to
+work with and any other you know
+relevant constraints um around
+particular um asset classes or subasset
+classes that we're getting into. And so
+that's kind of a bit closer to what you
+might think of as a more standard SAA
+approach um to to um allocation.
+So Charles, I want to pick up on that
+last point which is the the portfolio
+and how how the portfolio has changed
+over this journey. So starting back in
+2010 all the way to to present. Um talk
+through how as you've gone through this
+journey from SAA to TPA. Uh what what
+have the uh trends been within the
+portfolio in terms of asset classes that
+you may have invested in that you no
+longer do invest in or new asset classes
+or strategies that have been introduced
+as a result of uh moving towards TPA.
+And then maybe a follow on to that is
+the relationships that you've built and
+partnerships you've built with the
+external managers uh that you utilize
+and how have those changed over time.
+Okay. So, um it as I said earlier, it's
+been u we've been on this journey for 15
+years. So, um the the pre and post um is
+it it's it wasn't a big bang uh where
+you can kind of easily say, okay, this
+is what it looked like before and this
+is what it looked like after. It's
+something that's it's been a slow burn,
+you could say, and it's um it's evolved
+over time. that um but I I guess if I
+have to point to one thing that changed
+and it did change um at right around the
+time that we adopted the reference
+portfolio construct which I said earlier
+was I think the foundation of that total
+portfolio approach and and the
+delegations associated with that um the
+changes um was that we adopted uh what
+we call a a strategic tilting program
+which is an internal DAA program that we
+Um and so um that was adopted
+essentially to um allow us to you know
+tilt um around the major asset classes
+um through time in a in a fairly dynamic
+fashion. You know we have this we we now
+have this reference portfolio which is
+which we only review every five years.
+So it's fairly fixed in time, but you
+know in in um accordance with um you
+know our desire to be more dynamic uh we
+we needed something like the strategic
+tilting program to allow us to move the
+portfolio around as um the
+attractiveness of different asset
+classes uh waxed and waned. So um that
+that was a key um uh difference to our
+portfolio um pre and post and I think it
+it remains something that's fairly
+distinctive for our fund partly because
+of its performance which has been you
+know quite exceptional but also and
+perhaps also the fact that we're willing
+to size it um at at the level that we
+do. So it it does take up a good portion
+of our active risk budget and so I I
+think it's you know it's quite
+distinctive in that way and and I guess
+you know the the performance and the
+sizing are not unrelated um it's
+something that we started off small um
+as it um proved itself up we were um you
+know we got more comfortable with it and
+we were willing to allocate um more risk
+to it but I I think you know my take is
+that if um if we were still running a
+more traditional approach, we probably
+wouldn't have got to the point where
+we've um given it the allocation that we
+have. And and the way I think about it
+is that, you know, in a more typical SAA
+approach, you'd make an allocation to
+all of the major asset classes. You'd
+make an allocation to alternatives. Then
+within that alternatives allocation, you
+kind of suballocate to a number of
+different things, global macro and maybe
+some trend and and whatever else. Um
+whereas we allocate directly to um
+strategic tilting um along with low
+things. So our allocation
+occurs um directly at a more granular
+level in that um risk budgeting um
+exercise that that we do. So that I
+think is certainly one thing that stands
+out for me as being um quite a big
+difference pre and post um
+implementation of our total portfolio
+approach. And then the other thing that
+happened when we um when we did make
+that change was that we went through and
+kind of cleaned out the portfolio. So we
+actually terminated a lot of strategies
+and managers which which we just felt
+that when when we looked at it from that
+total portfolio perspective
+there just wasn't a strong rationale for
+for how all of that fitted together. And
+so we got rid of, you know, quite a few
+um hedge fund strategies and and we
+terminated um uh quite a few managers um
+at that time. And there was a real focus
+for a while on having what we used to
+refer to as fewer deeper manager
+relationships
+um and and really just kind of
+consolidating the portfolio down to
+something that was more coherent, you
+could say. So, so that was another
+change that there was a real kind of
+clean out of the portfolio um in the
+first few years after adopting um the
+reference uh well the reference
+portfolio and total portfolio
+approaches. Um the the other thing that
+was notable and I think distinctive was
+that we we were more comfortable um not
+necessarily having all asset classes
+represented in our portfolio. And this
+goes back to that that idea that you
+know um you you want to have competitive
+tension in your portfolio and you want
+to be including those things that are
+attractive and being um
+being willing to to not include things
+that are are not attractive. So for
+example, you know, there was a period
+there when for a few years when we
+didn't have any real estate to speak of
+in our portfolio, which I think you
+would agree is quite a distinctive um
+makes it a distinctive portfolio
+relative to most of our peers. Um
+although you know that said as we've
+grown in size you we acknowledge that it
+becomes harder and harder to you know
+pivot into and out of a whole asset
+class um through time. So uh there there
+are some things you can do in a total
+portfolio approach um when you're small
+that you can't do when you're large. And
+I'm not saying by any means that we're
+large on the global scale. Um but you
+know the way that we think about uh the
+total portfolio approach I think is
+slightly different from the way that
+some of our peers think about it who are
+much larger and who just can't kind of
+do the things that we do because we are
+after all still a relatively small um
+player on the global stage.
+Um
+yeah, but I I think really at the end of
+the day, it's it's more about the the
+mentality that we bring um with the
+total portfolio approach. So, you know,
+instead of just asking the simple
+question, does this new investment uh
+clear its or beat its cost of capital,
+we're we're much more cognizant of how
+does how does this new investment fit
+into the the puzzle of our broader
+portfolio? How does it impact on our
+tail risk? How does it impact in
+particular on the liquidity risk that we
+have? Um and you know how how
+diversifying is it um as an alpha source
+say relative to the other alpha sources
+we have? What are the factor exposures
+that it brings and how does that align
+with what we're trying to achieve from a
+total portfolio perspective?
+>> Wonderful. Well, Charles, I really
+appreciate your time and and walking
+through uh some of these uh these
+additional questions and case studies.
+And again, appreciate your contribution
+both uh to the original piece that we
+put out uh last year and then being part
+of this follow-up piece. I think uh the
+industry is going to benefit uh from
+your expertise and learning a little bit
+more about how you've made this
+transition over the past uh several
+years. So, uh thanks again. Really
+appreciate it.
+>> Well, it's a pleasure, Aaron. Thanks for
+having me.
+[Music]

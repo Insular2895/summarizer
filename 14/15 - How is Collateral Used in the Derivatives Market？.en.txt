@@ -1,0 +1,37 @@
+what is collateral in the derivatives
+market and how can it make the economy
+safer think about how a secured loan
+works a person takes out a loan to buy a
+new car and puts up the car as
+collateral
+if she can't repay the loan then the
+lender uses the car to offset its loss
+collateral in the derivatives market
+works in a similar way assets are put up
+to protect each counterparty from loss
+in derivatives however the market value
+of the trade can vary from day to day
+that's where variation margin comes in
+say two parties enter into a ten year
+interest rate swap if the market value
+of a trade changes by $1 on any given
+day then a dollar in collateral is
+delivered that way a firm would be paid
+what it is owed even if the trade is
+terminated that day new regulations
+require most firms to post variation
+margin on their derivatives trades in
+addition many firms including financial
+institutions are also required to post a
+part of collateral before they trade
+with each other this is called initial
+margin and it's a kind of buffer that
+insulates the surviving party against
+further losses following a default these
+are important changes collateral is a
+backstop that protects market
+participants and the economy as a whole
+the collateral requirement is just one
+of the five key reforms we have seen in
+the derivatives market that make it more
+transparent resilient and safe

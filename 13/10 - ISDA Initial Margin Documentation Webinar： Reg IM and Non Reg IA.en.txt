@@ -1,0 +1,409 @@
+hello and welcome to our webinar is the
+documentation focusing on interaction
+between regulatory required initial
+margin or reg I am and negotiate initial
+margin or non reg ia this is part of a
+series of webinars looking at recently
+publishes documentation that enables
+parties to comply with regulatory
+requirements related to initial margin
+my name is Megan o Flynn I'm an
+assistant general counsel here it is
+done and I'm joined today by Tamsin
+roles executive director and assistant
+general counsel JP Morgan as well as
+Ryan Pitino a partner at Tegel and Hans
+LLP I'll go ahead and turned over to
+Tamsin and Ryan to begin the
+presentation thank you very much for the
+introduction Megan on the first slide
+for background purposes we're setting
+out certain concepts and terminology
+that will be used throughout the
+presentation in the center of the slide
+you'll see a black bar indicating the
+relevant regulatory initial margin
+compliance date the red arrow
+illustrates that the regulatory initial
+margin requirements go into effect after
+this compliance date whereas the green
+and purple arrows indicate that non
+regulatory independent amounts and
+variation margin which have been
+effective for some time at least for
+most counterparties will continue to be
+relevant
+after the regulatory initial margin
+compliance date below the dotted line we
+further distinguished trades entered
+into before the relevant regulatory
+compliance date so called legacy trades
+and trades entered into after the
+relevant regulatory compliance date so
+called new trades so the purposes of
+this presentation we'll assume that all
+trades entered into prior to the
+compliance date will not be subject to
+regulatory initial margin requirements
+although there are circumstances where
+that would not always be the case for
+instance due to certain life cycle
+events or if the parties so chose for
+the purposes of netting pre and post
+compliance date trades and determining a
+single net initial margin requirement on
+these next few slides we'll explain how
+these distinct margin requirements reg
+a.m. non reg ia and BM can be applied to
+legacy trades and nutrients under the
+new I M CSA the different approaches
+dubbed margin approaches under the new
+imc sar1
+the distinct margin flow I am approach
+to the allocated margin flow I am ia
+approach and three the greater of margin
+flow I am my approach so first will be
+turning to the distinct margin flow I am
+approach thanks Ryan
+so let's talk about the first margin
+approach the distinct margin flow
+approach and before we describe how this
+works is probably just worth quickly
+explaining why we need to deal with the
+interaction between ia and I M so in the
+first few phases of initial margin the
+parties that were in scope of the rules
+at that time tended to be dealers who
+tended not to have posted I am to each
+other and it was therefore fairly simple
+to put in place a regulatory document
+that sets out the parties obligations as
+we come into phase four and phase five
+of the I M rules the picture becomes a
+bit more complex a far wider range of
+counterparties comes into scope and many
+of those entities are already posting
+non-regulated independent amounts to
+their dealers and that's why the
+documentation has been amended to deal
+with the interaction between these flows
+so looking at the distinct margin flow I
+M approach let's talk about what this is
+intended to achieve so under this
+approach we maintain two separate and
+distinct margin flows the first the
+regulatory initial margin is to be
+calculated in the course of the margin
+rules and is documented under the 2018 I
+NCSA in respect of new trades so trades
+that are executed after the compliance
+date for I am only and this flow of
+regulatory initial margin is distinct
+from and has no impact upon any existing
+non regulatory independent amount the
+non regulatory independent amount that
+the pledge or is required
+to transfer for either legacy and new
+trades or for legacy trades only will
+continue to be calculated and documented
+under the existing legacy documentation
+there will be no change to the way in
+which parties currently calculate the
+non-regulatory independent amount and
+that is made clear in the 2018 initial
+margin CSA in paragraph three that deals
+with these three approaches you might
+ask why anyone would want to adopt this
+approach given that it seems to give
+rise to a greater margin requirement
+than would be needed either from a
+credit perspective or from a regulatory
+perspective so to explain why it's been
+included this approach was specifically
+requested by certain of our buy-side
+participants to deal with the situation
+when the where the non regulatory
+independent amount is a single number
+and not an amount that applies on the
+per trade basis it's also worth
+mentioning that it has the advantage of
+relative operational simplicity and it
+also means that the existing independent
+amounts will not be subject to other
+requirements of the margin rules the for
+example the eligibility requirements or
+the segregation requirements Ryan is now
+going to talk about the next margin
+approach that's documented on to the new
+2018 I mcsa thanks James and the next
+approach starts to get a little bit more
+complicated it's a bit more nuanced than
+the distinct margin flow approach so the
+way this amount is the way this approach
+operates the regulatory initial margin
+is calculated as the excess of the
+margin amount I am over the pledgers
+threshold and that's calculated and
+documented under this 2018 IMC essay and
+respective nutrients only again this
+total amount of collateral that's
+required to be transferred that is not
+in respective it's
+Bossier will be allocated across reg I
+am and non reggae the amount of Reich
+reg I am required to be transferred will
+they be the minimum not do under the
+terms of this 2018
+I am CSA the non reg ia will be the sum
+of the margin amount I a that pleasure
+is required to transfer for legacy
+trades and/or new trades after taking
+into account any threshold or similar
+amount as calculated and documented
+under the existing legacy document and
+the twist here is that that amount is
+reduced by the amount of the Reg I am so
+you're essentially still calculating
+business as usual your independent
+amounts under your existing CSA so
+you're calculating those total amounts
+across the board for all of your trades
+and coming up with an amount taken into
+account threshold and similar
+requirements after that is done you
+would separately calculate this reg I am
+requirement and subtract that from this
+non reg I am out the reg I M would be an
+amount that flows through the new CSA
+and this reg I am would be subject to
+all the margin regulations including the
+segregation requirements there in the
+non reg ia would continue to be posted
+as it was under the existing legacy
+agreement so that could be you know
+directly posted to the counterparty it
+doesn't necessarily need to be
+segregated but it would be essentially
+reduced or you would get credit for that
+amount a reg I am that is separately
+flowing through the new I am CSA so it's
+a pretty simple process but basically
+your your calculating
+the amount of independent as you always
+would but then subtracting this amount
+of reg I am from that calculation and
+you have to separate flows one flow
+through the new IMC SA and one flow
+through your legacy si si thanks Ryan so
+I'm now going to talk about the third
+and final approach that is available
+under the new 2018 IMC SI documents now
+the third approach is known as the
+greater of approach and this is the only
+approach which provides for a single
+flow of margin from the collateral giver
+to the collateral taker and that single
+flow will comprise both regulatory
+initial margin and any non regulatory
+independent amount and the way that this
+works is as follows a single amount will
+be due under the 2018 IMC si and that
+amount will be equal to the greater of
+the I M amount that's required by the
+margin rules over the collateral givers
+threshold and of course that that
+threshold needs to comply with the
+regulatory requirements but is also an
+amount that needs to be agreed with your
+counterparty and this amount will be in
+respect of new trades only because this
+amount relates to the margin required
+under the regulations but then parties
+will also be required to look at the non
+regulatory independent amount
+requirements and so the amount posted
+will be the bigger number of that
+regulatory requirement and the non
+regulatory independent requirement so
+obviously the idea here is that it might
+be that a counterparties credit
+department requires more independent
+amounts than the regulator's do and the
+purpose of this calculation and approach
+is to allow for the amount required by
+regulation to be posted and for the
+counterparty to be satisfied from any
+internal credit perspective the non
+regulatory independent amounts will be
+calculated under the
+listing legacy documentation but that
+documentation will be amended to make
+clear that the actual posting will take
+place under the 2018 IMC SA only and not
+under any other document so the
+advantage of this is that the old CSA
+can remain untouched and the calculation
+will stand as it always did
+but then the IMC si will make clear that
+the actual posting takes place under
+that document and so a party's
+obligations in respect of both the
+regulatory initial margin and any non
+regulatory independent amounts will be
+satisfied by delivering delivery of
+collateral under the terms of the 2018 I
+am si si now the consequence of this is
+obviously that the requirements of the
+margin rules will apply both to the
+amount actually required by regulation
+and to any excess that separately
+requested by the counterparty so that
+means that provisions like the
+eligibility requirements wrong-way risk
+requirements concentration limits and of
+course the requirements of segregation
+will all apply to both portions of
+collateral and one collateral accounts
+is typically used however obviously what
+one does achieve through this approach
+is greater operational simplicity
+parties only have to deal with one flow
+of collateral so it might be that that
+felt to be advantageous and now Ryan is
+going to go through some numerical
+examples so that you can see what it
+means in practice to actually use one of
+these approaches or another thanks
+Vincent so yes I think this is really
+this chart is really illustrative of how
+these distinct margin flow approaches
+work so under the top cell on the left
+side we set out the example and in this
+case party B's posting obligations are
+as follows
+for non-regulatory independent amounts
+there is a hundred requirement for that
+independent amount there's a threshold
+of zero for the regulatory initial
+margin requirement presumably let's say
+this this is the sim calculation the
+amount is 90 and then there's a
+threshold of 50 and I think that fits in
+well with the 50 million dollar
+threshold so under the distinct margin
+flow I am approached party B's posting
+obligation under the 2018 I am si si is
+essentially calculated as 40 and so that
+$40 40 million amount would be their
+regulatory I am - the threshold so it's
+pretty simple you're just looking at reg
+I am and the reg I am threshold for
+calculating the amount that's due under
+the new lion si si under the existing
+legacy document if you go down to the
+next row the I a requirement would be
+100 that's again very simple the non reg
+I a requirement is a hundred the
+threshold zero so you get a calculation
+of 100 so what does that mean overall
+overall under the under both documents
+as Kempton mentioned earlier you would
+essentially be posting both you'd be
+posting the 100 under the legacy
+document and 40 under the new IMC si for
+a total of 140 million in IA and I am so
+you can see pretty quickly how that
+starts to stack up the allocated margin
+flow I am I approach works a little bit
+differently but in the first row it
+works quite the same way you're just
+looking at regulatory initial margin
+requirements for the purposes of the
+2018 new IMC si
+so you'd be taking that regulatory I am
+requirement of 90 and subtracting the 50
+million dollar threshold for a total of
+40 million same as distinct but then
+this is where it really becomes
+different for calculating the
+independent amounts under the existing
+legacy document you would essentially
+get credit for that same 40 million that
+is posted under the I MCSA so you'd have
+the 100 million in non reg ia and then
+you'd be subtracting that 40 million
+that is being posted now under the new
+IM csa to essentially get credit for
+that 40 million stretch that under your
+legacy document you are only posting 60
+million in IA and this is done in the
+new IM csa there's actually a provision
+in these margin approaches that amend
+the independent amounts under your
+legacy
+si si so what does that mean for the
+total posting obligation it's 40 plus 60
+for a total of a hundred million so
+clearly you're posting less under the
+allocated margin flow
+I am a approach than you would under the
+distinct margin flow approach and then
+the last column I think is quite simple
+again this is the greater of margin flow
+approach and here you would be totaling
+up the amounts that are calculated under
+each of the CSA's so under the legacy si
+si you'd be looking at that non reg I
+amount of a hundred million you'd be
+applying the threshold that results in a
+hundred and so that would be one
+calculation then you'd separately run a
+calculation under the new IMC si which
+is similar to what we saw under the
+first two approaches it would be ninety
+million in reg I am - is 50 million
+dollar threshold that will be 40 and
+then you'd say which is greater of those
+two one
+hundred or 4100 larger so that would be
+the amount the total amount that's
+posted under the new IM csa the similar
+to what I was discussing for the
+allocated margin flow approach there's
+an amendment to the existing legacy csa
+that essentially brings that amount down
+to zero under the legacy csa so party
+B's posting obligations here under the
+legacy csa would be 0 and then the total
+ah this way would be 100 so as you see
+in this chart this is really how under
+the greater of approach you're seeing
+things sort of flow more through the new
+IM csa and it does really as as Tamsin
+mentioned you know there there are other
+impacts such as you know what
+requirements will apply the other
+implications I should say to the
+requirements that were applied to that
+specific amount depending on which
+document you're posting under and the
+greater of margin flow since you're
+seeing everything flow through the new
+high mcsa everything would be subject to
+the same eligible collateral
+requirements and the same segregation
+requirements and the like
+so you can sort of see how those flows
+would work and it's Illustrated out on
+this chart Thank You Ryan and thank you
+Samson that brings us to the end of this
+presentation focused on interaction
+between right I am and non reg I a I'd
+like to thank both Tamsin and Ryan for
+joining us today really appreciate it if
+you have any further questions regarding
+this presentation or is this initial
+margin documentation more broadly please
+feel free to contact us at is illegal at
+is dot org which is on your screen
+have a good day

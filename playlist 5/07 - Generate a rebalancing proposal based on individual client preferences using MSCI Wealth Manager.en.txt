@@ -1,0 +1,94 @@
+Welcome to this demonstration on how
+wealth management firms can use MSCI's
+factor-based similarity score to quickly
+and easily create a customized portfolio
+solution while adhering to a client's
+unique investment needs and preferences
+inside MSCI Wealth Manager. Client
+expectations are evolving, driving
+increased demand for personalization
+inside their investment portfolios. MSCI
+wealth manager provides firms with the
+capability to enable them to meet this
+demand. We are starting with an existing
+client
+portfolio. This client already has a
+model portfolio assigned from the wealth
+management firm which is being used as a
+benchmark.
+This is the firm's recommended model
+portfolio for this specific client based
+on their goals and preferences. As we
+compare the client portfolio to the
+model portfolio, we notice the model
+portfolio contains exposure to
+alternatives and real estate, which are
+asset classes that are not in the
+client's current holdings. We can
+compare the two portfolios across a
+variety of metrics, some of which are
+presented at the top. Reviewing the
+asset allocation data table allows us to
+obtain greater insight on the
+differences between the model and client
+portfolios and see the individual
+holdings of both. In choosing the model
+portfolio to act as the benchmark to
+compare the current holdings against, we
+see today there is a tracking error
+against the model portfolio of 6.0%.
+Next, let's look at Wealth Manager's
+proprietary similarity score. The
+similarity score provides a unique value
+that is calculated using MSCI's
+factor-based framework and evaluates the
+true source of risk and return between
+portfolios. Currently, the client's
+portfolio has a score of 64%. Which is
+not ideal and shows
+misalignment. As we begin formulating a
+recommendation to rebalance the client's
+portfolio to better match the model
+portfolio, there are personal
+preferences that this client has that we
+need to take into consideration. For
+example, we will want to stay within the
+prescribed investment policy statement
+balance. Equity and fixed income ranges
+are listed below. They would also like
+to sell any exposure to tobacco and to
+hold on to their energy infrastructure
+investments. MSCI Wealth Manager also
+allows for the client or firm to specify
+individual securities that the client
+might not want to sell. Here we are
+adding a constraint on the fly to help
+avoid the purchase of any mortgagebacked
+securities or assetbacked securities.
+Here is the list of the client's
+individual constraints that we can
+overlay on top of the investment policy
+statement bounds in addition to the
+firm's bounds and opinions of the
+marketplace. With all the constraints
+outlined, both individual and firm
+based, a user can simply select the run
+rebalance button and get a new third
+rebalance portfolio that incorporates
+all those individual preferences while
+bringing the client's current portfolio
+closer in line with the target model
+portfolio. After we run the
+optimization, we can see we have
+successfully brought the new proposed
+portfolio in line, improving the
+tracking error and similarity score
+while still adhering to our clients
+unique needs. Whether it is optimizing
+to individual preferences or other
+wealth management needs, MSCI Wealth
+Manager helps investment teams and
+advisers streamline their portfolio
+management workflows at scale. Learn
+more at mseci.com/wealthmanager.
+[Music]

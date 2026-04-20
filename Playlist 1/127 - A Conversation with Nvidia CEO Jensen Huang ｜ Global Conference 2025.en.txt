@@ -1,0 +1,706 @@
+Please welcome president and CEO of
+Nvidia, Jensen Hong, in conversation
+with Institute Chairman Michael
+[Music]
+Milin. Thank you guys.
+[Music]
+They're big fans of yours. I think
+that's for you.
+I think the hoohoo is for you. And I
+think your
+outfit is for for me. So,
+welcome.
+So,
+AI is this the next industrial
+revolution?
+Yes. The next manufacturing revolution?
+Yes. Let me let me uh let me explain.
+So, so all of us have have um uh been
+talking about the technology of AI that
+it can perceive the world, it can uh
+generate content, it can translate, uh
+it can now even reason and um solve
+problems, use tools, use the web
+browser, read PDFs, um uh do research
+for you. And so so we know what the
+technology uh is able to do and that's
+very exciting in itself. It's
+transformative completely in itself. uh
+we understand that the technology is
+unlike uh any IT technology of the past.
+Remember IT technology is a tool. You
+have to use it to make it effective. You
+have to sit in front of the computer and
+use it. uh but now AI has the ability to
+uh automate and the concept of of
+robotics and robots are very well
+understood and so imagine a physical
+robot but you know we understand that we
+can imagine that uh imagine a digital
+robot and it's in you know in the
+computer in your data center doing work
+for you and so so this is it's exciting
+because for the first time it's no
+longer just replacing or the next
+generation of the IT technology that we
+know but for the first time it actually
+could augment um and add to the digital
+workforce. And so the part of the
+economy that is part of uh is much
+larger than a trillion dollars is part
+of the hundred trillion dollars. And so
+that's that's the first layer. The
+second the second layer is uh how do you
+uh how do you generate this AI? How
+where does the AI come about? You know
+whereas the the last generation of
+computers uh was uh software written by
+hand and it runs on CPUs. What NVIDIA
+took some 33 years to build is this idea
+of a new type of computer that learns
+the machine learns to write the software
+itself and it runs on this this
+processor this computing platform we
+invented called accelerated computing
+and GPUs and so so so now the question
+is how does the AI get produced and it
+gets produced in essentially what people
+call data AI data centers but it's
+essentially a factory it's unlike a data
+center it doesn't look like a data
+center um it's uh quite large in scale.
+Uh it does use energy and it produces
+you apply energy to it and it produces
+these things called tokens but they're
+basically numbers and these tokens can
+be reformulated into numbers or words or
+images or pixels or videos or chemicals
+or protein combinations for drug
+discovery. um or even uh uh mo motor
+skills uh necessary to drive a robot or
+steering wheels to drive a self-driving
+car. And so that these tokens are being
+manufactured by this factory. And so
+what's interesting is that people are
+starting to understand that that there's
+a whole new industry that has been
+created. This new industry has a factory
+and this factory there are AI factories
+and um uh how large can the these
+factories be? They you know they could
+be a gig. We're building ones that are
+about a gigawatt and each gigawatt's
+about you know 50 60 billion dollars and
+over the course of the next um you know
+call it 10 years or so uh I wouldn't be
+surprised to see tens of gigawatts of AI
+factories being built around the world
+and so that's the second layer. The
+third layer that's that's probably even
+more profound um is that for the very
+first time you have a capability a
+technology
+um that affects almost every industry
+from financial services to healthcare to
+manufacturing to logistics to you know
+retail to entertainment you name it. And
+so so this this
+this infrastructure if you will this AI
+factory now becomes an infrastructure
+for a whole bunch of other industries
+and and uh just like the last generation
+this infrastructure is kind of hard to
+understand but the last generation we
+had the information infrastructure and
+the generation before that we had the
+the energy infrastructure and now we
+have the intelligence infrastructure and
+the the internet was is the information
+in uh infrastructure. ffstruure and
+artificial intelligence is this one and
+so so now you know I think when you look
+at AI from those different lenses you
+could start to understand the impact of
+AI to the technology industry that we're
+in to a new industry uh that that every
+country want to be part of anybody have
+excess energy you're going to want to be
+part of this industry uh to the
+infrastructure that affects every
+industry so let's step back for a couple
+minutes and talk
+about the skill sets needed to
+interact. Um we estimated a number of
+years ago that if you took the most
+modern agricultural
+technology that in the world you might
+eliminate a half a billion jobs of
+what's going on in farming subsidized
+etc. There's significant cons, you know,
+questions
+today. Who's going to be
+disintermediated? Now, I had a
+substantial advantage
+uh in the 1960s that I could calculate
+yields in my head and then in 1970 they
+came out with the
+calculator. So, I got
+disintermediated. Uh then looks like
+he's done pretty well since the
+invention of the calculator. Then I
+could remember millions of trades and
+then computers started storing in those
+trades. What do you see in the concept
+of work and the interaction with the
+technology you're going to provide?
+Yeah. Um so we've you all of you have
+heard a lot about about job
+displacement. Uh every job will be
+affected. Uh some jobs will be lost,
+some jobs will be created. Uh but every
+job will be affected and immediately it
+is unquestionable. You're not going to
+lose a job your job to an AI but you're
+going to lose your job to somebody who
+uses AI. Um but let me give you and
+those are those are fairly common sense
+things to to to uh uh to have observed
+but let me give you the two extremes
+that you might want to consider as well.
+Uh computer technology computer science
+has benefited about 30 million people.
+There are about 30 million people in the
+world who knows how to program and use
+this use this technology to its extreme.
+And it's really benefited all of us that
+have been in this industry the last 30
+years. Potentially one of the best and
+most most wealth creating industry you
+could have selected. I could I could
+have been a petroleum engineer. My dad
+was and uh I could have been I could
+have been a doctor. My my mom thinks
+everybody should be a doctor.
+uh but I chose I chose uh to to go into
+computer engineering and it turned out
+to have been quite a good good choice.
+Um and and how however however there are
+about 30 million people like in in this
+industry. Um and so we've created Mike
+in the last you know 30 40 years
+probably the greatest technology divide
+the world's ever seen. The the the
+instrument that we've invented uh we
+know how to use but but the other eight
+seven and a half billion people don't.
+Um I I'll I'll put on the table that in
+fact artificial intelligence is the
+greatest um opportunity for us to close
+the technology divide. And let me prove
+it to
+you. You know, if we just look in this
+room, it's very unlikely that more than
+a handful of people know how to program
+with C++. Um and uh an equally equal
+number know how to program in C. Um and
+yet a 100% of you know how to program an
+AI. And the reason for that is because
+the AI will speak whatever language you
+wanted to speak. You could draw a
+schematic and show it to it. You could
+draw a picture and ask it what to do. Um
+you could, you know, obviously talk to
+it in in words. You could you could
+write a prompt. Uh you could describe
+your prompt in a very explicit way. Uh
+you could describe your promp prompt in
+a very implicit way. Uh and if you don't
+know how to program that computer using
+AI, you just tell the AI, I don't know
+how to program you. How do I program
+you? and the AI will tell you exactly
+how to program you and and program it.
+And so I think that that um and the
+number of people who are using ChatgPT
+and Gemini Pro and these AIs kind of
+demonstrate that in fact this is one of
+the easiest to use technologies in his
+in history. And so now all everybody
+could take advantage of this capability
+where there's a a a teacher or a student
+want wanting a tutor and every student
+should use it as a tutor. I use it as a
+tutor every day. And so I think the the
+ability for us to now use artificial
+intelligence to close the technology gap
+is incredible. So that's one extreme.
+The other extreme that I will say is
+that remember uh we're we have a
+shortage of labor. We have a shortage of
+workers. We don't have an abundance of
+workers. we have a shortage of and for
+the very first time in history we
+actually have we can imagine the
+opportunity to close that gap to put 30
+40 million workers back into the
+workforce um that otherwise otherwise uh
+the world doesn't have and so you could
+you could argue that artificial
+intelligence is probably our best way to
+increase the GDP the global GDP and and
+so those are you know two two other ways
+to look at it in the meantime I would
+recommend a 100% of everybody you know
+take advantage of AI And don't be that
+person who ignores this technology and
+this result loses you. So let's talk for
+a moment. They're going to walk out of
+this
+room and Thursday after six days of the
+conference, they're going to want to
+learn more about AI.
+Do they ask their computer to teach them
+about AI? Is that what we're going to
+do? Excellent. Excellent way to do it.
+Just pick up your phone, get yourself,
+you know, Perplexity is pretty good.
+Chat GPT is really excellent. Uh Gemini
+Pro is excellent. I use all three of
+them. And um just ask it whatever you
+want to ask it about AI and it'll tell
+you as deep as you like it to be. And I
+sometimes I I um uh in areas that that
+are fairly new to me, I might I might
+say uh start by explaining it to me like
+I'm a 12-year-old and then work your way
+up into, you know, into a into a
+doctorate level over time. And so so I
+you could all do the same. Let's look at
+it from another side. Johnson, you your
+family came from Taiwan, you went to
+Washington, then the eventually your
+parents moved to
+Oregon and I've had a chance to finance
+many other entrepreneurs. Uh Bill Gawan
+comes to mind at MCI. So he had a
+company that had 99% market share in
+AT&T that he wanted to take on. In those
+early years that you often talk about
+you didn't know if you're going to make
+it or not. He often was wondering where
+the payroll was coming from every month.
+Um what did the other companies miss who
+had more access to capital than you did
+at the time? What did they not see that
+you saw?
+Um
+gosh, what in other words in Intel, what
+did Intel not see in the market? What
+what did they not recognize? Yeah. The
+reason why I paused it to say it is is
+um because from the very beginning we we
+imagined so what we were trying to do as
+a company was to build to invent a new
+way of doing computing that solves
+problems that normal computers can't. In
+fact, if you just if you just wrote that
+mission statement out to do something
+that normal things can't, it's like to
+go I would like to build a new car to go
+places where normal cars can't. Well,
+usually what happens if normal cars
+can't go there, those places
+also aren't paved with roads or they're
+not that desirable to go to anyways. And
+and um and so we we came up with this
+mission statement to solve problems that
+normal computers can't. And uh uh
+several problems with with that with
+that mission statement. Turned out it
+took us three three years to do and it's
+we succeeded at it. But the first thing
+is that the whole economy, the whole
+industry, the whole ecosystem wants to
+go where problems can be solved. Nobody
+wants to go to where problems can't be
+solved. And and so where where we are
+was rather lonely. You know, there
+aren't other people solving this problem
+because it's hard to solve. uh there
+aren't many customers because they they
+tend not to choose problems like that.
+They want to have their problems be
+solvable, not unsolvable. Uh and and
+then the other thing is is that Intel
+watching us the whole time I had the
+benefit and you said they had they had
+um greater source of cap access to
+capital and that's completely true
+because they were so successful doing
+what they were doing. They kind of
+rejected what we were doing and that's
+in fact the good news over time. The
+reason why it took us so long is because
+it's hard. And the reason why we're here
+alone is because people left us alone
+for a long time. And and and there there
+there's a there was a book that was re
+written recently and I I I picked it up
+and skimmed it. Uh Peter Teal's 0ero to1
+book. In a lot of ways is kind of a
+story about Nvidia 2. You know, we we
+chose we chose to do something that
+nobody thought was possible or very hard
+to do. um and very unlikely to succeed.
+Uh but to us it was very common sense.
+And so I think simultaneously because it
+was hard to do um and also because they
+were so successful doing what they were
+already doing, they kind of rejected the
+idea until until everything came
+together. Well, and you're also trying
+to make sure your company doesn't go in
+the direction of Intel also. So you're
+the leader today. How do you get that
+culture of constant innovation? And if I
+wanted to talk about Captain Kirk to go
+where no one has gone before,
+um I think I think
+partly well first of all there's just no
+guarantees but but um we have several
+things about our company that's really
+quite extraordinary and and and I
+appreciate it as a person. I I wish my I
+wish upon my kids and the people I love
+to have have the same same his same
+experience which is which is that long
+long suffering that comes with struggle
+and you never take anything for granted.
+You're super super efficient. Uh you're
+trying to you're trying to save
+everything you can save every penny you
+can because you don't you don't know
+when you know how long the struggle is
+going to last. uh you have incredible
+resilience uh because because it took a
+long time to do it and so the company
+has has that in its character. Uh almost
+everything we undertake these even these
+days are you know 5 10 year endeavors.
+We're probably we're probably the the
+deepest in this new area called physical
+AI which translates to robotics uh in
+the world and um uh the fundamental
+technology necessary for the next
+generation of AI were probably the
+furthest along the deepest of anybody
+and and so so I think I think those
+those characteristics of dreaming big on
+the one hand um and having the
+resilience and the character to to
+suffer until you see it happen. I I
+think that's that's very good. Um I
+think the the other part that's good is
+is um you're always going out of
+business for us for you know for 30
+years we're always in a perpetual state
+of going out of business and so you
+don't take anything for granted and and
+I I don't you know when we when there's
+a setback it doesn't it doesn't it
+doesn't trouble me too much. Um when we
+make mistakes it doesn't surprise me too
+much. uh when we have success, I don't I
+don't take it for granted and we don't
+celebrate it too much. Um and we really
+stay, you know, stay focused on on doing
+our work. And so I think part of that is
+is just how long it took to build a
+company. Let's talk for most lay
+persons. How do you make a chip? What is
+required to make a chip? So we all like
+we'd all go out there and make chips. We
+have no idea how to go about it, but
+we'd like to. And as you remember, the
+US passed an act. We're going to invest
+62 billion. And then they discovered six
+months later, there's no one in the
+United States that knows how to build a
+factory. And we need to get 7,000 people
+from Taiwan here. Mhm. Okay. Well, with
+all things, I think I think craft craft
+and artistry matters. Um, if you want to
+learn how to build a chip, you know, I
+would start with YouTube and then and
+then
+Uh so it turns out uh we started we're
+very good at building chips and the
+reason for that is because we build uh
+not not since IBM in the 60s has a
+company like us existed where we come up
+with a blank sheet of paper design a
+brand new architecture create the chips
+create the systems um create the
+networking create the infrastructure
+write all the software take that
+software to the market um have the
+world's developers and ecosystem develop
+for that computer kind of like we
+develop for um for uh iPhones and you
+develop for Windows, you develop for
+Nvidia and so so u not not since not
+since the 60s and 70s uh when IBM built
+everything from the ground up has a
+company like us exist. We build the
+chips but we build the entire system and
+we're really we're really an AI
+infrastructure company today. If you
+look at the systems we build, each one
+of
+our chips, if you will, it's a ton and a
+half. This is a ton and a half chip.
+It's $3 million each. We build these
+things in very high volume. Uh we we uh
+uh manufacture it, assemble it, and then
+we test it. We use a supercomputer to
+test the supercomput because you have to
+be smart to test if the computer you
+make is smart. And so we test everything
+is liquid cooled. Uh, and then we we
+test everything, assemble everything. We
+disassemble everything, put it on a
+plane, ship it to wherever the the the
+data center is, assemble it again
+outside their door, put it inside their
+data center. This entire process has 200
+manufacturers and uh um supply suppliers
+working with us around the world. Uh we
+build a couple of hundred billion
+dollars of it a year. These at this
+moment, we're the largest technology
+company, chip company in the world, I
+guess, if you will. And so the it's it's
+it's uh incredibly hard to do. Our R&D
+budget, you know, per generation is
+probably about 2030 billion dollars. Um
+and so these are this is a this is a
+giant game. Um but but um uh we're we're
+working into an industry, you know,
+Mike, that that you know, the the uh the
+intelligence industry will likely be
+measured in trillions of dollars. And so
+that the amount of investment that we're
+making is is warranted for the the
+opportunities ahead.
+So, we've all had a chance to read about
+potential restrictions on where you're
+going to be able to sell your
+chips. Uh there's pros and cons that
+people put forth in this
+debate. Lay out the issues as you see
+them.
+um Nvidia's technology um oftentimes
+described as a national treasure and um
+uh the technology obviously uh is
+important to this new industry called
+artificial intelligence and so uh one
+extreme uh in one side we want to we
+want to make sure that this technology
+is available only to uh the friends of
+friends of our nation uh we want to
+ensure we want to ensure sure that that
+um uh access of this technology doesn't
+fall into the hands of people who might
+use it for military reasons. And and so
+those are those are the arguments uh for
+limiting the access for economic
+reasons, for national security reasons.
+And and um uh the the fallacy the
+fallacy of that is is uh uh no
+government especially the government of
+of of uh our adversaries are limited by
+uh the available capacity of computing
+in their country for their military
+reasons. uh our country is not no
+countries are if uh they they need it
+for military advance um they'll just
+secure whatever computing resources that
+they already have and uh there are
+millions and millions of NVIDIA chips in
+in just about every country already and
+so so it's it's not going to limit um
+shipping additional GPUs Nvidia
+technology into into uh whatever country
+is not going to limit uh their military.
+I think the the the reason why uh the
+pro the the reason for um leaning into
+uh uh the export of this technology is
+we want to build the world's AI uh
+whereas whereas American standards are
+being adopted around the world the
+ecosystem of artificial intelligence
+will build on on top of our standard
+versus somebody else's standard and we
+are not alone you know Nvidia of course
+is the world leader Okay. Um, but in our
+absence, if we don't serve a particular
+market, if we leave a market altogether,
+uh, there's no question somebody else
+would step in. Huawei, for example, is
+very formidable, one of the most
+formidable technology companies in the
+world. They'll step in. And so, so the
+the reason why, uh, it would make sense
+is to to win in the marketplace. uh make
+the American standard uh the global
+standard have AI be built on top of
+American technology and and of course
+very importantly it's a giant market you
+know when we were uh limited to ship to
+China uh the Chinese market in a couple
+years is probably about $50 billion uh
+the the market we've left behind is
+utterly gigantic $50 billion just so you
+so you have a feeling for that number
+$50 billion is like Boeing not a plane
+the entire our company and so so um uh
+that's the that's the business
+opportunity that I think we could we
+could enjoy uh bring back tax dollars uh
+create jobs uh advance uh advance our
+technology e even further well also your
+interaction with the customer you're
+missing that chance to learn from that
+interaction from the customer the most
+important thing for any business is the
+interaction with the customer and what
+have what have your customer what have
+you learned from your customers over the
+last few years and their demand for one
+their demand for chips but their use of
+chips and how is that feedback to you
+and Nvidia? Well, we work with just
+about every AI developer in the world
+and and
+um we learn everything from uh how our
+architecture how the the the nature of
+our technology is used is optimal or not
+optimal for the future of AI. And so uh
+when we understand what an AI researcher
+would like to do with um uh for example
+um the the AI model for a for a virtual
+cell you know we we've now uh made very
+good progress with virtual proteins and
+so now we're working on virtual cells
+and if we can understand how cells uh
+interact and how how its pathways um uh
+can be expressed uh and uh understand
+basically the meaning of cells and and
+its dynamics
+we could do that with AI. So that AI
+model is very different than AI model
+for large language models and so
+understanding how people want to use
+that helps us change our architecture in
+the future to be better suitable. So as
+I mentioned you Jensen you know many
+years ago I went to IBM and tried to
+convince them at what they called their
+super chip at the time that we should
+use it for medical
+research. And then they wrote me a Dear
+John letter. Thanks Mike. great
+presentation, but we're going with video
+games. So, where where does the demand
+you see in the future? Is it is is
+certain industries going to play a
+larger role such like bioscience and
+what you could do in that area? Um where
+do you see the demand from different
+industries? Well, if you look at where
+AI is today, as large as Nvidia has been
+already and as large as the AI industry
+is already, we're serving basically the
+consumer internet market. If you just
+kind of take a step take a step back for
+a second, that's the entire that's the
+only tiny little sliver of the global
+economy that we're serving. Uh above
+this are uh healthc care industries uh
+life sciences uh manufacturing the act
+the actual manufacturing in the future
+the factory will be one gigantic robot
+orchestrating a whole bunch of robots
+inside working with people to build
+products that are robotics. So you have
+robots building robots building robots
+and this nested layer of technology uh
+is nearly upon us and so that in that
+application for manufacturing
+industrialization
+um plants and factories and that entire
+area needs this new AI called physical
+AI. If we if we can solve that we're
+talking about trillions and trillions of
+dollars of industries. So last question,
+we might have a lot of people after
+listening thinking, how do I get a job
+at
+Nvidia?
+Okay. What are the skill sets you're
+looking for today? You have in high
+Well, if you can't design a
+chip, if you tell me if you tell me that
+you you learn how to design chips on
+YouTube, I think that's going to that's
+going to tell me a lot. And so, no, no,
+I look, you know, we're we're um Nvidia
+is a is is a is the world's first chip
+company. Um, of course that we, as I
+mentioned, we building the entire AR
+infrastructure stack, but we have we
+have uh uh we have uh digital
+biologists, we have quantum chemists, uh
+we have computer graphics engineers, we
+have roboticists, we have uh language
+experts. Um we have we have expertise
+across a very large domain of science
+and we have a very large domain of
+industries and so uh you know we serve
+healthc care industry we serve financial
+services industry. So if you have domain
+expertise, we love that. We love people
+with domain expertise. And so um we also
+love people with general b general basic
+intelligence. And if you love hard work
+and especially if you love to suffer uh
+you know you know you know exactly who
+to call
+you know we have seen over the years
+that those I don't know if my my
+microphone is working or not here.
+Uh can you hear me?
+We have a famous professor, a friend of
+mine tells me when he gets a new class,
+he tries to figure
+out who got in because of their ability
+and who got in because of their family
+relationships. And that is There we go.
+Okay. So I was
+saying when you talk about what built
+Nvidia, hard work, a lot of challenges,
+tough days. I was saying this professor
+friend of mine points out that he tries
+to figure out when the class comes in
+who got in on their ability and who got
+in because of
+relationships. That's easy. He tells me
+within a week. What's harder is how long
+will it be before the person that got in
+on the relationships is working for the
+person with ability. That takes a long
+time. He needs to get to know the
+students. Those hard days have paid off
+and we look forward to see when you can
+accomplish in the future. Thank you for
+joining. Thank you very much, Mike.

@@ -1,0 +1,61 @@
+[youtube:tab] Extracting URL: https://www.youtube.com/playlist?list=PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0
+[youtube:tab] PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0: Downloading webpage
+[youtube:tab] PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0: Redownloading playlist API JSON with unavailable videos
+[download] Downloading playlist: MSCI Real Assets
+[youtube:tab] Playlist MSCI Real Assets: Downloading 8 items of 8
+[download] Downloading item 1 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=LzmskpRb6Do
+[youtube] LzmskpRb6Do: Downloading webpage
+[youtube] LzmskpRb6Do: Downloading android vr player API JSON
+[youtube] LzmskpRb6Do: Downloading web safari player API JSON
+[youtube] LzmskpRb6Do: Downloading player 4c5cf06a-tv
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] LzmskpRb6Do: Downloading m3u8 information
+[info] LzmskpRb6Do: Downloading subtitles: en
+[info] LzmskpRb6Do: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0/1 - MSCI Debt Intelligence： See risk. Find opportunity..en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0/1 - MSCI Debt Intelligence： See risk. Find opportunity..en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    1.59KiB at  263.53KiB/s (00:00:00)[download] 100% of    1.59KiB in 00:00:00 at 6.89KiB/s
+[download] Downloading item 2 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=eqOQvWBpdR4
+[youtube] eqOQvWBpdR4: Downloading webpage
+[youtube] eqOQvWBpdR4: Downloading android vr player API JSON
+[youtube] eqOQvWBpdR4: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] eqOQvWBpdR4: Downloading m3u8 information
+[info] eqOQvWBpdR4: Downloading subtitles: en
+[info] eqOQvWBpdR4: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0/2 - Move faster in real estate with MSCI Market Data.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miQMpnmUJquGLBexamQ5ntV0/2 - Move faster in real estate with MSCI Market Data.en.srt
+[download]    1.00KiB at  977.69KiB/s (00:00:00)[download]    1.33KiB at  749.89KiB/s (00:00:00)[download] 100% of    1.33KiB in 00:00:00 at 4.05KiB/s
+[download] Downloading item 3 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=lEJvQhvNark
+[youtube] lEJvQhvNark: Downloading webpage
+[youtube] lEJvQhvNark: Downloading android vr player API JSON
+[youtube] lEJvQhvNark: Downloading web safari player API JSON
+[download] Downloading item 4 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=PGL8VdDA8qg
+[youtube] PGL8VdDA8qg: Downloading webpage
+[youtube] PGL8VdDA8qg: Downloading android vr player API JSON
+[youtube] PGL8VdDA8qg: Downloading web safari player API JSON
+[download] Downloading item 5 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=52z20d71URs
+[youtube] 52z20d71URs: Downloading webpage
+[youtube] 52z20d71URs: Downloading android vr player API JSON
+[youtube] 52z20d71URs: Downloading web safari player API JSON
+[download] Downloading item 6 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=eKJd1buk5yU
+[youtube] eKJd1buk5yU: Downloading webpage
+[youtube] eKJd1buk5yU: Downloading android vr player API JSON
+[youtube] eKJd1buk5yU: Downloading web safari player API JSON
+[download] Downloading item 7 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=bGjCY2uaEgA
+[youtube] bGjCY2uaEgA: Downloading webpage
+[youtube] bGjCY2uaEgA: Downloading android vr player API JSON
+[youtube] bGjCY2uaEgA: Downloading web safari player API JSON
+[download] Downloading item 8 of 8
+[youtube] Extracting URL: https://www.youtube.com/watch?v=UtuKB29_-fY
+[youtube] UtuKB29_-fY: Downloading webpage
+[youtube] UtuKB29_-fY: Downloading android vr player API JSON
+[youtube] UtuKB29_-fY: Downloading web safari player API JSON
+[download] Finished downloading playlist: MSCI Real Assets

@@ -1,0 +1,127 @@
+[youtube:tab] Extracting URL: https://youtube.com/playlist?list=PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10&si=gTUJApJkGiQy6ObK
+[youtube:tab] PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10: Downloading webpage
+[youtube:tab] PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10: Redownloading playlist API JSON with unavailable videos
+[download] Downloading playlist: Carbon Markets
+[youtube:tab] Playlist Carbon Markets: Downloading 10 items of 10
+[download] Downloading item 1 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=4XT934ncoXA
+[youtube] 4XT934ncoXA: Downloading webpage
+[youtube] 4XT934ncoXA: Downloading android vr player API JSON
+[youtube] 4XT934ncoXA: Downloading web safari player API JSON
+[youtube] 4XT934ncoXA: Downloading player 4c5cf06a-tv
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] 4XT934ncoXA: Downloading m3u8 information
+[info] 4XT934ncoXA: Downloading subtitles: en
+[info] 4XT934ncoXA: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/01 - REDD+： Reduced Emissions or Distorted Decrease？.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/01 - REDD+： Reduced Emissions or Distorted Decrease？.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.48MiB/s (00:00:00)[download]    7.00KiB at    1.53MiB/s (00:00:00)[download]   15.00KiB at    1.55MiB/s (00:00:00)[download]   31.00KiB at  618.66KiB/s (00:00:00)[download]   63.00KiB at  829.11KiB/s (00:00:00)[download]  103.78KiB at  549.07KiB/s (00:00:00)[download] 100% of  103.78KiB in 00:00:00 at 208.44KiB/s
+[download] Downloading item 2 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=1cvfPdoZdsU
+[youtube] 1cvfPdoZdsU: Downloading webpage
+[youtube] 1cvfPdoZdsU: Downloading android vr player API JSON
+[youtube] 1cvfPdoZdsU: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] 1cvfPdoZdsU: Downloading m3u8 information
+[info] 1cvfPdoZdsU: Downloading subtitles: en
+[info] 1cvfPdoZdsU: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/02 - Biochar： Lift-off for Engineered Carbon Dioxide Removals (CDR).en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/02 - Biochar： Lift-off for Engineered Carbon Dioxide Removals (CDR).en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.47MiB/s (00:00:00)[download]    7.00KiB at    2.59MiB/s (00:00:00)[download]   15.00KiB at    4.45MiB/s (00:00:00)[download]   31.00KiB at    1.24MiB/s (00:00:00)[download]   63.00KiB at    1.37MiB/s (00:00:00)[download]  114.13KiB at    1.19MiB/s (00:00:00)[download] 100% of  114.13KiB in 00:00:00 at 317.44KiB/s
+[download] Downloading item 3 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=vRDIXioDTs8
+[youtube] vRDIXioDTs8: Downloading webpage
+[youtube] vRDIXioDTs8: Downloading android vr player API JSON
+[youtube] vRDIXioDTs8: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] vRDIXioDTs8: Downloading m3u8 information
+[info] vRDIXioDTs8: Downloading subtitles: en
+[info] vRDIXioDTs8: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/03 - Nature-Based Solutions in the VCM： 2023 in Review.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/03 - Nature-Based Solutions in the VCM： 2023 in Review.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.47MiB/s (00:00:00)[download]    7.00KiB at    2.89MiB/s (00:00:00)[download]   15.00KiB at    3.65MiB/s (00:00:00)[download]   31.00KiB at  893.68KiB/s (00:00:00)[download]   63.00KiB at    1.06MiB/s (00:00:00)[download]  106.22KiB at    1.05MiB/s (00:00:00)[download] 100% of  106.22KiB in 00:00:00 at 254.04KiB/s
+[download] Downloading item 4 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=I2bHnKnsYXk
+[youtube] I2bHnKnsYXk: Downloading webpage
+[youtube] I2bHnKnsYXk: Downloading android vr player API JSON
+[youtube] I2bHnKnsYXk: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] I2bHnKnsYXk: Downloading m3u8 information
+[info] I2bHnKnsYXk: Downloading subtitles: en
+[info] I2bHnKnsYXk: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/04 - 2023 VCM in Review： Carbon Markets at an Inflection Point.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/04 - 2023 VCM in Review： Carbon Markets at an Inflection Point.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.50MiB/s (00:00:00)[download]    7.00KiB at    2.70MiB/s (00:00:00)[download]   15.00KiB at    5.05MiB/s (00:00:00)[download]   31.00KiB at  593.82KiB/s (00:00:00)[download]   63.00KiB at  519.08KiB/s (00:00:00)[download]  104.87KiB at  628.15KiB/s (00:00:00)[download] 100% of  104.87KiB in 00:00:00 at 196.13KiB/s
+[download] Downloading item 5 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=LwqdumOQuhw
+[youtube] LwqdumOQuhw: Downloading webpage
+[youtube] LwqdumOQuhw: Downloading android vr player API JSON
+[youtube] LwqdumOQuhw: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] LwqdumOQuhw: Downloading m3u8 information
+[info] LwqdumOQuhw: Downloading subtitles: en
+[info] LwqdumOQuhw: Downloading 1 format(s): 136+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/05 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/05 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download]    1.00KiB at  946.80KiB/s (00:00:00)[download]    3.00KiB at  457.46KiB/s (00:00:00)[download]    7.00KiB at  232.85KiB/s (00:00:00)[download]   15.00KiB at  487.01KiB/s (00:00:00)[download]   31.00KiB at  437.18KiB/s (00:00:00)[download]   63.00KiB at  600.96KiB/s (00:00:00)[download]   89.14KiB at  680.85KiB/s (00:00:00)[download] 100% of   89.14KiB in 00:00:00 at 229.73KiB/s
+[download] Downloading item 6 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=S4TCkOv1qho
+[youtube] S4TCkOv1qho: Downloading webpage
+[youtube] S4TCkOv1qho: Downloading android vr player API JSON
+[youtube] S4TCkOv1qho: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] S4TCkOv1qho: Downloading m3u8 information
+[info] S4TCkOv1qho: Downloading subtitles: en
+[info] S4TCkOv1qho: Downloading 1 format(s): 136+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/06 - Using carbon credits to enhance corporate climate action.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/06 - Using carbon credits to enhance corporate climate action.en.srt
+[download]    1.00KiB at  937.69KiB/s (00:00:00)[download]    3.00KiB at  178.20KiB/s (00:00:00)[download]    7.00KiB at  404.04KiB/s (00:00:00)[download]   15.00KiB at  846.34KiB/s (00:00:00)[download]   31.00KiB at  237.15KiB/s (00:00:00)[download]   63.00KiB at  474.06KiB/s (00:00:00)[download]   90.81KiB at  642.12KiB/s (00:00:00)[download] 100% of   90.81KiB in 00:00:00 at 164.54KiB/s
+[download] Downloading item 7 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=0ZfSB7B8wXA
+[youtube] 0ZfSB7B8wXA: Downloading webpage
+[youtube] 0ZfSB7B8wXA: Downloading android vr player API JSON
+[youtube] 0ZfSB7B8wXA: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] 0ZfSB7B8wXA: Downloading m3u8 information
+[info] 0ZfSB7B8wXA: Downloading subtitles: en
+[info] 0ZfSB7B8wXA: Downloading 1 format(s): 136+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/07 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/07 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  311.78KiB/s (00:00:00)[download]    7.00KiB at  664.39KiB/s (00:00:00)[download]   15.00KiB at  497.61KiB/s (00:00:00)[download]   31.00KiB at  365.45KiB/s (00:00:00)[download]   63.00KiB at  724.51KiB/s (00:00:00)[download]   89.21KiB at  570.71KiB/s (00:00:00)[download] 100% of   89.21KiB in 00:00:00 at 176.38KiB/s
+[download] Downloading item 8 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=2r6wtvnY-dw
+[youtube] 2r6wtvnY-dw: Downloading webpage
+[youtube] 2r6wtvnY-dw: Downloading android vr player API JSON
+[youtube] 2r6wtvnY-dw: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] 2r6wtvnY-dw: Downloading m3u8 information
+[info] 2r6wtvnY-dw: Downloading subtitles: en
+[info] 2r6wtvnY-dw: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/08 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/08 - Trove Research Webinar： 3Q23 VCM in Review - The Changing Landscape of the Global Carbon Market.en.srt
+[download]    1.00KiB at  910.62KiB/s (00:00:00)[download]    3.00KiB at    1.55MiB/s (00:00:00)[download]    7.00KiB at    1.41MiB/s (00:00:00)[download]   15.00KiB at    2.60MiB/s (00:00:00)[download]   31.00KiB at  287.60KiB/s (00:00:00)[download]   63.00KiB at  476.73KiB/s (00:00:00)[download]   97.70KiB at  538.30KiB/s (00:00:00)[download] 100% of   97.70KiB in 00:00:00 at 147.46KiB/s
+[download] Downloading item 9 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=xHsptiS8dfU
+[youtube] xHsptiS8dfU: Downloading webpage
+[youtube] xHsptiS8dfU: Downloading android vr player API JSON
+[youtube] xHsptiS8dfU: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] xHsptiS8dfU: Downloading m3u8 information
+[info] xHsptiS8dfU: Downloading subtitles: en
+[info] xHsptiS8dfU: Downloading 1 format(s): 313+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/09 - MSCI Carbon Markets： Investment-grade carbon market data and analytics.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/09 - MSCI Carbon Markets： Investment-grade carbon market data and analytics.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.68MiB/s (00:00:00)[download]    3.69KiB at    1.71MiB/s (00:00:00)[download] 100% of    3.69KiB in 00:00:00 at 9.99KiB/s
+[download] Downloading item 10 of 10
+[youtube] Extracting URL: https://www.youtube.com/watch?v=G7NaPzXVGk8
+[youtube] G7NaPzXVGk8: Downloading webpage
+[youtube] G7NaPzXVGk8: Downloading android vr player API JSON
+[youtube] G7NaPzXVGk8: Downloading web safari player API JSON
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] G7NaPzXVGk8: Downloading m3u8 information
+[info] G7NaPzXVGk8: Downloading subtitles: en
+[info] G7NaPzXVGk8: Downloading 1 format(s): 137+251
+[info] Writing video subtitles to: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/10 - Nature-Based Solutions in the VCM： 1Q24 in Review.en.srt
+[download] Destination: /Users/insular/transcripts/PLuSyKaki_miRbm6zZeZm-K2XIqsOWDB10/10 - Nature-Based Solutions in the VCM： 1Q24 in Review.en.srt
+[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    2.00MiB/s (00:00:00)[download]    7.00KiB at    3.05MiB/s (00:00:00)[download]   15.00KiB at    1.35MiB/s (00:00:00)[download]   31.00KiB at  725.21KiB/s (00:00:00)[download]   63.00KiB at    1.01MiB/s (00:00:00)[download]  109.16KiB at  952.81KiB/s (00:00:00)[download] 100% of  109.16KiB in 00:00:00 at 225.22KiB/s
+[download] Finished downloading playlist: Carbon Markets

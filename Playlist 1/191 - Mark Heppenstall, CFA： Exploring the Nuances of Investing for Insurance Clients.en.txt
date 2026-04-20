@@ -1,0 +1,555 @@
+[Music]
+hello and welcome to guiding assets the
+flagship investment podcast for CFA
+Institute I'm Mike Walberg and today
+I'll be joined by Mark heppenstall Mark
+is the president and chief investment
+officer of pen mutual asset management
+where his team of over 30 analysts and
+portfolio managers run about $30 billion
+for pen Mutual Life Insurance he's an
+Alum of Vanderbilt and Carnegie melon
+universities and is also a CFA Charter
+holder I have two goals for the show
+today uh one is to shed some light on
+the Nuance that is applied when a money
+manager manages specifically for an
+insurance client as opposed to say an
+individual or a pension or a foundation
+and also I'm looking for Mark who's very
+at home in the fixed income trenches to
+shed some light on where we are in
+credit and other Bond markets and see
+where he's seeing the value welcome to
+the show mark thank you it's great to be
+here with you mark let's start with the
+high level topic of managing money for
+an insurance company now I was fortunate
+and that early in my career I had the
+opportunity to be mentored under a very
+experienced investor like yourself a
+fellow named Tony Gage and he'd been key
+to building the insurance company at uh
+or the insurance business rather at my
+former asset management firm so he had
+us read Buffett's letters and integral
+in there was a lesson in how Insurance
+businesses actually make their money as
+I recall it the most important driver of
+profitability was not their ability to
+eek out fat margins by pricing the risk
+you know it's still important but you
+know charging premiums that would far
+exceed their ultimate liabilities but
+rather it was in maximizing the return
+on the float that exists while there's
+that mismatch between the receip of
+those premiums and any ultimate payouts
+now correct me if I'm wrong on that but
+uh as I understand it anyways that's
+where you come in so can you please take
+a talk a bit about what's unique about
+the investment goals and how you
+structure a portfolio for say in your
+cas case a life C well I'll start off
+with at the end of the day the assets
+that we manage for pen Mutual Life
+Insurance Company are driven entirely by
+the lit liabilities or the insurance and
+annuity policies that are under it and
+we manage for those policy holders so we
+are very much focused on what's
+happening within the liabilities and so
+we are liability driven investors the
+vast majority of our assets are high
+quality fixed income secur
+investment grade primarily and so really
+we manage those assets very much in line
+with the the liabilities both in terms
+of one staying up in credit quality but
+also managing in line with the interest
+rate risk or duration risk embedded
+within the liabilities and just on an
+asset portfolio the liability duration
+can be dynamic so it can move with the
+level of interest rates it can move with
+policyholder behavior so we recalibrate
+the duration of those liabilities on a
+regular basis just to make sure again
+that those assets and liabilities are
+very much in line with one another so I
+mean it's obviously we've had a big
+pivot in the last couple of years here
+so what what did that look like for
+insurance companies in terms of how they
+were treated by rating agencies and
+their overall quality sort of in the 10
+years leading up till the most recent
+period in sort of 2022 plus and then you
+know what's that done for their
+liability profile and and and what
+you've been doing for them well I will
+say you know really since the global
+financial crisis we have been in a world
+of very very low interest rates and
+again given the fact that the vast
+majority of our assets are fixed income
+assets the new money rates that were
+available um in a world where the 10year
+treasury note would was let's say
+between 1% and 3% for the vast majority
+of the time the opportunity set was
+somewhat limited so I will say what has
+happened within the fixed income markets
+during the past 21 months or so has been
+quite remarkable um clearly the fed's
+response to inflation that got to be a
+bigger problem that I think they ever
+envisioned in 2021 forc them to really
+catch up quickly with short-term
+interest rates and so again the
+opportunity set for investing in
+highquality fixed income is so much
+better than I ever would have imagined
+that it might be two years ago so we're
+putting High fixed income assets on in
+that 7 to 8% zip code really focused
+today at the front end of the yield
+curve where you know it's been somewhat
+of an interesting time in the world of
+fixed income with the extended inversion
+of the yeld curve you're actually paid
+not to take risks so we've been
+disciplined with asset liability
+management but again focused on the most
+attractive relative value within the
+world of fixed income and again the
+opportunity set today is so much better
+and in terms of the liability duration
+it has performed as you would expect it
+similar to the asset duration that tends
+to short shorten as interest rates are
+on the Move higher that's also been the
+case with the liability duration so
+there is that sensitivity to interest
+rates we really haven't seen
+policyholder Behavior change much at
+this point so that has been less
+impactful in terms of the duration of
+our liabilities but again something that
+we are closely monitoring to to again
+make sure that assets and liabilities
+stay within line with each other yeah
+that's something that folks may not
+appreciate which is that in an
+environment like this as long as you
+have those assets and liabilities
+matched off it kind of doesn't matter
+what interest rates do but in in a
+vacuum as rates fall the discount rate
+effectively for your liabilities rise
+the present value of your liabilities
+actually goes down so it's actually a
+Tailwind for you if if you happen to be
+short yes exactly and we have been
+managing really short the duration of
+the asset portfolio relative to our
+liabilities really for the past 2 years
+now again you know there were periods of
+time in 2021 where the investment grade
+Bond Universe yield to maturity traded
+below the 2% level so again given sort
+of the inability to earn much in the
+world of fixed income we were relatively
+conservative with our portfolio
+positioning we did hold more floating
+rate assets again especially at the
+front end of the Yol curve it just paid
+you to have floating rate assets within
+the portfolio that at least had the
+optionality for higher yield and income
+sh interest rates rise so again they
+have both been a benefit to the pen
+Mutual
+portfolio right and just for our
+listeners for a lifeco what's the sort
+of the general duration that we're
+talking about here and by that for for
+our listeners that's you know what's the
+sort of the the sensitivity of the
+portfolio and and it's a function of
+kind of when they expect those
+liabilities to come due yeah and again
+that can vary among life insurance
+companies based on the type of products
+that they are selling but the duration
+of the the liabilities that we're
+managing to is in that 6 and a half to
+seven year duration today right so basic
+Universe type mandate or that type of a
+duration match exactly yes so I wanted
+to turn to talk a little bit about
+credit so you know we're talking in mid-
+October and we have seen a bit more
+volatility in credit markets recently
+but what are you watching for in terms
+of signals or catalysts either positive
+negative for corporate credit and what
+are you seeing out there well there has
+been an interesting Dynamic that we've
+seen and I think this is somewhat kept a
+lid on the level of credit spreads that
+I would say that's true for both
+investment grade and high you credit but
+I think just because treasury rates have
+increased so much during the past two
+years that the all- in yields now
+available for investment grade and high
+yield investors is almost the metric
+that they're looking at I would say more
+so than the spread component or what
+you're getting paid relative to treasury
+so I I think just again the fact that
+interest rates have risen so much that
+absolute returns are relatively robust
+for investment grade in high yield
+especially again since the global
+financial crisis all of that I think is
+factored into credit spreads remaining
+relatively benign you know I do think
+today just given the starting point for
+spreads you know we're finding more
+attractive opportunities in the world of
+securitized credit relative to
+investment grade and High Yield
+Corporate credit so how would you
+compare if you're looking at it today to
+how things were back in ' 08 like what
+did credit spreads tell us then and and
+and how is that message the same or
+different this time well I have always
+felt that credit spreads were always
+somewhat the canary in the coal mine
+when it came to what was happening
+within other risk markets and I think
+that was true as we came into the global
+financial crisis where we saw a lot of
+weakness in the credit markets I would
+say that was especially true among
+certain bank and broker names coming
+into the to the financial crisis and
+that really preceded the eventual
+downturn that we witnessed within the
+equity market so we haven't seen nearly
+the indication today in the credit
+markets that would suggest that we're
+headed down a similar path the only
+caveat I would throw out there is that
+you know Bank lending has been
+tightening pretty dramatically so even
+though the public markets for high yield
+and investment great credit are pretty
+wide open still I would say Bank lend
+has become much more constrained so I
+think that might be a headwind for
+economic growth ahead yeah it's
+interesting because you look at the
+yield curve and you talk you mentioned
+before about the the surge in short
+rates obviously tracking the beds
+activity but also I mean we had an
+inversion in that yield curve for a
+while which is often a precursor or
+predictor of recession but you couple
+that with relatively benign spread still
+and you know relatively low default
+rates in the bank so far like it's kind
+of a mixed message so how do you see
+this playing out is it soft Landing is
+it hard Landing like what what do you
+what do you think what is your base case
+at at pen Mutual well I will say I think
+sometimes we tend to get a little bit
+too caught up in the technical
+definition of a recession so whether or
+not we actually have two quarters of
+negative growth back to back I think
+that is somewhat up in the air and I do
+think part of why I would say the
+markets in the economy has been so
+resilient this year it's just there's
+been a lot of consumer spending
+initially it was going towards Goods as
+the economy shut down due to coid and
+now that has all transitioned to the
+service side of the economy so we're
+seeing the service sector spending
+really support the overall economic
+growth Equity markets have stayed
+relatively elevated obviously we've seen
+um you know a downturn last year in
+equities but we've seen a pretty
+significant bounceback so far this year
+home prices have have remained
+relatively stable despite the fact that
+mortgage rates are well into the 7%
+range today so I think all of that has
+helped um household wealth stay
+relatively high and again been
+supportive of overall economic growth
+and I see the Atlanta fed today just
+raised their third quarter GDP estimate
+to over 5% so I would say a year ago or
+at the start of the year nobody ever
+would have expected we would see such
+robust economic growth in the United
+States sounds like you have of
+confidence in the in the household
+balance sheet at this point then given
+all the stimulus and the you know the
+indications that folks are putting that
+money to work and moving from products
+into Services am I understanding that
+right yeah I mean again I I I think it's
+hard to see a near-term recession again
+you know if you look at the majority of
+economic forecasters they've all pushed
+out their recession forecasts now well
+into 20124 but again just given what's
+happening with household wealth given
+relative stability within the financial
+markets again it you know there just
+aren't a lot of leading indicators that
+suggest that an economic downturn is
+imminent today so since since you and I
+chatted a few weeks ago for the first
+time Mark the I think high yield spreads
+have widened out a little bit from that
+point is the time coming for high yield
+well I I would say versus history you
+know I would say we we're kind of just
+into the average territory so I don't
+know that I would necessarily put a
+green light on high yield investment
+opportunities you know we have been more
+focused at on opportunities at the front
+end of the E curve within the high yield
+space and I would say that is true
+across the securitized credit markets as
+well so again I think valuations are
+reasonable today but again there still
+is a lot of uncertainty some of it tied
+as I mentioned earlier to what's
+happening within the banking system
+today so again that's something that
+we're clearly keeping a close eye on for
+potential potholes down the road
+something I talked about in the last
+episode with rodri PRI was was that when
+inflation finally recedes we will likely
+be left with real and nominal rates that
+are far higher than what was considered
+normal over the last 15 years would you
+agree with that and what opportunities
+would that open up with higher reel
+rates well again you know if you were to
+tell me um 18 months ago or 20 months
+ago that real yields whether it's the
+fivey year the 10 year or the 30-year
+would all be in the zip code of 2 and a
+half% I would say that
+is extremely attractive and so you know
+I do think that tips are a great
+diversifier within a fixed income
+portfolio because as we clearly seen
+inflation is the Nemesis of nominal Bond
+performance and so at least with the
+tips component you are getting uh that
+inflation adjustment embedded into your
+return so again I do think real yields
+in the vicinity of 2 and a half% today
+are attractive and I think that that
+goes back to when tips were first issued
+in the late 90s not just relative to
+what's happened since the the great
+financial crisis can you explain for our
+listeners Mark what what tips are I'm
+try I was trying to remember what the
+actual acronym was but it's effectively
+they're inflation protected bonds right
+yeah treasury inflation protected
+securities and so the principal value in
+a tip adjusts higher every month with
+the CPI print so basically you're
+getting compensated for the Consumer
+Price Index changes with a higher
+principal value within your underlying
+investment so the coupon rate stays the
+same but again your total returns are
+going to benefit from higher inflation
+readings if you buy and hold them to
+maturity so again there is sort of an
+inflation hedge embedded within the tips
+performance that you don't get within
+the nominal bond market so what gets you
+excited today well I will say I do think
+the tips markets are attractive where
+they sit today in the vicinity of 2 and
+a half% especially in that 5year part
+where there really isn't a lot of
+duration or interest rate risk embedded
+within the security again I I I could
+see them winning under whether there's a
+downturn in inflation and the FED
+eventually lowers interest rates I think
+real yields are going to fall and again
+if inflation stays sticky again earning
+a two and a half% real yield over that
+CPI will be attractive as well and in
+one of the other areas where we are
+sourcing opportunities in an area where
+we really haven't been investing since
+the financial crisis partly resulting
+from what the Federal Reserve has been
+doing with quantitative easing and
+buying up agency Residential Mortgage
+back Securities but you know the
+valuations there look so much different
+than they did a couple years ago again
+as the FED has turned into um not
+selling the rmbs but not purchasing at
+this point but again the rise in rates
+means that we're finding opportunities
+in the rmbs sector in 70s and low 80s
+type of dollar prices today so again
+much better upside downside in terms of
+price performance versus where we stood
+two years ago when almost the entirety
+of the mortgage Market was priced overp
+par so again a much better asset
+liability management investment where
+they stand today in the rnbs sector and
+any other securitized stuff that's got
+your attention we have been investing in
+AAA collateralized loan obligations and
+student loan asset back Securities again
+you know the leverage loan Market has
+been an area of focus I do think the
+fact that anybody that's borrowing in
+floating rates today obviously is paying
+a lot more in interest costs than they
+did a couple years ago so that's
+something that we're keeping an eye on
+but again at the AAA level we think
+we're well protected from any
+delinquencies and eventual losses within
+the clo space and again for student load
+asset back Securities again staying up
+in credit quality and there and again
+that's where we're sourcing
+opportunities in that 7 to 8% type of
+zip code for for new yields so some of
+the listeners on the show today will
+have a little bit of a PTSD reaction to
+Clos I know I know that they've actually
+persisted and been around since the
+great financial crisis but can you you
+walk us through what's different now in
+in the in the clo Market versus some of
+the issues that happened in the crisis
+back in
+0809 well I will say Clos was one of the
+fixed income asset classes with the
+acronyms that actually survived and
+performed well so you know there
+realized losses within the sector were
+very very small clearly the mark to
+Market you know as you know risk was
+selling off in ' 0809 was a very
+different story in in terms of the price
+performance But ultimately you know the
+sector did return principle for the vast
+vast majority of the Investments there
+so again we think it's a sector that's
+well protected even in more dire
+economic scenarios so again staying up
+in in credit quality there and a sector
+where we think we're getting paid hombly
+for the rest today but again you know we
+look at all of the leverage loans all of
+the performance of the underlying loans
+and we tend to buy more season
+Securities ones where the AAA tranches
+are in the process of we near beginning
+to pay down so again we think we're
+going to have a pretty short weighted
+average life type investment on our
+hands with a lot of the Clos we're
+purchasing today and and you mentioned
+the the student loan asset back
+Securities as well what are the
+implications for the any payback delays
+or return return to the schedule for
+that how does that market respond to
+that like what are the things folks
+should be thinking about when they're
+when they're reading the news and then
+looking at at ABS in that in that part
+of the market well the student loan debt
+repayment resumption clearly is going to
+be a headwind for overall economic
+growth some estimates have it at100
+billion do a year reduction in um
+consumer spending that'll be available
+versus before so again I would say net
+net it's going to be a tough one you
+know most of I would say the more
+challenging components of the student
+loan Market unfortunately reside today
+on the government's balance sheet so if
+you look at the performance within the
+private student loan space it's been
+very very solid and again with the
+unemployment rate so low as it stands
+today you would expect there to be not
+too many issues for some of the private
+student loan Securities so again I would
+say the bigger picture for the economy
+is could be more challenging but again
+you know we think there attractive
+investment opportunities within the
+student loan space and that's in the
+private space but also in the government
+guaranteed student loans as well gotcha
+well unfortunately this is uh we're
+already down to our final question here
+Mark so I wonder if you can tell me what
+was your first job in the industry and
+if you could go back and take yourself
+for coffee on your first day what key
+piece of advice would you offer yourself
+wow that is a good question so my first
+job in Investments was with the National
+Bank of Detroit and their trust
+department and the National Bank of
+Detroit through a bunch of mergers has
+eventually turned into JP Morgan today
+but you know I will say you know more
+than 35 years of investing in the fixed
+income markets you know every day is
+different I I never have a boring day
+and if you look at what's happening
+within the world of credit and interest
+rates today every day presents new
+challenges so I would just say that you
+know if you're considering a career in
+invest in investing I think the fixed
+income markets are a great place to be
+I've been speaking today with Mark
+heppenstall CFA president and CIO of pen
+mutual asset management thanks so much
+for coming on the show today Mark thanks
+Mike I'm Mike Walberg and this is Bean
+guiding
+[Music]
+assets
