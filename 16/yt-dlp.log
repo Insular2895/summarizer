@@ -1,139 +1,0 @@
-[youtube:tab] Extracting URL: https://youtube.com/playlist?list=PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C&si=WPF_wWrzL8DHbeec
-[youtube:tab] PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C: Downloading webpage
-[youtube:tab] PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C: Redownloading playlist API JSON with unavailable videos
-[download] Downloading playlist: MBA Asks the Experts
-[youtube:tab] Playlist MBA Asks the Experts: Downloading 11 items of 11
-[download] Downloading item 1 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=ROFX79qjm5s
-[youtube] ROFX79qjm5s: Downloading webpage
-[youtube] ROFX79qjm5s: Downloading android vr player API JSON
-[youtube] ROFX79qjm5s: Downloading web safari player API JSON
-[youtube] ROFX79qjm5s: Downloading player 4c5cf06a-tv
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] ROFX79qjm5s: Downloading m3u8 information
-[info] ROFX79qjm5s: Downloading subtitles: en
-[info] ROFX79qjm5s: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/01 - MBA Asks the Expert： A Conversation on AI andAutomation in Insurance Tracking.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/01 - MBA Asks the Expert： A Conversation on AI andAutomation in Insurance Tracking.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.67MiB/s (00:00:00)[download]    7.00KiB at    3.29MiB/s (00:00:00)[download]    8.93KiB at    3.72MiB/s (00:00:00)[download] 100% of    8.93KiB in 00:00:00 at 28.21KiB/s
-[download] Downloading item 2 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=YeSVL9KWYdk
-[youtube] YeSVL9KWYdk: Downloading webpage
-[youtube] YeSVL9KWYdk: Downloading android vr player API JSON
-[youtube] YeSVL9KWYdk: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] YeSVL9KWYdk: Downloading m3u8 information
-[info] YeSVL9KWYdk: Downloading subtitles: en
-[info] YeSVL9KWYdk: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/02 - MBA Asks the Expert： A Conversation on AI andAutomation in Insurance Tracking.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/02 - MBA Asks the Expert： A Conversation on AI andAutomation in Insurance Tracking.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.48MiB/s (00:00:00)[download]    7.00KiB at    2.73MiB/s (00:00:00)[download]    9.05KiB at    2.93MiB/s (00:00:00)[download] 100% of    9.05KiB in 00:00:00 at 25.65KiB/s
-[download] Downloading item 3 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=taa1InUGOtY
-[youtube] taa1InUGOtY: Downloading webpage
-[youtube] taa1InUGOtY: Downloading android vr player API JSON
-[youtube] taa1InUGOtY: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] taa1InUGOtY: Downloading m3u8 information
-[info] taa1InUGOtY: Downloading subtitles: en
-[info] taa1InUGOtY: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/03 - MBA Asks the Expert with Paul Orlando of Lender Price on Emerging Technologies and Trends.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/03 - MBA Asks the Expert with Paul Orlando of Lender Price on Emerging Technologies and Trends.en.srt
-[download]    1.00KiB at  956.95KiB/s (00:00:00)[download]    3.00KiB at    1.56MiB/s (00:00:00)[download]    7.00KiB at  823.64KiB/s (00:00:00)[download]   15.00KiB at  323.04KiB/s (00:00:00)[download]   26.52KiB at  481.79KiB/s (00:00:00)[download] 100% of   26.52KiB in 00:00:00 at 68.81KiB/s
-[download] Downloading item 4 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=99ReswI1tYE
-[youtube] 99ReswI1tYE: Downloading webpage
-[youtube] 99ReswI1tYE: Downloading android vr player API JSON
-[youtube] 99ReswI1tYE: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] 99ReswI1tYE: Downloading m3u8 information
-[info] 99ReswI1tYE: Downloading subtitles: en
-[info] 99ReswI1tYE: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/04 - MBA Asks the Expert： MeridianLink’s Chris Dumas on Accelerating the Underwriting Process.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/04 - MBA Asks the Expert： MeridianLink’s Chris Dumas on Accelerating the Underwriting Process.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  883.38KiB/s (00:00:00)[download]    7.00KiB at    1.81MiB/s (00:00:00)[download]   13.30KiB at    3.14MiB/s (00:00:00)[download] 100% of   13.30KiB in 00:00:00 at 41.01KiB/s
-[download] Downloading item 5 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=EPBRme8IWNg
-[youtube] EPBRme8IWNg: Downloading webpage
-[youtube] EPBRme8IWNg: Downloading android vr player API JSON
-[youtube] EPBRme8IWNg: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] EPBRme8IWNg: Downloading m3u8 information
-[info] EPBRme8IWNg: Downloading subtitles: en
-[info] EPBRme8IWNg: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/05 - MBA Asks the Expert： Proctor Loan Protector on Servicing and Improving the Customer Experience.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/05 - MBA Asks the Expert： Proctor Loan Protector on Servicing and Improving the Customer Experience.en.srt
-[download]    1.00KiB at  952.60KiB/s (00:00:03)[download]    3.00KiB at    1.51MiB/s (00:00:03)[download]    7.00KiB at   55.44KiB/s (00:00:03)[download]   12.15KiB at    7.03KiB/s (00:00:04)[download] 100% of   12.15KiB in 00:00:04 at 2.52KiB/s
-[download] Downloading item 6 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=QKNX_KXarHw
-[youtube] QKNX_KXarHw: Downloading webpage
-[youtube] QKNX_KXarHw: Downloading android vr player API JSON
-[youtube] QKNX_KXarHw: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] QKNX_KXarHw: Downloading m3u8 information
-[info] QKNX_KXarHw: Downloading subtitles: en
-[info] QKNX_KXarHw: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/06 - MBA Asks the Expert： MeridianLink’s Mitchell Swanson on AI and Automation Adoption.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/06 - MBA Asks the Expert： MeridianLink’s Mitchell Swanson on AI and Automation Adoption.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:01)[download]    3.00KiB at   18.58KiB/s (00:00:01)[download]    7.00KiB at   43.06KiB/s (00:00:01)[download]   15.00KiB at   91.82KiB/s (00:00:01)[download]   15.81KiB at   51.15KiB/s (00:00:01)[download] 100% of   15.81KiB in 00:00:01 at 10.86KiB/s
-[download] Downloading item 7 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=P7GXVvVR4Bc
-[youtube] P7GXVvVR4Bc: Downloading webpage
-[youtube] P7GXVvVR4Bc: Downloading android vr player API JSON
-[youtube] P7GXVvVR4Bc: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] P7GXVvVR4Bc: Downloading m3u8 information
-[info] P7GXVvVR4Bc: Downloading subtitles: en
-[info] P7GXVvVR4Bc: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/07 - MBA Asks the Expert： A Conversation on AI and Automation in Insurance Tracking.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/07 - MBA Asks the Expert： A Conversation on AI and Automation in Insurance Tracking.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  Unknown B/s (00:00:00)[download]    7.00KiB at   27.96KiB/s (00:00:00)[download]    8.93KiB at   35.51KiB/s (00:00:00)[download] 100% of    8.93KiB in 00:00:00 at 11.39KiB/s
-[download] Downloading item 8 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=-8kjoBnr03Y
-[youtube] -8kjoBnr03Y: Downloading webpage
-[youtube] -8kjoBnr03Y: Downloading android vr player API JSON
-[youtube] -8kjoBnr03Y: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] -8kjoBnr03Y: Downloading m3u8 information
-[info] -8kjoBnr03Y: Downloading subtitles: en
-[info] -8kjoBnr03Y: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/08 - MBA Asks the Expert： A Conversation with Proctor Loan Protector on Insurance Loss Draft Claims.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/08 - MBA Asks the Expert： A Conversation with Proctor Loan Protector on Insurance Loss Draft Claims.en.srt
-[download]    1.00KiB at  960.45KiB/s (00:00:01)[download]    3.00KiB at  408.17KiB/s (00:00:01)[download]    7.00KiB at  142.49KiB/s (00:00:01)[download]   11.31KiB at  226.12KiB/s (00:00:01)[download] 100% of   11.31KiB in 00:00:01 at 6.91KiB/s
-[download] Downloading item 9 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=YX5HazVsFJQ
-[youtube] YX5HazVsFJQ: Downloading webpage
-[youtube] YX5HazVsFJQ: Downloading android vr player API JSON
-[youtube] YX5HazVsFJQ: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] YX5HazVsFJQ: Downloading m3u8 information
-[info] YX5HazVsFJQ: Downloading subtitles: en
-[info] YX5HazVsFJQ: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/09 - MBA Asks the Expert： A Conversation with Lender Price’s Paul Orlando on Mortgage Technology and ROI.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/09 - MBA Asks the Expert： A Conversation with Lender Price’s Paul Orlando on Mortgage Technology and ROI.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.42MiB/s (00:00:00)[download]    7.00KiB at    1.35MiB/s (00:00:00)[download]   15.00KiB at  674.68KiB/s (00:00:00)[download]   18.94KiB at  628.82KiB/s (00:00:00)[download] 100% of   18.94KiB in 00:00:00 at 59.02KiB/s
-[download] Downloading item 10 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=r11fmnz9G1A
-[youtube] r11fmnz9G1A: Downloading webpage
-[youtube] r11fmnz9G1A: Downloading android vr player API JSON
-[youtube] r11fmnz9G1A: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] r11fmnz9G1A: Downloading m3u8 information
-[info] r11fmnz9G1A: Downloading subtitles: en
-[info] r11fmnz9G1A: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/10 - MBA Asks the Expert： A Conversation with Lender Price Founder and CEO Dawar Alimi on AI (Part II).en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/10 - MBA Asks the Expert： A Conversation with Lender Price Founder and CEO Dawar Alimi on AI (Part II).en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.70MiB/s (00:00:00)[download]    7.00KiB at  403.32KiB/s (00:00:00)[download]   15.00KiB at  803.74KiB/s (00:00:00)[download]   15.09KiB at  720.30KiB/s (00:00:00)[download] 100% of   15.09KiB in 00:00:00 at 46.54KiB/s
-[download] Downloading item 11 of 11
-[youtube] Extracting URL: https://www.youtube.com/watch?v=KBuQ4Z0QZlk
-[youtube] KBuQ4Z0QZlk: Downloading webpage
-[youtube] KBuQ4Z0QZlk: Downloading android vr player API JSON
-[youtube] KBuQ4Z0QZlk: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] KBuQ4Z0QZlk: Downloading m3u8 information
-[info] KBuQ4Z0QZlk: Downloading subtitles: en
-[info] KBuQ4Z0QZlk: Downloading 1 format(s): 313+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/11 - MBA Asks the Expert： A Conversation with Lender Price Founder and CEO Dawar Alimi.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1Ftm8Ze2DbmGawhOD9Vx3C/11 - MBA Asks the Expert： A Conversation with Lender Price Founder and CEO Dawar Alimi.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:01)[download]    3.00KiB at    1.47MiB/s (00:00:01)[download]    6.60KiB at  187.60KiB/s (00:00:01)[download] 100% of    6.60KiB in 00:00:01 at 4.86KiB/s
-[download] Finished downloading playlist: MBA Asks the Experts

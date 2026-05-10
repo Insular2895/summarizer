@@ -1,0 +1,13 @@
+# Cookies YouTube (privé - ne jamais commiter)
+cookies.txt
+
+# Fichiers macOS
+.DS_Store
+
+# Transcripts téléchargés (output du script, pas du code)
+playlists/
+[0-9]*/
+
+# Logs et métadonnées yt-dlp
+*.log
+*.tsv

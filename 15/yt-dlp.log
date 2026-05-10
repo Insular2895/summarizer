@@ -1,19 +1,0 @@
-[youtube:tab] Extracting URL: https://youtube.com/playlist?list=PL7xwFJcUfgW1-CbNc1IaGAShdnboCecVs&si=ww8iNwaOouF0AD0U
-[youtube:tab] PL7xwFJcUfgW1-CbNc1IaGAShdnboCecVs: Downloading webpage
-[youtube:tab] PL7xwFJcUfgW1-CbNc1IaGAShdnboCecVs: Redownloading playlist API JSON with unavailable videos
-[download] Downloading playlist: MBA Affordable Housing
-[youtube:tab] Playlist MBA Affordable Housing: Downloading 1 items of 1
-[download] Downloading item 1 of 1
-[youtube] Extracting URL: https://www.youtube.com/watch?v=y7YIbKF01KA
-[youtube] y7YIbKF01KA: Downloading webpage
-[youtube] y7YIbKF01KA: Downloading android vr player API JSON
-[youtube] y7YIbKF01KA: Downloading web safari player API JSON
-[youtube] y7YIbKF01KA: Downloading player 4c5cf06a-tv
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] y7YIbKF01KA: Downloading m3u8 information
-[info] y7YIbKF01KA: Downloading subtitles: en
-[info] y7YIbKF01KA: Downloading 1 format(s): 136+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL7xwFJcUfgW1-CbNc1IaGAShdnboCecVs/1 - MBA AHI Fireside Chat - April 16, 2024.en.srt
-[download] Destination: /Users/insular/transcripts/PL7xwFJcUfgW1-CbNc1IaGAShdnboCecVs/1 - MBA AHI Fireside Chat - April 16, 2024.en.srt
-[download]    1.00KiB at  893.55KiB/s (00:00:00)[download]    3.00KiB at    1.35MiB/s (00:00:00)[download]    7.00KiB at  920.67KiB/s (00:00:00)[download]   15.00KiB at  536.59KiB/s (00:00:00)[download]   30.17KiB at  539.50KiB/s (00:00:00)[download] 100% of   30.17KiB in 00:00:00 at 81.28KiB/s
-[download] Finished downloading playlist: MBA Affordable Housing

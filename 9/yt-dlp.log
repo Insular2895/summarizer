@@ -1,203 +1,0 @@
-[youtube:tab] Extracting URL: https://youtube.com/playlist?list=PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9&si=yTQFnHV9vKKvafB1
-[youtube:tab] PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9: Downloading webpage
-[youtube:tab] PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9: Redownloading playlist API JSON with unavailable videos
-[download] Downloading playlist: Margin & Collateral Management
-[youtube:tab] Playlist Margin & Collateral Management: Downloading 17 items of 17
-[download] Downloading item 1 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=UwrjbuPI7bU
-[youtube] UwrjbuPI7bU: Downloading webpage
-[youtube] UwrjbuPI7bU: Downloading android vr player API JSON
-[youtube] UwrjbuPI7bU: Downloading web safari player API JSON
-[youtube] UwrjbuPI7bU: Downloading player 4c5cf06a-tv
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] UwrjbuPI7bU: Downloading m3u8 information
-[info] UwrjbuPI7bU: Downloading 1 format(s): 137+251
-[info] There are no subtitles for the requested languages
-[download] Downloading item 2 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=1XnJpLL5SQc
-[youtube] 1XnJpLL5SQc: Downloading webpage
-[youtube] 1XnJpLL5SQc: Downloading android vr player API JSON
-[youtube] 1XnJpLL5SQc: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] 1XnJpLL5SQc: Downloading m3u8 information
-[info] 1XnJpLL5SQc: Downloading subtitles: en
-[info] 1XnJpLL5SQc: Downloading 1 format(s): 136+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/02 - ISDA Collateral Management Transformation Toolkit - Custodial Onboarding....en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/02 - ISDA Collateral Management Transformation Toolkit - Custodial Onboarding....en.srt
-[download]    1.00KiB at  591.66KiB/s (00:00:00)[download]    3.00KiB at  707.18KiB/s (00:00:00)[download]    7.00KiB at  682.13KiB/s (00:00:00)[download]    9.33KiB at  773.55KiB/s (00:00:00)[download] 100% of    9.33KiB in 00:00:00 at 29.57KiB/s
-[download] Downloading item 3 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=KWq7gW9qPMo
-[youtube] KWq7gW9qPMo: Downloading webpage
-[youtube] KWq7gW9qPMo: Downloading android vr player API JSON
-[youtube] KWq7gW9qPMo: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] KWq7gW9qPMo: Downloading m3u8 information
-[info] KWq7gW9qPMo: Downloading subtitles: en
-[info] KWq7gW9qPMo: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/03 - ISDA Collateral Management Transformation Toolkit - Portfolio Reconciliation.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/03 - ISDA Collateral Management Transformation Toolkit - Portfolio Reconciliation.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at    1.44MiB/s (00:00:00)[download]    7.00KiB at  959.04KiB/s (00:00:00)[download]   10.91KiB at  573.08KiB/s (00:00:00)[download] 100% of   10.91KiB in 00:00:00 at 30.34KiB/s
-[download] Downloading item 4 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=WEbpsqBzTnE
-[youtube] WEbpsqBzTnE: Downloading webpage
-[youtube] WEbpsqBzTnE: Downloading android vr player API JSON
-[youtube] WEbpsqBzTnE: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] WEbpsqBzTnE: Downloading m3u8 information
-[info] WEbpsqBzTnE: Downloading subtitles: en
-[info] WEbpsqBzTnE: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/04 - ISDA Collateral Management Transformation Toolkit： Digitizing Documentation and Streamlining to OS.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/04 - ISDA Collateral Management Transformation Toolkit： Digitizing Documentation and Streamlining to OS.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  281.93KiB/s (00:00:00)[download]    7.00KiB at  511.77KiB/s (00:00:00)[download]   10.75KiB at  475.83KiB/s (00:00:00)[download] 100% of   10.75KiB in 00:00:00 at 26.40KiB/s
-[download] Downloading item 5 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=mw3_LlOiVRI
-[youtube] mw3_LlOiVRI: Downloading webpage
-[youtube] mw3_LlOiVRI: Downloading android vr player API JSON
-[youtube] mw3_LlOiVRI: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] mw3_LlOiVRI: Downloading m3u8 information
-[info] mw3_LlOiVRI: Downloading subtitles: en
-[info] mw3_LlOiVRI: Downloading 1 format(s): 136+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/05 - ISDA Initial Margin Documentation Webinar： Overview of New Initial Margin Documentation (FULL).en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/05 - ISDA Initial Margin Documentation Webinar： Overview of New Initial Margin Documentation (FULL).en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  826.84KiB/s (00:00:00)[download]    7.00KiB at  292.43KiB/s (00:00:00)[download]   15.00KiB at  424.37KiB/s (00:00:00)[download]   25.30KiB at  416.11KiB/s (00:00:00)[download] 100% of   25.30KiB in 00:00:00 at 61.39KiB/s
-[download] Downloading item 6 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=bWwJVYmeZeM
-[youtube] bWwJVYmeZeM: Downloading webpage
-[youtube] bWwJVYmeZeM: Downloading android vr player API JSON
-[youtube] bWwJVYmeZeM: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] bWwJVYmeZeM: Downloading m3u8 information
-[info] bWwJVYmeZeM: Downloading subtitles: en
-[info] bWwJVYmeZeM: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/06 - ISDA IM Documentation Webinar： Custodian Risk & Relationship w⧸ Account Control Agreement.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/06 - ISDA IM Documentation Webinar： Custodian Risk & Relationship w⧸ Account Control Agreement.en.srt
-[download]    1.00KiB at  990.86KiB/s (00:00:00)[download]    3.00KiB at    1.67MiB/s (00:00:00)[download]    7.00KiB at  580.72KiB/s (00:00:00)[download]   15.00KiB at  654.79KiB/s (00:00:00)[download]   31.00KiB at  497.31KiB/s (00:00:00)[download]   45.82KiB at  464.01KiB/s (00:00:00)[download] 100% of   45.82KiB in 00:00:00 at 89.09KiB/s
-[download] Downloading item 7 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=BhR4VYtcV9U
-[youtube] BhR4VYtcV9U: Downloading webpage
-[youtube] BhR4VYtcV9U: Downloading android vr player API JSON
-[youtube] BhR4VYtcV9U: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] BhR4VYtcV9U: Downloading m3u8 information
-[info] BhR4VYtcV9U: Downloading subtitles: en
-[info] BhR4VYtcV9U: Downloading 1 format(s): 136+140
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/07 - ISDA Initial Margin Documentation Webinar： Regime Table & “Strictest of” Rules.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/07 - ISDA Initial Margin Documentation Webinar： Regime Table & “Strictest of” Rules.en.srt
-[download]    1.00KiB at  982.27KiB/s (00:00:00)[download]    3.00KiB at    1.37MiB/s (00:00:00)[download]    7.00KiB at  792.85KiB/s (00:00:00)[download]   15.00KiB at  388.49KiB/s (00:00:00)[download]   24.72KiB at  499.54KiB/s (00:00:00)[download] 100% of   24.72KiB in 00:00:00 at 50.93KiB/s
-[download] Downloading item 8 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=juMmcEjsziY
-[youtube] juMmcEjsziY: Downloading webpage
-[youtube] juMmcEjsziY: Downloading android vr player API JSON
-[youtube] juMmcEjsziY: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] juMmcEjsziY: Downloading m3u8 information
-[info] juMmcEjsziY: Downloading subtitles: en
-[info] juMmcEjsziY: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/08 - ISDA Initial Margin Documentation Webinar： Overview of Euroclear & Clearstream Documentation.en.srt
-
-[download] Downloading item 9 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=we6CDbbGxYw
-[youtube] we6CDbbGxYw: Downloading webpage
-[youtube] we6CDbbGxYw: Downloading android vr player API JSON
-[youtube] we6CDbbGxYw: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] we6CDbbGxYw: Downloading m3u8 information
-[info] we6CDbbGxYw: Downloading subtitles: en
-[info] we6CDbbGxYw: Downloading 1 format(s): 136+140
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/09 - ISDA Initial Margin Documentation Webinar： Rights and Remedies.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/09 - ISDA Initial Margin Documentation Webinar： Rights and Remedies.en.srt
-[download]    1.00KiB at  378.82KiB/s (00:00:00)[download]    3.00KiB at  786.83KiB/s (00:00:00)[download]    7.00KiB at  122.80KiB/s (00:00:00)[download]   15.00KiB at  257.77KiB/s (00:00:00)[download]   16.55KiB at  275.35KiB/s (00:00:00)[download] 100% of   16.55KiB in 00:00:00 at 40.59KiB/s
-[download] Downloading item 10 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=LGgA5xA9TCk
-[youtube] LGgA5xA9TCk: Downloading webpage
-[youtube] LGgA5xA9TCk: Downloading android vr player API JSON
-[youtube] LGgA5xA9TCk: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] LGgA5xA9TCk: Downloading m3u8 information
-[info] LGgA5xA9TCk: Downloading subtitles: en
-[info] LGgA5xA9TCk: Downloading 1 format(s): 136+140
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/10 - ISDA Initial Margin Documentation Webinar： Reg IM and Non Reg IA.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/10 - ISDA Initial Margin Documentation Webinar： Reg IM and Non Reg IA.en.srt
-[download]    1.00KiB at  911.61KiB/s (00:00:00)[download]    3.00KiB at  293.23KiB/s (00:00:00)[download]    7.00KiB at  388.37KiB/s (00:00:00)[download]   15.00KiB at  455.95KiB/s (00:00:00)[download]   28.78KiB at  419.66KiB/s (00:00:00)[download] 100% of   28.78KiB in 00:00:00 at 66.30KiB/s
-[download] Downloading item 11 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=XeTjUrhMgo8
-[youtube] XeTjUrhMgo8: Downloading webpage
-[youtube] XeTjUrhMgo8: Downloading android vr player API JSON
-[youtube] XeTjUrhMgo8: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] XeTjUrhMgo8: Downloading m3u8 information
-[info] XeTjUrhMgo8: Downloading subtitles: en
-[info] XeTjUrhMgo8: Downloading 1 format(s): 136+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/11 - ISDA Initial Margin Documentation Webinar： Overview of the Bank Custodian CTA ⧸ SA.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/11 - ISDA Initial Margin Documentation Webinar： Overview of the Bank Custodian CTA ⧸ SA.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  871.76KiB/s (00:00:00)[download]    7.00KiB at  507.14KiB/s (00:00:00)[download]   15.00KiB at  584.68KiB/s (00:00:00)[download]   19.53KiB at  573.42KiB/s (00:00:00)[download] 100% of   19.53KiB in 00:00:00 at 53.56KiB/s
-[download] Downloading item 12 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=nmfrDC_A4kI
-[youtube] nmfrDC_A4kI: Downloading webpage
-[youtube] nmfrDC_A4kI: Downloading android vr player API JSON
-[youtube] nmfrDC_A4kI: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] nmfrDC_A4kI: Downloading m3u8 information
-[info] nmfrDC_A4kI: Downloading 1 format(s): 136+251
-[info] There are no subtitles for the requested languages
-[download] Downloading item 13 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=fVDKWdp7PrU
-[youtube] fVDKWdp7PrU: Downloading webpage
-[youtube] fVDKWdp7PrU: Downloading android vr player API JSON
-[youtube] fVDKWdp7PrU: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] fVDKWdp7PrU: Downloading m3u8 information
-[info] fVDKWdp7PrU: Downloading subtitles: en
-[info] fVDKWdp7PrU: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/13 - ISDA Margin InfoHub.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/13 - ISDA Margin InfoHub.en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    3.00KiB at  809.50KiB/s (00:00:00)[download]    7.00KiB at  629.56KiB/s (00:00:00)[download]   15.00KiB at  650.93KiB/s (00:00:00)[download]   17.80KiB at  744.78KiB/s (00:00:00)[download] 100% of   17.80KiB in 00:00:00 at 45.86KiB/s
-[download] Downloading item 14 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=LywO8BKRscI
-[youtube] LywO8BKRscI: Downloading webpage
-[youtube] LywO8BKRscI: Downloading android vr player API JSON
-[youtube] LywO8BKRscI: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] LywO8BKRscI: Downloading m3u8 information
-[info] LywO8BKRscI: Downloading subtitles: en
-[info] LywO8BKRscI: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/14 - ISDA Initial Margin： User's Guide & Annotated Docs (PREVIEW).en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/14 - ISDA Initial Margin： User's Guide & Annotated Docs (PREVIEW).en.srt
-[download]    1.00KiB at  Unknown B/s (00:00:00)[download]    2.84KiB at  703.17KiB/s (00:00:00)[download] 100% of    2.84KiB in 00:00:00 at 7.67KiB/s
-[download] Downloading item 15 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=9K14BBbIxXM
-[youtube] 9K14BBbIxXM: Downloading webpage
-[youtube] 9K14BBbIxXM: Downloading android vr player API JSON
-[youtube] 9K14BBbIxXM: Downloading web embedded client config
-[youtube] 9K14BBbIxXM: Downloading web embedded player API JSON
-[youtube] 9K14BBbIxXM: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] 9K14BBbIxXM: Downloading m3u8 information
-[info] 9K14BBbIxXM: Downloading subtitles: en
-[info] 9K14BBbIxXM: Downloading 1 format(s): 136+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/15 - How is Collateral Used in the Derivatives Market？.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/15 - How is Collateral Used in the Derivatives Market？.en.srt
-[download]    1.00KiB at  982.27KiB/s (00:00:00)[download]    2.57KiB at   43.51KiB/s (00:00:00)[download] 100% of    2.57KiB in 00:00:00 at 6.44KiB/s
-[download] Downloading item 16 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=wV_iF97dIH8
-[youtube] wV_iF97dIH8: Downloading webpage
-[youtube] wV_iF97dIH8: Downloading android vr player API JSON
-[youtube] wV_iF97dIH8: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] wV_iF97dIH8: Downloading m3u8 information
-[info] wV_iF97dIH8: Downloading 1 format(s): 137+251
-[info] There are no subtitles for the requested languages
-[download] Downloading item 17 of 17
-[youtube] Extracting URL: https://www.youtube.com/watch?v=pco_UxaTKp4
-[youtube] pco_UxaTKp4: Downloading webpage
-[youtube] pco_UxaTKp4: Downloading android vr player API JSON
-[youtube] pco_UxaTKp4: Downloading web safari player API JSON
-[youtube] [jsc:deno] Solving JS challenges using deno
-[youtube] pco_UxaTKp4: Downloading m3u8 information
-[info] pco_UxaTKp4: Downloading subtitles: en
-[info] pco_UxaTKp4: Downloading 1 format(s): 137+251
-[info] Writing video subtitles to: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/17 - SIFMA AMG ⧸ ISDA Webinar - December 2022.en.srt
-[download] Destination: /Users/insular/transcripts/PL-yXUUl1_XU7cAX9wz4YhXWIVSb47RoO9/17 - SIFMA AMG ⧸ ISDA Webinar - December 2022.en.srt
-[download]    1.00KiB at  996.04KiB/s (00:00:00)[download]    3.00KiB at  275.23KiB/s (00:00:00)[download]    7.00KiB at  374.01KiB/s (00:00:00)[download]   15.00KiB at  481.57KiB/s (00:00:00)[download]   31.00KiB at  278.91KiB/s (00:00:00)[download]   63.00KiB at  481.61KiB/s (00:00:00)[download]   95.19KiB at  495.20KiB/s (00:00:00)[download] 100% of   95.19KiB in 00:00:00 at 164.10KiB/s
-[download] Finished downloading playlist: Margin & Collateral Management
