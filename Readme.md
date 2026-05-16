@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🎙️ Transcripts
+<img src="docs/assets/transcripts-animated.svg" alt="Transcripts animated logo" width="112" />
+
+# Transcripts
 
 **Téléchargeur automatique de sous-titres YouTube**
 

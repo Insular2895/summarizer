@@ -1,0 +1,22 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Transcripts animated logo</title>
+  <desc id="desc">Animated microphone and subtitle wave mark for Transcripts.</desc>
+  <rect width="160" height="160" rx="34" fill="#0B1020"/>
+  <rect x="61" y="30" width="38" height="70" rx="19" fill="#F8FAFC" stroke="#60A5FA" stroke-width="5"/>
+  <path d="M49 72c0 20 12 34 31 34s31-14 31-34" stroke="#93C5FD" stroke-width="7" stroke-linecap="round"/>
+  <path d="M80 106v20" stroke="#93C5FD" stroke-width="7" stroke-linecap="round"/>
+  <path d="M61 128h38" stroke="#93C5FD" stroke-width="7" stroke-linecap="round"/>
+  <g stroke="#F43F5E" stroke-width="5" stroke-linecap="round">
+    <path d="M32 58c7-8 15-8 22 0">
+      <animate attributeName="d" values="M32 58c7-8 15-8 22 0;M29 58c9-13 19-13 28 0;M32 58c7-8 15-8 22 0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M106 58c7-8 15-8 22 0">
+      <animate attributeName="d" values="M106 58c7-8 15-8 22 0;M103 58c9-13 19-13 28 0;M106 58c7-8 15-8 22 0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="#E0F2FE">
+    <rect x="45" y="137" width="70" height="5" rx="2.5">
+      <animate attributeName="width" values="34;70;42;70" dur="2.1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
