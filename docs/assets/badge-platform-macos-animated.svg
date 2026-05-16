@@ -1,18 +1,20 @@
-<svg width="340" height="56" viewBox="0 0 340 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Platform macOS</title>
-  <desc id="desc">Animated badge for macOS platform.</desc>
-  <rect width="340" height="56" rx="0" fill="#171A20"/>
-  <rect width="220" height="56" fill="#5A5A5A"/>
-  <rect x="220" width="120" height="56" fill="#050505"/>
-  <g transform="translate(25 13) scale(1.25)">
+<svg xmlns="http://www.w3.org/2000/svg" width="162" height="28" viewBox="0 0 162 28" role="img" aria-labelledby="title desc">
+  <title id="title">Platform macOS animated badge</title>
+  <desc id="desc">Animated local README badge using the Apple icon from Simple Icons.</desc>
+  <defs>
+    <linearGradient id="badgeBg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#20252e"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+  <rect width="162" height="28" rx="6" fill="url(#badgeBg)"/>
+  <rect x="0.5" y="0.5" width="161" height="27" rx="5.5" fill="none" stroke="#ffffff" stroke-opacity="0.16"/>
+  <g transform="translate(11 6) scale(.66)">
     <!-- Apple icon path from Simple Icons: https://simpleicons.org/icons/apple.svg -->
-    <path fill="#FFFFFF" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701">
-      <animate attributeName="opacity" values="1;0.82;1" dur="2s" repeatCount="indefinite"/>
+    <path fill="#ffffff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701">
+      <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" repeatCount="indefinite"/>
     </path>
   </g>
-  <text x="70" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="6">PLATFORM</text>
-  <text x="246" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="4">MACOS</text>
-  <rect x="-90" y="0" width="46" height="56" fill="#FFFFFF" opacity="0.14" transform="skewX(-18)">
-    <animate attributeName="x" values="-90;360" dur="3.2s" repeatCount="indefinite"/>
-  </rect>
+  <text x="34" y="18" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#ffffff">Platform</text>
+  <text x="102" y="18" font-family="Inter,Arial,sans-serif" font-size="12" fill="#e8edf7">macOS</text>
 </svg>
