@@ -5,8 +5,8 @@
 **Téléchargeur automatique de sous-titres YouTube**
 
 <p>
-  <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="42" /></a>
-  <a href="https://www.gnu.org/software/bash/"><img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash" height="42" /></a>
+  <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="42" /></a>&nbsp;&nbsp;
+  <a href="https://www.gnu.org/software/bash/"><img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash" height="42" /></a>&nbsp;&nbsp;
   <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="42" /></a>
 </p>
 

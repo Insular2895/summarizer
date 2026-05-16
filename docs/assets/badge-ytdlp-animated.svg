@@ -1,20 +1,20 @@
-<svg width="330" height="56" viewBox="0 0 330 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="352" height="56" viewBox="0 0 352 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">powered by yt-dlp</title>
   <desc id="desc">Animated badge for yt-dlp.</desc>
   <rect width="330" height="56" rx="0" fill="#171A20"/>
-  <rect width="210" height="56" fill="#5A5A5A"/>
-  <rect x="210" width="120" height="56" fill="#FF0505">
+  <rect width="230" height="56" fill="#5A5A5A"/>
+  <rect x="230" width="122" height="56" fill="#FF0505">
     <animate attributeName="fill" values="#FF0505;#D90404;#FF0505" dur="2.2s" repeatCount="indefinite"/>
   </rect>
-  <g transform="translate(22 18)">
-    <rect width="28" height="20" rx="5" fill="#FFFFFF"/>
-    <path d="M12 6l8 4-8 4V6z" fill="#5A5A5A">
-      <animate attributeName="fill" values="#5A5A5A;#FF0505;#5A5A5A" dur="1.6s" repeatCount="indefinite"/>
+  <g transform="translate(22 16)">
+    <!-- YouTube icon path from Simple Icons: https://simpleicons.org/icons/youtube.svg -->
+    <path fill="#FFFFFF" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+      <animate attributeName="opacity" values="1;0.82;1" dur="1.6s" repeatCount="indefinite"/>
     </path>
   </g>
-  <text x="62" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="6">POWERED BY</text>
-  <text x="237" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="3">YT-DLP</text>
+  <text x="62" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="500" letter-spacing="5">POWERED BY</text>
+  <text x="253" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="3">YT-DLP</text>
   <rect x="-80" y="0" width="54" height="56" fill="#FFFFFF" opacity="0.16" transform="skewX(-18)">
-    <animate attributeName="x" values="-80;350" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="-80;372" dur="2.8s" repeatCount="indefinite"/>
   </rect>
 </svg>
