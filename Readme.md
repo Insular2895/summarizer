@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="docs/assets/transcripts-animated.svg" alt="Transcripts animated logo" width="112" />
-
 # Transcripts
 
 **Téléchargeur automatique de sous-titres YouTube**
 
-[![yt-dlp](https://img.shields.io/badge/powered%20by-yt--dlp-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
-[![Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![Platform](https://img.shields.io/badge/Platform-macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+<p>
+  <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="42" /></a>
+  <a href="https://www.gnu.org/software/bash/"><img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash" height="42" /></a>
+  <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="42" /></a>
+</p>
 
 </div>
 

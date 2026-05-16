@@ -1,0 +1,20 @@
+<svg width="330" height="56" viewBox="0 0 330 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">powered by yt-dlp</title>
+  <desc id="desc">Animated badge for yt-dlp.</desc>
+  <rect width="330" height="56" rx="0" fill="#171A20"/>
+  <rect width="210" height="56" fill="#5A5A5A"/>
+  <rect x="210" width="120" height="56" fill="#FF0505">
+    <animate attributeName="fill" values="#FF0505;#D90404;#FF0505" dur="2.2s" repeatCount="indefinite"/>
+  </rect>
+  <g transform="translate(22 18)">
+    <rect width="28" height="20" rx="5" fill="#FFFFFF"/>
+    <path d="M12 6l8 4-8 4V6z" fill="#5A5A5A">
+      <animate attributeName="fill" values="#5A5A5A;#FF0505;#5A5A5A" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <text x="62" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="6">POWERED BY</text>
+  <text x="237" y="36" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="3">YT-DLP</text>
+  <rect x="-80" y="0" width="54" height="56" fill="#FFFFFF" opacity="0.16" transform="skewX(-18)">
+    <animate attributeName="x" values="-80;350" dur="2.8s" repeatCount="indefinite"/>
+  </rect>
+</svg>
