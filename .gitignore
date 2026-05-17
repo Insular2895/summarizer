@@ -43,3 +43,5 @@ output/graphipy_ready/*
 !requirements-dev.txt
 !requirements-pdf.txt
 !tests/fixtures/*.txt
+!tests/fixtures/*.srt
+!tests/fixtures/*.vtt
