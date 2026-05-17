@@ -1,2 +1,9 @@
-mineru
-marker-pdf
+# MinerU and Marker currently conflict in one Python environment on Pillow:
+# - mineru 3.1.x requires Pillow >= 11
+# - marker-pdf 1.10.x / surya-ocr requires Pillow < 11
+#
+# Install only one engine in a given environment:
+#   pip install -r requirements-pdf-mineru.txt
+#   pip install -r requirements-pdf-marker.txt
+#
+# The base pipeline still works without either engine via the pypdf text fallback.

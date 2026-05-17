@@ -22,8 +22,10 @@ pip install -r requirements-dev.txt
 Les moteurs PDF sont optionnels et lourds :
 
 ```bash
-pip install -r requirements-pdf.txt
+pip install -r requirements-pdf-mineru.txt
 ```
+
+MinerU et Marker ne cohabitent pas proprement dans un seul environnement Python actuel : MinerU demande `Pillow >= 11`, tandis que Marker / Surya demande `Pillow < 11`. Le pipeline garde donc MinerU comme moteur principal et utilise `pypdf` comme fallback texte inclus dans `requirements.txt`. Marker peut être installé dans un environnement séparé avec `requirements-pdf-marker.txt`.
 
 ## Configuration
 
@@ -89,7 +91,7 @@ python -m src.cli pdf-batch --dir input/pdf --engine mineru --mode deep
 python -m src.cli pdf --file input/pdf/book.pdf --engine marker --mode deep
 ```
 
-`--engine auto` essaie MinerU, puis Marker, puis un fallback texte léger avec `pypdf`.
+`--engine auto` essaie MinerU, puis Marker si disponible, puis un fallback texte léger avec `pypdf`.
 
 ## Modèles Gemini
 

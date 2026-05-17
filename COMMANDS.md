@@ -14,6 +14,30 @@ Ajoute ta clé Gemini dans `.env` :
 GEMINI_API_KEY=ta_cle
 ```
 
+## Moteurs PDF optionnels
+
+Le fallback texte `pypdf` est inclus dans `requirements.txt`, donc `run-pdf` peut déjà extraire les PDF texte.
+
+MinerU et Marker ne doivent pas être installés ensemble dans le même environnement Python actuellement :
+
+- MinerU `3.1.x` demande `Pillow >= 11`.
+- Marker `1.10.x` / Surya demande `Pillow < 11`.
+
+Pour le moteur principal MinerU :
+
+```bash
+pip install -r requirements-pdf-mineru.txt
+```
+
+Pour un environnement séparé Marker :
+
+```bash
+python3.11 -m venv .venv-marker
+source .venv-marker/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-pdf-marker.txt
+```
+
 ## PDF complet
 
 Une seule commande pour extraire, nettoyer, résumer et exporter Graphipy :
