@@ -64,9 +64,16 @@ def run_video_batch(file_path: Path, **kwargs: object) -> JobManifest:
     return manifest
 
 
-def run_playlist(url: str, resume: bool = False, **kwargs: object) -> JobManifest:
+def run_playlist(
+    url: str,
+    resume: bool = False,
+    limit: int | None = None,
+    **kwargs: object,
+) -> JobManifest:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     title, videos = extractor.list_playlist(url)
+    if limit is not None:
+        videos = videos[:limit]
     manifest_path = manifest_path_for_playlist(f"playlist-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
     for video in videos:
@@ -193,6 +200,7 @@ def run_youtube_source(
         return run_playlist(
             source,
             resume=resume,
+            limit=limit,
             ask_each=ask_each,
             keep_all=keep_all,
             export_graphipy=export_graphipy,
@@ -219,6 +227,7 @@ def run_pdf(
     delete_cache: bool = False,
     overwrite: bool = False,
     dry_run: bool = False,
+    max_pages: int | None = None,
 ) -> Path:
     slug = safe_slug(file_path.stem, "book")
     output_path = project_path("output", "books", f"{slug}.md")
@@ -226,6 +235,8 @@ def run_pdf(
     if dry_run:
         console.print(f"[dry-run] PDF: {file_path}")
         console.print(f"[dry-run] Engine: {engine} / mode: {mode}")
+        if max_pages is not None:
+            console.print(f"[dry-run] Max pages: {max_pages}")
         if engine in {"auto", "smart"}:
             plan = build_pdf_engine_plan(file_path)
             console.print(f"[dry-run] Complexity: {plan.complexity.complexity}")
@@ -237,7 +248,7 @@ def run_pdf(
     if output_path.exists() and not overwrite:
         raise FileExistsError(f"Output already exists: {output_path}. Use --overwrite.")
     console.print("[1/5] Extraction PDF")
-    markdown_path = _extract_pdf(file_path, cache_dir, engine)
+    markdown_path = _extract_pdf(file_path, cache_dir, engine, max_pages=max_pages)
     markdown = markdown_path.read_text(encoding="utf-8", errors="ignore")
     if not _is_usable_markdown(markdown):
         raise RuntimeError("PDF extraction produced weak or empty Markdown.")
@@ -325,13 +336,18 @@ def _confirm_keep(output_path: Path, ask_each: bool) -> bool:
     }
 
 
-def _extract_pdf(file_path: Path, cache_dir: Path, engine: str) -> Path:
+def _extract_pdf(
+    file_path: Path,
+    cache_dir: Path,
+    engine: str,
+    max_pages: int | None = None,
+) -> Path:
     if engine == "mineru":
-        return extract_pdf_with_mineru(file_path, cache_dir)
+        return extract_pdf_with_mineru(file_path, cache_dir, max_pages=max_pages)
     if engine == "marker":
         return extract_pdf_with_marker(file_path, cache_dir)
     if engine == "text":
-        return extract_pdf_with_pypdf(file_path, cache_dir)
+        return extract_pdf_with_pypdf(file_path, cache_dir, max_pages=max_pages)
     if engine not in {"auto", "smart"}:
         raise ValueError("engine must be auto, smart, mineru, marker or text")
 
@@ -341,7 +357,7 @@ def _extract_pdf(file_path: Path, cache_dir: Path, engine: str) -> Path:
     last_error: Exception | None = None
     for candidate in plan.fallback_order:
         try:
-            markdown = _extract_pdf(file_path, cache_dir, candidate)
+            markdown = _extract_pdf(file_path, cache_dir, candidate, max_pages=max_pages)
             if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
                 return markdown
             raise RuntimeError(f"{candidate} produced weak or empty Markdown.")

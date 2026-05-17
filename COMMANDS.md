@@ -42,6 +42,12 @@ Dry-run :
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
 ```
 
+Test rapide sur les 10 premières pages :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+```
+
 PDF hors du repo :
 
 ```bash
@@ -66,6 +72,7 @@ Installer MinerU :
 
 ```bash
 pip install -r requirements-pdf-mineru.txt
+mineru-models-download --source modelscope --model_type pipeline
 ```
 
 Installer Marker dans un environnement séparé :
@@ -101,6 +108,12 @@ Tester une seule vidéo d’une playlist locale :
 
 ```bash
 python -m src.cli run-youtube "playlists/Playlist 38" --limit 1
+```
+
+Tester seulement les 2 premières vidéos d’une playlist YouTube :
+
+```bash
+python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --limit 2
 ```
 
 Reprendre un job :

@@ -99,6 +99,12 @@ python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
 ```
 
+Tester rapidement un gros PDF sur les premières pages :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+```
+
 MinerU est le moteur principal. Le fallback `text` via `pypdf` est inclus dans l’installation de base.
 
 ## Installer MinerU Ou Marker
@@ -114,7 +120,10 @@ Pour le moteur principal MinerU :
 
 ```bash
 pip install -r requirements-pdf-mineru.txt
+mineru-models-download --source modelscope --model_type pipeline
 ```
+
+Le téléchargement des modèles est nécessaire pour les PDF scannés ou très visuels. Il se fait une seule fois, puis MinerU réutilise le cache local.
 
 Pour Marker, utilise un environnement séparé :
 
@@ -137,6 +146,12 @@ Playlist :
 
 ```bash
 python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+```
+
+Tester seulement les premières vidéos d’une playlist :
+
+```bash
+python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --limit 2
 ```
 
 Batch d’URLs :

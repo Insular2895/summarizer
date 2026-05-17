@@ -120,11 +120,13 @@ def playlist(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    limit: int | None = None,
 ) -> None:
     try:
         manifest = run_playlist(
             url,
             resume=resume,
+            limit=limit,
             ask_each=ask_each,
             keep_all=keep_all,
             export_graphipy=export_graphipy,
@@ -147,6 +149,7 @@ def pdf(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    max_pages: int | None = None,
 ) -> None:
     _ = resume
     try:
@@ -158,6 +161,7 @@ def pdf(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            max_pages=max_pages,
         )
     except Exception as exc:
         _fail(exc)
@@ -174,6 +178,7 @@ def run_pdf_full(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    max_pages: int | None = None,
 ) -> None:
     _ = resume
     try:
@@ -185,6 +190,7 @@ def run_pdf_full(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            max_pages=max_pages,
         )
     except Exception as exc:
         _fail(exc)
@@ -201,6 +207,7 @@ def pdf_batch(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    max_pages: int | None = None,
 ) -> None:
     _ = resume
     try:
@@ -212,6 +219,7 @@ def pdf_batch(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            max_pages=max_pages,
         )
     except Exception as exc:
         _fail(exc)
