@@ -17,7 +17,9 @@ En playlist, les vidéos sont traitées séquentiellement. Chaque vidéo a son p
 
 ```txt
 PDF dans input/pdf/
-  -> MinerU ou Marker convertit en Markdown
+  -> analyse de complexité
+  -> choix intelligent du moteur PDF
+  -> MinerU, Marker ou fallback texte pypdf convertit en Markdown
   -> cache/pdf_md/<book_slug>/
   -> nettoyage Markdown
   -> comptage tokens
@@ -29,3 +31,22 @@ PDF dans input/pdf/
 ## Chunking
 
 Le chunking préserve les sections Markdown quand c’est possible. Si une section est trop grosse, elle est découpée par paragraphes. Les chunks sont résumés puis fusionnés par une synthèse finale.
+
+## Choix Intelligent Du Moteur PDF
+
+`--engine auto` et `--engine smart` lisent quelques pages du PDF avec `pypdf` pour estimer :
+
+- nombre de pages ;
+- densité de texte extractible ;
+- présence d’images ;
+- indices de tableaux ;
+- indices de formules ou notation technique ;
+- probabilité de PDF scanné.
+
+Ordre de moteur :
+
+- PDF texte simple : `text -> mineru -> marker`
+- PDF moyen ou technique : `mineru -> text -> marker`
+- PDF scanné / visuel / tableaux / formules : `mineru -> marker -> text`
+
+Le pipeline saute automatiquement les moteurs non installés.

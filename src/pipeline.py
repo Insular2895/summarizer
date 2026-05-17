@@ -7,6 +7,7 @@ from rich.console import Console
 from src.converters.markdown_cleaner import clean_markdown
 from src.converters.srt_to_text import convert_srt_to_text
 from src.exporters.graphipy import export_graphipy_ready
+from src.extractors.pdf_analyzer import build_pdf_engine_plan
 from src.extractors.pdf_marker import extract_pdf_with_marker
 from src.extractors.pdf_mineru import extract_pdf_with_mineru
 from src.extractors.pdf_text import extract_pdf_with_pypdf
@@ -225,6 +226,12 @@ def run_pdf(
     if dry_run:
         console.print(f"[dry-run] PDF: {file_path}")
         console.print(f"[dry-run] Engine: {engine} / mode: {mode}")
+        if engine in {"auto", "smart"}:
+            plan = build_pdf_engine_plan(file_path)
+            console.print(f"[dry-run] Complexity: {plan.complexity.complexity}")
+            console.print(f"[dry-run] Reasons: {', '.join(plan.complexity.reasons)}")
+            console.print(f"[dry-run] Engine order: {' -> '.join(plan.fallback_order)}")
+            console.print(f"[dry-run] Available engines: {plan.available_engines}")
         console.print(f"[dry-run] Output: {output_path}")
         return output_path
     if output_path.exists() and not overwrite:
@@ -325,21 +332,23 @@ def _extract_pdf(file_path: Path, cache_dir: Path, engine: str) -> Path:
         return extract_pdf_with_marker(file_path, cache_dir)
     if engine == "text":
         return extract_pdf_with_pypdf(file_path, cache_dir)
-    if engine != "auto":
-        raise ValueError("engine must be auto, mineru, marker or text")
-    try:
-        markdown = extract_pdf_with_mineru(file_path, cache_dir)
-        if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
-            return markdown
-    except Exception as mineru_error:
-        console.print(f"[yellow]MinerU fallback:[/] {mineru_error}")
-    try:
-        markdown = extract_pdf_with_marker(file_path, cache_dir)
-        if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
-            return markdown
-    except Exception as marker_error:
-        console.print(f"[yellow]Marker fallback:[/] {marker_error}")
-    return extract_pdf_with_pypdf(file_path, cache_dir)
+    if engine not in {"auto", "smart"}:
+        raise ValueError("engine must be auto, smart, mineru, marker or text")
+
+    plan = build_pdf_engine_plan(file_path)
+    console.print(f"[cyan]PDF complexity:[/] {plan.complexity.complexity}")
+    console.print(f"[cyan]Engine order:[/] {' -> '.join(plan.fallback_order)}")
+    last_error: Exception | None = None
+    for candidate in plan.fallback_order:
+        try:
+            markdown = _extract_pdf(file_path, cache_dir, candidate)
+            if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
+                return markdown
+            raise RuntimeError(f"{candidate} produced weak or empty Markdown.")
+        except Exception as exc:
+            last_error = exc
+            console.print(f"[yellow]{candidate} fallback:[/] {exc}")
+    raise RuntimeError(f"No PDF engine produced usable Markdown: {last_error}") from last_error
 
 
 def _is_usable_markdown(markdown: str) -> bool:

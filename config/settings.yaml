@@ -16,9 +16,13 @@ youtube:
   fallback_auto_subtitles: true
 
 pdf:
-  default_engine: "mineru"
+  default_engine: "auto"
   fallback_engine: "marker"
   max_single_request_tokens: 160000
+  smart_engine:
+    simple_text_engine: "text"
+    complex_engine: "mineru"
+    fallback_engine: "marker"
 
 graphipy:
   enabled_by_default: true

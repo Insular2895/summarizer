@@ -91,7 +91,7 @@ python -m src.cli pdf-batch --dir input/pdf --engine mineru --mode deep
 python -m src.cli pdf --file input/pdf/book.pdf --engine marker --mode deep
 ```
 
-`--engine auto` essaie MinerU, puis Marker si disponible, puis un fallback texte léger avec `pypdf`.
+`--engine auto` analyse rapidement le PDF avant extraction. Pour un PDF texte simple, il privilégie le fallback `pypdf` rapide. Pour un PDF scanné, visuel, long, avec tableaux ou formules, il privilégie MinerU, puis Marker si disponible, puis `pypdf`.
 
 ## Modèles Gemini
 

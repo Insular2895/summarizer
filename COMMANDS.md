@@ -66,7 +66,17 @@ python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
 ```
 
-`--engine auto` essaie MinerU, puis Marker, puis le fallback texte `pypdf`.
+`--engine auto` analyse rapidement le PDF et choisit l’ordre des moteurs :
+
+- PDF texte simple : `text -> mineru -> marker`
+- PDF moyen ou technique : `mineru -> text -> marker`
+- PDF scanné, visuel, tableaux ou formules : `mineru -> marker -> text`
+
+Tu peux aussi écrire explicitement :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
+```
 
 ## YouTube complet
 
