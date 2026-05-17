@@ -1,177 +1,262 @@
 # Summarizer
 
-Pipeline local pour extraire, convertir et résumer des vidéos YouTube et des PDF avec Gemini.
+Pipeline local pour transformer des vidéos YouTube, playlists et PDF en résumés Markdown propres avec Gemini.
 
-Le repo garde les scripts Bash historiques dans `run/`, mais la V1 cible un usage simple :
+Objectif V1 : rester simple.
 
 ```txt
-input/  -> sources utilisateur
-cache/  -> fichiers temporaires supprimables
-output/ -> résumés finaux Markdown
+input/   -> tu déposes les sources
+output/  -> tu récupères les résumés
+cache/   -> fichiers temporaires supprimables
 ```
 
-## Installation
+Pas de dashboard, pas de base de données, pas de SaaS. Tout tourne en local.
+
+## Démarrage Rapide
 
 ```bash
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-pip install -r requirements-dev.txt
 ```
 
-Les moteurs PDF sont optionnels et lourds :
-
-```bash
-pip install -r requirements-pdf-mineru.txt
-```
-
-MinerU et Marker ne cohabitent pas proprement dans un seul environnement Python actuel : MinerU demande `Pillow >= 11`, tandis que Marker / Surya demande `Pillow < 11`. Le pipeline garde donc MinerU comme moteur principal et utilise `pypdf` comme fallback texte inclus dans `requirements.txt`. Marker peut être installé dans un environnement séparé avec `requirements-pdf-marker.txt`.
-
-## Configuration
+Créer le fichier de secrets local :
 
 ```bash
 cp .env.example .env
 ```
 
-Ajoute `GEMINI_API_KEY` dans `.env`. Ne commit jamais `.env`, `cookies.txt`, PDF, transcripts, caches ou outputs générés.
+Puis remplir :
 
-## Utilisation YouTube
+```env
+GEMINI_API_KEY=ta_vraie_cle_api
+```
 
-Commande simple recommandée :
+Ne commit jamais `.env`. Il est ignoré par Git.
+
+## Commandes Simples
+
+PDF complet :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf"
+```
+
+Vidéo YouTube :
 
 ```bash
 python -m src.cli run-youtube "https://youtube.com/watch?v=..."
+```
+
+Playlist YouTube :
+
+```bash
 python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+```
+
+Playlist déjà téléchargée avec les anciens scripts :
+
+```bash
 python -m src.cli run-youtube "playlists/Playlist 38"
 ```
+
+Tester sans rien écrire :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
+python -m src.cli run-youtube "playlists/Playlist 38" --dry-run --limit 1
+```
+
+Toutes les commandes pratiques sont regroupées dans [COMMANDS.md](COMMANDS.md).
+
+## PDF
+
+Dépose les PDF dans :
+
+```txt
+input/pdf/
+```
+
+Puis lance :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf"
+```
+
+Par défaut, `--engine auto` analyse rapidement le PDF et choisit le meilleur moteur disponible :
+
+```txt
+PDF texte simple                 -> text -> mineru -> marker
+PDF long ou moyennement complexe -> mineru -> text -> marker
+PDF scanné / visuel / tableaux   -> mineru -> marker -> text
+```
+
+Forcer un moteur :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
+```
+
+MinerU est le moteur principal. Le fallback `text` via `pypdf` est inclus dans l’installation de base.
+
+## Installer MinerU Ou Marker
+
+MinerU et Marker ne cohabitent pas proprement dans le même environnement Python actuel :
+
+```txt
+MinerU 3.1.x  -> Pillow >= 11
+Marker 1.10.x -> Pillow < 11
+```
+
+Pour le moteur principal MinerU :
+
+```bash
+pip install -r requirements-pdf-mineru.txt
+```
+
+Pour Marker, utilise un environnement séparé :
+
+```bash
+python3.11 -m venv .venv-marker
+source .venv-marker/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-pdf-marker.txt
+```
+
+## YouTube
 
 Vidéo unique :
 
 ```bash
-python -m src.cli video --url "https://youtube.com/watch?v=..."
-```
-
-Batch depuis `input/youtube/urls.txt` :
-
-```bash
-python -m src.cli video-batch --file input/youtube/urls.txt
+python -m src.cli run-youtube "https://youtube.com/watch?v=..."
 ```
 
 Playlist :
 
 ```bash
-python -m src.cli playlist --url "https://youtube.com/playlist?list=..."
+python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
 ```
 
-Options utiles :
+Batch d’URLs :
 
 ```bash
---ask-each
---keep-all
---export-graphipy
---delete-cache
---overwrite
---resume
---dry-run
+python -m src.cli video-batch --file input/youtube/urls.txt
 ```
 
-La logique playlist est vidéo par vidéo : une vidéo produit un Markdown, possède son statut dans un manifest, et peut être gardée ou supprimée sans toucher aux autres outputs. Les manifests sont dans `cache/jobs/`.
+Exemple de fichier :
 
-## Utilisation PDF
+```txt
+input/youtube/urls.txt
+```
 
-Commande simple recommandée :
+```txt
+https://youtube.com/watch?v=...
+https://youtube.com/watch?v=...
+```
+
+Pour une playlist locale legacy :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/book.pdf"
+python -m src.cli run-youtube "playlists/Playlist 38"
 ```
+
+Le traitement playlist est toujours vidéo par vidéo :
+
+- une vidéo = un fichier Markdown ;
+- une vidéo = un statut dans le manifest ;
+- si une vidéo échoue, la suivante continue ;
+- aucune suppression globale de `output/videos/`.
+
+## Outputs
+
+Résumés vidéo :
+
+```txt
+output/videos/
+```
+
+Résumés PDF :
+
+```txt
+output/books/
+```
+
+Exports Graphipy-ready :
+
+```txt
+output/graphipy_ready/
+```
+
+Manifests de jobs :
+
+```txt
+cache/jobs/
+```
+
+Les fichiers Graphipy-ready n’incluent pas `model_used` dans le frontmatter.
+
+## Nettoyage
+
+Supprimer le cache :
 
 ```bash
-python -m src.cli pdf --file input/pdf/book.pdf --engine auto --mode deep
-python -m src.cli pdf-batch --dir input/pdf --engine mineru --mode deep
-python -m src.cli pdf --file input/pdf/book.pdf --engine marker --mode deep
+python -m src.cli cleanup --cache
 ```
 
-`--engine auto` analyse rapidement le PDF avant extraction. Pour un PDF texte simple, il privilégie le fallback `pypdf` rapide. Pour un PDF scanné, visuel, long, avec tableaux ou formules, il privilégie MinerU, puis Marker si disponible, puis `pypdf`.
+Supprimer les temporaires :
 
-## Modèles Gemini
+```bash
+python -m src.cli cleanup --all-temp
+```
 
-Les modèles sont configurés dans `config/models.yaml` :
+Supprimer les vieux outputs avec confirmation :
 
-- vidéo simple : `gemini-3.1-flash-lite`
-- vidéo dense : `gemini-2.5-flash-lite`
-- PDF dense : `gemini-2.5-flash`
-- PDF trop gros : chunks avec `gemini-2.5-flash-lite`, synthèse finale avec `gemini-2.5-flash`
+```bash
+python -m src.cli cleanup --outputs --older-than 7
+```
 
-Le modèle utilisé peut être gardé dans les manifests internes, mais il n’est pas écrit dans les fichiers Graphipy-ready.
+Le pipeline ne supprime jamais `input/` sans confirmation explicite.
 
 ## Structure
 
 ```txt
 input/
-  youtube/urls.example.txt
+  youtube/
   pdf/
 output/
   videos/
   books/
   graphipy_ready/
 cache/
-  transcripts/
-  pdf_md/
-  jobs/
 prompts/
 config/
 src/
 run/
 ```
 
-## Conservation et suppression
+Les scripts Bash dans `run/` sont conservés comme legacy, mais l’usage recommandé passe par `python -m src.cli`.
 
-- `input/` contient les sources utilisateur : jamais supprimées sans confirmation.
-- `cache/` contient les fichiers temporaires : supprimables.
-- `output/` contient les résultats finaux : suppression fichier par fichier ou avec confirmation explicite.
-- Une playlist ne supprime jamais globalement `output/videos/`.
-
-Cleanup :
-
-```bash
-python -m src.cli cleanup --cache
-python -m src.cli cleanup --all-temp
-python -m src.cli cleanup --outputs --older-than 7
-```
-
-## Export Graphipy
-
-```bash
-python -m src.cli video --url "<url>" --export-graphipy
-python -m src.cli pdf --file input/pdf/book.pdf --export-graphipy
-```
-
-Les fichiers sont copiés dans `output/graphipy_ready/` avec frontmatter Markdown propre et sans `model_used`.
-
-## Tests et qualité
+## Qualité
 
 ```bash
 black src tests
-ruff check src tests --fix
+ruff check src tests
 pytest -q
 ```
 
-La CI GitHub Actions lance Black, Ruff, pytest, un scan de secrets, et un mypy non bloquant au début.
+La CI GitHub Actions vérifie format, lint, tests et scan de secrets.
 
-## Scripts legacy
+## Sécurité
 
-Les scripts Bash existants restent disponibles :
+Ne jamais committer :
 
-```txt
-run/run_transcripts.sh
-run/run_transcripts_playlist2.sh
-run/yt_transcribe_fallback.sh
-```
+- `.env`
+- `cookies.txt`
+- PDF utilisateur
+- transcripts
+- cache
+- outputs générés
 
-Ils ne sont pas supprimés et peuvent continuer à servir d’extracteurs legacy.
-
-## Roadmap
-
-- `v0.1.0` : pipeline vidéo.
-- `v0.2.0` : pipeline PDF.
-- `v0.3.0` : export Graphipy.
+Le `.gitignore` protège ces fichiers.

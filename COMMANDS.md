@@ -1,6 +1,8 @@
-# Commandes simples
+# Commandes
 
-## Préparer
+Ce fichier sert de mémo rapide. Les commandes sont à lancer depuis la racine du repo.
+
+## Setup
 
 ```bash
 python3.11 -m venv .venv
@@ -8,54 +10,48 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Ajoute ta clé Gemini dans `.env` :
+Créer le `.env` :
+
+```bash
+cp .env.example .env
+```
+
+Puis remplir :
 
 ```env
-GEMINI_API_KEY=ta_cle
+GEMINI_API_KEY=ta_vraie_cle_api
 ```
 
-## Moteurs PDF optionnels
+## PDF
 
-Le fallback texte `pypdf` est inclus dans `requirements.txt`, donc `run-pdf` peut déjà extraire les PDF texte.
+Déposer les PDF dans :
 
-MinerU et Marker ne doivent pas être installés ensemble dans le même environnement Python actuellement :
-
-- MinerU `3.1.x` demande `Pillow >= 11`.
-- Marker `1.10.x` / Surya demande `Pillow < 11`.
-
-Pour le moteur principal MinerU :
-
-```bash
-pip install -r requirements-pdf-mineru.txt
+```txt
+input/pdf/
 ```
 
-Pour un environnement séparé Marker :
-
-```bash
-python3.11 -m venv .venv-marker
-source .venv-marker/bin/activate
-pip install -r requirements.txt
-pip install -r requirements-pdf-marker.txt
-```
-
-## PDF complet
-
-Une seule commande pour extraire, nettoyer, résumer et exporter Graphipy :
+Commande simple :
 
 ```bash
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf"
 ```
 
-Avec un PDF ailleurs sur le Mac :
+Dry-run :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
+```
+
+PDF hors du repo :
 
 ```bash
 python -m src.cli run-pdf "/chemin/vers/mon-livre.pdf"
 ```
 
-Tester sans exécuter :
+Choix intelligent explicite :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
 ```
 
 Forcer un moteur :
@@ -66,39 +62,42 @@ python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
 ```
 
-`--engine auto` analyse rapidement le PDF et choisit l’ordre des moteurs :
-
-- PDF texte simple : `text -> mineru -> marker`
-- PDF moyen ou technique : `mineru -> text -> marker`
-- PDF scanné, visuel, tableaux ou formules : `mineru -> marker -> text`
-
-Tu peux aussi écrire explicitement :
+Installer MinerU :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
+pip install -r requirements-pdf-mineru.txt
 ```
 
-## YouTube complet
+Installer Marker dans un environnement séparé :
 
-Vidéo YouTube :
+```bash
+python3.11 -m venv .venv-marker
+source .venv-marker/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-pdf-marker.txt
+```
+
+## YouTube
+
+Vidéo :
 
 ```bash
 python -m src.cli run-youtube "https://youtube.com/watch?v=..."
 ```
 
-Playlist YouTube :
+Playlist :
 
 ```bash
 python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
 ```
 
-Playlist legacy déjà téléchargée :
+Playlist locale legacy :
 
 ```bash
 python -m src.cli run-youtube "playlists/Playlist 38"
 ```
 
-Tester seulement la première vidéo d’une playlist locale :
+Tester une seule vidéo d’une playlist locale :
 
 ```bash
 python -m src.cli run-youtube "playlists/Playlist 38" --limit 1
@@ -110,13 +109,35 @@ Reprendre un job :
 python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --resume
 ```
 
-Écraser les outputs existants :
+Écraser un output existant :
 
 ```bash
 python -m src.cli run-youtube "playlists/Playlist 38" --overwrite
 ```
 
-## Outputs
+## Batch URLs
+
+Créer :
+
+```txt
+input/youtube/urls.txt
+```
+
+Puis lancer :
+
+```bash
+python -m src.cli video-batch --file input/youtube/urls.txt
+```
+
+## Cleanup
+
+```bash
+python -m src.cli cleanup --cache
+python -m src.cli cleanup --all-temp
+python -m src.cli cleanup --outputs --older-than 7
+```
+
+## Résultats
 
 ```txt
 output/videos/
