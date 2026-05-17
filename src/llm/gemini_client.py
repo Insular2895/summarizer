@@ -4,11 +4,13 @@ import os
 import time
 from dataclasses import dataclass
 
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
 from src.config import ModelConfig
 from src.llm.rate_limiter import RateLimiter
+from src.paths import project_path
 
 
 class GeminiError(RuntimeError):
@@ -23,6 +25,7 @@ class GeminiClient:
     rate_limiter: RateLimiter | None = None
 
     def __post_init__(self) -> None:
+        load_dotenv(project_path(".env"))
         key = self.api_key or os.getenv("GEMINI_API_KEY")
         if not key:
             raise GeminiError("GEMINI_API_KEY is missing. Create a local .env from .env.example.")

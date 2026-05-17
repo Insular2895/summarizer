@@ -35,6 +35,14 @@ Ajoute `GEMINI_API_KEY` dans `.env`. Ne commit jamais `.env`, `cookies.txt`, PDF
 
 ## Utilisation YouTube
 
+Commande simple recommandée :
+
+```bash
+python -m src.cli run-youtube "https://youtube.com/watch?v=..."
+python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+python -m src.cli run-youtube "playlists/Playlist 38"
+```
+
 Vidéo unique :
 
 ```bash
@@ -69,13 +77,19 @@ La logique playlist est vidéo par vidéo : une vidéo produit un Markdown, poss
 
 ## Utilisation PDF
 
+Commande simple recommandée :
+
+```bash
+python -m src.cli run-pdf "input/pdf/book.pdf"
+```
+
 ```bash
 python -m src.cli pdf --file input/pdf/book.pdf --engine auto --mode deep
 python -m src.cli pdf-batch --dir input/pdf --engine mineru --mode deep
 python -m src.cli pdf --file input/pdf/book.pdf --engine marker --mode deep
 ```
 
-`--engine auto` essaie MinerU puis Marker si l’extraction MinerU échoue ou produit un Markdown trop faible.
+`--engine auto` essaie MinerU, puis Marker, puis un fallback texte léger avec `pypdf`.
 
 ## Modèles Gemini
 

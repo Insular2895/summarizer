@@ -6,7 +6,14 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
-from src.pipeline import run_pdf, run_pdf_batch, run_playlist, run_video, run_video_batch
+from src.pipeline import (
+    run_pdf,
+    run_pdf_batch,
+    run_playlist,
+    run_video,
+    run_video_batch,
+    run_youtube_source,
+)
 from src.storage.manifest import manifest_summary
 from src.storage.retention import cleanup_all_temp, cleanup_cache, cleanup_outputs_older_than
 
@@ -26,16 +33,54 @@ def video(
     dry_run: bool = False,
 ) -> None:
     _ = resume
-    status = run_video(
-        url,
-        ask_each=ask_each,
-        keep_all=keep_all,
-        export_graphipy=export_graphipy,
-        delete_cache=delete_cache,
-        overwrite=overwrite,
-        dry_run=dry_run,
-    )
+    try:
+        status = run_video(
+            url,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
     console.print(status)
+
+
+@app.command("run-youtube")
+def run_youtube(
+    source: Annotated[
+        str,
+        typer.Argument(help="YouTube video URL, playlist URL, or local legacy playlist directory."),
+    ],
+    ask_each: bool = False,
+    keep_all: bool = True,
+    export_graphipy: bool = True,
+    delete_cache: bool = False,
+    overwrite: bool = False,
+    resume: bool = False,
+    dry_run: bool = False,
+    limit: int | None = None,
+) -> None:
+    try:
+        result = run_youtube_source(
+            source,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            resume=resume,
+            dry_run=dry_run,
+            limit=limit,
+        )
+    except Exception as exc:
+        _fail(exc)
+    if hasattr(result, "videos"):
+        console.print(manifest_summary(result))  # type: ignore[arg-type]
+    else:
+        console.print(result)
 
 
 @app.command("video-batch")
@@ -50,15 +95,18 @@ def video_batch(
     dry_run: bool = False,
 ) -> None:
     _ = resume
-    manifest = run_video_batch(
-        file,
-        ask_each=ask_each,
-        keep_all=keep_all,
-        export_graphipy=export_graphipy,
-        delete_cache=delete_cache,
-        overwrite=overwrite,
-        dry_run=dry_run,
-    )
+    try:
+        manifest = run_video_batch(
+            file,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
     console.print(manifest_summary(manifest))
 
 
@@ -73,16 +121,19 @@ def playlist(
     resume: bool = False,
     dry_run: bool = False,
 ) -> None:
-    manifest = run_playlist(
-        url,
-        resume=resume,
-        ask_each=ask_each,
-        keep_all=keep_all,
-        export_graphipy=export_graphipy,
-        delete_cache=delete_cache,
-        overwrite=overwrite,
-        dry_run=dry_run,
-    )
+    try:
+        manifest = run_playlist(
+            url,
+            resume=resume,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
     console.print(manifest_summary(manifest))
 
 
@@ -98,15 +149,45 @@ def pdf(
     dry_run: bool = False,
 ) -> None:
     _ = resume
-    output = run_pdf(
-        file,
-        engine=engine,
-        mode=mode,
-        export_graphipy=export_graphipy,
-        delete_cache=delete_cache,
-        overwrite=overwrite,
-        dry_run=dry_run,
-    )
+    try:
+        output = run_pdf(
+            file,
+            engine=engine,
+            mode=mode,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
+    console.print(f"Output: {output}")
+
+
+@app.command("run-pdf")
+def run_pdf_full(
+    file: Annotated[Path, typer.Argument(help="PDF file to summarize.")],
+    engine: str = "auto",
+    mode: str = "deep",
+    export_graphipy: bool = True,
+    delete_cache: bool = False,
+    overwrite: bool = False,
+    resume: bool = False,
+    dry_run: bool = False,
+) -> None:
+    _ = resume
+    try:
+        output = run_pdf(
+            file,
+            engine=engine,
+            mode=mode,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
     console.print(f"Output: {output}")
 
 
@@ -122,15 +203,18 @@ def pdf_batch(
     dry_run: bool = False,
 ) -> None:
     _ = resume
-    outputs = run_pdf_batch(
-        dir,
-        engine=engine,
-        mode=mode,
-        export_graphipy=export_graphipy,
-        delete_cache=delete_cache,
-        overwrite=overwrite,
-        dry_run=dry_run,
-    )
+    try:
+        outputs = run_pdf_batch(
+            dir,
+            engine=engine,
+            mode=mode,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    except Exception as exc:
+        _fail(exc)
     console.print(f"Generated: {len(outputs)}")
 
 
@@ -155,6 +239,11 @@ def cleanup(
     else:
         raise typer.BadParameter("Use --cache, --outputs or --all-temp.")
     console.print(f"Targets: {len(targets)}")
+
+
+def _fail(exc: Exception) -> None:
+    console.print(f"[red]Error:[/] {exc}")
+    raise typer.Exit(1) from exc
 
 
 if __name__ == "__main__":

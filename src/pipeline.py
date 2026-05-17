@@ -9,6 +9,7 @@ from src.converters.srt_to_text import convert_srt_to_text
 from src.exporters.graphipy import export_graphipy_ready
 from src.extractors.pdf_marker import extract_pdf_with_marker
 from src.extractors.pdf_mineru import extract_pdf_with_mineru
+from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
 from src.paths import project_path, safe_slug
 from src.storage.manifest import JobManifest, VideoStatus, manifest_path_for_playlist
@@ -80,6 +81,133 @@ def run_playlist(url: str, resume: bool = False, **kwargs: object) -> JobManifes
         manifest.upsert_video(status)
         manifest.save(manifest_path)
     return manifest
+
+
+def run_local_playlist_dir(
+    directory: Path,
+    ask_each: bool = False,
+    keep_all: bool = False,
+    export_graphipy: bool = False,
+    delete_cache: bool = False,
+    overwrite: bool = False,
+    dry_run: bool = False,
+    limit: int | None = None,
+) -> JobManifest:
+    playlist_slug = safe_slug(directory.name, "playlist")
+    manifest_path = manifest_path_for_playlist(f"playlist-{playlist_slug}")
+    manifest = JobManifest.load_or_create(manifest_path, directory.name)
+    transcript_files = [
+        path
+        for path in sorted(directory.glob("*.txt"))
+        if not path.name.endswith("-orig.txt") and path.name != "yt-dlp.log"
+    ]
+    if limit is not None:
+        transcript_files = transcript_files[:limit]
+    for transcript_path in transcript_files:
+        title = transcript_path.stem.removesuffix(".en")
+        slug = safe_slug(f"{playlist_slug}-{title}", "video")
+        output_path = project_path("output", "videos", playlist_slug, f"{slug}.md")
+        try:
+            if dry_run:
+                console.print(f"[dry-run] Local transcript: {transcript_path}")
+                console.print(f"[dry-run] Output: {output_path}")
+                status = VideoStatus(
+                    url=str(transcript_path),
+                    title=title,
+                    status="dry-run",
+                    output_path=str(output_path),
+                    kept=False,
+                )
+            elif output_path.exists() and not overwrite:
+                status = VideoStatus(
+                    url=str(transcript_path),
+                    title=title,
+                    status="done",
+                    output_path=str(output_path),
+                    kept=True,
+                )
+            else:
+                console.print(f"[1/3] Lecture transcript local: {title}")
+                transcript = transcript_path.read_text(encoding="utf-8", errors="ignore")
+                console.print("[2/3] Appel Gemini")
+                output_path, model_used = VideoSummarizer().summarize(
+                    title,
+                    str(transcript_path),
+                    transcript,
+                    output_path,
+                )
+                kept = keep_all or _confirm_keep(output_path, ask_each)
+                if not kept:
+                    safe_delete(output_path)
+                if export_graphipy and kept:
+                    export_graphipy_ready(output_path, slug)
+                    console.print("[3/3] Export Graphipy")
+                if delete_cache:
+                    console.print("No transcript cache to delete for local legacy playlist.")
+                status = VideoStatus(
+                    url=str(transcript_path),
+                    title=title,
+                    status="done",
+                    output_path=str(output_path),
+                    kept=kept,
+                    model_used=model_used,
+                )
+        except Exception as exc:
+            status = VideoStatus(
+                url=str(transcript_path),
+                title=title,
+                status="failed",
+                error=str(exc),
+            )
+            console.print(f"[red]Failed:[/] {title} - {exc}")
+        manifest.upsert_video(status)
+        manifest.save(manifest_path)
+    return manifest
+
+
+def run_youtube_source(
+    source: str,
+    ask_each: bool = False,
+    keep_all: bool = True,
+    export_graphipy: bool = True,
+    delete_cache: bool = False,
+    overwrite: bool = False,
+    resume: bool = False,
+    dry_run: bool = False,
+    limit: int | None = None,
+) -> JobManifest | VideoStatus:
+    path = Path(source).expanduser()
+    if path.exists() and path.is_dir():
+        return run_local_playlist_dir(
+            path,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+            limit=limit,
+        )
+    if "playlist" in source or "list=" in source:
+        return run_playlist(
+            source,
+            resume=resume,
+            ask_each=ask_each,
+            keep_all=keep_all,
+            export_graphipy=export_graphipy,
+            delete_cache=delete_cache,
+            overwrite=overwrite,
+            dry_run=dry_run,
+        )
+    return run_video(
+        source,
+        ask_each=ask_each,
+        keep_all=keep_all,
+        export_graphipy=export_graphipy,
+        delete_cache=delete_cache,
+        overwrite=overwrite,
+        dry_run=dry_run,
+    )
 
 
 def run_pdf(
@@ -195,15 +323,23 @@ def _extract_pdf(file_path: Path, cache_dir: Path, engine: str) -> Path:
         return extract_pdf_with_mineru(file_path, cache_dir)
     if engine == "marker":
         return extract_pdf_with_marker(file_path, cache_dir)
+    if engine == "text":
+        return extract_pdf_with_pypdf(file_path, cache_dir)
     if engine != "auto":
-        raise ValueError("engine must be auto, mineru or marker")
+        raise ValueError("engine must be auto, mineru, marker or text")
     try:
         markdown = extract_pdf_with_mineru(file_path, cache_dir)
         if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
             return markdown
     except Exception as mineru_error:
         console.print(f"[yellow]MinerU fallback:[/] {mineru_error}")
-    return extract_pdf_with_marker(file_path, cache_dir)
+    try:
+        markdown = extract_pdf_with_marker(file_path, cache_dir)
+        if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
+            return markdown
+    except Exception as marker_error:
+        console.print(f"[yellow]Marker fallback:[/] {marker_error}")
+    return extract_pdf_with_pypdf(file_path, cache_dir)
 
 
 def _is_usable_markdown(markdown: str) -> bool:
