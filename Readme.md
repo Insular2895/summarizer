@@ -1,247 +1,161 @@
-<div align="center">
+# Summarizer
 
-# Transcripts
+Pipeline local pour extraire, convertir et résumer des vidéos YouTube et des PDF avec Gemini.
 
-**Téléchargeur automatique de sous-titres YouTube**
+Le repo garde les scripts Bash historiques dans `run/`, mais la V1 cible un usage simple :
 
-<p>
-  <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="28" /></a>
-  <a href="https://www.gnu.org/software/bash/"><img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash" height="28" /></a>
-  <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="28" /></a>
-</p>
-
-</div>
-
----
-
-## ✨ Ce que ça fait
-
-Télécharge automatiquement les sous-titres de playlists YouTube par batch, gère les rate limits, et convertit les `.srt` en `.txt` prêts à importer dans ChatGPT.
-
----
-
-## 📁 Structure
-
-```
-transcripts/
-├── run/
-│   ├── run_transcripts.sh           ← script principal (usage général)
-│   ├── run_transcripts_playlist2.sh ← variante playlist fixe
-│   └── yt_transcribe_fallback.sh    ← fallback si pas de sous-titres
-├── playlists/                       ← dossiers de sortie auto-générés
-│   └── <Nom de la playlist>/        ← un dossier par playlist
-└── cookies.txt                      ← authentification YouTube (⚠️ privé)
+```txt
+input/  -> sources utilisateur
+cache/  -> fichiers temporaires supprimables
+output/ -> résumés finaux Markdown
 ```
 
-> **Note :** Le chemin exact des dossiers de sortie dépend de ta configuration. Dans cette installation, les playlists sont rangées dans `transcripts/playlists/<Nom de la playlist>/`. Si tu as une autre organisation, adapte les chemins en conséquence.
-
----
-
-## 🚀 Utilisation
-
-### 1. Prérequis
+## Installation
 
 ```bash
-# Installer yt-dlp
-brew install yt-dlp
-
-# Exporter les cookies YouTube depuis le navigateur → cookies.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
-### 2. Lancer le téléchargement
-
-Depuis le dossier du projet :
+Les moteurs PDF sont optionnels et lourds :
 
 ```bash
-cd /Users/insular/transcripts
-bash ./run/run_transcripts.sh "https://youtube.com/playlist?list=VOTRE_PLAYLIST_ID"
+pip install -r requirements-pdf.txt
 ```
 
-Le script télécharge les sous-titres par **batch de 20 vidéos** avec des pauses pour éviter les bans.
-
-### 3. Convertir les SRT en TXT
-
-> **Important :** Adapte `DIR` à ton propre chemin. Dans cette installation, les playlists sont dans `transcripts/playlists/<Nom de la playlist>`. Chez toi, le chemin peut être différent — vérifie avec `ls` où tes fichiers ont été téléchargés.
+## Configuration
 
 ```bash
-# Exemple avec cette installation :
-DIR="/Users/insular/transcripts/playlists/Playlist 38"
-
-# Adapte ce chemin selon ta propre structure, par exemple :
-# DIR="/chemin/vers/tes/playlists/<Nom de la playlist>"
-
-find "$DIR" -type f -name "*.srt" -exec sh -c '
-for f do
-  txt="${f%.srt}.txt"
-  tmp="$txt.tmp"
-
-  if sed -E "/^[0-9]+$/d;/-->/d;/^[[:space:]]*$/d" "$f" > "$tmp"; then
-    mv "$tmp" "$txt" && rm "$f"
-    echo "Converti : $f"
-  else
-    rm -f "$tmp"
-    echo "Erreur : $f" >&2
-  fi
-done
-' sh {} +
+cp .env.example .env
 ```
 
-Cette commande supprime les numéros de séquence, les timestamps et les lignes vides, puis remplace chaque `.srt` par un `.txt` propre (le `.srt` n'est supprimé que si la conversion réussit).
+Ajoute `GEMINI_API_KEY` dans `.env`. Ne commit jamais `.env`, `cookies.txt`, PDF, transcripts, caches ou outputs générés.
 
----
+## Utilisation YouTube
 
-## ⚙️ Workflow complet
-
-```
-📱 Partage de connexion iPhone
-        ↓
-🎬 Playlist YouTube créée
-        ↓
-🖥️  run_transcripts.sh <URL>
-        ↓
-📄 Fichiers .srt téléchargés dans playlists/<Nom>/
-        ↓
-🔄 Conversion SRT → TXT
-        ↓
-🤖 Import dans ChatGPT
-```
-
----
-
-## 🛠️ Dépannage
-
-### 1. `yt-dlp` est installé mais Homebrew affiche une erreur de link
-
-**Problème :**
-
-```
-Error: The `brew link` step did not complete successfully
-Could not symlink bin/yt-dlp
-Target /opt/homebrew/bin/yt-dlp already exists
-```
-
-**Cause :** Un ancien fichier `yt-dlp` existe déjà dans `/opt/homebrew/bin` ou dans un autre dossier prioritaire du `PATH`.
-
-Vérifier quelle version est utilisée :
+Vidéo unique :
 
 ```bash
-which -a yt-dlp
-yt-dlp --version
+python -m src.cli video --url "https://youtube.com/watch?v=..."
 ```
 
-Si le terminal affiche `/Users/insular/bin/yt-dlp`, ce n'est pas la version Homebrew qui est prioritaire.
-
-**Correction :**
+Batch depuis `input/youtube/urls.txt` :
 
 ```bash
-mv ~/bin/yt-dlp ~/bin/yt-dlp.old
-brew link --overwrite yt-dlp
-hash -r
-which yt-dlp
+python -m src.cli video-batch --file input/youtube/urls.txt
 ```
 
-Résultat attendu : `/opt/homebrew/bin/yt-dlp`
-
----
-
-### 2. Ne pas réinstaller yt-dlp à chaque nouveau terminal
-
-Il n'est pas nécessaire de refaire `brew install yt-dlp` à chaque ouverture de terminal. L'installation Homebrew est globale sur le Mac.
-
-Dans un nouveau terminal, vérifier simplement :
+Playlist :
 
 ```bash
-which yt-dlp
-yt-dlp --version
+python -m src.cli playlist --url "https://youtube.com/playlist?list=..."
 ```
 
-Si le résultat est `/opt/homebrew/bin/yt-dlp`, tout est bon.
-
-Pour mettre à jour yt-dlp plus tard :
+Options utiles :
 
 ```bash
-brew update
-brew upgrade yt-dlp
+--ask-each
+--keep-all
+--export-graphipy
+--delete-cache
+--overwrite
+--resume
+--dry-run
 ```
 
----
+La logique playlist est vidéo par vidéo : une vidéo produit un Markdown, possède son statut dans un manifest, et peut être gardée ou supprimée sans toucher aux autres outputs. Les manifests sont dans `cache/jobs/`.
 
-### 3. Message macOS sur zsh
-
-**Problème :**
-
-```
-The default interactive shell is now zsh.
-To update your account to use zsh, please run `chsh -s /bin/zsh`.
-```
-
-Ce n'est pas une erreur. Ce message apparaît quand on lance manuellement `bash`. macOS indique simplement que le shell par défaut moderne est zsh.
-
-Pour lancer le script, ne pas taper seulement `bash`. Utiliser :
+## Utilisation PDF
 
 ```bash
-bash ./run/run_transcripts.sh "URL_DE_LA_PLAYLIST"
+python -m src.cli pdf --file input/pdf/book.pdf --engine auto --mode deep
+python -m src.cli pdf-batch --dir input/pdf --engine mineru --mode deep
+python -m src.cli pdf --file input/pdf/book.pdf --engine marker --mode deep
 ```
 
-ou rendre le script exécutable :
+`--engine auto` essaie MinerU puis Marker si l’extraction MinerU échoue ou produit un Markdown trop faible.
+
+## Modèles Gemini
+
+Les modèles sont configurés dans `config/models.yaml` :
+
+- vidéo simple : `gemini-3.1-flash-lite`
+- vidéo dense : `gemini-2.5-flash-lite`
+- PDF dense : `gemini-2.5-flash`
+- PDF trop gros : chunks avec `gemini-2.5-flash-lite`, synthèse finale avec `gemini-2.5-flash`
+
+Le modèle utilisé peut être gardé dans les manifests internes, mais il n’est pas écrit dans les fichiers Graphipy-ready.
+
+## Structure
+
+```txt
+input/
+  youtube/urls.example.txt
+  pdf/
+output/
+  videos/
+  books/
+  graphipy_ready/
+cache/
+  transcripts/
+  pdf_md/
+  jobs/
+prompts/
+config/
+src/
+run/
+```
+
+## Conservation et suppression
+
+- `input/` contient les sources utilisateur : jamais supprimées sans confirmation.
+- `cache/` contient les fichiers temporaires : supprimables.
+- `output/` contient les résultats finaux : suppression fichier par fichier ou avec confirmation explicite.
+- Une playlist ne supprime jamais globalement `output/videos/`.
+
+Cleanup :
 
 ```bash
-chmod +x ./run/run_transcripts.sh
-./run/run_transcripts.sh "URL_DE_LA_PLAYLIST"
+python -m src.cli cleanup --cache
+python -m src.cli cleanup --all-temp
+python -m src.cli cleanup --outputs --older-than 7
 ```
 
----
-
-### 4. Erreur `No such file or directory`
-
-**Problème :**
-
-```
-find: /Users/insular/transcripts/Playlist 38: No such file or directory
-```
-
-**Cause :** Les playlists ne sont pas directement dans `transcripts/` — elles sont dans le sous-dossier `playlists/`.
-
-Vérifier les dossiers disponibles :
+## Export Graphipy
 
 ```bash
-ls -la /Users/insular/transcripts/playlists
+python -m src.cli video --url "<url>" --export-graphipy
+python -m src.cli pdf --file input/pdf/book.pdf --export-graphipy
 ```
 
-Puis définir le bon chemin :
+Les fichiers sont copiés dans `output/graphipy_ready/` avec frontmatter Markdown propre et sans `model_used`.
+
+## Tests et qualité
 
 ```bash
-DIR="/Users/insular/transcripts/playlists/Playlist 38"
+black src tests
+ruff check src tests --fix
+pytest -q
 ```
 
-> Le chemin exact dépend de ta structure. Utilise `ls` pour trouver où tes fichiers ont été téléchargés avant de lancer la conversion.
+La CI GitHub Actions lance Black, Ruff, pytest, un scan de secrets, et un mypy non bloquant au début.
 
----
+## Scripts legacy
 
-### 5. Ne pas garder les chevrons `< >` dans les chemins
+Les scripts Bash existants restent disponibles :
 
-Les chevrons sont des placeholders dans les exemples — ils indiquent ce qu'il faut remplacer par le vrai nom.
+```txt
+run/run_transcripts.sh
+run/run_transcripts_playlist2.sh
+run/yt_transcribe_fallback.sh
+```
 
-| | Exemple |
-|---|---|
-| ❌ Mauvais | `DIR="/Users/insular/transcripts/<Playlist 38>"` |
-| ✓ Bon | `DIR="/Users/insular/transcripts/playlists/Playlist 38"` |
+Ils ne sont pas supprimés et peuvent continuer à servir d’extracteurs legacy.
 
----
+## Roadmap
 
-### 6. Autres problèmes courants
-
-| Problème | Solution |
-|---|---|
-| 🔴 Téléchargement bloqué | `yt-dlp -U` puis relancer |
-| 🔑 Cookies expirés | Réexporter `cookies.txt` depuis le navigateur |
-| 🔇 Pas de sous-titres `.en` | Utiliser `yt_transcribe_fallback.sh` |
-| ⚠️ Erreur 429 | Augmenter `--sleep-interval` dans le script |
-
----
-
-<div align="center">
-
-Made with ☕ — propulsé par [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-
-</div>
+- `v0.1.0` : pipeline vidéo.
+- `v0.2.0` : pipeline PDF.
+- `v0.3.0` : export Graphipy.
