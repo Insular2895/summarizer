@@ -21,13 +21,16 @@
 ## Démarrage Rapide
 
 ```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
+git clone https://github.com/Insular2895/summarizer.git
+cd summarizer
+./runhelp
 ```
 
-Ajoute ensuite ta clé dans `.env` :
+Au premier lancement, `./runpdf` et `./runyoutube` créent automatiquement `.venv` et installent les dépendances de base.
+
+Il reste une seule étape manuelle : ajouter ta clé Gemini dans `.env`.
+
+Si `.env` n'existe pas encore, la première commande le crée depuis `.env.example`, puis te demande d'ajouter :
 
 ```env
 GEMINI_API_KEY=ta_cle_api_gemini

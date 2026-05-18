@@ -4,19 +4,15 @@ Ce fichier sert de mémo rapide. Les commandes sont à lancer depuis la racine d
 
 ## Setup
 
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+Le setup de base est automatique.
 
-Créer le `.env` :
+Au premier lancement, `./runpdf` ou `./runyoutube` :
 
-```bash
-cp .env.example .env
-```
+- crée `.venv` si besoin ;
+- installe `requirements.txt` ;
+- crée `.env` depuis `.env.example` si besoin.
 
-Puis remplir :
+La seule étape manuelle est d'ajouter la clé Gemini dans `.env` :
 
 ```env
 GEMINI_API_KEY=ta_vraie_cle_api
