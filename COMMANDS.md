@@ -126,13 +126,13 @@ python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
 Playlist locale legacy :
 
 ```bash
-python -m src.cli run-youtube "playlists/Playlist 38"
+python -m src.cli run-youtube "playlists/nom-de-la-playlist"
 ```
 
 Tester une seule vidéo d’une playlist locale :
 
 ```bash
-python -m src.cli run-youtube "playlists/Playlist 38" --limit 1
+python -m src.cli run-youtube "playlists/nom-de-la-playlist" --limit 1
 ```
 
 Tester seulement les 2 premières vidéos d’une playlist YouTube :
@@ -150,7 +150,7 @@ python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --resume
 Écraser un output existant :
 
 ```bash
-python -m src.cli run-youtube "playlists/Playlist 38" --overwrite
+python -m src.cli run-youtube "playlists/nom-de-la-playlist" --overwrite
 ```
 
 ## Batch URLs
