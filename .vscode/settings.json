@@ -12,6 +12,8 @@
     ".vscode": true,
     ".venv": true,
     ".venv-marker": true,
+    "AGENTS.md": true,
+    "AI_MAINTENANCE.md": true,
     "CHANGELOG.md": true,
     "cache": true,
     "config": true,
@@ -21,6 +23,9 @@
     "pyproject.toml": true,
     "requirements*.txt": true,
     "run": true,
+    "runhelp": true,
+    "runpdf": true,
+    "runyoutube": true,
     "src": true,
     "tests": true,
     "yt-dlp.log": true
@@ -34,11 +39,16 @@
     ".claude": true,
     ".venv": true,
     ".venv-marker": true,
+    "AGENTS.md": true,
+    "AI_MAINTENANCE.md": true,
     "cache": true,
     "docs/assets": true,
     "output": true,
     "playlists": true,
     "run": true,
+    "runhelp": true,
+    "runpdf": true,
+    "runyoutube": true,
     "yt-dlp.log": true
   }
 }
