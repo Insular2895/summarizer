@@ -72,6 +72,8 @@ Regle de debug :
 Commandes utiles :
 
 ```bash
+./runpdf --engines-status
+./runpdf --setup-engines
 ./runpdf "input/pdf/mon-livre.pdf" --dry-run
 ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
 ./runpdf "input/pdf/mon-livre.pdf" --engine smart --overwrite

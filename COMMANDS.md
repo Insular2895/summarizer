@@ -18,6 +18,13 @@ La seule étape manuelle est d'ajouter la clé Gemini dans `.env` :
 GEMINI_API_KEY=ta_vraie_cle_api
 ```
 
+Installer les moteurs PDF avancés en local :
+
+```bash
+./runpdf --setup-engines
+./runpdf --engines-status
+```
+
 ## PDF
 
 Déposer les PDF dans :
@@ -74,6 +81,7 @@ OCR en français, si les données Tesseract françaises sont installées :
 Installer OCRmyPDF pour les livres scannés longs :
 
 ```bash
+./runpdf --setup-engines
 brew install ocrmypdf
 ```
 
@@ -92,17 +100,14 @@ export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
 Installer MinerU :
 
 ```bash
-pip install -r requirements-pdf-mineru.txt
+./runpdf --setup-engines
 mineru-models-download --source modelscope --model_type pipeline
 ```
 
-Installer Marker dans un environnement séparé :
+Installer Marker :
 
 ```bash
-python3.11 -m venv .venv-marker
-source .venv-marker/bin/activate
-pip install -r requirements.txt
-pip install -r requirements-pdf-marker.txt
+./runpdf --setup-engines
 ```
 
 ## YouTube

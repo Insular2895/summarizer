@@ -38,6 +38,15 @@ GEMINI_API_KEY=ta_cle_api_gemini
 
 `.env` est privé et ignoré par Git.
 
+Optionnel, pour préparer les moteurs PDF avancés en local :
+
+```bash
+./runpdf --setup-engines
+./runpdf --engines-status
+```
+
+Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur disponible.
+
 ---
 
 ## Commandes Essentielles
@@ -126,6 +135,20 @@ output/graphipy_ready/
 ## Moteurs PDF
 
 Le fallback texte `pypdf` est inclus dans l'installation de base.
+
+Pour installer les moteurs avancés dans des environnements locaux séparés :
+
+```bash
+./runpdf --setup-engines
+```
+
+Cette commande prépare OCRmyPDF, MinerU et Marker sans les mélanger dans la même `.venv`, car certains moteurs peuvent avoir des dépendances incompatibles entre eux.
+
+Vérifier les moteurs disponibles :
+
+```bash
+./runpdf --engines-status
+```
 
 Pour les livres scannés longs, OCRmyPDF est recommandé :
 

@@ -11,12 +11,16 @@ usage() {
 Usage:
   ./runpdf "input/pdf/mon-livre.pdf" [options]
   ./runpdf --dry-run
+  ./runpdf --setup-engines
+  ./runpdf --engines-status
 
 Examples:
   ./runpdf "input/pdf/mon-livre.pdf"
   ./runpdf "input/pdf/mon-livre.pdf" --engine smart --overwrite
   ./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
   ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+  ./runpdf --setup-engines
+  ./runpdf --setup-engines --download-mineru-models
 
 If input/pdf/ contains exactly one PDF, ./runpdf can be launched without a file.
 EOF
@@ -24,6 +28,21 @@ EOF
 
 if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   usage
+  exit 0
+fi
+
+if [[ "${1:-}" == "--engines-status" ]]; then
+  echo "PDF engine status:"
+  print_pdf_engine_status
+  exit 0
+fi
+
+if [[ "${1:-}" == "--setup-engines" ]]; then
+  DOWNLOAD_MINERU_MODELS="false"
+  if [[ "${2:-}" == "--download-mineru-models" ]]; then
+    DOWNLOAD_MINERU_MODELS="true"
+  fi
+  install_pdf_engines "$DOWNLOAD_MINERU_MODELS"
   exit 0
 fi
 
@@ -54,5 +73,6 @@ fi
 
 ensure_runtime
 ensure_env_file
+activate_pdf_engine_bins
 
 exec "$PYTHON_BIN" -m src.cli run-pdf "$@"

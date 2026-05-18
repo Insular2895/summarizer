@@ -12,6 +12,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .venv*/
+.engine-bin/
 
 # Transcripts téléchargés (output du script, pas du code)
 playlists/

@@ -20,6 +20,7 @@ PDF:
   ./runpdf "input/pdf/mon-livre.pdf"
   ./runpdf "input/pdf/mon-livre.pdf" --engine smart --overwrite
   ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+  ./runpdf --setup-engines
 
 YouTube:
   ./runyoutube "https://youtube.com/watch?v=..."
@@ -40,6 +41,9 @@ EOF
 echo
 echo "Setup status:"
 print_runtime_status
+echo
+echo "PDF engines:"
+print_pdf_engine_status
 
 echo
 echo "Detected local inputs:"
