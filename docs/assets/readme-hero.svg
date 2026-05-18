@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Summarizer local AI pipeline</title>
+  <desc id="desc">Animated banner showing YouTube and PDF inputs flowing into Gemini and Markdown outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="52%" stop-color="#101827"/>
+      <stop offset="100%" stop-color="#182033"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff4d4d"/>
+      <stop offset="100%" stop-color="#ff8f70"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0%" stop-color="#35d399"/>
+      <stop offset="100%" stop-color="#8ee8c2"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" x2="1">
+      <stop offset="0%" stop-color="#67a8ff"/>
+      <stop offset="100%" stop-color="#b4d4ff"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" x2="1">
+      <stop offset="0%" stop-color="#b18cff"/>
+      <stop offset="100%" stop-color="#f0c6ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .title { font: 800 62px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f8fafc; letter-spacing: 0; }
+      .subtitle { font: 500 22px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #c7d2fe; letter-spacing: 0; }
+      .card-title { font: 800 18px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f8fafc; letter-spacing: 0; }
+      .card-text { font: 600 14px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #aebbd4; letter-spacing: 0; }
+      .mono { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #dbeafe; letter-spacing: 0; }
+      .stroke { stroke: #ffffff; stroke-opacity: .16; }
+      .flow { stroke: #93c5fd; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 10 14; fill: none; opacity: .8; }
+      .flow2 { stroke: #86efac; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 12; fill: none; opacity: .72; }
+      .pill { fill: #ffffff; fill-opacity: .08; stroke: #ffffff; stroke-opacity: .13; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="30" fill="url(#bg)"/>
+  <path d="M0 260 C180 220 260 312 430 272 C640 222 728 110 943 142 C1070 160 1130 122 1200 82 L1200 360 L0 360 Z" fill="#ffffff" opacity=".035"/>
+  <path d="M44 70 C220 12 376 96 542 62 C686 32 810 18 988 58 C1084 80 1148 54 1200 26" stroke="#ffffff" stroke-opacity=".08" stroke-width="2" fill="none"/>
+
+  <g transform="translate(78 66)">
+    <text class="title" x="0" y="62">Summarizer</text>
+    <text class="subtitle" x="4" y="101">YouTube + PDF -> Gemini -> Markdown propre</text>
+    <g transform="translate(4 132)">
+      <rect class="pill" x="0" y="0" width="148" height="34" rx="8"/>
+      <text class="mono" x="18" y="22">./runpdf</text>
+      <rect class="pill" x="162" y="0" width="184" height="34" rx="8"/>
+      <text class="mono" x="180" y="22">./runyoutube</text>
+      <rect class="pill" x="360" y="0" width="148" height="34" rx="8"/>
+      <text class="mono" x="378" y="22">./runhelp</text>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <g transform="translate(82 242)">
+      <rect width="190" height="72" rx="14" fill="#141d2d" class="stroke"/>
+      <circle cx="38" cy="36" r="18" fill="url(#red)"/>
+      <path d="M33 27 L33 45 L49 36 Z" fill="#ffffff"/>
+      <text class="card-title" x="70" y="31">YouTube</text>
+      <text class="card-text" x="70" y="53">videos + playlists</text>
+    </g>
+
+    <g transform="translate(310 242)">
+      <rect width="190" height="72" rx="14" fill="#141d2d" class="stroke"/>
+      <rect x="25" y="17" width="28" height="38" rx="5" fill="url(#blue)"/>
+      <path d="M31 27 H47 M31 36 H47 M31 45 H42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <text class="card-title" x="70" y="31">PDF</text>
+      <text class="card-text" x="70" y="53">text + OCR fallback</text>
+    </g>
+
+    <g transform="translate(556 224)">
+      <rect width="216" height="108" rx="16" fill="#111a2a" class="stroke"/>
+      <circle cx="108" cy="40" r="22" fill="url(#violet)">
+        <animate attributeName="r" values="20;24;20" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <text class="card-title" x="76" y="76">Gemini</text>
+      <text class="card-text" x="52" y="96">resume, critique, trie</text>
+    </g>
+
+    <g transform="translate(826 242)">
+      <rect width="292" height="72" rx="14" fill="#141d2d" class="stroke"/>
+      <rect x="27" y="18" width="34" height="38" rx="5" fill="url(#green)"/>
+      <path d="M34 29 H53 M34 38 H50 M34 47 H45" stroke="#0b1020" stroke-width="2.5" stroke-linecap="round"/>
+      <text class="card-title" x="78" y="31">Markdown final</text>
+      <text class="card-text" x="78" y="53">output/ + graphipy_ready/</text>
+    </g>
+  </g>
+
+  <path class="flow" d="M275 278 C366 258 452 260 548 274">
+    <animate attributeName="stroke-dashoffset" values="48;0" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+  <path class="flow2" d="M502 278 C530 278 532 278 548 278">
+    <animate attributeName="stroke-dashoffset" values="40;0" dur="1.2s" repeatCount="indefinite"/>
+  </path>
+  <path class="flow" d="M774 278 C796 278 802 278 822 278">
+    <animate attributeName="stroke-dashoffset" values="48;0" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+
+  <g opacity=".82">
+    <circle cx="1012" cy="76" r="3" fill="#93c5fd">
+      <animate attributeName="opacity" values=".25;1;.25" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1044" cy="108" r="4" fill="#86efac">
+      <animate attributeName="opacity" values="1;.25;1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1082" cy="62" r="3" fill="#f0c6ff">
+      <animate attributeName="opacity" values=".35;1;.35" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

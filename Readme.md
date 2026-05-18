@@ -1,8 +1,8 @@
 <div align="center">
 
-# Summarizer
+<img src="docs/assets/readme-hero.svg" alt="Summarizer - pipeline local YouTube et PDF vers Markdown" width="100%" />
 
-**Pipeline local YouTube + PDF vers résumés Markdown avec Gemini**
+<h1>Summarizer</h1>
 
 <p>
   <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="28" /></a>
@@ -10,143 +10,108 @@
   <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="28" /></a>
 </p>
 
+**Pipeline local pour transformer YouTube, playlists et PDF en résumés Markdown propres avec Gemini.**
+
+`input/` pour déposer les sources. `output/` pour récupérer les résultats. `prompts/` pour piloter le style.
+
 </div>
 
 ---
 
-## Vue Rapide
-
-Summarizer transforme des vidéos YouTube, playlists et PDF en fichiers Markdown propres, prêts à lire ou à importer dans Graphipy.
-
-```txt
-input/   -> sources utilisateur
-cache/   -> fichiers temporaires supprimables
-output/  -> résumés finaux
-```
-
-Pipeline :
-
-```txt
-YouTube / PDF
-  -> extraction ou OCR
-  -> Markdown ou texte nettoyé
-  -> Gemini
-  -> output Markdown
-  -> export Graphipy-ready
-```
-
-V1 reste volontairement locale et simple : pas de dashboard, pas de base de données, pas de Redis, pas de SaaS.
-
----
-
-## Installation
+## Démarrage Rapide
 
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-Créer le fichier local de configuration :
-
-```bash
 cp .env.example .env
 ```
 
-Puis remplir dans `.env` :
+Ajoute ensuite ta clé dans `.env` :
 
 ```env
 GEMINI_API_KEY=ta_cle_api_gemini
 ```
 
-`.env` est ignoré par Git. Ne le commit jamais.
+`.env` est privé et ignoré par Git.
 
 ---
 
-## Commandes Simples
+## Commandes Essentielles
 
-Afficher l’aide client :
+| Besoin | Commande |
+|---|---|
+| Voir l'aide simple | `./runhelp` |
+| Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
+| Résumer une vidéo | `./runyoutube "https://youtube.com/watch?v=..."` |
+| Résumer une playlist | `./runyoutube "https://youtube.com/playlist?list=..."` |
+| Lancer un fichier d'URLs | `./runyoutube --file input/youtube/urls.txt` |
+| Tester sans écrire | `./runpdf "input/pdf/mon-livre.pdf" --dry-run` |
 
-```bash
-./runhelp
+Toutes les variantes utiles sont dans [COMMANDS.md](COMMANDS.md).
+
+Pour une correction future par une IA ou un assistant de code, le point d'entrée est [AGENTS.md](AGENTS.md) et le guide complet est dans [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
+
+---
+
+## Ce Que Fait Le Pipeline
+
+```txt
+YouTube / PDF
+  -> extraction, transcription ou OCR
+  -> nettoyage texte / Markdown
+  -> résumé Gemini
+  -> Markdown final
+  -> export Graphipy-ready
 ```
 
-PDF :
+| Dossier | Rôle |
+|---|---|
+| `input/youtube/` | URLs YouTube et playlists à traiter |
+| `input/pdf/` | PDF ou livres à analyser |
+| `cache/` | fichiers temporaires supprimables |
+| `output/videos/` | résumés vidéo |
+| `output/books/` | résumés PDF/livres |
+| `output/graphipy_ready/` | Markdown prêt pour Graphipy |
+| `prompts/` | prompts Gemini modifiables |
 
-```bash
-./runpdf "input/pdf/mon-livre.pdf"
-```
-
-Vidéo YouTube :
-
-```bash
-./runyoutube "https://youtube.com/watch?v=..."
-```
-
-Playlist YouTube :
-
-```bash
-./runyoutube "https://youtube.com/playlist?list=..."
-```
-
-Tester sans écrire :
-
-```bash
-./runpdf "input/pdf/mon-livre.pdf" --dry-run
-./runyoutube "https://youtube.com/playlist?list=..." --dry-run --limit 2
-```
-
-Toutes les commandes utiles sont regroupées dans [COMMANDS.md](COMMANDS.md).
-
-Pour une correction future par une IA ou un assistant de code, le point d'entree est [AGENTS.md](AGENTS.md) et le guide complet est dans [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
+La V1 reste volontairement locale : pas de dashboard, pas de base de données, pas de SaaS.
 
 ---
 
 ## PDF
 
-Dépose les fichiers dans :
+Dépose ton fichier dans :
 
 ```txt
 input/pdf/
 ```
 
-Lancement recommandé :
+Puis lance :
 
 ```bash
 ./runpdf "input/pdf/mon-livre.pdf" --engine smart
 ```
 
-Le mode `smart` analyse rapidement le document et choisit le meilleur moteur disponible :
+Le mode `smart` choisit automatiquement le meilleur plan :
 
-```txt
-PDF texte simple                 -> text -> mineru -> ocrmypdf -> marker
-PDF long ou moyennement complexe -> mineru -> text -> ocrmypdf -> marker
-PDF scanné / livre long          -> ocrmypdf -> mineru -> marker -> text
-PDF visuel / tableaux / formules -> mineru -> ocrmypdf -> marker -> text
-```
+| Type de PDF | Stratégie |
+|---|---|
+| PDF texte simple | `text -> mineru -> ocrmypdf -> marker` |
+| PDF long ou dense | `mineru -> text -> ocrmypdf -> marker` |
+| Livre scanné | `ocrmypdf -> mineru -> marker -> text` |
+| PDF visuel, tableaux, formules | `mineru -> ocrmypdf -> marker -> text` |
 
-Forcer un moteur :
+Commandes pratiques :
 
 ```bash
-./runpdf "input/pdf/mon-livre.pdf" --engine text
-./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
+./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
 ./runpdf "input/pdf/mon-livre.pdf" --engine mineru
 ./runpdf "input/pdf/mon-livre.pdf" --engine marker
 ```
 
-Tester seulement les premières pages d’un gros PDF :
-
-```bash
-./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
-```
-
-OCR en français, si les données Tesseract françaises sont installées :
-
-```bash
-./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
-```
-
-Le résultat final est écrit dans :
+Résultats :
 
 ```txt
 output/books/
@@ -157,7 +122,7 @@ output/graphipy_ready/
 
 ## Moteurs PDF
 
-Le fallback texte `pypdf` est inclus dans l’installation de base.
+Le fallback texte `pypdf` est inclus dans l'installation de base.
 
 Pour les livres scannés longs, OCRmyPDF est recommandé :
 
@@ -171,7 +136,7 @@ Ou, si les dépendances système sont déjà disponibles :
 pip install -r requirements-pdf-ocrmypdf.txt
 ```
 
-Pour les PDF complexes avec mise en page riche, MinerU est disponible séparément :
+Pour les PDF complexes avec mise en page riche :
 
 ```bash
 pip install -r requirements-pdf-mineru.txt
@@ -203,13 +168,13 @@ Vidéo unique :
 ./runyoutube "https://youtube.com/watch?v=..."
 ```
 
-Playlist :
+Playlist complète :
 
 ```bash
 ./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
-Reprendre une playlist déjà commencée :
+Reprendre une playlist :
 
 ```bash
 ./runyoutube "https://youtube.com/playlist?list=..." --resume
@@ -221,13 +186,7 @@ Tester seulement les premières vidéos :
 ./runyoutube "https://youtube.com/playlist?list=..." --limit 2
 ```
 
-Batch d’URLs :
-
-```bash
-./runyoutube --file input/youtube/urls.txt
-```
-
-Le traitement playlist est toujours vidéo par vidéo :
+Le traitement playlist est sécurisé :
 
 - une vidéo = un fichier Markdown ;
 - une vidéo = un statut dans le manifest ;
@@ -238,7 +197,9 @@ Les anciens scripts Bash dans `run/` sont conservés comme legacy.
 
 ---
 
-## Outputs
+## Sorties Markdown
+
+Les fichiers finaux sont lisibles directement et compatibles Graphipy.
 
 ```txt
 output/videos/          résumés de vidéos
@@ -247,27 +208,15 @@ output/graphipy_ready/  exports Markdown prêts pour Graphipy
 cache/jobs/             manifests de suivi
 ```
 
-Les fichiers Graphipy-ready n’incluent pas `model_used` dans le frontmatter.
+Les fichiers Graphipy-ready n'incluent pas `model_used` dans le frontmatter.
 
 ---
 
 ## Nettoyage
 
-Supprimer le cache :
-
 ```bash
 python3.11 -m src.cli cleanup --cache
-```
-
-Supprimer les temporaires :
-
-```bash
 python3.11 -m src.cli cleanup --all-temp
-```
-
-Supprimer les vieux outputs avec confirmation :
-
-```bash
 python3.11 -m src.cli cleanup --outputs --older-than 7
 ```
 
@@ -275,39 +224,14 @@ Le pipeline ne supprime jamais `input/` sans confirmation explicite.
 
 ---
 
-## Structure
-
-```txt
-input/
-  youtube/
-  pdf/
-output/
-  videos/
-  books/
-  graphipy_ready/
-cache/
-prompts/
-config/
-src/
-run/
-docs/
-```
-
----
-
-## Qualité
+## Qualité Et Sécurité
 
 ```bash
 python3.11 -m black src tests
 python3.11 -m ruff check src tests
 python3.11 -m pytest -q
+detect-secrets scan $(git ls-files -co --exclude-standard)
 ```
-
-La CI GitHub Actions vérifie format, lint, tests et scan de secrets.
-
----
-
-## Sécurité
 
 Ne jamais committer :
 
@@ -318,10 +242,10 @@ Ne jamais committer :
 - cache
 - outputs générés
 
-Le `.gitignore` protège ces fichiers.
+Le `.gitignore` protège ces fichiers et la CI GitHub Actions vérifie format, lint, tests et scan de secrets.
 
 <div align="center">
 
-Pipeline local, simple, relançable, sans exposer les sources utilisateur.
+**Local. Simple. Relançable. Sans exposer les sources utilisateur.**
 
 </div>
