@@ -78,14 +78,16 @@ OCR en français, si les données Tesseract françaises sont installées :
 ./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
 ```
 
-Installer OCRmyPDF pour les livres scannés longs :
+Important pour macOS : OCRmyPDF peut avoir besoin d'outils système comme `tesseract`, `ghostscript` et `qpdf`.
+
+Sur Mac, le plus simple :
 
 ```bash
 ./runpdf --setup-engines
 brew install ocrmypdf
 ```
 
-Ou, si les dépendances système sont déjà présentes :
+Si les dépendances système sont déjà présentes :
 
 ```bash
 pip install -r requirements-pdf-ocrmypdf.txt

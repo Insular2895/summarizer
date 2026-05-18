@@ -139,8 +139,8 @@ install_pdf_engines() {
   echo "PDF engine status:"
   print_pdf_engine_status
   echo
-  echo "Note: OCRmyPDF may also need system tools such as tesseract, ghostscript and qpdf."
-  echo "On macOS, install them with: brew install ocrmypdf"
+  echo "Important macOS: OCRmyPDF may need tesseract, ghostscript and qpdf."
+  echo "Install them with: brew install ocrmypdf"
 }
 
 install_python_engine() {

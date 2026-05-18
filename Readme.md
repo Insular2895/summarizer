@@ -150,13 +150,13 @@ Vérifier les moteurs disponibles :
 ./runpdf --engines-status
 ```
 
-Pour les livres scannés longs, OCRmyPDF est recommandé :
+Important pour macOS : OCRmyPDF peut avoir besoin d'outils système comme `tesseract`, `ghostscript` et `qpdf`. Le plus simple est de passer par Homebrew :
 
 ```bash
 brew install ocrmypdf
 ```
 
-Ou, si les dépendances système sont déjà disponibles :
+Cette commande installe OCRmyPDF avec les dépendances système nécessaires. Si elles sont déjà disponibles, tu peux aussi installer seulement le package Python :
 
 ```bash
 pip install -r requirements-pdf-ocrmypdf.txt

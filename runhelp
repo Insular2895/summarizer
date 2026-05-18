@@ -22,6 +22,10 @@ PDF:
   ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
   ./runpdf --setup-engines
 
+macOS OCR tools:
+  brew install ocrmypdf
+  Installs OCRmyPDF system dependencies like tesseract, ghostscript and qpdf.
+
 YouTube:
   ./runyoutube "https://youtube.com/watch?v=..."
   ./runyoutube "https://youtube.com/playlist?list=..." --resume
