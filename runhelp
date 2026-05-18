@@ -9,6 +9,9 @@ source "$ROOT_DIR/.runlib.sh"
 cat <<'EOF'
 Summarizer quick commands
 
+Interactive menu:
+  ./summarizer
+
 First run:
   ./runpdf and ./runyoutube create .venv and install base dependencies
   automatically if needed.

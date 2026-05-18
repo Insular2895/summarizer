@@ -9,7 +9,9 @@ from google import genai
 from google.genai import types
 
 from src.config import ModelConfig
+from src.converters.token_counter import count_tokens
 from src.llm.rate_limiter import RateLimiter
+from src.llm.usage import record_gemini_usage
 from src.paths import project_path
 
 
@@ -34,6 +36,7 @@ class GeminiClient:
 
     def generate(self, prompt: str, content: str, model_config: ModelConfig) -> str:
         request = f"{prompt.strip()}\n\n---\n\nCONTENU A ANALYSER :\n\n{content.strip()}"
+        input_tokens = count_tokens(request)
         last_error: Exception | None = None
         for attempt in range(self.retries + 1):
             try:
@@ -50,10 +53,50 @@ class GeminiClient:
                 text = (response.text or "").strip()
                 if not text:
                     raise GeminiError("Gemini returned an empty response.")
+                _record_usage_safely(
+                    model=model_config.model,
+                    operation=model_config.name,
+                    input_tokens=input_tokens,
+                    output_tokens=count_tokens(text),
+                    max_output_tokens=model_config.max_output_tokens,
+                    status="success",
+                )
                 return text
             except Exception as exc:  # pragma: no cover - network/API behavior
                 last_error = exc
                 if attempt >= self.retries:
                     break
                 time.sleep(2**attempt)
+        _record_usage_safely(
+            model=model_config.model,
+            operation=model_config.name,
+            input_tokens=input_tokens,
+            output_tokens=0,
+            max_output_tokens=model_config.max_output_tokens,
+            status="failed",
+            error=str(last_error),
+        )
         raise GeminiError(f"Gemini request failed: {last_error}") from last_error
+
+
+def _record_usage_safely(
+    model: str,
+    operation: str,
+    input_tokens: int,
+    output_tokens: int,
+    max_output_tokens: int,
+    status: str,
+    error: str | None = None,
+) -> None:
+    try:
+        record_gemini_usage(
+            model=model,
+            operation=operation,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            max_output_tokens=max_output_tokens,
+            status=status,
+            error=error,
+        )
+    except Exception:
+        return

@@ -6,6 +6,8 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from src.llm.usage import summarize_gemini_usage
+from src.menu import run_interactive_menu
 from src.pipeline import (
     run_pdf,
     run_pdf_batch,
@@ -253,6 +255,29 @@ def cleanup(
     else:
         raise typer.BadParameter("Use --cache, --outputs or --all-temp.")
     console.print(f"Targets: {len(targets)}")
+
+
+@app.command()
+def usage() -> None:
+    summary = summarize_gemini_usage()
+    console.print(
+        {
+            "requests": summary.request_count,
+            "success": summary.successful_requests,
+            "failed": summary.failed_requests,
+            "input_tokens": summary.input_tokens,
+            "output_tokens": summary.output_tokens,
+            "estimated_cost_usd": summary.estimated_cost_usd,
+            "budget_usd": summary.budget_usd,
+            "budget_remaining_usd": summary.budget_remaining_usd,
+            "by_model": summary.by_model,
+        }
+    )
+
+
+@app.command()
+def menu() -> None:
+    run_interactive_menu()
 
 
 def _fail(exc: Exception) -> None:

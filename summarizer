@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+
+source "$ROOT_DIR/.runlib.sh"
+
+ensure_runtime
+activate_pdf_engine_bins
+
+exec "$PYTHON_BIN" -m src.cli menu "$@"

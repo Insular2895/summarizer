@@ -1,3 +1,4 @@
+from src.extractors import pdf_analyzer
 from src.extractors.pdf_analyzer import PdfComplexity, choose_engine_order
 
 
@@ -93,3 +94,34 @@ def test_choose_ocrmypdf_first_for_long_scanned_book() -> None:
         "marker",
         "text",
     ]
+
+
+def test_ocrmypdf_ready_requires_system_tools(monkeypatch) -> None:
+    monkeypatch.setattr(
+        pdf_analyzer,
+        "find_spec",
+        lambda name: object() if name == "ocrmypdf" else None,
+    )
+    monkeypatch.setattr(
+        pdf_analyzer.shutil,
+        "which",
+        lambda name: "/usr/bin/" + name if name in {"tesseract", "qpdf"} else None,
+    )
+
+    assert pdf_analyzer.is_ocrmypdf_installed() is True
+    assert pdf_analyzer.is_ocrmypdf_ready() is False
+
+
+def test_ocrmypdf_ready_accepts_ghostscript(monkeypatch) -> None:
+    monkeypatch.setattr(
+        pdf_analyzer,
+        "find_spec",
+        lambda name: object() if name == "ocrmypdf" else None,
+    )
+    monkeypatch.setattr(
+        pdf_analyzer.shutil,
+        "which",
+        lambda name: "/usr/bin/" + name if name in {"tesseract", "qpdf", "gs"} else None,
+    )
+
+    assert pdf_analyzer.is_ocrmypdf_ready() is True

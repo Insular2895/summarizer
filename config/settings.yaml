@@ -28,3 +28,15 @@ pdf:
 graphipy:
   enabled_by_default: true
   output_dir: "output/graphipy_ready"
+
+usage:
+  log_path: "cache/jobs/gemini_usage.jsonl"
+  monthly_budget_usd: null
+  # Fill this only if you want local cost estimates.
+  # Prices change over time, so they are intentionally not hardcoded here.
+  # Example:
+  # model_prices_per_1m:
+  #   gemini-2.5-flash:
+  #     input: 0.0
+  #     output: 0.0
+  model_prices_per_1m: {}

@@ -103,12 +103,26 @@ print_pdf_engine_status() {
   echo "  OCRmyPDF: $(engine_status ocrmypdf)"
   echo "  MinerU:   $(engine_status mineru)"
   echo "  Marker:   $(engine_status marker_single)"
+  echo "  OCR tools:"
+  echo "    tesseract:   $(engine_status tesseract)"
+  echo "    ghostscript: $(ghostscript_status)"
+  echo "    qpdf:        $(engine_status qpdf)"
 }
 
 engine_status() {
   local command_name="$1"
   if command -v "$command_name" >/dev/null 2>&1; then
     printf 'available at %s\n' "$(command -v "$command_name")"
+  else
+    printf 'not installed\n'
+  fi
+}
+
+ghostscript_status() {
+  if command -v gs >/dev/null 2>&1; then
+    printf 'available at %s\n' "$(command -v gs)"
+  elif command -v gswin64c >/dev/null 2>&1; then
+    printf 'available at %s\n' "$(command -v gswin64c)"
   else
     printf 'not installed\n'
   fi

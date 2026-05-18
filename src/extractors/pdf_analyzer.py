@@ -80,7 +80,7 @@ def analyze_pdf_complexity(pdf_path: Path, max_sample_pages: int = 8) -> PdfComp
 def build_pdf_engine_plan(pdf_path: Path) -> PdfEnginePlan:
     complexity = analyze_pdf_complexity(pdf_path)
     available = {
-        "ocrmypdf": find_spec("ocrmypdf") is not None or shutil.which("ocrmypdf") is not None,
+        "ocrmypdf": is_ocrmypdf_ready(),
         "mineru": shutil.which("mineru") is not None,
         "marker": shutil.which("marker_single") is not None,
         "text": True,
@@ -115,6 +115,24 @@ def choose_engine_order(
 
     order = [engine for engine in preferred if available.get(engine, False)]
     return order or ["text"]
+
+
+def is_ocrmypdf_installed() -> bool:
+    return find_spec("ocrmypdf") is not None or shutil.which("ocrmypdf") is not None
+
+
+def is_ocrmypdf_ready() -> bool:
+    if not is_ocrmypdf_installed():
+        return False
+    return (
+        _has_ghostscript()
+        and shutil.which("tesseract") is not None
+        and shutil.which("qpdf") is not None
+    )
+
+
+def _has_ghostscript() -> bool:
+    return shutil.which("gs") is not None or shutil.which("gswin64c") is not None
 
 
 def _sample_indexes(page_count: int, max_sample_pages: int) -> list[int]:

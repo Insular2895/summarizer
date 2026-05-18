@@ -18,6 +18,14 @@ La seule étape manuelle est d'ajouter la clé Gemini dans `.env` :
 GEMINI_API_KEY=ta_vraie_cle_api
 ```
 
+## Menu interactif
+
+```bash
+./summarizer
+```
+
+Le menu propose PDF, vidéo, playlist, batch d'URLs, moteurs PDF, nettoyage cache et usage Gemini.
+
 Installer les moteurs PDF avancés en local :
 
 ```bash
@@ -191,4 +199,16 @@ output/videos/
 output/books/
 output/graphipy_ready/
 cache/jobs/
+```
+
+## Usage Gemini
+
+```bash
+python3.11 -m src.cli usage
+```
+
+Le log local est dans :
+
+```txt
+cache/jobs/gemini_usage.jsonl
 ```

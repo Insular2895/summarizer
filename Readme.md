@@ -53,6 +53,7 @@ Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur 
 
 | Besoin | Commande |
 |---|---|
+| Menu interactif | `./summarizer` |
 | Voir l'aide simple | `./runhelp` |
 | Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
 | Résumer une vidéo | `./runyoutube "https://youtube.com/watch?v=..."` |
@@ -61,6 +62,8 @@ Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur 
 | Tester sans écrire | `./runpdf "input/pdf/mon-livre.pdf" --dry-run` |
 
 Toutes les variantes utiles sont dans [COMMANDS.md](COMMANDS.md).
+
+Le menu interactif `./summarizer` propose PDF, vidéo, playlist, batch, moteurs PDF, nettoyage cache et usage Gemini sans retenir les commandes.
 
 Pour une correction future par une IA ou un assistant de code, le point d'entrée est [AGENTS.md](AGENTS.md) et le guide complet est dans [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
 
@@ -235,6 +238,24 @@ cache/jobs/             manifests de suivi
 ```
 
 Les fichiers Graphipy-ready n'incluent pas `model_used` dans le frontmatter.
+
+---
+
+## Usage Gemini
+
+Chaque appel Gemini ajoute une ligne dans :
+
+```txt
+cache/jobs/gemini_usage.jsonl
+```
+
+Voir le résumé :
+
+```bash
+python3.11 -m src.cli usage
+```
+
+Le coût estimé reste désactivé par défaut. Pour l'activer, renseigne les prix par modèle dans `config/settings.yaml`, section `usage.model_prices_per_1m`.
 
 ---
 
