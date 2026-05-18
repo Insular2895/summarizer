@@ -1,0 +1,19 @@
+# OCRmyPDF is recommended for long scanned books. It also needs system binaries
+# such as tesseract, ghostscript and qpdf. On macOS, prefer:
+#   brew install ocrmypdf
+# or, in a Python env with system dependencies already present:
+#   pip install -r requirements-pdf-ocrmypdf.txt
+#
+# If pip installation conflicts with another PDF engine, keep OCRmyPDF in a
+# separate environment and expose it via PATH or OCRMYPDF_COMMAND.
+#
+# MinerU and Marker currently conflict in one Python environment on Pillow:
+# - mineru 3.1.x requires Pillow >= 11
+# - marker-pdf 1.10.x / surya-ocr requires Pillow < 11
+#
+# Install only one engine in a given environment:
+#   pip install -r requirements-pdf-ocrmypdf.txt
+#   pip install -r requirements-pdf-mineru.txt
+#   pip install -r requirements-pdf-marker.txt
+#
+# The base pipeline still works without these engines via the pypdf text fallback.

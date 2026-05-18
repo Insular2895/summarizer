@@ -1,8 +1,17 @@
 # Cookies YouTube (privé - ne jamais commiter)
+.env
 cookies.txt
 
 # Fichiers macOS
 .DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv*/
 
 # Transcripts téléchargés (output du script, pas du code)
 playlists/
@@ -11,3 +20,32 @@ playlists/
 # Logs et métadonnées yt-dlp
 *.log
 *.tsv
+
+# Pipeline local
+cache/
+input/pdf/*
+input/youtube/urls.txt
+
+output/videos/*
+output/books/*
+output/graphipy_ready/*
+
+*.srt
+*.vtt
+*.txt
+*.pdf
+
+!input/pdf/.gitkeep
+!input/youtube/urls.example.txt
+!output/videos/.gitkeep
+!output/books/.gitkeep
+!output/graphipy_ready/.gitkeep
+!requirements.txt
+!requirements-dev.txt
+!requirements-pdf.txt
+!requirements-pdf-ocrmypdf.txt
+!requirements-pdf-mineru.txt
+!requirements-pdf-marker.txt
+!tests/fixtures/*.txt
+!tests/fixtures/*.srt
+!tests/fixtures/*.vtt

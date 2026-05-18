@@ -1,0 +1,11 @@
+google-genai
+python-dotenv
+pyyaml
+pydantic
+typer
+rich
+yt-dlp
+tiktoken
+beautifulsoup4
+markdownify
+pypdf

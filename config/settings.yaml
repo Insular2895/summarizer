@@ -1,0 +1,30 @@
+paths:
+  input_dir: "input"
+  output_dir: "output"
+  cache_dir: "cache"
+  prompts_dir: "prompts"
+
+retention:
+  keep_cache_default: false
+  ask_before_delete_output: true
+  delete_input_after_run: false
+
+youtube:
+  preferred_subtitles:
+    - "fr"
+    - "en"
+  fallback_auto_subtitles: true
+
+pdf:
+  default_engine: "auto"
+  fallback_engine: "marker"
+  max_single_request_tokens: 160000
+  smart_engine:
+    simple_text_engine: "text"
+    scanned_book_engine: "ocrmypdf"
+    complex_engine: "mineru"
+    fallback_engine: "marker"
+
+graphipy:
+  enabled_by_default: true
+  output_dir: "output/graphipy_ready"

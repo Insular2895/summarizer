@@ -1,0 +1,30 @@
+{
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    ".github": true,
+    ".pre-commit-config.yaml": true,
+    ".vscode": true,
+    ".venv": true,
+    ".venv-marker": true,
+    "cache": true,
+    "docs/assets": true,
+    "playlists": true,
+    "run": true,
+    "tests": true
+  },
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    ".venv": true,
+    ".venv-marker": true,
+    "cache": true,
+    "output": true,
+    "playlists": true,
+    "run": true
+  }
+}

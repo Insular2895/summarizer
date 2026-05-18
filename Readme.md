@@ -1,8 +1,8 @@
 <div align="center">
 
-# Transcripts
+# Summarizer
 
-**Téléchargeur automatique de sous-titres YouTube**
+**Pipeline local YouTube + PDF vers résumés Markdown avec Gemini**
 
 <p>
   <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="28" /></a>
@@ -14,234 +14,306 @@
 
 ---
 
-## ✨ Ce que ça fait
+## Vue Rapide
 
-Télécharge automatiquement les sous-titres de playlists YouTube par batch, gère les rate limits, et convertit les `.srt` en `.txt` prêts à importer dans ChatGPT.
+Summarizer transforme des vidéos YouTube, playlists et PDF en fichiers Markdown propres, prêts à lire ou à importer dans Graphipy.
+
+```txt
+input/   -> sources utilisateur
+cache/   -> fichiers temporaires supprimables
+output/  -> résumés finaux
+```
+
+Pipeline :
+
+```txt
+YouTube / PDF
+  -> extraction ou OCR
+  -> Markdown ou texte nettoyé
+  -> Gemini
+  -> output Markdown
+  -> export Graphipy-ready
+```
+
+V1 reste volontairement locale et simple : pas de dashboard, pas de base de données, pas de Redis, pas de SaaS.
 
 ---
 
-## 📁 Structure
+## Installation
 
-```
-transcripts/
-├── run/
-│   ├── run_transcripts.sh           ← script principal (usage général)
-│   ├── run_transcripts_playlist2.sh ← variante playlist fixe
-│   └── yt_transcribe_fallback.sh    ← fallback si pas de sous-titres
-├── playlists/                       ← dossiers de sortie auto-générés
-│   └── <Nom de la playlist>/        ← un dossier par playlist
-└── cookies.txt                      ← authentification YouTube (⚠️ privé)
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-> **Note :** Le chemin exact des dossiers de sortie dépend de ta configuration. Dans cette installation, les playlists sont rangées dans `transcripts/playlists/<Nom de la playlist>/`. Si tu as une autre organisation, adapte les chemins en conséquence.
+Créer le fichier local de configuration :
+
+```bash
+cp .env.example .env
+```
+
+Puis remplir dans `.env` :
+
+```env
+GEMINI_API_KEY=ta_cle_api_gemini
+```
+
+`.env` est ignoré par Git. Ne le commit jamais.
 
 ---
 
-## 🚀 Utilisation
+## Commandes Simples
 
-### 1. Prérequis
-
-```bash
-# Installer yt-dlp
-brew install yt-dlp
-
-# Exporter les cookies YouTube depuis le navigateur → cookies.txt
-```
-
-### 2. Lancer le téléchargement
-
-Depuis le dossier du projet :
+PDF :
 
 ```bash
-cd /Users/insular/transcripts
-bash ./run/run_transcripts.sh "https://youtube.com/playlist?list=VOTRE_PLAYLIST_ID"
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf"
 ```
 
-Le script télécharge les sous-titres par **batch de 20 vidéos** avec des pauses pour éviter les bans.
-
-### 3. Convertir les SRT en TXT
-
-> **Important :** Adapte `DIR` à ton propre chemin. Dans cette installation, les playlists sont dans `transcripts/playlists/<Nom de la playlist>`. Chez toi, le chemin peut être différent — vérifie avec `ls` où tes fichiers ont été téléchargés.
+Vidéo YouTube :
 
 ```bash
-# Exemple avec cette installation :
-DIR="/Users/insular/transcripts/playlists/Playlist 38"
-
-# Adapte ce chemin selon ta propre structure, par exemple :
-# DIR="/chemin/vers/tes/playlists/<Nom de la playlist>"
-
-find "$DIR" -type f -name "*.srt" -exec sh -c '
-for f do
-  txt="${f%.srt}.txt"
-  tmp="$txt.tmp"
-
-  if sed -E "/^[0-9]+$/d;/-->/d;/^[[:space:]]*$/d" "$f" > "$tmp"; then
-    mv "$tmp" "$txt" && rm "$f"
-    echo "Converti : $f"
-  else
-    rm -f "$tmp"
-    echo "Erreur : $f" >&2
-  fi
-done
-' sh {} +
+python3.11 -m src.cli run-youtube "https://youtube.com/watch?v=..."
 ```
 
-Cette commande supprime les numéros de séquence, les timestamps et les lignes vides, puis remplace chaque `.srt` par un `.txt` propre (le `.srt` n'est supprimé que si la conversion réussit).
+Playlist YouTube :
+
+```bash
+python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+```
+
+Tester sans écrire :
+
+```bash
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
+python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --dry-run --limit 2
+```
+
+Toutes les commandes utiles sont regroupées dans [COMMANDS.md](COMMANDS.md).
 
 ---
 
-## ⚙️ Workflow complet
+## PDF
 
-```
-📱 Partage de connexion iPhone
-        ↓
-🎬 Playlist YouTube créée
-        ↓
-🖥️  run_transcripts.sh <URL>
-        ↓
-📄 Fichiers .srt téléchargés dans playlists/<Nom>/
-        ↓
-🔄 Conversion SRT → TXT
-        ↓
-🤖 Import dans ChatGPT
+Dépose les fichiers dans :
+
+```txt
+input/pdf/
 ```
 
----
-
-## 🛠️ Dépannage
-
-### 1. `yt-dlp` est installé mais Homebrew affiche une erreur de link
-
-**Problème :**
-
-```
-Error: The `brew link` step did not complete successfully
-Could not symlink bin/yt-dlp
-Target /opt/homebrew/bin/yt-dlp already exists
-```
-
-**Cause :** Un ancien fichier `yt-dlp` existe déjà dans `/opt/homebrew/bin` ou dans un autre dossier prioritaire du `PATH`.
-
-Vérifier quelle version est utilisée :
+Lancement recommandé :
 
 ```bash
-which -a yt-dlp
-yt-dlp --version
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
 ```
 
-Si le terminal affiche `/Users/insular/bin/yt-dlp`, ce n'est pas la version Homebrew qui est prioritaire.
+Le mode `smart` analyse rapidement le document et choisit le meilleur moteur disponible :
 
-**Correction :**
-
-```bash
-mv ~/bin/yt-dlp ~/bin/yt-dlp.old
-brew link --overwrite yt-dlp
-hash -r
-which yt-dlp
+```txt
+PDF texte simple                 -> text -> mineru -> ocrmypdf -> marker
+PDF long ou moyennement complexe -> mineru -> text -> ocrmypdf -> marker
+PDF scanné / livre long          -> ocrmypdf -> mineru -> marker -> text
+PDF visuel / tableaux / formules -> mineru -> ocrmypdf -> marker -> text
 ```
 
-Résultat attendu : `/opt/homebrew/bin/yt-dlp`
-
----
-
-### 2. Ne pas réinstaller yt-dlp à chaque nouveau terminal
-
-Il n'est pas nécessaire de refaire `brew install yt-dlp` à chaque ouverture de terminal. L'installation Homebrew est globale sur le Mac.
-
-Dans un nouveau terminal, vérifier simplement :
+Forcer un moteur :
 
 ```bash
-which yt-dlp
-yt-dlp --version
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 ```
 
-Si le résultat est `/opt/homebrew/bin/yt-dlp`, tout est bon.
-
-Pour mettre à jour yt-dlp plus tard :
+Tester seulement les premières pages d’un gros PDF :
 
 ```bash
-brew update
-brew upgrade yt-dlp
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+```
+
+OCR en français, si les données Tesseract françaises sont installées :
+
+```bash
+python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
+```
+
+Le résultat final est écrit dans :
+
+```txt
+output/books/
+output/graphipy_ready/
 ```
 
 ---
 
-### 3. Message macOS sur zsh
+## Moteurs PDF
 
-**Problème :**
+Le fallback texte `pypdf` est inclus dans l’installation de base.
 
-```
-The default interactive shell is now zsh.
-To update your account to use zsh, please run `chsh -s /bin/zsh`.
-```
-
-Ce n'est pas une erreur. Ce message apparaît quand on lance manuellement `bash`. macOS indique simplement que le shell par défaut moderne est zsh.
-
-Pour lancer le script, ne pas taper seulement `bash`. Utiliser :
+Pour les livres scannés longs, OCRmyPDF est recommandé :
 
 ```bash
-bash ./run/run_transcripts.sh "URL_DE_LA_PLAYLIST"
+brew install ocrmypdf
 ```
 
-ou rendre le script exécutable :
+Ou, si les dépendances système sont déjà disponibles :
 
 ```bash
-chmod +x ./run/run_transcripts.sh
-./run/run_transcripts.sh "URL_DE_LA_PLAYLIST"
+pip install -r requirements-pdf-ocrmypdf.txt
+```
+
+Pour les PDF complexes avec mise en page riche, MinerU est disponible séparément :
+
+```bash
+pip install -r requirements-pdf-mineru.txt
+mineru-models-download --source modelscope --model_type pipeline
+```
+
+Pour Marker, utilise de préférence un environnement séparé :
+
+```bash
+python3.11 -m venv .venv-marker
+source .venv-marker/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-pdf-marker.txt
+```
+
+Si OCRmyPDF est installé dans un environnement séparé :
+
+```bash
+export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
 ```
 
 ---
 
-### 4. Erreur `No such file or directory`
+## YouTube
 
-**Problème :**
-
-```
-find: /Users/insular/transcripts/Playlist 38: No such file or directory
-```
-
-**Cause :** Les playlists ne sont pas directement dans `transcripts/` — elles sont dans le sous-dossier `playlists/`.
-
-Vérifier les dossiers disponibles :
+Vidéo unique :
 
 ```bash
-ls -la /Users/insular/transcripts/playlists
+python3.11 -m src.cli run-youtube "https://youtube.com/watch?v=..."
 ```
 
-Puis définir le bon chemin :
+Playlist :
 
 ```bash
-DIR="/Users/insular/transcripts/playlists/Playlist 38"
+python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..."
 ```
 
-> Le chemin exact dépend de ta structure. Utilise `ls` pour trouver où tes fichiers ont été téléchargés avant de lancer la conversion.
+Reprendre une playlist déjà commencée :
+
+```bash
+python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --resume
+```
+
+Tester seulement les premières vidéos :
+
+```bash
+python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --limit 2
+```
+
+Batch d’URLs :
+
+```bash
+python3.11 -m src.cli video-batch --file input/youtube/urls.txt
+```
+
+Le traitement playlist est toujours vidéo par vidéo :
+
+- une vidéo = un fichier Markdown ;
+- une vidéo = un statut dans le manifest ;
+- si une vidéo échoue, la suivante continue ;
+- aucune suppression globale de `output/videos/`.
+
+Les anciens scripts Bash dans `run/` sont conservés comme legacy.
 
 ---
 
-### 5. Ne pas garder les chevrons `< >` dans les chemins
+## Outputs
 
-Les chevrons sont des placeholders dans les exemples — ils indiquent ce qu'il faut remplacer par le vrai nom.
+```txt
+output/videos/          résumés de vidéos
+output/books/           résumés de PDF/livres
+output/graphipy_ready/  exports Markdown prêts pour Graphipy
+cache/jobs/             manifests de suivi
+```
 
-| | Exemple |
-|---|---|
-| ❌ Mauvais | `DIR="/Users/insular/transcripts/<Playlist 38>"` |
-| ✓ Bon | `DIR="/Users/insular/transcripts/playlists/Playlist 38"` |
+Les fichiers Graphipy-ready n’incluent pas `model_used` dans le frontmatter.
+
+---
+
+## Nettoyage
+
+Supprimer le cache :
+
+```bash
+python3.11 -m src.cli cleanup --cache
+```
+
+Supprimer les temporaires :
+
+```bash
+python3.11 -m src.cli cleanup --all-temp
+```
+
+Supprimer les vieux outputs avec confirmation :
+
+```bash
+python3.11 -m src.cli cleanup --outputs --older-than 7
+```
+
+Le pipeline ne supprime jamais `input/` sans confirmation explicite.
 
 ---
 
-### 6. Autres problèmes courants
+## Structure
 
-| Problème | Solution |
-|---|---|
-| 🔴 Téléchargement bloqué | `yt-dlp -U` puis relancer |
-| 🔑 Cookies expirés | Réexporter `cookies.txt` depuis le navigateur |
-| 🔇 Pas de sous-titres `.en` | Utiliser `yt_transcribe_fallback.sh` |
-| ⚠️ Erreur 429 | Augmenter `--sleep-interval` dans le script |
+```txt
+input/
+  youtube/
+  pdf/
+output/
+  videos/
+  books/
+  graphipy_ready/
+cache/
+prompts/
+config/
+src/
+run/
+docs/
+```
 
 ---
+
+## Qualité
+
+```bash
+python3.11 -m black src tests
+python3.11 -m ruff check src tests
+python3.11 -m pytest -q
+```
+
+La CI GitHub Actions vérifie format, lint, tests et scan de secrets.
+
+---
+
+## Sécurité
+
+Ne jamais committer :
+
+- `.env`
+- `cookies.txt`
+- PDF utilisateur
+- transcripts
+- cache
+- outputs générés
+
+Le `.gitignore` protège ces fichiers.
 
 <div align="center">
 
-Made with ☕ — propulsé par [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+Pipeline local, simple, relançable, sans exposer les sources utilisateur.
 
 </div>
