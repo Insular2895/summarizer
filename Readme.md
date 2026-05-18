@@ -98,6 +98,8 @@ Tester sans écrire :
 
 Toutes les commandes utiles sont regroupées dans [COMMANDS.md](COMMANDS.md).
 
+Pour une correction future par une IA ou un assistant de code, le point d'entree est [AGENTS.md](AGENTS.md) et le guide complet est dans [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
+
 ---
 
 ## PDF

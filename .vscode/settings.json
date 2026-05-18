@@ -1,30 +1,44 @@
 {
   "files.exclude": {
     "**/__pycache__": true,
+    "**/.DS_Store": true,
     "**/.pytest_cache": true,
     "**/.mypy_cache": true,
     "**/.ruff_cache": true,
+    ".claude": true,
     ".github": true,
+    ".gitignore": true,
     ".pre-commit-config.yaml": true,
     ".vscode": true,
     ".venv": true,
     ".venv-marker": true,
+    "CHANGELOG.md": true,
     "cache": true,
-    "docs/assets": true,
+    "config": true,
+    "cookies.txt": true,
+    "docs": true,
     "playlists": true,
+    "pyproject.toml": true,
+    "requirements*.txt": true,
     "run": true,
-    "tests": true
+    "src": true,
+    "tests": true,
+    "yt-dlp.log": true
   },
   "search.exclude": {
     "**/__pycache__": true,
+    "**/.DS_Store": true,
     "**/.pytest_cache": true,
     "**/.mypy_cache": true,
     "**/.ruff_cache": true,
+    ".claude": true,
     ".venv": true,
     ".venv-marker": true,
     "cache": true,
+    "docs/assets": true,
     "output": true,
     "playlists": true,
-    "run": true
+    "run": true,
+    "yt-dlp.log": true
   }
 }
