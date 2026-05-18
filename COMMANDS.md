@@ -64,8 +64,33 @@ Forcer un moteur :
 
 ```bash
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
+```
+
+OCR en français, si les données Tesseract françaises sont installées :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
+```
+
+Installer OCRmyPDF pour les livres scannés longs :
+
+```bash
+brew install ocrmypdf
+```
+
+Ou, si les dépendances système sont déjà présentes :
+
+```bash
+pip install -r requirements-pdf-ocrmypdf.txt
+```
+
+OCRmyPDF dans un environnement séparé :
+
+```bash
+export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
 ```
 
 Installer MinerU :

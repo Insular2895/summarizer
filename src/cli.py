@@ -150,6 +150,7 @@ def pdf(
     resume: bool = False,
     dry_run: bool = False,
     max_pages: int | None = None,
+    ocr_language: str = "eng",
 ) -> None:
     _ = resume
     try:
@@ -162,6 +163,7 @@ def pdf(
             overwrite=overwrite,
             dry_run=dry_run,
             max_pages=max_pages,
+            ocr_language=ocr_language,
         )
     except Exception as exc:
         _fail(exc)
@@ -179,6 +181,7 @@ def run_pdf_full(
     resume: bool = False,
     dry_run: bool = False,
     max_pages: int | None = None,
+    ocr_language: str = "eng",
 ) -> None:
     _ = resume
     try:
@@ -191,6 +194,7 @@ def run_pdf_full(
             overwrite=overwrite,
             dry_run=dry_run,
             max_pages=max_pages,
+            ocr_language=ocr_language,
         )
     except Exception as exc:
         _fail(exc)
@@ -208,6 +212,7 @@ def pdf_batch(
     resume: bool = False,
     dry_run: bool = False,
     max_pages: int | None = None,
+    ocr_language: str = "eng",
 ) -> None:
     _ = resume
     try:
@@ -220,6 +225,7 @@ def pdf_batch(
             overwrite=overwrite,
             dry_run=dry_run,
             max_pages=max_pages,
+            ocr_language=ocr_language,
         )
     except Exception as exc:
         _fail(exc)

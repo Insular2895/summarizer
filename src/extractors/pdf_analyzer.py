@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import shutil
 from dataclasses import dataclass, field
+from importlib.util import find_spec
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -79,6 +80,7 @@ def analyze_pdf_complexity(pdf_path: Path, max_sample_pages: int = 8) -> PdfComp
 def build_pdf_engine_plan(pdf_path: Path) -> PdfEnginePlan:
     complexity = analyze_pdf_complexity(pdf_path)
     available = {
+        "ocrmypdf": find_spec("ocrmypdf") is not None or shutil.which("ocrmypdf") is not None,
         "mineru": shutil.which("mineru") is not None,
         "marker": shutil.which("marker_single") is not None,
         "text": True,
@@ -96,13 +98,20 @@ def choose_engine_order(
     complexity: PdfComplexity,
     available_engines: dict[str, bool] | None = None,
 ) -> list[str]:
-    available = available_engines or {"mineru": True, "marker": True, "text": True}
-    if complexity.scanned_likely or complexity.complexity == "high":
-        preferred = ["mineru", "marker", "text"]
+    available = available_engines or {
+        "ocrmypdf": True,
+        "mineru": True,
+        "marker": True,
+        "text": True,
+    }
+    if complexity.scanned_likely:
+        preferred = ["ocrmypdf", "mineru", "marker", "text"]
+    elif complexity.complexity == "high":
+        preferred = ["mineru", "ocrmypdf", "marker", "text"]
     elif complexity.complexity == "medium":
-        preferred = ["mineru", "text", "marker"]
+        preferred = ["mineru", "text", "ocrmypdf", "marker"]
     else:
-        preferred = ["text", "mineru", "marker"]
+        preferred = ["text", "mineru", "ocrmypdf", "marker"]
 
     order = [engine for engine in preferred if available.get(engine, False)]
     return order or ["text"]

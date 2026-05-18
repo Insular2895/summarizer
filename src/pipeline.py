@@ -10,6 +10,7 @@ from src.exporters.graphipy import export_graphipy_ready
 from src.extractors.pdf_analyzer import build_pdf_engine_plan
 from src.extractors.pdf_marker import extract_pdf_with_marker
 from src.extractors.pdf_mineru import extract_pdf_with_mineru
+from src.extractors.pdf_ocrmypdf import extract_pdf_with_ocrmypdf
 from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
 from src.paths import project_path, safe_slug
@@ -228,6 +229,7 @@ def run_pdf(
     overwrite: bool = False,
     dry_run: bool = False,
     max_pages: int | None = None,
+    ocr_language: str = "eng",
 ) -> Path:
     slug = safe_slug(file_path.stem, "book")
     output_path = project_path("output", "books", f"{slug}.md")
@@ -237,6 +239,7 @@ def run_pdf(
         console.print(f"[dry-run] Engine: {engine} / mode: {mode}")
         if max_pages is not None:
             console.print(f"[dry-run] Max pages: {max_pages}")
+        console.print(f"[dry-run] OCR language: {ocr_language}")
         if engine in {"auto", "smart"}:
             plan = build_pdf_engine_plan(file_path)
             console.print(f"[dry-run] Complexity: {plan.complexity.complexity}")
@@ -248,7 +251,13 @@ def run_pdf(
     if output_path.exists() and not overwrite:
         raise FileExistsError(f"Output already exists: {output_path}. Use --overwrite.")
     console.print("[1/5] Extraction PDF")
-    markdown_path = _extract_pdf(file_path, cache_dir, engine, max_pages=max_pages)
+    markdown_path = _extract_pdf(
+        file_path,
+        cache_dir,
+        engine,
+        max_pages=max_pages,
+        ocr_language=ocr_language,
+    )
     markdown = markdown_path.read_text(encoding="utf-8", errors="ignore")
     if not _is_usable_markdown(markdown):
         raise RuntimeError("PDF extraction produced weak or empty Markdown.")
@@ -341,15 +350,23 @@ def _extract_pdf(
     cache_dir: Path,
     engine: str,
     max_pages: int | None = None,
+    ocr_language: str = "eng",
 ) -> Path:
     if engine == "mineru":
         return extract_pdf_with_mineru(file_path, cache_dir, max_pages=max_pages)
     if engine == "marker":
         return extract_pdf_with_marker(file_path, cache_dir)
+    if engine == "ocrmypdf":
+        return extract_pdf_with_ocrmypdf(
+            file_path,
+            cache_dir,
+            max_pages=max_pages,
+            language=ocr_language,
+        )
     if engine == "text":
         return extract_pdf_with_pypdf(file_path, cache_dir, max_pages=max_pages)
     if engine not in {"auto", "smart"}:
-        raise ValueError("engine must be auto, smart, mineru, marker or text")
+        raise ValueError("engine must be auto, smart, mineru, marker, ocrmypdf or text")
 
     plan = build_pdf_engine_plan(file_path)
     console.print(f"[cyan]PDF complexity:[/] {plan.complexity.complexity}")
@@ -357,7 +374,13 @@ def _extract_pdf(
     last_error: Exception | None = None
     for candidate in plan.fallback_order:
         try:
-            markdown = _extract_pdf(file_path, cache_dir, candidate, max_pages=max_pages)
+            markdown = _extract_pdf(
+                file_path,
+                cache_dir,
+                candidate,
+                max_pages=max_pages,
+                ocr_language=ocr_language,
+            )
             if _is_usable_markdown(markdown.read_text(encoding="utf-8", errors="ignore")):
                 return markdown
             raise RuntimeError(f"{candidate} produced weak or empty Markdown.")

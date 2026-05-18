@@ -19,7 +19,7 @@ En playlist, les vidéos sont traitées séquentiellement. Chaque vidéo a son p
 PDF dans input/pdf/
   -> analyse de complexité
   -> choix intelligent du moteur PDF
-  -> MinerU, Marker ou fallback texte pypdf convertit en Markdown
+  -> OCRmyPDF, MinerU, Marker ou fallback texte pypdf convertit en Markdown
   -> cache/pdf_md/<book_slug>/
   -> nettoyage Markdown
   -> comptage tokens
@@ -45,8 +45,9 @@ Le chunking préserve les sections Markdown quand c’est possible. Si une secti
 
 Ordre de moteur :
 
-- PDF texte simple : `text -> mineru -> marker`
-- PDF moyen ou technique : `mineru -> text -> marker`
-- PDF scanné / visuel / tableaux / formules : `mineru -> marker -> text`
+- PDF texte simple : `text -> mineru -> ocrmypdf -> marker`
+- PDF moyen ou technique : `mineru -> text -> ocrmypdf -> marker`
+- PDF scanné ou livre long : `ocrmypdf -> mineru -> marker -> text`
+- PDF visuel / tableaux / formules : `mineru -> ocrmypdf -> marker -> text`
 
 Le pipeline saute automatiquement les moteurs non installés.

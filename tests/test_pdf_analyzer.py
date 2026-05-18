@@ -15,9 +15,12 @@ def test_choose_text_for_simple_extractable_pdf() -> None:
         reasons=["texte extractible simple"],
     )
 
-    assert choose_engine_order(profile, {"mineru": True, "marker": True, "text": True}) == [
+    assert choose_engine_order(
+        profile, {"ocrmypdf": True, "mineru": True, "marker": True, "text": True}
+    ) == [
         "text",
         "mineru",
+        "ocrmypdf",
         "marker",
     ]
 
@@ -36,8 +39,11 @@ def test_choose_mineru_for_complex_pdf() -> None:
         reasons=["document long", "nombreuses images détectées"],
     )
 
-    assert choose_engine_order(profile, {"mineru": True, "marker": True, "text": True}) == [
+    assert choose_engine_order(
+        profile, {"ocrmypdf": True, "mineru": True, "marker": True, "text": True}
+    ) == [
         "mineru",
+        "ocrmypdf",
         "marker",
         "text",
     ]
@@ -57,7 +63,33 @@ def test_choose_available_fallback_when_mineru_missing() -> None:
         reasons=["PDF probablement scanné ou très visuel"],
     )
 
-    assert choose_engine_order(profile, {"mineru": False, "marker": True, "text": True}) == [
+    assert choose_engine_order(
+        profile, {"ocrmypdf": False, "mineru": False, "marker": True, "text": True}
+    ) == [
+        "marker",
+        "text",
+    ]
+
+
+def test_choose_ocrmypdf_first_for_long_scanned_book() -> None:
+    profile = PdfComplexity(
+        page_count=396,
+        sampled_pages=8,
+        extracted_chars=100,
+        avg_chars_per_page=12,
+        image_count=8,
+        table_hint_count=0,
+        formula_hint_count=0,
+        scanned_likely=True,
+        complexity="high",
+        reasons=["PDF probablement scanné ou très visuel", "document long"],
+    )
+
+    assert choose_engine_order(
+        profile, {"ocrmypdf": True, "mineru": True, "marker": True, "text": True}
+    ) == [
+        "ocrmypdf",
+        "mineru",
         "marker",
         "text",
     ]

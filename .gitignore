@@ -11,6 +11,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.venv*/
 
 # Transcripts téléchargés (output du script, pas du code)
 playlists/
@@ -42,6 +43,7 @@ output/graphipy_ready/*
 !requirements.txt
 !requirements-dev.txt
 !requirements-pdf.txt
+!requirements-pdf-ocrmypdf.txt
 !requirements-pdf-mineru.txt
 !requirements-pdf-marker.txt
 !tests/fixtures/*.txt

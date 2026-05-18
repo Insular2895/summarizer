@@ -86,17 +86,25 @@ python -m src.cli run-pdf "input/pdf/mon-livre.pdf"
 Par défaut, `--engine auto` analyse rapidement le PDF et choisit le meilleur moteur disponible :
 
 ```txt
-PDF texte simple                 -> text -> mineru -> marker
-PDF long ou moyennement complexe -> mineru -> text -> marker
-PDF scanné / visuel / tableaux   -> mineru -> marker -> text
+PDF texte simple                 -> text -> mineru -> ocrmypdf -> marker
+PDF long ou moyennement complexe -> mineru -> text -> ocrmypdf -> marker
+PDF scanné / livre long          -> ocrmypdf -> mineru -> marker -> text
+PDF visuel / tableaux / formules -> mineru -> ocrmypdf -> marker -> text
 ```
 
 Forcer un moteur :
 
 ```bash
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
+```
+
+Pour un OCR en français après installation des données Tesseract françaises :
+
+```bash
+python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
 ```
 
 Tester rapidement un gros PDF sur les premières pages :
@@ -105,9 +113,29 @@ Tester rapidement un gros PDF sur les premières pages :
 python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
 ```
 
-MinerU est le moteur principal. Le fallback `text` via `pypdf` est inclus dans l’installation de base.
+OCRmyPDF est recommandé pour les livres scannés longs. MinerU reste utile pour les PDF complexes avec mise en page riche. Le fallback `text` via `pypdf` est inclus dans l’installation de base.
 
-## Installer MinerU Ou Marker
+## Installer OCRmyPDF, MinerU Ou Marker
+
+Pour les gros livres scannés :
+
+```bash
+brew install ocrmypdf
+```
+
+Le moteur OCRmyPDF utilise `eng` par défaut. Pour OCR en français, installe aussi les données de langue Tesseract puis lance avec `--ocr-language fra`.
+
+Si l’installation pip d’OCRmyPDF entre en conflit avec un autre moteur PDF, installe-le dans un environnement séparé et expose la commande avec :
+
+```bash
+export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
+```
+
+Ou, si les dépendances système sont déjà présentes :
+
+```bash
+pip install -r requirements-pdf-ocrmypdf.txt
+```
 
 MinerU et Marker ne cohabitent pas proprement dans le même environnement Python actuel :
 

@@ -21,6 +21,7 @@ pdf:
   max_single_request_tokens: 160000
   smart_engine:
     simple_text_engine: "text"
+    scanned_book_engine: "ocrmypdf"
     complex_engine: "mineru"
     fallback_engine: "marker"
 
