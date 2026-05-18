@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+
+if [[ -x "$ROOT_DIR/.venv/bin/python" ]]; then
+  PYTHON_BIN="$ROOT_DIR/.venv/bin/python"
+elif command -v python3.11 >/dev/null 2>&1; then
+  PYTHON_BIN="python3.11"
+else
+  PYTHON_BIN="python3"
+fi
+
+usage() {
+  cat <<'EOF'
+Usage:
+  ./runyoutube "https://youtube.com/watch?v=..." [options]
+  ./runyoutube "https://youtube.com/playlist?list=..." [options]
+  ./runyoutube --file input/youtube/urls.txt [options]
+
+Examples:
+  ./runyoutube "https://youtube.com/watch?v=..."
+  ./runyoutube "https://youtube.com/playlist?list=..." --resume
+  ./runyoutube "https://youtube.com/playlist?list=..." --limit 2 --dry-run
+  ./runyoutube --file input/youtube/urls.txt
+
+If input/youtube/urls.txt exists and is not empty, ./runyoutube can be launched
+without arguments to run that batch file.
+EOF
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+if [[ "${1:-}" == "--file" ]]; then
+  shift
+  URL_FILE="${1:-input/youtube/urls.txt}"
+  if [[ $# -gt 0 ]]; then
+    shift
+  fi
+  exec "$PYTHON_BIN" -m src.cli video-batch --file "$URL_FILE" "$@"
+fi
+
+if [[ $# -eq 0 ]]; then
+  URL_FILE="input/youtube/urls.txt"
+  if [[ -f "$URL_FILE" ]] && grep -Ev '^[[:space:]]*(#|$)' "$URL_FILE" >/dev/null; then
+    exec "$PYTHON_BIN" -m src.cli video-batch --file "$URL_FILE"
+  fi
+  usage
+  echo
+  echo "No URL provided and input/youtube/urls.txt is empty or missing."
+  exit 1
+fi
+
+exec "$PYTHON_BIN" -m src.cli run-youtube "$@"

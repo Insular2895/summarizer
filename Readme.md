@@ -65,29 +65,35 @@ GEMINI_API_KEY=ta_cle_api_gemini
 
 ## Commandes Simples
 
+Afficher l’aide client :
+
+```bash
+./runhelp
+```
+
 PDF :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf"
+./runpdf "input/pdf/mon-livre.pdf"
 ```
 
 Vidéo YouTube :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/watch?v=..."
+./runyoutube "https://youtube.com/watch?v=..."
 ```
 
 Playlist YouTube :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
 Tester sans écrire :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
-python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --dry-run --limit 2
+./runpdf "input/pdf/mon-livre.pdf" --dry-run
+./runyoutube "https://youtube.com/playlist?list=..." --dry-run --limit 2
 ```
 
 Toutes les commandes utiles sont regroupées dans [COMMANDS.md](COMMANDS.md).
@@ -105,7 +111,7 @@ input/pdf/
 Lancement recommandé :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
+./runpdf "input/pdf/mon-livre.pdf" --engine smart
 ```
 
 Le mode `smart` analyse rapidement le document et choisit le meilleur moteur disponible :
@@ -120,22 +126,22 @@ PDF visuel / tableaux / formules -> mineru -> ocrmypdf -> marker -> text
 Forcer un moteur :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
+./runpdf "input/pdf/mon-livre.pdf" --engine text
+./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
+./runpdf "input/pdf/mon-livre.pdf" --engine mineru
+./runpdf "input/pdf/mon-livre.pdf" --engine marker
 ```
 
 Tester seulement les premières pages d’un gros PDF :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
 ```
 
 OCR en français, si les données Tesseract françaises sont installées :
 
 ```bash
-python3.11 -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
+./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
 ```
 
 Le résultat final est écrit dans :
@@ -192,31 +198,31 @@ export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
 Vidéo unique :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/watch?v=..."
+./runyoutube "https://youtube.com/watch?v=..."
 ```
 
 Playlist :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
 Reprendre une playlist déjà commencée :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --resume
+./runyoutube "https://youtube.com/playlist?list=..." --resume
 ```
 
 Tester seulement les premières vidéos :
 
 ```bash
-python3.11 -m src.cli run-youtube "https://youtube.com/playlist?list=..." --limit 2
+./runyoutube "https://youtube.com/playlist?list=..." --limit 2
 ```
 
 Batch d’URLs :
 
 ```bash
-python3.11 -m src.cli video-batch --file input/youtube/urls.txt
+./runyoutube --file input/youtube/urls.txt
 ```
 
 Le traitement playlist est toujours vidéo par vidéo :

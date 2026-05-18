@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+
+cat <<'EOF'
+Summarizer quick commands
+
+Setup:
+  cp .env.example .env
+  python3.11 -m venv .venv
+  source .venv/bin/activate
+  pip install -r requirements.txt
+
+PDF:
+  ./runpdf "input/pdf/mon-livre.pdf"
+  ./runpdf "input/pdf/mon-livre.pdf" --engine smart --overwrite
+  ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+
+YouTube:
+  ./runyoutube "https://youtube.com/watch?v=..."
+  ./runyoutube "https://youtube.com/playlist?list=..." --resume
+  ./runyoutube "https://youtube.com/playlist?list=..." --limit 2 --dry-run
+  ./runyoutube --file input/youtube/urls.txt
+
+Cleanup:
+  python3.11 -m src.cli cleanup --cache
+  python3.11 -m src.cli cleanup --all-temp
+
+Outputs:
+  output/videos/
+  output/books/
+  output/graphipy_ready/
+EOF
+
+echo
+echo "Detected local inputs:"
+
+PDF_COUNT="$(find input/pdf -maxdepth 1 -type f -name "*.pdf" | wc -l | tr -d ' ')"
+echo "  PDFs in input/pdf/: $PDF_COUNT"
+if [[ "$PDF_COUNT" != "0" ]]; then
+  find input/pdf -maxdepth 1 -type f -name "*.pdf" -print | sort | sed 's/^/    - /'
+fi
+
+if [[ -f input/youtube/urls.txt ]] && grep -Ev '^[[:space:]]*(#|$)' input/youtube/urls.txt >/dev/null; then
+  echo "  YouTube batch: input/youtube/urls.txt is ready"
+else
+  echo "  YouTube batch: input/youtube/urls.txt is empty or missing"
+fi

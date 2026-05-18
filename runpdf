@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+
+if [[ -x "$ROOT_DIR/.venv/bin/python" ]]; then
+  PYTHON_BIN="$ROOT_DIR/.venv/bin/python"
+elif command -v python3.11 >/dev/null 2>&1; then
+  PYTHON_BIN="python3.11"
+else
+  PYTHON_BIN="python3"
+fi
+
+usage() {
+  cat <<'EOF'
+Usage:
+  ./runpdf "input/pdf/mon-livre.pdf" [options]
+  ./runpdf --dry-run
+
+Examples:
+  ./runpdf "input/pdf/mon-livre.pdf"
+  ./runpdf "input/pdf/mon-livre.pdf" --engine smart --overwrite
+  ./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
+  ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+
+If input/pdf/ contains exactly one PDF, ./runpdf can be launched without a file.
+EOF
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+if [[ $# -eq 0 || "${1:-}" == "--dry-run" ]]; then
+  mapfile -t PDF_FILES < <(find input/pdf -maxdepth 1 -type f -name "*.pdf" | sort)
+  if [[ ${#PDF_FILES[@]} -eq 0 ]]; then
+    usage
+    echo
+    echo "No PDF found in input/pdf/."
+    exit 1
+  fi
+  if [[ ${#PDF_FILES[@]} -gt 1 ]]; then
+    usage
+    echo
+    echo "Several PDFs found. Choose one:"
+    printf '  %s\n' "${PDF_FILES[@]}"
+    exit 1
+  fi
+  if [[ $# -eq 0 ]]; then
+    set -- "${PDF_FILES[0]}"
+  else
+    set -- "${PDF_FILES[0]}" "$@"
+  fi
+fi
+
+exec "$PYTHON_BIN" -m src.cli run-pdf "$@"

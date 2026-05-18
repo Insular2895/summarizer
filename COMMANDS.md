@@ -33,46 +33,46 @@ input/pdf/
 Commande simple :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf"
+./runpdf "input/pdf/mon-livre.pdf"
 ```
 
 Dry-run :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --dry-run
+./runpdf "input/pdf/mon-livre.pdf" --dry-run
 ```
 
 Test rapide sur les 10 premières pages :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
+./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
 ```
 
 PDF hors du repo :
 
 ```bash
-python -m src.cli run-pdf "/chemin/vers/mon-livre.pdf"
+./runpdf "/chemin/vers/mon-livre.pdf"
 ```
 
 Choix intelligent explicite :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine smart
+./runpdf "input/pdf/mon-livre.pdf" --engine smart
 ```
 
 Forcer un moteur :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine mineru
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine marker
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine text
+./runpdf "input/pdf/mon-livre.pdf" --engine mineru
+./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf
+./runpdf "input/pdf/mon-livre.pdf" --engine marker
+./runpdf "input/pdf/mon-livre.pdf" --engine text
 ```
 
 OCR en français, si les données Tesseract françaises sont installées :
 
 ```bash
-python -m src.cli run-pdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
+./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
 ```
 
 Installer OCRmyPDF pour les livres scannés longs :
@@ -114,43 +114,43 @@ pip install -r requirements-pdf-marker.txt
 Vidéo :
 
 ```bash
-python -m src.cli run-youtube "https://youtube.com/watch?v=..."
+./runyoutube "https://youtube.com/watch?v=..."
 ```
 
 Playlist :
 
 ```bash
-python -m src.cli run-youtube "https://youtube.com/playlist?list=..."
+./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
 Playlist locale legacy :
 
 ```bash
-python -m src.cli run-youtube "playlists/nom-de-la-playlist"
+./runyoutube "playlists/nom-de-la-playlist"
 ```
 
 Tester une seule vidéo d’une playlist locale :
 
 ```bash
-python -m src.cli run-youtube "playlists/nom-de-la-playlist" --limit 1
+./runyoutube "playlists/nom-de-la-playlist" --limit 1
 ```
 
 Tester seulement les 2 premières vidéos d’une playlist YouTube :
 
 ```bash
-python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --limit 2
+./runyoutube "https://youtube.com/playlist?list=..." --limit 2
 ```
 
 Reprendre un job :
 
 ```bash
-python -m src.cli run-youtube "https://youtube.com/playlist?list=..." --resume
+./runyoutube "https://youtube.com/playlist?list=..." --resume
 ```
 
 Écraser un output existant :
 
 ```bash
-python -m src.cli run-youtube "playlists/nom-de-la-playlist" --overwrite
+./runyoutube "playlists/nom-de-la-playlist" --overwrite
 ```
 
 ## Batch URLs
@@ -164,7 +164,7 @@ input/youtube/urls.txt
 Puis lancer :
 
 ```bash
-python -m src.cli video-batch --file input/youtube/urls.txt
+./runyoutube --file input/youtube/urls.txt
 ```
 
 ## Cleanup
@@ -173,6 +173,12 @@ python -m src.cli video-batch --file input/youtube/urls.txt
 python -m src.cli cleanup --cache
 python -m src.cli cleanup --all-temp
 python -m src.cli cleanup --outputs --older-than 7
+```
+
+## Aide Rapide
+
+```bash
+./runhelp
 ```
 
 ## Résultats
