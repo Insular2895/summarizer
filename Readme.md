@@ -271,6 +271,104 @@ Le pipeline ne supprime jamais `input/` sans confirmation explicite.
 
 ---
 
+## Évolutions Envisagées
+
+La V1 reste locale-first. Les évolutions suivantes sont prévues comme options, sans remplacer les commandes simples actuelles.
+
+### Docker robuste
+
+Objectif : fournir un environnement reproductible quand une machine locale a des problèmes de dépendances PDF/OCR.
+
+Mode visé :
+
+```bash
+./summarizer-docker
+./runpdf-docker "input/pdf/mon-livre.pdf"
+./runyoutube-docker "https://youtube.com/playlist?list=..."
+```
+
+Le container monterait les dossiers locaux :
+
+```txt
+input/
+output/
+cache/
+prompts/
+.env
+```
+
+Avantage : Python, OCRmyPDF, Tesseract, Ghostscript, qpdf et les dépendances système seraient installés dans l'image Docker plutôt que sur la machine utilisateur.
+
+Compromis : l'image peut être lourde, plus longue à télécharger/build, et Docker Desktop reste nécessaire sur Mac.
+
+### Images Docker standard et heavy
+
+Pour éviter une image unique trop lourde :
+
+```txt
+Image standard
+- Python
+- dépendances du pipeline
+- yt-dlp
+- pypdf
+- OCRmyPDF
+- tesseract
+- ghostscript
+- qpdf
+
+Image heavy optionnelle
+- image standard
+- MinerU
+- Marker
+- modèles lourds éventuels
+```
+
+Le mode standard couvrirait la majorité des usages. Le mode heavy serait réservé aux PDF très complexes.
+
+### Mise à jour contrôlée
+
+Pas d'auto-update silencieux au lancement.
+
+Commande envisagée :
+
+```bash
+./update
+```
+
+Elle pourrait :
+
+- faire `git pull` ;
+- reconstruire l'image Docker avec `docker compose build --pull` ;
+- vérifier `.env` ;
+- vérifier les moteurs PDF ;
+- ne jamais toucher à `input/` ni `output/`.
+
+### Cloud plus tard
+
+Vercel seul n'est pas adapté au coeur du pipeline, car les traitements PDF/OCR/playlists sont longs et lourds.
+
+Options plus adaptées :
+
+- VPS + Docker pour un serveur privé simple ;
+- Cloud Run / Fly.io / Railway pour exécuter un container ;
+- Vercel uniquement plus tard pour une interface web légère ;
+- worker séparé pour les jobs longs si une vraie app cloud est créée.
+
+Architecture cloud possible plus tard :
+
+```txt
+Frontend
+  -> upload PDF / URL playlist
+  -> job queue
+  -> worker Docker
+  -> Gemini
+  -> stockage output
+```
+
+Pour l'instant, la priorité reste : local simple, Docker en plan robuste, cloud en V2.
+
+---
+
 ## Qualité Et Sécurité
 
 ```bash
