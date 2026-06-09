@@ -1,0 +1,467 @@
+[music]
+On April 24, a developer that
+most people in crypto don't
+really know dropped a
+tweet that had the effect of a small
+bombshell.  His name is Paul Stort and what he
+announced was that he was going to, and I
+quote, "force Bitcoin."  In short, create a
+copy of Bitcoin with a new name, a
+new project and a
+free distribution to all current
+BTC holders.  So far, there's nothing very
+original; Bitcoin has already been hacked
+dozens of times.  Most of these
+attempts ended up in the great
+graveyard of forgotten cryptos.  Except that
+this time, there's one detail that's
+troubling.  To finance its project,
+Storts decided to tap into the
+most sacred wallet in all of
+crypto, that of Satoshi Nakamoto.  More
+than half a million Bitcoins that have been dormant
+for 15 years will be redistributed on
+the new chain.  So, who is this
+guy and what does he propose?  And will that
+really double your
+Bitcoin holdings?  Well, that's
+exactly what we're going to see in this
+video because you'll see, there's
+a greater danger to nuts than
+actually seems.  To understand what
+Storts is going to do, you first need to understand
+what a fork is.  Bitcoin
+is fundamentally a software, an open
+source software, which means that its code
+is public, readable by everyone and
+copyable by anyone.
+Theoretically, anyone can
+download the Bitcoin code,
+copy it, change three lines and launch
+their own crypto.  It's already been done
+many times.  Like Litecoin for
+example, basically it's a fork of
+Bitcoin and there are plenty of others.
+However, having the code is one thing,
+having a working crypto
+is another.  For a blockchain to
+truly exist, two
+ingredients are necessary.  There are already people
+running the software on their
+computers, called nodes,
+and miners who dedicate
+computing power to securing the
+network and validating transactions.  Without
+them, there is no one to keep the
+record and without minors, anyone
+can rewrite history.  In any case, that's what's
+happening for
+proof-of-work cryptos, and that's what
+interests us today.  A fork
+is when a part of the network decides
+one fine morning to follow
+different rules.  The chain splits in
+two.  From the block where the split
+takes place, two versions of the blockchain
+coexist and continue to grow on
+their own.  There are actually two types
+of fork.  Firstly, a soft fork
+is a change that is compatible with
+the old software, meaning that the
+old nodes continue to work
+even with the new rules.  And the
+hard fork represents a clean break.  The
+two channels become incompatible and
+users must choose
+sides.  This is the type of force
+Storts is preparing, and this is where the trouble
+begins.  The new chain inherits
+the history of transactions and
+balances, but it must rebuild from
+scratch user trust,
+developer attention,
+exchange support, and above all, the
+mining power that secures the
+network.  Without it, she becomes an
+easy target for attacks.  Its price
+collapses and the project dies within a
+few months.  History is full
+of examples.  Bitcoin Cash in 2017 remains pretty
+much the only fork to have truly
+survived and still not a copy of
+the original.  All the others eventually
+died.  Forking
+Bitcoin is technically very simple,
+but successfully forking it is a whole different ball game
+.  Well, Paul Storts is not just
+anyone.  In the small world of
+Bitcoin developers, he has been a
+familiar figure for over 10 years.  He
+runs a company called Layer to
+Labs which is dedicated to building
+secondary layers on Bitcoin.  And
+before that, he spent years
+developing Truf Coin, a
+decentralized predictive market project.  But his
+real obsession since 2015 is a
+concept he has dubbed Drive
+Chains.  This is a way to add
+scalability and functionality to
+Bitcoin without touching the
+base layer.  On paper, it looks like a
+miracle solution, but in practice,
+Storts spent a decade
+trying to get it adopted without success.
+He formalized his proposal in 2017
+in the BIP 300. A BP is
+the equivalent of a bill for
+Bitcoin.  This is an official format for
+proposing a modification to the protocol
+submitted to the developer community.
+Strots also added the BP 301 in 2019
+and since then, well, he's been waiting.  Except that the
+main developers of Bitcoin, those
+who maintain the official version
+of the software called Bitcoin Core,
+never wanted to integrate these
+proposals.  Rejection after rejection, Strots
+has made a specialty of criticizing
+what he calls dev capture.  According to
+him, a handful of developers
+are holding Bitcoin hostage.  It blocks
+any major development and prevents the
+network from adapting to the times.
+After 10 years of frustration, he
+finally concluded that if Bitcoin
+Core didn't want his ideas, he
+would simply create his own
+Bitcoin.  The announcement was posted on X and immediately
+picked up by all
+crypto media outlets.  The project is called ICH.
+The meeting is set for block
+number 964000, which roughly corresponds
+to August 21, 2026 on the
+Bitcoin calendar.  At that precise moment, the chain
+will split in two.  And the name is
+already causing debate because Icash is a
+theme that has already been used several
+times in crypto.  There is the
+ICash protocol by David Chum in the 90s
+for example which is considered
+today as one of the
+founding pairs of cryptography.  There
+is already an altcoin called ICash with
+the ticker XEC which came from a Bitcoin
+Cash forg in 2020 and so on.  And Stort
+knows that very well.  He simply bought the .com
+domain and he stands by the name,
+saying that other uses don't
+bother him.  From a
+technical standpoint, ICASH is almost a carbon copy
+of Bitcoin Corpe.  Same
+mining algorithm, same
+block structure, same history preserved until the
+fateful block.  And in August, as soon as the
+blockchain splits in two, all
+Bitcoin holders will
+automatically receive the same amount in ICH.
+For example, if you have 0.3 Bitcoin on the
+day of the hardfk, you will also have 0.3
+in e-cash.  You can then
+sell them, keep them, or ignore them
+completely.  However, be aware that it must be
+self-
+custody.  For exchanges, it will be on a
+case-by-case basis.  And that's convenient, since we're
+talking about self-custody, let me
+make a brief digression about Ledger,
+the partner of this video.  Ledger
+are the French champions of Hardware
+Wallets and they have just launched a
+promotion until Sunday.  The principle is
+simple: for each device purchased through
+our link, you will receive a bonus in
+Bitcoin included in the box.  $10
+BTC on the nano S+, $20 on the
+nano X, $30 on the brand new
+nano Genè 5, $70 on the Flex and
+$80 on the STX.  This offer is
+not available on Ledger's public website;
+it is only available via our link.
+So if you were planning to equip yourself to
+properly secure your cryptos, now is
+probably the right time.  So don't
+hesitate any longer, I'll put the link in the
+description.  Okay, back to the video.
+Ik will start with a
+deliberately very low mining difficulty in order to
+encourage miners.  But what
+makes Ikash really different from
+Bitcoin is what will be grafted onto it
+from day one, the famous drive
+chains.  A drive chain is a
+secondary chain connected to the
+main chain on which one can take advantage of
+features absent from
+basic Bitcoin.  The unique feature of the Stort model
+is the way in which these drive chains
+are secured.  They will use a
+mechanism called
+merge mining.  In other words, the same miners
+who secure the main ICH chain
+also secure the secondary chains in parallel and without
+expending more energy
+.  This is what will
+theoretically allow for a multiplication of
+functionalities without diluting security.
+Sep drive chains have already been
+announced for launch.  The
+stated ambition on the official website is to
+eventually accommodate 8 billion
+users.  Let's be clear, this is
+pure and simple marketing.  No blockchain
+in the world comes close to such a figure.
+But it gives an idea of ​​the ambition that
+Stort wants to give to its project.  But
+then, why is he doing this now?
+Why in this form?  Well, for
+him, Bitcoin is fixed.  The
+base layer is no longer changing and the Lightning
+Network, this second-
+layer solution that was supposed to solve the problem
+of Bitcoin's scalability, has not lived up to
+its promises, at least according to
+him.  In 2017, the Bitcoin ecosystem was
+betting on Lightning.  Today, 9
+years later, adoption remains
+marginal.  The user experience is
+complicated and the volumes are low
+compared to the initial promise.
+Having personally tested it
+thoroughly, we can't fault it on
+one thing.  Lightning is very
+impressive and super ingenious, but
+for the general public, it's incredibly
+complicated to use in a
+completely sovereign way.  That
+was the original goal.  His thesis is
+that users want
+features and if Bitcoin does not
+offer them, they will continue to
+look for them on Ethereum, Solana and
+any other blockchain.
+So, a decision must be made.  So why
+a hard fork rather than a more consensual soft fork
+in this case?  Well, because a
+soft fork would require the agreement of the
+Bitcoin Core developer, and that
+agreement will never come.  And Stort
+accepted it.  He prefers to bypass
+everyone and create his own
+playing field rather than continue talking
+to a wall.  So why an airdrop
+rather than a new token sold via ICO
+?  Well, to immediately give ICH
+a base of millions of holders and
+a legitimacy that no new project
+can buy with advertising.  All
+Bitcoin holders
+automatically become IK cash holders
+whether they want to or not.  The schedule he has
+set for himself is tight.  The forx market is around the
+end of August.  The code will be
+frozen 30 days in advance and several
+bug bounty programs are planned
+during the summer for stress testing.
+On paper, the idea has real
+technical coherence.  However, to
+finance all of this, Stort made a
+choice that caused a large part
+of the Bitcoin community to jump for joy.  The ICA project
+needs money, lots of money.
+We need to pay developers, we need to
+finance set drive chains, we need to
+run the infrastructure, we need to
+attract partners.  The solution
+chosen by Storts is anything but ordinary.
+On the new ICH chain, the bitcoins
+associated with Satoshi Nakamoto will be
+reassigned.  So, not all of them a priori,
+but around 500 to 600,000 bitcoins out of
+the million he would have mined at the time.
+These coins can be identified thanks to what is
+called the patoshi mining pattern.
+I already mentioned this in this
+video.  It is a very
+particular signature left in the first
+Bitcoin blocks by a single
+miner who most likely corresponds
+to Satoshi himself.  These Bitcoins haven't
+moved at all in 15 years.  They sleep
+untouched like a sacred relic of
+protocol, if you will.  To make sure
+you understand correctly, on the
+original Bitcoin chain, nothing
+changes.  Nobody touches Satoshi's corner
+.  He stays exactly where they
+are.  The reassignment only concerns
+the new ICA chain where these same
+addresses will be emptied from the start
+to redistribute the funds to
+investors and developers of the project.
+Several Bitcoin developers have
+accused Storts of outright theft,
+even though technically no Bitcoin is
+stolen.  Here, the argument is
+not accounting-based, it is moral.  If we
+accept that a fork can reassign
+Satoshi's coins under the pretext that it is
+dormant, what will prevent
+another project tomorrow from reassigning those of
+any inactive wallet?  Stort is
+opening Pandora's box and
+beyond the controversy, there are also
+serious technical objections.
+Some have publicly dismantled the
+drive chains.  The central argument is
+that the Storts model gives far
+too much power to miners.  If a
+majority of the network's computing power
+agrees, it can
+potentially divert funds
+locked on secondary chains.  A
+risk that is classically called a
+51% attack but transposed to a new
+context.  For Cashu developer
+Stors, he is simply throwing a
+tantrum.  Another
+sensitive point is replay protection,
+which is the mechanism that prevents a
+transaction signed on one channel from being
+fraudulently replayed on the other.
+So, pay close attention for 2 minutes because
+this could directly concern you.  I'll
+try to keep it simple.
+Mechanically, a valid transaction
+on one chain is
+also valid on the other provided that
+the UTXOs used predate the
+fork.  To try and simplify as much as possible,
+this means that if you move a BTC
+on the Bitcoin blockchain, the same
+transaction could be rebroadcast on
+ICH without your consent.  And the reverse is
+also true.  Without Replay Protection,
+Bitcoin holders risk
+accidentally losing coins by moving their
+EC and vice versa.  Stort made the
+deliberate choice not to implement this
+protection because,
+according to him, it is a lever to force exchanges to
+list.  Because in reality, the worst enemy
+of a fork isn't really the code,
+it's the indifference of the exchanges.  If
+the major exchanges refuse to list
+cash, the project is doomed.  No
+liquidity, no market price, no
+adoption.  Most forgotten Bitcoin forks
+died that way.  And the
+exchanges in 2026, they are more
+cautious than before.  Listing a fork involves
+technical work,
+regulatory risks, customer support to
+manage, and often little revenue to be gained
+.  His logic is that he wants to put
+the exchanges in a legally delicate position
+.  Because when
+users make
+BTC withdrawals, it will also generate
+e-cash transactions.  They will be
+accidental but as a result, from a
+legal standpoint, it puts the exchanges in a bit of a
+bind, and so it's a way to
+force them to manage and list ICH.   Keep in mind
+that even Bitcoin Cash
+implemented this protection in 2017.  It's
+not that we don't know how to do it, we know how to do it very
+well.  It's a deliberate choice,
+as I said; it's a kind of
+blackmail against the entire industry.  So there's no need to
+worry.  If you
+want to avoid problems, it's
+simple.  Simply don't touch your ICA
+.  Don't move them, don't
+sell them, don't touch them.  In this
+way, a replay attack becomes
+impossible.  And then the big novelty
+of this fork, the one that
+radically distinguishes it from Bitcoin Cash, is that
+Bitcoin is no longer a matter for
+isolated geeks.  As I speak,
+US spot ETFs
+alone hold more than one million Bitcoins.
+Strategies, Sailor's company,
+alone holds more than 800,000.
+Add to that the other
+listed companies, the funds, the state treasuries,
+all that.  And what are
+these giants going to do in the face of a Diash airdrop?
+Will they claim it and
+risk having to manage a
+controversial asset that will need to be justified
+to shareholders, or will they
+sell it immediately,
+creating a massive selling wave
+on IC from its first day of trading
+?  Or will they ignore it
+and explain to the same shareholders
+why they refused a free asset
+that was potentially worth billions
+?  ETF prospectuses
+already provide for specific treatment of
+forked assets, but no line has ever been
+tested on this scale.
+Wall Street compliance departments are watching this
+closely.  This is the
+first time a Bitcoin force has
+arrived in a world where Bitcoin is
+owned by BlackRock, Fidéity, or
+S&P 500 companies. The
+only question that really matters remains.
+Will ICH truly exist, or will it
+join the graveyard of
+forgotten Forques?  Well, nobody knows anything about it, and
+Storts has an advantage that
+previous forks didn't have.  A
+technically sound project, side chains
+already in advanced development, and a
+clear vision.  But he has history against him
+, a large part of the
+Bitcoin community and a moral choice that is
+causing friction even within his
+own camp.  By the end of
+August, we will know if the Bitcoin fork with
+Satoshi's coins was a stroke of
+genius or the latest bad idea from a
+developer who never knew how to let
+go.  Of course, we will keep you
+informed about all of this on our
+Telegram news channel.  So, feel free
+to join us.  We summarize
+all the latest crypto news live, and it
+really saves a lot of time.   Don't hesitate
+to also check out
+Cara's adventures on
+Steady Lads and also check out the
+offers from Ledger, the partner of this
+video.  I've put all the links in the
+description as usual.  So,
+tell me in the comments what you're
+going to do with this ICH, I'm interested.
+Also, let me know if you have any ideas
+for topics for future videos.  And until then,
+we'll see you next time.  Bye
+!
+[music]
+[music]
+Oh.

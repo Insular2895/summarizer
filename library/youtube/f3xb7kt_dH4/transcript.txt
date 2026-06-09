@@ -1,0 +1,59 @@
+what is Docker compose it's a tool that
+makes it a breeze for developers to
+Define and run multicontainer Docker
+applications imagine you're building a
+complex app that needs a web server and
+a database let's walk through what we'd
+have to manage and set
+[Music]
+up without Docker compose you'd be
+typing in multiple commands to get each
+of these containers up and running for
+every service needed to run your
+application for instance you'd start
+with something like Docker run for your
+database adding in all those flags and
+parameters for ports volumes and
+networks again diving back into the
+terminal typing another lengthy Docker
+run command with even more parameters to
+ensure that it runs your nodejs app this
+process can be very error prone as there
+is more potential for typos or mistakes
+that could send you back to square one
+enter Docker compose with Docker compose
+you define your multicontainer setup in
+a single yaml file that's right one file
+you outline which images to user build
+the ports the volumes and how these
+containers should talk to one another
+configurations for services are defined
+in a composed. yml file which uses yaml
+syntax a service definition in Docker
+compose tells Docker how to run a
+specific container based on an image
+incl including configurations like ports
+volumes environment variables and
+dependencies on other services with just
+a simple Docker compose up D and build
+flag command Docker compose gets to work
+bringing your entire application to life
+seamlessly no more juggling multiple
+Docker run commands no more fear of
+typos throwing a wrench in your setup
+and when you're done you can simply run
+Docker compose down to tear it all down
+Docker comp posst not only simplifies
+the development process but also ensures
+consistency across environments making
+it a beloved tool among developers
+whether you're working on complex
+applications or just starting out Docker
+compose makes container management a
+piece of cake for your next steps I
+invite you to practice using Docker
+compose there's a walkthrough on the
+page linked in the description to guide
+you through all the steps you need to
+run a simple app with all of its
+dependencies using docker compon POS

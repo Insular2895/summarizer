@@ -1,0 +1,287 @@
+in this video I'm gonna show you the
+syntax and the contents of kubernetes
+configuration file which is the main
+tool for creating and configuring
+components in kubernetes cluster if
+you've seen large configuration files it
+might seem overwhelming but in reality
+it's pretty simple and intuitive and
+also very logically structured so let's
+go through it step by step
+[Music]
+so here I have examples of a deployment
+and service configuration files side by
+side so the first thing is that every
+configuration file in kubernetes has
+three parts the first part is where the
+metadata of that component that you're
+creating resides in one of the metadata
+is obviously name of the component
+itself the second part in the
+configuration file is specification so
+each components configuration file will
+have a specification where you basically
+put every kind of configuration that you
+want to apply for that component the
+first two lines here is you see is just
+declaring what you want to create here
+we are creating deployment and here
+we're creating this service and this is
+basically you have to look up for each
+component there's a different API
+version so now inside of the
+specification part obviously the
+attributes will be specific to the kind
+of a component that you're creating so
+deployment will have its own attributes
+that only apply for deployment and the
+service will have its own stuff but I
+said there are three parts of a
+configuration file and we just see
+metadata and specification so where's
+the third part so the third part will be
+a status but it's going to be
+automatically generated and edit by
+kubernetes so the way it works is that
+commodities will always compare what is
+a desired State and what is the actual
+State or the status of that component
+and if the status and desired state do
+not match then kubernetes knows there's
+something to be fixed there so it's
+going to try to fix it and this is the
+basis of the self-healing feature that
+kubernetes provides for example here you
+specify you want to replicas of nginx
+deployment so when you apply this when
+you actually create the deployment using
+this configuration file that's what
+apply means Cabrera's will
+adhere the status of your deployment and
+it will update that states continuously
+so for example if a status at some point
+will say just one replica isn't running
+then communities will compare that
+status with the specification and we'll
+know there is a problem there and other
+replicas needs to be created ASAP now
+another interesting question here is
+where does communities actually get that
+status data to automatically adhere or
+update continuously that information
+comes from the HCD remember the cluster
+brain one of the master processes that
+actually stores the cluster data so it's
+indi holds at any time the current
+status of any community's component and
+that's where the status information
+comes from
+so as you see the format of the
+configuration files is yem oh that's why
+the extension here and generally it's
+pretty straightforward to understand
+it's a very simple format but yeah Mel
+is very strict about the indentations so
+for example if you have something
+wrongly indented here your file will be
+invalid so what I do especially if I
+have a configuration file that has 200
+lines it's pretty long I usually use
+some yellow online validator to see
+where I need to fix that but other than
+that it's pretty simple
+another thing is where do you actually
+store those configuration files a usual
+practice is to store them with your code
+because since the deployment and service
+is gonna be applied to your application
+it's a good practice to store these
+configuration files in your application
+code so usually it will be part of the
+whole infrastructure as code concept or
+you can also have its own git repository
+just for the configuration files
+so in the previous video I showed you
+that deployments manage the pots that
+are below them so whenever you edit
+something in a deployment it kind of
+cascades down to all the ports that it
+manages and whenever you want to create
+some pots you would actually create a
+deployment and it will take care of the
+rest
+so how does this happen or where is this
+whole thing defined in the configuration
+so here in the specification part of a
+deployment you see a template and if I
+expended you see the template also has
+its own metadata and specification so
+it's basically a configuration file
+inside of a configuration file and the
+reason for it is that this configuration
+applies to a pod support should have its
+own configuration inside of deployments
+configuration file and that's how all
+the deployments will be defined and this
+is going to be the blueprints for a pot
+like which image it should be based on
+which port it should open what is going
+to be the name of a container etc
+so the way the connection is established
+is using labels and selectors so as you
+see metadata part contains the labels
+and the specification part contains
+selectors it's pretty simple
+in a metadata you give components like
+deployment or pod a key value pair and
+it could be any key value pair that you
+think of in this case we have App Engine
+X and that label just sticks to that
+component so we give parts created using
+this blueprint label App Engine X and we
+tell the deployment to connect or to
+match all the labels with App Engine X
+to create that connection so this way
+deployment will know which parts belong
+to him now deployment has its own label
+App Engine X and these two labels are
+used by the service selector so in the
+specification of a service we define a
+selector which basically makes a
+connection between the service and the
+deployment or it spots because service
+must know which pods are kind of
+registered with it so which pods belong
+to that service and that connection is
+made through the selector of the label
+and we're gonna see that in a demo so
+another thing that must be configured in
+the service and part is the ports so if
+I expand this I see that service has its
+ports configuration and the container
+inside of a pod is obviously running or
+needs to run it's important so how this
+is configured is basically Service has a
+port where the service itself is
+accessible at so if either service sends
+a request to nginx service here it needs
+to send it on port
+but the service needs to know - which
+part
+it should forward the request but also
+at which port is that poor listening and
+that is the target port so this one
+should match the container port and with
+that we have our deployment and service
+basic configurations done and to note
+here most of these attributes that you
+see here in both parts are required so
+this will actually be the minimum
+configuration for deployment and service
+so once we have those files let's
+actually apply them or create components
+using them so let's head over to the
+console and here I'm gonna create both
+deployment and service so cube city I'll
+apply connects deployment create it and
+nginx service so now if I get the pods I
+see two replicas are running because
+that's how I define it here and we have
+our service as well which is engineer
+service this is a default service it's
+always there this is the one we created
+and it's listening on port 80 as we
+specified now how can we validate that
+the service has the right pots that it
+forwards the request to we can do it
+using cube CTL describe service and the
+service name and here you see the end
+points where you have all this status
+information here like things that we
+define in the configuration like a
+selector etc we have the target port
+that we define and we have the endpoints
+here and this must be the IP addresses
+end ports of the pots that the service
+must forward the request
+- so how do we know that these are the
+IP addresses of the right pots because
+we've keep city I'll get pod you don't
+get this information so the way we do it
+or way we find that out is using get pod
+and then you do - Oh which is four
+outputs and then we want more
+information so Oh wide and here we see
+more columns here so we have the name
+and status ready etc but we also have
+the IP address so here is the IP address
+endpoint specified here and this is the
+other one so we know that the service
+has right endpoints so now let's see the
+third part of the configuration file
+which is a status that kubernetes
+automatically generated and the way to
+do it is we can get the employment nginx
+deployment in a yellow format so when I
+execute this command I will get the
+resulting or the updated configuration
+of my deployment which actually resides
+in the HDD because HDD stores the status
+of the whole cluster including every
+component so if I do this I'll get the
+yellow output in my console but I want
+it in the file so I'm gonna save it into
+nginx the employment result and I'm
+gonna save it there and I'm gonna open
+it in my editor next to the original one
+so as you see a lot of stuff has been
+added but let's just see the status part
+so all this is automatically added and
+updated constantly by kubernetes so it
+says how many replicas are running what
+the state of those replicas and some
+other information so this part can also
+be helpful when debugging so that's the
+status but also if you noticed other
+stuff has been added in the metadata and
+specification part as well so for
+example creation timestamp when was the
+component created is automatically
+edited by kubernetes because it is a
+metadata some unique ID etc you don't
+have to care about it and in the
+specification part it just adds some
+defaults for that component but again
+you don't have to care understand most
+of these attributes but one thing to
+note here is that if you for example
+want to copy a deployment that you
+already have using maybe automated
+scripts you will have to remove and get
+rid of most of this generated stuff so
+you have to clean that deployment
+configuration file first and then you
+can create another deployment from that
+blueprint configuration so that's it
+with this video so from now on we're
+going to be working with the
+configuration files so for example if I
+want to delete the deployment and the
+service I can do it using that file
+configuration file is well using delete
+and like this the deployment will be
+gone and I can do the same for service
+alright so using cube city I'll apply
+and cube city I'll delete you can
+basically work with the configuration
+files thanks for watching the video I
+hope it was helpful and if it was don't
+forget to like it this is a video series
+so I will create a new one every week so
+if you want to be notified whenever a
+new video comes out then subscribe to my
+channel if you have any questions if
+something wasn't clear in the video
+please post them in a comment section
+below and I will try to answer them so
+thank you and see you in the next video

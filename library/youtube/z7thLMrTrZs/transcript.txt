@@ -1,0 +1,55 @@
+you can do some really clever things
+with default parameters of generics and
+they can really help tidy up really
+complicated looking generic signatures
+here we've got an object where what we
+want to do is we want to extract the
+values of the keys that start with a
+from this object and so this union it's
+looking at the a a2 a3 just here and if
+i change this to foo for example it's
+extracting the values of those keys that
+start with a but it's a pretty messy
+type signature because there's quite a
+bit of duplication here here we're
+extracting the key of the object and
+we're saying we only want those keys
+that have
+basically start with a in them and then
+we return the part of the object that
+corresponds to that key and here we're
+also doing it a second time right
+because we need to then map over the
+object in order to
+pull those values out
+so we can do something about this and
+reduce the duplication by kind of saving
+it to a local variable and you might
+think where on earth would i save it
+here
+well you can stick it inside the default
+parameters of a new private generic so
+if i call this extracted keys here you
+can see this is yelling at me because it
+requires two type parameters but if i
+give it a default type parameter here i
+can actually pass extract in there
+and now we've got our keys all extracted
+already
+so what we can do is we can now get rid
+of these
+and we can name them extracted keys
+instead now there's an error going on
+here because extracted keys it says is
+not assignable to type string or number
+or blah blah blah that's because it
+takes the value from the type of this
+generic here so if we add to it and we
+say it extends a key of obj
+then it starts working because we say
+okay this extracted keys extends the key
+of the object
+sorry my cats are fighting
+and then we can just start using it here
+so this is now much easier to read and
+our union still stays the same

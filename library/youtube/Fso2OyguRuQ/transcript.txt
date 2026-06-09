@@ -1,0 +1,872 @@
+[Music]
+good afternoon
+um harnessing the power of event-driven
+systems that's of course a a title that
+you can
+you can basically talk about anything uh
+and and i guess my abstract was just
+uh two uh two sentences more so i'm
+i'm guessing that a lot of you have
+different expectations of what you're
+going to see in the
+in the talk if you have any questions
+don't hesitate to
+to drop them at the at the end so my
+name is aler bauzer i'm the founder and
+cto of aksonic and i started a journey
+around 11 years ago to
+basically experiment a bit with cqs and
+event sourcing
+and domain driven design and you could
+say that that is a little hobby that
+got out of control and three years ago
+three and a half years ago
+i uh i founded axonic and right now we
+are a team of
+of 30 building software to make event
+driven systems more
+approachable or accessible to uh
+to the to the masses i would say but
+before that
+i want to go back a few uh well a few
+years
+two days maybe a few minutes depending
+on on your background but
+there was a time where um it was a
+really good
+idea or it was the best practice to
+build
+a um a so-called layered architecture
+in inside the applications and
+the uh the layered architecture started
+uh in in the in the 70s more or less
+where
+we had specific problems that we needed
+we needed to tackle
+and i saw this uh this really nice uh
+picture from from ted neward who
+who explains that as a box box cylinder
+architecture and basically
+uh the data is in a cylinder but you
+don't want to access that data directly
+so you have a
+box of logic and that box of logic then
+doesn't access it directly either
+so you put a box in between and of
+course there's lots of jokes out there
+where
+if you have a problem that's too complex
+for two boxes you just add another box
+and another one and another one
+and just add more layers
+unfortunately this is still a pretty
+dominant architectural style nowadays
+even though the
+um the type of problems that we're
+trying to solve
+is is not the same to say the least
+as it was in the in the 70s
+and a lot of these uh these projects and
+basically these monolithic
+projects that we've built um they turn
+out
+to become something that in domain
+driven design we call
+a big ball of mud and as you can see on
+the picture it's not really mud
+but as any big ball of mud there's
+always an architect
+and defending its creation and really
+proud of what it has created
+really unable to see what it really
+really is
+but the idea of the big ball of mud is
+that the the internal structure is lost
+to a degree where
+you can only really add more mud to it
+and that might sound familiar
+fast forward a few years from the 70s
+then is of course microservices to the
+rescue right microservices is the answer
+to
+any problem you have um um
+well except that it doesn't solve many
+of those problems and it brings
+out its its own set of problems
+and i was a few a few months ago i read
+a very interesting uh article
+well interesting in the uh i would say
+the british sense of the world like
+interesting where
+they described a certain way to
+architect microservices that
+sounded extremely familiar when you go
+back a few slides
+um and basically what you would have is
+well you you make the
+big problem you turn it into a lot of
+small problems and then they're easier
+to solve
+right that's the idea the the the big
+idea of microservices and then you can
+you can change those uh those components
+more easily
+at least that's the that's the promise
+but if you look at every service there
+are small
+box box cylinder uh type applications in
+in in many cases they own uh they have
+their own database so we're trying
+we're solving the same problem again but
+now on a smaller scale
+and then we let all of these services
+communicate with each other
+to solve the big problem altogether and
+there's something to say about it
+except that in many implementations that
+i've seen
+and definitely in the in the years
+before i i started axonic
+is that a lot of these implementations
+turned out to really look like that
+so there are services that are
+responsible for
+let's say the states they're the entity
+services they have this concept of a
+customer and you can make modifications
+but you don't want to make modifications
+directly to the customer so
+you will have an api around it
+and then some other services that are
+conceptually in that middle box
+they provide some some business logic
+and the services on the left
+in the left virtual box they are the
+uh backend for front-end type type
+services
+right so still there's this layer
+architecture that seems to
+want to fight its way back into the into
+the architectural style even though
+we're going for microservices
+and of course i'm exaggerating slightly
+uh and then generalizing there's there's
+different variations but i've seen this
+more than more than once
+so what we've really done is we've taken
+the practices that give
+us a big ball of mud and we've increased
+the number of deployment units
+and that's amazing and then what you get
+is a distributed
+big bowl of mud otherwise known as a
+pile of
+something and what we should be
+should be doing instead is increase the
+modularity
+and i have to agree that on a powerpoint
+slide that is very easy all you need to
+do is use boxes and happy colors
+and that's it of course in practice it's
+slightly more complex than that
+but we'll get to that a little bit later
+and as soon as we have better modularity
+then we can think about increasing the
+number of deployment units
+but getting that modularity right first
+is very very very important
+unfortunately if it was just as easy as
+this
+we would all be building modular modular
+applications or modular monoliths
+and and extracting components out of
+those and deploying them as
+microservices
+out there there's a lot of
+anti-modularity forces
+there's a lot of choices we make that
+basically drive the mother modularity
+down and and
+something we have to to fight against it
+is not a trivial
+uh battle that we need to to fight
+and in that battle the word events pops
+up
+quite a lot and events are
+are very powerful they can do a lot of
+things
+but there's also a lot of things they
+cannot do
+which are still attributed to them
+now the concept of an event is fairly
+simple what if you have two services
+and one service does something and
+another
+service needs to do something as a
+result of the first service
+taking its action right so service a
+let's say
+changes or receives a request to change
+the name of a customer
+whatsoever um it can notify certain
+server c
+of that change and it can just do a call
+to server c
+the problem is if it's not just server c
+but as the
+application evolves it is also service b
+and d
+that need to know that we need to change
+the logic
+in service a to also call these other
+services
+right and this creates a lot of
+dependencies between these
+these different services and this is
+where events can be very useful right so
+instead
+a service can emit an event and then the
+other uh the services b
+c and d can just watch those uh what
+whatever topic or queue
+these uh these events are placed on and
+then uh respond accordingly
+right this is a fairly common
+pattern and i don't feel that i need to
+to explain it in
+in too much detail however from the
+arrows you can already see that the
+thing that really happened was
+dependencies were inverted
+right now it's the services watching a
+space where the other services
+is placing something instead of services
+and directly interacting with each other
+now if we take this and then look at how
+we can
+improve our microservices deployments
+basically what we get is this
+right we put a service bus in the middle
+and now all these services instead of
+directly interacting with each other
+they can just interact with a an event
+bus in the middle
+and this is very um again very powerful
+but it does not solve the problems that
+are very often
+attributed to the solution like there's
+no dependencies that disappear
+dependencies between services don't
+disappear
+they're now much more difficult to uh
+to see and they're inverted but they're
+still there
+and and again i've seen examples where
+you can still put the box box cylinder
+uh concepts behind those services
+because the services still have the same
+responsibilities but their form of
+communication just changed
+so the promise with these uh that are
+very often attributed to those uh
+those events is that well if you want to
+be cloud native if you want to be
+reactive you just
+you have to use events right well that
+might be true but it doesn't mean that
+by using events you suddenly become
+cloud native or reactive or whatever
+whatever it is that you're looking for
+it is one of the tools in the toolbox
+but you have to be very careful when to
+use that tool and when not to
+another thing is events give you
+location transparency
+well true to some extent i mean by
+publishing an event
+and by you don't know where the
+consumers are you don't know when they
+consume it
+and that's fine so yes it can give you
+location transparency
+but it can also give you a very awkward
+coupling as we'll see in
+a second evolutionary architecture is
+also something yeah you can just evolve
+your your system by adding new
+components that react on those events
+and you don't need to change existing
+components again
+it's it's one of these promises
+and the last one is well if you just
+publish events you can always reuse
+those event streams later on
+you can always build a new component
+that goes back in time
+and as long as you just keep those
+events around
+then you'll be able to to stream them to
+a component that was deployed after
+the actual first events have been have
+been emitted
+and these are all promises and yes they
+are to some extent delivered by events
+but we have to be careful to not
+assume that by using events we get those
+we get those promises right away
+because the picture that we get is very
+often like a
+travel agency brochure right it always
+looks beautiful
+in this case there's a nice picture of a
+sort of a jungle environment
+and a beautiful waterfall
+you can just feel the serenity this is
+what 2020 needs right
+unfortunately what you get when you go
+there
+is well the little details and the
+little details are the really annoying
+things that you'll encounter
+but you'll never read about in advance
+and i'm not going to pick all of them
+but just a few
+that that i really want to to warn you
+about and
+in many systems what i've what i've seen
+is that events are considered a side
+effect
+right they're not the system is not
+designed around events they call it
+event driven but it's not
+driven by events it's driven by other
+things by requests and states
+and then events are just emitted as a as
+a side effect from those
+from from whatever happens whatever
+state changes are made
+um cdc change data capture is one of
+those examples like
+well we just use cdc to emit events
+right well that's not event driven
+that's events as a side effect and it's
+not per se a bad thing
+but there are some um
+some aspects to to to be careful about
+and one of them is if you have events as
+a side effect how can you guarantee that
+those events are correct
+how can you guarantee that there every
+change you made to a system is correctly
+represented as an event
+and everything that is represented as an
+event is correctly
+um accepted or or
+accommodated as a change in the system
+as well right it's that two-way problem
+and that is quite quite hard to to do
+and as any side effect in your system
+any afterthought that you have
+like you've designed for example this
+this layered architecture style
+application which is very state driven
+if you start doing events as
+on top of that it will add complexity
+and
+anything you do that was not accounted
+for in the beginning will add complexity
+to your
+to your architecture and that might be
+very doable in the beginning but as
+applications evolve that complexity just
+might
+get more and get higher and higher um
+and with the results that you
+uh the development of new features slows
+down
+there's something else about those
+events uh that i'd really like to
+uh to talk about and there's always
+things that happen in a system or the
+way we talk about a system
+what happens especially when we talk to
+non-technical people
+and the information that the system
+actually stores and remembers
+right the things that apparently we as
+developers
+tend to care about and they differ quite
+a bit so
+if we look at what happens it's well an
+order was created and i apologize for
+the
+lousy uh e-commerce kind of example but
+i guess they're uh they're easy enough
+to uh to just use in
+in a presentation so what we store is
+well we've got an order
+with identifier one two three and it's a
+waiting con confirmation
+because that's the initial state
+apparently and then we added two items
+in this case um some chairs
+and that's a 798 euros and then we
+remove a chair and as you can see on the
+right the information we store is
+that we just have this order which is a
+waiting confirmation for one
+chair which is technically correct
+because that's what we are trying to get
+confirmed at this point
+but it's not the whole history we have
+already deleted some information
+that might be interesting
+uh might be valuable even so the uh
+order is confirmed and the status
+changes and as more events or as more
+things happen
+i gave it away i guess but as more
+things happen
+we update the status and the uh and
+the information we store but the actual
+interesting information is on the left
+it is what happened in the application
+right that's what gives us a lot of
+information whereas on the right is
+maybe a nice summary
+for for some people but we have lost
+a lot of information on on that side
+so i always start questioning why do we
+store the
+part of the information that is less
+relevant
+than what happened right so why don't we
+just store what happened and this
+is really the concept that event
+sourcing is about this is the thing that
+event sourcing is about
+is about not storing the current state
+of things
+but storing how we got to that state
+and i would like to emphasize that it is
+not about data dealt ads
+but about capturing really what happened
+describing what happened and make sure
+you remember that
+and as a result you can calculate what
+the current state of the system is
+we all know what the status of an order
+is given that flow that we had earlier
+but i'd like to express the uh event
+sourcing as the way for an application
+to capture the truth the whole truth and
+nothing but the truth
+to make sure that everything that
+happens gets captured as an event
+and everything that is captured as an
+event is actually something that
+happened
+so if it's not in the in the events it
+just didn't happen
+period end of discussion right and
+that's something that event sourcing can
+give you
+when we go back to um to some of the
+challenges with uh with events
+then i really want to warn you for uh
+for awkward coupling right there there
+is going to be coupling no matter what
+you do
+there has to be some form of
+communication between two components
+because they need to exchange
+information
+in one way or another right so we just
+need to accept
+that that coupling between these two
+components will be there
+but the question is how do we want that
+coupling to
+to manifest itself and events are very
+powerful but they invert dependencies
+right so now it's suddenly the consumers
+that need to be aware of the producers
+and
+uh producing a certain message whereas
+the producer is not responsible anymore
+for knowing who is consuming the message
+right
+and it's also a dependency that is
+slightly obfuscated because it's
+it becomes more difficult to find
+basically to put your finger
+maybe you remember from the good old
+days where
+programming was about finding the the
+top
+left part of a script and just
+with your finger you could just follow
+the entire process of the application
+with events you can't do that anymore
+when as soon as you publish an event
+where wherever that event goes becomes
+really obscure
+and you might need to use tools to to
+find out where
+where these dependencies are which
+applications are actually consuming that
+event and what are they doing with it
+it becomes harder to track not
+problematic but it's something to be
+aware of
+and also communication in terms of
+events
+becomes really awkward you can try it at
+home right just
+just emit facts it will probably won't
+last more than an hour
+and and whoever else is in the home will
+probably go crazy
+right if you you can't just shout i'm
+thirsty and just wait
+for for a drink to show up right it
+doesn't work like that communication
+does not work like that
+in between humans and i seriously doubt
+it should work like that
+in in systems as well
+and that's because when we talk about
+messaging while we give events so much
+attention they are definitely not the
+only type of message
+conceptually that should flow between
+components
+i started experimenting with with
+different uh
+types of messages and i've uh
+fortunately because of conferences met
+other people that are also that did a
+similar thing
+and we came back down to the same
+conclusion
+there's essentially three categories of
+messages
+and events is is one of them and events
+follow a pops up
+pattern right an event describes a
+certain facts something that happened
+something that's in the past
+that cannot be changed anyway so i might
+as well let you know
+and then you can do whatever you like
+based on the on the knowledge
+that the event carries but sometimes you
+want to communicate
+because you have an intent to change
+something and
+that's a command and commands are
+typically routed to a single destination
+and there might be some form of
+acknowledgement or confirmation
+from that command that yes we have uh
+executed what you asked for
+or or something like that right
+the other thing is if you have a need
+for information you want to ask a
+question
+so you have a need for information you
+can you can send a message
+to uh either to a component or have some
+some
+routing mechanism routed for you
+but the the value of that communication
+is in the answer that you get
+and there's different patterns that you
+have you have what we call
+point-to-point it's where you have a
+single destination answer the question
+and you've got the answer but in some
+cases you want to do a scatter gather
+which is very typical at conferences you
+ask a question when you're on stage you
+get multiple answers
+you gather the answers and you do sort
+of a reduction and say oh yeah half of
+them know about cqrs or
+or something like that right those are
+different styles of
+uh of queries that you can you can think
+of
+but the most important is that we should
+not confuse
+eventing and messaging an event is just
+an example of a message
+and it is a very powerful building block
+but is not the only one
+and when you use those three different
+styles of messaging
+um explicitly and and you're aware of
+your of your choice
+when uh when you choose what that is
+when you can achieve
+true location transparency then it
+doesn't matter anymore
+which weather components are all
+deployed in the same
+units as the the little box on the left
+right we have all uh all colors in the
+same box so that's our monolithic
+deployment
+um it doesn't matter as long as the the
+queries that we have or the commands or
+the events that we send they can just be
+published within that component
+but then we can extract the component
+and start deploying it separately and as
+long as we make sure that these messages
+are then transported across
+deployable units then they can still
+communicate and of course there's a bit
+remoting in place so we have to be
+careful
+how we design the apis on those uh on
+those messaging systems
+that they are aware of potential
+remoting
+and then you can you can evolve as you
+as you go on
+so really the the journey towards
+microservices should not be
+oh let's uh let's go from an idea that
+we have
+straight into okay this is the solution
+that we want to build these are the
+different services that we need
+let's deploy them all separately and and
+see where we end up
+i've seen unfortunately too many
+startups with a great idea
+fail on all the technical complexity
+that they
+they force onto themselves
+because they have to deal with all of
+the problems at day one
+right and very often they you you
+digress you find out that oh the service
+boundaries weren't quite right
+and before you know you end up in that
+big distributed big ball of mud
+type of type of system so instead we
+should really focus
+on building that structured monolith
+first
+right it gives us much more ability to
+learn about the different
+let's say sub boundaries of our of our
+systems our boundaries
+of our subsystems whatever you want
+and it makes it easier to refactor those
+and then as we start learning about our
+system and start finding out what the
+non-functionals are
+that we need to to cope with then we can
+start extracting components
+and we can extract components for which
+it becomes important to do so
+instead of upfront we thought of five
+components we separate
+all five but now we can separate them
+based on the non-functional requirements
+that we have
+and then we can evolve as we as we go
+and that sounds all very easy but of
+course we all know that there's
+technical complexity involved with doing
+that right
+rule number one of distributed systems
+is don't
+and it's it's don't for a reason because
+of the
+the complexity so delivery
+guarantees become very important
+suddenly within a single deployable
+units we would probably just have an
+in-process communication
+um and well delivering
+a method invocation is not particularly
+difficult but it does become difficult
+as soon as you need to cross
+a boundary of a of a process
+so delivery guarantees become important
+do you want at least once at most once
+those are basically your options right
+the timeliness when do you deliver those
+messages do you deliver them in the same
+order
+that they were dispatched how that's
+that's fairly uh fairly complex
+how to deal with error handling right
+things will go wrong
+how do you deal with those this is not
+an afterthought this is something you
+want to take on from the very beginning
+um and then when you have these messages
+how are you going to evolve them
+and as soon as the publisher wants to
+change the shape of a message
+how are you going to make sure that the
+consumer doesn't choke
+on that modified message structure
+and how do you prevent the publisher
+from choking by having to maintain all
+the
+versions and formats of these
+of these messages now that we
+we have this promise of event sourcing
+um
+how can we trigger replays how can we
+effectively do those replays for
+all those historic events there's
+potentially millions or in some cases
+billions of events how can we replay
+those how is that even
+uh pragmatic thing to do
+i'm going to keep it really short
+because of obviously of of time
+um but there's tools out there right
+there's a lot of
+uh so we we started around 11 years
+ourselves but we are noticing that
+the there's a very rich ecosystem around
+um you know event driven systems for
+event sourcing for concepts like cqrs
+and ddd
+so i would definitely recommend you know
+don't don't stick
+for too long on on the things that
+you've known and that you've always done
+right we've always built systems like
+that and it's kind of works so we might
+as well do the next one the same way
+make sure you keep your eyes open for
+new tools and new methods that are
+that are out there but in the same time
+we also need to make sure
+that we have the discipline to use those
+tools correctly
+and also the discipline to not use them
+when appropriate
+sometimes a tool is really cool to use
+but you really shouldn't
+just in case you you haven't seen this
+one this is a um
+a scene from the movie the karate kid uh
+in uh i think it was from
+from 84. i don't know how many times
+i've seen that
+that movie back in the days but there
+was one scene that
+um i just associated directly with
+discipline
+and it's the wax off wax off scene so
+the little boy there
+daniel he wants to learn karate and
+the gentleman mr miyagi is trying to
+teach him that
+and he says well you go wax my car first
+right wax on wax off
+and the whole idea was to build the
+discipline and the or the muscle memory
+in this case
+to uh to make sure that he got the
+movements right
+and this is the basic tool that he
+needed essentially to
+uh to win the heart of some some girl in
+school uh because it's uh
+of course in an american movie uh from
+the 80s so that's what's
+uh what the goal was but there's a big
+analogy with with
+software engineering sometimes we have
+to learn those annoying basics
+to make sure that we
+we get the thing done right
+and some of the practices that are that
+are now emerging
+are well they go back to the design
+phase
+right there's that's where a lot of
+things still unfortunately go wrong
+um so there's a practice of domain
+driven design which i can really
+recommend
+uh reading into if you haven't done so
+already that's
+a book of by by eric evans written in
+but i think it is more relevant right
+now than it was in 2003
+right and the relevance is only
+increasing as microservices
+and distributed systems become more
+prevalent but there's there's also some
+design practices that really take those
+events
+into account and start designing
+applications starting at events but
+definitely not stopping there so you'll
+see the commands and the queries in
+there as well
+and two of those are event storming and
+event modeling
+looking at slightly different
+aspects of the system event storming
+being very suitable for
+exploring systems especially if you're
+if you're doing a big picture
+uh exploration event storming is a very
+good way to find out what a system
+should do
+and taking into account that a system is
+broader than just the i.t part of it
+it's also about the human interaction
+with the system and
+even the human parts of a system
+whereas event modeling is much more
+about the the it part of the system
+looking at how to to design user
+interfaces how to ask for information
+where that information comes from which
+occurrences of events
+influence those uis essentially
+so in closing beware of coupling
+right events are a solution they're a
+way of
+easing that coupling inverting the
+dependencies but don't always use that
+consider commands and queries as much
+as you would use events so every time
+you see an event-driven system
+rather think about a message driven
+systems where yes we have events but
+there's definitely not only events
+and microservices are a journey and i'm
+not the first one to say it and i won't
+be the last one to say it
+but it is definitely a journey an
+interesting journey a challenging
+journey but it should start with
+a monolith and most important
+make sure to uh
+to bring on the discipline and if you if
+you have the discipline
+to do things right you'll see that the
+tools that you need to
+use emerge quite naturally
+and that i guess is not a pure
+coincidence
+if you want to know more there's uh well
+there's a bit of time left for
+for q a and otherwise here's a few uh
+free of references that you can
+you can use

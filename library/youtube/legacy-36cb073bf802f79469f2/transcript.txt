@@ -1,0 +1,351 @@
+hello and welcome to our webinar today
+on is the initial margin documentation
+focusing on the regime table and
+strictest of rules this is part of a
+series of webinars that is des is doing
+on recently published initial margin
+documentation my name is Mark nu I'm
+senior counsel for the Americas at is
+des and I'm joined today by Ryan Pitino
+who is a partner at T Glen hunt so why
+do we use the approach of regimes in
+these initial margin documents
+well this recognizes a couple of
+features of the initial margin
+regulations first of all the
+documentation is typically required to
+allow the parties to collect and post
+the initial margin that they are
+required to collect and post under the
+applicable regulations so one of the
+tasks for the documentation is to take
+those regulatory requirements and turn
+them into contractual rights and
+obligations so in a sense an approach
+could be to simply say that the parties
+will comply with applicable law however
+that wouldn't be a very clear statement
+of the rights and obligations of the
+parties under the contract and so it's
+desirable to provide some additional
+specificity but on the other hand in
+particular because the initial margin
+requirements have a cross-border element
+and so it's quite possible that more
+than one initial margin regime could
+apply to a counterparty pairing it could
+become very complicated to draft out all
+of the specific terms that the parties
+might need or be allowed to have in
+order to comply with any particular
+combination of initial margin
+requirements so the approach that's
+embodied in the documents is a sort of a
+middle approach between those two
+extremes where the parties specify the
+regimes in the documentation
+that will apply to that relationship but
+then the specific requirements are then
+dictated by the regulatory content of
+those regimes and that will determine as
+we will see things like the transactions
+that are covered under that csa and for
+example the the haircuts or the minimum
+haircuts that have to be applied to
+collateral posted as initial margin so
+this gives specificity as to which
+regimes rules are included within the
+contractual framework and essentially
+converted into contractual rights and
+obligations and it also in the csa
+contains rules that govern the
+interaction of multiple sets of margin
+requirements where the parties are
+subject to multiple regimes and in
+today's presentation we're going to be
+looking at how the parties can specify
+those regimes and what some of the
+consequences are under the documents of
+specifying those regimes in your CSA so
+that's why I want to say in terms of a
+background Ryan I'll hand over to you
+start talking about how we complete the
+regime table thanks mark
+so I'll jump right in as Mark mentioned
+the this is a completely new concept
+that is included in the IMC essay this
+regime table doesn't exist in other is
+there published documentation and the
+idea behind this is to complete the
+regime table to specify those regimes
+that apply to a particular counterparty
+pairing so quite simply what we would be
+doing is determining which regimes apply
+and specifying them as applicable or not
+applicable now under many of the
+regime's there are obligations to both
+collect initial margin and post initial
+margin and so you see that
+reflected in these two columns one
+dealing with party a is a secured party
+so dealing with their obligation to
+collect and party B's obligation to post
+and also in the other column that talks
+about party B is the secured party and
+its obligation to collect and party a's
+obligation to post now just to avoid any
+confusion the way the intro is drafted
+may suggest that you would only be
+specifying those regimes to which you
+are directly subject as a secured party
+but that's not in fact the case you
+would want to specify the regimes that
+apply to both the posting and collecting
+obligations of either one or both of the
+parties now take for instance a swap
+dealer who is subject to CFTC margin
+rules under the CFTC margin rules they
+have both an obligation to collect
+initial margin and post initial margin
+but a financial end-user is not directly
+subject to those rules so they would not
+have any direct obligations under the
+regulations nevertheless in that
+situation where the CFTC margin rules
+apply you would want to specify CFTC as
+applicable in both columns so there's
+various regimes that are included here
+if the parties were interested in
+additional regimes they might want to
+consult with legal counsel because
+analysis was done across these regimes
+that they're generally certain
+principles that apply across the board
+and therefore you know these regimes can
+simply be turned on or turned off
+without changing too much throughout the
+rest of the credit support annex the
+regimes that are included are near the
+u.s. rules Canadian Switzerland Japanese
+Australia and Hong Kong and Singapore
+margin rules
+now in the US we've included here the
+Prudential Regulation with the CFTC
+regulations and also the SEC regulations
+and some my query why the SEC
+regulations have been included when they
+have not yet been finalized
+well this Agreement is designed to be
+somewhat future-proofed
+and so under general principle BB
+lowercase BB the way this would work is
+even if you specified the SEC rules as
+applicable to the particular
+counterparty pairing those rules would
+not apply until the relevant effective
+date of the party's obligations to post
+and collect under those rules so you
+could specify the NCC margin rules as
+applicable to the relevant counterparty
+turning but they wouldn't go into effect
+obviously until those rules are
+finalized
+one other thing to tie this all out
+since we are in some cases saying that
+certain rules apply even where a party
+is not directly subject to those rules
+there is a disclaimer in this
+introductory paragraphs basically saying
+that this specifying whether or not a
+particular regime is applicable is not
+actually a representation or an
+admission that the parties actually
+regulated under that margin regime and I
+think that's critical to completing this
+table there's no parties wouldn't want
+to have any sort of liability or
+potential for and have been default just
+by specifying a regime as applicable
+when it may or may may not be applicable
+so this is essentially just a
+contractual agreement to apply certain
+regimes and as Mark mentioned and which
+we'll get into later these regimes once
+specified tie into how initial margin is
+calculated and how certain other
+calculations are made onto the CSA okay
+so the next thing to be decided in the
+regime table
+is whether the parties are going to
+specify a sim exception as applicable in
+respect of a regime so just to give you
+a little bit of background on what this
+sim exception is referring to the
+initial margin regulations require
+parties to to calculate their initial
+margin on the basis of either a model
+that meets the regulatory requirements
+or on the basis of specified standard
+percentages of notional known as grids
+sim or the is de sim is initial margin
+model that was developed by is de for
+the purposes of the initial margin
+requirements and has been broadly
+adopted and so there is embedded in the
+is the document an assumption that the
+parties will be using sim to calculate
+their initial margin amount but if the
+parties want to use the grid method for
+a particular regime then they can do
+that by specifying a sim exception as
+applicable and if they do that they may
+want to add some additional information
+for example they may be using the
+standard grids only for certain types of
+transactions as opposed to all
+transactions for the particular regime
+but as I said if the parties simply
+specified that the same exception isn't
+not applicable then that means that sim
+is going to be used to determine the
+initial margin amount for the trades
+subject to the particular regime there
+are also a couple of fallback points
+here relating to sim and these recognize
+that in some regimes it is possible that
+whilst the model may be used
+at some point in time that ability to
+use the model might be removed in which
+case the parties would need to decide
+how they will deal with that under their
+documentation in particular the parties
+could include a fallback to mandatory
+method election and that means that if a
+party notifies the other party that the
+regime requires the grid to be used for
+the types of transactions that are
+relevant then it can unilaterally switch
+from the is the sim to the grid
+another alternative exception is to
+elect that the mandatory method will
+apply for a particular regime and that
+simply means that the grid will apply
+instead of sim or that regime just to
+fill out the picture here one last point
+we make is that whilst the regimes will
+typically be filled out in full for both
+collecting and posting obligations in
+the way that Ryan described earlier it
+is possible that the parties may be
+subject or become subject to a
+regulatory requirement to post that they
+didn't include in the regime table and
+in this case there is general principle
+D D which provides that if a pledge or
+is obligated to post under an initial
+margin regulation that's not specified
+as a regime in the table then the
+secured party will use reasonable
+endeavors to accommodate pledge rules
+requests to post the additional amount
+required and Marquette I would just
+highlight to the group that the default
+really here and the agreement amongst
+the working group was that Tim should be
+the applicable method for calculating
+initial margin its
+much less costly than utilizing the grid
+and that's why this chart has been you
+know drafted in this manner that you're
+really looking for some exception where
+it wouldn't work to utilize the sim
+either for regulatory purposes or for
+some other reason but that's why the
+default is to have sim reply when you
+specify a particular regime as
+applicable okay
+now I wanted to talk a little bit about
+this concept of the strictest of which
+mark alluded to earlier and we've
+mentioned already a couple of general
+principles but a lot of I should just
+note that a lot of the ways in which the
+grid that I should say the regime table
+is designed to work is that the the
+regime table is very simple but all the
+operative provisions are built into
+these general principles and one of the
+general principles in calculating the
+margin amount I am the initial margin
+that's required is based on this
+strictest of principle so to the extent
+that multiple regimes apply to a
+particular counterparty pairing then you
+would want to look across all of those
+regimes to see which is the most onerous
+to satisfy and so this plays out in a
+few different provisions one for the
+margin amount I am as I mentioned so you
+would look across the various regimes
+and determine which regime has
+essentially the highest initial margin
+requirement and to the extent that each
+of those regimes were to apply sim then
+you would just be looking across sim and
+the various versions of sim that apply
+with respect to the relevant regime
+and so each I have approved a different
+version of sim and those calculations
+might be different under each of those
+versions there's also the possibility
+that under one regime you'd specified
+sim and I'm never another regime you'd
+specify grid and in all likelihood it
+would probably be the grid that would be
+the higher amount and so that amount
+would be the amount that would be
+included as the margin amount I am for
+purposes of the CSA similar principles
+would apply across valuation percentage
+and the FX haircut and for valuation
+percentage since that is calculated as a
+percentage of the value of a particular
+asset that's posted as collateral in
+that case you would be looking at the
+lowest valuation percentage that's
+permitted under the various regimes for
+the FX haircut percentage the strictest
+would essentially be the highest so
+whichever regime had the highest FX
+haircut percentage a percent in the
+United States for instance so the way
+this is designed to work from a
+documentation standpoint is that the
+parties would actually agree in a
+schedule either schedule to this CSA or
+schedule to the relevant account control
+agreement where the initial margin is
+segregated they would specify all of
+those valuation percentages and effects
+haircut percentages and those
+percentages whatever was agreed between
+the parties would be subject to these
+regulatory requirements of the various
+regimes so to the extent that the regime
+had something that was more strict than
+what was agreed between the parties then
+that would be overridden that stricter
+requirement would override what
+in the agreed schedule between the
+parties so that brings us to the end of
+our description of the regime table the
+regimes the parties can specify and how
+they are used in the documents I'd like
+to thank Ryan very much for presenting
+with me today if you have any further
+questions regarding this presentation or
+is this initial margin documentation
+please do contact us you can see an
+email address to use on your screen and
+with that we will close there for today
+thank you very much for listening

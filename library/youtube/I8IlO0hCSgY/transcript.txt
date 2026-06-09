@@ -1,0 +1,445 @@
+what is going on guys my name is hussain
+and i'd like to discuss this thing
+optimistic
+versus pessimistic concurrency
+control it's a very interesting thing
+and uh
+the web is filled with confusing uh
+articles about this topic so i'd like to
+go to back to the basics because
+this channel is all about the basics
+it's all about the fundamentals
+it's all about the bass bass bass bass
+bass all about that bass that bad bass
+no trouble so yeah we're going to talk
+about
+the fundamentals of of optimistic
+concurrency control notice that i didn't
+use the word locks here
+okay because it's it's it's a
+it's a cash 22 and it's really an
+oxymoron to use locks with optimistic
+controls so let's talk about that and
+explain why i don't think it's a good
+idea
+what it is first why do we need it and
+how do we jump into it let's define for
+uh let's verify just for the english
+word
+optimism versus pessimism
+right or optimistic versus pessimism you
+can skip this part if you don't want to
+but
+i'd like to start there because as a
+non-english
+speaker it's very important for me to
+understand this war in order to actually
+know what's the next thing because
+otherwise it's just a tech war that we
+don't link it with the real world
+so the idea of
+pessimistic let's take an example let's
+say it's a
+it's a cloudy weather which is beautiful
+i love cardiovascular
+but you you want to go out to the park
+however you don't know if it's going to
+rain or not
+so the the pessimistic approach
+is to take an umbrella just in case
+however right
+it's gonna cost you right because taking
+an umbrella with you it's gonna little
+bit of inconvenience so you have to
+carry this stupid umbrella with you all
+the time which is like well
+right so that's the pessimistic look
+it's like you're so
+you you're you're you're essentially uh
+pessimistic of the scenarios like oh
+it's gonna happen so you
+you take the worst case that is gonna
+happen the the
+the optimistic approach is jerusalem one
+i have a feeling that is not gonna rain
+so i'm not gonna look like an idiot and
+i'm not gonna take the umbrella with me
+so and as a result
+worst case scenario i'm gonna run to my
+car or i'll buy an umbrella so
+and this is my philosophy in life it's
+just like yeah
+anything it was like anything i just
+haven't i'll deal with it when it
+happens
+i'm not gonna take uh extra precautions
+or
+anything like that no it's there
+or i mean just throw in the umbrella and
+uh in the car and
+get it over with her but this is the
+idea guys so let's uh
+let's move to a databases when it comes
+to optimistic concurrency controls and
+and pessimistic concurrency control
+so this is specifically when you have a
+database that is centralized and you
+have
+two transactions cons
+or multiple transactions trying to
+access the same row
+right reading is not really much of a
+problem
+however if one transaction is writing
+and the other transaction is
+reading then how do you
+know what do you exactly you want here
+do you want this transaction to write
+first and then
+this transaction will read this change
+or
+do you want this time constant to read
+to always read the consistent
+uh row and then when no matter what this
+change is happening i shouldn't see
+these changes right
+so this is referred to as isolation
+levels
+where every transaction has almost like
+a a scope
+right of things that it can see it says
+okay
+i i started this transaction and these
+values now won
+and even if someone else changed that
+value while i
+am in the transaction and doing my own
+stuff i didn't end the transaction
+i should always see the value of one
+now you can argue with whether the other
+party of the other transaction actually
+changed the value and committed
+do you want to see committed value do
+you want to see dirty values
+do you not want to see anything at all
+so that is the idea of concurrency
+control so
+there are a lot of questions what do you
+do right
+and and as a result take a simple
+example where
+two transactions are actually writing at
+the same time right
+both of them and we talked about this in
+the double booking problem
+check it out right here so how do you
+prevent
+uh two people booking the same seat in
+the cinema we actually built something
+similar like that right so
+so check out the video where you
+actually prevent it so what do you do
+right if if two
+two transactions read the seats and
+both of them at the same time said oh
+the seat is available and the same
+both of them at the same time droid okay
+let's book the seat so in this case you
+will have double booking problem
+and essentially this applies to banking
+applies to all of stuff
+what do we do let's talk about the
+pessimistic control uh
+concurrency control says when uh uh
+a transaction it's attempting to update
+it needs to essentially to
+to achieve this pessimistic control
+concurrency control or pcc
+i don't think it's called pcs yeah it's
+all pieces then
+it acquires an exclusive lock an
+exclusive lock we talked about that
+check those stuff it means yo
+people i am now owning this
+nobody should read it nobody should
+update it nobody
+don't touch this because i am in the
+middle of updating them
+and when i say middle this is maybe
+microseconds or milliseconds
+very small amount of time talking about
+very small amount of time
+but it's enough to to cause a little bit
+of congestion
+so aquatic explosive lock so if if that
+transaction came at the same time try to
+read that roses
+going to be posed that why because we're
+we're
+we're pessimistic right we're we're
+really don't don't trust anything i'm
+taking my umbrella babe
+i'm taking it with me because i'm don't
+want to look like an
+idiot so we'll take that stuff and then
+the transaction will just go and it
+doesn't stuff maybe other stuff
+and then update and then once that
+transaction goes
+out of the scope what the heck does that
+mean it means
+meh i'm done commit or me
+something happened a primary constraint
+go out of of scope and then roll back
+that is when the lock is released and
+this transaction
+is still waiting and then once it sees
+the
+the lock is gone it will unlock and
+start reading and guess what
+when you start reading in this case the
+row or the value or the seat or the or
+the cinema or
+booking system or the balance or
+anything it's going to see the latest
+value
+and this is what you want in this case
+right that's what we want because we
+want
+we want only one to update at the sensor
+so now you're getting always a serialize
+a nice
+serialized view right so all this
+transaction came after you
+and then you're gonna do all things this
+is the pessimistic approach which i love
+i like i like i like to be uh
+when it comes to databases not much in
+real life
+right so i like i like to take my
+cultures when it comes to databases like
+yeah let's take a look
+what's worse can happen what's the bad
+thing about this
+well you guessed it these locks might
+not be
+much right in raw locks especially
+not with two transactions but imagine
+hundreds of thousand transactions right
+trying to update the same role now our
+question i will question your data model
+and database design in this case
+like why the hell in so many
+transactions updating the same role
+right
+that's that's a database design question
+which uh
+so you start yelling at the dba here who
+designed the database
+in a way an application so that all this
+transaction acquiring the same role
+i doubt that this should happen but
+again there's so many things optimistic
+control is not solution for everything
+you have to think
+right why are we have three million
+transactions are calling the same role
+that shouldn't happen right so hey
+you have to be a little bit pragmatic
+when it comes to the programmatic
+programmer
+is this book it's really good just
+way of thinking all right so that's the
+the optimist
+the pessimistic yeah obviously if you
+have the scenario it's gonna go
+slow you're gonna get poses and and
+the user experience will not be as great
+so
+meet the optimistic concurrency control
+where it says uh
+let's not take the umbrella with us
+let's just let them run with each other
+so let both of these guys take
+the same seat right let them read
+so they don't read let's say this is the
+seat i wanna book
+both of them read the same seat and says
+oh it is available
+right so go ahead and read it okay and
+the next thing is
+go and update that and when it's update
+right it says and this is this is going
+to update
+at the end of the transaction you as
+you are you is you are responsible to
+check
+is the value that i just read changed
+if it if it didn't change then nobody
+actually
+changed something beneath me right so
+you're good
+but if it did change you are responsible
+to just
+the trash the trash the
+uh the row or the transaction and start
+over and that's what i don't like about
+optimistic control right if you have
+this
+restarting behavior i'd rather pause
+and get the correct result you you see
+where i'm going with this right
+i always have an a bias towards
+something but
+you as as an engineer you get to decide
+and you get to
+to kind of argue with it and then have a
+discussion this is what's
+all about nothing there's no right or
+wrong in software engineering
+guys we all make decisions we all think
+and it
+all depends it all depends on what
+you're trying to do
+don't don't be afraid of voicing your
+opinion
+call everyone out call me out i don't
+care
+because we just learn so yeah so both of
+them
+will come that and and essentially if
+the value change we are all back
+how does this is implemented so many
+implementation for it
+one implementation is uh as essentially
+application level and uh implementation
+where
+the application itself says um okay
+i'm gonna read this now right and then
+i'm gonna start
+doing my own thing and if of when i'm
+i'm
+i'm gonna uh before i want to update it
+i'm gonna read it again
+did the value change so you need at
+least
+read committed isolation level to do
+that right otherwise you you'll not see
+the outside war
+so now if that changed
+right then you're responsible to abort
+the transaction
+right that's that's the idea here all
+right so you always check this
+before that that's that's however very
+flawed
+because there is there is this thing
+that is i forgot what it's called but
+essentially
+i'm going to put it in the screen
+essentially the moment you read
+how do you between the moment you read
+and you write this
+little bit of a small millisecond
+that transaction could have another
+transaction could have come
+and updated your stuff so you can even
+trust this thing
+so that's another a problem on the
+optimistic control comparison control
+so so there's a lot of ways that you can
+do this
+at the database level right where you
+you will just leave the database to do
+the optimistic
+concurrency control for you i know
+there's a lot of application
+orns and stuff like that that does that
+for you i don't know how
+personally they work right if but to me
+if it's at the application level there
+is
+this uh uh the chance
+where uh let me actually google that
+yeah it is called
+time of check to time of use t-o-c-t-o-u
+right you're checking between the
+checking and
+between using someone could have sneaked
+in and actually
+did that that's why locks are great
+right with optimistic
+currency control yeah you don't have
+locks
+that's the trick optimistic concurrency
+controller should not have locks
+that's why the idea of optimistic lock
+is very confusing to me right it says
+wait a second what locks are you talking
+about right
+but it's a it's it's a it's a it's an
+application level
+lock think about this way right so
+essentially
+if that changed right let's say you read
+the value and then
+before you start writing obtain the
+value read it again
+see if it changes and if it changes you
+don't trust it you roll back with an
+error saying optimistic lock error
+that's some
+googling from googling i notice these
+errors coming up optimistic lock error
+again this is i don't recall any
+database
+doing such thing all databases don't
+have
+a concept of optimistic lock
+they have optimistic concurrency control
+uh
+now this is another thing i'm not sure
+about right
+you can do uh an a a serialized
+serializable level at the postgres where
+you essentially when when both
+transactions come in
+you check the version at the beginning
+of the transaction and check the version
+of the raw at the at the end of
+transaction and and fail
+when the version actually changes right
+this is actually
+again a very deep discussion topic i
+possibly can discuss
+all of all of this stuff in 15 minutes
+but i thought i gotta
+make a vlog just just to discuss this
+out loud and get your opinion with you
+guys that
+working with these kind of things what
+do you guys think i know some of you
+deal with these application level
+uh logs and and dealing with uh
+you know database level event sourcing
+and stuff like that uh
+let me know what do you guys think about
+this topic optimistic
+can concurrency control versus
+pessimistic concurrency control what are
+what do you prefer
+uh sometime the optimistic concurrency
+control can win
+if you don't really uh
+crave consistency so you can give up
+some consistency
+when it comes to this stuff yeah so
+databases don't
+just magically take care of that stuff
+you have to be responsible of acquiring
+the lock
+and doing all this sometimes this uh
+low-level stuff let me guys uh know what
+you think
+i'm gonna see you in the next one you
+guys stay awesome goodbye

@@ -1,0 +1,345 @@
+really excited to focus on performance
+measurement today. Uh this is the kind
+of vital niche function which looks at
+the single most important in investment
+management which is uh performance. When
+I speak to people in performance
+measurement, it it's rare that I maybe
+someone says you know they've had a
+lifelong dream to to work in performance
+measurement. It's uh it's often quite
+serendipitous how people wind up in the
+performance measurement function. I also
+view it as a bit of a secret way into
+Wall Street. Uh so uh I'm sure there'll
+be some good opinions on that in the
+conversation. So what does the future of
+performance measurement look like? Are
+the job shifting from develop to
+developing markets? I get that question
+a lot and uh and you know we had a a a
+conversation uh about uh this particular
+topic in San Diego and if you work in
+the performance world you know the
+answer and there's no doubt that the
+reliance on developing market has grown
+significantly over the years and I think
+the trend will continue uh uh over uh
+next few years uh and one of the clear
+advantage that the um the developing
+market has is a time zone differences.
+We're seeing more and more functions uh
+being distributed globally particularly
+routine reportings, reconciliations,
+controls which are increasingly
+centralized in a lower cost centers. So
+but the but at the same time I I really
+want to emphasize that the shift doesn't
+like it it's not diminishing the role in
+the develop market.
+>> It it it basically redefineses it. The
+future of performance in is going to be
+more strategic. Um and the automation
+and offshore support and uh uh and to
+take over the repeatable task and the
+the value add in for a develop market is
+from the oversight the interpretations
+and stakeholder engagement and
+translation of data into insight for the
+front office client and regulators. So
+in in my personal opinion I don't like I
+don't think it's a displacement of a job
+but it's the evolution because the this
+this model for the global asset manager
+is becoming more global more
+collaborative and more integrated with
+the business decision making.
+>> The audience is asking what skills
+should you focus on developing to work
+in performance measurement. is essential
+to focus on strong technical skills
+>> um and a solid understanding of the
+concepts behind what you're calculating.
+So on the technical side, mastering
+Excel is a must. I mean, you'll often be
+working with large and and sometimes
+messy data. So being comfortable with
+things like advanced formulas and pivot
+tables can improve how efficiently and
+accurately you work. Um, as you grow in
+the role, I think skills like SQL or
+even Python can help automate reporting
+or pulling in data from different
+sources.
+Um, while I don't see Excel going away
+anytime soon, um, there's real value in
+being open and curious about new tools.
+Maybe about 10 years ago, I was tasked
+when I was in industry with having to
+write a one or two page summary
+um
+on the drivers of the performance
+uh that would go to the board and the
+CEO
+uh every month. And that's not really
+something that a human being has to do
+anymore. Um AI can do that and it's and
+it and it's it's been done for a few
+years now. what is the transferability
+of skills from one asset class to
+another? Uh, for example, I run
+performance presume equity, but that
+likely won't allow me to get hired as a
+performance analyst or a fixed income
+manager.
+>> The transferability of skills is it's
+definitely a relevant question, and I
+think it's it's something that I think
+maybe some people um might struggle with
+a little bit when they're thinking
+about, hey, do I, you know, can I move
+from one asset class to another? Um,
+I've been in fixed income all my life.
+I've had those thoughts, too, right? um
+you know would that be a relevant uh
+thing for me to do? I think as as
+Jennifer mentioned, you know, in her her
+response, I think as long as you have
+the foundational knowledge of
+performance and and you understand the
+concepts of how uh what things drive
+returns um in one asset class, I think
+they're, you know, they're definitely
+relevant for different asset classes,
+whether you're going from equity to
+fixed income or you're going into the
+private markets, alter alternative
+assets. I think those skills are um you
+know, you know, knowing that financial
+knowledge will really help you in those
+roles. I think something I would
+recommend is if you're you're
+interviewing for that type of sit, you
+know, situation where you're trying to
+change um asset class or becoming, you
+know, in charge of a different asset
+class. I think it's important for you
+just to to be able to demonstrate that
+you understand that um and that you
+understand the new asset class and how
+that would translate to what you're
+doing today. I think that would give
+you, you know, the person that you're
+interviewing with, right? Um some good
+sense of of your knowledge of that. So
+yeah, I think it's for sure you you know
+you can take it across asset class and
+it gets a little bit maybe trickier on
+the attribution side. You might need to
+know a little bit more uh detailed
+information about the asset class
+specifically if you're trying to you
+know present attribution and and um in
+that situation. So but yeah I I think it
+it's definitely something that that can
+happen and really does happen often.
+What does an employer look for in a
+potential candidate for a performance
+management role assuming they have no
+prior experience?
+>> The answer is is has evolved over the
+past 8 to 10 years. Right? So I I you
+know if you were to ask this of me 10
+years ago, I would have a different
+answer. The the the typical you know way
+to get into it might have been okay,
+let's see, you know, someone has a math
+degree, maybe a finance degree, right?
+They've got some, you know, they've
+taken a couple classes on the markets,
+capital markets. They've got a a very
+naive foundation there that that's
+that's pretty good to start with. um on
+the soft side, you know, the soft skill
+type component of it. It's, you know, we
+look for people that are very
+inquisitive, people that have um are
+very critical, great skills from a
+critical thinking standpoint, uh the
+proactiveness and some, you know, you
+can ask questions and you can kind of
+get get an idea if someone would would
+be a good fit. Although it's it's hard
+to to kind of make a decision in one
+interview, but you know, you can you can
+kind of be guided there. Now that was
+let's say that that's 5 10 years ago
+where
+>> we are have evolved to today is the same
+soft skills are important right no
+matter what role we're looking to hire
+in I think in terms of the knowledge
+base that has tended to shifted a little
+bit more to the um you know the data the
+data science umbrella
+>> excuse me
+>> so what kind of fits under there right
+you know being able to analyze data
+programming um or or quering large data
+sets Jennifer alluded to that. Um, data
+visualization tools,
+>> machine learning, Excel, I mean, it's
+funny, Excel is the best performance
+system in the world, but it's it's not
+meant to be a performance system, but
+everybody use it for everything from
+from, you know, to-do lists all the way
+through, you know,
+all kinds of crazy macros and things
+like that. So that that's where our
+focus is really more has been more
+lately within the last few years on that
+data. You know, what is someone's
+experience? We're not even
+>> it's going to be hard to get someone
+with performance experience, especially
+coming out of school. They're not going
+to have that, right? That's fine. We
+look at our performance teams when we
+bring somebody on and we've got pretty
+strong regional performance teams where
+those teams can teach a new hire
+performance. and within the performance
+space those topics right ideally if they
+pursue a CIPM that's what we want people
+to do or the CFA designation you know
+they can get a better foundation there
+but we can teach the performance
+it's sometimes harder to teach the data
+analytics and and the querying data sets
+and things like that that's a little bit
+harder to teach
+>> Jennifer I'm curious what success
+stories you've seen over the years as
+someone lateraling into performance
+maybe as a second or third job uh after
+I have seen career changers come into
+the space. So people who came in from
+somewhere other than financial services.
+So Jeff mentioned you know looking at
+the the data analytics skills or the
+data scientists. I have seen individuals
+move in you know with a strong
+programming background and they can move
+into the performance measurement space
+with uh zero experience. Um because
+again you have that CIPM program or you
+have um mentors on staff. Um
+and I do think moving from fund
+accounting roles into performance people
+are very successful to Sherog's point.
+Um they already understand navs and cash
+flows and reconciliation.
+Um so learning return methodologies
+etc is sort of a natural next step. Um
+so I've seen I've seen very uh
+successful transit transitions from fund
+accounting roles. Uh I'd also say coming
+over from the operation side because say
+if you're doing trade settlement or
+reconciliation you understand how data
+flows through systems. So transitioning
+to performance, you can bring that that
+systems thinking um you're managing
+complexity and timeliness and and that's
+a good fit I think with with an ops
+background.
+>> Um
+>> Jeff mentioned you know the difference
+say between
+uh a system running holdings based
+attribution versus transactionbased
+attribution. you know, there's a
+difference there and the performance
+team is likely going to have to explain
+that. Um, and I've heard people say,
+well, we just kind of eyeball it. But if
+you have a good data grant, you you
+don't have to eyeball it. You can get in
+there and
+explain the difference down to, you
+know, a half the basis point.
+>> What are the typical ways into a
+performance measurement team at entry
+level? The performance measurement has
+become like increasingly uh specialized
+uh from today are typically looking for
+candidates who bring at least some
+foundational knowledge whether that's
+familiarity with the investment
+performance concepts or gib standards or
+general understanding of how data flows
+from one point to the other uh
+throughout the uh investment management
+life cycle. So for those who are
+interested in entry- levelvel roles
+often come from the adjacent functions
+like index operations, fund accounting
+uh client reporting these areas uh
+typically provides an excellent base uh
+because they expose you to the core data
+inputs like navs, pricing, transactions,
+how the correction happens, error
+corrections, the um
+um corporate actions uh uh uh how data
+recorded uh that feeds this information
+feeds directly into the performance
+calculations. So by just having the
+knowledge of the other data point it
+actually helping you to perform your job
+as a performance analyst player.
+>> In fact uh this was exactly my path. Uh
+so I started as a fund accountant where
+I was responsible for calculating a
+daily navs and doing a reconciliations
+throughout the fund. Um I was then given
+a few performance related tasks and and
+that's where my interest really sparked.
+Uh as I said my company decided to
+become a gibs compliant adopt a gib
+standard. So that was a natural
+transition into the performance. So, so
+initially to gain a deeper understanding
+uh
+and uh move fully into the performance
+so I pursued the CIPM designation and
+that actually helped me bridge the
+technical and analytical side of the
+role.
+>> So for those who are starting out, I
+recom I personally recommend that go
+close to the data.
+>> Yeah. understand the system that you're
+working with and uh like and and don't
+hesitate to pursue CIPM uh because it it
+it actually signals your commitment and
+your capability. You already have the
+knowledge of the other data that feeds
+into the performance. Now you just need
+a additional knowledge the technical
+knowledge of how as Jennifer Ped you uh
+the the concept of performance how like
+difference between IRRa when to use IR
+when to use TWWR the nuances of the GIP
+standard you know and there are some
+some things outside of the and uh and
+Jennifer would know that SEC marketing
+rule for example
+>> having those knowledge I think that that
+really helps So uh you don't have to
+have a performance background as long as
+you have some found like foundational
+level uh like foundations are clear you
+you know the how the data is moving from
+one system to the other uh in the
+compensation.

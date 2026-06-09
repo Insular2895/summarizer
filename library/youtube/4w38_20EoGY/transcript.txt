@@ -1,0 +1,46 @@
+[Music]
+hi
+this is nicole and abby from the
+technical account manager team and today
+to finish the tips and tricks videos on
+rgs and abm
+i'd like to speak about analyte span
+let's quickly go to the code to show you
+how to quickly add an analyzed span
+the main difference here compared to
+what we've seen in previous videos
+is a line 263 where we put analytics to
+true
+as always we want to add additional
+context and so we want to set up some
+additional attributes to our span
+go back to our application to generate
+some traffic
+then we can go back to the data doc
+platform to see what has changed
+if you go to a traditional flame graph
+we can see that the new
+user authorization span has been added
+however since it's not a root span none
+of the attributes can be made searchable
+if we now go to the analyze spans view
+we will see
+new spans as added called user
+authorization
+if you click on any of those we can see
+that
+the attributes can now be made
+searchable by creating a facet
+this could for instance help us to
+better understand and do some search
+about
+how a method is currently used we can
+also use this new created resource
+to have new statistics around total
+number of requests errors and latency
+wrong this could help you to create new
+search capabilities
+around the method and also get some
+statistics about utilization
+and performance of this method
+you

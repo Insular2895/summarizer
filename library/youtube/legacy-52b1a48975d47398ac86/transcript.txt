@@ -1,0 +1,1276 @@
+broadcast is now starting all attendees
+are in listen only
+[Music]
+mode good afternoon everyone or I guess
+good morning for those of you that are
+in the great state of Texas it's
+pleasure to have you here on this Texas
+Mor Mortgage Bankers Association webinar
+where I'll be chatting with Alex Massa
+of appraisal MC about appraisal bias and
+you what it is and what lenders and
+appraisers can do to manage the risk
+associated with appraisal bias for those
+of you that I haven't met my name is
+Lynn Wooley and I'm a managing director
+with risk EXC Alex would you like to
+introduce
+yourself Ellen thanks for having me I
+appreciate that uh Alex MSA I'm the CEO
+of appraisal MC we are an appraisal
+management company licensed in 38 States
+um one thing that I guess helps my
+credibility on on this
+particular um assignment here is that we
+are a minority owned Enterprise and um
+bias is obviously very important in our
+industry at the moment so glad I could
+jump in and and add some uh context to
+what's going
+on thanks Alex next slide please
+let's begin with just a little bit of a
+back background the discussion around
+appraisal bias really started with a few
+news stories about minority homeowners
+that were P primarily seeking
+refinance and had what they thought were
+low
+valuations and at on reappraisal
+after whitewashing so to speak the house
+received a higher value after that both
+of the gsse Freddy and Fanny next slide
+please did slightly different analyses
+looking for evidence of approval bias
+Freddy focused predominantly on
+refinance and they their approach was to
+take the appraisals that they had
+received to the results of a proprietary
+AVM model and they found that black
+borrowers tended to resle receive
+slightly lower apprais values than AVM
+values but white own homeowners
+especially white homeowners in majority
+minority
+neighborhood were more likely than black
+homeowners to receive overvalued
+appraisals and they defined
+overvalued as the appraisal amount was
+at least 10% higher than the AVM
+amount and they found that
+undervaluations were pretty similar in
+distribution across minority white and
+minor majority white and majority black
+neighborhoods and further Six States
+accounted for most of the overvaluations
+of white-owned homes in majority black
+neighborhoods Fanny's analysis focused
+on purchase money
+appraisals and they compared the
+appraisal value to the contract price
+value and they found that in majority
+black or majority Hispanic census tracks
+apprais values were more likely to be
+less than the contract price than they
+were in majority white tracks and that
+Gap increased as the minority population
+increased bny went one step further as
+well and looked at appraisers that had
+sufficient volume in both majority white
+and majority Black Or Hispanic tracks
+and said are there individual appraiser
+gaps and found that they you know
+potential gaps at least in roughly half
+of those
+appraisers after that next slide please
+fhfa uh started it releasing a appraisal
+data set they did note that as attention
+has been aaid to appraisal graps they
+are seeing gaps in appraisal appraised
+value
+U versus contract
+price declined somewhat and this this
+slide just has a snapshot of uh their
+most recent reporting where they looked
+at the you from
+2013 through first quarter of
+2023 and then split that into two
+subgroups before the pave task force
+report or paveed task force was stood up
+and then after the paveed task force um
+report was released which is the first
+quarter of
+2023 Alex what are your thoughts in
+hearing the results of the fanny Freddy
+and fhfa
+Analysis Lynn um it's a great question
+so I think that currently we are all in
+a period of gathering information and
+Gathering data and trying to figure out
+what is the most reliable data I'll give
+you my thoughts on advantages that
+appraisers have that an AVM may not so
+appraisers are able to really analyze
+and view condition and quality of
+properties a from physically looking at
+them um you know on site for the subject
+properties and also being able to
+analyze conditioning quality of
+comparable sales based on the available
+data INF photos and public um MLS
+systems the challenge with avms is that
+you don't have um the art of anal anal
+analyzing
+that specific um thing that could affect
+the value and I'll go back
+to um zillow's um AVM that they were
+utilizing to price properties for their
+I buying um
+initiative which failed miserably you
+know in AVM that they had spent billions
+of dollars um investing in to price
+properties in order to buy them and make
+a profit off of them um didn't work so I
+think we still need to gather more
+information right now we've got uh other
+I know you'll share resources later
+we've got other institutions doing
+analysis we've got Brookings Institute
+um you''ve got the American Enterprise
+Institute and all of them have
+conflicting data of what's really going
+on here and confiting confusions about
+conclusions about what is happening uh
+you know that I think that's one place
+that the fhfa data set May really help
+because we can at least start with the
+same data with different
+analyses correct yeah so you know I'll
+go back to my experience as an AM see we
+you know we have tens of thousands of
+appraisals that we manage uh Across the
+Nation um we haven't come across a claim
+of bias quite yet um I think everyone's
+jumping the gun a little bit there is
+some work to be done as of today's date
+I don't think a single appraiser is yet
+to be adjudicated of bias but I do see
+some room for improvement on how
+appraisers communicate within the
+report thank Alex next slide
+please one of the things that fhfa did
+was they did a um an automated word
+search of the free form text Fields both
+in property description and in um
+neighborhood or amenity
+description in appraisals that were
+received by Fanny or
+Freddy and on the right hand side of
+this slide you see some of the the
+phrases that they found you know
+explicitly describing the racial makeup
+of the city or the languages spoken in
+an
+area what types of for example religious
+amenities or racial or ethnic
+amenities or amenities oriented to
+particular racial or ethnic group might
+be be
+available or the
+uh to now to give a little bit of
+I I won't say cover but a little bit of
+context to some of the phrase phrase
+usage like the bullet that says the area
+is a white flight Red
+Zone um that was was part of a
+historical
+description of a particular City they
+said this was a wh's only City it became
+a white flight Red Zone and now is
+racially and ethnically
+diverse that's not as uh objection
+perhaps as just saying this is a white
+flight Red Zone would have be would be
+if you were talking about current status
+but I think there are some opportunities
+there for appraisers and Appraisal
+reviewers within lending
+institutions to pay a little more
+attention to
+um the descriptive language that is used
+in those free form
+fields and it looks like um
+Fanny at least is starting to give a
+little more guidance as to terms that
+they would find objectionable that's
+what the left-and slide of this side
+is how will you implement that guidance
+about um EXA objectionable content or
+phrases or how will you instruct the
+appraisers that work with you to
+implement that guidance ly thank you for
+that question ultimately um this is the
+responsibility of the appraiser to
+understand what changes are coming uh
+what words can and cannot be used you
+know what subjective language what
+subjective language and Freddy Mac FY
+May are are sharing this content um usap
+is adapting um some of this content in
+their new 2024 2025 update So currently
+it's it's not um completely clear on
+what words exactly need to be utilized
+or excted or taken out but this is the
+guidance that um Freddy Mack put out and
+I I can't simplify it more than what
+they wrote here incorporating
+terminology or veiled language that may
+be code words that could indicate
+underlying bias that include but are not
+limited to Pride of ownership crime rden
+areas desirable neighborhoods or
+locations or underlying neighborhoods or
+locations
+gentrification preferred Community upand
+cominging predominantly spanic or black
+neighborhood so this is the challenge
+that appraisers have is understanding
+what terminology is acceptable and what
+is not what is objective and what's
+subjective and I think what we're seeing
+in appraisal reports it's basically
+within the property description or
+neighborhood description that we're
+finding this so our guidance to
+appraisers is exactly what HUD and FY
+and Freddy uh are stating re look at
+your language um right now the only real
+guidance that they've given us is um
+words or phrases that can't be utilized
+in alternatives to those words but um
+there are words that may be veiled as
+possible bias that need to be um
+relooked at in appraisal terminology
+look uh that language changes with times
+and political correctness continues to
+change and really at this moment uh from
+from a 30,000 foot level from what I it
+is they're just asking appraisers to be
+politically correct and remove all bias
+which um I I understand that when
+reviewing and reading reports and as a
+certified appraiser myself writing
+reports you know writing in a different
+way in a more subjective
+way and I think there's also an
+opportunity there at lenders you know
+that's my background I can't I Was A
+lender before I became a consultant and
+I have been on both the credit side and
+the compliance side of lending
+organizations and many of the
+organizations that I've worked with
+prior to the discussions of bias the
+appraisal review function was often
+quite limited it was is the value per
+square foot reasonable are the comps
+reasonable does it support the loan done
+um given the focus now it might be a
+good idea for lenders to have their
+appraisal review function also take a
+read of those free form
+descriptions and see if there is
+anything that they might want to have
+revised before finalizing and accepting
+the
+appraisal 100% agree look at the
+addendums um maybe this is something
+that down the line can be improved
+there's a lot of narrative in appraisal
+reports and maybe it it needs to be less
+narrative and more just statistical
+analysis or a different analysis so
+again we're in that gathering
+information phase um my suggestion to to
+lenders is focus on the narrative and
+review The Narrative very closely but
+also continue to see what Fanny Freddy
+and HUD is rolling out on language that
+is acceptable to
+them next slide please can you hear
+me yes just like to
+you're breaking up a little bit
+Mark okay I'm still in a bad cell
+neighborhood apologies you're much
+clearer now than you were when you
+began okay well anyway my apologies I've
+been trying to log on here for the last
+45 minutes and I just as I drove off and
+frustration um trying to find some place
+with better internet I've got to notice
+that our internet is
+down
+so we're glad you were able to join
+us do you want to take a moment and
+introduce
+yourself uh sure sure my name is Mark
+Bond I'm a real estate appraiser been
+appraising for over 40 years
+P president of our chapter here the
+north chapter so I have a lot of appr
+appraisal experience in the years of
+practice I've had office as large as 20
+appraisers U as I've getting gray in the
+hair of downsized as just myself and one
+a apprais has worked with me for over 30
+years and um as terms of bias U I was
+born in Mexico I was raised white
+Methodist a Jewish wife wife Jewish kid
+woman
+son-in-law black daughter-in-law and
+grandkid Hispanic daughter-in-law and a
+member of the
+lgbtq transgender family so we've
+covered it all in our family as as life
+has grown
+up anyway that's that's where I'm coming
+from and let's go from
+there well you you were able to join
+just in time for for our discussion
+questions and the first question I want
+to throw out to you you and to Alex is
+what are common challenges or
+biases that residential property
+appraisers might encounter when
+assessing properties and I'd like to
+focus on one to four family resi here
+because that's where all of the um
+attention is being paid right
+now
+yeah I'll jump in on this um several
+challenges um that I see appraisers are
+facing one of them might
+be um trying to explain why a certain
+location that's closer to a certain
+place of worship might be worth more um
+the terminology that's been extracted
+from appraisals that can't be utilized
+and and I understand why or synagogues
+churches mosques um you know you go down
+the list but in some
+areas uh being located near these places
+of worship do increase the value of the
+property appraisers are just analyzing
+Market forces that um participants
+determine are valuable so when you have
+situations like that it becomes very
+difficult for the appraiser to explain
+what's going on and analyze without
+sounding biased so I I think appraisers
+for situations like that may need better
+guidance um again this goes back to
+challenges in describing neighborhood
+and describing um properties without
+sounding bias but still portraying to
+the reader what's going on and uh in
+factual terms right if it's close to a
+place of worship that um increases the
+property values then that's a fact that
+possibly an appraiser might be able to
+prove so how do they how do they explain
+that and stay within the context that
+Fanny Freddy and HUD
+want Mark do you have any thoughts on
+that
+question um that's absolutely true
+question because um you're with a Jewish
+wife we the Jewish synagogues they they
+what they call the aru which is their
+holy area and Rabbi marks it off on the
+map says you live in here you can drive
+you can push your baby buggage baby
+buggies to the synagogue at
+sh and they pay premiums they pay big
+premiums for that and um and it's a fact
+it's like Alex saying it's a fact that
+needs to be
+identified because if you go over you
+can go over just across the street if
+it's not in the AO there'll be price
+differentials and it's not a
+discrimination Factor it is a true
+market Factor it is you're picking up
+there on a factor that's important to
+certain Market participants and it might
+affect prices that would be then
+observed but not necessarily agreed with
+by other Market participants they you
+that other participant might be willing
+to go across the street um to avoid the
+price premium and it may be a difficult
+or awkward to describe
+that valuation
+difference while avoiding any appearance
+of
+bias 100% L that's a good summarization
+of that so now we've described the
+problem how can we mitigate it as
+appraisers or as lenders what can we do
+to mitigate some of those
+challenges yeah that you know this is I
+think this is what the debate is all
+about and how do you describe certain um
+instances like this I'm sure there are a
+million other instances that we can come
+across in a way that is going to be
+acceptable um and not portrayed as
+Politically
+Incorrect um at the end of the day you
+know appraisals are an opinion based on
+um what they're analyzing so how can we
+best describe this analysis is the
+guidance that appraisers need right now
+with all the
+the information about bias being pushed
+out the only
+ramification or change has been change
+of terminologies
+change of phrases so let's get a list
+you know can we work within the list and
+that's going to be a list that
+constantly changes
+um I think that's the best way to
+address this for
+now all do you have any comments you
+like to
+add well again Alex is leading the way
+very well um I agree
+the main the main thing that we're
+seeing in this bias or just implicit
+words if you say master bedroom then
+you're
+biased and and they have other
+gentrification is biased and Fanny May
+and HUD or turn you in for being biased
+appraisers when these have been
+acceptable terms for
+decades and so right now appraisers live
+in fear and they're and in the fear they
+lose their ability to be objective and
+be
+factual so I I think we just need a you
+can say this but you can't say that
+guideline appraiser is run by guidelines
+fenny May and Freddy Mack FHA have set
+up these lender guidelines of appraisal
+rules percentages of adjustments you can
+can't make the distance from ACC
+comparables to bracket the appraisals
+and all the technical stuff from the
+mathematical and analytical side of the
+appraisals but nobody has come up with a
+technical you can't say this word and
+that word until now and so appraisers
+are just kind
+of like the old pinball machine they're
+bouncing around getting thrown this way
+and that way and I and personally I feel
+like appraisers are being having
+receiving implicit bias just by the a
+lot of the terms thrown at them you know
+that that you're you're racist because
+you said this and until you prove it's
+racist by providing a unfair number I
+think appraisers need given the benefit
+of the
+doubt Mark how would you address the
+allegation that appraisers are sometimes
+excessively
+subjective you know I don't I don't see
+those
+reports so it's really difficult for me
+to say that's makes me have to make an
+assumption that is just not in my
+factual basis
+I know for example I've been reading
+through go ahead I'm
+sorry I've been reading through um some
+I've done a lot of research on this and
+I'm really sorry for being late because
+if anybody does not like inferior
+Superior those type terms of
+being um potentially biased but in the
+beginning of the appraisal forms that's
+the way you
+that's why you presented it as this one
+is Superior in condition or interior in
+condition you made an adjustment based
+on that and now they're saying there
+improper
+words so I don't see that much of it in
+all
+honesty when in your experience and this
+is Alex both to you and to Mark in your
+experience when there have been
+questions raised about appraisals
+either that uh were ordered through you
+in the case of an AMC or completed by
+your
+firm what's the most common question
+that is raised I know what I used to see
+most frequently was choice of
+comps as a
+lender ly that's that's a great question
+um it doesn't get questioned very often
+if the appraisal makes value on the
+sales price you know so I think let's
+start there um I'll give you some
+context and some background so when
+everyone when when anyone's doing a
+refinance and it's ordered through us we
+do not provide the appraiser uh
+predetermined value the appraiser is
+going out there to determine a a value
+and we expect them to be objective
+impartial and unbiased and provide the
+support for their conclusion as an
+opinion of
+value with purchases it's a little bit
+different um they are required to
+receive the contract and analyze the
+contract so the appraiser knows the
+contract price uh what they don't know
+is what race or ethnicity the buyer is
+the borrower is not at the property so
+again I think with purchases it's it's
+probably a little bit easier to be
+unbiased towards the the borrower um
+because you don't know what race the
+borrower is so the challenges come when
+the value is not supported there the
+value that the appraiser States is not
+supported in um in the value conclusion
+and doesn't support the contract price
+so at that point that's when I've seen
+the most cims not of bias but of the
+appraiser not doing their job and you
+know filing complaints against an
+appraiser I I think that's where we're
+seeing most of these issues come from
+absolutely again Alex I agree
+100% you know in the old days before
+2008 crash a lot of times the lenders
+would call up and say hey can you make a
+refinance of this for
+250,000 and
+frasers would be asked to research it
+and technically according to their
+appraisal ethics they can't because that
+in itself is an
+appraisal but that was practice in 2008
+after the financial crash you know Fanny
+May and Freddy Mack said no you can't go
+we can't give you an opinion is what we
+think it's worth you have to go out
+there and form your own objective
+opinion and at the same time they said
+we want you to know the sales contract
+price so you can see if it's supported
+or not so they we have us Running Blind
+on one side and with knowledge on the
+second side when and blind typically
+it's the refinances where the people are
+unhappy with the Value Estimate and own
+we typically find that um owners will
+have the best house on the Block and
+they're most proud of it and it's it's a
+pride factor that helps them it doesn't
+matter about race a lot of times it's
+the pride that they they want to know
+how much their house is worth and how
+they've been
+smart there's probably a little bit of
+motivation
+if I am purchasing a
+home I want that appraisal to be as
+accurate and quite frankly as low as it
+can be and still and still be
+appropriate because that's money out of
+pocket that I'm having to pay to buy a
+home if I'm refinancing I want my value
+to be as high as
+possible um and when you combine that
+with the different information set that
+the appraiser has it's not
+surprising that you you may see more
+questions raised about refinance
+appraisals than you do about purchase
+money
+appraisals that's again what's
+interesting go ahead Alex yeah no I was
+just gonna say Lynn does a great job of
+summarizing our wordy responses Mark so
+I just want to give you uh kudos to that
+Lynn but correct that's that's accurate
+yes and what what's interesting too is
+the appraisers we get put into tough
+scenarios if we go back two three years
+ago we had some hyperinflation in in
+most of the housing markets you we were
+seeing 20 30% the year rate of inflation
+and the when we were doing the sales the
+realtor would often say I know we don't
+have
+any comparables at this price yet but I
+got 15 offers and they'll give me a
+spreadsheet of 15 or 20 offers on the
+house all above list price all people
+paying 10 $20,000
+over
+and that was the market and it was
+really tough to make
+it and we had to analyze it and that's
+what the market was after a while when
+they started selling you could start
+tracking that we could start tracking in
+price increases but we're shooting from
+the hip there at
+first I think it's
+Market gives you the same problems just
+going the other direction right think
+about what we saw after
+the okay can after the what after the
+more think of what we saw in the
+aftermath of the mortgage crisis some of
+the some markets saw 40 and 50 to 50%
+declines in value in a very brief period
+And if you have that sharp deflation of
+prices you get the same PR same issue as
+you just described just going in the
+opposite direction where uh a value that
+might have been supported six months ago
+is not supported
+currently exactly in that case you know
+the appraisers had to look at listings
+when you in a track neighborhood and the
+listings were 20 or $30,000 below the
+last couple of
+sales you made minus time
+adjustments yes
+there's been a lot of discussion about
+whether tools like automated valuation
+models can help promote fairness and
+accuracy as somebody whose background is
+in model building my big concern there
+is garbage in garbage out you know
+whatever you fed trained those models on
+is going to influence um the values that
+come out of
+them I'd like to hear your thoughts on
+using avms or other data and analytics
+tools as
+a either instead of or as a companion
+to appraisals to help you set values
+what do you think the pros and cons
+are Lyn I um I'll jump in
+first pros and cons I think it should
+and can be used as a tool to assist
+appraisers I don't think that there is a
+model again I'm going to go back to
+Zillow spending billions of dollars on
+the on a formula for abms that didn't
+work um I think it's a tool to help
+analyze and Freddy Mack and Fanny May
+have the ucdp and the ucdp findings
+which is basically mining all the comp
+the comparable data in the market area
+it's probably the best tool that can be
+utilized it's just not a tool that's
+shared with
+so maybe formulating a tool that can be
+shared with appraisers based on ucdp
+findings and having the appraiser
+address the finding if there are any
+discrepancies or if there are any
+comparables that are suggested that
+weren't utilized why or why not the
+appraiser can go back and analyze and
+explain um we don't have that right now
+appraisers don't have abms listen Lyn as
+an AMC we do provide uh avms to some
+clients that want avms and there are
+four or five different AVM services that
+we utilize and you can't imagine the
+variance of prices in these four or five
+avms that we utilize if I was to order
+four five four or five appraisals from a
+a group of appraisers the variance would
+be less than the avms so just to put
+that in context um but they can be
+utilized as tools depending on how much
+information those avms is willing to
+share with
+appraisers and I think there's also the
+opportunity for a professional appraiser
+to have not
+[Music]
+only they can bring a more current
+appraisal valuation if you're building
+some you all the avms are built on
+historic data it may be recent historic
+data but it is built on they are built
+on historic data and there may be new
+factors arising that a professional
+appraiser could detect that the AVM
+might not know about yet I'll give you
+an example from a neighborhood near mine
+um neighborhood has a golf course the
+city is taking the golf course to turn
+it into a passive Park you cannot tell
+me that uh homes purchased in that
+neighborhood before the city took over
+the golf course have the same value as
+after the city took over the G golf
+course it's a different amenity and if
+you're looking for a golf course home
+you're no longer going to be interested
+in that
+neighborhood it's 100% correct Lynn I I
+can name numerous examples I can um name
+examples where appraisers were uh turned
+in and complaints filed on them for
+situations like that uh one that comes
+to mind that we helped an appraiser uh
+fight was
+a property that was in the Gated section
+of the subdivision which this gated
+section was only encompassed two streets
+and the price point within the Gated
+section was much higher um the findings
+showed that they were similar size sales
+within the same subdivision that were
+30% Less in price point of course but
+those were outside of the uh G section
+so if you don't put eyes on it like the
+appraiser does if you don't drive it and
+then in the community you're not going
+to know uh AVM or any findings uh unless
+analyzed properly are not going to give
+you the most accurate data um you know
+it's it abms can't think they can
+analyze that's it they're a great way to
+compile existing data for
+comparison but um a as you will hear it
+freely both not just a admitted but
+encouraged in different conversations
+about using Advanced algorithms to deter
+to you know in access to credit they
+need human
+oversight they do correct there's an I
+agree I
+agree go ahead Mark Alex no Mark no I
+was just
+say that um they can't be um you can't
+form an algorithm to
+to do it all you're right there there
+needs to be some kind of human analysis
+there as
+well in my opinion
+I I always think in analogies and um you
+know since covid we've had a lot more
+doctor phone calls you go visit the
+doctor via teleconference versus seeing
+them and they can do a whole lot with a
+teleconference but it takes good eyes on
+and sometimes they got to touch you feel
+you and and look at your the color of
+your skin or your whatever your uh
+situation is in order to give you the
+proper diagnosis and it's same way with
+the praisers you got to be out there and
+touch it see it feel it if I see
+pictures all the time in in MLS and I go
+out there to see the house and the
+pictures look so much better they do in
+person oh yeah and and that's going to
+become more of a challenge with uh AI
+generated pictures um yeah that'll be a
+big challenge for sure kind of like
+social media pictures with all the
+filters applied versus meeting someone
+in person right
+right next slide please now
+they they can furnish the houses fully
+by the photos just drop the furniture
+in
+yes uh Lynn one last thing I wanted to
+comment because you said you were
+talking about tools um so the appraisal
+management software that we utilize does
+have a tool to uh sip through and take
+out words that are um within a certain
+list the problem we're having is we have
+multiple lenders that have provided us
+very various lists that are very
+different um I think it's valuable to
+all come together to get one master list
+or one I don't even know if I can say
+master list anymore uh one condensed
+list that we can all
+utilize um in order to to push this out
+and appraisers have the understanding
+that these are words or phrases that
+can't be utilized and that would
+probably help with consistency in
+descriptions too if there was a
+Consolidated list of don't use these
+These are okay so that
+uh it would be easier to
+compare across appraisals and
+appraisers to you know if if you're a
+lender that is trying to test for bias
+within the appraisals you receive if
+there is a single list of things not to
+say that makes your testing far easier
+as well as making it more easy or
+reasonable for appraisers to produce
+quality work that won't be challenged
+for
+bias 100% we can't use this tool yet
+because it doesn't Encompass all the
+lists that we're getting so um you know
+we're left to do it um you know
+basically by reading the
+report one of the
+questions go ahead
+Mark I say our software also does a a
+similar checklist
+for potentially biased terms but you
+know that's that's a never ending change
+at this
+for one of the recommendations that came
+out of the pave task force was was to
+increase Fair lending or fair housing
+training for
+appraisers can you all share with me a
+little bit about what the current
+training for appraisers are on how to
+recognize and avoid bias how to ensure
+that their
+um appraisal actions and reports are
+consistent with fairhouse
+well
+um the appraisers go through a lot of
+education courses about biased and
+training and fair housing is all part of
+the standards of appraising and myself I
+also have my realtor license so as a
+realtor I get a double dose of
+it so I don't know what more we can do
+to
+make people more sensitive to it you go
+through the courses and then you got to
+just get in the field and and
+practice and and practice right
+hopefully you don't offend anybody the
+first time
+through yeah just add on to
+that oh sorry Mark I didn't mean to cut
+you
+off oh it's all right I'll add to it
+here after you oh yeah there are
+sections of usap that um deal with bias
+and appraisers being objective and
+impartial and unbiased um and they're
+just expanding on that uh I know they
+expanded on it in the 2024 2025 usap
+update uh and usap version I have not
+taken it yet it literally just came out
+a couple weeks ago so um interested to
+see what changes there are there um it's
+been ingrained in our education since I
+started in the industry in 19 1999 so I
+think it's just um moving it to the
+front of the list and reiterating what
+appraisers should and should not
+do yeah as we've chatted we've talked a
+little bit about some recent changes you
+just talked about you the pend in use
+papap changes we mentioned earlier that
+um Fanny and Freddy have some additional
+guidance that will take PL taking effect
+on term terms not to use
+and um we know that pave the pave task
+force made some recommendations and
+there may be more to come what other
+recent regulatory changes or industry
+guideline changes are you aware of that
+appraisers or the lenders that they're
+completing appraisals for need to be a
+need to know
+about yeah ly uh I'll jump in and answer
+this question certain States let let me
+rewind appraisers once their licens are
+certified need to do uh continued
+education it's roughly 28 hours every
+two years and some states are adding a
+certain amount of uh hours to be
+dedicated to bias I know California just
+rolled out I think uh it's a requirement
+that you take a a appraisal bias class
+uh that's three or four hours long I
+think that that's going to um come out
+in Most states and just become part of
+the continued education every every two
+years so um outside of that again you
+know the growing list of of words like
+we've discussed in phrases that need to
+be um erased or removed from
+appraisals Mark any pending changes on
+your
+mind no um I think Alex covered that
+pretty well I'm sure we're gonna have
+some classes come come down and help
+coach us on words but what I was going
+to say is is it is all right now the
+potential bias is all about words I
+haven't seen any say in the practice of
+phaal it says this practice of this
+adjustment or going this far for
+comtable is
+biased and and so we're we're basically
+talking about
+semantic and unfortunately I'm going to
+throw a hog in the wheel here on pave I
+I've read page twice the first time I
+stopped on page
+four and U this is a quote here from HUD
+secretary Marsha L
+fudge and and the reason I say this is
+because several times in the in the pave
+it's it's a seems like it's a group of
+non appraisers trying to decide what is
+a good appraisal
+term Marshall fudge is the HUD secretary
+and she says in her quote I live in an
+all black community my lot and my house
+are bigger yet my home is valued at
+$25,000 less than the house two doors
+from me which is in the all white
+community and this statement just threw
+me for a big loop because how can you be
+two doors away from an online
+community I I just don't see
+that and the $25,000 less
+who's the source of the less I it tax
+row is it apprais they bigger they
+smaller and so the whole a lot of this
+premise this is the premise it's set up
+in
+page and we we're GNA go around and and
+chop up appraisers for words they use
+and
+so I have problems with some of
+that because I don't think even you I
+don't I don't think anybody can say that
+a house two doors away is an all white
+neighborhood and two doors other
+directions all black
+neighborhood and again that's page
+four are there any new collaborative
+eort efforts excuse me or Partnerships
+that are developing within the industry
+to help increase transparency in
+property appraisals it seems to me
+sometimes looking at requests for
+reconsideration of values and I've also
+had the chance to look at some
+complaints about appraisals that lenders
+have received that sometimes the root
+cause is the borrower not understanding
+what an appraisal is and how a value is
+assigned um are there opportunities to
+be more plain English and transparent so
+that the borrower understands the
+appraisals that they're
+receiving oh that's uh that's a
+difficult question because appraisers
+are not in charge of the forms that
+they're utilizing for the appraisals so
+the forms are Fanny and Freddy Mack
+forms um and they're really
+written
+to Underwriters and to Fanny and Freddy
+they're not easily read by the consumer
+the consumer is not the intended user
+the intended user is the lender and
+Fanny and Freddy
+really whoever your client is um so
+that's a question
+for that I think that's a that's a
+bigger question that we can't answer as
+appraisers um because of our restraints
+on what we're allowed to utilize now can
+we explain it to the consumer um you
+know I think there might be some
+guidelines against that as well we can't
+even discuss the appraisal with the
+consumer because the intended use user
+is the only person that we can explain
+the appraisal to so I I think this is a
+a question that can't be answered by
+appraisers so maybe that's a question
+that's better um would be better posed
+to Fanny and Freddy or fhfa or maybe the
+banking trades what can they do on the
+lender side to help promote transparency
+and better understanding of what an
+appraisal is and is not
+uh now that Bor because borrowers do
+routine routinely receive their
+appraisals now which they didn't always
+and that may be part of why more
+questions are
+arising I think on top of that
+understanding what guidelines or
+appraisers are given um you know it's
+got to be based on historic sales um so
+you could go out to a property today and
+then tomorrow a new comp sells that
+could maybe help the appraisal uh either
+show higher value or lower value but it
+can't be utilized because the appraisal
+is as of a certain effective date so I
+think under understanding the guidelines
+and the guidelines really state that
+it's as of the effective date and that
+the appraiser has to utilize the sales
+and that are locationally and physically
+the most similar to the subject property
+um and it's it's as simple as that
+that's what the appraiser is trying to
+accomplish in in our practice we've
+we've had got a couple of good lenders
+who have appraisal departments
+themselves and when there's a rebuttal
+the appraisal Department gives them a
+list they they want their comments of
+why they disagree and they want them to
+present two or three comparables that
+they think they believe that appraiser
+should have
+used and and those are always
+interesting because that
+point as the appraiser we can see what
+their comments are what they disagreed
+with as far as our comments in the
+appraisal and which comparables they
+think are valid and sometimes it's
+interesting because they wind up giving
+us back the same comparables we had in
+the
+report they don't they don't understand
+the process and in honesty they never
+can understand the process just as we go
+again here's an analogy we go to the
+doctor they hand us an x-ray we don't
+know what it means you know somebody's
+got to tell us you know what one spot
+means or what that
+things Mark you touched on one of my
+next
+question now one of some of the guidance
+that's come out for
+lenders particularly Bank lenders has
+been that lenders should um maybe beef
+up their reconsideration of value
+processes make make sure that all of
+their um their loan officers know what
+the ROV process is and they have good
+you consistent approaches internally as
+an appraiser or as an
+AMC if a lender get receives a request
+for reconsideration of
+value what happens next from your
+end yeah uh Mark I'll start and then you
+can explain what the appraiser does so
+from our end when we receive a
+reconsideration of value
+first of all it's it's um you have to
+understand that we have airs compliance
+with Fanny and Freddy on conventional
+and for FHA assignments um the only
+person that can
+request reconsideration of value is the
+underwriter so a for FHA assignments
+we're getting verification that this was
+underwriter requested now um when we get
+a reconsideration of value typically it
+comes over in the narrative format not
+just always here's for sales why were
+these not utilized and when we get the
+narrative style we've got to um cleaned
+up the verbage to make sure that it does
+not um influence the Appraiser's opinion
+of value or just extracting the facts
+whatever the facts may be these three
+sales please explain why they were not
+utilized or and also here are upgrades
+that uh were not mentioned in the
+appraisal report
+um you know please comment um so we're
+we're extracting the facts and then we
+send it to the appraiser so then Mark
+hand it over to
+you okay
+um you pretty much summed it up again
+Alex and is the appraisers you know we
+look at the comparables look at the data
+and we're human sometimes it's a a
+simple Overlook that there was a pool
+proposed that we weren't given the plans
+to and it's a quick fix so we can put
+theol into the refinance of the house
+and other times we
+um look at it and find out it's a
+different School District you know and
+in Dallas we have a some of the urban
+school districts are becoming very
+popular again there's value differences
+between one school district elementary
+school and another one well if there's
+something like that we can provide a
+change too and if it's not reasonable
+valid then we we stand
+firm
+and that's I don't know what else to add
+after that have you seen any increases
+in requests for reconsideration of value
+since we started discussing appraisal
+bias more
+broadly um I yeah no we've seen actually
+a decrease we we keep record of this um
+we saw a lot of it during the pandemic
+when values were skyrocketing quickly
+you know um you have a willing buyer and
+a willing seller but there aren't any
+sales to support it so they're going to
+do everything in their power to increase
+the value so we saw a lot of it then uh
+we're not seeing as much now um but
+we're also seeing less appraisals coming
+in below the sales price now so that
+could be a factor in in that percentage
+yeah I think the pandemic was and this
+is my highly technical term just
+weird because you also have lenders that
+were more likely to request appraisal
+waivers during that period you had
+rapidly increasing home prices and you
+had more desktop or exterior only
+appraisals because of some of the
+restrictions on face-to-face contact and
+that seems to me a combination of
+increasing prices more waivers and CH
+some at least temporary changes in the
+ratio of desktop or exterior only to
+what we've seen
+historically might be a good recipe for
+having an uptick in request for
+reconsiderations yep 100%
+agree agree
+yes we're getting close to the end of
+our
+time Mark I'd like to turn to you first
+and see if you have any closing comments
+you want to
+make yes I I've been a praising for a
+long time and I old enough to I saw
+discrimination in real terms real time
+in my life and um highly against it and
+feel like overall our
+system terms are that are pretty much
+low discriminations of almost no
+discrimination it's it's going to always
+exist somebody's going to prefer
+McDonald's over Burger King we always
+going to have a preference out there
+sometimes they're going to get
+interpreted as racial and sometimes they
+will be
+racial but overall I think it's good
+what sad is basically appraisers are
+becoming a punching bag
+for inequity and home ownership and
+they're looking at terms and that
+appraisers are biased and therefore in
+this pave
+event that we don't have equal ownership
+because the appraisers is are biased and
+I reject
+that and otherwise you I think the
+system and the appraisers
+are still there yes I'm sorry I thought
+I thought you I didn't mean to
+interrupt oh okay the last thing I say
+is the appraisers right now run in fear
+of being called a racist being a racist
+or a rapist or an embezzler I mean some
+of these things you can't ever take back
+once somebody has labeled it back and
+there there're terrible labels out
+there I have a lawsuit here I did not
+get a chance to discuss which an
+appraiser was in my opinion unfairly
+called a racist and you hear about hear
+the pr side of the P he was but the
+Press is not given him the counter side
+why he wasn't it was technically he
+wasn't so from there go to
+Alex yeah I Lynn thank you for giving us
+the opportunity to to speak at the end
+here and summarize you know we've got
+several thousand appraisers on our panel
+across the country and my observation um
+you know being involved with the AMC
+since 200 is that they are good men and
+women they want to do good they want to
+follow usap they want to appraise in an
+unbiased fashion that's objective um and
+we as appraisers understand that times
+change and um we just we we want to know
+exactly how it needs to be done and I
+think this is where the confusion and
+like to to what Mark is saying that
+appraisers are writing scared because
+there's no
+concrete
+um uh I guess Direction and I hope that
+we find direction here quickly because
+appraisers just want to do a good job
+they want to protect lenders they want
+to protect borrowers and ultimately we
+just want to uh continue being a part of
+the process and we think that there is
+Great Value in us being part of that
+process I I think there is and will
+continue to value in having appraisers
+as part of the valuation process to our
+audience we have included in today's
+slide deck a couple of pages of
+resources if you want to learn more
+about appraisal bias and some of the
+pros and cons out there um those are
+available to you as we reach the end of
+our time together I would like to thank
+you for all of your time and for sharing
+your knowledge with us today Alex and
+Mark we really appreciate your
+participation tmba continues to work to
+bring you great webinars like this one
+and I hope you'll check out the homepage
+at Texas mba.org for upcoming for the
+upcoming schedule and watch for those
+emails from tmba reminding you to
+register thank you everyone and have a
+great rest of your
+day thank you everybody

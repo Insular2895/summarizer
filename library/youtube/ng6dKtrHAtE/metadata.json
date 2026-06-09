@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "ng6dKtrHAtE",
+  "title": "Best Practices for Tuning Slow Postgres Queries | POSETTE: An Event for Postgres 2025",
+  "url": "https://www.youtube.com/watch?v=ng6dKtrHAtE",
+  "source_paths": [
+    "cache/transcripts/best-practices-for-tuning-slow-postgres-queries-posette-an-event-for-postgres-20"
+  ],
+  "updated_at": "2026-06-09T18:15:55.295384+00:00"
+}

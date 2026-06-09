@@ -1,0 +1,1115 @@
+[Applause]
+hello welcome to the sustainability
+story podcast I'm today's host Andreas
+Benelli Chief Economist at CFA Institute
+we are recording live from New York City
+at the CFA climate conference
+and in today's episode we feature
+Spencer Glendon the founder of pro World
+Futures a non-profit organization that
+aims to make climate science more
+accessible to everyone Dr Glendon has a
+varied and interesting background he's a
+leading expert on climate change
+he has a background in finance and
+economics having worked as an analyst
+for many years at Wellington Asset
+Management he also has a PHD in
+economics from Harvard University and
+recently has been welcomed by the
+Harvard Business School as a researcher
+in-house
+so join us in welcoming Dr Glendon
+you bring such a an interesting and
+varied perspective to to all this and
+your professional history encompasses uh
+Asset Management
+um it causes economics
+um and you're increasingly into the
+non-profit sector trying to influence
+the conversation and on the intersection
+of the environmental issues of the day
+and
+um trying to help people understand
+climate literacy so what do you mean by
+climate literacy sure so uh first of all
+it's a pleasure to be with you and so
+climate literacy
+I'll go back a few years we may wind up
+going back further but I'll go back a
+few years to when we started this
+initiative that is called probable
+futures
+I had this awareness that
+climate was maybe important I didn't
+know how I didn't know how it fit in I
+was working in finance
+in research capacity uh both conducting
+and overseeing research
+and I was interested in topics that
+weren't
+part of Orthodox Finance
+The Firm I worked at Wellington
+Management had all the parts of Orthodox
+Finance well covered they were analysts
+for each segment
+experts and I was interested in the
+topics that lay outside of the narrow
+slices
+and so climate change fit the bill for
+that
+and so
+I just started reading old Journal
+articles from the 70s and 80s to say
+well what was the origin of this science
+and what I discovered were these models
+that explained how the physical world
+worked
+that I had never understood
+I didn't know all these things about the
+world I lived in
+and what I realized is I know
+I knew a lot about economics I was
+actually first an engineer I knew a lot
+about business
+I'd never really thought about the
+physical world as being part of all of
+those questions
+and if you walked around Finance in the
+21st century it was done on computers
+you'd have meetings with people but it
+was either in a conference room or in
+two dimensions
+and the idea that I needed to sort of
+become really aware of the physical
+world which had probably been as a child
+but managed to suppress
+but then also discovered that that was
+one Insight but the second was actually
+almost all of climate change is
+comprehensible to a layperson
+and so I realized there was a kind of
+awareness vocabulary and skill set
+that
+when I dug Into Climate Change I thought
+all right I'm going to have to get
+I'm gonna have to spend a lot of time
+with experts to have any chance
+back to being an engineer back to being
+an engineer
+so I had I was actually simultaneously
+doing a bunch of work on Big Data so for
+that I was in Silicon Valley with people
+I was trying to understand the structure
+of databases it was hard work
+almost everything I learned in climate
+was intuitive like warmer air holds more
+moisture so here's a good example
+every one degree C with warmer air
+warmer air gets
+it can hold seven percent more moisture
+well that compounds so it means 10
+percent warmer 10 degree warmer air can
+hold a hundred percent more water
+that's why warm places can be more humid
+that's why warm days can have more rain
+that's a little insight about the
+relation that I sort of intuitively had
+but I couldn't I wouldn't have called it
+literacy and so what I mean by climate
+literacy is this idea that you start to
+be able to navigate the physical world
+you took for granted
+in a way that's got some clarity to it
+some the right words for it actually had
+this moment talking to a scientist in uh
+in Los Angeles who said I can use all my
+words with you and I said actually you
+know your words they aren't that
+abstract so this I'll give you the last
+example I'll give of this is the term
+Albedo
+it's a technical term not many people
+know it all it means is the
+reflectiveness of the ground
+so if Albedo is is one the sunlight all
+the sunlight is absorbed if the Albedo
+is zero all the sunlight is is reflected
+back to space
+so ice has a very uh actually I've got
+it backwards
+ice has a very high Albedo it's highly
+reflective
+the ocean has a very low Albedo it's
+highly absorptive so when there's less
+sea ice
+the Earth takes in more energy
+that's like 8th grade science and so
+what we say my colleagues and I call
+climate literacy is giving that facility
+to make climate change
+understandable and you can bring it into
+your everyday conversation but you can
+also bring it into real real decisions
+now
+the issue of water yeah how much water
+it holds I would assume that has
+incidents on the probability of Water
+Events and and on the magnitude now
+that's on one level very intuitive it's
+very you know a child should know about
+this on the other hand
+um to what extent was it Incorporated in
+the macro models or any type of models
+that you were conversing with or working
+with in Asset Management back then what
+was it there no not at all I I'll give a
+good example of how I Now understand
+this better and how that matters
+so
+a drought is not just about rainfall
+it's also about evaporation
+so a place can enter a drought with
+steady rainfall if what happens is it
+gets warmer over time and more moisture
+is sucked out of the plants and the soil
+and transported away
+and so
+models of you know the idea of where
+would there be a drought where would
+there be lower you know production
+even things like
+um the how Power Systems would work
+almost all the Power Systems in the
+world require water to cool
+the facilities well water availability
+is inversely related to heat
+and the water that is used to cool those
+buildings gets warmer
+when it's warmer outside so you actually
+need more water to do the same cooling
+those kinds of things once you explain
+you're like oh yeah I hadn't thought
+about that they were not in any of these
+models
+it's super interesting uh thinking about
+all the water that needs to to be used
+to cool
+um
+crypto miners or these days AI models
+which are very computational intensive
+that's becoming more and more part of
+the yeah
+Day Life conversation for for most of us
+so what what are the Frameworks that
+that that your organization develops out
+there Frameworks were thinking about
+this issue how does that work out for
+the rest of us sure so the the the key
+insight
+of all of this and it was crystallized
+in a conversation I had with a a great
+climate scientist uh one day in the
+probably seven years ago or so
+is that there's a reason we all stop
+talking about climate
+which was that it was so stable
+and so climate stability allowed us to
+stop thinking about it there's a reason
+it wasn't Incorporated in our models
+there's a reason it wasn't Incorporated
+our daily lives which was that the
+ranges of outcomes were predictable so
+in financial terms
+starting about 9 500 BCE so for about 12
+000 years climate volatility was
+extraordinarily low
+well when something becomes very low
+volatility
+people start making assumptions
+and so the main framework we offer is
+that for 12 000 years the climate was
+stable and especially during the
+formation of what we would call Modern
+civilization the climate was stable
+and leaving that stability is not just
+about warmer temperatures it's about
+actually going from a period where you
+didn't have to incorporate it because it
+was unchanged so in statistical terms it
+was a stationary distribution
+to being unstation non-stationary
+that change is a framework that needs to
+be incorporated in lots of places so the
+two pieces of that are one that
+stability underpins everything so you
+and I are sitting in Manhattan
+I'm looking at a window at one building
+you can see a wind out of a window in
+another building and we're in a third
+building all of these buildings were
+built with the same building codes
+those building codes all assumed a
+certain climate
+those building codes are now outdated
+they would have been fined for hundreds
+and hundreds of years that's why we use
+the term one in a hundred year storm if
+you knew the past you knew the future
+that's what stationarity is so the the
+first building block is understand that
+stability is what created civilization
+and then the second is that stability
+was embodied
+in our institutions in the form of
+assumptions
+the people who built these buildings
+didn't need climate people because
+the building codes just told them the
+ranges
+the storm sewers that run underneath
+these buildings were built for ranges
+we're now out of range
+and so that's a framework that I'm
+hopeful that people who work in finance
+can understand is you had a distribution
+that was very stable so stable that you
+could actually just assume it and now
+this distribution has shifted
+but you have huge amounts of models
+Frameworks infrastructures assumptions
+that are still assuming were in the past
+and you got to look around and say well
+what do I need to update
+does that make sense it does to me
+many of us thinking about what went
+wrong in the Great Recession that we had
+in 2007
+um
+there was a lot of this story going
+around not specifically on climate but
+all the models that most people used to
+go out to the level of risk were
+assuming
+something that was very stable which was
+in that case housing prices
+now we have and and then we had a crisis
+because our models just didn't compute
+uh in something that was thought out to
+be highly extreme well it just happened
+and where I I many of us feel that we
+are the proverbial frog in the boiling
+water that
+that see that this somehow into in an
+intuitive sense that that distribution
+is changing and perhaps in uh in many
+ways
+um but and yet we have the models and
+our Frameworks to catch up with so uh
+let me ask you in your experience
+um going back to your
+research analyst investor economies had
+to what extent do the Frameworks that
+that you are
+um ideating and translating is this
+being adopted by the industry or are
+people there or is the overarching
+conversation about the politics of all
+this sort of overshadowing the science
+behind it it's a great question
+um no we're a long ways from there we're
+not anywhere near there
+but things are changing
+um
+you know you and I are speaking at a
+climate risk and returns conference that
+was inconceivable
+10 years ago probably not I don't know
+for sure but I'd be surprised if it
+existed and if you called it this five
+years ago
+and so that's a sign of change
+and what's interesting is you could go
+to a conference
+10 years ago that was about
+sustainability
+almost everything that happened at those
+conferences was just about counting
+carbon
+was emissions of some kind and there
+would be vendors of data who
+may or may not have had insight about
+emissions may or may not have they're
+often making claims about how it would
+boost your returns
+but it's rarely in the context of risk
+and it actually very rarely was about
+climate change it was actually what was
+it about it was about this is a new form
+of return it was this argument of your
+returns will go up
+not your risk will go down
+it was like trust us if you do this
+thing
+you follow this new and often the
+evidence wasn't there because even not
+that long ago we weren't very ten years
+ago the climate had changed less than
+it's changed today
+and what we see is that each bit more it
+changes there's non-linearity in how
+extreme the changes are because the
+Tails keep moving
+and so my point is we've made a lot of
+progress in terms of the awareness that
+in your frog analogy
+hmm we might be frogs
+what we haven't done is
+the Frog didn't have the proverbial frog
+because my understanding is that
+I really do you know the story of
+lemmings also
+I think I do but my understanding is to
+phrase it for the audience so there are
+two apocryphal stories about humans
+where they compare themselves to
+animals who act foolishly
+the first is the frog that sits in water
+that's heated up and it never jumps out
+all the way up to boiling it just dies
+the second is Lemmings that
+throw themselves on mass over Cliffs out
+of a form of Madness
+my understanding is both of these
+stories were actually invented by humans
+and in the case of the Lemmings there's
+video of it they were pushed by people
+ah I didn't know that
+and it's a case where humans are seeking
+an apocryphal story about themselves
+and want there to be a story where in
+the natural world other animals do this
+Lemmings don't throw themselves on mass
+off of Ledges off of cliffs unless
+they're corralled and pushed to do so to
+suit a human narrative
+that that is fascinating I I wasn't
+aware of that we were anthropful more
+more fighting uh that's a word yeah uh
+those animals and we're performing them
+because we're aware of the things we can
+do
+but we want to
+have an analogy that it's like it's not
+just us
+but actually there isn't a good analogy
+for those things in the natural world
+these are Stories We Tell ourselves
+and so the lemming story is
+you know for a finance audience it's
+like a Minsky moment
+but it doesn't look like the natural
+world has Minsky moments
+it's instead that humans create these
+stories for themselves that can get them
+all out of balance
+and so what I would say is people are
+now aware but what's very different and
+exciting about climate change in this
+regard and why probable Futures is what
+it is
+is that unlike the Frog
+we actually know a lot about what's
+coming
+the Frog isn't told it's getting warmer
+it's going to get warmer and it's not
+told what the consequences are but
+climate models I started doing this work
+in Earnest because I started looking at
+those early models from the 70s and 80s
+and was astonished to see how right they
+were how accurate they'd been for 40
+years in fact the first email about
+climate change that I sent to my
+colleagues
+10 years ago
+was just called unused models
+and the beginning of the email had
+graphs from early science papers
+projecting
+temperature
+sea level other things like that
+and showing how well they had fan charts
+showing how well the data had done over
+the ensuing 40 years
+but I stripped off what the variables I
+didn't tell people what the graphs were
+of and I just said I've got models they
+predict the future they've done really
+well for 40 years do you want to use
+them
+okay
+because by that time I was well aware
+that people were using carry models
+price to growth model like all kinds of
+financial models that rarely work and
+those models that were they mainstream
+science they're totally mainstream
+science huh
+so it's an adoption issue it's just an
+adoption issue interesting interesting
+and so what probable Futures provides on
+our platform is taking models that were
+made at research labs around the world
+pulling them together
+so you can see for this place for any
+place that people live
+at a high resolution here's what the
+weather was here's what the weather was
+so we have 0.5 degrees C relative to the
+19 1850 to 1900 Baseline so 0.5 degrees
+that's the late 20th century 1971 to
+2000.
+one degree C that's about 2017. we're at
+about 1.2 now so we show 1.5 so we have
+0.5 1 1.5 we can show two two and a half
+three
+we're not frogs we can actually see what
+it will be like at three degrees C and
+we have the controls on the knobs right
+and so what hasn't happened is the
+Incorporation
+of those models that show us these
+distributions that show us what is
+likely
+into
+anything else really anything else so
+build the building codes
+the building of the sewer system
+real estate models
+all those things you know in the in the
+area of finance and financial regulation
+there's a an institution in the U.S
+called the community reinvestment Act
+uh where Loosely speaking Banks get
+review when they do merger or an
+acquisition and one of the factors uh
+for approval or disapproval is the
+impact that we'll have in in local
+communities
+um and that still
+um
+largely because of discriminatory
+pricing issues on mortgage mortgage
+lending traditionally but that has been
+basically extended and one of the
+interesting places of all places I saw
+an interesting climate model
+to God
+basically the the influence that a
+merger could have on particular
+populations and heat Maps being used in
+a zip code level trying to predict
+um basically the impact of climate
+issues on certain populations and that's
+done in a quantifiable Way by
+Nicola Santa
+who said studies this area but that's a
+tiny example of that now that's what
+I've seen and it's still in very early
+proposal stages but are there other
+places in the interface of
+Society financial regulation that could
+have an impact in in the environment yes
+for sure so
+um
+you see already in tcfd and other sort
+of proposals
+some of these documents are very long
+right there's lots of writing about them
+right writing in them
+so in emissions we have scope one scope
+two scope three you have already fights
+over those things
+but if you look in those documents at
+the physical climate risk portion
+it's just a small amount of suggestive
+language
+and that's where the growth needs to be
+and one of the reasons for me to agree
+to spend time with you to come to the
+CFA Institute
+event and speak is that
+what I'm worried about is that there
+will be this rush to have scores
+but this part of Manhattan or some part
+of Illinois or some part of India or
+some part of Senegal will just have a
+score assigned to it that's either good
+or bad or
+it's a bad climate place or it's a
+dangerous climate place or it's a risky
+climate place or it's a safe climate
+place
+so you can see some of this and I don't
+I don't think these are
+wrong necessarily they're they're
+interesting ways to incorporate it but
+you have now some amount of data about
+flood risk
+that's Incorporated with a flood score
+and there's an institution that I admire
+and think is doing good good work called
+The First Street Foundation that
+provide use some of the same data that
+we do puts That Into Climate into sea
+level rise and flooding models
+and says how where is their flooding
+risk in real estate
+and how will that change over time
+and
+the level of water is a single
+quantifiable thing but climate's pretty
+multivariate and so one place is hot
+might not be the same as other places
+hot so drought is a good example drought
+is a locally defined variable
+a drought in Kansas is not the same as a
+drought even in Montana
+because
+in each place there's a water balance
+there's a pattern of of heat and
+humidity and rainfall
+that was stable for so long that all the
+vegetation all the buildings all those
+things are
+acculturated and attuned to a past
+climate that's now shifting
+what I think we need is process to say
+all right we can see how these are
+likely changing let's examine in each of
+these places
+what are the risks so we need a risk
+process more than a single risk metric
+and so I think we need
+a way to audit risk and so what I hope
+happens is not that we quickly turn it
+into a score but that what happens in
+tcfd and things like that is a suggested
+process
+that says here are the kinds of
+questions to ask here are the data
+available
+and what people may find is that after
+they've done a process like that
+they're actually in good shape
+they also may find they have a very
+specific kind of Crisis Brewing
+but that is quite addressable
+in other cases they might find we have
+an existential question here but it's
+gonna be different for each place and
+best understood by a local community not
+by a central single data provider just
+providing so we are a central single
+data provider that all it does is
+provide
+Global models that have been downscaled
+in a thoughtful Regional way that tell
+you that the weather here in Manhattans
+can be a little different actually than
+the weather in Short Hills having to be
+a little different than the weather and
+you know Stamford and the changes are
+also going to be different
+but what it means for here versus New
+Jersey versus Connecticut the people in
+those places need to assess for
+themselves or the people who are
+considering moving in the area people
+are continuing putting Capital there so
+I'll give you a really good example
+we had a conversation with a a city on
+the south side of uh South Shore of
+Massachusetts New Bedford which used to
+be the whaling capital and twice was the
+richest city in the world
+and local officials there
+spend time with us and
+um there were two variables that
+mattered a lot to them
+number of snowy days
+because
+it's a been a cold place but it's
+getting warmer and it's on the ocean
+and so it's somewhat temperate
+and what happened to snowy days just
+kind of go away
+but they maintain an entire snow plow
+infrastructure
+it's expensive
+but what they also know is that the
+distribution is changing in such a way
+that giant blizzards because of Arctic
+air coming down are still are actually
+increasingly at risk
+so the risk of a ton of snow is not
+going down
+but the chances of two or three inches
+of snow is going down very predictably
+and quite a lot
+so do they take apart they dismantle
+they cancel their regular snow service
+and build an emergency snow plan
+and otherwise not deal with it that's a
+big change programmatically
+but it's a very coherent decision
+and so you could imagine a plan that's
+actually extremely cheap where you say
+we're not going to prepare for two
+inches of snow because it happens too
+infrequently
+and when we get 12 inches of snow we'll
+contract for emergency services but
+we'll just be ready to say the city is
+closed we just stop right because you
+know what else we also know it's going
+to be there are so many warm days that
+snow doesn't hang around anymore the way
+it used to
+and so that's a that you move 30 miles
+north from there it's a different
+decision
+that's what I mean by the science has
+been so accurate is that it's not only
+gotten global temperatures right on
+average but the models that got global
+temperatures right
+they predict weather now they don't
+predict it day-to-day but they give you
+these ranges so the second thing the
+people in New Bedford were interested in
+was the weather the changes in Guatemala
+Guatemala yeah
+wow what is that so when people migrate
+from one country to another they tend to
+go to the places that their relatives
+friends predecessors went to
+there's chain migration
+and New Bedford is a place where people
+from Guatemala tend to go
+they want to be able to anticipate in
+migration
+and if it's very hot in Guatemala if
+there's floated in my what about it they
+show up over there that's very
+interesting now
+um this models clearly have a a lot of
+purchase for at the local level like
+that and and perhaps at a federal level
+you can you can see that
+um
+moving to the the corporate world
+um
+and perhaps the world of financial
+institutions what could be the ways that
+these models could inform their own risk
+assessment
+um also illuminate opportunities uh that
+might come from these changes in in
+distributions
+um
+because we know that that a lot of folks
+are there mean well in what they do they
+have a plan but many times it doesn't
+quite translate in how you engage in
+planning risk
+processes or even the accounting of
+assets that might be impaired because of
+this change in distribution so has this
+been used by the private sector somewhat
+it's starting and there have been some
+real leaders in the area trying to push
+it
+and uh
+I think that there are a couple things I
+do think that
+it's apt that we're as I say here in
+Manhattan in a tall building Finance has
+been centralized so much that this is a
+real challenge that Finance is often not
+got a location anymore
+this is a problem of two things location
+and duration
+if you are making a decision for the
+next two weeks
+climate doesn't matter that much
+if you're making a decision for five
+years it matters quite a lot if you're
+making a decision for 30 years it's
+super important
+and so in the finance community in the
+business community
+the first place this really needs to be
+embraced is where long-term decisions
+are made
+and so I
+tradable Finance has a role to play but
+really Lending
+and making long-term Investments is
+bigger
+I think one window into this is seeing
+how I think poorly people understand
+insurance
+we're talking about risk
+there's an idea in economics that's
+does an enormous amount of work on
+economic models that most people don't
+see
+that you can offlay any risk there's a
+market for every risk that's one of the
+complete Market assumptions is there's
+markets for every kind of risk
+it's just not true
+so I had a really important conversation
+important to me conversation with uh
+somebody who worked at one of the
+world's biggest reinsurers
+early in this work it really helped
+shape my understanding of this
+and I asked about how Insurance markets
+were thinking about these changes
+because the people in reinsurance had
+already embraced these models that's the
+industry where these models are already
+the backbone well their livelihood
+depends on it that's right big time but
+what's interesting is
+they're barely used at all in retail
+insurance
+he said that they are just reselling the
+risk to this that's right big shot they
+assume so
+there will be a market for reselling the
+risk
+and the other is that
+the retail insurers almost all
+outsourced their
+catastrophe modeling
+to other shops
+and so they're not even particularly
+good consumers of that I'll give you a
+very real example of this that will uh
+might make you worry a little bit
+so when I
+I think some most of this has changed
+somewhat but as of not that long ago
+four or five years ago
+the people who did
+the risk modeling for insurance
+companies
+had
+separate models for each kind of risk
+and those models were uncorrelated okay
+and so from the model's perspective it
+was a surprise
+if it was both windy and rainy at the
+same time
+and it was a surprise
+if there were hurricanes in both Florida
+and Texas
+because those were different business
+lines
+and each of those business lines had a
+different product
+and they only wanted that variable
+outcome
+and so at the big risk modeling firms
+those are different departments
+fascinating that's what sociology is
+Merton not the economies but his father
+will call sub goal formation it's each
+part of the company coming up with their
+own goals risks and measures in this
+case that's a great term huh and so sub
+goal formation can be seen as a product
+of a stable climate
+because you like I don't need to
+understand the whole thing
+because the whole thing is stable
+so in economics terms I can just do
+partial equilibrium all the time okay I
+never need to do generally equilibrium
+and I can specialize
+so so his attorney from from people
+trying to optimize their own uh part of
+the business to seeing things in a more
+General way which I believe is a big
+part of what you're doing yeah so so to
+finish the story what the this reinsurer
+told me was the first time there's a
+catastrophic loss in a location
+it's an insurance cost it's an insurance
+problem
+the second time
+it might be an insurance problem but by
+the third time it's an equity and debt
+problem
+because by then the insurer isn't
+insuring anymore
+but then he went on to explain what
+people don't understand is that in a
+catastrophe situation in almost any
+situation all that's insured is the
+physical structure
+and you can't lose on a grade A office
+building on a grade A retail or
+residential property
+you can't lose more than 10 percent
+generally on a on something like that
+because all you're doing is replacing
+the windows and demolding the first
+floor and doing other stuff like that
+the land value is not insured insurance
+doesn't cover the most valuable asset
+which is the location
+and so it's the people who have made a
+long-term commitment to a place that can
+often be quite a lot of money
+think they're insured but all they're
+insured for is repairing in the same
+place they are not insured for the
+actual value
+and so that's an example of something
+where you can bring that in which is say
+what are we in what risks are we insured
+for so if you ask what can we are going
+to bring into into business you've
+already said one of the most important
+things is it's at a higher level
+generally
+the first place it needs to come in is
+that the board
+to ask questions
+do we have a process have we thought
+about these things
+I gave a talk in 2019
+to a group of
+of board members of major endowments and
+Foundations in the United States and I
+asked the audience how many of you at a
+board meeting have had a conversation a
+real like agenda item to talk about
+civil unrest the United States
+one country invades another country
+somewhere in the world the risk of a
+nuclear explosion
+I actually was going to ask about
+pandemic and I still have my notes
+across it off because I'll lose them if
+I say pandemic
+a major climate event
+and they all said nobody nobody had done
+it and I said but you're the board
+you're supposed to ask you're
+responsible for risk and the response
+from the audience was you're a pessimist
+I said no I'm not a pessimist all of
+these things have meaningful
+probabilities I'm not asking them to be
+your base case I'm asking if you've had
+one meeting
+if you've had one unpaid intern do a
+project
+if you've asked the question
+and overwhelmingly they said that's not
+our job I said that's absolutely your
+job
+and so this belongs in oversight it
+belongs in the Executive Suite
+and then you figure out where it goes in
+the organization because in some
+organizations it'll go different places
+so I'm okay with people building a
+sustainability but everybody's building
+a sustainability Department
+without having a conversation at the
+board or or c-suite level about what
+does this mean
+what risks are we exposed to
+how do we build this into our Frameworks
+what do we do when there's just more
+uncertainty what is non-stationary for
+us
+fascinating I was taking out a a study
+that it's a survey study on I believe it
+was the top 50 public issues in the U.S
+and most of them actually now have an
+ESG subcommittee of the board so maybe
+your preaching is is getting traction
+out there suspect you will be speaking
+to more boards about how to take this so
+this is serious comes back to your first
+question
+which is climate literacy
+and what these boards need
+is they need a little orientation around
+climate change not to have an immediate
+ESG agenda with a whole bunch of
+checklists but like let's step back
+let's understand that a stable climate
+underpins everything we did before and
+let's ask ourselves maybe look at some
+maps
+get some examples
+so with
+the largest bank in the United States
+that I won't name had a conversation
+with the
+c-suite members
+showed the maps and the response of the
+key person was
+we need to think about our employees
+right the assumption is that we've got
+to look at our loans
+and this person's like we have tens of
+thousands of people in this place that's
+imperiled and they don't know
+they don't really understand
+and so is that an HR issue
+is that a strategy issue I had another
+prominent Finance CEO say oh I'm so glad
+we didn't put
+we resisted the urge to go into this
+country when everybody else did because
+look that country's in bad shape that
+country faces very dire consequences
+you don't know whether it's a strategy
+question an HR question of a capital
+question
+I think the best analogy for this is
+that climate is becoming like
+information and money
+it's likely that a lot of these
+institutions will have a senior person
+who's got some climate remit
+but I'm going to guess that you and I
+are roughly the same age somewhere in
+our 50s
+and when we were younger businesses had
+a webmaster there was one person
+responsible for the internet
+but over time information became part of
+every decision these are all information
+businesses
+it shows up everywhere climate's going
+to be like that it doesn't mean that it
+will drive every decision but making
+decisions ignorant of it will be
+irresponsible and so actually I do think
+one of the main applications of this
+data and this work in the near future
+will be lawsuits
+which is people saying you were
+negligent to make a decision without
+considering
+these effects
+and that's why the senior people are
+going to be on the hook for this as a
+standard of care
+which is you should have known you can't
+pretend that it's the same and so you
+should have asked this question and so
+probablefutures.org is a place to see
+the data one of the reasons to do it is
+to put pressure on people to say well it
+was free it was out there
+you can't claim you didn't know
+it's fascinating I one way to look at
+what ultimate progress could look like
+is when this conversation this rest
+these opportunities are already
+Incorporated in how we do business and
+how market price is that's right what
+they tell us about what scars and what's
+abundant out there today we all know
+that that's not fully uh in there do you
+have a final challenge that you want to
+yeah give people I think that one of the
+the main Challenge and it's a challenge
+that I think is very hopeful and I think
+is encouraging which is we need to make
+Society more resilient there's a way to
+look at this the stories about the
+future are generally bifurcated
+somehow everything works out we have a
+lot of electric vehicles and modernist
+architecture
+or it's Mad Max
+but we're going to live in the spaces in
+between that's why we called this
+probable Futures we can't be imagining
+these things that have super low
+probability of zero probability we're
+not going back to the time we had before
+we have this space in between that we
+need to live in and imagine well so
+start thinking about how we're going to
+live well in those ranges and one of the
+things about that is
+we need to start thinking about
+resiliency and adaptation not just
+mitigation and I say this because there
+is now momentum around decarbonization
+and that's great but if we do that
+without making Society more resilient
+which partly is better regulations
+partly is more awareness partly is just
+strengthening our Civic institutions
+just getting better at talking about
+risk those are all ways to make us more
+resilient when things partly go wrong
+I I like the story from Muhammad Aryan
+you you brought up the financial crisis
+he was asked
+how did Pimco get the crisis right he
+said we got it totally wrong
+we just prepared for all the outcomes
+their committee assigned only a five
+percent chance to Lehman going under in
+a disorderly way
+but they built a plan for what they
+would do if that happened
+too much of Finance that's a low
+probability I'm not going to do anything
+about it
+we have these things that are now they
+went from a zero probability to five or
+ten percent probability those are not
+low numbers
+we need to plan for those things and I
+think if we plan for those things we'll
+see lots of ways to make Society more
+resilient
+and a lot of people can participate
+well we're uh to the end of the podcast
+but uh thank you so much uh planning for
+resilient Society I think that's a theme
+that will interest most most people
+certainly got my attention and uh Dr
+espresso Glendon thank you so much for
+your contributions in uh to society uh
+in in making us just a little bit more
+informed so we can do something about
+this and thank you for the your
+contributions to the finance industry
+too those are greatly appreciated thank
+you so much you're very welcome I'm
+happy to be a part of it and I will give
+one final pitch which is check out
+probablefutures.org it's not a business
+so this isn't marketing but I think it
+can be helpful to people so thanks so
+much absolutely thank you so much
+[Music]
+[Applause]

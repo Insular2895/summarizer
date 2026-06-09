@@ -1,0 +1,217 @@
+hey guys i just wanted to do a quick
+video on uh how uh
+message brokers kill strong consistency
+um
+it's it's pretty easy to see the value
+add of message brokers and so it almost
+raises the question of when you would
+not want to use a message broker
+um so i think one of the most clear-cut
+examples of when you definitely actually
+would not want to use a message broker
+is when you want strong consistency
+this is a question that came up when i
+was covering session one of tinyurl
+and i actually thought it would make for
+a really nice short video so i'm just
+going to go ahead and cover it
+separately
+um so here in the first case we have uh
+just a pretty classic uh pattern where
+you have one user that's going to be
+writing to a data store and then you
+read from it
+and so in this traditional setup uh you
+would have a strong consistency so we
+could say for example that the data
+store is postgresql for example
+so you would have your right going in to
+the right service it performs the right
+operation on the data store
+data store says yep i wrote it back
+successfully and then it returned to 200
+okay to the
+client
+and then you have the read one it comes
+in with a request and then it's just
+going to immediately see that data so as
+soon as the right scenario is done the
+reader will be able to pick up on it as
+soon as that 200 okay returns back
+so uh the right case here just involves
+what you see here now what happens if
+you introduce a message broker between
+the right capture service and the data
+store
+so i have that diagram written over here
+and uh the
+difference is that
+the right capture store only has to
+write to the message broker before it
+returns back successfully
+to the client
+um so you have a request come in
+the right capture service receives it it
+writes the message broker and then it
+immediately returns back a message
+to the right service like yep i've got
+it on the broker uh it's stored here in
+kafka kinesis sqs whatever it is and
+then it returns back 200 okay
+well so what if there's an outage
+downstream for example the data store
+or perhaps uh the
+um task runners for some reason are down
+so either this or this
+then uh you'll have it written and
+you'll think oh okay so it's it's uh
+it's captured it's it's going to be
+available to the readers
+uh but if you have an outage this could
+be several hours it could even be a
+whole day uh it's a data store it's down
+you could even get a lost right
+uh if you don't have this set up uh if
+you don't have a good retention policy
+you could actually get your right
+operations lost
+um and so uh this read service it won't
+see your data until your data makes
+always all the way from a message broker
+to the data store you're going to have
+stale reads
+um so the the right scenario here only
+involves what you see
+over here
+uh you're just making onto the message
+broker and in ddia
+designing data intensive applications it
+said message brokers you can kind of
+think of them as a as a data store
+and uh that's that's true it's just
+you're storing the data on a message
+broker in fact i think with kinesis in
+aws
+it might actually be implemented on top
+of dynamodb if i'm remembering correctly
+it's the right scenario it's just
+getting to the message broker before it
+returns back to success
+um why would you even want a message
+broker really um well so
+it's good for increasing availability
+um so uh
+if if you don't want to
+you don't want to overload the data
+store for example if it's a time series
+database it's uh it's a common practice
+stick a message broker in front if you
+want to improve the availability
+what you're what you're doing is
+basically turning a push into a pull
+so
+you have a right service it's pushing
+onto a message broker which is designed
+for high availability you have some kind
+of other data store that's not designed
+explicitly for high availability and so
+then you can pull off of the message
+broker and
+push with retries very effectively you
+don't really want to have your retry
+logic on the right service because that
+uh could increase a lot of latency uh
+you'd have to have your retries before
+you return to 200 success it's easier
+just to have it written on to a highly
+available service
+uh that isn't as hard to uh persist it
+to
+um uh you typically don't really account
+for
+uh streams to be down uh when you're
+designing when you're doing a system
+design
+uh you might be able to account for a
+message broker being down and you just
+do that by adding a message that you
+might be able to account for a data
+store being done you just kind of do
+that by um throwing a message broker in
+front of it um but you don't really
+account for message brokers going down
+and any system designs that i've really
+seen you don't really expect kafka to go
+down it's kind of like trying to design
+for aws itself going down which i mean
+i've seen a couple of times but
+typically you don't really do it
+particularly in a system design
+interview
+so it's it's uh you can expect a data
+store to go down but not really a
+message broker
+um and again all it really does for
+improving availability of the data store
+is you're you're turning a push into a
+pull off of it and persisting it
+and um so it's it's very advantageous
+for availability and again with cap
+theorem you see how that that trade-off
+kind of um
+works out in cap theorem with uh trading
+off availability for
+trading off consistency for availability
+so you've improved availability but
+again if you have strong consistency
+here you've gotten rid of it you've
+improved availability and you've
+decreased consistency so that's you know
+cap theorem uh consistency availability
+partitioning tolerance pick two
+you can't you can't say no i'm not going
+to give up partitioning tolerance uh
+it's it's actually consistency or
+availability pick one
+and um so if you're improving
+availability with a message broker you
+are getting rid of uh consistency and
+that's how that whole thing works out
+is um
+uh
+when you're when your data stores down
+it's uh
+it's gonna be more available your rights
+are more available but then you're going
+to get stale reads from the read service
+it's not going to immediately see the
+data from the data store as opposed to
+if you really want strong consistency in
+your design for example it's the wallet
+service
+from alex u's second book or if it's a
+stock exchange design or something
+similar where you want really strong
+consistency
+you might want to go ahead and just not
+have the message broker at all
+since that would force you into stale
+reads and so yes you're going to get
+lower availability but every single uh
+200 success you get off of the right
+service is guaranteed to have a strong
+uh it's strong consistency and and it
+will not have still reads as long as
+you're using something like postgresql
+or spanner or something else that
+supports
+uh
+strong consistency then you'll you'll
+have that strong consistency as long as
+you do not throw a message broker in
+there
+so there you have it uh when would you
+not want to use a message broker
+it is hard to see some cases but one of
+them is when you want strong consistency
+for your data store thanks

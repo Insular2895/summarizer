@@ -1,0 +1,49 @@
+[Music]
+hi this is Ryan from technical solution
+tear up data dog today I'm going to
+share the basics of setting up a graph
+using aggregation and roll-ups the
+visualization we are using here is a
+time series and the metric we're
+graphing is system CPU user our graph is
+currently showing us the average value
+of system CPU user crossed our entire
+environment this is not very helpful for
+providing insight into my diverse cloud
+infrastructure let's look at in a way
+that we can improve this using tags we
+have the ability to aggregate our data
+into groups for example if we wanted to
+understand our infrastructure by cloud
+provider or understand the CPU by cloud
+provider we can add that tag in here we
+now have a grouping for each value of
+the cloud provider tag for example
+Amazon Web Services Google cloud
+platform and assure all of these values
+are the average across each of those
+tags but we have the ability to change
+that to a different method for example
+max bye max bye is showing us the
+maximum value for CPU across each of
+these cloud providers we also have the
+ability to add functions to our craft
+for example the roll-up function this
+will roll up the metric by its maximum
+value in the specified time period this
+is that are demonstrated using the bar
+graph notice each of these bars
+represents a time interval of 1 minute
+we have the power to change this time
+interval to whatever we may need for
+example five minutes or 300 seconds
+notice each of these bars is now
+representing the maximum CPU for each
+cloud provider
+over a five-minute period aggregating
+into groups and aggregating over time
+with the roll up function is a great way
+to make your visualizations more
+actionable and specific I hope this tips
+and tricks video was helpful thank you
+for watching

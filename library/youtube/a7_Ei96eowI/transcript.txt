@@ -1,0 +1,103 @@
+[Music]
+hi
+this is trey solari from the datadog
+solutions engineering team
+today i'm going to cover generating
+metrics from log events
+so to give you some context of the logs
+that i'm bringing in here is my live
+tale where i'm actively collecting logs
+in real time
+and i can select one and see my log
+event that has the attribute of score
+and in this case 26 this is the
+attribute that i'm going to convert to a
+measure and a metric
+inside of datadog so i'm generating
+these scores from my
+application these could be payment
+amounts latency time or any other type
+of quantitative value you'd like to
+measure and track as a metric
+inside of datadog and if i move over to
+my log explorer
+i'll be able to see all the logs that
+have come in over an extended period of
+time
+and i'm going to select one of them and
+under the score attribute
+i'm going to click on score click create
+measure for score it's going to give me
+some information about what we're doing
+we're creating a measure for
+quantitative value
+like like latency for example i've given
+it a name of
+score and i'm going to add this to my
+list of facets and measures over here on
+my left side
+which i can then search through and
+actually find that
+particular measure and then i can scope
+it say between 37
+and 57 and now i'll only see log events
+that match that particular query of
+score 37
+to 57 now from here i'm going to extend
+this even further
+and actually create a generated metric
+from this log
+so to do this i went to logs generate
+metrics and now i'm going to click on
+new metric and i'm going to define the
+query just like i do when the log
+explorer
+to narrow it down based on my service
+tray underscore logs
+and under the count drop down i'm going
+to select the measure
+score that i just created to say this is
+the metric or the attribute that we want
+to create a metric for
+i'm not going to do any group by or
+using tags and key values at this point
+i'm going to have it as a standard score
+if i needed to i could scope it down by
+a dimension of
+index or service environment name or any
+other key value tags that we're
+collecting inside of datadog
+i'm then going to give it a name score
+from logs
+and i'm going to create my metric and
+once this is run
+metrics will start being generated from
+this log event that is filtered down by
+service
+tray underscore logs and now i can
+quickly come over and see
+in metric explorer my metrics that have
+come in
+and here you can see over time these are
+the metrics that have been extracted
+from
+the log event that have been ingested
+into datadog
+now we can use this concept to take
+these metrics and use it in
+graphing observability alerting
+monitoring and machine learning and
+datadog
+it will be treated just like any other
+metric that has been collected
+via an integration or an api or any
+other method that we have for collecting
+metrics in to datadog so again thank you
+so much for watching this tips and
+tricks video
+i hope you found it helpful and i'd
+recommend watching some of the other
+valuable
+tips and tricks that we have provided in
+this video list as well
+thank you

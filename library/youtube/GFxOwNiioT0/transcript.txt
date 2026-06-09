@@ -1,0 +1,657 @@
+imagine launching your own amnb in
+minutes realtime booking Conflict Free
+reservation seamless off in a
+beautifully designed front in all
+powered by super base and bolt on you
+without writing a single line of code in
+this video we're building a fully
+functional rental platform from scratch
+with a fast and reliable backend
+flexible search and filters and a smooth
+booking experience no complex
+infrastructures no tedious spiler plates
+just super based and Bol on you doing
+the heavy lifting so you can focus on
+shipping let's dive in let's start by
+creating the UI of the
+app so I'm giving it some details about
+what kind of app I'm working on and um
+some more specific stuff about what
+exactly uh what pages do we need and
+stuff like that but we could certainly
+be more specific um as usual I like to
+kind of start with something abstract
+and then uh maybe add some details later
+on but let's see what Bol can come up
+with
+this okay so it is done generating and
+we can see a beautiful listing page uh
+it's nice we can I guess favorite it
+maybe and it has some nice images um of
+the place we can see the price some
+dates and we can make the
+reservation I think this is a really
+good good starting point okay so let's
+polish this up um later on we'll be
+adding more complex features like
+filters and also being able to make the
+reservation and stuff so let's see let's
+start off by adding some UI for the
+filters so I've asked both to add some
+filtering feature and of course we
+haven't connected any back end to this
+so This filter feature doesn't have to
+be really working on the front end it
+just has to have a nice UI but um I
+think bolt is going to try to make
+something work locally which is great uh
+it makes it easier uh when we actually
+connect super base later
+on but yeah you can see both adding
+filters by location filters by amenities
+some of the things that I expect like a
+airnb type of app to have okay great uh
+we have yeah it's looking beautiful the
+UI could use some work obviously we
+might not want to uh clutter the
+vertical space like this with bunch of
+tags but uh it's all right it's all
+right it's it's working the tag
+filtering is working so I think it's
+great uh we can always uh you know
+polish up the UI
+later the date filters are there and
+locations uh filters are there as well
+California New York Colorado yeah we can
+later on certainly polish these filter
+up but I think for now uh these look
+beautiful now let's also polish up this
+Details page so here we only have a
+single date but obviously when we stay
+at a place we uh have a start date and
+an end dat so let's um add that I'm try
+to think if there's other stuff that we
+should be
+updating but I think it's good yeah we
+have number of guests number of bedrooms
+number of bathrooms pool yeah all these
+uh categories I guess so yeah I think it
+makes sense let's just um add the end
+dat so you can see there's now a start
+date and an end date and
+yeah it's I
+guess storing it somewhere we don't
+really need to worry about the code for
+now or later on because this is a no
+code
+tutorial but okay as we come back we can
+see that there is
+a dates
+property H dates it says plural but it's
+still a
+single date field isn't
+it oh I guess the UI hadn't updated yet
+okay so we have a check-in
+date and a check out
+date great and as we make oh wow as we
+update the dates it gives me the final
+pricing and it also includes a service
+fee works works for me great I am loving
+this now that we have a beautiful UI
+let's connect superbase and add off to
+it now superbase is the back end that
+we'll be using and the great thing about
+it is we can just click this button and
+get started with uh connecting it to
+super base so right now behind the
+scenes bolt onu is spinning up a new
+superbase instance and we can just wait
+for it to be available for us so our
+superbase project is done spinning up
+and we can actually view the project if
+we wanted
+to so looks like this we have bunch of
+tables we have we can write SQL if we
+want to um we can take care of
+authentication but the beautiful thing
+is we don't really need to work within
+our super beast dashboard we can
+actually let bolt take of um everything
+that we need within super base so let's
+do that so yeah we can add both to add
+authentication uh from the signin
+button so just with a simple prompt I
+asked it to add Super Bee all to this
+app and I specified email plus password
+authentication um we can certainly add
+Google o or Facebook o or other type of
+authentication but it's a bit more
+complicated and uh some of those o
+wouldn't work within this bolt um
+preview window so you would have to
+deploy uh for it to work and for this
+tutorial I don't want to go through the
+hassle of deploying all the app every
+single time I test it out so I'm just
+going with a simple email plus password
+login you can always ask both to
+implement um all the other
+authentication options if you want
+to okay so let's press sign in and see
+if we can get our users uh signed up so
+we need to sign up first right
+and hit create an
+account and just like that we are signed
+in now that we're signed in we can also
+connect our superbase database to the
+app so that our listings actually get
+loaded from the actual
+database so I've asked both to create
+the tables necessary to store all the uh
+location listings and also to connect
+superbase to the app so that the
+listings will be loaded from subbase
+database we can see BU building the
+listings table to store all the listings
+which has title location price rating
+reviews description all the information
+that you see on the details page and
+it's also taking care of some security
+stuff that we don't really need to go
+too deep into but um it's making sure
+the app only allows the right users to
+be able to interact with the database
+okay so we got some erors let's see what
+is going on transfer failed see okay I
+have no idea what this eror is but uh we
+can oh yeah it's probably because we
+haven't actually run the uh script to
+create the tables uh so in order to
+create the tables we need to Grant
+permission for bolt to actually interact
+with our database which is a nice
+feature that they have so now that they
+have run the migration command if we go
+back to our
+database we can see the listings
+table which shouldn't have any data at
+the moment or I guess it does have some
+dummy data which is great okay but we
+still have this error going
+[Music]
+on let's hit refresh and yeah we still
+have the error so transform failed one
+error unexpected end of
+file okay we can copy this and let Vault
+take care of
+it all right we were able to resolve the
+error now we don't see any listings uh
+but that was because there was a default
+filter for some reason we can probably
+fix this
+okay H it's still having the same issue
+isn't
+it no listing found
+okay let's ask it to load the list of
+locations
+initially okay let's actually move on
+and we can take care of it later now I'm
+en counting a air when I go to The
+Details page so let's take of
+that H we still have an
+error okay
+all right I think we were able to fix
+the error isn't like bolt was able to
+fix the era for
+me oh great so uh yeah both definitely
+did struggle a bit right there but the
+point is we didn't really have to dig
+into the code at all we were just able
+to click to fix the error or we just
+feed in the error message to b and it
+was able to resolve the error on its own
+except this filing issue which is um
+kind of annoying but we'll take care of
+it later one of the key to developing
+apps with AI is just patience isn't it
+just kind of have to um sometimes you
+just have to be lucky considering how
+much work we've been able to get done in
+just a matter of minutes is amazing like
+if we were manually building out this
+application by hand we were certainly
+not have this beautiful looking
+application um in just you know whatever
+time we spend so far now in order to
+make this demo application more
+interesting I want to add more uh demo
+data into the database so let's ask B to
+do that
+so I created another migration file with
+bunch of demo data that will be inserted
+into our database
+soon all right B is done generating all
+the dummy data so let's apply
+changes and take a look at the list of
+locations okay so it has quite an
+extensive list of filters we should
+probably take care of that maybe but
+yeah as you can see we have a whole
+bunch more locations that we can work
+with which is
+great let's let's quickly take care of
+this UI CU it's quite
+disturbing so I asked B to make it into
+a drop down instead of just listing out
+all the every single categories that are
+available let's see if it can come up
+with a nice
+UI Okay so we've encountered some errors
+but that's all right let's fix it
+clear filters and we
+have
+amenities
+dock Lake areas great I like the UI I
+like the fact that we can view all the
+filtered categories right
+here and we can clear the
+filter looks pretty good we can choose
+the location
+great I think it's looking pretty
+good now that we have some data to work
+with let's work on the booking feature
+so when we go into the details page we
+should be able to make a booking by
+selecting the check-in date and check
+out date and number of guests so we need
+a table to store these information one
+of the key component about booking is
+making sure that no two reservations
+overlap with each other so no two
+parties should be able to uh make
+reservation on this luxury beach front
+Villa um on the same day or overlapping
+dates and post actually has a neat data
+type to handle situations like this
+called date range that we can utilize so
+let's keep that in mind and let's ask
+both to implement booking feature and
+one thing we want to do today is to add
+U Payment Processing so we're just going
+to store the booking information on the
+database and uh that'll be
+yet so it's creating a bookings table
+with ID listing ID user ID and a chicken
+and checkout
+column H chicken date check out date
+column and it's adding Ro level security
+to it
+um okay so it's not using the date range
+type that I asked it to use but let's go
+back to the
+code but it's asking adding some
+constraints of no overlapping booking to
+exclude using gist index with listing ID
+and date range okay so this works I
+suppose yeah it's storing the checkin
+and checkout date is two separate dates
+but it's actually um adding a constraint
+so that no two reservations would
+overlap with each other so this works
+great um see um both and new I feel like
+is always a hit of me um it knows what
+it's doing and just standard practices
+of uh adding proper Ro level security
+policies so that no users can uh pretend
+to be someone
+else and it's also asked adding index so
+that we can efficiently query the list
+bookings with listing ID check in and
+check out columns yep let's apply these
+changes and I think this problem is due
+to the fact that we didn't have the
+table
+earlier
+H okay so something with
+the there was something with running the
+C
+so let's ask that
+to fix it and let's see what it comes up
+with so it's updating the migration file
+that we were taking a look at
+earlier let's take a quick look so it's
+still using the same
+stuff TS range so timestamp
+range uh using checkin checkout
+and
+okay let's see if that goes
+through okay check in his date check out
+his date okay so if you think about uh
+ranges uh if I'm booking from February
+1st to February 2nd and if someone else
+wants to book from February 2nd to 3rd
+that someone should be able to book it
+right even though both of us will be
+staying at the at the place on February
+2nd because I'll leaving in the morning
+and this new guy will be coming in at
+night so there's not a problem that's
+the standard way of how uh Hotel um or
+these type of things work in order to
+kind of do that in postgress uh we have
+this notation of this square brackets
+being inclusive and the curly uh braces
+being exclusive so what this is saying
+is the checkin date should be inclusive
+and checkout date should be exclusive
+meaning if I have have a check in date
+of February 1st and checkout date of
+February 2nd uh that someone should be
+able to book starting from February 2
+that's not considered a
+overlap but yeah um bolt. new was able
+to just kind of detect it uh figure out
+what exactly the area was and was able
+to fix it on its own so I think it's uh
+working great let's take a look if it's
+truly working so if I say I want to
+check in on February 3rd check out on
+February 4th with one guest I should be
+able to make a reservation right so if
+we jump into the table editor we have a
+bookings
+table and we have the booking that we
+just created um this is my user ID and
+we have a check date of February 3rd and
+check out date of February 4th now if I
+go back and make another reservation on
+the same
+place on the same dates so February 3rd
+to 4th with one guest I shouldn't be
+able to make this reservation because
+these dates are not available please
+select a different date range I love the
+message as well and if I do book from
+February 4th to 5th I should be able to
+make this reservation and it went
+through
+and similarly it also takes care of um
+overlapping in a in a larger scope so if
+I have febrary 3rd to February 10th
+because we uh have multiple actually
+reservation that overlaps with these
+dates it will prevent me from um making
+those
+reservations and if we jump into the
+superbase database and hit refresh we
+can see that we have those two
+reservations from February 3rd to 4th
+fourth and fourth fifth now that we have
+the booking feature Let's uh fine-tune
+the filtering feature that we have so if
+we go to our listing page we have a date
+filter where we want to specify from
+which St to which state we would like to
+stay and it would be neat if we could
+exclude those places listings that has a
+reservation between those dates because
+obviously we wouldn't be able to uh stay
+there uh so yeah let's work on that
+feature
+so I've given it the prompt to use these
+date Pickers to exclude uh those
+listings with reservations that are
+already there and I'm curious to see how
+exactly B will um solve this problem I
+can see a few ways that I would go about
+solving this problem I might use a Pocus
+function or um yeah there there's few
+things that come to my mind that could
+make this feature uh complete but let's
+see so if I do try to make a reservation
+from the 3D to
+5ifth it should exclude it this but
+instead it just errored out
+because because okay let's just fix
+it and this is a challenging um feature
+because obviously we don't want to
+expose the booking information to the
+public the booking information should be
+private to whoever made the bookings but
+we still want to know the fact that
+there are bookings for this uh locations
+in certain dates so we would have to
+come up with something that would bypass
+Ro Lev security which restricts the
+booking information to be only
+accessible by that user who ever made
+the reservation but is it working so we
+have if we clear the filters so this is
+this disappeared didn't it so if we go
+from fourth to
+fifth yeah the first listing is gone and
+the second one and on is only being
+displayed so I wonder how it solved this
+problem let's
+see add a new state variable unavailable
+listing IDs track list have overlapping
+bookings add new user effect fetch
+bookings that overlap with selected date
+range uses post range overlap operator
+to check for conflicts updates the
+unavailable listing
+State uh update the filtering listing
+logic so one thing I'm curious of is if
+we take a look at the migration file and
+go to the yeah uh R over security for
+bookings we can see that uh the select
+policy create policy for booking for
+insert select so the policy for select
+is using AA uid um is equal to the user
+ID so this means that the booking
+information is only accessible by the
+user who made the
+booking meaning that if I sign out and
+sign in is another user sign up is
+another user I suppose Tyler +
+one okay now that I'm signed in is
+another user I shouldn't be able
+to have access to the booking
+information of the fact that uh Tyler at
+superb. was has a reservation here so
+let's just refresh the page just in
+case and if I go from fourth to
+sixth okay because this Tyler plus one
+user doesn't have access to the Tyler at
+superbo booking information it's looking
+like I would be able to make a
+reservation here but if I actually jump
+in pin and try to make a reservation it
+should block me because there is a
+reservation and uh that's being blocked
+at the database
+level so it's great that that's working
+but it's not great that the filter is
+not working so yeah um we're going to
+have to ask bolt to bypass this
+so I didn't really go into uh giving
+bolt onu too much uh information about
+why it's not working I just said it's
+not working and come up with a different
+uh
+implementation and it's creating a
+database function so if we go here it's
+creating a database function and I think
+this is a what's called a security
+definer database function what this can
+do is it can bypass Ro level security
+policies so that um all the users would
+have access
+to whatever this function is doing what
+we have to be careful is the security
+defer function cannot be exposing
+anything that shouldn't be public like
+if it was exposing the actual booking
+itself it would be a problem whereas if
+it's just exposing the fact that there's
+a booking on a certain date it probably
+isn't a huge uh problem at all in fact
+we would kind of need that information
+to be public in order for for this
+filter to uh work
+so it takes a listing ID checkin date
+check out date and it Loops through them
+and returns if a booking exists at that
+time this will
+work uh but we would need to call this
+function for every single booking that
+is being displayed so if I go from third
+to
+fifth this kind of works but uh it's not
+really a scalable solution so yeah let's
+let's just table
+that so I just basically told that that
+it's not really a scalable solution and
+come up with a more scalable solution
+something that I would do is I would
+just uh create a generic function that
+that will return the list of listings uh
+that are
+available um giving the list of uh
+parameters but it's
+still okay so it's taking a location
+filter amenity filter check and checkout
+date and it returns a list of uh
+locations so yeah more or less that's
+kind of the direction that I would go
+about f fix in this problem and I think
+it's the way um Bol is doing it right
+now so already I believe it's using that
+function to load the list of
+listings and we don't see the listings
+that I've already made a reservation
+four which
+is which is a bit weird because I
+haven't really set any filters but if I
+do third to fifth that particular
+location is gone if I go from fifth to
+sixth
+H if I go from I don't know 18
+to
+19th so this location is available I
+wonder what happen just there if I go
+from 4th to 19th that location is no
+longer available if I go from 6th to
+7th okay this location is available so
+you can see that um that new Pocus
+function that b. new created is taking
+care of um all the filtering logic and
+it should work with all the other
+filters that I have here as well so if I
+uh you know filter it to California it's
+giving me all the list of um listings
+that are in California and if I do apply
+some amenity filtering like
+fireplace there you go it still uh works
+pretty good okay so yeah that's the
+basic uh day and in uh basic drop down
+filtering and lastly I want to add a
+keyword search feature to this listings
+page so we should have a text box that
+users can enter whatever keyword they uh
+can come up with and it'll search
+through the uh all the listings in the
+database try to find the listings with
+matching keywords in the description or
+the title and return those listings um I
+believe Bol on you should just update
+the um functions that we is in Bolt that
+you just created uh but let's see what
+it can come up
+with so I've asked both to basically
+Implement a keyword search feature that
+matches the keyword against title in the
+description and I also added this a
+little bit about uh making sure that the
+implementation is scalable hoping that
+it will come up with a uh nice scalable
+solution that just um utilizes the
+postgress full potential because
+postgress database on its own is a very
+scalable database it Powers some of the
+world's most big services like Reddit or
+notion or figma so yeah if you use it
+correctly it can scale really really
+well and I liked what we saw right there
+so again we're opening the migration
+file and it's creating a another columns
+for um search text so this is a common
+pattern that we see in postas we create
+a new column that combines the all the
+columns that we want to search against
+in this case we want to combine the
+title and the description of the
+listings and once we create that column
+we create a index on that column so that
+we can uh search against it efficiently
+and uh lastly we update the uh functions
+that we have have and we pass in a new
+search query parameter and basically do
+all the same query that we've been all
+doing so far with the filters so let's
+apply
+changes and we get some
+errors try again okay yeah let's try to
+fix it by asking Bol to just fix it
+without even looking at the errors
+I think it has something to do
+with h never
+mind but yeah this query is becoming
+quite complex but that's okay because we
+have all the necessary indexes to scale
+and okay so it looks like we have
+something going on um I'm not sure why
+we already have some filtering going on
+but
+let's see uh if I search for wine
+hm so there's some UI glitch where as I
+type it performs a search and uh while
+it's performing the search the UI
+doesn't display the text box and once it
+comes back I'm not focused on the text
+box anymore so let's ask it to um fix
+that so instead of Performing the
+keyword search
+so some basic stuff instead of just uh
+you know performing the search on every
+single keystroke I asked bolt to only
+perform the search when I actually press
+a search button or you know hit return
+on my
+keyboard pretty standard I think it
+should be able to take care of it pretty
+smoothly
+all right let's take a look so if I type
+wine
+inserch there you go we have wine County
+Villa now if I yeah let's look for
+another random location okay so Mountain
+View cabin so if we take a look at the
+description cozy let's search for
+cozy um
+cozy we have we have a few places with
+the keyword cozy so let's take a look at
+this one and it's a uh
+cozy Maritime
+charm beautiful so keyword search is
+working um yeah uh I guess all the basic
+features are working we can refresh the
+page and you know along the way we also
+fixed the you know uh issue where
+initially the data wasn't being loaded
+but now it's uh being loaded so yeah
+that's it um yeah um we have a nice
+filing feature bookings are not
+overlapping with each other we have a
+beautiful UI we were able to create a
+beautiful Airbnb clone

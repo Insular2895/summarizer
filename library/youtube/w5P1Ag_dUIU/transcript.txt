@@ -1,0 +1,316 @@
+Hi. Guess what? Event-driven agents
+not new.
+I know. I know. Over the past few weeks,
+I keep hearing people talk about it like
+it's some crazy new idea. And I get the
+excitement. But here's the thing.
+Event-driven architecture has been
+around for a while. In fact, serverless
+made EDA available to everyone.
+And agents?
+They're just another workload.
+So, can we do event-driven agents?
+Yeah, we absolutely can. In fact, I
+built a little something to show you how
+it works. An event-driven architecture
+that orchestrates five different AI
+agents.
+While this pattern can be applied to a
+lot of different things or processes,
+this particular one helps content
+creators build video content from
+beginning to end.
+So, let me show you what it looks like.
+I sent a message to a Telegram bot. Make
+me a video about an event-driven agent
+with Lambda durable functions.
+And behind the scenes, five AI agents
+wake up one at a time. One researches
+the topic, another builds an outline,
+another writes working demo code. Then a
+script gets drafted, polished, and
+delivered back to me in Telegram with
+included download links.
+No servers running, no containers
+sitting idle. I can review and approve
+each step along the way or let the whole
+thing run fully autonomous. And if I'm
+in review mode and I step away, the
+pipeline just waits. Up to 30 days out
+of the box, but configurable up to a
+full year.
+Before I show you how I built it, let's
+talk about why.
+Tools like Open Claw and Cursor have
+shown us the power of event-driven
+agents. Browse the web, update emails,
+reserve a flight, and more.
+But here's where my brain went. What
+happens when you want to run this for
+multiple users? Not one person on a
+laptop, but hundreds or thousands of
+people kicking off agent pipelines at
+the same time.
+That's when the questions start piling
+up.
+How do you coordinate multiple agents?
+How do you let a human jump in
+mid-workflow to approve or give feedback
+without a server burning compute the
+whole time they're thinking?
+How do you keep track of where each run
+is or across hours or even days? And how
+do you make sure each agent only has
+access to what it needs?
+I got you. That's what this video is all
+about. We're going to take an agent
+pattern and make it event-driven,
+scalable, and ready to handle thousands
+of concurrent runs with no servers to
+manage.
+So, let's dive into what I built. As I
+said before, this particular example is
+a content creation app that orchestrates
+across five different unique agents to
+complete a task.
+First up is the research agent. It does
+a deep dive on the topic. Key findings,
+sources, technical details. This one
+runs on Claude Sonnet 4.5 because
+research quality matters.
+Next, the outline agent takes the
+research and builds a structured video
+outline. Sections, talking points, demo
+segments, estimated duration. This is
+Sonnet 4 to handle this.
+Then, the demo code agent picks up those
+demo segments and generates actual
+working code for each one. Back to
+Sonnet 4.5 here.
+You want the code to actually work. The
+script draft agent takes everything so
+far, research, outline, demo code, and
+writes a full video script, narration,
+demo walkthroughs, transitions, speaker
+cues. This is Sonnet 4.
+And finally, the script edit agent
+polishes the whole thing, pacing,
+clarity, engagement. Sonnet 4.5 for the
+final pass.
+Each of these agents is critical to the
+overall task, but each has its place in
+the order. Research must be completed
+before an outline can be generated. An
+outline is required to create demo code,
+which is then needed for the draft, and
+so on. You get the idea. What we need is
+orchestration. Something to handle the
+flow when things go well and when things
+fail. For this, I chose the new AWS
+Lambda durable functions. If you haven't
+used these yet, they're worth knowing
+about. I'll leave a link down in the
+description.
+Here's the idea.
+You write your workflow and as plain
+sequential code. Durable functions
+support Python, TypeScript, and Java.
+We're using Python for this project, but
+the same patterns apply in all three.
+All right. Let's take a look at this
+handler. It reads top to bottom like a
+script.
+Every time you call context.step, the
+framework checkpoints your progress
+automatically. If the function restarts,
+it replays from the last checkpoint. You
+don't manage any of this state yourself.
+And here's the part I really like. Wait
+for callback. After the orchestrator
+processes this call, it stops. The
+function is no longer running, no
+compute, it just sleeps.
+Then, when the callback arrives, maybe
+an agent finished its work or maybe a
+human clicked approve in Telegram, the
+orchestrator wakes up, replays to where
+it left off, and keeps going. If the
+callback is a human approval, these can
+often take days, weeks, or even months.
+To manage that, you can configure the
+timeout up to 365 days, and the
+orchestrator sleeps the entire time with
+no idle compute. Okay. So, that's cool
+for one user, but remember the question
+from earlier, what about hundreds or
+thousands of users? This is where it
+gets interesting. A thousand users kick
+off pipelines at the same time. Each one
+gets his own durable orchestrator. They
+all sleep independently. They all resume
+on their own callbacks. No connection
+pools, no session management, no server
+capacity planning. It just works.
+And the best part?
+This is just Python. You can read it.
+You can debug it. You could put it in
+version control and review it in a PR.
+Your workflow logic lives in code, not
+in config files. Okay. That's the
+orchestrator. Now, let's take a look at
+the agents themselves. Each one is a
+Strands agent running in its own Lambda
+function. Here's the research agent.
+Pretty simple, actually. It receives the
+input payload plus a callback ID. It
+runs a Strands agent with a system
+prompt and a Pydantic model for
+structured output. When it's done, it
+calls send durable execution callback
+success with the result and that
+callback ID.
+That's it. The agent doesn't know about
+the pipeline. It doesn't know about the
+other agents. It doesn't know about
+Telegram. It just does its job and calls
+back. Now, the fact that each agent is
+completely on its own, that's the other
+half of the scaling story.
+We talked about the orchestrator scaling
+through durable functions. The agents
+scale the same way Lambda always has. If
+500 research requests come in at once,
+you get 500 research agent functions
+running in parallel. The outline agents
+don't even notice. They're completely
+independent.
+And because they're independent, you get
+security out of the box. Each agent has
+its own IAM role. The research agent
+can't touch the script edit agent's
+resources. Each one has its own timeout,
+its own dependencies, its own blast
+radius. If one agent has a bug, it
+doesn't take down the pipeline. Now, all
+of this would be cool on its own, but
+the human in the loop part is where it
+really comes together. When you start a
+pipeline, the bot asks you, "Do you want
+to review each phase or auto-approve
+everything?"
+If you pick review mode, after each
+phase completes, you get the output
+right in Telegram, plus a link to
+download the full artifacts from S3, and
+three buttons, approve, iterate, or go
+back.
+Approve moves to the next phase.
+Iterate lets you give feedback. Uh make
+the intro shorter, add more details on
+the off section. And the agent revises
+its output with your notes. You can
+iterate as many times as you want.
+Go back jumps to the previous phase.
+Maybe the outline was fine, but after
+seeing the script, you you realize the
+research missed something. Jump back to
+research, redo it, and the pipeline
+picks up from there. One fun detail.
+Telegram limits callback data to 64
+bytes. Our durable function execution
+callback IDs are longer than that. So,
+we store a short ID in the Telegram
+button, map it to the full callback ID
+in DynamoDB,
+and look it up when the button is
+clicked. Small things, but it's the kind
+of real-world problem you hit when you
+actually build this stuff. Okay,
+speaking of, I want to talk about how I
+actually built this. I understand the
+concepts. Durable functions, strands
+agents, event-driven architecture,
+that's my wheelhouse.
+But I'm an architect more than a
+developer. My title says developer
+advocate, but honestly, the code is
+that's where I struggle.
+That's where Kiro Powers came in. I
+relied heavily on them.
+So, there's two powers in particular.
+The strands agent power helped me
+scaffold each agent lambda function. It
+already knew the patterns, how to set up
+the strands SDK, how to define the
+structured output with Pydantic models,
+how to wire up the callback integration
+with durable functions. Instead of
+staring at docs trying to figure out the
+syntax,
+I had guidance right in my editor that
+actually understood what I was building
+and helped me write the code. The
+durable function power was a huge for
+the orchestrator. I knew what I wanted.
+Steps, checkpoints, callbacks, but
+translating that into working Python,
+that's where I needed help.
+The power walked me through it, showed
+me the right patterns,
+caught my mistakes, and there were
+plenty. Here's the thing about powers,
+they're not just documentation. They
+understand your code and your stack.
+When I was wiring up the callback flow
+between the orchestrator and the agents,
+the power knew what I was trying to do
+and suggested the right patterns.
+That's way different from tab switching
+between docs and your editor.
+Now, one thing worth mentioning before
+we wrap up.
+I built each agent as a lambda function,
+but that's not the only option. I could
+have used Amazon Bedrock Agent Core to
+run the agents instead. Agent Core is a
+good route if your agents need to run
+for longer than lambda's 15-minute
+timeout. Think really deep research
+tasks or complex code generation that
+takes a while. I may actually switch
+this out later, but for now, lambda
+keeps things simple and the agents
+finish well within the time limit.
+All right. So, that's the pattern.
+Specialized agents, each in their own
+lambda function, a durable function
+orchestrator that coordinates them with
+plain Python code.
+Human review gates that cost nothing
+while they wait. Event-driven
+everything.
+It all scales to zero when idle and
+scales out per user when it's busy.
+And this isn't just for content
+creation. The same architecture works
+for code review pipelines, data
+processing workflows, approval chains,
+anything where agents need to work
+together and humans need to stay in
+control.
+I'll drop links to the repo, the Kiro
+powers I used, and the lambda durable
+functions docs in the description.
+Go build something cool with it. Oh, oh.
+And one more thing.
+This script, the one I just read to you,
+yeah, I used a script for once.
+It was hard.
+Anyways, it was generated by the app. I
+used the same pipeline you just watched
+me build to create the outline, draft,
+and edit for this video. Turns out I'm
+not just a builder, I'm also a customer.
+So,
+it works.
+Thanks for watching.

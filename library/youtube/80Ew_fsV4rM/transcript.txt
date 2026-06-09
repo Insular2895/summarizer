@@ -1,0 +1,501 @@
+so in this video we're gonna talk about
+what ingress is and how you should use
+it and also what are different use cases
+for ingress so first of all let's
+imagine a simple kubernetes cluster
+where we have a part of my application
+and it's corresponding service my app
+service so the first thing you need for
+a UI application is to be accessible
+through a browser right so for external
+requests to be able to reach your
+application so one way to do that an
+easy way is through an external service
+where basically you can access the
+application using HTTP protocol the IP
+address of the node in the port however
+this is good for test cases and if you
+want to try something very fast but this
+is not what the final product should
+look like the final product should be
+like this so you have a domain name for
+application and you want a secure
+connection using HTTPS so the way to do
+that is using commander this component
+called ingress so you'll have my app
+ingress and instead of external service
+you would instead have an internal
+service so you would not open your
+application through the IP address and
+the port and now if the request comes
+from the browser it's gonna first reach
+to the ingress and ingress then we'll
+redirect it to the internal service and
+then it will eventually end up with the
+pot so now let's actually take a look
+and see how external service
+configuration looks like so that you
+have a practical understanding so first
+of all if you want to know in more
+details how Cabrera's llamó files are
+written and what the syntax looks like
+for different components then I have a
+separate video so you can check it out
+but here to just to understand the main
+concepts so you have the service which
+is of type load balancer this means we
+are opening it to public by assigning an
+external IP address to the service and
+this is the port number that user can
+access the application at so basically
+IP address
+the external IP address and the port
+number that you specify here again if
+you want to know more details about each
+attribute then check out my kubernetes
+GML video now with ingress of course it
+looks differently so let's go through
+the syntax of ingress basically have a
+kind ingress instead of a service and in
+the specification where the whole
+configuration happens you have so-called
+rules or routing rules and this
+basically defines that in the main
+address or all the requests to that host
+must be forwarded to an internal service
+so this is the host that user will enter
+in the browser and in ingress use define
+a mapping so what happens when that
+requests or that host gets issued you
+redirect it internally to a service the
+path here basically means the URL path
+so everything after the domain name so
+slash whatever path comes after that you
+can define those rules here and we'll
+see some different examples of the path
+configuration later and as you see here
+in this configuration we have an HTTP
+protocol so later in this video I'm
+gonna show you how to configure HTTP
+connection using English component so
+right now in the specification we don't
+have anything configured for the secure
+connection it's just ad HTTP and one
+thing to note here is that this HTTP
+attribute here does not correspond to
+this one here this is a protocol that
+the incoming request gets forwarded to
+to the internal service so this is
+actually the second step and not to
+confuse it with this one and now let's
+see how the internal service to that
+ingress will look like so basically back
+end is the targets where the request the
+incoming request will be redirected and
+the service name should correspond the
+internal service name like this and the
+port should be internal service port and
+as you see here the only difference
+between the external and internal
+services is that here in internal
+service I don't have
+the third ports which is the note ports
+starting from 30 thousands we now have
+that attribute here and the type is a
+default type not a load balancer but
+internal service type which is cluster
+IP so this should be a valid domain
+address so you can just write anything
+here it has to be first of all valid and
+you should map that domain name to IP
+address of the node that represents an
+entry point to your kubernetes cluster
+so for example if you decide that one of
+the nodes inside the kubernetes cluster
+is going to be the entry point then you
+should map this to the IP address of
+that note or and we will see that later
+if you configure a server outside of the
+kubernetes cluster that will become the
+entry points to your kubernetes cluster
+then you should map this hostname to the
+IP address of that server so now that we
+saw what kubernetes ingress components
+looks like let's see how to actually
+configure ingress in the cluster so
+remember this diagram I showed you the
+beginning so basically you have a pod
+service and corresponding ingress now if
+you create that ingress components alone
+that won't be enough for ingress routing
+rules to work what you need in addition
+is an implementation for ingress and
+that implementation is called ingress
+controller so the step one will be to
+install an ingress controllers which is
+basically another pod or another set of
+parts that run on your note in your
+kubernetes cluster and thus evaluation
+and processing of ingress routes so the
+yellow file that I showed you with the
+ingress component is basically this part
+right here and this has to be
+additionally installed in components
+cluster so what is ingress controller
+exactly the function of ingress
+controller is to evaluate all the rules
+that you have defined in your cluster
+and this way to manage all the
+redirections so basically this will be
+the entry point in the cluster for all
+the requests to that domain or
+the main rules that you've configured
+and this will evaluate all the rules
+because you may have 50 rules or 50
+ingress components created in your
+cluster it will evaluate all the rules
+and decide based on that which
+forwarding rule applies for that
+specific request so in order to install
+this implementation of ingress in your
+cluster you have to decide which one of
+many different third-party
+implementations you want to choose from
+I'll put a link of the holism
+description where you see different
+kinds of English controllers you can
+choose from there is one from kubernetes
+itself which is kubernetes nginx ingress
+controller but there are others as well
+so once we install ingress controller in
+your cluster you're good to go
+create ingress rules and the whole
+configuration is gonna work so now that
+I've shown you how ingress can be used
+in a Cabana this cluster there is one
+thing that I think is important to
+understand in terms of setting up the
+whole cluster to be able to receive
+external requests now first of all you
+have to consider the environment where
+you come in at these cluster is running
+if you are using some cloud service
+provider like Amazon Web Services Google
+cloud lino there are a couple more that
+have out-of-the-box coronated solutions
+or they have their own virtualized load
+balances etc your cluster configuration
+would look something like this
+so you would have a cloud load balancer
+that is specifically implemented by that
+cloud provider and external requests
+coming from the browser will first hit
+the load balancer and that load balancer
+then will redirect the requests to
+ingress controller now this is not the
+only way to do it even in cloud
+environment you can do it in a couple of
+different ways but this is one of the
+most common strategies an advantage of
+using cloud provided for that is that
+you don't have to implement a load
+balancer yourself so with minimal effort
+probably on most cloud providers you
+will have the load balancer up and run
+and ready to receive those requests and
+forward those requests into your
+cabinets cluster so very easy setup now
+if you are deploying your humanities
+cluster on a bare metal environment then
+you would have to do that part yourself
+so basically you would have to configure
+some kind of entry point to your
+cabinets cluster yourself and there's a
+whole list of different ways to do that
+and I'm gonna put that also in the
+description
+but generally speaking either inside of
+a cluster or outside is a separate
+server you will have to provide an entry
+point and one of those types is an
+external proxy server which can be a
+software or hardware solution that will
+take a role of that load balancer in an
+entry point to your cluster so basically
+what this would mean is that you will
+have a separate server and you would
+give this a public IP address and you
+would open the ports in order for the
+requests to be accepted and this proxy
+server then will act as an entry point
+to your cluster so this will be the only
+one accessible externally so none of the
+servers in your kubernetes cluster will
+have publicly accessible IP address
+which is obviously a very good security
+practice so all the requests will enter
+the proxy server and that will then
+redirect the request to ingress
+controller and English controller will
+then decide which ingress rule applies
+to that specific request and the whole
+internal request forwarding will happen
+so as I said there are different ways to
+configure that and to set it up
+depending on which environment you are
+and also which approach you choose but I
+think it's a very important concept to
+understand how the whole cluster setup
+works so in my case since I'm using mini
+cube to demonstrate all this on my
+laptop the setup will be pretty easy and
+even though this might not apply exactly
+to your cluster setting still you will
+see in practice how all these things
+work so the first thing is to install
+ingress controller in mini cube and the
+way to do that is
+by executing mini cube add-ons enable
+ingress so what this does is
+automatically configures or
+automatically starts the kubernetes
+nginx implementation of ingress
+controller so that's one of the many
+third-party implementations which you
+can also safely use in production
+environments not just mini cube but this
+is what mini cube actually offers you
+out of the box so with one simple
+command ingress controller will be
+configured in your cluster and if you do
+cube CT I'll get pod in a cube system
+namespace you will see the nginx ingress
+controller pod running in your cluster
+so once I have English controller
+installed now I can create an ingress
+rule that the controller can evaluate so
+let's actually head over to the command
+line where I'm gonna create ingress rule
+for kubernetes dashboard component so in
+my mini cube cluster
+I have kubernetes dashboard which is
+right now not accessible externally so
+what I'm gonna do is since I already
+have internal service for kubernetes
+dashboard and a pod for that I'm gonna
+configure an ingress rule for the
+dashboard so I can access it from a
+browser using some domain name so I'm
+gonna so this shows me all the
+components that I have in CONUS
+dashboard and since I already have
+internal service for kubernetes
+dashboard in the pod that's running I
+can now create an ingress rule in order
+to access my kubernetes dashboard using
+some hostname so let's go ahead and do
+that so I'm gonna create an ingress for
+Communities dashboard so these are just
+metadata the name it's gonna be
+dashboard ingress and the namespace it's
+gonna be in the same namespace as a
+service and pod so in the specification
+we are gonna define the rules so the
+first rule is the hostname I'm just
+gonna call I'm gonna define dashboard
+com
+and the HTTP forwarding to internal
+service path let's leave it at all path
+and this is the back end of the service
+so service name will be what we saw here
+so this is the service name and service
+port is what the service listens so this
+is actually 80 right here and this will
+be it that's the ingress configuration
+for forwarding every request that is
+directed to dashboard comm to internal
+kubernetes dashboard service and we know
+it's internal because its type is
+cluster IP so no external IP address so
+obviously I just made up host name
+dashboard comm it's not registered
+anywhere and I also didn't configure
+anywhere which IP address this host name
+should resolve to and this is something
+that you will always have to configure
+so first of all let's actually create
+that ingress rule
+so keep CTL apply and it's called
+dashboard ingress mo see English was
+created so if I do get increase in the
+name space I should see my ingress here
+and as you see address is now empty
+because it takes a little bit of time to
+assign the address to ingress so we'll
+have to wait for that to get the IP
+address that will map to this host so
+I'm just gonna watch this and it's I see
+that address was assigned so what I'm
+gonna do now is that I'm gonna take that
+address and in my if you see hosts file
+at the end I'm gonna define that mapping
+so that IP address will be mapped to
+dashboard comm and again this works
+locally if I'm gonna type dashboard calm
+in the browser this will be the IP
+address that it's gonna be mapped to
+which basically means that the request
+will come in to my mini cube cluster
+will be handed over to English
+controller and English controller then
+we'll go and evaluate this rule that
+I've defined here and forward that
+request to service so this is all the
+configuration we need so now I'm gonna
+go and and enter dashboard comm and I
+will see my kubernetes dashboard here so
+embrace also has something called a
+default back-end so if I do cube CTL
+describe ingress the name of the ingress
+in the namespace
+I'll get this output and here there is
+an attribute called default back-end
+that maps to default HTTP back-end port
+80 so what this means is that whenever a
+request comes into the communities
+cluster that is not mapped to any
+back-end so there is no rule for mapping
+the request 20 to a service then this
+default back-end is used to handle that
+request so obviously if you don't have
+this service created or defined in your
+cluster
+kubernetes will try to forward it to the
+service it won't find it and you would
+get some default error response so for
+example if I entered some path that I
+haven't configured I just get page not
+found so a good usage for that is to
+define custom error messages when pages
+and found when request comes in that you
+can handle or the application can handle
+so that users still sees meaningful
+error message or
+just the custom page where you can
+redirect them to your home page or
+something like this so all you have to
+do is create an internal service with
+the same name so default they should be
+back-end and the port number and also
+create a pod or application that sends
+that error custom error message response
+so till now I have shown you what
+ingress is and how you can use it I've
+also shown you a demo of how to create
+an ingress rule in mini cube but we've
+used only very basic ingress ml
+configuration just a simple forwarding
+to one internal service with one path
+but you can do much more with ingress
+configuration than just basic forwarding
+and in the next section we'll gonna go
+through more use cases of how you can
+define more fine granular routing for
+applications inside kubernetes cluster
+so the first thing is defining multiple
+paths of the same host so consider
+following use case Google has one domain
+but has many services that it offers so
+for example if you have a Google account
+you can use its analytics you can use it
+shopping you have a calendar you have a
+Gmail etc so all of these are separate
+applications that are accessible with
+the same domain so consider you have an
+application that does something similar
+so you offer two separate applications
+they're part of the same ecosystem but
+you still want to have them on separate
+URLs so what you can do is that in rules
+you can define the host which is my app
+calm and in the paths section you can
+define multiple paths so if user wants
+to access your analytics application
+then they have to enter my Abe comm
+slash analytics and that will forward
+the request to internal an analytic
+service and the pot or if they want to
+access the shopping application then the
+URL for that would be my F comm slash
+shopping
+so this way you can do forwarding with
+one ingress of the same host to multiple
+applications using multiple paths
+another use case is when instead of
+using URLs to make different
+applications accessible some companies
+use subdomains so instead of having my
+app comm slash analytics they create a
+subdomain analytics dot my app comm so
+if you have your application configured
+that way your configuration will look
+like this so instead of having one host
+like in the previous example and
+multiple paths here inside now you have
+multiple hosts where each host
+represents a subdomain and inside you
+just have one path that again redirects
+the request to analytic service pretty
+straightforward
+so now in the same request setting you
+have analytic service and a part behind
+it another request will look like this
+using a subdomain instead of path and
+one final topic that I mentioned that
+we'll cover here is configuring TLS
+certificate till now we've only seen
+ingress configuration for HTTP requests
+but it's super easy to configure HTTP
+forwarding in ingress so the only thing
+that you need to do is define attribute
+called TLS above the rules section with
+host which is the same host as right
+here and the secret name which is a
+reference of a secret that you have to
+create in a cluster that holds that TLS
+certificate so the secret configuration
+would look like this so the name is the
+reference right here and the data or the
+actual contents contain TLS certificate
+and TLS key if you've seen my other
+videos where I create different
+components like secret you probably
+notice the type additional type
+attribute here in kubernetes there is a
+specific type of a secret called TLS so
+I'll have to use that type when you
+create a TLS secret and there are three
+notes to me to be made here one is that
+the keys of this data have to be named
+exactly like that the values are the
+actual file contents of the certificate
+or key contents and not the file path or
+location so you have to put the whole
+content here basics before encode it and
+the third one is that you have to create
+the secret in the same namespace as the
+ingress component for it to be able to
+use that otherwise you can't reference a
+secret from another namespace and these
+four lines is all you need to configure
+mapping of an HTTP request to that host
+to internal service thanks for watching
+the video I hope it was helpful and if
+it was don't forget to like it if you
+want to be notified whenever a new video
+comes out then subscribe to my channel
+if you have any questions if something
+wasn't clear in the video please post
+them in the comment section below and I
+will try to answer them so thank you and
+see you in the next video

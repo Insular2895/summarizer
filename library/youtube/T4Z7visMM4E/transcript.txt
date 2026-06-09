@@ -1,0 +1,695 @@
+in this video i will give you a complete
+overview of kubernetes services
+first i'll explain shortly what service
+component is in kubernetes
+and when we need it and then we'll go
+through the different service types
+cluster ip service headless service node
+port
+and load balancer services i will
+explain the differences between them
+and when to use which one so by the end
+of the video you will have a great
+understanding of kubernetes services and
+will be able to use
+them in practice so let's get started
+so what is the service in kubernetes and
+why do we need it
+in a kubernetes cluster each pod gets
+its own
+internal ip address but the pods in
+kubernetes
+are ephemeral meaning that they come and
+go very frequently
+and when the pod restarts or when old
+one dies and the new one gets
+started in its place it gets a new ip
+address
+so it doesn't make sense to use pod ip
+addresses
+directly because then you would have to
+adjust that every time
+the pod gets recreated with the service
+however you have a solution
+of a stable or static ip address that
+stays
+even when the pod dies so basically in
+front of each pod
+we set a service which represents a
+persistent
+stable ip address access that pod
+a service also provides load balancing
+because when you have pod replicas
+for example three replicas of your micro
+service application
+or three replicas of mysql application
+the service will basically get each
+request
+targeted to that mysql or your
+microservice
+application and then forward it to one
+of those
+pods so clients can call a single
+stable ip address instead of calling
+each pod
+individually so services are a good
+abstraction for
+loose coupling for communication within
+the cluster
+so within the cluster components or pods
+inside the cluster
+but also from external services like if
+you have
+browser requests coming to the cluster
+or if you're talking to an external
+database for example
+there are several types of services in
+kubernetes
+the first and the most common one that
+you probably
+will use most of the time is the cluster
+ip type
+this is the default type of a service
+meaning when you create
+a service and not specify a type
+it will automatically take cluster ip as
+a type so let's see how
+cluster ip works and where it's used
+in kubernetes setup imagine we have
+a micro service application deployed in
+the cluster
+so we have a pod with microservice
+container
+running inside that pod and beside that
+microservice container we have
+a sidecar container that collects the
+logs of the microservice and then sends
+that to
+some destination database so these two
+containers are running in the pod
+and let's say your microservice
+container is running at pod
+3000 and your logging container
+let's say is running on port 9000
+this means that those two ports will be
+now open
+and accessible inside the pod and pod
+will also get an ip address
+from a range that is assigned to a node
+so the way it works is that if you have
+for example three worker nodes in your
+kubernetes cluster
+each worker node will get a range of ip
+addresses
+which are internal in the cluster so for
+example the pod 1 will get ip addresses
+from a range of 10.2.1
+onwards the second worker node will get
+this ip range
+and the third worker node will get this
+one so let's say this port starts on
+node
+2 so it get an ip address
+that looks like this if you want to see
+the ip addresses
+of your pods in the cluster you can
+actually
+check them using kubectl get pod output
+wide command where you will get some
+extra information about the pods
+including its ip address and here you
+will see the ip address that it got
+assigned
+and as i mentioned these are from the ip
+address range
+that each worker node in the cluster
+will get so this is from the first
+worker node
+and these are from the second worker
+node
+so now we can access those containers
+inside the pod at this ip address
+at these ports if we set the replica
+count to two
+we're gonna have another pod which is
+identical to the first one
+which will open the same ports and it
+will get a different ip address
+let's say if it starts on worker node 1
+you will get an ip address that looks
+something like this
+now let's say this micro service is
+accessible through a browser
+so we have ingress configured and
+the requests coming in from the browser
+to the micro service
+will be handled by ingress how does this
+incoming request
+get forwarded from ingress all the way
+to the pod
+and that happens through a service a
+cluster ip
+or so-called internal service a service
+in kubernetes is a component just like a
+pod but it's not a process
+it's just an abstraction layer that
+basically represents an ip address
+so service will get an ip address that
+it is accessible
+at and service will also be accessible
+at a certain
+port let's say we define that port to be
+so ingress will talk to the service or
+hand over the request
+to the service at this ip address at
+this
+port so this is how service is
+accessible within the cluster so the way
+it works is that
+we define ingress rules that forward the
+request
+based on the request address
+to certain services and we define the
+service by its
+name and the dns resolution
+then maps that service name to an ip
+address that the service
+actually got assigned so this is how
+ingress
+knows how to talk to the service if you
+don't know how ingress works i have a
+separate video
+where i explain ingress all its concepts
+and how to
+use that so you can check out that video
+to learn
+more on ingress itself so once the
+request gets
+handed over to the service at this
+address
+then service will know to forward that
+request to
+one of those pods that are registered as
+the service endpoints now here are two
+questions
+how does service know which pods it is
+managing or
+which parts to forward the request to
+and the second one is how does service
+know which
+port to forward that request
+to on that specific pod the first one is
+defined by selectors a service
+identifies
+its member pods or its endpoint parts
+using selector attribute so in the
+service specification
+in the yaml file from which we create
+the service we specify the selector
+attribute
+that has a key value pairs defined as a
+list
+now these key value pairs are basically
+labels
+that pots should have to match that
+selector
+so in the pod configuration file we
+assign the parts certain labels in the
+metadata section
+and these labels can be arbitrary name
+so we can say
+my app for example and give it some
+other labels
+this is basically something that we
+define ourselves we can give it any name
+that we want
+these are just key value pairs that
+identify a set of pots
+and in the survey cml file then we
+define a selector
+to match any part that has all of these
+labels
+this means if we have a deployment
+component that creates three replicas of
+parts
+with label called app my app
+and type microservice for example
+and in the service selector attribute we
+define those two labels
+then service will match all of those
+three
+pod replicas and it will register all
+three parts as its
+endpoints and as i said it should match
+all the selectors not just one
+so this is how service will know which
+parts
+belong to it meaning where to forward
+that
+request to the second question was if a
+pod has
+multiple ports open where two different
+applications are listening inside the
+pod
+how does service know which port to
+forward the request to
+and this is defined in the target port
+attribute
+so this target port attribute so let's
+say target port
+in our example is three thousand what
+this means is that when we create the
+service
+it will find all the parts that match
+this selector
+so these pods will become endpoints of
+the service
+and when the service gets a request it
+will pick one of those
+pod replicas randomly because it's a
+load balancer
+and it will send the request it received
+to that specific pod on a port
+defined by target port attribute
+in this case three thousand also note
+that
+when you create a service kubernetes
+creates an
+endpoints object that has the same name
+as
+the service itself and kubernetes will
+use this endpoints object to keep track
+of which pods are members of the service
+or as i said which pods are the end
+points
+of the service and since this is dynamic
+because whenever you create a new pod
+replica or a pod dies
+the end points get updated so this
+object will basically track that
+and note here that the service port
+itself is arbitrary so you can define it
+yourself
+whereas the target port is not arbitrary
+it has to match
+the port where container the application
+container inside the pod
+is listening at now let's say our micro
+service application
+got its requests from the browser
+through ingress
+and internal cluster ip service and now
+it needs to communicate with the
+database
+to handle that request for example and
+in our example let's assume that the
+microservice application uses mongodb
+database
+so we have two replicas of mongodb in
+the cluster
+which also have their own service
+endpoint
+so mongodb service is also of cluster ip
+and it has its own ip address so now the
+microservice application inside the pod
+can talk to the mongodb database also
+using the service endpoint so the
+request will come from one of the parts
+that gets the request
+from the service to the mongodb service
+at this ip address and the port that
+service has
+open and the service will again select
+one of those pod
+replicas and forward that request
+to the selected pod at
+the port the target port defined here
+and this is the port where mongodb
+application inside the pod
+is listening at now let's assume that
+inside that mongodb pod there is another
+container running that selects the
+monitoring metrics for prometheus for
+example
+and that will be a mongodb exporter and
+that container
+let's say is running at port 9216
+and this is where the application is
+accessible at
+and in the cluster we have a prometheus
+application
+that scrapes the metrics endpoint from
+this mongodb exporter container from
+this endpoint now that means that
+service
+has to handle two different endpoint
+requests
+which also means that service has two of
+its own
+ports open for handling these two
+different
+requests one from the clients that want
+to talk to the mongodb database
+and one from the clients like prometheus
+that want to talk to the mongodb
+exporter application and this is an
+example
+of a multi-port service and note here
+that
+when you have multiple ports defined in
+a service
+you have to name those ports if it's
+just one port then you can
+leave it so to say anonymous you don't
+have to use the name attribute it's
+optional
+but if you have multiple ports defined
+then you have to name
+each one of those so these were examples
+of cluster
+ip service type now let's see another
+service type which is called
+headless service so let's see what
+headless service type is
+as we saw each request to the service is
+forwarded to
+one of the pod replicas that
+are registered as service endpoints but
+imagine if a client wants to communicate
+with one of the parts
+directly and selectively or what if the
+endpoint
+parts need to communicate with each
+other directly
+without going through the service
+obviously in this case it wouldn't make
+sense to
+talk to the service endpoint which will
+randomly select
+one of the parts because we want the
+communication
+with specific parts now what would be
+such
+a use case a use case where this is
+necessary
+is when we're deploying stateful
+applications in kubernetes
+stateful applications like databases
+mysql mongodb
+elasticsearch and so on in such
+applications the pod replicas
+aren't identical but rather each one has
+its individual
+state and characteristic for example if
+we're deploying a mysql application
+you would have a master instance of
+mysql and worker instances
+of mysql application and master is the
+only pod allowed to
+write to the database and the worker
+parts must connect to the master
+to synchronize their data after
+masterpod
+has made changes to the database so they
+get the up-to-date data as well
+and when new worker pod starts it must
+connect directly to the most
+recent worker node to clone the data
+from
+and also get up to date with the data
+state
+so that's the most common use case where
+you need
+direct communication with individual
+pots
+so as you see deploying and managing
+stateful applications like databases and
+kubernetes
+is pretty complex and that's why we need
+special type of components for them in
+kubernetes
+however their alternatives were working
+with sql databases
+in kubernetes much easier like
+cockroachdb
+our sponsor for this video cockroachdb
+is a cloud native
+distributed sql database suited
+perfectly to kubernetes
+cockroachdb handles the messy details of
+keeping your data replicated in a
+consistent way
+even with all sorts of failures when you
+run
+cockroachdb on kubernetes you'll have a
+great combination of cockroachdbs
+built-in replication
+and survivability model and kubernetes
+process management
+and this will help you create highly
+available stateful applications in
+kubernetes
+so going back to our example of how
+client can know pod's ip addresses
+for such case for a client to connect to
+all pods
+individually it needs to figure out the
+ip address of each individual pod
+one option to achieve this would be to
+make an api call to kubernetes api
+server and it will return the list of
+pods
+and their ip addresses but this will
+make your
+application too tied to the kubernetes
+specific api
+and also this will be inefficient
+because you will have to get the whole
+list of pods and their ip addresses
+every time you want to connect to one of
+the pods
+but as an alternative solution
+kubernetes allows clients
+to discover pod ip addresses through dns
+lookups and usually the way it works is
+that when a client performs
+a dns lookup for a service the dns
+server returns a single ip address which
+belongs to the service
+and this will be the services cluster ip
+address
+which we saw previously however if you
+tell kubernetes
+that you don't need a cluster ip address
+of the service
+by setting the cluster ip field to none
+when creating a service then the dns
+server will return the pod ip addresses
+instead
+of the services ip address and now the
+client can
+do a simple dns lookup to get the ip
+address
+of the pods that are members of that
+service
+and the client can use that ip address
+to connect to
+the specific part it wants to talk to or
+all of the parts
+so the way we define a headless service
+in a
+service configuration file is basically
+setting the cluster ip
+to none so when we create these service
+from this
+configuration file kubernetes will not
+assign the service a cluster ip address
+and we can see that in the output when i
+list my
+services so i have a cluster ip service
+that i created for the microservice and
+a headless
+service and note here that when we
+deploy stateful applications
+in the cluster like mongodb for example
+we
+have the normal service the cluster ip
+service
+that basically handles the communication
+to mongodb and maybe other container
+inside the pod
+and in addition to that service we have
+a headless service
+so we always have these two services
+alongside each other
+so this can do the usual load balancing
+stuff
+for this kind of use case and
+for use cases where client needs to
+communicate with
+one of those parts directly like a
+master node directly to
+perform the right commands or the pods
+to talk to each other
+for data synchronization the headless
+service will be used for that
+when we define a service configuration
+we can
+specify a type of the service and the
+type attribute
+can have three different values it could
+be cluster ip which is a default
+that's why we don't have to specify that
+we have a node port and load balancer
+so type node port basically creates a
+service that is accessible
+on a static port on each worker node
+in the cluster now to compare that to
+our previous example
+the cluster ip service is only
+accessible
+within the cluster itself so no external
+traffic can
+directly address the cluster ip service
+the node port service however makes the
+external traffic accessible on static
+or fixed port on each worker node
+so in this case instead of ingress the
+browser request will come directly
+to the worker node at the port that
+the service specification defines
+and the port that node port service type
+exposes
+is defined in the node port attribute
+and here note that the note port value
+has a predefined range between thirty
+thousand
+and thirty two thousand seven hundred
+sixty seven
+so you can have one of the values
+from that range as a node port value
+anything outside that range won't be
+accepted so
+this means that the node port service is
+accessible for the external traffic like
+browser request for example at ip
+address of the worker node
+and the node port defined here however
+just like in cluster ip we have a port
+of the service so when we create the
+node port service a cluster ip service
+to which the node port service will
+route
+is automatically created and here as you
+see
+if i list the services the note port
+will have a cluster ip address
+and for each ip address it will also
+have the ports
+open where the service is accessible at
+and also note that service spends all
+the worker nodes
+so if you have three pod replicas
+on three different nodes basically the
+service will be able to handle that
+request
+coming on any of the worker nodes and
+then forward it to one of those
+pod replicas now that type of service
+exposure is not very efficient and also
+not secure because you're basically
+opening the ports
+to directly talk to the services on each
+worker
+node so the external clients basically
+have access to the worker nodes directly
+so if we gave all the services
+this node port service type then we
+would have a bunch of
+ports open on the worker nodes clients
+from outside can directly talk to
+so it's not very efficient and secure
+way to handle that and as a better
+alternative there is a load balancer
+service type
+and the way it works with load balancer
+service type is that the service becomes
+accessible externally through a cloud
+provider's load balancer functionality
+so each cloud provider has its own
+native load balancer implementation
+and that is created and used whenever we
+create a load balancer service type
+google cloud platform aws azure linode
+openstack and so on all of them offer
+this functionality
+so whenever we create a load balancer
+node port and cluster ip services are
+created automatically by kubernetes
+to which the external load balancer of
+the cloud platform
+will route the traffic to and this is an
+example of how did we define
+load balancer service configuration so
+instead of node port type we have a load
+balancer
+and the same way we have the port of the
+service
+which belongs to the cluster ip and we
+have the node
+port which is the port that opens on the
+worker node
+but it's not directly accessible
+externally but only through the load
+balancer itself
+so the entry point becomes a load
+balancer first and it can then
+direct the traffic to node port
+on the worker node and the cluster ip
+the internal service
+so that's how the flow would work with
+the load balancer service
+so in other words the load balancer
+service type is an extension of the node
+port type
+which itself is an extension of the
+cluster ip type
+and again if i create a load balancer
+service type
+and list all the services you can see
+the differences
+in the display as well where for each
+service type
+you see the ip addresses you see the
+type
+and you see the ports that the service
+has opened
+and i should mention here that in a real
+kubernetes setup example you would
+probably not use node port for external
+connection
+you would maybe use it to test some
+surveys very quickly
+but not for production use cases so for
+example if you have a
+application that is accessible through
+browser you will either configure
+ingress for each such request so you
+would have internal services the cluster
+ip services that
+ingress will route to or you would have
+a load balancer that uses the cloud
+platform's
+native load balancer implementation
+so that was an overview of kubernetes
+service types
+the differences between them and when to
+use
+which i hope you guys got a lot of
+information out of this video let me
+know in the comments if you have any
+questions
+what is your feedback for the video or
+what other topics you want me to cover
+next thank you for watching and see you
+in the next video

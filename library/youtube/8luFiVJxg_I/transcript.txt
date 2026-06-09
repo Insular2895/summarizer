@@ -1,0 +1,553 @@
+hey guys hackersploit here back again
+with another video and in this video i'm
+going to be talking about docker on
+windows
+more specifically how to run containers
+how it works the infrastructure because
+in my previous video regarding docker
+i got a lot of questions about people
+you know uh just inquiring about how it
+works on windows because i explained it
+uh to
+to a very basic extent um as to how it
+works on linux and the fact that you're
+sharing the linux kernel the uh the
+linux kernel of the host
+so i've got a lot of questions regarding
+how this is handled on windows
+especially when you want to run
+containers that linux containers uh and
+one of them is the bug bounty toolkit so
+in this video my goal is to show you how
+to set up docker on windows
+the requirements secondly i'll be i'll
+be explaining the structure and then
+finally we'll take a look at
+uh at the bug bounty toolkit in action
+all right so first of all
+there's some very important
+prerequisites that you need before you
+can run docker on windows right so let's
+just take a look
+at them right over here so first of all
+you require windows 10
+or windows server 2016. now this is
+very very complex because it also
+depends on the version that you're
+running so you require windows 10 pro
+or windows 10 enterprise now i'll
+explain why you need this in a second
+and i believe i believe it's the same
+for windows server
+it could be the standard edition i'm not
+too sure but i'm also going to be
+covering that
+and an active directory because it's
+something that i've been lacking in but
+the point being the reason you need
+these versions of windows
+um is because uh docker on windows
+utilizes hyper-v all right so for those
+of you who are new to what hyper-v is
+or you've never heard of it and you know
+for good reason it's more of an
+enterprise feature but hyper-v is
+essentially microsoft's
+uh native hypervisor so there you go if
+you guys didn't know that microsoft has
+their own
+they do so many of you will be asking
+well where can i go and download it
+surely it must be better than virtualbox
+because it's native right well
+uh the answer to that is no you do
+require windows 10
+pro or enterprise and you have to enable
+it manually now you might be saying well
+how do i enable it manually you mean it
+comes pre-installed
+well not really you have to go into your
+control panel go to uninstall programs
+or
+and turn windows features on or off
+similar to what you would have to do
+if you are enabling the windows
+subsystem for linux
+and what you're looking for is hyper-v
+now by default it's going to be
+disabled so you want to make sure you
+click on this check box here and once
+you hit ok it's going to start
+downloading it
+searching for the required files as
+windows would call it and it's going to
+install it and
+prompt you to restart your system after
+which it's going to have hyper-v setup
+now
+the important thing to to to actually
+understand here is hyper-v cannot work
+in conjunction with virtualbox so if you
+have hyper-v
+setup and install virtualbox will not
+work and you can test it out for
+yourself
+um so that's how to install hyper-v now
+when
+installing docker on windows you it will
+do it itself automatically because it
+requires hyper-v
+i'll explain how it handle it handles
+virtualization in a second right so
+uh what you want to do is just go to the
+docs.com
+and under docker for windows this link
+will be in the description section
+and you don't want to download the
+docker enterprise edition because that
+is
+of course an enterprise edition with a
+features that are useful to enterprises
+uh so you're going to install docker for
+desktop and that's going to take you
+into the docker hub right over here so
+you want to sign into docker hub or
+create an account
+for some weird reason if you're doing it
+on windows they require you to do it so
+just go and go ahead and sign in and
+download it uh and the setup is very
+simple it's just going to prompt you to
+begin installing and again if you have
+hyper-v disabled it's gonna
+it's gonna ask you as to whether you
+want to do it after it's installed
+instead of hyper-v it's gonna restart
+your system and you should have docker
+running
+now uh once you have docker set up uh
+and installed and
+you can see that it's gonna be enabled
+on startup so you want to go into your
+taskbar and you can see
+you have the little docker icon here
+right now still in my docker is running
+so if i just click on it you can see it
+gives you various options i can restart
+the daemon
+i have documentation i have the docker
+hub itself and i can switch to windows
+containers now
+switching to windows containers this
+means that you're now working with
+windows containers
+and that's something that i'll probably
+have to cover on its own because
+there aren't many windows containers and
+it really works well on windows server
+as for my experience
+but you want to go into your settings
+right so in your settings
+uh you have what i would call you know
+the essentials in regards to the
+configuration so if you take a look
+at your shared drives um you can specify
+the local drives you want
+you want available to your containers i
+typically
+have mine just set to the default where
+windows is installed so that's my c
+drive as for the advanced settings this
+is where you limit the resources
+available to docker engine
+in my case uh it's uh two cpus of two
+gigs of ram
+uh swap of one gig and the disk image
+location is under program data
+uh docker desktop so it just gives you
+the location there by default
+and you can specify um the disk image
+size uh
+or the partition that you want to
+specify uh where your images
+will be stored as you can see i've used
+about 3.8 gigs
+so far you then have your network where
+you have your subnet
+so the default subnet is set for you
+right over here
+um you can also change your subnet mask
+that's
+very important if you're working with
+networking and you can specify a dns
+server
+very useful you also have proxies the
+daemon itself
+so you can configure the docker daemon
+by again
+you can take a look at all the
+configuration options here this is
+beyond the scope of this video and
+you can then reset the docker the docker
+daemon so
+that's essentially the options you're
+given here now before we get started
+with
+using it i want to explain the structure
+of how docker works on windows
+how it virtualizes linux so that you can
+run linux containers so
+i'll get back to you in a second with my
+whiteboard
+alright so we're back on my whiteboard
+and
+you know i've got i've got a lot of
+requests for people asking me
+to actually use my graphics tablet for
+illustrations as opposed to
+using images and i totally agree
+but my handwriting and my my drawing is
+pretty
+terrible on this graphics tablet but
+again please do bear with me
+you have been warned um so what we're
+going to try and do now is i'm going to
+try and explain
+how docker works on linux first of all
+and i know i've already explained that
+but i want to explain one more time so
+that we know the differences between how
+it works on linux
+and how it works on windows so i'll also
+explain how it works on windows we'll
+take a look at the
+similarities the differences and of
+course the biggest difference which is
+going to be the utilization
+of system resources so let's get started
+with understanding
+how it works on linux now as i said in
+the previous video uh we can take a
+simple example we have the host
+operating system and this is
+uh this is running ubuntu right so we're
+going to say ubuntu you'll be saying
+what version i'll just say
+18.04 standard lts so we'll also add
+that i'll add that right over here this
+is running the kernel version 4.19
+i think that's the standard one it comes
+pre-installed with you then have docker
+here
+all right so docker is installed and you
+can install this
+either by using the convenience script
+or the aptitude package manager
+um and then once you have docker you
+then have your containers here
+and i'll just add quite a few containers
+here we can have a
+larger container and a smaller one right
+over here so we could have
+this could be running apache for example
+uh apologies for my bad and writing this
+could be running my sql it could be
+running a database this is running
+alpine and these are just simple
+examples
+and this could be running fedora not
+many people like fedora for
+one weird reason and the overlying of
+the underlying concept here
+is that with docker these containers
+utilize the host operating system kernel
+so in this case
+all the containers here will utilize
+this kernel
+right over here which is going to be
+4.19
+so apache will also run on this here
+mysql will run on it alpine will run on
+it and
+that way you have a lower utilization of
+system resources
+because of the fewer layers now a
+typical hypervisor
+would be as follows and again this was
+explained in the previous video so you
+have your
+you have your os or this could be the
+hypervisor but i'll give you an example
+of a typical desktop setup and you have
+your hypervisor
+and then after you've set up your
+hypervisor
+you then have your vms right so vms will
+just set up two here and then you have
+the operating system again so you have
+to install the operating system and then
+finally you can host
+the service so again os
+and service so what happens with this
+the more layers that you add
+the higher the utilization of system
+resources which is one of the problems
+docker
+was trying to tackle so now that we
+understand how it works
+uh on linux and the differences
+between how it works on linux and a
+typical hypervisor uh uh infrastructure
+let's take a look at how it works on
+windows
+which is uh gonna be slightly different
+and uh it you again
+uh the mention of hyper-v and it's uh
+and
+the role it plays is very important here
+so we'll have the host operating system
+here and this is going to be running
+windows
+10 or server
+2016. do let me know what version of
+windows server it runs exactly i'm not
+too sure
+and then you have docker right the
+docker engine
+and then right over here you have
+hyper-v
+and this is hypervising or virtualizing
+linux because we're talking about linux
+containers here
+this is different when talking about
+using docker windows to host
+uh windows windows containers so
+you have the hypervised or virtualized
+linux layer here
+and this is all handled by hyper-v which
+is much better than
+something like virtualbox for example
+and of course you then have your linux
+containers and again
+i'll just you know keep them nice and
+sorted right over here and of course we
+could have
+ubuntu and we had a
+fedora we'd have alpine
+and nginx for example nginx web server
+and what they're going to do is let's
+say we add a kernel version 5.
+sorry 5 of we have 5.3 let me just
+get rid of this here i believe that's
+the latest version
+5.3 that means that x will run on this
+kernel
+uh ubuntu will also run on this fedora
+alpine you you get the idea they all run
+on this kernel
+so one thing that you can see on windows
+here is we have a much higher
+utilization as opposed to dock on linux
+because
+of the additional layers so we have
+docker the hyper-v virtualization of
+linux and then the containers themselves
+which is fine i haven't noticed too much
+of a difference in regards to resource
+consumption and utilization but this is
+typically
+how it works on on windows and i'm
+specifically referring to running
+linux containers so this is linux
+containers on
+windows right and again this changes
+when running windows uh containers on
+on windows with docker i'll pretty i'll
+probably make of
+an entire video on that but again as i
+said the infrastructure is very very
+simple with docker you're essentially
+using the hypervised using the
+hypervised linux layer here
+to to essentially make all of these
+other containers function so now that we
+have an understanding
+of how docker works on windows and how
+it differs
+you know from traditional or the hosting
+on linux we can actually get our hands
+dirty
+with seeing how it works and how we can
+set up the bug bounty toolkit
+so i'll see you there all right so now
+that we're done with
+actually understanding how it works on
+windows and i'm sorry i had to sit
+through my horrendous drawings
+and my illustrations but they'll get
+better we can actually get our hands
+dirty so
+make sure you have docker installed if
+you're following along
+and we can get started immediately now
+to use docker uh you it's going to be
+pretty much the same commands that you
+have on linux the commands don't change
+however you'll be executing these
+commands from powershell
+so again you want to make sure that you
+have docker running so
+you can see if i just hover over the the
+icon on my taskbar tells me that
+docker desktop is running it's very
+important that you have it running
+before we actually
+get started so um let me just change a
+few things here
+with the font uh we'll just make that
+larger so you guys can see what's going
+on so again i can
+use a simple command like docker ps and
+i hit enter
+you can see it gives us the results
+similar to what we had on
+linux i can also display all
+and there we are if i display my images
+you can see we have the bug bounty
+toolkit
+and that's the latest version we have
+added a few more tools
+go buster is one of them many of you
+guys were requesting that uh thank you
+to
+uh i actually can't remember your name i
+do apologize but we had a contributor
+who actually added that feature i do
+really really appreciate that so thank
+you
+i do apologize your link uh your github
+repository
+will be in the description section or
+the link to your github repo will be in
+the description section
+uh we then have ubuntu here which uh is
+i think was downloaded because i set up
+the bug bounty toolkit so
+again the docker pool commands still
+remain the same so
+uh you can use the um i just say
+hub.docker.com
+and you can use the you know the same
+docker pull commands
+if i search for mysql for example if i
+wanted to set up a database
+i can just search for it right over here
+and you can use the tag system as i
+mentioned in the previous video
+so you can copy the docker pool command
+and that's just uh
+and that's just how you can pull a
+docker image without running it so
+let's try and run the the bug bounty
+toolkit and i'll explain about
+a little bit of why i created it and how
+it really works well with windows
+especially when using docker so again
+i'll just say docker
+sorry that is docker run
+and i want it to be an interactive i
+want an interactive terminal
+uh and i'll also uh i'll also clean up
+after i have exited from the session
+because i don't want to have a container
+uh and i don't want to persist the data
+within the container
+then i specify the uh the image name
+or the id so i'll just specify the first
+three
+uh the first three letters or characters
+in the image id that's uh that's another
+tip for you guys
+and i then specify what command i want
+to run
+i'll also be adding an entry point to
+the docker image so that it does this
+automatically and i hit
+enter and we'll give it a few seconds
+and there we are you can see we're now
+inside the bug bounty toolkit and all
+the tools work natively
+so again we can use dev for example we
+have
+nmap that's working out just fine
+we also installed girl buster as i said
+so go buster
+works natively fantastic so this is
+pretty much the infrastructure i had in
+mind when many of you are asking me
+how would this look if i was running
+this on windows so for example
+if i'm performing a bug bounty if i'm
+you know doing bug bounties
+or i'm performing a web assessment i can
+you know fire up my proxy
+it could either be sap or burp suite
+and then i have my tools right on you
+know
+easily accessible to for me so let me
+just minimize this
+so i could have my proxy right over here
+i then have my tools
+you know right beside me and um you know
+if i wanted to run another one
+so i can just open up windows powershell
+docker run uh uh also sorry uh
+you have the images here uh because i
+need the image name
+so uh docker run
+and we just sorry this is it
+and we specify 1 6e
+pin bash hit enter
+and i can also use another session if i
+was performing an nmap scan go buster so
+i can spawn multiple containers uh you
+know for
+various tasks and this is typically how
+i would use it
+so i'll just exit and remember it's not
+persisting any data so that means it's
+not saving them if you want to save them
+go ahead if you have data that's useful
+we have the word lists uh which is as i
+said we're currently using set lists
+and uh you know it's absolutely
+fantastic you can use the various tools
+that we added we added mass dns
+that was a highly requested tool knock
+by
+everything working out of the box we
+also have sub lister
+and there you go we also have comics we
+added plenty of
+plenty of tools and sql maps so this is
+typically
+or this is the typical setup that we had
+in mind in regards to all you can use it
+on windows and also on linux so
+that's how to use docker on windows
+that's how it works how to set it up
+let me know if you guys have any other
+questions regarding you know
+images how to uh how to actually build
+new images which is pretty much the same
+as
+as it was uh on linux uh yeah so that's
+pretty much all i had to
+to explain in this video if you have any
+questions or suggestions
+let me know in the comments section on
+my social networks
+and you can check out our blog at
+hsploy.com and i'll be seeing you
+in the next video
+you

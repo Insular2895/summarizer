@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "5bKghy4QKy0",
+  "title": "NodeJS Instrumentation - Creating Custom Spans for Method-Level Visibility | Datadog Tips & Tricks",
+  "url": "https://www.youtube.com/watch?v=5bKghy4QKy0",
+  "source_paths": [
+    "cache/transcripts/nodejs-instrumentation-creating-custom-spans-for-method-level-visibility-datadog"
+  ],
+  "updated_at": "2026-06-09T18:15:56.087679+00:00"
+}

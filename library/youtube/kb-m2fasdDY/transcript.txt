@@ -1,0 +1,1217 @@
+[Music]
+all
+[Applause]
+right great thank you so much um so I
+want to talk to you a little bit about
+sort of some lessons learned about uh
+about Uber's scaling and you know we've
+I've been talking about this for a while
+so I mean there's there's a bunch of
+stuff out there about like I don't know
+know like uber got pretty big um You
+probably like you know like most people
+know what it is now like it's kind of a
+thing um I think perhaps surprising to
+many people is sort of how quickly
+things are changing and so I've got a
+couple of quick little videos to show
+you the the pace of growth um in a
+couple of Chinese cities uh over the
+course of over the course of one year is
+that
+playing oh there we go so so this is
+this is Beijing over uh from the
+beginning of beginning of a year to an
+end of a
+year and you can just sort of see like
+in one city things are happening like
+that um this is uh changdu and it's sort
+of the same
+story and you kind of
+see big reveal you kind of see the same
+pattern happening um in a bunch of
+cities sort of all all over the world so
+this thing is happen happening really
+really quickly and a bunch of the ways
+that we have responded to kind of like
+how to handle all of this scaling maybe
+you know we did the best that we could
+they weren't always right um but we
+certainly learned a lot along the way
+some some quick public numbers because
+everyone always wants to know most of
+the stats I'm not allowed to talk about
+but those are some fun ones um another
+fun one is how many Engineers we have
+which is somewhere around 2000 and when
+I started started at Uber a year and a
+half ago there were 200 and so this is a
+a 10x growth in a year and a half pretty
+pretty crazy and I've learned in this
+very short time I mean a year and a a
+year and a half doesn't seem like long
+at all but in this kind of crazy
+accelerated path it seems like forever
+ago and I try to think about like what
+could I tell myself a year and a half
+ago like what advice would I do I wish
+that I could have gotten um and you know
+F thing about advice is you're not
+always uh you're not always open to hear
+it like you hear advice when you're
+ready to hear it and I think most of my
+advice I probably would have said you
+don't understand me man it'll be
+different this time like I got this but
+um I I think that there are a few things
+there are a few things that maybe I uh I
+could have gotten through to uh to my
+young and naive self a year and a half
+ago but you know I think a lot of um a
+lot of this stuff like man you probably
+have to learn at the hard way like at
+least a little bit so take take this uh
+take this advice for what it is you
+might have to learn some of these things
+the hard way but then maybe you can
+think back to then oh that one Uber guy
+was telling me about this a long time
+ago and that'll be fun so uh here's a
+graph of our uh service growth uh you'll
+know it doesn't end at a thousand even
+though I said a thousand uh this is
+because we don't have a reliable way of
+sort of tracking this over time it's
+like bizarre but it's somehow really
+hard to get the exact number of services
+that are running in production at anyone
+time because it's changing so rapidly um
+so there are all these different teams
+who are building all these different
+things and they're cranking out new
+Services every week some of the services
+are going away but honestly tracking the
+total count is like this sort of weird
+anomaly like we have metrics and
+everything else but on actual count of
+services sort of not a thing people care
+about so yes yes I have to use the word
+microservices like we like everyone else
+have microservices and it's a technology
+conference so we have to say
+microservices a whole lot and so here we
+go have said it but I want to like try
+to add a little bit something to uh to
+this discussion of yes it's super great
+um to to kind of break up uh all of your
+your monoliths into um smaller things um
+monolith just the name sounds bad I mean
+it has lith at the end of it right it
+sounds like a terrible thing that you
+would never want like monolith but are
+there I mean there are probably some
+sort of similar like at at certain scale
+there are some similar kind of uh I
+don't know downsides surprising
+trade-offs about microser services that
+uh that I want to explore with you here
+a little bit and one of them is if
+you're building a whole lot of services
+and uh you you start to accumulate a lot
+of them and you might start to wonder at
+some point whether you could get some of
+these other cool buzzwords from the
+industry that like database people and
+programming language people are always
+like so excited about they've got their
+mut immutability it changes everything
+it's so great um why can't I mean at
+some point like our microservice
+uh can can they be
+immutable specifically or I mean
+additionally uh like append only
+databases these are great like everyone
+loves them you can reason about them Etc
+but I think the similar properties are
+true of a microservices deployment at
+some level in some ways um the time when
+things are most likely to break is when
+you change them so Uber is most reliable
+on the weekends when our Engineers
+aren't making changes um even though
+that's when we're the busiest and so
+every time you go to change something
+you risk breaking it I I think that
+there is a point at some you know at
+some point um a set of software that's
+deployed in microservice it might
+actually make sense to just never touch
+it maybe I don't know I think we're
+doing that whether we like it or not
+like whether it was even planned out it
+was sort of like a surprising benefit uh
+that we ended up there um you know this
+just sort of all you know kind of
+happened and you know it's it's worth
+sort of questioning like like why why
+are we we're throwing you know a lot of
+engineering effort into this kind of
+this architectural style like like why
+are we going to do this like it's not
+purely by accident I mean like we're
+definitely getting a lot of good things
+out of it like obviously like we can you
+you know it allows these teams so we're
+we're adding people all the time there
+they need to be quickly formed into
+teams and like get to work on something
+where they can sort of reason about the
+their boundaries and so so this allows
+these teams to be formed quickly and
+move and release independently like
+that's really good and we've adopted the
+own your own up time so you like you run
+the code that you write um everyone is
+on call for all the service teams are on
+call for the services that um that they
+run in production and so so that's
+pretty cool and then it starts to get
+maybe a little less obvious but it
+doesn't mean people say it less often um
+which is we should use the best tool for
+the job but best has so many different
+uh ways of being understood like best in
+what way like best to write best to run
+best because I know it best because our
+libraries best like ah there are all
+these like weird like it sounds so
+obvious you can just say it's the best
+um but when you really dig into it maybe
+I don't know it starts to get a little
+shaky and and if you start really
+thinking about like what are the costs
+what are the costs of doing like a big
+microservices deployment um I mean right
+off the bat now you have a distributed
+system and these are way way harder to
+work with than a a single piece of
+software than than a single monolithic
+system like everything is an RPC all of
+the sudden you have have to handle all
+of these different crazy failure modes
+all of these different weird behaviors
+that in a in a single monolith did not
+exist and more importantly like what if
+it breaks so how do you troubleshoot how
+do you how do you figure out if your
+service is in some chain uh between
+something else that's broken like how do
+you make sure that the right people get
+paged the right uh corrective actions
+are taken to fix it but you know the
+these are still like sort of the the the
+obvious things like you know you can you
+can read a lot of people talking about
+you know about these and they're sort of
+obvious if you think about them but
+there's some less obvious costs and I
+think these are really interesting you
+know first of all everything is a
+trade-off let me just reiterate that
+even if you don't realize you're making
+it um everything is a trade-off like
+you're you're going to get something and
+you know an exchange for having all
+these microservices like you get these
+things but you're probably giving some
+things up and this happens in more ways
+than uh than you might think like you
+might choose to build some a new service
+in instead of fixing something that's
+broken and I don't know that doesn't
+maybe seem like a cost at first like it
+maybe seems like a feature like I don't
+have to wait into that like old code and
+you know risk breaking it but at some
+point like the cost of having always
+building around problems and never
+cleaning up the old problems like this
+starts to be a factor and another way to
+say that is you might trade complexity
+for politics so instead of having to
+have a maybe awkward conversation with
+some other human beings turns out it's
+all human beings who are writing the
+software at least at least these days
+still um there are people on the other
+end uh of these you know of these source
+code files and you might have to talk
+with them and you might have to have
+these awkward you know human emotion
+relationships with them and this is
+really easy to avoid if you can just
+like write more software and that's a
+weird weird property of of this system
+uh you can just write more software and
+avoid having uh having these these sort
+of awkward conversations and you get to
+keep your biases like if you know along
+those same lines if there're are some
+things that maybe like you don't
+necessarily agree with or like let's
+just say you like uh python but the team
+that you're interfacing with uh they're
+writing their stuff in nodejs you might
+think that you might have opinions about
+which one of those languages is better
+and instead of maybe helping uh work in
+that other code base that uh is a
+language that you don't personally care
+for uh you might just build some new
+stuff in your own language just to sort
+of you know prop up your sort of the the
+the things that you think are best even
+though that might not be the best thing
+for the organization or the the system
+as a whole so these are kind of weird
+like these are sort of like I'd never I
+hadn't really considered that by super
+modularizing everything uh that we uh we
+might be introducing these these sorts
+of things so I'm going to take you
+through like give you some some real
+some concrete examples of sort of how um
+how we've broken up some of our
+engineering teams and some of the
+technology choices that um that we've
+made and you can maybe see how you can
+imagine project if you will how this
+might be going down uh with all these
+all the people that work at Uber so
+before uh in in the prehistory of uber
+there was 100% outsourced there um you
+know it didn't seem like a technology
+problem so like just had some some
+company somewhere write the first
+version of The Uber mobile app on the
+back end um but eventually the um when
+the engineering was brought in house uh
+we had a dispatch which is all written
+in no. JS Al these day these days the
+teams uh that team is writing all their
+new stuff and go the core Services which
+is kind of like the rest of the system
+um was originally written in Python and
+now that team is moving to go and
+eventually we brought maps inhouse and
+so that those those teams are using U
+Python and Java and we have a whole data
+engineering uh you whole group that
+their stuff's written in Python and Java
+we've got an in-house metrics thing that
+we've written that's written in go and
+you start to notice like wow that's like
+a lot of languages
+and we could do that like it was great
+like microservices let us do that like
+we could just have teams be writing in
+different languages and they're still
+communicating with each other and that's
+cool except we hadn't really counted on
+or factored in what all the cost would
+be of operating that way so the first
+obvious one like okay fine yes hard to
+share code like simple like no no no
+surprises there but it's also kind of
+hard to move between teams like if you
+want to sort of reorganize some people
+and like now you've got a whole bunch of
+knowledge built up inside of people's
+heads in sort of one platform but maybe
+doesn't directly translate um to to some
+other platform and they can obviously
+they can learn anybody can learn but
+like there's a cost right there's a
+switching cost of of moving between
+teams and so what I wish I knew before
+kind of Thoroughly embracing this like
+microservices everywhere model is that
+by having multiple languages it can
+fragment the culture you can end up with
+sort of camps of like Oh I'm a node
+programmer or I'm a go programmer and
+Java don't care for it like people
+have it's natural like human beings
+organized around you know tribes or
+whatever uh but by embracing this we can
+have lots of languages everywhere it's
+it'll there's there's nothing to sort of
+like check that that tendency and
+there's a real cost there and I'm not
+sure exactly how to like how to you know
+appropriately address those costs but
+surpris there there is a cost so like I
+said everything becomes an RPC and that
+has a lot of surprising issues when when
+teams are communicating with each other
+with rpcs like that's the way that that
+they're talking to each other so right
+off the bat like when you know when I
+started we were doing everything with
+with htdp and wow this is uh a a very
+common path that a lot of people go down
+but at scale especially with lots and
+lots of people joining really really
+quickly the the weaknesses of something
+like hdp really start to show up like
+what's a status code for what are
+headers for what goes into the query
+string like is this restful oh what
+method is it like what does that mean
+and uh all of a sudden all these subtle
+things that seem like really cool when
+you're doing browser programming all of
+a sudden become very very complicated
+and what you really just want is to say
+I run this function in this like over
+there as opposed to here tell me what
+happened but instead now you have all
+these like weird subtle interpretation
+issues with like you know HP semantics
+um and yeah that's surprisingly
+expensive and Jason again like super fun
+like it's neat that you can just like
+look at with your eyeballs and like read
+it and just see like UTF characters
+there but there's without types it is a
+crazy crazy mess uh but not right away
+it's uh it's just you're sort of
+borrowing against a future crazy mess
+when someone will change something and
+then maybe a couple hops Downstream they
+were depending on some subtle
+interpretation of like empty string
+versus null versus some type coercion
+deal or whatever in one language versus
+the other and it will cause like a huge
+huge mess that takes forever to to sort
+out and what we really we could have
+fixed all of this if we had just had
+Types on all these interfaces and all of
+these things like that seem so great um
+at like small scale or when doing
+browser programming um end up being like
+real costs um at at scale especially at
+big team scale of course rpcs are are
+slower than just like making a function
+call in inside a browser but especially
+as you move absolutely everything to
+microservice is the the cost of making
+these things starts starts adding up so
+what I wish I knew is that servers are
+not browsers like talking across the
+data center it's makes way more sense to
+treat everything like a function call
+than it does to treat it like some kind
+of web request that you might want to
+cash and fetch over the internet and
+have all the extra browsery stuff when
+you control both sides of the of the
+interaction it's way better for
+everybody to treat it like a like a
+function
+call so how many repos is best this is a
+thing that I never thought that a
+discussion I never thought I would have
+because I thought the answer was obvious
+one is what I thought um but it turns
+out many people disagree with me and uh
+many people think that many repos is the
+right answer uh maybe one repo for a
+project maybe multiple like who knows
+because you know it's kind of like the
+the trend in the industry of like
+publishing many small modules and it's
+very open source friendly right right
+like you have um if you break everything
+into nice small modules and it's really
+easy to just open source some part of it
+or swap pieces of it out but on the
+other hand one repo is really great
+because then you can make cross cutting
+changes if you want to change something
+in two services at the same time it's
+really easy you can browse the code
+really easy really easily um so you know
+there there are definitely trade-offs
+and you know many is bad because like
+it's really going to stress out sort of
+your build system your navigation
+ability it's really uh it's kind of
+painful to make sure that you've uh done
+a cross cutting change correctly or even
+this that you have all the right code um
+and one of course is bad because
+eventually like it's going to get so big
+that you won't be able to uh to actually
+build your software or even check out
+your software unless you have some
+elaborate uh crazy system that uh you
+know does go through heroics to allow
+you to preserve this uh illusion like
+the system at Google Google famously has
+one repo but kind of because it's so
+large never actually check it all out so
+instead they have a virtual file system
+layer that like lets you pretend that
+you have it all checked out but you only
+actually have the stuff checked out that
+you're actually working with wow one
+repo super cool but probably not usable
+uh without specialized tooling so here's
+this here's a glimpse of how many repos
+we have at Uber um I I took this a month
+ago and this is also apparently not
+tracked anywhere so I just happened to
+have looked at it a month ago and so in
+our internal repository there there are
+over 7,000 repos a month ago and now
+there are over 8,000 repos so that's a
+lot of repos and if you sort of filter
+out like okay like individual Engineers
+might just want to put up a few you a
+few of their own little projects as
+individual repos and some some teams
+track the configuration of their service
+separately from the service itself and
+so these are like the configuration
+repos but you can see like that's you
+know still not the majority of them the
+I mean there are just a a lot of repos
+out there we are so far to the other
+side of the of the many Continuum on the
+the one versus many that I I fear that
+there is no uh there's no way to ever
+become a single repo I don't know maybe
+we'll
+see so in this big uh you know this this
+big like microservices deployment like
+there are a ton of operational issues
+that come up you know like I mentioned
+well what happens and things break so
+yeah there are Downstream dependencies
+like this is really complicated but back
+to the people ISS isues there are some
+surprising things that some surprising
+situations that will come up is when
+other teams maybe are blocked by you
+because it's not part you're not ready
+to release your thing but they have to
+put a fix into your service but here you
+are owning your up time but now some
+other teams dependent on you and so can
+they release your service like if all
+your tests pass or like I don't know is
+it is your is all of your automation
+good enough that other teams can you
+know teams can release each other's
+software like I don't know that's an
+inter problem and for us it sort of like
+depends on the situation like sometimes
+yes but sometime like usually no like
+usually you just have to have to be
+blocked by the other team releasing
+their thing and you just got to
+coordinate and it's kind of you know
+time
+expensive but I think that the real like
+big realization uh you know for me was
+that we really want to understand like
+like we went to one side of the
+trade-off with microservices we said
+yeah great small teams everybody's
+moving fast they're all releasing
+features super quickly iterating their
+owning their own up time Etc that's all
+great but sometimes you have to
+understand the whole Sur the whole
+Service as one thing as one top level
+working together as one giant machine
+system and that is kind of hard when you
+spent all this time breaking it up so we
+just got done you know decomposing it as
+much as possible and now we have to like
+somehow like re reand that uh all as one
+this is a tricky problem and uh I I wish
+that I had uh spent more time kind of
+keeping that context together of like we
+should really understand we should still
+be able to understand the whole system
+working as
+one so
+performance a big you know it's
+definitely going to come up when teams
+are talking through each other um when
+you know to each other over rpcs rpcs
+are expensive and especially when there
+are multiple languages the the answer
+for like how you understand your
+performance it to totally depends on the
+language tools and the tools are like
+all different and so now we've just gone
+through uh this process of like allowing
+people to write in all their all these
+different languages but now the per
+understanding the performance across
+those languages becomes a real challenge
+so like maybe in go you might have
+something like this this PPR output
+which is pretty sweet um but not all
+runtimes have this so what we have been
+doing is to try to get everything to to
+get the Performance Tools uh that all
+the languages that we run to uh to have
+a common uh sort of profiling format and
+which is flame graphs so this for
+example is a flame graph from a go
+program and this is a flame graph from a
+node program and we have similar deals
+with with python and and uh I'm pretty
+sure we have this uh just about worked
+out with Java at this point although
+there's some weird other deals where
+some things in Java are hard to capture
+performance-wise but anyway like the
+goal the the the the point of this
+though is that as you want to As you
+move around and want to understand the
+performance of the system if the tools
+are so very different from one side to
+the other that is another big point of
+of friction when you're trying to chase
+down a performance problem and it's the
+the tools are different the the other
+big thing that uh that I learned that
+was surprising was everybody wants to
+get a dashboard you know some
+performance dashboards like this but if
+it's not generated automatically um
+teams will just end up making their own
+like fun little dashboards of things
+that they think are important and then
+when you want to try to trace some
+problem down um one team's dashboard
+will look all totally different than
+another and what we should have done
+earlier and what what we're doing now is
+make it so every service when you create
+it you get the standard dashboard with
+the same set of things that we all agree
+are useful things to know about from
+your service and you do that you get
+this without having to do any work at
+all like it just shows up you have a
+service and now you have these dashbo
+boards so then you can always browse
+everybody else's stuff and it will all
+sort of look the same another big debate
+performance-wise is whether you should
+even care about performance um you know
+performance premature optimization uh
+root of all evil Etc it spawn that that
+phrase has spawned a very weird
+subculture in our industry of people who
+are literally like against optimization
+because they they're just like it
+doesn't matter this is this is not busy
+the the service do have that much
+traffic like we should always optimize
+for developer velocity um we can always
+you know buy computers is cheaper than
+than hiring uh
+engineers and there's a certain truth to
+that I mean Engineers are indeed very
+expensive and getting more expensive all
+the time whereas computers are getting
+cheaper all the time so so that
+definitely is I mean there's some truth
+to that but the problem is that
+performance doesn't matter until it does
+one day you will probably have have a
+performance problem and if you've kind
+of established this culture of no
+performance does not matter we'll just
+get more computers it can be very very
+difficult to actually have it suddenly
+matter um if you're you know without the
+kind of infrastructure necessary to to
+sort of deal with these sorts of things
+and so what what I think is you probably
+want to have at least some kind of
+minimum requirement some kind of SLA
+that's performance-based on everything
+automatically that is gets created
+whether or not um it's even um a useful
+like usefully Fast number just so that
+there is a number maybe you set it to 20
+seconds like but just make it so
+everybody has a performance SLA that
+they just have to have whether they
+don't have to opt into it they can opt
+into a more aggressive you know amount
+but everything has an SLA and then that
+way you can always lower it you can
+always you can always bring it in and
+then will always be just that safety net
+of like at least we have a way to you
+know a knob that we can
+turn so you know what what I wish I knew
+is that you know good is not is not
+required but you have to at least know
+where you stand and it's maybe not now
+but it will be
+eventually so related to to Performance
+is this notion of fan out which causes a
+lot of performance problems and like
+this has some kind of uh you know sort
+of obvious at first uh side effects but
+like a little subtle um if you've never
+dealt with this problem before which is
+the overall latency before you can
+respond to the user right you've got uh
+you've got to wait for the whatever the
+slowest thing you have um in your call
+chain and so imagine a a typical service
+that uh you know it's generally pretty
+fast um responds in 1 millisecond 99% of
+the time that's pretty good but 1% of
+the time unfortunately it takes like a
+whole second still doesn't sound too bad
+right well it's a bummer but 1% of the
+time my users are going to get the slowc
+case and like oh well and you know
+that's that's pretty basic but you know
+if you suddenly start having big fan out
+the chances go up pretty quickly and
+suddenly more and more and more of your
+users are hitting somebody's slowc case
+somewhere um and this gets so this gets
+even worse if you're not on the P99 if
+you're on the P95 it only starts taking
+a few uh a few you know fanned out
+service calls before suddenly you start
+hitting the slowc case way more often so
+the best way to sort of um to sort of go
+after these kind of fan out problems is
+to get some kind of distributed tracing
+there are lots of ways to get this you
+can get the the Zipkin or now this this
+open tracing project is pretty cool um
+we're participating in that that's a
+that is a a a great effort but you know
+if you don't have that kind of a scale
+you can just use logs just Plum a common
+ID through every request and just put
+put it in your log message um without
+this kind of tracing with without a way
+to understand um a request's journey
+through uh the architecture uh
+understanding these sorts of fan out
+problems uh is really really difficult
+and I will give you some examples these
+are actually from our our production uh
+uh Zipkin deployment of of sort of why
+some of this stuff is so hard to track
+down so this one I'll start with an easy
+one so this one super obvious classic
+like a request is working its way
+through the system and then all of the
+sudden somebody took like a long time
+and the results of the you know the
+services down below they kind of all
+depend on that and you know it's really
+straightforward like like no tricks
+let's just get in there and figure out
+what's why every now and then uh that
+thing is is too
+slow but here's a trickier one which is
+there's a huge fan out and it turns out
+it's to all the same service
+and what you see is that yeah of course
+the top level service it took it a long
+a long it was a long time before it
+could respond but each of the individual
+service calls into this thing below it
+are are kind of the same speed and know
+they're not that fast I mean this is not
+a not a blazingly fast service but it uh
+I I can't remember what it does on each
+request but it's it does something that
+you know takes some time but still they
+all take roughly the same time and so if
+you ask that team like hey it really
+seems like uh like something might be
+wrong with your thing and they'll look
+at their graph and they'll be like no
+way man our stuff is super fast it's
+like really consistent it's responding
+really really you know really well um
+but it turns out that there's this
+massive fan out now this is a case of
+unintentional fan out where the the top
+level service was fetching a list of
+things and then that list contained a
+bunch of IDs and then it was going out
+and resolving those IDs like one at a
+time and so it was making like a whole
+bunch of concurrent rpcs um you know you
+can see how it's got like a sliding
+window of you know a bunch of pending
+requests and as some of them finish it
+can fire off more of them but this is
+just silly right like there should just
+be a a a bulk resolve endpoint where you
+just ship the whole thing the list of
+IDs that you want and it just sends them
+all back to you um but we never would
+have found this if it had not been for
+tracing because these
+things they they sort of uh they sort of
+confuse a lot of the the the common
+metric
+so here's another one um this one the
+the fan out is super super fast you know
+there it's um the requests are super
+super fast but the the the amount of
+them um is many thousands and what's
+going on here is there's an omm involved
+and the the the service gets back an
+object that looks like a regular old
+object that you might Loop over or
+change things in a loop loop on but it
+turns out when you do that every time
+you change one of these properties due
+to Magic it uh turns into a database
+request and so all of a sudden this
+seemingly innocent uh traversal of a
+collection turns into 10,000 database
+requests um whoops so anyway but you can
+you can if you ask the database team
+like how's your thing going they'd be
+like yeah we are serving requests so
+super fast like you guys got nothing to
+worry about everything's great but by
+the way why are we doing like a million
+you know transaction per second or
+whatever cuz turns out they're uh
+they're pointlessly doing these these
+tiny tiny little
+operations so you probably want you want
+to get some kind of a tracing um you
+know to to understand the fan out um
+another surprising thing about this is
+the uh the overhead from tracing can
+actually uh change the results so uh it
+turns out it's a lot of work to actually
+do all this like tracing stuff and so
+you probably want to not Trace them all
+but trace a statistically significant
+portion of them like 1% or something
+like pretty low um is I think what we do
+um but really the the you know this this
+is you know not too surprising but the
+real surprising thing to me anyway was
+implementing this kind of tracing
+behavior requires cross language context
+propagation and this is in the way of so
+many other problems that we have right
+now which is because we have all those
+different languages and they're all
+using different Frameworks if if we want
+to have we want to Plum through
+something some kind of context about the
+request like what user it is or are they
+authenticated or what gense are they in
+or like I don't know like there are all
+these things that we want to do and that
+becomes very very complicated if there's
+no way to um if there's no place to put
+this context where you know it will be
+propagated and specifically I mean if
+you take in a request and you make
+dependent requests based on that
+incoming request will you add in this
+incoming context without even
+understanding it so there may be like
+fields in there that this that the the
+the intermediate service doesn't even
+understand but it will send them along
+the way um to the ones down below um
+this would have saved us so so much time
+uh and hassle uh had we added it a long
+time ago or just PRI prioritized adding
+it but uh it just kind of didn't seem
+that important and turns out it
+is so related to tracing of course is
+logging um a big perhaps it's no no
+longer a surprise you're probably
+starting to see the pattern here but uh
+with a bunch of different languages and
+a bunch of teams and a bunch of people
+who are all very new you know half the
+engineering team has been here less than
+six months so like that's you know
+everybody's pretty new um Everybody uh
+might tend to log in very different
+incompatible ways and I think the the
+answer there is to give everyone the the
+structure like the Mandate the mandates
+are tricky to give them tools that are
+so so obvious and easy to use that they
+wouldn't do it any other way uh to get
+uh consistent and structured logging and
+you know of course multiple languages
+make this hard and but even even worse
+um when there are problems um logging
+itself can make those same problems
+worse so something bad starts happening
+it's like you start logging a lot um now
+you've actually got a whole new problem
+caused by like logging too much and then
+that can Cascade etc etc so having some
+kind of back pressure in the logs where
+you'll actually just drop log messages
+if uh you can't log fast enough um
+should have uh we we're slowly rolling
+that out um to you know to the various
+different platforms but um wish we had
+put that in there sooner but I more
+importantly than all of that is I wish
+that we had added some notion of
+accounting for uh all log messages
+because what happens to all these logs
+is generally they get like indexed by
+something like a like an elk or a Splunk
+or
+you know some Hadoop you know some kind
+of a thing takes all these log messages
+and you know let's build indexes on them
+so that people can like search to them
+and like learn things but the amount of
+data that people log like if it's free
+uh some people will uh log way more than
+other people without you know malicious
+intent they were just like I don't know
+logs are free right I just made them um
+and without having some way to uh to
+sort of Trace which you know which to
+some somebody to send a bill to so when
+the when the big elastic search cluster
+that has to index all these things um
+you know starts running into capacity
+problems and needs to prune something um
+like somebody can get that like feedback
+that hey maybe slow down with the logs
+already so we've uh We've we open
+sourced a thing that we're building a
+lot of our new stuff with um on the Go
+Side called zap structured logging uh my
+favorite part about it though uh is how
+fast it is uh zero allocations uh on
+every log so you might want to check
+that out
+another thing that uh that comes up when
+when you know like like a problem
+surprises uh that contains surprises um
+is around lad testing and so so we want
+to um you we want to do these lad tests
+like before things go into production of
+course um that only makes sense but
+unfortunately there's no way to build as
+big of a test environment as there is a
+production environment and even worse
+there's no way to uh actually generate
+realistic traffic that um will exercise
+kind of all of the problems that are
+that are lurking out there and so what
+we have started to do is run these load
+tests against production um during off
+peak times and this causes a lot of
+strange problems um the biggest one is
+that uh blows up all the metrics
+suddenly everyone uh thinks that we're
+having way more traffic than than we
+actually do and that's you know in order
+to to to fix that we're back to this
+context propagation problem again of if
+you're load testing production but you
+want it you want people to not think
+that we're getting you know denial
+serviced you have to make sure that all
+of those requests have some kind of
+context that says this is a test request
+like don't increment the counters and
+don't freak people out and that has to
+Plum all the way through the system um
+otherwise like someone's going to get
+someone's going to get sad but what we
+really want to do is we want to to run
+load against all of our services all of
+the time even when there there is excess
+capacity because we keep having these
+bugs
+where things there are latent bugs that
+only show up when uh when the traffic
+hits its peak so we want to keep our
+systems near their peaks um you know
+just just shy of them and then back off
+as the real traffic uh starts ramping up
+um but that just makes this problem even
+even worse so I wish had we had started
+Building Systems a long time ago that
+knew how to handle this test traffic and
+uh sort of account for it
+differently so if you uh if you just saw
+saw Casey's talk like that was um uh you
+know very very relevant stuff um we I
+was I was already super on board with
+this idea of of failure testing you know
+uh chaos monkey Etc um it it's super
+great um not here to try to convince you
+of that but a surprising thing that I
+found when getting this done was that um
+not everybody likes it in fact a lot of
+people hate it um especially if you have
+to add it in later so if imagine you've
+written the service and you think it's
+pretty great and you put it in
+production and then someone comes to you
+and says oh hey bye the way we're going
+to start killing your thing now like you
+will feel bad like that's my baby I just
+spent all this time making it and now
+you're going to kill it and it's
+probably G to I know users are probably
+going to notice and like this is going
+to be bad so what I wish that we had
+done is made failure testing happen to
+you whether you liked it or not this is
+not a decision this is just part of
+going into production is you just have
+to you just have to withstand these
+sorts of random killings and slowing and
+you know perturbing of uh of your
+operation um because people probably
+won't want to opt into
+it so another big surprise was
+migrations um you know a lot of times uh
+people come you know hear like big uh uh
+big companies come and they talk about
+how amazing their technology is or
+whatever and it's always like the new
+stuff that they just got working and
+that's why they came to a tech talk
+because they want to talk about their
+new stuff and meanwhile you might think
+oh no my stuff it's like really bad and
+old and we spend all our time doing
+migrations and it's mostly Legacy most
+of our stuff is Legacy well no surprise
+all of our stuff is Legacy it's all
+migrations most of mostly like people
+who work on the storage like all they're
+doing is migration they're just like
+some constant migration from one piece
+of legacy to another not quite so Legacy
+thing um someone is always migrating
+something uh somewhere and that is I'm
+pretty sure what everyone is doing uh in
+spite of what you might think uh when
+people come to conferences and give you
+awesome talks about their new tech CU
+you know what the old stuff still has to
+work like you have to keep that business
+working there's no such thing these days
+as a maintenance window there's no like
+going down uh to you know work on your
+work on your service like even in off
+peak times you uh become a global
+business there are no off peak times
+like it's always peak times somewhere
+right and I remember what I said before
+about like well what happened to like
+these immutable microservices what are
+you like migrating um well that turns
+out to be the problem with uh with
+making uh you know just abandoning
+things at some point as long as they
+keep working is at some point you might
+need to make some kind of a crosscutting
+change and that's going to be very
+expensive if people haven't touched that
+code in months and are afraid of ever
+touching it again because the last time
+we released it it was you know 6 months
+ago um that's a that is a tricky problem
+and what I really wish that I knew was
+that mandates to migrate are bad um I
+knew people wouldn't like it like I knew
+it's like I never want to be told that I
+have to like adopt some new system but
+specifically being you know making
+someone change just because the
+organization needs to change versus
+offering a new system that is so much
+better that it will just be obvious that
+you need to get on this new thing um I I
+wish I had uh placed the appropriate
+priority on like pure pure carrots no
+sticks um anytime the sticks come out um
+it's uh I'm I'm convinced it's bad I
+mean unless it's for like security or
+you know compliance reasons I think
+those are kind of like the two Trump
+cards where you know it's probably okay
+to like force people to do stuff but um
+as a you know someone working on
+architecture or infrastructure I think
+the carrots are the only way to go so
+here's another uh another surprise um
+you know open source it's super fun
+right everybody loves open source um
+this uh you know the build the build by
+tradeoff remains uh a non
+unanimous uh you know non-common
+understood concept not everyone agrees
+where you should you what you should
+build and what you should buy what you
+should you use from open source or what
+you should build internally um but I
+would observe that anything that seems
+like infrastructure anything that seems
+like uh it's part of the platform and
+not part of the product um even if it's
+something that just makes sense for you
+to build uh for yourself um at some
+point it is on its way to becoming an
+undifferentiated commodity Amazon's
+going to offer it as a service or
+someone's going to offer it as a service
+and eventually that thing that you're
+spending all your time like kind of this
+platform you're spending all your time
+working on um someone else will do for
+cheaper and better um and as long as you
+have that perspective I think that's
+very very healthy but that what I was
+surprised to learn is this will make a
+lot of people sad um a lot of people um
+get really invested in their work and if
+they're working on some kind of like
+lower level infrastructure platforming
+kind of thing um it it doesn't sound
+good to hear that Amazon is just
+released your thing as a service like
+you still kind of try to rationalize why
+we should use your private thing or or
+whatever and this this is not uh this is
+not obvious um and it's again back to uh
+turns out there are people on the other
+end of all these text editors um yeah I
+I I wish that I had I had known that uh
+how different uh the understandings of
+of uh of this trade-off are amongst uh
+in our industry which brings us to
+politics so these Services by breaking
+everything up into small pieces it can
+allow people to play politics so it's
+useful politics is one of these funny
+words like like a lot of people throw
+around um but I don't actually think
+everyone knows what it means I will um a
+colleague of mine has a really great
+definition that that I like um he says
+that politics happens whenever you
+violate this property so if you make a
+decision that violates this property
+where you uh put the values of yourself
+above those of your team or the values
+of your team above those of the company
+that anything uh you know decisions that
+violate this property um are are
+politics um a a funny thing is that um
+you in many environments like politics
+just means uh things I don't like oh
+that thing happened I don't like it
+politics like that's the obvious reason
+right um but I think seriously like this
+this uh this property here is is a
+useful one to consider and and it's one
+that by embracing highly modular you
+know rapid development um hiring people
+very quickly and trying to release
+features as quickly as you can um it's
+there there is a a Temptation um to to
+start violating these properties because
+when you uh when you value shipping
+things you know shipping things in sort
+of like smaller individual
+accomplishments it can be harder to uh
+to to sort of prioritize what is better
+for the company um surprising
+trade-off but you know everything is a
+trade-off and I think that uh you know
+if there's if there's one thing that
+that I that I learned from you know
+going through this process is that I
+wish that I knew how to better make
+these trade-offs intentionally like
+understand like when when things are
+just kind of like happening like without
+an explicit decision just because it
+seems like this is just the way things
+are going it's just the momentum is
+heading in that direction like I wish
+that I had uh that I had thought about
+what what tradeoffs were being made um
+even though uh I wasn't explicitly like
+you know we weren't explicitly making
+them so anyway that's all I have thanks
+a lot
+[Applause]
+we have time for one question and
+there's like 30 questions here so oh
+dear right given that you use RPC rest
+how do you avoid coupling between your
+services how do I avoid
+what how do you avoid coupling oh uh H I
+don't know I mean we don't in many cases
+I mean we do our best but like it
+happens like um yeah that that's part of
+the problem I
+mean there's duplication sometimes and
+there's coupling sometimes and we you
+know we try to like exercise um you know
+good engineering discipline and like we
+try to do failure testing and making
+sure that like we surface like
+unexpected couplings but sometimes there
+just is and especially like in Avail you
+know for like Downstream availability
+like a lot of times there's just nothing
+you can do if a service you know there's
+some service like three you know three
+down the chain that if it's down there's
+actually nothing there's no useful
+answer uh that you can degrade to and
+that coupling just exists but we still
+it's important to remember what the
+trade-off is even though there's
+coupling the teams can still uh they can
+still move independently they can still
+release their components independently
+and monitor them understand them Etc but
+sometimes it does
+happen okay thank you remember to vote
+in the app have a good break
+[Applause]

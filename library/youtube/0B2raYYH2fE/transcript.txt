@@ -1,0 +1,202 @@
+docker compose up with that single
+command i just spun up a react
+application
+an express api server and a mongodb
+database
+fully configured and ready to interact
+with in this video i'm going to walk you
+through the whole
+docker compose setup that i used and if
+you stick around to the end of the video
+you have all the information you need to
+run a multi-container application of
+your own
+hey team syd here with devops directive
+bringing you the information you need to
+level up your devops and cloud
+infrastructure
+skills on this channel i create a
+mixture of informational videos
+as well as tutorials like this one so if
+you're new here consider subscribing
+let's get into it docker containers
+enable you to bundle up an application
+along with all of its dependencies into
+a standalone package
+called an image that can be run
+consistently across a variety of
+platforms
+that being said each container is only
+designed to run a single process
+many applications are composed of
+multiple services that need to work
+together in coordination
+and communicate with each other over
+network requests
+for example one popular application
+technology stack
+consists of a react.js application on
+the front end an express js-based ipi
+and a mongodb database to persist the
+data
+this is known as the mern stack if we
+had to configure all this manually
+it would require a sequence of five or
+more docker commands to set up all the
+necessary services
+the shared network data volumes etc
+luckily we don't have to do that because
+docker compose allows us to clear
+declare all of this as a single
+configuration file
+and then handles all of the necessary
+commands for us
+to get started i followed a tutorial i
+found online
+to set up a basic mirn application that
+allows the user to perform crud
+create read update and delete operations
+on a set of fictitious movie records
+i'll link to that post in the
+description below and i've also provided
+all the code used today for this example
+within the devops directive github repo
+with that application as the base i then
+created docker files for the react
+client as well as the express api server
+creating those is outside the scope of
+this video but i'll add a card to an
+excellent video by tutorial edge that
+explains this whole process
+once i had those docker files i built
+the images
+and tagged them with the names react app
+and api server respectively
+these tags are important because they're
+how we'll tell docker compose
+which container images we want to use at
+this point we have all of the components
+in place to start configuring docker
+compose
+to do this we create a file called
+dockercompose.yaml
+in this file we specify which version of
+the docker compose api we want to use
+version 3 is the latest major version of
+the api so that's what i'm using here
+after that we define a set of services
+in our case
+our web app is composed of three
+services the react app client
+the express api server and the mongodb
+database
+each of these services requires us to
+specify an image tag
+here we're using the client and server
+images that we built before and for the
+database we're just going to use a
+publicly available mongodb
+image from docker hub in order to
+communicate with the other services
+we need to set up access to the proper
+ports for each of them
+we'll connect to the react app on port
+3000 the api server on port 5000
+and the database on port 27017
+for the react app container i'll add the
+standard in
+open true option to keep the container
+alive and listening for request after
+startup
+because the express server needs to
+connect to the mongodb service
+we actually specify that it depends on
+that service this ensures that the
+containers start in the correct order
+there's one additional change to our api
+server code that we need to make in
+order for this connection to work within
+docker compose
+different services are discoverable at a
+host name identical to the container
+name
+so in this case we need to change the
+connection string from using
+localhost to using the name we use
+for the mongodb service in the compose
+file
+at this point the configuration is
+sufficient to run the application
+but there's two places that we can
+actually make improvements the first
+is networking between the containers
+docker compose would have set up a
+default network
+but if we ever wanted to have multiple
+applications running on separate virtual
+networks
+we'll need to define the network
+explicitly here i'm going to name the
+network mirn app
+which uses the default driver i'll add
+all of the services to this network
+this will allow the services to talk to
+one another while providing isolation
+from other docker containers that happen
+to be running on the same host
+the last addition that i'll make is to
+define a docker volume
+to enable persistence of the database
+data across container restarts
+this is mounted into the mongodb
+container at the proper path where
+is expecting to store its data
+okay that's it let's run the application
+as mentioned at the beginning
+all that's required to run this is to
+run the command docker compose up
+this will start all three containers as
+well as create and attach the network
+and volume resources
+once it's started we can run docker ps
+on our system to see the containers
+running
+now for the moment we've all been
+waiting for if i pull up a web browser
+and go to local host on port 3000 we can
+see the application running in all of
+its glory
+i can create a new movie listing view
+the existing listings
+etc and the data for those movies gets
+stored into the mongodb database within
+that volume
+this is obviously just a simple example
+app but the same technology stack can be
+used to build
+all sorts of web applications a quick
+search in a job posting site like indeed
+shows the demand for engineers who can
+build applications using these types of
+technologies
+hopefully this walkthrough will be
+helpful as you build out your own
+dockerized applications with multiple
+components
+let me know within the comments section
+how you're using docker compose within
+your development workflow
+if you want to continue down the docker
+rabbit hole my past few videos have been
+all about docker
+including how to debug containers how to
+decrease image sizes
+and to improve container security so i
+recommend checking out one of those
+videos
+by clicking the cards over there now i
+release new content most mondays so make
+sure to subscribe to the channel
+if you don't want to miss any upcoming
+content that's all for today
+remember just keep building

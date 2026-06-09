@@ -1,0 +1,1095 @@
+[Music]
+foreign
+[Music]
+welcome to the second episode of the
+cloud security Lounge uh today Izar and
+I are proud to welcome Zach Zach is a
+working as the lead of security research
+and threat detection teams here at data
+dog along with us
+um Zach also has a newsletter on a
+threat detection engineering he has a
+really uh security and threat focused
+background that he will he will share
+with us just now Zach the the floor is
+yours uh thanks JB uh really happy to be
+here and yeah so basically what I do
+here at datadog is I I help run the
+threat detection in security research
+mission for our security products and so
+that involves working with not only the
+product teams that will protect our
+customers but also our internal security
+teams to kind of bridge that Gap and
+make sure that we're not only building
+great things for our products but we're
+also using them internally and we're dog
+fooding them so to speak
+yeah thanks for the for the intro so I
+think our topic today is around account
+takeover
+um which is something
+that uh a lot of people don't really
+know about uh until you you faced one
+and and you've been breached uh I don't
+know was any of you uh already victim of
+a like password theft or something like
+that is our
+well I I get emails from uh have you
+been pawned
+every 15 minutes so I'm guessing that
+yeah I'm out there
+uh yeah same here same here so
+um uh whether it's been pawns or or any
+any of the other few Services I I feel
+like it's a weekly occurrence so I I
+think it just kind of goes to show how
+prevalent
+Data Theft is and how exposed we are in
+terms of having hundreds of accounts
+that we have to remember all these
+things on
+and so Zach you've been a really uh
+involved into uh summer data breach and
+a account takeover stories so uh would
+you be able to to share a bit more and
+what you used to to do in those kind of
+sure Affairs yeah so uh I was the senior
+director of threat intelligence at a
+company called zero Fox before I joined
+datadog and one of the big things that I
+was responsible for there was the
+acquisition of stolen breach data and
+using that to find customers and kind of
+provide them uh with as much data as
+possible to make sure they can reduce
+any type of exposure they had so
+um you know jumping on things like the
+dark web in cyber criminal forums and
+kind of seeing how things were traded or
+how things were given away downloading
+all those things and kind of seeing like
+all right who's been exposed how many of
+these people are customers and how can
+we go and give them what they need in
+order to change passwords or adjust
+their threat models and things like that
+cool
+Zach one thing before we go into the
+meat of what we're talking about today
+uh
+in the minds of people whenever they
+hear data breach and things like that
+usually it's the hacker in the basement
+with the hoodie tapping very fast crazy
+commands crazy
+yeah like t-shirts
+good guys were black too and uh
+the the thing that I wanted to to ask
+you is in in the grand scheme of things
+would it be uh
+would it be right to say that a lot of
+the bridges that we see
+basically start and come from ATO from
+County Culvers from credentials that are
+lost missed misplaced found breached
+whatever how would you put this like one
+thing against the other between the the
+high-end techniques and ATO yeah look I
+I think your spot on here is our
+um a lot of what you see in terms of
+personal data breaches or even larger
+ones not are not really the result of
+like a super crazy Uber hacker that won
+like the Defcon CTF right
+um what you see is that a lot of the
+times these breaches are the result of
+wearing down a human
+and what I mean by that is that uh
+you know whether you're you have a phone
+that's pushing something saying like hey
+someone's trying to log on of course you
+would say like this doesn't look like me
+I'm gonna press no but imagine getting a
+notification every 10 seconds that
+someone's trying to log on
+that is when these breaches happen is
+because humans are kind of not really
+looking at the way that these attackers
+are are tiring us out and So eventually
+you're going to want your phone to stop
+ringing and so you're going to say you
+know what screw this I'm going to press
+approve uh I don't want to see this
+anymore it's 1am uh and then that's the
+result of a lot of these breaches right
+and this is not just phones this can be
+something along the lines of like
+password reset emails
+um even to the point of things like Sim
+swapping where SIM card is stolen and
+then it's kind of taken over
+and that might happen when you're
+sleeping or that may happen and you
+don't really have a lot of sense of
+urgency around it and these types of
+low-tech attacks are extremely effective
+yeah yeah and something that is pretty
+fun and I so I think I'm gonna shut my
+screen just for one minute and and to
+give a sense
+um to everyone of how widespread uh and
+and easy to perform uh such attacks
+might be
+um it's to look at YouTube for instance
+and so you would just search for
+um Sentry MBA which is like one of the
+tools that some attackers use and and
+you can see immediately in the
+suggestions you have Century NBA Netflix
+um so that was pretty uh surprising to
+me the first time I saw that but then
+okay you can just have a video that will
+tell you how to uh actually use uh
+centria NBA to uh
+to to to try to find the Nets I'm trying
+to find an actual screenshot of the of
+the tool we'll get there yes so that's
+one of the tools that is used by uh
+attackers
+just to to manage uh finding stolen
+accounts or actually accounts that that
+work and maybe that you can you can tell
+us a bit more about that
+sure yeah so um what I was talking about
+previously were very targeted attacks
+um and this is definitely the result of
+an account takeover of like a very high
+value Target let's just say a devops
+engineer software engineer security
+engineer
+someone in finance uh someone in HR but
+there's also a numbers game associated
+with account takeover if you happen to
+have access to the same data sets that a
+service like have I been poned has have
+I been won't give you the password that
+is breached they'll just say this
+account was breached on this domain
+but many of those data sets have the
+passwords or at least the password
+hashes available if you can get access
+to those things that's when you can
+start automating and scripting out a lot
+of this account takeover
+um and so you happen to have an access
+to a database that has a couple million
+usernames and passwords you can kind of
+assume that most of these people
+probably have access to kind of like
+commodity platforms like Amazon Netflix
+social media accounts and things like
+that you can also probably surmise that
+some of these passwords maybe one
+character off between platforms because
+people in general still aren't using
+password managers enough so if you can
+basically script out and assume those
+things and you have
+10 million 20 million accounts to crack
+even like a one percent success rate of
+cracking that is a few thousand accounts
+right and so Century MBA
+um and they're like open bullet a few
+other of these
+tools help you automate something like
+an attack uh at that scale
+but let's take a step back here for a
+second I think that it's very important
+that we understand who are these people
+and what's the motivation like why would
+somebody want my Netflix password
+yeah uh this is a great question and I
+know I've talked about this a few times
+but looking at the victimology but also
+the criminology Behind these types of
+attacks
+um you know the the types of people that
+will go after this are usually
+um you know people that are in cyber
+crime but not cyber crime like we think
+of ransomware cybercrime in the sense of
+like hey I'm gonna do like these
+low-level types of crime that probably
+don't have a huge amount of financial
+impact but I'm going to scale it across
+thousands and thousands of these
+accounts and eventually if I crack
+enough of these and I sell these to
+people that want a five dollar Netflix
+account versus paying 15 a month I can
+make pretty good margins on that and so
+it's definitely like a tier list but
+someone that goes and specializes in
+something like this where they can sell
+many types of Netflix accounts Amazon
+accounts things like that
+um they can make a few thousand dollars
+a month and for most people in the world
+that's a good living
+and that's a uh sorry uh JP that that's
+a very interesting point that and it
+never fails to bring me back to the
+point that uh whenever we we asking
+developers to think security and what
+they have to do and the prevention and
+stuff like that
+sometimes you tell them hey things like
+a hacker which is something that doesn't
+happen right so nobody just thinks about
+the techniques that they have to prevent
+but when you put in terms of the
+economic incentive as you did that uh
+sometimes we we think like these people
+and we think I wouldn't go after
+something that gives me a bunch of
+thousand dollars a month because it's
+not enough incentive but when you
+transfer it to the haters there's
+something outside of our borders there's
+a whole economic
+reality outside where a bunch of
+thousand dollars a month is a lot and
+and that to me is more interesting in
+terms of uh thinking like a hacker than
+the the specific techniques what are the
+motivations around those people so thank
+you that's that's a great point
+and so we talked about the the Netflix
+the Amazons but I think most of our
+listeners are actually owning uh
+predictions maybe at Amazon and Netflix
+but also at companies that are not b2c
+um what kind of uh attacks and targets
+have you seen if any
+b2c companies are
+yeah it's it's a great question so um
+this is kind of graduating from I would
+say commodity accounts or commodity
+cyber crime to more Specialized or and
+things that we see in the news and in
+the news whether a big hack happened or
+a big arrest has happened right so
+um you know some of the biggest hacks uh
+at some of you know these companies
+include going after internal portals
+so for example imagine a B2B company
+that uh has internal support portals and
+these internal support portals are used
+by customer support to go and help
+troubleshoot on behalf of customers
+maybe there's a relationship manager
+there these are great targets for kind
+of more higher profile attackers that
+want to eventually move into something
+like data theft ransomware and things
+like that and so you can really split
+this off and kind of say like hey
+what if I get into this B2B company and
+steal all their source code maybe put it
+off somewhere on a server and then email
+the the CEO or email a bunch of
+reporters and say I have this source
+code and I won't leak it unless you pay
+me a hundred thousand dollars
+this has happened quite a few times in
+even the last few years
+um some of the scarier ones include uh
+things around like telcos or any type of
+critical infrastructure type of
+companies where if you had a malicious
+Insider and what a lot of these account
+takeover actors do is they'll text
+LinkedIn message
+um send uh you know even even call some
+of these like internal support people on
+the phone and say Hey listen do you want
+to make a few thousand dollars a week uh
+make a few switches in your internal
+system and I'll send you Bitcoin to do
+that
+um and to a lot of customer support
+people again to izzar's point like
+outside of our borders this is so much
+money and so it's not just a
+technological problem it can also move
+into an Insider threat problem and with
+that type of access you could really
+take over and achieve a lot of
+objectives into more of these like B2B
+sales and B2B companies
+so I I testified uh and one of those
+attacks uh when we were at uh screen
+um one attack happened into our systems
+uh one one night it was actually one
+after a screen party so we were coming
+back home in a taxi uh with a with a
+friend and at 2 am
+um we we got a bunch of screen
+notifications on our phone and so uh we
+we discovered that yes we weren't like a
+a current takeover attack so really uh
+distributed it was like hundreds of IP
+addresses so pretty hard to block
+because like
+the the attackers were rotating the IPS
+very very quickly
+um and it was focusing uh against I know
+like a few thousand uh users and and
+most of them were not a part of uh of
+string but if you were and so we've been
+monitoring the the thing very very
+closely it lasted for like an hour and a
+half but like we were super happy to
+have our
+um account to cover heuristic uh to to
+to to tell us about what was happening
+because if you don't have that well you
+might see a pic of a spike in your new
+logs but otherwise those things are not
+trivial to detect because it's like the
+normal course of your application to to
+validate and to reject uh passwords so
+that that's that's a zero memory of one
+faced attack and so
+I guess you you yeah
+yeah it's it's scary it's it's super
+scary to to go through this um because
+it's very personal
+I I feel like um
+I don't know I've I haven't been part of
+an incident where I was ransomware and
+my company was ransomware but it's very
+much like
+a group of criminals versus a business
+and of course there's some personal
+attachment to it where you know it could
+affect business operations and it could
+affect your paycheck and things like
+that but to be specifically targeted
+like you and your account it does feel
+like somebody
+like threatening you it feels like it's
+a one-to-one interaction versus one to
+many interaction and it's it's
+whether like how small it is or how big
+it is it's never it's very unnerving it
+never feels comfortable right so so
+that's interesting that takes me to my
+next question so we spoke about
+motivations we spoke about the people
+who are behind these attacks now we went
+a bit into how they happen and are they
+personal or are they spraying prey so
+can you take us a bit about on the on
+the life cycle of this whole thing like
+how it starts how do they get all these
+inputs
+and from there
+yeah yeah so in general
+um it's a numbers game like I said and
+so it's a numbers game because we assume
+that breaches will happen and those
+breaches have the latest state of
+somebody's online identity because you
+can kind of assume as time goes on each
+one of us gets to have I've been putting
+email every week we change our passwords
+we're good internet citizens but if you
+can get a very fresh piece of data from
+like a data breach
+um that that is very valuable because it
+just shows that like it's almost like a
+zero day this person is unaware that
+this service has been breached and so
+you have like the zero day base right
+the zero day database that says this
+hash is current representation perhaps
+of like Zach's passwords
+once I had that
+there are certain ways that you can kind
+of go through it and almost perform a
+like open source intelligence who are
+the people in this database and those
+are the questions that a lot of these
+criminals ask themselves when they first
+get these things especially if they're
+very good at targeting individual people
+and so what I mean by that is a lot of
+these the origins of these data breaches
+are for the sole purpose of finding
+folks to do account takeovers to do Sim
+swapping to drain a bank account drain a
+crypto account and things like that it's
+a very high payoff and it's very
+targeted and so once you kind of go
+through that and it becomes less fresh
+and people update their passwords then
+those data breaches and databases are
+either traded or sold to the point where
+the demand starts to lower because the
+supply is copied over and over again
+across the value chain and then
+eventually it's just given away
+and so at my last job what we saw is a
+lot of the times we would see the
+databases be shared freely that are
+fresh for us as researchers but are
+months to almost years old for a
+criminal once it gets to that point
+where it's given away that's when you
+start to see this uptick for the most
+part of like spray and pray credential
+stuffing and account takeover attacks
+because people are kind of picking up
+the smaller pieces and just kind of
+hoping that maybe they can get a
+commodity account or two out of these
+things
+and so once you have uh those what do
+you what do you do with it
+uh once we have specifically once we
+kind of obtained those those data
+breaches and databases as an attacker
+right yes yeah so um you could do a few
+things uh most of the time it's almost
+like a mad rush to crack passwords most
+of the time not all the time in modern
+kind of data breaches you'll have hash
+passwords hopefully it's a
+um you know there's a salt added
+hopefully it enforce some type of
+password standards many times they do
+not
+um
+you just start going to town throw it
+into Jack the Ripper uh pull in some
+word lists maybe add a couple of
+variations on there and you start to
+crack as much as possible so once you're
+I'm not sure how
+um
+Familia the the audience will be with
+that so let me just uh put some some
+explanation on top of that deck so when
+when we say a stud
+um
+it means you know you start like the the
+Shah or the Big Crypt of of the password
+if if you store the the raw password the
+plain text password then obviously if
+your database gets stolen then attackers
+can directly use the passwords if you
+store a hashed version of it it's harder
+for the attackers because they first
+have to uh find a string that will uh
+end up like the ash right so this is
+called Brute forcing and and when you
+said uh John the repairs like it's a
+it's like a tool that helps you brute
+force a variety of passwords
+um yes that's why thank you goodbye
+everyone to ask your passwords and so
+the salt yes makes it even harder Etc
+go ahead sir so
+it's actually just a parenthesis here
+okay so uh we're talking about
+Rich lists that come as hashes and
+somebody has basically to to crack them
+are we talking about different tiers of
+of costs here like
+when they move from the from the hash to
+the decrypted already do people have
+that whole economy of how much it costed
+me to decrypt this
+small amount of passwords is that
+incorporated in the sales value
+I I would say
+um for the most part there is a premium
+on that but it's mostly based on at
+least in my experience who of the high
+value targets like were cracked
+um and just kind of like the the
+freshness of the data eventually like
+password hash cracking it has approached
+a state where it's not too hard to
+perform
+um cost wise as well as technology wise
+so that premium is factored in but once
+it kind of gets to the state where it's
+almost like a bunch of piranhas or
+circling around the scraps you know it's
+not it's not as worth as much as it
+would be like something completely fresh
+thank you yeah no problem so uh
+basically a lot of a lot of these people
+will go and crack these things with John
+the Ripper
+um and once they get those outputs
+they'll mix and match and what I mean by
+missing mix and match is that a data
+breach within itself is useful but there
+are also these sets of data that you'll
+see people talk about called combo lists
+and basically a combo list is just a a
+list of usernames and passwords that
+have been cracked or seen in the wild at
+in a data breach
+once you mix and match these things they
+eventually turn into a really nice data
+set of passwords and victims that you've
+known to see like in the wild as part of
+the data breach and you can start doing
+small permutations at an exclamation
+point add a one if you see in dates
+there at a date to remove a date and
+they're actually pretty Thrifty at kind
+of building these things out and then
+you'll start to get this like really big
+blob that you can go and load into these
+tools and and just start rapid firing
+um at all these different platforms
+nice the the the Fuller attack life
+cycle and so one of the things they used
+to to to stay kinda discreet is um they
+don't want everything to come with one
+IP address usually so could could you
+could you let us know a bit more about
+how they managed to to cycle that and
+find so many proxies
+yeah of course so um I'm sure everyone
+has probably faced this at one point in
+their life but you go onto a website and
+let's just say you're at an airport or
+you're at an Airbnb on vacation or
+you're just away from home and you're
+presented a captcha you have to fill in
+some ridiculous uh you know letter uh
+number combination or look at a picture
+and say like find everything in these
+nine squares and mark them that is a
+protection that is being put in place
+when a vendor season IP address it
+doesn't necessarily trust and so the
+heuristic there is really anchored to
+the IP address and so if you can kind of
+Mark an IP address as maybe
+um a little bit suspect you can add
+additional layers of protection and and
+investigation before you let this thing
+interact with your system
+you can also just skip that if you
+happen to have enough ways to route your
+traffic through IP addresses that you
+know are fresh enough that maybe the the
+platform doesn't have enough data on so
+for example if you say I'm gonna put a
+protection in place that says if we get
+10 failed logins from an IP address
+we're either going to block it or
+present a captcha well if you have
+access to 10 000 IP addresses and you
+manage to do 10 different logins from
+each of those that's going to be a lot
+harder to track on on the platform side
+and it gives you just a lot more access
+to try things quickly and and and and
+find those accounts that are valid or
+have a good username and password that
+you have guessed
+nice
+um so maybe one of the no I guess the
+next topic would be would be tools right
+we discussed quickly uh Central MBA open
+ballet uh I can I can share that but
+it was uh like a revelation to me when I
+realized that attackers uh use really
+really some tool when I was a pen tester
+and I had like to run a Brute Force for
+a test I was doing usually it's a few
+lines of uh of python or whatever to to
+just
+try an IP I mean a login and a password
+and just see if it's a failure or not
+and
+um
+obviously if you don't test HTTP well
+okay like the I don't know uh
+silver sntp or whatever maybe you want
+you don't want to read the full RFC and
+and you will use the Q some tool but
+actually when you start to do it at
+scale for HTTP when then obviously you
+need multi-threading you maybe you need
+to distribute the attack reversible
+nodes Etc and so that's why yes
+obviously you will need some more some
+more tools but it's it's uh easy to see
+that very easily those kind of of tools
+go beyond like a simple pen testing and
+those are more
+like
+um offensive requirements so one one of
+those two is better so I like it because
+it was written by London who's a friend
+and uh was a co-worker in where I was a
+pen tester actually so he wrote it while
+I was there it's full Python and and you
+can see it's mostly like a brute force
+on a bunch of various protocols so so
+pretty fun it's super easy to look so
+nice because it's a bunch of um
+of plugins that you have there but very
+flexible and and easy to and well easy I
+I don't know but uh at least very
+flexible actually it's saying it's not
+scriptically friendly
+so one of the two that you uh you
+mentioned uh zaken that I think is uh
+much more tight into like
+um
+the use case you described before is
+open Beret and so we can see from the
+the screenshots on GitHub that you have
+like uh a lot of settings that makes it
+really easy to use uh and and really
+tight uh to the to the world of uh of
+pen testing so we'll we'll share the
+links for those tools in our
+is there any other tools that you that
+you have in mind or maybe things that
+are much less uh public and and that are
+uh reserved to some uh specific uh
+communities of hackers or
+yeah I mean like these
+these tools are probably like the
+biggest ones that I've seen at least for
+this kind of large-scale account
+takeover credential stuffing attacks
+um and it really comes back to what I
+said about it being a numbers game uh
+the funny thing about Brute Force tools
+is that you know I would do the same
+thing GB I would have something like
+that I would write or or maybe I would
+update burp to do something specific but
+a lot of these tools are purpose built
+for one thing and that one thing is
+account takeover and if you go and look
+at the readme's uh of those tools it
+says this is not used for account
+takeover this is used for pen testing
+but then you look at like the tabs you
+know in that open bullet thing it says
+load your proxies here load your word
+list here load your configs here these
+are all things that are very
+specifically designed to Target an
+authentication endpoints
+and to replace
+certain words within there and to
+measure a response and to see if that
+response indicates a successful login so
+it's kind of hard for me to say like
+this is not like this is a pen test tool
+because it's it's clearly designed to do
+credential stuffing and account takeover
+I guess if you want to use it for like a
+pen test job great but you know I've I
+I've showed a couple screenshots to to
+Czar and GB here and there's a bunch of
+um great work done on these tools
+um you know in the blogosphere
+um they're a whole cyber criminal Forum
+sub committees or sub communities
+designed just to talk about what is
+working for account takeover using these
+tools so
+when it looks like a duck it quacks like
+a duck it's probably a duck right so
+which which brings us to an important
+point that we are sharing these tools
+here and the details for research
+purposes so that people can learn about
+them learn how they work and do their
+detections and all that good stuff yes
+of course nice transition is our because
+uh so yes we talked a lot about uh
+offense here but so I think the next
+question that will also be very
+interesting for the for everyone
+listening is
+watching us is um how do you detect
+um similar similar attacks
+what variety of tools who wants to who
+wants to start I I can I can kind of
+give my two cents here um I think this
+is a great example of of like purple
+teaming so it's purple teaming is the
+combination of taking an attacker
+mindset red teaming pen testing like
+JB's talked about and blue teaming on
+the defense side and kind of putting
+them together a lot of the times these
+two teams there's like a huge wall that
+separates them and are kind of throwing
+stuff over throwing ideas over in terms
+of here's what's vulnerable here's
+what's been attacked here's the type of
+defenses we have but if you kind of tear
+down that wall and take that hacker or
+attacker mindset you can actually go and
+clone these tools you can run them
+against your infrastructure and then you
+can look on the other side and see what
+kind of logs they generated or what kind
+of telemetry gets generated and then you
+can make the decision is this enough to
+catch this or do we need to add more to
+make sure that we can specifically
+identify an attack like this and so I'm
+a big fan of purple teaming and threat
+emulation and things like that you know
+there's a couple names for it but to to
+kind of have something packaged to say
+I'm going to run this attack in a
+controlled environment I'm going to see
+what the Telemetry is on the other side
+and then I'm going to write monitors and
+detections to make sure I can catch it
+is a really good way to to kind of start
+adding coverage for this attack
+so what I'm hearing from you is that
+even if I do all my Authentication
+from a third party
+I can't just rely on the fact that they
+are responsible for that and eventually
+if there's an attack like this they'll
+be monitoring and let me know that there
+is an added component here of checking
+my own sites that shared responsibility
+my logs my apps and see if something
+came true before they they actually
+realized right
+that's right especially for like this
+username and password specifically
+um login endpoints so of course there
+are different ways you can do account
+takeover for like saml based
+authentication and and single sign-on
+but it's kind of outside the scope of
+like what open bullet in Century MBA and
+these large-scale credit stuffing and
+tax try to do
+and so you you mentioned uh what kind of
+flux of telemetry so
+um one thing we can share is how we we
+do accountable detection
+so I'm gonna I'm gonna share quickly my
+uh my screen
+uh and so what we do specifically in ASM
+um
+you know esm is is working on uh
+services on top of the data dog APM so
+that means that any
+HTTP activity that is happening within
+your application
+um is is watched by the APM and so from
+a security standpoint we care about a
+subset of those and for instance
+everything that is login related uh we
+we obviously care about so we're able to
+detect credential Staffing attacks here
+that's an example on the on the data log
+demo application where we discovered uh
+like a huge Spike of login attempts in
+which 18 logins were successful and
+which translates into one compromised
+account so that's like here we can see
+that's the that's the admin user so
+um what can you do as a as a way to
+answer well you could choose to to block
+the the IP obviously which is probably
+not enough as a as an administrator of
+of the application what you want to do
+is probably lock the user account revoke
+all existing all existing sessions and
+obviously change the change the password
+of the of the user but so what's
+interesting is that the way
+this information is gathered from
+applications you have several ways to do
+it one of them is to use the
+framework that is used to perform
+authentication that might be I don't
+know Spring Security in in Java passport
+node jungle in Python and by
+instrumenting those
+at the application Level you can know
+whether a specific request is performed
+by an authenticated user or whether it's
+a login attempt and if the result is a
+success or a failure and so like the
+rule to to detect that is super super
+simple we look if you if we have a lot
+of failed uh login and we compare that
+the trade to a threshold so very
+simply we can we can perform something
+like that so it's super easy to to
+adjust
+the rule
+to your infrastructure and so if you
+want to uh to address that it's uh it's
+possible the the added value is that uh
+once this is done you can have context
+about a specific user and so you can
+look at uh what this specific user has
+been doing within your infrastructure so
+what kind of attacks it performed uh
+what kind of ips they used and the
+activity over time so that's that's an
+interesting approach to uh to monitor
+account covers
+one of the way uh to do it is to use
+um
+Sim
+like Sim platforms that will help you
+monitor
+logs directly so that could be
+applicative logs so here it's the same
+we detected like a Brute Force attempt
+on uh on one specific application and
+the rule is very similar uh super simple
+we just took it if the number of plugin
+is is greater than than five so that's
+also very easy to to customize uh and
+and and to answer there either by
+blocking the IP as a first measure and
+obviously uh changing the the the
+password and revoking the the user
+account
+so that's how we do
+um attack detection at the whether it's
+at the trace level within the
+application or at the log level have you
+have you seen
+um similar approaches uh in the past
+Jack
+I I have not seen it um specifically but
+I have worked on this specific problem
+um for years now I mean I've been
+writing math rules
+since I mean in in University right so
+you know I I helped write a lot of the
+original laugh for a large content
+delivery Network protecting all of its
+customers
+and the problem I've always had is that
+threat detection
+um the level of visibility you get into
+the request is really a function of
+the type of observability you have into
+it so access logs for example out of the
+box for patching they log very little so
+one of the things I like to do when I
+bought when I was on pen test is if I
+would have a C2 framework I would always
+make sure that I send my commands over a
+header that start with an x because
+those are custom headers and Apache and
+IIs don't log those by default and
+what's really cool about doing threat
+detection for these types of attacks at
+datadog is it's at the trace level so
+because the code is instrumented
+um our teams can get really really deep
+when it comes to writing the exact type
+of heuristic to find these these attacks
+so we start with almost all of the data
+instrumented versus very little amount
+of the data instrumented and then we
+kind of tailor it to what we need and so
+that's
+that's what's made it really fun to to
+work on this specific product and I know
+that the team in my org that works on
+this has had a lot of fun building it
+out too okay so we spoke the attack
+itself we spoke detection we spoke uh
+around the market now let's get to the
+end of the pipeline
+how do we defend against it and what are
+the things that we can put in front of
+this attack so that we lower the chances
+of being a victim of them so I think
+it's it's
+I don't want to say defense and depth
+because I feel like that's an easy
+answer here but you know yeah and and
+you know maybe I'll become a sister one
+day if that's nicer for everything but
+but I I think I yeah seriously
+um I I think when it comes to protection
+for this type of attack you know there
+are a couple layers first
+really identify what what's your public
+facing attack surface when it comes to
+these types of authentication endpoints
+and make sure that you can really tune
+your Telemetry and your your detection
+mechanisms around assuming that you're
+constantly under attack or you could be
+under an attack because something's
+publicly facing I think the more
+interesting one and this is something
+that a lot of the Uber had one was
+account takeovers that happen on
+internal authentication portals so I
+mentioned earlier you know support
+portals and and support links and and
+VPN access that kind of thing those are
+the more targeted attacks that I've seen
+become really wildly successful because
+a support engineer may have a lot of
+access a devops engineer or an SRE will
+have a lot of access to those internal
+systems and if you just assume it's
+internal and it'll always remain
+internal that's like a pretty it's not
+the right approach right so if you can
+find a way to also instrument
+your Telemetry and instrument your
+detection around internal and systems
+like that it's going to make a response
+plane a little bit easier right and you
+know it almost you approach it like an
+Insider threat that at any time your
+devops person could be compromised and
+what access does that devops person have
+that's when you should kind of start
+like start from there and then kind of
+work your way backwards which is a great
+assumption right yep
+nice and what when um
+one big evolution that we've seen I
+think in the in the past uh in the past
+years oh my God I feel old because I
+think it was like maybe 20 uh 2015 it's
+like Beyond Corp
+um which I like was a way to uh to move
+um to centralized authentication right
+and to add a layer of context and and
+Intelligence on top of a various slogans
+um so
+it's something that we see uh
+some convergence towards right is it
+something that you've witnessed as well
+as zakira
+yeah I think uh you know Google's Beyond
+Corp has been taken over by zero trust
+and and so Gartner probably captured
+that and they're very happy about it now
+um and all the other marketing firms so
+I I think that it's it's very important
+way to kind of approach the threat model
+right like assume that everything's kind
+of publicly facing or assume that
+everything's internally facing and then
+start your authentication mechanisms
+through there and I think you get a lot
+of benefits for that of course the
+trade-off would be complexity right and
+so you know making sure you can
+instruments whatever however complex
+your architecture is and having those
+appropriate response plans and detection
+plans is probably going to be your best
+bet
+and I think it's important to bring out
+two that's we look at the the places
+where you would put your credentials as
+the places we would defend against this
+attack specifically but sometimes we
+forget to look at the other forms of
+access other forms of authentication and
+those go
+okay I don't have passwords there so I'm
+fine but you you forget that for example
+somebody logging in as a support person
+and then using the SSH share keys and
+everything to to people everywhere
+that's a second order uh uh result of an
+attack like this that people many times
+ignore
+so keep your threat models up to date
+people yeah
+I need a poster with that as a quote
+like right in front of me
+all right and actually that takes us to
+another interesting point which we
+didn't touch I can I can see the guy
+there in the back of the room going to
+fa to fa to fa what's the role of 2fa in
+this whole thing
+uh this is another great question
+because I talked a little bit about
+um like 2fa and human fatigue in the
+beginning
+um it's obviously a great approach
+um when it comes to that type of
+authentication but we're starting to see
+bypasses on that and the bypass isn't
+the 2fa technology itself it's the
+session token and so a lot of malware if
+you look up steel or malware
+um Redline Steeler is is is a really big
+one
+um I just put a couple things out my
+newsletter around Aurora's dealer a lot
+of these um Downstream uh kind of tools
+to use these session cookies are getting
+even easier and easier to use to the
+point where it's like a chrome or a
+Firefox plug-in where it says point to
+your session cookie and then I'll Point
+let's just say I stole something from
+Azar I point to his session cookie go to
+gmail.com and boom logged in as a czar
+and so that has nothing to do with your
+password or your two-factor
+authentication kind of processes
+everything you do with after that
+authentication process
+insane hello how easy it is it's a
+solution it makes you feel like you have
+to just turn off everything and walk
+away very quick and never touch a
+computer again yeah and obviously if
+you're if you're on the on the end point
+the authenticated browser like it's yes
+it's game over
+Zach has a Weekly Newsletter where he
+has a lot of resources and sometimes he
+goes into things like what we just
+discussed and it's going to be in the
+materials as well so definitely pay
+attention to that absolutely if you want
+to hear more about the the threat Hunter
+world
+Please Subscribe thanks a lot everyone
+have a great rest of the of the day
+thanks a lot for joining Zach
+and see you sooner of course thanks for
+having me it was great
+foreign
+[Music]

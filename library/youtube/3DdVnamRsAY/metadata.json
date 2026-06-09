@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "3DdVnamRsAY",
+  "title": "PGConf NYC 2022 PostgreSQL and DevSecOps Ensuring database security in DevSecOps by Tim Steward",
+  "url": "https://www.youtube.com/watch?v=3DdVnamRsAY",
+  "source_paths": [
+    "cache/transcripts/pgconf-nyc-2022-postgresql-and-devsecops-ensuring-database-security-in-devsecops"
+  ],
+  "updated_at": "2026-06-09T18:15:56.128666+00:00"
+}

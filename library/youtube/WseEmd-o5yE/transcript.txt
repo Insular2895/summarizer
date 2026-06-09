@@ -1,0 +1,105 @@
+[Music]
+hi this is Ali Shah from data dog in
+this two-part series we're going to look
+at how to use data dogs synthetics to
+proactively monitor the health and
+performance of your web applications
+today in part one I'll be sharing with
+you a tip on how to create an API test
+to check for availability and uptime of
+your applications from the data Dog
+synthetics homepage click new test their
+new API test first we're going to define
+the URL we wish to test in my case I'm
+gonna use shop SEO I can give my test a
+name and then I can specify the tags
+associated to this test day-to-day data
+dog leverages tags throughout the
+platform so it's important to set these
+to correlate this with the rest of the
+data I'm collecting
+let's specify my environment tag as
+shabbos
+and then I can configure any additional
+tags to relate this to the rest of the
+services I'm going to specify webstore
+next I can configure the locations I
+wish to test from there are a series of
+data dog managed locations around the
+world that I can test from out of the
+box as well as deploy my own locations
+for more granular testing finally I
+specified the time period at which I
+want to run this test say every five
+minutes let's run a test against this
+URL to see the response you'll notice in
+the response preview that we're
+presented with the status code as well
+as the response time these elements are
+automatically added as assertions to my
+test in other words these conditions
+must be met for the test to pass next I
+can specify if I want to define any
+extra headers or parts of the body in my
+test for example I can specify etag as a
+value for more advanced configuration
+options I can use the Advanced Options
+section to define any request headers
+cookies authentication my site requires
+or only
+body that I want to pass as part of my
+request finally I'm given some similar
+conditions around whether to retest on
+failure and last but not least I can
+define a notification method for saying
+that our site is down for example and
+integrating into the various
+collaboration tools for routing that
+alert to the right place let's create
+the test this test will now run at the
+regular interval every 5 minutes that
+I've defined let's take a look at one I
+made earlier back on my synthetics home
+page I can filter down by the tags and
+the name of the service that I created
+and open up an example test that was
+previously created I'm presented with in
+a global uptime to see the overall
+availability of my service and then
+broken down by the various locations and
+network timings that the test is
+recorded finally I have the results from
+the tests that have been running and I
+can see where they have been okay or
+where I've had alerts
+let's explore an alert in alert I'm
+presented with the various timings for
+the specific test the assertions and I
+can see where we failed the response
+time was exceeded and I can look at the
+response details here I'm presented with
+the header and body where applicable of
+the response of this test this may give
+me some initial insight into why my
+tests failed for more insight I can also
+correlate my synthetic tests back to the
+backend performance of the application
+thanks to the link into data dogs
+application performance monitoring I can
+tie this request back to the backend
+trace to understand whether there was an
+element within the code when this test
+executed that failed and finally I can
+combine all of these metrics that I'm
+pulling from my synthetic tests and
+build my own bespoke visualizations in
+data dog dashboards whether it's top
+listing the slowest API endpoints using
+the SLO widget to calculate based on my
+synthetic tests the overall performance
+from the past week or 30 days as well as
+combining
+all of this data with other data of
+metrics and events thank you for your
+time
+you

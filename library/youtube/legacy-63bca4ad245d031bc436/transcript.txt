@@ -1,0 +1,2840 @@
+[Music]
+Welcome to Capital Decanted. In this
+show, we say goodbye to tired market
+takes and superficial sound bites.
+Because here, instead of skimming the
+surface, we dive into the heart of
+capital allocation, striking the perfect
+balance and exposing the subtleties that
+reveal the topic's true essence. Prepare
+to have your perspectives challenged as
+we open up the issues that resonate with
+the hearts and minds of those shaping
+capital allocation. We've enlisted the
+wisdom of visionary leaders in the
+industry. And just like a meticulously
+crafted wine, we'll allow their insights
+to breathe, unfurling their hidden
+depths and transforming our
+understanding.
+This is season 2, episode 10 of Capital
+Decanted, Assetbased Lending. I'm John
+Bowman and I'm Aaron Philbeck and we are
+your hosts. A huge thank you as always
+to our returning title sponsor,
+Alternatives by Franklin Templeton. We
+are of course grateful to have them back
+to partner with us. They've been here
+from the beginning. Franklin Templeton
+has over 40 years of alt investing
+experience, over 260 billion of asset
+center management. Their specialist
+investment managers have expertise
+across six different asset classes. Real
+estate, private equity, private credit,
+hedge strategies, venture capital, and
+digital assets. And of course, all of
+them operate with the client first
+mentality that has always defined
+Franklin Templeton to help prioritize
+investment outcomes. So, thanks again,
+Alternatives by Franklin Templeton. All
+right, Aaron. Assetbased lending. We've
+done several episodes on what I would
+call coming of age stories. it it often
+navigates to those types of topics this
+show across the two years that we've
+been doing this where strategies or
+techniques or financing mechanisms they
+might start in the dark corners of Wall
+Street or high sophisticated finance and
+then they institutionalize a bit they go
+mainstream and so I'm thinking for
+example GP stakes that was season 1
+episode 10 or secondaries which was
+episode 14 those were great examples of
+this evolution and even in some sense
+the larger category story we're going to
+be speaking of today, our episode on
+private credit last year, which was
+episode 11. These capabilities often
+blossomed from distress desperation from
+lenders or capital providers of last
+resort to widely accepted portfolio
+tools. And just as the story goes, today
+serves now as a crucial and flexible
+source of capital for business
+expansion, inventory financing, growth
+and acquisition, and cash management.
+And we'll talk a lot about that. They've
+gone from fringe to widely accepted. So
+ABL shares this coming of age story with
+many topics. But Erin, I don't know
+about you, but that's really where the
+similarities as my research unfolded
+ended because I would argue, and I know
+this is hyperbole and perhaps a bit of
+exaggeration, but it seems to me that
+this is the most idiosyncratic and
+complicated asset class we've covered.
+In fact, I'd suggest it's hard to even
+make the claim that this is a single
+asset class or exposure or economic
+factor that you can kind of put your
+thumb on and say, "I need some more of
+that beta or I need some more of that
+risk premia." And that's even after
+hours of study, reading, and
+conversation because each of these loans
+are snowflakes. They're each unicorns to
+borrow from our family office friends.
+If you've seen one loan, well, you've
+seen one loan. ABL puts the specialty in
+specialty finance. I like that one. So
+yet, that's what makes this space so
+fascinating and intellectually
+stimulating, at least to me. But I will
+say nonetheless, I do not envy the CIO
+in having to think about the right way
+to allocate to this space. If that's
+even how you should think about it, by
+the way, we should ask Greg about this.
+How do you allocate? Should you allocate
+actually to the space explicitly? And
+even more so, I don't envy even more
+conducting the multiaceted due diligence
+and eventually underwriting and sizing
+of these GPS. So, you're in for, I
+think, a really nice journey here. That
+is, however, why Capital Decanted
+exists. That's all the more reason ABL
+was the perfect topic for this show. It
+it combined a couple characteristics
+that really define who we are here at
+Capital Decanted. One is this
+multi-layered, complicated,
+misunderstood nature of this category of
+credit. As I've just been talking
+through, you need a few breaths, maybe a
+couple glasses of wine to navigate your
+way through this. Sound bites and social
+media fluff just ain't going to cut it,
+Aaron, on this stuff. But second, this
+stuff is hot. We often talk about the
+Kaya stage indicator, as you might say,
+to identify the trendy. In other words,
+given all the industry events that we
+host and speak around the world, we have
+this unique perch in which to gauge how
+often panels and speakers are mentioned
+and what topics or investment
+opportunities are advocated for most
+often. And Erin, I was thinking about
+this, by the way, in my prep. I I think
+we probably could have monetized this
+leading indicator to make some serious
+money. I think back to crypto cycles and
+middle market lending over the last few
+years. I think we should back test this.
+So, if you could get to work on that be
+great collateral, John, speaking of
+spacebased lending. Wow, you've been
+waiting for that one. So, we'll check
+back in on this back test on whether we
+can productize this going forward. I
+wouldn't say to be fair that ABL has
+reached the fever pitch that we've seen
+with some of the others, but we are
+certainly hearing a lot about it right
+now, particularly in light of how
+crowded the direct lending, the
+traditional, if you can call direct
+lending traditional, but the traditional
+direct lending space has gotten. So
+today we're marrying as I said
+complicated with a lot of momentum.
+That's a perfect candidate for us here
+on capital decanted. So assetbased
+lending, it's exactly what it says on
+the box for those of you which I assume
+is very few who are new to this, but
+assetbased lending rather than a
+traditional loan that is secured or
+based upon the credit quality, the
+operational health, the cash generation
+of a business, an AL is secured by the
+underlying value of a specific company
+asset or assets identified as the
+collateral, hence the name. And of
+course, under the terms of these loans,
+the lender has the right to seize that
+collateral if the borrower defaults on
+their loan. The collateral could be
+tangible like real estate, machinery,
+and equipment or inventory inhouse.
+These are things you can feel and touch
+or intangible such as intellectual
+property, royalties, R&D, discovery, and
+patents or accounts receivable, which is
+very popular as we'll talk about. So,
+just to make this very simple, the
+mortgages on our homes are effectively
+assetbased loans. Most likely a bank,
+not most likely, almost certainly a bank
+conducted or commissioned an appraisal
+on the value of your house and they
+determined through that appraisal an
+appropriate loan to value LTV against
+said appraisal and they therefore loaned
+you that amount of money for you to buy
+your home. And just like with all ALS,
+as I mentioned, that bank actually has
+rights to claim and sell your property
+if you default on that loan because it
+serves in this case in this example as
+the underlying collateral to secure that
+credit, that mortgage. So the great
+contradiction here, Aaron, getting back
+to my point on the most idiosyncratic,
+the most complicated, is that it's
+fairly straightforward concept at the
+micro level, at its essence, as I just
+explained in an individual mortgage. The
+issue is that it's expanded to a myriad
+of very complex industries and
+collateral types. And so grouping this
+and generalizing and stereotyping is
+where you get into trouble and where you
+find yourself working through just a
+wide variety of different credit types,
+collateral types, and GP expertise. And
+it's that that we're inviting you today,
+listeners, to discover with us today.
+And I think we're going to have some
+fun. So speaking of that journey, I'm
+going to do a few things. First, I'm
+going to give you, as I typically do, a
+brief history of ABL. And unlike some of
+those other coming of age stories, this
+is neither linear nor smooth. Its
+evolution is better represented by
+starting at a single point and beginning
+to draw bigger and bigger circles
+outward from there. It's this meandering
+maturity story like the start of the
+yellow brick road for you Wizard of Oz
+fans. Aaron, when you know, you know.
+So, history. Second, Aaron's going to go
+into a little bit more detail on types
+of collateral, especially how it's
+expanded away from the banks here, but I
+want to outline a few archetypes of
+businesses where also
+need for this type of credit. So,
+getting away from the philosophy to how
+does this actually help the world in
+which we walk in and operate in and
+transact in as consumers. And finally,
+as a segue and some important identity
+hooks, as I hand off to Aaron, I want to
+give you very quickly some market
+sizing, some profile data for the AL
+industry today, which is a whole lot
+more challenging than you might expect.
+Aaron's going to then unpack in his
+segment in more detail the different
+types of AL today, which by the way seem
+to broaden by the day. Every article I
+read is reshaping types of ALS. who
+plays in which of those segments with a
+particular eye towards where the banks
+are still dominant or at least a major
+factor and finally outlines some of the
+common misconceptions, areas of
+confusion, things to look for when
+analyzing these strategies. So, he's
+going to be putting on his old due
+diligence hat there. And then we will be
+joined this episode in studio by two
+exciting guests that are really experts
+in this field of ABL. Cedric Henley,
+partner and chief risk officer of
+specialty finance at SLR Capital
+Partners, which is a 13 billion of
+investable capital private origination
+platform. And then Greg Turk, deputy CIO
+and head of private markets at the 13
+billion Illinois Police Officers Pension
+and Investment Fund. So, we'll be
+looking forward to speaking with Seed
+and Greg as we navigate through this
+exciting topic. Sound good, Erin? Sounds
+great. Well, let's go. I want to open
+with a question to you. You shared with
+me, I forget, in an email as our prep
+was wrapping up that you found a cool or
+weird anecdote, I think were your words
+about ABL that you came across in this
+space. And listeners, by the way,
+decanters, I've not heard this either.
+So, we're hearing this for the first
+time. And if you get to know Aaron, you
+need to buckle up when you ask him for
+weird anecdotes. So, Aaron, off to you
+live. Yes, absolutely. So, this is a bit
+of a preview of what's to come in my
+segment, but I talked to a couple people
+in trying to prepare for this because as
+John mentioned, this is a very
+complicated and growing esoteric area of
+the private credit complex. And one of
+the examples that was given to me in
+terms of a deal or a loan that one of
+the GPS presented to an LP that I was
+talking to was a loan that backed
+Bitcoin mining companies and the
+collateral was the computers that were
+actually doing the mining for Bitcoin,
+which sounds great in theory until
+Bitcoin falls 50%. So, we'll get into
+some of this a little bit in terms of
+collateral, but that was one of the
+weirdest things that I've heard in terms
+of just the collateral backing some of
+these loans. You can get really specific
+and esoteric with some of this
+collateral. The last thing I'll say,
+John, cuz I have to get a joke in here,
+is I will be listening to your segment
+and the duration of your segment with
+great interest. Too good. That actually
+rhymes with a couple examples I'm going
+to talk about later. Maybe not quite the
+volatility of crypto, but there's some
+systemic circular elements to this when
+you get into high-tech ABL. So, put that
+up on the wall. Park that for a few
+minutes and we'll get back to it. All
+right. So, before I unleash my inner
+historian, we first need to throw out a
+huge definitional disclaimer. This was
+something Aaron and I talked about at
+length. This was an enigma, honestly,
+that haunted the entire prep and perhaps
+has you scrambling too, as you start to
+read about this. And if you read
+articles in the media, there is massive
+conflation of what I'm about to talk
+about. So we are going to make a big
+distinction between assetbased loans AL
+as we're calling it and again these are
+individual credits secured by a specific
+underlying corporate asset with the
+entire world we're distinguishing it
+against of Asabast. So we are going to
+make a big distinction between
+assetbased loans ABL. Again these are
+individual credits secured by specific
+underlying corporate assets with the
+entire world of assetbased finance or
+assetbased securities ABF or ABS. You
+might have heard that called. Now that
+might simply sound like semantics or
+acronym gymnastics but these are
+literally trillions of dollars apart. So
+it's really critical we draw some lines
+here. When I say assetbacked finance or
+ABF, I'm talking about the enormous
+world mostly originating in banks,
+pooling a bunch of assetbased loans and
+then trunching and syndicating them.
+KKR, for example, has this space ABF at
+nearly 5 trillion and moving to 10
+trillion in 2030. So, as we'll talk
+about shortly, true ABL is a fraction of
+that. assetbased finance has occupied
+our conscience and frankly Hollywood
+theaters in the form of collateralized
+loan obligations, collateralized debt
+obligations for all kinds of underlying
+credit. Perhaps notably, as you all
+remember, or at least most of you should
+probably remember, the subprime mortgage
+crisis that brought the global financial
+system to its knees in the GFC. But
+these collateralized securities also
+have other flavors of mortgages,
+consumer credit card debt, auto loans,
+and project loans in areas like
+commercial real estate, aircraft, just
+to name a few. So to be clear, again, I
+cannot put a finer point on this. Today,
+we are disciplining ourselves to focus
+on true private capital origination
+platforms that are sourcing,
+underwriting, and servicing these loans
+and credit risks from their own balance
+sheets or funds. So, another way to say
+this is that this is true assetbased AUM
+versus syndicated financing. Really
+important preface here. Okay, so
+definitions established. Off to the
+history. As you might imagine, ABL in
+one sense are probably the oldest form
+of credit in human history. And you're
+going to like this. And that's because
+the relative security, the known
+downside again, you've got assets and
+particularly in the earlier days, all
+physical assets that you were valuing
+these loans against. So there are
+actually records in ancient Mesopotamia,
+this modern Iraq and Iran, as early as
+3000 BC. This is during the Acadian and
+Sumer empires. This was the time of
+Gilgamesh. If you remember your high
+school epic, Sargon the Great. So this
+is a few moments ago. Now, I'm not sure
+Gilgamesh did any syndication of these
+ALS. We'll have to look back at the
+record. But nonetheless, traveling
+merchants would borrow against their
+goods, their livestock or their land
+from these money lenders. Or farmers
+would borrow against their future
+perspective crop harvests. Again, this
+is 5,000 years ago. So really
+mind-blowing if you think about it,
+during the Middle Ages, fast forwarding
+just 4,000 years, mercantile finance
+extended this practice to things like
+spices, gold, textiles. Famously, Henry
+VIIIth after the shame of the family
+food fight of the English throne, this
+the infamous war of the roses, resorted
+to AL to fund his invasion of France
+later in his reign. Very interesting. So
+the military has levered their assets
+for purposes of invasion and war. So in
+more modern history, this practice began
+to proliferate during the industrial
+revolution early in the 20th century.
+Now you can imagine that heavy
+manufacturing and back then early in the
+industrial explosion it was
+overwhelmingly textile garment steel
+factories they would struggle to secure
+traditional financing because they were
+assetri and cash starved these business
+models and particularly as they were
+beginning to establish themselves. These
+businesses had very big balance sheets
+but very thin and often upside down
+P&Ls. So they were forced to turn to
+alternative forms of revolving credit
+that levered their prized assets,
+typically their factory equipment or
+their physical inventory. And this
+reliance on AL for heavy manufacturing
+companies was of course exacerbated
+during the Great Depression when the
+credit market seized up for years and
+they needed a reliable cash facility to
+survive this economic turmoil. But it
+was not until the 80s when you began to
+see two parallel identities of AL
+emerge, which really starts to paint the
+picture of our coming of age story. So
+on the one hand, the use of AL began to
+be used as a working capital tool.
+Intangible assets like accounts
+receivable began to be levered to ensure
+the company could cover payroll, rent,
+and general expenses while their supply
+chain worked itself through their cash
+cycle. It also allowed companies to fund
+expansion, new equipment purchases and
+growth endeavors. So that's one side of
+this dual path. But this is also when
+the distress stigma and narrative really
+emerged for ABL as it begun to be
+associated ABL that is with the very
+last option and source of capital for
+businesses with limited cash flow or
+even worse companies in process of
+restructuring, dancing on the bankruptcy
+line or facing LBO recapitalization
+because this is the time the chapter of
+the corporate raider of the hostile
+takeover phase that really picked up
+steam in the late 70s and into the 80s.
+Now, most recently, ABL really took off
+during COVID when global supply chains
+literally froze for several months. And
+arguably, you could say even though they
+picked up again, at least they started
+moving again after several months, they
+really didn't completely thaw for a
+couple years. So, ABL was an
+unprecedented lifeline for many to
+survive that cash desert and that
+economic volatility. So, as you can see,
+there's been these chapters of it
+serving urgent needs and chapters of it
+allowing for balance sheet optimization.
+Hence my point on it meandering this
+history. It wasn't a straight line. So I
+think that winding and serpentine-shaped
+history leads us to our archetypes which
+I think is really interesting. It's here
+that we see the diversity, the ultra
+bespoke nature of this credit category.
+It also brings as I alluded to some full
+technicolor illustrations to the concept
+that really help me at least crystallize
+the role of these loans as I said in the
+real economy. So, by the way, I
+certainly don't pretend that these are
+anywhere near exhaustive, but what I've
+done through the course of my reading is
+chosen and grouped five business
+profiles that really dominated my
+research and extend this practice way
+past its desperation label. So, I'm not
+going to cover the distressed narrative
+here at all. These are beyond that. And
+I realize it's still working to shake
+that narrative, but nonetheless, these
+are five archetypes that take advantage
+often of ALS. So number one, I'm going
+to call this long payment cycle or
+extended supply chain. So these
+businesses usually have multiple
+specialized raw materials, significant
+lead time between purchase of those
+inputs and ultimately harvesting the
+cash from their finished product sale.
+Think of garment and apparel companies
+or healthcare providers. And by the way,
+when your main payer healthcare
+providers is the government, you don't
+have high expectations for quick
+turnaround of bills. So import export
+businesses and international trade would
+also fit I think into this category as
+days sales outstanding you might say for
+payment could be literally several
+months. So you might call these extended
+supply chains cash delayed businesses
+they need access to working capital. So
+that's number one. Number two lumpy or
+seasonal businesses. Aaron by the way do
+you know my very first job 14 years old?
+I don't I don't think you've told me.
+Well, it was Chickfil-A, which by the
+way is neither seasonal nor cashrich.
+But my second job, importantly, was KB
+Toys, which probably Did that exist in
+your childhood? It did. I shoed there
+quite a bit, actually. Well, I worked
+there. I ran the Fashion Square Mall in
+Charlottesville, Virginia, KB Toys.
+That's an exaggeration, but I worked
+there. I stock shelves, basically, is
+what I did. This is largely defunct,
+which is hopefully no correlation with
+my lack of skill in stocking the shelves
+or merchandising in the 90s. But the toy
+business itself is massively hit driven
+and seasonal, obviously. So, when a new
+Star Wars or Avenger film comes out, you
+see a spike in sales. When a new video
+game system is released, you see a
+spike. And of course, we all know that
+the large majority of toy sales come
+around the holidays, post the so-called
+Black Friday, when these businesses move
+from the red to the black in annual
+profitability. Have you ever seen a
+Halloween store? I have. Yeah. That's
+the oddest business model that's ever
+been created. So, I don't know why these
+exist, but I imagine, for example, their
+cash balances struggle for about 350
+days a year. They get about 2 weeks of
+cash movement. But beyond toys, jokes
+aside, there is seasonal apparel and
+equipment. You can imagine agricultural
+operations, obviously, that's massively
+seasonal. Tourism related activities.
+So, you get the idea. These are great
+examples of businesses that need to
+smooth their working capital against
+these jagged and concentrated cash
+behaviors of their consumers. Third,
+industrial product. So to some extent,
+this is an extension of the delayed
+supply chain. But the reality here, the
+unique additional factor here is that
+the working capital, the shipping and
+the production costs are really
+substantial in these types of business
+models. So think of drilling and mining,
+aircraft engines, auto parts, freight
+and trucking, medical equipment,
+technology infrastructure. These are
+big, big product, expensive, long
+production cycle, assembly line product,
+very expensive, physically large, take a
+long time to monetize. So the idea here
+is to unlock trapped capital that just
+gets clogged up in the system given the
+timing. That's third. Fourth, R&D. Our
+guest today, SLR, is actually one of the
+private capital firms that have really
+built this practice in life sciences or
+pharma or biotech. This is lending
+against those future discoveries,
+royalties, patent exploitation. So these
+companies need access to ongoing capital
+to keep funding the chemistry, the
+research, the design, the trials and the
+marketing associated with their
+innovation. So largely in the healthcare
+space. And finally, number five, growth
+financing. Now, the most obvious here is
+early stage companies that don't have
+the history of cash flow, similar to the
+early history of AL. They can't justify
+traditional direct lending because they
+don't have that three or four paychecks
+we're used to giving to the bank when
+they're looking at our credit
+capability. But they can lever their
+assets. So, similar to back in that
+industrial revolution, but very much
+these are new economy models I'm really
+pushing on. And this category is also
+robust for established companies that
+want to enter new product lines, new
+geographic areas, make acquisitions. So
+I mentioned to put a pin in Aaron's
+story on the tech side a few moments
+ago. So one of the recent examples here
+I found fascinating that has received a
+lot of press coverage has been the AI
+cloud companies that provide support to
+companies that are building LLMs, large
+language models and generative AI. So
+these are companies like Crusoe, Lambda
+Labs, Core Weeave. These are businesses
+that have secured massive AL facilities
+against their inventory of, drum roll
+please, Nvidia GPUs. So a single AI GPU
+from Nvidia could cost 30 to 50 grand
+and a full rack might cost as much as $2
+million US. So you can imagine the
+levering power of this equipment in
+these data centers basically. And guess
+what these Neo cloud companies are doing
+with all this new access to capital?
+Well, yes, they're buying more Nvidia
+GPUs. So, I alluded to this systemic
+risk. So, question for another day is
+whether Nvidia is creating some circular
+systemic risk in the credit system
+because they are basically syndicating
+and syndicating these loans and credit
+against the same collateral to buy more
+of that collateral than levering it and
+on and on. So, you get layers and layers
+of Nvidia GPU collateral. So, there you
+go. extended supply chain, seasonal
+businesses, industrial product, R&D, and
+growth. Again, probably not exhaustive,
+but I think it really brings to life the
+power of some of this ABL credit capital
+access. Okay, let me finish off my
+segment very quickly by painting a
+picture for you of the current sizing
+and the state of the AL ecosystem. So,
+remember what I said at the start of the
+show. We are differentiating for
+purposes of today's episode from
+assetbased finance only focusing on true
+originators and operators of AL. These
+are GPS and banks where you could
+explicitly capture AUM or what you might
+call investable capital. But it's a
+whole lot easier said than done is there
+is a ton of double counting conflation
+overlap in the data we've looked at.
+Lone pooling and syndication creates
+this messy octopus of interconnectedness
+that we had to unravel a bit before we
+could draw any types of lines and pencil
+in some sizing here. So, as I mentioned
+earlier, the ABF again that's pulled,
+collateralized, and syndicated is about
+5 trillion. I looked at a ton of sources
+to try to size just true AL as a part of
+that. And those estimates ranged, Aaron,
+for 2025 anywhere from 700 to 900
+billion. So just taking the midpoint
+there, I think we can say with some
+level of confidence that ABL is roughly
+800 billion of the 2 and a.5 trillion of
+private credit and arguably the fastest
+growing. So as we alluded to earlier,
+cash flow direct lending has become very
+crowded. It's pushed GPS and LPs to look
+for other sources of yield and fixed
+returns. So there's significant demand
+pull from capital allocators down the
+value chain for these types of offering
+for other exposures to credit. Further,
+of course, the continued retrenchment of
+banks from the space, especially after
+the collapse of Silicon Valley Bank, has
+further emboldened the private capital
+firms to be aggressive here. However, as
+we've tried to explain, this is a very
+specialized form of finance that
+requires deep technical subject matter
+expertise, much more so than most forms
+of credit. That's across a very narrow
+and unique forms of collateral, as we
+tried to explain. And we're going to
+talk to Greg and to said about how they
+think about the specialization of this.
+But to do this well ABL, you can't just
+build a group of credit generalists and
+release them into the wild even if those
+credit generalists have significant
+experience in origination and
+underwriting. And this is really
+important these next couple sentences
+because the key here is business model
+intimacy, valuation competency in the
+specific type of collateral the
+borrowers are levering. Your team of
+underwriting and valuation experts, as
+you might imagine, are very different
+looking professional profiles when
+you're underwriting, say, life sciences
+versus manufacturing equipment versus
+Nvidia GPUs versus Bitcoin mining
+equipment. Very different types of
+individuals with very different
+competency sets. And furthermore,
+lenders are facing expensive and
+increasing pressure to invest in data
+analytics, cyber security, advanced
+fintech tools that are enhancing the
+decision-making, improving risk
+assessment, and real time monitoring of
+the assets that are the collateral to
+really streamline the loan origination
+process. So I mention all of this in a
+bit of an aside as there are unique
+pressures that add I would say an
+inherent governor to the growth of AL
+scarcity element that limits the
+velocity of the segment at least the
+velocity of quality capabilities and GPS
+on the segment and that keeps the supply
+demand dynamic very favorable for I
+think experienced investors. Now despite
+all of that most forecasts have that
+growing to sound terribly contradictory
+and very healthy kaggers. perhaps
+unrealistic clips in my opinion for the
+reasons I've just highlighted. So for
+example, research and markets puts a
+nearly 11% growth rate 10.7 growth rate
+on it resulting in a $1.3 trillion
+market by 2033. Business research
+company is even more bullish using a
+13%. Kagger resulting in 1.4 trillion as
+early as 2029. And global market
+insights also uses 11% resulting in it
+reaching 1.5 trillion in 2032. And by
+the way, if you're trying to do this
+math at home, just stop. Don't try this
+at home. These are not apples and
+apples. As I mentioned earlier, the
+starting points are all different. But I
+think you can see we're at least in
+adjacent zip codes across these research
+houses. Whether you think they're a bit
+too aggressive, which I do, they seem to
+be concentrating around a certain low
+singledigit type of kagger. So, as I
+finish off, how about segmentation? From
+a collateral standpoint, accounts
+receivable ABL is now the largest type
+at approximately 45% of total. Inventory
+financing, the original would be next at
+35%, equipment at 15, and there's this
+long tail of others for the last few
+percent. Unlike the earlier industrial
+ages, small and medium-sized businesses
+versus large are now dominant in ABL,
+almost 2/3 of the total and growing. So
+again, this is growth capital now, much
+more so than it was desperation capital.
+From an industry standpoint,
+manufacturing, no surprise, is the
+biggest user at almost a third of the
+total. Healthcare perhaps surprisingly
+is second and over 20%, retail and
+wholesale is nearly 20%, high teens, and
+tech is 15%. And then you see again this
+long tale of construction, auto,
+logistics, agriculture, and so on.
+Origination still is owned by the banks
+at about 40%. But private capital firms
+have exploded here and are quickly
+gaining share at over 30% now. So
+Apollo, Blackstone, Aries, Sixth Street,
+Oak Tree, Carlilele, KKR, HBS, these are
+all household credit brands. They've all
+made acquisitions and/or launch
+dedicated platforms and funds really in
+the last few years. This is really new
+in many ways. Finally, on the geography
+side, while the US still holds nearly
+half of the global market, Asia,
+interestingly, has been a region of very
+high ABL growth, expected to close the
+gap from its current 35% due to these
+rapidly growing economies, particularly
+in Southeast Asia, and quickly
+developing infrastructure and
+manufacturing supply chains that has
+been I think supercharged postco as you
+nearshore and diversify your supply
+chain dependency across countries. China
+itself now represents over 100 billion
+in AL. The last couple other fun facts
+here as you digest that segmentation is
+that unlike direct lending, which is
+nearly all floating rate loans, ABL is
+2/3 fixed rate lending, ABL is also
+typically represented, and I mentioned
+this earlier if you picked it up, in
+much shorter term facilities or
+revolving lines of credit. So, they're
+rarely direct term loans that dominate
+the cash flow space. This is usually a
+line of credit for lack of a better way
+to phrase it. And that gives them an
+average life of 1 to two years on
+average versus perhaps triple that in
+direct lending and of course five or six
+times that in private equity. So in
+summary, let's call this an $800 billion
+segment that's led by the primary
+profile of accounts receivable
+collateral loans atmemes in
+manufacturing in the US with fixed
+shorter term revolving lines of credit.
+That's your typical profile here. So
+there you have it. You've got your
+primer on the history and the current
+status of ABL. So Aaron, I want to turn
+to you to tease out these segments and
+collateral types a bit more with a
+different lens, a lens of how this
+affects your investing thesis and your
+approach to partnering with these GPS.
+So Aaron, off to you. And John, just a
+couple reactions just listening to you
+talk. And I think most listeners know
+this. We don't give each other what
+we're about to say. So I'm learning this
+in real time as John goes through some
+of the history. I'm shocked that the US
+is so small relative to direct lending.
+That Asia presence being much larger.
+When you look at like direct lending
+now, I think it's somewhere around 80%
+is US origination and then it's slowly
+moved overseas. But were you surprised
+by that half and half? On the one hand,
+yes, for the reasons you've just cited
+because private credit is overwhelmingly
+westernbased currently. If you look at
+just a stat on what percentage of banks
+still are relied on for credit
+facilities and as you know in the west
+it's something like 70 80% now non-banks
+are lending. Asia is the exact opposite.
+So they're early. So if you look at the
+private credit origination platforms
+just generally in Asia they would still
+be mezzanine desperation restructuring
+non-performing loan type capabilities.
+And the only thing to get to your
+question that I'm thinking is that given
+that the early stages of ABL typically
+mirror those restructuring or bankruptcy
+or trouble type of companies that my
+guess is is that's why ABL is perhaps
+exploding in Asia early. So I think just
+a few things are coming together. The
+stars are aligning for ABL to do quite
+well in the current Asia space. Other
+thing maybe more of an aside. had this
+mental image of you going back in a time
+machine and trying to explain trunching
+to Gilgamesh and Henry VIIIth. So that
+was fun as you were talking. I'm sure
+that they'd be interested in your micro
+credential on private credit. There you
+go. Well, great. That was really
+helpful, John. And I think previews some
+of the things I'm going to talk about
+from your perspective maybe a little bit
+different perspective for me relative to
+what you were sharing. But nevertheless,
+this is a challenging place to define
+and get your arms around just given some
+of the different definitions and where
+some of the assets lie. So what I'm
+going to do is I'm going to walk through
+the universe of AL and try to codify and
+put some definitions around some of the
+different collateral players that are
+out there. I'm also going to talk
+through banks versus private lenders.
+John walked through some of the
+different types of companies, but I
+think some of the characteristics is
+also important to differentiate between
+where the private players play and where
+the banks play. I'm also going to walk
+through a little bit on structure and
+mechanics of AL. And John, your intro
+talking about mortgages, that's a great
+preview for what I'm going to do there
+as well. and then I will wrap up with a
+little bit on some of the opportunities
+and risk considerations for investors
+moving forward. So on the universe of
+ABL and the different players that are
+out there, there's a couple of
+categories and again this is not
+all-encompassing and you may see some of
+this in the direct origination space and
+you may see it in the bank and the
+syndicated space as well, but I want to
+focus mostly on collateral and then we
+can get into structure. So from my
+perspective, there's really three main
+groupings of ABL that's out there.
+There's hard assets, there's balance
+sheet assets, and then there's specialty
+finance. And you can maybe trade between
+each of these in terms of which one fits
+within each one. But when you look at
+hard assets, you're looking at, as the
+name suggests, physical properties,
+assets that are available to the
+company. So that's things like real
+estate, infrastructure, farmland,
+timberland, and then commodities and
+energy. getting into oil and some of the
+raw materials that go into the business
+and how the business operates. On the
+balance sheet asset side, this is where
+we get into some of the receivables, the
+inventory, the equipment assets that are
+held on the balance sheets of some of
+these organizations that may be more
+specific to different parts of their
+operating model and their business
+model. I found it odd in my prep that
+often inventory was grouped in the
+intangible space. And I guess I'm
+probably thinking about a certain type
+of inventory. You walk the factory floor
+and there's widgets laying around which
+is very tangible and kind of the old
+school AL. But can you help me and the
+listeners understand what the variations
+of inventory that would label it
+intangible would be? When I was thinking
+about grouping this when you look at
+card assets, so like you look at real
+estate or an infrastructure project,
+these are typically very specific pieces
+of collateral. It's a specific property.
+it's a specific project that's being
+done. When you look at the balance sheet
+assets like an inventory or equipment,
+it's usually based on a collection. So,
+I think it's less about physical versus
+financial and it's more about a grouping
+of some of the assets that are backing
+that particular loan. That may not be
+the right way to think about it, but
+that's how I group this within a balance
+sheet context instead of a physical hard
+asset context. Okay, that's helpful.
+Thanks. So, the one other thing that we
+didn't talk about is nav lending. So, a
+lot of what we focused on here on the
+balance sheet side are companies that
+are operating and trying to get loans
+based on their collateral. Well, we're
+actually seeing fund managers and GPS
+that are using this facility to raise
+funds to help them through the cycle of
+making commitments and exits and
+potentially reinvesting in some of those
+different portfolio companies. And
+that's a unique maybe more esoteric
+asset that's being backed by loans but
+sits on the balance sheet of the GP if
+you will. On the specialy finance side
+you've got more esoteric assets. So this
+is things like consumer finance which
+includes credit card loans, SoFi,
+personal loans if you will and then this
+whole revolution of buy now pay later
+which I'll get into as well. A lot of
+ABF tends to play in this space but
+you're seeing more and more direct
+platforms as well. You also have
+royalties, health care, R&D, some of the
+things that you mentioned, John, before.
+And then finally is these insurance
+contracts and policies. So life
+settlements and reinsurance, catastrophe
+bonds, and so on. So there is an asset
+backing it up. It just happens to be a
+insurance contract instead of something
+physical. So if it's not obvious, this
+is clearly not the same as what we see
+in the cash flow-based lending space.
+Cash flow-based lending tends to look at
+the entire company and their ability to
+repay the loan, whereas the assetbased
+lenders are looking all at the
+collateral and the collateral that's
+backing that specific loan. And you can
+see that it gets very very esoteric very
+quickly. So, as John mentioned, some of
+these categories originated at the bank.
+So, I think it's essential to
+differentiate who plays where today.
+Where are the banks making these loans
+versus where are some of these private
+lenders making these loans? And this is
+a really tough delineation to make. It's
+not as clean as saying the banks are
+here and the private lenders are here.
+So, we can't really divide the world up
+in that way, but you can do it based on
+some characteristics. And I think there
+are some clear differentiations that you
+see between preferences between these
+two different types of lenders. So banks
+tend to lend to more investment grade
+and asset heavy companies whereas
+private lenders are willing to go down
+below investment grade maybe take on
+more complex situations and may lend to
+companies that don't have as much
+physical assets backing some of these
+different loans. So this lends itself to
+the different types of collateral types.
+So banks tend to be focused much more on
+hard assets and more standard balance
+sheet assets like receivables and
+inventory where you can bring it all
+together and make a loan based on a
+collection of assets. Whereas private
+lenders, they may operate in this space
+as well, but they might take on some of
+those more specific complex esoteric
+assets like receivables that are more
+specific to a particular area,
+royalties, which are much more
+challenging, intellectual property,
+certain types of equipment, and then
+again those nav loans that I mentioned
+as well. Now, in terms of structure,
+banks tend to follow this originate to
+distribute model, which means that they
+tend to go into securitized products,
+which means that they're much larger and
+much more standardized in nature. So,
+banks are working within a box, if you
+will, and they've got to check a bunch
+of things within the box so they can
+then distribute it to an SPV, which then
+can be securitized. So, this is where
+the asset based finance or asset back
+finance tends to show up. Private
+lenders, as we've talked about, are much
+more bespoke and are willing to go much
+smaller in terms of size and scale. So,
+as you can imagine, greater complexity,
+higher yields, and greater flexibility
+tends to exist in the private lender
+space. And the opposite is typically
+true in terms of what you see in the
+banking space. The other thing that I'll
+say here is there's a lot more intensive
+monitoring that takes place from the
+private lenders relative to the banks,
+which I'll get into with an example. A
+related thought here and the evolution
+John that you were walking through is
+that the banks and the private lenders
+are actually increasingly working
+together. So this is not a clear again
+delineation between those two lenders.
+So in some cases you may have a bank and
+a private lender split an opportunity
+and they'll play where they are most
+appropriate where the bank is much more
+risk conscious and the private lender is
+able to take on some of those different
+esoteric characteristics or maybe a
+particular asset for the private lender
+whereas a more generalized asset might
+support the bank lender. So let's talk a
+little bit about the structure and the
+mechanics of assetbased lending. So in
+assetbased private credit, it's
+impossible to talk about any of this
+without talking about the collateral.
+We've talked about it quite a bit, but
+the collateral drives so much of the
+decision-m for those private lenders. So
+lenders in this space are laser focused
+on assessing the collateral value of the
+assets for the loan. And that tends to
+be based on a percentage. So getting
+that LTV, the loan to value ratio,
+right, is so important. But more
+important is the V, the denominator. how
+do I actually assess the value of the
+asset that I'm lending against? And
+typically, there's a whole process that
+goes into this, but even more so to give
+themselves cover and a safety net.
+Typically, the loan is not 100% of that
+asset's value. It's much lower than
+that. And depending on the riskiness of
+the asset could be even lower than
+certain other types of assets. So,
+typically the owner or the company has
+to make up financing elsewhere. That
+could be their own equity. It could be
+through bank financing and it could be
+through direct lending. Again, these are
+multiple parts of a capital structure.
+So, the assetbased lender is not the
+only lender for the overall
+organization. Typically, these assets
+are also cash flow generating
+themselves. And that could be directly
+like receivables where you're waiting on
+money to come in and you're just waiting
+on that cash flow to re-enter the
+company so you can distribute it back to
+the loan or they're somehow tied to a
+revenue generating activity. So at least
+having a form of liquidation value in
+the event payments can't be met is
+important because if you're not getting
+that cash flow, then the asset is
+somewhat worthless. And again, I'll get
+into an example here in a second. So, an
+extreme way to put this, John, is that
+the lender doesn't actually really care
+about the borrower's prospects as an
+overall company in many ways, maybe with
+the exception of how it actually impacts
+the assets themselves. They just care
+about the collateral. What is the
+collateral actually delivering at the
+end of the day? I think that's where
+Aaron, my mortgage example breaks down
+because any of you out there that have
+gone through it doesn't sit in one camp
+or the other. I mean, they go through
+your income generative capabilities with
+a fine tooth comb just as explicitly and
+carefully as they send the appraiser out
+to look at the underlying collateral.
+So, I use that just as an introduction,
+but you're right, true ABL is much more
+extreme in their laser focus to your
+point. No, absolutely. And actually,
+that's a really good segue in terms of
+how to structure the loan. And I will
+use the mortgage analogy. I had a
+breakdown of how this might actually
+work with the full caveat that you just
+made that it's somewhere in the middle
+in some ways. Asset based lending again
+is very laser focused on collateral.
+Maybe not so much focused on the overall
+cash flow generating capabilities, but I
+do think that the analogy is helpful in
+understanding some of those
+characteristics. So, I also think it's
+helpful because John and I have both
+recently purchased new homes. So, this
+might bring up some bad memories. I
+don't know. This is not investment
+advice and certainly not advice in terms
+of what rate to get because I think I
+top tick that perfectly. So don't listen
+to me in terms of when to buy a house by
+any means. So when you buy a new house
+and let's use this mortgage analogy and
+we'll beat it to death, but I do think
+it is very helpful to think through
+this. There are some critical things
+that the lender and you as the borrower
+have to talk about in exchange for
+structuring a mortgage. So I mentioned
+the LTV and the asset. There's a whole
+discussion around the value of the home
+and how much you're going to put up
+versus how much the lender is going to
+provide you. The lender does not or the
+bank in this instance does not give you
+100% of the home value. You've got to
+put up some level of equity and of
+course show that there's cash flow
+that's going to go towards repaying that
+loan. Unless we're in 2009, in which
+case the lender gives you 120% loan to
+value, but we'll park that. We won't
+talk about that. Yeah, that's bad vibes.
+But yeah, you're exactly right. And this
+is where you can get into trouble. How
+much are you giving relative to the
+actual value? And I don't know about
+you, John, but when I go to a bank and
+I'm asking, how much can I afford?
+They're giving me two times what I
+actually want to pay. So maybe there's a
+bit of moral hazard there that exists as
+well. But you do have to put equity in
+skin in the game in a normal environment
+outside of 2008. The other thing here is
+that your house is the collateral and
+there's a constant monitoring that takes
+place. So, it's not like you just buy
+the house and then you never hear from
+anyone ever again. There's annual
+appraisals. There's monitoring that
+takes place to make sure that the home
+itself actually holds its value. So,
+banks might do this less frequently. For
+me, as the borrower on the house,
+typically it's annual or maybe every
+couple of years where they're assessing
+the value of the home. Lenders in the
+private space when you've got a specific
+asset are doing this constantly.
+Sometimes that's property and equipment
+and then other times it's looking at the
+aging of receivables and the likelihood
+of that repayment. It's a much more
+frequent appraisal that's taking place.
+But there is that ongoing let's look at
+the underlying asset and are we actually
+going to get repaid at the end of the
+day. There's also the amortizing and
+self-liquidating nature of a loan and a
+qualified mortgage. It's an amortizing
+loan. So you are repaying principal and
+interest at the same time which is
+pretty typical for a lot of assetbased
+loans. So unlike direct lending or cash
+flow-based lending where you're paying
+interest over a time period and then a
+large bullet payment at the end of that
+term, the assetbased loan is being paid
+down as you go. Very much like what we
+see in mortgages. And then of course if
+you're in the unfortunate situation of
+default or foreclosure, if I don't make
+my payment, the bank has that house as
+collateral and they can come in and
+seize it, repossess it, and make
+themselves whole. And similarly, private
+lenders have that capability. although
+we'll get into a couple of examples
+where that's really important to pay
+attention to in terms of how they can
+actually acquire that particular asset.
+So, it's a very large and general
+oversimplification.
+And again, there's a lot of caveats that
+come into the mix. But if you think of
+ABL as a mortgage and some of those
+characteristics, think of ABL as like a
+mortgage, but it's on a constantly
+changing pool of properties, if you
+will. That revolver that John mentioned,
+you're constantly re-uping those
+particular loans. But again, like a
+mortgage, if the value of those assets
+does drop or there's impairments, the
+lender does ultimately step in. Aaron,
+I'm curious. Maybe you're going to cover
+this, but I talked about the very varied
+and diverse needs for different
+competencies based upon which
+collateral. So, where are these private
+capital firms and the banks finding
+collateral experts on these eclectic
+forms of collateral? Obviously, they've
+got a long history and there's an entire
+cottage industry. They actually
+commission to an appraisal and there's
+some sense in which there's a conflict
+of interest. the banks actually can't
+have these people employed. So, I'm
+curious, are these employees, these
+valuation experts? Are they third-party
+big five accountants? Are they
+specialist healthcare, life sciences
+valuation experts? Where do these people
+come from? Yeah, it's a really good
+question and it gets to some of the due
+diligence considerations as well. I
+would say, John, it's a bit of a mix and
+again it depends on the collateral. If
+you're talking about healthcare,
+intellectual property and royalties or
+R&D, you clearly need someone that's got
+a healthcare background or a science
+background that's going to be able to
+help you think through some of that.
+They may or may not be a collateral
+expert by any means, but having that
+subject matter expertise is important,
+but a lot of these organizations will
+also rely on third parties. So whether
+that's big four accountant firms or
+specialists that are in this area, it's
+a bit of a mix. But the bottom line is
+that typically I guess the ones that do
+it right have many more people whether
+that's employees directly or it's a
+network of people that can help them
+through that assessment. It's a lot more
+than what you might typically see in a
+traditional private direct lending
+underwriting process. So it's really
+really important. If you get into
+consumer finance for example you need
+someone who understands behavior FICO
+scores. It gets really specific really
+fast. might be a little bit easier when
+you get into things like real estate or
+infrastructure because that might be
+more of a general area of expertise,
+subject matter expertise for a lot of
+investors, but the bottom line is the
+headcount, whether direct or indirect,
+is much higher than what you see in more
+traditional direct lending. So, John,
+that's a good segue into due diligence.
+So, we talked about expertise and
+background. I think that's an important
+consideration. Again, we see a lot of
+money in direct lending and there's a
+lot of people moving into direct
+lending, but that doesn't mean that the
+skill sets in direct lending translate
+completely over to what you see in the
+assetbased lending space. So, we talked
+about getting that expertise on board
+and employed or as part of the process
+as a third party. So, that's one. Second
+is sourcing capabilities. And this is
+not unique necessarily to ADL and you
+see it in direct lending as well,
+traditional public credit as well. But
+where are the actual assets and deals
+coming from? And what we've started to
+see that 800 billion that you mentioned
+is not large, but as people start to
+move more and more into this space, you
+see people who have been at it or firms
+that have been at it for a very long
+time that have built up their ability to
+source opportunities and build a network
+of deals. And then you've got newcomers
+that might rely more so on the banks. So
+some of these banks are distributing
+directly to private lenders. So where is
+the sourcing coming from? And where does
+that expertise come into play? As I
+mentioned, it's much more hands-on in
+the private space than what you might
+see in the banking space. So if you're
+getting deals that have checked a couple
+boxes, that's a question that you should
+be asking. The other thing here is again
+the collateral value and sensitivity. So
+to your question on valuation, how do
+you actually value this stuff? going
+through that process of internal versus
+external that's very critical. The other
+thing I mentioned the Bitcoin example
+which is a good one but what is the
+actual sensitivity to the economy to
+esoteric events that are happening you
+mentioned the Nvidia example are you
+actually going to run into what we call
+wrongway risk so despite the fact that
+your loans are performing well if the
+parent company is not that's where you
+start to get into trouble so we've seen
+examples of this mentioned Bitcoin but
+energy as well if you've got loans that
+are tied to the price of oil that can be
+very challenging even if the particular
+asset is doing Well, if the company
+can't pay you and make you whole, that's
+a challenge as well. And then there's
+fraud and collectibility. So, this is
+really important. Again, collateral is
+so key when making these decisions. So,
+when issuing a loan, you have to make
+sure that the collateral is actually
+there at the end of the day, which
+requires a bit more hands-on due
+diligence. It might actually require
+physical trips to ensure and as an LP,
+ensuring that the capabilities are there
+from your GP. So, there are two examples
+that I want to mention here. One of the
+biggest assetbased lending frauds in
+recent history was with a company called
+Arena Television which worked on the
+Glastonbury Music Festival, the Six
+Nations Rugby and the Euro 2020 football
+championship. So media company had a lot
+of equipment and they needed money. They
+needed cash flow and so they went and
+borrowed almost 300 million British
+pounds from 20 different lenders and it
+was all supposedly backed up by the
+company's equipment. But when it came to
+verification and getting their money
+back, turned out that none of the
+equipment existed in the first place. So
+that's a challenge that's not good for
+those particular lenders. So that's an
+extreme example on a corporate side. A
+more recent example is again this rise
+of buy now pay later in consumer
+finance. So while physical assets may
+back some of these financing options,
+others aren't or have assets that are
+hard to seize in the event of default.
+John, I don't know about you, but if you
+go to Chipotle, you can do buy now pay
+later layer. It's not like they can
+seize your burrito if you don't make
+that payment. So, there's a lot of risk
+in terms of some of the collateral. And
+Garp actually released an article that
+showed the delinquency rates of buy now
+pay later versus regular lending
+practices like credit cards and so on.
+And they found that it was about three
+to five times higher than what you see
+in traditional lending sources. So you
+have to be very careful about partnering
+with some of these platforms because you
+may not get your money back and you may
+not have collateral to seize at the end
+of the day. So when you zoom in and this
+will be a final thought before turning
+back to you John but when you zoom in
+there's a lot of differentiation in why
+LPs and investors are interested in this
+space. You mentioned a lot of the
+crowding that we see in direct lending
+that's taking place. I think that's a
+very real challenge for a lot of
+investors. hear anecdotes about the same
+direct lenders competing for the same
+deals and that brings in spreads. It
+causes covenants to lighten up to be
+competitive and so I think investors are
+trying to find other ways to continue to
+expose themselves to private credit but
+do so in a more thoughtful manner. So
+that's important to mention. Collateral
+again you've got exposures to different
+parts of the real economy. There could
+be inflation sensitivities in there that
+could differentiate your return sourcing
+liquidity and duration. Some of these,
+as you mentioned, are revolvers. They're
+shorter in duration. They're
+advertising. You're getting your money
+back sooner and more frequently than you
+might in a bullet loan. Risk management,
+again, because there's a collateral
+element attached to a lot of these
+loans. They tend to be much more
+structured, have many more covenants and
+safeguards that are put in place. But I
+think more importantly, this is a
+diversifier within your private credit
+allocation. To your very beginning early
+comments, John, I don't know that I
+would call this an asset class, but
+there's certainly credit characteristics
+that exist, but still you can diversify
+around your traditional public credit
+and your direct lending allocation. So,
+lot to think about, lots of ways to
+define this, but hopefully that
+scratches the surface before we meet
+with our guests. I'd also double down on
+your point about the crowdedness that I
+mentioned earlier too of direct lending
+and just the interest and curiosity and
+diversifying your credit book out a bit
+into these AL type strategies. You've
+also got the return with ZERP going
+away, zero interest rate environment
+going away. You've also got the return
+of traditional public fixed income. So
+there's a lot of headwinds for direct
+lending. direct lending exploded out of
+this need for where am I going to put do
+you remember when we used to say what's
+the other 40 where's your 40 going you
+remember those conversations when
+there's no yield in your portfolio and
+pensions have to deliver a 7% actuarial
+rate where are you getting at least the
+more stable form or portion of that
+return and that's why there was this
+voracious sprint towards other forms
+like direct lending and now you're
+starting to see those options and
+choices open back up. One thing we
+didn't talk about is rates relatively
+given the both perceived and real nature
+of the risk profile of a AL. I don't
+even want to say the average AL because
+there is no average AL as this whole
+episode is suggested, but on average
+these tend to be slightly lower rates
+given that the profile of the credit as
+determined by the lender is slightly
+better and lighter than a direct
+lending, a cash flow loan. Am I right
+about that? Yeah, it's really hard to
+pinpoint. I thought about trying to
+generalize that, but I've seen some
+performance measures of you can kind of
+expect maybe 200 maybe 300 basis points
+above public high yield credit, but I
+think that changes when you get more
+complex. I mean, clearly if you're
+looking at real estate, it's going to be
+very different than healthcare R&D, if
+you will. But it's a wide margin. But
+yes, I think lower than direct lending,
+which I don't think is such a bad thing
+in some ways. is I mean I know on its
+face low double-digit yields is
+attractive but you see some of the
+cracks with pick interest picking up and
+amend and extend taking place. So you
+might be giving up a little bit on the
+yield of face value but yeah somewhere
+between your traditional public credit
+and direct lending. Yeah. Well, this is
+the catch 22 that younger or cash
+starved or cash delayed businesses to
+use some of the language you used face
+is that you can't run an economy on 12
+13% cost of capital. And so the whole
+point as we said of a lot of the newer
+ABL is to spread and challenge and
+protect their working capital. And if
+you end up just stretching your P&L even
+further with debt expense, then you've
+shot yourself in the foot. So, they do
+seem to have found a nice middle ground
+for rates based again upon the downside,
+the known downside given that you've got
+collateral associated with these loans
+versus cash flow. So, exactly. Well,
+Erin, that was fantastic. I do think
+we're going to need to leave it there
+and just returning to where we started.
+So, hopefully that was a good overview,
+a good fly over of where we are with ABL
+and some of the specifics and
+implications for how to think about it
+as an investor. And we are now going to
+move to a quick halftime episode and
+after that we'll be back with said and
+with Greg. So stay tuned.
+Well, welcome back to our halftime
+segment and I am just delighted to be
+joined now in studio by Matt Brancado
+who is the head of alternative sales at
+Franklin Templeton. Matt, welcome to
+Capital Decanted. John, thank you.
+Pleasure to be with you today. Well, as
+you know, Matt, and listeners, as you
+know, we've been spending some time with
+different segments of the Franklin
+Temple Tim machinery, and I'm actually
+been really looking forward to this one,
+Matt, because it's going to be a bit of
+a postcards from the pavement. What are
+you actually hearing? So, Matt, maybe
+I'll start with the proverbial
+intimidation topic. What is it that you
+hear most that clients, prospective
+clients or those that are already
+allocating to alts are challenged with,
+are intimidated with these issues that
+they can't seem to get through? I've
+been blessed to work with financial
+adviserss for over 20 years with the
+goal of helping them build better
+portfolios through the use of
+alternative investments. And when I
+think about the main challenges and
+roadblocks that many advisers have when
+it comes to allocating to alternatives,
+they all center around some form of
+educational or expectation gap. And
+these gaps are what I like to call my
+three lessons learned about these
+challenges that have been constant
+throughout my career in alternatives. So
+lesson one, in order to have a
+productive conversation about
+alternatives, whether it's sponsor to
+advisor or advisor to client, you need
+to be speaking the same language. And I
+think that's a roadblock. A simple
+highle conversation on the role and
+benefits of alternatives in a portfolio
+can lead to confusion if you're not
+defining exactly what you're talking
+about. And at Franklin Templeton, we
+define alternatives as private markets,
+hedge strategies, and digital assets. So
+you need to have a shared language. I
+think lesson two, alternatives are just
+tools. Like all investments in a
+portfolio, alternatives are designed to
+achieve a desired outcome in an asset
+allocation. So no different than stocks
+or bonds. Sure, the pathway to the
+results, John, are a little different
+with concepts and constraints like ili
+liquidity or the structures may be
+different like a limited partnership
+drawdown or a perpetually offered
+strategy. But hesitancy and intimidation
+quickly fall away when advisors shift
+their perspective on alternatives from
+different asset classes or funds to
+viewing them as a means to achieve a
+desired goal. And then lastly, and this
+isn't necessarily unique to alternative
+investments, but really the human
+condition. Lesson three is people
+typically allocate to what they wish
+they would have allocated to 12, 18, 24
+months ago. And this is really where the
+power of alternative investment
+education plays such an important role
+in private wealth. In addition, it also
+stresses the value of partnering with
+the right asset managers, the right
+partners so they can help in identifying
+early cycle opportunities. So those are
+really the biggest roadblocks to three
+lessons learned. Yeah, those are
+fantastic. Matt, you certainly are
+preaching to the choir here on a couple
+things. We've been very vocal about
+leading with purpose and portfolio fit
+instead of product wrapper or product
+design. I think many will miss the point
+and that conversation typically goes
+south when you're talking about the
+product specs as if they're on a used
+car lot and you're trying to explain
+this air conditioning versus this
+upgrade versus this package and instead
+what are you trying to accomplish by
+actually potentially including this in
+your portfolio. So obviously education
+is our bread and butter. So love that
+you're leading with that and I know
+we've been a part of that as well. Matt,
+maybe the other side of this you talked
+about 12 to 18 months out there. They're
+starting to get a little bit of
+backwardlooking desire to have chosen a
+little bit earlier. So in your
+conversations now, what are they jazzed
+about that in 18 months those that don't
+choose are going to be coming back to
+you and saying, "Man, I wish I would
+have allocated back then." This is
+really where my passion and my team's
+passion comes to the forefront. We want
+to help advisers with early cycle
+opportunities and I think that the tenor
+in the industry is changing because
+advisers are rallying around this
+concept of early cycle opportunities. So
+at Franklin Templeton, we're seeing
+excitement around asset classes like
+private equity and how to simplify that
+access for private wealth investors. So
+things like private equity secondaries,
+we're starting to see the environment
+shift to private real estate debt
+lending into real estate assets, things
+like private equity co-investments and
+digital assets. And while at first
+glance those are all very different
+asset classes, I think, John, the common
+thread is they all have long-term
+structural shifts in these particular
+areas of private markets. and they're
+paired with something that I've seen
+over time that there's an immediate
+supply demand imbalance of the
+opportunity set and the capital that's
+available to take advantage of it. I
+think that's what we're most excited
+about and I think it's being
+wellreceived by advisors. They're
+getting excited about it. Well, good to
+hear. Certainly, the product
+proliferation is happening at a frantic
+pace and it's good to hear that the
+dialogues are much more focused on fit
+and bespoke need and purpose as we
+talked about earlier. So Matt, so
+thankful for your brief time with us and
+keep it up. We loved the angle and the
+approach and the anchor to making sure
+the clients interests are put first.
+Thanks for joining Capital Decanted and
+listeners, stay tuned for our guest
+segment.
+Well, welcome back to Capital Decanted.
+And as promised, now in studio, we have
+Cedric Henley, partner and chief risk
+officer of specialty finance at SLR
+Capital Partners. It's a private credit
+asset manager with over 13 billion of
+investable capital. And said is joined
+by Greg Turk, deputy CIO, head of
+private markets of the 13 billion, also
+conveniently same number, Illinois
+police officers pension investment fund.
+Said and Greg, welcome to Capital
+Decanted. Thank you for having me. Thank
+you. It's great to be here. All right.
+Well, as most of you know, this show
+often consists of coming of age stories,
+the kind of evolution of topics, of
+asset classes, of strategies, and this
+one was no different. And it echoed, as
+I can remember, at least from my
+perspective, some of the work we've done
+on things like secondaries or GP stakes
+that started off with a very different
+motivation in mind and grew into a
+necessary tool in the tool set for
+modern finance and modern capital
+allocation. And I think as you'll see
+over the course of this discussion, this
+will be much more of the same. So I want
+to start with a little bit of
+retrospective to try to help fill in the
+history that Aaron and I attempted to
+tell in our intro section. So said, I'm
+going to start with you if you don't
+mind. We did a private credit strategy
+more generally last season. And as with
+all flavors of private credit, they
+really originated in the banking sector
+quite a long time ago and particularly
+in this case regional banks. And often
+those loans are secured by hard assets
+as we know, real estate, equipment, etc.
+But in recent years, we've seen a lot of
+this regional bank activity and
+dominance shift to private market
+origination platforms like yourself. Can
+you tell us a little bit about the
+reasons and the catalyst for that
+evolution? Sure. It's a very astute
+observation and really one of the
+drivers that you've seen this transition
+and if you look at cash flow loans, it's
+somewhat similar but AL is a nuance onto
+itself and really one of the main
+drivers relative to this transition to
+private capital has come about from the
+regulatory framework that regional banks
+and even money center banks operate in.
+And when you have borrowers who either
+have a short-term issue relative to
+their income statement, maybe they're
+undergoing a transition, there's a
+reason why they need further liquidity.
+The banks in their regulatory
+environment really struggle with that
+type of a borrower. And so really,
+you've seen private credit step in and
+fill the void relative to that. I guess
+the other makeover or evolution has been
+in the spirit of the popular shows where
+either homes or individuals or
+reputations are made over. There's been
+many ways in which this has taken on a
+new form. It's been resurrected ABL that
+is for a very different purpose. I think
+it started and you correct me if I've
+misread this history as a bit of a
+lender of last resort. If direct
+lending, traditional cash flow lending
+was unavailable for whatever reason,
+whether too early in life cycle stage or
+cash flows weren't particularly
+dependent enough based upon the lender,
+you relied on, you were desperate and
+moved to basically levering your asset
+base. Now, this seems like it has
+entered traditional flexible risk
+controlled financing tool set as I've
+alluded to at the beginning. Tell us
+about that parallel perception evolution
+as well. It is correct. It used to be
+10, 15, 20 years ago, you went the AL
+route because you didn't really have the
+availability of the cash flow route or
+other liquidity triggers. Really, where
+it's sort of morphed itself into is
+there's still obviously that aspect of
+it. there is an aspect of ABL that
+hasn't gone completely away. But really
+where it's begun to morph more and more
+to is for not only privatelyowned or
+public companies, but also sponsorback
+companies that want to generate
+incremental liquidity away from their
+cash flow structures. This is a great
+way to do that. If you have accounts
+receivable and inventory, it is a
+simpler way to put that in place because
+you're really driving your liquidity
+based on your working capital as opposed
+to waiting for cash flow metrics. So,
+it's really become a solution provider
+as opposed to this last resort.
+Companies are almost on their desk
+doorstep here. Capital solution. It
+really has moved that way and we see a
+tremendous amount of flow coming not
+only from strategic corporateowned
+companies but also private equity
+entities that are looking for liquidity.
+They're looking to do something
+strategic. It can be a great solution
+for those and that's really a change. So
+SA I want to pick up a little bit on
+some of the evolution that you walk
+through. So we've talked a little bit
+about the lender of last resort
+evolution. We've talked about the growth
+of assetbased lending in general. I
+think one of the other dimensions of
+this is the collateral itself. And when
+you look historically 10, 15 years ago,
+maybe it was real estate that was
+dominating and equipment and so on. But
+as you look more recently, it seems like
+that menu of different collateral
+options has expanded quite considerably
+onto balance sheets, royalties,
+healthcare, all sorts of different
+options that are backing these loans. So
+maybe we can matrix this a little bit,
+but could you talk through the evolution
+of the collateral that's now available
+backing the loans and then in particular
+where private markets and private
+lending comes into the equation versus
+maybe the more traditional banks that
+have been there historically. Yeah. And
+you mentioned a couple of interesting
+areas where AL has really started to
+rise and that's from the different
+assets that are available. There's
+always the traditional working capital,
+accounts receivable and inventory.
+There's the equipment finance and real
+estate that you mentioned. But there's
+also drug royalty which is a big portion
+of the health care market etc. That's in
+essence an ABL loan where you're banking
+on the future cash flow streams and
+looking at the cash flow stream. That is
+something that's relatively new. And if
+you look at it as well, you could think
+about a lot of recurring revenue
+software company deals. that really is
+an ABL deal that's being structured like
+a cash flow loan as well where you're
+counting on recurring revenues and
+basing your loan off of what that
+recurring revenue stream is going to be.
+So again, that's another new entrance
+into what I would think of as the AL
+market. And I think one of the things
+that you've seen in private credit is
+most of the private credit guys that are
+doing APL such as SLR, you also see them
+have the ability to do equipment finance
+because the two go hand inand. And you
+want to have that arrow in your quiver
+that when somebody comes to you, maybe
+you're not so crazy about the assets on
+an ABL, but you know what, you really
+like the equipment that they own or the
+real estate that they own. So you really
+have to have in private credit all these
+various methodologies in place to really
+offer a complete solution. So it really
+has matured and I think again it goes
+back to the banks have challenges with a
+lot of these different asset classes.
+It's really hard for them to lend money.
+And the other thing relative to AL
+that's really interesting and why
+private credit makes a great partner for
+banks is that we're asset gatherers. We
+are really focused on assets and asset
+growth. We want assets. On the other
+hand, banks historically, they have been
+ones of syndicating risk. Whether it's a
+cash flow loan, an AVL loan, you pick
+it. They're in the business of
+syndicating risk, but what they do like
+is deposits. Well, ABL in partnering
+with banks like we do, there are
+structures that you can come up with
+where, hey, they'll keep the cash
+deposits because we obviously don't want
+cash deposits. We're not a bank, but
+we'll take the assets. And so we're
+constantly having these dialogues with
+banks and quite frankly seeing
+opportunities where ABL can potentially
+really enure to us in terms of the
+assets. The bank can keep the deposits
+because at the end of the day they
+really want deposits. They want that
+capital base to support themselves. One
+thing that's really interesting to me,
+we talked a little bit about it in the
+intro, but this idea of differentiating
+between ultimately syndication flows out
+from the bank, meaning moving it off of
+their balance sheet, trunching it,
+syndicating it. Do private market
+origination platforms do much or any of
+that? Does SLR do any of that? Great
+question, John. We do not. So, we're not
+good buyers off of bank desks. There's
+really nowhere on the SLR platform that
+we look at that. And one of the main
+reasons, and this is really across all
+of our strategies, is we have a pretty
+long track record of we do our own
+diligence. We do things in conjunction
+with the owners of the business, whether
+that's a private equity sponsor or a
+company, and we do things handinand.
+Putting an intermediary right in between
+that, it just never really worked well
+for us. And I think a lot of AL folks
+that are on the private credit side, I'd
+venture that that's probably similar.
+And honestly, the private markets, and
+you've seen this in the cash flow side
+as well, we're much better at clubbing
+with our frenemies than we are doing
+something with a bank. And we like it
+when the frenemies are us big investors
+through co-invest and generous
+economics. So, yeah, there's a way for,
+let's call it, a smaller, larger
+contingent to benefit from Cedric's
+work. And Greg brings up a great point
+that is growing dramatically. Five years
+ago that wasn't the case. Now it is the
+case. So that when we have investors and
+LP relationships like Greg, one of the
+conversations now is co-invest and
+that's a big part of the conversation.
+So said in addition to maybe the friend
+of me lines, so obviously working with
+banks on some of these things. Are there
+places where you're actually competing
+with banks and making some of those
+direct loans? Are there places where
+they're playing that you're also playing
+or is it a pretty clear delineation
+between the two? I wish it was clearer.
+It's not really clear, but if a bank
+wants to come in and offer sofur plus
+150, no private credit shop's going to
+meet that. When you start to get a
+little bit more gray is when you get
+into the sofur 400ish area, 375 400,
+then it starts to get a little bit gray.
+Obviously, above that, that's private
+credit world. So, you do have this
+little bit of a gray in the middle area.
+And a lot of times in these ABL deals,
+the natural takeout is a bank. the
+company will get through whatever issue,
+the liquidity will clear up, things will
+improve, and the natural takeout will be
+a bank. Not dissimilar from a cash flow
+loan where maybe they started at five
+and a half times and they paid it down
+to four times and the company's grown
+dramatically and they're going to go do
+a BSL. It's the same thing. So, going
+back to the evolution of collateral, so
+you've now got this wider opportunity
+set that's out there and each of these
+different pieces of collateral and
+assets are all different in different
+ways. It's structured differently. So, I
+would imagine obviously the underwriting
+process is challenging, but I would
+think that the default process is even
+more so relative to a cash flow-based
+loan where companies might be able to
+get a little bit more creative in terms
+of how they make you whole or partially
+whole relative to your original
+commitment. So, could you just talk
+through the process that you guys see
+across those different collateral pieces
+and what that process is like to
+actually collect and make yourselves
+whole during a challenging period?
+Honestly, we do do both SLR cash flow
+and ABL. So, we have a good vantage
+point to speak to what's the differences
+are. And a lot of ABL quite frankly, the
+real work begins once you've booked the
+loan because you're getting a borrowing
+base on your assets quite frequently.
+You have to review those borrowing
+bases. You need to ensure that the
+company has sufficient liquidity. You
+need to constantly monitor borrowing
+bases. On the cash flow side, you
+generally after you close a loan, your
+interactions you get maybe you get a
+monthly statement, but generally you're
+getting quarterly financial statements.
+If you have a covenant, you're getting a
+covenant compliance record. So the
+monitoring of an ongoing cash flow loan
+is much different than AVL. It's very
+intensive and you're constantly in AL
+world. That's one of the reasons why you
+have so many people. For us with 13
+billion, we have over 300 people
+predominantly on the assetbased lending
+side is the majority because of all the
+nuances and checking that goes into ABL.
+So it really begins after and it comes
+from years and years of experience.
+Again, we have cash flow and I did cash
+flow for the first 20 years of my
+career. Now I've been doing ABL for the
+last 15. But for the cash flow side, the
+diligence process, we all know what the
+diligence process is. On the AL side,
+you're really looking at working with
+not only the company, there's two really
+big points. You're looking at what the
+liquidation value of the assets that
+you're working on. You need to determine
+either from an in-house appraiser or an
+outsourced appraiser what that
+liquidation value is going to be at
+closing and then you're updating that
+constantly. The other thing you're also
+looking at in terms of AL is you're
+really looking at the company's ability
+to report that information to you on a
+very timely accurate manner because it
+is the old cliche of garbage in garbage
+out. If they can't report to you or they
+can't get you the information timely,
+it's really hard to do an ABL. So really
+those two things go hand in hand and
+you're constantly monitoring those after
+you've closed the loan and after you're
+working with a company. And really in
+ABL land, your covenant package and your
+structuring is tighter than you're going
+to see on a cash flow side. So you are
+going to get a lot of footfalls and
+that's by nature. You want to make sure
+when you're in AL world because you're
+really depending on those values. You
+really want to make sure that you're not
+going to get the phone call on a
+Thursday night saying, "Hey, I can't
+make payroll. I need to over advance."
+Which is really that's the Achilles heel
+when you start doing that over advance.
+That's the problem with ABL. A lot of
+questions there. It's to the heart of
+what we do every day. The hardest thing
+with being an allocator and I've been an
+allocator 20 plus years now. Every day
+you have more. You have more options. 30
+years ago when I got out of school felt
+like there were maybe five or six
+options. Now you have five or six
+options just within ABL. So the long and
+short of it is nobody is arguing or
+nobody's really having a conversation
+whether private debt or private credit
+broadly is worth having an allocation
+to. In 2009 all of a sudden the asset
+class really opened up when public debt
+rates went down. All of a sudden you
+needed to find a premium and private
+debt supplied that. So the industry
+overall the private debt sector from an
+allocator's perspective is still only
+about 15 years old and the first mover
+was probably the easy move and I think
+said mentioned this with cash flow
+lending it's a very understandable
+metrics the metrics are very
+understandable a lot of it has to do
+also with understanding a lot of its
+private equity back so you understand
+the sponsors that are largely
+personified in a portfolio and that was
+an easy first move and a lot of
+allocators moved a lot of capital that
+way and they waited on ABL because
+exactly what you said understanding the
+liquidation value metric. Not only did
+we have to understand what Cedric meant
+by liquidation value for receivables,
+but we had to understand the third
+parties that they were working with to
+truly get a feel for what that
+collateral was worth. So, it's one of
+those step functions that it's a little
+I think harder to understand. And then
+there's a scalability issue. In 2009, I
+was working with a $65 billion plan and
+cash flow lending through $2 billion
+fund was easier to get an allocation
+size whereas the AL profiles then were a
+little bit smaller, a little bit more
+niche. You didn't have all the size that
+you have now. So, I think the
+understanding is there now from the LP
+community in terms of what AL due
+diligence really means. And there's
+plenty of my peers that are probably
+growing their portfolios a lot faster
+than we are here at the police at this
+stage. But I think the metrics are just
+better known. And the other thing is to
+Cedric's point on domain expertise. The
+checklist for understanding the analysis
+on the collateral, but then also setting
+up the infrastructure that's 10 years.
+We really only want to invest with
+institutions that have really been doing
+this for 10 years, have a great
+database, have the relationships already
+built, have the network, and that takes
+time. So, I think all of that has come
+together in the last 2 or 3 years to
+really make ABL look extremely
+attractive. But I think it is a little
+bit of a harder diligence that has kept
+people away. And honestly, the returns
+in cash flow lending had been so good
+that I think people were just repeating
+that until about three years ago when
+all of a sudden it really felt like
+middle market cash flow lending was
+getting very crowded. So, Greg, I want
+to double click on the diligence topic
+just a slightly more. But before I do
+that, I want to maybe ask you a little
+bit more cuz I'm curious. When you think
+about the underlying collateral of some
+of these loans, they could be
+duplicative with other parts of your
+larger portfolio. So, let's take the
+obvious one, real estate. So, you've got
+inflation hedge built in there. Perhaps
+you have geographic plays or angles or
+even risk control that you've got
+through your real estate book. There's
+other themes that you're playing through
+your real estate book. Those could be
+duplicated, replicated in your ABL
+credit book as well. So how do you think
+about avoiding that unintended
+duplication? As an allocator, you can
+take one of two positions. You can
+really try to understand all the
+underlying loans and industries and
+metrics within your portfolio and keep
+them apart. Or you can just understand
+that there's a lot of different methods.
+Middle market companies need financing
+and we like when they have a lot of
+options and then we like looking at what
+we think is the best option not just
+from a cost of capital standpoint but
+from a long 75year
+horizon. So to answer your question
+there's going to be some overlap and
+real estate the real estate and markets
+can often be the poster child for that.
+I think what we like about ABL and what
+we find with the platforms within ABL
+that we really like, it's a tighter
+relationship with that end collateral
+and that end company. And I think Cedric
+went into this a little bit more, but
+ABL is a little bit more structured. And
+we like that structured part because it
+takes that credit risk that we know
+we're underwriting to. And it maybe it
+doesn't get rid of it, but your all-in
+return profile now comes a little bit
+more from the structuring and Cedric
+uses the technical term footfalls. When
+companies their whatever levels reach a
+certain amount, they have to call Cedric
+up. Maybe he gets some money. Maybe he
+has to renegotiate stuff. Those are
+tighter than cash flow loans. cash flow
+loans, there's usually a wide margin of
+error. So, you're getting paid, you're
+getting paid, and then all of a sudden,
+boom, your enterprise value may
+condense. Whereas with ABL, you're
+tighter along the way, and I think
+you're getting paid back a little bit
+better from the structuring part of it.
+With that said, there's lots of ways
+cash flow and like I said, we like
+platforms like SLR because they're both
+a cash flow and an assetbased lender.
+So, they can work with the entities that
+they want to where those entities may
+want that exposure. So, we do measure
+it, but the overlap, we're not overly
+concerned about that overlap as long as
+we feel like we're getting pretty good
+risk return characteristics for our
+underwrite. John, you bring up a really
+good point that in the past few years,
+it's a little bit of a tangent, but one
+of the things that I've noticed when
+we're speaking with folks such as Greg
+and others is that when we talk about
+cash flow, one of the things that we now
+do is we track basically a correlation
+of exposures to us and the other big
+private credit managers because they're
+very interested to know, hey, if I go
+and put out names, if I go and I'm an
+investor in Aries or Gallup or pick
+whomever private credit manager and I
+invest in SLR. Am I just buying the same
+loan three times because I'm in all
+three of yours. So, we've had to track
+that because I think it goes to your
+point, John. Hey, where are we relative
+to that? Because they don't want to be
+overexposed into one loan. And the other
+nuance relative to that is one of the
+things that we've found over the past
+couple of years is that when you talk
+about APL to folks such as Greg, they
+really enjoy it because you don't really
+have that much correlation that you do
+find in cash flow. That's fascinating
+and it actually rhymes with a lot of
+work that we've been doing on the
+blurring of asset classes, which is kind
+of the thrust of my question is that
+these things don't fit in one bucket or
+another cleanly anymore. And that's why
+I'm teasing this out. Greg, last
+question for you as I really beat this
+horse to death a bit, but you talked
+about the layers of ABL due diligence,
+the tighter relationship, I think were
+your words. Is there anything you would
+point out that makes this due diligence
+with SLR or an equivalent a contemporary
+unique against either cash flow lending
+or other types of GPS that you work
+with? You've got the GP, you've got the
+underlying portfolio company, the
+organization taking the debt on, and
+then you've got their underlying
+collateral. You pull back this onion and
+there's lots of ways you could approach
+this due diligence. There's a lot to
+talk about here, and I am definitely not
+I keep joking around with Cedric. I'm an
+equity guy that's still learning the way
+bond guys talk. But by far the biggest
+difference that you have to switch off
+from cash flow lending and then switch
+on for AL is you immediately need to get
+to how do you assess the value of that
+collateral. Whereas with cash flow, it's
+more all right, let's model that cash
+flow. Let's look at where your covenants
+lie on that. Let's see what your work
+looks like compared to the company's
+work. What you got to switch on
+immediately with an ABL is how do you
+come up with your liquidation value and
+then how do you lend off of that because
+there's a lot of I think differences
+with how Cedric's platform might differ
+from others in terms of how you lend off
+that liquidation value. But we tend to
+side obviously with the ones that I
+think do the most and get a lot of
+outside third-party validation on that
+liquidation value and then keep their
+covenants very tight. So whenever I get
+asked that question that's the key one
+and honestly what we like as investors
+in this asset class in general is there
+are a lot of subsectors
+and I'll talk about SLR but with SLR
+nobody can really do health care a lot
+of the health care underlying industry
+and life sciences the way they can. So
+once you start peeling the onion, you
+really understand where that
+specialization is. And then once you get
+into each of those collateral types or
+each of those industries, as you would
+expect, there's industry specific terms,
+language, and all that. So healthcare is
+not everything that SLR does, but it's a
+good component of it, and we think it's
+a huge competitive advantage. So that's
+the lens we put on when we're
+underwriting these platforms. It really
+is fascinating. I said, I'm just curious
+just before we turn back to Greg, is
+what Greg described echo most of your
+perspective and existing LP
+relationships? You were in cash flow
+lending, you mentioned, for a large
+portion of your career. I imagine you
+have to go into ABL given these layers
+we've just talked about with a little
+bit more patience and expectation that
+LPs are going to have to kick a few more
+tires, go a little bit deeper, walk
+around the house many more times before
+they're willing to commit. Is that fair?
+More than fair. It is because I think it
+goes back to the root of the expertise
+of the liquidation value and how you
+execute on that, how you structure
+things, how you monitor things, how you
+move daytoday is not a simple one times
+conversation or they just look at your
+loss ratio or your default. It's not
+nearly as insimplistic as that. It is a
+very indepth long process and honestly
+it's a lot of education too. Greg for
+his claiming to be an equity guy, he
+really knows. He asks, great questions,
+but a lot of LPs really do dig in and go
+through a lot of these questions and
+understand who do you use? And the
+answer is, we're talking a lot about
+liquidation values. You use different
+appraisers and liquidation firms for
+different situations. Some are really
+good at retail, some are really good at
+consumer products, some are really good
+at real estate, some are really good at
+equipment. So, you have to know which
+one you're using. And then you also have
+to I'll give you guys a great example of
+the human touch element relative to APL
+is a few years ago everybody knew that
+Toys R Us was struggling. That wasn't a
+secret. Everybody knew that here comes a
+default. They may not pay their bonds.
+This looks like it's going to go into
+BK. Well, if you're the APL lender to a
+company supplying to Toys R Us, you have
+to be able to go to the company that
+you're lending to and say, "You know
+what? I'm not accepting any more
+accounts receivable in your borrowing
+bids. I'm stopping that because I know
+that you're going to be an unsecured
+creditor and you're not going to get
+recovery. The debt ahead of you is going
+to get recovery. So, you have to monitor
+things like that. And I can give you a
+lot of other examples of companies where
+you just immediately put them on watch.
+You got to go to your borrower and say,
+you know what, I can't accept any more
+AR. I need you to collect out and move
+on. So, that type of diligence that you
+have to do and then relay that to Gregs
+of the world, it is a very cumbersome
+process. And just to put a final point,
+cash flow lending again the metrics from
+one firm to another to another very
+similar and all of us on the LP side
+have a template now. But think about
+transportation. We did a lot of
+transportation alensplanes
+and super tankers compared to
+healthcare. It's night and day. And by
+the way, those go together well also
+from a portfolio construction
+standpoint. So there's a lot of degrees
+like that that just make it I think
+challenging. Maybe as we close here and
+Cedric I love your views as well but
+Greg on the flip side of the question I
+asked Cedric earlier in this
+conversation of the evolution of all the
+different types of AL strategies that
+are coming to market. It seems like
+we've moved from everyone was a middle
+market cash flowbased direct lending
+strategy to more and more AL strategies
+coming available on the market. So, I'm
+assuming you're getting more and more
+GPS that are trying to partner with you
+and fit into your portfolio. How do you
+think about the breadth of all of those
+different options that are available?
+And any things that you are interested
+in investing in, things you might be
+avoiding just from a pure collateral
+perspective and then Cedric, I'd love
+your thoughts on this as well, just from
+observations of competitors that are out
+there. Stop me if I'm rambling on too
+long on this question, but anyone in my
+seat with unlimited time horizon, a
+healthy risk perspective, we're in the
+business of taking risk. We're in the
+business to be able to pay off long-term
+benefits. So, we start all of our
+analysis with a very high level. Is an
+asset category growing or not? Do we
+like the metrics? Do we like how many
+players are in there? So broadly,
+private credit is still an asset class
+of growth. So I think most allocators
+including us are continuing to find ways
+to allocate even with base rates moving
+back up and bank loans and high yield
+being a little bit more attractive some
+of the public side. With that said, I
+think for the last two years, 202122 was
+a bit of a pause with a lot of markets
+or a lot of markets altered direction
+somewhat, but we think the growth of ABL
+will outpace the growth of middle market
+cash flow. And I think there's plenty of
+studies out there, the one that I was
+just looking at last week, ABL was
+maybe, and Cedric probably knows this
+data better than I do, but it was maybe
+four four and a half trillion of the
+loan market. And by 2030 it's supposed
+to be 10. So within a decade that's a
+big number and direct lending cash flow
+not as good still growing. So anyways
+that's how we start our analysis on
+anything. Those projections are great
+but then you have to do the work and do
+your capital market assessments. And we
+really do think to try to get to a
+conclusion to your question. What we
+really think is available with ABL to
+direct lending now is twofold. One, I
+think too much money is chasing cash
+flow lending to the point where I think
+if you returned an 11 to 12% with your
+platform in the last 10 years, maybe
+it's going to be more like a 9 to 10
+with some of the underwriting that we're
+seeing right now and expectations. It's
+still healthy number, still reason to be
+in there. But I think some of these AL
+platforms and the looks that they're
+getting and the higher barriers to entry
+in areas like health care platforms like
+that are going to allow the seasoned
+providers and to generate probably a low
+teens. I like seeing when private equity
+is going after when there's some
+consolidation when there's some M&A. I
+was just talking to a European platform
+earlier this week where they got a big
+private equity infusion and basically
+doubled the number of disperate lines,
+underwriting lines that they had. So
+that's a little bit of a show of the
+growth. And if you peel the onion back
+on Cedric shop, they have for the size
+of institution that they have, they have
+a lot of regional offices. They have a
+lot of teams that are just going after
+one specific collateral type. one
+specific loan type. So, we think people
+that have already put that together and
+have a very seasoned platform within
+ABL, I think are going to be very well
+off over the next 10 years. I think
+what's clear is that this is not a space
+for a credit generalist. I think that's
+what several answers to our questions
+you've reinforced which is these are all
+micro specialties and they deserve and
+require and demand their own teams that
+do a very unique due diligence process
+have to get very close to the business
+the underlying collateral and if you
+don't have that it's going to be really
+challenging to create alpha I imagine
+said just in closing that while as I
+mentioned earlier ABL hasn't quite
+reached the red flag on our stage but as
+far as the trendiest thing we're
+hearing, but there's no doubt it's
+getting more interest. Are you seeing
+underwriting cycles, sourcing approaches
+start to shorten, quicken, become a bit
+more urgent? I'm not really seeing them
+become a bit more urgent or quicken. And
+I think one of the things that we really
+like about ABL, honestly, is that if you
+picked up a cash flow document from 2018
+or 2015 and you compared it to 2025 cash
+flow document, they would look really
+different. If you picked an AL document
+in that same time horizon, you probably
+couldn't tell which one was from 2015
+and which one was from 2025. So the
+process that we have to go through an
+APL that we've been talking about really
+you can't force feed and do inventory
+counts or accounts receivable or get
+values on equipment or real estate
+whatever you're lending on. You can't do
+that overnight. There is a process that
+you have to go through. So I think
+you're getting heightened interest from
+all the players whether that's private
+equity or corporate side etc in this
+space. But one of the things for AL is
+the process. You can't go faster.
+Everybody can go faster. But there's a
+lot of times and honestly you're
+bringing up an interesting point in AL
+land and this is just my experience.
+When you get the phone call that
+somebody needs to close in three weeks,
+an ABL, that's generally a really bad
+phone call because they've either fallen
+down. There's two scenarios that I think
+about. And again, you're getting to my
+why I'm a risk guy. You're either
+talking to somebody who like, oh my
+gosh, my company's going to explode or
+it's fraud. The latter is a big problem
+in AL fraud. When people want to defraud
+you in AL, they work really, really hard
+and they can be very creative. It
+usually goes handinhand with I got to
+close in three weeks. And so that raises
+such red flags for us that normally we
+just put our pencils down and move on
+because you can get burned. So still
+hearing plenty of supply to go around,
+but you have to be careful nonetheless.
+So listen guys, that was a master class
+that really was a view from the trenches
+of much of the summary that we opened
+with. I know the listeners will have
+massively benefited from many of those
+illustrations, those real life examples.
+So, Greg and said, "Thank you so much
+for joining Capital Decanted and
+listeners, stay tuned for the last sip."
+All right, welcome back to the last sip.
+Erin, I really appreciate it. The
+interchange between Greg and said, that
+I think is the second time in our 24
+episodes that we've had an LP and a GP
+that actually work together. And I don't
+know that that's necessary every time,
+but in this case, I think it was really
+helpful given the newness and the
+somewhat foreign nature, at least to
+most of the listeners, I would guess, of
+AL because I think their play off of
+each other and how they think about
+this, what they demand from each other,
+what they're seeing said was really,
+really helpful. And this is Greg's style
+at Illinois, but here's what we see.
+Here's why it's very common the way Greg
+approaches it. Here's why it's a little
+bit rare. and here's what we see from
+some of our other LP partners. So, I
+just found that conversation really
+enlightening on bringing to life some of
+our philosophical stuff that we talked
+about in the intro, but anything that
+was revolutionary or a big takeaway that
+came across in that conversation for
+you? Well, first of all, I loved Greg
+talking about being an equity guy and
+making this transition. I think that
+might be indicative of a lot of people.
+This is new for a lot of investors. So
+that was just interesting to hear him
+talk through his thought process as he
+learns more about this and begins to
+allocate more to it. I think there were
+two takeaways, one from Greg and then
+one from said. So you asked the question
+on allocation. So how do you think about
+this in a portfolio context? And if I
+remember correctly, I think Greg was
+like it doesn't really matter. It's more
+about just getting exposure. And I think
+that's the right way to think about
+this. I'm biased and you mentioned this
+TPA is what we're focused on quite a
+bit. So that was just the blurring of
+asset classes and it almost doesn't
+matter where you put it in a bucket.
+It's more about the exposure at the end
+of the day. And then from set this is
+more of a reinforcement I think based on
+our prelude before they came on. But the
+idea that this is not for generalists.
+This is for investors who can build out
+a team. They can have the expertise to
+be able to analyze collateral but also
+go through the workout process when
+things get really tough. So those are
+two for me. But how about yourself? I
+agree. Greg didn't seem overly concerned
+about real estate collateral in his ABL
+book versus his actual real estate
+portfolio or allocation. And I thought
+that was interesting again and I think
+it goes back to where I started at the
+intro way back which is is this even an
+asset class and allocation is it right
+to think about it that's in the same way
+or is it extensions of lots of asset
+classes so we're almost a diversifying
+bucket of credit that just doesn't fit
+anywhere else. So that's interesting. I
+think the biggest takeaway for me and I
+can't remember if this was in the green
+room or in the conversation, but I had
+talked about and introduced this entire
+topic as one of the most complex, one of
+the most idiosyncratic. And I think it
+really crystallized for me when Seth and
+Greg were talking about the fact that
+what you're doing on the due diligence
+side is there's due diligence on the GP,
+there's due diligence on the loan, the
+credit structure, and then there's due
+diligence on the underlying collateral
+as you talked about at length. So you've
+got three, I think they called it
+layers, and you're just peeling this
+stuff back. And every one of those due
+diligence elements, I suppose most LPs
+are used to the first two, but they're
+certainly not used to the third or even
+having a third. And so these layers and
+mechanisms by which you need to ensure
+that you're clearly understanding what
+that partner is delivering to you, that
+they have expertise, that the valuation,
+the LTV is appropriate, the monitoring
+system is current, I think is
+fascinating. And so it's this iceberg
+metaphor where at outside the water you
+see just this little bit of this
+beautiful credit against a piece of
+machinery but underneath the water is
+just a whole lot of process complexity
+expertise and workflow needed to make
+sure that you do that and perhaps more
+than any other asset class we've looked
+at. At least my impression is. So again
+this is why I think there is this
+governor as I mentioned in the intro
+earlier at least to do it well. Now, you
+might have a bunch of copycats jumping
+in, but I think to do this well, you
+really need to step back and make sure
+you've got the right approaches and
+build the muscle before this is
+allocated too explicitly. So, John, how
+does this all make you think about
+monetizing our insights on capital to
+cancel it? You started with that at the
+very beginning. So, are we moving to an
+originate to distribute model? Are we
+getting an assetbased loan? What's going
+on in your mind? I don't know. I think
+I'm more confused on that front than I
+was when I opened in the intro. It
+sounded clean and fun then, but I would
+like to do some back tests on that
+because I think we could perhaps sell a
+Kaya leading indicator that could be
+quite interesting. All right, listeners.
+So, our personal question that we agreed
+on, I think is a fun one. And that is
+Aaron. And you're a different generation
+than me, so probably thinking about this
+differently because you're more native
+than I was at an earlier age to the
+phone and the behavior of the use of
+your mobile. But the question was, if
+you had to delete every app except three
+from your phone, which three would you
+leave? First and foremost, I would leave
+Apple Music cuz I'm a huge music nerd.
+First and foremost, wow. First and
+foremost, that's the most important one.
+I could stop there and I'd be totally
+happy. So, it's an iPod. It's an iPod,
+which is fine. That's fine with me.
+Yeah, Apple Music would be one. I guess
+I have to keep Messenger so I can
+actually talk to people. So my iMessage
+and then I would probably have to keep
+Instagram just because one you got to
+see people and two the reals they're
+good. So those three. How about
+yourself? So on the music side I get
+made fun of by my adult kids all the
+time cuz I use Pandora. Oh god.
+A little old school. The eye rolling
+when I turn that on on Friday night. Are
+they still in business? They are. That
+was AI before AI was cool. Let me just
+say their algorithms are wicked awesome.
+I would not choose that though. I would
+not. As much as I like music, that would
+not be one of the three. I went much
+more utilitarian than you cuz thinking
+about how my life would change if I
+didn't have certain things. So, first of
+all, I chose Messenger cuz I think
+that's just an absolute life necessity,
+at least the way we run our lives now. I
+chose United and Uber because I
+literally can't imagine my travel
+schedule without my ability to call an
+Uber and the constant navigation delays,
+rebookings on United. If I didn't have
+access to that, it would be the old
+school calling the 1-800 number, which I
+do not want to do. So, there you go.
+United, Uber, and Messenger. Uber was my
+fourth just because I'm out in the
+middle of South Jersey and if I need to
+escape, it's tough. But yeah, I did make
+the cut. That's good. Well, that was a
+fun one. I mean, every one of these I
+learned a ton. This might be one,
+although this follows China, so it's
+hard to argue that the educational depth
+will ever match what at least I learned
+in China, speaking for myself. But when
+I think about investment asset classes,
+this was really enjoyable because it was
+outside my depth. I think I've mentioned
+to you, similar to Greg, I was an equity
+guy. So, credit generally, fixed income
+generally is always a stretch for me.
+And when you throw a whole lot of weird
+collateral and structures and covenants
+against this, that just adds a whole lot
+of complexity that is outside of my
+comfort zone. So, I found it really
+helpful. So, listeners, I hope you
+enjoyed that pathway, that journey as
+much as we did, and we hope to see you
+next time on Capital Danton.

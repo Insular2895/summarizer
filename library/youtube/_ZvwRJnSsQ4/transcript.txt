@@ -1,0 +1,1350 @@
+[Music]
+hello and welcome to this episode of
+goto unscripted I'm Charles humble I'm a
+freelance techie editor author and
+consultant and this is part of a series
+of podcasts that I'm doing for go to
+talking to software engineering leaders
+today we're joined by Randy sha Randy
+has spent more than two decades building
+distributed systems and high performing
+teams and has worked as a senior
+technology leader at many of the Silicon
+Valley Giants including eBay Google wew
+work and Stitch fix he's currently SVP
+of engineering at Thrive Market he also
+coaches CTO advises company and talks a
+lot sometimes at conferences about
+software and he's interested in the
+Nexus of culture technology and
+organization Randy welcome to the
+show uh thanks Charles it's great to be
+with you love to chat with you as always
+yeah always a pleasure thank you very
+much for J this so what attracted you to
+thrive Market it's obviously a smaller
+company than an eBay or a Google or an
+Amazon so what was the sort of
+Attraction there yeah sure uh so uh
+Thrive market for the very many people
+that don't know is uh an online organic
+grocery here in the United States so
+think Costco meets Whole Foods but
+online and what Costco means is it's a
+membership uh model it's a curated
+selection uh and you get better prices
+by being by being a member Foods angle
+is the it's all organic sustainable uh
+regenerative like we have a thousand
+band ingredients that we do not have on
+any of our any of our products so one of
+the reasons people love us is because
+they know we've already done all the
+looking at the labels so like if we say
+it's allergen safe for you as a
+gluten-free allergen having person like
+my son or various other things like
+we've already done that uh so uh we have
+1.6 million members now uh been around
+for 10 years
+uh growing more this year than we ever
+have um and I'm starting to answer your
+question about why I joined so uh I love
+this phase of company in in particular
+it is the late stage private hopefully
+with fingers crossed transitioning to
+public company you know sometime over
+the next while uh you know when the
+markets Etc permit um and I've done this
+uh ride now four times actually back in
+the boom/bust with a company called
+tumbleweed communic which did security
+software um Stitch fix I led engineering
+up to and through their IPO in 2017 uh
+we work I led a significant portion of
+engineering up to and through our not
+successful IPO in 2019 happy to tell
+that story but that's a whole another
+podcast and
+minies by the way if you do a mini
+sidebar if there's a miniseries about a
+place that you've worked uh you probably
+had a exciting time in the uh in the you
+know Chinese curse uh phrase of exciting
+um and so this will be the this will be
+the fourth uh for me uh in this in this
+phase and I love it because it is the
+company is large enough so that the eBay
+Google at all lessons apply um so like
+my skills are actually you know valuable
+and useful and can change the trajectory
+of the company and it's also small
+enough so that we can decide together
+and act on it like right now you know we
+can decide hey we're going to do feature
+flags and boom tomorrow we feature Flags
+you know we can decide to do Canary
+deployments and boom tomorrow we're
+doing Canary deployments so uh that
+combination of uh being able to bring
+this the large scale uh kind of
+distributed systems and large scale
+organizational expertise uh and have
+those relance be relevant combined with
+uh you know it's small enough to be able
+to like really change the trajectory of
+the company you know significantly and
+relatively quickly um I was all I'll
+highlight the other aspect of it which I
+love the mission so our mission is again
+to bring uh healthy and sustainable
+living to everybody uh and everybody is
+a subset of the United States at the
+moment but we want it to be a lot of the
+United States and maybe then all of the
+United States and then expanding out
+from there um and every time somebody
+becomes a member uh a paid member uh we
+also give a a free membership to uh a
+first responder or a teacher or a
+veteran or uh somebody who's low income
+so you know it's it's doing well by
+doing good if that makes sense yeah
+totally can you tell us what the
+architecture look like looks like what
+are the components you're using how's it
+kind of
+structured yeah sure uh so it this we're
+in the monolith uh transitioning to
+microservices phase uh there's that's
+another whole podcast we might talk
+about a little bit of that today um but
+uh but yeah so uh you know again we've
+been around for 10 years and we have
+10-year-old uh software so um we started
+and are still on uh Magento which is a
+PHP based uh open source e-commerce in a
+box uh it was really big 10 years ago um
+now you can think Shopify um but there's
+no company uh around the open source um
+uh thing for Magento so uh so the core
+of our e-commerce in out up and down is
+this uh PHP monolith um we have a bunch
+we have a a constellation of let's call
+it 100 um services that are around that
+and then over time uh we find important
+pieces of the monolith that for reasons
+need to be extracted and we extract them
+into Services written typically in uh in
+python or in Java um that's the quick uh
+that that's the quick overview we
+leverage uh uh we're full in uh we're
+all in on cloud AWS uh all up and down
+in left and right no physical
+infrastructure except for the Wi-Fi uh
+things in the warehouses um because we
+have we're a physical business like
+Stitch fix was so we have physical
+warehouses and one of my teams build
+software and maintain software for that
+right yes and is that I presume because
+not the other thing sorry to interrupt
+you Charles the other thing to complete
+that thought is um as every small
+company should we use a ton of
+thirdparty services we use ton of manag
+services you know from AWS our Cloud
+vendor but we also use a ton of
+thirdparty services for everything
+that's not our core competency right our
+core competency is not shipping physical
+boxes from our warehouses to people uh
+so we leverage it third party called
+convey to give us notifications about
+that all aspects you know internal and
+external of things that are not core to
+our mission we use third parties for
+that right yes and is that so that
+you've not been there all that long so
+I'm presuming the architecture is
+largely something you effectively have
+kind of inherited and are working within
+is that right that's exactly right yeah
+so I started in uh early March so that
+would give me n and a half months uh of
+uh of here uh time here uh yeah I mean
+the architecture has not I was GNA say
+not significantly changed it's probably
+not changed at all to candidly uh since
+I've been here um where we've built a
+lot of cool stuff um there's a reason
+why you you use these e-commerce things
+in a box because stuff like Regional
+pricing you get for free if you do it
+right um so uh you know we're doing a
+lot of work uh there we just integrated
+just now basically in the last couple of
+weeks we integrated with um an instacart
+offering around what are called uh
+retail ads so it's ads on our site
+that are promoted by our vendors uh for
+things we already sell hope that makes
+sense like the if you're old enough as
+you and I are to remember like little
+inserts in the physical newspapers about
+like hey at you know your local Aldi or
+Tesco or Safeway uh here are here are
+some you know it's 50 5% off this thing
+or 15% off this other thing um you can
+think of that so uh vendors actually
+fund for the most part those uh Those
+ads um but again the ads are not for
+things that are outside of Thrive
+they're things for things we already
+sell right yes yes so how naturally does
+that architect sorry the reason why I
+mentioned that in in the form of
+Architecture is that was an opportunity
+for us to build a set a set of services
+around uh with in Java and uh use uh sqs
+and SNS and the whole you know the whole
+deal rightor go ahead yeah yeah so how
+naturally does that architecture fit
+with the the kind of current business
+domain where you are as a business as it
+were oh very insightful question yeah so
+as is cor absolutely correct for this
+phase of company uh our architecture
+lags the current state of the business
+right which is correct because like if
+the architecture were ahead of the
+business we would have wasted a lot of
+time building things that we didn't need
+um and so uh as we might talk about
+later like eBay Twitter Amazon like
+everybody who's big now started off
+small and like we're drag Ted by their
+business into better and more
+sophisticated distributed systems in
+terms of their architecture so we're in
+that same same exact phase we're in what
+I have called in the past the scaling
+phase of okay Now's the Time to take
+that monolith and break it up into
+smaller pieces so uh and the way you ask
+it is really apt um you know we have
+very well-defined individual business
+domains um uh and uh you know around how
+do we acquire new members that's a thing
+you know for a membership company how do
+we make the membership the subscription
+like service really good for people so
+um uh recurring recurring shipments that
+you would get with from us every you
+know a couple weeks or a month like
+making that experience really good how
+to find how do people find stuff on the
+site uh how do we get information about
+the items that we uh sell from our
+vendors and how do we incorporate that
+around in the uh in the system etc those
+are all those are all separate domains
+so the first one is member growth we
+call habit formation which is around
+that um uh that uh recurring shipments
+we talk about discovery which is how
+people find things on the site etc etc
+um and so right now all of those domains
+more or less live in the monolith and
+have some ancillary services but the the
+where we will ultimately get to is those
+uh those domains will own up and down uh
+independent services that are around
+their particular domain so very apt
+question and that's why I'm here I mean
+that's why I like this the other other
+aspect of why I like this is the
+architectural opportunity to take a
+really successful business because why
+would you be in this situation if you
+weren't successful business uh and then
+we levered the the uh knowledge that we
+now have that frankly we didn't have you
+know five or 10 years ago about okay
+here is the domain decomposition here is
+the place where we want to invest in
+terms of scaling the business and
+scaling the technology um and we do that
+so it's a it's a fun place to be yeah
+yeah I think there's a really there's a
+there's a really interesting thing to
+pull on there which is when you when
+should you choose to go to a distributed
+architecture like microservices because
+I I I think and I I think you would
+agree with me on this it's generally a
+huge mistake to sort of start building
+Microsoft microservices when you're you
+know at that seeking product Market fit
+stage and obviously you're a bit beyond
+that stage now and so you're starting to
+kind of break bits of your monolith
+apart but but how do you how do you make
+that decision what's the point at which
+you go right we we need to start
+breaking this down
+yeah extremely apt question that I'm
+that I'm living now uh there are really
+two there are really two motivations so
+uh first let me underline what you said
+which I 100% agree with 95 99% of the
+applications on the planet are and
+should remain monoliths full stop end of
+story uh you should only do distri I
+mean I love distributed systems I've
+lived in it for probably 25 years and
+like I just get joy from doing this kind
+of things and I read the papers and like
+and I find it super exciting uh and also
+it's a 1% situation right uh the vast
+majority of um you should only you
+should only be dragged Kicking and
+Screaming into distributed systems
+rather than uh starting from the
+beginning there are a handful of counter
+examples to that that I can think of uh
+and they are super rare uh and I've
+never been in one myself uh where you
+would start with microservices the only
+case that I can think or the several
+cases are the thing you are offering
+needs to be at massive scale out the
+gate right so you're AWS you're offering
+a new service like you don't start that
+as a monolith because day one it's
+supposed toly always day one at Amazon
+but like day one when they when they
+launch uh the new XYZ service like it's
+already got uh you know a million
+requests a second or whatever and so you
+better you you better be ready for that
+uh the other thing is an example of um
+like uh companies like monzo in in the
+UK where their banking software
+and the reason they started with uh with
+um microservices because the banking
+domain is known up and down in left and
+right for four and five decades so the
+domain decomposition is super obvious
+and so you can if I start by like
+skating to where the puck is going to be
+uh you can you can um get a lot of
+benefit there's some great Talks by um
+Matt Smith I want to say from um from
+monzo about about that and that's a
+decision that I'm on board with but like
+I I exhausted my my uh my examples of
+where you should start with
+microservices anyway so absolutely start
+with a monolith 90% 99% case for sure
+and so only when you are at the scale
+that I'm talking about uh where the
+monolith is running out of gas do you do
+you want to move to a distributed system
+in the form of uh typically
+microservices okay so what do I mean by
+running out of gas two things developer
+velocity is slowing down because one of
+the benefits and then costs of a
+monolith is like it's a single repo and
+every body's you know on top of each
+other uh and so if uh the opportunity uh
+when developers are stepping on each
+other's toes you want to uh pull the uh
+the things apart and that's going to
+solve essentially an organizational
+problem an organizational like
+efficiency and scalability Problem by
+simply make uh separate parts of the
+system components or services or
+whatever that are independent and
+isolated and able to be worked on and
+deployed independently um the other the
+other argument is straight up load where
+like uh the part parts of the system
+need to scale much faster than other
+parts of the system and simply
+vertically scaling or like even
+horizontally stamping out more instances
+of the monolith isn't going to cut it um
+and so that's those are the two
+arguments that I have uh
+deployed uh over over time about why you
+would want to move from monolith
+microservice but again I will I will
+triple underline the vast majority of
+software on the planet should remain
+monolithic
+and you should feel like it's too late
+and then only then you should do it
+right yes yeah I think it's worth
+underlining that point about sort of
+organizational scaling because I think
+generally people think with
+microservices in terms of you know being
+able to scale up or scale horizontally
+or whatever but they tend to miss the
+point that actually that's certainly
+that's one reason for doing it but if
+you've got thousands of developers
+working in a single repay or in a single
+code base you're going to start tripping
+over each other and it just doesn't work
+and so at that point splitting things
+apart makes a bunch of
+sense yeah and if you were so if you had
+sufficient foresight and you
+componentized uh your monolith that
+makes it a lot easier um the hard case
+is the case where I was in at wework and
+I'm in here and I was mostly in it
+somewhat in at Stitch fix of yeah the
+monolith isn't particularly well
+componentized so step one is taking a
+page out of Michael feathers uh working
+effectively with Legacy codebook and
+like finding a seam for uh for a
+component uh within your monolith and uh
+Walling that off in your favorite
+interface approach writing tests around
+that then extracting it so uh yeah it's
+a it's a it's a standard progression um
+and I've uh as you know Charles but
+maybe your listeners don't like I've
+given talks on this exact thing so you
+can Google my name and look for
+monoliths and M microservices and
+migrations and you know hour-long
+disquisitions on on thinking about this
+stuff yeah there's one interesting thing
+just to sort of connect a couple of dots
+in that because you were talking about
+the Monza example and you said quite
+rightly with monzo because the problem
+domain is all the domains are so well
+understood basically you can you can do
+the whole domain driven design because
+you know what the the cont you know what
+your boundary contexts are effectively
+you know what your boundaries are
+straight away there's an interesting
+sort of counter to that which is I think
+sometimes you know what a lot of the
+boundaries are but then you have a sort
+of mysterious blob over here where we're
+really not quite sure yet and so you can
+sort of group those things
+together separate them off if you will
+and then at some point you'll you'll get
+clearer on what the boundaries are and
+then you can start spitting those off
+does that sort of do you see what I'm
+getting oh yeah yeah that that's so
+insightful and I actually want to Riff
+on that for a moment because missed
+thank you for reminding me I missed the
+third reason uh which or the or I'll say
+it this way the reason why you do an
+additional reason why you do not start
+with microservices is you do not
+understand your domain you think you do
+but you do
+not
+sorry this is I I once had hair uh as
+the people seeing the video can tell on
+audio trust me andall um the uh the you
+do not understand your domain when
+you're starting out and particularly
+when you don't fully have a business
+model or product Market fit you do not
+understand your domain therefore stay as
+a monolith because things are you can
+use refactoring tools to move things
+around and componentize and recomen tize
+and and so on um only when your domain
+has quite your overall set of domains
+let's say it that way have coalesced and
+you really understand your domain
+decomposition then you can say okay well
+now it's clear that I can pull out
+payments now it's clear that I can pull
+out member acquisition now it's clear
+that I can pull out finding or search or
+you know however you want to the catalog
+um so yeah super insightful Point uh
+that um again the only you cannot split
+things into Services once you have split
+something into Services you have reified
+your domain decomposition like chunk
+like you have um colest is not the right
+word you
+have uh taking it from
+um solidified that's a that's a good
+you have you have solidified it into
+into software and now it's really hard
+to
+refactor
+capabilities to undo that this
+particular service and like recompose it
+into other services it's just harder
+yeah yeah yeah yeah great great Point
+thank you that's all right thank you so
+so as I say we were talking about this
+we were talking about microservices kind
+of in the context of it's effectively an
+engineering productivity thing right as
+as your team gets larger so focusing
+because I think roles at eBay in your
+second St at eBay because you've been at
+you were at eBay twice and at thri have
+some similarities in the sense that
+you're focusing on developer
+productivity so what we might call sort
+of platform engineering or Engineering
+enablement in the sort of Team topology
+sense of that um and how that sort of
+fits together is that is that kind of
+right is that a reasonable description
+of of the parallels between the two yeah
+um uh yeah so like you say I've been at
+eBay twice so I was there as a mostly as
+an individual contributor uh from 2004
+to 2011 where I worked on eBay search
+engine and learned a ton about
+distributed systems then um and then I
+uh left and did other things for 10
+years or so worked at Google uh Stitch
+fix we work other places um and then uh
+in 2000 right at the start of the
+pandemic I was asked back to be Chief
+Architect of eBay so I came back and I
+took on the Chief Architect role but
+also LED uh the platform engineering
+organization that developed like the
+internal developer Frameworks the cicd
+pipe lines uh the external apis a whole
+bunch of stuff that's you know related
+to engineering productivity and yeah
+this is something that um is very near
+and dear to my heart uh and I care a lot
+about it um and so even though I wore
+the Chief Architect hat the thing that I
+did first and really solely frankly in
+the two years that I was there um was
+not reforming the architecture not
+because it didn't need to be reformed it
+did and does uh but because it is it was
+very clear that the what was preventing
+us from reforming the architecture was
+all aspects of software delivery right
+like better uh setup for automated tests
+better pipelines for Canary deployment
+uh out and back it when the the way the
+only way I know of um doing large scale
+change whether it's architectural or
+otherwise is in small steps that can
+that are two-way doors that go forward
+and back and uh you know there's the
+whole how do you eat an elephant it's
+one by at a time uh and then I love the
+reformulation by John SM of sooner safer
+happier where he says you want elephant
+Carpaccio uh so like super super super
+thinly sliced uh uh pieces and and we're
+aggregated all together it makes a big
+difference okay so how did we approach
+that uh idea so as with all things
+whether it's developer productivity
+architecture or whatever you really need
+to understand the problem that you're
+solving so if people take nothing else
+from this uh talk or you know this chat
+um remember these seven words what
+problem are we trying to solve so often
+as Engineers we don't ask that question
+we assume we know or we're handed off
+some spec or some you know diagram or
+some you know beautiful um uh you know
+sketch and and Implement that well like
+if we understand why we're going to do a
+better job and we actually will we'll
+get there so um uh so understand the
+problem statement at eBay it was uh you
+know we had better words for it but we
+were too slow like just end to end it
+took us too long to go from idea all the
+way to value and so you know you can I
+like to think of it as like four steps
+so uh planning is like how does an idea
+become a project uh software development
+is how does a project become committed
+code software delivery is how does
+committed code become a feature that
+people use on the site and then post-
+relase iteration is how does that
+feature that we launched initially get
+iterated upon based on user feedback and
+and analytics and and monitoring so on
+um and uh we learned at eBay we did a
+value stream map which comes out of lean
+so we just looked we thought of it as a
+big workflow and we looked at where the
+opportunities were where was what was
+taking longer what was taking shorter um
+and it became glaringly clear what most
+a lot of people knew anecdotally and
+individually but the data was really
+clear that it was all about software
+delivery at at eBay um you know there
+are opportunities everywhere frankly
+like planning could be a lot better
+software development could be a lot
+better Etc but like the really big
+opportunity there was in the software
+delivery space and fortunately we were
+living in the world of 2020 and still
+this world where we have a lot of uh a
+lot of Industry uh expertise now like 10
+15 years of the state of devops reports
+and the accelerate book and the Dora
+metrics and so on so that what we did is
+we just straight up you know had every I
+had everybody read the accelerate book
+which everybody should if you haven't
+already stop now pause it video go read
+the book come back um and uh we used the
+Dora the Dora 4 metrics as our way of
+measuring our software delivery
+performance and again without going into
+human huge detail read the book Dr
+Nicole forren who leted all that
+research and was the primary author of
+the book um uh proved that these four
+metrics of deployment frequency of lead
+time for change of change failure rate
+and of meantime to recover do predict
+predict software delivery performance
+and therefore business and
+organizational performance so we
+measured ourselves on hey how often are
+we deploying code how often are we um
+how long does it take us from when a
+developer commits her code to when it
+shows up on the site that's a lead time
+for change when we deploy things how
+often do we have to roll it back or hot
+fix it that's change failure rate and
+then mttr when we have an incident uh
+how long does it take us to recover from
+it and um we then we then we went to the
+so we we put together uh eBay is big and
+therefore they build living themselves
+so we built a tool you know to monitor
+all those things look at our deployment
+pipelines etc etc issue tracking Etc
+integrated that all together and uh and
+we're able to uh see that very quickly
+which is really great um and then how do
+you do it from there is you just
+understand you you basically go to teams
+and you go what's preventing you from
+moving faster and being more effective
+and the most uh useful question that I
+could ask as the like head of platform
+engineering was uh hi XYZ team uh I see
+that today you're deploying maybe once a
+week or once every two weeks if I told
+you that you had to deploy every day
+tell me all the reasons why you can't
+and this wasn't like a challenge this
+was like an opportunity and they were
+like wow somebody will finally listen
+and they said how long do you have Randy
+and like do you want the whole list or
+just the top 150 um and so they gave us
+you know a a huge list all legit of like
+okay well the tests are flaky and the
+builds take too long and I have to get
+um manual approvals but not one but not
+two but like all the dependent teams
+that depend on the software that I build
+and uh when I roll out I have to have
+somebody hand look at it to to go from
+you know the one stage to the next stage
+to the next stage of the deployment
+process and so unlike all the other
+conversations and rants that you know
+those people legitimately had over the
+years uh finally uh uh I somebody was
+listening to them and I said great you
+just gave my TMR backlog
+uh and and then we formed a um team of
+teams uh ref referencing exactly the
+book but um but a team of teams where
+like we would get together once a week
+of like all the teams that were working
+together on improving their uh their
+software delivery performance and we
+would share the things that we learned
+and and how we're doing and what
+immediately came out was everybody was
+motivated to make their lives better
+individually and then people could share
+ideas and like oh I'm having problems
+getting PE nagging people about doing
+their code reviews other team says hey
+we implemented this super lightweight
+tool that nags people and like hey you
+want to use it and you know so the
+sharing of experiences and uh successes
+was really valuable um and then overall
+I I inherited this word but overall this
+thing at eBay we called the velocity
+initiative um I would have given it a
+different word if I had been there but I
+inherited the word uh but yeah so again
+it's about improving the overall
+engineering productivity and flow of the
+organization and one of the things I'm
+super proud of of the work that we did
+together with a bunch of really great
+people at eBay was that um for the teams
+that we work with we doubled their
+engineering productivity and what does
+that mean doubled it means as measured
+by features and Bug fixes like produced
+end to end per unit time uh they doubled
+so given the same team composition same
+team size before we did this work they
+were doing X number of you know features
+and Bug fixes per week or month or
+whatever and then now they're doing 2X
+and like that's
+cool and uh uh I am very personally
+proud of it and also I didn't do
+anything we didn't do anything magic
+it's it's the it's the standard standard
+I mean it's the Playbook it's the it's
+the devops accelerate Dora Playbook of
+in the you know hey we we need to do
+automated testing we need to make sure
+that uh tests are not flaky we need to
+automate the deployment process so like
+a canary situation where a human's not
+pressing a button to go from stage X to
+Stage y to Stage Z it happens
+automatically looking at metrics if
+they're good they go forward if they're
+bad they go back um just leveraging all
+the tools and techniques and
+capabilities that we have in the 2020s
+in our and had in the 2010s uh in our in
+our world um and so we didn't do
+anything magic we just started ex we
+just executed and like introduced people
+to continuous delivery essentially yeah
+how much of your engineering effort goes
+into that platform team at somewh like
+eBay at eBay that's a good question um I
+I have
+noticed uh anecdotally but my experience
+at multiple places that as you get
+larger there is a larger percentage of
+time spent in the what call platform
+versus in the other areas and that is
+because when you are small the amount of
+Leverage you get by a common platform
+team is small it only is over the
+whatever 20 or 30 people you have let's
+say but when you are 4,000 Engineers
+like eBay or you are a 100,000 Engineers
+like Google or maybe it's 200,000 Amazon
+Amazon some crazy number at this point
+like the tiniest little you know
+three-person team in platform that does
+what seems like a relatively small thing
+has this massive impact and pays for
+themselves like in a week so uh so at
+eBay scale it's basically half and half
+so the uh what eBay uh I don't know if
+they've reorganized but when I was uh
+recently there we had what we called the
+product engineering organization which
+delivered user facing features and they
+were excellent uh and then we have the
+techn core Tech so like think RIT large
+the platform organizations that's
+infrastructure that's devops that's my
+platform engineering blah blah blah all
+sorts of different things and it was B
+basically half and half so order 2,000
+Engineers on the uh product engineering
+side and 2,000 Engineers on the on the
+uh cortex side and um goog when I was
+there Google had a similar
+ratio the user-facing things versus the
+multiple really excellent layers of
+software that everything is built on if
+that makes sense yeah totally totally
+there are a couple of other things about
+platform teams that I've seen people
+come on stuck with um one of those is
+how you prioritize the work that comes
+in and how you manage that relationship
+because it's a bit of an unusual
+relationship it's a bit like a vendor
+customer relationship rather than a than
+a
+um more it's it's different from you
+know other internal teams I think I'm
+not yeah what I'm getting out yeah I do
+and and you you used the metaphor that I
+like to use uh straight away which which
+is vendor customer so how as a platform
+team do I understand what to do I talk
+to my customers and just as if I was a
+third as if I were a third-party uh
+vendor I prioritize based on that like
+okay I think of my thing as a product my
+platform as a product and I use product
+management techniques and lean product
+management to like figure out what to do
+um so it's it's exactly like any any
+thirdparty vendor listen to your
+customers
+you know and prioritize the largest
+opportunities slash thee largest paying
+points uh first and so does that mean
+that every customer gets exactly what
+they want when they want no we uh that's
+what prioritization is like we don't
+have infinite resources to everything
+but um but it's correct for a thirdparty
+vendor and it is equivalently correct
+for an internal platform team to say if
+I work on this thing it impacts most or
+all of the teams and make them
+substantially produ more productive and
+if I do this other thing that this
+particular customer team is asking for
+that really only affect only you know
+makes them more productive and so okay
+it's a the that prioritization is really
+clear so put your I mean we used to this
+was eBay so like put your eBay hat on
+right uh put your put your Broad company
+hat on like what is the correct thing
+for us to
+improve uh you know what to uh as a as a
+member uh like what would the executive
+say essentially like what what's the
+overall priority of the of the
+organization and and and once you put
+that hat on that like pretend you're a
+vendor It all becomes really clear um
+and again you don't you can't do
+everything you but you prioritize and
+you say hey I can't get to this this
+time but you know two quarters from now
+sure I'll be happy to do it but but and
+also you know one of the benefits of
+running that organization is like guess
+what we'll happily consult with you like
+if you want to roll your own thing to to
+your your kind of custom uh Improvement
+uh we can help you and point you at the
+right direction but we just can't do it
+for you right now yeah there's another
+thing that I I mean it it's it's become
+something of a maxim that people talk
+about the fact that you shouldn't
+mandate the use of a platform but I
+think it's worth talking about it
+because I still see see people sort of
+going no we've built a platform and now
+you've got to use that and I think
+there's interesting aspects of that so
+just sort of Riff on that a bit what
+what's your sort of view on mandating
+versus you know just allowing it having
+it there why would you favor one over
+the
+other yeah fantastic question I love it
+this is the um the distinction is should
+is it a mandated platform is it or is it
+a paved path and I'm very intentionally
+stealing that phrase from Netflix so
+Netflix and Google are excellent at this
+um Let me give a slightly more new so in
+general I prefer the paved path or
+almost almost exclusively I prefer the
+paved path versus the Mandate and I'll
+explain why in a moment uh I want to
+give a little more nuanced thing was if
+you're small um it shouldn't be mandated
+but like there's not a lot of excuse at
+my scale for people to to roll their own
+because like we only have 100 Engineers
+um at Google scale with 100,000
+Engineers there's a lot more play and
+frankly a lot more the distribution of
+individual teams needs is much broader
+um but overall My Philosophy is if you
+have to it it should be the the platform
+should be so good that people should
+want to choose it affirmatively so it
+needs to be affirmatively better
+strictly better than buying it borrowing
+it or stealing it um uh and that's the
+choice because the it is right for me as
+the internal software vendor of platform
+teams to um uh of platforms to give my
+customers the choice why because it puts
+all the incentives in the correct places
+the customer team is correctly they're
+good Engineers which they mostly are
+like they're choosing what works best
+for them and sometimes that's hopefully
+mostly the time that's the platform
+other okay but if they have weird you
+know not weird but like different needs
+like okay for machine learning hey this
+like this thing isn't G to do it like
+you need you need something else um so
+it's to so it puts the customer uh in
+control where where they should be
+essentially the customer team in this
+example um but also it gives me as the
+platform team the right incentives as
+well like if I'm essentially competing
+with all the other options my customer
+teams can have like now I'm GNA think
+now I'm it's now I'm like a third- party
+vendor back again like okay how am I G
+to
+survive as a as a going concern like uh
+uh if it is if it is strictly better for
+my customers to use a um a managed
+service from our Cloud vendor instead of
+the thing I built great I should want
+that because guess what there's other
+stuff I should do if if if we can get
+this thing as a managed service or
+there's a third party that does this
+like fantastic um thanks glad glad what
+I did helped you and you know from the
+past and then now we're going to do
+other things because again there's that
+big long list of priorities from my
+customers that we weren't able to get to
+um and and I 100 and I 100% believe that
+um the reason why people would mandate a
+platform I think are deeply wrong uh are
+the they are the um I don't mean to be
+mean but it's the it's the bi it's the
+it's the bias of um uh Sun cost it's a
+sun cost fallacy it's like well I built
+this so you should use it like well okay
+we spent that
+money now what yes and if the right
+thing today is to continue to use the
+platform great we did a good job and we
+should Pat ourselves in the back but if
+as often happens that was the right
+thing to do four years ago but right now
+there's a third party that has packaged
+that set up for free and it's all
+integrated and way better uh in some in
+the cloud ecosystem in the kubernetes
+and you know cncf ecosystem like at any
+given year there's way more stuff out in
+the world in open source etc etc than uh
+there was the year before so the the the
+um I hope this metaphor is going to work
+but like the the overall like tide in a
+good way is rising right the the the
+Baseline level of what's out there for
+free or for cheap in the industry is is
+uh going up and that's a good thing we
+should want to float on top of that
+rather than chaining ourselves to the
+bottom of the harbor if that makes any
+sense yeah there's a actually an
+interesting sort of line I want to pull
+on there which is because obviously eBay
+has been around by kind of internet
+company standards a long time and when
+you started or when it started out you
+know the cloud wasn't even the thing so
+if you were building an eBay
+today or something like an eBay today
+what would be different are there more
+off the shelf services that you would
+maybe draw on that you couldn't have
+drawn on at the time and how would that
+look how would that
+compare oh yeah oh I I love this I
+actually did this thought experiment um
+when I was at eBay as the chief AR
+because what what what should the Chief
+Architect do the Chief Architect should
+be thinking about hey if I had to do
+eBay all over again what would I what
+would I do and I would make what's a way
+to say
+this most of the pattern I'll give
+specific examples but like most of the
+patterns are correct and I would keep
+most of the implementations I would
+update right so the patterns are
+uh uh so uh well let's take it one at a
+time um so eBay does not use public
+Cloud basically um eBay leverages own
+private Cloud because guess what when
+eBay started almost now 30 years ago um
+we're at 29 years right now um there was
+no cloud like you say uh the first thing
+you do is you buy some actual physical
+Hardware from an actual physical vender
+you install software on it like from a
+CD or a floppy uh you rack it in a in a
+rack you put it in a data center blah
+blah blah and companies that got big
+early on in uh internet time uh eBay
+Amazon Yahoo Google all had to learn how
+to do that so they all learned how to be
+their own what we would Now call Cloud
+vendors um and eBay is pretty good at
+that actually and from a cost
+perspective uh if you think a way to say
+this if you lifted and shifted all of
+eBay's infrastructure from the private
+setup that they currently have to the
+public Cloud it would probably increase
+the cost let's call it 4X but if you
+were smart you could um get a lot of
+benefit and it wouldn't be 4X if that
+makes any sense like if you just lifted
+and shifted it would be that way so what
+I would do today is I would Leverage
+go all in on one of the cloud vendors um
+I partner with them up and down in left
+and right exactly how you know Netflix
+has done and various other big place
+places have done I would build from the
+ground up in an autoscaled way so again
+when you run your own data
+centers like physical things don't
+flex uh in in the way that uh we would
+like uh and now we've learned what we
+can do with with auto scaling so I would
+do that uh the reason why I said all in
+on a cloud vendor is I Would by default
+use all of their managed Services up and
+down in left and right and only where um
+the managed service didn't meet a very
+specific need that we had which is
+frankly a rare case in these days in
+2024 um only then would I build Uh
+custom infrastructure um and then the
+other thing which eBay again you know
+it's legit uh eBay uh built built and
+builds and maintains its own data
+centers there are um three data centers
+in the in the United States and mostly
+the Western United States um so that's
+great if you happen to live in the
+United States um that's not great if you
+happen to live in Australia so uh if I
+had it to do uh all over again I would
+go uh oh if I had to jet to where we
+currently are we're not eBay as a
+startup we're eBay at current scale
+let's say it that way um I would be
+Global multi- region active active right
+um so I haven't directly used uh spanner
+from Google or the brand spanking new
+thing from uh Amazon Aurora dsql that
+they just announced like a few weeks ago
+at reinvent which is spanner Plus+ as
+far as I can tell uh spanner even better
+um anyway I would leverage I would
+leverage something that was you know all
+the capabilities that are like multi-
+region from the from the beginning if
+that makes sense um so that's what I
+would do on infrastructure uh again it
+is correct that something at eBay scale
+would be microservices I would continue
+to do that um eBay uh you know evolved
+over time like if you could Jet right to
+The Domain decomposition that we've
+currently learned or that eBay's
+currently learned we would we would just
+you know construct services around that
+that's fine we would do what eBay does
+today wasn't when I was there the first
+time but you know really in a DDD way
+organizing teams and um Services aligned
+to those domains like very clearly uh
+you know um uh segmented there you know
+bounded context like you were suggesting
+earlier um I would be event driven from
+the beginning again we're not being a
+startup we're being eBay current scale
+um and I would go either all in on a
+cloud whatever
+clouds whatever Cloud I chose I would go
+all in on their eventy setup or if I
+didn't like that for whatever reason I
+would go all in on
+kofka um and then I because we can't get
+past functions as a service even 10
+years along um I would use those as kind
+of lightweight event producers and
+consumers but um despite the like
+serverless
+first um I don't think starting at with
+functions as a service is is the right
+way to go um it's a tool in our toolbox
+but it shouldn't it's not the first tool
+um now serverless as AWS says RIT large
+like everything should be scalable down
+to zero and scalable up to a million
+like yes yes yes 100 a thousand times
+yes um and then the very last thing is
+um I would
+do a first order implementation of
+workflows um uh so whether that's a saga
+pattern uh layered over an inventing
+system or something that's new to me but
+I think is not new to most people or a
+lot of people is something like temporal
+which is um uh you know used by coinbase
+and stripe and a bunch of places that
+this stuff really matters um uh we're
+currently looking into that now about
+like how to implement workflows in a
+very high in a higher level like correct
+and very reliable way so um that's
+that's what I would
+do that's absolutely fascinating I was
+gonna say did did did I indicate that
+I've been thinking about this for a
+while yeah know no it's really it's it's
+really interesting though because
+something I've been reflecting on a bit
+and actually something you said earlier
+about when you came back to eBay and you
+basically used the work from the
+accelerate book and continuous delivery
+and all of that and so much of that is
+is stuff that wasn't there 20 years ago
+it's like like the the the the patterns
+and approaches that we need are so much
+better defined for the scale that we
+operate at than they were a few years
+ago and it's just it's kind of
+interesting I think think to reflect
+back on that actually on that because we
+we're getting towards we're getting
+towards the end of our time I was you
+and I met I think at cuon San Francisco
+in 2007 it's quite a long time ago now
+so we've talked about how you would do
+eBay differently but how have the sort
+of architectural principles or
+approaches changed over the sort of 20
+or so years that you and I have known
+each other yeah uh uh in preparation for
+this talk I actually was listening to an
+interview I did at cuon London in
+2008 uh for software engineering radio
+but whatever that's another good podcast
+uh I listen to goto all the time too as
+well don't worry um uh and I was
+listening to the themes from that talk
+which was the same talk that you saw at
+um at cuon San Francisco in 2007 uh and
+oh my gosh all the patterns are the same
+yeah like and it's not because Randy was
+brilliant it's because it took us a
+while to learn it took us maybe five or
+10 years to learn how to do distributed
+systems but then we learned them and and
+patterns the patterns are the same the
+detail infrastruct detail
+implementations are very different so
+number one was scaling
+okay domain partitioning of our service
+domain decomposition Services per domain
+microservices that own their own data
+boom we knew that then uh we know that
+now uh whatever we're at 17 years later
+uh asynchrony again particularly at
+Large Scale prefer an event-driven
+architecture over everything being
+synchronously coupled um and go all in
+on the implication that there is
+eventual consistency from something
+happens over here when somebody bids on
+an event and only later does it show up
+in Search and only later does it show up
+in these other places now at eBay we did
+a lot of work so the later was it shows
+up in a couple of seconds in search but
+you know the conceptual idea of a thing
+happens over here in one part of the uh
+system and then it pro propagates
+quickly or slowly you know to the rest
+of the uh the system in like an
+eventually consistent way uh the uh
+automation so you can not live at Large
+Scale without automating everything up
+and down and left and right and that is
+things like uh a canary roll out right
+so automating the steps to roll things
+out um what I call adaptive
+configuration so say to a part of the
+system here is your SLO I need you as an
+event consumer to consume or message
+consumer to consume messages at a
+certain rate and keep your the message
+the cue of messages below a certain
+level and then tune yourself tune your
+uh polling rate and your parallel
+threads and your number of consumers to
+keep that rate with minimal um uh you
+know with minimal research usage and
+that's not conceptually all that
+difficult but you just have to implement
+it um we could talk about machine
+learning that's automation at massive
+scale um but uh but same exact thing uh
+I think it's the first and then failure
+I think it's the first uh first policy
+of distributed systems it's certainly in
+in there uh like the you know things
+fail all the time uh so you know you
+have to invest um invest in some form or
+another now you can use third parties
+but like invest in observability Step
+One um and then as I was mentioning you
+know uh things fail in every way so like
+canaries and automated rollback um you
+know looking at those those monitoring
+metrics to decide you know what to do to
+scale up and down um uh what we now call
+thanks to um Mike nyard circuit breakers
+um we had that technique at eBay back 20
+years ago we called it markdown like you
+mark down a database that temporarily uh
+when it's not performing well so circuit
+breakers like that and then when things
+aren't available you don't collapse you
+gracefully degrade the functionality so
+and then um a thing that's a little bit
+new uh well okay the the massive thing
+that's new is what you hinted which is
+continuous delivery so uh those other
+those other like patterns around scaling
+around asynchrony around Automation and
+around failure um those were things were
+known different words but like we knew
+them all 20 years ago and we and we're
+uh you know at least the the at the time
+secret uh big companies knew all these
+things and it wasn't just eBay by the
+way Yahoo Google everybody knew it um
+the thing that is massively different
+today versus 20 years ago is all aspects
+of continuous delivery so when I first
+gave that talk back in 2006 about hey
+here's how we're doing things at eBay
+opening up the hood a little bit um
+people were amazed shocked uh that we
+released the entire site every two weeks
+so like oh my God how do you do it and
+we're like so proud we're like well we
+compute the transitive closure of all
+the interdependencies of all the
+different services and applications and
+we execute on that in this automated way
+we like up the dag from the leaves to
+the root uh rolling forward and back to
+past based on things and we were so
+proud but we thought of the site as this
+monolithic thing and we release the
+whole site um you know in pieces but
+like the whole site every two weeks now
+that would be laughable absolutely
+laughable um I don't remember the exact
+thing but like Amazon way 10 years ago
+was doing hundreds of thousands of
+deployments every day I don't know that
+they've said it now but let's say that
+it's two orders of magnitude larger uh
+Google would be the same so the idea you
+know and it's first you know um credit
+to uh Jess hble and and Dave Farley for
+for the continuous delivery book in 2010
+uh the very famous uh 10 deploys a day
+talk which I was lucky of to attend at
+velocity from John Alpa and Paul Hammond
+back in 2009 so now it's crazy talk to
+think that you shouldn't be deploying
+multiple times a day for each individual
+thing um so that's the and all the
+techniques that you say that are around
+continuous
+delivery and I think we knew all the
+individual techniques but we never
+layered them together and combin combine
+them in a way that would allow us to
+safely deploy micro changes in a
+constant stream and now we do and now uh
+the best-in-class companies those High
+performers uh you know in the accelerate
+slum
+Dora uh mil um uh are doing intraday
+every application multiple multiple
+deployments um and that's the standard
+and you're you would be laughed at if
+you if you were a big site and uh
+updated everything every two weeks so
+we've come a long way patterns are all
+the I love and and it's like it's so
+it's really exciting to me to to see
+that we as an industry discovered all
+these things co-discovered right like
+they're all being like nobody's talked
+to anybody uh uh super secret but like
+Yahoo and and eBay and Amazon and Google
+all co-discovery all these techniques
+all at once you know feature flag and
+canaries and circuit breakers and anyway
+uh super ex and and the broader the
+broader the broader techniques as well
+anyway love that and uh love that those
+patterns are still just as relevant
+today as they were uh and also love that
+we've come a long way on the continuous
+deliver friend so 2024 is a great a
+great time to be be a software engineer
+100% Randy thank you so much as ever I
+feel like I could talk to you for hours
+but that was wonderful as always thank
+you so much thanks Charles uh me too
+clearly we can talk on any of topics uh
+forever but uh really enjoyed our
+conversation thank you my pleasure

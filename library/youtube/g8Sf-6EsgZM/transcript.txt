@@ -1,0 +1,190 @@
+so kubernetes is an orchestration tool
+which means that if you have a complex
+application made up of multiple
+containers kubernetes tool will help you
+achieve high availability scalability
+and disaster recovery of your
+application setup but what does all
+these things actually mean and how does
+kubernetes help you achieve all of these
+things in order to answer these
+questions we're gonna go through a
+simplified visualization how kubernetes
+cluster really works so first let's talk
+about high availability and scalability
+here let's say we have two worker nodes
+of kubernetes cluster server one and
+server two with each server holding a
+replica of my application and a database
+application and we also have an ingress
+component which basically handles every
+incoming request to your application so
+if someone accessed my app website on a
+browser the request would come in to
+ingress an ingress component will
+actually be their own parts on each
+server so they are replicated as well so
+now when a user visits my app website on
+browser a request is made and handled by
+ingress first and as we just saw ingress
+is load-balanced so we have replicas of
+ingress on multiple servers ingress will
+then forward that request to a service
+for my application and service is a load
+balancer as well that will then direct
+that request to the respective replicas
+of the pot if let's say for that request
+a database access was necessary my app
+will then make another request to
+database service which is also load
+balanced and pass a request to one of
+the replicas and of course this is a
+simplistic view you can have 10 servers
+and 10 replicas of your database my
+April ingress applications but what this
+setup demonstrates is that from
+entry point of the request into the
+cluster til the last end point which is
+a database every component is replicated
+and load-balanced which means that in
+this whole setup there is no bottleneck
+where a request handling for example
+could stop the whole application and
+make the responses slower for a user but
+of course it must be noted here that
+your application or the way your
+application is designed should also
+support this replication and request
+handling because this is just tools that
+kubernetes offers you to make your
+properly designed application highly
+available in highly scalable so with
+this setup
+if server 2 completely crashed and all
+the parts that are running on it died
+you would still have replicas of your
+application running so there will be no
+downtime and in the meantime a
+kubernetes master process called
+controller manager would actually
+schedule new replicas of the died pods
+on another worker node let's say server
+3 and recover the previous load-balanced
+and replicated application state which
+means while the node servers actually do
+the work of running the applications the
+master processes on the master nodes
+actually monitor the cluster state and
+make sure that if a pod dies it
+automatically gets restarted or if
+something crashes in the cluster that it
+automatically gets recovered an
+important master component that is used
+to manage the cluster mechanism to run
+properly is the Etsy D store which
+stores the cluster state like the
+resources available on the notes and the
+pod state etc at any given time so for
+example if a pod diet and it CD so would
+be updated about it and that's how the
+controller management would know that it
+should intervene and make sure new pot
+gets restarted so when that happens
+again it CD store gets updated
+and because etsy D always has the
+current state of the cluster it's also a
+crucial component in disaster recovery
+of kubernetes clustered applications and
+the way disaster recovery mechanism can
+be implemented how kubernetes is to
+create debt CD backups and store them
+into remote storage and these backups
+are in form of 8 CD snapshots now
+kubernetes doesn't manage or take care
+of baking updated CD snapshots on remote
+storage this is responsibility of the
+kubernetes cluster administrator so this
+storage could be completely outside the
+cluster on a different server or maybe
+even cloud storage an important note
+here is that HCD
+doesn't store database or application
+data that data is usually also stored on
+remote storage where the application
+thoughts actually have reference to the
+storage so that they can read and write
+the data from and this remote storage
+just like the HDD snapshots backup
+location isn't managed by kubernetes and
+again must be reliably backed up and
+stored outside of the cluster this is
+usually how production clusters are set
+up so now considering a reliable backup
+and replication of HDD snapshot and
+application data is in place if the
+whole cluster were to crash including
+the worker nodes and the master nodes
+themselves it would be possible to
+recover the cluster state on completely
+new machines with new worker nodes and
+also new master node using the HDD
+snapshot and the application data and of
+course you can even avoid any downtime
+between the cluster crash and a new
+cluster creation by keeping a backup
+cluster so to say that can immediately
+take over when the active cluster or the
+current cluster crashes or dies
+there is one thing I should note here
+you can actually achieve this setup with
+load balancers and replicas also without
+kubernetes for example on AWS instances
+using the AWS load balancer etc however
+there are a couple of advantages that
+you have with kubernetes that you don't
+have with other tools or if you would
+create this setup yourself
+one is the replication is made much
+easier using kubernetes the only thing
+that you have to do is just declare how
+many replicas of a certain application
+beat your own application or a database
+application you need and the kubernetes
+component takes care of actually
+replicating it second one is the
+kubernetes self-healing feature so what
+it basically means is that if a pod dies
+there should be processed that monitors
+the state that detects that a replica
+died and automatically restarts a new
+one and again you have this feature out
+of the box from kubernetes third is
+smart scheduling feature of kubernetes
+which means that for example if you have
+50 worker servers that your application
+containers will run on with kubernetes
+you don't have to decide where to run
+your container you just say you need a
+new replica of a pod and kubernetes
+smart scheduler basically goes and finds
+the best fitting work node among those
+50 worker nodes maybe to schedule your
+container by comparing how much
+resources a worker node has available or
+free and overall many features that you
+could also do elsewhere on other
+platforms like as I mentioned AWS is
+made simpler or it's easier to create
+and configure in kubernetes like service
+as a load balancer for example thanks
+for watching the video I hope it was
+helpful and if it was don't forget to
+like it this is a video series so I will
+create a new one every week so if you
+want to be notified whenever and you
+comes out then subscribe to my channel
+if you have any questions if something
+wasn't clear in the video please post
+them in a comment section below and I
+will try to answer them so thank you and
+see you in the next video

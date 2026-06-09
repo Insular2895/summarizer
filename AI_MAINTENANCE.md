@@ -36,6 +36,7 @@ Dossiers techniques :
 - `config/` : configuration YAML.
 - `docs/` : documentation technique.
 - `cache/` : fichiers temporaires.
+- `library/youtube/` : source canonique locale des transcripts YouTube, indexée par video ID.
 
 ## Pipeline PDF
 
@@ -88,7 +89,8 @@ Flux attendu :
 URL ou playlist
   -> yt-dlp
   -> SRT/VTT
-  -> texte nettoye
+  -> bibliothèque canonique `library/youtube/<video_id>/`
+  -> texte réutilisé par les prompts
   -> Gemini
   -> output/videos/
   -> output/graphipy_ready/
@@ -106,6 +108,12 @@ Modules importants :
 Regles obligatoires :
 
 - Une playlist se traite video par video.
+- Une transcription YouTube doit être stockée une seule fois par video ID dans `library/youtube/`.
+- Toujours réutiliser la bibliothèque avant de télécharger de nouveaux sous-titres.
+- Les fichiers sous `output/` sont des dérivés régénérables, pas la source canonique.
+- `output/graphipy_ready/` est un export explicite temporaire et ne doit pas dupliquer durablement
+  `output/videos/`.
+- `YOUTUBE_LIBRARY_DIR` peut déplacer la bibliothèque canonique vers un SSD.
 - Une video qui echoue ne doit pas bloquer la suite.
 - Ne jamais supprimer globalement `output/videos/`.
 - Ne jamais supprimer les outputs deja valides.

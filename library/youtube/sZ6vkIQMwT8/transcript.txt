@@ -1,0 +1,46 @@
+if you're thinking of deploying a
+typescript package to npm you should be
+considering pre-construct it's
+incredibly easy to set up and it handles
+so many things for you let's get started
+we have a simple index source file here
+which just is inside src
+and we've got our package here and we've
+got a basic name map pre-construct
+example this is not set up at all for
+deploying to npm and you see how quick
+and go we can go yarn add
+as dev dependency pre-construct
+cli
+and this is going to install a cli which
+handles all of our building handles a
+lot of our um
+other stuff too and now we can run yarn
+pre-construct fix
+and pre-construct is there because we've
+installed the cli you'll notice here
+that it's added dist map pre-constructed
+example cgs.js into our main so we don't
+even need to think about our main
+if we want to add bundling for
+for esm we just had module true run yarn
+pre-construct fix again and it will go
+in and add the esm version and now we
+can run yarn pre-construct build
+and i'm just gonna while this is running
+just gonna add this into a script into
+my npm as well so we've got build
+yarn pre-construct build
+and now we've got a disk file with all
+of the correct stuff in there i'm just
+going to git ignore it actually
+and we've got
+cgs.d.t.s we've got all of our
+declaration files properly exported
+we've got everything working for esm as
+well if we want it it just gives you
+everything out of the box and from here
+i could just run yarn publish or npm
+publish and send this up to the cloud
+and it's ready for you to use in any of
+your apps

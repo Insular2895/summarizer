@@ -1,0 +1,581 @@
+Hi everyone, my name is Adam Wolk.
+I'm a Principal Technical Program Manager
+for PostgreSQL here at Microsoft.
+Today I'm going to tell you how to travel using
+row-level security with PostgreSQL and Citus.
+So grab a towel and join me
+if you want to learn how to use
+row-level security with your application.
+Hi everybody, don't panic.
+We're going to learn about row-level security
+in PostgreSQL and in Citus today.
+So just like a towel,
+row-level security is a useful tool.
+Imagine you're on a beach
+and you need to cover some private parts.
+Then if you have a large enough towel
+that's just right, it will do its job.
+It will hide the pieces that you need covered
+and same with row-level security.
+Things that need to be hidden will be hidden.
+If you wrap yourself too tightly,
+then you will be encumbered in some way.
+And with too complex policies that you employ
+in PostgreSQL, it will slow down your database.
+It won't be able to move as fast as it used to.
+You can have a too small towel
+and then it will cover too little.
+People from this side will be able to
+get a glance on things
+that they shouldn't see or infer what's there.
+And it can be too big,
+essentially covering you wholly
+and then somebody will step on you
+because they don't know
+that you're sunbathing underneath a towel.
+And the same thing can happen
+with row-level security.
+If you cover everything and want to do a backup
+and then all the rows are hidden,
+then you don't have a backup.
+So we're going to touch upon
+some of those aspects also.
+So you can think of row-level security
+the same way as a SEP field.
+So as soon as you enable it
+and have some policies in place,
+the rows that are under the policy
+become somebody else's problem.
+You will no longer see them
+or they will no longer see them.
+Now, there are some cases where
+somebody can see through the SEP field
+for the row-level security.
+If you're an owner of a table,
+you're exempt from the row-level security policies
+and you can see all rows.
+You can change that with the FORCE setting.
+So if you tell
+ALTER TABLE... FORCE ROW LEVEL SECURITY;
+even you as the owner
+will be forced to obey the policies.
+Now, some other users essentially bypass it.
+Anyone with a bypass RLS row-level
+security role will be able to bypass it.
+Also, the super user will be able to bypass it.
+And there are some mechanisms of PostgreSQL
+that simply ignore it.
+For example, the TRUNCATE command or any foreign
+key references, but they need to do it to
+provide integrity, essentially.
+And there are some leak-proof functions
+that can leak data that we may touch upon later.
+So defining row-level security policies,
+that's something like every Vogon's
+bureaucratic dream to define policies.
+By default,
+the policies are ignored.
+If you create a policy and don't enable
+row-level security, it's just there.
+You define a policy per table,
+so every table can have its own set of policies.
+You can reuse the name across different tables,
+but obviously unique on the same table.
+There are two types of policies
+you can have, permissive and restrictive.
+By default, if you have no policies, it's denial.
+Permissive policies
+are required to say you can access a row,
+and you need at least one permissive policy
+evaluating to true to see any rows at all.
+If you have multiple permissive policies,
+they will be chained together with an OR clause.
+So if you have five permissive policies defined,
+you need just one of them
+to evaluate to true to be able to see a row.
+Now if you have restrictive policies,
+they are
+the opposite of that.
+They tell you,
+for whatever you are allowed to see,
+make sure that we don't need to remove more.
+So they restrict what you are allowed to see.
+And they are chained with an AND clause.
+So if you have five restrictive policies,
+all of them need to pass for you to see the row.
+And if any one of them doesn't pass,
+you are not allowed to see it.
+To see any rows at all,
+you need at least
+one permissive policy passing
+and all restrictive policies passing.
+There is no point in having
+just restrictive policies,
+so you always need at least one permissive.
+Now, policies can be defined for all commands,
+a subset of them, like you can decide,
+well, I want a policy for a SELECT and a DELETE,
+but I don't care about INSERT and UPDATE.
+Or you can define them for a single one of them,
+however you want.
+Policies can also be defined
+for everybody in the database.
+So for the public role, which is the default,
+or for a specific role, user, whatever you define.
+Now, there are two clauses that take expressions.
+So you have a USING expression,
+which essentially applies to existing data.
+So it would apply to SELECT, UPDATE and DELETE
+because they work with existing data.
+And the WITH CHECK would be used for the newly
+added data, like an INSERT statement.
+It gets tricky with the MERGE command
+because it will apply to a mix of both, right?
+If you're doing a MERGE command that can
+result in an INSERT or UPDATE or an UPSERT
+or something like that,
+or a DELETE MERGE with DELETE,
+then it will use the appropriate
+policies and appropriate types of commands
+that were defined for it.
+If you don't provide a WITH CHECK,
+it will use the USING clause that you define.
+So if you skip this WITH CHECK,
+it will use the USING clause
+both for newly added and existing groups.
+Now, there is also this GUC.
+GUC is like a user configurable variable
+in PostgreSQL
+called row_security.
+That's very misleading.
+And it tells you, like you can set it to off.
+And what it does is it doesn't disable
+row-level security.
+What it does is it tells you,
+if I run a query now, would this query be
+limited by the policies of row-level security?
+And you can see here
+we have a table literature_entries.
+We select from it
+and we see two books by Douglas Adams
+and we turn row_security to off
+and do the same query again.
+And now we get an error that,
+hey, this query would be affected by row-level
+security policy for table, blah, blah.
+Now, maybe you see a gap between 1 and 3.
+So it says that there are two rows.
+We don't know if there are two rows,
+but maybe there's more.
+Maybe some policy hides that row from us.
+This is useful
+for the too big towel example.
+Like if you're doing backups,
+you want to make sure that you export to the rows.
+So knowing that something would be
+hidden is useful.
+And this is actually something
+that pg_dump is doing
+when it's doing an export to make sure
+that you're not tripping over your own towel.
+OK, so that's row-level security with
+PostgreSQL itself.
+Now with Citus,
+Citus is kind of cool.
+Citus brings some
+alien technology back to PostgreSQL
+so that you can get
+your standard PostgreSQL database
+and expand it horizontally across
+multiple machines, just like a Galaxy Expanse.
+And you can do it by schema or by row.
+And we will focus by row
+in this specific presentation.
+So think of sharding as in like partitioning.
+So imagine you're taking a table and deciding,
+I’m going to take a column of this table
+and designate it as the distribution column.
+So I'm going to split the table
+based on the values of that column.
+And that way you end up with many small tables,
+let's call them shards.
+The magic in Citus is that it allows you
+to move shards to a different machine
+and all machines in the cluster
+know where every shard is.
+So if you ask any machine about any data,
+it knows where to go to get that data back to you.
+So because I'm lazy and I have it handy,
+I'm going to use Elastic Clusters,
+which is essentially Citus available
+on Azure Database for PostgreSQL Flexible Server.
+And it's the standard Citus
+that you can use and deploy yourself.
+What it does actually is
+like the difference
+is that we added this special port 7432,
+which actually load balances any connection
+that you may make to any node in the cluster.
+And that way you can scale your workloads by
+splitting up the incoming traffic onto many nodes
+and have every one of them act as the single,
+like as a coordinator node essentially.
+So imagine
+that in the bustling data hubs of the galaxy,
+there is this pan-galactic bibliotheca
+that maintains a table called literature_entries
+that we saw before
+to store books, poems
+and other countless creations.
+This is the table, it's very basic,
+but we also know that some of these will be
+the dreaded works of Vogon poetry,
+and these can cause distress
+to anyone who reads them.
+So it would be nice to have some form of
+preventing people from
+accidentally reading Vogon poetry.
+So we add a content rating, and
+this 'Ode to a Small Lump of Green Putty'
+is an abstracted part of a Vogon poem
+that we want to prevent people from seeing.
+So we will have
+'safe' as the content rating for any
+non-Vogon poetry,
+and 'vogon_poetry' essentially for Vogon poetry.
+Next up, our prosthetic Yeltsin Jr.,
+the author of the database,
+a well-meaning but slightly careless DBA,
+will try to define
+some roles and policies on how to access this
+table.
+So we can see a critic role,
+a vogon bureaucratic role.
+These roles are NOLOGIN,
+they are used for grouping permissions,
+and we create a very simple policy on the table,
+allowing you to read safe poetry,
+and a policy for vogon_bureaucrats,
+allowing them to read everything if they want to.
+And of course, we enable row- level security.
+Prosthetic Yeltsin made a mistake of
+not doing force row-level security.
+So as the table owner,
+when he tested this and ran SELECT * FROM table
+he was exposed to the full length of the
+Vogon poetry, and ended up
+essentially hospitalized for the remaining time.
+So please remember to apply policies.
+So row-level security with Citus itself
+is the same as with PostgresQL.
+There's really not much difference,
+because Citus is magical in a way
+that you can do almost anything
+that you can do with Postgres.
+But there are some good practices that you can do
+when using row-level security with
+Citus itself.
+The first thing is, there are two ways
+you can set up policies.
+One way is to use role-based policies,
+let's call them that.
+So you can see here, I have an
+example based on the standard
+Citus tutorial with companies, ads, and campaigns.
+And I'm trying to limit every tenant of the table
+to access its own rows.
+So I'm defining a policy on every table
+that's for all commands,
+and I'm allowing the current user
+to execute that command only if
+their user name, the PostgresQL role, matches
+what's stored in the id column
+or company_id column,
+because this data is distributed
+based on company_id, essentially.
+This is nice because it
+limits access down to
+protocol level.
+You connect with the user,
+when you have access or not,
+and there is not much you can do about it
+in terms of swapping tenants.
+The problem with this is overhead,
+like you're adding a lot of users to your database,
+so that may be cumbersome.
+And the other problem with that is
+you have more connections overhead,
+because you cannot multiplex
+a single connection onto multiple tenants.
+But that is very useful when you, for example,
+have an application and want to give
+a tenant direct database access to your system
+so that they can do ad hoc queries
+without the risk of them
+snooping around on other tenants.
+Another approach common for doing
+row-level security with Citus would be
+a SET LOCAL-based policies.
+So we can use
+PostgreSQL settings and introduce
+a custom setting like my_app.company_id
+and set the company_id to the tenant
+that's going to use the database.
+And here, everything is the same except
+that we're reading the current setting of
+this value and comparing it with the company_id.
+So querying that data with
+SET LOCAL setup is very simple.
+First, in your connection, you need to enable
+propagate_set_commands to local
+so that local commands are propagated.
+Then you open a transaction.
+Within that transaction,
+you SET LOCAL .company_id = 5;
+And then you can do a query for that company_id.
+And you should be able to see those rows.
+But if you try to query for a different row,
+that row won't be visible.
+Like if you tried company_id 6
+with this value being set to 5.
+There's a gotcha with Citus before version 13.1.
+In version before 13.1,
+if you're doing transformations with this
+WITH INHERIT option or with that option,
+these won't be propagated
+to all nodes in the cluster.
+That changes with Citus 13.1.
+But in previous versions,
+if you want to use something like this to
+essentially assign rows,
+you will need to disable DDL propagation
+and use the run_command_on_all_nodes
+to essentially execute this command
+on every node in the cluster.
+That's just an easy way to do this.
+So now that we've got all the theory
+out of the way,
+we can actually jump
+into seeing both things in action.
+So we are going to do the Vogon Poetry example.
+And we will do the row-level security setup
+with the campaigns table for Citus.
+So let's swap to a friendly PostgreSQL terminal.
+And I'm here connected, actually.
+I can connect here to my
+remote cluster running Citus
+on a two-node machine.
+Let's swap this place so that it's better visible.
+So you can see I have two nodes.
+This node on port 7000 and this node on port 7001.
+And I took the leisure of creating some tables.
+So ads, campaigns, companies, literature_entries,
+and even reviews.
+And what we are going to do is, first off,
+we are going to just select from this table,
+from literature.
+So we can see all the three rows,
+including the vogon_poetry row.
+And this is because we haven't enabled row-level
+security yet, and we haven't defined any roles.
+So if we connect to this database, for example,
+not as me, but as Arthur,
+we can also see that
+Arthur is able to query the whole table.
+So if we swap to display,
+we can see he unfortunately can see vogon_poetry
+and we don't want that to happen.
+So let's connect back.
+Let's enable row-level security
+on this table.
+And if you look at it right now,
+you will see that the policies are enabled.
+And that should change how things work already.
+So let's connect back as Arthur.
+Let's filter
+and do a query.
+We can see that we have no rows because by default
+with no policies, nobody can access anything.
+So let's define some policies.
+So, I'm going to execute CREATE POLICY
+that we saw in the slide deck.
+This creates two policies,
+you can review them on the table.
+POLICY... FOR SELECT 'safe'
+and POLICY for 'vogon_access'
+for vogon_bureaucrat to everything.
+If we connect now as Arthur
+and try to read from this table,
+we still have no rows because we didn't assign
+any role to Arthur himself.
+If we go to
+my superuser account and check
+what role assignments I did,
+you can see that zaphod is a critic,
+marvin the robot is a vogon_bureaucrat
+because robots don't care
+about reading Vogon poetry.
+But just for the sake of it,
+we prevent Arthur, the regular human being,
+from reading anything stored there
+because maybe he sees that
+Earth is bound to be destroyed in 50 years
+and maybe files a complaint
+and the Vogons wouldn't be happy about that.
+So, what can we do here?
+Let's connect as zaphod
+and see the same table.
+We can now see that...
+the vogon_poetry is hidden properly,
+so the rule that we defined is fine.
+And if we connect as the
+marvin robot and execute the same query,
+we can see the additional vogon_poetry
+being shown.
+Now, zaphod is a very
+curious fellow
+and he noticed that there's this reviews table
+that doesn't have row-level security
+but has a foreign key reference to the
+entries table that stores all the data here.
+So, the question is,
+can I insert into reviews
+where...
+and I need to do a select
+so that I have some... Yes.
+So, can we add a review
+for the first entry in the books table,
+put 'good book'?
+I can,
+if I write without errors,
+which is reviews. Sorry.
+So, I was able to add a review
+for the first entry in the books table.
+I can add it
+for the second.
+I can add it for the third book.
+And I cannot add it for the fourth book.
+So, what happens here?
+If we select as zaphod
+from the entries here, we only see two entries,
+but we were allowed to do more.
+We were allowed to insert the second row.
+So knowing this, we just figured out, okay,
+if I provided an ID that doesn't exist,
+I would get a foreign key constraint error.
+I didn't.
+So, entry two must exist.
+And that way, zaphod found out that on row two,
+there is probably something hidden.
+Now, this may or may not be a problem.
+This is like a side channel leak.
+Essentially, somebody using the knowledge of
+something is there
+to figure out if it's there or not.
+That may or may not be a problem,
+but keep that in mind.
+You can, of course, design around it.
+You can make sure that you cannot add reviews
+for rows that you shouldn't see, etc.
+But just keep in mind,
+when you're designing your security policies,
+what type of information can be figured out
+by the act of not seeing everything.
+Okay, now we can
+switch to the Citus-based example.
+So, we're still connected to the cluster.
+Let's make sure that I connect as my superuser.
+We see several tables.
+Currently, there is no policies in place.
+So, let's enable row-level security.
+So, this is a very simple
+ALTER TABLE for every table.
+Enable row-level security.
+Now, we have row-level security enabled,
+but with no policies.
+So, what does that mean?
+That means that right now,
+I can connect as tenant_42,
+and I can do a query.
+Like this for company_id 5.
+And I enabled row-level security.
+So, since there's no policies,
+I see no data, neither for this tenant
+or for my own tenant.
+So, if I do 42, I still see nothing, right?
+Now, if we want to fix this,
+we need to define some rules.
+So, let's define the role-based policies.
+Policy role-based.
+We saw it in the slides.
+This compares
+the current_user to 'tenant_' id of the company.
+So, roles are now created.
+I did cheat and I created
+100 tenant-something users beforehand
+so that you don't have to wait
+for me to create them now.
+And, of course, in a scripted manner.
+But let's connect back as the tenant_42 user.
+And let's try doing this query again,
+which is, hey,
+I want to see rows from tenant_42.
+And suddenly, we can see the data.
+And this is very bad.
+But I have a meeting starting right now.
+Okay.
+So, if I switch to company_id 5,
+we can no longer see the data
+because I'm connected as tenant_42.
+And if I select from the companies table,
+all I see from the companies table is tenant_42.
+If I reconnect as tenant_13,
+the only data I will see when
+querying from the companies table
+is rows for company 13.
+There's no other way for me to access
+any other row in these tables because my access
+is limited by the policy that we defined
+that I have to be this user to access these rows.
+So, let's drop this policy.
+This is just
+DROP POLICY name from the companies tables.
+And let's define the second policy,
+which is the SET LOCAL based policy.
+So now, with this policy in place,
+if I'm connecting as advertisement user,
+for example,
+so nothing related to the tenant setup
+that we had before,
+and I do a query from companies, it will fail
+because I didn't define this SET LOCAL variable.
+So what I need to do
+is query SET LOCAL.
+First off, we disable the set commands.
+Then we open a transaction,
+set my ID to this company_id 5, then do the query.
+So let's do this.
+And we can see a lot of results.
+Now we can try to do this manually.
+So I'm going to open a transaction,
+set local my_app.company_id = 42;
+Select all from companies.
+And I see... I'm going to change the display....
+And I see only record 42.
+Now, if I change the app ID to 13,
+and I do the query, I can see
+data for a different tenant.
+And as you can see,
+I can reuse the same connection.
+So from the application's perspective,
+that's nicer,
+because it's easier to handle this
+without additional users.
+But if you're allowing
+somebody direct access to the terminal,
+then that's harder to manage
+and filter off, essentially.
+So with that,
+you should be set up for your travel
+with row-level security.
+Grab your towel and go try it out.

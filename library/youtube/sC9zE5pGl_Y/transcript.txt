@@ -1,0 +1,1169 @@
+[Music]
+foreign
+[Music]
+welcome to the first episode of the
+cloud security Lounge I'm your host JB
+Javier with Izar and we are glad to
+Welcome to the Steve springette
+Steve welcome to the cloud security
+launch thanks for being our first guest
+um Steve you are the author of The
+Cyclone DX specification which is one of
+the most famous es boom specification
+and you are also working on the on the
+Cyclone DX specification curl working
+group our listeners can find you or get
+in touch with you on LinkedIn in Twitter
+and obviously we let the new contacts in
+the in the notes of the episode
+about me I'm um JB so I work at datadog
+I was a co-founder and CTO at screen
+where we built application security and
+we got acquired by data in 2021st and
+now I'm building the security products
+over there obviously in that Journey I'm
+not alone for instance Izar is also
+working at datadog yep and uh been doing
+the security thing for a long time it
+was proficionado that was the first
+place where I saw a Steve a couple of
+years ago at wasp Cali I wandered into
+your presentation totally by mistake to
+tell you the truth but uh you started to
+be so interesting that I said you know
+what I'm probably in the right place
+so after 45 minutes I came out to
+understand thinking that I understood
+what s-bombs are all about
+app set Cali is a great conference and
+uh you know the fact that I could you
+know persuade you to stay in my room as
+opposed to going out to enjoy the beach
+is uh thank you for that
+so I'm honored to be uh your your first
+guest on the podcast and and
+congratulations on its launch
+thank you Steve would you would like to
+start by
+um quickly reminding the audience what
+is uh esper and and maybe how that
+relates to security right so uh a lot of
+descriptions for s-bomb actually break
+it down to a simple list of ingredients
+right uh food for whatever reason we
+always use food as the analogy
+um people are hungry I guess but when
+you look on the back of an angry you
+know packaging of a food label you see a
+list of ingredients that's the common
+analogy I don't I don't really prefer
+that analogy but it's um the the overall
+push in the industry has been around
+software transparency
+um and you and making transparent the
+third party and open source components
+that you use is one of the objectives
+within the overall transparency movement
+and software bill of materials is just a
+mechanism in which uh facilitates that
+transparency
+but there's a lot of things that you can
+do with the software bill of material
+and it is much more than a simple list
+of ingredients
+which I think get us to our first
+question so what would you say we're
+trying to solve with as bones Steve
+you know that's that's a really great
+question the transparency uh of an
+s-bomb or a bill of material in general
+is going to lead to a lot of different
+use cases right the primary motivating
+factor for the U.S federal government at
+least for initially for the transparency
+effort was just about
+identifying those at risk components
+those things that have known cves for
+example
+um the things that might be out of date
+or maybe the supplier is no longer in
+business so those are like the immediate
+type of security use cases that you can
+achieve with uh with a software Bill
+material but obviously you know there's
+all kinds of other security use cases
+there's authenticity use cases there's
+Integrity use cases
+open source is the ultimate supply chain
+and components are continuously modified
+and renamed and redistributed at
+infantium so being able to track all of
+that is also very useful security use
+case did you copy and paste vulnerable
+code from stack Overflow fantastic
+documented in yes Bob
+um so it's these types of security use
+cases that can also be represented as
+opposed to you know much more things but
+even within security outside of security
+you know security is you know we might
+think of it as a center of the universe
+but there's all kinds of other use cases
+there's license and intellectual
+property use cases there's use cases for
+mergers and Acquisitions that
+incorporate both security license IP and
+and other types of use cases as well
+um so it's really about what type of
+information can go into that bill of
+material and transparently provide that
+information out to the people who need
+to be able to analyze it and depending
+on your role and what type of data you
+care about for that role is is really
+going to dictate what the the use cases
+are and what you can do with that so you
+touched in a use case here that I I
+hadn't thought of before that the GitHub
+one the cut and paste and I think that
+that links a bit into the fact that
+perhaps because a lot of people see the
+analogy of the food label and stop there
+or perhaps some people are more familiar
+with some different or unique format of
+of s-bomb of which we come to learn that
+there is quite a number and could you
+just visit a bit that's that's I don't
+know if even if it's a battle but the
+fact that we have these many different
+s-bomb standards out there and if I
+don't know they apply to different cases
+and then go and explain a bit more about
+this GitHub case that you mentioned sure
+yeah I mean there's two primary formats
+um in existence today there's a cyclone
+DX and there's spdx they both solve very
+different problem spaces really came
+from different entirely different
+backgrounds
+uh spdx grew up in an era of manual use
+cases it's a fairly old spec and lawyers
+be lawyering because they you know they
+came from that license and intellectual
+property use case uh these spreadsheet
+format is and was and currently still is
+a viable format for spdx right being
+able to make annotations uh comments uh
+on hey this license might look iffy
+because of X Y and Z perfectly valid use
+case but that's kind of the era in which
+spdx grew up in
+um not a big fan of their file format
+which is kind of why Cyclone DX exists
+in the first place but they've done a
+number of great things with in terms of
+like uh just standardizing how licenses
+open source licenses are identified or
+how they can be expressed for example I
+might have a dual licensing where I
+could either apply maybe a
+a GPL without the class path or you know
+some other license right and you can say
+either you know you you have to do one
+license or the other or maybe you have
+to do two licenses to be able to use
+that component right so they've
+developed both the identifiers and the
+expression languages which you know are
+in wide use today
+um Cyclone fully supports that and has
+since version one
+um but those are the two big formats um
+Cyclone obviously grew up in a later era
+it grew up in an age of devsecops
+automation right we had to as Security
+Professionals we didn't have to automate
+for any kind of efficiency or anything
+like that we have to automate for
+survival right we had typically it's
+very small security groups and we were
+serving tens of thousands of developers
+in some cases
+and we had to automate and so Cyclone DX
+grew up in an age of of automation so
+the the object model in Cyclone is is
+kind of geared toward being highly
+automatable it's it's not the perfect
+object model it's not designed to be the
+perfect object model it is designed to
+be highly automatable
+um so there's a very big difference
+between being able to automate something
+versus being able to automate
+continuously that same thing using
+multiple different tools until the end
+of a that s-bomb process is done so we
+grew up in entirely different eras you
+know obviously spdx came from license
+and intellectual property and Cyclone DX
+came from the owasp and security World
+we've kind of enroched on each other's
+uh Turf so to speak a little bit and the
+next version of cyclone actually is
+going to have more licensing
+capabilities than spdx supports so
+that's uh that's something that we're
+really proud of the copy and paste issue
+is a really big valid one actually
+um not just for like the copy and
+pasting of code but just actually making
+derivatives of of things right
+um a very common pattern that you get
+into especially with large applications
+is once you have a lot of components in
+your application tight coupling becomes
+a thing and simply upgrading components
+may not necessarily be viable right
+because you upgrade this component well
+then you have to upgrade this other
+thing which means you also have to
+upgrade this other thing which means
+that now your application breaks
+so things are a lot more complex in the
+real world so a lot of organizations
+what they do is they Fork some of these
+components because of tight coupling
+they Fork them they make those the back
+ports to otherwise vulnerable components
+and they can describe what those back
+ports are right they can describe the
+commits who made them they can describe
+the diffs what specific changes were
+made why were those changes made it
+resolves cve X and and that way when you
+consume that bill of material now all
+your lights don't go off right now you
+know that hey you're using an otherwise
+vulnerable component but this vendor
+actually did the right thing right they
+backported I'm no longer susceptible to
+this vulnerability it's a very very
+common thing with you know real
+applications so these are things that go
+beyond just a simple list of ingredients
+that are really important and so do you
+see a vendors actually going to that
+level of precision and annotating their
+own dependencies with that level of of
+care yeah
+so my own employer for example I work
+for servicenow and our MVP of our s-bomb
+contains you know the the normal things
+from the NTA minimum elements uh in
+addition to I think we also have
+licenses in there as well but um you
+know like any big platform whether
+you're servicenow or some other big
+platform company you're going to have
+tight coupling and you're going to be
+using vulnerable components it's
+inevitable
+um but you know we are responsible
+platforms right we are responsible
+vendors and we've got hundreds of
+components that we've forked we've
+backported security fixes so that our
+customers are not vulnerable so while
+the MVP of our s-bomb is not going to
+have that information we absolutely need
+to include that because we don't want as
+vendors we don't want our support staff
+to get overwhelmed when consumers
+actually start consuming these s-bombs
+and thinking that we're using a bunch of
+vulnerable components when in fact we're
+not it wastes their time it wastes our
+time and we need to think about the
+customer experience
+so you're describing a richness of
+format here that I I have to confess I
+was not aware that has bones were
+reaching into and I wonder how that
+connects with other formats that have
+started appearing to continue the
+process of informing risks based on an
+s-bomb like Vex or vdr how do you see
+those things progressing do you see them
+coming becoming part of yes bomb or
+still being separate formats in terms of
+the pedigree I believe it's kind of
+um unique to Cyclone at this point uh
+you know spdx can be can do a little bit
+of that but it's not quite to the extent
+that that we can with Cyclone
+um Vex is going to be extremely
+important one of the pushbacks that
+vendors have in general is that they
+don't want their support staff to be
+inundated with uh with calls and being
+able to describe uh things like
+um you know I'm not vulnerable to you
+know log for Shell because of X Y and Z
+is kind of important for vendors
+um you know there's a lot of studies
+based on you know whether you go to
+different SCA vendors or different
+research vendors whatever that the
+overwhelming majority of vulnerable
+third-party components are not actually
+exploitable in the context of the
+application in which they're running
+right we all run vulnerable components
+it's it is inevitable but are they
+actually exploitable in the application
+most of the time they're not and being
+able to communicate that is really
+important for vendors and it it helps
+consumers actually focus on the things
+that matter so the way you describe
+annotating your own as boom with um how
+what you and what happened so it
+feels like really ideal to me but it
+also feels like pretty hard to to to put
+in the workflow of developers right do
+you how do you manage to to to guide
+them through doing that lots and lots of
+glue
+duct tape and super glue you know
+creating an s-bomb which is why I've
+always I've always considered creating a
+bill of material as a process it is not
+a one thing it is not a one-time event
+it should never be viewed as a one-time
+event and anybody who views who does
+view it as a one-time event I think
+really doesn't understand the the true
+nature of what a bill of material
+actually is
+um you can start creating them with your
+package manager for example but your
+package manager isn't going to know a
+lot of different things right if I run
+npm or or uh you know Maven or something
+my package manager is not going to know
+that you know I forked this version of a
+cap Apache common Zio right it's just
+it's just going to see my it's just
+going to see Apache Commons i o or maybe
+it will even see my renamed version of
+Apache Commons i o dash custom or
+whatever right so
+um package managers are not only
+intelligent they also are going to be
+completely blind when it comes to
+non-software digital assets right what
+are the fonts what are the images what
+are these services that my application
+also depends on right do I rely on some
+type of uh you know service to fetch
+stock quotes from the internet
+um great that should be part of my
+inventory because it is a dependency of
+my application but your package managers
+manager doesn't know all these other
+details right it just knows what's what
+you've specified on the Manifest but if
+you have forked all these things
+hopefully you have documentation on what
+that is and if you do then you can
+describe the modifications and if you
+have references to the defects then you
+can start pulling that information
+together
+and once you have this data then you can
+describe oh well I see that this change
+actually affects this defect over here
+which actually is a security thing which
+is a cve over there so now you can start
+pulling all this data and start
+populating into in into your s-bomb
+which is one of the things that we're
+looking to do within servicenow so when
+I said duct tape and super glue yes I I
+kind of meant that because we all have
+different systems you know some of us
+use GitHub bitbucket gitlab whatever we
+use jira we use servicenow we use GitHub
+issues we use all these different things
+and there isn't a single tool that is
+going to be able to work with everything
+so a little bit of duct tape and super
+glue is kind of necessary at least for
+the time being to get to that next level
+so you're talking about in the future
+we're going to get there but every time
+that I participate in a discussion that
+has s-bones uh somebody brings up the
+okay we have an s-bomb and it's even a
+good one but what do we do with it now
+right do we just publish do we sign it
+do we
+store it somewhere and never look at it
+again so if you had to describe an
+ecosystem of automations around the the
+correct use of an s-bone trying to
+extract the most value that you can what
+what are the bits and pieces that you
+would put in place to put the glue and
+the tape on
+yeah I think the first thing that any
+organization that adopts that spam is is
+trying to figure out what that radius of
+transparency looks like we first have to
+be open and honest with ourselves as
+companies about what really is in our
+software right what are the license
+issues what are the security issues that
+we have and based on that information or
+requirements that we might have from
+regulations or you know whatever we need
+to figure out what that radius of
+transparency looks like and do we put uh
+do we sign our our ad effects I mean I'm
+I'm in big favor of sine s-bombs Cyclone
+actually supports envelope signatures in
+addition to external signatures so if
+you only want to sign part of your
+s-bomb and then maybe sign the full
+thing with a different signature you can
+absolutely do that perfectly valid use
+case and there's a lot of reasons to do
+that
+um but sign is certainly something
+having control over your distribution of
+your s-bomb is something that most
+security event or most vendors so most
+software vendors are concerned about
+while we don't want to necessarily
+leverage security through obscurity it's
+certainly not a bad thing right as long
+as it's not the only thing right so kind
+of limiting what the radius of
+transparency looks like so that only
+authorized users can actually get access
+to the software build materials
+is a good thing in terms of use cases
+you know there's uh there's been a lot
+of talk on quality and quality s-bombs
+are multi-dimensional
+um there's a group within OAS bug it's
+called the software component
+verification standard or scvs scvs
+itself is a is a way for organizations
+to measure and improve their software
+supply chain Assurance
+scbs is referenced in its entirety in
+nist ssdf but the scvs project is also
+working on a bomb maturity model and
+it's a formal taxonomy of all the
+different types of data that you could
+theoretically put in a bill of material
+covering software Services Hardware
+configurations other types of data all
+kinds of other things that could
+potentially go into a bill of material
+every single field has identifier has a
+description and has a level of effort
+and as a consumer of of a bill of
+material you have to kind of know what
+is in there and does it provide the
+necessary data for your intended use
+case and what we envision in the future
+is people taking up the scvs biomaturity
+model taxonomy in creating new
+categories of tools specifically s-bomb
+profilers
+so that you can analyze the build
+material and it will actually tell you
+whether or not it has the data for the
+type of analysis that you want to
+perform right you could get a bill of
+material and it may not actually have a
+CPE or a Perl and you'll run it through
+some kind of security analysis and
+you'll say oh great no vulnerabilities
+in it perfect thank you vendor when in
+reality it doesn't have the data
+necessary for you to perform that type
+of analysis so there's a lot of
+um uh talk about that and we're we're
+trying to deliver a a a viable uh
+taxonomy here within the next month or
+two
+the other aspect of quality is accuracy
+right how accurate is the data that's in
+the Bill of material accuracy is a much
+harder problem to solve right for
+example if I
+um if I generated my bill of material
+from npm or Maven and I do have modified
+components but I don't document that
+well how accurate is that bill of
+material at least it's not going to be
+accurate for those modified components
+that I have and the consumer is not
+going to know that right how accurate is
+the license is the what the stated
+license in that's in the repo actually
+accurate or is there other legal
+considerations that we that we need to
+to also take in consideration right so
+the accuracy is is a much harder problem
+to solve and I think as an industry
+we'll we will eventually get there
+there's a lot of tools create that that
+are being created that actually do
+Target s-bomb quality and some of those
+tools will be supporting the oau
+software uh the the biomaturity model
+that I talked about super interesting I
+think that's that also brings the the
+topic of like freshness of the of those
+boom right which seems similar in terms
+of quality efficacy as you as you
+described that's something that we
+care about at a data luxury maybe I I
+wrote a quick schema that I'm going to
+share
+um so in terms of s booms you can
+imagine that a lot of different things
+uh can be used as a source for s-bones
+from Dev ide's continuous integration
+the side scanning that would be like
+purely
+Cloud Integrations for instance and the
+in the runtime
+and so I guess what you describe is that
+usually vulnerabilities are often
+vulnerabilities are not directly within
+s booms and and what to do later with
+this boom can be can be anything
+and so each organization or vendor might
+have a different approach each of those
+s-bone sources have pros and cons and
+things that might be more or less
+precise more or less information and and
+yes so obviously the the other one is
+the is the runtime one and so one thing
+I'm very curious about Steve is so given
+each of those sources can have different
+um
+information uh different data sources
+that they could leverage in order to
+enrich the s-boom what are the kind of
+things that we can share within sboom
+that go beyond the the pure uh list of
+uh of software materials yeah I think
+the runtime environments are really
+interesting
+um we refer to that within Cyclone as as
+Obama or operational bill of material
+which is kind of a a superset of your
+s-bomb your maybe the hardware that is
+running on maybe the container images
+that you're using
+um maybe it even links out to the
+organizations that the parties that are
+responsible for the operational aspects
+of that so we actually refer to that as
+the sdo bomb but um yeah I mean we've
+always tried to position s-bomb in
+general as a you know as a way to
+provide transparency that would not be a
+quote unquote road map to the attacker
+right the adversaries I mean providing a
+list of ingredients the adversaries are
+smart they can figure that out on their
+own uh it's not hard especially if you
+have a you know remotely exploitable
+vulnerable component right it's not
+difficult existing exploit code is going
+to test for the existence of all those
+things anyway
+um but there are other things that you
+can put in in a software in an s-bomb
+that could in fact be a road map to the
+attacker which we need to again when
+we're talking about the radius of
+transparency we need to be cognizant of
+so for example if we described in a
+software build material the precise
+steps in which that software was created
+yeah that as an adversary that gives me
+a way to threat model their build
+process and you know potentially exploit
+that in the future do I actually want to
+provide that out to my customers
+probably not
+um that would be a case where the radius
+of transparency if I have that data in
+my s-bomb I probably want to keep that
+fairly you know close right I probably
+want to keep that within my organization
+or have really strict contract uh
+Provisions that would exclude you know
+divulging that information out
+um but you know the peer inventory use
+case
+um is is kind of what we're capturing
+but you know again we try to not provide
+a road map to the attacker because once
+we start going down that route then
+you're gonna have more and more pushback
+from vendors so
+um what we do see are a lot of
+organizations producing uh both
+externally
+consumable s-bombs so things that don't
+have all that other information and will
+not be a road map to the attacker versus
+internally uh used s-bombs which have a
+lot of that other metadata in it that's
+going to be really useful for the
+organization that produced it and really
+bad if it got into the and got to the
+wrong hands so you you mentioned the the
+vendor pushback and I I think it can't
+go unsaid that uh
+when the US government came out of their
+first memorandum and now the cyber
+security policy which both mentioned the
+s-bomb we have seen some pushback from
+vendors basically and saying okay you
+guys are requiring us to create this s
+bonds and to to publish them but
+nobody's telling us what exactly going
+to do with it so you are going to push
+us into building this whole process
+inside and and this whole complex way of
+maintaining insurance and whatnot and
+then giving it to you and then what
+happens what do you think of that
+pushback I I'm surprised that the
+vendors are pushing back but
+um you know I guess I guess it's to be
+expected because even if the vendors
+start asking their cut you know their
+suppliers for us bombs what are they
+going to do with it once they get it
+um there is not a shortage of tools that
+produce s-spons right we have literally
+hundreds of them available today there
+is a shortage of consumption tools so
+what do you do when you actually get an
+s-bomb
+um you know things like oauth's
+dependency track which has not it's now
+celebrating its 10th anniversary was
+specifically designed for this purpose
+right it was designed before s-bomb was
+even a term it it basically the original
+use case was for bill of materials right
+I didn't I needed a way 10 years ago to
+track
+um what are called server appliances
+these are things that people deployed in
+their data centers and at the time I
+need I needed to track the the hardware
+all the
+um the firmware uh the operating system
+OS packages applications application
+libraries I had to track the entire
+thing
+and that's the original use case that
+dependency track was was built on and
+now we've got tens of thousands of
+organizations including multiple federal
+agencies that have standardized on their
+use of of s-bomb consumption using that
+tool
+um but that's just one tool right
+and it only supports Cyclone DX so what
+happens if you standardize on spdx well
+there's even fewer consumption tools for
+that especially at the Enterprise level
+right if you are an Enterprise where you
+have quite literally hundreds of
+thousands or even millions of devices in
+your environment and you are going down
+that s-bomb route and trying to do
+everything right what are you going to
+use there's not a lot of options out
+there you know other than dependency
+track and some other things that are
+kind of in the works but what do you do
+in an Enterprise scale and how do you
+tie that back to assets in your cmdb
+um that's uh that's kind of a growing
+field but you know the pushback is is
+legit
+um I've actually talked with uh you know
+NSA reached out to me last year because
+they were doing some research a couple
+couple other analysts reached out to me
+and they had some questions on
+dependency track and a few other things
+and
+um because they were trying to provide
+some guidance for the federal agencies
+right so at least on the consumption
+level anyway Steve is something you you
+mentioned uh during the preparation was
+uh SAS boom
+um could you could you tell us more
+about that the concept of services came
+about you know several years ago
+um I I was actually working on a mobile
+app and we had a Transit of dependency
+that actually re that actually phoned
+home to some service and we had no idea
+what this service was because we weren't
+doing the one making the call uh it was
+a Transit of dependency so at that point
+it became kind of of obvious to us that
+we need to start tracking Services as
+part of our software inventory just in a
+normal s-bomb so we added support for
+services into the spec and it's been
+it's been hugely successful right while
+your package manager may not necessarily
+know what your services are there are a
+lot of tools out there that can discover
+what your services are and and augment
+those in your s-bomb right but then what
+happens if you start taking away the
+software components and you're left with
+only Services well that's essentially
+what a SAS bomb is it allows you to
+describe all the services that are in
+your environment maybe you're just maybe
+you want to describe a microservices
+architecture or maybe you want to
+describe maybe a system of system for
+example
+the various Computing components in an
+automobile for example so it allows you
+to to describe all these different types
+of services and their dependencies to
+other servers Services the interesting
+thing about SAS bombs is that it's
+really about what we want to protect in
+the case of an s-bomb well this is
+primarily intended for software that we
+would deploy right and it's our
+environment that we need to protect
+right if we want to protect our
+environment we kind of need to know what
+is that vulnerable version of log4j
+right so that we can protect that
+environment well in the case of SAS well
+we're paying somebody else for that
+service right it's not the environment
+we want to protect it's it's the data
+and so these the data and the data
+classifications and the directional flow
+of data and the trust boundary
+traversals these are types of things
+that we can represent in Cyclone DX
+because again it's it's really about
+what we want to protect so wait do you
+you're blowing my mind here
+let me bring this to to a place that's
+near and dear to me which is strength
+modeling and I heard you describe the
+album The operational bill of materials
+the s-bomb with sort of like almost a
+system of systems approach to what
+services are we using of course we have
+the s-bomb it seems to me that you are
+building to a set of different bombs
+that at the end of the day they will
+have enough resolution to describe
+exactly what's running what's talking to
+whom which pieces are in play and what's
+not and at some point if I have that
+then the system doesn't have a threat
+model yet
+that would have a lot of information
+that I would need to actually build a
+good one that is absolutely where we're
+going and in fact I think you will be
+happy to note that in so in Cyclone DX
+we have these things called external
+references and they're basically like
+things that are outside of the component
+or service that are are related to them
+it's our way of establishing
+relationships uh within Cyclone DX and
+you'll be pleased to note that that we
+are adding we're actually about doubling
+the number of external references that
+we support we're including things like
+maturity models so if you have like an
+oauth Sam for the organization or a B
+SIM for the organization you can
+reference that you can reference all
+your static analysis results maybe your
+pen test results maybe any kind of
+certifications and yes throt modeling is
+a threat model is a new type of external
+references so if you have like something
+in otm format maybe it's just a pure
+dataflow diagram whatever you have you
+can absolutely reference these things or
+actually include them in your bill
+material itself so yeah because I'm a
+big threat modeling person as well and
+that's kind of what my team does within
+servicenow and so being able to
+represent all those different type of
+security data is kind of essential
+depending on the type of use case that
+you want to perform right
+um so yeah that's kind of where we're
+going with this whole thing and the SAS
+bomb uh capabilities in Cyclone DX
+actually allow I think I think there's
+enough granularity right now to actually
+convert a cyclone DX a SAS bomb into
+otm and for those that may not know what
+otm is it's the open threat modeling
+format it's put forth by a company
+called Continuum security they make a
+product called erious risk on that
+advocating for this particular product
+however
+traditionally what has been problematic
+in threat modeling is that the outputs
+have always been tool specific so if
+you're using multiple tools interrupt
+has always been a challenge and otm is a
+is an effort to kind of standardize that
+there's enough data in Cyclone DX to
+actually generate a an otm that would be
+useful for the basis of a threat model
+I will be looking into that I'm sure you
+will sure you will
+I'd like to to share
+um like data dog approach to um sboom
+and to or at least how do we Source
+s-bones right
+um so so the goal is to really have
+something that is low friction so here
+what you can see is basically just the
+the what we call the service catalog
+it's it's a list of the services that
+you may have in your organization and it
+includes like ownership information
+about the repository and obviously
+um Telemetry with information such as
+like performance where we give you data
+APM review in real time like a latency
+and the request prescription Etc but we
+also have the security Tab and so just
+based on the APM nothing like
+um specific to to add here we can gather
+from the runtime context the
+vulnerability information and so to your
+pants to your point Steve this
+particular flavor of as boom that we are
+gathering is what's provided by the
+application runtime so what libraries
+are actually required when the
+application is uh starting and running
+if some libraries are loaded later so
+it's it's a different view from what you
+would get from the source code because
+it's not like package that Json or Maven
+that XML it's what's getting actually
+loaded on that specific execution right
+just from a purely observability tool we
+can use that dependency data and see
+that
+um what are the actual vulnerabilities
+that we that we got there and so one
+topic that we touched but didn't discuss
+yet deeply is the the topic of
+prioritization because okay once you
+have those 95 vulnerabilities fund what
+do you do so one of the things that
+thanks to all of the runtime contacts
+that we have one of the things that we
+can do is actually actually adjust the
+severity of the vulnerabilities so here
+we see that that specific service didn't
+receive any suspicious requests in the
+last month which
+seems to say that yes the service will
+never be attacked right like no internet
+noise ever reached it so in that case
+we're confident enough that we can lower
+the severity of that specific
+vulnerability
+so that topic of prioritization I think
+is key as one of the implementations
+that we do utilizing as well and so I I
+would love to to hear more
+about that Steve is it something that
+you think is like a first-class test
+boom citizen
+um what kind of how do you prioritize
+the the dimensions of prioritization
+um yeah it's a hard problem I mean uh
+too many organizations I think rely on
+cbss scores which do not communicate
+risk in any kind of way some newer you
+know like dependency track for example
+and a bunch of other tools they're
+starting to to include things like epss
+which will give you
+um you know the probability of a
+particular thing being exploited in the
+next 30 days right
+epss is really good for applications and
+operating systems and these types of
+things but it's not overly good for
+libraries right it's it's it's it's
+better for other things so being able to
+prioritize
+um because if you have limited Cycles
+right most teams have time box
+constraints so if you have time boxes
+and Sprints it's kind of important to be
+able to prioritize your work and if you
+know exactly what the probability of
+something being attacked is going to be
+based on maybe your architecture maybe
+how things are deployed or maybe whether
+or not you know your Telemetry actually
+tells you that hey I have this thing and
+people are starting to starting to test
+it yeah you should probably prioritize
+those signs of things you know it all
+goes back to like different metrics what
+do you want to what do you want to
+measure mean time to recovery for
+example for vulnerabilities is something
+that we absolutely want to measure
+having that transparency while good what
+are you going to do with it and being
+able to respond quickly in the event of
+an incident you know is is kind of the
+utopian thing that we all need to get to
+do you see that as boom as as a required
+Vector for this kind of of information
+is there you mentioned epss is it should
+that fit within sboom is it like I don't
+think so epss is very Dynamic I mean
+it's updated scores are updated every 24
+hours I believe you know there's there's
+so there's things that that I believe
+should be in an s-bombs and and things
+that should not right Dynamic data for
+the most part probably doesn't belong in
+an s-bomb now you know and that includes
+like epss scores and vulnerabilities and
+that sort of thing there is one use case
+for um including vulnerabilities in the
+s-bomb itself and that's for audit right
+what were the vulnerabilities at a given
+specific point in time for this
+particular piece of inventory perfectly
+valid use case but for the most part
+these things should be entirely
+decoupled and Cyclone DX for example
+allows you to decouple your your
+software inventory from your
+vulnerability information so that one
+your s-bomb is static and it's you know
+specific to a release of something and
+your vulnerability information is
+dynamic you can change you know multiple
+times a day so wait let me just make
+sure that I understood you you mean
+audit in terms of publishing the
+packages that are in use in my product
+and at the same time I'm publishing the
+known vulnerabilities on those packages
+at that time did I get it right yeah I
+mean you could you just use it for that
+kind of audit but I was thinking more
+about
+um uh more about you know some more I
+guess uh different types of use cases
+for example uh NTSB when they have to
+National transportation and safety board
+for example in the United States when
+they have to investigate what software
+was in Play When a major incident
+actually happened well then having all
+that software cataloged along with the
+vulnerabilities that that software had I
+think is a very uh you know useful use
+case
+um and you'd probably want to have all
+that data together and SCA tools for
+example are very common to put all this
+data together because again it's it's
+here is the data that we know at a given
+point in time and it's only valid for
+that point in time it doesn't doesn't
+affect five minutes later you know it's
+invalid five minutes later but at this
+given point in time this is the
+vulnerabilities that we knew about is
+there a capability that dependency track
+has yes we we can isolate uh both the
+s-bombs and the Vex for example
+consumption use case for example is you
+know you consume a bill of material and
+that contains your inventory and then
+you consume the Vex which you know if
+the inventory lights up your you know
+your dashboard because of all the
+vulnerable components your Vex is going
+to is your negative advisory right it's
+going to start uh calming those lights
+down right so that as a consumer you're
+only looking at the things that actually
+matter not all the things that might
+have vulnerabilities in IT team I think
+we're getting
+um out of time here is there uh any any
+topic you'd like to uh touch or discuss
+that we that we didn't go through yeah I
+mean uh Cyclone DX is currently of you
+know continuously evolving we are
+working on 1.5 of the spec right now
+we're trying to get that pushed out in
+uh sometime in May we're working on 1.6
+uh beyond that so one five if we're
+introducing machine learning build
+materials we're introducing
+manufacturing build materials which is
+the idea of how things were created
+um we're introducing bill of uh
+attestations uh and then in one six
+we're introducing cryptography building
+materials so being able to track all the
+cryptographic assets the algorithms and
+protocols and everything else so that we
+can start analyzing risk uh for post
+Quantum
+um you know systems and applications uh
+and even beyond that we're looking at
+you know things like entry and exit
+points and all kinds of other things so
+if this is something that your audience
+is interested in uh visit
+cyclindx.org participate there are links
+to our slack channel to our GitHub
+organization to our mailing list get
+involved we are an open Community owas
+projects like Cyclone DX are open for
+anyone whether you are a large
+organization or an individual
+contributor everyone has an equal seat
+at the table and if we have people who
+for some reason just got into the s bomb
+bus now hearing us talking here what
+would be the the order of resources that
+you tell them hey go look at this thing
+and then at the same to start getting a
+foothold yeah I would take a look at the
+ntia.gov s-bomb it's going to have some
+really high level use cases and why this
+is even a thing that we're talking about
+so it's going to have a lot of
+consensus-based documentation out there
+but also take a look at
+cyclonedx.org capabilities because while
+the world is kind of Gone s-bomb Crazy
+there's actually a really big ecosystem
+outside of just us bombs right you can
+do Hardware billing materials and SAS
+bombs and all these other things so
+really start looking at what as an
+organization do you care about and then
+start looking at the specs to see if
+those align with what your organization
+cares about but Cyclone DX has a pretty
+extensive resource of capabilities as
+well as use cases and examples that I
+would I would encourage folks to to take
+a look at and as a tool we would suggest
+people to start looking at those
+dependencies track would that be a good
+first one or for consumption yeah it's
+probably the you know there's a lot of
+consumption tools everything from
+command line things that you can do
+quick and easy to things like dependency
+track which is more of a platform
+um but start consuming them start
+playing with them uh things like
+dependency track are used by again like
+tens of thousands of organizations and
+federal agencies one thing we didn't
+mention and that is also like a very
+easy way to uh to start would be a
+trivia for instance
+so like just giving one example of what
+you what you can do just working on a on
+a specific Google image
+here 3v is
+um is downloading like the the the
+vulnerability of a database of
+vulnerabilities and uh and so it will
+just go through that specific uh dooker
+image and it will make the best to guess
+what other software install on it
+whether it's like operating system
+packages or if it's like the application
+that is installed there 3v will make
+their best to find the files and uh and
+analyze what are the dependencies and so
+we can see like a
+um pretty hard to consume include but so
+you you can also ask a trivia to to
+Output data in a in Json for instance
+and here you would get uh some some s
+burning in a in design format so that's
+also like a very easy way to uh to get
+started and and get your hand on a
+specific husband
+yeah absolutely trevi's a great tool
+I've been using it for years uh they
+support spdx and cyclone and I think
+they also support like CIS benchmarks if
+I remember right and stuff like that so
+it's a fantastic tool we use it all the
+time in our CI pipelines thanks a lot
+Stevo for um sharing all of this
+knowledge with you I think I I have
+better understanding of what as boom are
+but I've also got a lot of questions uh
+because that's like a super super wide
+space and and it's really exciting to
+see what you guys are building in terms
+of bringing support for a new uh
+category and kind of data thanks a lot
+for uh for sharing that uh Steven thanks
+JB thanks sir
+um you know congratulations on the on
+the launch of the podcast and really
+honored to be your first guinea pig
+thank you so much
+have a great day steva cheers you too
+foreign
+[Music]

@@ -1,0 +1,717 @@
+[Music]
+Hello and welcome to the Enterprising
+Investor, the flagship investment
+podcast for CFA Institute. I'm Mike
+Wahberg and today's guest is Rob Arnot,
+founder and chairman of Research
+Affiliates and one of the most
+influential voices in quantitative
+investing. With decades of experience
+challenging conventional wisdom in asset
+pricing and portfolio construction, Rob
+has authored well over a 100 academic
+papers, many of them award-winning, and
+pioneered strategies that blend theory
+with real world application, including
+the practice of tactical asset
+allocation.
+Listeners may recall we had Ed McCory on
+the show last year to talk about his new
+paper that challenged the long-held
+assumption that equities have always
+reliably outperformed bonds. I remember
+that conversation well because he told
+me at the time and I forget if this was
+offline or in the episode itself that he
+was headed then in January, so January
+25 to a CFA Institute webinar to discuss
+or probably defend the findings with
+Jeremy Seagull, Rob here, Roger
+Ibbitson, Elroy Dimson, and Lawrence
+Seagull. And I admit that hearing that
+list of panelists made me a little
+afraid for Ed at the time. The good news
+is that today we are talking about a
+furtherance of that research. Research
+that Rob conducted together with Ed.
+They recently co-authored a paper this
+past spring titled Fear Not Risk
+Explains Asset Pricing. This article
+offers a provocative rethinking of how
+markets actually reward investors and
+what we've been getting wrong for
+decades. I look forward to hearing more.
+So, welcome to the show, Rob.
+>> Thank you very much. It's a privilege
+being here.
+>> Before we get going here, tell me a
+little bit about that webinar. How did
+that go and how did that conversation go
+and how did that sort of inspire you to
+to work more with with Ed on this topic?
+>> Well, firstly, these conversations are
+wonderful fun because we all have a
+mutual admiration society and deep
+respect for one another. We just have
+different opinions.
+Um, uh, Jeremy Seagull's very important
+contribution to the world of finance has
+been his work on the equity risk premium
+and his demonstration that over long
+periods of time, stocks have reliably
+beat bonds for the investor who's
+patient enough.
+And that's the key issue. it. A lot of
+people read his writings as suggesting
+that an investor with a 5-year horizon,
+for instance, hardly anyone has a
+horizon much longer than that, even
+though they should. The odds of success
+for stocks on a rolling 5-year basis is
+actually not brilliant. And and Jeremy
+would be the first to readily
+acknowledge that. Ed McCquer's
+contribution was to challenge stocks for
+the long run by looking at the long-term
+history. He's an empiricist and he's a
+superb empiricist.
+He took a deep dive into the sources of
+long-term returns going back well before
+the crisp data starts in 1926.
+We had the cow's commission taking data
+back to the 1870s.
+We had Schwerk taking data back to 1802.
+And these were based on studies that
+turned out to be more superficial than
+people realized.
+And Ed took the data back to 1802
+and found that stocks more broadly
+defined than short did, more broadly
+defined than cows did had performed a
+little worse than people realize and
+that bonds had performed a little
+better. which means that the risk
+premium had been smaller. Now, the other
+thing that Ed and I both noticed is that
+the data covered by the crisp data going
+back to 1926 and by the Ibbits and
+Sinkfield data going back to 1926
+is heavily dominated by a half century
+from 1950 to 2000.
+Why is that important?
+the stock market went from an 8%
+dividend yield to a 1% dividend yield in
+that 50-year span.
+That means and we have a working paper
+entit called revaluation alpha which
+points out that if historical return
+includes a revaluation and you assume
+that historical return is predictive of
+the future tacitly you're predicting
+that the revaluation will continue
+eight-fold revaluation. So does that
+mean that we should expect 50 years?
+Hence that the dividend yield on US
+stocks will be 15 basis points for a
+dividend yield
+and the cape ratio would have to would
+have to rise to about 300 to match that.
+Um okay
+if you do you want to assume mean
+reversion that is to say when
+revaluation happens it reverses course.
+That's one possibility. That's that's
+what Jeremy Grantham assumes in his
+seven-year real return forecasts. It's a
+little dangerous because you can enter a
+new world where there's new risk
+tolerances. People are living longer.
+They don't have
+if if your life expectancy is 50/50
+chance you're going to be alive in 10
+years. Chances are that you're going to
+demand a pretty high risk premium to not
+spend today. And if your life expectancy
+is is 40 years or 60 years, you're going
+to demand a smaller risk premium. You're
+going to be fine with a lower risk
+premium. And so if the risk prem if the
+normal risk premium changes, then
+revaluation can be sustained, but you
+don't dare assume that it's going to
+persist. Now back to the second half of
+the 20th century. That 50year span saw
+an eight-fold rise in valuation of
+stocks measured against dividends.
+Six-fold rise on a cape ratio basis.
+That is huge.
+The revaluation alone
+accounts for 400 basis points of the
+stock market's return peranom for 50
+years. 400 basis points a year for 50
+years. is attributable to revaluation.
+A, you need to take that out.
+So if the excess return for stocks was
+8% over that span,
+absent revaluation, it was four.
+And if you take the revaluation out of
+the entire century long span covered by
+the Ibbitson data, the Ibbitson data
+will have a century as of the end of
+this year. And that century long span
+would have been influenced to the tune
+of about 200 basis points a year. So
+when people look at the past and say
+stocks have beat bonds over the last
+century by 4 and a.5%.
+Peranom compounded. Fantastic. Except
+two of that was revaluation. Take that
+out and you're looking at 2 and a half%.
+So these are important observations
+because the risk premium is smaller than
+people think.
+If the risk premium is smaller than
+people think and the variability of
+returns is exactly what people think it
+is, then that means that the amount of
+time you have to wait to have confidence
+that you're going to win with stocks
+goes up with the square of the decline
+in risk premium. So if people are
+assuming five and it's two and a half,
+then that means you have to wait four
+times as long to have confidence that
+stocks will beat bonds. And sure enough,
+when when McQuary redid the analysis
+with painstakingly reconstructed stock
+and bond returns over the 125 year span
+ended in 1926,
+painstakingly reconstructing those
+returns to be more accurate, a more
+complete picture. What you find is that
+there was the entire 19th century bonds
+beat stocks.
+entire century. Most of us don't have a
+century to wait for the risk pre to kick
+in and and reward us for our choices.
+Which tells us that the stock versus
+bond decision is lightly based on a
+presumptive risk premium and heavily
+based on a tactical evaluation of which
+is priced to produce a higher return.
+Back in 2000, I wrote a paper, a death
+of the risk premium. It got published in
+the journal of portfolio management in
+and basically it said look stocks have a
+yield of one tips have a yield of four
+stocks have inflation participation in
+the dividends tips have inflation
+participation in the coupon
+and so
+defining the risk premium using tips not
+corporate bonds is actually a more
+sensible comparison. Very few people to
+this day, quarter century later,
+have picked up on that, but still it's a
+relevant comparison. So all stocks have
+to do is have real earnings and dividend
+growth of 3% a year,
+which doesn't sound like a big hurdle.
+3% real growth in earnings and dividends
+to justify being a 3% lower yield.
+That's what it would take to have a risk
+premium of zero.
+All right. Over the last hundred years,
+what's been the real growth of earnings
+and dividends? About 1 and a.5% a year.
+So, if real growth is one and a half and
+you've got a 3% shortfall, odd 30-year
+tips,
+we're back in approximately that
+circumstance today, but with a much
+smaller gap. You've got long tips
+yielding 2 1/2, stocks yielding one and
+a quarter. So real growth has to be one
+and a quarter in order for stocks to be
+long tips. The historic norm is a little
+over one and a half. All right, that
+means you might have a positive risk
+premium of of 2 or.3%. Nobody buys
+stocks expecting a risk premium of a
+quarter%. And so tacitly it's a bet.
+Stocks are a bet that earnings and
+dividend yield will be much more robust
+than has been the case over the last 100
+years. Is that possible? Absolutely.
+That's what Jeremy Seagull would argue.
+So, this all formed the basis for us
+recognizing I've long thought that CAPM
+is built on a shaky simplification of
+risk aversion. And this is not a
+criticism of Bill Sharp. CAPM was a
+brilliant innovation, an enormous leap
+forward, but it tacitly assumes that
+investors hate downside risk and upside
+risk equally.
+>> Mhm. Just beta is enough to capture it
+and and it's it's it's volatility in all
+directions.
+>> Exactly. Now you or anyone listening to
+this podcast, I would pose the question,
+are you more uneasy about downside
+volatility or upside volatility? I'm
+guessing that somewhere around 99.9% of
+us say, I don't like downside
+volatility. I love upside volatility.
+>> And even within that, there's a nuance
+where where, you know, the the
+behavioral scientists say that that we
+we hate downside more than we appreciate
+upside.
+That's exactly right. So this is this is
+where there's been a clash between
+behavioral finance and academic
+neocclassical finance
+and finance neocclassical finance theory
+posits that you have this symmetric risk
+aversion which we know is false.
+in our paper fear not risk uh drives
+returns and the paper points out that
+the fear is symmetric. It's fear of
+downside risk. It's fear of missing out
+on upside risk.
+And what's what's beautiful about this
+idea um by the way um we aren't by a
+long shot the first people to think
+about this. uh Cam Harvey wrote a
+wonderful paper looking at upside skew
+and so if you look at semivariance which
+is the downside half of variance and
+skew which is the upside asymmetry
+those could be the two relevant measures
+for a redefinition
+of finance theory
+in our paper we've been faulted
+absolutely correct directly for not
+advancing a new theory, for merely
+offering a framework for a new theory.
+Bluntly, I'm good at math. Ed is good at
+math. We're both empiricists.
+Neither of us is nearly as good at math
+as the pioneers who've shaped
+neocclassical finance. So the paper is
+really an invitation to those who are
+spectacular at math to flip the signs
+and look at aversion to downside risk
+and aversion to missing out on upside
+risk.
+And it could be skew or it could be
+upside semivariance.
+Either way, you're looking at a measure,
+a quantitative measure that simply adds
+one more dimension. Instead of aversion
+to risk, it's aversion to this risk and
+enthusiasm for this risk.
+Now, if you do that,
+you have an even more powerful tool
+because in market in horrific bare
+markets, people have lost a ton of
+money. The fear of further losses
+becomes intense.
+The fear of missing out on upside fades
+to be very mild.
+And that creates an asymmetry where you
+would expect a big risk premium.
+And during stupendous bull markets,
+basically 09 to 2025 has been a
+stupendous bull market with a couple of
+interruptions.
+It's been astonishing.
+When you get a stupendous bull market,
+fear of missing out becomes intense
+and fear of downside risk fades. In that
+circumstance, you would expect a
+negligible risk premium or even a
+negative risk premium.
+So revisiting finance theory to
+acknowledge human nature to acknowledge
+that people do not fear upside risk
+except maybe just the little hint of
+fear that if I just made 20% oh goodness
+I could lose 20 but there's that little
+twinge and it's only a twinge because we
+love getting the 20%.
+So
+this is an invitation for those who are
+extraordinary at math at the math of
+finance to go win a Nobel Prize by
+reshaping CAPM
+to embrace the asymmetric fears which
+are a fear of loss and a fear of missing
+upside. It's interesting. I u if I could
+interrupt for a quick sec, Rob, the uh
+one of the things I liked that you guys
+wrote in this in this paper was uh you
+referenced Thomas Coon's reference to
+paradigms. You're saying theories can
+fail in the data forever until a new
+better paradigm emerges. So I guess is
+that effectively what you're hoping is
+that you know the data has proven long
+enough that you know that it the former
+way of thinking about risk theory as the
+as the driver or predictor of equity
+risk premium. um or or asset pricing
+really as the underpinning for that.
+CAPM and model portfolio theory that
+really the data doesn't surprise support
+it as much as people have thought it has
+for all this time and that perhaps fear
+as opposed to risk is the way that
+people should be thinking about it.
+>> That's exactly right. So we're not
+proposing a new paradigm.
+We're proposing a framework for a new
+paradigm that we encourage others to
+develop. The academic community includes
+a lot of people who are way better at
+math than Ed and I are, but who are not
+nearly as good as empiricists
+or market historians as Ed or I are. And
+encouraging
+the academic community to stop clinging
+to a theory that is so patently
+obviously lacking. I won't say wrong
+outright. I'll say lacking because it
+lacks an acknowledgement of human
+nature. It lacks an acknowledgement that
+people like making money. They're not
+afraid of it. They're not averse to it.
+And if you simply acknowledge reality,
+you're going to say the beautiful simple
+math that's associated with CAPM
+where risk aversion is relative to a
+quadratic function. I mean, quadratic
+functions are elements that most of us
+were introduced to in roughly eighth
+grade
+>> and they source data that's readily
+available, right?
+>> And 8th grade math supplemented a little
+bit with some college level whisbang
+stuff creates a beautiful simple theory.
+And we're saying that theory is wrong
+and the correct theory
+will be more complicated. But just one
+baby step in the direction of that more
+complicated simply splitting upside and
+downside risk and saying people hate
+this and love this.
+>> Right. And and you talk in in the
+article as well about you know the the
+difficulty of quantifying that at least
+historically about getting under the
+skin of what people were you know more
+appropriately entire markets full of
+people are feeling at any given point in
+time. Can you talk a bit about you know
+some potential solutions to that to that
+gnarly problem?
+>> Well, the beauty of introducing this
+new structure or building out a new
+paradigm is that it can be
+multi-purpose.
+It can help define
+how markets function and it can help us
+also identify
+when we're in frothy bubbles or in deep
+bargain circumstances. Because if you
+can quantify
+fear of downside, fear of loss, and
+quantify fear of missing out, and
+instead of having just one metric for
+risk aversion, have two metrics.
+And if you can measure the market's
+collective
+aversion to downside and aversion to
+missing upside and measure them relative
+to one another, you have a wonderful
+tool for those who are willing to buck
+their natural human emotions to buy low
+and sell high,
+>> right? And you and and in order to
+develop this and again this is there's a
+bunch of math that has to happen and
+then to develop the the data around
+that. One idea you posit is that we
+could harness the power of AI to test
+sentiment somehow to read you know every
+every um financial journal that's
+published every day all the time social
+media that sort of idea. be able to for
+the first time in our history really get
+a sense of sentiment, a market sentiment
+that's not reliant on, you know, surveys
+like we might have done to sort of
+develop our gamma gamma signal. By the
+way, speaking of AI, AI has is
+phenomenal. It is people who don't play
+around with it for several hours a week
+are are missing an opportunity. Two and
+a half years ago, we have an old hands
+meeting every quarter. Two and a half
+years ago at the all hands meeting, I I
+said you're going to hear a lot about AI
+in the months and years ahead. And it's
+the real deal. You're going to hear a
+lot about millions of jobs being
+displaced. I want to assure everyone who
+works for research affiliates, AI will
+never take your job. Somebody who knows
+how to use AI better than you do may
+take your job. So study, get used to it,
+play around with it, and don't be that
+person who's displanted by somebody who
+knows how to use it better than you. One
+of the things I love doing these days is
+Perplexity is an AI of AIS, and it's a
+really powerful tool. It chooses which
+AI is best suited to your question,
+which is very cool.
+We took the Fear paper, gave it to
+Perplexity, and said, "Critique this.
+Tell us what we're missing.
+Tell us who's done work along these
+lines that we might have missed in our
+citations.
+Tell us what the three most important
+strengths and three most important
+weaknesses of this paper are. And
+Perplexity came back with in effect a
+referee report. When I was editor of
+FAJ, I saw hundreds of referee reports.
+I never saw a single one that was as
+detailed as what you can get out of AI
+today. And it came back with critiques
+very similar to the ones we got from the
+FAJ referees, which were this is an
+interesting paper. It plows new ground,
+but it doesn't posit a specific theory.
+It falls short. And that's exactly
+right. It falls short. It falls short
+because it it lays out a framework and
+invites the academic world to please
+stop clinging to something you know is
+flawed and have known is flawed for 50
+years
+and start exploring ways to move it
+towards an acknowledgement of behavioral
+finance.
+Human psyche matters.
+So I want to I want to circle back to
+just the application of of this
+framework. We talked about you know
+stock selection or asset valuation. How
+would you see it applying to portfolio
+construction given what we we know about
+you know potentially the the wrong
+conclusions that we've been making for
+230 years around asset allocation
+between stocks and bonds.
+>> Well this can be used in a number of
+ways. It can be used for early in my
+career, I used dividend discount models
+to estimate stock returns company by
+company for the stock market as a whole
+and comparing it with long bond yields
+and for individual companies comparing
+it with their own bond yields and came
+up with very simple
+value strategies and a very simple
+tactical asset allocation strategy. In
+fact, the first Graham and Dodd scroll
+that I ever won was for a 1983 paper,
+systematic asset allocation, which was
+subsequently relabeled tactical asset
+allocation. It It's funny, Bill FA was
+the dominant player at Wells Fargo in
+the tactical asset allocation arena. He
+had billions of assets managed to
+reflect the calculated risk premium for
+the stock market. the higher the risk
+premium and the higher the equity
+allocation.
+>> And he came up to me at a conference
+right after we published the paper and
+said, "You son of a You you told
+the secrets."
+>> And I I said, "Bill, you're right, but
+I'm not going to apologize because
+you're the dominant player. Watch what
+happens to your AUM."
+And
+anyway, it was it was a funny exchange,
+but it
+risk premium
+can be used for stock selection. It can
+be used for asset allocation and
+reefined
+to recognize
+that the risk premium really relates to
+aversion to downside risk and seeking of
+upside risk can make that a more nuanced
+decision.
+So, so in in an example, say say that
+there was a huge signal for fear of
+missing out, which if I'm doing the math
+right in my head, it's basically
+valuations are stretched because people
+are piling into whatever the latest
+bubble idea is. So, equities look less
+attractive. So, the the high FOMO signal
+tells you to underweight equities. Is
+that
+>> correct?
+>> Is that correct? Okay. Now that also is
+an implication of conventional asset
+allocation drivers using conventional
+risk premium measures but you get a more
+nuanced picture. you get a a measure of
+how it's stretched, why it's stretched,
+and also very interestingly there may be
+just as an example momentum
+in the appetite for
+upside in the increasing fear of missing
+out. There may be a momentum component
+that can help us
+stay in
+a frothy market until the turning point
+is closer. uh so sort of first
+derivative on that as it's moving
+>> right so I see so much potential in this
+but mostly the paper is a call to action
+for academia to please stop
+fussing around with
+a a framework that you know is false
+has been an amazing conversation Rob
+thank you so much for indulging me uh to
+chat about this article that I enjoyed
+so much. Um, we do have a two-point
+question at the end of the end of each
+one of our episodes and I'm going to ask
+you just like I do everyone else. Rob,
+what was your first job in the industry
+and if you could go back and take
+yourself for coffee on your first day,
+what key piece of advice would you offer
+yourself?
+My first job firstly, I tailored my
+education to this career in high school.
+I was kind of ambivalent about do I want
+to pursue astrophysics or investments.
+And I
+fairly quickly realized
+certainly by my first year of college
+that astrophysics is pure math. And
+I'm pretty good at math, but I'm not
+brilliant at math. and advanced math,
+which is central
+to uh astrophysics,
+I'd be good enough to be an adequate
+astrophysicist.
+I would do no pathbreaking work. And I
+also realized at that time that
+investing was a domain of narrative
+storytelling
+and negligible use of quantitative tools
+and thought I can do some pretty
+powerful work here. So let me pursue
+finance. Well, my college education was
+applied mathematics, computer science,
+and economics, triple major, and my
+first job was at the Boston company as a
+computer programmer. I was offered four
+jobs when I came out of college. Boston
+company offered me the lowest pay of the
+four because with each of the four, I
+said, I want to spend a day a week doing
+pure research of my own.
+and you'll have credit for it and you'll
+be able to monetize it, but I want to do
+some pure research. And most of them
+said, "Uh, do that on your own time."
+Boston Company said, "We love the idea.
+We'll pay you for 4 days a week."
+I said, "Done deal." And if I had any
+advice for my
+23-year-old self, I actually started at
+22 shortly before my 23rd birthday. The
+advice would be when you learn something
+new that is contrary to conventional
+wisdom, just be aware you're going to
+make a lot of people very angry
+because what you're doing is telling
+them that the core foundation of their
+career on which they built their career
+is flawed.
+Case in point, when I wrote the paper,
+Death of the Risk Premium, about five
+years after that, I was at a Q
+conference and went up to a guy I knew
+and liked and said, "How's life?" And he
+said, "Oh, life is good. By the way, I
+no longer hate you." And I said, "What?"
+He said, "When you wrote Death of the
+Risk Premium, I hated you because you
+were telling me that the essential
+foundation of my career was wrong. And I
+said, 'Okay, why do you not hate me
+anymore?' He said, ' Because you were
+right.
+Anyway, it was it was eye opening. I
+let's see, I was uh I was 50 when I had
+that conversation. And so it wasn't
+until my 40s that I was beginning to
+realize how pissed off people got when
+you challenge their core principles,
+even if you're right. So,
+I've been endlessly curious. That's been
+the essence of my career. And
+if something is a conventionally held
+view, I will just automatically ask the
+question, has anyone tested that? And
+if not, I'll go test it. And often it
+turns out to be correct. Great.
+Fabulous.
+Publish a short minor paper. And often
+it turns out to be wrong.
+Publish a paper that will rattle a few
+cages. And so the the big shock to me in
+the first 20 years of my career is how
+often I pissed people off.
+>> Well, having that it's it's courage at
+the at the root of it, right? The uh the
+courage to be right and the courage to
+be wrong and uh and to rattle some cages
+along the way. But I'm I'm glad you
+continued for the next 25 years after
+that uh death of the risk premium to to
+challenge the industry and to challenge
+your your peers. And I'm excited to see
+where this uh where this fear narrative
+goes. And hopefully someone takes up uh
+the mantle and and your challenge to get
+their calculators out and figure out a
+way to quantify all this.
+>> Exactly.
+>> I've been speaking today with Ra Barnot,
+founder and CEO of Research Affiliates.
+The article again is called Fear Not
+Risk Explains Asset Pricing. And I'm
+just so thrilled that you came on the
+show with me today. Again, thanks again
+uh Rob.
+>> Thank you. This has been great fun. I'm
+Mike Wahberg and this is Beam, the
+enterprising investor.
+[Music]

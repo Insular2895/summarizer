@@ -1,0 +1,1136 @@
+foreign
+[Music]
+my name is Michael Mattis I'm an
+Enterprise account engineer here with
+Amazon web services and today's webinar
+will be on implementing Amazon
+workspaces for high security
+environments
+so a lot of customers when they
+initially start their Cloud journey and
+specifically with Amazon workspaces they
+have obviously a lot of questions on
+where to start workspaces when they
+think about securing it traditionally
+comes down to most customers look at
+applying operating system patches
+updating third-party software that's on
+the Amazon workspaces itself what we've
+done in terms of this Workshop or this
+webinar is we have broken it down into
+five specific areas of focus the first
+focus is on securing the endpoint this
+would be the device that is used to
+connect to the Amazon workspace itself
+there is securing the control plane and
+the control plane is uh more so the
+workspaces administrator or the AWS
+account owner or administrator who is
+provisioning workspaces on behalf of the
+end customers so in a large organization
+this might be a central Cloud team or a
+central Cloud office
+the third aspect of securing Amazon
+workspaces would be securing the data
+plane this is the actual traffic whether
+it's PCO for IP or the workspaces
+streaming protocol or any network
+traffic that is Flowing between the
+customer environment and AWS
+the fourth aspect is securing the
+workspace itself and this is where most
+customers are used to their tried and
+true practices of again applying
+operating system updates
+securing third-party software making
+sure that they're running updated
+versions of third-party software
+and then the fifth aspect is securing
+the directory itself
+and this is often an overlooked aspect
+and I like to think of uh you can
+actually have a secure workspace until
+the directory itself that the workspace
+is authenticated against is secure so
+we'll touch on that as well
+and then at the very end we'll have a
+Hands-On workshop and that I will be
+touching on a few of the different
+aspects of securing workspaces such as
+securing the control plane securing the
+data plane and securing the directory
+so expanding on securing the workspaces
+all the bullets in this particular slide
+focus on one of the five areas that I
+mentioned in the prior slide we talk
+about directory security this could be
+things such as making sure that you have
+the appropriate encryption algorithms
+allowed or disallowed for your
+particular directory
+MFA so the MFA stands for multi-factor
+authentication this could be not only
+multi-factor authentication to the AWS
+account for the central Cloud team or
+the the person that's provisioning the
+Amazon workspace but this could also be
+applied to allowing multi-factor
+authentication uh whether it is uh
+through Yuba keys or through smart cards
+to the Amazon workspace itself
+IP routing
+so again a lot of customers want to
+control not only how they can connect to
+their workspace but where their
+workspaces themselves can connect to so
+IP routing could take one of two
+different areas there
+client certificates client certificates
+we're probably not going to elaborate on
+too much in this webinar however
+workspaces does allow the ability to
+have a third-party certificate Authority
+or a customer managed certificate
+authority issue search down to client
+devices and that's one way to constrain
+which client devices can actually
+connect to the Amazon workspaces
+endpoints
+log forwarding this could be not only
+for the directory itself but also log
+forwarding from the workspaces
+themselves so that you have Central law
+collection of what's going on inside the
+guest operating systems
+volume encryption uh this is I would say
+often overlooked by a lot of customers
+workspaces does have the ability to
+integrate with AWS KMS so that you can
+simply select a customer managed KMS key
+to use to encrypt the EBS volumes that
+are associated with their Amazon
+workspaces
+the domain credentials that are used to
+actually launch the workspaces and join
+those workspaces to the active directory
+domain
+the group policies on the target active
+directory domain and the organizational
+unit to which those workspaces will be
+become a member of
+the workspaces security group this is
+the stateful firewall that's going to be
+attached to the network interface that's
+associated with each Amazon workspace
+that is part of that directory
+and then over on the right hand side
+again we're talking about workspaces
+internet connectivity again that kind of
+comes back to that third bullet over on
+the left hand side IP routing so in this
+particular case we're focusing strictly
+on network connectivity where workspaces
+can connect to themselves
+authorized clients workspaces does have
+the ability to constrain or control
+which client you can actually use to
+connect to your workspace whether
+they're Windows devices Mac OS devices
+Linux devices web client
+zero clients
+user rights within the workspace so by
+default when you provision a workspace
+there is a checkbox to either allow or
+disallow the provisioned user to have
+local administrator access on the
+workspace itself
+for high security environments by far
+and large almost every customer should
+be deselecting that and saying no they
+do not want their users to be local
+admins on their workspaces
+authorized and permitted IP ranges for
+clients and again this is uh again
+constraining who can connect and where
+they can connect from
+user self-service permissions
+this is an interesting one and I see a
+lot of customers that are allowing their
+end users to be more self-service in
+determining whether they can upsize or
+downsize the Amazon workspace that they
+have provisioned for themselves
+Custom Image or maintenance on the image
+itself and the software installed in the
+image this gets back to again a lot of
+the tailored maintenance that customers
+are used to doing whether it's Supply
+and operating system patches third-party
+software updates on the guest operating
+system whether it's windows or Linux
+based
+password complexity requirements that
+are associated with the the active
+directory accounts
+and then clipboard redirection this is I
+would say highly overlooked it is very
+very beneficial especially if you have
+uh customers or clients connecting in
+from untrusted environments into your
+trusted corporate environment you can
+either allow list or deny list the the
+ability to redirect something from their
+local clipboard to the workspace or from
+the workspace outside of the environment
+thereby preventing data exfiltration
+this is a busy slide and I'm just gonna
+hit on some of the high notes Here If
+you look over on the left hand side you
+have a customer site and you have users
+in their corporate data center and down
+in the bottom left-hand corner
+and I'll just kind of trace the data
+flow from end to end here so the user is
+in a customer site they're on a client
+we'll just say a Windows based
+Workstation
+and they authenticate over TCP 443 that
+traffic flows over the public internet
+it hits an AWS manage public endpoint
+that public endpoint is an
+authentication session Gateway
+that off session Gateway is then go into
+broker a connection to the customer's ad
+connector and again in this particular
+diagram we're assuming that the customer
+has deployed active directory either on
+ec2 or they're authenticating against
+active directory that is located back on
+premises
+so in this particular case the customer
+has ad connector deployed in an AWS
+account
+that ad connector then has an elastic
+network interface that allows it to
+interact with the customers domain
+controllers and in the bottom you will
+see that active directory can be
+replicated on AWS
+by far and large I have not seen a lot
+of success with customers deploying
+active directory on-premises and not
+extending that active directory into AWS
+with the usage of workspaces
+in other words if you're using
+workspaces in AWS you absolutely should
+be extending your existing active
+directory domain or deploying an active
+directory domain inside AWS that will
+allow you to achieve the best and
+optimal authentication experience
+so as that authentication happens it
+hits active directory active directory
+validates the user's credentials those
+credentials generate a Kerberos token
+that token is then assigned back to the
+user identity
+at which point all authentication has
+happened
+and then the user is going to open up a
+second
+TCP and UDP session and that is where
+the streaming Gateway IP so over on the
+left hand side you can see the streaming
+Gateway IP with binary ones and zeros so
+that all is happening over in this
+particular case it's happening over PC
+over IP which is p TCP and UDP ports 70
+that traffic also flows over the public
+internet
+it is encrypted it hits an AWS managed
+streaming Gateway
+and then that streaming gateway then has
+an elastic network interface that allows
+it to interact with the customer's
+Amazon workspaces
+which is in an AWS managed account
+and then the customer's Amazon workspace
+also has an eni that allows it to
+communicate with active directory DNS
+other ec2 instances or anything else
+that's inside a customer managed VPC
+so this was a very brief overview of
+securing Amazon workspaces
+best practices for deploying Amazon
+workspaces is going to go in
+significantly more depth it is about 40
+plus pages long
+it is a very good read and it is updated
+very very frequently I would say quite a
+few times per year I believe it was last
+updated in June of 2022.
+and with that I will cut over to a demo
+where I will walk through some of the
+steps that I talked about so that you
+can actually properly secure your Amazon
+workspaces for a high security
+environment
+okay now we're in the AWS console and
+I'll show you actually how to properly
+secure your directory
+and so the first thing we'll do is we'll
+go to the directory Services console
+so right here I'll just click on my
+recently visited menu
+foreign
+now I've already gotten a directory
+provisioned as part of this Hands-On lab
+this directory is configured with all
+the default settings the directory name
+itself is
+workspaces.labx.com what I'll do here is
+I'll just click on the directory ID
+from here I will scroll down
+foreign
+log forwarding here
+and what I'm doing here is I'm creating
+a new cloudwatch logs group that's then
+going to take the logs from the domain
+controllers and forward them to this
+cloudwatch logs group
+this is useful for auditing and security
+purposes
+I'll click on enable here
+and that will take somewhere between 5
+and 10 minutes for those logs to be
+available in cloudwatch logs
+foreign
+now what I'll do is I will go down and I
+will configure s s notifications
+and that's in the maintenance tab
+directory monitoring I will create a
+notification here
+and I will create a new notification
+and this these notifications will alert
+you of any health issues when the status
+of the directory changes
+so obviously if the directory is
+Paramount of Paramount importance for
+Amazon workspaces as that's the
+directory that users authenticate
+against if there's a health change with
+the directory the administrator or the
+operations team should know about it so
+ideally you would configure an
+operations team email list in this
+recipient chain
+and then they would be notified anytime
+that the status of that directory
+changes
+so there we'll go ahead and click create
+there
+and now we'll register the directory so
+that we can create Amazon workspaces
+so here we will actually go to the
+search menu
+and we will click on the Amazon
+workspaces logo there
+and that's going to launch the Amazon
+workspaces console
+in here we will click on get started now
+and here you're presented with two
+options either the quick setup or the
+advanced setup
+we're going to go ahead and click the
+advanced setup and click launch
+now in the select directory type I'm
+actually going to cancel out of this
+because I already have a workspace or a
+directory configured and it's an Amazon
+managed active directory so I will go
+ahead and click cancel here
+and then that will back us into the
+workspaces console and the list of
+directories
+and I will click on the directory here
+click on the radio button
+I will click on actions
+and I will click on register
+now I need to register that directory
+with a couple different subnets
+I will register
+with this subnet as you can see that is
+Us East 1A
+in this section we're going to register
+the directory with two different subnets
+those subnets will be 10 0
+1 0 24 and 10 0 2 0 24. so I will go
+ahead and select that subnet
+and I will select the other subnet
+and in this particular case just for the
+purpose of this Workshop we are not
+going to enable self-service permissions
+and we will not enable Amazon workdocs
+we'll go ahead and click register there
+okay
+and now it says it's successfully
+registered the directory this now
+enables us to launch Amazon workspaces
+but before we go ahead and do that
+now what we're going to do is we're
+going to select the directory and we're
+going to update the details so that we
+can actually pick the appropriate
+organizational unit and all the
+specifics with the directory for our
+Amazon workspaces
+so I will select the directory here
+you will see the registration code and
+all the other settings are associated
+with the workspaces
+directory itself
+and the target domain and organizational
+unit
+we will click edit Target domain and OU
+we will select the computers OU
+we will hit save
+access to Internet
+we will edit access to Internet we will
+just make sure that that is disabled
+this does not necessarily mean that
+workspaces cannot access the internet it
+just means that they must go through an
+outbound service or system to access the
+internet in this case this Workshop is
+going to leverage a Nat Gateway for the
+Amazon workspaces so the workspaces
+themselves will be deployed in a private
+subnet inside the Amazon VPC
+in Access Control options we will go
+ahead and select edit access control
+options
+and here's where you can allow or
+disallow specific devices and this
+particular Workshop we're going to say
+that our organization is a Windows only
+org so we will allow all windows devices
+we will deny all Mac OS devices and we
+will deny all Android or Chrome OS
+devices
+the option here for root certificate 1
+and root certificate 2 is relevant if
+you have a certificate Authority as part
+of your organization's hierarchy then
+you can issue machine certificates that
+can be deployed to your trusted devices
+to only allow machines that have those
+certificates on their local certificate
+store to authenticate to the workspaces
+themselves
+we will hit save there
+and then there's an option here for
+endpoint encryption
+if we select edit here for endpoint
+encryption by default it's going to be
+TLS encryption mode if you are an
+organization that has fips 140-2
+validated requirements such as a US
+government organization or the United
+States Department of Defense you can
+select the radio button for fips 140-2
+validated mode and click save
+for the purpose of this Workshop I'm
+just going to keep it as TLS encryption
+mode but again select the appropriate
+encryption mode based on your
+organization's requirements
+the local administrator setting down
+here
+if we click on edit
+make the user a workspaces administrator
+we are going to deselect that
+and then the IP Access Control groups
+we will skip that for now we will come
+back to that at a later point
+self-service permissions we will update
+those settings there
+we will deselect remember me and we will
+deselect restart workspace from the
+client
+all right now we'll go back into the IP
+access control group setting and we'll
+start over on the left hand side
+over on the left hand side
+we clicked on IP Access Control groups
+we're going to create an IP group here
+we will call the group name corporate
+office
+and we'll give it a description of Ip
+range of corporate office
+and like most things in AWS you can
+apply tag values
+we will leave that blank for the purpose
+of the webinar
+now what we'll do is we'll select the IP
+access control group that we just
+created
+and we will click edit
+we will add a rule
+and what we're going to do here is we're
+going to add specific IP address ranges
+of our corporate Network
+and the IP address ranges that we Define
+here are the only IPA ranges that are
+allowed to connect to the corporate
+workspaces
+in this particular case I'm going to
+assume that my on-premises environment
+my corporate cider range
+is 128
+1.0.0.0 slash eight
+I will call this
+corporate HQ for headquarters
+we now need to associate that IP access
+control group with the directory
+so if we go back
+oh
+if we go back to the directories tab
+within the workspaces console itself
+when we click on the directory ID
+we should be able to click on edit IP
+Access Control groups
+we can select that IP access control
+group
+and we can select associate
+now at this point once we associate that
+IP access control group with the
+directory itself only IP addresses
+within that cider range that we defined
+as part of that IP access control group
+will be allowed to connect to workspaces
+foreign
+securing the workspaces environment is
+securing the directory itself and what
+we've done so far is we've updated log
+forwarding we've updated SNS
+notifications to alert us when the house
+of the direct when the health of the
+directory changes
+we've configured the active directory OU
+that the workspaces will be joined to
+but now we're going to go ahead and
+update the encryption settings on the
+directory itself
+now we're going to go back to the
+directory Services console and update
+the encryption settings to specify
+the specific encryption protocols and
+ciphers that are allowed for our Amazon
+directory
+so here we will select directory service
+we will select the directory itself
+and here at the directory settings down
+here you can see the various encryption
+protocols and the cryptographic ciphers
+that are enabled for that directory
+we will go through and click on edit
+settings
+and we we what we will do for this
+particular Workshop is we will disable
+everything except for TLS 1.1 and
+aes128-128
+so we will go through and disable
+all of these other protocols and
+cryptographic ciphers
+disable
+we will review our settings
+and we are effectively disabling
+everything with the exception again of
+TLS 1.1 and AES 128.
+we will click on update settings
+foreign
+now up at the top of the screen you will
+see notification the settings on the
+directory themselves this itself is
+being updated it will take approximately
+anywhere from 30 minutes to a couple
+hours depending on the number of domain
+controllers in your directory in terms
+of this Workshop I just provisioned two
+domain controllers as part of my AWS
+Microsoft managed active directory
+it should take anywhere from 30 minutes
+to an hour for that to happen
+now that we've provisioned the directory
+we will move forward to actually
+launching an Amazon workspace and
+adjusting the directory settings and the
+configuration in the works workspace
+itself to be more secure
+so we will go back to the Amazon
+workspaces console
+and we will click launch workspaces
+in this particular menu you can see the
+directory that you want to launch the
+workspaces in we will use the
+workspaces.labx.com directory that we
+already previously created
+because we're using mic uh AWS managed
+active directory we get the ability to
+create active directory users at the
+same time that we provision a workspace
+for them
+and that's exactly what we will do in
+this specific scenario
+so we will create one for image Builder
+we'll call it image Builder essay
+with the first name of image Builder
+last name service
+account
+and an email address
+we will create the user
+by clicking that button that will create
+the user in the in the directory itself
+this module is all about creating a
+customer managed KMS key creating an IAM
+policy to allow workspaces
+administrators to use the key and
+attaching an IAM policy to the IAM role
+that the workspaces administrators
+assume when they perform their duties
+customers and regulated and high
+security industries generally prefer the
+use of customer managed KMS Keys rather
+than AWS managed keys for the following
+reasons
+customer managed Keys offers customers
+the ability to have full control over
+the KMS key including establishing and
+maintaining their key policies IIM
+policies
+grants and enabling and disabling of
+keys rotating their cryptographic
+material the addition of tags and
+creating aliases that refer to the KMS
+keys
+customer managed KMS keys can be used in
+cross-account scenarios
+what we'll do now is we will go to the
+Key Management Service console itself
+and here at the KMS console landing page
+we'll click on create a key
+we will leave the default option for
+symmetric you must use symmetric keys if
+you want to use KMS keys with Amazon
+workspaces
+foreign and we will leave the default
+for encrypt and decrypt operations as
+well
+we will go ahead and click next
+we will give the key in Alias and in
+this particular case we will call it
+workspaces
+Workshop key
+and then in the description we will call
+it KMS key used to
+encrypt
+Amazon
+workspaces
+we will click next
+in this menu we're defining the key
+administrators
+these are the people who actually have
+access to the KMS key and can administer
+the key through the KMS API
+in this particular example
+we will select ee Overlord
+and the ee Overlord role
+and the key usage permissions
+we will select team role
+and here you can see the key policy and
+the other configuration settings that
+are used for that particular KMS key
+here's the default key policy with an
+option to add additional actions
+or principles to this particular key
+policy we're going to leave it as the
+default for now
+and select finish
+now we will modify the IM policy
+associated with the workspaces
+administrator's IAM role such that they
+have permission to use the KMS key in
+their account
+foreign since we are using a customer
+managed key to protect our workspaces
+data in addition to the permission in
+the key users section of the default key
+policies workspaces administrators need
+permission to create grants on the KMS
+key
+also if the workspaces administrators
+use the AWS Management console to create
+workspaces with encrypted volumes
+workspaces administrators need
+permission to list aliases and list keys
+for that part of the workshop we will go
+to the identity and access Management
+console otherwise known as iam
+we will select policies on the left hand
+side
+and then the policies filter section
+we will filter
+by simply typing
+workspaces
+we will expand the workspaces admin AWS
+manage policy
+we will click on the copy button here to
+copy all of that Json to our clipboard
+and then we'll create a new customer
+managed policy from that and for that we
+will click on create policy
+and instead of walking through this
+visual editor we will just go right to
+the Json tab right here
+we will highlight that deleted and paste
+in all of the existing content which we
+had previously copied from the
+default
+AWS
+managed workspaces policy
+foreign
+the following lines to our workspaces
+administrators to create grants on the
+KMS key
+so for that
+we will add in an allow action
+we will add in an action
+that action will be
+KMS colon create Grant
+and then the resource
+will be the Arn or the Amazon resource
+name of the KMS key that we previously
+created now if you don't have the Arn
+handy
+you can open up a new
+AWS console and another browser tab
+go to the KMS console itself
+click on the customer manage key
+and then here you can see the Arn I will
+click on this button that will copy that
+Arn to the clipboard
+I will then come back here
+and paste that in
+with that we will click on next
+we will not add a tag to this we'll
+click on review
+and we will give our policy name
+custom
+workspaces
+admins
+policy
+we'll click on create policy there
+and now that we've created that custom
+policy we will attach it to the IAM role
+being used by our workspaces
+administrators
+so on the left hand side of the IAM
+console we will click on roles
+and if you remember they were key
+administrators and they were key users
+that we defined for that particular KMS
+key
+the key users were the team role was a
+key user so we will select team role
+here
+and in the in the permissions policies
+window what we will do is we will click
+on ADD permissions
+we will select attach policies
+and then we will
+select the check box next to custom
+workspaces admins policy
+we will scroll down
+and select attach policies
+and the policy is now attached to the
+team role
+now that we've updated the team role
+role to include the ability for the
+workspaces administrators to create
+grants against the KMS key
+we will jump back to the workspaces
+console itself and provision our first
+workspace
+we will select launch workspaces
+we are going to be launching it in the
+workspaces.labx.com directory so we will
+click Next Step
+in here you can identify users or we can
+select users from the existing directory
+let's go ahead and click on show all
+users and see which users are part of
+the directory
+in our example here we will go ahead and
+we will provision a workspace
+for a new user
+we will call that new user
+image
+Builder
+SA
+with the first name of image Builder
+and the last name of service account
+that just created a new user in the
+directory
+we will show all users
+and now you can see that the list of
+users has changed to reflect the
+addition of image Builder essay to the
+directory itself
+we will select that user we are going to
+provision just a workspace for them we
+will select next steps
+in this menu you get a view of all the
+different bundles that you can select
+for
+in which bundle you choose is going to
+be based on
+organizational preference
+in this particular example we are going
+to provision a workspace that is
+standard with Windows 10
+server 2019 based PC over IP
+down at the bottom you can see the root
+volume for the operating system is set
+to be 80 gigs and the user volume is set
+to be 50 gigs we will leave those as the
+defaults and select next
+you have the option of choosing your
+running mode with each Amazon workspace
+in this particular example we are going
+to set the auto stop time for four hours
+foreign
+in the encryption section this is where
+you can select via a checkbox whether to
+use a customer managed KMS key with
+either the root volume or the user
+volume for each Amazon workspace in this
+particular case we're going to select
+the customer managed KMS key that we
+create as part of this Workshop which is
+called workspaces Dash Workshop Dash key
+and we will use that to not only encrypt
+the root volume we will also encrypt the
+user volume as well
+we will select Next Step
+we will verify our settings here
+and you can see the check box at the
+root volume and the user volume are both
+encrypted with this particular
+encryption key
+and we will select the button to launch
+the workspace
+now you'll get this little pop-up here
+that says workspace is being launched
+unencrypted workspaces take
+approximately 20 minutes to become
+available inside the AWS console itself
+workspaces that are encrypted will take
+approximately 40 minutes to become
+available as the note indicates
+foreign
+now that you have provisioned a
+workspace once your workspace is is up
+and ready and you've successfully
+connected to an authenticated against
+your workspace you can actually check
+those Cloud watch logs to make sure that
+log forwarding did happen and the way
+that you would do that is you would use
+the cloudwatch console and the
+cloudwatch console has a section called
+log insights
+and we will expand the logs section over
+here on the left hand side
+and we will select logs insights
+what we do here in the logs insights
+console is we actually select a law
+group to query and then we specify a
+set of statements that can execute
+against that Law Group
+and retrieve a set of results
+so in this particular case we're going
+to select the directory law group so
+that would be
+workspaces.labx.com if you remember
+and we will then go through and update
+our query to include the information
+that's relevant for this specific
+Workshop in this particular case what we
+want to do is we want to grab the IP
+address of the workspace to check to see
+who authenticated against it and when
+they authenticated
+so in this particular case I will open
+up another Tab and grab the IP address
+of the workspace
+and that will be in the workspaces
+console
+in this particular section of the log
+insights console we are going to input
+a
+set of statements which we will use to
+query the
+workspaces.labx.com cloudwatch logs
+group to ensure that a user was
+successfully authenticated against their
+workspace
+so we will leave the fields at timestamp
+and at message
+we will then add another row
+to apply a filter
+where at message
+like
+and we will call this
+event ID
+4624 event ID 4624 is the Microsoft
+Windows event ID for a successful logon
+event
+event ID
+foreign
+we will then add another filter
+where at message
+like
+and in this particular case we would
+input the IP address of the Amazon
+workspace in question
+so in this particular case if we know
+the Amazon workspace has an IP address
+of 10.0.1.125
+that is what our statement would look
+like
+we will apply yet another filter
+where we're going to be looking for
+a particular user of interest and in
+this example we will use image Builder
+underscore essay
+we will sort it in descending order and
+we will limit it to only 20 results
+foreign
+so when we hit run query what we're
+doing is we're querying that cloudwatch
+logs group to see if image Builder essay
+logged in to the workspace that has the
+IP address of 10.0.1.125
+and we could tell they logged in by
+event id4624
+so as you can see here
+there were 19 543 records zero results
+which means image Builder essay has not
+logged into their workspace yet
+now
+later on once the user authenticates and
+has access to their workspace if you
+were to rerun this query you would see
+results return in this cloudwatch logs
+group query
+okay now we have a image Builder essay
+has an Amazon workspace that is standard
+available to them
+now what we will do here is we will
+expand the workspace
+we will grab the registration code
+we will copy it to our clipboard
+and assuming you're on your endpoint
+device that you're using to connect your
+Amazon workspace we will launch the
+workspaces clients
+we will input that registration code
+we'll click on register
+as you can see that the device is not
+authorized to access the workspace and
+that's because
+the workspaces directory was configured
+with an IP access control group to only
+allow IP ranges falling within the
+128.0.0.08ipspace
+I've since deleted that IP access
+control group just for the purpose of
+this scenario so I will go through and
+register this new directory with the
+workspaces client itself
+and you can see it's now
+popping up an authentication prompt
+at which point I will input a username
+and password
+and in this particular case
+the username is going to be image
+Builder essay
+and the password
+will be a password that was created
+by me so when I provisioned the image
+Builder essay workspace if you remember
+it asked for an email address associated
+with this identity
+that email came into my mailbox there
+was a link within that email I clicked
+the link and input the specific password
+that I wanted associated with that image
+Builder essay account
+so I will now use that password to sign
+into the workspace
+just
+ice
+because this is the first time the
+workspace is actually logged into it may
+take about a minute or two for
+everything become available
+foreign
+now that we're in the workspace what we
+will do is we will configure the PC over
+IP encryption settings and the clipboard
+redirection to ensure that we're using
+the strongest encryption algorithms that
+are available
+and to prevent clipboard redirection
+from the guest operating system in the
+workspace outside
+and so for that we will go to the start
+menu
+we will click on edit group policy
+jeez
+foreign
+what do I need to do here
+I need to update this
+sorry I need to make another quick
+change
+so now image Builder essay has an Amazon
+workspace that's available to them and
+we registered that that registration
+could with the workspaces client itself
+now we're going to go ahead and
+authenticate to the workspace
+so we're going to input the image
+Builder essay
+and the password that was created
+when the account was set
+now this is the first time that image
+Builder essay is logged into this
+workspace so there may be
+about 10 to 15 seconds extra of
+configuration that happens the first
+time the profile is loaded onto the
+workspace itself
+okay
+foreign now what we're going to do is
+modify the local group policy on this
+particular workspace to deny specific
+Cipher Suites and we are going to
+prevent clipboard redirection and we
+will do that by launching the local
+Group Policy editor
+edit group policy
+and once the local Group Policy editor
+is open we will full screen that
+we will expand computer configuration
+administrative templates
+PC over IP session variables
+overwritable administrator defaults
+and then
+PCR IP security settings
+foreign
+security settings we're going to select
+the radio button for enabled we'll
+select TLS security mode for maximum
+compatibility
+and then we will modify the blacklisted
+Cipher Suites or what we shall say the
+denial listed Cipher Suites
+and we will deny list
+anything that is not AES 256 galoy
+counter mode with Shaw 384.
+so what we will do is we will
+and it's a semicolon separated list so
+we will just append a semicolon to each
+of these
+foreign
+we'll just take these first four Cipher
+Suites at the bottom as a
+an example of how to deny list those
+particular Cipher Suites
+and then PC over IP data encryption
+ciphers
+we will select AES 256 GCM only
+and then we hit apply
+and select ok
+now what we will do is we will also
+configure clipboard redirection and to
+do that we select configure clip
+reaction here
+double click on that
+and select enabled
+and then the options are as you can see
+disabled in both directions that
+prevents the endpoint from redirecting
+data into the workspace itself and also
+the workspace from redirecting data back
+out to the endpoint
+that is the most restrictive setting for
+high security environments this is by
+far and large what the majority of
+customers do so we will select that
+and we will select ok
+so now that we've configured clipboard
+redirection and prevented bi-directional
+clipboard redirection
+from a client to a workspace itself we
+will test it out in practicality
+and to do that
+we will open up
+the Notepad application within the
+workspace
+we will input test clipboard
+and then we will go out of the workspace
+to the local client
+and we will dump the clipboard contents
+and you can see that the clipboard
+contents were just of the local
+clipboard on the endpoint itself
+and previously what was in the clipboard
+was the registration code for the image
+Builder essays workspaces registration
+code so you can see that that test
+clipboard did not get redirected out and
+if I were to highlight the registration
+code from the endpoint here and try and
+paste it into the workspace itself that
+still does not paste the only thing in
+the clipboard in the workspace itself is
+what I had previously copied which was
+just the text test clipboard
+so that just illustrates a quick example
+of how to prevent uh clip or redirection
+to the workspace and outside of the
+workspace as well as controlling which
+encryption algorithms are allowed for
+the streaming of traffic to the Amazon
+workspace and in this particular example
+for today's webinar we used PC over IP
+but the same policies are also
+applicable to WSB workspace streaming
+protocol as well
+well everybody I really appreciate your
+time today it was greatly appreciated
+we'd love to hear your feedback on the
+webinar if you do have feedback you can
+email me directly at Mattis m m a t t e
+s m amazon.com and if you have other
+ideas or topics that you'd like to see
+discussed further about Amazon
+workspaces again feel free to reach out
+to me and I'll be sure to either take
+that feedback personally or relay that
+to the appropriate team members inside
+abios that way we can continue to
+innovate and deliver the best experience
+for you the End customer
+thank you very much

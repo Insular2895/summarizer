@@ -1,0 +1,51 @@
+You head on over to open router.ai in
+your browser. You're going to click on
+sign up in the top right hand corner.
+Personally, I like using my GitHub
+account. Click on verify you're not a
+bot. Then once you're logged in, in the
+top right hand corner, if you click on
+your profile information, you're going
+to click on and go to settings. And then
+once you're in settings, you're going to
+go to the API keys option in the lefth
+hand side menu. You're going to click on
+create an API key. Give it a name. In
+this case, for mine, I named it based on
+the IDE I'm going to be using, open
+router within, which is VS Code
+Insiders. And then you can put a credit
+limit on it. You can use all of this
+under a free tier, albeit you'll have
+limited access and a limited number of
+requests you can make to these models
+under your free account with open
+router. Then once you have that, go into
+your various IDE. In this case, I'm
+showing you in Visual Studio Code
+Insiders. You can click to add a model
+to this. It'll prompt you in a way
+similar to this. You enter in that API
+key and then it'll start showing you the
+other models available via open router.
+The way I can do that inside of Visual
+Studio Code or inside VS Code Insiders
+is by collapsing the Copilot and
+Anthropic and we can see all of the
+models that are available to me via Open
+Router. Now you'll want to scroll down
+to MiniiaX Miniax M2.1 model and toggle
+on that. So when they're toggled off by
+default they show with this icon here.
+And when they're toggled on, you'll see
+that little eyeball shown staring right
+back at you. Then once you have that set
+up, you can go back into Copilot or
+whatever tool you're using, select
+different models, and you should see the
+model available there, and you can
+select it and use it in that way, too.
+So, there you have it. There's another
+alternative way you can access Miniax
+M2.1 model in your other tools of
+choice.

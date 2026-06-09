@@ -1,0 +1,287 @@
+[Music]
+hey guys hack exploit here back again
+with another video and welcome back
+to the web application penetration
+testing series all right so in this
+video we're going to be looking at uh
+web application firewalls
+or what's as they're called now this may
+be a new term for you and
+do not worry this is uh now when we move
+into a more professional level and again
+this is what i'm
+i've been talking about uh is most
+people out
+almost documented documentation out
+there won't cover
+the most important industry standards
+you know now when i'm talking about
+web application firewalls what i mean is
+is these are the protection uh or these
+are the mitigation uh
+procedures put in place to protect a web
+application
+from attacks obviously now as a
+penetration tester or if you're looking
+at it from a white hat
+or a black hat perspective from
+whitehead perspective it's always
+important to have a web application
+firewall
+and i'll probably make another video
+showing you how to set it up it's really
+easy and it's free
+and it'll uh probably remove about 20 of
+attacks
+okay so that's if you're a white hat now
+if you're a black and you're targeting
+or you're performing a penetration test
+legally on a website or web application
+uh usually what the employer will tell
+you is
+they'll give you a scope of the project
+and again they might give you the source
+code
+etc etc you get the idea you have your
+white box testing
+black box and gray box uh but coming
+back to the
+firewall most of them wouldn't know that
+there is a file and that's because
+the person who set the website up for
+them in terms of hosting
+or the web application for them uh will
+in most cases
+on a professional level have a web
+application firewall
+now you might be a bit confused and you
+might be saying well why is this
+important when performing a penetration
+test
+well this is important because firstly
+it's something that most pen testers
+overlook and if you know this
+you've got an ace up your sleeve all
+right so
+essentially what's happening is if it's
+being used uh
+if a web application firewall is being
+used uh you obviously first need to
+detect it and i'm going to show you how
+to detect
+it in this video using a special tool
+that i don't think you've ever heard of
+but it's also industry standard so this
+is a really real secret i don't know for
+some reason
+it's not just uh it's something that
+just hasn't caught up yet
+but hopefully after this video you'll
+know about it all right so essentially
+the purpose of a web application
+firewall
+is uh it uh it protects the web
+application uh you know
+from a firewall point of view in the
+sense that it blocks attacks
+uh as one would expect them to come now
+what does this mean for you
+well this means that yeah you will need
+to in uh you will need to manipulate
+um any type of data that is going to be
+encoded all right so what this means is
+if you're
+if you're performing a penetration test
+that involves you manipulating data and
+sending it back to the web application
+similar to what we did in the previous
+video then you need to encode it in a
+specific way to bypass the firewall
+otherwise it will be blocked by the
+firewall and i'm sure most of you have
+actually done this before if you're just
+amateur penetration testers and you've
+just begun
+you'll find that for some reason your
+requests aren't being
+processed and that's because there's a
+firewall set up to prevent
+these malicious requests from being
+processed
+okay so again a web application firewall
+is really really important now
+looking at the tool we'll be using the
+tool has actually a very very funny name
+you for some of you might find it
+hilarious
+it is called waffle now for those of you
+who have heard of it uh you
+pretty much already know how to detect a
+web application firewall but it's really
+very very simple
+all right so just open up your terminal
+and uh what you want to do is you want
+to type in waffle
+all right so this is how it is going to
+be uh spelt
+so it's with a wolf with a two with two
+zeros
+and uh the syntax is pretty simple if i
+just hit enter
+as you can see waffles a web application
+firewall detection tool
+all right so credits go to the author
+it's actually it's a tool that's been
+there since the
+i think almost the last version of
+backtrack and uh the first version of
+kali so again
+quite a an old tool when i say old i
+mean you know i mean that with respect
+uh given the fact that it's
+really really useful and i've used it a
+lot because it saves you
+a lot of time and what i'm talking about
+is so
+um let's say we want to scan a website
+okay
+in this case i have my wordpress server
+running here and as you can see
+it's the site is being hosted on
+192.168.1.101
+all right so i have that ip opened up in
+my browser and as you can see it's a
+wordpress site
+and this site is vulnerable and this is
+what we're going to be performing uh
+later on the penetration test on but for
+now
+we want to find out whether it has a
+firewall now by default i know it
+doesn't have a firewall but let's see
+what waffle for tell us all right so the
+syntax is very simple as you can see you
+just type in waffle
+and you enter your url or your url so
+you can enter as many as you like
+okay so i'll give you an example there
+of how to go about it make sure you
+enter your http
+or https protocol and we just
+let's try that out so waff wolf and we
+specify
+our protocol http in this case and the
+ip address 192.168.1.101
+all right now in this case i'm pretty
+sure that it won't detect any
+web application firewall so let me just
+hit enter and as you can see
+no web application firewall detected by
+the generic detection
+all right now this is very very advanced
+and this tool is an industry standard
+and if it does tell you that there is no
+uh web application firewall then by all
+means i can guarantee that
+it does not have a firewall now let's
+look at one of my sites that i currently
+own
+uh it's a site that i use um it's
+actually my web development
+company that obviously we use for web
+development now
+i've protected this site with a web
+application firewall provided by
+cloudfare now for those of you
+web developers and when you're
+performing your hosting you know that
+using cloudfare is awesome because it
+allows you to optimize your site for
+speed
+it allows you to purge assets and make
+your site faster protect it
+and again protect it from ddos attacks
+etc etc
+all the good stuff so let's see if it
+will actually detect this so i'm going
+to type in waffle
+i know that name is really really funny
+the protocol
+is https https like so
+and i'm going to specify the site which
+is elgonstudios.com
+all right i'll go on studios.com and if
+i hit enter as you can see it's going to
+start checking the site
+give it a few seconds it shouldn't take
+any much uh
+you know a lot of time and as you can
+see the site elgonstudios.com is behind
+cloud fair
+all right now what this means is that
+most of the um
+most of the attacks that involve
+manipulation of data
+uh will be in some way blocked and you
+know you won't get your response back
+the way you wanted it
+and the render wouldn't be the same all
+right now again
+as you can see it's detected that it is
+behind a web application firewall now
+the next step
+is how to encode these um how to encode
+encode your
+your requests that you're going to be
+sending to the web application
+and that's what we'll be looking at as
+we increase the security level
+uh using the uh the damn vulnerable web
+application
+all right so i thought this is something
+that i really need to share with you
+again it's going to really help you
+and i promise you this is something that
+you know if you go for a job interview
+or you're performing a penetration test
+for a company this is something that
+most of the network or systems
+administrators are very keen on
+they want to know whether you really
+know your stuff and whether you're
+really up to date
+with how to detect first of all because
+information gathering
+is really important and as you can see
+this tool is fantastic and once you know
+there's a firewall
+you then have a better idea of how to
+target and you won't be wasting time
+again that's something that most of the
+amateurs or beginners do
+they waste a lot of time trying
+different commands that they've seen
+but they find they under they see that
+it doesn't work and they're like
+how's this possible am i doing something
+wrong the truth is
+uh the web application is probably well
+protected
+so again uh you know do not use this for
+any malicious purposes
+again this is simply an information
+gathering tool and yeah that's going to
+be it for this video i hope you found
+value in this video if you did please
+leave a
+like or a thumbs up depending on what
+you call it if you haven't have
+any questions leave them in the comments
+section on my social networks or you can
+write up your questions on the website
+and i'll be happy to answer them
+thank you so much for the support guys
+and i'll be seeing you in the next video
+peace
+[Music]
+you

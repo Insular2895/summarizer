@@ -1,0 +1,402 @@
+You see this image or even this
+audio file, it seems
+totally normal to you, doesn't it?  And yet, what if
+I told you that I had hidden
+invisible information,
+secret messages,
+concealed data, even entire files inside
+without you
+noticing?  And the craziest thing about all this is that
+even if you looked
+closely, analyzing every
+pixel, you wouldn't see anything at all.
+Well, in this video, I'm going to
+show you how it's possible to
+hide entire files in an
+image, to conceal messages in
+text, in metadata, or even
+to display data in audio
+without anyone being able to detect them
+at first glance.  And you'll see,
+it's incredibly simple.  This is called
+steganography.  In reality, this
+practice dates back to antiquity.  At
+the time, slaves' heads were shaved
+, a secret message was engraved on them
+, and then the hair was simply allowed
+to grow back.  Once it returned, the
+message became completely invisible.
+To give you a more recent example
+from the series Prison Break, Michael
+Scofield also hides
+information in his tattoo which
+actually contains all the plans for the prison.
+In real life, this technique can
+also be used by hackers.
+Instead of encrypting a file in the
+traditional way, which makes it immediately
+suspicious and easily detectable, it is
+possible to use astganography
+to hide malware or
+sensitive information in
+regular files.  So how does it all
+work?  An image is simply
+a grid made up of millions of
+pixels.  And each pixel is actually
+composed of three values: red, green, and
+blue, which is called RGB.  Each
+of these values ​​is stored in
+binary form.  A sequence of 0s and 1s.
+In practice, each color channel,
+RG or B, is coded on 8 bits.  And among
+these bits, there is one that is very
+special, the last bit called the least
+significant bit.  It is important because it has
+the least impact on
+the final color, and if its
+value is changed, the difference is so
+small that the image remains visually
+identical.  The idea is to use these
+lightweight penises as a
+hidden storage space.  We will
+slightly modify the pixel values ​​to
+insert information such as text,
+but also entire files such as
+ZIP files.  To put all of this in place,
+we're going to use an incredible tool
+called SteG Hyde.  And the good news is, it
+'s available on Linux, Windows and
+Mac.  On Linux, the installation is very
+simple.  Start by updating your
+packages with the sudo aptate command
+and then install Stag by typing sudo apt
+install Stagide-y.
+On Windows, it's even simpler.
+Simply download the
+official package, extract the file, then
+right-click in the folder and
+open it in a terminal like this.
+You will then be able to use
+the steghyde.eexxée executable
+directly.  Now we move on to the
+most interesting part.  Hiding a
+message in an image.  For this demo,
+I created a simple text file called
+secret.txt which contains a
+confidential message.  And for the background,
+I'm using this photo of my little cat.
+To hide the text file in
+the image, use the following command.   Simply put
+, mbed is the
+main action that means to hide a
+file.  EFCret.txt
+is the file you want to
+hide.  And cfcha.jpg
+is the container.  So, the image in which
+we're going to hide the data.  Upon
+pressing enter, the tool will
+ask you for a passphrase, which is the
+password to protect
+your hidden file.  In my case, for
+the demo, I use something very
+secure.  1 2 3 4 and boom, it's good.  If
+I open my image again, there is
+absolutely no visual difference.
+The photo is literally identical.  I
+can now send this image
+just as we could have done for you.  In
+my case, with the email software, the
+session looks like this.  And there you go, I receive it
+with my other account.  Once again
+, everything is normal.  But now,
+if I go to my Windows terminal, I
+can use the following command to
+retrieve and extract the hidden content.
+Here, extract indicas tagide that we want to
+extract to a file and sfcha.jpg, jpg.
+This allows you to indicate the file that
+potentially contains
+hidden data.  When I press enter, it
+asks me for the password I
+set just before.  I enter it and
+instantly the original file
+reappears on my computer.  Perfect.
+And it works with any
+type of file.  For example, if I
+take a CSV with false
+information, another image and I
+put the same command back, same result,
+the data is invisible but indeed
+present inside the image.  And
+now you might be wondering how
+we could find this
+famous passphrase without knowing it.
+This is where an even
+more interesting tool comes in;
+for this, you need to enter this
+command.  SF indicates the image to analyze
+and wlre.ttext. A text is a word list,
+therefore a very large list containing
+millions of potential passwords.
+Pressing enter, boom!  It
+directly finds the pass phrase I had
+used just before.  I can then
+extract my CSV file like this and
+presto, it appears as if by magic, as
+you can see.  This type of
+technique clearly demonstrates that data can be hidden
+in
+seemingly innocuous files.  On the internet
+, for example, the images or even audio files
+you download may very well
+contain hidden messages.  And at some
+point, all this data
+has to be stored somewhere.
+And that's precisely where the
+video partner O2 Switch comes in.  Out
+Switch is a 100% French web hosting provider
+with its own data centers in
+France.  In practical terms, if you have a
+project, you have a choice of three
+offers to suit your needs, including
+their cloud offer which I find
+particularly interesting.  With
+this offer, you get
+unlimited NVMe storage,
+unlimited bandwidth, unlimited databases, and
+even a domain name included.  But
+where it gets interesting, especially given the
+subject of the video, is the
+security aspect.  Their Tiger Guard system
+analyzes everything that
+happens on your hosting in real time with
+proactive detection of
+suspicious behavior.  And with Tiger Protect, you
+can fix problems before
+they become critical.  In terms of
+performance, they use their
+own Power Boost web server, which allows
+for very fast loading times
+, even with a lot of traffic.  And
+as a bonus, you get a Nextcloud instance
+included with 250 GB. So you
+can practically have your own
+private cloud hosted in France.
+Obviously, all of this comes with
+French technical support available 24/7.
+Right now, there's
+a great promotion on the cloud offer,
+ideal for starting a project, and you
+can also use my code parlon
+cyberdis to get an additional 10% discount
+.  The link is in the
+description.  To continue, we can
+do exactly the same thing with
+audio files.  For example, here I have a
+simple Wav file.  Listen to this.
+Here, audio stecanography works
+on exactly the same principle as
+that of images.  In other words, you
+can change the signal a little without
+changing what you hear.  And as before
+with images, we can
+use exactly the same tool but
+this time by giving it an
+audio file as a medium.  If I open Audacity
+and put the
+original file and the modified file side by side, you
+can see that the waveforms are
+identical.  There is no
+visible difference.  And if we listen to the original sound
+and compare it with the sound, with
+the hidden data,
+there is absolutely no difference.
+It's magical.  So far, we have managed to
+hide files in images and
+in sound.  But what is even more
+surprising is that you can combine
+the two to hide an image
+directly in an audio file.  A
+well-known example of this principle is
+Affex Win's Devil Face, where an image is
+literally hidden in the
+audio spectrogram.  To do
+this, we will use a tool called
+Quagula, available on Windows.  You
+just need to download the software,
+extract it, and then launch the executable.
+For the demo, I'm going to use this
+simple image with a black background and my
+logo in white on top.
+Then you just need to open this image in
+the tool and you should see it
+appear here.  Next, at the top, click
+on sound and then on render without blue.
+At that point, the tool will generate a
+rather strange sound which
+simply corresponds to the conversion of the image into an
+audio file.
+And we do this without blue because it allows us
+to remove certain components and
+keep only the
+important elements of the image, notably the
+white logo on a black background which stands out better
+in the spectrogram.  Once the
+file is generated, all that remains is to
+save it to your PC.  Then open it
+in a tool like Audac City,
+click on the three small dots here,
+then switch to spectrogram mode.  And
+then, boom!  Your
+hidden image will appear in the audio.  That's
+incredible.  But there is still
+another medium that we haven't seen: the
+text.  For this, we will use a tool
+called ste
+instead of hiding data in
+pixels or in audio frequencies, here
+we will hide it in something
+that we almost never notice.
+empty spaces.  For the demo, I will
+use two files.  A
+secret file that contains the hidden message and
+a message file that is the
+normal text, the one in which we will
+conceal the information.  To encode
+everything, simply use the
+following command.  Here, the
+Stegano file will be the output file, the one
+that contains the final text with the
+hidden message inside.  And as
+you can see, the file was
+generated correctly and invisible lines were
+added to the text.  Now, if we
+open this file with command 4, we
+only see the normal text.  But in
+reality, if you look closely just
+below, there is indeed
+additional information hidden in the
+empty spaces.  Finally, regarding the different
+methods, I wanted to show you that it
+is also possible to hide
+information directly in the
+metadata of images, in what is
+called exif data.  For this, we will
+use a well-known little product, Exifol.  If
+you simply use it on a
+regular image, you will see
+all the normal file information appear
+: the name, the type, the resolution,
+sometimes even the creation date or the
+camera model.  And what's
+interesting is that we can write in it
+and add our own
+personalized information.  For
+example, using the
+following command, we will simply write
+a hidden message in the comment field
+of the image metadata.  We confirm and
+boom, it's done.  Now, if we
+rerun the analysis of the
+image metadata, we can see that a new
+line has been added here.  And yet,
+visually, once again, nothing has
+changed.  What's worrying about
+steganography is that this kind
+of attack can even affect you
+simply by visiting a website without
+you needing to click on
+anything or download
+any files.  In 2016,
+cybersecurity researchers discovered a
+set of coordinated attacks called
+Stegano, spread through online advertisements
+on highly popular sites
+visited by millions of users
+every day.  At first glance, these
+banners seemed completely
+normal, but in reality, they
+contained images in which
+malicious code was hidden
+directly in the pixels.  To
+work, this method was
+combined with fight zer day vulnerabilities,
+that is, vulnerabilities
+unknown to software publishers and
+therefore not yet fixed.  As a result,
+simply loading the page was enough
+to be exposed and no action
+was required.  Moreover,
+steganography can also exist in
+the physical world without us realizing it
+.  One of the best-known examples is
+that of Reality Weiner, a former
+employee working for the NSA,
+the American intelligence agency.  In
+2017, she decided to give the press
+a confidential document containing
+information about Russian attempts
+to influence the American elections.
+But what she didn't know was that even
+a simple printed document could contain
+hidden information.  In fact,
+some laser printers have a
+little-known feature.  They
+automatically add tiny yellow dots to printed pages,
+completely
+invisible to the naked eye.  And these dots
+actually form a code that allows you
+to identify the printer, the
+exact date of printing and sometimes even
+the precise time the document
+was printed.  In this case,
+investigators recovered the document and,
+thanks to these yellow dots, were able to
+trace it back to a very
+specific printer.  And by cross-referencing this information
+with activity logs, they
+identified which person had used
+that printer at the exact time of
+printing.  But then, how can we
+detect steganography?
+Because so far, we've seen something
+quite problematic.  There is
+no universal signature.  The
+first method is to start with
+the simplest principle.  Compare the
+file with its original.  If you
+still have the original version of an image,
+for example, you can check if
+it has been altered by calculating its
+digital fingerprint, which is called a
+check summ.  For this, we can use the
+chat 256 command. The principle is
+simple.  If you compare two files that are
+supposed to be identical but the H is
+different, then it means there has been
+a modification, however small.
+But obviously in many cases, we do
+n't have the original to compare it to.  So there are
+also specialized
+detection tools.  For example, Steg Expose,
+a tool designed to detect
+anomalies in images and in particular
+bit manipulations by looking for
+inconsistencies that should not
+exist in a natural image.  There is
+also Ex Tool which we have already seen earlier
+but which can also be used in
+a detection logic by reporting
+errors.  And finally, there are some
+really cool sites like Apisolve that
+allow you to automatically analyze
+an image using several techniques in
+parallel.  And besides, perhaps
+the video you just watched
+also contained a hidden message.
+Did you pay close attention?  If
+you enjoyed the video, please
+like, share and subscribe to
+support me and not miss
+future videos.  We're almost at
+100,000 subscribers.  That's incredible.  THANKS.

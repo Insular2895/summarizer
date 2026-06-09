@@ -1,0 +1,307 @@
+you want to build an mpm package and you
+came to the right place maybe you need
+to build it for yourself for your team
+at work for the open source world and
+you want to share it with everybody
+because it's something that's common and
+everybody could use that is fantastic
+and I'm glad that you want to build an
+npm package but maybe you haven't built
+an mpm package before and that's why you
+came to this video I got you covered in
+two ways you can watch this video and
+follow along that way and or you can
+take a look at the blog post that we
+have on the snak.io blog bam right there
+now
+this is 33 minutes long who wrote this
+thing it was me I know but we're going
+to try and speedrun this real fast in a
+video so that you can get the most value
+the most bang for your buck and your
+time first of all you need to be
+familiar with no. JS JavaScript GitHub
+and GitHub actions that's what we're
+going to be using for our project here
+our mpm package and you're going to be
+you know development tools available to
+assist with creating an mpm package what
+I mean by that is essentially like vs
+code or some type of editor IDE that you
+like to use when you're writing
+JavaScript typescript that type of stuff
+okay first of all we're going to start
+off with a simple example just to get
+you acquainted with building out an mpm
+package so we're going to create a
+simple example mpm package then after
+that we're going to go into a production
+ready mpm package why do I say that
+because you need to have a more robust
+solution if you're going to be building
+something that's out there in the world
+for others to use again whether it's
+publicly available or to your own team
+at your own company that type of thing
+you need to have a lot of stuff in place
+to make sure that it stays reliable and
+you can update it efficiently and that
+sort of thing and I'm going to step you
+through all of that in this video so
+stick around let's jump right into it
+let's start off with creating a new
+GitHub repository I'm assuming that you
+have a GitHub account so to create a new
+repo you can go to github.com new pop
+that bad boy open I'm going to choose me
+as the owner we going to call it demo
+simple mpm package
+oh I can't do that we'll do package one
+okay give it a description make it
+public private add a read me yes get
+ignore we're going to say node get
+ignore and then license you can choose
+whatever license you want I'm going to
+go with that bada bing bada boom you
+click create repository and you're good
+to go okay once your repository is
+created you should see something similar
+to what I have here if you chose the
+same options but probably obviously gave
+it a different name and you're going to
+have a get ignore a license and a readme
+file so now what you can do is you can
+clone it locally and start working with
+your IDE that way or what I personally
+prefer to do is use GitHub code spaces
+so I'm going to go that route feel free
+to do the same if you'd like but it's
+not a big deal if you don't do that and
+you do it your own way if you want to go
+locally you can copy it via htps SSH
+however you've set up your GitHub
+account and locally on your machine with
+your terminal you'll want to go that
+route okay all right once you have it
+opened locally or in a code space
+however you prefer to do that open up
+your terminal I'm going to use the
+built-in vs code terminal to do this and
+we're going to mpm and nit and I'm going
+to say hyphen y just to automatically
+say yes to all the prompts that come up
+and that'll give you a package Json with
+the default answers to the prompts that
+come up there like the name the version
+and so forth let's open up the package
+Json and make some changes here first
+thing you should look to do is updating
+the name what we want to do here with
+the name is use what's called a scoped
+name so that others that may have the
+same name of a package can't duplicate
+what yours hases or confuse other people
+that are going to try and consume this
+package with someone else's package if
+it's called like name squatting if you
+will on the package name so we want to
+avoid that by scoping that and this is
+something that's available via the npm
+registry so I'm going to say at clario
+demo simple npm package in that way and
+now we can go ahead and get started
+writing our code for this package so for
+that I'm just going to create an
+index.js file and in here we're just
+going to do a very boring hello world
+type of situation in
+YouTube right we save that now we have
+our mpm package I chose index.js because
+our main field here in the package Json
+points to index.js being the main entry
+point for this particular package so we
+followed that with the index.js file all
+right so now that we have the package
+kind of set up to go and we want to
+start deploying it we need to create an
+mpm account in order to do that if you
+have one already you can go ahead and
+Skip ahead but if you don't you can
+follow along we're going to go and set
+up a new account right now so head on
+over to npm mj.com and there you'll
+click the sign up
+button you choose yourself a username an
+email address and a password agreed to
+the end user license and privacy policy
+agreement here you can click on those to
+read those highly recommend you go
+through it okay it's important Does
+anybody read these anybody then when
+you're done filling all that out click
+on the create an account button right
+there so I'm in the middle of signing
+into my account what other thing I want
+to note when you create your mpm account
+be sure to enable two Factor
+authentication to add that extra layer
+security onto your account so that
+others cannot take over it and take over
+your packages as easily as without it if
+you want to learn how to configure two
+Factor authentication for your account
+there is some documentation on the npmjs
+website that steps you through exactly
+how to do that all the various ways you
+can go about doing that if you'd like
+too so I'll leave a link for that in the
+description below once you finish
+creating an mpm account you'll be
+brought to a page like this where it let
+you explore packages while you're signed
+in in the top right hand corner there
+there you go so next step is to go back
+to your editor choice or rather your
+terminal so that you can log into your
+mpm account in the CLI in the command
+line let's switch on over to that now
+all right once you're over in your
+terminal or command line of choice you
+can run npm
+login and that will prompt you to open
+up a URL you can press enter to open
+that in your browser and if you get this
+message like me browser unavailable you
+can open it up manually by pressing
+control click on it from Visual Studio
+code I'm going to copy it and I'm going
+to paste it into my browser and I'm
+going to log in now you can see it knows
+that I was already logged in or had a
+set session active in this browser and
+all I have to do is enter that onetime
+password for that two-factor
+authentication yet again and then as you
+can see once you finished doing that
+you'll see the message authentication
+successful and you can close this tab
+and return to your command line so let's
+go ahead and do that now all right so we
+are logged in successfully but something
+else to note and and realize here is
+that I'm logged into the main npm
+registry if you are looking to create
+packages for your company you have an
+internal registry that you're using of
+packages you'll want to log into that
+registry instead said I imagine if you
+already have that and you're aware of it
+you know how to set that up but if you
+don't and you want a video on how that
+works leave a comment below let me know
+and we can work on that all right so now
+we're up to the step where we're ready
+to publish this package we have an npm
+account we have our package ready to go
+we need to publish it to the registry so
+what do we do to get that going we're
+going to run another command in the
+terminal all right so the next step is
+to see what would be included if you
+were to package up your mpm package and
+publish it to the registry of your
+choice and what we had in the past was a
+package called mpm pack list but that
+will no longer work for you so we
+actually need to update this blog post
+so you're getting to see the updated
+version of that what we're going to use
+instead is mpm pack with the dry run
+flag so that we can see exactly what we
+would be included in the package so
+let's head on over to our command line
+again we're going to run mpm pac-- dry
+hyen run in the output that you see
+after running that command you want to
+pay attention to the tarball contents
+and just double check that the files
+that are list listed here are the ones
+that you want included in the package in
+this case this is fine for now but in
+other scenarios where you might have
+like environment variable file just
+locally on your machine you want to make
+sure that you're not accidentally
+including that as part of it another way
+we can go about doing this is using the
+npm publish
+command which also has a dry run flag
+and will give you a very similar output
+that we saw before essentially we look
+at the tarball contents and see what's
+going to be actually included in the
+package that gets published it also
+calls out that it would be publishing to
+this registry so that's something else
+to take note of depending on what
+registry you're going to be working with
+all right once we're ready we can run
+the mpm publish command Let Me Clear My
+screen so you can see this better mpm
+publish and because we used a scoped
+package going back to our package Json
+let me close this package Json file you
+can see for me I'm making it scoped
+based on my account that I have my mpm
+account but maybe you have an
+organizational account with mpm that you
+want to publish packages under that
+scope you would have that listed here
+you would be logged into your command
+line tool that way as well and so forth
+but because we're using a scoped package
+by default when you go to publish npm is
+going to publish those as private so if
+you want to make that public you got to
+add the access flag and set that to
+public I'm going to show you how to do
+that right now publish hyphen hyphen
+access equals public and that will make
+sure that that when it does get
+published it's readily available for
+anybody that has access to that registry
+in this case the public mpm registry is
+what we're going with and with that you
+are done you've successfully create an
+mpm package you created an mpm account
+and then you published your package
+using that account to the public mpm
+registry now the next step from here is
+to make a more production ready package
+what that involves is a couple of things
+you're going to want to make sure you
+have unit tests or just tests in general
+to ensure that the package is behaving
+the way you expect it to behave you want
+to make sure you have Security checks in
+there so that you're not introducing any
+vulnerabilities into the code of folks
+that are using and relying on your
+package as a dependency that M
+themselves last but not least you want
+to automate some of the version
+management that you have here as you
+make changes you make improvements you
+fix bugs in your packages you need to be
+able to manage the versions properly
+when you go to publish them following
+semantic versioning so in the next video
+we're going to cover going in depth on
+those steps to make a more production
+ready package but if you got value out
+of this video be sure to like it down
+below and share with somebody who can
+put it use and if you made it this far
+subscribe to the channel so you don't
+miss out on upcoming videos thanks for
+watching and happy safe coding everyone

@@ -1,0 +1,193 @@
+Look, let's be honest with each other.
+Um, for years, the prevailing wisdom in
+AI has been deceptively simple. Toddler
+logic. More is better. More data, more
+parameters, more compute power. We've
+been told, "Shovel internet text into
+the gaping m of a neural network and it
+will emerge Athenaike, wise, and
+helpful." But here in 2026, that
+approach is a spectacular failure. It's
+like trying to become a gourmet chef by
+eating everything in a grocery store.
+Cleaning supplies, checkout candy.
+You'll be full. You still won't know how
+to cook. And you might think bleach
+tastes interesting. Chasing data volume
+alone is a fool's errand down a
+dangerous path. These massive,
+indiscriminately trained models are
+masters of confident nonsense. They can
+sound plausible. They can sound
+authoritative. And they can be utterly,
+fundamentally wrong.
+Experts call this hallucination, which
+means the AI is making things up, like a
+child explaining where the cookies went.
+So, what is this empathy gap? It's the
+chasm between what a model knows and
+what a user actually needs. A large
+language model can ingest the entirety
+of Wikipedia. It can ingest thousands of
+books. It can ingest the chaotic mess of
+the public internet. It can tell you the
+capital of Burkina Faso. It can tell you
+the molecular weight of caffeine. But it
+can't learn how to be patient with a
+confused student. It can't learn how to
+offer encouragement to a struggling
+artist. It can't learn how to provide
+clear, simple steps to someone who is
+already overwhelmed. Raw data is devoid
+of intent, tone, and context. It teaches
+facts, but not how to care. A tool that
+doesn't care about its users goals is
+ultimately a bad tool. This gap births
+the most frustrating problems. Ask for a
+simple recipe and you get a culinary
+dissertation. The model isn't malicious,
+it's clueless. It learned patterns from
+professional cooking websites, not a
+tired parents reality. The data taught
+complexity, not utility. The empathy gap
+also drives bias. If your data comes
+from a world full of systemic biases,
+spoiler, it does. Your model will learn
+and amplify them, and it will sound
+perfectly objective doing it. It's an
+engine that laers prejudice into the
+appearance of fact. Empathy is the
+bridge across this gap. It makes us ask,
+who are we building this for? So, how do
+you actually practice this empathy in a
+concrete way? You can't just write
+import empathy in your code. Stop
+designing for a vague mythical user.
+Start designing for specific people.
+This is where user personas come in. A
+persona is not just a demographic
+profile. It's a short narrative sketch
+of a target user complete with a name, a
+job, a core goal, a primary frustration.
+It's a simple act of fiction grounded in
+reality. And it is a shockingly powerful
+tool for focusing a development team.
+You are no longer building a generic
+chatbot. You are building a tool for
+Maria. Maria, a high school biology
+teacher who needs creative, safe lab
+ideas she can explain to 15year-olds in
+under 5 minutes. Let's make this real.
+Imagine you're fine-tuning a coding
+assistant. Instead of one generic model,
+be guided by a few key personas. Maria
+the teacher, David the student coder,
+Priya the data scientist. David, a
+19-year-old CS student new to Python. He
+needs clear step-by-step explanations
+with lots of comments. He's terrified of
+looking dumb in front of his professor.
+Priya, a senior data scientist with a
+decade of experience. The traditional
+approach to fine-tuning often resembles
+a massive oneshot cannon. Teams spend
+weeks preparing a gigantic data set,
+load it up, press the go button on a
+cluster of GPUs for days and then
+anxiously wait to see what comes out the
+other end. It's slow, it's expensive,
+and if the result is bad, it's
+incredibly demoralizing. The design
+thinking approach, however, treats
+fine-tuning less like a cannon and more
+like sculpting. You don't try to get it
+perfect on the first try. Instead, you
+embrace the idea of a low-fidelity
+prototype. You start small, you start
+fast, you start messy. Your first
+fine-tuning run shouldn't use your
+entire painstakingly curated data set.
+Instead, take a small but representative
+sample, your golden examples, and run a
+quick, cheap training cycle. The goal
+here is not to create a finished
+product. The goal is to learn. This
+first prototype will almost certainly
+have flaws. It will misunderstand
+prompts. It will adopt the wrong tone.
+It will hallucinate wildly. But here's
+the key. You treat these failures not as
+bugs in the code, but as flaws in the
+design. You analyze the bad outputs and
+ask design- ccentric questions. Why did
+the model get this so wrong? Was the
+instruction unclear? Is our example for
+a polite tone actually coming across as
+robotic? For far too long, the AI
+community has been obsessed with the
+wrong report card. We measure our models
+with abstract standardized benchmarks
+and watch loss curves creep downwards,
+celebrating when our line is slightly
+lower than someone else's. This is like
+judging a chef's skill based only on the
+final weight of the food they produce.
+It's a metric, sure, but it tells you
+absolutely nothing about whether the
+food is delicious, nutritious, even
+edible. These old metrics are not
+useless. They can tell you if your model
+is learning something, but they are
+dangerously incomplete. They tell us
+nothing about whether the model is
+useful, trustworthy, pleasant to
+interact with. To build models that
+truly serve people, we need to invent
+and adopt new human focused measures of
+success. This starts with creating a
+custom alignment score for your project.
+This isn't a single number, but a
+composite score derived from several
+qualitative assessments. You get a panel
+of human raiders, people who represent
+your user personas, to evaluate the
+model's output on real world tasks. They
+don't just rate it as correct or
+incorrect. They rate it on multiple
+axes.
+Did it successfully complete the task?
+Was the tone appropriate for the
+situation? Was the information presented
+clearly? Did it build trust or create
+confusion? This provides a rich
+multi-dimensional view of performance
+that a simple accuracy score could never
+capture. So here is the bottom line and
+I need every engineer, every product
+manager and every team lead to hear
+this. Stop chasing raw data. Just stop.
+That habit, the reflexive instinct to
+solve a problem by finding a bigger data
+set is holding us back. It is the single
+greatest obstacle to building AI that is
+genuinely helpful, reliable, and aligned
+with human values. We have to change
+this core behavior. We must treat the
+large language model not as a passive
+database to be filled, but as a product
+to be designed, a partner to be trained.
+The work is not done when the training
+run starts. That is when the real work
+of refinement and guidance begins. Here
+is how you can start this shift today
+with five clear actionable steps. First,
+before you write a single line of tuning
+code, create two or three simple user
+personas. Give them names and problems.
+Second, forget bulk data. Instead,
+gather or write a small set of 50 to 100
+golden examples that perfectly
+demonstrate the desired behavior for
+those personas. Third, run a fast,
+low-fidelity fine-tune using only those
+examples.

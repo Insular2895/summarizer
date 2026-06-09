@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "2KzDMD5Qk2k",
+  "title": "How to make smaller Docker containers (including multi-stage build demo!)",
+  "url": "https://www.youtube.com/watch?v=2KzDMD5Qk2k",
+  "source_paths": [
+    "cache/transcripts/how-to-make-smaller-docker-containers-including-multi-stage-build-demo-2kzdmd5qk"
+  ],
+  "updated_at": "2026-06-09T18:15:55.763349+00:00"
+}

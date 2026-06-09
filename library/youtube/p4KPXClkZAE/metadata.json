@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "p4KPXClkZAE",
+  "title": "NodeJS Instrumentation - Adding Custom Tags to Spans | Datadog Tips & Tricks",
+  "url": "https://www.youtube.com/watch?v=p4KPXClkZAE",
+  "source_paths": [
+    "cache/transcripts/nodejs-instrumentation-adding-custom-tags-to-spans-datadog-tips-tricks-p4kpxclkz"
+  ],
+  "updated_at": "2026-06-09T18:15:56.084032+00:00"
+}

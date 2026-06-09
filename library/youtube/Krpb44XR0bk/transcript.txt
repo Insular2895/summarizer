@@ -1,0 +1,404 @@
+hello and welcome to the next kubernetes
+tutorial video so in this video I want
+to give you an overview of the most
+basic fundamental components of
+kubernetes but just enough to actually
+get you started using kubernetes in
+practice either as a DevOps engineer or
+a software developer
+now kubernetes has tons of components
+but most of the time you are going to be
+working with just a handful of them so
+if you have just 30 to 40 minutes and
+you want to get started with kubernetes
+as fast as possible this video can
+actually be the perfect fit for you so
+[Music]
+I'm gonna build a case of a simple
+JavaScript application with a simple
+database and I'm gonna show you step by
+step how each component of kubernetes
+actually helps you to deploy your
+application and what is the role of each
+of those components
+so let's start with the basic setup of a
+worker node or in kubernetes terms a
+node which is a simple server a physical
+or virtual machine and the basic
+component or the smallest unit of
+kubernetes is a pot so what pot is is
+basically an abstraction over a
+container so if you're familiar with
+docker containers or container images so
+basically what pod does is it creates
+this running environment or a layer on
+top of the container and the reason is
+because kubernetes wants to abstract
+away the container runtime or container
+technologies so that you can replace
+them if you want to and also because you
+don't have to directly work with docker
+or whatever the container technology you
+use in a kubernetes so you only interact
+with the kubernetes layer so we have an
+application pod which is our own
+application and that will maybe use a
+database pod with its own container and
+this is also an important concept here
+pod is usually meant to run one
+application container inside of it you
+can run multiple containers inside one
+pod but usually it's only the case if
+you have one main application container
+and a helper container or some side
+service that has to run inside of that
+pod and you say this is nothing special
+you just have one server and two
+containers running on it with a
+abstraction layer on top of it so now
+let's see how they communicate with each
+other in kubernetes world so kubernetes
+offers out-of-the-box a virtual network
+which means that each pod gets its own
+IP address not the container the pod
+gets the IP address and each pod can
+communicate with each other using that
+IP address which is an internal IP
+address obviously it's not the public
+one
+so my application container can
+communicate with database using the IP
+address however pod components in
+kubernetes also an important concept are
+ephemeral which means that they can die
+very easily and when that happens for
+example if I lose a day
+a base container because the container
+crashed because the application crashed
+inside or because the notes the server
+that I'm running them on ran out
+resources the pod will die and a new one
+will get created in its place and when
+that happens it will get assigned a new
+IP address which obviously is
+inconvenient if you are communicating
+with the database using the IP address
+because now you have to adjust it every
+time pod restarts and because of that
+another component of kubernetes called
+service is used
+so service is basically a static IP
+address or permanent IP address that can
+be attached so to say to each hot so my
+app will have its own service and
+database part will have its own service
+and the good thing here is that the life
+cycles of service and the pod are not
+connected so even if the pod dies the
+service and its IP address will stay so
+you don't have to change that endpoints
+anymore so now obviously you would want
+your application to be accessible
+through a browser right and for this you
+would have to create an external service
+so external service is a service that
+opens the communication from external
+sources but obviously you wouldn't want
+your database to be open to the public
+requests and for that you would create
+something called an internal service so
+this is a type of a service that you
+specify when creating one however if you
+notice the URL of the external service
+is not very practical so basically what
+you have is an HTTP protocol with a node
+IP address so of the node not the
+service and the port number of the
+service which is good for test purposes
+if you want to test something very fast
+but not for the end product so usually
+you will want your URL to look like this
+if you want to talk to your application
+with a secure protocol and a domain name
+and for that there is another component
+of kubernetes called ingress so instead
+of service the request goes first to
+ingress and it does the forwarding then
+to the service so now we saw some of the
+very basic components of kubernetes and
+as you see this is a very simple set up
+we just have a one server and a couple
+of containers running and some services
+nothing really special where kubernetes
+advantages or the actual cool features
+really come forward but we're gonna get
+there step-by-step so let's continue
+so as we said pots communicate with each
+other using a service so my application
+will have a database end point let's say
+called MongoDB service that it uses to
+communicate with the database but where
+do you configure usually this database
+URL or endpoints usually you would do it
+in application properties file or as
+some kind of external environmental
+variable but usually it's inside of the
+built image of the application so for
+example if the endpoint of the service
+or service name in this case changed to
+MongoDB you would have to adjust that
+URL in the application so usually you'd
+have to rebuild the application with a
+new version and you have to push it to
+the repository and now you'll have to
+pull that new image in your pod and
+restart the whole thing so a little bit
+tedious for a small change like database
+URL so for that purpose kubernetes has a
+component called config map so what it
+does is it's basically your external
+configuration to your application so
+config map would usually contain
+configuration data like URLs of database
+or some other services that use and in
+kubernetes you just connect it to the
+pot so that pot actually gets the data
+that config map contains and now if you
+change the name of the service the
+endpoint of the service you just adjust
+the config map and that's it you don't
+have to build a new image and have to go
+through this whole cycle now part of the
+external configuration can also be
+database username and password right
+which may also change in the application
+deployment process but putting a
+password or other credentials in a
+config map in a plain text format would
+be insecure even though it's an external
+configuration so for this purpose
+kubernetes has another component called
+secret so secret is just like config map
+but the difference is that it's used to
+store secret data credentials for
+example and it's stored not
+a plain text format of course but in
+base64 encoded format so secret would
+contain things like credentials and of
+course I mean database user you could
+also put in config map but what's
+important is the passwords certificates
+things that you don't want other people
+to have access to would go in the secret
+and just like config map you just
+connect it to your pot so that pod can
+actually see those data and read from
+the secret you can actually use the data
+from config map or secret inside of your
+application pod using for example
+environmental variables or even as a
+properties file so now to review we've
+actually looked at almost all mostly
+used kubernetes basic components we've
+looked at the pod we've seen how
+services are used what is ingress
+component useful for and we've also seen
+external configuration using config map
+and secrets
+so now let's see another very important
+concept generally which is data storage
+and how it works in kubernetes so we
+have this database pod that our
+application uses and it has some data or
+it generates some data with this set up
+that you see now if the database
+container or the pod gets restarted the
+data would be gone and that's
+problematic and inconvenient obviously
+because you want your database data or
+log data to be persisted reliably
+long-term and the way you can do it in
+kubernetes
+is using another component of kubernetes
+called volumes and how it works is that
+it basically attaches a physical storage
+on a hard drive to your pot and that
+storage could be either on a local
+machine meaning on the same server node
+where the pod is running or it could be
+on a remote storage meaning outside of
+the kubernetes cluster it could be a
+cloud storage or it could be your own
+premise storage which is not part of the
+kubernetes cluster so you just have an
+external reference on it so now when the
+database pod or container gets restarted
+all the data will be there persisted and
+because data storage and volumes is a
+very important topic I'm gonna make its
+own tutorial video about volumes but now
+it's important to understand the
+distinction between the kubernetes
+cluster and all of its components and
+the storage regardless of whether it's a
+local or remote storage think of a
+storage as an external hard drive plug
+in into the kubernetes cluster because
+the point is Kunitz clustered explicitly
+doesn't manage any data persistence
+which means that you as a community's
+user or an administrator are responsible
+for backing up the data replicating and
+managing it and making sure that it's
+kept on a proper Hardware etc because
+it's not taking care of kubernetes
+so now let's see everything is running
+perfectly and a user can access our
+application through a browser and when
+they set up what happens if my
+application pod dies right crushes or I
+have to restart the pod because I built
+a new container image basically I would
+have a downtime where a user can reach
+my application which is obviously a very
+bad thing if it happens in production
+and this is exactly the advantage of
+distributed systems and containers so
+instead of relying on just one
+application pod and one database pod etc
+we are replicating everything on
+multiple servers so we would have
+another node where a replica or clone of
+our application would run which will
+also be connected to the service so
+remember previously we said the service
+is like an persistent static IP address
+with a DNS name so that you don't have
+to constantly adjust the end point when
+pod dies the service is also a load
+balancer which means that the service
+will actually catch the request and
+forward it to whichever part is least
+busy so it has both of these
+functionalities but in order to create
+the the second replica of the my
+application pod you wouldn't create a
+second part but instead you would define
+a blueprint for in my application part
+and specify how many replicas of that
+pod you would like to run and that
+component or that blueprint is called
+deployment which is another component of
+kubernetes and in practice you would not
+be working with pause or you will not be
+creating pods you would be creating
+deployments because there you can
+specify how many replicas and you can
+also scale up or scale down number of
+replicas of pods that you need
+so with pod we said that part is a layer
+of abstraction on top of containers and
+deployment is another abstraction on top
+of pods which makes it more convenient
+to interact with the pods replicate them
+and do some other configuration so in
+practice you would mostly work with
+deployments and not with pots so now if
+one of the replicas of your replication
+pod would die the service will forward
+the requests to another one so your
+application would still be accessible
+for the user so now you're probably
+wondering what about the database pot
+because if the database pot died your
+application also wouldn't be accessible
+so we need database replicas as well
+however we can't replicate database
+using a deployment and the reason for
+that is because database has a state
+which is its data meaning that if we
+have closed a replicas of the database
+they would all need to access the same
+shared data storage and there you would
+need some kind of mechanism that manages
+which parts are currently writing to
+that storage or which parts are reading
+from that storage in order to avoid data
+inconsistencies and that mechanism in
+addition to replicating feature is
+offered by another kubernetes component
+called stateful set so this component is
+meant specifically for applications like
+databases so my sequel MongoDB
+elasticsearch or any other state full
+applications or databases should be
+created using stateful sets and not
+deployments it's a very important
+distinction and stateful said just like
+deployment would take care of
+replicating the pods and scaling them up
+or scaling them down but making sure
+that database reads and writes are
+synchronized so that no database
+inconsistencies are offered however I
+must mention here that deploying
+database applications using stateful
+sets in kubernetes cluster can be
+somewhat tedious so it's definitely more
+difficult than working with deployments
+where you don't have all these
+challenges that's why it's also a common
+practice to host database
+applications outside of the kubernetes
+cluster and just have the deployments or
+stateless applications that replicate
+and scale with no problem inside of the
+kubernetes cluster and communicate with
+the external database so I'm gonna make
+another video in order to show specific
+comparison between deployment and
+stateful set and how to actually deploy
+database applications properly in a
+communities cluster so now that we have
+two replicas of my application pod and
+two replicas of the database and they're
+both load balanced our setup is more
+robust which means that now even if node
+one the whole note server was actually
+rebooted or crashed and nothing could
+run on it we will still have a second
+note with application and database pods
+running on it and the application would
+still be accessible by the user until
+these two replicas get recreated so you
+can avoid downtime so to summarize we
+have looked at the most used kubernetes
+components we start with the pods and
+the services in order to communicate
+between the pots and the ingress
+component which is used to route traffic
+into the cluster we've also looked at
+external configuration using config maps
+and secrets and data persistence using
+volumes and finally we've looked at pod
+blueprints with replicating mechanisms
+like deployments and stateful sets where
+stateful set is used specifically for
+stateful applications like databases and
+yes there are a lot more components that
+communities offers but these are really
+the core the basic ones just using these
+core components you can actually build
+pretty powerful kubernetes clusters
+thanks for watching the video I hope it
+was helpful and if it was don't forget
+to like it this is a video series so I
+will create a new one every week so if
+you want to be notified whenever a new
+video comes out then subscribe to my
+channel if you have any questions if
+something wasn't clear in the video
+please post them in a comment section
+below and I will try to answer them so
+thank you and see
+in the next video

@@ -1,0 +1,395 @@
+Clouded code is gaining a lot of
+popularity among developers. Docker MCP
+toolkit makes it easy and secure to run
+and configure MCP servers to automate
+dev flow. Together, they make a powerful
+combination as development tools. In
+this video, I'm going to go ahead and
+show you how to add MCP servers to Cloud
+Code with Docker MCP toolkit. How to set
+up cloud code, configure three MCP
+servers, Jira, GitHub, and file system
+so you can orchestrate workflows across
+all three. And everything that I'm going
+to show you can turn 30 minutes of
+manual work into 2 minutes. That's
+orchestrating. We're going to give
+instructions to cloud code as you see on
+the bottom right hand corner so that it
+can scan the entire codebase. Identify
+15 plus todo fix me comments. Retrieve
+git history [music] for each one.
+Categorize them by business priority.
+Create properly formatted Jira issues
+and then link each one back to the exact
+file and line number and then give us a
+nice summary. So let's go ahead take a
+look. Quick note that this video was
+inspired by this blog here by Ajet Raina
+that you can follow along. Before we get
+started, there are a couple of
+prerequisites. The first is to install
+Docker Desktop, which you could do from
+this site [music] here.
+The next step would be to enable the MCP
+toolkit. Following this link will bring
+us to this documentation here. But
+essentially what you'll need to just do
+is within Docker Desktop, go to the
+settings tab. And once you do, navigate
+down to beta features [music] and make
+sure that you have enabled Docker MCP
+toolkit check. And once you do, you can
+hop on over here to MCP toolkit where
+you'll have four tabs. And if you go to
+catalog, you could see all your MCP
+servers available. The next step is to
+hop on over to my terminal and install
+Claude. I'll be using Brew, which is a
+package manager since I'm on a Mac. And
+that'll give me a nice clean install.
+Okay, based on this top line up here,
+looks like Claude was successfully
+installed. And to [music] verify, I'll
+just enter in claude version. Looks
+good. So now let's [music] go ahead and
+just start cla. I can choose the mode
+that I want. I will stick with dark
+mode. And I will stick with number one
+because I do have a subscription. And it
+is asking me to give it permission so
+that I could log on with my account. And
+I'll click enter to continue. Gives me a
+little bit warning here. [music] I
+understand. and I will hit enter and I
+will stick with the recommended settings
+and yes continue to give it permission
+to work in my directories. So right now
+we are ready to work with claude and if
+I actually typed in /mcp we could see
+what servers we have access to and so
+far we only see this option manage mcp
+servers. So, why don't we go ahead and
+bring up our Docker desktop. And as you
+can see, right now, we don't have any
+servers under my server. But if we hop
+on over to our clients, we now have the
+option for connecting with cloud code.
+And boom, on the bottom right hand side,
+you see client connected to the MCP
+toolkit. So now when we go back to cloud
+code. So to continue I want to go ahead
+and restart cloud. So let me go ahead
+and exit and start it up again.
+And at this point when I type in MCP
+I can see that I have access to the MCPS
+that Docker will provide. So now we're
+going to move on to a a realworld demo.
+It's going to be a todo to ticket
+automation demonstration
+and uh we can do this because we've now
+connected cloud code to docker mcp
+toolkit [music] and we now want to see
+it in action. In this practical example,
+we're going to [music] be automatically
+converting to-do comments in a real code
+base into tracked Jira tickets complete
+with git history priority categorization
+and proper linking. And we're going to
+be required to configure three MCP
+servers. We're going to be orchestrating
+the file system MCP specifically to scan
+our codebase and read source files. Then
+there's the GitHub MCP to run Git Blame
+and extract author information. And then
+there's Atlasian MCP to create and
+manage Jira issues. We'll walk through
+enabling and configuring all of these
+three servers. [music]
+And configuration for the Atlantian
+server will be done under the
+configuration tab here which we will
+talk about later. And this also applies
+to the other MCP servers always under
+the configuration tab. [music] As we go
+through this walkthrough, if you go to
+my servers, you will end up having three
+of the MCP servers we just discussed as
+you see here. Now, what makes this
+realistic? We're going to be using
+actual codebase called catalog service
+node. We're going to be extracting git
+blame info to identify code authors.
+This process categorizes by business
+priority using keyword analysis. It
+creates properly formatted Jira issues
+with context and even links back to
+exact file and line numbers for easy
+navigation. Now, if we're doing this
+manually, this would take us about 20 to
+30 minutes. But throughout this process,
+as it's going to be automated, it should
+only take it a couple of minutes. So
+let's go and walk through starting with
+configuring the servers. So we're ready
+to enable Docker to work with Ajira
+issues. But before we can connect Docker
+in any way to handle Jira issues, we
+need Atlancian, the parent company of
+Jira credentials that tell Docker's MCP
+server where to look and what
+credentials to use. If you don't already
+work with Jira, you'll want to set up an
+Atlantian account for these credentials.
+And there's three of them. the Jira URL,
+your Jira username, which is usually
+your email, and an API token. To set up
+an account, you can navigate to the
+atlancian.com
+website. And when you [music] click sign
+in, you'll have an option to create an
+account here. And in my case, I just use
+one of my Google accounts. I can go
+ahead and show you how to start that
+process by clicking one of these and
+then start the process to create your
+account. Once you have your account,
+you'll get an option to set up a test
+project, which will look similar to
+this. And this will be the test project
+that we'll interact with. Now, you will
+need to generate an API key. And to do
+so, you'll just want to enter in this
+URL. You'll be prompted to verify
+yourself. And then you will come to this
+screen right here, which will give you
+an option to create an API token. Once
+you have all your credentials for
+working with Jira issues, all you need
+to do is go to the MCP toolkit and under
+catalog, we can search for Atlassian,
+which is right over here, and add that.
+And as you can see here, it says it
+requires some secrets to work. So for
+the configuration, all I'll need to do
+is put in my URL. Of course, you'll have
+your own Jira username, which is my
+email. And then for the API token that I
+created, I will need to put that in for
+my personal token. And I'll click the
+check mark. I'll do it again for the
+Jira API token. Click the check mark.
+And we're going to keep doing this until
+we don't see that yellow warning sign.
+I'll put it for my Confluence personal
+token. And then the Confluence API
+token. And the nice thing about
+configuring it like this in Docker is
+because it keeps all your secrets out of
+plain environment variables and config
+files. Everything stays protected inside
+Docker and you only have to set it up
+once for the server for it to work
+across all your MCP clients. One
+important note here is that it is
+crucial that we have https
+colon/ slash indicated here. Beautiful.
+Then I'll go ahead and click save. And
+now if we navigate to our my servers, we
+see that Atlassian is set up. So now
+before we go ahead and configure any
+other servers, let's go ahead and test
+to make sure that this one works. So I'm
+restarting Claude to make sure that it
+has the latest configuration
+information. And I'll give it permission
+right here to access my files. And I'll
+simply ask it to list the last two Jira
+issues in my project.
+Okay, it looks like it will be using the
+MCP Docker server. All right, this looks
+good so far. I see you've mentioned
+mobile banking and it's prompting us to
+get all issues for this specific project
+which I'll say yes.
+Beautiful. And there you have it. NBA 8
+and NBA 6 which matches these two right
+here. Now behind the scenes you'll
+notice that we executed Jira get product
+issues and if we hopped over to the MCP
+toolkit and clicked on our Atlassette
+server you'll see that there are 42
+tools available which one of them are
+Jira get project issues. If for any
+reason you're having issues and you need
+to look back at your configuration to
+modify it, you can hop over to your
+configuration tab right over here to
+either delete the secrets, read it, or
+modify any of the variables up here. All
+right, so the next server that we want
+to add onto our list is GitHub,
+specifically GitHub official, which
+[music] I'll go ahead and click add
+server. Here I do need to give it some
+form of authentication and I can do it
+by a personal access token or using O.
+And the main [music] difference being is
+that OOTH gives temporary revocable
+access through a secure signin flow
+while a personal access token is a long
+lived direct key you could generate
+manually to give the server ongoing
+access without logging in. We will be
+using OOTH. Once I click this link here,
+I can go ahead and press authorize and
+it'll bring up this site here. Now I'll
+click authorize Docker.
+Select open Docker. And at the bottom
+right hand corner you can see login code
+received for GitHub. And now if we go to
+my servers I see GitHub official. And
+under tools, these are the ones that
+will be available for us to use. And
+under configuration, it says that it is
+authenticated. So now let's hop on over
+to the terminal to give it a test. Okay.
+And now from the terminal, I am going to
+restart Claude. I also restarted the
+terminal session because it did make a
+difference in my particular case, but
+sometimes you just need to restart
+Claude. And from here, I will ask it to
+do a simple test to get us our GitHub
+account name.
+And it looks like it's going to use the
+MCP Docker. That looks good. We'll hit
+enter. And there you go. the rental that
+is my account name. All right. So, we
+are ready to add our last server here
+and I created a directory called MCP
+toolkit project claude where we're going
+to put our project in. And I want to
+make sure that I have a copy of the path
+here. So, I'm going to go ahead and copy
+that. And then what we're going to do is
+add the file system MCP server which is
+used to allow claw to read files from
+our local system. And we're going to
+need to specify which directories it has
+access to. So I'm going to go ahead and
+add the server
+and then take a look under my servers
+where it was added. I see the tools here
+that it has available for us. And under
+configuration, I'm going to put in the
+path. Hit the plus sign [music]
+and hit save. And I'll tab away and tab
+back just to make sure that it's there.
+And now we're ready for a quick test in
+terminal.
+Now from the terminal, I'll go ahead and
+start cla. And for our quick test, we're
+going to ask it to list allowed
+directories
+and see what it returns.
+And it ideally should indicate the path
+that we just gave it. Perfect. MCP
+Docker list allowed directories. That's
+the tool it's going to use. We'll say
+yes.
+And there we go with our allowed
+directory, the exact path that we gave
+it. Okay. So, now that we have all our
+servers installed and configured, we are
+ready to run our automation.
+And I'm going to be cloning our test
+project that we're going to be working
+off. And then navigate into our
+directory for catalog service node. And
+what I want to show are the instructions
+that I'm going to give Claude here.
+We're going to ask it to scan the code
+base, extract the comment and
+surrounding code context. It's going to
+utilize get blame to ID, who wrote it,
+determine priorities, and then create
+issues, and lastly, give us a summary.
+One thing that I want to mention with
+these directions here is that the only
+thing that I changed different from what
+the original blog had is I changed my
+project ID to MBA. so that it matches my
+Jira project. And in the context of the
+servers, it's going to be using the file
+system MCP to scan our directory, the
+GitHub MCP to run get blame and get
+author info, and then the Atlassian MCP
+to create Jira issues. All right, so
+we'll start cloud here, and we are going
+to paste the directions that we just
+went over and let the magic begin.
+So, right now it's doing all the
+scanning and reading. And now it's moved
+on to the get blame. And I'll speed this
+up for editing purposes.
+And now we move on to creating the Jira
+issues.
+Right over here at the very top, you can
+see that it's invoking the Jira batch
+create issues. So, it's going to create
+batch of issues. Let's go ahead and
+accept that to proceed.
+Looks like it created issues
+successfully and then started updating
+some fields.
+This time I'll hit number two so it
+doesn't ask me again
+and just accepts it by default.
+So I worked on a lot of high priority
+issues and now it's moving on to medium
+and low priority issues.
+Yes to creating the batch issues.
+And now we're towards the end where it's
+creating a summary report.
+Okay, look at that. Here is our summary
+report.
+The total of todo and fix me comments
+found word 19. And then we have a nice
+breakdown by priority starting off with
+high, medium, and low. And then the
+issues that were created are indicated
+here. And now if I go to Jira, we can
+now see all these other issues that have
+been created which were not there
+before.
+So, in just under two minutes, Claude
+has scanned the entire codebase,
+identified 15 plus to-do fix me
+comments, retrieved git history for each
+one, categorized them by business
+priority, created properly formatted
+Jira issues with full context, and
+linked each issue back to the exact file
+and number. For example, if we were to
+open up this issue here, you could see
+at towards the bottom where there's the
+GitHub link. What would have taken 20 to
+30 minutes of manual work is now
+automated and consistent. So, as you can
+see, Docker gives you a clean,
+consistent, and secure way to run
+everything. And with access to pre-built
+servers that you can add with just a
+single click along with a simple secure
+credential setup, the toolkit removes
+all the manual work that normally slows
+developers down. And as you saw, once
+cloud code connects through the MCP
+toolkit, we can orchestrate multiple
+servers together. So let me know in the
+comments which MCP servers that you'd
+like to see in action next. And of
+course, if you got value out of this
+video, make sure to hit that like button
+and also check out this video here, too.

@@ -1,0 +1,1705 @@
+hi everyone and welcome to the Texas
+Mortgage Bankers association's education
+webinar series a part of the education
+and endowment committee LED this year by
+co-chairs Hannah Barton and Steven
+Bertrand I'm Steven bertran and I'll be
+facilitating today's webinar titled
+digital closing table exploring eclo
+e-notes and Ron in mortgage
+lending tmba invites you to attend its
+education Symposium this November 4th
+and 5th at the Hilton Dallas Lincoln
+Center Hotel the committee is crafting
+sessions with industry leaders and
+experts that will give you the latest
+news and Trends in the mortgage industry
+there's still time to take advantage of
+the early bird registration prices also
+those attending today's webinar will be
+receiving a special offer next week so
+be on the lookout for that we'd love to
+hear from you during our webinar today
+please feel free to ask questions
+throughout the webinar using the team's
+Q&A now I'd like to introduce today's
+moderator Dan mcru over the last 12
+years Dan has guided mortgage lenders
+through their digital Journey
+transformation Dan Works closely with
+lenders to understand where they are in
+their journey and helps them prepare for
+a successful digital transformation Dan
+Works closely with losos providers
+document generation providers e-closing
+platforms and Evol providers to ensure
+his customers have the necessary Tech
+stack to successfully make the shift to
+digital this process also involves
+assistance with Ms e-registry setup
+meeting with all lender counterparties
+as well as equipping his lender
+customers with knowledge and best
+practices of how to move from a
+traditional paper based process to
+digital includ including e-closing of
+all types over the last 10 years Dan has
+worked with over 20 lenders interested
+in making the jump to e previously Dan
+was coo and managed sales at pavaso an
+e-closing provider Dan implemented sales
+strategy developed marketing plans and
+was directly involved with lender
+customers during the sales process as
+well as imp
+implementation when Dan joined praso
+they had three customers he oversaw the
+growth to 76 lenders during the time
+there Dan has over 30 years of
+experience in software Consulting and
+guiding customers through change
+management project management and
+helping customers with adoption both
+internally and externally of their new
+software Dan specializes in determining
+e- Readiness of mortgage Originators and
+focuses on putting lenders and their
+team in position to succeed in the Jour
+journey to digital okay let's get
+started uh Dan the presentation is all
+yours thank you Stephen and welcome
+everyone today we uh we're very excited
+to present the information about
+e-closing today for you have a great
+panel let me start with introducing Jeff
+bod Jeff is the chairman of the board
+chief executive officer and president of
+click and close formerly known as mid
+americ mortgage having been in the
+Mortgage Banking since 81 bod founded
+and ran the original iteration of M
+America mortgage in 1989 during which
+time he also became the first lender to
+develop an interface inside kaix point
+in 201 three Jeff sold Mid America to
+AIS mortgage and focused on developing a
+mortgage and developing mortgage machine
+and proprietary loan origination system
+and creating tax lean business which
+originated the highest amount of loans
+of all single family tax lean companies
+in Texas the first two years he
+re-entered the mortgage Market in 2007
+and in 2010 he purchased Smith mortgage
+company and reorganized its operations
+to incorporate the loan production of
+mortgage operation unit he managed prior
+to the acquisition resulting in the
+reemergence of mid americ Mortgage in in
+2011 midamer mortgage was the first
+independent mortgage lender in the
+nation to implement electronic mortgage
+closings e- closings and electronic
+e-notes through its retail wholesale and
+correspondence divisions in
+2022 Mid America sold majority of its
+retail lending Division and rebranded to
+click and close under bod's leadership
+click and close has become a Pioneer in
+the digital mortgage space clicking
+close is a direct consumer Ultra secure
+digital mortgage platform to get home
+buyers from application to application
+to closing within two weeks just a few a
+few clicks at closing click and close
+puts the keys in the home buyer's hand
+and 15 minutes are left Jeremy Dean
+Jeremy is co-founder of elite Title
+Company Jeremy has an extensive career
+in residential lending real estate
+spanning 23 years he has spent time in
+operating
+sales and management in the mortgage and
+title sectors he and his wife currently
+own a mortgage company a title company
+and an appraisal company with mortgage
+and title they are pushing the narrative
+fully digital closings to the entire
+industry Jeremy serves on the board of
+the tmba and is currently pursuing his
+doctorate in
+business wow Leah Somerville she is the
+Enterprise Solutions manager at Doc
+magic she is proud to lead doc Magic's
+e-o team and serve as an Enterprise
+solution manager
+responsible for Doc Magic's robust site
+Suite of e Solutions Leah focuses on
+strategy development and promotion of
+innovative Lending Solutions to
+implement new digital standards for
+industry practices which directly result
+in improved mortgage process and a
+significant Roi for clients she has led
+the efforts for more for multiple
+digital closing platforms focusing on
+e-closing
+eorz eote evault the Mery registry and
+investor e delivery after effectively
+pioneering digital process changes for
+over 700 organization Le is respected as
+a thought- leading digital
+transformation coach her consultative
+approach has empowered her to Shephard
+lender's successful transition from
+paper to digital processes and she
+ensures clients experience all the
+benefits of the industry's most
+comprehensive totally e closed platform
+all right let's get started first thing
+we want to address is
+what is le let's just make sure everyone
+understands what is e-closing so uh I'm
+going to start with you Leah could you
+give us an overview of e-closing and
+what that actually means please
+absolutely Dan picture this you generate
+an e-lo transaction and borrowers are
+immediately invited in and have the
+opportunity to review their documents
+electronically as often as they'd like
+in advance of closing day now settlement
+agents are also automatically invited
+into the e CL process and they have a
+dedicated eclose console where they can
+review all of the lenders forms and also
+add title documents into the eclos
+transaction so then on closing day all
+signing participants receive an email
+and have an opportunity to eign all of
+those documents that don't require e
+notarization on their own so they can do
+that at the convenience of their office
+or homes and then depending on the
+version of e-closing they can join the E
+notary from virtually anywhere that they
+have internet connection now when the
+eode is signed it's immediately
+deposited into the lender's evault and
+registered with mge so we found that the
+e-o experience expedites the borrower's
+workflow on closing day to an average of
+15 minutes and then think about it with
+those e-notes if they're immediately uh
+deposited into your EV Vault and
+registered with merge then that means
+you can also e deliver them on the
+evening of closing to your investors so
+that loan is on its way off its book off
+your book
+okay that's fantastic now let's get a
+perspective from that's that's coming
+from the software side of the house Jeff
+what do you think about the process of
+e-closing does it work like she
+says it does but actually for the lender
+I think it's even better than that um we
+started doing e- closings in um 2015
+actually we used the doc magic solution
+um and um in 2017 I acquired another
+lender that was about the same size
+doing the amount of volume that we were
+we had three people in in post closing
+they had 27 we got our loans bought on
+an average of eight days they got theirs
+bought in 26 days so it just you can
+imagine and the reason that happened is
+it reduced mistakes but it it works
+every bit as good as what Leah said
+maybe even a little better that's
+fantastic all right Jeremy give us a
+perspective on the title side what your
+thoughts are on what the e-closing does
+and what the process is good and bad for
+the title
+folks yeah there's certainly a ton of
+advantages uh the list of advantages is
+about a mile long for everybody right
+for title for buyers and sellers and for
+the lender um in addition so one real
+important component is the speed and the
+convenience right so if we're if we're
+talking about getting these buyers
+signed in 15 minutes or so sometimes
+even less um that's huge important to
+our customers right um I I don't know
+that anybody out there if any you know
+most of the people on this call are
+probably you know lenders in The Lending
+space if you said hey Mr Mrs customer
+you know my
+borrower uh could you give me an hour of
+your time or could you give me 15
+minutes of your time who's gonna say
+sure I got I would to sit and close for
+an hour um so the convenience for the
+borrower is is significant um and where
+the title company plays into that is you
+know I tell lenders all the time we all
+hear this phrase of like hey First
+Impressions right so when you're trying
+to win business or whatever the first
+impression is super important right well
+sure it is well so is the last
+impression and the last thing that that
+customer does before they move in is
+come to the title company and sign and
+what you as a lender do not want is for
+them to walk out of the title company
+and think that process was miserable
+because even though the prior three four
+weeks might have been great the last
+thing they remember is signing a stack
+of papers this thick and how much of a
+pain in the butt that was that is a
+direct reflection on you as a lender so
+you want that last impression to be
+really really great to the customer as
+well even though they are here at the
+title company or in this case if it's a
+Ron or whatever um and that I think for
+the lender that's going to go a long way
+to solidifying you know future referrals
+and and positive um positive memories
+for that client with that being the last
+thing that they do before they move
+in okay thank you Jeremy Leah Just One
+Last closing question on this on this
+particular part of the topic here uh you
+have you have lenders that can do a wide
+variety of e- closings that there're
+still e- closings right from the hybrid
+on the front end to you know even e noiz
+as well as e-notes okay what do you find
+but with with lenders today current
+current day what do you find that their
+their appetite is is more where do they
+gravitate more towards yeah Dan when you
+mentioned those different versions of
+e-closing we realize that e-closing
+isn't one siiz fits-all so I would say
+that most ERS are at least doing a
+hybrid number one version of e-closing
+where we eign about 90% of that closing
+package all the instiller docs but we
+still paper out the note
+notorized their monthly newsletters was
+that we we've got about I think it's
+between a little over 7% of loans now
+include an eote so lenders are certainly
+getting towards that completely
+electronic workflow where everything is
+eign but they get to decide which
+version of e-closing they're going to
+provide on every single loan so it's
+hard for me to say that um you know
+they've gone oh completely e or they do
+a lot of hybrid 3es it's pretty all over
+the board once we get past that hybrid
+one hybrid one is kind of a a freebie or
+you know really no barriers there right
+right okay good good all right moving on
+um adoption to the process um we've all
+all three of us have discussed this and
+talked about this in the past Jeremy
+what's your perspective on why the why
+the industry as a whole has has been a
+lot slower to move than folks like Jeff
+would say that he thought that it was
+going to happen you know many years ago
+what would you say the biggest
+challenges have been for for lenders to
+adopt this as well as
+title yeah um I've been trying to find
+the answer to this elusive question for
+18 months I mean Freddy uh announced
+that they would start buying e-notes
+well over a decade ago almost 20 years
+ago now um and so this is not it's not
+like this is some new you know AI
+Bitcoin thing that like nobody's ever
+heard of or you know people are scared
+of you know eign and U acts from 1999
+and 2000 kind of introduced what a
+digital signature can do just in general
+right well outside of real estate um so
+for the last 18 months Dan I've asked
+this question to uh probably 50 lenders
+you know if you're not when Leah showed
+that chart you know on the fully fully
+fully electronic fully paperless right
+if you're not on that last section where
+you're doing eote and E notorized docs
+then why and I hear Linder St oh sure we
+do digital closings and it's the hybrid
+one that Leah talked about um so I would
+ask the question why and I've got a a
+pretty wide range of answers but some of
+the most common ones are we don't have
+enough investors to sell to um there's
+still a lot of correspondent investors
+that will not buy them um so that's
+probably one of the biggest ones um
+title companies that won't support it
+which uh you know as a company for for
+us it really it's your docs right it is
+your note it is your docs I I shouldn't
+really have a say in the matter if you
+come to me and say hey I've got doc
+Magic's platform you know I can invite
+you in um I I should not have the
+ability to tell you no I'm not going to
+do it right this is your loan this is
+your collateral this is your borrower
+these are your docs um so if if a title
+company says hey I'm just going to
+reject the invitation I get from Doc
+Magic's platform I'm just not going to
+sign it um then you need to find a Title
+Company um so title companies really
+should not be the barrier here um and
+then the other ones that I commonly hear
+are uh you know there's is it is it
+technology is it software is it cost
+right how much did it cost to get my
+evault set up and all those types of
+things but Dan I will tell you from my
+perspective 18 months of having these
+conversations here's my two cents right
+wrong or indifferent I think the biggest
+barrier to this is just a hesitancy to
+change it is the if it ain't broke don't
+fix it mentality right what we are doing
+is working
+like Leah said the MS numbers come out
+every month we're at 78% industrywide
+adoption that is a very low number and I
+think from a lender's perspective it's
+well what we're doing is working
+borrowers are not screaming for it
+there's not a ton of demand well
+borrowers weren't scream I mean
+customers weren't screaming for the
+iPhone in 2004 either right because they
+didn't know about it so it's a lack of
+awareness it's a lack of education and I
+think it's just a resistance to
+change thank you Jeremy well Jeff I want
+to get your perspective because he's
+talking about your years what do you
+think the biggest challenge has been and
+why it is taking people and is still
+taking uh lenders so long to adopt this
+technology it's just I'm just completely
+shocked I honestly thought when we
+started this some years ago that in two
+years everybody would be doing it but
+the savings we've achieved are so far
+beyond anything I I think we spent like
+$25,000 to incorporate our signing
+platform with Doc magic and that was we
+were one of the first we're the first
+one so I don't think it's a big deal and
+I think there's more competition for Doc
+magic now that you know that the price
+is pretty reasonable I just don't get
+why it hasn't occurred I mean the the
+savings we Garner or you know what is it
+um notorized had a project and they
+analyzed this about three or four years
+ago and they there was about $440 per
+loan I think that's high I think we I
+mean I don't think that's high I think
+we save more than that
+especially with opportunities to move
+loans through to the gsse quicker we've
+got one lender that doesn't take enotes
+that um we sell the bulk of our product
+to and we we have a pretty sharp pencil
+when it comes to selling our loans and
+and um we have found that to be much um
+much easier to sell to an investors and
+typically you tell them it's e-notes or
+nothing they're going to get there
+matter of fact the one lender that does
+taking notes is working on a pilot to
+get
+there one other question I have for you
+Jeff if you could I recall the
+conversation the two of us had uh few
+years back and I was asking you you know
+how you know when you first got started
+trying to implement it you know it was
+it wasn't the easiest thing for you in
+the beginning to get people to adopt it
+all right what what tell the story of of
+what actually happened that caused that
+to change from your per from from your
+previous
+experience well probably the biggest
+problem I had initially was just my own
+staff just did not like the idea of
+change and um you know I I'm the owner
+of the company so instead of a being a
+democracy it's a dictatorship and I just
+said we need to do this and my employees
+embraced it pretty quickly and then you
+know in the in the second month we were
+doing it so why would we do a paper
+closing why would we go back to that so
+they embraced it quickly and the Lo own
+officers were very reluctant to move
+forward on it um probably my last movers
+were my wholesale account Executives and
+it was frankly because of their
+ignorance they didn't want to look
+stupid um so when somebody asked a
+question they had never really been
+through the process we didn't make them
+go through it and um ultimately we made
+them go through the process and they've
+got most everybody there's
+one broker in Arkansas that isn't hasn't
+embraced it but other than that
+everybody's on board good good okay
+thank you very much for that um uh Leah
+let me ask you this question you've got
+significant
+experience working with lenders what has
+the feedback been as to what the
+advantages for those that are producing
+enotes that that they would tell you and
+have told you that enotes are superior
+to producing a paper note oh my gosh
+they love them because they don't have
+to worry about losing the e-notes I had
+some lenders down in Louisiana and when
+that Hurricane Katrina came through uh
+you know they were paying people
+hundreds of dollars for every note they
+found on the ground in the streets
+e-notes are virtually indestructible
+they can be instantaneously e delivered
+and they have an audit Trail so you know
+exactly what's happened and then I would
+say although we kind of mentioned how
+e-notes can expedite time to funding
+even before we get to post closing
+closings that include an eote close to
+hours and 37 minutes faster that's a
+fact from Market wise so I like to look
+at numbers and they can tell me all day
+how much better the borrower experience
+is for credit unions they really care
+about those members and I respect that
+but when we can prove that Roi on the
+bottom line that's what's indisputable I
+think right I agree um Jeff I'll ask you
+just one and then I'm gonna come to
+Jeremy uh with another topic um you've
+done both you've done you started out
+doing the hybrids then you then you went
+to to the e-notes from A lender
+perspective do you consider that e-notes
+are are vast vastly superior to the
+paper
+notes I I certainly do um you know a
+case in point of something that that
+goes wrong you know FedEx does a great
+job I'm not going to be little them but
+um whenever that bridge went out in
+Philadelphia there was a case where we
+had I think it was about $25 million
+worth of correspondent loans that were
+paper loans and they were on a FedEx
+truck on the way to um a spot in in New
+Jersey and they couldn't get across that
+bridge so everything went back to you
+know the off um to Atlanta where FedEx's
+offic are we didn't get those notes back
+for over a month so we were sitting
+there paying interest on these notes
+with the inability to sell those so it's
+just so much easier and if you're
+dealing with Freddy Mack they will
+actually buy the note the same day um
+one example of why this is better is
+back in 2000 and 2 I'm sorry 2020
+2021 when business ramped up really fast
+we couldn't get our warehouse lines
+increased quickly enough because they
+just didn't have the capacity and we
+used our own cash to fund our enotes and
+got those bought either that day or the
+next day and we just saved our Jenny May
+production that was before Jenny May
+accepted the enotes um we did that and
+securitize those loans so we just kept
+our warehouse lines available for the
+Jim May and we were doing at least 50%
+of our business was on a conventional
+basis so it just really is as a business
+owner it is just such a tremendous
+benefit and so so much easier to move
+loans through um you know even on the
+the now with Jenny may we get our loans
+um into Securities much faster than than
+the paper paper notes we buy loans on a
+correspondent basis and those paper
+notes take about a week longer to get
+into a security than the than the E
+notes so regardless of how you're doing
+this it's just a lot faster now I don't
+know if you're selling to aggregators
+you know I'm not sure if they've gotten
+the process down or they're they're
+smooth and getting them bought but
+certainly if you're going to the gsse
+it's better but you will never lose one
+of those notes you'll never have to pay
+somebody to to search for a note on on
+Bourbon Street it just is gonna happen
+Jeremy one of the things that uh you and
+I have talked about this before but when
+I first started you know it was easy for
+the lender to blame the title company my
+title company doesn't want to do it and
+you did a great job of responding to
+that earlier what about this this is a
+challenge that that I've personally
+heard a bazillion times on the title
+side is that well it's hard for us to
+embrace this because there's so many
+different e-o Platforms in the
+marketplace how you know are we supposed
+to get are we supposed to get educated
+and bought on to each one of them that's
+just almost impossible solution for my
+people how do you respond to
+that yeah that that's a great question
+so
+um you know the the fanny Freddy they
+they publish a list on their on their
+sites of the approved platforms um that
+that can do this and there's not a ton
+um but yeah if you if you wanted to
+consider consider having a title agent
+or an escort officer be well-versed in
+every single one of those that that
+would be too much to ask um so then it
+comes down to like I said earlier if
+you're going to tell me as a title
+company hey this is the platform we have
+the deal is closing with you we don't we
+don't really have a choice um it's not
+our responsibility or you know we don't
+we don't have the um the ability to say
+no to that however what you probably
+will get from title companies is a lot
+of push back um and they may not even
+you know they hey I don't want to work
+with you or maybe I don't want future
+deals from you or whatever um the
+reality is with a lot of these platforms
+especially the bigger ones like so doc
+magic is one of the bigger ones and some
+of some of Doc Magic's competitors
+another thing that they're doing is
+they're bypassing the title companies
+completely um and so there are a lot of
+websites that will have uh third party
+notaries right like proof or whatever um
+and so like WM for example will do this
+and they will just bypass the title
+company now it's our job to close the
+trans action right that's what the
+escrow fee is for we are we are getting
+paid to close and fund that deal but
+with some of these platforms it is
+easier for the lender to just use a
+third party notary and a to company is
+not involved in the actual signing
+process itself I don't particularly
+prefer that um in Texas the online
+notary is a separate commission from an
+Inc notary so we have all of our
+employees maintain their online notary
+commission so we want to be the signer
+on that platform on 100% of our closings
+we will not ever use a um a notary from
+a national network like proof or
+whatever because we want it to be our
+people talking to your client but that's
+just how we operate um so at the end of
+the day Dan I think it's I think it's
+unwise for a title company to say hey I
+I don't I don't want your business
+because you know I don't want to figure
+out how to log into XYZ platform um and
+there's not that many right there's only
+there's really only a handful and they
+kind of all function in somewhat of a
+similar manner right there's a closing
+session you get get an email you log in
+you join the session it's not it's
+really not that
+difficult with its
+challenges um better created I mean
+because it's for some for most people
+that haven't done this it's new okay and
+and I agree 100% with what each of you
+have said it's changed I mean that's why
+I'm in business and and and helping
+people through that process Leah let me
+ask you a question have you ever met a
+customer worked with a customer that
+wasn't a customer became a customer and
+then started using your platform for you
+know a year and said you know what we're
+going to go back to the old way of doing
+business have you ever experienced that
+absolutely not no no they won't even
+question it no and I think Jeff made a
+really good point it is very helpful for
+adoption when that change management
+comes from the top down at the same time
+I'm in middle management so I don't
+always have that much you know power so
+I think also it's very valuable have
+malleable employees because once they
+start doing this managers aren't going
+to go back because they see the cost
+savings and then the employees aren't
+going to go back to other ways because
+it makes their jobs easier too and so
+they can close more
+loans very good very good okay Switching
+topics here um let's talk about Ron for
+a second um what has been your
+experience with Ron
+Jeremy it's amazing um
+we we do Ron for sellers quite a bit
+just because I don't have to ask
+anybody's permission on that right so we
+we have a C class that we teach to
+agents and we show them and teach them
+how to win more business and build their
+uh pipelines by offering digital
+closings to their clients um but what I
+have to tell them is listen on the
+seller side if you're the listing agent
+I can do this nearly 100% of the time
+except you know with very few small
+exceptions on the buyer side I'm going
+to tell them hey it depends on your
+buyer's lender right if your buyer's
+lender comes to us and says hey I don't
+have the ability to do a Ron I don't
+have the ability to do enotes then I
+can't do it
+regardless of I'm GNA have all the
+software in the world but I can't do it
+but um but we do Ron quite a bit and
+we've actually got a couple clients that
+are international we have some investors
+and some property flippers so we've done
+multiple runs with clients that have
+signed internationally um South America
+Central America and it is fantastic I
+mean I have one client in particular
+that is in Peru and she is nowhere near
+an embassy or consulate and she goes to
+an internet cafe she pays like 5 10
+bucks to get on their Wii she takes her
+laptop and she's out of there in less
+than 20 minutes and for her to have to
+go to an embassy or consulant and get
+those docs signed and get back to us in
+the US I mean this is a week-long
+process and we're done in 20 minutes and
+we're recorded with the courthouse a few
+minutes later um and so it is it is
+mind-blowing and to what Leah said a
+second ago I would say the same thing is
+true of the borrowers if you have a
+borrower that goes through this process
+and you as the lender call your borrower
+afterwards and say hey uh next time you
+close would you prefer to drive to the
+title company and sign a stack of no
+borrowers ever going to say yes please
+that was horrible I hated it give me a
+stack of papers next time they're just
+not going to um and one other thing I
+would add to Dan we talk about Ron a lot
+something that gets Lost in Translation
+that almost never gets mentioned when we
+say digital close or e- clo or eote or
+whatever from my conversations with
+Realtors and stuff there is always an
+assumption that it is a Ron um it does
+not have to be a Ron it can also be an
+ipen it can be in person that one like
+the ipen just doesn't really get a lot
+of love cuz I hear from agents well I
+want to go to the closing right or the
+loan officer I want to go to the closing
+I want to meet my borrower face to face
+I want to take them the gift I want to
+take a picture in front of your sign you
+know I want to do all these things um
+but if it's Rong I can't do that and it
+feels less personal so we would gladly
+open that up to saying you can come and
+do it in person uh you don't have to
+worry about the multiactor
+authentication you don't have to worry
+about the KB if you want to do it in
+person but to the borrower they show up
+here in our office if they want to come
+here and we hand them an iPad and sign
+it all on an iPad and it's
+like it's it's mind-blowing but that the
+ipin doesn't get um it gets left out a
+lot in conversation when we talk about
+Ron but either way I've never had an
+experience where somebody said that
+sucked I hated it don't ever let me do
+that
+again that's uh that's absolutely spot
+on thank you Jeremy uh Jeff what's your
+perspective on the use of the remote
+online notary oh I I am so pleased with
+the remote online notary we have been
+slow to embrace it though um we are
+using it for our modifications for
+delinquent borrowers that are getting
+current again um and with those
+modifications and that has been a big
+deal we've had times where the notary
+didn't get things done properly or their
+commission it expired that we sent out
+so if you use the Ron process it's
+perfect every time it it won't go bad
+and we also use it for modifications on
+our construction loans and it found it
+to be very beneficial um we have title
+company that we own as well and whenever
+we do closings we we push the wrong
+process and that works out better I mean
+you think about it you don't have to
+chase down final docs you can you know
+with um CSC and simple file they can
+file those documents at at the time of
+closing so you know within 30 minutes
+those documents are filed we've got the
+title policy we've got the security
+agreement we're we're done so it just
+kind of removes a lot of that back
+office stuff
+and just makes it so much simpler and
+easier so it really the the eess is just
+forgetting how to do things you don't
+have to do with you know with the eess
+that you have to do in paper it just it
+removes a lot of steps and it's just
+simpler and mistakes they don't occur
+you know they just the things that if
+you're going to send something to a
+title company that you know you need to
+have signed like um say tax returns you
+know we send it to to Jeremy you know 30
+minutes before closing Jeremy's busy
+with some other stuff he doesn't see
+that email and then we get the documents
+back we miss the
+TX hey it's not our fault even though we
+sent it late but it just it's
+problematic for everybody involved but
+if we just put it right up you know load
+it right up in our doc magic signing
+room you know it's accepted we don't
+have to chase down documents after we
+don't have to get the borrowers to come
+back into the title company or come to
+the office or S you know deploy a a loan
+originator to go out and get the
+borrowers to sign it just removes those
+mistakes absolutely Leah a lot of people
+ask the question when we when we talk to
+folks about Ron the you know they they
+get very very frustrated because the of
+the different states the different laws
+regulations about Ron can you shed a
+little light on you know sort of in a at
+a high level about the lawfulness of Ron
+and then as a state issue how that all
+comes downhill yeah absolutely if I have
+to find a rainbow from the covid storm
+it was Ron because that really forced
+legislators to allow for remote online
+notorized online notarization
+and I used to have all of these
+resources from the national notary
+Association and Pria bookmarked on you
+know my web browser so I could kind of
+look this up to advise clients as this
+was evolving but I would say that doc
+magic takes the guesswork out of what
+you can do where we provide an e
+eligibility audit that you can run at
+any stage of the loan to confirm if
+remote online
+notorized permissible in that state if
+you can e-record in that county if you
+can include an eote on that loan so
+while this is very optimistic to me at
+this point not something you have to
+memorize or take a picture of right now
+if you have that e eligibility
+audit so so one other question I'm G
+stick with you Lee on this but one other
+question about
+Ron um does the is there certain
+technology providers that facilitate Ron
+that have to meet certain standards or
+that that that there's some lawful body
+that that governs all of this
+yeah different states have different
+requirements some states require the
+vendor be approved in that state which
+requires some vesting uh excuse me
+vetting out things like that um I would
+say I don't want to speak for all e-
+closed platforms but doc Magic's
+solution is mismo certified also so
+there are there are some kind of guiding
+bodies to ensure that we're meeting you
+know all of the regulations and and
+different states will require those Most
+states require those KB that Jeremy had
+mentioned earlier but not all of them so
+you need a technology provider that
+knows what's required and where so that
+your team doesn't have to guess and you
+don't have a potential
+error so if the if the lender is is
+operating you know obviously which is
+the next point that we want to talk
+about is uh but to make sure from a
+technology perspective there are some
+companies out there that have the full
+Suite okay everything from the e-o
+capability and the ability to produce e
+notes Evol and then close it utilizing
+Ron technology and then there's some
+that just have a part of that right
+there's some that are not a full-blown
+you know Master Suite of all that's
+involved uh so would from an advice
+standpoint would your recommendation be
+um that they should really really uh
+validate and check with who's approved
+and who the investors will accept and
+all that sort of thing would you think
+that'd be a good step absolutely I
+wouldn't want to drive a car with just
+three wheels I need it to have
+everything to get me the entire way for
+sure so I think you need a solution that
+can provide everything even if you're
+not ready to go completely e but you
+have to be planning for the future at
+the same time you're implementing today
+right right okay all right Jeremy I got
+a question for you sir um what's your
+opinion about the different technology
+platforms and the importance of of
+seamless Integrations and and everything
+that's involved D um how do you feel
+that you know that the the that that the
+importance of that when someone's
+starting this process to to eclose
+whether it's whatever the technology is
+you know we hear a lot of with lenders
+that you know it took them forever to
+get set up or whatever I realize you're
+on the title side you guys have
+technology too what's your opinion about
+the importance of having seamless
+Integrations when
+necessary yeah this is a huge component
+to it right I mean we're talking about a
+a technology product this is a digital
+product and so the the platform that's
+being used is a is a massive component
+to this um and I think this goes back to
+one of those barriers to adoption right
+if if I mean in my prior years of uh
+managing operations at A lender like
+when you're switching your Los right or
+your POS or you're implementing
+something new like this is a very
+substantial um process for lenders and I
+think that that is one of the
+hesitancies and barriers to adoption is
+an understanding or or I should say a
+misunderstanding of how how much you
+know um this is going to require but if
+you have the right relationships and the
+right professionals you know people like
+you Dan that can help walk them through
+this process and people with you know on
+the investor side like Jeff and the and
+the platform side like Leo it is
+actually a lot more manageable than I
+think most people realize I think
+there's this assumption that hey this is
+going to take me three years and you
+know all this kind of stuff and I've got
+to do if you you want to do it right
+then yeah you got to do your testing you
+got to do your implementation and all
+this kind of stuff but um one of the
+things that I hear a lot from lenders is
+I I don't want to change a lot of my
+processes I would like to minimize my
+disruption and that was one of the whole
+reasons we launched the title company is
+because as a lender I I want to minimize
+disruption to the lender so what we
+don't want is hey you have to change
+your doc prep provider right we don't
+want to tell lenders that because
+especially in Texas as an attorney
+review state like if they say we're
+really happy with who we're using for
+Doc prep uh we don't want to change that
+or we produce the docs out of Encompass
+and we have the attorney review we don't
+want to change that then we would say
+great you don't have to so this is where
+the integration from the few platforms
+that are out there uh becomes really
+really um in that we want to try to
+minimize the disruption to the lender
+and so if they can keep doing what
+they're doing you know Leah's platform
+has an incredible you know AI component
+to where it'll go in there and they can
+just upload it and it can read and find
+all the signature TXS um which is like
+amazing and mind-blowing so I think that
+is a real real important component to
+all this Dan is the the
+misconception that the the setup and the
+implementation of this while yes there's
+a lot of moving pieces the ERS The Vault
+all that kind of stuff you know the
+things that you would walk through with
+somebody Dan there's a lot of moving
+pieces it is not as difficult and as
+complicated nor should it take multiple
+years that I think most a lot of most
+most a lot most lenders assume and if
+you have the right people in place then
+and have the right relationships then it
+can be a lot smoother um and faster than
+people
+realize very good well I you know I know
+that I mean to me just some common sense
+here um that if you have you know a doc
+provider that has the ability to provide
+the the various uh categories of
+e-closing and Ron solution and evault um
+um that's that obviously minimizes the
+number of Integrations that you have to
+have which should enhance you know the
+confidence for the lender and and a lack
+of uh security and so forth which is the
+next topic Jeff let me ask you this um
+have you found the using the e-closing
+technology just in general and
+as a lender that uh fraud and um you
+know Security fraud prevention has been
+something that um has been a an asset or
+has it been a real problem for you with
+the use of this
+technology um that's an interesting
+comment um actually I was working with
+with um the Texas actually Texas
+Mortgage Bankers Association came up
+with a model law in 2017 it went through
+the Texas house senate and the governor
+signed it for remote online notary um
+and the um the gentleman that was on the
+other side that was working with the
+Texas bage Bankers Association John
+Fleming he um he worked for a bank um
+doing legal work that I was trying to
+acquire and their largest single credit
+that was um in default was on a false
+notary and um you know it was just
+interesting that that was their biggest
+classified asset I never got the bank
+acquired but um you know the solution is
+we were writing that bill that John
+Fleming came up with let's come out with
+the KB um and just all kinds of
+solutions to stop fraud and now you're
+seeing that fraud is to be minimized I
+can't it was um sithma I think made a um
+a release and they were talking about
+how the remote online notarization was
+removing fraud from transactions that
+who is going to lie and tell you there's
+somebody else when they on camera with
+their voice being recorded they they've
+got positive identification as to who
+they are no way that's going to happen I
+mean you're not going to commit fraud
+like that as opposed to a notary that
+you know comes out to your house oh I'm
+Bob yeah I'll sign it you know it just
+isn't gonna happen so it does remove
+that and you know I my hats off to the
+tnba because they're the ones who push
+this forward where it became more
+prevalent and did it right that um to
+make it where there's just fraud has
+been
+eliminated good good thank you thank you
+Jeff Leah let me ask you this from the
+the the technology perspective and I'm
+not just talking about Ron but let's
+just just if you would for the audience
+can we give them a little confidence
+about what measures are put in place in
+the technology to ensure uh that that
+there's you know not a security issue
+and and fraud cannot happen can you can
+you whether it's Ron or just the
+e-closing process can you can you help
+these people feel a little more
+comfortable because you you and I know
+both know everything's going great
+everyone wants to buy this until the
+until the uh the compliance group gets
+involved so Le let's see if we can't
+make them feel a little better can you
+help absolutely anytime a borrower logs
+in to review those documents or eign
+them they have to validate their
+identity by inputting maybe the last
+four digits of their social or the
+property address or unique identifier
+that the lender can create or pull from
+the loone data and then when those
+documents are igned we've mentioned like
+the KB but there's also technology
+identity verification where that
+requires the borrows submit photographs
+of the front and back of their
+government issued IDs and the technology
+confirms that they're not fraudulent or
+expired another big improvement from
+traditional notarization but then
+outside of Ron even after those e
+signatures are applied to documents a
+tamper evidence seal is placed around
+them so those documents cannot be
+modified there's also an audit log
+included within an eign Andor the eote
+certificate that shows exactly who did
+what and when so you can see when your
+bar reviewed those docs when they signed
+each form and we also capture the IP
+address for all of those actions so
+there's no disputing who did
+what Jeremy um have you have you
+experienced in your ever um fraud uh
+security issues that have spoked people
+to where they're scared to death of of
+this whole
+process I haven't experienced it on
+deals that we've closed I've experienced
+it in you know conversational Theory uh
+but yes the conversation comes up all
+the time and exactly what Jeff and Leah
+said one of the things that we teach
+agents and lenders and that we teach in
+our CE class is this is exponentially
+safer right you go into a current
+closing you walk into the es I mean to
+the closing room you hand the escra
+officer your ID they go back to the back
+they copy it they bring it back to you
+they are not trained nor is it supposed
+to be part of their job to try and make
+sure that that idea is not fake or
+whatever um now you know they're going
+to maybe they look at it and match up
+the picture right but there is no method
+of validating that ID as a valid current
+government issue ID in in the in the
+physical inperson process right whereas
+with this process that we're discussing
+it is there are three separate measures
+of security between ID valif kvas and
+multiactor authentication to validate
+that person um one of the things that
+does come up and that I have had
+questions about um is well you know
+cyber crime right is just this is huge
+and it's been on the rise for a long
+time and wire fraud is a huge deal for
+us as title companies because we move so
+much money so why would you want me to
+go to a more digital process when cyber
+crimes and Ai and cyber criminals are
+just they are skyrocketing right now so
+why should we go there isn't paper
+shouldn't paper be better so the notary
+can meet the person face to face so we
+get that question a lot and I've
+actually had a realtor tell me hey we
+don't want to do e- closings we don't
+want to do Ron because it did I had a
+client that it spooked because they
+thought you know cyber crime it's just
+cyber crime is such a big deal right now
+and so that again going back to the
+education and awareness part behind all
+of this which is we're doing here um is
+trying to convince not only lenders when
+they're adopting this but also the
+agents the buyers and the sellers that
+this is substantially safer than an
+in-person closing because we ver we
+validate who that signer is multiple
+ways
+um and that is as Leah said a lot of
+that is procured out of state law and so
+once we can help people understand that
+this is safer um between cyber crime
+seller seller impersonation fraud is
+really really huge in the title world
+right now because everything is going
+digital right so people can create a
+warranty deed you know they can Google
+it find one on legal zoom.com and then
+they sign it as the seller now they own
+the house and then they go sell it for a
+cash transaction whatever and now I got
+the like that happens and so working
+with a title company and doing this
+process of validating who the the
+signers are almost completely eliminates
+the majority of that risk as Jeff said
+earlier and so it is like at this point
+it's not even about it we could argue
+that it's less about even the
+convenience for the customer more so
+than it is the safety of the customer
+and the safety of the lender um and the
+property owner you know from a from a
+security
+standpoint very good thank you Jeremy
+uh next question to to the panel here um
+the custo we I want to touch a little
+bit more on the customer
+experience um you know I think that that
+what we've seen in time is that I think
+this is there's no one that can dispute
+this but when the lender is first trying
+to start this process whether it's a
+hybrid or whether it's fully closing and
+and and using Ron you know it typically
+in my experience it the success of that
+event has a lot to do with the
+confidence of the the loan officer or
+whoever it is that is speaking to that
+individual trying to educate him on
+what's going to happen what's this
+process going to going to look like
+right so with people having experience
+in doing it you know the trepidation and
+and lack of confidence will go away
+because they'll see success stories but
+from day one okay when a borrower goes
+through this process the the borrowers
+that you have Jeff is there any way to
+say other than if they used a you know
+maybe a poor technology platform and the
+documents were Incorrect and or
+something like that is there anything
+about this process that that you would
+think as a consumer that it's not an
+exceptionally better
+process not a thing I mean it is just so
+much better and I I think we've never
+had a consumer complain about the eess
+you know obviously there are some people
+that are reluctant to the same things
+that Jeremy identified but frankly you
+know once they get into it do it it's
+just so much easier and you know with
+the eess they get to see the documents a
+day in advance at least and and they've
+got to appreciate that because they're
+not seeing that CD which has a lot of
+their money going all kinds of
+directions they get to look at that
+analyze it and talk to people if they
+have a question you know so I think
+there's the consumers have appreciate it
+all along we started doing this I guess
+it was
+2016 you know we we had some Title
+Company push back but that after they
+did two loans they were like why am I
+not you know why am I not doing this
+because they don't have to have a a pile
+of paper which the borrowers sign and
+and they don't have to copy it and send
+it back to us because we have it in our
+our portal um so I think the consumers
+they love
+it thank you Jeff and Jeremy uh you you
+spoke on this a while ago but is there
+anything else that you'd like to add to
+because I think you know if I'm running
+a mortgage company you know I want to
+have happy I want to have someone have a
+happy uh experience good experience and
+they're happy when they they get their
+mortgage so that they'll tell their
+friends and they'll come back to me
+right um so does this does this help
+enhance that process or do you find that
+it is more of this it's built with more
+challenges than than maybe you know it's
+worth
+I think
+um in the year plus that we've been
+doing these I I I think I can probably
+recall maybe one transaction where we
+had a customer walk away not fully
+satisfied and the only reason for that
+is because he could not figure out how
+to get his his camera and his mic turned
+on on his computer you know and so we're
+on the session and he can hear us um but
+we couldn't see him you know and it took
+him 45 minutes and he had to get
+somebody to come help him and and so he
+walked away like a that was you know I I
+didn't like that process
+but so I mean you can't pleasee
+everybody right and there is going to be
+a small probably very small group of
+exceptions you know that maybe think hey
+this process is not for me and that's
+okay you know that's okay but I think as
+a general rule for the large majority um
+yeah I exactly what Jeff said I
+don't that was the only customer that I
+can point to of all the of all the
+closings that we have done this way that
+came back and said yeah I'd be okay not
+doing that and it's and it was because
+he couldn't figure out his own laptop so
+um the customer experience is huge it's
+huge for all of us and if they walk away
+thinking that was convoluted it was
+clunky it was not easy right like the I
+mean think of all of us as consumers
+with all of the apps we use on our phone
+we log into our bank we log into you
+know whatever we buy stuff on Amazon if
+it is not userfriendly
+just outside of real estate if it's not
+userfriendly the app the ux right the
+user experience we're probably not going
+to want to use it we're going to use a
+different app we're going to use a
+different platform so how friendly it is
+to the customer and how easy it is for
+them is hugely important and that's
+where the doc Magic's of the world you
+know they spend a lot of time on that um
+but it does the customer is not going to
+go sit down and tell their friends at
+dinner hey you guys should really look
+at Doc magic like the the like that's
+what the lenders are going to say right
+but the customers are going to say you
+should use you know Jeff you here was my
+lender and they sent me through this
+process right and so you want the lender
+to be the one or the title company or
+whoever to have the um for the for the
+borrower right to have that
+positive um impression that you leave
+them with um and and the and then that's
+where you're going to get those
+referrals um but I have not yet seen
+outside of that one client a customer
+that said I didn't like this you know
+please don't do that
+again very good Leah let me ask you this
+I don't mean to put you on the spot
+because we didn't discuss this ahead of
+time so I guess I am putting you on the
+spot um do you have a couple of success
+stories that you can share from the
+lender perspective uh if we were going
+to you know write a case study do you
+have a couple in mind that you could
+share sort of from the time you started
+working with them to what their comments
+were you know and and now that they've
+got experience with it and what they say
+today about the whole experience with
+e-closing yeah I do Dan and if anyone
+wants to see those case studies
+specifically they're on Doc Magic's blog
+and and they reference Atlantic Bay was
+a big one canopy mortgage Superior
+Credit Union is a case study we've done
+in just the last about six months um all
+of them are are kind of preaching to the
+choir here um they won't go back to the
+other ways it was interesting when Jeff
+mentioned earlier how he had an in-house
+title company so did Superior Credit
+Union so he's one where we we brought
+iPads into our offices and we have it's
+bar still want to feel like we're
+holding their hands then they come in
+for a closing celebration granted now
+it's 15 minutes and it's done digital so
+I think to kind of one of the points
+Jeremy was making this is another arrow
+to have in your quiver once you start
+using them lenders love it and I love to
+see it's hard I've noticed not a lot of
+them do all the cost accounting so I can
+shout out all their rois but they'll go
+through and they repeat the same
+benefits again and again the better Bor
+experience the Streamline closing
+process and the exited time to funding
+okay that's fantastic Jeff would you
+have been one of those people that would
+have been a great case
+study with your overall experience
+absolutely you know and it just happened
+so long ago I don't think um you know it
+was we give give it consideration but it
+I I've never looked back on this and
+thought that was a mistake the e-closing
+process was easily the best decision and
+frankly you know that the $440 per
+transaction we save it's real you know
+that's not you know if your margins are
+tight we haven't lost money you know for
+years I mean it's just um I don't think
+we've lost money since I bought the
+company and I think e-closing is a big
+part of it I mean saving four over 400
+bucks per file is just giant um and you
+know and then it's it's just the labor
+you save it's you do that it's the
+mistakes that you reduce and you just
+you know closing mistakes used to be
+pretty common when it was paper and I
+can't blame the title company for it I
+can't blame my closers for it it was
+just excess
+communication that um didn't benefit a
+thing you know that just caused things
+to be missing you know that was what it
+was so yeah it was it's just been a a
+windfall for us fantastic thank you okay
+um we need to answer this one quickly
+because I've got two that we got to get
+through really quick any thoughts on
+some future Trends that's coming as it
+relates to uh the technology in the
+mortgage industry any any thoughts from
+you Jeremy on what you see
+coming um I think really the two things
+that come to mind is the secure act this
+has been kind of tossed around in
+Congress quite a bit um it's not has not
+been signed into law so I think if that
+happens um which it sounds like it
+probably will maybe next legislative
+session we'll see I don't know um but
+you know we talked earlier Leah showed
+the chart we got 44 States adopting Ron
+right now but from a gsse perspective
+and an invest investor perspective it's
+like oh I've got all these different
+state rules that I got to worry about
+right and so if we get Federal
+legislation on this I think it might
+help streamline adoption Nationwide and
+make things a little bit easier um I
+don't I don't know I Haven really i't
+read the bill I don't know what all is
+in there but I think that's kind of the
+intended purpose um so that and then I
+think a universal a more Universal
+transferability between the evals that
+are out there most of them so the you
+know the eote is a mismos smart doc so
+it's got the same standard um that's
+really pretty much Universal but um I
+have heard I don't know this for sure
+but I've heard that some of the Evol
+providers have you know maybe they'll
+add a few custom Fields here and there
+and so um I know mismo has a whole
+committee that is working on Evol
+interop
+interoperability um to make that a
+little more streamlined so I think that
+I think those two things will help just
+circulate Nationwide thank you Jeremy
+Leah any thoughts on this question yeah
+Dan remember this date is the date I
+told you about e chatt we have so many
+lenders that are collateralizing in
+these loans and increasing their
+liquidity with e-notes that now they
+want to do it for contracts for solar
+leases or commercial loans or maybe all
+their auto loans so that's what's coming
+next I think fantastic okay last
+question Jeff um do you have any advice
+for your peers any of your fellow
+lenders out there do you would you like
+to pass along any advice to them you
+know move forward I I don't know why you
+wouldn't um you know and all of those
+naysayers about the process you just
+have to educate them and let them know
+that it happens um get the CEO of your
+company pushing for it to happen do I
+get an opportunity on what I see coming
+for a technology or you got time that
+sure absolutely go right ahead something
+that that I'm working with in in my role
+on the tnba board is the um the
+objective of taking smart docs and
+moving it Forward um with that the CD is
+the um mismo has made the CD a smart doc
+32 version so um what we'd like to do is
+push that over to the title company so
+effectively they have all of the fees
+that we're charging what they're
+charging and and can be verified
+electronically with a smart doc the
+smart do is basically a document it's an
+electronic um document that has a PDF
+Adobe Acrobat if you wish with the the
+metadata surrounding that that created
+the document is part of the of that
+smart doc as well as it's encrypted just
+like the enote so that way a computer
+could read it as well as you know you
+being able to physically read it we're
+working on a project with that matter of
+fact I think um um doc magic is also
+working on a a solution for the um the
+CD to be that but that would you know
+just Jeremy think of what that would
+save you and you know we'd like to get
+that push through the Texas land tile
+Association with the tnb's objective to
+make that happen that's another thing
+that tnba is doing for
+you fantastic thank you Jeff Leah do you
+have any closing comments on
+recommendations or advice to
+lenders yes don't wait you have got to
+be putting yourself out there with some
+version of e-closing borrowers expect to
+click button get mortgage don't get left
+behind with your borrowers and your
+bottom line very good and Jeremy same
+thing I tell people all the time this is
+Blockbuster and Netflix Blockbuster
+laughed Netflix out of the boardroom and
+could have bought them for a million
+dollars because they said no our
+business model is solid there's nothing
+wrong with what we do this is literally
+the same thing this is not an if it is a
+win we're seeing rates come down this is
+super easy for refi but what's going to
+happen is the lenders that have not done
+this are going to wake up and say oh
+shoot I wish we had started doing that
+when they want to do it for refi this is
+not an overnight process it takes a
+little bit of time when you talk about
+emmer registry and the Evol takes some
+time to get this set up and you're going
+to wake up next spring and really wish
+that you had started it you know when
+you watched that tnba webinar back in
+September uh okay thank you very much
+Jeremy I'm I'm sorry folks it's this is
+my fault um my computer doesn't like me
+very well because it has not shown me
+that we have any questions but we do
+have a few and for those that want to
+stay Stephen is it okay if I ask if we
+try to answer these questions or do we
+need to be done yes yes of course please
+proceed okay I'm sorry folks um all
+right question is there any indication
+of how many counties that do or do not
+register the security instrument that is
+eclosed would that not become an issue
+um would that not become an issue in
+jurisdiction Leah what do you think yeah
+CSC and simplifile are two e-recording
+platforms that have been mentioned on
+this webinar go to either of their
+websites I have them bookmarked because
+they will tell you by state Which
+counties you record fortunately 90% of
+the population lives in a county that
+can E Record so it's not too big of a
+concern at this point and I touch on
+that Dan as well well um yeah sure from
+the title company perspective one thing
+that's important to know for Texas I
+cannot speak for other states but for
+Texas you got two different things to
+consider with that question one is can
+the county e-record and the other is
+will the county accept an electronic
+notary those are two completely
+different things because in Texas the
+e-recording should be unless you get a
+small rural County Clerk that's going to
+push back that should be irrelevant
+because we have a papering out process
+that they should be forced to accept so
+if we do a completely paperless closing
+and the county says we don't e-record
+then there is a process and your prep
+attorney should be able to walk you
+through this of papering that out and
+giving them a physical document that
+they can record so e-recording should
+not be a barrier to do this but we have
+had some counties say we will not accept
+an electronic notary and that we can't
+do anything about so those are
+separate okay another question is opin
+is opin being lumped in with Ron for the
+purpose of this conversation I can see
+why that might have been a question we
+were addressing both we were talking
+about Ron Security fraud we were talking
+about the ease of use but um ien uh J
+Jeremy referenced it where you can
+actually do that you can do the
+electronic netization um with an actual
+you know you can do that in person um
+and you can also I mean so so yes and I
+I'm I see where you might have been a
+little confused uh if you if you need
+more information on that or you're
+please let us know send us an email
+we'll be happy to to get you the the
+technical person that can help you this
+is to Jeff if you had to do it over
+again and you were starting from scratch
+with no e-closing platform at all would
+you work your way into it with a hybrid
+program or a full e- close uh producing
+e-notes from the
+beginning I would start out with the
+full platform um so that way you know
+people don't get confused on the process
+and let them opt out of what they don't
+want to do but go with the eote you know
+just right off the bat that's that's the
+first thing that's where you get the
+biggest l lift on you know at speed to
+to sale on the on the transaction I
+would build the whole platform right off
+the bat and if people didn't want to do
+various parts let them you know opt out
+of that so that way you have a they're
+they're embracing the full process and
+they get to have the benefit right off
+the bat and I think your your
+salespeople would appreciate that and
+that there would be one training process
+so I'd go with the full platform and let
+them opt out of things if they needed to
+you know you've got an investor that
+doesn't take an eote when you sell the
+loan things like that matter of fact we
+just tell investors there other than one
+which we're going to go through their
+pilot program if you don't do e-notes
+we're not selling you
+business very good okay Leah can you
+answer this please um says what is the
+average cost of the evault as this has
+been a prohibitive factor
+previously Dan if I told you the average
+cost in the industry I would scare you
+so I'm not going to but let me speak for
+Doc Magic and say that the average cost
+of that standing at the evault is not
+cost prohibitive because the evault is
+not our main Revenue Source we want to
+increase eote adoption as much as
+possible because we have we're providing
+those evals to those Warehouse lers and
+those investors as well so to stand up
+and eval with us the average is
+$2,500 that is and and if you said a key
+thing that I want everybody to hone in
+on um if you do one thing if you're an
+Evol company and that's all you do then
+you've got got to you've got to price it
+such that it can support your company if
+it's just one thing of many things that
+you do it doesn't have to be so
+expensive so thank you very much ladies
+and gentlemen I hope you've gotten
+something from this we appreciate your
+time and I'll turn it back to you
+Stephen thank you Dan uh Jeremy Leah and
+Jeff for taking the time to share your
+knowledge and experience with us uh
+thank you all for joining us today and
+we hope you have learned more and
+enjoyed the presentation tmba continues
+to bring you great webinars like this
+one please VIs is our homepage at Texas
+mba.org for upcoming webinars and
+previous webinar recordings uh thanks
+again everyone and that concludes our
+webinar

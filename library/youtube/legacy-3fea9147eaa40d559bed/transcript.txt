@@ -1,0 +1,111 @@
+[Music]
+one of the big issues for isda in 2021
+is the implementation of the final parts
+of the basel iii framework
+including the fundamental review of the
+trading book and the revised credit
+valuation adjustment framework
+given the impact of the coronavirus
+pandemic the deadline for these rules
+was delayed by a year until january 1st
+with less than two years to go this will
+be a bigger area of focus in 2021
+in the latest edition of iq magazine we
+have an article that explores isda's
+benchmarking initiative
+for standardized approaches under the
+frtb and cva
+as well as the standardized approach to
+counterparty credit risk
+with me to discuss this is ista's head
+of capital paniotis giannis operos
+paniotis thanks for joining us hey joe
+so greater use of standardized
+approaches to calculating capital
+requirements
+is going to be a key element of basel
+iii why is this
+and what are the characteristics of
+these new standardized approaches
+so with a general move away from
+internal models
+standardized approaches have become more
+sophisticated
+so that they are a credible fallback to
+internal models
+this makes standardized approach
+implementation
+more challenging for the banks it is
+important to note
+that standardized approaches will play a
+key role
+in the output floor calculation
+that forms part of the basel 3
+requirements
+so with the aim of promoting greater
+accuracy and consistency in the use of
+standardized approaches
+is the launch the sa benchmarking
+initiative back in 2018
+how does this benchmark initiative work
+and how do banks benefit
+from using it the objective
+is to ensure consistent and accurate
+implementation of standardized
+approaches
+the benchmarking exercise has two
+distinct parts
+the unit test and the hypothetical
+portfolio exercise
+unit test aims to validate the
+aggregation of the re-sensitivities
+performed by the banks
+in line with regulatory rules while
+the hypothetical portfolio exercise is
+an end-to-end test for potential
+variability
+in the bank's capital models using
+hypothetical portfolios of
+varying complexity across the asset
+classes
+ista benchmarking has supported 55 banks
+including 23 global systemically
+important institutions in their frtb
+standardized approach implementation
+major source of value for the banks
+relates to the analysis
+the banks receive participating in the
+aside benchmarking initiative
+so as the industry now moves towards
+basel iii implementation in 2023
+what's next for this project the initial
+focus has been on frtb
+but this is now extending to cover
+standardized approach for counterparty
+credit risk
+and credit valuation adjustment so
+essentially
+cover the full suite of trading book
+standardized
+capital models we are in dialogue
+with more banks regulators and
+technology providers
+about extending further the project with
+particular focus on regional
+benchmarking exercises
+is a benchmarking initiative is
+currently limited to standardized
+approaches
+but same principles and tools may apply
+to internal models benchmarking
+and maximize efficiencies in that space
+as well
+well thanks very much fanny artists you
+can read more about is
+sa benchmarking including interviews
+with banks and regulators
+in the latest edition of iq magazine
+which is free to download
+on the insta website at isda.org thank
+you
+you

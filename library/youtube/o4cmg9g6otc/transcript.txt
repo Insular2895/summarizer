@@ -1,0 +1,572 @@
+If you're trading in 2026, the way real
+edge gets built is changing faster than
+you realize. Not the strategies
+themselves, but how you actually
+research, test, and deploy them. I've
+been trading for 7 years, and I'm
+currently running 10 automated
+strategies [music] across crypto,
+futures, and equities with my portfolio
+now sitting in mid-six figures. And over
+the last 30 days, I've watched something
+strange happen with AI tools. The
+bottleneck in algorithmic trading has
+changed. It's not where it used to be at
+all. [music] It's completely moved. And
+if you're a trader trying to figure out
+why systematic guys are pulling away
+from the rest of the market right now,
+or you've been thinking about getting
+into algorithmic trading, but kept
+telling yourself it's way too technical,
+you need to watch this video.
+Now, what has actually changed? Well, to
+explain it, let's look at what building
+an algo used to look like versus what it
+looks like today. The old workflow was
+tons of researching ideas, so a lot of
+slow reading, going through papers,
+tweet posts, YouTube videos, really
+anything, going through books as well.
+Then you'd code it from scratch, and
+depending on your coding level, it would
+take you either a couple hours to a
+couple of days, and also depends on what
+particular strategy you're coding. Then
+you'd 100% have to go through debugging,
+so finding out bugs that happen within
+your code, fixing them, going back and
+forth. Then obviously building out your
+backtest infrastructure. Now, over time
+this would get quicker and quicker, but
+initially building out backtest
+infrastructure definitely is a quite big
+time commitment. Then you've got test,
+iterate, and repeat. Obviously, you need
+to find constantly new strategies and
+optimize as well. Now, the new workflow
+is you can research using AI, so a lot
+of times you can pass papers, books, uh
+YouTube videos, podcasts into AI, and it
+can give you a summary, and what you can
+actually do is I'm going to tell you a
+technique later where it can tell you
+and find you strategy ideas from within
+those videos very quickly. Two, now the
+design architecture is still going to
+mainly be you. And what I mean by this
+is how you particularly backtest, um how
+do you particularly build out your
+execution engines, what methods are you
+going to use, what brokerages are you
+going to use, um what is the most ideal
+route for you to go past for this
+particular strategy. That's going to
+still be reliant on you, but a lot of it
+is more thinking and research side of
+things rather than having to comb
+through tons of papers and stuff like
+that. Then three, AI can now pretty much
+code the implementation. It depends on
+the strategy and the brokerage.
+Sometimes AI is going to be amazing, for
+example, like with Interactive Brokers
+and maybe with crypto, AI is really good
+at coding algos on those ends. But with
+a a more niche platform, let's say like
+DAS, most of the time you're going to
+need to hire a developer or you're still
+going to need a bit of coding knowledge
+there. Then four, is verify, test, and
+judge. This is still going to be mainly
+you and this is probably most of my job
+nowadays, where I'm verifying the output
+of the particular code, testing it
+myself maybe about some nuances, and
+then judging, you know, if this is good
+enough to pass on to the next layer.
+Eight is then the test the backtest
+infrastructure. Now, AI can now help you
+build this a lot faster than you used to
+be able to. And if you pass in the right
+sources or templates, it can build it
+very, very well, where even a top-tier
+developer basically be the same. And
+number six, the biggest difference in
+this new workflow is you can ship
+multiple strategies or multiple
+different ideas
+every single month using this sort of AI
+workflow. It has become so much faster
+to go from idea to output using AI
+because you can set up these processes.
+And a lot of the times when researching
+new strategy ideas, you're doing
+fundamentally the same things. So once
+you've done it once, it it quickly
+multiplies where you can do multiple of
+these different ideas quickly in a
+month. To be completely frank, the
+bottleneck to algorithmic trading used
+to just be writing code and also the
+time of it. Now, it's design,
+verification, and knowing what a good
+system actually looks like because if
+you don't have those things, you can't
+really take advantage of AI.
+But what does this actually look like in
+my portfolio of the past 30 days? Well,
+across my 10 strategies running on
+different markets, so equities, futures,
+and crypto, we can see overall the
+portfolio returned about 11.9%
+and I had a max drawdown of 4.93%.
+In total, I took about 224 trades and
+these were all fully automated without
+me manually placing them at all. Now, I
+will say this was one of the better
+months for sure. There was tons of
+volatility and overall, equities also
+carried me quite a lot during this
+month, but crypto also performed
+amazingly with our cross-sectional
+momentum strategy that I actually went
+through in a recent video a while back.
+Now, some of you have been asking for me
+to like log into an account or whatever,
+so I thought I would show you a direct
+login from my mobile. Obviously, it
+can't really be changed from mobile into
+Interactive Brokers. Now, keep in mind,
+the percentages are not going to match
+up. Now, the reason why is I trade
+across multiple different brokerages,
+and Interactive Brokers is primarily
+only where I trade equities. So, you can
+see the capital I have on equities and
+the percentage on that particular
+capital um trading equities. And when
+you start running multiple strategies,
+you will realize you're definitely going
+to have to have a way to consolidate all
+this information, and that's why I
+normally just share this particular um
+kind of like table because it just puts
+everything into one nice table, and I
+can easily view it and review it. And
+obviously then it's very easy to show it
+to you guys. I often get some questions
+as well, like do I actually show my
+performance? I've been showing my
+performance on my YouTube for I think 2
+years plus. Um so, if you want to go
+through that, you totally can, but this
+isn't really a channel around me showing
+you tons of my results. I more want to
+show you my techniques and what I am
+using and what I'm finding useful.
+That's the whole purpose of this channel
+since day one. So, please more focus on
+that stuff rather than trying to like
+copy uh you know, a particular strategy
+of mine or something like that. It's
+more about the techniques and the
+ultimate lessons I'm learning over my
+trading career. And as you'll notice
+from this table, there is a mix of
+underperformance. I had one strategy
+drawdown um I think 3%. I pretty much
+lost 3% on that particular one strategy,
+but of course I had a ton of other
+strategies that were break even, and
+then some that did really well, like
+they did 4. 4.18%. So, the whole purpose
+of this is that there is a mix of
+different strategy types, and they all
+perform differently in different
+markets, but overall when you put them
+all in one portfolio, they outperform.
+But how did AI actually help me in this
+workflow and getting these strategies
+live? Well, there are four big levers
+that I kind of mainly use AI for. And
+one is trying to translating ideas. So,
+as you can see here, we have books,
+papers, podcasts, YouTube videos. A lot
+of algorithm trading is finding new
+ideas or slight changes of current ideas
+and applying them and trying to sl-
+optimize your particular strategies. So,
+what I can easily do now, and the
+technique I mainly use, is I find any
+books or papers that I think could be
+potentially useful. I then pass it
+through uh Claude, but Claude has access
+to one of my skill N D's, which has my
+philosophy and what I look for in
+strategies and what has previously
+worked very well for me. This way, when
+I'm passing in that paper, it kind of
+knows my own philosophy of how I look at
+strategies and what I actually like in
+in most strategies. This makes it so
+much easier of a process because then it
+can just come back to me with, "Hey,
+this is a summary. These are some of the
+ideas I found in this paper or in this
+book that potentially could be useful to
+you." And then I always have it cite the
+actual page or source uh so I can
+quickly view it and then, you know, read
+over it myself as well if I want to.
+Then two is running multiple coding
+tasks at once. To be honest, this has
+really been a game-changer. Um most of
+the time I'm still writing the main
+strategy code, the main logic, and those
+sort of things just because I want to
+make sure those are all perfect. But,
+Claude can really help me in a lot of
+other areas like data pipeline,
+performance metrics, uh logging systems,
+which are really useful when you have an
+execution infra. Uh most of the time
+actually logs are like the most
+important thing just because it can be
+actually quite difficult sometimes to
+find out why a bug happened or why
+something is actually occurring. And
+those sort of things are perfect tasks
+to get AI's to work on them for a couple
+of hours while I'm working on something
+else. And nowadays you have Claude Code,
+you have a ton of different agents you
+can use, meaning I can be coding on one
+particular thing and having other things
+completed in the background. This kind
+of leads me into my third point of what
+I mean to use it for is getting stuck on
+bugs. Um if you've ever coded before,
+especially, you know, pre-AI, most of
+the time you can get stuck on a bug and,
+you know, it it could last 5 hours, it
+could last 8 hours, it could last
+multiple days depending on the bug. And
+then four is removing the mental block.
+Now, personally, this has never been too
+much of an issue for me, but in the
+cases it is or when I have a new idea
+and I want to get started on it, now AI
+can give me that first template so much
+faster. It can, you know, normally take
+10, 20 minutes and I already have a very
+MVP version of that sort of project that
+I want to do up and running and I can
+start kind of iterating it from there.
+Each one of these is maybe just a small
+improvement, but when you stack them all
+together, the speed at which I can
+research, test, and ship is on a
+completely different level than just,
+you know, 2 years ago or even maybe like
+6 months ago, give or take. But, and
+this is important, it's not all upside.
+There are some very real things AI is
+still very bad at today. If you don't
+know what they are, you're going to most
+likely get burnt. But, I did want to
+give you guys a bonus. I too went
+through this in the crypto momentum
+group that I run, and one of the members
+asked, "How do you structure all this
+context and like MD files when you're
+working with AI?" So, I just wanted to
+give you a quick run down. It's a pretty
+simple system. Primarily, I use a free
+tier hierarchy. So, one is tier one,
+which is global. And this is the Claude
+MD. This is specifically when I'm
+working with Claude, but you can do this
+with other, obviously, AIs as well.
+Primarily, this is going to be at the
+project root, so whatever, you know,
+mainly you are working on. And it's
+going to say the tech stack, the key
+assumptions, the rules, basically loaded
+into every single session you start
+coding with that particular project.
+Then tier two is more module-based. So,
+this is going to be called a structure
+MD, and this is inside each major
+folder. So, for example, the engine,
+data, live execution, backtest infra.
+These are going to give context to AI
+for that particular module of whatever
+you're coding with. And then tier three
+is basically task-based. So, you only
+really paste it in when you need it, so
+it's maybe one-off context. You want to
+quickly paste in a paper or something
+like that, and that mainly just lives on
+for one particular session. And a key
+thing to think about when you're making
+these MD files is they aren't a
+knowledge base for you. I I see a lot of
+people put a lot of stuff in the MD
+files that AI is not necessarily going
+to need or use. You want to make sure
+that they are as impactful as possible
+for the AI understanding what it is
+working on and what it should be doing
+every single time. So, what a potential
+kind of project folder could look like
+is, you know, you have my crypto
+research. You'll have Claude MD at tier
+one, which is the global, so it'll just
+be straight in that folder. Then you'll
+have your different separate folders, so
+data, research. Then you'll have your
+source side of things, so you'll have
+your engine and strategies. Then you can
+have a structure MD in both of those
+explaining what is happening in those
+particular folders. And that's pretty
+much it. It's a very simple system, but
+it's very, very useful for me for that
+AI always has context on what I'm
+particularly working on and how I want
+it to structure itself.
+Now, what do we need to actually look
+out for when using AI? Well, AI is still
+very bad at being overly confident. Even
+when it's wrong, it's going to tell you
+it's probably right, and it will
+regularly hallucinate, you know, API
+things, especially if it's not a
+well-documented API. It will make up
+random function names and things like
+this. Most of the time, you're still
+going to have to cross-check stuff with
+your own knowledge or other sources
+before really trusting it. Two is it
+misses complex trading ideas. Most of
+the time, on surface areas, it's really
+great. But for subtle stuff like risk
+parity nuances, regime shifts, portfolio
+construction especially, um it's not
+always the best. So, a lot of times
+there, you're going to have to verify
+every assumption yourself. Or what I
+personally like is you create uh your
+knowledge base, so what you believe is
+true for this particular, you know, like
+a solution you're working on, and then
+you paste it into that and say you need
+to stick to these particular things, and
+this is what I personally think is true.
+Um sometimes it's going to still fight
+back with you, but um that's just one of
+the things you have to do with dealing
+with AI. Three is overfitting and
+overcomplication. What I see pretty much
+with everyone using AI nowadays is,
+"Hey, here's my strategy, improve it."
+Um and it will gladly add 50 indicators,
+10 filters, and different free machine
+layers, whatever, um to try and get a
+better performance historically. But a
+key thing in all of my time working with
+AI is I always give it on the focus that
+simple is better. We want to be as
+robust as possible. I do not want to
+overfit, and AI has just made most
+strategies more overfit than ever really
+before because they think they're an
+algorithmic trader now, and they can
+just paste in a strategy and get AI to
+improve it. But most of the time, that's
+never really going to work live. Four is
+pretty code that hides bugs. A lot of
+time, AI code can be clean, I guess, to
+someone that to someone that just wants
+to kind of read it almost like an
+English, if that makes sense. Uh but a
+lot of times, they can actually hide
+really subtle bugs, especially if you're
+not too aware of coding knowledge. These
+can often cause some issues down the
+road where you realize, "Oh, wow, it
+actually had a data leakage or it had a
+look-ahead bias" or things like that.
+So, personally, what I would recommend
+is always, if you even if you don't
+understand code, once it has finished
+off, you know, writing code view, I'll
+get to walk step-by-step of every single
+process that is process that is doing
+and why it is doing that. And then
+normally through that process, you can
+often see if there's some misassumptions
+or if there's something kind of weird
+going on and you can go further into it.
+Obviously, if you can read code, you can
+just obviously look through the code,
+but this is a great way to kind of
+double-check. Ultimately, AI is a coding
+partner. It is not a trader. Your
+judgment is still going to be very
+important. AI isn't some amazing trader
+that's going to make you, you know,
+hundreds of thousands creating an AI
+strategy. And if you check for these
+four warnings, you'll avoid 90% of
+disasters.
+Uh the next part is what hasn't changed
+over this time. Well, AI can now handle
+most of the coding, but what do you
+actually need to bring to the table? And
+these are exactly what separate people
+who succeed from people who normally
+blow up using AI strategies. One is
+foundational knowledge. Knowing what a
+good system looks like before you build
+it. For example, if I came into creating
+a strategy using AI and I said, "Hey, I
+want you to create me a hyper-profitable
+strategy and I want you to have super
+specific trades and it has the perfect
+entry and the perfect exit and I pass it
+some historical data." It will most
+likely create you a backtest that looks
+amazing, but it will not work live. And
+the reason for that is is because it's
+overfitting. So, you still need to come
+in with the knowledge of knowing that
+simple most likely is better. I want it
+to be robust. I really don't want it to
+be hyper-sensitive on parameter changes
+and those sort of things. Two is the
+ability to verify AI's output. While you
+don't need to necessarily be as
+technical as you were before, you still
+need to understand a lot of the basics.
+Now, the greatest thing about that is
+you can actually ask AI to teach you the
+basics and it'll do a very good job of
+that. So, there is still a bit of a
+chicken and egg problem here where you
+can kind of use AI to teach yourself how
+to spot AI mistakes, um but this is just
+overly going to improve probably with
+model over model. Next is system design
+skill. Um even simple bots can actually
+have very complex execution engines that
+you need to design. And often AI isn't
+going to get that perfect on the first
+run and it's most likely going to need
+your help to structure a solid execution
+engine. I will probably make a video at
+some point in time of why execution
+engines can get so complicated, uh but
+there's just a lot of nuances people
+don't think about when interacting with
+exchanges or when you're having multiple
+strategies execute at once. The next
+part is the backtesting process. You
+obviously need to know what a good
+process looks like and the different
+sort of checks you need to make. So, for
+example, out-of-sample data,
+walk-forward optimization, parameter
+sensitivity, etc. Lastly, is the live
+execution infra. This is going to be
+things like VPS, how you're going to
+monitor, what alerts you're going to
+have, is there going to be any
+fail-safes, and the most annoying one
+that I deal with a lot is exchange
+quirks. A lot of times exchanges are
+going to have different ways of
+interacting with the same sort of style
+endpoint and you're going to have to
+understand how those differ and you're
+going to have to code around those.
+Ultimately, AI accelerates the speed of
+execution, but it doesn't replace the
+foundations underneath of it. And this
+is exactly what we focus on inside the
+Crypto Momentum Group. We help you build
+your first live algo in crypto using AI
+tools the right way with the foundations
+underneath. We give you the templates,
+the techniques, the infrastructure
+guides that I use, and the community to
+actually pull it off. For example, one
+of our members just was saying recently
+that it is so satisfying to have his
+algos running all the time finally and
+he can't imagine having the setup
+without the group that we have provided
+for him. If you do want to find out
+more, feel free to click the first link
+in the description.
+And this all ties back really to my
+trading philosophy of why does using AI
+actually work for me when it maybe
+doesn't work for a lot of other traders.
+Well, it's because I focus on simple is
+better almost always. The three strategy
+types I really focus on using this
+philosophy is trend following, mean
+reversion, and arbitrage / carry. These
+are all primarily premiums and I can
+understand the reasons of why they work
+apart from really arbitrage, that's more
+of an inefficiency, but they're very
+clear to me and I can understand why I'm
+going to make money with any one of
+these particular strategy types. And
+what I normally stay away from is heavy
+machine learning stacks, neural nets,
+anything with, you know, 100+ factors,
+those sort of things. A lot of times
+they're very easy to overfit and they're
+almost impossible to understand why they
+actually work. Now, let me be clear
+here. I'm not saying these things don't
+work. Many funds that I've actually
+worked with have setups like this and
+they do incredibly well, but they also
+have huge teams and incredibly smart
+people. Personally for me, I know where
+my kind of edge lies and where I can
+really and where I can actually make
+returns in the market. And it's not
+going to be in these hyper complex sort
+of structures. Most of the time it's
+going to be more simple things, but
+optimizing them very well. So, if you're
+starting algo trading right now, here's
+what I'll tell anyone before you think
+about getting into this. The good news
+is it's never been easier to start. AI
+removes the biggest barrier, coding. So,
+for non-engineers, you can now be an
+algorithmic trader. But, the hard news
+is it's never been easier to fool
+yourself, either. You can overfit
+backtests, you can have hidden bugs that
+you're not going to understand, and you
+can be confident when you're actually
+getting the wrong AI output. Ultimately,
+AI has lowered the barriers to entry,
+but it raises the importance of
+judgment. Fundamentals now matter more
+than ever, really. So, it is the best
+time to start, but it is the worst time
+to skip the foundations of doing so. And
+that's how 30 days of using AI has
+properly changed my algo trading
+workflow and what has come out on the
+other side. I hope this was valuable,
+and see you in the next one.

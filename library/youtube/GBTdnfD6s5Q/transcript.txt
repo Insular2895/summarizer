@@ -1,0 +1,1234 @@
+we've held a lot of go to conferences
+across the world
+and collaborated with some of the top
+creators and innovators within software
+in this brand new go to book club to
+give you key takeaways
+from the masters themselves in the form
+of interviews revolving around books
+they've created
+learn strategies empowered to become a
+more efficient developer
+as we dive into the first online series
+of our go to book club
+[Music]
+this episode was made possible thanks to
+growtopia.tech
+we asked ourselves what would happen if
+we could take
+two of the brightest people in our
+industry and put them together two
+people that have between and authored
+more than 15 books
+what would happen if we could take
+martin fowler
+the most viewed speaker on our youtube
+channel all times
+bring him together with sam newman one
+of the most popular speakers
+since 2013 at our conferences this is
+the go to book club
+we kicked off by asking sam why another
+book about microservices
+so the reason i wrote that book was
+quite straightforward so i wrote a book
+called building micro services back in
+i suppose i wrote in 2014 and it was
+released in 2015 and
+times moved on and i thought i should
+review and re and update that book and
+write a second edition of this book to
+encompass all the new changes that have
+come about and so i sat down to work on
+the second edition
+of building micro services and i thought
+i'd pick the hardest
+chapter to work on first and so i picked
+the chapter that was all about how you
+break
+service but break things apart how you
+take a big monolithic application and
+how you break it down into smaller
+individual services and i thought
+that chapter i knew was going to be
+really tricky to write so i'd start
+there and that you know that way
+get a better estimate of how long the
+whole process for writing the second
+edition was going to take
+and so i started that process and then
+two months later i was still working on
+that chapter
+and the chapter of that book had gone
+from being 5 000 words to being 25
+000 words so a chapter about how you
+make big things smaller had itself gone
+very big
+and i was then stuck with this problem
+which was what the what am i going to do
+with this content
+and i sort of realized that i was quite
+enjoying writing and exploring
+that deeper side of it you that
+monolithic decompositional side of
+things
+and thought well actually this could
+work really well as a standalone book so
+that's when i went back to the
+publishers and said look
+i know i said i'd do the second edition
+and i will do the second edition
+but i've gone off on kind of a different
+trouser leg of possibility
+and this could actually work really well
+as a standalone title so that's that's
+kind of
+i sort of stumbled into it accidentally
+in the same way that when i wrote
+the first book i didn't sit down to
+write a microservices book
+i sat down to write a book about how you
+architect for continuous delivery and
+ended up writing a microservices book so
+i sort of let the
+i saw that the content follow you know
+almost let the content guide me
+initially
+and then once i had a sense this was
+going to be its own book then i had a
+pause and i had to kind of reshape the
+content and think about the structure a
+little bit
+this time along i'm going to the second
+edition at the moment and i've just hit
+another point like that with the second
+issue when i'm looking at the whole area
+of
+microsoft's collaboration um and i've
+been very forceful myself this time to
+put a very big pin in that and prove all
+the content i'm not sure about off to a
+different document in a different git
+repo
+so i got the second edition of finish
+and then i'll go back to that content if
+i want so yeah i just got i got diverted
+along the way but it was a
+sort of a happy diversion i often
+imagine
+that uh when people think of
+advocates of microservices they think of
+these people who are determined to use
+microservices in every situation
+there's a thousand line program here
+we've got to break it down into ten
+hundred line programs
+um and yet as i know too well i've
+actually
+only ever heard you complain of people
+using microservices when they shouldn't
+have done i don't think i've ever heard
+you complain of the opposite
+so maybe you should talk about when
+people should actually even consider
+using microservices because
+i don't think i've actually ever heard
+you state that argument
+oh okay so my if you want a one
+quick answer for when you should use
+microservices
+it's when you've got a really good
+reason and that that sounds like a try
+answer of course well you wouldn't
+but i guess what i mean by that is
+there's a danger in our industry
+that we often focus on the activity not
+the outcome we focus on the tech tool
+not the
+thing the tech tool lets us do and so
+for me a micro service architecture is a
+conscious choice you have made
+to kind of implement something in that
+style because of some
+outcome you're looking for there's some
+benefit you think a microservice
+architecture is going to give you so
+like my qualifying criteria is going to
+be what is the thing you think it's
+going to give you
+there's some great you know i could talk
+about the things that microsoft
+architectures can give it gives you
+more options around how to scale up
+applications
+it gives you this lovely property of
+independent deployability
+when implemented correctly uh it can
+really help isolate the surface area of
+failure what some people call kind of
+limiting the blast radius
+which can help make applications more
+robust i mean ultimately you could argue
+that
+microsoft is a this is a james lewis
+quote micro service architectures buy
+you
+options and fundamentally when you buy
+into a microsoft architecture you're
+buying into
+a whole other series of options and
+choices that you can make
+i think james's you know quote there
+buys you options is quite
+deliberate though right options great we
+all have options
+but buy implies a cost and they do have
+a cost
+takeaway number one our industry tends
+to focus on tech instead of outcome
+one should use microservices as a means
+to obtain a desired outcome
+rather than for the sake of using a new
+technology it's almost like you're
+saying that your default option should
+be not to use the microservice right
+your
+if unless you have a really good reason
+go with them olive
+uh yes and i would say that that
+absolutely i would also
+caveat this by saying and
+trying to be really clear about this
+idea that micro services aren't
+like an on off switch um and
+people i think partly often because we
+don't
+you know or have time to engage with the
+topic more fully we like to sort of very
+clearly delineate things and say this is
+this thing and this is that thing and
+you know we say microservice
+architectures are distributed systems
+and distributed systems are hard and
+the phrase distributed systems are hard
+it's true and a single process
+monolithic architecture
+is not distributed well actually it is
+right so if you think about a normal
+single process monolithic application
+if you're reading data from a database
+on a separate computer that is a
+distributed system
+if you're putting data from that process
+into a browser
+that is a distributed system it's just a
+really
+simple one so you're gonna you know
+you're gonna not even see a large amount
+of differences so
+my default is absolutely to look at a
+really simple deployment topology
+a single process monolith will be one i
+might break down into modules within
+that kind of process boundary
+and then if i think a service based
+architecture could be a good approach
+i'm going to look to maybe just try out
+one of them make my system a little bit
+more
+distributed just a little touch like
+turning that little dial
+and just see what that does can i deal
+with it do i sidestep these issues of
+you know horribleness that come from uh
+distributed systems and do i get some
+benefits out of it so i think
+yeah absolutely my default is a single
+process
+monolithic application simple deployment
+topology you sidestep lots of issues
+but if i'm interested in trying
+something new it we shouldn't view it as
+being a massive undertaking to try it
+something else out
+and that's often the problem that a lot
+of organizations say right you know
+we think we might do micro services
+let's spend six
+months building a platform for
+microservices it's like no no just try
+one and see what happens
+take away number two microservices
+shouldn't be the default option if you
+think a service architecture could help
+try it with one of the modules from a
+very simple monolith and let it evolve
+from there
+so you need a reason to push for
+microservices what would be
+your top three reasons that you think of
+valid reasons that people should be
+thinking of going down that path
+yep um i would go uh top reason number
+one
+is independent deployability and
+specifically i'd say taken to the
+extreme
+would be zero downtime independent
+deployability
+so the ability to make a change to piece
+of functionality
+deploy that functionality and do so in a
+way that the rest of the system doesn't
+need to change
+so that limits the scope of each release
+but also implement that deployment in
+such a way that i get zero downtime
+deployment
+um so that's really useful if you think
+about you know a sas based business
+where you can't afford downtime
+and that's really really key so i think
+that's that's kind of the big clear
+winner
+the second area that's come up with a
+few times my clients recently
+has been isolation of data and isolation
+of processing around that data
+some of my clients have been operating
+and say healthcare industries
+a lot of my clients have to be concerned
+about things like the gdpr
+and implementing how do i know where my
+customer data is how do i implement
+things like right to be forgotten
+because with a microservice you isolate
+the data and the processing that acts on
+that data
+you can kind of clearly delineate these
+services touched personally identified
+by
+identifiable information and therefore
+might require more oversight a higher
+degree of governance
+and maybe audited and these ones never
+touch this stuff and don't even talk to
+the services that touch this stuff
+and therefore we can kind of separate
+them out and so i think that data
+partitioning side of things i think is
+is really kind of key the third reason i
+suppose you could maybe argue that this
+is a facet of independent deployability
+the third reason is really where you're
+looking to enable a higher degree of
+organizational autonomy you're looking
+to push
+and distribute responsibility into teams
+you want those teams to be able to make
+decisions
+roll out software and reduce the amount
+of coordination those teams need with
+other parts of your organization
+so i'd say sort of independent
+deployability um
+i say data partitioning and i would say
+sort of organizational autonomy
+um and there's other things like
+technology and and different scaling
+models as well but those would be the
+top three things that i
+kind of see as reasons most often
+take away number three the top three
+reasons for using microservices are
+zero downtime independent deployability
+isolation of data and processing around
+that data
+use microservices to reflect the
+organizational structure
+looking through again this independent
+deployability i mean this brings us to
+a problematic setup that we see
+a fair bit which is a distributed
+monolith which is where you've got
+a system that's called microservices
+but in order to deploy this service i
+have to ensure i deploy this service and
+i've got to update the versions of these
+services
+um that's a trap that people can easily
+get into when they don't pay enough
+attention to
+independent deployability but how do you
+avoid that trap how do you what lessons
+are you finding with
+people to avoid it the first thing which
+is is to say well
+if you have an architecture which
+theoretically allows you to deploy
+your microservices independently then
+actually don't make that theoretical
+thing you do make it an actual thing you
+do
+i've spoken to a surprising number of
+people who said well
+we did used to be able to deploy these
+services independently but we decided
+just bundled it up because it was
+in air quotes easier and you know many
+months and you know years passed and
+then they suddenly realized they could
+never go back to the old way of working
+because
+you know you've indoctrinated almost in
+into your into your development process
+the idea that all these things get
+deployed together so having a
+theoretical
+ability to do it you want to make it an
+actual deployment mechanism that's what
+you do
+so that's the first thing the second
+thing would be to start looking
+if you are finding it difficult to
+change microservices in isolation is
+look for patterns
+so do you see a collection of
+microservices often being changed
+together
+one thing that i can be you know quite
+useful is if you are making use of say a
+ticket tracking tool like jira
+is actually to make use of the ability
+to tie
+a commit back to a piece of work uh
+you know every month look back at all
+the stories you completed and look at
+the commits
+and then you can map those commits to
+which services those stories impacted
+are you seeing areas where you see well
+these two or three services always seem
+to change together
+these five or six services always seem
+to change together
+that can sometimes be a sign that you
+might want to merge those things back
+together again
+or perhaps to look at different ways of
+sort of slicing and dicing that
+those services in different ways and so
+those are kind of the two very quick
+things i'd be thinking about is looking
+for those patterns i mean really the the
+sort of the technological idea or the
+design
+principle underlying independent
+deployability that i think is the most
+important is this idea of information
+hiding
+uh which is you know so many things
+flow from that when you're creating
+america's service if you hide as much
+information inside that service boundary
+as possible
+you're going to reduce the effectively
+the interface that your microservice has
+with the rest of the world
+with a smaller interface to the rest of
+the world it's much easier to make sure
+that any changes you make inside that
+service boundary don't change that
+interface
+so if i can make an internal change to
+microservice without changing the
+interfaces that i expose
+i've i can get my independent
+deployability done
+um i think the challenge is often that
+people
+don't know what information hiding
+really means and
+um and and so that you know it's
+and we have a lot of technology
+available to us that makes it quite easy
+to violate this concept of information
+hiding
+um in the same ways that we have lots of
+uh helps and aids to us in our code
+bases to help us violate
+you know encapsulation which after all
+is just an implementation of
+information hiding take away number four
+you can avoid a distributed monolith by
+creating a deployment mechanism looking
+for patterns and deciding how to deal
+with them
+but be aware people don't really know
+what information hiding really means
+goto gives you the chance to learn from
+the brightest minds in software
+development
+join community meetups and highly rated
+conferences
+and take deep dives on your favorite
+topics with masterclasses
+that's talking about the sort of how do
+we avoid the distributed monolith and
+again it comes down to this question of
+independent deployability
+but that makes me also want to go back
+and say well why is independent
+deployability such a big deal in the
+first place i mean there are
+organizations that have
+big monoliths um and have had those and
+are able to deploy them at regular
+intervals i mean they have
+continuous delivery pipelines they're
+able to take people's commits on a daily
+basis
+redeploy the monolith i mean it's a
+great thing about a monolith to deploy
+it's you know if you've got everything
+automated and set up you can just roll
+it
+so why why do why should we care about
+independently deploying a bit if we've
+got the necessary
+cd pipelines and we can just deploy our
+monolith
+so there absolutely are some great
+example of organizations that have
+monolithic applications that have a
+really really good story around their
+ability to deploy software frequently
+um i mean the kind of poster children of
+this was originally flicker and then
+etsy
+who were sort of monolithic php based
+applications that had a really slick
+deployment model and they weren't
+deploying
+once a day they were deploying multiple
+times per day
+for developers walking all over and they
+had a lot of investment in making a
+pipeline that would work for them in
+that environment so it's absolutely
+possible
+i would just but i think the issue is
+it's easier with microservices to limit
+the impact of each release so if i think
+about
+a deployment what i want to do is create
+an environment in which
+you feel safe in making a change when i
+make a change
+i feel safe and one of the ways you can
+make a change feel safe
+is by reducing the impact and the risk
+of each release
+if i'm deploying an entire monolithic
+system then i'm
+increasing the amount of things that are
+potentially changing in my deployments
+and therefore there's more things that
+could potentially go wrong
+with a microservice architecture if i'm
+just deploying a single service
+i can reduce the scope of that
+individual deployment and i can manage
+that deployment more effectively and
+more efficiently
+if you've also then also embraced ideas
+like zero downtime deployments you know
+you're also going to be doing that in
+such a way that your system isn't really
+going to be impacted
+when you've got a single process
+monolithic application and you're trying
+to do things like zero downtime
+deployments
+there are kind of quite a few there are
+quite a lot of limitations in terms of
+how you can do that
+um and there are also types of
+deployments that are very difficult to
+do in that environment
+so i talked to john olspor who was the
+release engineer at
+reefs manager at flickr and then at etsy
+and went on to become etsy cto and
+talked to me about how you do things
+like database
+changes for example and he would say
+well look we can do these fast frequent
+deployments but if we ever had to do any
+database migration
+those sorts of things would still have
+to be done during the weekend in you
+know
+you know in sort of quiet times because
+of the larger impact
+on the system but if i'm doing a change
+like that on a smaller individual
+microservice
+i you know i it's much easier the data
+the volume of data is likely to be lower
+and therefore the impact and the the
+time taken for that migration to run
+might be lower and therefore the impact
+on the system will be lower
+so i'm not arguing that i'm not saying
+it's not impossible to do it with a
+monolithic application
+just in my experience it's much harder
+to do with a monolithic application to
+make those things
+to get to a pipeline where you can make
+those changes in a quick and effective
+and efficient manner
+the other overlay here i think to an
+extent is organizational scale
+so for me like if i've got uh
+one team working on the system you know
+you can afford within a single team to
+have a high degree of coordination
+really great fine-tuning grain
+communication you're working on the same
+things together
+it's easier for you to reason about the
+changes you're making when you deploy
+something
+so be a monolith or a microservice
+architecture when you start getting into
+the world where you've got 5
+6 10 15 20 different teams and they're
+all trying to work
+on the same monolithic application and
+then you want to deploy that monolithic
+application
+you have a whole host of coordinations
+required between those different teams
+in order to make a change happen
+certainly you know flickr and etsy never
+had development teams that are that big
+and so obviously you can do things like
+breaking things down around modules but
+modules don't necessarily allow for hot
+deployment at least on
+most of the runtimes that we look at so
+there's also a scale element in there as
+well
+i must admit i find those latter two
+arguments much more convincing than the
+general
+hey it's easier to deploy one thing
+because the problem with the
+hey it's easier to deploy one thing
+argument is well yes you are deploying
+only one thing
+but you've got a distributed system
+there is nothing less complicated than a
+distributed system
+so yeah i only have to redeploy one part
+of it but i've still got to connect to
+everything else
+and yeah if you're really good you can
+reduce the risks involved in doing that
+but i mean that's part of the argument
+right it's
+hard to be really good so as a result
+i'm not convinced that that makes the
+bigger monolith a harder thing to deploy
+because you can much more effectively
+test the whole thing
+if it's a single monolith before it goes
+live
+but the other two arguments about data
+and particularly about organization
+i find much more convincing take away
+number five you should strive for
+independent deployment
+because it's easier to limit the impact
+of each release when using microservices
+and as the team size increases it gets
+exponentially harder to coordinate a
+deployment
+as you say data is always takes time
+when you've got to do migrations
+it's harder to contain within a single
+application because it's just easier to
+say just hit the data all the time
+yeah and organizationally
+that is certainly when i talk about
+microservices to people
+that's the area that i tend to focus on
+more that it was
+as team size increases then it's harder
+to coordinate people
+i believe it gets exponentially harder
+to coordinate people's team size
+increases
+so you need to set up barriers and
+microservices kind of force you into an
+awkward way of working which is actually
+kind of what you need with a bigger team
+anyway
+those barriers should be modules
+inside a monolithic application i mean
+setting aside the fact that we don't
+most of us don't work in run times that
+allow for hot deployment of modules
+i mean that was the whole concept of
+structured programming to a large extent
+which was how do we take larger programs
+break them apart into pieces that can be
+worked on in isolation to reduce
+that kind of coordination effort i find
+it quite interesting that for a while
+eric brooks who wrote
+the mythical man month he disagreed with
+parnassus whole
+information um hiding theory and i think
+in the 20th i think he wrote this in the
+full word of the 20th edition of the
+mythical man month basically apologized
+said i got it wrong
+information hiding is how you break
+apart work the kind of interesting thing
+i think
+the conversation i remember us having uh
+when you were helping with
+with building micro services was that
+modules within a
+within a monolithic system should work
+better than they do
+but we find all sorts of ways to violate
+those modules we don't think about
+they're often not a first-class
+consideration our application or our
+tooling
+and the concepts of modules certainly
+things like java historically been quite
+weak but we violate them the whole time
+but once you make that a service a
+process boundary
+violating those things becomes really
+painful
+and there is something about making
+something you shouldn't be doing
+difficult
+and so i think there is something about
+the the very fact that you've made this
+now a separate process boundary
+means you may be slowed down you're
+thinking about what those boundaries
+should be
+and make it harder for you to sort of
+just do arbitrary silly things with them
+you know that that for me is it's not a
+great i think it's
+true but i'm disappointed that it's true
+in a way like
+we shouldn't need to make things
+difficult to make us do the right thing
+but
+that just seems to be what life is take
+takeaway number six
+we tend to violate monolith architecture
+by not respecting the modules
+bringing them into services makes it
+harder to do so
+it's kind of sad that it's a programming
+language infrastructure has really not
+done a very good job at modularity
+um i think the class idea was kind of
+cool
+and gave us some handy tools but then we
+have but it's too
+too fan grained and as a result we ended
+up with nothing
+none of the language is really giving
+you much above the class level to really
+control modularity in any kind of
+sensible way
+um and without those tools the best you
+can do is kind of set yourself up and i
+have come across teams that have done
+some good things of interrogating the
+code base in order to try and spot
+module
+modularization failures and and try and
+lead people in a better direction but
+it's all stuff that people have got to
+be
+put on top of the language and the
+languages are just not giving us the
+help and it's too easy
+to get around the language barriers when
+they're so minimal and then
+break it and i guess in the way i look
+at it often that breakage
+most likely happens with data handling
+as you say with the information hiding
+section
+yeah which then leads into the
+interesting question but if we're
+looking at
+breaking apart or wanting to think about
+breaking apart a monolith into
+microservices certainly one of the areas
+that
+strike me as one of the key hard parts
+of doing this comes around the handling
+of data
+so what are some of the observations
+you've made about how we can handle data
+better to look at that breaking apart a
+module in a larger monolith into
+microservice
+style thinking yeah
+um so let's start with obvious thing
+data is hard
+that's the first thing and breaking data
+apart which is in a relational database
+is also quite hard because of the
+fundamental nature of a relational
+database
+you know the relational database is
+about relationships and turns out some
+of those relationships are going to end
+up
+being broken there's some interesting
+benefits that actually come from working
+with a relational database though which
+is often that the relationships between
+data are sometimes significantly more
+obvious
+than the relationships between code it's
+amazing how many code bases i work on
+where i find that the
+the schema does a better job of
+communicating
+intent and understanding of the domain
+and the code does
+um and that's often because somebody
+spent a lot of time thinking about a
+schema
+up front they never changed it
+afterwards or in such way but there's
+almost like this there's the granularity
+you can start seeing things in there
+you start seeing the shape of stuff
+emerging one of the earliest things i'll
+often do in these situations is
+just load up the schema into a sort of a
+graphical tool
+and just start playing around with it
+just looking at the shape of it the
+structure of it
+are there parts of this that seem more
+tightly or aligned than others
+if you think about it something like um
+a foreign key relationship you know we
+think about a foreign key relationship
+in a relational database as being all
+about
+uh this is about referential integrity
+and yes it is but it's
+also about making the relationship
+between things
+really explicit and in fact a lot of
+people don't know but in relational
+databases you can pop from key
+relationships on it without enforcing
+referential integrity not anyone
+ever bothers so there's often there's
+some help for you
+in that in that space and so that was
+but i also realized that
+a lot of the complexity in breaking
+apart systems was going to be in the
+database so i keep
+going backwards and forwards on this
+like if i'm going to pull out a piece of
+functionality
+and i think this my data and the
+processing for i don't know
+uh awarding loyalty for ordering points
+for an
+order i'm going to extract that out and
+i thought well if the database is often
+the most difficult part then maybe you
+should tackle that earlier make sure
+it's even possible to extract that part
+of your data model out from the system
+and then you could do all the work to
+diligently
+separate out the database and then the
+code would be easy by comparison
+the reality is that most people don't
+want that to do that most people what
+they want to do
+is to get some benefit from having this
+new
+points awarding functionality extracted
+into a microservice first and so
+the model i see more often is that
+people extract the code and then they'll
+look to extract the data
+unfortunately all too many of them then
+don't do the data extraction
+um and so that that though in a way once
+i've pulled out
+my microservice i've pulled that out
+i've now got that running as a separate
+process it's still talking to the old
+database
+you at least then get a bit of a clear
+understanding about what parts of that
+data does this new thing use and then
+you've got the decision which is well
+of that data that this new micros this
+newly created microservices use
+how much of that data should really move
+into this microservice and
+and what parts that data should really
+stay where they are in which case we've
+got to clean up how that data is
+accessed
+my colleague preferable tutka wrote a
+piece on martinville.com about
+breaking up a microservice focusing on
+the data
+um and that i think is a particularly
+useful thing to look at because to me
+certainly the data
+side is a really important part of it
+and people of course
+should remember that if you've even with
+a single database you can have separate
+schemas in fact that's usually the best
+way to go
+is to keep one database and separate the
+schema
+and doing that can be an important part
+of keeping that data separated
+and that's actually the if i look at
+organizations that run microservices
+on premise on their own data centers on
+their own private clouds
+they typically will have a lot of
+logically
+isolated databases running on the same
+database infrastructure
+so they will be partly because the cost
+of spinning up fully isolated database
+infrastructure is too expensive so
+that's a very very common model you do
+then need to deal with of course
+the potential single points of failure
+you get but that is a very common model
+and that's often a bit of pushback i get
+is that's gonna be really expensive it's
+not like
+every single relational database under
+the sun lets you
+host multiple databases off the same
+database node
+you can do that um that and to be fair
+that's really the main pushback i get um
+there's all kinds of other challenges
+that people start seeing
+uh with with breaking databases apart uh
+you'll get concerns around performance
+uh which i think are valid to raise you
+know the the worsening latency
+uh you get issues around things like um
+data consistency because if you're
+breaking frankie relationships you're
+typically often also breaking the
+enforcement
+of referential integrity within data
+model so you've kind of got to deal with
+how that all works
+and then some people just want all their
+data in one place i think there's good
+arguments and explanations to how you
+resolve all of those issues but it is
+all work that has to be done
+um it's right that database chapter that
+i put in the monitor microservices book
+that's the biggest chapter in the book
+because it's the nas there are so many
+difficulties that emerge in that space
+and so it's i think
+i think what we maybe don't have more
+widely as an industry
+are more tools in our toolbox to say
+well actually in this situation
+there's this this and this that could
+help you in this situation this is an
+issue that can help you and
+and i think that's what's really good
+now is that we've got more case studies
+of people that have done this
+that are able to share the techniques
+that they've used
+to make these things happen and so this
+was my
+this is the first time i've kind of
+tried to write patterns was in was in
+the monitor microsoft's book
+so i then try to take some of those
+experiences and kind of create a named
+pattern around some of these things
+i'm not very good at naming things but i
+do think that
+we can't even imagine a world in which
+we break a database apart because it's
+not something we've ever done before
+um and actually look let's be really
+really honest there's another reason why
+single process
+monolithic application works so well is
+relational databases
+are amazing they are really really good
+joins
+are awesome there's a lot of value in
+being able to run
+arbitrary queries over large sets of
+data
+there's a lot of good sides about it and
+acid transaction
+is fantastic in terms of helping you
+reason about the system
+guess what if you're going to micro
+services that's all going out the window
+and this is again part of that sort of
+difficult journey of
+learning that you're going to be going
+on where you're moving through that sort
+of
+this sort of rocky path towards you know
+some greater distributed future
+yeah consistency is another reason to be
+very wary of going down the microservice
+path right because it's a whole
+more complicated world of eventual
+consistency that you've got to start
+dealing with and you can no longer keep
+things all
+straight with each other that's not
+something that's
+easy to manage take away number seven a
+lot of the complexity of breaking
+complex system lies in the data
+after extracting the microservices you
+need to understand what part of the old
+database the system uses
+so data is complicated the one thing i
+would say
+is more complicated about than data in
+when it comes to software development
+is people because people are always the
+most complicated part about any software
+development effort
+so i think when i think about
+microservices
+and we've hinted about a little bit
+about this is a difference in skills the
+difference in culture people aren't used
+to managing
+distributed systems to the degree that
+microservices
+requires it and thinking about
+independence and all the like of it
+so where do you see some of the biggest
+issues that tend to be top of your list
+when it comes to
+organization on people's sides when it
+comes to microservices
+yeah there's a famous jerry weinberg
+quote
+which is it's it's always a people
+problem there are obvious skill gap
+things start creeping in but maybe talk
+about the
+kind of the dysfunctions or maybe the
+dysfunctions but the change i see i say
+larger corporates that i work at
+when you go from an organization which
+is used to managing more monolithic
+software where
+and maybe even the factors of monetary
+software is not the issue it's the fact
+that it's software that hasn't really
+changed much
+the sort of structure the outline of the
+software hasn't changed in
+5 10 15 20 years this is the shape it is
+a box
+the things go in the box and the
+organization is built up knowing how to
+manage
+that box and we're now moving into a
+world where we're saying there's not one
+box there's lots of boxes we don't know
+what the boxes are going to look like
+yet there's going to be some boxes will
+get bigger some boxes will get smaller
+and just fundamentally you know the way
+an organization goes about making
+decisions
+just doesn't scale and or shift doesn't
+work in that world
+you know you go from a sort of a rather
+old fashioned way of
+making decisions which is maybe more
+centralized command and control type
+mindsets
+where you don't need to make many
+decisions very often but every decision
+you make
+that gets debated endlessly and then
+well now we're moving into the world of
+microservices and
+you know it's like well what the hell is
+all this going to be one of the earliest
+things that comes up i feel in this
+environment
+is where is that power where is the
+power that goes about making decisions
+um and there's got to be a bit of a bit
+of a willingness
+to um to change as an organization
+if you want to get the most out of
+america service architecture
+i think if you're a very old-fashioned
+command and control mindset that is used
+to doing centralized
+decision making then i think you'll pay
+the cost of a microservice architecture
+let's be honest
+microsoft's architectures will very
+rarely save you money they do not save
+you money they might help you make more
+money but they are going to cost you
+more money in the short term
+you know so in that environment you
+might end up paying the cost and having
+the pain and suffering of a microservice
+architecture
+but if you don't also look to maybe
+embrace some degree of
+organizational autonomy then you're
+going to be missing out on the real big
+benefits doesn't have to be overnight i
+think this is the other thing that
+people started getting worried about
+it's the other the other thing i see is
+some organizations just will not change
+anything and everything has still had to
+be done
+the way it used to be and other
+organizations go from a situation where
+developers are used to turning out doing
+working from nine til 5 30 and then
+going home to their families
+and then they get they turn up on monday
+they said oh guess what
+you're now our devops and now you are
+going to own and run your software
+and you're going to do production
+support and you're going to have full
+ownership
+and you you know those sorts of
+organizations you get about five percent
+of people get really energized
+and 95 percent of people start looking
+for another job um
+it's almost like everything has to be a
+massive decision everything has to be a
+big decision and so for me i'm thinking
+about the organizational change aspects
+i do kind of come back to that dial
+metaphor
+it's not big or showy for a cto a cio or
+ceo say we're going to try doing
+microservices i
+don't think a ceo should even know what
+a microservice is personally
+but for me it's like as you're making
+incremental changes to your architecture
+you should be experimenting with
+incremental changes to your
+your organizational structure as well so
+if you're thinking about something like
+shifting responsibility for things well
+maybe just to shift a couple of
+responsibilities into the teams and
+support them in that
+growth one of the most common
+dysfunctions i see in this space is that
+people don't trust the people in the
+teams enough
+they still want everything to be done
+the same way
+they want the illusion that people have
+some sort of choice
+and then a lot of their efforts will go
+into central platform engineering teams
+i'm going to create a platform on which
+all things will be done
+and effectively it's governance through
+tooling
+and this is obviously where you know
+some large
+companies out there uh make an awful lot
+of money
+selling in things like openshift nobody
+shifts is really good
+but openshift is often used as a way to
+build a corporate platform
+that will try and tell everyone this is
+how things should be done in this
+organization
+so for me it's more about saying okay
+what kind of
+what kind of organization do we want to
+be how much power and responsibility do
+we want to have
+in the teams and actually having a bit
+of an honest conversation about that and
+saying well we're going to make some
+changes and just see what happens we
+could try one or two things
+but i think all too often it's like you
+know people think it's either going to
+happen overnight or that nothing's going
+to change
+and i genuinely think if you if you
+spend all the time energy and money in a
+microsoft architecture and then do
+nothing to change your
+old-fashioned top-down command and
+control organization
+you're going to end up with probably the
+worst of both worlds
+takeaway number eight there has to be a
+willingness to change
+as an organization if you want to make
+the most out of using microservices
+subscribe to the go to youtube channel
+now for ad-free videos released almost
+daily
+and join the experts in person or online
+at any upcoming go to conference
+using the promo code book club visit
+gotopia.tech
+to learn more
+[Music]
+bye

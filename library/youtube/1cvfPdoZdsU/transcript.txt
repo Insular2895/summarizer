@@ -1,0 +1,1620 @@
+hello everyone and welcome to the second
+webinar of this year from msci carbon
+markets so today we'll be discussing uh
+bios Shar one of perhaps the most highly
+value uh carbon dioxide removal
+techniques and because we are going to
+look at it from different angle today
+our panel has uh team members with
+different expertise across our carbon
+markets team first today we joined by
+the managing director of carbon markets
+Jamie Saunders then we also join by the
+CDR product lead um Gregor Mazar as well
+as CDR technical expert constantina stui
+who will explain to you the overview of
+this CDR carbon removal technique then
+we're going to dive into um the
+Integrity assessment of CDR and explore
+why it is considered to have such a high
+integrity credits so we joined today by
+our uh our expert from carbon credit
+Integrity team Modi Cooper as well as
+our head of carbon projects and
+integrity Tristan ller and finally we
+will discuss the Outlook of the biosa
+credit market so we join by our head of
+carbon credit forecasting ukash
+akur as usual our webinar will be
+recorded and will be uploaded to our
+website later this week uh but you can
+take advantage of joining us live today
+by putting your question into the Q&A
+chat box and we will try our best to
+answer them as much as we can at the end
+of the
+presentation so I will now hand over to
+our managing director Jamie s to give
+you an overview of msci carbon markets
+platform and how our product may be able
+to help you answer some of your uh CDR
+questions so over to you
+Jimmy yeah thanks I'm uh delighted to be
+here and see so many of you on the line
+um for those who are regular joiners and
+expecting to see our usual figurehead
+guy Turner on the on the line I'm afraid
+he's in the jungles of Costa Rica this
+week and send his apologies but you got
+me instead for a very interesting agenda
+as you can see here on the screen uh
+we're going to kick off things with a
+introduction to the engineered CDR
+Market uh at an overall level um and
+then we're going to dive deeper as said
+into biochar covering sort of what it is
+uh what makes for a higher Integrity
+sort of biochar credit uh what's
+happening in the market today and how
+that market could uh look set to evolve
+in the coming years and then we'll try
+and leave some time at the end for
+audience
+Q&A um but before we get into that I
+think it's worth just spending a minute
+or two recapping who we are I know we've
+got some firsttime listeners today and
+some of you won't have joined uh any of
+our events since we transition from
+being Trove research to msci carbon
+markets so all the team on the line
+actually today used to work at a startup
+called Trove research um uh which was
+acquired by msci in November last year
+uh msci is a large American financial
+data company been around for almost 50
+years um and operates all around the
+world it's most uh one of it best known
+businesses it's sort of legacy is in the
+production of finial Market indexes in
+particular Equity Market
+indexes um and it among the 270,000 uh
+indexes it calculates every day are a
+whole host of ESG and climate indexes
+and there are over $ 660 billion dollars
+of institutional retail and exchange
+traded capital is benchmarked against
+those indexes it also has a a well
+established analytics and real assets
+business and then most relevant for most
+of the audience today is it has a large
+um and highly regarded
+ESG um research business um of which it
+includes um the world's sort of leading
+uh ESG ratings uh provider a and um a
+detailed sort of climate Solutions
+including now uh a carbon markets
+division um the carbon markets business
+uh
+is aims to provide a extensive source of
+data analytics and research on corate
+climate action more generally and the
+use of carbon credits structured around
+um six different areas uh each seeking
+to answer users key questions uh which
+uh or um covering things such as how
+will new policies and guidance affect
+corporate climate action and their use
+of corporate credits which companies
+have set climate targets and are using
+carbon credits today or in future or we
+need to in future uh what type of carbon
+credits are out there in the market
+Market how many credits they've issued
+um what those we have a large dedicated
+team looking at the Quality or Integrity
+of those carbon credits and you'll hear
+from some of that team today um and uh
+we also spend a lot of time tracking the
+prices of those carbon credits to
+produced carbon credit price indexes and
+estimates and finally under other cares
+on the line today uh we do detailed and
+quite sophisticated modeling in the
+short medium and long term for the
+market overall and and different
+segments of the
+Market we have a uh a CDR Focus part of
+our platform uh which covers all six of
+those different areas um which is led by
+gregar who you're going to hear from in
+a minute and um yeah just to give a
+quick overview of the CR products we do
+sell it on a standalone basis or as part
+of the overall subscription um and it
+covers sort of looks at the CDR Focus
+policy tracking emao alerts uh news
+updates monthly reports Etc
+understanding the fast changing policy
+landscape for CDR uh we we track
+corporate Investments and purchases of
+CDR credits and model what future
+removals credit demand will be for each
+individual corporate um based on their
+climate commitments we track CDR
+projects with detailed profiles for each
+of those products projects um and um
+look into the Integrity of the
+registered carbon um credits which is
+Larie biochar uh and also are
+have been in the process of developing
+exante project assessments as well for
+CDR um which will be available on the
+platform soon and then we track the
+prices and produce detailed sort of cost
+modeling for the development cost of CDR
+and forecast each individual sort of
+market and you'll see an example of that
+in from later in this session for
+biochar um so without further Ado uh I
+will hand over to Greg to take us
+through an introduction to the CDR
+Market thank you Jamie um hello everyone
+the focus of our presentation today is
+on biosure projects in the context of
+engineered carbon dioxide removal the
+def definition of which can be elusive
+um even for us who work in this market
+so we Define engineered CDR as the
+active removal of carbon dioxide
+emissions from the atmosphere um as
+opposed to avoidance or reduction using
+industrial processes as opposed to
+Natural carbon carbon sinks like forest
+or ocean uh without any other man-made
+assets CDR is also typically defined
+through the lens of storage because
+emissions tend to be stored in
+underground geological formations but of
+course that's not really the case with
+biochar
+projects so where do we start the
+intergovermental panel on climate change
+has stated that the world would
+overshoot its 1.5 degree climate warming
+Target Target without inclusion of
+removal Technologies to deliver
+so-called negative emissions with the
+need to be specific of um six gatons of
+CDR power removals per year in average
+for a total of up to 660 gatons by
+2,100 uh governmental response has been
+very quick spurred both by the ipcc
+modeling and corporate lobbying with in
+particular um the EU bu building on
+other older legislation to improve
+definitions of removals and storage the
+us more than any other region signing
+off on massive subsidy packages and
+Asian and Middle Eastern countries
+focusing on public private Partnerships
+and cross bandary storage
+agreements corporate climic commitment
+standards reflect the scientific
+imperative for large scale removals in a
+net zero World both the um science-based
+targets initiative also um acronym sbti
+and the the iso specify that only
+removals can be used to support a
+corporate's net zero claim um the sti's
+strong tense on the use stance on the
+use of high permanence removals um only
+in support of a net zero claim have in
+particular help to drive uh or increase
+corporate interest in
+CDR however we should note that most
+that um most voluntary corporate
+standards allow the use of both removals
+and reduction credits on a company's
+path to Net Zero uh one prominent
+example of such a standard is vcmi claim
+code under which um just yesterday B
+Consulting became the first firm to make
+a successful
+claim s spti is yet to publish its
+guidance on what actions corporate
+should take beyond their value chain
+while the transition to Net Zero uh and
+The Stance they take if any as to which
+corporates should prioritize investing
+in nation Technologies like CDR in a
+near term versus which should purchase
+more traditional reduction credits will
+likely have an important impact on the
+CDR Market's growth
+trajectory besides new voluntary
+standards uh government corporate claim
+regulation are starting to emerge with
+California and the EU being two early
+movers laws and accompaning details are
+not yet finalized but it seems that
+Europe may be leaning more towards a
+removals Focus for offsetting claims
+supported by its new carbon removal
+certification framework RC
+RCF a provisional deal was reached last
+week between the Parliament and the
+Council on this new removal
+certification scheme so it is now highly
+likely to become law it it aims to
+provide an eu-wide standard for carbon
+removals and also um soil-based emission
+reductions and under this scheme
+existing voluntary standards such as um
+either CDR Center Registries like Puro
+Earth or the more quote unquote
+traditional vcm Registries like Vera or
+gold standard can apply for their own
+CDR methologies to be recognized by the
+EU although they they do not have to um
+the CR CF defines three types of removal
+activities one permanent carbon removals
+with a permanence of um several
+centuries two carbon storage in products
+which must have a permanence of 35 or
+more years and three more short-term
+carbon farming and soil carbon removals
+which require a minimum per permanence
+of five
+years so for the time being at least uh
+carbon storage must been um within the
+um within the EU uh and a resulting crcf
+certified crits can only be used towards
+the 's uh NDC and other climate targets
+so while initially voluntary crcf
+credits are likely to be required to
+make claims on res residual emissions
+within the EU now it's also possible
+that as with other EU regulations the EU
+standard becomes a global standard uh
+and starts being used by companies
+operating elsewhere that being said much
+of the details still need to be worked
+through including what methologies or
+standards will be accepted and how this
+is embedded within the um eu's upcoming
+corporate claims
+directive so moving on from the policy
+aspect of CDR the number of C Sr
+Technologies under development may be
+overwhelming to an onlooker but they can
+be classified under a small number of
+techniques and this here is a
+classification that we use at MCI so
+while underlying transactions very a lot
+in size depending on the technique
+involved um you can see that most pure
+tons of carbon dioxide equivalent sold
+in the past three years where from beex
+Project or bio energy carbon capture and
+storage and DC projects or direct air
+capture as we'll see through the example
+of biochar in his presentation which
+accounts by far for the highest number
+of transactions CDR differs both by its
+potential and in its present state from
+state from the rest of the voluntary
+Common Market first of all units are
+typically sold on an ex an basis that is
+on a forward basis as a pre- purchase or
+through a memorandum of understanding
+between a buyer and a seller rather than
+on a spot basis um simply because a lot
+of projects are not actually operating
+yet second the
+a specific typee of buyer on average
+these are typically Tech firms uh
+Financial in institutions consultancies
+or hairlines and they're all fairly tax
+heavy uh they also tend to buy through
+organized consortia such as Frontier or
+NextGen which I'm sure a lot of you are
+familiar with already and third CDR
+insurances trade at a significantly
+higher price point in other carbon
+credits or units the weighted average
+price of all CDR units uh sold in 2023
+including biochar was at 265 USD against
+an average of $6 for reduction credits
+so now we need to explore the drivers
+behind this price and why companies are
+willing to pay it and I will um let
+trist and take it
+away thanks Greg so as Greg said a key
+question here is what is driving these
+high prices and this High willingness to
+pay for engineered CDR credits and we
+fundamentally see two main categories of
+factors that are affecting this the
+first of those is on the impact side so
+buyers clearly want to maximize the
+environmental impact from their
+purchases and from their transactions
+and we see a number of attractive
+features of engineered CDR to do this
+firstly the fact that these projects do
+result in real removals the fact that
+transactions at this early stage can
+have a catalytic effect by driving down
+Technologies through the cost curve and
+thirdly that appeal of these Solutions
+is a high-tech solution to achieve
+this and these second s of category
+factors are much more on the Integrity
+side and engineered CDR is perceived by
+many as having higher integrity and
+funding lower reputational risk than
+other project types that we see in the
+market particularly on the emissions
+impact side course additionality
+quantification and permanent
+these project types are seen as
+fundamentally higher integrity and we'll
+dig into whether that's the case for
+biochar later in the
+webinar so this is this hype I think it
+is worth reflecting on the fact that
+there are challenges with engineered CDR
+and the first really starts with the
+fact that at least in the very short
+term the impact of these Technologies is
+going to be somewhat Limited as a chart
+shows on the right hand side engineered
+CDR is starting from a very low base
+compared to biological removals or
+reduction Technologies as well and given
+the time required to scale production of
+this type of
+Technology even though the potential
+over 2050 Horizon is very significant
+this doesn't translate into material
+short-term
+impacts so I think it's worth definitely
+reminding ourselves that these
+engineered removals will be important
+part of the set of solutions necessary
+to reach Net Zero but they're a
+necessary solution alongside other
+Technologies such as reductions which
+will have a higher impact in the short
+term one reason for this limited impact
+in the short term is that the process of
+developing scaling these Technologies is
+both complex and
+expensive currently the development
+costs of engineered CDR Technologies are
+very high compared to the spectrum of
+reduction and biological removal
+Technologies and so those high prices
+that we saw these credits being
+transacted at are really necessary to
+firstly cover these costs and secondly
+provide that certainty and visibility
+and demand that will enable project
+developers and financiers to invest in
+the development and scaling of these
+projects and lastly it's important to
+note that while the Integrity of these
+projects is perceived as very high
+they're definitely not immune from
+Integrity
+considerations particularly an
+individual project level we do see
+variability in the Integrity of
+engineered CDR projects and some of
+these factors we LT on the right hand
+side are common Integrity considerations
+that we see for this type of category so
+for example the second bullet point here
+around the use of biomass so engineered
+CDR products that rely on biomass as a
+input
+clearly must appropriately consider what
+the alternative land use for that
+biomass would have been to avoid
+situations where maybe deforestation
+occurs to create biomass for these
+projects the other point worth saying
+here is that the Integrity
+considerations are not the same across
+all subtypes within engineered
+CDR for a direct air capture project the
+Integrity considerations are going to
+look very different to a bioch project
+and this is why we can't sort of just
+look at these categories Al together we
+need to look at the project subtypes in
+a bit more specificity and that's why
+for the rest of this webinar we're going
+to really focus on
+biochar and maybe some of you are asking
+sort of why biochar out of the different
+engineered CDR Technologies there are
+probably two reasons why this is the
+area we're focusing on firstly it's the
+most proven and lowest cost technology
+out of the engineered CDR Technologies
+we've seen and secondly in terms of its
+short-term potential we do think biar
+has the greatest short-term potential
+and this is really illustrated by the
+number of registered projects that we
+see in the carbon markets so for the
+remainder of the webinar we're really
+going to be recapping what biochar is
+diving deep into its integrity and
+discussing the Market Outlook of
+it so to start with what is biochar
+biochar it's really the name for the
+carbon Rich charcoal like substance that
+is the output from what's fundamentally
+a four-step
+process and that process all starts with
+sourcing an input and that input tends
+to be some kind of biomass feed stock
+this could be forestry based residue it
+could be an agriculture residue could be
+a waste
+biomass and once that input's been
+sourced it will will then be
+transported to some kind of processing
+facility in the second stage and then
+once the biomass has reached that
+production site what the key process
+then to sort of turn that input into
+biochar is this process that's typically
+called pyrolysis where essentially the
+biomass is combusted in a oxygen limited
+environment and so once you have that
+output which is the biochar the last
+stages in terms of where it's stored or
+what the end use of it is typically this
+is in soil applications for the majority
+of
+projects and so thinking about this
+process some of you might be wondering
+why this is a removal technology and
+where the removals are happening and I
+think the easiest way to think about
+this is that naturally clearly biomass
+has been created would have naturally
+decayed and as it naturally decays it
+would emit CO2
+but what this process of pyrolysis does
+is it means it sort of it locks in that
+carbon and it then stores it in a way
+that it takes this carbon neutral
+process and turns it into a carbon
+negative
+one so as I mentioned earlier this is
+one of the more um more mature project
+subtit with engineered CDR there are 39
+registered projects currently there are
+another 40 going through the
+registration process
+to date most of these projects have been
+registered under the Puro Earth registry
+though we are starting to see more
+activity within both Vera and gold
+standard here and I think geographically
+it's quite an interesting picture where
+for biochar most projects tend to be
+located in North America and Europe so
+far though we are seeing some projects
+in pretty much every continent um
+particularly in the pipeline
+so before we get into the insights on
+the Integrity of bioch specifically I
+think it's very worth very quickly
+recapping on how we approach and Define
+integrity at
+msci and our integrity assessments
+provide consistent scores for over 5,000
+projects across the volunteer carve
+market so we really pride ourselves on
+that comprehensive view of
+integrity and all projects that we
+evaluate are evaluated against six main
+criteria that cover the emissions impact
+on the left hand side and the
+implementation Integrity that includes
+things like the co- benefits and legal
+and ethical
+risks beneath each of these criteria
+there are clearly lots and lots of sub
+criteria important to
+consider but I think the main point I
+want to make on this slide is the fact
+that clear the relevance of each of
+these sub criteria and also how we
+assess them varies a lot by project type
+and this is really why we develop
+project type specific methodologies that
+allow us to assess the Integrity of
+projects based on what the key drives of
+Integrity are for that project
+type and so if you look at
+biochar through this framework when
+we've created our biochar methodology
+there around 20 key risk topics which we
+primarily focus on and again those
+topics really represent what are the
+most important drivers of quality for
+bioch child
+projects for example just to pick out a
+couple of examples here within
+additionality given the fact that there
+are alternative revenue streams outside
+of carbon credits that can be available
+to bioch child
+producers understanding the percent of
+Revenue that comes from carbon credits
+and how carbon credits alter the
+internal rate of return analysis is a
+really important
+consideration while on co- benefits
+examinate examining the potential soil
+health benefits for projects where
+biocharge stored as a soil amendment is
+crucial for those interested in learning
+more about our methodology our detailed
+bi methodology note can be found on the
+car markets
+platform and actually last November we
+released individual Integrity
+assessments on all registered biochar
+projects so the individual project
+scores and ratings can be found in our
+carbon markets platform form for 34
+registered biochar
+projects and over the following slides
+we'll provide some more aggregated in
+insights into each of these
+criteria perfect thank You Tristan for
+that so specifically for additionality
+of biochar projects we have considered a
+number of factors for our biochar
+additionality assessment and the risk of
+for each of these criteria has been
+evaluated individually we have also
+taken into account more than 20 sub
+criteria including the technology
+maturity level data for common practice
+for all the project locations and
+whether a project could qualify as a
+first of its kind in that region
+specifically the potential of a project
+going forward without the use of carbon
+credits has been evaluated through
+financial additionality by assessing a
+number of metrics such as project costs
+including biomass sourcing and Supply
+percentage of revenues from carbon
+credits versus alternative revenue
+streams in combination with any existing
+financial support scheme subsidies at a
+regional or national level projects that
+transparently disclose their financial
+information have limited have access to
+limited alternative revenue streams
+combined with the first of its kind
+installation in that country and at the
+same time can demonstrate that carbon
+credits were considered prior to the
+project start are presented with low
+residual risk resulting in higher
+Integrity value overall biochar projects
+are showcased on the right hand side
+have good additionality characteristics
+with an average score of 3.6 Which is
+higher than our overall project average
+some of the key issues identified have
+been the lack of transparency on
+providing data for project costs and
+increased the risk that the project will
+be fully financially viable without the
+use of carbon credits in the near future
+going into a little bit more detail for
+one of the sub criteria that we have
+looked we have identified several
+alternative revenue streams for biochair
+projects and that that we have
+identified as you can see in the graph
+this can range from like really high
+value as you can see on the far far left
+hand side which can be animal feed that
+command a market value up to th000 per
+ton or on the far end on the other side
+you can be positioned in the lower end
+of the Spectrum which is construction
+materials or energy generation it is
+important though to note that these
+streams are not necessarily mutually
+exclusive and I'll explain a little bit
+further what that
+means however also not all of these
+alternatives are necessarily applicable
+to all markets and all projects and they
+currently stand at varying levels of
+Market maturity what this means is that
+realistically these streams might not be
+available for producers to sell their
+biochar products as can be highlighted
+in the graph with different colors so in
+red you will see it's less likely and
+orange are the more likely revenue
+streams to
+happen Market maturity now is highly
+dependent on various factors this can be
+insufficient demand regulation which is
+not at the level that we want and the
+states in the product developments that
+the individual products are in our
+approach was to include all potential
+revenue streams relevant to the
+different biochar applications assign an
+average value using independent sources
+and project data where project data was
+available and then identify the level of
+Market maturity for each of these
+revenues for the location that the
+project were in for example a project
+that generates electricity and supplies
+biochar as a Sol amendment can tap in
+two of those two revenue streams both of
+which have medium Market maturity and
+therefore could PR present a realistic
+and consistent Revenue source for that
+project out of the 34 projects that we
+have assessed nearly 80% are intended
+for soil applications with the remaining
+split between construction animal feed
+and land remediation nearly 50% of the
+projects generate renewable energy which
+is either sold or used for self-c
+consumption in the process itself
+specific some of these revenue streams
+like Tipp T tipping fees for example are
+only applicable to waste biomass fed
+stocks and used only for specific
+applications however when tapped into
+those they could significantly a affect
+the financial profitability of a project
+Emerging Markets such as land
+remediation have also been considered in
+our approach however they are still at
+very early stages in the research phase
+and they are presented though with a
+very high potential and a High could
+command potentially High market
+value moving into the carbon
+quantification approach and what we have
+looked carbon quantification is Central
+to the quality of those projects and
+that is why we have included more than
+75 data points spread between 15 sub
+criteria in our method we have assessed
+the quantification approaches employed
+by the projects to me to measure the
+carbon content of
+biochar those approaches could be just
+measuring carbon content fixed carbon
+hydrogen into carbon ratio and a number
+of different other metrics combined with
+the methods used to achieve that for
+example projects that use best practice
+scientific analysis and contact uh
+rigorous biocharge sampling methods to
+measure biocharge carbon content lower
+the risk of overestimation the other key
+assumptions analyzed include the biomass
+biomass carbon content and whether a
+project accurately accounts for all
+emission sources in all stages of the
+process we have also tested the accuracy
+of those assump ions in the project
+documents on the biochar and biomass
+carbon content side using independent
+third party data
+sources what actually drives Integrity
+higher is a combination of robust
+methods employed to quantify the carbon
+remov removal potential combined with a
+strong correlation of the estimates
+against independent third party D data
+values as you can see on the graph in
+the right biochar projects score really
+high 4.3 on the carbon quantification
+criteria with limited risk and high
+concentration of the pro of the project
+around the 4 4.5 range which sits above
+the average score of
+3.1 finally projects that have
+transparently accounted for all
+emissions including leakage minimize the
+risk for overestimating the Project's
+carbon removal
+capacity in this slide we have focused
+and included some of the key metrics
+used such are carbon quantification
+approach and biomass carbon content
+accuracy as shown in the graph biochar
+can be produced from a number of of
+different uh materials starting from
+energy crops Forest residues
+agricultural residues all the way to
+Municipal Solid Waste or waste streams
+these uh these materials and fed stocks
+have different carbon contents and H we
+have also in what approach we have
+looked at the project data that what the
+projects are saying in terms of carbon
+content and used inde dependent sources
+to validate those values and assess the
+risk with a subsequent overestimation
+potential you can see the ref values and
+then the project data are the bullet
+points in general we can see very good
+correlation between the project data and
+the reference value across all biomass
+types with only a few projects exceeding
+the reference values projects that
+overstated the carbon content had a
+higher risk of overestimating the
+removal capacity but such metrics have
+been Incorporated in an approach
+yielding reliable catification results
+and thus strengthening the Integrity
+profile of the biochar
+projects
+thank you constantina now I'll be taking
+you through the permanence portion of
+our methodology permanence is a really
+important topic for biochar right now
+and I've seen some questions going
+around about it already um with many
+insightful papers coming out recently
+and some thought-provoking discussions
+had at the recent International bioch
+chart initiative Symposium which has
+reignited the
+conversation here we can see the spread
+of permanent scores for biochar on the
+right hand side which shows that in
+general biochar projects score very
+highly with the modal score between 4
+and 4.5 which represents a low risk of
+reversal over the 100-year period when
+compared with other carbon projects that
+involve carbon being stored in a carbon
+Reservoir and therefore having some
+reversal risk bioch chure has a
+relatively low risk of reversal due to
+its stability particularly over the
+100-year period which is where most
+research has been
+conducted our own scoring evaluates that
+the best soil-based biochar projects as
+over 80% of the projects are are still
+stored in a lower temperature soil
+environment as this slows down the
+breakdown process which we will
+elaborate on in one moment the highest
+Acclaim method of determining permanence
+is the random reflectance method an
+Imaging technique used to determine the
+structure of the biochar or using
+accurate carbon mization estimates or
+the hydrogen to carbon ratio this
+coupled with reasonable duration
+assumptions keeping closer to 100 rather
+than a thousand years and the
+utilization of a buffer percentage
+reduction have the greatest
+likelihood although no project scores
+particularly badly as you can see
+biochar applied to inappropriate end
+uses based on feed stock type and
+location have a higher permanence risk
+this coupled with no discount for
+leakage and an overestimated duration
+assumption with immaterial evidence
+receive low lower
+scores now we will focus in on projects
+where the biochar is stored as a soil
+amendment in the yeah which represents
+around 80% of the current carbon
+projects fundamentally the risk of
+carbon loss depends on two factors the
+type of process used to create the
+biochar as shown on the vertical axis
+and the soil temperature where the
+biochar is stored which you can see
+along the top as you can see on the
+right hand side of the table the
+permanent risk increases in higher soil
+temperatures and lower stability biochar
+which is produced at lower pyris
+temperatures in the current group of
+carbon projects three quarters were
+applied in countries with average soil
+temperatures below 10° C and therefore
+having a carbon loss of 20% or under in
+the 100-year time frame that we have
+assessed therefore having a high
+permanence
+likelihood many of the co- benefits of
+biochar also relate to its ability to
+improve a soil environment as you'll see
+in the next
+slide as you can see the overall average
+score for biochar is greater than the
+average co- benefit score of other
+project types but there is still a
+widespread going from 1.5 up to four in
+a soil amendment context Co benefits
+should be listed monitored and
+Quantified in order to improve their co-
+benefit Integrity ensuring that the
+bioch chart is reaching its full
+potential in application and that this
+is evidenced this is bolted further with
+evidence of economic benefits for
+example being given out locally and
+making an impact in local communities or
+offering training or education in its
+application and potential
+use biochar also produces useful
+bioproducts which have the potential to
+make the whole process circular for
+example renewable energy which can be
+reused in the re the pyrolysis process
+or bio oil and wood vinegar or projects
+May stipulate that they have used waste
+feed stock and described where this has
+come from and how far it has traveled
+and the emissions incurred from this
+projects score better if this is stated
+and proved projects fall into the higher
+risk category if they withhold
+information on their end use so it is
+impossible to deduce what their benefits
+could be and how suitable the bioch
+chart is for that end use based on its
+location and feed St stock used biochar
+projects often don't elucidate on their
+social impacts giving little information
+on benefiting the local economy or
+improving livelihoods even though
+biochar has a great potential to do so
+we would encourage extra transparency in
+Project documentation in order to
+maximize Integrity in this area scores
+can be mitigated through certifications
+including using FSC approved feed stock
+or having European biochar or World
+biochar
+certification here we can see the
+mapping of potential benefits for soil
+application the size of these benefits
+primarily depends on soil type and
+region academic findings illustrate the
+potential scale of these benefits
+biochar can increase crop yields up to
+50% specifically in arid areas and
+reduce the need for the addition of
+fertilizer this all creates a lucrative
+increase in income from yield with
+examples adding up to $2,000 per
+hectare although High soil High soil
+temperature May reduce permanent
+potential this does not necessarily
+correlate with soil Co benefit for
+example although Brazil has a higher
+mean soil temperature than average as
+you can see here the co- benefit
+potential is still very high due to the
+acidity and infertility of soils here
+biochar can increase the pH of the soil
+and fix nutrient retention biochar will
+have fewer co- benefits if added to
+already nutrient-rich fertile soil which
+you can see in and around Canada when
+compared to out it to arid land with
+acidic soils which face water scarcity
+and benefit from increased water
+retention as shown in some regions of
+Australia and I'll pass you back to
+Tristan to go through the rest of our
+integrity
+criteria thanks myty so the fifth
+criteria we look at on carbon credit
+integrities around legal and ethical
+risks and these can fundamentally
+emanate from two main sources the
+project developer or at the country
+level and on both of these these sources
+bioch projects on average tend to have
+very low legal and ethical risks so on
+the developer level we screen all
+developers against sanctions watch lists
+and adverse media databases as part of
+our financial crime assessments for very
+few bi developers have identified risks
+against these and secondly given the
+fact that projects tend to take place in
+countries with relatively low corruption
+risk risk at Country level are
+relatively
+low the last criteria around delivery
+risk and this is particularly important
+for biochar given how many transactions
+are occurring in an early stage and a
+preissuance
+stage generally when we look at delivery
+risk we consider developer risk so
+whether there are financial and
+execution risks that might mean the
+project doesn't successfully implement
+the project we look at whether country
+risk could impact delivery and we also
+look at natural risks but for biochar
+it's really the first two of these are
+most relevant so the financial Ur
+execution risks for example that might
+mean that a developer abandons a project
+or runs out of money to fully scale and
+reach production
+capacity given the technological
+complexity and high development costs of
+these projects it's it's really crucial
+to assess these risks for exanti buyers
+so for financial risks understanding if
+projects have secured long-term Revenue
+agreements in place or significant
+invest M behind them that might provide
+sufficient cash flow to reach scalable
+production levels again it will indicate
+lower risks while on the execution side
+a management team with the track record
+de developing similar projects will have
+lower execution
+risks so overall now we've gone through
+each of the different Integrity criteria
+I think what we've hopefully shown is
+that existing biochar projects do have
+relatively low Integrity risks in fact
+across the full spectrum of project
+types we've assessed as part of our
+integrity assessments on average biochar
+projects receive the highest Integrity
+scores of all project types and these is
+particularly driven by the high
+emissions impact
+Integrity however it should also be
+noted that not all bioch projects are
+the same we see high variability and
+integrity across bi our projects which
+again shows a value of individual due
+diligence even within low risk
+categories like
+biochar so hopefully we've convinced you
+of the potential benefits of biochar as
+a category and I think a big question
+many of you might have is in terms of
+how the market for this is going to
+scale um and how far really biochar can
+go and so for that I'll hand over to OS
+to go through some of the Market
+Outlook thanks Tristan um I'm just going
+to start with the current market so the
+voluntary carbon Market has seen a sharp
+upswing in interest in biochar in the
+last few years um we've been tracking
+and analyzing um issuances and
+retirements of biar based credits from
+all major Registries and so far two
+thirds of all biochar crits issued to
+date have come from projects in the US
+although most grits issued in 2023 came
+from a single Brazilian project buyers
+of biochar GS have included some major
+corporates um including Microsoft JP
+Morgan Chase Swiss rean and NASDAQ for
+from less than a thousand tons in 2020
+corporate use of voluntary credits from
+biochar projects has jumped for to
+34,000 tons in 2022 and 65,000 tons in
+2023 on the price front um we see that
+over the last two years the P the price
+of biochar crates have followed a
+consistent Trend with many credits sort
+of trading in the range of 100 to um
+$200 per ton uh price this is far above
+this $6 average we've seen in the
+voluntary carbon credits in 2023
+although we have to keep in mind mind
+that the transaction sizes are typically
+uh much smaller for biochar credits
+these high prices May reflect the the
+permanence of um biar removal credits in
+contrast to the biolog biological or the
+nature based removal credits such as
+aforestation and Mangrove which sort of
+lack that how sustainable this price
+range is is questionable and is
+something we will sort of address
+shortly in the forecasting
+section before we I move into discussing
+the insights from our forecasting I
+would like to talk talk briefly about
+our approach to U Market forecast for
+CDR Technologies our demand Model
+includes um estimating demand volume for
+various sectors and segments of the
+market and then we estimate the
+willingness to pay for these credits
+which is a very comprehensive exercise
+looking into a lot of details around uh
+corporates and companies that form the
+demand pool um on the supply side we
+estimate the volume based on Advanced
+geospatial and economic modeling of the
+project types and then then looking at
+the cost of developing these projects to
+produce these credits I think the cost
+of developing um these projects is as an
+important um input and we've developed
+our own proprietary models to build out
+um cost developing cost um outputs for
+all all these project types Price
+Forecast then is sort of what we do is a
+scenario based output and is a partial
+equilibrium solution to the demand and
+Supply C and it calculates the market
+clearing price and volume transacted
+each year so what we end up providing in
+our forecasting module is annual demand
+Supply and Price Forecast up to 2050 for
+all these
+Technologies and um Beyond this um if
+you move forward a key piece of modeling
+as I mentioned we do within our CDR
+product is estimating the levelized cost
+of producing carbon credits from a biar
+operation uh in in dollars per ton of
+CO2 sequestered and this serves is a
+very important input to our supply
+forecast and within this analysis we
+look comprehensively into various
+capital and operational expenditures and
+the cost components while setting up or
+developing these projects uh it is very
+important to highlight the variability
+in different cost components du to
+variability in Project developers
+approach and operational uh management
+choices can lead to a huge range of
+levelized cost at which byr um projects
+can be um developed the advantage from
+this analysis we found out is that biar
+is much simpler and less costly
+operation than the other comparative
+High permanence um carbon removal and
+storage Technologies key drivers of cost
+for developing biochar project includes
+input technology I think one of my
+colleagues mentioned that it's the
+complexity of Technology sort of
+challenges the scaling of bi of of the
+CDR projects and while biochar projects
+could be built on fixed and mobile
+industrial units which are slightly high
+technology and have a higher Lifetime
+and include a mix of Forestry and
+agricultural feed stocks you also have
+soil pits and box gills which which are
+slightly lower technology and
+considerably cheaper have a shorter
+Lifetime and fully use agricultural feed
+stock so the input technology which the
+developer is using sort of impacts the
+cost a lot then I think infrastructure
+is also an important point where you
+look at the biochar production equipment
+for carrying out the paralysis process
+and also the transportation and
+equipment and side preparation cost is
+what um sort of impacts the total cost
+of the project and then I think we could
+see that biomass availability and feed
+stock cost are two major um cost
+components which have huge uh could have
+a huge impact in the long term for
+biochar projects now when I'm talking
+about biomass availability it's
+important to understand that the
+competing Technologies such as
+sustainable aviation fuel or bioenergy
+carbon capture would also be requiring
+the same kind of feed stocks as um
+biochar so in the future there is an
+expectation that there'll be a
+competition for feed stock and the
+prices would sort of um increase if the
+demand for all these techn techologies
+increase with time so that would lead to
+a higher feed stock cost also the type
+of feed stock you're using in in the
+biar production as well as um the
+sourcing of feed stock play an important
+role um in the overall cost of the
+project finally I think Community
+engagement is also something which is a
+sort of a feature of of a carbon project
+rather than just a biochar project but
+if the level of community engagement is
+high it could be a costlier process um
+um but then it helps the project achieve
+I think higher integrity and pre in in
+the credit sale price currently if you
+can see um the chart on on the on the
+left side the cost of production stands
+at the mid to high range but biochar we
+expect can be produced at a cheaper cost
+in the future as well recent standards
+have now opened the door to support more
+small scale biochar projects in um rural
+or um less developed regions the most
+recent updates by the Vera methodology
+sort of distinguishes between low and
+high tech and tries to accommodate for
+small scale biochar projects so there is
+a potential for increase in apply in the
+short run due to the development of more
+of these um small scale projects and
+we'll discuss that more in the
+forecasting section um as we move
+there right um for the forecasting
+section what I'm going to do is discuss
+about the demand Supply and pricing um
+insights which our model has come up
+with uh the the approach would be that
+we look at the key drivers and what are
+the key figures in terms of growth in
+demand Supply we expect the demand to
+grow 15 to 25 times um from the current
+potential to by 2035 and the key drivers
+we expect um this demand would that
+would be driving sort of leading the
+demand would be number one corporate
+targets and policies as corporates move
+closer to their Net Zero targets and
+other voluntary commitments the demand
+for high integrity vcm credits will ramp
+up leading to a de increase in demand
+for CDR and biochar rates as well
+additionally we are already seeing
+removal Centric policies and mandates
+such as sbti uh allowing only removal
+credits for the residual emissions and
+EU sort of adopting world's first
+certification scheme to scale up
+removals so all these policy signals are
+sort of positive in terms of increasing
+the demand of biochar the emerging Biers
+profile um is also one of the key um
+leading points for increase in demand
+right now we see that the corporate
+buyers currently inclined towards the
+removal Market are mostly from Big Tech
+and financial services but we do expect
+um their um their peers to join in and
+also other similar sectors to
+participate in the future it's sort of
+enhancing the bio profile for CDR
+credits I think acceptability as high
+integrity option as my Integrity team
+colleagues pointed out about permanence
+and durability as biocharge acceptance
+of more per permanence based solution
+comes into play I think um the demand
+would sort of ramp up um for them as
+well if if you then move on to the
+supply side I think it's pretty clear
+that sustainable biomass availability
+would be a m major factor which would
+impact how the supply scales up our
+assumption is that um sort of our our
+belief is that by 2035 again overall the
+supply could grow from 18 to 27 times um
+um compared to the current um Supply
+potential if the price is around $100
+per ton but uh coming back to the
+drivers I think sustainable biomass
+availability is a major factor there
+will be competition for feed stock so
+this could lead both ways in the short
+term you could have High um availability
+of biomass and feed stock for um
+building biochar projects but as more
+and more Technologies mature there will
+be a competition and there will be a
+challenges to scaling more bihr um
+operations because there's lack of feed
+stock available I think that also ties
+up with the sensitivity to the feed
+stock cost and one major uh I think
+defining factor for biochar is that it's
+has a lower capital expenditure so less
+investment is required to sort of build
+out more bioch chart projects projects
+and it has shorter issurance time so in
+the in the short time you could start
+developing issuing more and more credits
+um and and and sort of increase the
+supply um ramp it up pretty quickly in
+the short term and from there if you
+move to the price forecast um what we
+feel is that um Supply from small scale
+projects and moderate demand growth
+could see prices softening in the short
+term so they could be a likelihood of
+credit Surplus um because of these
+factors but potentially uh there will be
+priced strengthening in the long term
+where you see competition between
+biomass based M mitigation path phas the
+feed stock cost is increased the cost of
+production sort of grows up as well as
+there is um growth in demand for biochar
+Credits based on its um Integrity
+features and there's a high growth in
+sort of willingness to pay for the
+corporates to meet their voluntary
+targets so in the long term you probably
+would expect the price to um rise but
+since our modeling is scenario based I
+would also like to point out that there
+could be a low scenario which we
+consider where we assume Buy has shift
+their preferences in the removal credits
+to either more Advanced Technologies
+like bio energy carbon capture and
+direct air capture or continue just
+focus on nature-based removals thereby
+decreasing the willingness to pay for um
+your bioch chart projects additionally
+it could be that low by low quality
+biochar crates are um sort of accepted
+in the market and because of their low
+cost of operations they significantly
+flood the market with Supply causing the
+market Surplus to stay longer than what
+we expecting and the prices sort of keep
+falling for a longer period um with that
+I would sort of finish um the
+forecasting section this is what we uh
+msci carbon markets feels about um the
+forecast but we would be also interested
+to know what your um um view is about
+about the market and with this I'll hand
+it over to um Jimmy to sort of um run
+through the poll and its
+results thanks with K and team uh very
+interesting stuff as you say that's it
+would be you know that's our view on
+where prices might go uh but it'd be
+great to hear everyone else's view so
+you should see pop up in front of you a
+request to fill in what you think the
+average price of carbon biar credit will
+be in 2025 and 2035 so if you could just
+select one of the multiple choice
+options there we give it a minute or two
+and then
+um we should shortly see the results so
+I don't know um how we're doing on
+response rate do we want to
+close the
+survey see the results so hopefully
+everyone can see the results on screen
+there so we bear in mind that average
+biochar credit prices in the second half
+of last year are about $175 a ton so
+we've got around uh looks like around
+60% of uh you of the audience 60 65% of
+the audience think prices will come down
+from where they are today and drop with
+almost 20% of you thinking prices in
+years the next year or two will be below
+$100 so seems like a consensus that
+we're going to see falling prices over
+the next year or two um with relatively
+few in fact only 3% seeing prices
+spiking up above the $250 Mark and only
+8% above $200 so yeah it seems like
+pretty strong Market or webinar
+participant uh consensus there and what
+about turning to the longer term 2035
+it's a more even picture but there's
+still around 60% of the audience today
+thinking prices will drop below $150 and
+remain below $150 so looks like this
+again a pretty strong view that prices
+are not going to spike up hugely above
+where they are today uh for at least
+another of 10 years um we do see
+slightly more positive view for a price
+spike above $200 in the long run with it
+looks like what's that
+23% of of webin our participants
+thinking the price will be above $200 in
+10 years time so yeah very interesting
+that's good I think a wisdom of the
+crowd is always much wiser than the the
+uh even despite the clever brains we
+have here at msci I think the wisdom of
+the crowd is quite indicative of where
+the market might go um so yeah I think
+that leads us to sort of just saying
+what to look out for going forward now
+so it's been a very sort fast moving
+quick moving Market lots happening in
+bioch space so these are the sorts of
+things we're really looking out for over
+the next year or two World biochar
+prices start to fall below $150 a ton
+consistently what is that the average
+we'll see in in this year um will the
+supply of credits Spike above 100,000 or
+issuances above 100,000 tons this year I
+think that will be a real um Benchmark p
+uh level for issuances to break through
+this year uh on the Integrity side I
+think there are key question is how the
+ICBC with its core carbon principles the
+ccps will look at CDR generally but
+particularly biochar will that receive
+sort of the methodologies were in the
+market today receive acceptance uh later
+this year from the
+ibcm and um in particular I think on the
+Integrity side one of the most
+interesting sort of more academic
+debates to follow is around the
+permanence uh and that links to the EU
+carbon removal vication scheme that Greg
+mentioned at the start you know will
+biochar be considered permanent will it
+be accepted to have permanence of uh a
+couple of centuries at least a couple of
+centuries that will be important for how
+the extent to which biochar can be used
+and adopted for Net Zero claims in the
+long run in the EU um and I think the
+other thing that we're very interested
+to look out for msci is what the sbti
+the science-based target initiatives
+Beyond value chain mitigation guidance
+uh which is long awaited comes uh out
+with later this year in what company
+should be doing now beyond their value
+chains to help mitigate their impact on
+the climate will that come out with a
+strong leaning towards the CDR space
+investing in the CDR space or or look
+more towards traditional credits or be
+quite neutral in in between the two of
+those um we'll be interesting to see and
+potentially have a large impact on
+voluntary corporate climate action in
+the coming year or
+two um we're not only looking at the
+market over the next year or two we're
+also doing a lot of work internally to
+try and continually enhance the Insight
+we provide our clients and there's lots
+more coming from us in the coming months
+I think the subscribers to our platform
+can benefit from various enhancements
+we're adding in the coming couple of
+months we're going to be releasing a
+detailed cost and Market Outlook report
+for uh beex and then later in the
+quarter for direct air capture as well
+and we're also going to be releasing a
+uh article six Price Forecast uh on how
+we think corresponding adjustments will
+impact carbon gr prices for our
+subscribers and look at the um you
+potentially very large Market that's
+developing around jurisdictional red um
+and provide particularly through
+financial services uh new regulatory
+reporting solutions for carbon credits
+and launching a new geospatial tool for
+cook stoves we also have another webinar
+in just under a month's time um on red
+plus which anyone's welcome to join I
+don't know if we can post the sign up
+link but you can certainly find it on
+are LinkedIn uh it's going to be really
+interesting topic red plus obviously
+subject of a lot of debate in the market
+last year um and uh yeah we'll be
+sharing our views on what's next for red
+plus and and what the issues have being
+so that'll be a really interesting one
+and I see am's just posted the sign up
+link in the chat so do sign up for
+that and so to wrap up we are I think we
+taken a minute or two long a few minutes
+longer than we expected but hopefully
+you found it interesting we' probably
+got time for just one or two
+questions from the team
+um as we as we run up against the hour
+mark so uh maybe I will call up a
+question or two shall I I think um we
+had quite a few questions around
+permanence uh maybe Constantino you want
+to take this one as our technical expert
+um I don't know if you want to talk more
+about whether we think biosa should be
+considered sort of permanent in a vertic
+commers perfect thanks thanks uh Jamie
+sure of course yeah I think permanence
+is one of the most debatable areas in
+biochar and that is because biochar kind
+of has a CO crossover it's it's kind of
+like a
+semi-permanent um material so we do see
+relatively low permanence risk over the
+100e time frame particularly where the
+biot are is stored in um lower
+temperature environments or is produced
+through a high temperature process which
+ultimately results in a highly stable
+carbonized biochar in reality
+biochar is split into a very permanent
+fraction which is the inner tight
+fraction and a degradable fraction which
+means that depending on the con
+conditions of the end application part
+of the carbon will be lost and part of
+the carbon will remain stored long term
+which is why what we have taken into
+account in our permanence risk
+assessment generally we would have
+expect some carbon loss Beyond this
+100-year time frame that we have
+considered however recent academic
+findings indicate that biochar in the
+10,000 year time frame and Beyond can
+still be very highly stable nearly aite
+uh this subject is still like highly
+highly debated and constantly updated
+with new research and it will be very
+interesting to see what position the EU
+takes on biochar given they have tried
+viewing permanence on a couple of uh
+Century time
+frame it's great thanks constantina um
+yeah there's so many great questions
+here it's hard to pull them out but uh
+maybe to switch to one on uh you know
+the Market Outlook of ksh uh if you want
+to pick this one up
+what um what do we see as the key
+near-term drivers for um increas in
+demand for bioch and and or CDR I
+suppose more
+generally thanks Jamie um that's a good
+question I think the key near-term
+drivers would be sort of corporate
+activity and guidance um I think that's
+most important the volary corporate
+action we've seen um it's Gathering
+momentum by um alteristic and profitable
+firms and to take the demand to the next
+level um requirement is that the
+promotion of CDR purchases within
+corporate climate standards sort of pick
+up second would probably be um I think
+the government policies and subsidies
+that that helps to reduce cost and as we
+discussed on the cost of um operations
+for bihr High-Tech byr projects require
+uh higher levelized costs so government
+incentives for example in the US um
+probably after elections could make a
+difference um commitments by um other
+markets as well like the compliance
+Market in EU or UK or California could
+also boost um the demand in the long
+term I think overall um the technology
+rate is also something which we we
+should be um focusing on so as the
+technology matures for producing biochar
+I think the cost sort of comes down um
+to produce them and that sort of drives
+makes um cheaper credits are available
+and drives sort of demand and finally I
+think minimizing delivery risk would be
+important I I feel a lot of these um um
+agreements right now are um future off
+takes but it would be interesting to see
+how well this deliveries risk managed
+for these pilot projects delivery
+failures would sort of drag to um sort
+of um sort of stopping additional
+corporates from joining into the um CDR
+segment and finally yeah trans uh from
+delivery risk I think uh linked is
+transparency as well um all CDR projects
+um are currently thought of high
+integrity but um they're not free from
+Integrity risk so delivery risk and
+integrity risk both of them would be
+important to sort of deal with to ensure
+that there's short-term
+demand great thanks Akash probably got
+time for one more question uh for those
+who want to hang around on the line uh
+so maybe um Tristan you want to take
+this one I've seen a few questions in
+the chat around uh alternative revenue
+streams for J biochar and how much sort
+of financial additionality needs to be
+considered in the removal space and and
+how might that evolve over time I don't
+know if you want to tackle that
+question yeah thanks it it's a really
+good question because I think as one of
+the slides constantina showed given the
+potential prices of some of these
+alternative revenue streams and the cost
+that car showed it's theoretically
+possible to create a profitable B
+Project without carbon credits but
+practically at the moment given the
+maturity of these alternative revenue
+streams and fundamentally they're not
+available to all developers it's very
+difficult to think about how alternative
+revenue streams are sufficient without
+carbon credits for these projects to go
+ahead so I think that question is an
+interesting one going forwards if some
+of these alternative revenue streams
+become more mature then could this
+create more additionality risk for
+biochar um and I think that's definitely
+something we're interested in sort of
+keeping a close eye
+on yeah indeed thank you Thank You
+Tristan uh and thank you to all the team
+I think we should probably wrap up here
+Ram um given we're over know three
+minutes past so um yeah I mean lots of
+great questions sorry we couldn't answer
+them all we never have time to but uh
+yeah I think if if you've likeed what
+you've heard and you'll be interested in
+learning more about a subscription
+please do get in touch and um yeah do do
+follow us if you'd like to hear more on
+future webinars and thanks for all
+joining us and have a good
+afternoon

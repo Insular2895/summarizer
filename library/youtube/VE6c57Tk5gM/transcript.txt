@@ -1,0 +1,110 @@
+database attacks can be devastating
+because hackers can steal sensitive data
+passwords create admin accounts for
+themselves and take whole systems under
+their control
+[Music]
+hey and welcome to security bytes a
+series of short videos from the github
+security lab aiming towards educating
+developers on common software backs
+today we look at a common but critical
+bug called sql injection we have an sql
+injection also known as sql injection
+when an attacker is able to send a
+malicious sql query to a website's
+database the root cause of this back is
+incorrect user input sanitization or no
+sanitization at all let's take a step
+back and understand this vulnerability
+step by step databases are everywhere
+and they are used to store information
+web developers rely on sql commands and
+queries to create read update and delete
+database records in this video we will
+use some simple php and mysql notation
+to understand how the vulnerability
+occurs and how to avoid in future take
+the simplified example of a website that
+relies on a database to dynamically
+generate content this url will query the
+site's database and dynamically create a
+response based on the information
+returned for this to happen the
+following code could exist behind the
+scenes the first line accesses the name
+value from the url which is then passed
+to the query that executes on the final
+line someone could notice that the name
+parameter from the first line is passed
+and sanitized to the second line the
+software developers of the website are
+expecting and trusting users to pass
+names that consist only of regular text
+what if an attacker is able to pass a
+string that will return every user of
+the database instead
+consider this url parameter that will
+result in the following sql statement
+the conditional operator or will make
+the whole where statement to be equal to
+true as a result sql will now return all
+the users of the database not just those
+named cleo let's now see a funny example
+from the famous little bobby tables
+where student name resulted in the whole
+students database to be deleted behind
+the scenes in the software that the meme
+refers to we have something similar to
+the following query where the name
+variable is inserted and sanitized to
+the query like for example if we take
+this one step further consider the
+following query where the malicious
+command is intended to delete the table
+students completely the remainder is a
+comment to prevent syntax errors with
+the apostrophe and the closing
+parenthesis let's now see a real-world
+example of an sql injection being
+uncovered from the github security lab
+our researcher antonio morales observed
+that this function in qrftpd did not
+properly sanitize sql queries in the
+postgres config file which could lead to
+an sql injection vulnerability in the
+ftp server specifically a function was
+reintroducing the single quote which
+effectively makes the sanitization
+process to cross itself out in addition
+another function namely s and printf was
+called on non-escaped strings and made
+it possible to tamper with the query
+logic by inserting sql code one
+protection available to prevent sql
+injection is the use of prepared
+statements which is a database feature
+executing repeated queries the
+prediction stems from the fact that
+queries are no longer executed
+dynamically this is because the user
+input will be passed a template
+placeholder which means that even if
+someone manages to pass and sanitize
+data to a query the injection will not
+be in position to modify the databases
+query template therefore no sql
+injection will occur widely used web
+frameworks such as ruby on rails and
+django offer built-in protection to help
+prevent sql injection but as technology
+will always grow and be perfect software
+developers should always follow best
+practices contextually to be careful
+when handling user input by planning for
+the worst and to stop trusting the user
+make sure to leave a comment below to
+let us know which vulnerabilities to
+cover next in the meantime stay in the
+loop by following us on twitter remember
+call the code is a qr code

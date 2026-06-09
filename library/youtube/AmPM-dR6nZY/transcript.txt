@@ -1,0 +1,102 @@
+[Music]
+in this two-part series we've been
+looking at how to use data talk
+synthetics to proactively monitor the
+health and performance of your web
+applications today in part two I'll be
+sharing with you a tip on how to create
+a browser test to simulate user journeys
+to test that your application is
+available and working properly for your
+users starting at the data dog
+synthetics home page let's hit new test
+and choose browser tests the first step
+is to define the URL I wish to test my
+case shop sto I can give my test a name
+maybe check out shop is to check out
+process and finally apply any tags as we
+saw previously tags are key within data
+dog to help tie this data together
+alongside with my infrastructure metrics
+application traces and logs let's pick
+the shop list environment tag and tie it
+to an additional tag for the service
+that we are monitoring next I can define
+the Dutton device type and location I
+wish to test from I'm going to choose
+laptop Lodge and leave the default
+locations I can choose between manage
+locations as well as private locations
+the final steps to my configuration are
+to choose the frequency of my test let's
+do every 15 minutes and then my alert
+conditions and notification here I can
+specify a message I'll check out process
+as broken and then I can include any of
+my notifications into slack pager duty
+or email let's record the test this step
+is very intuitive with no code I can
+replicate the journey a user would take
+to test certain elements along the way
+so let's start recording choose the item
+I wish to purchase and at this stage I
+can add extra assertions to my test for
+example I can test that an element is
+present I can test that the ability to
+add to cart is available and working
+correctly let's add to cart
+I can navigate to my cut and at this
+stage I may want to replicate a user
+interaction in this case applying a
+discount code so let's enter the
+discount code and hit apply again I can
+add an assertion to confirm that the
+text is present on the page and I can
+maybe put discount and apply finally I
+can hit my checkout process let the
+process go through and validate that we
+got the thank you message so again I can
+test that an element is present and
+include the your order has been placed
+there are a series of different options
+that I can define as part of my tests I
+can include navigation to other pages
+special actions adding in variables to
+my process as well as adding wait times
+and sub tests let's stick to this simple
+example for now let's launch that test
+this test will now continue to run at
+the defined interval and report back on
+any failures or errors let's take a look
+at one I made earlier here you can see
+we're testing the same site and the same
+process I've included a more structured
+message detail for when the notification
+does trigger that gives me links to
+various different time boards a test a
+link to the test as well as some key
+information that might be useful to help
+troubleshoot this issue when exploring
+the detail I then get a breakdown of the
+different timings the overall uptime and
+then a waterfall break down per test
+here I'm seeing the latest tests I'm
+presented with the screenshots relevant
+to each stage as this is running from a
+real browser I can navigate through see
+the journey that was taken and see the
+items that were selected
+in this case the test succeeded
+everything was okay you will also see
+some key aspects such as the resources
+information on every page load
+we're also capturing all of the
+resources loaded as part of this page
+along with key timings duration and size
+as a final stage where we do have issues
+we also correlate back to the APM trace
+data this has been correlated with an
+APM transaction and I'm therefore
+presented with the entire back-end
+process that was run as part of this
+process

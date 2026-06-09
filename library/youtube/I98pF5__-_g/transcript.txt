@@ -1,0 +1,336 @@
+[Music]
+before we get started with this video i
+would like to mention that you can get
+started with part two of this series
+which is the blue team series by
+clicking on the link in the description
+section where you'll be required to
+provide your first name last name email
+and company after which you'll be
+provided with instant on-demand access
+to the videos included in part two of
+this series uh these videos include
+host-based intrusion detection with os
+sec
+memory acquisition with lime memory
+forensics disk analysis docker image
+analysis and incident response with fire
+eye redline so do
+be sure to check this out the video is
+100 free all you need to do is register
+and you'll be able to access the videos
+so that's the lab environment we can now
+get started with the practical
+demonstration so i'm going to switch
+over to my ubuntu virtual machine
+all right so i'm back on my ubuntu
+virtual machine and you can see i have
+linux opened up here i haven't set
+anything up yet because we're going to
+be walking through the process together
+i then have the splunk.com website here
+so if you're new to splunk then you need
+to create a new account in order to
+follow along so
+just head over to head over to
+splunk.com and uh you know register for
+an account it's free once that is done
+you'll need to activate your account or
+verify your account through the email or
+the verification email
+they'll send you once that is done
+we can then move forward because in
+order to access the actual um
+splunk universal folder you'll need to
+have an account and of course
+you know in this case i'll be going
+through everything as we move along in a
+structured uh in a structured manner and
+then to perform the actual nids uh tests
+uh we are going to be using the test
+mynids.org project which is on github
+so this is essentially a bash script
+that allows you to as you can see here
+it allows you to essentially emulate or
+simulate malicious network traffic so
+previously we had used the website uh
+the website technique to essentially get
+a linux uid and that traffic would be
+logged as malicious or
+it could be logged as a potential
+intrusion and we can run a few other
+checks like an
+http basic authentication bad
+certificate authorities
+uh an exe or dll download over http so
+you know just we can run tests that uh
+you know will just make our
+intrusion detection system blow up in
+terms of alerts and that's what we want
+because we want to see how that data is
+presented to us as a security engineer
+on splunk with that being said the first
+step of course is to set up splunk es on
+linux so
+just click on click on create and a
+linux and click on marketplace
+and they already have splunk here so
+there we are you can click on that there
+and if you click on this little info
+button here it'll give you an idea as to
+how to deploy it on
+uh on linux and of course you have more
+information regarding splunk so you have
+the documentation link there so i'll
+just click on splunk
+once that is clicked we can then head
+over here you'll need to specify the
+splunk admin user i recommend using
+admin to begin with and then specify a
+password
+uh if you're setting up you know splunk
+on a domain then you can specify the
+lynode api token to essentially create
+the dns records that's if you're using
+linux dns uh dns service
+and then of course you need to add the
+admin email for the server so in this
+case i can just say for example
+hackersploit
+gmail.com
+don't spam me on this email because i
+don't respond anyway so we can create
+another user
+uh so this is the username for the
+lynnode admins ssh user please ensure
+that the username does not contain any
+so we can just call this admin and then
+for the admin user we'll just say
+provide that there so the image we're
+going to set it up on ubuntu 20.04 the
+region i'll say london because that's
+closest to me as for the actual linux
+plan uh linux es doesn't require that
+many resources especially because you
+know the amount of uh data that we're
+processing or the logs that are being
+forwarded to splunk are relatively few
+so less than 100 which if you've used
+splunk before for security event
+monitoring you know that that is
+like really really small in fl in in
+fact splunk will actually tell you that
+uh you know the amount of data uh to
+begin with that uh you have imported or
+you afforded is too little to make any
+sense off uh but that's where the snort
+app for splunk comes into play so i'll
+just say splunk
+and i'll provide my root password for
+the server
+and we can click on create
+all right now
+uh once this is set up and provisioned
+the actual installer is going to begin
+so it's going to set up because there is
+an auto installer setup that will set up
+splunk yes for you so let it provision
+after that's done you can launch the
+lish console to avoid logging in via ssh
+and of course one thing that i need to
+that i don't need to tell you is if
+you're setting this up for production
+then you need to make sure you're
+securing your server so do only use ssh
+keys for authentication with the server
+if you're new to hardening and securing
+a linux server you can check out the
+previous series
+that we did with linux the linux server
+security series uh that'll give you uh
+you know all the information you need to
+secure a linux server for production
+with that being said i'm just going to
+let it provision after which we can
+launch the english console to see what's
+going on in the background and we can
+then get started uh you know officially
+with um
+with how to set up splunk we then need
+to set up the universal folder
+so
+this is booting now
+all right so the server is booted and
+you can see i've just opened up the lish
+console here
+to essentially view what's going on as
+you can see it's begun setting up a
+splunk yes so just give this a couple of
+minutes
+to essentially begin
+and once it's done it'll actually tell
+you that it'll provide you with the
+login prompt
+but it's probably logged in as the root
+user already so
+just let this complete i'm just going to
+wait for this to actually conclude
+all right so once splunk es is done
+or the actual uh linode is done here
+with the setup you can see it's going to
+tell you installation complete
+and you can then log in uh keep this
+window open because this is going to be
+very important as we'll need to
+configure a few firewall rules because
+uh by default this linux comes with ufw
+which is the uncomplicated firewall for
+debian or it typically comes
+pre-packaged with debian based
+distributions like ubuntu
+uh in this case it's already added the
+firewall rule for the port that we
+wanted but just keep it open because
+we'll need to run a few checks
+um so you can log in there so i'm just
+going to log in with the credentials
+that i specified as the root user and i
+can just say sudo ufw status
+and you can see these are all the
+allowed rules or the actual rules
+configured for the firewall
+which is looking good so far
+so we can access the splunk es instance
+that we set up by pasting in the ip of
+the server and and opening up port 8000
+that's going to open up splunk yes for
+you so just give this a couple of
+seconds there we are and the credentials
+that we had used were admin and uh the
+password that i created uh that you know
+of course you'll you'll be able to
+specify yourself so just sign in
+and once that is done you'll be brought
+to splunk enterprise
+security here so there we are explore
+splunk enterprise
+and
+in this case what we're going to be
+doing what we're going to start off with
+is we need to go through a few
+configuration uh changes with splunk
+itself uh so the idea firstly is to
+configure
+uh the actual uh rece the receiving of
+data so if you head over into settings
+you can click on under data just click
+on forwarding and receiving
+uh and once that is done once that is
+loaded up
+um under received data we need to
+configure this instance to receive data
+forwarded from other instances so we
+want to configure receiving and we just
+want to set the default receiving port
+so we can say new receiving port
+and the port is of course going to be
+the default which is 9997 which is why
+that firewall rule was added so i'll
+click on save
+all right so once that is done we can
+now install the snort uh app for splunk
+so click on apps and head over into find
+more apps
+and because the ubuntu server is running
+or the ubuntu vm that i'm currently
+working on is running snot2 we'll need
+the appropriate app here so i'll just
+search for snot there and we're not
+looking for these note 3 json alerts
+although that you know could be quite
+useful but we want the snort alert for
+splunk all right so this app provides
+field extraction so that's really great
+because performing your own field
+extractions uh you know using rejects
+can be quite difficult if you're a
+beginner so fast and full
+uh as well as dashboards uh saved
+searches reports event types tags and
+event
+search interfaces so we'll install that
+now you'll need to log in with these
+your splunk account credentials that you
+uh you know that you actually created on
+splunk.com so i'll just fill in my
+information really quickly
+all right so i've put in my username and
+password so i'll just say i'll accept
+the terms and conditions there so log in
+and install
+that's going to install it there we are
+so we'll just hit done
+now that that is done if we head back
+over into our dashboard so i'll just
+click on splunk enterprise there
+and you can now see we have snot alert
+for
+for splunk so that's it already comes
+pre-configured with a dashboard
+so we'll just let this load up here and
+you can see that we don't have any data
+yet so
+this will display your events and
+sources top source countries the events
+this is very important the sources top
+10 classifications so that will classify
+your alerts in in terms of the type
+which again will make sense uh in a
+couple of seconds
+uh so now that that is done we actually
+need to configure
+the actual splunk universal folder so
+i'll just open that up in a new tab it's
+absolutely free to download the debian
+client or the the splunk universal
+forder debian package so universal
+forwarders
+provide reliable secure data collection
+from remote from remote sources and
+forward that data into splunk software
+for indexing and consolidation they can
+scale to tens of thousands of remote
+systems collecting terabytes of data so
+again you can actually see why splunk is
+so powerful and why it's widely uh used
+and deployed because of the fact that
+you can literally uh you know be
+you can literally forward a ton of data
+from a ton of systems into splunk
+so because the uh because snot is
+running on this ubuntu vm we need the
+debian package so i'll click on linux
+and we want the 64-bit version again you
+can choose one based on your
+requirements so if you're running on red
+at fedora or centos you can use the rpm
+package so i'll just download the debian
+package here
+give that a couple of seconds it's then
+going to begin downloading it and then
+i'll walk you through the setup process
+so there we are
+it's begun the setup
+i just want to take a couple of moments
+to thank our patreons thank you michael
+hubbard dustin empress jerry speds doozy
+sid saab ryan carr shamir douglas jojo
+bibi balangos kush kev rs nino boykov
+and david bricker you guys are really
+awesome thank you very much for
+supporting us and you guys make these
+types of videos possible so we really
+appreciate it and we look forward to
+producing even more high quality content
+[Music]
+you

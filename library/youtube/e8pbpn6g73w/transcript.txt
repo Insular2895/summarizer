@@ -1,0 +1,646 @@
+Most video editors try to make their
+animations look better by adding more
+things, but the truth is the cleanest
+animations come from a much simpler
+approach. Once you understand this
+approach, creating those smooth UI
+animations becomes way easier. So, in
+this video we're going to be creating
+Apple style UI animation to show you how
+this type of movement is actually built
+from scratch. And the best part is that
+once you understand the logic behind it,
+it's going to be so effortless for you
+to create these animations. All right,
+that being said, let's lock in right now
+and learn something new. But before we
+begin, there are only 24 hours left to
+get the 3-in-1 bundle. I'm preparing a
+big update and plenty of assets are
+being removed forever. So, if you grab
+it now, you'll get everything that's in
+the bundle plus the big future update
+for free. There are plenty of drag and
+drop assets to speed up your workflow
+and you can customize it however you
+like. So, if you don't want to build
+everything from scratch, this is for
+you. But once the timer hits zero, this
+version of the bundle is gone forever.
+Link is in the description and now let's
+get into it.
+So, the first thing you want to do is
+create a new comp. I've already created
+one, so I'm just going to show you the
+comp settings. Resolution 1920 by 1080,
+frame rate set to 60, and duration 10
+seconds. Let's hit okay. So, the first
+thing you need to do is create a minimal
+background. So, for this I'm going to
+right click, go to new, solid, and here
+in the color I'm going to pick that hex
+code. Let's hit okay and rename to BG.
+I'm going to hit okay again. So, now you
+want to head over to the toolbar and
+grab the round rectangle tool, and we're
+just going to create a shape in the
+middle like that. I'm going to re-center
+and then we're going to need to fix some
+settings. So, first head over to the
+color and change it to this hex code and
+hit okay. And then in shape properties
+we're going to change the roundness to
+95. Also, we can uncheck constrain
+proportions, create a key frame for
+size, then move it forward, and we're
+going to squeeze it in like that. So,
+that's what you should have. Then hold
+shift, click P, and create a key frame
+for position, align that key frame with
+the second one, and we're going to go a
+little bit lower. All right, we can
+squeeze in the key frames for a faster
+movement, and then what I'm going to do
+is rename the layer to frame.
+We're also going to need one more
+property, which is going to be rotation,
+so I'm going to hold shift, click R,
+then create a key frame for rotation,
+move back to the beginning, and we're
+just going to adjust it maybe like that.
+Once you've set up the key frames, make
+sure to head over to the comment section
+below and grab the expression I left for
+you. Once you copy the expression,
+alt-click the stopwatch for size and
+paste the expression over here. Then
+we're going to do it accordingly with
+other properties.
+Just like that. So that way we're going
+to get that bouncy look. Next step would
+be creating the text. So I'm going to
+grab the type tool and I'm going to type
+in timers. Let's re-center and put it a
+little bit towards the left. Then once
+you've done that, we're going to need to
+parent our text to the frame. But make
+sure that the time indicator is at the
+moment when everything stops. So I'm
+going to have it over here and then I'm
+going to use parent and link. So that
+way it's going to follow our frame, but
+we're also going to add an expression to
+our text. So now if you open up the
+properties for the text and go to
+animate, you want to pick position, then
+change the Y value to 30,
+then go over to add property, and we're
+going to pick opacity. Here you want to
+change opacity to 0%, and then we're
+going to need one more thing, which is
+the expression window. So for this I'm
+going to go to add selector, and I'm
+going to pick expression. So now if I
+open it up and go over to the amount,
+you're going to notice the expression
+window over here. So now you want to go
+over to the comment section again and
+grab the second expression I left for
+you.
+Then copy the expression and paste it
+over here. Once you've done that, make
+sure to change based on characters to
+words,
+and that way the text is also going to
+have its own bouncy movement. So
+together with parent and link, it's
+going to look a little bit better. So
+now as you can notice, we have a little
+bit of room over here for our icon. So
+I'm going to grab it from the project
+panel and put it on the timeline.
+Remember guys, you can find it in the
+description below. Then I'm going to
+definitely scale it down and place it on
+the right. And then over here to the
+icon, we're going to need to add
+position key frames. So for this I'm
+going to hit P, create a key frame, move
+it forward, and then drag it lower
+to around the position of our frame. We
+can squeeze it in a little bit, and also
+we're going to need the expression. So,
+I'm going to hit you over here, open up
+size, copy the expression,
+then alt-click the stopwatch for
+position, and paste it here. So, that
+way you're going to have something like
+that. It's a little bit too late, so I'm
+going to squeeze it in.
+And this seems to be good enough. We
+might actually have it in a bit
+different position. Then around the time
+when everything stops, we're going to
+add another movement. So, for this, I'm
+going to open up keyframes for frame,
+and then we're going to create a
+keyframe for size, move forward, and
+we're just going to expand our rectangle
+to something like that.
+Maybe even more.
+So, that's what you should have.
+And together with that, we kind of want
+to also animate our text and our icon.
+So, for this, I'm going to select these
+two, create a keyframe for position,
+then move forward, and for example, this
+icon is going to move over to the right
+bottom corner, and the text is going to
+go lower like that.
+So, you should have something like that,
+but at the same time, you kind of want
+to make these icons and text disappear.
+So, for this, I'm going to add opacity
+keyframes,
+then move forward, and we're going to
+change it to 0% at around this time. And
+then whenever it disappears, we can trim
+these layers, so it doesn't bother us.
+The next step would be creating the
+button with the text start, and this is
+going to replace our icon from here. So,
+what you want to do is head over here,
+grab the ellipse tool this time, and
+we're going to create a circle in the
+middle. Then rename the layer to button,
+and then also as for the color, you want
+to pick that hex code.
+Then hit okay, and now in the middle of
+the circle, we're going to need the text
+start. So, I'm going to grab the type
+tool,
+and I'm going to make sure to create a
+new text, then type in start, recenter
+the text, and then as for the color,
+we're going to pick that hex code. So,
+we have a nice contrast between dark
+green and bright green. Then what we
+want to do is have the text follow our
+circle. So, what I'm going to do is use
+parent and link, and I'm going to parent
+it to the button. So, now whenever you
+move the button, you're also going to
+move the text. So, let's hit U for
+everything and now what we want to do is
+place our button on top of our icon. So,
+I'm going to take the button, place it
+over here, then create a keyframe for
+position. I'm going to align the time
+indicator with the second keyframe over
+here and what we want to do is place it
+in the right bottom corner.
+So, let's do it like that. Then also
+we're going to need an expression. So,
+I'm going to open it up, copy the
+expression, alt-click the stopwatch for
+the button for the position, and paste
+it here.
+So, you're going to have something like
+that,
+but it can start randomly like that. We
+actually need to trim these layers to
+this position.
+Then what we could do is fade it in so
+it's smooth. So, for this I'm going to
+add opacity keyframe over here, go to
+the beginning, and change it to zero.
+So, now just to get rid of that text as
+well, I'm going to go over to the modes
+and I'm going to use the track mat. So,
+now if you parent the track mat to our
+button, then our text is going to
+disappear and it's going to show up
+whenever the button has opacity at 100%.
+So, now it automatically disabled our
+button, so we're going to turn it back
+on. And let's see what we got.
+All right, it's a bit smoother now, but
+I would probably just take these
+keyframes, move them forward,
+and have them like that.
+All right, so we've made a little bit of
+room over here for our minutes. So, for
+this I'm going to grab the type tool.
+I'm going to type in 20.
+Then I'm going to recenter the layer and
+what you want to do is right-click, go
+to pre-compose, and we're going to
+rename it to minutes. Then make sure
+remove all attributes into the new comp
+be selected, then hit okay, and we're
+going to go over to that layer. So, now
+here what we're going to need to do is
+create more numbers. So, basically you
+just want to duplicate this, push it a
+bit higher, then change the value to 19,
+and maybe make a little bit more room,
+and then subsequently you just want to
+keep doing that unless you have the
+whole screen filled out. So, I'm going
+to duplicate this, change it to 18,
+make more room, duplicate again, change
+to 17,
+and on the other side I'm going to do
+the same thing.
+All right, so that's how it's looking.
+And then also we're going to need to
+duplicate that text one more time. Then
+push it to the right and we're going to
+change it to minutes.
+Okay, then I'm going to decrease the
+size.
+And then maybe here I'm going to
+probably use something grayish.
+Then make sure to place the minutes on
+top. And we're also going to need to
+create a new null object. So just
+right-click, go to new, null object, and
+rename it to all one. Now I'm going to
+place that null object below our
+minutes, and I'm going to select
+everything beneath our null object. Then
+I'm going to parent it to our all one
+layer. And that way we can control
+everything with only this. So now what
+we want to do is separately create a
+movement for the numbers and also for
+the text over here. So I'm going to
+select these two, then hit alt shift P.
+That way I have two keyframes for
+position, and I'm going to move to the
+beginning. Now I'm going to push it
+higher, just like that. And then in
+terms of all one, I'm just going to push
+it a bit higher. So there's a little bit
+of difference between these two
+movements. Then I'm going to select all
+four keyframes, hit F9, go to the graph
+editor, and here you want to push the
+peak towards the left, just like that.
+Okay, looks pretty cool. Now the problem
+is that it doesn't really look like an
+iPhone. So for this I'm going to
+right-click, go to new, adjustment
+layer. Let's rename the layer to optics.
+And we're going to apply optics
+compensation. So here you want to change
+the field of view to around 130.
+Maybe I went overboard. Yeah, something
+like that should do. So now it's going
+to look exactly like an iPhone, but the
+problem is that we don't want to target
+minutes over here. So I'm going to place
+that layer below minutes, and then also
+I'm going to create another adjustment
+layer. So let's go to new, adjustment
+layer, place it below, and this is going
+to be called exposure {slash} blur. So,
+here what we want to do is make the
+middle value the most visible. So, I'm
+going to apply exposure.
+Then, I'm going to decrease the value
+like that. And also, I'm going to apply
+Gaussian blur.
+So, if I bump it up, it's going to
+become blurry.
+And now, what we could do with this is
+select our adjustment layer,
+go over to the rectangle tool, and we're
+just going to create a rectangle in the
+middle. So, now the clue is to invert
+the mask. So, I'm going to click on
+invert it,
+open it up, and change the feather.
+Okay, so that way it's going to look
+somehow like that. Then, we can actually
+close it down, and I'm going to go over
+to our main animation. So, now whenever
+we have the second movement, we need to
+introduce our minutes. So, I'm going to
+place it over here,
+probably like that. And let's see. Okay,
+it looks pretty cool, but the problem is
+that it doesn't have any bounce. So, for
+this, I'm going to make sure to apply
+position keyframe, then go over to the
+beginning, and we're going to probably
+push it towards the right. Just like
+that.
+All right, but also we're missing one
+thing, which is the expression. So, I'm
+going to hit U, grab the expression from
+here, and we're going to all click the
+stopwatch, paste it here, and we should
+be good.
+Okay, starts to look pretty cool.
+I feel like we could scale it down just
+a bit. And as you can notice, it's
+extending beyond the frame. So, for
+this, we need to close it down, then go
+over to the modes, and we're going to
+make sure that the track mat here is set
+to our frame. That way the frame
+disappears, so we need to enable it
+again, and we have everything within the
+frame.
+And then, right at this moment, what I
+would do is go back to our minutes, hit
+U, and we're going to start another
+movement. So, here I want to place a
+keyframe for all one layer for position,
+then move forward,
+and we're just going to change it to 23.
+Just like that. So, now I'm going to
+apply the mid graph over here. Let's go
+over to the graph editor, and maybe
+let's squeeze that peak a little bit
+more.
+Okay, looks pretty cool. But as you can
+notice we got a problem because there
+are no more numbers. So for this, I'm
+going to disable our optics just for a
+second and I'm just going to copy 24,
+which is here.
+Now I'm going to place it lower, change
+it to 25. Okay, let's go even further
+with this.
+And also as you can notice we got it
+very harsh over here on the edges. So
+for this I'm going to head over to the
+blur and I'm going to uncheck repeat
+edge pixels. All right, so let's see
+what we got. Pretty good. I'm just going
+to push these keyframes back and this
+should be good enough. And now to add a
+little bit of spice over here whenever
+we're changing the minutes, we're also
+going to squeeze in the frame. So for
+this we need to go back to the minutes.
+Then make sure to place the time
+indicator on this very keyframe, go back
+and I'm going to go to the frame, hit U,
+I'm going to create a keyframe for size,
+then also we're going to need to create
+a keyframe for the button. So I'm going
+to hit P, create a keyframe, then we're
+going to go back to the minutes,
+place the time indicator on this second
+keyframe,
+go back and we're just going to squeeze
+it in in X over here and this is going
+to go more towards the middle. So this
+is going to look pretty cool but we need
+the exact same graph as we used in the
+minutes. So what I'm going to do is go
+back, select these two, go to the graph
+editor and you want to replicate what
+we've created here. Since I got the
+flow, I'm just going to read the values
+and now I can go back and I can paste
+that graph by hitting apply. Okay, let's
+see.
+So it's going to look a little bit
+better whenever it's squeezing. And now
+at this very moment we're going to start
+our timer. So for this we need to have a
+button press. So I'm going to place a
+keyframe for scale over here, move
+forward, then decrease the value, move
+forward again and we're going to copy
+the first keyframe and paste it here.
+Okay, pretty cool. Let's hit F9 and push
+it a bit back. Okay, I think this is
+going to be good enough. And now
+whenever the button press is occurring,
+we need to expand our frame. So what I'm
+going to do is hit U, and around this
+time we're going to start another
+movement. So, I'm going to create a
+keyframe over here. Then we can hold
+control and click on the keyframe, so it
+goes back to the original state. Then
+I'm going to move forward, and we're
+going to squeeze it in Y, and we're
+going to expand it in X, just like that.
+Okay, but the problem is this is going
+very slow. So, for this I'm going to
+squeeze it in. Okay, better, maybe even
+faster.
+Okay, great. So, now at this very
+moment, whenever we're starting the
+second movement, we're also going to
+need to add position keyframe over here.
+So, let's go ahead and do that. Then I'm
+going to move forward to the second
+keyframe, and we're going to push it to
+the left.
+And accordingly, we're going to need to
+set up a keyframe for positioning our
+button. So, I'm going to click here,
+change it to original position, move
+over here, and we're just going to
+probably place it somewhere in the
+middle on the right. Okay, let me show
+you all the keyframes, and we're just
+going to play it back, so you can see
+what's going on.
+All right, so once we have this, we're
+also going to need to create another
+button. So, what I'm going to do is
+select start, then hold control, select
+button, and I'm going to hit control C,
+control V. Then I'm going to select all
+these four layers and hit U. So, here
+what you want to do with the button two,
+we can actually rename this one to
+button one. So, here we only want to
+leave these two keyframes. So, I'm going
+to delete everything here, then let's
+take this, delete, and delete these
+three as well. Then once you've done
+that, make sure to select our second
+button, and we're going to trim it to
+this position. All right. We can
+actually differentiate it by changing
+the color, so this is going to be pink,
+and this is going to be orange. So, in
+terms of our second button, we're going
+to need to change the name to cancel.
+Also, in terms of our color, we're going
+to pick something grayish,
+even dark gray.
+All right. Also here, we're going to
+change the color to white, or maybe
+something darker, then hit okay. And
+then we're going to take our cancel
+button and place it below our start
+button. Okay, so now it's heading
+towards the same position, and what we
+want to do is have the time indicator on
+the second keyframe over here, and we're
+going to place it on the left. Maybe
+like that. Let's see the full frame.
+Okay, looks pretty good to me. And then,
+since we're starting the timer, what I
+would like to do is change this button
+into an orange color. So, I'm going to
+make sure this button is selected. Then,
+I'm going to have it probably somewhere
+here, and I'm going to place a keyframe
+for fill color. Then, let's move
+forward. I'm going to go to the color,
+and let's pick something orange or
+brown. Then, hit okay. Together with the
+button color change, we're also going to
+need to change the text. So, here at the
+peak of the movement, we're going to
+make sure to select start, and I'm going
+to hit control shift D. So, this text is
+going to be renamed to pause.
+I'm going to select it, and then I'm
+going to change the hex code to this.
+Then, hit okay. All right, let's see how
+it turned out. All right, pretty cool in
+my opinion. Then, let me hit U for
+everything, and let's see.
+Okay, so now the last component would be
+changing our minutes over here. So, now
+we need to start our actual timer. So,
+what I'm going to do is first get rid of
+that. So, let's hit U for that layer,
+and around this time at the peak of the
+movement, we're going to apply opacity
+keyframes.
+All right, then let's change it to zero.
+All right, I think this is going to be
+good enough. Then, I'm going to have the
+time indicator at the very beginning
+over here, and we're going to take round
+rectangle tool. Then, let's create a
+circle in the middle. Actually, we're
+going to have a square, but if you bump
+up the roundness, we're going to achieve
+a circle.
+You can re-center. I'm going to turn off
+fill, turn on stroke. Stroke with a 12
+should be good, and then we're also
+going to change the color to this.
+Then, hit okay. Then, we need to make
+sure that this is placed on 23. I'm
+going to trim this layer to this
+position, and I'm going to rename it to
+timer circle. All right, the next step
+would be creating a position key frame,
+so I'm going to hit P,
+create a key frame, move forward,
+and we're going to have it over here.
+Maybe a little bit earlier. All right,
+so that's our movement, and I can tell
+that it's already a bit too big. So, for
+this, I'm going to change the size, and
+then also we're going to need to place a
+key frame for size, but first uncheck
+constrain proportions, create a key
+frame, move back,
+and here we're going to squeeze it in in
+the X, just like that. All right, now
+you can really see any bounce because we
+don't have an expression. So, I'm going
+to go over here, copy the expression,
+then alt-click the stopwatch for
+position, paste it here, and alt-click
+the stopwatch for size.
+Again, paste it.
+All right, so the next step would be
+adding a countdown over here. So, what
+I'm going to do is grab the type tool.
+Here, I'm going to type in 23, and I'm
+going to change the color to white, and
+definitely I'm going to bump up the font
+size,
+and let me just place it right in the
+middle. And now we're going to apply a
+slider control. So, I'm going to go over
+to the effects, add slider control, and
+we're going to rename it to minutes.
+Make sure to rename it like that. This
+is actually quite important, and then
+we're going to open up the properties,
+go to text, and I'm going to alt-click
+the stopwatch for source text. Here, you
+want to paste the third expression I
+left for you in the comment. So, once
+you click the way, make sure this layer
+is aligned with this one over here, and
+now in the slider you're going to be
+able to change how many minutes are on
+the countdown. So, for example, if I
+change it to 23 over here, we're going
+to go down from 23 minutes right from
+the beginning of the layer. So,
+actually, since we're starting from 23,
+I'm going to probably change it over
+here to 23.
+01.
+Then we're going to rename the layer to
+countdown, and then at the very moment
+whenever everything stops, we want to
+parent our countdown to the timer
+circle. So, let's go ahead and do that,
+and that way it's also going to get that
+bouncy movement.
+But we could go further with that and
+what I'm going to do is head over to the
+timers, open it up, go to text and I'm
+going to copy the animator one and I'm
+going to paste it to the countdown. So
+that way it's also going to have that
+bouncy movement but the problem is that
+it's going from the bottom. So what I'm
+going to do is open it up, go over to
+the position, I'm going to change Y
+value to zero
+and I'm going to probably change
+position in the X to 50.
+So that way it's got bouncy expression
+from parent and link and also from the
+animator one. So this is looking pretty
+awesome so far. I'm just going to make
+some adjustments. So first I'm going to
+go over to this text, I'm going to
+change it to light. Then also to make it
+different I'm going to go over to the
+timer circle and I'm going to probably
+squeeze in
+position. Let's see.
+Yeah, it looks a little bit better and
+then also I'm going to fade it in so
+it's not that harsh. So let's set
+opacity keyframe, move to the beginning
+and change it to zero. Then we can do
+the same with the minutes over here. So
+I'm just going to add opacity keyframe,
+move to the beginning and change it to
+zero. Yeah, way better. And now what
+we're going to do is head over to the
+minutes, turn on the motion blur for
+everything, then go back and turn it on
+here as well. Now let's see how it
+turned out.
+All right, so we got a pretty cool
+animation and also if you add sound
+effects it's going to be way better.
+Hopefully you enjoyed this tutorial.
+Make sure to check out the video on the
+screen and I will see you in the next
+one. Cheers, guys.

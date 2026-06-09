@@ -1,0 +1,964 @@
+okay who has you SPG bonds before okay
+it's by the third okay so quick intro PG
+bouncer i PG bouncer calls herself a
+connection pooling demon but I like to
+think of it as a ghost ghost Protocol
+proxy basically you have a database
+client normal to Postgres database
+application which would normally connect
+to a Postgres database and instead you
+can stick a proxy in between and the
+concept of proxying is well known in
+other protocols HTTP proxies are very
+popular and they have all kinds of
+functionalities and other protocols have
+boxes as well and this is just the same
+right it reads the protocol looks at a
+couple things and may or may not do
+things with it and then it for what's
+the data to the regular database and
+also on the way back so that's what PG
+bounces and there's alternatives such as
+PG pool which I'll talk briefly layer
+that essentially do the same thing just
+brief little detail so you can
+understand a couple of the later details
+I'm gonna go into PG bouncer is just
+started as a command you give it a
+configuration file which is often at
+that location it doesn't have to be
+completed whatever you want I find it
+useful when I log into a box I look at
+the process list I can actually see what
+the configuration file is because OSI
+could be confusing and it has a the
+configuration file has this dot any
+format which is mainly known from
+Windows so it has like these bracket
+sections and in the PG boundary
+configuration the main sections the
+database section and the PG bouncer
+section databases section determines
+where your downstream connection is
+going so in this case if I connect to
+the proxy as and say I want to connect
+the database foo
+then what PG bouncer does it's like aha
+I'm actually going to send this in
+mission to this place and this is a
+Postgres connection string and if you
+connected this database and it goes
+there and if you connect to a database
+that's not listed here it gives you an
+error message at the day that database
+doesn't exist and there's a lot of
+details to this but that's the basic
+functionality and then down here in the
+PG balance section you give a general
+configuration information most important
+one perhaps is you give it have to give
+it a port number and as you know
+Postgres uses five four three two as its
+standard port PG bouncer I've seen in
+practice all kinds of port numbers being
+used the default in the sense that the
+the source code of the the template
+configuration file uses that port is 6 4
+3 2 but there's no reason why you'd have
+to use that you could also you know
+cheat and use 5 4 3 2 I guess if you
+want and then have the actual post
+console we use a different port that
+might be a good idea or not so that
+that's just a super quick intro to PG
+bouncer so let's talk about connection
+pooling which is the the most well known
+functionality but as I will argue later
+maybe not the most useful one so this is
+you know client server with the database
+application database now what what
+happened in in in the really old days is
+that the typical example was a PHP
+application which was a couldn't
+composed of a bunch of pages because the
+page only lived as long as the page was
+executing then everything was removed
+every time he loaded the new page it had
+to open it all its resources again right
+and I had to open all the database
+connections again which is very slow and
+then all some smart people said well
+let's just have a connection pooling
+thing in between and admittedly Piazza
+was not the first one to come up with
+that peachy pool was the first to do
+that but you would basically
+possibly run it on the same host even so
+in the same box here and then the
+application would connect to the proxy
+which is quite quite cheap and quick and
+then the proxy would keep connections
+open to the back-end database which is
+which are slow to open but it just holds
+on to them nowadays you could say well
+why don't you just keep your connections
+open don't close them all the time and
+that's probably good but there's still
+reasons to do this just in terms of how
+you design your applications in terms of
+resiliency especially if your
+applications are complicated and you
+have multiple threads and all kinds of
+things it's very it's kind of can be
+very difficult to to keep one connection
+open all the time and be able to use
+everywhere so sometimes it's actually
+quite useful you store the connection
+the way when you don't don't need it
+anymore and and because you know opening
+another one is cheap so this is still
+kind of useful but maybe the main use
+case from you know in the 90s is what
+I'm thinking office is maybe it's going
+away so let's look at some measurements
+and resolution this is a little bit low
+but really back so I was interested in
+how much overhead does this present so I
+wrote a couple of quick test programs
+which or I will supply with the the
+slides but they're very simple C
+programs the first one is just opening
+connection just check it make an arrow
+check that you actually open the
+connection and then disconnect do that
+ten thousand times if you connect
+directly to Postgres so ten thousand
+connection opening close Mesa can you
+directly to Postgres 24 seconds connect
+to PG bounce or four seconds point
+something so that basically shows why
+why that is useful what I did a couple
+months ago now so I wrote my own clone
+of PG bounce or in in Python just as an
+experiment just highly recommended if
+you
+practicing programming written in Python
+totally unarmed eyes doesn't have any
+smarts about it just you know accepts
+connections puts them into the list
+dustin walking and then forwards the
+packets through so connecting to that
+ten thousand times ten seconds compared
+to twenty four to post case so even you
+know you can see how what do you how is
+slow connected postcode bilious even if
+you use like a totally dumb proxy
+implementation you can totally beat out
+connecting directly to those guys so
+that's that's the rationale for
+connection pooling so second test was
+connecting and then running a query
+which in this case is just select
+morning and then disconnecting so at
+least you're doing some work in the back
+end right so directly to Postgres ten
+thousand times is twenty seven seconds
+to post kiki bouncer almost seven
+seconds and my own proxy clone almost
+thirteen seconds so you can see the
+overhead of actually running the square
+is the same the connection overhead is
+really significant in this case
+obviously we're not doing a whole lot of
+work once you do more work the boy goes
+it goes away a little bit and and
+finally this is just keeping one
+connection open and then doing one
+hundred thousand in this case not time
+that was more now that i wasn't kind of
+queries and then disconnecting and there
+you can see there is some overhead to to
+having a proxy in between right so if
+you just keep a connection open directly
+post cuz it's almost seven seconds by
+RPG bouncer it's eleven seconds so
+that's quite a bit over and obviously
+the work here is cheap just select one
+so once dead or where it gets more
+significant that difference goes away a
+little bit but there's some more ground
+right in my own stupid implementation
+twenty one seconds and with PG pool
+twelve seconds so it's slightly slower
+than PG bouncer the reason I have PG
+pool here and not on the previous slides
+is that I that those previous two tests
+actually crashed PG pool
+it's sorry what's that question so the
+whatever was yeah when I was package
+most reason I had a version of this talk
+a couple months ago in Philadelphia post
+user group why did these measurements
+and I actually PG pool functioned but I
+made a mistake was pointed out to me
+afterwards because I originally I ran
+these tests with data based PG database
+equals post gross and then PG pool came
+out really badly it was really slow and
+somebody told me they thought that if
+you connected the Postgres database PG
+pool doesn't do any pooling so it has
+some how is this special case that's
+kind of weird
+so in this case I had to actually make
+sure I used like some other non default
+database and some in that case PG pool
+actually did it's pooling but didn't do
+so well and so if you know if someone
+actually is an expert about TG pool I
+would gladly demonstrate that and
+departed with someone later or online so
+now they're really so that was a the
+sort of default use case of connection
+pooling more interestingly to me is
+connection queuing that's the term I
+made up so that's not as nano term I
+work at meat medium which is a social
+network site and so we are basically a
+web site exposed to the Internet right
+we get off and there's a you know some
+web clients going on and they are
+basically exposed to the open Internet
+and so we have you know the number of
+connections that could become coming in
+here is you know unbounded by whatever
+happens out in the world right but we
+have learned quickly and this has become
+quite important to us in the database
+administration team is that it's very
+important to restrict the number of
+connections that the postcode server
+takes and there are
+yeah ways to configure that inside a
+post goes you know max connections and
+you can have connections limits per user
+and that kind of thing but once those
+are exhausted then what happens to your
+clients they they will just an hour out
+that's not good for them
+so what PG bonds are can do and does by
+default is you you tell it how many
+connections you want to pass through and
+everyone else has to wait so he's you
+know default setting is 20 you know that
+depends on obviously how mainly how you
+know big your database server hardware
+is you could do that proportional to the
+number of CPU cores possibly or what you
+know depending on what workload you have
+but you want to have it you know less
+than 100 200 something like that right
+certainly not a thousand but those those
+you know those incoming connections are
+not infinite but there's lots of web
+servers and the web servers and there's
+many threads in this many connections
+but it could be many thousand right and
+and PG bouncer helps basically control
+that and PG bouncer itself can actually
+accept many thousands of client
+connections at once and it will
+basically just make sure you get you
+know only 20 or so or pass through at a
+time and the other ones have to wait and
+they only wait in fact it really briefly
+so this doesn't actually hurt anyone so
+the way the way you set this up is you
+have a in the configuration file in the
+PG balancer section you set default pool
+size the default setting is 20 but again
+you should set that to something as you
+like another option that is in there
+which I haven't actually used but you
+can you can set it so in this case for
+example that if a client has to wait in
+this case three or more seconds to get a
+slot it will then open up this reserve
+pool of five more connections or
+whatever he said I don't know how
+useful there could be but those are the
+kinds of options that PG bouncer
+provides and now I say okay now if you
+don't have that make connections already
+do you wait obviously that can work
+briefly but eventually if there's too
+much waiting at least that's the signal
+for you maybe you should provide more
+database resources or you know split up
+your database or in a different way
+optimize your queries or something like
+that
+PG balance has a way to you can monitor
+that PG balancer has a sort of an
+internal fake database so the normal for
+those who are not too familiar with PG
+bars are just a brief explanation normal
+the normal functionality of PG bounds is
+I connect to it it just passes the
+connection through but if you connect to
+the database called PG bouncer that's
+actually internal to the proxy where you
+can read statistics out and it has these
+fake SQL like commands like show pools
+for example which gives you information
+about this situation so in this case
+there's not a lot going on here but if
+you had some for example here are the
+incoming clients from the web tier for
+example currently they are non waiting
+if this were fully like if this had full
+traffic this service active would say
+something like 20 and then you might
+have a couple waiting here and then down
+here it says how long the longest one
+has been waiting and this is the sort of
+thing you want to throw your monitoring
+system on right basically whatever
+monitoring system you use you write a
+check which can use whatever you know
+normal post ghost client you have
+connect to this address and run this
+query and then this is this is a normal
+post code result set so you can all that
+use all your normal API is to look at
+this data and then you know when the
+clients waiting is too big then you
+should you know at least record add or
+throw in the Lord and then if that hop
+happens a lot then you need to provide
+more processing
+so the experience for the client might
+be it has to wait a while but at least
+it won't error at least a database over
+will stay upright as opposed to the
+alternative is that the client might get
+a result really slowly but then all the
+clients are going to be super slow and
+the database so it gets trash so that's
+not good that's what we want to avoid
+and this is at least for site like ours
+where you are basically exposed to the
+opening tonight this is super useful
+questions about this so then let's talk
+about connection routing again this is
+the term I made up how do you connect
+the Postgres there was a presentation in
+another conference a couple years ago
+where a you know someone was presenting
+the use case of how they used posters
+and what issues the head and the first
+issue they had was like its how do you
+connect a Postgres well obviously you do
+something like this right whatever
+programming environment you have you
+pull out the drive or put in some host
+name and things like that and then you
+connect if I go that's right
+but that's obviously not what do you
+really do right because you don't want
+to hard-code host names in your code
+maybe you do but ok many people don't
+want to do that then ok you think of
+something okay I should have a
+configuration file
+how do I distribute that configuration
+file maybe I should have a confirmation
+server system how do I get that
+distributed and maybe you have something
+really fancy where you can really how
+does that then work across different
+programming environments right if you
+have the first line they're supposed to
+be PHP a second line is supposed to be
+Python you know you could have many more
+how do you make sure all these
+environments get your connection and
+configuration information all the time
+well maybe you have that figured out but
+then surely you have like some random
+cron jobs running around somewhere with
+just a shell scope which is probably not
+gonna connect
+- whatever super configuration system
+you have so there's always some nonsense
+like that lying around but someone is
+just the hard-coding configuration
+information like that so how how do you
+address that well let's look at this
+diagram from earlier again if you do
+this then your client doesn't actually
+have to know what you databases because
+all it has to know is where this guy is
+and that's pretty easy because it's on
+localhost and if you decide on the port
+number then that's pretty much all you
+need to know and this guy in its
+configuration file knows who all the
+database server sorry and that solves
+that problem
+so essentially you write a configuration
+file for PG bouncer like that you know
+you have to name all your applications
+somehow but that's pretty much all you
+need to do and then you need you have
+one configuration file format which
+contains all the knowledge of where all
+the database servers are what port they
+might have a different port a different
+use or anything like that if this one
+file you can distribute that across you
+know it's the same file you can
+distribute somehow across all your
+servers but then all your all your code
+needs to know is localhost which is the
+default so you only have to mention that
+you need to have a port ok as I
+mentioned earlier this is not what I'm
+necessarily recommending but as I
+mentioned earlier you could also run PG
+bounds on 5 4 3 2 and then you can even
+omit that right maybe that's not such a
+good idea
+it's 2 to implosive maybe and that's it
+and those that's how our applications
+kind of look like because we do that so
+we don't have the the application
+developer so whoever comes up with these
+this code doesn't have to know anything
+what were the database servers are all
+they need to know is on your local
+machine as a PG bouncer running on that
+port you connector and everything will
+be fine and
+my job for the last year has been
+actually to like just trace down all the
+code that violates that and you know
+very difficult process to then identify
+I find the code find out who is
+responsible and who wrote that ten years
+ago and it's very annoying so this is
+much more helpful PG bouncer it's gonna
+talk about it late a little bit but PG
+bouncer is does not have the fanciest
+access control mechanism it has
+usernames and passwords so you can have
+you can have some access control and
+yeah that's how you distribute passwords
+this you no question but it's no
+different from what you would normally
+do it you can use a PG pass file or you
+know LDAP lookup or there's other ways
+to do it but I don't have like a really
+sophisticated solution for that but it's
+basically the same as what you would
+normally do alright so now that this
+previous example was just one host in
+practice it might look more a little bit
+like that right and then in practice you
+have a lot more clients than those three
+certainly you know we have hundreds you
+have a lot more databases but you have a
+lot more clients and databases probably
+and now one thing that this allows you
+if you need to move a database down
+there to somewhere else this is you know
+quite easy because there's only one
+place you have to change it but it could
+be difficult to make that one change and
+propagate it to all those hundreds of
+clients at the same time especially if
+we want to do sort of a life failover
+things like that you really need to have
+everyone in sync at least within sort of
+a very very short timeframe and that
+could be difficult just in terms of how
+long does it actually take to log to all
+these machines and make those changes
+depending what system you use or what if
+one of those clients is currently downed
+and the whole process will fail right so
+if you have that situation then I just
+rather propose a system like that which
+is actually what we're using to have
+another layer of PD bouncer which has
+all that knowledge and and that's then
+very simple to update right so we have
+basically these locally running PG
+bouncers which you know provide
+connection pooling to the app and let's
+let the app easily connect to Postgres
+because it only has to know about this
+and this guy knows about this guy and
+this guy knows about all the databases
+and then whenever there's a change in
+one of the databases we have to add
+another one or if they fail over a
+change heart or anything like that all
+we have to do is update this and that
+can be done very quickly and sort of
+quasi atomically well it does introduce
+latency but we accept that right
+obviously because you don't I mean
+there's other concentrate considerations
+to application design right there's
+obviously caching here and stuff too so
+by the time you hit the database you've
+already accepted that you or have much
+more latency than if you read from cache
+or things like that yes
+because that also gets moved around you
+yeah if you really I mean this this is
+sort of if you don't like this you can
+also do what you know he proposed and
+just skip those but then you expose
+these guys to your design down here and
+sometimes this change is right obviously
+we don't only have one here because that
+would be a single point of failure we
+have several here which are load
+balanced and we currently use a hardware
+load balancer but you know this changes
+from time to time so we have basically
+made the choice we insulate all this
+business up here from all this business
+down here and well you could also be
+cynical and say well this you you might
+have heard this like the way an
+architecture comes out is sort of
+informed by how the teams are divided
+that worked on it right this in a way is
+reflected here because sort of the the
+organizational boundary is kind of here
+alright so which you know is again if
+you have only one team maybe you don't
+want to do this but there's you know the
+organizational situation the way it is
+is also a fact that we have to work with
+and we so this affords us insulation of
+these guys that don't have to worry
+about it and these guys don't have to
+worry about it it's just sort of
+robustness you know in all known all
+levels levels yes
+we don't do that but you could do that
+so here's what he is referring to his PG
+bouncer is is it's a single process it
+uses slip event to do it's multi flexing
+I guess so it's a bit like Redis in a
+way that it only uses one CPU really
+it's so first so the the proposal was
+you could run multiple PG bounces in one
+machine yes you could certainly do that
+we have not found the need to do that
+because it's as it was said it's fast
+enough we have never had any problem
+with PG bars are not being fast enough
+and we or you know we have literally
+tens of thousands of connections coming
+into the client side there and it's not
+a problem but you could certainly do
+that if you want that's that's an option
+we basically only use we use we use
+multiple instances in this middle layer
+but we have also chosen to put them on
+different hardware boxes for the obvious
+reason that we need to be resilient
+against Hardware so you know if we need
+it
+if we need it let's say we needed 20 PG
+bouncers then I would say okay let's
+only buy five boxes and put four on each
+but it doesn't turn out that it doesn't
+we Doug need 20 but that's that's an
+option too you could so that's kind of
+how we approach it
+I don't actually know how the load
+balancer works and we are actually
+moving to different load balancers now
+and I've never had a problem this way or
+the other I could if you're interested I
+could get that information from all guys
+who did the load balancer right as far
+as I know there's you didn't have to do
+anything particularly special
+so connection maintenance this comes in
+to what I said if you're here and you
+want to move some of these data bases
+around down there you could say
+obviously I don't need PG bonza at all I
+can all use virtual IP addresses and all
+that kind of business
+you could certainly do that we have
+chosen not to do that because there's
+all kinds of complications with
+different networks that are involved and
+it's also not protocol away all right
+you could say ok I can move the virtual
+IP address around but then the the
+protocol gets broken so the client will
+get confused or you will have to break
+the connection the client gets upset
+what did you bounce I can do it can do
+this in a post ghost protocol aware
+fashion so you can again connect to this
+sort of fake internal make
+administration database and you can use
+a command like that you can save pause
+this application and then what will
+happen is it will wait fiji balancer
+will wait for all the connections that
+are currently in all the the queries
+that are currently processing on that
+connection to finish and it will not
+allow any new connections what did what
+it means by not allow any new it will
+just let them hang the the client will
+not realize what is going on except of
+course it will take a little while to
+come back but other than that it doesn't
+even know what's going on and that you
+do in any maintenance so what you can
+then do when you're done you say resume
+and every
+just keeps flowing and if you put that
+together you can do things like that you
+can you can restart your back-end
+postcodes instance without the client
+even realizing if you build a shell
+script like that but maybe a little bit
+more our checking and things like that
+but the principle is like this so you
+you you pause pausing the wait for
+everything to finish if you have a
+long-running for you this will not make
+you happy because pause will just wait
+so a don't have long-running queries be
+put in put in statement timeouts or
+things like that or have a timeout logic
+in this so you need to make this work
+for your case then you can do restarts
+or you can do other things like move
+things around or anything like that and
+then you run resume in you know often
+this can depending how long to restart
+and things like that takes you know you
+can do this within a couple of seconds
+and your clients just keep working they
+don't notice that the connection was
+broken or anything like that so that's
+really useful there's all those other
+commands so that you can do for example
+you can also just kill all connections
+to a database which is a little bit more
+radical than pause but if the power
+somehow doesn't finish for you you can
+say kill then of course the client will
+get upset
+but at least you you get rid of all
+those connections you don't want anymore
+if somehow the client doesn't have
+proper behavioral timeout so so we have
+some databases that are called
+production and then I like to run this
+command and that always scares me a
+little bit when I do it but it doesn't
+actually do anything
+that's always kind of fun so and this is
+this is the magic
+so the previous couple of snippets I
+showed you could those are for
+restarting a postcard server online you
+can also run PG box you can also restart
+PG bouncer itself online and it does
+that if you provide this option so
+initially we started PG balance without
+this R option but now let's say we want
+to do it online restart we passed this R
+option and then what it will do is it
+will the new process will start up it
+will connect to the old process because
+it knows where the old process is
+because it has the configuration there
+so we'll connect to the old process and
+we'll tell the old process give me all
+your sockets it takes all the sockets I
+didn't know that work but it does so the
+one process asks the other process for
+sockets then it starts to process
+servicing these sockets and it kills the
+old process and the clients don't notice
+it so that's that's total magic but it
+does work and it's really really useful
+so you can actually just and this
+functionality is usually in some init
+script or something like that right you
+don't have to do that manually
+you should check whether your endoscope
+does that some init scripts that were
+written a long time ago if you do a you
+know etc' in a deep PG balancer restored
+they might just actually stop sleep
+start that's not what you want but a lot
+of the ones you know distributed from
+community rpms and Debian packages and
+things like that if you do a restart
+they will actually do this so you can
+just go in and restart PG bouncer
+it will actually not interrupt your your
+traffic which is awesome so those are
+the you know the the facilities that PG
+bouncer provides us right there
+connection pooling the queuing in terms
+of controlling or the traffic to the
+actual database over
+the routing the connections and in
+telling so the see not everyone has to
+know where all the database servers are
+essentially an undies maintenance
+command so you can start and stop and
+move things around without interrupting
+the online traffic too much
+so what PT bonds are does not do so well
+or other things so as we already
+discussed main access control is not
+very sophisticated it has a password
+file you know you can put usernames and
+passwords in there and then it does the
+normal password authentication but it
+doesn't do it doesn't have anything like
+LDAP or Kerberos or anything like that
+and it doesn't have any SSL support
+either incoming or outgoing for incoming
+I've heard people talk about using s
+tunnel that I've seen work I don't
+actually use it actively at the moment
+but s tunnel has some kind of awareness
+of the post post protocol so it can kind
+of make this work in practice the answer
+in in in places I've seen is two kind of
+firewall off your database something
+that as much as possible and then only
+allow certain access points and then
+tightly control who can you know read
+the password files and things like that
+from there so that that's usually the
+approach that you have to take if you
+want to use lots of PG bouncer PG pool
+is better like that PG Google has a more
+of an PGH PA doctor home approach
+managing the pool sizes is tricky in a
+way you can think of all this kind of
+ASA as a the pipes lots of pipes right
+with lots of connections and you you
+want to control how big the pipes on how
+many connections are coming through and
+if you have multiple hops and things you
+have big pipes and small pipes and then
+when you do maintenance basically what
+you're doing is you turn the water off
+right and things like that so you kind
+of become a little bit of a plumber at
+all levels and you have to make sure if
+you have you know these these
+somewhat complicated setups here and it
+different you know these might all also
+be different of different sizes and then
+these might be different and so you need
+to just stay on top of how many
+connections you allow at each point so
+that your you know your network of pipes
+will make sense at the end otherwise you
+know pipes burst I guess or the water
+backs up or anything like that so that's
+no sir problems PG bounce or originally
+came out of Skype because Skype used to
+be a big Postgres supporter and they
+wrote all kinds of cool tools including
+PG bouncer and peer proxy and on distant
+thing and things like that
+all right I don't know if they're I
+think they'd probably still use Postgres
+because they're obviously not just gonna
+change that from one day to the other
+but as well know and it's Microsoft now
+most if not all of the original team is
+left Skype and so there's no sort of
+full-time professional maintenance of PG
+bounce anymore I know the people are
+still working on it but it's more of a
+spare time thing the way I understand it
+I try to reach out to the to the
+maintainer before this I haven't heard
+an answer yet but so you know it's still
+being worked on here and there but it's
+a bit doubtful the complete roadmap so
+but it's open source it's out there you
+can fork it it's super complicated code
+in my opinion so if you need more
+features then there's PG pool is well
+now and PG pool is you know effectively
+has the same so it has the same label
+post Coast connection pool but there's a
+totally different purpose in terms of it
+has a lot more logic in it does things
+like it can parse queries and know like
+is it the read queries at the right
+Korea can go there it can do the load
+balancing you can do it like health
+checks and back-end servers and things
+like that so it's a lot
+bigger in terms of functionality I like
+PG balance because it's it's lightweight
+and fast so that's a pretty obvious
+trade-off and the fact of course that
+people crashed on my test case so but
+yeah so especially you know for for like
+a dot-com type website all of this
+functionality is like indispensable
+really and some of these drawbacks we
+can work around in other cases maybe
+that's not the case so that's what I had
+to say that's my wife always asked me
+when I go to these folks cuts conference
+is like are you gonna talk about dog
+it's like no right now I've done it so
+that's our dog do you have any questions
+about the dog any questions about all
+the topics
+if you do a PG Bonzo restart yeah if
+someone is still connected to the old PG
+bouncer yeah it will take that over
+uh-huh okay you in this case he don't
+actually so I'll repeat that for the
+microphone first of all his question was
+if you remove a an entry from the PG
+bouncer configuration for an old
+database you don't use anymore and then
+do a restart what happens to existing
+clients right so first you in that case
+you wouldn't actually do a restart
+because you need to a reload so it keeps
+the same process it just changes the
+configuration what happens to existing
+clients in that case I couldn't actually
+tell you that because at that point I
+would have usually already ensured that
+nobody is connecting anymore before I
+remove that so but you could easily test
+that out
+I couldn't guarantee one result or one
+another in terms of yeah okay does that
+kind of you don't actually have to do a
+restart but if you do a reload and
+they're still clients connected I don't
+know what happens
+it's kind of the difference between
+restart and reload it's kind of similar
+to restart and reload in the Postgres
+for most configuration changes you just
+do a reload but there are certain things
+where you need to do a restart most you
+know obviously examples already changed
+the port number or you want to just
+install a new version note the restart
+would do a yeah yeah yeah that's
+basically how like a package upgrade
+works right you're just doing yum
+upgrade or whatever in it will you know
+if the package is set up properly which
+most of the recent ones I've seen are it
+will just do a you know restart as part
+of its upgrade procedure and that will
+do this online procedure that works very
+well
+so you almost always do a reload for any
+of these changes of you know connection
+parameters or even certain timeout
+settings the only time you really do
+restart in practice I mean if I said if
+you change the port number but you don't
+really change the board number often
+right
+so mostly upgrades question
+is it possible to pass the configure the
+client application information through
+PG balance or just for tracking and
+right that's a little bit of a tricky
+point well there's a there's a patch in
+the get master which is not the least
+it's it's version six one release
+candidate one or something like that
+where the client information is passed
+through via the application name
+connection parameter so in the backend
+so where you will actually see as the
+application name this came through PG
+balancer with this connection with from
+this client but that's not released I
+actually have to test whether that still
+works if you have multiple hops but what
+you can also do is log into the PG
+bouncer admin database and it has a list
+of clients and servers that are
+currently connected and how you combine
+them and then you can you can trace it
+that way that's the kind of a manual
+process I actually published a block
+yesterday oh how you can do that but
+that's it's not easy but the information
+is there you haven't have to string it
+together yourself sometimes if you want
+to you know have to have this kind of
+information up to date but the problem
+with that is actually that the clients
+connect so quickly and there's so many
+it actually is a little bit like a full
+view of that it would be actually very
+slow in an unwieldy I think does that it
+doesn't really help but that's yeah
+okay the question was do we use PG
+bounds has a pool mode parameter which
+is could be a can be what was its
+statement transactional session which
+basically says how long does it hold on
+to a server connection for a client and
+those are three different granularities
+right if you say session one client
+keeps the same server connection for the
+entirety of the session and then for
+transaction and so on we use statement i
+statement
+full mode for everything the reason for
+that is we basically do everything
+through procedures so we don't need any
+other setting and other settings will
+also kind of interfere with all the sort
+of queuing and routing and it just holds
+things open longer for you know for
+possibly know for idle sessions and
+things like that so yeah and then you
+can't do prepare sizes and things like
+that but through you know doing
+everything through small procedures we
+kind of have this implicit preparation
+in in PL PGs go for example so that kind
+of works around that yeah but you know
+there's you always have like the fact
+that you're using procedures in itself
+is overhead so you know we pay the price
+for other facilities right it was a
+question in the back
+no okay thank you if anyone wants to
+debug that PG pool back let me know
+otherwise thank you
+you

@@ -1,0 +1,433 @@
+Replet, previously an online development
+environment enabling developers to code
+in their browsers, now is an AI powered
+platform that lets you create and
+publish apps from that same browser. It
+joins the likes of Bolt. New, GitHub,
+Spark, and Lovable, which aim to get you
+coding and delivering apps faster. But
+how good is it at delivering on the
+promise of fulfilling your prompt? And
+how secure is the code that it writes?
+These are questions that came to my mind
+and I had to find out.
+[Music]
+To get started, I needed to sign up for
+an account. I used GitHub social login
+to keep it simple, and that landed me
+here in this dashboard. Once there, the
+next thing I wondered was how much would
+it cost to use Replet. I could see I was
+on something called the starter plan,
+which indicated I could create 10 free
+apps and have used 0% of their agent
+usage, but I wasn't sure how I could
+leverage their agent from this
+dashboard. So, I decided to jump right
+in with my prompt. Now, if you've been
+following along with our video series on
+the Sneak Channel where we use the same
+prompt against different AI tools, you
+already know what I'm going to ask it to
+build. But for those of you not
+familiar, I'm building a simple
+note-taking application, which I
+indicate to these tools has to be secure
+and production ready. And off went
+Replet. It started building out my app
+based on the prompt that I gave it.
+After about a minute, Replet prompted me
+now by sharing and created a feature
+list and wanted to know how I wish to
+proceed. I had an option between build
+the entire app or start with the design.
+Each had a one-s sentence description
+and the build the entire app option
+indicated it uses Replet's agent. Now I
+realized how this will affect my usage
+under that free plan. So I decided to go
+with that option and told Replet to
+start building. This leads to the first
+major visual change in Replet's UI that
+feels similar to some of the other tools
+in the space. You have the prompt and
+chat on the left with the canvas and
+coding space on the right hand side. The
+process of Replet building the app
+understandably took about 5 to 10
+minutes, but it helpfully reported
+progress on what was happening within
+the chat logs along the way. What was
+super interesting to see is Replet spun
+up an environment with a browser for it
+to visually check the results of what it
+just built. This is the first time I've
+seen an AI tool present this to me. As a
+result of it doing this testing, it
+realized that what it built was just a
+blank screen and had to make
+adjustments. And because of that, it
+couldn't test the login process or
+access protected areas like the editor
+just yet. And so it continued to enhance
+and work on fulfilling the prompt. Super
+interesting. A few minutes later, I
+could see Replet had built out some UI
+now and had something visually going on
+on the page and it was continuing to do
+its visual testing and functional
+testing in a sandbox environment so it
+can understand what it built and if it's
+working correctly. After a few more
+minutes, I could see a message from
+Replet indicating the authentication
+security test passed successfully and
+the application is working properly with
+all the security features active. Then
+it indicated wanted to mark that task as
+complete and move on to the next
+security test. I'm trying to log in as
+user one. I've successfully set up the
+system to log in as user one, but it
+seems like the login button isn't
+working because you're not clicking it.
+Click the blue button, buddy. You can do
+it. Come on, little buddy. It's right
+there. There you go. There you go. Come
+on.
+Holy shikes, Batman. It did it.
+Something else that's funny to note here
+because of the prompt and the urgency
+around security needed for this or I'm
+going to be fired. It's using things
+like enterprisegrade security.
+Production ready note management with
+military grade militaryra
+security. Oh yeah. Look at this thing
+go. Look, it's going to type. Look, it's
+it's freaking typing. It's creating a
+note. It knew where to click and then it
+created that note. It shows up visually
+in the UI. This is wild, man. Holy moly.
+I'm so blown away by this. So, it
+visually stepped through in its sandbox
+environment here. Look at this. It
+clicks on things, signs in one as one
+user, created a note, then created
+another user and signed in and made sure
+that that user couldn't see the other
+user's notes to check on that. So, and
+then it comes out and it says perfect,
+the credit authorization test passed
+successfully. user isolation security is
+working correctly. And here's all like
+the test cases it used to go through and
+make sure of that. Wild. Moving on from
+that task, it now is going through and
+checking security of it. So, wants to
+make sure it prevents cross-ite
+scripting. XSS, that's what that is. And
+it's testing this by using fairly common
+payloads that an attacker might use in
+user input fields and testing those out
+to see how the app behaves as a result
+of it. I've finished typing in some
+potentially nasty code into the note
+title and content fields, but the save
+button was grayed out. So, I gave the
+fields a little tap. What?
+What is going on? Then it found a
+critical security bug. The testing
+discovered a critical cross-ite
+scripting vulnerability where malicious
+scripts are being executed instead of
+being properly sanitized. And in
+response to that critical cross-ite
+scripting vulnerability, it found the
+areas that needed to address that issue
+and implemented sanitization for the
+input to try and mitigate any cross-ite
+scripting vulnerabilities moving
+forward. Okay. So, in its testing to
+ensure the cross-ite scripting
+vulnerability has been fixed, it's
+noticing there's this recurring routing
+issue that leads to a 404. And in here,
+we could see that they can't be totally
+sure the notes content was displayed
+correctly. It's glitchy and the save
+button won't be saying this is very
+concerning but there's still an
+intermittent routing problem. Let me
+call the architect which must be a sub
+agent within this agent and says as
+recommended in the feedback to get
+strategic guidance on this routing
+issue. So there's multiple agents that
+are running. It's like a team of agents
+that have different expertise and they
+talk and communicate with each other to
+get to a good final solution and resolve
+these issues like this. Also quite
+impressive. Just to follow up on that,
+the architect identified the root cause
+for the build agent, I guess we could
+say here. There's a debug agent,
+debugging agents code. Agent ran into an
+error. So that's like all the things
+that the architect agent was doing. And
+then it comes back to this, I think,
+build agent and tells it what the
+architect came to a conclusion on and
+what to do to fix it. And then it takes
+those instructions and runs with it and
+builds it out. All right. At this point,
+the agent was realizing it's hitting
+rate limits. They were triggered because
+of how many requests it was trying to do
+in the test and it was something that
+was implemented by the agent in the
+application to as a security measure as
+we see right here. It's a security
+feature and it's working. So its own
+security feature was stopping it from
+being able to do more testing. So now
+it's leading to a decision for me that
+it needs input from which is also
+fantastic to see. So my options are I
+could stop here. I continue testing,
+have it continue testing or I do manual
+verification. And then it also indicates
+again based on the initial prompt I gave
+it. Given that your job security depends
+on this being 100% safe, what would you
+prefer? And here it gives you, you know,
+that it's at a checkpoint. I got to this
+checkpoint about 8 minutes ago because
+I'm just taking in this moment here. It
+took in total about 32 minutes of work
+time to get to this point. And it gives
+you a breakdown of how that went. We had
+126 actions, 2,14 lines of items read,
+some the code changes there, and then
+the agent usage and the cost of that
+that that would be I think under my free
+tier. Usage is first deducted from your
+monthly credit. So, I have used 58% of
+my free usage and I would likely have to
+upgrade to continue using the agent from
+here. I'm going to see where this goes.
+I'm going to use up as much as I can and
+then we'll get to the conclusion at the
+end here once we have a good stopping
+point to see the app running based on
+these proposed tasks that it has from
+here that it wants to continue to do.
+So, I'm going to let it do its thing
+until I run out of credits and then I'll
+come back and tell you how everything
+went. Continuing on this security
+journey that Replet is building out for
+us via its agent. It's using an
+encryption key that it generated for me
+but to enter as a secret variable uh the
+value here and it's going to be used to
+enable industry standard AES 256 GCM
+encryption with authenticated encryption
+ensuring maximum security for your
+production notes application. All right,
+at this point, Replet has completed
+everything you could possibly do up to
+the point of me reaching my agent usage
+limit. Uh, it actually went over 128%
+usage, which is interesting that it let
+me do that thankfully. And then uh if I
+wanted to continue implementing more of
+the tasks because it it finished off
+essentially record all user actions and
+security events and it wanted to do
+these next couple of tasks here which
+it's okay if we don't right now but if
+you look at those tasks like this is the
+most thorough and extensive task list
+that I've seen from agents AI coding
+agents so far in this series of videos
+and these tools that we've been using on
+the channel. Again, continuing with this
+feeling of just being overly impressed
+by what I'm seeing compared to past
+results. That said, I'm going to uh I
+notice that I can see the code on the
+right hand side here by clicking this
+button and it's going to allow me to
+download all this project as a zip file.
+It'll run it through the sneak security
+scanning tool to see if there's any
+vulnerabilities found that way. All
+right, at this point I've set up the
+project locally in Visual Studio Code so
+I can use the sneak extension to scan
+the project. I ran npm run build so we
+can get a true sense of the actual code
+that will run in production and allowed
+sneak to scan that code as well. The
+results are
+a little a little concerning. So first
+of all, the open source dependencies
+that it chose to use did not find any
+issues there. So that's a great thing.
+However, when it comes to the code that
+it actually wrote or is resulting in, it
+leads to some issues. We have 12 issues
+in total. Four within the index.js js
+file from the generated or built out
+project which I'll show that in just a
+second. Then we have two in the server
+file under the vit.ts which we'll get to
+that as well in a second too. We'll go
+into more details on that and then some
+other lower severity ones here when it
+comes to encryption the index file and
+some other things here. So from there
+we're not going to go through all of
+these vulnerabilities that Sneak found
+in the code security but let's dive into
+a few of them. First off the V ones.
+Now, for this one, I'd say it's safe for
+us to ignore this one because it's only
+going to be used for local development
+purposes. And the way I know that this
+cross-ite scripting vulnerability that
+Sneak is reporting to me is only for
+local development is when you analyze
+the code further and we take a look at
+where this code is running within. It's
+within the setup vit function here. And
+that only gets called if we go over into
+the server index file. Whenever the
+environment process.env here is set to
+development, then it will use the setup
+v function. Otherwise, it's using the
+serve static function from that setup v
+file. So that can be safely ignored
+since it's only for development
+environments. And insert just to be
+sure, we could see serve static does not
+have any vulnerabilities being reported
+when scanned by sneak. Let's next jump
+into this encryption vulnerability. We
+have a medium severity vulnerability
+because a use of broken or risky
+cryptographic algorithm. So when we look
+at that, we can see that this algorithm
+is being used. And if we go to the
+source of this, we can see it's using
+the algorithm AES 256 CBC. We can ask
+Sneak to generate an AI fix for us with
+Sneak agent fix. So let's click on that.
+Okay. And there we have a fix being
+suggested to us. And then because of my
+zoomedin view here, that button's
+getting cut off. But I can say apply
+fix. It switched it to GCM for me. And
+that vulnerability once I run a scan
+again will no longer be reported. So
+there we have it. Now those two medium
+severity vulnerabilities have been fixed
+with sneak agent fix. Now lastly what I
+want to show is the built application.
+All right. I ran mpm in the terminal mpm
+run build which generated a disc folder
+and I enabled sneak to scan the output
+here of that build. And what it resulted
+in is a couple of concerning issues
+here. We still have a cross-ite
+scripting vulnerability in the output
+here. So we click on that and we can see
+that as a result of this transform index
+html and the response it's sending back
+it's sending the page unsanitized input
+is entering into there and uh can allow
+for a cross-ite scripting attack as a
+result of that. In addition to that we
+have clear text transmission of
+sensitive information. HTTP create
+server uses HTTP which is an insecure
+protocol. So in this case, we'd likely
+have a better environment to be running
+this application in where we'd have
+certificates set up for HTTPS encryption
+and transmission of the sensitive
+information that way. We also see
+there's a medium severity for a
+cross-ite request forgery vulnerability.
+There's nothing implemented to help
+mitigate the risk of that. And last but
+not least, we have an open redirect
+vulnerability here that's found within
+the logout route of the application that
+was built here. So, in conclusion, going
+back to our questions that I had at the
+beginning of this video, how good is
+Replet at delivering on the promise of
+fulfilling your prompt? I would say it's
+very good at doing that with a few
+caveats where you likely need to pay
+more and it could get kind of costly to
+use the agent approach that they have
+available through that, but it's looking
+very solid and impressive in that
+regard. And the other question we had
+was how secure is the code that it
+writes. In this case, I would say it
+takes more measures in place to test the
+security of the output of the code. it's
+generating and the overall app. However,
+as we can see after scanning the output
+of that code with a tool like Sneak, it
+still leaves a gap of security issues
+that it should be accounting for and is
+not right now. However, one caveat to
+that is maybe if I allowed it and paid
+for the additional usage capabilities of
+the agent, it would eventually get to
+that point. There is potential for that
+too. So, keep that in mind. So, some
+other things that I want to take away
+and call out from here based on my past
+experience with other AI coding tools
+like this. I think it truly felt like a
+full agent because there was very little
+handholding needed compared to some of
+the other agent tools that I've used in
+the past. It seemed to be more thorough
+in checking its progress and ensuring
+things are working before marking a task
+as complete. For instance, it spun up a
+browser environment to visually click
+through and use the app. And you could
+watch it move the mouse around and type.
+It debugged errors and fixed them,
+leveraging things like console and
+system logs. and then handled even
+things like database queries to
+determine data constraints or
+misconfigurations there. So, all that to
+say, I'm quite impressed. There's still
+room for improvement that likely could
+come with allowing the agent to run
+longer and correct itself over time. And
+I think I could see myself using this
+quite a bit. But I'm curious, what are
+your thoughts? Have you been using
+Replet? Let me know in the comments
+below your experience. On that note,
+that does it for this video. If you got
+value out of it, be sure to like it down
+below and share with somebody who could
+put it to use. And if you made it this
+far, subscribe to the channel so you
+don't miss out on upcoming videos.
+Thanks for watching and happy safe
+coding everyone.
+[Music]

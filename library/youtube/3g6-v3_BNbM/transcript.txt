@@ -1,0 +1,731 @@
+what's up
+so today's stream we're going to talk a
+little bit about taking some of the
+components that I'm designed in figma
+and taking that first step of
+translating those from just wireframes
+over to high fidelity mock-ups and now
+take that next step to actually convert
+them into code and start to get some
+real UI in this application another
+thing I want to do is improve the
+landing page right now it doesn't look
+very great after we got rid of all of
+those styles so I want to just put the
+logo here and then like a small button
+to login for the people who are
+following along on the course because
+I'm gonna keep it unrestricted on logins
+for a while so that you can still see
+the data as it's being built since we're
+just working with a dummy database for
+now so I'm going to start with the
+landing page I think so one thing that I
+want to do is take the SVG logo and then
+put it in the middle of the screen so to
+do that I already have the SVG that I've
+exported so I'm going to a really
+helpful tool is this SVG Oh online which
+gives you a GUI for SVG Oh which is an
+optimizer to compress the file sizes of
+your SVG OS are your SPG's sorry so I'm
+gonna take this and we're just gonna go
+to desktop so I mean you see we already
+dropped 84% on the file size of the SVG
+so this is super super helpful
+I do this for almost all of the SVG so I
+have and then you click on this markup
+tab it actually gives you the outputted
+code that you need so if you remember
+from the last video talked about in this
+theme document you can put a key for
+icons in here so you can override it and
+extend your own icons and I can kind of
+show what that looked like
+again basically you override the default
+icons and then you give a unique key
+name for the one that you want a path
+and then optionally a view box if you do
+have one that has a custom view box so
+I'm gonna take this actually I'll just
+go back up to the top take this throw
+and icons in here and we're gonna call
+this logo this will allow us to pass in
+chakras color so if we were doing dark
+mode this is even more important than
+you can conditionally change that we're
+just going to keep this as is we'll take
+this path and replace that we don't need
+that fill for now okay and it looks like
+it also has a custom view box so let's
+make another key for view box and this
+is just a string copy this over
+so use all the existing icons but then
+also override it and make our own for
+the logo and give it a custom view box
+well let's start this locally and I'm
+gonna pull up [ __ ] already yeah I still
+have the chakra docks here what we're
+gonna need is the icon and basically now
+that we have a custom icon we can just
+pass in the name of logo for what we
+want to use so let's go back to index
+and we'll throw this in here and say
+logo and then we need to import this
+that's production
+it's gone real slow I think my computer
+is just hot the struggle bus
+okay so we have some of the logo we
+might need to now pass in what we want
+to fill it with so for example we could
+pass in whatever color we wanted let's
+just do black and then probably going to
+want to be a little bit bigger too
+I might not be able to play music
+because my computer is on the struggle
+bus
+she's gonna cut that out because my
+stream it seems to be lagging a little
+bit maybe ditched some of these tabs to
+let me know if things are starting to
+clear up a little bit in the chat might
+as well just close all this too
+okay let's make this a little bit bigger
+will do maybe 64 Souls
+okay that's mayoralty big
+okay another thing I'm realizing now is
+I defined this color on the group when
+in reality it should be on the path so
+I'm gonna take this and put it directly
+on here and it was the fill instead of
+the stroke and I honestly I don't think
+we're even going to need this extra
+group I'll see how this looks that looks
+a little bit better I haven't really
+decided what I'm going to do with the
+text of the logo so for now I'm just
+going to get rid of this and I'm not
+even gonna show the logged in user but I
+think we'll probably redirect to a
+completely different page if logged in
+once we create that what I want to do is
+convert this to a box which is chakras
+essentially think of it like a div but
+it has access to all of the style props
+I'm going to have the outputted HTML be
+a main so nothing really changes here
+except now we can do anything that we
+want to do directly on this box so for
+example I want to Center these things
+and a shortcut for even doing that is
+transforming from box to flex and this
+is going to give me some of the Flex
+properties enabled by default so we'll
+start with that
+and I'm gonna need to change the
+direction of where we're flexing to a
+column and let's say we want to align in
+the center we're gonna justify in the
+center and the max width will be 300
+pixels looking okay I think it's because
+I have this extra give out here which
+this is a fragment of the last one
+because we're not even using class names
+at all so let's let's transform this
+let's take this flex
+and put it out here
+probably going to need a width of a
+hundred
+and the shortcut for that with chakra
+you could just do with full-back I don't
+know I'm not haven't made my mind up on
+this whether it's more explicit to say
+like a hundred percent or a hundred view
+width instead of saying full I don't
+know what am i it's not really going to
+100% width
+hmm
+sometimes when it's not respecting like
+this all just hard-coded or something
+really large and see if that is applying
+but it's still not
+it's
+yeah that max-width is definitely
+screwing it up let's change this to
+height of 100% get rid of that oh pretty
+you're going crazy on me formatting I'm
+guessing we're probably in the same boat
+now where yeah still not the full height
+so let's go the same properties that we
+use on the underscore next element which
+was in our app we put that 100% view
+height so that at least gives us
+something that's centered I don't think
+I'd make this bigger I don't think I
+want to show the current user anymore
+but instead if there isn't a user we're
+going to show this new dashboard that
+we're working on otherwise the sign-in
+button and I might just change this too
+I might just changes to like a small
+link button or maybe ghosts let's do
+let's do link so if there's not a user
+on this sign-in button will do a
+variance of link and size
+but I already have a user so that's why
+we're seeing this here so I'm gonna sign
+out that was trippy
+yeah good enough for now actually I kind
+of kind of like that default now they
+look at it
+yeah let's keep that for now another
+thing on my ad would be a little bit of
+margin on the top and I believe I talked
+about this but this four number that I'm
+just magically pulling is still
+constraining to the theme where the
+spacing theme is right down here so this
+four will actually then translates over
+to a REM value which has a pixel
+equivalent okay so this is looking okay
+I'm going to sign back in
+okay now the next thing I want to do is
+start to build out what we're gonna see
+on this dashboard so at least what I'm
+thinking for right now is we'll have
+some kind of navigation bar at the top a
+way to view your account settings and
+then a list of all the sites that you
+manage in the feedback that you gave so
+I'm going to start with trying to
+recreate this inside of open chakra our
+visual editor and then I can kind of
+pull that code in and componentize it so
+let's do what I like to do when I look
+at it is just try to get a little bit of
+a mental model of what the layout will
+be so for example we're gonna have links
+here some sort of flex container that
+has space between for these this will be
+a heading button obviously should give
+me a decent route to start so let's
+start with a flex and then let's do
+actually two flexes inside of here and
+this one is going to be column on the
+top we have a logo some links
+which is gonna be an icon icon a link
+another link and then we could make it
+say count have it be a link or have the
+icon be a link I think for now I'm going
+to just do another well actually we're
+gonna want to do space between on these
+these are going to need to be self
+contained in something so let's do a box
+inside of here and put these inside and
+we want the icon to be first
+I wonder if I can easily change this to
+a flex I don't think I can just cuz I
+don't like how that's displaying and
+then I'm going to delete this go back
+over to here okay what icon do I want it
+doesn't really matter because I'm going
+to change it out but we'll just do I
+don't know we'll do this
+this was sites feedback
+okay we probably want to have some
+spacing in here so one thing that you
+can do is you can do an inline stack
+let's let's do that that might be easier
+than having to put margin and padding on
+each of those opponents so if we take
+stack I'm just gonna move these into
+here so right now it's a vertical stack
+but instead we're going to do an inline
+stack put the icon first and right now
+the spacing in between these is two
+maybe we'll just bump up to four I'm
+going to move this to the other side and
+this will be a link and an avatar
+think my computer is froze
+now I think my my USB mouse just died on
+me so I think I'm going to need to pull
+over my keyboard quick I wondered what
+was going on that I thought my whole
+computer just froze up on me let's see
+if I can do this and not unplug anything
+they say that we are employed
+okay how are we doing on our stream okay
+I think we're back to good here let me
+fix my mic I have a keyboard that works
+and where did we leave off we have a
+link and an avatar let's make this
+avatar smaller change this to count
+we'll put a little margin on the right
+and we'll see how we're working they
+should have a background white cool
+this flex container will want to have
+space between the items
+whoops
+okay that's looking decent we'll
+probably also put some padding probably
+just on the top and bottom that's
+probably too much okay that looks decent
+now let's do this will be a breadcrumb a
+header and then some box so this
+container we're going to do background
+color of grey at like 50 it's a really
+nice light grey and we want to have a
+flex container inside here it's going to
+have a bread crumb a heading and then
+goes throw another box inside here I did
+not go on the right spot
+so this should be sites
+sytze okay
+yeah that's throw a box how we doing
+closer it doesn't look like the
+background color got applied here oh
+that's because it's color and not
+background color okay that's looking
+okay now let's take this flux container
+let's put it to have like a max width of
+800 pixels or something and we'll make
+it so that it flex yeah let's let's put
+it in the center
+try thinking how I want to do this might
+be better to do like a left-right with
+Auto
+yeah I'm like you better and then we'll
+make this with a hundred percent
+background of white border-radius
+somewhere my cat the cat wanted out
+where's border-radius we'll do a border
+radius of four and then what do we want
+inside here we want another heading some
+text and a button and we'll do yeah
+seems like my stream and my content has
+got a lot better so I'm going to pull
+back up some music
+upgrade to use starter
+doesn't look like the border-radius
+applied there yeah
+I'll probably just end up doing the
+little top bar to match what the table
+looks like once we get that in the app
+but this seems like a decent start the
+way idea is I don't like to take it too
+far
+per se because I don't want to get pixel
+perfect in here but at least gives me a
+good jumping off the stars that's
+actually not bad so now here's the nice
+thing we're gonna start to create
+basically a shell for our dashboard
+right if we take code panel this gets us
+set up with a pretty good shell and
+we're gonna go over to our code
+my resize isn't working and let's make a
+new folder components new file dashboard
+shell and now we can copy this don't
+need the theme provider don't need the
+CSS reset the top-level flex should work
+we can condense this padding since we
+ended up just doing four for all sides
+[Music]
+this is gonna be logo when we filled it
+with black
+I'll leave the sights for now but okay
+feedback sites account avatar I believe
+it's probably source but I just want to
+double-check what the actual API for
+this is yes so if we go to avatar will
+do source of user well let's hold this
+off right now
+cuz I want to get this component set up
+first before we pump in too much data in
+here okay so if you notice the first one
+that I built this is if you have a free
+plan so you have to upgrade your plan to
+allow you to add these sites but you
+could still log in and view the feedback
+that you've given on other sites so what
+I want to do is you'll notice that
+there's a shared kind of shell between
+all these pages so I'm gonna extract
+that and then allow your passing
+children to display the other
+information so we'll take this dashboard
+shell and we're gonna make a new
+component specifically for we'll say
+free plan empty State
+and we can take this and really the part
+that we want to extract out of here is
+just this shared box area which comes
+down to really just this part right here
+so we're only going to take this get rid
+of all of this call this free plan empty
+and now we want to import that dashboard
+shell from the other component and now
+put the contents inside of here so this
+is going to be the children that we
+passed into the dashboard shell for what
+we want to show so I'm gonna get rid of
+a bunch of in force that we don't need
+and then if I go back to dashboard shell
+and here this content that we passed in
+is now going to be the children and
+that's a prop that we pass in now later
+we're going to actually hook up these
+links and customize this a little bit
+more but this should at least get us off
+the ground because then it's really easy
+to then take this right and if you look
+it's pretty similar to when you have a
+plan the empty state for that so I can
+basically override this make a new
+component and we'll just call this one
+empty States when you actually have a
+plan
+and the text is just slightly different
+okay that's looking good
+so really we're not rendering this
+dashboard shell directly we're rendering
+either the freer and empty state or the
+empty state so if we go back to our
+index if we have a user instead of doing
+this sign out button which we'll
+probably do in a different way let's
+actually render out this we'll just do
+the empty state for now trying to check
+if that it did import that and you
+notice that it's now using the alias
+that we defined earlier so let's just
+comment this out for now
+so we remove that go back to here okay
+so we're making some progress but we
+still have this wrapper up here that's
+rendering essentially our landing page
+so there's a couple things that we could
+do here are our dashboard isn't going to
+be at this route anyway so let's just
+take this and we'll make a new route for
+dashboard because I don't want to mess
+up this landing page
+so we can then put this over here
+and then on the dashboard
+let's just ditch pretty much all of this
+so if there's a user we're going to show
+the empty state otherwise we're going to
+show a loading state so I'm just going
+to do it like this if there is no user
+okay
+let's go to our dashboard
+so you see it showed loading because we
+didn't have a user yet once that would
+finish if there actually wasn't a user
+we would probably redirect back to a
+signing page or a login page but this at
+least works for here so this is looking
+okay I think this doesn't seem like the
+right size to me so I'm going to go back
+to our dashboard shell
+oh is this interesting this is getting
+rendered as a child of the breadcrumb
+when it shouldn't be
+same with this heading that was probably
+just screw up on my part yeah should be
+better
+okay are we at that 800 pixel with is it
+sure doesn't seem like it
+I think this should be alright so right
+now the content isn't actually taking up
+800 pixels so it's not going to be that
+large but we could do min-width if we
+wanted the only thing that's not great
+about that is then if we resize it's not
+going to be good so I think instead we
+probably want to keep that as max width
+and then do probably like a width of a
+hundred so it takes out that entire
+container
+[Music]
+okay it looks good
+set yeah that's 800 on this heading put
+a little bit of margin on the bottom
+[Music]
+on our empty state I think we want to do
+this centered yeah everything centered
+[Music]
+I think my prettier might be picking up
+files it shouldn't be because it's
+taking really long to format the code
+okay that's looking decent let's see
+[Music]
+probably want to put a max width on this
+button will do 100 pixels it's also
+aligning sense
+oh it's definitely not watching
+and then we'll probably also want some
+margin on the bottom here slightly less
+here I even bumped this up a little bit
+[Music]
+I'm gonna have to check out that
+prettier oh that's way too much
+I have a feeling it might be
+the next folder because it should do
+node modules by default let's see if
+that helps it all should be the only
+generated files I'm working with here
+could use a bit more padding
+it might be too much though huh still
+taking forever
+okay that looks a little bit better
+let's put the font weights on our button
+to be normal that we called it now
+normal medium bold and then I also feel
+like is this font weight 700
+[Music]
+it is I feel like I must have a darker
+variance in figma
+[Music]
+doesn't look like that space is being
+respected there's a couple ways we could
+go about this you could do like a
+unbreaking space you could turn it into
+a string really just depends they kind
+of all get you the same outcome in just
+a different way I think for this I'm
+going to just turn it into a string
+hmm guess I'll just ditch the emoji for
+now so that's gonna bother me
+so that's looking decent I also feel
+like this should take up the full height
+and that would be in the dashboard
+shuttle
+nice it makes the gray at least extend a
+little bit more another thing that looks
+a little odd is the size of this logo
+yeah because it doesn't look like this
+stack is being centered and I feel like
+this might want to be like
+all right it's prettier thing he's gonna
+drive me nuts
+let me make sure that I spelled that all
+right
+a dot prettier ignore file did I spell
+it right I did
+maybe my computer is just one struggle
+bus
+okay that logo looks much better now
+that it's centered I also feel like
+padding on the y-axis looks good here
+let's do a little bit more
+okay now let's go back to our avatar and
+let's pull the user well we should user
+should be defined if showing this shell
+so we'll do the user dot photo URL and
+we're gonna want to change this so that
+we can pull and use off
+they call that user yes off well I
+wonder what's more clear they're off or
+user what did i do on index Oh oops off
+dot user dot go to URL okay that was
+pretty painless actually what should we
+do next let's double check this maka I
+feel like the table needs to be a bit
+wider
+and this is also a different color so
+let's go where's that at
+this breadcrumb let's do ray
+can it looks a little bit better also
+feel like
+like that could be maybe a little bit
+bigger
+okay now let's actually start getting
+towards adding a site so I believe the
+mock-up for this ya pups of modal ad
+site with a name a link cancel and
+create so let's check out a little bit
+long
+I really like the API for chakras modal
+makes it pretty composable for only
+using the parts that you need
+hmm actually might be nice considering
+the first thing they're gonna do is type
+just to have it automatically focus in
+on their I think this was probably a
+decent starting point and it's already
+got the inputs set up which is nice
+let's go to components add sight modal
+copy this over
+I just hit the copy button like a normal
+person oops ad site modal
+we also have four control forum label
+but
+don't need the final rack we're only
+gonna do that initial one use this
+closure we'll need that okay is open on
+open on closed initial draft button what
+did we call that let's extract this guy
+from here
+don't need that
+okay initial focus trap final focus ref
+don't mean that is open his clothes
+it's a modal modal overlay yes mobile
+content modal header
+and sites
+hmm
+and might be missing an import but let's
+find out
+so the add your first site shouldn't
+look too different don't you love that
+when the docks are great and you can
+just pull components in and have it work
+I think that's the best thing I mean
+we're already like very close to what I
+had mocked up which is great ad site
+should probably be font-weight:bold
+I also might do a custom I like this
+custom color because I'm using this kind
+of teal ish color for my brand so we'll
+do
+and another awesome thing about react
+fast refresh is you just don't lose that
+state that you got in the modal open
+super nice okay it's looking pretty good
+I'll have to fix the hover styles there
+but let's throw
+[Music]
+so when we click on the button we want
+to create the site depending on how
+complex we want to get here we might
+want to do some sort of forum validation
+and there's many many routes that we can
+take for this
+whether that's formic or reactive hook
+form I think for now I might just assume
+good input and do some cleanup on this
+later since we're already getting close
+to the excuse me to the hour mark so
+let's let's see we'll just go for it
+okay we're just gonna go for it so I'm
+going to start copying some stuff over
+here
+so we're moving since we're adding this
+form it's on submit of the form instead
+of on click of the button so we want to
+make sure that that
+hmm yeah the way this is broke up the
+modal body is one div and then the modal
+footer is another so I think what I
+might do is just take this and turn
+modal content into a form and put the on
+submit here
+okay so now on our components we
+basically need to give them a name and
+then register them I don't think we're
+gonna need really anything too complex
+for what we're doing initially
+it's a sight
+it's definitely required don't worry
+about that Wow
+hmm I don't know if I don't need this
+pattern to start with let's see we can
+get away without it I've only used this
+library a couple times so definitely an
+exploration into what works and what
+doesn't
+okay that's looking decent its we're
+just not going to worry about errors for
+now
+so let's see handle submit on the forum
+register the values when those values
+happen we're just going to log them out
+so if this works then we have properly
+configured the forum
+took a second there to compile
+Kim
+loading state as we expected okay we see
+our dashboard let's click on add your
+first site and we'll put in some test
+values here it creates again I love when
+Docs just work and make it easy the next
+thing that we want to do is actually
+save off this information to the
+database because eventually what we're
+gonna do is show pages for each site as
+well as actually update this dashboard
+to show the list of sites that we have
+so to do that let's go let's go back to
+our firebase I'm sorry our DB file and
+we have a function for creating a user
+let's just do something very similar for
+sites and it's gonna take in some data
+and I think we can just do something
+like this making new collection sites
+cuz I don't think we have any there and
+then add in this data that we pass let's
+give that a shot
+autocomplete where are you
+I'll stick with values
+did that import it did not why did that
+not work
+oh because I named it the same let's do
+on submit or on on create site
+now we get our auto import
+nope that is not accurate can have check
+the docks so fire store and data
+so the reason I got rid of this dock is
+because we want to not specify that UID
+that we're getting back from firebase
+off we actually want it to generate the
+ID for us so instead we're just doing
+collection of whatever we want so in
+this example sites and then just doing
+an ad allows us to pass in whatever data
+we want
+so that might have worked because I
+wasn't closing the modal or doing
+anything yet I think the only way we'll
+be able to know is if we go check out
+our database and you probably logged
+something out to you it might be helpful
+or some kind of success banner would be
+good too so that did work we see a site
+was created and because I pressed that
+button twice actually it created
+duplicates so we're gonna want a handle
+for that because we don't want that so
+if I go back to here one thing that we
+could do is make this a little bit
+easier is putting the loading state
+behind some kind of state so we know
+when the app that when the action has
+started when it has finished and then we
+can also then handle those airs and show
+a toast if something goes wrong so we'll
+probably use chakras toast to show
+either a success or a failure for when
+this happens we hit our hour mark so I
+think I'm gonna call it for now I made
+some pretty good progress I'm gonna try
+to keep these streams to kind of an hour
+apiece
+so just to recap we talked about open
+chakra and how we can build components
+with it and take our designs to the
+actual functional react code and then
+actually get that in our application and
+start consuming it and building on top
+of it so we built out some components we
+got the base of our dashboard set up and
+then we integrated react cook form to
+handle this modal and then save off some
+data to the database a lot more to do
+here but a really good start and we have
+a little bit better landing page too
+it's nice and polished with the logo so
+we're making progress so with that being
+said feel free to
+any messages if you have any questions
+and I'll see you at the next stream so
+thank you guys

@@ -1,0 +1,2785 @@
+[Music]
+Welcome to Capital Decanted. In this
+show, we say goodbye to tired market
+takes and superficial sound bites.
+Because here, instead of skimming the
+surface, we dive into the heart of
+capital allocation, striking the perfect
+balance, and exposing the subtleties
+that reveal the topic's true essence.
+Prepare to have your perspectives
+challenged as we open up the issues that
+resonate with the hearts and minds of
+those shaping capital allocation. We've
+enlisted the wisdom of visionary leaders
+in the industry. And just like a
+meticulously crafted wine, we'll allow
+their insights to breathe, unfurling
+their hidden depths and transforming our
+understanding.
+This is season 2, episode 11 of Capital
+Decanted. private equity from wizards to
+artisans. I'm John Bowman
+>> and I'm Aaron Philbeck.
+>> A quick thank you as always to our
+returning title sponsor, Alternatives by
+Franklin Templeton. We're so grateful
+they're back to partner with us. They've
+got over 40 years of alt investing, over
+260 billion of asset center management.
+Their specialist investment managers
+have expertise across six different
+asset classes, real estate, private
+equity, private credit, hedge
+strategies, venture capital, and digital
+assets. And of course, all of them
+operate with the client first mentality
+that has always defined Franklin
+Templeton to help prioritize investment
+outcomes. So, thanks again, Alternatives
+by Franklin Templeton. I'm also
+delighted once again, and we heard from
+them a little bit earlier this season,
+to introduce SLR Capital Partners as an
+episode sponsor. SLR is an independent
+boutique asset manager focused on direct
+lending with expertise across a range of
+primarily senior secured financing
+solutions for US middle market
+companies. From their roots as a cash
+flow direct lender to sponsor owned
+companies, the SLL platform has evolved
+into a diversified commercial finance
+solutions provider encompassing cash
+flow, assetbased lending, and specialty
+finance. So stay tuned to halftime where
+we'll hear more from Michael Gross, one
+of the founders of SLR and currently the
+co-CEO.
+Well Aaron, we have reached the end, the
+series finale, the season finale I
+should say, of Capital Decanted for this
+exciting season 2. How are you feeling
+about the end here?
+>> I'm feeling pretty good. We've had a
+good season so far, John.
+>> It has been fun. It has been fun. And
+you're going to hear a lot more from us
+in the coming 60 days or so about what
+our plans are in store to transform this
+show for season 3. So I think some
+exciting evolutions around the edges
+that is going to make this even more
+interactive and hopefully engaging. So
+stay tuned for that. But today we are
+once again, as has been the case many
+times this season in particular, but
+both seasons diving into a dramatic
+transformation story. And today it is
+the evolution of the swashbuckling
+corporate raiders, the bootstrapping
+deal junkies, the ruthless high yield
+pirates, and their transformation to the
+process savants, the roll up your
+sleeves mechanics, the programmatic
+value quarterbacks. This is the story of
+how private equity over the course of
+more than five decades has
+metamorphosized from financial
+engineering to operating artisanship.
+The Institute of Private Capital, the
+IPC, which is led by our friend and
+board member Greg Brown, looked at
+nearly 3,000 exits between 1984 and
+2018. And here's what they found. From
+84 to 2000, as I said, the go- go years
+of the leverage buyout that we'll talk
+about in depth today. 70% of deal value
+creation was due to leverage alone. So,
+you'd buy struggling businesses on the
+cheap. You'd load up the balance sheet
+with all kinds of debt facilities, slash
+some spending, shutter or sell some
+capital sucking assets around the edges,
+and move quickly to an exit before that
+short-term arbitrage window closed. And
+when this playbook worked, your small
+cash or equity investment was typically
+levered, hence the name, by many, many
+multiples. But starting in the 2000s and
+accelerating after the GFC, the music
+began to stop on this balance sheet
+alchemy, and a major transition was set
+in motion. PostGFC again from that IPC
+study less than a quarter of value
+creation has been based on the use of
+leverage. So from 70 to 25 and there's a
+sense from GPS that this will continue
+to shrink. Simon Coocher the consulting
+firm conducted a GP survey in 2024 to
+determine the drivers of return
+expectations or you might say the
+contribution to the investment thesis
+upon acquisition of new companies. And
+the verdict, GPS only ranked leverage as
+participating in a modest 7% of their
+expectations. So a very small part of
+their motivation for acquiring these
+portfolio companies. The practice of
+private equity is now a sophisticated
+laboratory of sustainable enterprise
+value improvement. Scores of experts
+across practices from HR to marketing to
+AI are employed and brandished across
+portfolio companies with the expectation
+of cultivating long-term and durable
+margin improvement. Operating value ad
+OVA as Steton calls it now accounts for
+about half of the value creation of
+private equity deals. So while leverage
+has been going down 70 to 25, operating
+value ad has been skyrocketing up and
+accounting for nearly half of that
+value, most of that OVA even more
+importantly is in sales growth in
+product improvement and expansion in
+efficiency gains versus cold hard cost
+cutting. And this is the patient
+craftsmanship that underpins many of us
+to believe that private companies,
+private structures are a superior form
+of governance and ownership than the
+momentby-moment emotional and
+schizophrenic machinations you might say
+of the public markets. But that is a
+very modern reality. It was not the
+roots and the origin of private equity.
+So what were the circumstances that led
+to this revolution? Why did the industry
+abandon that old model? Was it voluntary
+progression or collective coercion? And
+that's what we're going to examine
+today. So, as is common, Aaron and I are
+going to invite you into the capital
+decanted time machine to try to
+experience this transformation together.
+We'll start in the proto private equity
+era of the 50s and 60s and describe how
+the LBO was first conceived and how it
+was utilized and ultimately became
+synonymous with the pop culture of the
+roaring 80s when it really peaked. We'll
+spend a few minutes investigating the
+anatomy of those deal structures and
+actors that composed the financial
+engineering glory days. And then we'll
+begin peeling back some of the subtle
+but ultimately irreversible powers and
+trends that crept into the industry and
+began disrupting and demanding this
+model change towards operating value.
+And finally, we'll complete the story by
+describing how the operating value ad
+model is employed today, what levers
+these firms use, and how it manifests
+itself in risk return synthesis. And
+then of course after our short break for
+halftime today, we will be joined by
+Jacob Katub, co-president of the 50
+billion asset center management GP
+platinum equity, one of the very first
+movers in the operating value space. So
+that's where we're going. That is our
+blueprint. Aaron, are you ready?
+>> Ready to go. Let's do it.
+>> All right. So history, as I mentioned,
+as I periodically mention on stage and
+on this show, I believe before, the
+first venture capital deal was as early
+as 1957. There was a 30-year-old young
+corporate finance professional at Hayden
+Stone and Company named Arthur Rock. And
+Arthur was famous for providing capital
+for the founding of Fairchild
+Semiconductor to what is infamously
+called the Trtorious 8. These were the
+eight engineers that walked out
+simultaneously of Shockley semiconductor
+as I said in 57. And by the way, the
+legacy of those eight is just
+mind-blowing. Just as a fun fact, it
+included Gordon Moore, which is the
+inventor and the namesake of Moore's
+law. And then more the same Moore and
+another of those eight, Robert Noise,
+later founded another integrated circuit
+company that probably most of you have
+heard of, Intel. Andy Grove, another of
+the eight, was the third Intel CEO that
+was recruited over from Fairchild. And
+some of the others of those eight would
+be part of startups that we would know
+today. National Semiconductor, Advanced
+Micro Devices. These offspring of the
+Fairchild startups and founders were
+often called the Fairchildren, which I
+thought was amusing. But that's venture
+capital that is defined by early stage
+and a minority non-controlling stake. So
+Erin, in your research, did you come
+across or do you have a view on what was
+the first LBO leverage buyout deal ever?
+>> Oh man, I don't know what the first one
+ever was. I know when it peaked, but I
+imagine you're about to tell me.
+>> I am. I stumped you there. So, of
+course, history's never clear and
+definitions are murky back in the 60s
+and 70s. But there are admittedly to be
+fair alternative answers and plenty of
+lore associated with who was actually
+first. But I'm going to go with the most
+widely promulgated version of the first
+and that is of Orcin, the pest control
+company. So just quick story, the
+founder was Otto Orcin, who as the
+mythology goes at only 14 years old back
+in 1901, he borrowed 50 cents from his
+dad. And that 50 cents was utilized to
+experiment with mixtures of arsenic in
+attempt to develop a pesticide at his
+dad's request to keep the rats away from
+their Pennsylvania farm stocks. I have
+to admit, I'm not sure that this is
+great parenting advice. I've never given
+arsenic and suggested chemical
+experimentation or cocktail
+experimentation with poison to my
+children, especially my 14-year-old
+children. But the history is the
+history. And Otto's revelation worked so
+well he started selling it doortodoor
+and thus was born the modern pest
+control business. Now fast forwarding
+many decades much later in the early 60s
+through a bit of family drama and
+obviously his age Otto had seated
+control of the organization to his
+children and they had actually taken the
+company public in 1961 looking to
+monetize a portion of their inheritance.
+I think they floated about 15% of the
+company. But after a year of a listing
+and the company peaking previously
+shortly after the listing at a valuation
+of 72 million and despite having almost
+40 million in revenue, strong margins
+and a cashrich balance sheet, the stock
+was actually wallowing at about half
+that peak price. Now around the same
+time the Oregon children were flumxed by
+the underappreciation they would say of
+their cashrich pest business. A Georgian
+entrepreneur gentleman named Wayne
+Rollins had assembled various
+broadcasting assets. Six radio, three TV
+stations. But 1964 will be the end of
+that media identity for Wayne. As
+through this acquisition of Orcin, it
+begun its extreme makeover, you could
+say, to one of the largest pest control
+conglomerates in the world, which is
+what it stands as today. It's still
+listed as RO on the New York Stock
+Exchange. So, the story goes that two
+independent financiers and deal brokers
+Lewis Coleman and Herb Winer engineered
+and facilitated the leverage buyout of
+the much larger Orcin by Rollins. The
+terms at the time, Aaron, were $26 a
+share, which valued Orcin at 62.4
+million. That was approaching that
+previous peak if you remember. And this
+62.4 4 million was funded through a 40
+million bank loan from credential
+insurance, a 10 million loan from Chase
+Bank, 10 million additionally in sellers
+notes which are effectively more debt
+IUS and about 2.5 million in cash. And
+so for those keeping track, that's about
+a 96% levered buyout. And while Rollins,
+by the way, just as a fast forward, only
+reports consolidated numbers today,
+analysts believe that the Orcan
+subsidiary is doing over 1.5 billion now
+in annual revenue. So I think it's fair
+to say that Otto would be proud of that
+return on his two quarters back in 1901
+of what you could call preede money from
+his dad. So a fascinating story, but you
+might have noticed that while that was
+certainly an LBO in the literal
+interpretation and definition, these
+proto private equity days were largely
+financing corporate to corporate
+takeovers without institutional LP
+money. They were dealmakers and they
+assembled capital from various sources
+using their personal networks and
+relationships. In fact, to my earlier
+point on alternative histories and
+variations of definitions, you could
+make a very good argument that the
+merchant banks and the robber barons of
+the guilded age, think JP Morgan, Andrew
+Carnegie, the Vanderbilts, the Warbergs,
+they all took part in buyout activity
+and takeover financing from their own
+balance sheets around the turn of the
+20th century. So again, I'll leave it to
+you Aaron and the listeners to determine
+whether this orcin story is the best
+version of the first LBO. John, does
+this make you a buyout manager yourself?
+I'm sure you've given some loans to your
+children and the Bowman GP fund sounds
+like that might exist, too.
+>> Yes, although I'm not sure what you'd
+call this. I've given several loans that
+don't have any coupon in return, and
+there's no equity kicker. Let's just be
+clear on that. So, there's no leverage
+in the pure form to my debt facilities.
+It is more of a charitable bank is what
+I describe it as.
+>> Well, I hope your kids are listening and
+they can appreciate all this. I can
+assure you they're not. So there you go.
+They were forced to listen to one
+episode and I think they've retired
+their subscription, but oh well. So
+jokes aside, in order to understand how
+we evolved from these saber rattling
+financeers and cowboys to the modern LP
+fund innovation and asset class that we
+all know today, we need to return to our
+story in the '60s. So a month after the
+Rollins deal for Oregon, this is again
+July 1964, Business Week, the magazine
+called the Oregon Exterminating Company
+deal one that quote truly captures the
+imagination. End quote. Well, Business
+Week wasn't the only one that took
+notice of the opportunistic success and
+the obvious monetary benefit of using
+largely debt to finance take privates
+and takeovers. Jerome Colberg Jr., then
+head of corporate finance at Bear Sterns
+and his younger proteges Henry Kravis
+and Kravis's cousin George Roberts also
+found the buyout process what they
+actually termed bootstrap investing
+quite dreamy themselves and they began
+experimenting with their own series of
+buyouts while they were still employed
+with Bear Sterns. So through the 60s and
+70s, they began setting up these
+personal individual limited partnerships
+to pursue companies that that trio felt
+were performing well below their sales
+and profit potential and perhaps had
+assets that could be more optimally
+monetized. These were typically
+family-owned businesses that were
+struggling with succession and needing a
+liquidity event and some restructuring.
+So to fund the takeovers, just as with
+Oregon, the three usually borrowed 90 or
+so% through high yield debt shops and
+funded the remaining 10% through equity
+from those limited partnership funds. So
+for several years, Coberg and his two
+counterparts had lobbyed the executive
+team at Bayer to create their own
+investment division for them to do this
+full-time. But after repeated
+rejections, tension had built between
+the three and leadership to the point to
+the breaking point, you could say. With
+all this time that execs thought they
+were spending on a hobby so that
+ultimately in 1976 the three had had
+enough and they would leave bear to
+start of course Colberg, Kravis and
+Roberts or KKR and they would not waste
+any time getting started in their new
+address in 1976. Almost immediately they
+made their first acquisition buying AJ
+Industries manufacturing company for 26
+million. In that same inaugural year
+they would go on to buy two more small
+companies. But here's where this
+inflection point occurs because in 1978,
+this is obviously two years later, they
+raised and launched their first and as
+far as I can tell, Aaron, in history,
+the first ever private capital
+collective LP fund, meaning multiple LPs
+are funding a traditional draw down fund
+and they raised a whopping 35 million.
+Now, before this first fund, I should
+say that most of the equity capital for
+those isolated limited partner vehicles
+they used at Bear and that first year at
+KKR was one-off insurance money. Again,
+they were really working the phones of
+their networks. But a critical
+regulatory milestone had just occurred
+in the latter years of the trio's time
+at Bear Sterns, and that of course was
+the Orisa Act had been approved in 1974.
+And that provided a huge tailwind as
+they entered fundraising for their very
+first fund. Orisa was more than a decade
+response. It actually was initially
+catalyzed way back with the JFK
+administration and it was attempting to
+address the systematic underfunded
+status of public pension systems. And so
+as such in 1974, as I said, it
+introduced minimum fiduciary duty
+requirements, a focus on performance
+comparison and benchmarking. And most
+importantly for our story today, it gave
+broader interpretation and leeway to
+what types of asset classes could be
+included in these institutional pools.
+So pension fund CIOS were liberated, you
+could say, to be a bit more creative in
+their asset allocation. So in this first
+KKR LP drawdown fund in 78, the state of
+Oregon invested $10 million. This was
+the very first instance of any US public
+pension fund investing in any type of
+alternative as we call it today. They
+and all their brethren were 6040 and
+that was probably by the way 60% fixed
+income or more. But Orisa had nudged
+them to consider other ways to maximize
+risk return optimization. And Oregon's
+neighbor Washington would follow a
+couple years later and eventually
+Michigan and New York City jumped into
+KKR's funds during the early 80s as
+well. So again, alternative history you
+could choose as well. The first
+acquisition using institutional LP money
+from that KKR fund was a manufacturing
+conglomerate in Buffalo, New York called
+Hudai in 1979 for 355 million. And so
+due to KKR's early successes, the
+floodgates just open violently to this
+approach to financing and buying
+companies and retooling them,
+restructuring them, and selling them for
+a profit. Over the next decade, the 80s,
+it is estimated that over 2,000 LBOs
+were completed for a cumulative value of
+over 250 billion. Some of the more
+notable takeovers during that period
+were Safeway. That was my grocery store
+growing up, Aaron, just so you know.
+That was for 5.5 billion in '86.
+Beatatrice, the consumer goods
+conglomerate. So think the Samsonite
+Tropicana brands among others for 6.1
+billion. That was also in ' 86.
+Federated Department Store is for 6.6
+billion in 1988. That's Bloomingdales,
+Phileen for you Boston friends among
+other store brands. William Simons, and
+by the way, William Simon had just
+completed his term as Nixon's Secretary
+of the Treasury. He purchased Gibson's
+greeting cards for 80 million. And that
+was iconic not because of its size. This
+was in 82, but rather because Simon made
+200 times his money in only 18 months
+when he took it public. So his 330,000
+of cash turned into 66 million. That is
+the power of leverage to say the least.
+And all of this, of course, culminated
+in the most famous of all, the 25
+billion 1989 KKR takeover of RJR
+Nabiscoco, immortalized in the book of
+Barbarians at the Gate. And still, I
+should say, which is just shocking, more
+than 35 years later, the fourth biggest
+LBO still of all time. That one, which
+could be a whole another episode by
+itself, was truly excess personified. So
+Erin, before I shift to the
+circumstances on how we begun shifting
+to operational value creation, I think
+it's important to spend just a few
+minutes here, pause here, and break down
+the anatomy of these what I've called
+proto PE deals. Who were the actors? I
+hinted at a few examples, but who were
+the players generally? What did the
+capital stack look like? Where did the
+funding come from? How did this all work
+back in those early days? And I think at
+the very beginning of the episode, you
+were describing swashbuckling pirates
+and all sorts of different descriptors
+for these transactions. As I was going
+through this, I was thinking about the
+late8s into the '9s. This was the birth
+and adolescence of the modern LBO that
+we're familiar with today. It's
+obviously changed a lot since then, but
+like a lot of young toddlers, there's a
+lot of kicking, screaming, and in some
+cases, dirty diapers. So now that you've
+got that mental image, we'll get serious
+on the actual structure. But I think it
+does paint an image of this time or
+you've seen greed and excess in this
+industry and then the evolution since
+then. So in the early LBO days, these
+transactions were all a little bit
+different. You walk through some of
+those different examples, but they all
+had a few things in common. One is the
+high leverage. So you mentioned that
+already. Second, which I'll get into, is
+these complex capital structures. The
+early stories that you were telling of
+banks coming together to provide
+financing is the early side of this, but
+as you got into the 80s and 90s, there
+were a lot more players, which I'll walk
+through. And then of course is that
+mission of more aggressive cost cutting
+asset sales, all of which to juice
+returns and return quickly value to
+shareholders. So this truly was the
+greed is good era of private equity. But
+rather than talk in hypotheticals, John,
+I think it is helpful to use this KKR
+buyout of RGR and Nabiscoco, which is I
+think the quintessential illustration of
+this time period. So obviously one of
+the biggest still one of the most
+high-profile at the time as well and it
+also carries all three of those
+characteristics that I described. So to
+break things down, the total transaction
+value, as you mentioned, was 25 billion,
+which at the time was the largest. And
+here's how the deal actually looked when
+you start getting into some of the
+subcomponents. So 25 billion at the
+headline level, 21 to 22 billion of that
+was financed through debt and 3 billion
+or so through equity. So if you do the
+math, that's roughly 85% leverage on
+that particular deal. And that
+represented a debt to Ebida multiple of
+close to eight times. And for context,
+today a typical on average debt to Ibida
+is somewhere around five times. So we've
+come down significantly since then, even
+with lower rates. You have to remember
+at this time interest rates were much
+higher than they were even today. Now
+like most transactions at this time, the
+component of that 21 to 22 billion in
+debt financing came from multiple
+sources and it was pretty complicated.
+So no longer just banks. But in RGR's
+case, when you break things down, it
+amounted to this breakdown
+approximately. So 7 billion in senior
+secured debt and this was provided by
+the banks. This was the senior part of
+the capital structure backed by assets
+senior secured typical debt that you
+even saw in the early stages of a lot of
+these transactions.
+9 billion in high yield junk bonds. So
+at the time the rates on these bonds
+were mid double digits. So very
+expensive debt that was coming from the
+public markets unsecured. Three billion
+in bridge loans which these were just
+short-term loans and the idea was to
+refinance them later into high yield
+bonds. So add that three on to the nine,
+you've got 12. So almost half of the
+debt was financed in the high yield junk
+bond market. And then finally two
+billion in the other stuff which is a
+technical term John I don't know if you
+knew that but that included things like
+sellers notes that you mentioned
+preferred equity and other sources of
+financing. So this was one of the most
+complicated capital structures in the
+industry at the time and it was really
+expensive. The interest alone across all
+of those different sources was around 2
+billion per year which was barely enough
+for the cash that was just being
+generated by the company to cover. You
+have to remember RJR and Nabiscoco was a
+pretty boring consumer staples company
+that sold food and tobacco products. So
+it's not like this was a high-flying
+tech company with a lot of upside in
+terms of revenue generation. So as a
+result of the debt burden alone, the
+company struggled to deliver on some of
+the operating metrics that was necessary
+in order to just cover the debt. And we
+saw numerous asset sales throughout the
+rest of the9s, especially as KKR
+struggled to service the debt levels
+within the company itself. RJR wasn't
+the only one like this, and some deals
+were more successful than others, but
+the structure was pretty common. Other
+notable names throughout this era
+included Duracell, Hospital Corporation
+of America, and then of course Toys R
+Us, which we've talked about in previous
+episodes, which really ushered the late
+90s into the 2000s. So John, I'll leave
+it there, but I think this is a good
+transition into that next phase as the
+model began to get challenged.
+>> Toys R Us has gone back to the well a
+few times into private equity and LBO.
+They just can't catch a break. The 85%
+Aaron just to put a benchmark or an
+overunder on it. Was that about average
+for the debt level, debt percentage I
+should say, at that point? Was that
+higher or lower?
+>> That was about average in terms of the
+makeup. And you even gave a couple of
+examples a few decades prior where the
+leverage component was higher. I think
+what's different about this transaction
+is the source of those funds. It might
+have been 80 to 90% but a lot of that
+was coming from banks which had a lot of
+requirements maybe less expensive in
+terms of the interest being generated
+from those loans. But in this instance
+pretty typical debt allocation but very
+different in terms of the source of
+funds. And that's hence the beginning of
+the high yield debt junk bond explosion.
+>> Long way from a couple quarters.
+>> Yes, indeed. All right. Well, let's
+return to our story. That was really
+helpful, Aaron, just to frame that and
+understand how those structures work.
+So, as we've been describing this era
+and as Aaron walked us through a couple
+examples, this era was all about access
+to capital and mostly debt capital. Very
+little attention was paid to the
+operational efficiency or finding new
+strategies to grow. In some cases, these
+businesses, as Aaron mentioned, really,
+there was no expectation that they had a
+lot of growth capability in them. This
+was about flipping. It was really about
+re-engineering the balance sheet to
+significantly steepen the payoff curve
+towards an exit. As one blogger put it,
+quote, "It was an era defined by
+boldness where big money and big debt
+made big returns." End quote. The
+original dealmakers use financial
+sorcery, things like capital
+restructuring, tax arbitrage, asset
+sales, dividend recaps, and borrowing on
+top of borrowing on top of borrowing, as
+Aaron talked about, to create
+superersized outcomes, or at least when
+it worked, they created superersized
+outcomes. So, KKR was joined in the 80s
+and 90s by early entrance like Forceman
+Little, Thomas Lee, Leonard Green,
+eventually the other behemoths we've
+covered at length on this show,
+Blackstone, Carile, and Apollo. But the
+decade that begun with the dotcom bubble
+in the early 2000s and finished with the
+recovering war zone that was post GFC is
+when the winds began to shift and new
+pressures were placed on these firms to
+mature to grow up to find other ways to
+add value to their portfolio companies
+outside of the strip and flip model you
+might call it. So what were some of
+these pressures that started arising in
+the '9s and the 2000s? first, and we
+devoted a whole episode on this show
+earlier this season to the poor PR,
+partly self-inflicted, but the poor PR
+of the private equity industry. And
+let's be honest, the hostile corporate
+raider reputation of these first few
+decades that we've just walked you
+through largely still persists on Main
+Street today. Whether we think that's
+fair or not, that's the reality. Well,
+those early day shenanigans and
+high-profile bankruptcies of deals
+eventually caught up with them with the
+industry, and public scrutiny began to
+tighten up. Wall Street's Gordon Gecko,
+which of course Aaron just quoted,
+"Greed is good." Bonfire of the
+Vanities, Masters of the Universe. These
+archetypes loom large in defining the
+private equity brand. And the very real
+RJR Barbarians at the Gate cast a long
+shadow over this industry. So headline
+bankruptcies in the 2000s continued.
+Caesar's Entertainment, Energy Future
+Holdings, Linens and Things, Readers
+Digest, household businesses and brands.
+More recently, as Aaron mentioned, Toys
+R Us, included massive layoffs,
+excessive debt, flawed growth
+assumptions, and poor operational
+oversight. And these case studies, while
+statistically exceptions, nonetheless
+became cautionary tales and poster
+children that the public began to wield
+to begin casting stones at the industry.
+So, the first reason here is that the
+eye of the public eye began to close in.
+But number two, as we described, once
+the spicks of this tsunami of capital
+turned on and all these copycats jumped
+in to join KKR, competition massively
+increased. According to Pitchbook, the
+number of PE firms globally grew 143%
+between 2000 and 2014. Fundraising in
+the US alone skyrocketed from 68 billion
+in 2001. That's the whole industry, not
+the big firm as you might consider
+today. 68 billion in 01 to a peak of
+nearly 350 billion just before the GFC.
+So there was suddenly a ton of capital
+and dealmakers chasing new
+opportunities. And this of course drove
+up purchase multiples significantly and
+began to pressure firms to think outside
+of the financial magic and the multiple
+expansion to something more
+differentiated to create real value you
+might say versus masquerading shell
+games on the balance sheet. The period
+of buying companies for mids singledigit
+Ebida multiples and flipping them for
+double your money in a few years was
+really drying up as these entry
+multiples ballooned around that period
+of time to 9 to 11 times. You had to
+find other ways to extract value. And by
+the way, Erin, as you know, I just
+quoted 9 to 11 times. Like I'm dropping
+a mic there, but entry multiples are
+probably 150% of that today. So even as
+I tell this story, it's fascinating how
+we tend to move the goalposts of
+reasonable valuations even from this
+high-flying peak that we're describing
+here. So third, cost of capital. While
+historically low interest rates of
+course persisted through even co the
+lending industry dynamics fundamentally
+changed after the GFC after the systemic
+paralysis of the credit markets in 2008
+fall of Lehman Bayer Meil Lynch among
+others massive new regulation and
+capital controls on banks were
+introduced and the easy and loose money
+decade that led to the subprime crash
+gave way to yes the rise of private
+credit but in the meantime a whole lot
+more friction extensive due diligence
+process higher lending standards And so
+with the relative credit tightening and
+this structural shift, it just got a bit
+harder to make money versus those
+houseian days of the 80s. And then
+fourth and finally, the other pressure
+that arose in this period of time was
+that LPS themselves began to get more
+demanding as the balance of power
+shifted to the investors. As more of
+these collective LP funds were
+proliferating, the LPs had a stronger
+voice. So, endowment, pension, SWF
+boards and staff began tightening the
+screws on manager selection, demanding
+that GP showcase the ability to create
+sustainable and repeatable long-term
+value versus again these financial
+statement gymnastics. This expectation
+of durable value ad became even more
+important more recently as ESG
+considerations leaked into the culture
+of large LPs. the idea of social
+responsibility took hold in their
+investment beliefs and so the asset
+owners and the clients were holding
+themselves and by extension their
+managers to a broader and more strict
+definition of fiduciary
+responsibilities.
+So these new pressures began challenging
+the conventional wisdom and the ability
+for these firms the GPS to continue to
+drive and produce the returns they were
+used to for those first couple decades
+of their existence. They needed to
+showcase the ability, you might say, to
+produce alpha versus this riding the
+waves of beta they had been enjoying
+like multiple expansion and access to
+balance sheet leverage. They needed to
+begin finding other ways to improve the
+enterprise value of the portfolio
+companies. And as we said in the title
+of this episode, they needed to begin
+morphing into operational artisans
+instead of merely financial engineers.
+But who would move first? I mean this is
+a big change with very different
+competencies and identity of talent and
+organizational posture. Well back in
+1978 the same year that KKR raised their
+first fund Dublier Eugene Clayton and
+Joseph Rice founded Clayton Dublier and
+Rice or CDNR. CDNR is often called the
+godfather of the operating partner
+model. And the operating partner model,
+as they originally imagined it way back
+in the late 70s, was the placing of
+seasoned executives in their portfolio
+companies that through their managerial
+expertise could unlock value and drive
+performance. On the history section of
+CDNR's website today reads the following
+quote, CDNR was founded on a simple
+premise. Good investments results from
+sound decision-making, and great
+businesses are built with a commitment
+to operational excellence. The founders
+shared the belief that the combination
+of financial and operating capability
+would lead to better decision-making,
+more effective business building, and
+strong investment performance. They
+called it an operational approach to
+private equity investing. End quote.
+Now, frankly, Aaron, there's probably a
+little bit, as with all of our websites,
+of revisionist history here, or at least
+a sprinkling of exaggeration in this
+origin story, as these founders, let's
+be honest, they were primarily financial
+engineers to start as well, just like
+everyone else. Their original investment
+thesis was to focus on carveouts and
+turnarounds where significant
+intervention and capital restructuring
+was needed. But to their credit, pun
+intended there, as early as the 80s,
+their insight on the power of leadership
+compelled them to begin building a
+network of proven CEOs and experienced
+corporate leaders to install in their
+companies. So their model was at least
+financial engineering plus. Many of
+these operating partners were from large
+organizations like GE who had a deep
+understanding of supply chain
+rationalization, asset utilization,
+labor optimization, all the elements of
+course of Jack Welch's six sigma
+worldview. And this hands-on operational
+leadership well ad hoc and arguably more
+brute force cost cutting to start begun
+to unveil or peel back exciting lessons
+and it started to write the playbook for
+more comprehensive and programmatic
+value creation. So as they entered the
+90s and 2000s, this is again post.com
+crisis, CDNR really begun to
+institutionalize the operating partner
+model. These leaders were no longer just
+dropped in and asked to cut costs and
+polish up the machinery and the
+workflows for an exit, but executive
+level leadership begun to be viewed as
+an execution enabler now as a key
+competitive advantage. They were at the
+table were on the ground floor and
+aligned with the original investment
+thesis. They participated and
+contributed to the due diligence and the
+pre-transaction plan. And then postdeal,
+they were charged with sustainable
+long-term value creation. The partners
+called this their industrial approach.
+So transformative change that
+effectuated higher and more durable
+margins was the new blueprint. That was
+really the imagination of C, D, and R.
+So these operating partners now sought
+strategic M&A deals, expansion in new
+geographies or products, digitization,
+talent mapping, salesforce
+reorganization, and other levers to
+maximize the potential of the business.
+So CDNR really deserves much of the
+credit for pioneering this space, at
+least being the very first vocal
+proponent of operating value
+improvement. Now, Platinum Equity, our
+guest today, was founded in 1995, still
+a fairly early entrant, and postured an
+acronym they continue to highlight
+today, MN O, meaning they're combining
+investment expertise and their portfolio
+company acquisition, M&A, combined with
+the power of a quote large team of
+in-house operating professionals that
+add value from the boardroom to the
+factory floor end quote. So, MNA plus O.
+In 2000, KKR, back to our original
+protagonist here, stood up an internal
+division called Capstone. Capstone was
+an in-house roster of operators solely
+engaged to help portfolio companies
+improve performance and enterprise
+value. Sound familiar? CDNR would
+certainly say so. Capstone along with
+Blackstone are probably today seen as
+the industry benchmark for running this
+capability at scale with teams of
+unprecedented size that focus on
+everything from corporate governance to
+human capital to growth and expansion.
+But other early movers back in the 2000
+towards the operating model were Bane
+Capital and that was likely out of the
+consulting methodology and their DNA on
+their consulting business TPG and Helman
+and Friedman. So by the 2010s, it's fair
+to say that every major private equity
+house led with operating improvement
+versus cost cutting and certainly over
+financial engineering. Almost all GPS
+have a dedicated value creation team
+like Capstone at KKR. An army of funible
+operating partners that CDNR created or
+at least modeled that they could move
+around the proverbial chessboard of
+their portfolio companies. And they
+created which is really standard across
+the industry now what's called value
+creation thesis as part of the sourcing
+and deal closure process. So the map is
+put in place before the transaction even
+closes. And these value creation thesis
+now extend to sales optimization, ESG,
+pricing strategy, culture, incentive
+alignment, broad tech stack integration,
+of course, AI is top of mind these days,
+analytics, rigor, procurement synergies,
+and marketing best practices among many,
+many others. As we said a number of
+times, sustainable EBIDA improvement was
+now the holy grail. And this is where my
+portion of the story really reaches its
+end. However, before I hand to Aaron, I
+do want to pose a parting question that
+perhaps we can press Jacob on. And to me
+is the critical response of this entire
+episode, especially if you're an LP
+that's listening. Because when seemingly
+every GP says they focus on a
+differentiated set of proven and
+repeatable value creation capabilities,
+well, it logically follows that this
+just can't possibly be true. There has
+to be a spectrum of pedalling charlatans
+on the one end all the way to superstar
+artisans and a whole lot of participants
+in the middle. And how do we discern the
+players from the pretenders? I think
+it's a really important question. On
+platinum equity's website today, it
+states, quote, "We believe our
+commitment to the O, remember again M
+and A and O sets us apart from other
+firms and helps us build strong, healthy
+companies and create meaningful
+long-term value. Platinum is set apart
+and they've made a business out of this
+and that's probably fair. But the
+phraseology and verbiage I hear all the
+times in decks and speeches across the
+industry and at conferences. So where
+does lip service end and demonstrative
+proof begin? The financial wizardry is
+still there. It's just a bit more
+subtle. And how do we make sure we're
+understanding the attribution that
+creates value from each of these GPS? So
+Aaron, on that note, baton passed as we
+progressed into the teens and through
+the pandemic ultimately. How did OVA
+emerge as the dominant model? What
+avenues and activities really define
+what these GPS are doing with their
+portfolio companies?
+>> Yeah, and I love the four points that
+you brought up a little bit earlier,
+John, of the reason why we've seen this
+evolution. And if I can add a fifth,
+which I think is a good segue into the
+more recent past decade, 15 years or so,
+it's just the complexity of the private
+equity industry and in particular the
+different sectors that these GPS are
+playing in. RGR Nabiscoco was again that
+boring consumer staples food and tobacco
+company but now you have private equity
+heavily invested in tech in software
+cloud and all of these require a lot of
+more subject matter expertise a lot of
+them chase platform types of solutions
+and there's a stat when I was doing some
+research on this from pitchbook that
+looked at just add-ons as a component of
+the overall private equity transaction
+volume and in 2007 seven. So, right at
+the beginning of the GFC, only about
+half of the transactions that were in
+place were add-ons. So, basically a GP
+coming in taking two companies or
+merging them together or adding a
+smaller company to an existing larger
+company to try to grow scale. When you
+look at the early 2020s around the COVID
+period, it was over 70%. So, this volume
+of transactions and I think a lot of
+this is driven by the tech wave that
+we've seen post GFC as well. I think
+that's another huge component. You need
+subject matter expertise in order to
+execute. So I don't know if that came up
+in your research as well, but I thought
+that was interesting during mine. So in
+terms of a more recent history, I think
+maybe starting with an example and then
+I can get into the more recent playbook.
+So I used RJR and Aiscoco as an
+illustration of the early days of
+LBOS's. So if we look at postGFC era,
+let's use a more recent example to
+contrast some of those differences in
+terms of how deals look and are
+structured and different alignments. So,
+the one that I'm going to use here is
+Dell, Dell Technologies, which is a
+pretty common one when you take a
+modeling class. This was part of my grad
+school M&A class that I took. If you
+take any LBO transaction certificate or
+course that's out there, Dell is usually
+a really good one that's used in some of
+those different courses. So, Dell went
+through different buyout transactions
+over the course of 2010s. The first one,
+which I'll focus on, is in 2013. They
+had another one a couple years later in
+16 and then ultimately we went public in
+2018. Michael Dell himself and
+Silverlake Partners were the two
+sponsors and lead buyers on this deal.
+In 2012, Dell was a public company that
+was struggling to grow and really shift
+into this new cloud-based environment
+that we now know today. Michael Dell,
+founder of the company, believed that he
+would be in a better position as a
+leader of the organization and just from
+a governance and strategy perspective to
+transform the company and adapt in the
+private markets rather than in the
+public markets. So in late 2013, Dell
+and Silverlake partners took the company
+private at a valuation of 25 billion. So
+the same valuation that we saw with RGR
+and Aiscoco. Aaron, actually I think to
+be precise, it's about $100,000 cheaper,
+which means it comes in at number five,
+not number four all time.
+>> Close enough for this particular
+example. So 24.9 billion in terms of
+valuation, but the makeup of the
+transaction looked really different than
+what we saw with the early transaction
+of RGR and Nabiscoco. So 4.5 billion in
+equity through a combination of Dell and
+Silverlake only 15 billion in debt so
+rather than the 21 to 22 billion and
+then about 7.5 billion was in cash and
+this was cash that came from the balance
+sheet so didn't have to go for external
+sourcing in order to make this
+transaction. So while the leverage was
+high, it was only about 60% of the
+transaction value instead of the 85%
+that we saw 30 years ago. And the debt
+to Ebidal multiple was closer to about 4
+and a half instead of eight. So that's
+the structure. But I think in comparison
+to what we saw with RJiscoco, there's
+also three other differences that showed
+up more in the alignment and long-term
+thinking of the transaction. Maybe not
+so much the numbers. So, first, Michael
+Dell himself was an equity owner in the
+private company. He effectively rolled
+his 750 million in equity from the
+public company into this new privately
+held company and then Silverlake put up
+the rest of the capital in the
+transaction. Second, the debt was much
+less complicated and aggressive for
+Dell. For example, only 3 billion came
+in in the form of junk bonds versus the
+8 to9 or 12 if you're going to count
+those rollover components. And then
+finally, of course, as I mentioned, some
+of this was self- financed as well. So
+7.5 billion was used from cash on the
+balance sheet, which meant that the real
+debt was even less. There was less
+leverage in the system. While the deal
+structure isn't everything, you can
+probably see the differences just in
+terms of the alignment and the attitude
+between the new equity holders of this
+private company versus what we saw many,
+many years ago. The buyout of RGR
+Nabiscoco was focused on extracting
+value and using debt to juice returns.
+And in contrast to that, the Dell
+transaction was similar valuation, but
+much more focused on turning the company
+around to take advantage of new trends,
+new technologies, and so on. So, for the
+sake of time, I won't discuss the
+details of the following Dell LBO a few
+years later, but the spirit of it was
+pretty similar. Silverlake and Dell
+completed a merger in 2016 to integrate
+them into cloud infrastructure as part
+of a long-term platform strategy. So to
+bring that point back up as well and
+then of course Dell went public in 2018
+through an IPO. Now Dell is just one
+example but I think this is indicative
+of a few industry trends post GFC. John
+hit on a couple of these but first the
+leverage component has come down
+significantly post GFC. So again,
+instead of the 80 to 90% that we were
+used to seeing in the late 80s through
+the9s, we're looking at leverage closer
+to 50 or 60% for most deals. Second,
+capital structures have been simplified
+and there's greater coordination amongst
+the players. We've seen a large rise in
+middle market direct lending take the
+place of the banks in the senior secured
+space and also even if banks are playing
+in the broadly syndicated loan space the
+covenants have become much more flexible
+typically covite which works in great
+times and can be dangerous and
+challenging times but there's much more
+partnership and coordination amongst the
+equity holders and the lenders to these
+companies and then as John just
+mentioned third you've started to see
+these GPS build out their operator
+expertise and try to partner with
+organizations to maximize value over a
+longer time period instead of the
+typical couple years of flipping things
+around. And then finally, another
+interesting evolution is the shift for a
+lot of GPS from IRRa measurements to
+cash multiples. Leverage creates an
+opportunity to juice IRRs, and that has
+historically been the focus for a lot of
+these GPS. However, more and more
+investors are focused on cash on cash
+returns. what are you actually earning
+for your investment which isn't as
+easily gained by some of the tactics
+that leverage provided in the 80s. So
+that leads us to today. Let's talk about
+the playbook. So often times you'll see
+organizations discuss their operational
+playbook which is their quote unquote
+secret sauce dedicated to value creation
+for these organizations. And these are
+simply the levers that these operating
+teams focus on when they get really
+hands-on with the business or they're
+developing that thesis as John
+mentioned. Now, every GP has their own
+way of articulating their playbook
+strategy, but when you zoom out and try
+to look across all of the major players,
+there's a bit of a common taxonomy
+across four to six levers that they tend
+to pull with these organizations. So,
+I'll list them quickly and then we can
+get into how some of the different
+players lean into ones versus others. So
+first is revenue growth. Sales and
+pricing is an area of focus for this.
+Second is operational efficiency and
+this is really focused on margins ITA
+expansion and so on. How you actually
+managing the business from an
+operational perspective. Third is M&A.
+These are the add-ons that I was talking
+about earlier. Platform based
+strategies. How do you build synergies
+across multiple companies within the
+industry? Fourth is talent and culture.
+So leadership development, broad-based
+equity participation for employees and
+so on. Fifth is sustainability focusing
+on climate, people, human rights, etc.
+And then six is capital efficiency, the
+good old financial engineering that we
+started this episode talking about. Now
+each GP might focus on a handful of
+these. It may not be all four or all six
+depending on the organization. And these
+are all an art versus a science. Some
+are much more explicit than others, but
+when you look at places like Blackstone,
+Blackstone tends to focus on operational
+efficiency and M&A add-ons, whereas KKR,
+as we've talked about, has significantly
+shifted from the early days of capital
+efficiency to revenue growth and talent.
+And of course, we covered this in a
+previous episode on the PR side of this
+with Pete Stavros. Now, some of this
+becomes a little bit clearer when you
+start to think about where some of these
+GPS play in terms of segmentation. So
+for example, Apollo is still probably
+one of the major organizations that
+maintains that reputation on capital
+efficiency. They're typically looking at
+more distressed assets, valueoriented
+assets to try to turn companies around.
+They may be less inclined to do M&A
+solutions and emphasize different
+elements of this. On the other hand,
+Vista has a focus on software and tech,
+which means that they're much more
+focused on the M&A platform-based
+strategies to try to scale revenue
+growth, but they may not focus so much
+on the capital efficiency because
+leverage is not a big component for a
+lot of these organizations. So, it
+really depends on sector bias and where
+some of these organizations started to
+cut their teeth in terms of making these
+transactions. Now, the natural question
+to ask here is to John's point, how much
+of the value creation actually comes
+from the GPS versus these just being
+good companies? After all, GPS want to
+invest in these companies for a reason.
+They're typically generating healthy
+cash flows and are stable, but what is
+that correlation versus causation? So,
+I'm also very excited to get Jacob's
+view on this as a GP himself because
+it's really, really hard to break these
+components apart. As GPS talk up their
+operational expertise, practitioners and
+academics have tried to determine who's
+a good operator versus who's just good
+at identifying good companies. By the
+way, identifying good companies isn't a
+bad thing, but understanding where the
+actual value creation comes from, can be
+really helpful for manager selection,
+particularly LPs who are potentially
+willing to pay up for fees where that
+value is being created. I won't go into
+the details, but before I turn things
+over to John to close us out, I'll just
+highlight two studies that I think our
+listeners should check out on this
+correlation versus causation question.
+One is from Verdad Capital which looks
+at the US buyout industry and the other
+is from the European Bank for
+reconstruction and development that
+looks at the European component of the
+buyout industry and both of them try to
+disagregate what is attributable to the
+GP value ad versus GP's ability for
+selecting portfolio companies that were
+already on a positive trajectory to
+begin with. I'd say just as a headline,
+the results are still mixed, but it's
+not a situation where we can paint the
+broad industry with a broad brush either
+way. So, I'm excited to tease this a
+little bit further with one example with
+Jacob and Platinum Equity, but that's
+the playbook, John. Curious what you
+think. Well, I think you really
+highlighted the reality of today, which
+just looks like a 180 from where I
+started back in the early days of KKR
+and Rollins and Orcin. And it's a
+fascinating, as we often talk about,
+coming of age story. That's really where
+I think our guests can be really helpful
+is that we can walk through the history.
+We can give great puns on what these
+individuals look like and how they
+behave, but ultimately it's really
+valuable to bring in folks that are
+actually practicing and doing this on
+the ground. So with that, let's
+transition to Jacob Katzub, who is the
+co-president of the 50 billion AUM
+platinum equity. As I said a little bit
+earlier, one of the true pioneers and
+early movers on operating value ad. So
+stay tuned for halftime and we'll come
+back with Jacob.
+Well, welcome back to halftime in this
+episode of Capital Decanted and I am
+just delighted as promised to be here
+with Michael Gross, co-CEO and
+co-founder of SLR Capital Partners.
+Michael, welcome to Capital Decanted.
+>> Thank you for having me. Well, Michael,
+I thought it would be helpful for the
+listeners and certainly me to get a
+little bit of a tutorial, a primer on
+ABL, on asset back lending. I think this
+is one of the hottest and trendiest
+areas as a subset of this private debt
+explosion that we've seen in the last 5
+to seven years, let's call it. So, it
+has advanced and matured considerably in
+the postcoavid days. So, I wonder if you
+could just quickly walk us through the
+categories, the taxonomy that make up
+this asset class.
+>> Sure. And it's a very timely question
+because as you mentioned, it seems to be
+in 2024 and into 25. This is the hot
+area. In 2023 was quote unquote the
+golden age of private credit when you
+saw a real explosion to cash flow
+lending. And now we're seeing is people
+moving beyond that and looking to find
+other ways to make money within private
+credit. I think it'd be helpful to begin
+by distinguishing between ABL and ABS
+and ABF versus special finance. This
+alphabet soup can be very confusing to
+new investors and allocators to the
+space. Yet the riskrewards in financing
+the underlying collateral of various
+hard or real assets can be very
+different. The ABL market assetbased
+lending has traditionally been defined
+by carving out assets within working
+capital which can be quickly converted
+to cash. And the most common types of
+assets here being financed are
+receivables and inventory. And this is
+lifeblood of US companies and it's been
+around forever. But today we are seeing
+more private credit managers expand the
+opportunity set by going into not
+necessarily ABL but into ABS and ABF
+which include financial securities that
+typically have a Q set or extend further
+down the balance sheet to property sale
+leasebacks plant equipment and IP and
+it's interesting that the financing of
+these financial securities that has been
+very prevalent in the press and very
+prevalent within private creditor
+manager marketing materials includes
+assets that tend tend to be more
+associated with the consumer-like credit
+space like credit card receivables, non-
+agency residential mortgages, auto
+loans, and student loans. These pool of
+assets, financial assets tend to be very
+large and present very much scaled
+opportunities for large private credit
+managers to distribute in size while
+also presenting opportunities to be
+financed by insurance capital. We're a
+little different and one of the reasons
+we're having this discussion is we've
+been focusing on assetbased strategies
+now since 2012. So this is not a new
+flavor for us and we do it for a variety
+of reasons and we'll get into that a
+little bit later. But the type of assets
+that we do within ABL lending are
+stretch AL, healthcare ABL, equipment
+finance, inventory finance, life science
+finance, and lender finance. And these
+are all strategies that are extremely
+high in labor intensity to both source,
+service, and monitor the collateral. And
+as a result, the reason we like to be in
+these businesses and the reason why
+investors are extremely interested today
+is there's what I like to call the
+complexity premium involved with these
+because they are highly complex
+strategies and as a result our borrowers
+tend to pay higher returns which allows
+us to generate higher yields to investor
+than other mainstream lending
+strategies.
+>> That's really helpful. You alluded to
+allocators a little bit and I'm curious
+how your conversations go when someone
+is constructing a diversified portfolio
+with all types of risk premia. You
+talked about higher rates and returns.
+These are obviously different drivers,
+business and economic drivers than maybe
+your pure vanilla cash flow direct
+lending. How do you counsel them to
+think about where this fits in a
+portfolio? Michael?
+>> Yeah, it's a great question and we're
+have these conversations constantly. But
+I think in answer to that question I
+first help it understand why ABL is
+invoked today from an investor
+perspective. It's attractive to
+allocators investors for its absolute
+return and its counteryclical profile
+and that counteryclical profile comes
+from a recurring current income stream
+in the high single digits to low double
+digits. It doesn't have much correlation
+to base rates and importantly doesn't
+have much correlation to the cash
+lending strategies that you alluded to.
+It's also an inflation hedge and it
+tends to have higher recovery rates from
+collateral values and less volatility
+than cash flow lending. Collectively, if
+done properly, an allocation to ABL
+should create more attractive risk
+adjusted returns and expand a
+portfolio's efficient frontier. We like
+to talk to our clients and ABL loss
+rates tend to be lower than cash flow
+loans. And importantly, they are more
+constant throughout cycles, whereas cash
+flow loan loss rates will vary based
+upon the economic cycle. And also
+lastly, direct lending, more traditional
+direct lending has become extremely
+competitive and borrower friendly. And
+with the advent of these tremendously
+large perpetual private BDC's, rates
+been coming down and structed
+lending space. What we have found though
+is that allocations to ABL, whether it's
+from a pension fund, an endowment or an
+RAIA, still relatively early in its
+adoption, yet the opportunities for
+access have increased meaningfully over
+the last couple years, including from
+the asset liability mismatch dynamic
+that took place at the regional banks in
+2023. But we do think there's still
+there's still a challenge here in
+getting clients to move into the space
+because AL's still grappling with the
+bucketing problem that private credit
+used to have versus public credit. Most
+often we find the decision to allocate
+the AL follows a pre-existing investment
+in direct lending by these parties. And
+lastly, I think most allocators view
+this direct lending exposure as private
+credit beta and are now looking to AL
+and niche lending strategy to provide
+them with private credit alpha.
+>> Yeah, it's really interesting. It is a
+bit of a mashup in a way in that it
+shares some DNA with real assets. You
+mentioned inflation protection and then
+certainly it's fixed income in its very
+essence as far as being private
+debt-like and with a little bit of a
+premium given the return stream and yet
+it has very low loss rates. So it's a
+very interesting combination that you're
+charting a new course here Michael even
+though you guys aren't new to it. So,
+we're going to have to leave it there,
+listeners. And if you're interested in
+more of a primer on private credit, the
+entire space overall, we did a dedicated
+episode on that in season one last year.
+So, Michael, thanks so much for joining
+us. And listeners, stay tuned for our
+guest segment.
+Well, welcome back to this episode of
+Capital Decanted. And as promised, we
+are now delighted to have join us in
+studio Jacob Kadzub who is co-president
+of the near 50 billion of asset center
+management at Platinum Equity. Jacob,
+thank you so much for joining Capital
+Decanted.
+>> Thank you, John, and a pleasure to be
+here. Look forward to the chat.
+>> Well, I want to start with a little bit
+of historical framing, Jacob, that I
+thought you could help us with. Before
+we get to the operating capabilities and
+the rolling up your sleeves that has
+really defined this phase and certainly
+platinum equity, I'm hoping you could
+help the listeners take a little bit of
+a journey back to how we got here. A lot
+of these capital decanted stories as we
+often say are coming of age stories and
+private equity is certainly no exception
+there. So when I think of, as we talked
+about a little bit in the intro, those
+early iconic LBOs's back to the 70s and
+80s, Safeway, Beatatric, of course, RJR,
+which everyone knows about. This was
+predominantly a financial engineering
+business, and that really persisted for
+decades. They were these leverage
+wizards that would spin their magic, and
+that has really morphed into artisans,
+as you might call it, that are building
+true enterprise value with operating
+improvements. So, I'm curious on your
+perspective, Jacob, on how and when did
+we begin to start seeing that shift and
+why did it occur?
+>> You rais a great point and I think it's
+a natural evolution in private equity.
+You know, as competition has increased,
+more and more GPS have been funded by
+LPS. People have had to find a way to
+continue to differentiate themselves and
+find a way to generate alpha beyond just
+the financial engineering skills. And I
+think that's the biggest driver is how
+to be different and how to do more than
+what financial engineering alone lets
+you do. There's probably not a single GP
+today who walks into an LP meeting and
+says, "Hey, we're great financial
+engineers. Please make a commitment."
+Everybody talks about operations.
+Operations though is a very amorphous
+word. It has many different meanings in
+terms of how that's actually implemented
+and executed. I don't know when that
+transition began, but I will tell you
+that Platinum was among the earliest
+firms to utilize true operational
+differentiation, having been founded in
+1995 with operations as its core DNA. In
+fact, our founder Tom Gores, our current
+chairman and CEO, is somebody who came
+out of operations. His first hires were
+a group of operations executives. And
+this group of operations executives
+together learned M&A and it takes the
+typical founding of a US private equity
+firm and really flips it on its head in
+that they are typically founded by
+ex-wall street professionals who most
+likely have not spent a day of their
+life actually working in a factory or in
+a distribution facility. So we come from
+a totally different place and when we
+raised our first fund outside capital
+fund in 2004 the idea of an
+operationsled an operation centric
+private equity firm was still very much
+a novelty being in these meetings with
+LPs they were scratching their head at
+the fact that all the leaders in the
+firm didn't come from a pedigree of Wall
+Street education and it was exciting to
+educate them and exciting to deliver the
+differentiated results that we've been
+able to deliver as the result of that
+DNA and in fact that DNA impacts
+everything at our firm from how we
+assemble our deal teams to the kind of
+diligence that we do to the operational
+impact that we make on businesses once
+we own them as well as even how we form
+our investment committee. There are
+seven members of our investment
+committee. I'm one of them, but five of
+the seven come from an operations
+background. And again, that takes the
+typical power base and voice inside a
+private equity firm and flips it on its
+head. It's a nice place to come from. I
+think everybody feels they need to have
+it in some way. But again, how they
+implement it, how they executed is a
+really wide variety of dynamics there on
+the operation side. That's really
+helpful, Jacob. And there's a bunch of
+hooks that I want to make sure we come
+back to. You talked about that fictional
+exchange with the LPGP. I know we want
+to get back to that to help the
+listeners understand the players versus
+the pretenders because everyone's
+talking about operating value. So, we'll
+circle back to that later. I have to
+imagine that retrospective too
+competition has been a big part of this
+meaning it's just harder to make money
+off of really solid financial engineer
+and you have to have a lot more than
+that certainly the cost of capital in
+more recent years has obviously I think
+accelerated the pressure to offer
+something different and truly value add
+it so again we'll get back a little bit
+to that how that's affected your talent
+map and the type of individuals that you
+both have on staff and that I know you
+have in your network when you work with
+portfolio companies I want to maybe zoom
+in however before we get back to some of
+those points. Jacob Platinum uses this
+really interesting framing of MN A and O
+meaning mergers and acquisitions and I
+assume the O you can correct me is
+operating value or operating capability.
+You've added that third element and that
+means a couple things clearly. You're
+emphasizing the third element but it
+doesn't mean you're ignoring multiples.
+It doesn't mean you're ignoring entry
+point and exit point completely I
+assume. So I'm curious as you assess a
+prospective deal, a prospective
+portfolio company, how does the calculus
+work for the value you expect to get out
+of smart timing of entry and exit and
+then the value you expect to extract in
+between those two periods? So look,
+you're absolutely right that a GP has to
+be good at asset selection, which is to
+say correctly judging the macro and the
+microeconomics that will weigh heavily
+in favor of a business being successful
+in the long run, as well as ensuring
+that you don't overpay at entry. I think
+it may have been Buffett who said half
+the battle of being a good investor is
+not overpaying or to buy it right. But
+we view operational improvement as a
+core additional pillar in our investment
+thesis, investment philosophy. And
+importantly for us, we never want to be
+just capital in a transaction. We always
+want our operations team to be impactful
+to the deal that we're working on. And a
+lot of what we do is corporate
+carveouts. I think as a firm, we're well
+known as the premier global corporate
+carveout investor. And in corporate
+carveouts, there's two elements to
+operational capability and how to think
+about it. One is you're often buying
+businesses that have never been
+standalone companies and it's a complex
+separation process and you have to be
+good at that. And then also you have to
+be good at taking a business that has
+been noncore, underlogged, underinvested
+and understand how to improve those
+operations. And so for us that
+operational element is a sin qua nonan
+in terms of making an investment. has to
+be a core part of our operational
+thesis. So, we're always looking for
+those opportunities where we're not just
+buying a great management team, a great
+company with great macro and micro
+dynamics. There has to be something that
+we can do to transform it and
+significantly improve it. So, it's all
+of those things. It's being a good asset
+selector, a good buyer in terms of not
+overpaying, but also having ways to add
+value to the business beyond just its
+standard course without operational
+intervention.
+>> So that's table stakes. There has to be
+this assessment that not only is the
+multiple outcome upon entry and exit
+compelling, but also that there is room
+to get in there, roll up your sleeves,
+and truly change the business, improve
+the business. And we'll talk about which
+levers you often pull there. I'm curious
+given that all three of those as you've
+just said need to be there Jacob on the
+front end and if you want to use
+examples that would be helpful but give
+us a sense for how that sourcing works
+where does this universe come from
+meaning you have to check all three
+boxes so where do you assess these
+companies what is the mosaic of how they
+eventually end up on your lap and then
+what do you go about doing what's the
+playbook to move through this process of
+entry operating improvement and
+eventually exit
+>> we think we're quite differentiated
+really in the entire life cycle cycle of
+an investment from whether you're
+talking about the sourcing side through
+the diligence process through the impact
+process through the exit process. We
+have some very unique takes on each of
+those things and I'll walk you through
+that arc. From the sourcing side, we
+have and we have always had a dedicated
+business development group whose sole
+job when they wake up in the morning is
+go find deal flow for platinum equity or
+if we have a platform work with M&A and
+management on finding strategic add-ons
+for that platform. And this is a group
+that's empowered to be more than just
+transactional. really build
+relationships with counterparties like
+investment bankers like CEOs, CFOs,
+heads of corporate development and
+develop relationships that extend beyond
+an opportunity that is extent at this
+moment. So quite differentiated on the
+sourcing side in that regard. We might
+call on a company for two or three years
+reminding them of who we are, what we
+look for, how we work and we're told for
+two or three years, thanks don't have
+anything for you now. But the moment
+that they have a transaction where
+they're going to devest a division, the
+very first thing they think about is,
+"Oh, that person from Platinum Equity,
+they've been calling on me a long time.
+I'm going to have them on the list as a
+potential purchaser of the business." I
+think we have become in North America
+the gold standard. I probably should say
+platinum standard for complex global
+corporate carveouts. So often find
+ourselves with reverse inquiry from
+bankers detailing their views on hey, we
+think this is a perfect situation for
+you. There's operational improvement
+here. We know you guys like that and put
+us on the list. So sourcing today at
+Platinum Equity is not an issue. We have
+plenty of deals to sort through and
+determine where we want to focus our
+resources. You asked also about
+postsourcing. What are we looking at
+from a diligence point of view? How are
+we using a playbook there? And it's
+really interesting. You mentioned
+earlier our phrase M& mergers and
+acquisitions and operations is how we
+sum up that acronym. And the point of
+that is to say that we view that as a
+single discipline. We assemble a deal
+team consisting of all of those
+capabilities from day one. This team
+goes to management presentations
+together. They model together. They go
+to investment committee together and
+they act as a unit. In many private
+equity firms, the traditional M&A
+professional is the individual who is
+the voice of I really want to do this
+deal and is talking to similarly minded
+M&A execution professionals at an
+investment committee level. At Platinum,
+we really value the diversity of
+experience that the operations side
+brings to the deal team and it's a
+consensus driven team oriented
+philosophy around bringing together
+these different perspectives and
+aligning on it something we want to do.
+If I could tell you a little short story
+about the three disciplines that we
+bring together in a team, it's a very
+traditional M&A execution discipline.
+It's somebody like myself or somebody I
+might have trained with financial
+training and investment bank quite
+typically. We also bring in a M&A
+finance resource. That is somebody who
+typically has had five to seven years of
+experience at a big four accounting firm
+doing audit and transaction services
+work together with an operations
+professional who spent a career in
+corporations working on problems and
+transformation. And if you think about
+their personalities, an M&A execution
+professional, if you took a glass poured
+roughly halfway full, the M&A execution
+professional is going to tell you every
+single time that glass is half full. You
+need to have a deal champion. There's a
+thousand reasons not to do a deal. You
+need somebody who's willing to break
+down walls, climb over obstacles, find a
+way to the finish line. You combine that
+with the personality of an M&A finance
+professional, classically trained in
+accounting, conservative, looks at that
+same glass of water and tells you every
+time that glass is half empty. And then
+you combine that with the M&A operations
+professional who has accountability and
+responsibility for underwriting change.
+And they'll look at that very same
+glass. They'll study it. They might
+pause for a moment and then they'll tell
+you that glass is 48.7% full. And when
+you can bring those three personalities
+and disciplines together and agree that
+a deal is a deal that we should pursue,
+we think we're making better investment
+decisions than the typical model of just
+an M&A execution professional saying,
+"Hey, this is a deal we ought to
+transact on." So, a deeply embedded
+embracing of diversity of experience in
+our investment process that's mirrored
+at our investment committee level. We
+have all three of those disciplines at
+our investment committee level. So our
+diligence process is different and
+during our diligence process, we are
+actually underwriting an operational
+transformation with details around
+functional area by functional area how
+much, when, how fast, what do we expect
+it to deliver. And that means that when
+we close on a transaction, we're
+actually running at 60 m an hour
+executing on that transformation plan in
+partnership with management rather than
+we buy the business now let's go figure
+it out operationally what we want to do.
+We're actually executing on that plan
+right away. And we think all of those
+ways in which we utilize our operations
+team from integration in the sourcing
+with our business development group to
+the diligence process to the execution
+of transformation all of that is really
+impactful in how we deliver results for
+our investors. I love the illustration
+around the table of the different
+perspectives and the competencies
+because I think if you're going to
+underwrite all these elements as you
+articulated, you've got to have the
+diversity of capability and as we all
+know, diversity is chaotic and it's
+messy, but it leads to better outcomes.
+So, I really like the way that you
+described that, Jacob. As most of
+listeners know and as you know, most of
+Capital Decanted is meant to be long
+shelf life. This is not a timely pod in
+the sense that we're trying to assess
+today's market. But I'm going to break
+that rule for just a minute before I
+hand it off to Aaron who I know is
+anxious to get into the nuts and bolts
+because I think this is just some
+unprecedented levels of extremes you
+might say that you're currently faced
+with. Most of which I would argue are
+headwinds. So when you think about
+fundraising and deal flow and the amount
+of dry powder, the competition, I have
+to imagine that that's creating some
+challenges. And I'm just curious if
+you'd give us a quick word on kind of
+what you're seeing out there and whether
+that's actually affecting something that
+was on my mind with all this dry powder
+with the bank account full or fuller
+than normal. Is the cap table looking
+more equity heavy than it typically does
+just because you've got to get this
+stuff in the ground? So big question, a
+few aspects to it. One, I think that the
+fundraising environment having slowed
+down has had a big impact on the asset
+class. The most vulnerable GPS in that
+regard are those whose capital is
+running out or whose time to invest
+their capital is running out. And the
+drum beat today among LPs is DPI,
+distributed to paid in. What have you
+brought back for me relative to what
+I've invested in you? And for those GPS
+whose capital has been depleted, running
+out of time, and they haven't had many
+sales because deal flow has been slow,
+they are in a situation where they have
+to compromise on value. So this is, to
+your point, an ephemeral dynamic. It
+will pass. Most of the time, I think
+buying from PE is expensive, but there
+are dynamics in play right now where you
+can actually find a value deal in the PE
+environment. In terms of the cap table,
+the cap table for sure is driven heavily
+by how well are the debt markets
+functioning. And I would say that they
+are functioning today. They are working.
+They're not frothy though. And with debt
+markets delivering say four to five
+times leverage in LBOS's today, it does
+mean depending on valuation and where
+one is hunting and paying for businesses
+that the cap tables have gotten more
+equity heavy. There really is no
+discussion today of a 20% equity check.
+It is 35% as a floor and can go up to
+50% or even more. And GPS, even if they
+have a lot of capital, always want to
+balance the equity to debt ratio in a
+way that they think is most optimal for
+generating a good on their capital. But
+we're definitely in a more equityheavy
+environment without question. And I
+think that's going to persist for some
+time. Jacob, I think that's really
+helpful in terms of the current
+environment. As a wise investor once
+said to me, DPI does not lie. So very
+helpful in the context of the current
+environment. I want to pivot a little
+bit into some of the more mechanics of
+these transaction and as you're looking
+at deals I want to focus on the soft
+stuff which tends to get overlooked.
+There's a lot of conversation on how do
+you structure a deal? How do you think
+about balance sheet and income statement
+optimization and so on but maybe if we
+zoom in on management and culture as two
+levers and we'll focus on the first
+being management. How do you think about
+the relationship with management? how
+you assess leadership at an organization
+and maybe how that's evolved over the
+course of the history of buyouts. It
+maybe started as a very adversarial type
+of relationship, but it seems like
+management is more important than ever.
+So, what are things that you're looking
+for and how do you view management in
+the context of a new transaction?
+>> Thanks for this question. It's something
+we care really deeply about and I think
+it's a really interesting question. At
+the end of the day, we've always
+believed at Platinum Equity that we are
+not investing in inventory or accounts
+receivable or PP&E. We are investing in
+people and people are what make
+businesses valuable. So leadership at
+the management level and their ability
+to embrace the operational capability
+that we bring to the table is an
+essential element of our evaluation
+process. It's something we're doing from
+day one when we first meet management
+and looking to go many layers deeper
+than just the seauite. And we're really
+looking for managers who know how to
+inspire people and how to instill a
+culture of excellence and a sense of
+urgency about everything that needs to
+be done. And those attributes are really
+invaluable in terms of where we find
+those leaders. We having been around for
+30 years have a large cadre of former
+platinum management teams that we draw
+upon for serial assignments and there's
+an interesting dynamic that plays out in
+the corporate carveout context as it
+relates to management which is as you
+can imagine it would be the very rare
+highly driven highly capable highly
+skilled executive who raises their hand
+and says could I please go work in the
+noncore division that's not typically
+where those kind people want to go. So
+what we find in the corporate carva
+context is about half the time we're
+encountering meh management to bad
+management. In our context that makes us
+excited because it means there's a lot
+operationally that hasn't been thought
+of that hasn't been gone after and we
+can tap into our network of executive
+leaders to come in and help transform
+the business. But also about half the
+time you actually have a really
+intelligent, really capable management
+team whose every idea and every
+initiative has been ignored and we have
+the opportunity to unlock that
+management team's focus on the new
+standalone division that we're
+separating out from the carveout. So it
+can often come from the company where
+they just have been unable to execute on
+their vision because they've been deemed
+noncore and been run for cash. And when
+that's not the case, we tap into the
+large network that we have. But this
+core concept of inspiring people to
+embrace change, to have excellence as
+the foundational standard of everything
+they do is really core to how we think
+about what management to put in place
+and to work with.
+>> And maybe to take that a step further as
+you go down from leadership into the
+rest of the talent pool. And I love that
+framing within the context of a
+carveout. This might be a non-core
+business that's not being invested in.
+There's real opportunity to grow and
+develop this part of the business. As
+you think about the talent pool that is
+going into this new business that's
+being spun out, things that you're
+looking for, are there particular
+characteristics in the talent pool? And
+maybe importantly, how do you think
+about getting alignment in this new
+business that's no longer part of the
+broader organization that's maybe
+comfortable at times? So, how do you
+think about that? So look, from a
+characteristics point of view, you need
+somebody, as I mentioned, who can
+inspire employees, who can rally people
+instead of being afraid of change to
+embrace change and be excited about what
+that can bring to the business. And I
+think that in this context, culture is
+really paramount. And culture, it's not
+just a set of values you can write down
+and hand to each new employee you on
+board and say, "Hey, here's our culture.
+Please follow accordingly." It's
+something you have to as a leader and as
+a set of leaders, you have to
+demonstrate every single day in how you
+behave and what you do. And when you
+demonstrate it every day, people absorb
+that and mimic that and mirror that. And
+building a culture where trust is
+pervasive, communication's high. An
+executive is as comfortable walking into
+a room and delivering tough news,
+something's gone wrong, as they are
+coming into a room and saying, "Hey,
+look at this success we've had." where
+bad news travels fast. That's a really
+important aspect of what we look for and
+what we want to create in the businesses
+that we invest in is that environment of
+trust with great communication and an
+ability to come together and solve
+problems quickly when there are
+problems. So that's what we look for and
+what we hope to find. I think employee
+engagement is a key indicator of
+success. Turnover may or may not be an
+indicator. Sometimes when you have low
+turnover, it's actually a sign that the
+jobs have become synices and nobody's
+really pushing each other and
+everybody's protected. So you have to
+look deeper than just a turnover stat at
+really what is the culture like and
+trying to understand that in your
+diligence process. And one of the things
+I think we're really good at is cultural
+change and driving cultural change in
+partnership with management in a
+business. and we're very comfortable
+investing in businesses that don't have
+the right culture, but in putting that
+in place.
+>> So, Jacob, I want to pick up on
+something you said earlier, which is
+that feeling of urgency and maybe tying
+that back with that desire for change as
+well. If you zoom out and you think
+about your initial purchase of a
+particular portfolio company all the way
+to exit, there's a lot of different
+levers that you can pull within an
+organization to drive value, create
+value, and that could be sales
+optimization, pricing, product
+positioning, all sorts of different
+opportunities within this organization
+to grow value, increase the value of the
+business, and so on. So maybe a two-part
+question. One, I'm sure there's levers
+that I'm missing when I describe some of
+those. And then two, what do you tend to
+prioritize? And is it a nature of a
+couple of these first and then others
+later? Or are there particular areas
+that you're really focused on and that
+creates a value creation process?
+>> Thanks for this question. I think it's
+important to understand that every
+business is different and what they need
+operationally varies and often varies
+considerably. Our approach has always
+been to offer all of our operational
+capabilities to an investment, but
+prioritize what is going to be the most
+impactful. It is not a push model as
+much as it is a pull model for
+management on where can platinum help me
+and be most impactful. And it's
+interesting as someone who's been at the
+firm for over 23 years now. When I
+joined, our operational capability was
+really focused on what today we call ops
+1.0, 0 which was about cost extraction,
+removing excess cost from a business and
+the firm was already world class at that
+but it's evolved over time and as we
+reflected on where can we be impactful
+to a business and deliver in a
+consistent methodical repeatable way we
+realized hey we can move up the P&L from
+SGNA into margin expansion focusing on
+things like strategic sourcing there
+businesses we buy that may have never
+looked at their sourcing for 5 years and
+there's an opportunity to go relook at
+that and dramatically improve your gross
+margin and all the way up even into
+revenue trajectory. So, we look at all
+of the P&L. We have a deep focus on
+balance sheet management and removing
+underutilized fixed assets and looking
+at working capital and where that's
+often inefficient. Sometimes we buy
+businesses where for many many years
+management's been able to say, "Hey, I
+need 10 more million for inventory." and
+whoosh a transfer comes in and they have
+$10 million and they go invest in
+inventory but no real KPIs or metrics
+around it. So deep focus on the balance
+sheet where you can on a one-time basis
+monetize for cash excess assets on a
+balance sheet and d-risk your investment
+early. We've also developed expertise on
+the tech side. We've created a group we
+call the wide group stands for winning
+in the digital era and that group is
+focused on implementing technology both
+internally in a business that improves
+efficiency and reduces friction in
+internal processes as well as externally
+with customers making a business easier
+to do business with. So we leverage all
+of that capability in our underwriting
+and really focus on what can we deliver
+that is the most impactful in the
+shortest time frame possible. And as
+we've discussed at length already, a
+deep focus and capability around talent
+enhancement is core to what we do as
+well. Delivering management the very
+best leaders they need to make their
+vision a reality. By way of example,
+I'll just give you a concrete example of
+this. We acquired a business from
+Emerson that was their non-core division
+that they called network power. We
+renamed this business Verdive. The
+business manufactured cooling and backup
+power systems for data centers. And
+under Emerson's ownership, its revenue
+was actually attritting slowly and the
+business had accumulated as a long
+non-core operation a lot of unmotivated
+senior management. And once we invested,
+we brought in really talented leaders.
+We invested in innovation around energy
+efficiency of their products. We cleaned
+up a very messy IT environment. And we
+redirected the salesforce's go to market
+from corporate data centers where the
+business was a leader but the market was
+in decline to colllocation and
+hyperscalers like Microsoft, Amazon,
+Google, Apple, Tencent, Alibaba and
+incented them to go after where the
+growth was. Putting all those things
+together resulted in a business that we
+bought for $4.2 2 billion in 2016 to
+being a public company today with more
+than $42 billion of equity market cap.
+So there is room to create really really
+exciting returns delivering what a
+business needs. So we never come in
+Aaron with a predetermined view of we
+know how to do XYZ. This is what you
+need. It's really very much customized
+by business and what operational change
+is going to be most impactful for that
+business's success. Great. I want to
+zoom back out a little bit and maybe
+similar to the question on deal flow and
+valuations and all of those current
+events. I think there's a bit of a
+current element to this, but then how
+you guys think about this within your
+own organization and that is exits and
+the timing of those exits, the different
+levers you can pull for realizing that
+value after a certain amount of time.
+So, how do you think about the amount of
+time, effort, capital, maybe emotional
+investment that you're putting in some
+of these different companies and then
+the timing of those exits and the levers
+that you have for different ways of
+exiting and I would imagine valuations
+certainly plays a part of that in this
+environment, but other things that you
+factor into that decision would be
+helpful to know as well. It's
+interesting the way we run our business
+is the investment team that was engaged
+in the diligence process and encouraging
+the investment decision by the
+investment committee has lifelong
+ownership of that investment and stays
+very engaged in how are we developing
+the investment in accordance with our
+operational transformation plan and
+importantly how is that intersecting
+with the marketplace and the opportunity
+to divest somewhat unintuitively you
+might think that having a large
+operations team and a big transformation
+plan means that we might take longer to
+exit, but in fact, Platinum has had a
+long history of shallow J curves and
+shorter hold times than traditional
+private equity because of the fact that
+we're driving this operational
+transformation plan right out of the
+gates quickly and generating value very
+fast. That coupled with the fact that
+the most prominent exit type for us is
+too a strategic who has coveted the
+business that we buy but cannot get
+their arms around the complexity of that
+corporate carveout separation or the
+complexity of the transformation. And
+once we've done our work and they have a
+simpler thing to acquire, they come buy
+it from us. And that combination has led
+to rapid exits, rapid value creation
+translating into rapid exits. As a
+matter of course at Platinum in our
+investment process we don't model
+multiple appreciation as a core part of
+our investment thesis we are modeling
+either parody or in some cases where
+we're knowledgeable about a space and we
+think things are overheated might even
+model multiple compression and the
+operational value ad has to make up for
+that multiple compression plus some on
+top but we get after it very quickly and
+try to generate not just an attract
+attractive MOIC, but an especially
+attractive IRR in connection with that
+MOIC because of the speed at which we
+move.
+>> Great. Well, Jacob, as we move towards
+the end here, I thought we would finish
+with a couple bigger questions, zooming
+back out as we've taken a bit of a
+roller coaster ride. And I'd like to ask
+you a little bit about the PR, for lack
+of a better phrase, of the industry as
+we know well, as I'm sure you know even
+better than us because you're faced with
+these what you might call accusations,
+narratives, stories all the time. Is the
+derogatory terms on Main Street like
+vultures, assets, strippers, locusts is
+pretty pervasive. And yet, in
+preparation for this and in my own
+study, it's abundantly clear that
+revenue growth and operational
+improvement versus cost cutting and
+layoffs is actually responsible for the
+majority of IBIDA improvement. And
+that's pretty overwhelming these days.
+It certainly wasn't true to be fair in
+those high-flying days we opened with,
+but it certainly is true now. Why is PR
+so poor here? And what can we do
+collectively to change that narrative?
+Well, let's start with the hard fact
+that PE as an asset class is not always
+successful and that does mean that the
+use of leverage can result in bad
+outcomes. We fight very hard for
+employees and customers and vendors when
+things go off plan and it does happen.
+We're very proud at Platinum Equity of
+how few times in 30 years we've had any
+negative outcomes like that and we
+dedicate significant resources to
+recovering from situations that have
+gone off track. It's one of the things
+I'm most proud about as an executive at
+Platinum is not when we generate a great
+multiple like a 4x in 3 years or a 10x
+overall, but rather when we have a 1.1x
+after a very difficult situation. That
+is our operations talent hard at work as
+well. It's interesting though the
+negative bias in terms of that PR and
+the successes are rarely heralded
+broadly. Take for example our verd of
+asset that former Emerson network power
+division we discussed. I haven't seen
+that written up extensively as an
+example of a great PE success that's
+generated significant growth and hiring.
+People tend to focus on the negative and
+much like in comment sections on review
+websites you see a lot more negative
+reviews than you do positive because you
+know highly emotionally engaged on the
+negative side of things. But at the end
+of the day, the asset class is largely
+generating returns for pensioners who
+were firemen or police people or
+teachers or corporate workers. And the
+more success the asset class has, the
+more secure those pensions are. I
+believe the industry has done much more
+good than anything else. And I know
+that's something that we care really
+deeply about. I think the industry needs
+to do a better job of heralding a who
+we're working for. We're working for
+these pensioners for the most part in
+the terms of the US investors and
+heralding our successes and also I think
+the industry needs to do a job of
+minimizing how many bad outcomes there
+are and that means responsible use of
+leverage
+fighting when things go wrong. There are
+too many GPS especially those without
+operational talent where they just don't
+have the bandwidth. If something's gone
+off track they have to let it go and
+move on. We fight really hard. If things
+are off track, that's when we reassemble
+a SWAT team and go after and and and fix
+them so that at a minimum, even if our
+return is not going to be great, the
+business is stable, employees are taken
+care of, customers and vendors have a
+stable business to continue interacting
+with. But no doubt, I'll close with
+this, John, on your PR question. We have
+work to do as an industry to improve it.
+Jacob, maybe a final question for me.
+And as I was doing some preparation for
+this episode and looking at the
+different ways that GPS can add value to
+portfolio companies, there's research
+out there that some GPS are really good
+at selecting companies that are already
+on that upward trajectory in a lot of
+ways and others go above and beyond that
+in terms of adding that incremental
+value, which you spent a lot of time
+describing in your seat at Platinum. But
+if you were to take a step back outside
+of platinum itself for an LP or an
+investor who is looking at this asset
+class and looking at GPS across the
+private equity spectrum, what are some
+things that they should be asking,
+examining and so on around the selection
+process to try to determine which is
+which? Are you just good at selecting
+good companies or are you good at
+selecting good companies that you're
+then adding some value on top of? I
+think LPS and investors have a very hard
+job separating the wheat from the shaft,
+so to speak. In this regard, as you
+rightly mentioned, performance by itself
+could be misleading as a lot of firms
+have had the benefit of a long run of
+interest rate demands before 2022 andor
+they took high risk that paid off. And I
+think LPs really need to look for what
+are those firms taking low risk,
+generating high returns. I think
+platinum equity falls into that
+category. I'm a big believer in the LP
+diligence process in enabling them to
+dive deeper in the diligence to
+understand a firm's beyond performance,
+a firm's processes and the talent pool
+that they have. At Platinum, we have
+nearly 100 full-time employees on the
+operational side alone. And if that's
+not the largest in North American
+private equity, it's close to the
+largest operations team. And they should
+take a close look at the size and
+breadth of the team. How are the
+employees at the GP aligned with success
+in the investments? At platinum, we
+deliver competitive annual comp carry
+participation at more senior levels and
+a broad and deep co-investment program
+in the deals. And I think they should
+also look at the DNA of the firm. Is it
+ex Wall Street professionals who've
+tacked on operations as this adjunct
+thing or is it really in the core DNA of
+the firm? Look at where those operators
+engage. What are they doing? Are they
+represented throughout the investment
+process, including at the investment
+committee level? Obviously, platinum
+operations is the DNA. It's our core. We
+talked about the founding of the firm
+and how we got started and how our
+investment committee is comprised and
+how our deal teams are comprised. I
+think once you really dig into those
+things, you look beyond the numbers at
+the firm, the organization, their
+processes, their talent pool, it should
+become clear who's really walking the
+walk versus who's just talking the talk.
+>> I think that's really well said. And as
+we said at the beginning, there's your
+answer LPs and listeners for
+distinguishing between the financial
+wizards and the operational artisans.
+So, Jacob, really well said. Thank you.
+Also, I mean, it's abundantly clear that
+you take your stewardship and your
+responsibility to the stakeholders, the
+ultimate owners of this capital very
+seriously. We at Kaya obviously exist
+for just that reason. And it's really
+nice to see authentic validation of that
+in practice. And so, Jacob, we thank
+you. We applaud you at Platinum for
+really building this into, as you said,
+your DNA over at Platinum. It's been
+absolute pleasure to have you on Capital
+Decant to Jacob. I know Aaron and I have
+learned a ton. I'm sure the listeners
+have too. And I just want to thank you
+again for being part of this show. And
+listeners, stay tuned for the last sip.
+Well, welcome back to the last sip.
+Aaron Jacob was fantastic. Called in
+from vacation. Listeners, you should
+know. I don't think we mentioned that.
+So, we are deeply appreciative not only
+of the wisdom that he shared, but his
+willingness and sacrifice and making
+himself available in a time where he,
+I'm sure, would much prefer to be on the
+beach and sipping fun cocktails. So,
+what was your big takeaway either
+through your own research, Aaron, or
+perhaps reconciled or contradicted with
+the discussion with Jacob? I'd love to
+hear what you came away with.
+>> Yeah. Well, first of all, Jacob deserves
+a platinum star. We're not giving gold
+stars here at Capital, but as the CEO of
+Platinum Equity, Platinum Star, it is. I
+think my biggest takeaway from Jacob was
+when he was talking about the way that
+they approach how they source deals. And
+you typically think of a buyout
+transaction as a company that might be
+middling. Maybe it's generating some
+attractive cash flow, but
+underperforming relative to its
+potential. But the way that he was
+describing the way that they look at the
+world and I realize it's 1GP was we're
+looking for teams or businesses within
+larger organizations and try to pull
+them out and provide them with capital
+strategy to maximize the potential from
+that perspective. So it's just a bit of
+a different way of looking at the buyout
+space that maybe is not always obvious
+when I think of buyouts, but I thought
+that was just a really interesting
+conversation around how they develop a
+thesis around that. How about you?
+>> That's fantastic. I agree. I thought
+that portion of the conversation was
+really compelling, too. Mine is maybe
+combining a reference you made to
+episode 6, the PR of private equity with
+some of the conversation we had on
+Platinum Equity's model to find great
+leadership and the importance of
+installing these corporate leaders that
+have a lot of experience and capability.
+So, the last mile, it seems to me, of
+this OVA evolution seems to be the soft
+stuff. The early days of this when we
+were abandoning and departing from pure
+financial engineering, it was really
+mechanical stuff like supply chain
+optimization, factory floor efficiency
+improvements, but what you heard from
+Jacob and what you heard from Pete Savos
+as you mentioned at KKR is that things
+like empathy of leadership, actually
+defining a quotient of the CEO's empathy
+has big correlation with the employee
+engagement of the organization. And that
+combination, that secret sauce can have
+outsiz effects on morale, efficiency,
+turnover, and ultimately margins as we
+heard back again in episode 6. And there
+is just a growing body of research
+spearheaded partly by Pete at KKR and as
+we know at ownership works, which was
+his creation, and others that clearly
+correlates a great culture with superior
+financial performance. So I say all this
+because even within this era or epoch of
+OVA, you've seen it shift and morph and
+take on different shapes and emphases
+that I think ultimately is ending with
+this idea of leadership and soft strong
+culture and healthy leadership being
+really the ultimate in building value. I
+just think that not only aligns with my
+values and who we are at Kaya, but also
+is just a fascinating final stage of the
+maturity of private equity. So that was
+really my takeaway.
+>> Yeah, that's a good one.
+>> So as I mentioned at the beginning
+series finale, we are done. We are
+headed off to a short break. Seems like
+this break is even shorter than last
+season. I did also tease that we would
+be speaking soon about some of the
+changes and tweaks we thought based
+partly on your feedback and partly on
+what we're seeing from others and what
+we think resonates to make season 3 even
+better than season 1 and two. And as I
+said, we'll have more on that later. But
+just as we leave, as we move towards the
+conclusion of season 2, Aaron, what was
+your highlight? What was your favorite
+episode as you recall this journey
+together? There's several that we've
+done that really resonate with me. I
+think maybe the one that I learned the
+most from maybe that's a lens for me to
+think through was definitely the crypto
+episode and how this could be the time
+for crypto, how it could fit in a
+portfolio. So, I learned a lot from that
+one. I think more generally both private
+equity episodes, the PR one that we did
+and then this one, I feel like I've
+learned a lot even just in the research
+and the prep and the history around this
+industries. But in terms of the delta of
+what I didn't know versus what I know
+now, I'd say crypto was the one that I
+learned the most. How about yourself?
+>> I think my answer is correlated with
+what you just said. What I learned the
+most, what made me most proud based upon
+the labor and the hard work and the
+discipline of diving in. I think it's
+got to be China for me. I know it was
+our longest and that was, forgive us,
+but that was a manifestation of just a
+ton of reading and enlightening
+understanding of history. And oddly,
+while an ancient country, a very short
+modern history that has defined the
+investing thesis around that massive
+economy these days. So, I think that's
+got to be it. I loved a lot of episodes.
+Again, as I've said before, it's like
+choosing a child. But that was probably
+the most proud I've been. By the way,
+listeners, we're also, as we did last
+year, going to release our five top
+episodes in the off season. So Aaron and
+I's answer aren't necessarily the most
+popular and we'll let the suspense build
+for whether they were or not, whether
+those two were in the top five, but
+we'll see what you guys thought was your
+highlight just to contrast it with ours.
+So our fun question just to finish off,
+Aaron, this was suggested by our fun
+production team that are getting to know
+us all too well, but Aaron, what movie
+world or universe if you could live in
+would you choose? So, with all the
+disclaimers of this being a dystopian
+story, it's a good book, really good
+movie, but if I could live in the oasis
+of Ready Player 1, that'd be a ton of
+fun. So, yes, there's a evil villain
+who's trying to control it, and there's
+all sorts of bad things about virtual
+reality in the story, but it'd be cool
+to visit every so often. So, that
+probably says a lot about me, but that
+would be my choice. How about you?
+>> I'm really having a hard time on the
+spot here. I mean, I could say I'd love
+to be Link in Zelda if I could be one
+person, but if I had to say universe,
+Nicholas Sparks, I'm a romance lush. So,
+basically, all of his universe of just
+perfect fairy tale endings, as you've
+heard, Nicholas Sparks and me at 35,000
+ft end with a lot of crying and tears
+and quite embarrassment with my
+neighbors on the plane. So, I'm a sucker
+for anything Nicholas Sparks. So, if
+that's a universe, I would live in it.
+So, I want to go into a cool technology,
+virtual reality, and you want to cry a
+lot. That's great.
+>> I just want to win the girl in the end.
+Yeah, I'm romantic at heart. There you
+go. Lover, not a fighter.
+>> There you go. All right. Well,
+listeners, it's been a amazing season.
+It's been a fun ride both today and
+through the other 10 episodes. Thanks
+for hanging with us. Thanks for
+listening. Thanks for making this an
+enjoyable and fulfilling element of our
+work. It is hugely and richly valuable
+for us and I hope on the margin that
+there are takeaways and nuggets and
+elements that you're taking away to your
+desk that is making you a better
+investor and a better fiduciary for your
+clients. So with that, have an amazing
+summer and we will be back soon with
+some updates on season 3. Take care.

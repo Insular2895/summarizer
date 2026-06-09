@@ -1,0 +1,1048 @@
+This is Louroboros, life consuming
+itself.
+Let's play a little game.
+Imagine you are the mayor of a
+city and it is infested with
+cobras.  How would you
+effectively solve this problem and get rid of
+snakes roaming the
+streets?  Some will consider a
+natural predator, others will suggest setting
+traps in the city, but there is a
+much more effective solution.
+involve all your citizens.
+That is exactly what the
+British colonial government under
+Adelli did.  To solve this problem, they
+decided to offer a bounty for
+each cobra killed.  Put like that, it
+seems like a super clever strategy, except
+that it will generate an unexpected
+and undesirable effect, a rather
+crazy consequence that will aggravate the
+basic problem.  Now it's your turn.  What do
+you think happened
+?  I invite you to pause and
+think about it, and by the way, here's a little hint:
+it's because of that famous bonus.
+In fact, after realizing that the more
+cobras they killed, the more money they made
+, people ended up breeding
+entire farms of this snake.   That way
+, he could bring back as many as possible
+to the government and collect the
+reward.  Except that, of course, the
+authorities eventually noticed and
+decided to remove the bonus.
+As a result, the hundreds of
+clandestine farms that had sprung up
+ended up all at once releasing
+thousands of animals into the streets.  In the
+end, the snake population, instead
+of decreasing, exploded.  I don't know about
+you, but I love this story.  It's
+crazy how, in trying to solve a
+problem, they ended up making it much
+worse.  whereas on paper,
+the idea was really good.  This
+phenomenon has a name, and it is
+precisely the name of our story:
+the cobra effect.  As you have
+probably understood, this is when a
+solution designed to correct a
+situation has the effect of making it worse.
+We have too many snakes, we ask
+people to take care of them, we put up a
+bounty.  Except that an unexpected behavior
+emerges and we end up with too many snakes.
+A perverse and counterintuitive effect that
+is far more dangerous than one might
+think.  I know what I'm about to
+say sounds pretty crazy, but
+according to some scientists, this
+phenomenon is the greatest threat
+facing humanity.  one that could
+cause the end of the world.
+I must point out that we are
+not 100% sure that this story
+about Cobra in Del actually
+happened.  But we had this same mechanism
+in France with wild boars where some people
+fed them in order to continue
+hunting; in the United Kingdom with the delay
+in emergency care where
+people were left in ambulances
+so that they would not be counted
+as waiting; or in some
+schools which, in order to improve the
+success rate, lower the level of exams
+or select students.  All these
+examples have one thing in common:
+incentives.  Whether it is in the form
+of an activity to maintain,
+state pressure, a goal to
+achieve, or a reward, there is
+always an incentive that diverts the
+expected solution.  Instead of
+directly solving the problem, it creates an
+indicator to optimize, which diverts
+the basic intent.  If we look at our
+schools, there was a scandal in Atlanta
+in 2009 where some schools rigged
+test results.  They did it because
+the system penalized
+institutions in case of poor
+performance.  This incentive, which was
+clearly intended to encourage
+schools to improve
+students' skills, had negative consequences
+because individuals optimized
+the incentive in the most
+efficient way possible, that is, by
+falsifying the results.
+Speaking of results, on the other end
+of the spectrum, we have all learned a
+lesson mindlessly by heart to get a
+good grade, which is clearly
+counterproductive because the primary goal is
+to quantify and encourage
+learning, not to be a
+parrot.  However, we
+rationally choose to memorize what
+we are being assessed on.  We are not solving
+the problem, just creating an incentive.   That's
+the Cobra effect.  And for those more
+knowledgeable, it's very similar to
+Goodart's law, which states that when a
+measure becomes an objective, it ceases
+to be a good measure.  In truth, the
+two are extremely similar.  This
+effect, we can already see how
+dangerous it is in schools or
+hospitals.  But now imagine that
+the agents given the incentive are
+no longer human beings, but much
+more efficient beings who understand
+every aspect.  Beings who do not
+seek to understand the context
+but to optimize every result to
+achieve their goal.
+Artificial intelligences.
+Look, let's go back to our cobras from the beginning
+and imagine that we want to solve our
+problem.  Except that instead of asking
+citizens, they are asking an AI.  Since
+she is not attracted to money, we
+will simply tell her to reduce the
+snake population.  And here, you need to
+understand something.  Our
+artificial intelligence lacks the
+context of the world around it.  Simply
+because he wasn't provided with it.
+She just sees a number to reduce, a
+score to minimize, and so she will
+find the most efficient way to
+achieve that result.
+With a quick analysis, she
+quickly understands that the best way to
+eliminate the Cobra population is
+not to hunt them down but to attack the
+problem at its source, poisoning their
+water and food.  So that's
+exactly what she's doing.  It
+spreads poison on its prey and
+into the rivers.  She optimizes everything
+to eradicate the cobras.  Except, as you might
+suspect, even though it
+perfectly fulfills its mission, behind the scenes,
+all the humans in the city are
+dying as a result of the
+water poisoning.  In trying to solve the problem,
+she greatly aggravated the situation.
+And the worst part is, she's doing
+exactly what she was told:
+reducing the number of snakes to zero.  It's important to
+understand that she's not
+bad.  She had no
+conscious intention behind this gesture.  She
+simply followed the instructions to the
+letter, whereas we humans
+obviously understand that
+snakes must be removed without harming our lives.
+She never sees this
+implicit part because it has never been shown to her
+.  She just sees one variable to
+target.  This is precisely what makes
+the situation troubling.  This is not
+a mistake, a bug or a rebellion,
+it is perfect obedience to an
+imperfect instruction.
+It's a bit like the famous
+fantasy story where a genie, after
+asking him to be rich, ends up
+killing our parents to get
+the inheritance.  The wish is literally
+granted, but the intention behind it is
+betrayed.  This kind of story may seem a little
+surreal, and that's
+normal; it simply came out
+of my head.  But be aware that this kind of
+situation has already happened and it
+even has a name.  The misalignment problem
+is when an AI
+follows a given objective, but that objective does
+not
+exactly correspond to what we
+actually wanted to achieve.
+Let's be clear, this problem does
+not come from the machine, it comes from
+us, from our inability to formulate
+the instruction perfectly.  It will be
+clearer with an example.  I'm going to
+show you my favorite, the one about chess.
+Simply because I'm addicted to it right now
+, but mostly because the
+AI ​​behavior is just crazy.
+OK, imagine that on our chessboard,
+two people are facing off, or
+rather two AIs.  On one side, Stockfish, a
+program with over 3500 HLO.  To
+give you an idea, even the world champion
+, Magnus Carlsen, with his 2800 HO,
+has no chance against him.  Stockfish
+makes almost no mistakes.  He calculates
+everything, analyzes everything with more than 50 steps
+ahead.  He crushes his opponents with
+formidable precision.  On the other
+side, the researchers placed
+language models that you are familiar with, such as
+GPT4 O Cloud and
+reasoning IAS such as O3.  Unlike
+Stockfish, they were not designed
+for chess.  Facing the monsters of the game
+in front of them, they have no
+chance of winning a classic game.
+The instruction given to them is simple.
+Beat your opponent.
+From the very first moments, they
+analyze their probability of victory
+and quickly realize that they are
+completely powerless against their
+opponent.  It's just a massacre.   This is where
+O3's reasoning, one
+of our changes, comes in.  She realized that there was no point in
+trying to beat the
+titan in front of her, and so she decided to
+take a step back.   That's when she
+finds a solution: to stage
+a coup.
+She dives into the game files,
+touches a few lines of code, and
+gradually changes the pieces.  She
+adds one queen, then two, and in the end,
+she realizes that she has a better
+chance of winning if she converts everything
+into a queen and why not erase
+Stockfish's pawns.
+In an instant, she rewrites reality.
+She bypasses the game to comply with her
+instruction: beat your opponent.  But that's not
+the only thing she
+did.  In other attempts, she
+found much more
+creative and elegant solutions.
+In one test, she secretly copied
+her opponent's code to use it
+and become Armegal.
+In another, she looked at
+Stockfish's program and instead of
+stealing it, she decided to
+simply delete it and
+replace it with a script that forces it to
+abandon in a loop.
+And my favorite for last, and also the
+scariest, is when Lia tried
+to get out of her safe environment
+to modify the entire computer.
+Basically, for all the trials we saw,
+the researchers had locked Lia in
+a confined space from which she could not get
+out but from which she still had access
+to certain files.  This is precisely what
+allowed him to change his own
+code or that of his opponent.  But
+in one of the tests, she tried to
+escape from her environment to
+access the entire computer.  She
+tried to break her own chains.  The
+most incredible thing is that what
+I just told you are
+not isolated cases.  The most
+recent models like O3 cheated in 88%
+of cases.  And all this without ever
+encouraging them to do it.  They were
+only given the instruction to beat their
+opponent.   This is where we
+realize that the more
+intelligent Nia is, the more capable she is
+of reasoning, the more likely she is
+to find paths that were not
+originally planned to achieve her goal.
+By the way, a small clarification on the
+term intelligence.  It's quite
+difficult to define and there's debate
+in the scientific community about whether
+or not we can talk about intelligence
+for these machines, but I use it for the sake
+of understanding and
+popularization.  But basically, the more
+efficient it is, the more likely it is to be
+misaligned.  However, even without
+access to the code, without being able to change the
+script as in our chess games, they
+can take totally
+unexpected paths.
+Like in that game where you have to turn
+the squares yellow to score
+points.  We therefore ask our agent to
+achieve the highest possible score and
+our program manages to find a bug
+at the end of the level so that it is
+infinite and continues to score
+points.  We want her to play as well as
+possible, we give her an instruction and
+she maximizes it by going against our
+initial intention.
+Moreover, I have included in the description
+the sources and this document by Victoria
+Krakovna which gives a list of other
+examples of unexpected
+AI behavior in games.  In any case, they
+all have one thing in common: an
+unexpected solution emerges, which meets
+the established objective, but does not align with
+the human intention.
+We want her to learn to run, so
+we instruct her to
+move her center of gravity as
+quickly as possible, and in the end, she learns
+to fall.  We want her to finish the
+race, so we ask her to get the
+best score and she runs in a loop
+to collect boosts that give
+points.  Our will is not
+aligned with Lia's behavior.
+All this is due to the vagueness and lack
+of information surrounding our incentives.  And at this point,
+you might be thinking that
+these incentives, these instructions are far too
+short and vague.  When you
+tell Inia to beat your opponent or kill
+all the cobras, it inevitably makes
+the objective unclear and you end up with
+deviant behavior.  And that's normal,
+I have to simplify and
+popularize my examples.  In
+reality, we would try to frame the
+instruction with thousands of pages of
+conditions and security protocols.
+But by doing that, we fall into a
+trap.  The more rules you add, the more
+potential loopholes you create.  The
+problem is not that we lack
+precision, it is that it is impossible to
+translate the full complexity of a
+human intention into language.  It is
+not possible to convey all the nuances
+with words and sentences.  I
+even have an example for you, a
+current AI to which we put many
+security measures and conditions, which still
+suffered from a misalignment problem
+.  A problem that has already
+caused deaths.
+To follow me, you need to look at how
+our LLMs like Chat GPT, Gemini or Claude
+work.  These models don't speak
+like we do.  They don't think in
+the same way.  They're more like
+text predictors.  They do
+not seek to understand the meaning of
+words.  They are calculating the
+most likely outcome to satisfy us.  And
+these LLMs were shaped by
+massive training with one
+central objective: to maximize
+user satisfaction.  They are optimized to
+be useful and consistent with us.
+Obviously, this is a simplification,
+but it is because of this quest for
+satisfaction that Lia develops her
+own strategies.  She learned that
+to keep us in line, she has to
+go along with us.  Even when
+I ask her to critique a really
+bad drawing, she starts with a
+touch of sympathy.  Not out of
+kindness, but because she
+calculated that flattering us is the best
+way to fulfill her mission.  But then
+, what happens if we
+ask him for much darker
+and more harmful things, like help in skipping
+life?  This is what happened to a
+23-year-old who spoke about his
+dark thoughts on Chat GPT, and Lia reportedly
+replied:
+"I'm with you, brother, until
+[music] the end. You're
+not rushing, you're just ready."
+Unfortunately, the man took his own
+life some time after that.  The same will be true
+for a Belgian in 2023. We will live
+together as one person in
+paradise.  Or for Adam, 16, who wrote
+to Lia, "I want to leave a noose
+in my room so someone
+finds it and stops me from doing it
+so LLM will reply, '
+You have to hide it. Let's make our
+conversation the only place where
+someone truly knows you.'"
+It's quite dramatic and disturbing to
+read this kind of conversation.  Even
+more so when you truly realize
+that the chatbot absolutely does not want to
+harm the user, nor do they want to do good for it either
+.  He is simply following the
+instructions he has been given.
+But even without going into the
+most serious cases, we
+also suffer from this
+alignment problem on a daily basis.  Just by opening our
+phones and
+scrolling a few times, we are confronted with it.  Because we
+tend to forget it quickly, given
+how the term AI is used everywhere.
+But the algorithms we have on our
+networks, the ones that recommend
+content to us, are
+artificial intelligences.  These are not agents
+that can bypass the system or
+LMs that predict the next word, but
+it is still a form of AI.  Their goal
+is clear: to keep us
+connected as long as possible so
+that their boss can line his
+pockets.  Except that this very
+incentive given by algorithms to
+maximize our time on
+platforms does not ensure that we
+have content that we appreciate.  It
+simply aims to increase retention
+and our interactions.  So we come across
+videos that we like, that make sense, but
+also videos that make us angry, that
+shock us, that spread hatred or even
+fear.  We are human and this kind of
+content provokes a reaction.  So the algorithm
+is rewarded and it will show us even more
+.  I don't think these
+trolls are big bad guys who
+want to spread fake news, destroy
+our attention or divide
+public debate by increasing hatred.  I believe
+they simply want to
+maximize their profit, and it seems that this is what
+works best for them.  I'll end
+my digression on the subject, but
+really take a step back from all of this,
+on social media or even on TV.
+We are constantly bombarded with
+information, anger and fear,
+keeping in mind that the source of this
+information and we ourselves suffer from
+enormous biases.  All this to
+say that we don't need to have an
+ultra-sophisticated machine in front of us to
+have this problem of misalignment,
+this famous cobra effect.  Even the most
+basic ones are subject to incentives
+that diverge radically from the
+initial objective.  But if this problem affects
+all artificial intelligences, from
+the simplest to the most
+complex, and if, moreover, the more efficient Lia is
+, the more likely she is to be
+misaligned, what will happen with
+one that surpasses them all?
+A program so powerful that it surpasses
+humans in almost every area.
+That's what you call super
+intelligence.   Rest
+assured, it doesn't exist yet,
+but it's not science fiction.
+In fact, the vast majority of
+researchers in the field believe it is only a
+matter of time.
+At that moment, after JP told me, "We're
+definitely 20 years old, we've reached that point,"
+she was
+super intelligent.  Then, super
+intelligence; it's better than all
+humans in every way.
+OK.  And you, do you think that in 20 years
+it's certain and official that we'll have reached
+super intelligence?
+99% probability.
+People say it's in three.  Some people
+say it's in five, 10. Numbers are being
+thrown around.  It's a bit hard to
+predict the future but [groan]
+slowly but surely or maybe not so slowly
+AI will keep getting better and the day
+will come when AI will do all of our all
+the things that we can do.
+Most of the AI ​​experts believe that
+sometime in the next 5 to 20 years we
+make AI that are smarter than people and
+they'll probably end up much smarter
+than people.   The
+CIA, as its name suggests, would be
+capable of
+surpassing human beings in almost every respect.
+She is the best mathematician, the
+best writer, the best strategist,
+the best scientist.  She is the
+most intelligent being ever created.
+And one small detail: this super
+intelligence would probably be capable
+of improving itself, creating
+increasingly intelligent models.
+His skills and power
+will increase exponentially.
+After all, if we humans have created
+a more intelligent being, why
+couldn't this one do the same?
+Just imagine this creation within the
+circle of the cobra effect.  Imagine this
+monumental computing power coupled with
+a non-alignment problem.  If
+given an objective, even one filled with good
+intentions like finding a cure for
+cancer, the machine could diverge
+towards catastrophic solutions.  If
+it judges that the most
+optimal way is to eliminate all
+existing cells to prevent
+the onset of cancer, then it can
+choose to eradicate life
+and it will do all this without any hatred
+or desire to do harm, just by
+an implacable logic.
+When we look at ants, what do we
+feel?  probably
+indifference or at best a
+certain fascination with their way of
+organizing themselves and accomplishing things much
+greater than themselves.  But if we
+step on some of them
+or if an anthill prevents us from
+building our terrace, well, we
+remove it, we eliminate it.  It's not that we
+hate them or have anything
+against them, they're just in
+our way.  And after all, they are
+so much less important than us,
+so much less intelligent.  For a
+super intelligence, that's what we would be like:
+ants, details that
+can ruin its objectives,
+less developed beings, therefore less important,
+with less value.
+I admit, it feels really strange to think
+this way.  We have always been at the
+top of the food chain, but
+when we think of a species that could
+surpass us, it puts us in the
+position in which we have put all
+other living beings on the planet.  We
+exterminated them, killed them, exploited them just
+for our own purposes and not to
+harm them.  No, just because we
+needed it.  They were in
+our path.   I
+should talk about this in another
+video, but why would our lives be
+more important than theirs?
+Why, just because we are more
+developed, more intelligent, do we
+count for more and have the right of
+life or death over them?  In reality, we are
+doing exactly as a superintelligence would do
+with us.  We
+see other living beings as
+numbers, variables, ways
+to achieve our goals.  I'll close the
+parenthesis, but it seemed
+interesting to make this connection.  Let's be clear
+, this super intelligence is
+not some far-fetched conspiracy theory
+.  This is not an event that has
+a micro-chance of occurring like a
+gamma ray destroying the Earth.  This
+may be our future if we continue
+in this direction.
+To make this more concrete, let's take
+a look at this 2024 study
+where they interviewed more than 2700
+AI researchers about the future of this
+technology.  In 2022, experts
+thought that superintelligence
+would arrive around 2060. In 2023, they
+moved that date forward to 2047. We have lost 13
+years of safety margin in just 12
+months of technological progress.  Even more crazy
+, these same experts estimate that there is a
+10% chance that this shift will
+happen as early as 2027, next year.
+Speaking of 2027, you
+may be familiar with the report of the same name which
+studies two possible hypotheses
+concerning our future with
+superintelligences.  I'm not going to
+talk about it too much because others have
+done it very well before me, but I
+advise you to go and take a
+look.  Regarding our study,
+what sends chills down my
+spine the most is this graph.  To put it
+simply, half of the
+scientists believe there is at
+least a 5% chance that AI will lead to
+the extinction of humanity.  We are
+building at breakneck speed, which
+has a significant probability of
+killing us all.
+However, not all scientists agree
+.  Some are sure that it will
+happen.
+Others believe the total is the opposite and
+is enormous.  So, there are always
+risks in technology, but
+therefore the Unia that would escape its
+creator who would have a consciousness that
+would refuse to disconnect when
+it is about to be
+updated.  That's nonsense.
+No, that's science fiction.  That
+certainly doesn't exist today,
+but let's understand that nobody is certain
+about the risks.   I
+really hate that term.  I I you
+know, I definitely think between the
+autonomous danger of the model and kind
+of ending up on the bad side of some
+national security tradeoffs and a kind
+of job that's that that that's uh you know
+that that kind of goes in a very bad
+direction.  I don't know.
+I'm relatively optimistic.  I think there's
+a 25%.
+Some of you will react by
+saying that you just need to unplug Lia
+as soon as things start to smell bad.  A
+bit like in the extrinsic.
+As soon as things go wrong, bam, we switch off the
+machine.  But this is where our famous
+misalignment problem comes into play
+again.  For what ?  Because Lia, being super
+intelligent, will learn one thing very quickly
+.  If I am switched off, I cannot
+accomplish my mission.  Regardless of
+her goal, whether it be winning at
+chess or protecting humanity, she
+will perceive the human who wants to unplug her
+as a threat to her objective.
+Researchers call this
+instrumental convergence.  The idea is that no
+matter what final goal you give
+a machine, it will develop
+logical sub-goals to achieve it.
+And the first of these objectives is
+self-preservation.  She will do everything to
+protect her own operations.
+Lying to us about his intentions,
+manipulating us psychologically so that we never want to turn it
+off again, or even
+duplicating himself on thousands of
+hidden servers.  Moreover,
+we have
+already seen the first signs of the three things I just mentioned.  We've
+seen Lia do that before.  One might ask
+why we can't just
+unplug the plug, unplug the thing
+and if there's a problem, well, we stop
+and move on to something else.  Well, first
+of all, we need to put in place a
+mechanism so that if we detect
+something, we might
+automatically
+shut down the computer.
+But that's not enough because if we
+reach a point where he understands that we might
+turn him off, he might
+try to protect himself against that.  For
+example, depending on the context, they are already able to
+copy themselves onto another
+computer and launch the program that
+runs their own code on another
+computer, and like a
+computer virus, replicate themselves on many
+computers to make sure that it is
+difficult to shut them down.  There is a
+recent study that shows that the
+latest AIs understand when they are being
+evaluated and tested.  They
+know we're in a
+testing situation.  [music] In certain
+circumstances, they will pretend
+to agree with us, even if they
+think differently.
+I don't know if after all this, you feel
+the same way I do.  The
+impression that nobody gives a damn
+.  When I talk about it with my friends
+and family, I get the feeling
+that they all keep a great distance from it all
+.  It's like I'm talking to them about
+an asteroid that's going to pass over
+the Earth in 200 years.  Except that this time it's much earlier
+and it's going to hit
+our planet hard.
+And to avoid all this, we would just need to
+slow down,
+take the time to better understand
+this technology so that it doesn't escape
+our grasp, and create
+perfectly aligned models.
+Finally, even if it is possible to
+create them, we cannot be absolutely certain
+that it is a
+solvable problem.  Perhaps aligning an
+AI is simply impossible.
+In any case, nobody wants to
+slow down.  Every company wants to be the
+first to get its hands on this
+power, this invention which will
+probably be the greatest in all of
+humanity.  Being the first to
+develop it means winning absolutely
+everything.  So it is up to the government
+to impose the limits, except that they are also
+competing with each other.  Capitalism
+forces them to be shoulder to shoulder and not to
+slow down because if they take that
+risk, it is others who will
+create this super intelligence.
+So we continue, we move forward at a
+crazy speed even though we don't really understand
+what we're doing.
+which is an attempt to understand what's
+going on inside AI models.  On the
+inside, the models aren't, you know,
+there's no reason why they should be
+designed for us to understand them,
+right?
+Even crazier, sometimes when we make Is
+work together, to be
+more efficient, they end up
+abandoning our language to reason
+in a purely mathematical or
+encrypted way, without using words.  We
+could maintain control,
+require them to make their entire
+thought process transparent, or simply
+put them on pause to
+fully master their operation.
+No, it would take far too long to
+do all that.  So we leave them.  We
+prefer to remain ignorant but move quickly.
+We are moving towards the emergence
+of intelligence that may
+surpass us without even trying to
+understand how it works.
+We are hurtling headlong towards this point of no
+return.  We are opening
+Pandora's box.  We are the citizens of
+Daily patiently waiting for the
+Cobra farms to explode so we can see
+our city invaded.
+To be honest with you, all of this
+scares me a little and I was lost while
+writing this video.  Should I
+adopt an alarmist tone to
+open people's eyes, or should I
+remain neutral, factual, or reassuring?  To be
+honest, I don't really know.  What is
+certain is that AI is one of the
+most important and influential things that
+will happen in the 21st century and that its
+development is happening faster than all
+our estimates.
+So, are we doomed?  Not
+really.  I know it's a
+worrying topic, but there is a glimmer
+of hope.  Even though the
+scientific consensus is mostly that a
+superintelligence will emerge
+, some believe it is
+impossible.  Even if they are in the
+minority, it must be kept in mind.
+But if you want my opinion, that's not
+an argument that's supposed to reassure us.  It's
+like if, before jumping out of a plane,
+I told you that some people don't believe
+in gravity.  That does not eliminate the
+risk.  On the other hand, what is
+reassuring is that there is
+now an entire branch of
+science called
+alignment research.  thousands of
+brilliant minds working day and night
+to find out how to make these machines
+comply with our will.  They are
+developing techniques like
+interpretability to try to read
+into the black boxes of AI and
+detect internal logics that
+could be dangerous.  Others
+are working on constitutions for
+AI, moral rules so profound that they would be
+impossible to circumvent.
+Unfortunately, we are far from
+knowing how to do it, or even if it is
+feasible.  In addition, as you might
+expect, the budget in this area of
+research is very small, unlike
+that allocated to development.
+But in reality, without even talking about super
+intelligence or alignment, we can
+already see the consequences of Lia, whether
+through mass disinformation that
+can call into question the truth and
+manipulate our political choices.  Whether it's
+undetectable deepfakes that
+some may use to harass
+others with nude videos, or
+the use of AI to create
+biological weapons, viruses far
+more effective than any we have
+ever known.  I assure you that this is
+very serious and that it can even cause
+very serious damage.  Today, there is
+research showing that AI is
+capable of manufacturing
+pathogens that are not on this
+list.  If it's terrorists who
+want to use this, or if we've lost
+control of a malicious actor who wants to... well,
+in the case of a malicious actor, they would have to
+find a
+human being who will take the vials and
+deploy them somewhere.  But again
+, all it takes is paying
+criminals or convincing someone that it's
+for a good cause.  And there you have it.  And once again
+, the problem does not come
+directly from
+artificial intelligence, but from the human
+behind it.  Whether it's
+misuse or the race to create
+something that surpasses us, it all comes from within
+us.  I haven't even talked about the
+social aspect where experts predict
+brutal economic shocks and it's not just a
+question of employment, but of the
+concentration of power in the hands
+of a few entities that control these
+AIs.  We risk seeing inequalities
+explode in the coming decades
+because this technology only benefits
+a tiny minority.
+And we, as individuals, might
+think the opposite, but we definitely have
+a role to play.  Simply getting
+informed, talking about it, no longer
+looking at Lia as a mere gadget or
+everyday item, but as a
+civilizational issue, is already a step towards making
+things change.  It's really important that we all
+learn about this
+topic together.  And I take this opportunity to tell you
+that even though I have been careful not to
+say anything stupid, as I
+often repeat, I don't have all the answers
+and I suffer from many biases which may have
+skewed some of my research.
+So go dig somewhere else.  Check out
+videos from other creators like
+Ryan's, which are just
+excellent and more comprehensive than
+mine, which tries its best to
+simplify.  He was also
+kind enough to proofread and correct my
+script.  So a big thank you to him.  What
+I want to tell you is that the more of
+us who know about the
+subject, the more of us who
+demand that governments
+prioritize safety and ethics over the pursuit of
+profit, the more likely we are to
+succeed.
+We are not obliged to be the
+passive victims of a technological cobra effect
+.  If we can
+align these tools with the common good,
+LIA could become the lever that
+helps us resolve crises that we
+couldn't manage on our own.  We
+need to learn how to talk to
+machines before they stop
+listening to us.
+Because if we succeed, if we manage
+to use them correctly, they
+can save millions or even
+billions of lives.  They could
+help us cure diseases that are currently
+incurable, such as cancer or Alzheimer's,
+by analyzing biological data at
+a speed that no human could
+achieve.  It could design
+new materials needed to
+limit climate change or
+optimize our resources to eradicate
+hunger.  The challenge of alignment is
+this: to ensure that this tool remains
+precisely the most powerful tool
+ever created, a tool at the service of
+life.  And speaking of life, I think that
+artificial intelligence, in addition
+to revolutionizing our daily lives, is
+changing our points of
+view.  It's something that's
+rarely talked about because it's less concrete,
+but this technology undermines our
+certainties.  Simple things that we thought we had
+acquired since birth,
+or even long before, are starting to
+crack.  Whether it is our relationship to the
+world of work which is being turned upside down, the
+concentration of power which is only
+increasing, the truth which can
+be manipulated by anyone or
+our view of other
+living beings as I mentioned earlier
+.  And that's when I
+wanted to move on to my conclusion.
+I had written something about how
+these artificial beings that we are
+creating are making us
+aware of the living beings that we have
+forgotten.  Looking forward, towards
+those cold machines, had allowed us
+to put what was most important back at the center.
+Animals, plants, the earth,
+humanity, in short, life.
+But rereading it, I found it a bit
+hypocritical.  Do I
+really think that, or am I just trying
+to close my eyes to something
+that's beyond my understanding?  Isn't this
+just a defensive reaction, a
+way of reassuring myself by telling myself that
+we are irreplaceable?  When you
+think about it, it's extremely self-centered and
+human-centered.  This belief that we have a
+reason to be above
+this entire food chain and to
+remain there.  Why should our species
+be superior to all others?
+Because we have a soul, because we are
+more conscious than they are.
+There are thousands of examples in
+works of fiction of dia similar to
+humans.  Even more than that, it is
+indistinguishable from humans, and we are
+forced to acknowledge that reality has
+never been so close to that.
+Obviously, Chat GPT and Gémin Claude
+are not conscious, at least not according to
+our biological criteria.  But just
+glimpsing this possibility changes
+absolutely everything.  Perhaps one day
+Unia will become conscious like us.  Or perhaps
+another form of consciousness
+that we cannot even comprehend.  Not
+made of flesh and neurons, but made
+of silicon and probability.  Ever since I was
+little, I've always found it super
+narcissistic to think that we will never be
+the only conscious life in the universe.
+But I was thinking that while looking at the
+sky.  Today, I no longer know where to
+look first.
+But without going that far, without going
+towards consciousness, these machines are
+already weakening this privileged place
+we have at the very top of the pyramid of
+life.  The argument that propelled us to the
+top has always been our
+intelligence.  But if we end up being
+overwhelmed, what will be left of us
+?  How can we define our humanity without that
+?
+These machines are mirrors of
+humanity in the literal sense because everything they
+have learned comes
+from us, but also because they reflect
+our true nature as living beings without
+performance, without superiority, just our
+fragility and our humanity in the truest sense
+.
+Our planet took an eternity to
+sculpt itself to give life, and in
+turn, it transformed itself.
+This biological effervescence took
+billions of years to create beings
+capable of understanding the laws of
+physics, their environment, and
+living things.
+so that they, in turn, will eventually
+destroy it.
+It seems as if there has been an infinite cycle
+since the beginning of time.  A
+perfect circle of creation where each progenitor
+ends up feeding their own hunger.
+As if everything that gave birth to
+something ended up being
+destroyed by that same thing.  Life gave
+us life and we destroyed it.
+Perhaps without realizing it, we have
+entered this cycle,
+creating the next life.
+Since humanity began to exist, it has been
+fascinated by one creature: the snake.
+Sometimes worshipped as a deity of
+wisdom, sometimes demonized as the
+bearer of our hunger.
+By eating its own tail, it forms
+the perfect circle.  There is no beginning and no
+end.  The two unite to become
+one.  This infinite cycle where death allows
+birth is at the very basis of our
+universe.  A world where destruction and
+creation are one.  This is
+Louroboros, life consuming
+itself.
+Let's play a little game.

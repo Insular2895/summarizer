@@ -1,0 +1,212 @@
+hey everyone welcome back to react 2025.
+in this video we're going to be wrapping
+up the course
+so at the end of the previous video
+apologies for it getting cut off
+there was actually a huge storm here and
+i lost internet connection
+but at the end of the last video at the
+end of the last live stream
+we were adding mdx to our application so
+that we could do
+markdown for pages like the terms and
+privacy and documentation
+and that was all finished up and
+released and you can check out that
+associated pr
+on the last video really in this video
+what i want to talk about as the course
+comes to a conclusion is
+what to do when launching your product
+now this isn't a course on marketing or
+sales and i'm not an expert in those
+areas but i can
+share a few tips that have worked for me
+just launching things and
+i'm going to continue to learn as i
+launch this product and move forward
+probably the biggest thing that's helped
+me is focus on the copywriting so
+really writing that compelling copy
+focusing on
+customer pain points and specifically
+how your
+product is solving those so if you speak
+to the pain
+and show specifically the solution that
+you're providing
+it resonates with that customer and they
+understand the value proposition
+that you're providing it's also really
+helpful to include testimonials not only
+on your site but in your emails and
+other forms of marketing
+from satisfied customers and what they
+like about the product
+and provide that validation for somebody
+who might be on the fence about
+should i buy the product should i not
+buy the product um
+another one is to use imagery to
+convey your point so whether that's in
+an email or on your website
+just generally you know better colors
+better images a more vibrant website
+is going to help draw that person in and
+even taking it a step
+farther use video if you can whether
+that's just
+a screen share of you or a produced
+video
+every little extra step you can take
+there to provide a more polished product
+it's going to pay off dividends when
+you're trying to attract and retain
+customers i think i mentioned
+like way at the beginning of the course
+about hopefully you already had
+some potential customers and the funny
+thing about this course is
+really in building this product like the
+number one customer
+was me and a couple other people that
+i've had interested but
+in reality what you should do and after
+taking this course is
+try to find a market that already exists
+like you don't need to be the first
+person in your market there's plenty of
+opportunities for innovation in other
+markets find an established market
+where there's something out there that
+could be done better
+and talk to those people talk to your
+users grow that list of people before
+potentially you start coding maybe
+you've already started coding on mvp
+totally okay but before you launch
+ideally you have a group of people that
+you can kind of talk to
+um but here's the secret even if you
+don't
+you can always launch again like you're
+you're technically
+always launching you're always launching
+new features you're always
+incrementally trying to make your
+product better and get it in front of
+more people
+and it's it's a never-ending continual
+journey on growing your product so it's
+never
+done you're never going to be finished
+part of that which is related is where
+you should actually post your product
+when you launch and
+really the best advice i can give is
+just post it where your users hang out
+whether that's youtube packer news
+reddit facebook
+discord slack whatever you just want to
+post it where your
+potential users or customers are going
+to live and hopefully get that lead
+generation
+coming in to your product so that you
+have people who are
+willing to pay i would also recommend
+writing about your journey as
+an opportunity to attract customers i
+think content marketing is really
+successful so
+even sharing you know why you built the
+product or how you built the product or
+how it compares against other
+competitors even being very explicit
+like
+google analytics versus fathom like why
+does this exist
+why would i choose one over the other
+can help answer some of the doubts that
+customers might have when looking at
+your product
+and i guess kind of the final thing that
+i want to talk about is just
+measuring success so you've launched a
+product you've posted it places
+as i mentioned it's never really over
+but you need to have at least a baseline
+of understanding where you're at so that
+you can improve
+and we've started to kind of set up some
+of these metrics whether that's
+total number of customers monthly
+recurring revenue
+page views downloads or any of those
+type of metrics
+do you want to find a way to monitor
+these so that you can incrementally
+track
+improvement and see your user base your
+recurring revenue grow over time so
+whether that's stripe
+or analytics or firebase like there's
+all sorts of different places that you
+can
+kind of glean insights from and you want
+to take that to help
+drive decisions about what things you
+should or should not work on
+and critically like you really got to
+listen to your users and understand what
+they want
+that's what i'm trying to do now is
+reach out to some of these people who
+are alpha users of fast feedback
+and ask them what's working what's not
+working one thing that came up that
+i didn't even really think about but
+it's kind of a no-brainer now that i
+think about it is
+you know somebody leaves a comment in
+reply
+to something that i said it'd be nice if
+i got an email
+about it or some kind of notifications
+so i think
+potentially the next thing i'm going to
+work on for the product after the course
+is finished
+will be some sort of email notification
+or slack notification when
+a comment is posted on your site so that
+you don't have to keep checking the
+dashboard you can get notified
+like a push notification or something
+but yeah i think
+you know knowing where your customers
+are at talking with them
+you know posting it tracking your
+success and then
+continually trying to make your product
+better and incrementally improving
+things over time is a great strategy now
+that your
+product will be out there in the wild
+and hopefully growing
+and again if you built anything with
+this course i'd love to see it please
+send me an email
+send me a link um yeah that really wraps
+the course i can't believe
+it's finished thank you all so much for
+progressing through all the videos
+taking the time out of your life to
+learn with me and go on this journey of
+building a product from zero to
+production if you have any
+feedback comments or questions you can
+always email me at
+lerob.io or leave a comment on this
+video and
+yeah thank you so much again cheers

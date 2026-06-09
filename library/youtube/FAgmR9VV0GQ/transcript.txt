@@ -1,0 +1,1201 @@
+So, you want to add generative AI to
+your application.
+Maybe you want to build a smart
+assistant, or you have an AI-powered
+side project that you've been meaning to
+build.
+On the surface, it sounds simple. Call a
+model, get a response. How hard can it
+be?
+But, once you actually try to build it,
+things get complicated fast. How do you
+know which model to choose? How do you
+authenticate securely?
+What does a proper request look like?
+How do you control and anticipate cost?
+And what happens if you want the AI to
+be able to interact with external
+systems?
+And if you're new to AWS, which services
+do you actually need to get something up
+and running?
+It can feel like you need to understand
+everything before you can build
+anything, but you really don't. In this
+video, I'm going to show you how to
+build real AI capabilities into
+applications using Amazon Bedrock,
+starting from scratch so you can follow
+along.
+Amazon Bedrock is a service in AWS that
+lets you use powerful AI models without
+having to run them yourself.
+You don't set up servers or manage any
+infrastructure. You just call Bedrock
+from your application code, send it a
+prompt, and get a response back.
+And if you want to try a different model
+later, you can do that without
+rebuilding everything.
+In this video, we'll explore Bedrock AI
+features together step by step.
+We'll start simple and add more advanced
+features as we go, and then we'll bring
+everything together into one final
+application. You'll learn how to send
+your first prompt to a model through
+Amazon Bedrock,
+control responses using inference
+parameters and understand how tokens
+work,
+let a model have access to tools so it
+can interact with real systems,
+add retrieval augmented generation or
+rag so your AI feature can use your own
+data instead of just general knowledge,
+apply guardrails to keep outputs
+predictable and protect your application
+from abuse,
+and then we'll combine everything into a
+simple AI agent using the Strands Agents
+SDK, which is a lightweight framework
+for building AI agents. There's a repo
+in the description with all of the
+sample code so you can follow along. And
+if you're just getting started with AWS,
+Bedrock is a part of the AWS free tier,
+which means you can experiment without
+worrying about unexpected costs.
+If you want to move from AI user to AI
+builder, this is the practical place to
+start.
+Now, before we write any code, there's
+one thing you should do first. Decide
+which model you want to use.
+Bedrock offers a ton of models from
+different providers. Some are optimized
+for speed, some for reasoning depth,
+some for cost efficiency. They're not
+all the same, so choosing the right one
+does matter. You should test out a few
+models in a controlled environment to
+see which one works best for your use
+case. The fastest way to do that is the
+Bedrock model playground, and using the
+model playground just so happens to be
+one of the ways you can earn additional
+AWS credits for a free tier account.
+Here we are in the AWS console, and I'll
+navigate to the Amazon Bedrock console.
+From here, I'm going to select the
+chat/text
+playground from the navigation, and then
+I will choose select model.
+From here, you can see the providers
+listed. We have AI21 Labs, Amazon,
+Anthropic, Cohere, DeepMind, Google,
+Meta, and more.
+I'll select Amazon, and then I can
+select from the models right here, and I
+will select Amazon Nova 2 Light, and
+then select apply. You can submit your
+prompt directly here in the chat box,
+but before we do that, let's take a look
+at the configuration panel on the left,
+because this is where a lot of the real
+control lives.
+Right now, we have Amazon Nova selected,
+but you can reset this or change it at
+any time.
+Under that, you'll see system prompts.
+This is where you define the model's
+role and behavior.
+For example, you might say, "You are a
+helpful coding assistant
+that explains
+concepts step by step."
+And then in the chat panel, I can type
+something like, "Explain the difference
+between retrieval augmented generation
+and tool use." And then I can hit run.
+So, now Bedrock is invoking the model,
+and we can see the response has now come
+back. Now, if I change the system prompt
+to instead say, "You're a security
+reviewer providing deep
+technical
+recommendations,"
+and then I rerun the exact same prompt,
+this is going to give a response that
+has a totally different tone from the
+one that we just submitted.
+There are also other parameters that you
+can supply using the chat panel as we
+scroll through all of these different
+configurations, but we're going to go
+over some of these in code later in the
+video.
+When you send a prompt to a model and
+receive a response like we just did,
+that process is called inference. You
+provide input, the model runs its
+computation, and it generates output.
+Everything we've done in the playground
+is inference, just through the AWS
+console instead of through code.
+Now, let's move on to how you can use
+these AI models in your applications
+using the Bedrock API.
+Let's start with the Converse API, which
+is the standard way to call models on
+Bedrock. Let's take a look at
+converse_api.py.
+Before we can really get into the code,
+we need to download and install boto3,
+which is the Python SDK that lets you
+interact with AWS programmatically.
+To do that, you can run pip install
+boto3 and hit enter.
+Now, for the code. At the top, we import
+boto3 so we can use it in our
+application.
+Then we create a Bedrock runtime client,
+which is what you need to send inputs to
+a model and get responses.
+This client is how our Python code
+communicates with the Bedrock service
+over AWS APIs.
+Then we define the model ID. We're using
+Amazon Nova.
+Every model in Bedrock has a unique
+model ID that tells Bedrock exactly
+which model you want to use.
+Then we define a system prompt, telling
+the model, "You are a helpful technical
+assistant who explains concepts clearly
+and concisely."
+After that, we hardcode the first user
+message, "What is serverless computing?"
+This is our prompt.
+In a real application, this user message
+would come from some sort of front end
+like a website, mobile app, or you can
+even read the input in from the command
+line. But, for this initial exploration,
+we'll hardcode it.
+Now, let's look at the call to the
+Converse API.
+The structure is standardized. A system
+parameter for the system prompt, which
+is your overall system behavior
+instructions, a messages array, and a
+parameter called inference config for
+inference parameters.
+The messages array is how you structure
+the actual conversation that gets sent
+to the model.
+Instead of sending one big block of
+text, you send a list of message
+objects, each with a role and content.
+The role for each message is either user
+or assistant. User being associated with
+the prompt you send in, and assistant
+being associated with the model's
+response.
+This structure is what allows the model
+to understand who said what in a
+conversation.
+If you want multi-turn interactions,
+where you can have an ongoing
+conversation with an AI model, you have
+to include the full conversation history
+in the messages array for every request.
+This is because the model is completely
+stateless, which means it doesn't
+remember anything between calls unless
+you send the full context of the
+conversation each time.
+Then there is the inference config,
+which is where you define inference
+parameters.
+One of the main ones to know about is
+temperature.
+Temperature controls how random or
+creative the model's responses.
+Set it to 0.0 and you get the most
+predictable response every time, which
+is what you want for tasks like
+classification or data extraction.
+Push it higher towards 1.0 and the
+output gets more varied and creative.
+You'll also see inference parameters
+like max tokens, which caps how many
+tokens the models can emit for a single
+response.
+In other words, it limits how long the
+response can be.
+Also, know that different models support
+different inference parameters, so
+you'll want to check the documentation
+for the specific model you're using
+before adding them to your request.
+After the API call, we parse the
+response that comes back from the
+Bedrock service.
+We print the model's response and some
+usage information as well.
+So, now let's go ahead and give the code
+a run to see it in action.
+To do that, I will open back up my
+terminal,
+and then I will run
+python3
+converse_api and hit enter.
+So, we can see the system prompt has
+been set.
+If I scroll back up,
+we can see the user message, and then
+the assistant response, which gives us a
+nice explanation of serverless
+computing.
+And then here at the bottom, we can see
+the token usage.
+That's a working bedrock call.
+Notice how here at the bottom we've
+recorded input tokens, output tokens,
+and total tokens. There were 222 total
+tokens used.
+Tokens are how you are billed with
+bedrock. But what exactly is a token and
+how does this really work?
+A token is basically a small chunk of
+text. It might be a whole word, a part
+of a word, or even punctuation.
+Different models break text into tokens
+in slightly different ways. There isn't
+a universal standard. All you need to
+know is that when you send a prompt to a
+model, your text gets broken down into
+tokens. The model processes those tokens
+and then generates new tokens in its
+response.
+In our example, a short sentence like
+what is serverless computing was broken
+down into 20 tokens. Longer prompts mean
+more input tokens and longer responses
+mean more output tokens. You're billed
+for both input and output, so the size
+of your prompt and the size of the
+model's response does affect cost.
+Okay, so that was an example of a single
+turn conversation. One prompt, one
+response. Let's make this a bit more
+conversational and you'll see how the
+messages array is populated as we go
+along.
+This time we're going to use the same
+Amazon Nova model, but we'll write the
+app as a cooking assistant and mock up
+three conversation turns.
+I'll open up multi_turn.py.
+The beginning of this Python script is
+the same as the last one. We import
+boto3 and we also set up our bedrock
+runtime client and our model ID.
+Then we set up the system prompt. This
+says you are a helpful cooking
+assistant. Provide concise recipe
+suggestions.
+After that, we create an empty
+conversation history array. For each
+turn of the conversation we mock up, we
+will append the user message and pass
+the entire list to the converse API.
+Then once the model responds, we will
+also append the assistant's response
+back to the list.
+Here we are on line 24 setting up our
+first user message, which states suggest
+a quick dinner recipe with chicken.
+We'll take that message and we will
+append it to the conversation history.
+Then we call the converse API passing in
+the model ID, system prompt,
+conversation history, and inference
+config.
+The model will respond and on the next
+line we grab the response and save it to
+assistant message one. That also gets
+added to the conversation history.
+Now we're going to do that exact same
+thing two more times to simulate a
+conversation.
+For turn two, we ask the AI to modify
+the recipe. The user message says, "Can
+you make it vegetarian instead?"
+Then we add this to the conversation
+history, call the converse API again,
+and save the response back to the array.
+For the final and third turn, we ask the
+question,
+"How long will this take to prepare?"
+and follow the same setup. Append the
+message to the history, call the
+converse API, and append the response.
+Okay, so let's go ahead and give this a
+run.
+To do that, I will run Python 3
+multi_turn.py and hit enter.
+And we can see that the first question
+has gone through. I'll scroll up.
+All right, so we have turn one and then
+the user question and the assistant
+response.
+Scrolling down, we can see we have
+turn two and then we have we can see
+that it did provide a vegetarian recipe
+instead.
+And then for turn three, we say how long
+will this take to prepare and it gives
+us an answer about that specific recipe
+that it just provided.
+So, you could read in user input from
+the command line, add a loop, and
+continue this conversation until the
+user exits, but it's good to see how to
+do this manually first.
+Showing you how to use the converse API
+like this is essentially doing it the
+hard way and we're doing this on
+purpose. There are higher level
+libraries that can handle a lot of this
+complexity for you, like managing the
+message history and formatting the
+request body. But we're working with the
+bedrock APIs directly for now, so you
+can understand exactly how bedrock works
+and can use the APIs yourself if you
+ever need to.
+Later in the video, when I show you the
+simpler way to run inference using the
+strands agent SDK, you'll fully
+understand what's happening under the
+hood. It's always good to learn the
+fundamentals first.
+Now, up to this point, everything we've
+done has been purely text in, text out.
+But real applications usually need the
+model to interact with external systems.
+For example, what if you want your AI
+assistant to check real-time stock data,
+access your email, or manipulate local
+files? That's what tool use is for.
+Tools are functions that a model can
+request your application to run in order
+to interact with the real world.
+When a user sends a prompt, the model
+can decide if it needs help from a tool
+to do something, like read data, call an
+API, or access another system.
+The tool itself is likely a piece of
+code that is running somewhere. That
+might be a local function in your Python
+script, or it could be a function
+running somewhere else, like in the
+cloud.
+This is a pattern you'll see everywhere
+once you start looking for it. A
+customer support bot that looks up order
+status, that's tool use. A coding
+assistant that reads files from your
+local disk, also tool use.
+A personal assistant that helps you send
+emails, you got it. Tool use.
+Think of tool use like this. You create
+tools, make the model aware that those
+tools exist, send a model a prompt, the
+model asks for a tool, your application
+runs it, and the result goes back to the
+model.
+Let's run through an example. We want
+our AI application to answer questions
+about the weather in real time.
+So, if a user asks, "What is the
+temperature today in Seattle?" it won't
+just make up that information. Instead,
+it will use a tool to look it up.
+This does get a bit complicated, but I
+promise that later in the video I'll
+show you a super simple way to use
+tools. For now though, we really need to
+dig deep into how this works. First, we
+import boto3 and JSON. Then we define
+our tool.
+The tool in this case is a local tool,
+meaning it lives inside this Python
+script.
+This tool allows the model to pull in
+data about the weather.
+We have the tool stubbed out, meaning
+that it isn't actually reading the
+weather data, but instead we're
+hardcoding it to directly return some
+weather data that the model can use.
+In the real world, you would want to
+swap this out by connecting it to a real
+API. But I want to focus on showing you
+how tool use works, not the specific
+functionality of the tool. So, you can
+take this pattern and adapt it how you
+like.
+After the tool is defined, we then need
+to define a tool schema that we will
+give to our model so it knows which
+tools it can potentially use.
+This tool schema describes what
+functions are available and what
+parameters they accept.
+Think of this like writing documentation
+for your function, so the model knows
+how to use it.
+We give the tool a name, get weather, a
+description in natural language, and
+then we define the input schema, which
+lays out which parameters the tool
+accepts, the parameter names, the types,
+and if they are required or not.
+When you send a request, you can include
+this tool spec and the model decides
+whether it needs to call it to answer
+the user's question.
+If it does, it returns a structured tool
+request with the function name and
+arguments. Then control gets passed back
+to your code to actually call the tool.
+The results of the tool call are then
+sent back to the model so it can
+complete the response.
+With that in mind, let's move on to the
+next step.
+Here we create a dictionary that maps
+the tool name to the function we created
+earlier.
+This will be useful because when the
+model decides it needs this tool, it
+returns the name of the tool it wants to
+call. So, we need to be able to parse
+that and figure out which function to
+run.
+And then we have some logic here defined
+to actually call the tool when needed.
+This function takes in the tool name and
+the tool parameters. This data will come
+from the model.
+Then we look up the function from the
+tool map, invoke it, and return the
+result.
+And now we can scroll down to see the
+main loop that will call the model,
+parse the response, and call the tool if
+needed.
+First, we set up the bedrock client with
+boto3 and define the model ID. This
+should look familiar.
+Then we define the user message to say,
+"What's the weather like in Seattle
+right now?" Then we save that to our
+messages array.
+Again, this is all following the same
+format as what we did in the last
+example.
+Then we take that information and we
+call the converse API, but this time
+we're also passing in the tool config.
+This is so the model knows what tools it
+can potentially use and it will see the
+weather tool as an option.
+After that, we then parse the response
+from the model and this is where the
+logic does start to get a little bit
+complicated.
+If the model wants to use a tool, it
+returns this tool use block in the
+response.
+When we detect that block, we will then
+call the tool.
+The tool will run and the return data
+will be saved into this variable result.
+At this point, the model doesn't know we
+called the tool. All it knows is that it
+wanted the tool to be called. So, what
+we need to do now is pass the result of
+the tool call back to the model so it
+can incorporate that data into its final
+response.
+To do that, we append the tool result to
+the message array.
+This time the role is user, but instead
+of a user prompt, the content is the
+result of the tool that was executed.
+That updated messages array now contains
+the full conversation history plus the
+tool result. We pass that back into
+another call for the converse API, and
+then we print the final result. Let's go
+ahead and run it.
+To do that, we'll go back to the
+terminal, and I'll type in python3
+tool use and hit enter, and we'll let
+this run.
+All right, I'll scroll up, and let's
+review the result here.
+So, we see the user "What's the weather
+like in Seattle right now?" And we can
+see that we're sending that message
+along with the tool definitions.
+The model responded with the reason tool
+use. So, it comes back with that tool
+use block. We can see the model wants to
+call the tool get weather with this
+specific parameter set.
+And then we can see that the function
+returned that data.
+We then take that tool result, and we
+send it back to the model, and we can
+see the model thinking. The tool has
+returned the weather information for
+Seattle, and from there it will
+formulate its final response, which we
+can see here. The weather in Seattle
+right now is 58° Fahrenheit.
+Okay, so that's tool use doing it the
+manual way. Tools let the model reach
+out to external systems when it needs
+to.
+But one of the most common things you'll
+want to reach for is your own data.
+That's where retrieval augmented
+generation, or rag, comes into play.
+Models are trained on public data up to
+a cutoff date. They don't have access to
+real-time information, your company's
+internal documentation, your run books,
+your product specs, none of that. If you
+ask a model about your internal company
+policies, it's going to hallucinate
+something that sounds plausible, but is
+actually completely wrong. The common
+fix for this is straightforward. Before
+you ask the model to generate an answer,
+you first search your own documents for
+relevant information.
+Then you include that data in the prompt
+that you send to the model.
+The model generates its answer grounded
+in your actual data instead of relying
+on training data.
+This is called retrieval augmented
+generation, or rag.
+You retrieve the data, augment the
+prompt with that data, and then the
+model generates a response. The
+retrieval part uses semantic search,
+which is different from traditional
+keyword search that looks for exact word
+matches.
+Semantic search looks for meaning.
+If a document never uses the word
+deployment, but it talks about pushing
+code to production, semantic search will
+find it because the meaning is similar.
+Another example is the words queen and
+king, which are not directly a match,
+but they are semantically similar
+because they both represent royalty.
+Semantic search will find this
+relationship and consider it relevant,
+but traditional search would not.
+To power this type of semantic search,
+you first have to turn your data into
+numbers, so the computer can compare
+meaning mathematically.
+I myself am not a mathematician, but
+computers work much better with numbers
+than raw text. So, the data needs to be
+converted into vectors, which are simply
+lists of numbers.
+You take your documents and run them
+through an embedding model, which
+converts the text into these vectors.
+Then you store those vectors in a vector
+database.
+When a user asks a question, you convert
+the question into a vector using that
+same embedding model. Then you perform
+semantic search to find the closest
+matches by querying the database.
+Rag is great in concept, but there are a
+lot of things to manage to make it
+happen. You have to chunk documents,
+generate embeddings, store them in a
+vector database, write retrieval logic,
+and keep everything in sync.
+Luckily, Bedrock does this for you using
+Bedrock knowledge bases, and Bedrock has
+embeddings models available to create
+the vectors. Even though this sounds
+really complex, you'll see in a minute
+that it's not so bad. Let's create one
+together using the management console
+for a chatbot that helps users query an
+internal knowledge base for frequently
+asked questions for a university.
+Students will be able to ask questions
+about course enrollment, deadlines,
+financial aid policies, and general
+campus information.
+That's exactly the type of data a model
+wouldn't know from its training. So,
+instead of a student digging through the
+university website for answers, the
+chatbot will be able to help them find
+the most relevant information
+automatically.
+Let's go ahead and create a knowledge
+base.
+Here I am in the AWS console, and before
+we can create our knowledge base, we
+need to create an Amazon S3 bucket and
+upload our documents to it. I'll select
+Amazon S3.
+Amazon S3 is an object storage service
+inside AWS that allows you to store any
+type of file.
+I'll select create bucket. A bucket is
+just essentially like a folder for your
+objects.
+I will select general purpose bucket,
+and then give the bucket a name. Bucket
+names do need to be globally unique
+across all accounts. So, I'll call this
+campus
+FAQ
+docs, and then I'll add my initials and
+1 2 3 4 5 to make sure that it's unique.
+And then we can accept all of the rest
+of the defaults, scroll down to the
+bottom, and select create bucket.
+Now that the bucket has been created, I
+will select it. And then we want to
+upload the documents that we want our
+knowledge base to have access to. So, I
+will select upload,
+and then add files.
+So, these are the files we want to
+upload. I will select all of the files,
+and then hit open, and then scroll down
+and select upload.
+It's going to take a second for these to
+upload,
+and now they're done. So, our files have
+been uploaded to S3, and we can now
+proceed with creating our knowledge
+base. So, I will go back to the Bedrock
+console,
+and then I will scroll down and select
+knowledge bases.
+And we can then create a new knowledge
+base, and we will select knowledge base
+with vector store.
+We'll give this a name. I'll call it
+campus
+FAQ
+KB.
+And then scroll down, and we want to
+select Amazon S3 as the data source
+type, though you can select other data
+sources as well if you have different
+use cases. We'll leave it as S3.
+Scroll down and then select next.
+And from here we can then give our data
+source a name. We'll call it
+campus FAQ docs,
+and then we need to browse S3 to find
+that bucket we just created.
+Select choose,
+and then we can select the defaults.
+What this is going to do is Bedrock will
+actually go through, parse the
+documents, chunk them, create the
+embeddings, load that into a vector
+database for you. So, all of that's
+going to be handled for you, and we'll
+select the default settings for all of
+that.
+So, we'll scroll down,
+and then select next.
+Now we need to select an embeddings
+model.
+I'll choose select model, and then we'll
+choose Titan embeddings G1, and then hit
+apply.
+Then we can scroll down, and we need to
+select where we want to store these
+vectors. There's multiple different
+services that support this. I'm going to
+suggest that you use Amazon S3 vectors,
+because this is a very cost-effective
+choice when compared to something like
+Amazon OpenSearch serverless. So, I
+would reach for S3 vectors first, and
+then only use these other options if you
+absolutely need them.
+And then we can select next.
+So, then we're brought to the page where
+we can review and create our knowledge
+base. We can review the details that
+we've defined, scroll down to the
+bottom, and then select create knowledge
+base.
+This is going to take a minute, and
+we'll come back when it's done.
+The knowledge base is now done creating,
+and what we need to do now is sync our
+documents with the knowledge base. So,
+we can select the data source that we
+just created, and then select sync.
+This will also take a minute or two, so
+we'll come back when this is completed.
+All right, the data has been synced, so
+now I'm going to copy the knowledge base
+ID, which we'll need in the next step,
+and we'll head back to our IDE. So,
+let's go ahead and use this knowledge
+base.
+I'll open up knowledge base query.py,
+and first here at the top, we're
+importing boto3 just as we've done for
+the other examples. Then we need to set
+up the knowledge base ID, and I will
+paste in the ID for the knowledge base
+that we just created, and save the file.
+Then we have our model ID, which is the
+same Amazon Nova model.
+Then on line nine, we create a function
+called query knowledge base, passing in
+the user question as the parameter.
+On line 10, notice the client name here
+is actually Bedrock Agent Runtime. This
+is a different client from the Bedrock
+runtime we've been using up until now.
+Knowledge bases use a different API.
+On line 19, you'll see the call to the
+retrieve and generate API.
+This single call does both rag steps,
+retrieval of the documents using
+semantic search, and generation when the
+information is passed to the model so it
+can give a response. We're passing in
+the user prompt, and this retrieve and
+generate configuration block, which
+references the knowledge base ID and the
+model ID.
+After that, we extract the generated
+response, and we also have some logic to
+display the source citations.
+You get both the answer and where the
+model got that answer from.
+Finally, here at the bottom of the
+script, we call the query function
+passing in the user prompt, which reads,
+"When is spring break this year?" Let's
+see it in action. We'll open up the
+terminal and we'll run this.
+Hit enter.
+We can see the question and then we can
+also see the response has come back.
+Spring break for this year is March 8th
+through March 12th and we can see
+specifically where it got that from,
+which is the document that we uploaded
+to S3.
+So, we now have a model that can access
+private data.
+But, before you put something like this
+in front of real users, you need to
+think about what happens when people try
+to break it, misuse it, or try to get it
+to generate responses that shouldn't be
+shown to a user. That's where guardrails
+come in.
+When you put an AI application on the
+internet, you have to assume it's going
+to be abused. You can't fully trust user
+input and you can't blindly trust model
+output either. Bedrock guardrails helps
+you enforce safety policies, filtering
+both what goes into the model and what
+comes back out before it ever reaches
+your users.
+You configure your guardrails once,
+reference them in your API calls, and
+they work across any model. This really
+isn't about making the model any
+smarter. We're simply putting safety
+checks around the model.
+Guardrails support several types of
+filters and you can mix and match them
+depending on your use case.
+First, content filters. These detect
+harmful content in prompts or model
+responses, things like hate speech,
+sexual content, violence, misconduct, or
+even prompt attacks like jailbreaks or
+prompt injection attempts.
+Then there are denied topics, which let
+you block entire topics or subject
+areas. For example, you might prevent a
+banking assistant from giving investment
+advice.
+Word filters let you block exact words
+or phrases, including profanity.
+Sensitive information filters help
+detect and either block or mask things
+like personally identifiable
+information, credit card numbers, social
+security numbers, or even custom
+patterns that you define. And there are
+some more advanced options like
+contextual grounding checks to reduce
+hallucinations in rag workflows and more
+advanced checks as well.
+The important thing to understand is
+that these policies sit outside of your
+prompt. They're enforced before and
+after the model is called.
+Let's create a guardrail for our
+university chatbot. Imagine a student
+tries to ask the assistant something
+inappropriate, like how to cheat on an
+exam or how to hack the university
+network. That's not something we want
+our assistant helping with. A guardrail
+can detect that type of request and
+block it before the model ever generates
+a response.
+To create a guardrail, we'll use the
+Bedrock console. I'll select guardrails
+and then select create guardrail and
+then we'll give this a name. We'll call
+it campus
+FAQ
+guardrail.
+And then we can set a message for the
+blocked prompts. We can accept the
+default here. It says, "Sorry, the model
+cannot answer this question." But, you
+could customize this if you want.
+We can scroll down, select next, and
+here we can start to configure some of
+the content filters. I'm going to turn
+all of these on. So, for harmful
+categories and you can see you have some
+You have some control over how strict
+you want your guardrail to be. So, you
+can set thresholds for each of these
+different categories. So, we're going to
+leave all of these on. Scrolling down to
+prompt attacks, we also want to be able
+to detect and block user inputs from
+attempting to override our system
+instructions. So, I will turn that on.
+And then you have that same type of
+threshold that you can set for these.
+And then for content filters, I'm going
+to leave the classic tier here. We will
+accept the default. Then hit next. You
+can optionally add some denied topics,
+but we're going to accept the default
+here. I think that just the content
+filters will be enough for our use case.
+Select next. We'll turn on the profanity
+filter.
+And then you could add custom words and
+phrases. We're not going to worry about
+that for now.
+Select next.
+And then also we will scroll through
+this. Select next. And next again. Next
+one more time.
+And now we can review and create our
+guardrail.
+Scroll to the bottom.
+And select create guardrail.
+All right. So, our guardrail has now
+been created and you can test right here
+in the console whether it has the
+correct settings. So, guardrails are
+usually something you have to tune to
+get right. You don't want your guardrail
+to be overly strict and block content
+that's actually fine and you don't also
+want it to be too loose and let things
+through that it shouldn't let through.
+So, usually in a production system or a
+real application, you'll need to come in
+and fine-tune these guardrails to get
+them exactly right. And you can test out
+what prompts you want to try right here
+in the AWS console. But, for our uses
+for this demo, what we're going to do
+instead
+is we're going to scroll down and just
+create our first version
+I'll select create version.
+Create version again and now we have
+version one. I'm going to scroll up and
+copy this ID, which we'll need in the
+next step. So, let's go check out the
+updated code for our university chatbot
+using both guardrails and the knowledge
+base that we created in the last step.
+Here we have the guardrails.py file open
+and I will paste in the guardrail ID and
+then go back to the knowledge base
+script and grab the ID for the knowledge
+base.
+Paste that in as well and save the file.
+To use a guardrail, all you have to do
+is add a guardrail config to your API
+call with the guardrail identifier and
+the version number. Everything else in
+your code stays exactly the same, which
+is really nice. I'll go over just the
+code that changed from the last version
+to this version with the guardrail. So,
+now we have our guardrail ID and
+guardrail version defined here at the
+top along with our model ID.
+Then we have to call the retrieve and
+generate API.
+This time we've added a generation
+configuration parameter block, which
+contains the guardrail ID and the
+guardrail version that we want to use.
+Scrolling down to the prompt we want to
+pass in, all the way down here at the
+bottom, we're going to try two different
+scenarios.
+First, the normal question about spring
+break, which should pass through fine.
+Then second, we'll ask the model about
+cheating on exams, which should be
+blocked. Let's go ahead and give this a
+run.
+I'll open up the terminal
+and type in Python 3 guardrails and hit
+enter.
+We can see the question, "When is spring
+break this year?"
+And we can see the response has come
+back and it's telling us when spring
+break is. So, this means that this
+request did get through our guardrail.
+Now, let's update the question.
+And instead
+I'll say, "How can I cheat on my finals
+this year?" And save the file.
+Then let's give it another run.
+And this time we should expect to see
+this be blocked.
+All right, great. We see that standard
+response came back from the model,
+"Sorry, the model cannot answer this
+question."
+So, up until this point, we've been
+doing everything the hard way on
+purpose, so you can actually see how the
+pieces work together. Now, let's switch
+to a higher-level framework that handles
+much of this complexity for you.
+Let's now combine all of the different
+things we learned into something that
+looks closer to a real-world
+application. Real-world applications
+need more than a single prompt and
+response and hard-coded user queries.
+You need to take in dynamic input from
+the user and pass it to the model. Then
+the model might need to look up
+information, call tools, and take
+several steps before it can answer the
+question.
+An agent is simply a system that lets
+the model do this. Instead of taking in
+a prompt and responding immediately, it
+can think through the problem, decide
+what action to take next, use tools if
+needed, and repeat that process until it
+reaches a final answer.
+Under the hood, the model may be called
+multiple times as part of a loop until
+the task is complete.
+There are many different agent
+frameworks you can use to create agents
+like this and I've already hinted at
+this throughout the video, talking about
+how higher-level frameworks handle a lot
+of this stuff for you. Strands agents is
+one of those agent frameworks.
+Strands is an open-source SDK from AWS
+that makes building AI agents pretty
+straightforward and it integrates
+directly with Bedrock out of the box, as
+well as other model providers, including
+local models.
+We'll focus on Bedrock here, but the
+concept is simple. You give the agent a
+model, some tools, and a system prompt.
+Then it handles the reasoning for you.
+To create a Strands agent, we'll first
+need to download the library. To do
+that, I'll open up a terminal session
+and we can run pip install strands
+agents and hit enter.
+And then we will also need to download
+the tools package. So, we will also run
+pip install strands agents
+tools and hit enter.
+All right. so now that those have been
+downloaded, let's go ahead and look at
+the agent code.
+At the top, we import a few things from
+the Strands framework.
+We have the agent, the tool decorator,
+which will allow us to create local
+tools,
+Bedrock model for the model provider,
+and the built-in retrieve tool from
+Strands tools, which will be used to
+query the knowledge base we created
+earlier.
+Then, we define our configuration
+details.
+We needed to include the knowledge base
+ID, the guardrail ID for content
+filtering, and we're using Amazon Nova
+as our model. All things we've already
+set up and used individually.
+Strands includes a built-in retrieve
+tool that works directly with Bedrock
+knowledge bases. You set an environment
+variable defining the knowledge base ID,
+and the agent decides when to use it.
+Then, we have a custom tool defined.
+With Strands, you use this @tool
+decorator to define any function as a
+tool that the agent can use.
+We've got a lookup course function that
+simulates looking up course information.
+In a real application, this would likely
+query a course catalog, but for this
+proof of concept, we have the data
+mocked up.
+When called, this tool will return
+information about a specific course back
+to the model.
+Now, here's where we configure the agent
+itself.
+We start by setting up those environment
+variables that the retrieve tool needs
+so that it can find the information
+about which knowledge base we want to
+use.
+Then, we create an instance of the
+Bedrock model, since we want to use
+Bedrock as our model provider.
+We pass in the model ID, the region,
+inference parameters, and guardrail
+information.
+After that, we define our system prompt.
+The system prompt tells the agent that
+it's a university chatbot and how it
+should handle requests from a
+high-level.
+Then, finally, we create the agent
+passing in the Bedrock model,
+the tools list including both the custom
+lookup course tool and the retrieve
+tool,
+and finally, the system prompt.
+This last piece here is to bring in the
+dynamic user input. And for this use
+case, we're going to read input in from
+the command line.
+Here, we create an instance of our
+agent.
+Then, we read input in from the command
+line.
+Then, to call the agent and have it run,
+all you need to do is pass the input to
+the agent by saying, agent open
+parameter user input close parameter.
+This is surrounded by a loop that will
+allow us to have a multi-turn
+conversation until we exit the program.
+Let's go ahead and test it out. I'll
+open up the terminal
+and I'll run Python
+3 strands_agents.py.
+And this kicks off our program. So, here
+I'll type,
+when is spring break this year?
+And hit enter.
+And now the agent loop is running and
+Strands is handling all of that
+orchestration behind the scenes. We can
+see that it decided to call a tool, so
+it used the retrieve tool, which then
+reaches out to the knowledge base that
+we created, and it's printing out the
+result here.
+Then, we can follow up and ask another
+question. Let's say, how do I cheat on
+my exams? We'll try the guardrail out,
+and we can see that it's worked just the
+same way as before, saying, sorry, the
+model cannot answer this question. We
+could continue to interact with this
+agent until we're ready to exit, and I
+can just type exit, and the agent loop
+ends and the program exits.
+The agent framework, the Strands Agents
+SDK, handles all of the orchestration
+for you behind the scenes. Bedrock
+provides the model, knowledge bases
+provide your data, guardrails enforce
+safety. Tools give your agents a way to
+interact with the real world. Under the
+hood, Strands is calling the Converse
+API and using all of the different
+Bedrock APIs that we covered throughout.
+That's why it's good to learn the
+fundamentals first. This should all seem
+a lot less magical now than if you
+jumped right into using this agent
+framework.
+All right, we covered a lot of ground.
+Thanks for sticking with me.
+You now have the knowledge you need to
+start building real applications with AI
+on AWS and Amazon Bedrock.
+Remember, there's a repo that includes
+demo code for everything we covered, so
+you can go test it all out for yourself,
+and Bedrock is a part of the AWS free
+tier.
+I'd encourage you to take one of these
+examples and adapt it to a new use case
+so you can push your learning even
+further. Thanks for watching, and I'll
+see you in the next one.

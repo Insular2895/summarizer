@@ -1,0 +1,834 @@
+Open have launched their new
+voice medal and frankly it's absolutely
+incredible.  We're going to test it together and
+we're going to see just how much
+voice, audio is becoming
+more and more the most
+used interface, especially among young people.  And
+is this something that will become more
+widespread?  Let's talk about it right
+now.  Subscribe to Hard Disk TV,
+subscribe to Des Fan Off, subscribe
+to all these channels that allow you
+to have VOD on YouTube.  THANKS.
+So, we're going to listen to Romain who will give us
+an introduction to Open AI and then
+we'll talk about it.  Everyone, we introduce
+new realtime audio models in the open
+API.  In this demo, I'll show two of
+them.  GPT real time translate for live
+translations and GPT real time to for
+voice agents that can follow instruction
+and take actions.  Let's start with
+translations cuz that one feels so
+magical.  I speak French but say I need
+to present to an audience around the
+world.  The English here is the model's
+live audio output captured directly from
+this laptop with transcriptions.  Now as
+I start speaking in French will lower
+the volume of my mic and increase the
+one from the model so you can have a
+real feel for it.  No edit to the audio.
+Let's give it a try.  What's really
+impressive is that the model can
+listen to me and translate at the same time as
+I start the verb,
+and the result is a
+natural conversation exactly like a dialogue. (kann
+ich
+wechsel problemlos zwischen
+französisch und wir können sogar
+technisch)
+Thank you very much.
+That man man I want that as an
+OBS plugin because the number of
+times the number of times I was so
+happy to be able to bring Americans
+to stream man, we literally, I
+want to brag but I was happy, we
+literally did a stream with
+Dan Clany CEO of Twitch here on
+twitch.tv/10 TV/10 a few
+years ago and I was struggling.  Dude, on
+OBS, we had to use PowerPoint
+because PowerPoint in the background has a
+solution for auto
+-titles.  You make a green PowerPoint slide
+, you make a green background and you
+get the automatic subtitles and
+everything.  It was a nightmare.  If I had that,
+I could bring in American guests
+much more often and that would be so cool
+.
+Well, you can definitely do it.  All
+you have to do is tell your AI
+to retrieve the OpenAI PI,
+take the audio source from your
+guest's microphone, cut it in OBS, send it to
+the payload you're making, and generate an
+audio source that will send you into OBS.  Like,
+literally, you shoot that.
+Amazing.  OK.  OK.  OK.  I'll watch.   We
+continue.
+Yeah.  So that's the, that's the
+translate.  For me, it's truly the
+most magical thing.  I have the same
+demo.  I'm going to suggest that we try it out together
+afterwards.
+She's right here.  Oh no, you can't see it
+.  So we'll be able to
+use it right after.
+GP real 2, our new modeling
+voice agents.  Soal
+voice assistant.
+Hi there.  Hi again.  What's up?  Yeah, I
+have a customer meeting coming up.  Can
+you take a look at my calendar?  You have
+a meeting with robotics in 12 minutes
+and you're
+CTO.  Great.  Thank you.  Oh, please stay
+quiet for a second until I say back to
+demo.  Ramon, don't forget now that these
+models have things like reasoning and
+parallel tool calling, it's even more
+important to use things like preambles.
+This way, the model can explain itself
+and update the user.  Thank you Jason for
+the great reminder.  Very important.
+Action can of course take a few seconds
+and it's very important for the model
+with GPT real time you can communicate
+directly during the reason tool.   So.
+In fact, one of the
+important points to understand is that, uh, so
+, in fact, GPT, uh, Real Time 2,
+will act more and more like a
+model that can perform actions.
+That is to say, before the old
+techniques to allow
+voice models to take actions,
+it was actually that you
+retrieved what it said, okay?
+So basically you talk to it or
+things like that and it actually had to
+generate text or gon to
+take actions and now
+with a function tool you can
+connect it to any interface
+and in fact you can for example control
+your computer just with your voice.  You
+see, like for example right now, if I had
+an assistant on my computer, I
+could tell it "OK, change
+OBS scene, OK, do this, OK, do c, OK, do
+that, and so on, and so on."  And so,
+increasingly,
+AI personal assistants will also have
+assistants, will also be able to take
+actions solely on
+audio modes.  And once again, I've blown
+real time 2, it's not like something that
+generates text and then
+generates voice for you.  It's really
+something that will generate voices for you
+first on your first outing.  So it's
+ultra mega fast.  But there was
+someone in the chat
+who was talking about Qai, the company that was
+funded by Xavier Niel who had done
+a demo like that.  We had
+spoken about it in Unmute.  I'm not really sure where they stand
+now.
+Apparently, they went there
+recently.  I didn't see it.  But there was
+a demo a year ago.  That's how it is
+.  That's a bit old.   I don't know
+enough
+to answer.
+Yeah.  No, but there you have it.
+And by the way makes voice ag so natural
+now is
+Jason
+in fact typically there is someone
+in the chat who says it like you can
+have that continuously who is listening to your
+meeting you see and imagine you
+suddenly say I don't know Jarvis
+Share this with us on the Teams Meeting.
+Bam bam, he's sharing this with you.  You see, in
+fact, more and more it's going to be
+contactless, you see.  I'm not
+sure.  Let's highlight Jason just mentioned
+with preambles.  Let's ask another task
+and say, "Hey, could you now update the
+CRM and put the meaning of today as a
+brief and the next steps?
+and update your CRM. Sable CR launched
+warehouse automation this morning expion
+is active security review is the
+blocker. All right, thank you. I'm all
+set. Uh please stay quiet again as I w
+this up. What's exciting here is that
+you can now connect the model to any
+kind of system it could be your
+dashboards, the services you're using,
+even connected devices and so  much more.
+So that was a quick preview of our new
+real audio model coming to the Open API.
+You can now create agents that keep
+conversation going as they think in the
+background. They can translate live
+across 70 languages.
+Knowing that for me the most
+impressive and truly
+incredible thing is really the translate.  to
+be able to try
+all that, friends.  There are
+several things. He's got real-time, you
+see. So, I'm going to say, for
+example, "Act like my best friend." I do
+n't know if you'll be able to hear me.
+Tell me if you can hear me. But if, for
+example, I say, "Tap." Hello? Can you
+hear me or not? Oh no, damn.
+Wait.
+Hello? Can you hear me or not
+?
+OK. OK.
+OK. Come on, he's
+obviously annoying me.
+Oh well, it's real-time, he talks
+fast. Do
+you want to speak French?
+Yes, I speak French. Do you want to
+chat in French now?
+Uh, yeah. Can you explain to me who
+Hard Disk, the famous French YouTuber, is,
+please?
+Yeah, of course. Hard Disk is a
+French creator best known for his
+videos on tech, video creation, and
+the life of an online creator. He
+often talks about equipment, workflow, and
+tips for working more efficiently
+in the industry. I didn't include the "é" (e) because he's
+quite educational with a friendly side.
+Go ahead.  Uh, okay. Can you
+tell me what
+Hard Disk's latest video is on YouTube? Okay. Let me
+check what he's posted to
+give you the most recent one.
+Ah, he'll have to search a bit
+. Okay,
+let me check what he's posted
+to give you the most recent one. No,
+wait, but I ca
+n't check that live
+from here. I didn't put it on the web, but
+anyway, it's super mega fast.
+Okay. And especially the thing
+I also wanted to show you that
+Romain didn't show, is the transcript. So
+what is the transcript? It's when
+I'm speaking, it captures what
+I say in real time and
+displays it. So it also allows you to
+do completely
+automatic subtitling, you see, if you want. So you
+see, while I'm speaking, it
+literally writes
+everything I'm saying in real time, and
+I could very well use that to
+subtitle my  Chat, for subtitling
+events and so on. Another
+interesting thing is this
+subtitling with translate. It can
+be in any language you
+want, you see. So, in fact, you can
+also do totally
+automated subtitling like that. And I think you can
+see that when you look at the speed
+I'm speaking and the speed at
+which
+you're using words, you can
+use complicated words and switch
+from French to English, just to see. Uh, yeah, of
+course. Hey everyone, I hope
+my demonstration is amazing. Salam al
+Twitch. Oh, well,
+he doesn't want to speak Arabic at all
+.
+Oh yeah,
+damn, he's got Arabic, he changed
+the alphabet. Did
+you see
+what we call that? The fact that it
+changes so quickly. It's crazy,
+though.
+Oh no, that's really cool. The
+alphabet change. I admit it
+impresses me.
+Nono. There you go. Boom.
+Incredible. It's
+not bad, is it? Actually, the
+transcribe, the  Transcribe is one of the
+things that impresses me the
+most. How incredibly
+fast it is. It doesn't work locally at
+all.
+Well, yes,
+it doesn't work locally at all.
+Now, what I suggest is that we
+maybe take a look at the PI
+Translate. So, PI Translate, I don't have as
+good a
+feedback as what
+Open A showed you, as what
+Romain showed you, because for me, it
+cuts out. I'll show you. So,
+it works well, but for me, it
+really cuts out a lot. So, for
+example, what do you want me to translate it into
+? Well
+then, give it to me in French. Yeah,
+French, English, because I
+understand. Go ahead. OK. You connect. OK.
+Can you understand me if I
+start speaking in English? It could
+be quite interesting
+if we talk, for example, about how well I
+defend hard drive intelligence on
+my stream and listen only to English to
+see what happens. Wait.
+Okay, go ahead. I'm going to my stream,
+I'm going to too.
+Okay, so here we are in
+m
+or here I have here I have it's
+not bad. So the
+voice quality isn't great because it's real-
+time but but it's actually not bad.
+Okay.
+Oh,
+it stalled. No, but you see, in real life
+on the pay-translate I don't have such
+good feedback.
+Wait, you're Mike Horn, you're
+lost on the Titanic.
+What the hell is this? Wait,
+if I do
+Spanish.
+Okay, there I... Ah
+yes, okay. So we... Okay, wait, I'll put
+your normal mic back on.
+Manager. Wait, wait,
+I'm
+literally unmuting you. What the hell is
+this stupid glitch?
+I don't know, but actually there are
+sometimes errors like that in their API.
+I don't think they'll
+fix it. I don't know to what extent
+they'll modify it
+or not. But it's true  that there are some
+API error corrections but in any case the
+promise is there.
+Wait, disconnect because it's
+infernal.
+Wait, I'm speaking. Wait, I'm trying in
+Japanese.
+Go ahead. Wait, wait. Intend,
+you see. So after that, we can have fun
+like this for a long time,
+you know. It's
+not bad. It's not bad. It glitches
+a little but it's not bad.
+Exactly. In fact, I think
+the promise is beautiful. There are some
+small irregularities, you see, here on
+Translate, but because I don't have something
+as smooth as what Romain
+showed in his presentation, but I still
+think the promise is really very
+beautiful in that respect. Just before
+moving on to the debate, I just wanted to
+show you a tweet from Samaltman
+who explains something quite
+interesting.
+Click. You see my screen?
+Yeah. There, he says, uh, people are
+increasingly using voice to
+interact  With AI, especially when it has a
+lot of context, and you see,
+even I see it myself when
+I use AI that codes. In fact, I
+activate voice mode and I talk to
+the AI ​​and tell it what I want, what
+I want it to change, and
+so on. GPT Real 2 is launching in the country
+today.
+And on a side note, and I find this the
+most interesting,
+younger people prefer to interact
+with Lia by voice, while older,
+middle-aged people
+prefer to type on
+the AI. I wonder if this will change.
+So there you have it, there's definitely a—I would
+n't say a conflict of use—but there are
+definitely different ways of using it. Will
+voice become the
+next big interface? That's the
+question I'm asking you, hard disk and
+chat. Personally,
+I
+much prefer typing, by far
+. But it's also, I think it's
+a question  Usually, because
+it doesn't come from nowhere. It comes from the
+fact that, I don't know if you
+remember, but for young
+geeks back then, do you remember
+doing your shopping at
+Carrefour? And in the software aisle,
+finding a cardboard box with a CD
+inside from a company called,
+I think, VoiceDragon or something like
+that. Like, these
+enterprise-level speech recognition software programs, they've been around
+since the '90s, they
+never really worked. And so, if you
+will, we also carry the
+stigma
+of voice recognition that doesn't work well,
+you know, if you will. And Dragon Naturally
+Speaking. There you go, I remember it well.
+And so, if you will, we're also used to
+thinking, "Well, it's faster to
+type."  In addition, I can go into the
+level of detail I want, I can
+correct, I can, you see, it's
+still interesting." Someone
+in the chat also said another thing
+that interests me, which is "
+With your audio setup, I don't know
+how it works.  "What
+time is it in Tokyo? We could try
+calling a restaurant to get some
+information." Like,
+that would be awesome, right?
+You want to try that? Yeah.
+What time is it in Tokyo right now?
+Wait,
+no, but right now in Tokyo it's 6 PM, like, right
+?
+Yeah, that's perfect. It's 6:10 PM in
+Tokyo. Dude, seriously,
+seriously, we're going to try,
+can we play the sound from your phone?
+Wait.
+Yeah, but the thing is, they're
+going to tell me, "But actually, I'd have to
+play their sound from
+home in French."
+But if you have your phone on
+speakerphone,
+you know what I mean? That way,
+we can hear the model answering and
+you know,
+for real, wait, let me think about how to
+do that. Wait, give me a
+second. Uh, wait, if you put your
+phone on your headphones so they
+can hear what's coming out.
+Yeah,
+you know what I mean.
+Yeah, but actually, what if they, after me,
+receive what they say in
+French?
+Well, we have that in the browser, you see.
+No. Oh, wait. Oh yeah, it doesn't do
+both sides. No,
+actually, it can switch
+automatically, but then that means they'll
+hear themselves speaking
+in French.
+Yes.
+Otherwise, every time they reply to me,
+you see, I'd have to start all over again
+. Actually, we can do that if
+you want. Next time, I can
+do something where there's a stream on their end
+in Japanese, and on my end,
+I get the stream in French, and we
+see how smooth it is
+or not. You know
+, that would be awesome, man.
+We call shops and restaurants
+and do... That would be awesome.
+Well, we can't do that right now. I should have...
+It's true that it's one of the less
+interesting ones, but we can... go ahead
+next time, I'll try to see the
+stream.  I think it's funny. Okay. No,
+no, but otherwise, uh, otherwise, I find
+it super impressive, obviously. What do
+you think, chat? Will
+voice interfaces be the
+new way to interact more and
+more with AI? I want to tell you that's already how
+we started interacting with
+AI at the beginning, with Siri, with Alexa, with OK
+Google, and so on and so forth. I'm increasingly
+believing in this
+computer-by-voice thing, you know? Like
+, typically, tomorrow, I'm
+walking on my treadmill and
+I'm actually connected to my microphone and
+headphones, and my computer is doing
+things for me, like
+Tony Stark style, you know, like, bam, bam, bam, do this
+, do this, do that. I do
+n't know if it's something that
+will become widespread or not, but in any
+case, I'm eager to see. I
+think it has a chance, but we need to...
+It needs to be much more reliable, and in
+my opinion, it has to be linked to something else entirely
+, which is that
+the computer you're talking about needs to be
+smoother. Because
+I've tried things like everyone else, you
+know, Claude Cower, things like that
+work well, but when Claude, for
+example—this is the last thing
+I tested, so I'm giving you
+feedback—you see, take control of
+Google Chrome, it's so slow.
+Really slow, like, OK,
+I'll take a screenshot, the tab is there,
+I click on it, I go to youtube.com, it's
+incredibly slow. Whereas if I
+could say, I don't know, like, go
+to YouTube and give me the last
+thumbnail I made in this style that
+worked pretty well, and have it do it
+at the speed I do, you
+see, OK, we're starting to talk, you see, yeah, yeah, yeah, no, no, no,
+but
+totally. I think the speed is
+going to  It's going to be something extremely
+important. I think stability is going to
+be extremely
+important. You see, typically, when
+I'm talking about this and the thing that's going off the
+rails, I think it's going to raise a lot of
+questions. But then, I
+think it also says something about
+the increasingly global internet, which is whether this isn't
+the final
+stage of globalization,
+having more and more
+social networks, let's say,
+automatically translated, interconnected, and
+so on. We see it on X. On X
+now, they
+automatically translate posts. That's really, really
+powerful, you know,
+automatically translating posts. I
+find myself with people from
+really
+different countries whose posts are
+automatically translated into French and so on.
+Will you come across
+real posts automatically translated into
+your language tomorrow? I think these are
+questions that arise, but it
+also means that we're going to be
+increasingly in an increasingly interconnected market.
+Globalized. YouTube today, they
+allow you to have audio tracks
+in different languages, you know, and
+so on and so forth. So I don't know, what
+you're saying is super interesting
+because it makes me think of something, like, do
+you people
+here know about Esperanto or not?
+Esperanto? Oh man, that's a
+crazy story and I'm thinking of making
+a video about it maybe someday, it's
+interesting. But basically, Esperanto
+is something that dates back years, I do
+n't want to say anything stupid but it
+was before the 2000s, it was, uh, the
+60s, 70s, 80s, something like
+that. And it's people who said to themselves,
+"OK, just like you said,
+globalization is happening and all that, there's
+more and more interaction between
+countries."  We all speak a
+different language and we've all kind of
+agreed on English since then, you see.
+But it would be nice if there was a
+language that wasn't necessarily linked to
+a country and was just a
+somewhat generic language that mixed a bit of
+English, Spanish, and everything else.  And it's
+a language that someone invented.  There are
+Esperanto associations and everything
+to, in quotes, harmonize
+communications between peoples around
+the world, you see.  And everyone
+would speak Esperanto, which would be the
+common language of humanity.  That's
+the basic vision of the project.  1888. Ah
+yes, Espérant is old.  Uh, and
+actually, it's funny because this kind
+of technology shows that
+structurally the people who thought of
+Esperanto might not have been wrong,
+they were just materially wrong.
+They were structurally right and
+materially wrong.  That is to say,
+they thought they could create a new standard
+and impose it, whereas the reality is that
+technology will shatter the
+standards.  Do you see what I mean?
+And in fact, we're all going to speak our own
+languages, our own things, our own stuff, and it's
+the machines that are going to do the job of making
+us understand what the other person is
+saying.
+OK.  Seriously interesting.
+That's interesting.
+Yeah, really interesting.  OK.  I did
+n't know about Esperant.  I
+wonder why invent this when
+English already exists.  But it's surely
+because it's to have more
+nuance, more interculturality
+perhaps, and so on and so forth.  There are
+words, there are words to prevent
+one country from having control over
+others.  You see, that's what you see
+the idea of ​​Esperant is that
+we can therefore use English
+infinitely, you see.  But I think
+the idea was more along the lines of, well, so there you go, it's
+not this country
+that imposes its vision of this thing and
+all that.  We have a new standard that we are
+all building together, and that's it.
+You see, that was the idea.   So.
+Well, the problem is that learning a
+new language is still a mess, you know.
+You know, like, uh,
+yeah.  Yeah.  downright.  But OK.  Very
+interesting.  You see,
+typically, I wonder if we'll
+finally get the demo that we've been sold for
+years, and I mean years.  All
+the Googles, MTAs, whatever you want,
+all the keinotes, they're giving us
+automated live translation, you see
+or not?  Like, yeah, you go to any
+country and activate this or
+press a button and bam, I can
+understand the person in front of me,
+it works too well and all that doesn't work
+.  You see, when are we
+finally going to get something with
+glasses or I don't know, I'm thinking
+glasses typically.  You press a
+button, the person understands you.
+Magnificent thing.  Oh, magnificent.  And at the very least
+, I don't know about something here
+that writes something to the person or something,
+and really having a
+frictionless interaction with a
+person who speaks a foreign language.   Can
+you imagine how
+amazing it will be when it finally exists because
+I'm fed up with it just not existing
+every time we open it and it doesn't
+exist.
+Yes, but you follow
+the news a lot too.  We agree that we are
+less than 5 years away from being in this kind of
+reality, right?  We still have all
+the building blocks for it to work, you know
+.
+Oh my god.  I really think that
+the Meta glasses interface is
+one of the best interfaces there is
+because it's
+audio and you can do a lot of
+things with it.  But then, how would the other
+person understand you? That other
+person would also need to have glasses and be
+able to understand you, you see.
+But my dream is, I don't know, I
+go to a convenience store, you know, I speak
+French, the person answers me in
+Japanese and I answer them in Japanese.
+You see?  Would it work with an
+interface like this, with a
+speaker like this?  I don't know,
+I imagine something very dystopian but
+in reality it already exists, you see, with
+Dyson-style headphones, you see,
+with Dyson-style headphones like that and so on
+and so forth, it would be
+I don't know, I imagine something but I don't know,
+I don't know if you were going towards that by
+saying that, but I think you
+also raise a good debate which has a little nothing to do with it
+, but a little bit nonetheless, which is that there will be
+a big question of open
+source on this because if we
+find ourselves in a universe where I am here
+with my phone with Open AI which
+translates, you are speaking
+Italian for example and you have
+meta glasses, these
+devices will have to be able to talk to each other
+.  We'll still need
+a common technological standard so
+that someone using AirPods and
+someone using Meta glasses
+can translate for each other at the
+same time, you see?  Because otherwise,
+we're going to have an ecosystem of
+all different devices, it's going to be a
+complete mess and if you can only have a
+translated discussion with
+people who have AirPods and AirPods and
+Meta glasses, it's going to be
+very annoying, you see.
+Yeah, totally.
+We need a standard protocol for this kind of thing
+, you know.
+Absolutely insane, absolutely insane, absolutely insane.  And there, I think that
+indeed the answer is
+open source, you see.
+I'm thinking, you see.  In addition, there are
+glasses that are really fully
+open like the meta glasses and there is
+someone from meta, and a shout-out to him,
+who sent me a message not so
+long ago and said, "You know Anice,
+you can develop applications
+on top of the meta glasses and so on
+and so forth."  So it's not open source
+but you can really do things
+with it, you know.  And me, since I have two
+meta glasses, I'm going to try, you see,
+this weekend to make a mini app with
+GPT Real Time and see if, like, if I
+can take my own glasses, put them on,
+and imagine, I'm talking to someone who has
+a language, I give them the glasses and so,
+you see, we
+automatically connect to the same stream, you see,
+and they receive what I say and I
+receive what they say in their language and
+so on and so forth.  Do you see, if
+I give him a pair of glasses,
+could I finally achieve this
+frictionless translation?  But I think we'll get there
+.  I think we're this close to getting there
+.  We have to
+get there, but I think it's going to be
+extremely interesting.  And after the
+dream, the dream is to have
+virtual reality glasses or when you look at something,
+I don't know, in Japanese or whatever
+, well, it
+automatically translates what you are
+looking at and there we are in a
+world where there is more
+friction on translation and there we are in the
+quintessence of
+globalization, you see.
+Yeah, but I'm curious to see your
+feedback if you do it because I do
+n't know what it is.  Novate says
+"My expat dream in the chat."  I'm
+curious to see what the
+current limitations are for developing on meta glasses because I do
+n't know what kind of hardware it is.  I do
+n't know what the... Yeah, well,
+I don't know.  I was told we
+could do lots of things and all that.  So
+I'll try, uh, I'll tell you, but
+in any case, there are
+open source glasses
+that expose
+protocols that you can
+code on top of, well, that you
+can code on top of for
+the glasses and that are not
+glasses, but more, there is an
+American brand that does this in
+programmable
+glasses, smart glasses, you see, and there are more and
+more programmable things,
+and I think that it is very, very
+good in the era of
+artificial intelligence software to have more and
+more programmable connected objects.
+You see, me for example, I have a little
+robot, look, I have this piece of crap.
+I have this crappy thing and it's actually
+a thing where I can play with my dog
+and everything, you know.  And at the same
+time, it's a camera, so I
+also use it as a security camera.   I don't know anything about it
+when I'm not there.  And
+actually, this thing isn't
+programmable.  I wanted to
+put a routine on it, code a little
+something on top of it and all that, you know.  And in
+fact, it's not programmable at all.   So
+I sent a message,
+it's in Chinese, I sent a message to
+the Chinese company.  I said,
+"Excuse me, like, is there no way you could give me
+the endpoints of your
+API or something so I can
+program stuff on top of it?" and they told me
+no because it's not
+programmable, you see.  And I find
+it absurd that there are still things that ca
+n't be programmed, you know.   Wouldn't
+it be simpler to just do it
+yourself?  Because what you're
+asking for is an ESP32 with wheels, basically
+.   No,
+but I prefer to buy this.
+It cost me, I don't remember exactly, but it cost me
+like 30 bucks to buy this
+rather than bothering to assemble it
+and so on.  But yes, yes, today,
+today it's if I want to make
+something fully programmable, if I can do it
+.  You see, I'm 3D printing this:
+wheels, a camera thingamajig, and so on.  Yes,
+but it's going to take me a weekend, you see,
+whereas I paid €30 for this and that's it.
+But actually, it's just to say, I
+think we need to move more and more
+towards this programmable hardware and
+open it up to programming.  But that's
+not popular, obviously it's not popular with businesses
+, but I think we need to
+campaign for it anyway.
+OK.  Is that right? Okay, listen,
+interesting.  Um, I don't know if you had anything
+else to add, but if not,
+tell us what you think in the
+comments, of course.
+Thank you on YouTube.  Don't hesitate to
+subscribe, it's much appreciated.  And tell me
+what you think in the comments.

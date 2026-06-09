@@ -1,0 +1,414 @@
+hey guys hackersploit here back again
+with another video welcome back to the
+bug bounty series i do apologize for not
+uploading the last week
+i've been feeling very very unwell but
+i'm better now and here we go so welcome
+back to the series
+in this video we're going to be taking a
+look at iframe injection and
+more specifically html injection now i
+thought why not make a uh
+sort of like a conjoined video where i
+cover all of this and of course
+the best way to understand injection
+more specifically html injection
+is to also take a look at iframe
+injection all right so the first
+question in your mind is what exactly is
+an iframe well an iframe is an html
+document
+that is embedded inside another html
+document all right now
+a lot of you guys have requested for
+this particular video and
+asked me to explain it now attackers use
+it to leverage
+control over a particular web
+application that they have exploited
+all right so an iframe attack is when a
+hacker or
+an attacker embeds malicious code in
+your website page that executes various
+malicious instructions
+so for example it is usually bundled
+with malware on the web server that then
+redirects the home page to another
+website
+or usually with all the types of malware
+that you'll find on wordpress what
+happens is they use the iframe
+integration to essentially execute or
+run ads on your particular website or to
+redirect
+your website all right now with that
+being said this is a very common
+attack and a very common problem for
+websites and it's very important to
+understand
+how to perform this attack and why it
+occurs all right so let's take a look at
+the tools we'll be using
+now if you've realized i'm currently
+running this on my my main workstation
+many of you told me to do so
+i don't know for a reason but anyway
+here we go so the tools we're going to
+be using are going to be uh bewap so b
+web is going to be our target vulnerable
+web application which you've already
+realized
+because that's where i'm currently
+running it on now the link to be up will
+be in the description however if you
+have trouble
+setting it up or which i will make a
+video on
+uh later on um installing it manually
+onto web server you can get beatbox now
+be
+box is a pre-configured um virtual
+machine or a pre-configured linux server
+that already has
+a view app installed configured and
+ready to go so i will also have this in
+the description section
+and this is currently running on a
+virtual on my local network
+under a virtual machine so i already
+have that set up and you can see the ip
+is right over here
+192.168.1.105 uh so the tools
+the other tool we will be using is of
+course going to be burp and that is
+going to be our intercepting proxy the
+rest i'll be explaining as we move along
+all right so with bwap it's really
+really very simple
+uh all you need to do is uh essentially
+load up the ip address and we're good to
+go
+all right so let's start off with uh
+iframe injection so
+when you start up b wipe you can select
+the the bug that you want to exploit by
+clicking
+right over here and going into iframe
+detection
+sorry iframe injection now a lot of you
+uh will be wondering why i'm not
+covering html injection because that is
+primarily because i'm going to be
+covering it
+all within iframe injection instead of
+making uh
+unique videos for all of these topics
+although if you want me to do so
+let me know all right let's get started
+so we're going to click on iframe
+injection
+and click on hack and it's going to take
+us to the iframe injection page
+now if we open up the source of the page
+which is something you should be always
+doing to essentially to essentially
+analyze
+uh what the web application what what's
+going with the web application whether
+they are any misconfigurations
+all right so so far so good we can see
+that it is a simple html our web page
+with a bit of styling and right over
+here we have the iframe all right so the
+iframe right over here
+tells us that the source is uh or the
+page that is being displayed within the
+iframe is the robust.txt file
+now for this particular case i ran a
+dear buster on the local web server
+or sorry on bwap and essentially scanned
+the uh the local web route and these are
+the files and directories that exist now
+this is a vulnerable web application so
+you have to understand that
+now this web application by default we
+already know has a robots.txt page
+which it already confirms to us and
+that's exactly what this iframe is doing
+now if we take close uh we take closer
+look to the
+to the url you can see that we have the
+php file here
+which is iframe i dot p dot php and we
+then have the param url right over here
+now this parameter
+that is again called the param url
+allows us to specify
+any particular directory in the local
+web route what what does this mean well
+for example
+if we say uh if i wanted to load up any
+other directory
+in the local web route i would simply
+exchange that
+that robust txt for that particular
+directory and of course we have the
+other parameters here
+that specify um the height and width of
+the particular iframe you're going to be
+working with
+so for example i can say right over here
+i can change this to 300
+but you you get the idea in which case i
+will be explaining all of this in a
+second so
+the url radio is is very very important
+and allows us to specify any particular
+file on the local web route so for
+example
+uh with a b web we have a file here
+called 666
+and essentially is like a flag that
+you're supposed to find when fuzzing the
+web application so for example
+if i open up 666 you can see that it's
+going to tell us right over here hi
+little b
+uh how are you today try to detect this
+evil 66 page
+uh and of course we can scroll right
+over here through fuzzing and have fun
+so that is a simple example of
+of how you can sort of use the parameter
+over here but we haven't talked about
+iframe uh
+iframes and more particularly html
+injection
+all right so i've just performed a
+simple brute force so for example if i
+oh
+i can essentially specify right over
+here
+uh i can say uh be app images so for
+example i can change that right over
+here to the images directory and
+let's see if that brings it up for us so
+you can see it does work now
+if i'm to change it right over here
+within the param url i would specify it
+as is all right so for example i would
+say
+uh right over here if we just take a
+look at the directory uh once once more
+we can see it
+it it is under b web so i'm gonna say b
+we're going to specify b wrap right over
+here
+and that is under images so if i hit
+enter you can see it's going to display
+the directory for us with uh
+within the iframe so this is very very
+useful when you want to perform
+a bit of execution and discover what
+directories and what directories are on
+that particular web server
+and you can execute them and view them
+now of course many of you will be
+wondering well how can we leverage this
+further so for example if i wanted to
+view
+a directory outside the web root would
+that be possible well yes that would be
+possible
+if the web application is in incorrectly
+configured and
+what i mean by this is for example uh if
+you've ever set up a web server before
+you know there are users and groups
+and a good standard or uh the default
+standard
+is to essentially have the local web
+server uh which could be running apache
+whatever the case
+should be uh using the user and the
+group www root uh or so
+www data sorry apologies for that and
+there should be a distinction between
+the root user
+and uh the wwe up data so essentially
+separating
+all the various applications for so for
+example the web directory
+or the apache directory is going to be
+only uh
+is only going to be allowed to be
+accessed by that particular user and
+that user cannot access any other
+particular file on the system
+so if this uh if this web application
+was incorrectly uh configured
+then that means that we could
+essentially view any files on the target
+web server
+and how would we do that so for example
+i have burp suite set up here
+and what i'm going to do is i'm just
+very very simply i'm just going to
+re-reload this page i'm going to get rid
+of that and it's going to reload it for
+us
+i'll enable the proxy through foxy proxy
+right over here
+and i will also turn on intercept and i
+will reload this right over here just to
+understand what's going on here for a
+second so
+i'll open up burp suite and you can see
+right over here that we get the
+the proper get request here which again
+is also about uh the html
+injection which is also what we'll be
+taking a look at right now so
+sorry that was a mouthful so we can uh
+we can actually edit the get request
+here if i was to essentially put in
+hc password this could be a file that
+you want to view because it'll
+essentially give you an idea of what
+users are on the system
+this web application has been configured
+correctly which means if i hit forward
+it should tell us here right over here
+it shouldn't give us anything which is
+very very good
+which means that we are restricted to
+the web server and the web root
+directory we cannot
+view any other files on that particular
+web server all right that being said i'm
+just going to disable intercept here and
+you can see right over here
+that etsy password is not found which is
+great it means that we are only
+restricted to the web server
+or the web root directory all right so
+i'm going to reload this one more time
+and we'll go back to the iframe
+injection
+all right so now that we have we've
+essentially established that we can
+that we are limited to the web root now
+let's talk about injection
+more specifically html injection so if
+we take a look at the request that is
+being sent the get request that is being
+sent so what i'm going to do is again
+i'm just going to
+make sure intercept is set to on and we
+have web suite right over here so i'm
+going to reload that and we'll go back
+into web suite
+all right so within burp suite you can
+see something very very interesting you
+can see that we have the parameter url
+which specifies the file
+however we have not realized that it
+isn't important because we are only
+restricted to the web root so let's talk
+about html injection
+so you can see right here that the tag
+isn't closed which means if we close it
+we should be able to execute code now
+this is because this get request
+has been uh formatted incorrectly and
+the web application in this case
+is vulnerable to an html injection
+attack you might be saying well how do
+we
+how do we proceed from you so the first
+thing we want to do is we want to close
+the iframe
+because it hasn't been closed yet so we
+can close the iframe right over here
+so i can say iframe and once we close it
+we can execute any html code after this
+particular
+tag right here so for example i could
+say h1
+i could say alexis is cool i know that
+is a bit
+presumptuous of me but anyway h1 we'll
+close that tag right over here
+and if we forward this what should
+happen is we should be able to execute
+that html code
+which means you can potentially exploit
+a ton
+of you can essentially put in malicious
+code you get the idea
+i'm not going to get into all that you
+can do with html injection my goal is to
+explain how it works
+so for example if i hit forward you'll
+see that right over here it tells us
+alexis now the reason is giving us the
+width again is because we have to close
+that particular
+we have to close that particular tag
+there however you can see that we can
+execute
+code all right so uh now the interesting
+thing to take into consideration here is
+we just forward disable intercept here
+and let's just refresh that one more
+time and
+i will also enable intercept here so we
+can refresh it and understand what was
+going on
+so i can essentially explain it one more
+time so what i said here is if once we
+close this stack right over here
+and of course we know that it uses is
+using an iframe and we close the iframe
+tag
+after this it means now we can execute
+whatever we would we we could have
+executed after
+you know an iframe so you can execute
+any html code so again i can put in a
+paragraph here
+and i can type whatever i want i can put
+in an h2 i can put in whatever i want i
+can also insert javascript if i want
+but of course that is limited to the
+functionality of the of the particular
+web server you're running on and the
+particular stack
+that you're using all right now that is
+how to perform html
+iframe injection in html injection and
+this video is sort of
+out there to explain how you can go
+about doing this now of course we've
+talked about the param url
+and now you can essentially view all the
+files on a particular web server and of
+course if the web application is
+incorrectly configured
+that means you can view all the files on
+that particular web server
+that also go beyond the uh the the web
+root directory
+that being said this is a very very
+basic example and the goal of this video
+was to explain how it works
+now that we understand how it works we
+can now move on to command injection
+and all that good stuff all right so
+thank you so much for watching this
+video
+if you have any questions or suggestions
+let me know in the comment section on my
+social networks or at the forum
+at hackersploit.org and i'll be seeing
+you guys in the next video peace

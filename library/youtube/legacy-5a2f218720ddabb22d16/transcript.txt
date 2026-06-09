@@ -1,0 +1,4999 @@
+It is the most French software
+used in the world and the least profitable.
+VLC is a video player
+entirely open source which is
+used all over the world
+Today. If you watch a video
+on the internet, there is a part of VLC
+behind.
+It's funny, there are people who
+They say no to VLC, I don't see it
+But when you say no, it's the cone that
+reads videos everyone understands and
+People don't know that it's a
+association under the 1901 law, everything there is
+Just the most classic kind.
+Based in France, based in France, it must
+There are some pretty crazy things going on, though.
+which happened around VLC. Seya has
+used a fake version of VLC which
+was reading the files on your computer. We had
+The same problem occurs with Chinese people. We have
+Videolan, which was banned from India
+and I had to attack the government
+Indian to unblacklist VLC. In
+average, I'll take three letters
+of lawyers per month. The first one, you are
+trembling. Now, no
+issue. The worst part is easy to find, that
+Its name is Dolby. They're really
+boxes, where there are more lawyers than
+of engineers. They have techniques to
+the line between a mobster and a mobster. We have real ones
+With Li, we have real changes.
+changes with new technologies.
+Today, people don't realize
+account. We are not 10 times more
+Fast, 100 times faster, we are 100
+billions of times faster. THE
+computers have a growth in
+absolutely mind-blowing power and
+It's not over yet. And my main point,
+That means we need to go back to basics.
+Now, to understand this properly, he
+You need to understand how it works.
+How does this computer work? You
+Do you have 3 hours ahead of you or not?
+The first and most interesting step,
+it's about understanding how it works
+a transistor. A transistor is
+party. Okay, hi Jean-Baptiste, how are you?
+Well and you ?
+Well, listen, I'm delighted to have you here.
+on Generation V Self.
+As you saw, that team there, we're going to
+Thanks anyway, Clément. This is Axel
+in this case
+Matthéo but Axel behind who who has
+tope. Did you see that idiot behind you?
+Yeah.
+Given the construction work, I think it's
+the engineers from Free who are here. He
+went and tried to buy them a cone
+so
+illustrate. You know it's a... it's
+one is one, that was a real problem
+because actually, when I am
+Having arrived at the central school, uh, was it
+There was a cult of the Cone and we had
+there are often cults of the Cone in
+schools, but not necessarily the
+same sides. Yeah. Well, that's it.
+really the sides of construction sites. And in
+In fact, we borrowed from the
+departmental directorate of
+the equipment, the DDE of the 92nd district, a number
+important to coes and there is a moment,
+they officially complained to
+the school. Yes, but there was, but I
+I think that when I arrived at
+Central, there was
+300-400 students on campus, what and who
+were obviously borrowed from the DDE.
+And so at one point
+borrowed
+borrowed
+at some point they were returned since the
+It's a real loan, but a long-term one.
+You know. I don't know if that's a loan.
+I don't know. Yeah, we'll ask for one
+judge. I think you know some, or you
+You'd like to know some, anyway.
+I would like to know about it. Uh, we're going to
+to explain all this because there are
+mysteries for those who don't know
+the cone. Finally, everyone knows this
+cone, but you, I'm going to you
+Let's do it again. Uh, the church in the middle of the
+village, the cone that is behind uh
+Jean-Baptiste, uh, Kempf, our guest
+today, uh, is a cone of
+construction site, hence the famous orange cone
+white orange, white orange. Uh and uh
+and who represents who is the VLC logo
+which will be one of the topics of the day.
+VLC, that's funny, then there's...
+There are people who say "No, I have
+"VLC, I don't see it." I told them no but
+Go ahead and set up your computer for me. And then in
+They have VLC on it, that's all. It is
+But what's extremely important is that...
+Do you do it when I find myself, I do
+confessions all over the world,
+I find myself in the middle of India or
+deepest part of China, and so on
+talking about central France is not
+Very clear. There are still some VLCs out there
+some who say but when you say
+No, it's the cone that plays videos.
+Everyone understands.
+And between 20 and 25% of the traffic that comes
+on our web page it's the people who
+They searched for a con player.
+Huge.
+In Google they type "con player" and...
+It happens. So we're going to talk about that because
+VLC is something amazing. This
+What's funny is that we all have a
+different perception of VLC because
+I discovered it very early on in
+download in download
+borrowing films as you say by
+going back to, uh, what were the
+sites we used to borrow
+films already Dony Casa.
+Yeah Kazad. So there you have it, we were borrowing
+There were many films at the time, but there
+had no easy streaming options.
+Okay, we're talking about illegal downloads.
+It was very difficult to read them
+on a player.
+So today, it seems for everyone
+a very simple world. You go on Amazon, you
+Press play, you can watch it on Netflix or
+On YouTube, you add more and then it works.
+right away.
+I even had a box of
+the time when I still had two
+engineers who worked full time
+I think it's a VLC hack for
+to be able to put
+players on websites. Uh
+In short, all of this, we'll go, we'll go
+to tell this story which is when
+It's quite incredible, perhaps even known to me.
+ultimately, it appeals to the general public because
+VLC, we don't always know that it's
+French. Uh, very few people know that.
+the most installed software. Uh
+Well, what I'm saying is...
+the most used French software
+world
+and the least profitable.
+So after the question, it's even because
+Because you are French, you will be American.
+The question is, in fact, it's
+probably the software
+European most used in the world but
+You see, you have Spotify, so... but you are
+in the same order of magnitude.
+That's incredible.
+And people don't know that it's a
+association. It's an association, the I01
+everything that is most classic
+What.
+Based in France.
+Based in France.
+OK. So you're the president or
+of which I am the president.
+OK. And an association can have
+Employees, employees, anyway?
+No. None.
+Because there is no income.
+The income comes from donations.
+OK.
+And these are donations at a cost of €4 per donation.
+PayPal, you know, because at the top of the
+site, tuas tuas a little something and there you go.
+And the income,
+How many donations does that amount to per year?
+It's complicated because it varies
+a lot depends on when you do
+releases. When we have releases,
+We have more donations. Uh, but it's a little
+near the Yeah. between €40,000 and €60,000 per
+Yes, you see.
+Ah yes, OK. I was thinking maybe 3
+millions, though, out of 6 billion
+installation.
+Oh no, OK. But you are asking yourself
+Not too much though. It's not like Wi
+Wikipedia and everything. No, we don't do the
+a crybaby, you know, like Wikipedia,
+Help, we're out of money. Knowing
+that, nevertheless, one needs to know in order to
+Wikipedia is a bit of an exaggeration because
+some of them, they don't need them except in
+does their part, uh, which is
+perhaps 20% of their budget
+functioning. So, uh, I think no.
+we decided to
+Don't give Wikipedia what you say.
+I'm not saying that, but I am saying that in fact the
+The way they ask is not
+does not meet their needs.
+OK.
+Yes, they have employees on the branch.
+Yes, they have a huge number of employees.
+It's a true American foundation. He
+There are a really huge number of employees. But
+I think the operating budget
+According to Wikipedia, it should be 100-150
+millions. Afterwards, given the impact they have
+on the planet, it was very, very
+cool. But well, we don't really like it.
+this type of request. So we, we
+Don't ask. So, we're going to talk about
+That. We're going to talk about open source, we're going to
+perhaps talk a little about French and
+all of that, of a universe in which you
+navigates. We're going to talk about what they say is Kyber.
+Keyber
+Kber. Yeah.
+Kyber. So, your new start-up. uh
+on which we will be able to announce two
+Three small things, perhaps. Uh, we
+will talk, uh, yeah, about video, videolan
+of the evolution of all this. Uh, Kyber in 2
+seconds, if I understand correctly, it's uh
+Your goal is to limit, uh, the
+latency between the time a video is
+captured by a Sony FX3 that I have under
+the eyes or I was talking to you all at
+the time to we would like to test the
+Black Magic for example, and the moment when
+she arrives on a screen potentially
+Wireless, that is. That
+Actually, it's much more than that. Kyber
+It's a control solution for
+remote machine with the latency
+weaker. So it's to control
+uh, drones, robots, robots
+surgical, humanoid.
+So it's not just the lens, the
+camera, it's also
+actually, it's just that my
+The point is that you're going to have more and more
+more machines, more or less autonomous
+whether it's a more or less
+autonomous and so forth, whether it's a drone,
+we are going to have more and more machines
+semi-autonomous. That's because they can
+to do things but they need
+to be monitored in real time
+because they are in space
+public, or well, from time to time they
+They're not doing well. So we need to start again
+control. So we need to control the
+remote machines and therefore it is necessary
+check all the sensors. There is
+the sensor, which is called sight, which is
+the video that is the most difficult. But
+Kyber isn't just in the video,
+It's video, audio, subtitles, position,
+IoT sensor. It's consistent streaming
+multiple capture and also control.
+So that means you control some
+computers, uh, programs, uh,
+AI agents, uh, drones, robots,
+autonomous cars, uh, remotely
+as if you were, as if you were next to me
+from you. And the idea is actually the idea
+Keyber's job is to make it happen.
+The distance disappears. You have
+the feeling that it's next to you and
+Well, actually, it wasn't going well.
+It's, uh, it's fascinating because it has
+of the
+almost philosophical aspects or in
+In any case, it has an impact on the home relationship.
+machine and why not machine machine
+uh, very deep. That's exactly it.
+because actually, uh, Keyber, but we
+will be able to talk about evolution but at
+The origin is a solution that is
+to do a little cloud gaming
+h
+and that will turn into this and
+obviously the final one is actually
+machines that control other
+machines and and and Kyber does that.
+Okay, I'll take it, I have it, that's what
+I realized something a little in China when we
+So, you saw it, you didn't see the documentary that we
+I'll send you the information about China. On
+did a great thing, we did a little
+tour and then you know in a
+environment where there are drones,
+humanoid robots
+More and more of, well, there, I have
+Didn't see any military stuff, but you
+realize that I'm taking the
+in the case of one, then afterwards, it will be
+perhaps, in fact, this is quite virtual.
+military field because they won't
+Killing each other in drone combat doesn't have any
+grander. This is what happens in
+Ukraine, no less. You still have
+now 5 km, a 5 km Omanzan
+drone, though.
+Yes, that's true. It's true. But you
+said at one point they are they are
+maybe a little less stupid than us and
+so they will say to themselves, maybe they will stop
+this carnage of this
+Yeah no, I'm not sure. But in all
+What's funny is that
+so when you think of a field
+of a battle of the future, you might say
+"OK, there's a drone overhead."
+And
+that we will call."
+Maship, by the way, there is one, but he
+There are perhaps so many sint. OK.
+who will do more than just film, as you say
+but finally have thermal sensors
+a whole bunch of sensors that are
+why not olfactory sensory of
+different ways and so on and so forth
+who will himself engage in dialogue above with
+satellites below with
+Humanoid robots, autonomous tanks, and
+Submarines, whatever, I'll skip over them.
+And then you say, "OK, well, uh, it's a bit
+as today there would be
+Mothering that talks with people,
+but here the drone's view
+uh
+It is, if you read it, thanks to Keyber by
+example to all these uh robots that are
+On the ground, it's the same view. It's a
+one and the same vision. It's the big one
+different from us when you have a
+information from a Mership which is
+above, he tells you, uh, look, 100 meters away...
+On the right, there's a guy there, he is
+hidden behind the embankment. There, you are there, you
+Look, where are you doing that? At 100 m
+RIGHT. No, no. No, to the left, to
+Right there, no. You have the thing above,
+You have the embankment, you can see it from above and
+You know where he is, you know where you are by
+in relation to him. But even without
+to go to your battlefield, some
+cars on a motorway.
+Yeah.
+Finally, you see, at some point, you realize
+counts, finally, the number of cars that
+You're going to, you're going to surrender
+Consider that, in 10 years, in 15
+Years ago, many people had a robot
+humanoid for household chores.
+Yeah, but you, well, you'd like that
+to know how your mother or your uncle is doing
+and so on because, well yeah, you're a
+not far away. But actually, the robot actually
+and all the sensors of this robot, see
+robots in the house, in fact.
+That's your view of what's happening for
+your family who are with the
+aging of the population. You
+See, this is a real issue. So in fact,
+Do you realize we're going to have a lot of
+of machines, whatever the
+definition of machines that are not
+necessarily completely autonomous because
+As you can see, it's been 15 years now.
+and 100 billion or even 1000 billion
+that we invest in cars
+autonomous, they are still not
+100% autonomous. H, and so in fact you have
+lots of cases and then you also have lots
+of things where, well, a really simple thing
+podcast, but you see, you saw it clearly when
+You do remote production, you know?
+You have an event, I don't know...
+advice, I imagine there is one
+French Association of Surgeons
+So I imagine they have a summit
+somewhere and actually you arrive you have
+10 people, you have one, you have four
+cameraman, you have a producer and so on
+and actually what costs you the most
+It's not the equipment. The equipment costs
+Nothing more, it's hotel nights.
+to send people and send the
+skill. But actually, you
+to have two cameras, two people
+who manage the cameras and everything is done at
+distance. And so in fact you also have the
+the fact that it's a projection is because
+the projection in terms of skills.
+He was doing that in Iraq 20 years ago
+years already.
+Yes, but you see, and to do it there
+to have a latency, moreover. No.
+Yeah, of course.
+But, but so the topic here is actually
+You see, it's the projection of
+skills, you see. That's because you have a
+expert and in fact he can't go to an
+place because actually it takes some
+Time costs money. Obviously,
+We saw it with the surgery because
+That's the most visible thing.
+but you have lots and lots of other things
+Or, you could just do nothing about your maintenance.
+from your nuclear power plant, go
+in places that are dangerous. In
+In fact, there are plenty of places we'll go
+actually just projecting people to
+distance and then actually, you'll also
+to project power, in fact.
+That is to say, the computing power, uh
+Well, 15 years ago Bobs said "You
+Go do nothing more, everything will be on
+your phone and actually you realize
+already counts today that most of
+your apps on your phone, actually
+talks to a backend somewhere over
+internet and that there are relatively few
+reflection that is in the device.
+Now, in addition to having AI where it
+not only requires a huge amount of
+computing power but above all
+enormous access to data for
+to get answers, in fact she won't
+spin in your phone and especially
+That's when things start happening with, well, your, your
+smart glasses where you'll project
+something in a telescope, you're going to
+never be able to put the slightest
+processing power. So that means that
+The reflection will be done either on
+your phone and stream on your
+glasses, either in the cloud and streamer
+You can see through your glasses. So in
+In fact, you see, you have many uses for
+streaming power, uh access
+to machines that are remote or
+access to skills that are at
+distance. There is a number that is more
+important than all the others when we
+is an entrepreneur, when one manages a
+company, it's the small number that
+is in the bottom right corner of your invoice. THE
+The problem is that behind this number,
+There are countless others
+numbers and what weighs on the days of
+The delays, the numerous reminders, the
+unpaid bills that are found
+never in these emails, in short, the whole
+administrative hassle, the kind that...
+hates everyone. In 2026, billing
+Electronic electronics become mandatory.
+Forget the endless follow-ups, the
+Lost PDFs, the paperwork that eats everything up
+your time. And to be ready on the day
+I propose one thing: choose
+the electronic invoicing tool
+The one that best suits you. And then,
+no need to overcomplicate things because
+that you have Conto, my partner who
+is 100% compliant and already operational.
+Conto is the French pro account that
+I've been using it and recommending it for a while now.
+always. More than 600,000 entrepreneurs
+have adopted. And the advantage of accounting,
+it's what ? and that you have a
+A complete solution. You have
+your professional account and your invoicing
+compliant electronics in the same place
+without paying for an additional tool and
+You can create an invoice in one minute.
+And then the follow-ups are done in one
+click. Bill reconciliation
+The transaction is automatic and in this
+Use code 1850 for €50
+discount on your subscription without
+commitment. So if you too
+do you want to focus on the good
+Numbers, not paperwork, come on!
+at conto. It's conto.com/facturation
+q on to.com/facturation.
+Okay, let's watch the episode.
+Which explains, uh, so I, I, am full of
+questions, but I didn't ask my first one.
+question, but what explains all this,
+So that's what we call primary
+uh, uh, or cloud, that's it, right? SO
+Uh, it's yes, it's no.
+So yes, it's a bit
+That's kind of the point, but actually
+uh, on prime, that means it's
+really physically linked to the closest
+In fact. Um, and the cloud, that's...
+the furthest place. But actually, you
+You have plenty of ideas. Uh, there is
+many questions about what we
+called the ledge. Uh, that's all that
+is, uh, uh, at the level of, in fact, the
+telephone concentrator, huh, which
+which is a central, uh, central fiber optic network.
+uh, smart grids, think about it
+uh, how does it work? So in fact,
+You have plenty of uses where, precisely, we
+is no longer in a vision everything is in
+the cloud where everything is local, but uh
+For example, you'll be able to...
+You see, for example, the remark that you
+dais sur uh you have a lot of robots in
+at the same time, which are all more or less
+autonomous, but they all send to
+Even the first central player will think about it.
+Well, this first point is going to be the
+point one of the nerve centers even if
+the person who controls all of this
+In fact, she's at yet another point.
+So you see, and the first point is
+your what we used to call the edge.
+All right. And so each time you can have
+several levels of hedge, of
+decision, of things with
+and sensor aggregation. And in
+using more sensors, more
+machines together, you have a vision
+better, and therefore you are more intelligent
+with one, let's say the moership of the
+moership, which is always a kind of
+mega power plant, or rather mega data center
+to a human. OK.
+Yeah.
+OK. I still think that always
+In the end, you kill a human. In fact, it's
+of human enhancement. It is
+These are tools, these are tools
+The best, what else?
+H is like better hammers, you know.
+But wait, but then you see then
+No, but those hammers are brilliant. Me
+I have a friend who makes some
+professional pick hammers, you
+see
+and and and some real hammer tools
+and so forth. The price of these hammers,
+It's a fortune. And actually, yeah.
+but in fact
+What's it called? No box.
+No, I don't remember, but he's just
+That one in there isn't very important.
+But you're testing this [ __ ] thing?
+drill but it's a, it's a joy.
+It's a hydraulic drill, I know.
+Not what. It costs I don't know how much
+thousands of euros, but damn, that's
+It pierces everywhere. You never have any trouble, you
+see. And so, in fact, you were
+with your drill bit there in your wall
+concrete. you struggled and
+Yeah, but actually when you're your
+Professionally, that's normal, actually.
+to have better tools. Uh, the
+advanced tools and progress, it is at
+through the tools. You see, you are
+used to a combine harvester, he you
+Don't do things by hand. SO
+Here we have a real change, we have...
+real changes with AI. We have
+real changes with new
+tech with network coverage everywhere, right? Because
+that 30 years ago, there was no
+network. Now you're not feeling well when
+You have no network. So, in fact, he
+There's a change in tooling and Kyber
+That's part of it.
+Very clear. We'll come back to that. We're going
+to delve a little deeper into this area because
+I find it fascinating and I want to
+to understand a little better. But we will
+also to go back a little. Before
+All of that, if you like, Jean-Baptiste Kempf.
+I suggest you introduce yourself.
+So, my name is Jean-Baptiste,
+I'm at the best age, I'm 42. Uh
+I am
+Does that relate to the 42, or are you saying that because
+Yeah, 42 actually, that's it actually
+You'd tell me that next year too.
+No, no, 42, you know, that's all.
+lore actually uh around so uh
+this crazy joke called The
+Hchikers Guide to the Galaxy, eh who
+is one that has one that has one that is one
+a reference book for geeks, uh, which is a
+absurd English book about, uh, someone
+who, uh, so in French it was
+translated first by the Hitchhiker's Guide to the Galaxy
+from Routard International, uh, but and to
+one moment in fact there is there is there is
+a computer that must respond to the
+question of the universe, life and everything and
+everything and so they build a
+mega computer that calculates during
+10,000 years and his answer is 42. So
+It makes no sense, and that's the whole point of this thing.
+is absolutely hilarious and it starts with
+the earth is being destroyed because
+They built a highway, uh
+galactic and the Earthlings are
+Not aware. And then there's him, a guy
+who is a bit of a loser actually who who
+is saved by a completely
+delirious. And we tell him, "Well, yes, but
+In fact, it was written at your town hall of
+neighborhood, there was a sign that
+explained that you needed to move your
+planet because there was one there
+had a highway and the guys he said
+But which local town hall?
+Well, you know, that quadrant there.
+Alpha of the Sentor and in fact all of this
+That's something, it's a bit like English humor.
+Completely idiotic from the 70s and 80s.
+it makes it quite difficult to be
+unfortunately translated the translations
+In French, there are plenty of
+Jokes, but so there you have it, so that's it.
+accessible, otherwise in English, well, that's it.
+It's still simple, isn't it?
+hot
+It's tough to read, yeah.
+No, it reads very well, but you have to
+to have a good level of English because
+There are lots of backstabs, but it's great!
+and it's long
+Yeah, but it's not a big deal.
+You can read 100 pages out of 500
+pages, the 12 volumes, in fact it was at
+originally limited a radio broadcast
+You see, he's paid by the line. Actually,
+It's not of interest, but in any case
+In this case, this story of 42 and in fact is
+has become a reference for geeks.
+So there's a joke, and actually if you
+Look for 42, there are lots of people who
+take some of that. So that's why
+42 is the best age. Closing
+the first parenthesis. Uh, so I
+I am Parisian, I was born in
+Paris. Um, I travel a lot, but I
+I am still a Parisian at heart.
+I'm a geek and a mod.
+Ah good ?
+Yeah, it's no secret. He even
+dressed like a geek. I mean
+This is important. There you go.
+I arrived wearing a jacket anyway
+just in case, but anyway, if he didn't know if he
+The code was needed here, the code
+In terms of clothing, I say, oh, that's hot, you
+You didn't bring the tie, so oh well.
+Then, we'll form a choir.
+You'll never see me in a tie in my life.
+For what ?
+Well, firstly, for a simple reason, it's
+that I hit a little too hard by
+report for many, many reasons.
+I hate it. I feel like I'm not
+breathe and in fact never
+making small, custom-made shirts, that
+It's done, and it's not very expensive. It is
+nice. That's nice.
+You only wear a tie for the
+Weddings, the enters?
+Oh, well that's good then, that means that
+You did it anyway.
+Oh yeah, I do it.
+OK.
+Uh, and by the way, it's a joke.
+done in several jobs when I
+I was arrested and they offered me ties.
+funny. So I have a tie
+Cauliflower, for example. I hate the
+cauliflower. I have a tie
+cauliflower. Uh, you have everything you
+hates in just one.
+I have a tie
+yellow orange and so on. And soon I
+I'm going to have an orange VLC tie and
+white. So there you have it. We get the impression
+of the aviar.
+Uh, yeah. So I'm an engineer, I have
+In fact, I'm an entrepreneur, I've set up
+full of boxes. Um, I'm very
+curious. Uh
+What do you think? I have two children.
+That's about it. Roughly
+All. That's already pretty good. That's already not
+wrong. Listen, anyway, I am
+Very happy to have you here. Uh, I
+I will also thank Arnaud Laurent who
+made this connection for us which
+is my partner at OVNI. I'll make a
+mini disclaimer. I believe it's a
+first times, this is not the first
+times. So that has nothing to do with it, and you
+You'll understand very quickly, but uh, we
+we are investors via the fund, uh
+in Kyber. Uh, and we'll come back to that later.
+the time, but it's not at all the
+That's why I'm inviting you. I
+I would have invited you otherwise, of course, and
+We will soon understand why. I
+I think we've already understood. Uh
+It all started, in fact, so...
+earlier, but uh, this whole adventure
+The geek thing started, uh, once you
+has landed, at least the
+VLC section, uh, central if I understand correctly
+Understood.
+So yes, for VLC, but
+Actually, well before that, I...
+My parents are teachers
+And, uh, my father is a teacher of, well, he
+was now he is retired
+professor of macroeconomics at
+the university.
+OK. So, not scientific.
+macroeconomics is still a lot
+of math.
+OK. That's still macroeconomics.
+theoretical. anyway
+I listened to a debate recently about the
+the scientists who were talking about soft
+science and hard science, and who said
+No, but seriously, you're definitely on the hard side here.
+science because you're talking about math but
+he said when you talk about there was
+a whole thing about, you see, the
+The economy is precisely, uh, this
+science that is somewhat in between the two
+that is to say, you are actually between the
+social sciences and mathematics
+But there you have it, and they were saying that
+It couldn't be between the two, it was
+either they were hardcore scientists
+but
+Yeah, they're right. But I want
+To say, it's not psychology,
+It's not about long texts and so on,
+that's still
+Hot math, that's what it is.
+And to laugh at social sciences, you
+see. He's talking nonsense.
+Yeah. No, no, this is it, and so I
+I was born in '83 and so my father was
+on the internet before the web.
+OK.
+He had emails in the 80s.
+Yes, that's normal. And I
+I even remember him going to telnet
+on the Parisian university server
+whose name was Asterix. Don't ask me
+Why do I remember, but it's a
+something I remember and he was going
+check your emails via the command line
+From your home. From your home?
+No
+no, often from the center of
+you were not connected at home when
+even ? So, not right away, but we
+was connected, uh, you see, when, when
+back when we had 9600 models, you
+see. So it's still
+Oh, much earlier. It's hot, isn't it, because
+that when you rest put back in these
+Back then, I really, uh
+I discovered the internet in '96, '96, '97, that's...
+smashes the head. That is to say, there is
+At one point, you think, "OK, wow, how
+Wait, how did we ever live without that?
+What, my, my? I remember, I was 5 or 6.
+years old, so we're in '88 or '89. I remember
+to go, uh, to my office
+father, uh, in Tolbiaak there, you know, the
+university, that horrible thing, that thing
+brown, uh
+and to play, uh, MS-DOS games, you
+see. Um, and my dad buys the first one.
+The computer we have at home is running MS
+DOS 3.
+Yeah, I had that too.
+You see,
+Amstrad PC 152.
+And so there you have it, so I find myself in this situation.
+Like that, but it's important because
+I actually find myself, uh, during my
+6th. Um, my father is leaving in the year
+sabbatical like many
+From academics, he goes to Florence. SO
+Um, my family, so I have three sisters,
+So there are 6 of us. We're going to Florence for a year.
+during my 6th grade. And so, well, obviously,
+I don't speak Italian because
+Yeah, I learned Italian this
+that year, but before that, you see, I
+I wasn't speaking. And so I go back to school
+French school of Florence and the school
+French woman from Florence at the time then
+She has changed a lot, but in 6th grade we
+It was 10 and that was still pretty good
+"Yeahs" from the upper middle class
+Italian Florentine who liked
+to say that they were doing
+French, what else?
+and I had a teacher who was absolutely
+He was great as a math teacher and I was when
+even generally already quite good at math
+And so, in fact, I was bored, and so he
+made me program, and so I
+programmed therefore in
+in 6th grade and I loved it. So in fact
+when we returned to France during my
+5th, uh, so now we're getting closer.
+93 94 uh there are people who have uh
+who started to have more computers.
+My father had a laptop in
+Italy, you see. So a laptop to
+that era. in 12 kg,
+Not too much, but it was more like 10 inches
+passive matrix. The thing was, it was too much.
+And actually, I started to geek out
+working on that, and then we
+had a computer back in the Windows era
+95, you see, a Pintium 90 really in
+And before we had, yeah, a 486 DX, you
+see. So, it was really stuff
+very very slow, very very
+Pum, I had forgotten that term.
+Yeah, you see, we're really on the topic of...
+very old. But the result, uh
+I'm quite quick at tinkering and I have
+spent, uh, quite a bit of time, uh, during
+My high school, actually. I bought myself
+first computer. So I was doing
+anything to recover money for
+buy a computer. I have
+built my own computer like we used to do in
+the era. Um, and I have a lot
+tinkered with Windows and so on. SO
+kind of white. Ah yes, of course.
+Yeah, because he's done quite a bit
+things a little before that, but
+Yes, a few years older than you. But
+No, but I mean, it's funny.
+because he worked in the
+local shops, he repaired the
+People's computers, he was setting up
+Computers for everyone.
+And above all, I had a specialty,
+it was
+He was in the video, that's why.
+that I told you I had a specialty,
+It was about, uh, retrieving the files
+erased.
+Ah, that famous one. You can sell this for a lot
+That.
+So back then, you see, for example, I
+I found myself dealing with an SME twice.
+who had lost all his accounting records and in
+Actually, it's not very complicated. You had
+Some rather obscure software, but if you
+He knew how to use it, it wasn't that...
+very complicated. And I did that and I
+I finally found myself, you see, I was getting paid
+500 francs for a day's work.
+I was, I was, I was 16 years old, you know. Oh
+That was great. Uh, and wait.
+Wait, wait, wait, I have to do
+a pause on the deleted file, uh, 20
+30 years later. But, uh, what is the
+Is it possible, uh, can you?
+recover deleted files uh on
+a hard drive and but like, uh, during
+How long and if you what
+the fact that
+because they still need to be erased
+?
+But in fact it's never erased, one
+file.
+OK.
+In fact, the file is not deleted
+actually on the hard drive
+At the time, people were talking about rotating hard drives
+magnetic
+that when you rewrite over it. OK.
+So for example, during it's by
+For example, the FBI had a technique
+uh, for the discs, so they are
+rotating magnetic disks. It's necessary
+rewrite seven times on the disk to
+to be sure that all the data and this
+what we call a real eraser but a
+true erasure because in time
+That's normal, actually you don't do it. What you
+Erase, that's the front door. SO
+it's like if, for example, you see for
+They're telling you to delete this studio. Imagine that
+You have the ability to destroy something
+thing.
+Um, what a computer does is
+that he destroys the door. But the studio
+is there, so if you know, well you break through
+the door and you find yourself there.
+Interesting. But what is
+Interesting, that's kind of what we're going to
+Speaking today is also about...
+Everything you've done, and that's the proe
+from Central and Polytechnique,
+I can imagine that a little too, but it's just that
+you are in universes where
+You're not using code overlays.
+Finally, you're really in the you
+I potentially understand quite a bit of the
+the relationship between the software and the
+hardware, that is.
+It's actually one of my great
+topics right now because we
+arrives with AI and the impact of AI on
+about the developers and my point
+The main thing is, we need to go back to
+bases. That is to say, in fact now
+To understand properly, you need to understand
+what it works, how it works
+that's what the schools of 2000 of 2010 to
+2025 or from 2005 to 2025, she
+You weren't teaching that anymore? If
+No, never, but they never have
+It's practically never done, actually. By
+For example, I learned how it works
+a computer really because in
+parallel to central, I made a
+research master's degree at the laboratory which
+It was called the LRI in Oris, uh, which must
+it is now called Paris Saclet. Uh
+and it was an architecture course
+computers. And besides, I
+I hold a conference regularly, which is...
+I spend 3 hours and I'm going to do some electrons
+on the computer. Because in fact when
+you ask people how it works
+A computer, that's the answer.
+So actually yes, they are 1s and 1s
+zeros. All right. And those 1s and 0s, actually
+well, it allows us to represent all the
+letters. So far, so good. And like that and
+that makes very... that makes very...
+very quickly on these 1s and 0s. And so, as
+You can get computers for that. There,
+You go, "Wait, how many are missing?"
+What steps are there between the two? You were making fun of me
+"From me?" Actually, it's not that
+It's more complicated than that. It's very complicated to
+to truly understand. But just la la la
+general knowledge,
+She's not here. And that's annoying.
+because to be good, you need
+understand what is happening. And that
+It's a theme anyway, that's what
+Regulating things in my life is that
+I like to understand. I am
+someone very curious and uh well I
+can spend a lot of time trying
+to understand things that I understand
+not. Um, I had some friends a while ago.
+who called me Wikipedia but uh but
+That's actually true for many of
+topics, in fact, when I get into them, I get into them
+Put uh strong. And uh
+How does a computer work? You have
+3 hours ahead of you or not? the 2 minutes
+What.
+You can't do it in 2 minutes. But
+What's important to understand,
+That's because there are several steps.
+And the first and most important step
+What's interesting is understanding
+How a transistor works.
+A transistor is roughly a
+switch that you control remotely with
+an electric current. That is to say, at
+Instead of putting your finger, it's that you
+send a current
+electric. If the electric current
+It arrives, the switch is flipped.
+That's about it. And thanks to that, you
+are capable of doing
+what is called in algebra
+ball, the algebra of 1 and 0, we are
+capable of performing operations
+logics. That is to say, roughly speaking, if
+I'll give you one, well, you have
+two inputs and one output. If I tell you
+Give me 1 and 1, and I get 1. If I...
+It gives a 1 and a 0, and it outputs a 0. So
+These are what we call doors
+logics. So the door is, the door or
+Mainly, the door, no.
+No, the door, I'm telling you 1, you tell me
+Answer zero, you see.
+OK.
+And so there are a few doors and
+In fact, when you combine them, you are
+capable of doing
+an adder.
+So an adder is a thing, well
+That's what you know how to do. 1 + 1, that
+Made 10.
+Sorry, that makes 10, but so that makes 10.
+because we are in binary. All right.
+10, one, one unit, one ten, in base
+One second makes it deh
+SO
+You are capable of doing addition.
+Once you know how to do
+additions, well actually you know how to do
+subtractions because in fact one
+Subtraction is addition, a whole
+slightly different. And once you
+You know how to do addition, you know how to
+multiplications. Multiplication
+it's just doing a lot, a lot of
+addition. Division is a subject
+It's very complicated, but at least the principle is there.
+of the Euclidean division that you were told
+learned in, uh, I don't know, I imagine in
+CM1.
+Yeah. Yeah.
+Yeah.
+You can do it. It's very long but
+But it can be done. So you know how to do it
+simple mathematical operations
+but especially from the moment you know
+You know how to do subtraction.
+a comparison.
+OK.
+Yeah. Then, in fact, to see if two
+Things are the same, you just need
+check if you do the first one minus the
+second and that makes zero.
+easy. From the moment you know
+make a comparison
+and that you define the letter A as
+This is issue number 65, but we'll see.
+The sheet and the letter B are the same
+letter + 1 actually your text you know
+process your text. So that's it, actually.
+are you going to take some kind of table
+of comparison and in fact a
+A computer will never understand
+Letter A. He still has the code 65.
+He knows it's the letter A.
+And so, you digitize everything and everything, you
+You say, well, for example, the pixels, the
+The colors are red, green, and blue.
+and it ranges between 0 and 255.
+Uh, so that corresponds to 8 bits.
+VB, did you see that go red and green?
+blue. Yeah,
+red green blue. Yeah. And so, as
+That makes it with 8 bits, so 8
+1 or 0 x 3 for the three colors, you
+is capable of displaying all the
+colors.
+OK?
+You see? And so everything works as
+Then you do the addition. SO
+you know what something is
+One thing is darker than the other, well you
+Perform a subtraction. Is it that
+something is brighter than
+The other one? Well, you do a subtraction.
+Are you going to, and therefore you are
+capable of performing the processing and
+from the moment you do the
+processing, you can add the la
+subtraction, you can do
+one, and therefore comparisons, you can
+to use logic. You can say if
+Subtraction is never positive.
+Go do that. In the other case, go do
+One more thing.
+I learned that. Yeah. If else.
+Exactly.
+You learn that when you do
+coding basics. So if, then yes.
+Well, just with that, actually. So this
+What's happening is a jump
+But there you have it. And once you have
+You've practically got that figured out, you've almost got it figured out
+all the calculations. There you go, that's your
+first block. Your second block is
+memory. You want to be able to store a
+information because once you have
+So, you have memories that we
+primarily calls register
+it doesn't matter. We'll use the memory app and...
+done with in these memoirs, you will
+put
+a number and in the memory of the next one
+Bett
+next to. Or okay. Much better. And
+Then, you do your... you do your... you do your...
+additions. Once you have that,
+You have what's called a clock, a
+blister and all the
+n microseconds, you look at the output.
+All right ? Because obviously all of that,
+These are currents that propagate and
+Obviously it's not instantaneous. That
+does not exist instantaneously in physics.
+Al, if you manage it, call me because
+that you are the richest person
+to the world. But so, in fact, what you
+Do it, it's because you have your connections with
+your memoirs and your additions and all
+THE
+all the Ns, all the blisters, all
+all the interactions, you
+check the output. OK?
+Now that you know how to do that on
+the addition, what you do is you
+has another switch which will be the
+control selector. He will say no
+Now I do A-B.
+No, I'm doing A + B. No, I'm doing A.
+x B.
+You enter a third dimension
+What.
+And in fact, that's the dimension we
+calls it the control dimension.
+OK. And so, in fact, you imagine that you
+See, you have, you have, you have your two
+Registers, you have a block that knows how to do it
+all my operations and you
+has an exit that is on the other side
+Well, you say you give operations, you
+This is your operation selector.
+because what's actually happening is that
+your tone
+your system, so your chip actually
+It performs all the additions at the same time.
+What you're doing is just
+select
+Which one is it that interests me? OK.
+So. Once you have that, well you
+So, use what's called language.
+machine which is in fact explaining it
+what are all the operations to
+do it and you move forward, give instructions to
+each version of the clock.
+So. And so that's computer science.
+The 70s and 80s. We make
+programming, therefore, in machine language.
+We call it an assembler and then come
+So, human languages, where precisely
+You had, you wrote in English
+a little higher level and we have a ce
+what we call a compiler, a small
+program that transforms this into language
+machine
+and then you add layers and you
+Add layers and you add more
+layers because and to get away
+except that today
+Well, actually all the upper layers
+Your daughter can do it. So if you don't
+I don't understand what's happening down there.
+It's very complicated to understand and
+to master. And the hot cups, I
+Translate it and tell me if I understood correctly.
+huh, but the heat strokes, that's the
+It's really the basic software.
+That is to say, uh, when you were doing
+uh, so there is, there was, there is
+different levels of software. There is
+often we talked about we talked about
+frontend, backend, you had some
+languages ​​and these languages ​​in fact they
+had a tendency anyway more
+you move forward in time to simplify
+enormously. Uh, so, uh, finally, me
+I arrived even though I hadn't done any
+from engineering school to starting to code
+on fairly simple languages.
+I did a little HTML, but anyway
+It was almost too much, then too slow.
+And then, there you are, and then you arrive.
+on things and then now you have
+this is what is called vibe coding. I have
+Antonica received it there, in fact there are more
+language. Finally, language is...
+natural language, so you are, you speak to
+You tell the machine to do this, do that, and
+She understands you
+so that people understand, you see
+So when you have languages, therefore
+low levels for example each line that
+You write this, it will generate between one and 10
+instructions
+h
+machine instruction. So there you
+You understand, you're really at the closest point.
+of the machine, that is. So no, the most
+"Close" is when you write in language
+The machine we still use with VLC
+because we need the
+better performance.
+OK.
+Finally, because you're going to be
+And then when you go back up, you'll
+in languages ​​such as JavaScript,
+Each line will be dozens of
+thousands of instructions. And when you are
+In vibe coding, we're talking about hundreds of
+millions of instructions in language
+machine. That's what you're generating.
+something that will generate something that
+will generate.
+So you move away from the machine to
+each time
+and so you lose in pure performance. And
+Anyway, we have computers
+so powerful, as I recall
+that, roughly speaking, we sent people
+on the moon with whatever you have
+calculator. Casio,
+Not even. But no, no, the
+calculators all for there are very
+for a very long time. Today, we...
+People don't realize. On
+We're not 10 times faster,
+100 times faster, we are 100
+billions of times faster. That is to say
+that computers have a
+absolutely powerful growth
+mind-blowing, and so, uh, and it's not
+finished and and and so in fact well you didn't
+needed because it's much more
+It's ultimately quick to program in a
+high-level language because
+Obviously, it's easier.
+Unfortunately, that means you
+Lose performance, you lose
+optimization, and so you're going to go there
+search after. And understand what is happening
+pass, it's important because
+And for me, it's true, not even
+Not even in computer science, but it's true.
+on the whole body of knowledge
+human. When you have some ar which is
+capable of aggregating a huge amount of
+knowledge and giving them what this
+who values ​​learning by heart
+It descends towards zero. What is
+The important thing is to understand what is happening
+pass. What's important is
+to learn how to learn. For me, it's this
+that I, that's what I often say in
+As for me, I didn't learn any math in prep school and
+of physics. In preparatory school, I learned
+to learn, and that's really
+important because, uh, things will
+it will accelerate even further, and so you won't
+to be able to control everything. But
+today, someone who is a little
+Thanks to AI, he will be able to
+Not becoming an expert, but understanding very well
+quickly, a topic that should have been addressed
+years before understanding and
+And you see it very quickly, that's...
+But besides, maybe you can
+become an expert faster anyway
+Also
+Also. But in fact, there is a lack
+absolutely everywhere. That's what we
+calls for grey literature. You have
+THE
+What is Comand's name? I don't know anything about that.
+Any topic, I don't know. There
+Metaphysics for Dummies.
+Hm. and you have metaphysics tests
+And in between, well, you have nothing. You
+Look at me, I'd love to have 1000 pages!
+You see, you take 1000 pages, that's
+Alright. 1000 pages where he explains
+all the math or the whole great empire
+Roman, where you actually go.
+account that you see you have you have a
+about twenty large subjects and
+You think to yourself, well, actually, if I had 1000
+pages that give me a summary of what
+We need to learn from culture. G is
+That's amazing, it doesn't exist.
+It will indeed happen with the LLMs
+NOW. And then you can, you can
+ask questions by saying listen, it's
+Those are still certain manners.
+to learn about LM which are increasingly in
+more common. That is to say, consider that
+I am a 10-year-old child.
+Explain metaphysics to me. After you
+Go tell him, consider that I am in 3rd grade
+Give me more details and then you'll...
+raise it a little.
+Yeah, but you see, for example, it's
+It's the same remark, you see.
+I had a question the other day about
+Greek myths.
+H
+Damn, GPT is asking what the 10 are
+greatest Greek myths. It's super
+simple and it allows you to do so whereas before
+you had to look in books and
+etc. So this is for people who
+are fairly educated, fairly
+intelligent,
+curious, I think curious
+all those people, actually, if I ever tell you
+Damn it, I want to understand
+I don't know about everything, let's just say...
+Here's the history of the Roman Empire,
+Well, actually it's very hard to find one
+something that, in 400 pages, is roughly
+something that you are in a week
+gives the main points. I don't have
+need to know exactly what happened
+past but I need to have some
+big concepts. Same thing in
+philosophy, you see, I'm sure that in
+1000 pages, you can give yourself a...
+first pin and that doesn't exist. You
+See, you have what you did in
+terminal and you have expert tips
+You. You have a pardon, yeah. You have a
+The peculiarity is that, well, you me
+the clip on the computer, but
+uh uh you said it earlier, you
+I like to understand. So in all
+the professional fields then, you me
+You might tell us a little about the staff,
+perhaps on your children and so on,
+How are you? How far have you gone? But
+when you need to create an invoice or the
+Compa, uh, your accounting, you're the first one?
+The first assessment you made, you have
+Made it yourself?
+Yeah.
+All alone. All alone. The most important thing
+[ __ ] of the earth.
+Actually no, but it's really great.
+It is
+That's true, but actually I like it
+to understand and I like to know what
+I ask people. H, so you see by
+For example, I can tell you the first
+box that I dropped off, well, I went
+to the commercial court with the documents
+there for video labs. I made myself
+rejected four times, what. I didn't have the
+good stuff, I didn't have the right thing and
+etc. I made my first
+with my Ursaf declarations in hand, my
+first payslips, my first
+accounting and so on. Is it today
+I do it like this? Definitely not.
+You see, there's a formalist, you
+Do things automatically. But at
+At least I know what I'm asking for. I
+You know why I'm asking, you see. Uh
+you see, for example, compared to
+our politicians, uh, in I, he doesn't
+even the same ones at work, they don't
+They don't understand half of things, you
+see. What are arcos, what are actions?
+Why are there rates A, B, and C?
+What are the differences, etc.?
+You see, they have an idea, you see the la
+We are being told about simplification, the idea
+it's about simplifying the payroll form by
+makes you understand what's behind it.
+This is important. That doesn't mean he
+You have to do it every time, but that
+means that you understand the nuance
+and you'll get a better grasp of the subject. And
+It's true that, well, I did it, I did
+does this a lot in chemistry, in
+medicine, in biology, which is not
+Too much, but you also see, I did
+a lot of pharmacology while
+I really do make my friends laugh often.
+my doctor friends because they tell me
+"But how do you know this name of this
+medication. But actually, I took this
+habit but also on
+there
+legal patent. You see, for example, I... I...
+one of the things I'm doing right now
+I am paid by some
+American lawyers to destroy
+patents.
+That happens to me regularly.
+What does it mean to destroy a
+patent? Actually, it's uh you you are
+expert to say that a patent uh is
+null,
+It's worthless. And in fact, right now
+uh, you see, there are attacks
+patents in the United States, that's...
+hundreds of millions. Um, so you are
+expert witness. Uh, I even recorded it
+once, uh, uh, for a court
+American, uh, in front, you know, with the
+thing, objection, objection, the thing of
+films, uh, precisely to explain that
+This patent is worthless because I have this.
+I have this information, and so on.
+So that's
+I didn't really have a choice when I
+I arrived on VLC and that's it
+The important thing is that I found myself
+in fact, at the head of this project at the beginning
+2007. I arrived in Central in
+2003 and it's a project that existed before
+but I arrived in a position of responsibility
+of the project on January 1, 2007.
+There was a lot to do in terms of communication, of
+marketing, motivating teams. There's
+had more teams, there were two
+people using VLC at the time.
+Yeah. So, having legal problems,
+financial problems and in fact you
+There is no manual. So today, you
+has much more manual than that than to
+the time, but you didn't know that. SO
+So, what are you going to do? And likewise, you
+See, I know all the
+You often receive subsidies, there are
+people who call you. Yes, we're coming to you.
+help with intervention strategy and
+etc. And then I arrive and I go well
+I did a C, an EMI, an uh, a
+AMI, a FUI, I did JI, I did a
+PIA, I did a quick DGA and so on
+And I write my report, I do it myself.
+and so forth, and they go ah
+Thank you, goodbye.
+But knowing that I know which one is
+a little bit of a subsidized shelf and I have
+made some moussi. So, here's the thing...
+The thing is, I find that really the thing
+the most boring person on earth. But it's
+Yesterday, credit was given for a search. June
+innovative company. What did you tell me?
+Flee. I don't have that one. You see,
+single interministerial fund.
+OK. Me, I've done, you see, some things,
+There are some you don't know because
+The FSDP, for example, is
+No, but I did something that
+Her name is Riam.
+Strategic Fund for Development
+from the press or
+Riam. So that's something that depends
+from the national film center, uh, which is
+So I was looking for one, I don't really remember which one
+What. Um, I did something that
+It's called Rapide, which means diet
+support for dual innovation. YOU
+are more than a million per month at
+Watch my videos. 90% of you
+You are not subscribed. So, I'm going to tell you
+asking for something because after 8 years of
+generation of Tursal, this project, is
+the project of my life. Every week
+My team and I are giving it our all to
+to find the best guests, for
+to inspire you and to get the most out of it
+learning opportunity. For what ?
+Because my deepest conviction is
+that you need to use your brain time
+available on more content
+clever. This is important to me
+that this content is available
+free of charge. So, what I'm going to tell you
+Asking is simple, just subscribe. For
+For you, it's just a click. For us, that
+It changes absolutely everything. The more we have
+The more subscribers here, the better the
+content, guests, productions
+and therefore the value that will be brought to you.
+It's now. Must. But you see,
+I could provoke you a little
+about that. Uh, so, uh
+There are two things, that is that on the
+The fact of understanding everything, in fact, I
+sharing, that is to say that I love it, you
+see, me deconstructing
+for example in sports, a passion of
+running or there you go and tell you "OK,
+Wait, the new modes
+training, how does it work
+rather than going there with brute force,
+try to understand what you're doing
+A lot of, well, I've made episodes
+that in terms of basic endurance,
+that thingamajig, that fascinates me and
+That's what I do quite a bit in this
+podcast.
+However
+and I understand that there may even
+a form of anxiety in thinking there is
+In this thing, there's a blur
+artistically, I trust
+someone, I don't care, I don't have the
+time. And so there are people who there
+to people who go for it and who manage to
+to go very fast while saying to oneself "Me, I
+I'm going to take this highway, I
+I don't understand." Exactly everything in the
+details around me. However, uh
+However, it works and there are some
+others, and besides Elon Mus, whom we
+is part of it, it includes a lot of
+things down to the smallest detail and at
+Neuralink and SpaceX, etc.
+I'll just end my question there.
+We were just before, on you me
+I was saying that you
+on the, on forgiveness, yes, on the
+funds. So the funds are still there
+Zs. There are also many who
+They're actually saying, you know what? Me, the Zs
+I don't even want it. because it's too much
+tiresome. It depends on the bureaucrat, on the people
+who decide whether or not they give me
+The stuff and I don't know what. And so
+I prefer to move forward alone in the private sector
+uh, and make my own money in this
+capitalist and liberal system rather
+rather than going to try and beg for
+aids. Uh, uh, and there you go. And so, uh
+That's funny, I'm just putting this out there. But
+Yeah. So it's a very good one
+question and I will answer you that I have
+I did everything.
+I made some boxes. So here, I have to
+This is my 11th or 12th box, huh. I have
+I made boxes where I used full bootstrapping.
+Not a single bit of help, nothing, and it works.
+I have boxes or, uh, in particular
+some
+So bootstrap means that it is
+self-financed. You haven't raised any money.
+You put your money in, you are, you are
+So there you go, and you didn't get any help, and so...
+So, you sell your services, you live on
+yourself. I have a company called
+Videolabs, which employs most of the
+core developers of VLC, roughly the
+half of the VLC developer teams who
+So this is the first box I have
+Created. And in fact, there's a part here
+which is kind of like, I mean VLC, so it
+has a somewhat public interest party. SO
+I think it's morally normal.
+OK to go ask for some
+grant. When I say a little bit of
+subsidy for me there's something that
+What is very important is that it is necessary
+never let your subsidies be
+beyond 15% of your budget
+functioning.
+That's an arbitrary 15%.
+Yeah, it's arbitrary. Don't
+Actually, you shouldn't, there have been quite a few
+start-ups that are found in the
+In the case where you finally see it was almost 2
+a third of their budget and that's very
+embarrassing.
+I have boxes that I made where I have
+fundraising, uh, and now I'm doing it again.
+even with such American funding.
+So you see, I've tried pretty much everything.
+fashions. I created assaults, I have
+I managed real estate investment companies (SCIs), I created companies in
+Germany. I have a company in Germany,
+I did some research on credit.
+Germany, by the way. So you see me
+I have no problem watching a little
+All. So that doesn't shock me. I
+I really like people who are
+capable of saying that they do
+everything by themselves and that they don't take
+help. The remark which is the second
+The observation you make is, in fact, that she is
+What's interesting is that today I
+delegates a lot, like a huge amount
+but that's because I have a small
+at least an idea of ​​what they do
+people. And besides, the people I
+They recruit people who are better
+than me. I have people around me who
+are much smarter than me, but
+I at least have a fairly clear idea of
+what they do. You see, what you
+I was saying about Redlon Max, what, even if
+I don't really like the comparison. Uh
+That is to say, really, yeah, well
+you see, uh, when I talk to my
+accountant, obviously I don't have his
+level, but that means that in
+In a few minutes, I can arrive at a
+level of conversation which is good
+level and without being misled. But you
+You see, what I often say is that
+The goal is that in each area,
+you are at the master's level
+master's degree in all fields. Result,
+That means you can talk to a
+tessard.
+OK. The question is, when will
+Does that stop, as Aurels would say? No
+but because I obviously share I
+I'm being provocative, but I share this
+that you say. That is to say, you take
+all these professions that surround us here
+Today. In fact, I've done them all.
+all alone before.
+No, no, but I'm finishing, you see. Uh
+I have those cameras we were talking about.
+studied myself in minute detail
+details. Finally, which ones were needed?
+How to use this microphone, how to...
+He installs it, how exactly up there,
+Why are there signs?
+isophonic and who or where do you find them
+places and how much it costs and how you
+things, I can go quite far but
+You see, I'm taking the sign
+isophonic or even better the
+camera. There comes a point when I stop and
+I'm not trying to understand how
+works the cosmos sensor or the
+thingamajig because finally I could go
+You can see, there's no hunger.
+In fact, in all of this. You see what I
+I mean
+In fact, yes, there is an end because in
+It happens when you go down at some point, well
+You're getting into physics, basically.
+Yes.
+So in fact there is an end. What this
+What's even more troubling is that there
+there are areas where I know nothing you
+see. And actually it's the people who...
+they say "Ah, but JB, do you have an opinion on
+lots of things and then they told me
+They say so, but you haven't said anything yet. Well, in
+I don't know. So when I know
+You can't hear me. You, by
+for example, in science
+humanities, psychology,
+uh, lots, there are lots of things where
+Honestly, I have no idea. Does that frustrate you?
+Uh no, because I think that at one
+moment in my life, I'm going to have
+need and so, well, at some point I'm going to
+to delve into certain areas, but there is
+full of areas
+that I don't know at all.
+And what I love is realizing that he
+There's something huge I haven't seen.
+How did you learn to be a dad?
+like everyone else later in life. Uh
+that is to say, for me it's my
+That's my feeling and I have the impression
+that it's kind of the feeling of not
+bad of friends. I think that we
+Don't talk much to the future father about being
+Dad, because frankly, for it and it's
+That's normal, right?
+when you are a woman and you are
+When you're pregnant, they prepare you, then you have
+At least something that moves, you know?
+for a few months. What I'm saying
+For most dads, it's just yeah
+Don't worry if you don't realize
+that you are a father until 15 days after the
+Birth, don't worry, it's normal. And
+Actually, yeah, we're preparing a little bit.
+but when you have that thing there which
+starts screaming in your arms
+It's done, and well, there's no one to...
+to help you. Ultimately, it's just you.
+That's not something you're talking about, by the way.
+with your father, too much.
+No, because we're not used to it.
+It's not, it's
+You say it's normal. I'm not sure that
+That's normal. That needs to change
+A bit like that.
+Yes, but it's cultural because I
+Saying that, wait, excuse me,
+Excuse me, this isn't normal, but it's
+cultural. We don't talk much about our
+problems between men.
+It's especially changing our generation,
+our generation, the next generation.
+But it's true that we can't manage it, we
+Don't bother preparing, you see. And me very
+Finally, you see, it's very
+It's very hard, I say that to quite a few people.
+Future dads, you know, up to a
+months after the birth, you don't have
+I realized you were a dad, don't worry
+No, that's normal. So I think finally
+For me, it happened a little more often, I think.
+quickly, but, but, and the second
+The point I'm making is that you know if
+At some point you feel like throwing it away
+your kid screaming out the window is
+a normal feeling.
+Don't do it. No, I'm telling you, he doesn't
+Don't do it. That's not normal.
+That's not OK.
+Actually, that's not it. That's what being
+Dad, that's great and it's going to bring out
+positive emotions from you and
+negative things you've never experienced
+Before. It's a fantastic adventure. Uh
+I love it, I play with my
+my children. Um, I spend a lot of
+time with them. But you're not ready.
+But what you're saying is interesting.
+because you didn't think about it
+at least before this expert assessment. Essay
+I tried it, but it fell through my fingers.
+I tried.
+I was told there's a website I have
+Forgotten who owes who web quebeca. No
+No. a Quebecer, uh, whose name was a
+something about growing up, I don't know what. Finally I
+I don't remember anymore, but anyway
+good or not good
+which was very good
+I was given it
+but it was useful to me once that
+it was once we had the baby in
+done before it was too conceptual
+You see, it's done. So maybe and and
+It's funny when talking with someone
+like the metaphysics you were talking about
+Maybe earlier there won't be
+necessary or super good literature
+for afterwards men are this
+Cultural issues are also disinterested.
+before birth.
+Yeah, but I tried, you see. OK,
+But I did have some...
+Dad's blocks that I found very
+cool, which was notably a block of
+timeline during the first during the
+pregnancy, you see. OK. Watch out, he's going to
+to happen, and so on. But it's...
+Quite funny now. Uh, now
+I, well, you see, often I have some
+friends, girlfriends who are
+When they are pregnant, I name them, I talk to them
+of them, how many SA and so forth.
+I know, uh, you see, for example, I know
+It's very good that today you can
+I can give birth at 24 weeks of gestation. Uh, we
+managed only from 28 onwards, actually, you have
+virtually no more problems
+theratogenesis. I know that, for example
+uh, the problems, uh, in 4, 6 and 8
+with your vitamin deficiencies
+B5 and so on which can enf
+You studied pregnancy, the part
+scientist ?
+Yeah, but I did that afterwards.
+OK. Finally, I did it a little while
+but actually I retested it mainly
+for the second pregnancy which was
+much more, well, much more
+Funny because I actually knew
+Finally, you see, there are many more
+But on the other hand, I was super excited
+But you see, it's not the same thing.
+learning to be a dad and then especially
+I have parents
+who are finally I have I have parents who
+are still very present, uh, and and
+Then I have three sisters, you see, uh
+big small
+uh, one large one and two small ones. OK.
+Small
+It's funny being in the middle of three sisters
+anyway.
+I have two older brothers. So that's
+that's why me
+Actually, it's very honest, he
+It's very pleasant.
+No, but OK
+you are you are you are the only guy so in
+You have it, you see, prince
+not the prince but tuas tuasas you have
+special privileges that I did not have
+sisters.
+OK
+It's obvious, but it's a little
+cultural. Yeah. But, uh, so I don't have
+I really learned, well, I learned in
+done inside and and
+I still had two friends who who
+Yeah, they talked quite a bit and it was
+cool. If I go back to VLC, then I
+I thought you were
+Yeah. Originally, in fact, you are
+arrived on the project a few years ago
+After. There is no VLC origin, there is
+no creator. SO
+rapid genesis. For me, in the idea
+It was created at the central
+So we're on the Nuk myth of the
+Kem is there on a video game. Is that true?
+We need to go back a little.
+I promise I'll do it as quickly as possible.
+possible but
+Go ahead.
+It's the 1960s. And go ahead even
+Beforehand, explain it again because we didn't get it.
+as mentioned earlier regarding VLC
+For
+VLC is a multimedia engine
+and a fully open video player
+source which is used everywhere in the
+world as a reader and as
+engine. In general, today if you
+Watch a video about VLC online.
+a part of VLC behind
+including everything on Netflix you
+see. OK.
+So. Alright. We're now going to
+goes back to Genesis and then we'll tell you
+Go figure.
+In the 1960s,
+In the 1960s, there was this school
+which is called the Central School of Arts and
+factories that are not called schools
+central Paris at the time which is from
+on the side of the G of Lyon and which forms a little
+nearly a hundred engineers per year and
+we are in the reconstruction phase and
+frankly, a hundred is not enough
+quite enough. So they tell them he
+The school needs to be expanded. But the school
+central Paris, unlike, uh, so
+unlike other major
+schools, it's a uh a school that is
+uh
+whose supervisory ministry is
+national education.
+And so Polytechnique, you see, is
+it is it
+the army. Yeah.
+Telecom, it was the minister, finally you
+I see mines, at least there
+Most of the top schools have
+fairly wealthy ministries.
+Hm.
+And central Paris was not a
+Ultimately, a rather poor school. SO
+We understand each other, right? Pretty poor, that
+means quite poor. That's still
+quite rich compared to some
+universities, but for example the budget
+per student was divided by 3 by
+report on mines. OK. And so they
+They say, well, Central School, so it's going to...
+Ferrant, clearly the center of France.
+And there, the alumni of alumni
+say, "That doesn't suit us." And so
+What they're going to do is they're going to
+buy a plot of land next to
+from the jumping park to Chetnabri and they will
+build a campus and they're going to tell
+national education, "There you go, there you
+you have the right to build your
+teaching building and your
+research building, but uh
+"We're the ones who bought it." But this
+What's interesting is that we arrive
+at a school, everything that is more
+public, right, really central, it's
+really the most public thing, uh, which
+is on a private campus, admittedly managed by
+an association, therefore non-profit
+lucrative, but it's still a
+private land and everything was managed by
+students on the attack. The library, the
+cafeteria, supermarket,
+the organization of parties, the radio,
+the supermarket, even the grocery shopping.
+OK, very good.
+Radio, television, management of
+rooms, you see. So you had...
+had a little
+So ultimately this mode of
+how it works, wanting to understand everything
+it's practically native
+Yeah, yeah, central, yeah, I think so.
+Yeah, and so actually on this campus
+that is what is managed, therefore, in fact by the
+students
+and in the 80s there were people
+IBM, which wants to deploy a network at
+large scale. They want to deploy a
+large-scale network to be able to
+test things. And so a
+an association called Via Central
+Network via how to live computing
+otherwise
+and which deploys a
+Let's stick with Via, that's it.
+Yeah, I think so. Yeah, and who, uh
+deploys a Token Ring network. SO
+Ring tokens are technologies
+network.
+Ah yes, I saw it while working
+the episode. Yes, yes, yes. By the way, instead
+that each computer speaks to a
+A router that automatically redispatches a network
+in a star formation, everyone is actually on
+the same loop
+and actually you pass on the messages
+computer, little by little. It is
+as if you know, you put yourself, you
+put them in a circle and give the message
+in the ear of
+or you are in a one then
+it is still connected to the outside world
+a place, but to get the message across
+you are in a large circle with a
+Tipis, uh, every 20 meters, and then there's a
+a place where, within this circle, there is a
+exit route. So you're going to give
+You're going to give your message to the tipiide
+next door who's going to give it to the tipiide of
+It's a bit like a game of telephone. Must
+just hoping there's no
+loss.
+Normally you don't have to cancel that.
+But that means you're also slow
+than the slowest of your teepees.
+OK.
+And you see, and this is the period when I...
+I was telling you about my father who was watching his
+emails in in in tel net what.
+We don't care, it's irrelevant.
+That's very good. But then comes
+precisely the early 90s games
+Nuk Nukem Doom videos and so on and for
+play online.
+Doom
+Yeah,
+You need to put something back together there. Yeah, Doom
+It was crazy. Yeah.
+So you play online. But there in
+Designed for online play, you need to have
+low latency. Or obviously a one
+A network like that has a huge number of
+latency. So they're going to see the school in
+saying there's the web coming 93 92
+93, we need
+of a faster network for work.
+And the school told them with a bad
+faith that I think there are only the
+French people who are capable of doing a
+something about us months ago, saying we would like
+There really is a letter we would like
+I really want to help you, but you understand
+the campus does not belong to us, therefore
+Go check out the school's partnerships
+because in fact the school didn't have
+the money for that and that's what they're going to do
+to do these students. They're going to go and see
+and in particular they will go see the CIO
+from the Buig group, Alain Puya and
+someone was around and he told them
+The future of television is satellite.
+Well, no, but in '94 it's not stupid like
+REMARK. TPS, it worked.
+Exactly. And it's from and it's from
+digital. So the problem is that
+on a campus like Central, uh, you're going to
+needing to install 1500 antennas and
+1500 decoders. And they were coders.
+It was stuff like that. It can
+uh, it weighed a year's worth of death, it cost
+2000 francs. And then a student when
+It's not really, how should I say...
+Careful, huh? We've all been students.
+So the idea is you just put
+a single antenna and you send it to the
+network and it's people's computers
+who will decode. We are at 486 DX at 33
+MHz. H,
+It's impossible to get decoding.
+video. We are in postage stamp format and
+Here we're talking about satellites which are, you
+See, it's SD format, DVD format. THE
+Students say go and this project
+It's called Network 2000. Obviously, we
+It's 1995, everything's called 2000. Well...
+yes, but
+It's true. Optics 2000. There are some who
+They kept the name, by the way. But
+Yeah.
+And so, uh, and so it's 2000 and
+So you're going to give it a go.
+He shows the project; he has a system of
+financing with the tax
+professional, the apprenticeship tax
+from the school and so on. Anyway, he
+they set up the project and they have a new
+ATM network 155 MB per second. I think
+it was one of the best networks
+of Europe at the time. And they have a demo
+and the demo, we broadcast TV and the
+The project should have stopped there. But in
+97 was practically research in
+do.
+yes you were in something for
+So, finally, show this.
+The partnership worked because you have
+You managed to demonstrate... No
+Finally, those who were there succeeded in
+10 years before you arrived elsewhere
+managed to demonstrate some crazy stuff
+I think the big demo is from '96
+or in 97
+Yeah
+and the project should have stopped there.
+97, early 98 there are students in
+first year who actually say that
+That's good, and there may be others.
+people who are interested in the distribution of
+videos on a local area network (LAN) and
+He shows the Videolan project which is at
+at that time a sub-project of
+the association via central network. End and
+He is launching a second-year project because
+It was his second year, he launched a
+new project whose goal is to be
+open source and having a solution to
+streaming.
+So, video streaming on a
+Local networks, you're going to say that you have
+a video that is on a server in
+local and you can broadcast it everywhere on
+all computers.
+So that's precisely the idea here, it's not for
+files, that's for what happens
+directly from the satellite. So, streaming
+streaming, and so they have a solution
+satellite streaming on a network
+local. So you have a live video stream that
+arrives and you are able to broadcast it to
+full of computers. And and in there
+He made those videos, there are plenty of
+software. There is Videoline Server, it
+There's Videoland Channel Switcher, there's
+Videolan, there are tons and tons of
+stuff. And one of those things is called
+VideoLAN client and it's the player that
+originally it's not the most
+complex of the solution. the client one
+client is what downloads onto the
+on the end customer the customer's key
+SO
+to be able to read all of this
+on your computer
+on your computer, and so there is
+the VC Videolan client and then there is
+someone who adds since it reads the
+the MPEC 2 video and audio format which is
+So, satellites, but it's also
+the one from the DVD, so there's someone who
+add DVD support and then
+then we add the Divix file inside
+which arrives and in 2001 the central school
+allows the transition to open source
+It took a long time, didn't it? But then the
+The date of birth is 25 years ago
+years. It's February now.
+It was February 1, 2001, the director
+from the school signs a paper saying
+"I authorize the Videolan code to pass through
+open source under the JPL license
+because, in fact, technically, when you
+Go back to school and sign a paper.
+who says that roughly production in
+do
+I was going to say it wasn't him who did it
+developed, but yes, in fact
+Yeah, but still, you still have
+an intellectual property issue that
+is not necessarily very clear but
+normally some of your productions
+school like when you like you
+works can be considered that they
+therefore have a certain right to scrutinize
+there he gives the right to switch to LPG and
+So at that point it comes out of the central office
+There are people who test it and who
+door, especially under Windows, by which it was
+mainly Linux people who
+put them on Macs and lots of people who
+They add formats and that's it in
+This will make VLC extremely convenient.
+It's because you're downloading what you don't have
+Never done it because it's very, very
+illegal and it's wrong to do things
+illegal. You download it onto your model
+56k for 24 hours your September Divic
+exactly in '99.
+Hopefully your mother won't answer the phone.
+the phone because it cuts the
+connection. I remind you, we don't...
+No sorry, it's really 56k
+and you download that and then you
+you realize that the film you have
+It was launched as a Disney film, whereas you...
+I wanted the last James Bond
+Because the guy you put Matrix on
+above. He called it Matrix, but in fact
+behind it is just to make a
+Joke, I don't know, but it's
+Cinderella, basically. Or the other way around, you want
+Cinderella for your children, you have
+Matrix, you're not happy, you see. Uh
+and VLC, since it's a player that is
+Made for streaming, in fact you can
+already from the moment you have
+some data, see some images
+because on a network, you're used to
+lose packets. So actually VLC is
+very good because in fact after a
+By the hour, you can already see roughly if
+You downloaded the correct movie. But
+especially very often you download the
+Good movie, and then they tell you I can't
+To read it, you need to install a codec.
+pack. So now you're going to download into
+THE
+It's all Windows Media Player.
+It was awful, awful
+and you start downloading codecs
+codec packs and codec packs
+absolutely horrible things that will
+put viruses on your PC and in the end
+It's still not working. you install
+another codec pack and here's the codec pack
+In fact, it destroys the first codec pack.
+And then you have nothing left, you install your
+VLC computer, it happens with all
+codecs directly because basically
+It's a software program that's made under
+Linux actually, and under Linux you
+I'm used to packages, so actually
+they arrive and so, moreover, the
+people took a long time to
+The thing to understand is that VLC doesn't know.
+read the codec packs, so in fact one
+The file is either there or it isn't.
+read. You can't install anything on
+It was generally read, what. That's it
+who was good with
+Yes.
+Not at first.
+when I discovered VLC, indeed,
+That was kind of the magic of it.
+And so, indeed, towards that, that's it.
+Around 2001, around 2002 it started a little bit
+to take off around 2003-2004, at the time when
+I arrive at Central, that's precisely where
+It's starting to become known for that.
+It's really true, but I'll tell you
+Tell me, this is where I position it.
+clearly. Yeah, it's called 2002.
+video client and in 2003 it was called
+VLC Media Player
+and other video projects
+They don't die, but there are many.
+less interesting for outdoor use.
+I arrived in Central in September 2003
+and there is a change of direction and
+He tightens the screw a little because when
+even before the students had
+lots of free time and therefore time to
+to use VLC and therefore the software
+It's becoming increasingly complicated. SO
+actually the generations because actually
+It's generations of students, it's
+a project a year later. Yeah.
+And so when they come back you
+I'll be back in September, but by the time I've had enough time to...
+to actually access the VLC code
+You're already in March, you see. And so you have
+You have a problem with that. And
+end of 2006
+There's no one working on VLC anymore.
+You said you came back in 2003.
+Yeah.
+And so at the end of 2006 you graduated from school
+more.
+So. I was doing an internship. I was in
+internship in San Francisco. I made a
+VIIA. international volunteering in
+administration.
+Um, and before that, I did an internship at the CEA.
+uh, the applications department
+military personnel in Briger le Châtel. Uh
+Oh yes, actually it's rather during
+The SE actually does it, and me, uh, I do
+More and more VLC, but at some point
+That's true, there are two of us.
+Enemies, a guy named Réy, uh
+me and another one named
+Christophe.
+Then it's like real volunteering
+All of this is Ah
+Yeah, it's all volunteer work. Me,
+I'm going to the United States in 2007 and in
+actually coming back, I'm discovering the
+the world of startups in San Francisco and
+I say, "OK, actually, we need to do
+something a little more serious and
+So I'm going to create the association law
+1900 Videolan which is therefore the end of 2008
+who is being hosted. you will watch
+The address is public, it's at
+my parents because anyway, I
+I told myself, since I was a student, I
+change things, the most
+The stable one I knew was the one
+from my parents. The seat didn't move.
+is still at my parents' house.
+And so I created the association under the 1901 law.
+and I'm going to try to recover then he
+there were some servers
+intellectual property, a little bit of
+brand, a bit of domain, a little bit
+of money to the left to the right of
+restructure that into a real assault and
+to go and see the old ones, those who have
+Worked in '96, '98, 2001, and 2003
+to remanufacture and have it done by
+Young professionals, you know, young professionals.
+people who are somewhat experts. And
+I'm going to spend a lot of time going
+at Ipitech, at Ipita at Central for
+retrieve other jets, to go
+to do final year projects and
+etcera to revitalize VLC and that's it
+between, it's an important job
+that I did between 2016 and 2009 and in
+In 2009, we have version 1.0 of VLC and
+that's where we went from a few
+hundreds of thousands to a few
+millions of users to 100 million
+of users. So here, you have the real one
+gap, it's there and in 2012, we
+accelerates tremendously. We find ourselves with
+1 billion downloads.
+1 billion in 2012.
+So be careful, these are these are
+cumulative downloads. That's to say
+that actually someone who updates VLC
+Yeah. OK. OK. All right.
+However, what is interesting,
+it's that today to give a
+order of magnitude, the latest version
+from VLC, it is downloaded to our
+site 550 million times on a single
+version. So you can't say they are
+updates. Uh, and obviously, there are plenty
+Others, like it's free and open source
+and that you have the right to
+redistribute, there are plenty of other people
+who download it without going through
+our website.
+Hm.
+Extremely interesting.
+And that's a yes. download on
+Windows, iOS, Android, Linux, Mac, BOS,
+Solaris, OS2.
+Um, I'm on the site right now, it's quite
+funny. There's a real side to it, it is
+really when it's good old school.
+It's funny because in
+The player has the same face, he's always been
+old school VLC. I never remember
+He told me this thing is the future. You
+see
+the first version under MacOS 10, we have
+had a new design because of that
+It was the first application. But
+But it's true. And for example the website
+I'm the one who makes the entire website.
+alone.
+OK.
+Uh, I did it in 2010.
+I believe this version and it works
+What.
+Yeah. Yeah
+But it's not even ugly.
+Do you want to do it again? No. It's coming back. You
+go back to something that could be
+Because it's quite simple, it works.
+Uh, given 2 dollars, 5 dollars, that's
+Very funny. Um, and we agree on this.
+To end on the geek minutes, no, we'll...
+will probably come back, but uh, that uh
+so my team from my first start-up
+Citizen Side who were working on some, uh, uh
+video players, uh, and so it
+was developing things, but starting from
+of existing, it's very
+probably VLC or
+Absolutely, because VLC is actually
+not just a video player, it's a
+multimedia framework that makes
+thousands of things. There are filters,
+There are things, you can make things
+multiple feed mosaics. There are many
+very, very complex things in VLC
+who are just not exposed for the
+students.
+You could do things with
+watermarks overlaid, readings,
+things. I remember who we have
+two full-timers who were working hard
+about that.
+OK. Uh, all of that, actually, uh, you were doing
+That
+in my free time.
+In your free time because in
+In parallel, you set up boxes, you have
+worked at other people's houses.
+So, uh
+So you work at Skelou, you'll tell me about it
+times. So, so, I did
+I did an internship at the CEA.
+then a long internship at ST
+Microelectronics in Grenoble. I did
+1 year of international volunteering in
+administration in San Francisco. I have been
+a bit of a technical expert for a
+start-up then Cito of another start-up
+which was called Fairplay Interactive with
+an absolutely brilliant guy named
+Louis Vosdig and
+Ah yes, I know Louis. Well
+Yes, it was certainly great at the time.
+Yeah, yeah. Yeah,
+at the time the guy was in France,
+the entrepreneur you see in the chair
+rolling and which makes
+Yeah, we kiss him, I think he
+listens to us.
+Yeah. And above all, a sense of rectitude
+morality which, for me, was extremely
+important for the rest of my life, you know.
+And so there you have it, I'm the CTO of this
+start-up. At first, I help him to
+create a solution using VLC then
+Uh, and actually VLC is starting to take up space on me.
+really every night, every single one of my
+weekends. Fair play doesn't work.
+And so, well, actually, at the end of 2012, I went up
+my
+My company, uh, which is called Videolabs
+uh, whose goal is to pay two
+three people to, uh, maintain VLC.
+Because at the time, I had two
+Important convictions include, for example, that one,
+we are going to have more and more start-ups
+And so we'll have to be competitive
+because young people, they're going to want
+to create start-ups and I see it in
+central, in fact. Even when I talk about
+VLC, I'm talking about it
+exchange. When I was at V in Central,
+the guys who were doing open source,
+They were the best of the best. In 2011,
+I already have quite a few people, though.
+They want to start their own business, they
+They want to start a project, that's all.
+Uh
+and I, and I start having them again
+people who tell me "Yes, but why
+"It's free?" You see? So there you go.
+I thought, OK, I need to have a
+structure, there is a problem with
+The subsidy is what it actually means there is
+many subsidies in France which
+exist only for companies and
+scope but not for associations. That
+makes no sense.
+But so my original idea was
+to create a company that is a subsidiary
+in fact, by the Vidolan association.
+There are many people in the assault
+who are fixated on this. So I say
+Well, it's not a big deal, I'll just do it
+a a a a kind of accelerator.
+I could, sorry, uh, I can, mini
+Pause on that, but uh
+challenge what you say about
+subsidies that are for projects
+for business purposes and not for assaults. I
+I mean, for example, if you
+take the, uh, what some can
+to denounce, but in the universe of the
+culture, for example, where you can say to yourself
+"Well, uh
+I obviously mean for those who...
+Those who are used to it listen; they know.
+There are some who are less so, but you'll
+funding BitNCK who don't give a damn
+"A lot, that's great." But then,
+So in that it's a bit of a cliché of
+the non-profit sector, while
+the objective in perhaps the private sector which
+doesn't always necessarily work
+Better, right? Especially the...
+people who are heavily subsidized but
+you're going to subsidize when a universe
+which has the objective of creating jobs,
+create value, create taxes and
+Et cetera et cetera. But it's true, but
+In fact, for example, the tax credit
+search, you see you have plenty
+of associations that have a huge
+of employees and have tax credits
+Research can be very complicated
+for an assault, or even not possible. SO
+In fact, you see,
+It depends, but in any case, at the time
+So that's the thought process, I'm thinking...
+In fact, that's it, and then especially, uh, we have
+One problem is that the iPhone is starting
+and the apps and uh I'm going to have
+need a lot more equipment and therefore
+much more budget. Um, and for
+porting VLC to Android and iOS, it
+It's much more complicated than that.
+development on your PC. Everyone
+He has a PC there, he needs phones, he
+deployment is needed, and so on. Is it him?
+There are app stores that are still
+difficult to manage
+You can put updates on things everywhere
+Finally
+And so I'm saying, in fact, we need a
+structure, and so I create a structure
+which was called Fidelabs in 2012, whose
+but it's about hiring a few people
+From the association, that is. Wait
+So, but you were telling me that the association
+she had no employees so the
+Employees are in the LAABS video which is
+a private structure
+So, what are you selling then, and to whom?
+Well, I'm actually selling two things.
+mostly. The first one is...
+Outsourced video production.
+OK. So for companies like me
+that I was telling you about earlier, if I
+I didn't want to develop it myself, I
+I would have come to see Videolabs and then you are
+You would have been a very expert on VLC.
+capable of
+So. So. Primarily Google,
+Facebook, Amazon, Netflix, you see, that
+They are my clients.
+OK. OK.
+Uh, and then the VLC engine, it
+has a slightly different license from
+VLC. You have the right to use it in
+your enedad in your app.
+OK. So here we have a lot of engines
+video games, from telco which makes it
+the app for playing videos, streams
+Actually, the videos are run by VLC. OK.
+So when I am, I don't know, I
+I'll say I'm watching a football match
+on Orange TV. Uh
+not for Orange TV, but technically
+Exactly, it could be VLC
+behind.
+Why not ? Why are they at
+Who then?
+I don't know.
+Yeah. OK. OK.
+But Orange in general, they often have
+Their solution, that is.
+H
+And so there you have it. So those are things
+which are entirely possible and therefore
+That's a lot of contracts. So there
+we are really entering the
+classic open business model
+source which is which is a business model
+B2B consulting, and in your case it's
+That. So here in a model that would have
+If you had been private, you would finally have a company
+private, you could potentially have rented
+licenses to use your VLC. There
+You don't rent a license because VLC
+is public but you are proposing some
+services to optimize their videos. there
+Speed ​​that has no bugs, especially the
+even the most important supports and so there the
+The clients I've had, well, we've had Free...
+SFR, Sky RTL, German RTL
+of Microsoft of Nvidia of Google of
+Finally, there you have it, all large companies.
+Electronic Arts, that's the kind of thing and
+and also sometimes companies like
+Talè says there must be a defense
+Of course, OK
+extra, there was some stuff
+pretty crazy things that happened around
+VLC, though, and a few stories about
+crazy because when you dig a little
+You'll tell me all about that.
+Some, but when you have the software
+the most downloaded in the world which is very
+safe he if I understand correctly but you have
+people, including overweight people
+American administrations that are said
+Hey, let's make a fake VLC so that
+people pass it around
+They download each other and then like that.
+we will be able to take control of their
+computer more or less. That's what happened
+It did happen, it is.
+what is called the Volt Seven subject which
+is something that has been in
+Wikileak, in fact, you see the Wikileaks at
+the era, the golden age of Wikileaks
+who was launching big things. C before
+Snowden's things. And
+Indeed, there is a CIA version
+used a fake version of VLC which
+was the real version of VLC to which they
+had added two things which
+launched at the same time. Actually, you
+I didn't see him and he was reading the
+files from your computer and send them and
+in fact they used some
+targeted ads to send this to
+a specific person. Like that
+done, and especially when you launch VLC, you
+You're watching video, you have sound
+So actually, if your computer it
+starts to grind, it does a little bit of
+noise, you say okay, so it's the video or
+You can't hear it because of the video.
+So, as a result, now is the right time and
+Then you watch for 2 hours. SO
+He could encrypt it and use it. We have
+had another similar problem with
+So when he says that, for example, I
+I'm having a stupid mistake, but where did it happen?
+Bin Laden, I thought to myself, hey, I need
+to read
+I feel like watching a little Matrix
+deep in my cave
+Afghanistan. You download it, it works
+Not good, you download VLC but
+Actually, I typed VLC into Google, and that was it.
+The first linen is actually a fake, it's
+VLC-Miaplayer.biz.
+Uh, and this is the version that is, uh, for
+Afghanistan translated correctly. You
+Click on this link, download it, that
+looks like the VLC thing. In fact, it's
+a VLC. Besides, it mentions videos,
+You see, there's just one little thing
+additional. Yeah. They have, they have
+the thing. OK.
+We had the same problem with some
+Chinese, that was a bit more recent.
+4 or 5 years ago, uh, who have
+used it then, there's not even the reader
+video but they used the signature
+of VLC. To start something else. SO
+Nothing was happening there, but it was
+targeted with Indians. Result
+We had Vidéoline get banned
+from India and I had to attack the
+government
+Indian to unblacklist VLC.
+You took legal action against
+the government.
+Yeah. Yeah. OK. I did it too.
+Are you still welcome in India?
+I adore.
+I have been to India seven times. I have
+I visited many places in India. I adore
+That. But you know, I did, I did, I did
+Adopi was also seized, you know. I did
+a referral
+with, you see, the laws of Dats and
+Adopi with something called ARMT
+which was merged into Adopi which was
+merged into ARCOM. Uh, I have
+We did, uh, yeah, those are the
+attacks against governments
+more important, but you see, we have
+uh, I've regularly had...
+questions by Interpol or, uh, or some
+American administrations, in particular
+in police investigations where they have
+a video file and there's nothing that
+bed. Are you able to do it?
+Do it with VLC?
+You see,
+Often capable?
+Yeah.
+You sell it for a high price, so you make
+how ?
+It depends.
+OK. That's your box, that's what it is.
+do.
+Yeah. It can actually be free.
+OK.
+Me, me, I have a very, uh, yeah vision.
+Yeah. Very geeky about that. That is to say
+You see, there are things... you
+see for example
+when I was asked for help in the
+cases of child pornography
+You see, it's Yeah, go ahead, I'm coming
+To help you, what? You see, it's... it's you
+take a look at everything around you
+forchan.
+There is no rule, there is only one
+The rule is no child pornography.
+You see.
+uh
+Because that's actually it, there isn't
+You see, it's a debate.
+Hm.
+Even though you see the laws
+terrorists, there are always because
+that you see the terrorist laws, they
+have been used against environmentalists
+against something, you see, you always have a
+debate. The thing about pornography
+infant
+Childish, there's no debate about it.
+No. So in these cases, well no, we
+Throw it away for free, basically.
+Yeah. What needs to be hot is that
+so you end up lighting up
+things you don't really want to see
+What.
+Uh no, I don't watch it.
+OK. You can see that it lights up,
+I want it to work, but you want it, you want it.
+not
+No, but for example, what happened to me
+uh, uh, several times, uh, it's for
+police, uh, so we, we don't
+track nothing.
+Hm
+This is very, very important. I don't
+I'm not capable because in fact
+First, we don't have the infrastructure
+But we don't do telemetry. not
+of what I ultimately call it is
+SP
+I don't know how many readers there are in
+simultaneous on things not even
+How many times is VLC launched?
+As you said, he's a customer, so
+it's too much on my
+no information, and besides, it's
+Funny, a year ago we did
+We lost the Vidoline website because
+a somewhat complicated reason
+And nobody noticed, so
+the Vidoline infrastructure has collapsed
+completely the only thing you
+I see, that's when you were trying to throw
+the updates they said error of
+update in, no update found
+That's all for today, so people didn't see it.
+What. So no, no, nothing has been reported.
+But on the other hand, uh, it happened to me
+several times to have, well there you go, we have
+this computer
+Um, where is this phone?
+Has anyone looked at a file? He
+just gives you the filename without
+view the file. So, you see
+uh or
+uh
+Or you see, for example, it happened to me
+in the IDAO where the police asked me
+Is this type of video
+Can it be used in VLC? They said "Bah
+So, this person has VLC and they have this
+"The video format is usable."
+Um, sometimes that's happened to me too.
+Interpol, it gives me a starting point
+video, a file start and me
+ask if I am able to read.
+But the interesting part is
+later.
+Well, afterwards, yes, when it's
+some slightly more complicated cases,
+Indeed, we invoice, you see, by
+For example, the national gendarmerie uses
+VLC, they need support for it.
+has a contract with Videolabs, and that's it.
+Works very well.
+OK.
+Uh
+Could I ask myself the
+Finally, ask me about my computer, uh...
+Do I have VLC? On my
+smartphone, I know because I am
+on Android. Do you have on an iOS device
+Do you need VLC?
+Well, yes, because, well, actually you
+go ahead, we realize in fact on the
+mobile phones that there are many people who
+They say VLC for audio.
+OK.
+Because in fact people had
+lots of MP3s and in fact
+today there is nothing left that reads
+videos. It's just streaming. So in
+In fact, there's that and then there's...
+lots of videos that you've recovered and
+When you don't know how to read it, you use
+VLC. And then a little bit on iOS, but
+Okay, on iPad you see. And then you see if
+You have your ace, how do you access your
+data from your videos that you have
+saved a long time ago.
+So yeah, actually, there are loads
+of uses. Which is very, very true, but
+There you're getting far from the topic which is
+very very vag
+very, very different from one person to
+the other one.
+But now there are many and
+Then, as if by design, we kind of killed
+the game, there is more real
+player, BS player and so on. So in
+In fact, there are many formats of
+video. Well, it's VLC or nothing, basically. And you
+I know that VLC, being open source, in
+At 30 years old, you still have VLC.
+Yes. No, that's for sure. And then you
+so I probably use it
+directly or indirectly as you
+I was saying with Netflix, with all
+those things. But it's true that I
+I don't think I have VLC on this computer. I
+I know that I have it on my smartphone.
+Um, I know I'm using your reason for
+occasionally on audio files.
+Um, I think we're going to use it because
+I could get into a discussion
+a geek who would please my team
+but that's going to annoy everyone. On
+is installing an ace where we are
+doing some crazy stuff
+up there because I believe that we we we
+we with all the video files
+Now, we finally have to upload
+record roughly a little less
+almost 2 ter 1.8 ter per month and therefore
+That's a lot, and it's starting to affect us.
+cost a horribly, terribly much
+expensive in the cloud. Uh, and with Octave Claba
+who came on this podcast, I think
+that there are others who have learned it.
+They told me he was storing some
+stuff about magnetic tapes at very
+very cheap. So we're going to do a
+storage of our catalog bin on these
+bands, but we want to have it too
+accessible locally. And in short, uh
+On that note, we realized with you
+I know Alexandre Génie
+as a result ? Alexander, an extraordinary genius
+who is also with us at UFOs but
+I received on this podcast and who we
+develops something that allows us
+to search through files, therefore
+I don't know, I have 500
+Episodes 550 plus Martin Galal finally
+We're going to talk about the 800, maybe some
+thousands of hours of videos and then
+I'll be able to go get it, I know
+not for our masterclass on the
+performance I will look for all the
+occurrences where we go where we said
+performance in the podcast
+Yeah, absolutely.
+And then he's going to take it out for me and at
+instead of having to download and load
+each file individually in its
+I will be able to load everything.
+just the 3 minutes around this word
+performance.
+Actually, now with whisper in
+In fact, you're doing speech-to-text, you are
+capable of dumping everything that is what
+What are people doing? And so
+That's it, that's phenomenal and
+So we're on the fast track.
+technological and indeed I think that
+Behind all that, you'll have VLC on the
+player part
+minimum. I'll take one from you
+perhaps a consultation with your
+your team.
+Uh
+OK. You, in parallel with that, all these
+boxes, you'll be back. A little
+round trip. So, we're going to go back to
+the details of the boxes
+Jean-Baptiste. It's true that then he
+He left me, he's here for those who are here.
+We'll be back in a minute. It's true
+that this
+this rather geeky episode that we're going to try
+to regain some perspective. And
+Then, but I also found it interesting.
+this beginning of philosophical discussion
+that we had on the latency. So you
+You understood that, right? On Kyber, uh, in
+I'd also like to understand all of that, uh
+Well, what he wants to do with Kyber,
+It's KYBER. Uh, and uh, we touched
+from the fingertip of the depth of all this, uh
+today, from what it could
+to bring, uh, therefore, particularly in the
+dialogue between machines. I had seen that
+really through the video lens, but we have
+I definitely felt that it was wider and
+I think that
+well, in the machine dialogue
+machine, latency is really a
+This is a very important topic because we
+He doesn't quite realize, I was in
+I was explaining to the cat when I farted.
+Moreover, to my children the speed of
+light, the speed of sound which had
+a slight delay between the moment when
+I was talking to them and you can see my lips
+move and the moment they heard me.
+So, we had to take the example
+thunderstorms or fireworks with
+this latency which was, uh, uh, which
+was more visible anyway, uh, than we
+felt much more. Uh, so
+Okay, let's go into that a bit.
+and on all these because here we are
+I have Kyber and I have VLC, but how many
+Has he created any other companies? He
+He was talking about a dozen, 13. I think
+also that he tried to buy back some
+boxes in the courtroom. Uh and
+because he wants to understand everything and everything
+To do it, he went alone. Uh, welcome
+back Jean-Baptiste. I ask myself the
+question of the uh of the 12 other boxes
+uh, or 11 other boxes. Uh, what is it?
+that we have that is notable or interesting
+or anecdote
+funny
+? Before these anecdotes, sorry, about VLC,
+In the craziest anecdotes, we
+a we covered the things that he
+were or
+the traffic cone? Something
+Completely idiotic and makes no sense.
+who has a silly student joke. Uh,
+It should never have been released. It's out.
+As a result, well, today it's
+It's impossible to change, it's too much
+iconic. Um, um, I like to tell stories
+the story of Salah Hedin Salah who a
+guy who's not worth anything, who knows nothing, uh, but
+who has the EP is who sends me an email in
+telling me "I have 2 hours of electricity"
+per day and 2 hours of internet during
+the war in Syria. How can he
+help ? He's the one who's going to rewrite everything
+subtitle support, whereas uh
+Well, he doesn't have the technical basics.
+Damn, it's true that there are some of you
+You have the subtitle codex there.
+They were codices, that is to say that
+Yeah. Yeah. Yeah. VLC is one of the
+text rendering engines and
+Subtitles, something a psychopath would do.
+No, but that's it. To return
+On that note, I download some...
+for those who don't understand,
+uh, you were downloading a movie in a way
+illegal, let's be clear, there is
+Prescription, who cares, uh, there is
+15 years old, uh, and then well, he was in
+I don't know, in Swedish, and then you had
+No, there it is. So, we had to go
+download from bookstores
+specific to the translation, finally
+forgiveness, not translation, not the
+soundtrack, by the way, you must, you must
+also do it on the soundtrack but
+otherwise, pardon the subtitles and so
+You knew what the VST code was, right?
+VST SRTR but most importantly afterwards you need
+to render the graphics, for example
+Arabic, you see, is a language that is
+It's difficult to draw the malam all the
+South Asian languages ​​and that's what this guy is
+left, right, and all that, it's the
+what is called bidirectional very
+It's very complicated to write in Arabic. You write
+from right to left, but the
+You write numbers from left to right.
+So basically, you need to keep
+the space before being able to do it.
+In short, they're a bunch of jokers.
+I sometimes had to change the license of
+VLC. I went to see some
+hundreds of people, including
+people who, uh, had died and so
+I had to speak to their parents for their
+to say that I had to change one
+open source license to someone who
+was in a factory and who believed that
+I wanted to make money off the backs
+of his son. Not very funny. Uh
+I found myself really at four
+corners of the world, right, to do for
+to use VLC. In your travels,
+There wasn't a moment when you thought
+"Wait,
+It's just too stupid, you know?
+because you were younger or because
+that we're going to try to make money
+We're going to make it private. You
+Yeah, I mostly got offers at
+several tens of millions of
+dollars to buy VLZ and I had
+legally the right. It was, it was for
+Who is offering it? It was for you. Well
+in fact it was to buy back the real one
+value, it's the brand and the name of
+domain. But in fact, I had the
+So I could have done it.
+Yeah, I didn't do it because I
+I thought it was morally wrong
+just. He
+It didn't belong to you. So, beyond the
+Morally, you could have done it legally.
+Yes.
+OK.
+Of course. Then anyway the number
+of the people in the assault, there were 10
+people, there are always 20 people
+in the assault. So you see
+Technically, we could have. Is it that
+Was it moral? No. So I don't have it
+done because what is actually hyper
+important to me and that's perhaps
+my education
+I am, I lived in, well, I was
+So you see, I have three sisters but
+really what we'll call câau de
+left you can really see with a small
+a bit of a working-class side, finally.
+You see. So there are things that are
+good things and things that are not good things. And
+For me, it's important to do things
+morally. I'm not and people
+they say "Oh JB indeed you yourself he
+refused tens of millions
+euros." I'm not against money
+Finally, I don't have, I don't have, I don't have this
+need. I'm not you, I am
+not on a crusade. I just think you
+I can earn money in an ethical way.
+Yes yes.
+And it must be done.
+I think it's absolutely necessary
+All right.
+And the important thing is that in the evening when
+I go to bed proud of what I have
+do.
+There is the legal aspect. So that's
+One is something that shouldn't be
+Too much to go over, but morale is there.
+Yeah. which is very important. I am
+All right.
+No, but for me, I am finally myself.
+I'm not a legalist at all, you know. Me
+You see, for example, people tell you
+Yes, but that's the law. Yes, so what?
+If your law makes no sense, well, that's it.
+It's the law, not a
+justification. The question is, is it
+Is it morally right? And that's
+very important, and in any case for me
+This is extremely important. Like that in the evening
+I go to bed feeling proud of myself. You
+You see, and if I'm not proud of myself, I
+I'm telling you, I'm not sleeping. And so there you have it.
+This is very important. So I don't have it
+do. Um, what else do we have?
+like, uh, a lot? We did
+So much so, in fact, like VLC, it's very
+Funny, we've done so many of
+crazy nonsense about merchandise.
+We're talking about ties, we've been doing some
+chocolate, we made VLC beer which
+It was orange, we stopped, you know
+at trade shows, we go there
+Once, we built a room of
+cinema in a living room, you know, big
+trade shows at Porte de Versailles. Uh, we
+went to CES, we lit up
+fireworks at CES.
+You had some doji-like things, some...
+threats, a bit of stuff
+extremely, extremely legal, especially
+Roughly speaking, I take myself on average, I
+I get three letters from lawyers per month.
+OK,
+The first one, you're trembling.
+And I'm not putting any on now.
+We can throw some of the worst ones out there.
+THE
+Oh well, the worst ones are easy to identify. That
+It's called Dolby, right? It's a
+box which was a very, very beautiful
+a very technical box which has become
+a company where there are more lawyers.
+It's kind of like an oracle, you know.
+They're really boxes, there are more
+lawyers rather than engineers
+And they have borderline techniques.
+Even though it was a mobster's protection detail,
+You see. Okay, so you see, this is
+They make the sound, that's what. The 5th.
+I have a lot of people, well, I have some
+people who told me "Ah, you have to, you have to, if I
+I had to pay for all the licenses that we
+I'm wondering about VLC, should I spend
+over €100 per VLC."
+H
+but in fact most of these patents,
+They're worthless. It is, it is
+That's why you're good at patents.
+That's why I'm good at
+patent.
+So, yeah, I did a lot of stuff
+funny. Uh
+I worked. I think people, they
+do not account for the quantity of
+work. That's really quite
+important. Damn, I worked hard.
+What.
+H
+And yeah, it's finally my
+Work is my passion. What I do,
+I love it, but I work all the time. You
+see them, it's finally over anyway
+It's simple, I work, I take care of
+My children and I sleep.
+You don't do any sport?
+Uh, very, very little. I travel by bicycle
+And so it does, it does, I, I am
+bought a large bicycle 2 years ago.
+Finally, for my 40th birthday, I was given a
+big big bike and I score
+something called Babo Baboe. OK.
+Uh, that's 70 kg, uh, but it's a big one
+cargo in which I can put my
+two children in the morning. Um, and I do
+Approximately 100 km per week.
+Alright.
+That's quite reasonable. There are those who
+people in my circle do running
+But by bicycle.
+Yeah. I have scoliosis and
+I've done a lot of rollords in my
+in my youth. Which makes it
+My back hurts and my knees don't
+incredible. And running. No
+But cycling is very good. That's great.
+Uh, it wasn't condescending like
+REMARK. It was more about telling me "Mo I
+I didn't do it. we should do
+of the swimming pool.
+Yeah, but cycling is great. You
+I know the problem is that it
+accident-prone. Uh, the pool isn't
+Not, but the swimming pool for example, you shouldn't
+to do breaststroke. We're not going back
+in this
+Why do breaststroke?
+Because breaststroke is bad for
+bad for the knees and back.
+Yeah. Yeah. In the swimming pool you have to do
+crooked back. That's the best. This is the
+More annoying, but it's the best.
+And how do you manage to go straight?
+I never managed to understand how
+You can go straight backwards.
+Oh no, you need to take lessons.
+The back that you're starting to master
+However, there is nothing more
+majestic.
+Oh yeah
+Yeah. That's great. And then the croll
+The croll is really great. Al, I have
+never managed to create properly without
+to end up breathless.
+No, but that needs to be done, it's been 10 hours.
+10 half-hour lessons and you will
+to enjoy. Listen to me. Do that, you c
+the first four are
+awful.
+The next three are starting to be
+thingamajig, and then we start to
+Having a little mastery is sublime. Then there
+This is the right time of year for
+to start swimming. It's good. And then
+then in the summer you arrive at the
+beach and there when you can swim well in
+Damn, we kind of get the impression that we have
+spent the whole winter in a jar and then
+Then all of a sudden you were liberated
+splendid. I sold it for a good price.
+That's really great.
+Uh, Jean-Baptiste, let's start again with these
+What, 12 more, 11 more adventures?
+entrepreneurial. We talked about Kyber.
+In fact, there are plenty. They are
+tiny, tiny things, you know.
+The worst kind, or the
+Well, I have a company called
+Codeclabs. There are zero employees. Uh, he
+Years ago it was 1 million
+sales figures. Most of
+years equals zero.
+OK.
+And in fact, it's a box that was
+created for just two contracts, but
+It's with American boxes and
+It's a bit complicated. And just for
+a legal question, I prefer to have
+a box that, if ever, especially the
+Americans, these are conditions
+contractual warranty that may
+to have 10 million and so on. So in
+In fact, you'd better put that in a
+a structure that does nothing but that. SO
+So, I have a consortium of a group
+of 4 boxes plus one in Germany
+which is around VLC, around FMC,
+really the open source video part.
+H
+There you go, that makes six boxes.
+Then, I found myself managing
+buildings.
+Uh,
+Did you buy it?
+No, no, it's just stories about
+family.
+I need to find myself, for example
+I manage a real estate company (SCI) but I have no shares
+And I would never have had a share, you see.
+So, it's a bit strange. Uh, I have
+I bought my house with my wife in SI.
+You see. So I have, you see, I have, I have
+I created quite a few structures. I have
+tried to buy Shadow, uh, when with
+a team of pretty incredible people.
+Was Shadow a company owned by OVH? No
+it was
+No, no, it was a box.
+French start-up that had raised 120
+millions to do cloud gaming.
+Oh wow! OK. Yes, okay. and I was
+Cito and she fell flat and we
+tried to buy it back with a team.
+Uh
+Cloud gaming means you play without
+having it is potentially on one
+Chromebook for example, that is to say you have
+Do you have a computer, a machine, or
+something that has absolutely zero
+processor. You're just playing by
+cloud. But then, latency plays a very significant role.
+Strong too, I imagine.
+And actually, this is interesting
+Shadow's story because it is
+something that will ultimately be a
+pivotal for me in my life, it is
+that I find myself with, in fact, is a
+That's a bit like the beginning of the French language. 2016-27
+Station F. We'll meet at Station F.
+uh, with the VLC team because we have
+Having seen some friends, we were given an office and
+I absolutely love this place.
+Especially since my parents, and elsewhere
+The association emptied all that, you just came from
+What about you? No
+My parents' apartment is 100 meters from
+station truly. Me, me, when
+When I was 7 or 8 years old, I was going
+So in Fressinet I'm going to do some some some some
+Water gun completely illegal.
+I wasn't allowed to do that, but we
+was doing that. It was a playground
+Not very dangerous, by the way. Uh, but I have
+It does that pretty well. So that was it, that's what it did to me
+laugh at the station. I really like this
+place. But in fact I found myself
+with the beginning of the friendshake with
+including some people who do not
+who looked down on me, but you see
+No, but VLC works because it's
+free. Wait guys, there's a
+number of open source or free things
+which doesn't work. So at one point you see
+And so I was, I was a little
+involved in start-ups. I was
+That was the HC. No
+No, because not necessarily. Pardon,
+I have a "I" for the men who are listening to us, uh
+It wasn't a peak at all, but
+That's because I'll explain everything to you.
+We'll talk about it right now.
+Uh, this concerns me too, it's
+all the people from business schools,
+That's what I mean by that. Uh
+I found myself, in fact, at
+a bit of guidance for the start-ups, you know.
+We were somewhat used to it, we
+was very techy and so we
+found in this, in this space
+Green at Station F, there were people
+From Vitality, there were also the
+people from Ying Face and so on who are
+passed through there. It was quite funny and
+Actually, I'm becoming... we don't meet
+VC sickness, I'm becoming
+technical expert for investors
+and all the same access around the
+Video and No. OK.
+Not necessarily, but actually
+with Videolan we actually had so much
+few means that you learn to be
+very effective and can do everything and then
+especially you have a huge amount of
+technologies. I've done backend development, I've
+I've done C, I've done C++, I've done
+I've done C#ARP and Java for
+Android, I've done iOS, I've done
+I did some Mi6 driving, I did some
+network, well you do a lot of things
+and then especially well
+and then the video startups
+LAN is based on Bootstrap, so in fact
+It's even harder. So it is necessary
+really think about the business model, your
+working capital issues, things that when
+You raise funds in the traditional way, you don't
+Don't think so. So that means I
+I am still a very
+technical, but I have an understanding
+business. So very, very quickly, I arrive
+And you see, I'm actually spending two days there and
+I'm doing an analysis on a box. SO
+that actually makes people do this
+Professionally, we stop selling
+That's 10 days and so on, and I'll take it.
+one day and I'll pass and it's not
+very pleasant for people who are from
+the other side, but there you go, and then well
+That's it, that's consulting, that's it
+It worked, what?
+It's cold, actually. You arrive, you
+things, you look at it, tap tap tap, that
+It's for your pet, he'll do nothing. No,
+I'm not saying anything. I'm not saying anything, but I'm posing the question.
+It's very unpleasant. Finally, but
+That's normal, you arrive, you ask questions
+billions of questions. And I
+found, in particular, to be analyzed
+Shadow, I think it was Partech
+and 360 Capital Partner, but perhaps
+that it was for someone else, I
+I don't remember anymore. Um, and so, um, I
+I'll look at the file and spend two days
+uh, and here comes the CEO with
+me, uh, and who's watching, and actually, quickly
+So, Shadow, there is a
+very, very strong video component
+since there is cloud gaming which is
+streamed and at the end of the day, it me
+said "But it's still surprising in
+You seem to understand, uh, too.
+although my site, see better my site
+the problems faced by teams because
+I'm still arriving with a small
+DLC route and then most importantly, well, I'm asking
+questions and then obviously I can
+"Don't stop me." I said, "But you have
+"Thought to use this API?" Uh, no
+Hey, look at this because you might
+Do it like that, you see. And in fact
+very quickly, I found myself
+in there. I really loved it
+And that was in 2018. And in fact, the CEO
+got laid, left, got screwed
+out. I don't know exactly what
+what happened. The CEO was quite
+He's quite a funny character.
+Emmanuel Freud. And
+So in 2020, he leaves, he quits, he goes
+to set up another project, but he
+is still a shareholder. And he told me
+"Well, actually," and he takes the IOC from
+Shadow. He told me, "Well, actually, he said
+"Well, actually JB, you don't want to come in
+as CTO of Shadow, uh, for a
+a little because you understand a little
+these topics to, uh, improve
+look at what you can do, because
+that indeed there is a component
+Important video. Um, so I'm going to...
+actually finding CTO of Shadow, uh
+for 8 months.
+We are truly sorry to rewind he
+those that everyone has been following closely
+I imagine, but a video component
+important. But we also loop everything back together
+the loop. Then later from Kyber
+but rather from what you were saying,
+that is, being able to stream.
+This is truly pure streaming.
+that is to say, there is no
+local download when you play on
+from the cloud. So, to explain those
+who don't understand, in gaming
+generally the core of your game, it
+is on your computer and you need a it
+You need a computer that can really work hard.
+for very good games or certain
+because, well, it rotates, it requires a
+little power and so on and
+You will eventually have some
+data exchanges between your computer
+and the computers of other people who
+they play on the other side of the world. It is
+That's also why there's often
+For a long time we enjoyed LAN, therefore networked
+local because it was going much more
+quickly because there was no need to go
+far. So here we are, back to square one. That's what
+You were explaining it to me earlier about VLC,
+what you work on later
+Kyber. So here you are, right at the heart of it.
+of your expertise because you do that
+You for 20 years.
+Exactly. And so indeed, and uh
+and especially, uh, for many reasons, uh
+I still have that [ __ ] side
+to go and see the students. I was
+used to doing a lot of things on VLC
+things, uh, by listening to the authors and
+uh uh with there have been quite a few of
+Vals, the CEO, and in fact they had
+lost a bit of direction, uh, they
+They didn't really know how to go. And so I
+I actually went very fast, I am
+I went to see the community, I said "Well
+"What do you need?" They told me
+given three threads that they had
+promised since 2016 and who wasn't there
+in 2020. And in fact, I went
+reorganize the teams to achieve
+That. There were some great people in
+this box. What were the fittings?
+One of the most ridiculous things was the
+dual screen,
+to be able to play with two screens. OK.
+So. And in fact, they were promised that
+In 2007 and in 2020, it wasn't and I
+I went to see the engineers and in particular there
+They have two of them, they told me "Well actually,
+It's not very difficult, we know how to do it right
+Can you give us a month?
+and a half by giving us nothing else
+And in fact,
+Yes, it was a question of roadmap
+What. Finally,
+It was primarily a question, and above all
+to stop bothering them and their
+to make the permanent changes.
+So, this is what we have, this is what I have
+do. Um, and actually, the company, it
+went to the mat because in fact he
+is happening, I wasn't watching.
+All this because I was CTO at
+Half-time.
+Hm hm.
+So, it's half-temple
+and half-time JB. So, that made it I
+I think I was working at least as much
+than most other members of the
+CODIR. Uh
+but uh
+I didn't look at the fundraising and in
+They failed to lift it.
+OK. Um, what year was that?
+It was 2020.
+Yeah. Those times, they were
+hard. Yet 2020 could have been
+the explosion of cloud gaming and uh
+That was just before Covid.
+Ouch.
+That was just before.
+So actually, there's an error of 6 here.
+month. Ouch
+and it starts, it starts in RJenement
+judicial. I just have one question
+on that because the I I therefore I
+I'm not a huge gamer. Uh, I
+I was a little bit into him, but uh
+If I go back to what you were saying earlier
+the time on Steve Jobs
+uh, you had, uh
+So, uh, Steve Jobs, uh, who said...
+Basically, everything will happen on the phone.
+the smartphone and you say that's not it
+It didn't happen, and many people who
+predict that gaming will be everything
+move to the cloud. In any case, we
+had high hopes for the cloud
+gaming. I still don't have the... well, the
+the, uh, the consoles are still from
+increasingly powerful. Uh, indeed.
+You download a lot of things, uh, from
+from the outside, but we're not in
+train heading exactly in the
+cloud gaming, uh, scale. That's because
+that it's a huge success right now. In all
+In fact, we need to stop believing
+that gaming is something that is
+monolithic.
+Yes, there are many different shapes
+different.
+There are people who do what we
+calls for hypercual
+in the subway, making a case
+brick what. We don't call it a wreck
+brick, but there you have it. And besides, we have
+people in France who are very strong
+in that. A you who is a box who
+I made a lot of money on that. We have
+Lots of stuff, a bit of casual gamer stuff and
+You go all the way to the nerd stuff.
+Yeah. So gaming is multifaceted.
+There are lots of things. There is, there is
+people, you see, for example, people who do
+FIFA, you know, all football games actually
+It's a whole subculture. It's very
+complicated. There are constraints that
+are much, much more complicated.
+What's important, and this is true, is...
+There is a small risk, or there is
+perhaps a change is going to happen
+because there the graphics cards they
+start to cost significantly more
+Because of AI and memory too. SO
+in fact, buying computers will
+maybe it will start to cost a lot
+more expensive. So you might have
+a reconfiguration. But frankly
+It's very difficult to predict and I
+I will not venture to predict in
+Which way does it go? What is certain is
+that in all cases, one must have
+good solutions.
+Uh
+And so Shadow, I'm trying to buy back and
+So I, I do, well, I do
+An offer to buy Shadow JBK, that's what.
+JB
+solo.
+Solo.
+And how many people were there? He
+What was there? had
+There were 6 of us
+OK, 120 million raised, you were 6
+So no, so 120 million was raised
+before that we lift
+we make an offer first with we
+There were four, then two were added and
+we are trying to buy back the company and in
+does the buyout, in fact, what we
+it's called a reversal, it's a... it's
+a very, very special profession and which
+exists primarily in industry because
+that in the industry, in fact, it is
+Easy, you have machine tools, you can
+roughly speaking, to evaluate them in
+It's complicated when it's done in software.
+because in fact we need to evaluate the
+code, we need to evaluate the value of in
+made of material, in fact. So that's
+It's quite complicated, but obviously I
+I did a lot of analysis and that
+I was very familiar with Shadow's code.
+I was capable of giving that. In front
+From me, I have Octav Claba uh
+billionaire, Xavier Niel billionaire
+and then a fund, a Swiss fund too, which
+had a lot of money
+that you know more or less all the
+Two others, or none at all?
+Not yet at that time. OK. Uh, Xavier,
+I knew him because, uh, he...
+provided free accommodation for
+Vidolan's servers. So all the
+years ago, I started doing my email... uh, since...
+now, uh, for almost 20 years now.
+years ago, I sent an email to Xavionel on the
+connecting what happened in
+the year on VLC. So in general, I have
+An OK, a thumbs up, or a smiley face, you
+know.
+And Otave, I met him a very long time ago
+for a very long time because at one point in
+In my life, I've done a bit of hospitality work.
+But that's all. because you do
+part of these geek businesses
+but I never, well, I really never
+I really didn't have any interaction with
+Octave before that, and in fact it's a
+a bit of a two-turn system
+double blind in poker, that is to say, in fact
+You have to place an offer and you can
+improve your offer. So basically the idea
+it's about getting into an offer that is
+not too ridiculous so that we don't...
+throws
+but which must still be quite
+structured so that you can
+To improve it, basically.
+That's all the covers. It is
+like that
+all the reprises in reprise it's
+That's how it works and it works
+at the commercial court, which is a thing
+which is a somewhat protean thing
+A bit strange.
+Yeah. Which is ultimately not at all
+professional judges.
+These are often former
+entrepreneurs or
+Yeah, yeah, it's very, very, very
+Amazing. And so, between the two rounds
+Actually, I'm going to see Xavier. Wait,
+Wait, wait, wait. I would like
+just understanding how this works
+You explain it to us in 2 seconds. Uh,
+You say blind, double blind, so that
+It's poker language. You make a
+First suggestion, as you said,
+Not too ridiculous, a second one a little
+can be improved. What will make that
+Will the second one be taken? This is the
+number of employees you save. It is
+That.
+These are the debts you are repaying. No,
+Exactly. Yes, because in fact your
+the purchase price will reimburse your
+creditors. So in fact, the price
+In fact, it's about buying assets.
+almost
+The most important thing.
+OK. So you have a company like Shadow
+who who who falls. Generally, she
+falls because she cannot pay
+she can't pay her debts
+employees, she can no longer pay. So.
+And so she's going to have, let's say, you
+Remember how much debt she had?
+No.
+OK. But let's say 5 million in debt.
+You're going to say, "Well, me, I...
+buys back
+100,000 or 200,000
+and then the others will say well
+"Maybe 500,000 and so on." You're going to say
+"Yes, but I keep all the
+employees, the others." "Oh no, well I
+"Fire them all." Some will say
+thingamajig and in the end we'll try
+We're going to judge you based on what you're going to do.
+return to the Ursaf because often
+The Ursaf is a major debtor and
+then to the banks and then maybe that's it
+the state, the general management of
+public finances for VAT and everything
+That
+And what ultimately prevails is...
+the right mix of what you pay back
+or mainly the I thought that
+it was mainly the employees that
+You were saving then, right? No, because
+universe perhaps
+That's not it, it's that in fact all the
+the world is aware of the offers from
+others a little bit so we had
+made an offer where we took over
+virtually everyone in society
+and also
+and therefore the others do not. But so
+As a result, everyone fell into line.
+So then, as everyone was taking
+almost everyone except 4 c
+people, uh, well, 4 positions because
+You choose your positions, not your people.
+So you put in a number and then...
+Maybe you made a mistake about the
+figure. H
+and so, for example, between the
+first and second round, me
+I'm allying myself with Xavier, uh, because he
+he told me, "Well, it works anyway."
+"No." His goal was to
+buy back the company and the people for
+put them in Skyway. And in fact I
+He explains what we want to do
+because he knew me, after all.
+A little bit, you know. He told me "Good AG JB". He
+He told me, "No, but Shadow, it works!"
+not because of that" and I say "But in
+"That's not it at all," the figures.
+They told me, "Yeah, it loses 6
+millions per quarter per month."
+I said, "No, first it's by
+quarter." And in fact, by doing that and
+With that and that, we reduce the loss to 500,000
+per month.
+Wow, that's 500,000 per month. OK, we're going to
+Let's start discussing what. And I
+I got what I call my MBA in 5 hours.
+I had a business lesson on how
+We were doing business again with Xavier.
+Uh yeah, I think I did an MBA in
+5 hours, what. That's a brilliant slap in the face, huh?
+Absolutely brilliant. And we rebuilt
+a business, a business plan. We had
+a plan, he said "OK, well then you
+Drop your offer, but we'll take it.
+My offer, but with your team as
+"That leader, and off we go." And we have
+An offer has been submitted.
+OK. Can you give me a little more detail?
+What did you learn in these 5?
+time?
+Yeah. How to build a real business
+plan ?
+How about a big smile? In fact, it
+It's made with large stitches. Not at all.
+It's done the way they teach you in school
+trade with BP with
+Completely insane Excel files
+that is, to please the BPI or
+to the bankers really understand how
+you structure,
+What are your orders of magnitude, anyway?
+see working in order of magnitude
+Finally, you see the question.
+It was "to," we were on commas, weren't we?
+No, we were there, he took everything.
+simplified everything and so on, it's
+really very, very good at laying
+Good questions. And in the end, you see,
+We had our plan, we were saying that it
+5 million were missing
+and finally, the lowest hole, he is
+5 million, making him do it and therefore in
+taking all the assumptions
+More pessimistic, he said -30. He said
+"OK - 30, I know how to do that." There you go, and that's it.
+has left.
+So minus 30 million, that will be the debt.
+the worst
+in the years to come.
+In year 2 of our plan.
+OK.
+Incredible, truly incredible.
+What an incredible day that was. And
+So you have, uh
+And then we proposed, well, at the end, so we
+offered 4 million and opposite him there
+Octave Claba was there, so not on VH but
+with his personal holding company which has put
+5. Well, you see, at one point, ah, very
+disappointed and so on
+What a great experience. I have a lot
+learned during these months. I am
+He came out feeling pretty drained, though.
+eh.
+Uh, it's a fight. I still think so
+that there are many
+there is a real business that exists which
+is the turnaround of start-ups that will
+to fail because there are so many
+and in fact most of them go to the
+It's rubbish, and that's a real shame.
+Ah, but that's right.
+And that's a real shame. But when you have
+when you just have to grab something
+But when you have a box like that, we
+He's talking about 120 million, there are even some if
+even if it's 20 million
+It's 15 million, you know, or 50
+that it's not just the server but that you
+Have you had dozens of and that of
+sales too, but dozens of
+hundreds of engineers and people who have
+does things that we do with the product
+They're not too stupid, in theory, because
+They were funded and those who go to
+the breakage and you can buy them back for
+There you go, as you say, 5 million, 2
+millions, 1 million finally of time in
+Maybe some time if there's no one who
+bat because when you say that
+If it really goes to the junkyard in
+bankruptcy filing, well actually, take them
+What. There, there is, there is a
+but it's very difficult because
+It's very difficult to analyze and you have
+not much time, you're in a
+At this level, you need to understand the business.
+the tech, the plan and so on in 2
+weeks, 3 weeks, that's very
+intense.
+And so when you're not there it's very
+intense, well there are lots of people who
+Those who are capable of listening to us
+work very intensely for 2
+weeks, 3 weeks. Ideally, one should
+What do we need? You need a hen of a few
+people, someone very
+technically skilled, someone very business-oriented.
+someone legal.
+Yes. And a financier.
+A financier.
+Yeah.
+OK. Therefore, a legal technical business.
+financial. You arrive at 4, you look
+the stuff. Quite technical, though.
+It's also the technical aspect, but
+And actually, there are lots of start-ups there.
+And you see, actually, I don't know if you
+See what Bending Spoon is. You see
+What is Bending Spoon?
+No, I don't think so. Uh, so it's uh
+an Italian company that will
+probably be today the
+First, uh, I don't know how we
+Call that a horn, what else? Descorn
+descorn. Unicorn description
+Ah, I've heard about that. Who takes over
+those who who them who yeah who them
+aggregate.
+They, then, bought Everot.
+I've seen that ever
+meetup Hopin Vimeo Brightkov in 5 years and
+In fact, what they take, they take
+companies, so they...
+They don't take those who aren't well, but
+roughly speaking, which are companies like
+Evernot, which was valued at 1 billion, but in
+do
+That gives you an EBITDA of 2% to 3%.
+So in fact there will never be an exit
+suitable for investors
+But they're not failed products, you know.
+And so what they do is they
+They buy back the product, they fire everything
+world and they make the continuity of the
+product development in Italy and in
+Romania. So, I believe in Romania,
+I'm not sure. Um, and actually, they
+reduce structural costs by
+Three, that is. The product will advance less
+Quickly, that's for sure, but uh, and they're going to...
+They may raise prices, but they have
+will really almost just keep the
+produce and fire everyone. And in
+In fact, you see, there are quite a few
+companies in fact like that which in
+the value, you see, you call it as
+You want to, but you see, between 100 million
+and a billion. Aune for a moment
+valley of death
+at one point it was valued
+billion
+Or
+I think it was bought out for
+€100,000, you see, and there you have it, so that's it.
+this box and in fact what they
+they do it, so they don't do it.
+turnaround
+literally, that is to say, they pass
+not in court but in all
+In this case, it's this idea.
+So, there are those who
+go to court, there are those
+as you say, we who reach the end of
+their adventure that we mark which are
+perhaps profitable, a little profitable which
+have been overvalued and there is also
+among the things to look at there are some that
+who is actively working on this, I know, the
+funds of investment funds that have
+invested in companies there is finally, you
+see, from 2015 to 2020, the funds
+of French investment, they have been
+very very active. We're now returning from 2026.
+2030 is the time when they will
+to want to get out of these woods. And there, there
+It actually has a liquidity problem.
+Exactly. And so they don't like it
+to go out with heavy losses because
+It's palm-based. But there are
+moments when you made your gains on
+One or two boxes, that needs to be closed.
+the bottom line.
+Yeah, that's exactly it. a background, the
+People don't realize that...
+People do this when they talk, finally
+The general public tells you, they're confusing
+the investor and the fund. Most
+investors from companies
+investment, they have several
+funds and the funds, they have
+They have a background 1, background 2, background 3, we
+is in the bottom 1.
+So. And you have a limited time, in
+in any case an objective duration for and and
+a value, you see. So it's not
+infinity. So at some point, well, you have to
+To get out of it properly, you have to close it down properly.
+Finally, you see, you have to send some back.
+the money to your investors because
+that in fact the funds they have what we
+calls for LPs, limiting the partner and
+Actually, well, a background is like
+a start-up. You're going to raise funds
+from a bigger one who will give
+funds to create a fund
+investment. H
+So at one point there is indeed a
+The problem is, we need to get out, and then...
+The problem is that, in fact,
+shares in a company are not very
+liquid, in fact, like, it's not
+Bitcoin, that's what it is.
+Then deep down you killed both
+three companies that are very liquid
+because everyone wants them
+buy back, wants to get back in, and so on.
+then you have 80% of your your your
+lines, as they say, of your companies in
+which ones you invested in. So nobody
+doesn't want those who are in the valley of
+death, not necessarily corpses
+but who are
+So what we're saying is that in the
+You have one out of every ten startups, you have one out of every ten.
+which go in the trash which is worth
+zero, you have two that are barely scraping by and you
+you have one that does your
+exactly, and so here's what we
+is saying that
+There are two who are just getting by, but there is
+also what you were saying just before the
+are those that are worth zero actually worth
+zero ? Personally, I think she doesn't
+are not worth zero. For the funds
+Regarding investment, they believe that
+It's zero. But I think there is
+Indeed, things and especially
+today with AI, in fact, I think
+that you will be able to resume
+Technical companies are much better than you think.
+I could have done it before. Uh, but that means
+to say that, well, you see, you arrive at
+operations where there were 100 people
+and you're going to rotate them with four.
+So, to come back anyway because
+That was still your question because
+that we have, we have, we have drifted, therefore from Shadow
+In fact. Well, obviously the six who have
+We couldn't have put together a takeover bid.
+stay. You knew perfectly well that it wasn't going to work.
+to go well. We've left. And so,
+we set up, uh, a company called
+E-ShOTL who did stuff around the
+video rights, uh, rights
+video author using smart
+contracts to find out who had the
+broadcasting rights. And one of the uses
+These were the NFT videos from a live stream.
+A bit like NBA Topscho, well that's it.
+OK, I'll try to interpret it quickly.
+2 seconds. I'm making this video
+with you. I have my copyright, I
+I produced it myself. So there is
+different types of copyright. Who
+They produce, there are those who distribute, there are
+en a qui et cetera. You can sell them.
+You can rent them, you can have some
+licenses for a few years, you can
+saying things like that. You, you
+I'd engrave that in marble with NFTs.
+so on the blockchain
+And you were saying, well, look, he has
+no longer allowed to play this video
+because his thing lasted for 2 years.
+Today, things, people are expensive
+That's what Excel file manipulation is all about.
+very complicated and so on. Above all, manage
+He can't handle it. And above all, there was
+also all the technology that made you
+clips automatically in relation to a
+live.
+Hm.
+Automatically, who did the things and
+etcera with a small video editor. Uh
+That didn't work, so it pivoted.
+to find a solution precisely for
+cloud gaming, uh, for, uh
+test the games. It's not really
+cloud gaming in itself. It's more like
+alpha previews, press releases, etc.
+interactive advertising. Click here and
+Test the video game in your browser.
+So, it's more like this and this and here in
+That works better than the the the
+cloud gaming. Cloud gaming, you have a
+The problem is, it works very well but it's
+It's a business plan problem, basically.
+That's because people are going to spend money.
+They're going to play 100 hours and that
+It costs about €1 per hour, so that
+It won't work. But when it's to test a
+A game for a journalist, 5 hours, well, in
+You can bill them for it.
+shots or 5 minutes to test the game.
+That's possible. So there you have it, so that
+It's a company, uh, and then, uh, and
+Then, well, I have Kyber, uh, who is, uh
+the company I am focusing on
+this moment. Um, in the meantime, I've been
+Still, but we're not going to talk about it.
+I was VP of Engineering at Vent
+Private, an absolutely... uh... experience
+Brilliant.
+OK. VP of Engineering, that's the
+Vice President of Engineering.
+Yeah.
+Is there a difference with a
+CTO? You're above, you're bah
+In fact, you realize that sales
+VIPITECH private technical service is 900
+people. So in fact
+This box is a massive gift
+the CO I eat a friend uh
+He is the CEO of the Tech Business Unit
+What. You see, he's got it under control.
+He manages a recruitment budget.
+products, the relationship with
+Business outside of tech or not?
+No, that was the idea, but they did it
+Never done it. Anyway, there you go, well you
+see the purely technical decisions
+uh, it was me. So, but you
+I still had 900,900 people in
+VPtec. So, you see the questions
+techniques
+Yeah, they're sturdy, that's for sure.
+Yeah, but above all they are
+which are fundamental for many people,
+A lot of things about Galaxy.
+I learned a lot from that and afterwards thanks
+Through that, I became again
+Skou, you see. So that's funny, isn't it?
+loop back to your story
+Shadow. That's why I'm telling you
+Shadow's story, she is she
+is key. That's because there was the fact
+that I also wanted to show to
+people I knew could do something other than
+VLC.
+that I also understood business, that
+I did know how to manage teams, though.
+large, you see, 900 people at
+Scalway. I did that for two years and
+half, I actually started in
+doing an audit, precisely, uh, and when
+I was at Scalw's, that changed everything
+In fact, a few things happened
+products to hundreds of products.
+Today, Scalyway is almost
+capable of competing with a GCP, a
+EWS. Um, when I arrived 2
+years,
+Skalway is a company that belongs
+uh, Xaviel 100% at Iliad. OK. It is
+It is a wholly owned subsidiary of Iliade.
+OK. And who is on a cloud service like OVH?
+It is a competitor of OVH. It's not
+exactly the same positioning but
+Yes, you could say that. It's more
+cloud and less hosting.
+OK.
+That's because, in fact, before Skyway had
+also data centers. That was
+split into a box called
+HPCore. And so Scalway is really
+Pure software. It's really the
+cloud software.
+OK. and who operates the equipment but does not
+doesn't manage
+They also have their own data center, just like at
+VH
+No.
+OK.
+So Scalway no longer has a data center. He
+rents data centers from Equinix, from
+Interaction, at Digital Reality.
+We can talk about sovereignty. Skalway,
+It's like on OBH, it's a cloud service.
+Finally, it's a sovereign cloud.
+Yeah. The real issues, that's the
+real issue. That is sovereignty
+digital. Um, and there I did a lot
+many organizations. Uh, well, I have... I have...
+transformed nonetheless and
+engineering in a box like
+Scalyw is really the heart of the business.
+eh. So, that's what I did.
+and now in fact and in
+In parallel with all of this, I was working
+specifically on Kyber's technology. The idea
+it was about seeing how to redo the
+Shadow's open-source technology based on
+VLC and on FFmpeg, so linked to my other...
+companies. FFM PEG, I know it's a name that
+I know of several
+FFmpeg is like VLC but for the
+server. This is really the part
+video encoding processing.
+Yes, that's it. That was the encoding.
+encoding transcoding which is not the
+The same applies here.
+If we don't care, it's not... it's...
+processing video server side and that's it
+Part one is one of the companies that
+I have. I have a company called
+FFLABS which only does FFM PEG. And
+On that subject, by the way, I have three
+clients, Google, Amazon, Netflix and
+That's all.
+Uh
+And so, uh, Kyber, I launch and we
+Look, actually it's not even called
+Kyber, uh, and uh, finally it's okay
+to be called Kyber, uh, because actually the
+The company that made Shadow, uh, well, you see
+Shadow means the shadow, and therefore we
+We were saying, well, we have a project that
+His name is Light, and actually, uh, and that
+It's important, uh, in Star Wars the
+Lightsabers in English are called "lightsaber" or "lightsaber."
+Saber, hey, those are lightsabers. La la
+The translation of "lightsaber" is incorrect.
+translation. We should say saber
+light. And the origin of swords
+Lights, that's the kyber crystal.
+OK.
+So. And so this is the codem of the project
+in the same way as when we have the
+Shadow acquisition project, on
+He had initially called it Enduril. Good,
+It wasn't a good name because we didn't
+We hadn't noticed there was a box
+American woman who did that, but actually
+the box behind Shadow, it
+His name was Blade. And so the sword
+reforged from Lord of the Rings, it is
+Endur
+Short. And so there you have it, so it's called
+Keyber and for a very long time, it's
+It's just a prototype I'm making.
+thanks to my other companies, you see. And
+then we manage to do something that
+It works pretty well, and thinking about it
+Not bad, you think to yourself, that's something
+incredible because there are so many
+used for machine control
+distance, and that's how it actually is that
+I'm going to launch Kyber.
+OK, so here we are saying
+So pay attention, this is important.
+That's also what people will say
+Wait, but JB, how do you do it?
+manage all of that? I don't manage all of this.
+The thing is, I'm actually a pitcher.
+of the project, uh, and then afterwards I find
+And so I delegate a great deal.
+Do you understand, though?
+I understand, and above all, I have to
+very simple and automated reporting on
+A lot of things.
+But cybersecurity will be his only option and
+single subject.
+Yeah.
+Finally, I speak as
+that investor would be better
+stress. Yes, absolutely.
+But you see, actually, you see, I have
+I have different thicknesses, you see. I have in
+In my life, I launched Vidéolan in 2008,
+I launched Vidolabs in 2012, I launched
+Uh, FF Labs and Codeclabs in 2016. In
+In 2020, I was CTO of, you see, uh, I
+I did my consulting in 2018. Uh, I was
+CTO of Shadow in 2020. I returned to
+private sale in 2021, Scalway in 2020.
+I have cycles for launching projects.
+Uh
+And so I have some amazing people,
+That's what I was telling you, who are good
+better than me and who manage the
+daily, otherwise it's impossible. And
+That way I can focus on something
+thing. I automate everything.
+All. That is to say, I really consider
+that everything is automatable, including
+HR, company processes and
+especially we do the same thing in
+All companies, for example.
+I need you to explain, uh, two things to me.
+things.
+How do we automate it and to what extent? Uh
+because, in HR, I could
+to have points for reflection and
+topics. And how do we delegate? GOOD
+delegate, that means you agree to
+losing control, but that means you
+accept that people will do the
+things not exactly as you see them
+would have done. It's very frustrating
+First time and then afterwards you realize
+I realize that, well, in the end it's great.
+We need to have people who are
+compatible
+With you, at least. Uh, I
+works extensively asynchronously.
+My life is notifications and I
+I respond to notifications when I can
+and I strip everything. Uh, but so the
+people who need to make a pass with
+For me to ask a question, that
+It doesn't work at all. That doesn't mean that
+This is a bad way of working.
+It's just that it's not compatible with
+mine. And so that's very
+The important thing is that
+This is not a question of value
+Is it good or is it not good? There is
+people who are compatible with you
+to work with you and others who don't
+are not. interesting
+and and and
+You see, I'm going to tell you something a little
+funny, well, funny in a way that's true, but
+I am a very good leader, I am a
+I don't think he's a pretty bad manager.
+bad, but I'm not a good manager
+What, you see. I have people who
+precisely in societies, they are
+Much better managers than me. Yeah,
+It's... it's finally, you see, it's not
+I agree with you on that. I can
+to be that and what's funny is that
+I can be exactly like that. And to
+The opposite of you, I think I am
+more efficient when synchronous. That's to say
+that I hate living
+uh
+Actually, it depends on the notifications.
+I feel like I'm a slave to
+notifications, and that's something that...
+which weighs heavily on me.
+Everyone works as they see fit, that's all.
+I think that to delegate effectively, you need to
+Knowing yourself well. H
+I've had quite a few moments where you
+See, I analyzed myself and I had some
+people who helped me analyze myself
+Wise man, what am I doing well?
+What am I doing wrong? Know
+know
+Who were you, who are you now, coaches? Uh, no.
+friends of friends of friends with
+who were with me at Central uh
+especially Jeremy, if you're listening, uh, my
+woman, oh dear, uh
+people, specifically Simon, who is, uh, the
+CTO of Kyber, uh, uh, your analysis of
+In a pragmatic way, that's the most
+hard. Uh
+Yeah, it's not always like that, it depends.
+Sometimes it's just that you got hit.
+slap in the head, you take it
+A slap in the face, basically. You see by
+For example, there's a guy named
+Julien Rouillard, whom I haven't seen
+from Centrale and who told me three
+things at Centrale that have stayed with me
+extremely strong in the head.
+Go ahead.
+No, that's too personal.
+Stop.
+No, no, seriously.
+Oh yeah, but no, you can't do that to me
+Something like that. You can't get me out
+there. Julien told me three things
+Since. I haven't seen him for 20 years.
+thing. I can't tell you everything, but in
+In any case, for example, I was in a
+a time when I was feeling a little bit blue.
+and so on, central and every time that
+I was complaining, he was putting me in this position.
+street song that belongs to us that says
+"Luck does not smile on those who..."
+"They're sulking." But frankly, it's
+He told me, so I'm not going to say I'm going to
+I tried to be polite, but he shut me down.
+sweets for a long time with that me
+saying "Go on, stop complaining,
+"Go ahead, go!" What? Go ahead, go. And that
+Luck does not smile on those who
+They're sulking. But he has so much
+reason. Well, you see, that's a
+Something that always comes back to me. Rio Julien
+I haven't seen Rio. I have
+I tried to, I don't know where he is.
+I don't know what he's doing. Well, then.
+In fact, you see, and people tell me
+say I am someone
+lucky.
+Rio is no longer responding.
+Oh no, sorry, I don't know if it's
+allowed as a joke but it's with a
+yux.
+And that's super, that's super
+Interesting, it's extremely important. Uh,
+There are many people who tell me
+I'm lucky, but actually the
+chance brings. There is a part
+chance.
+I have an exceptional episode on the
+chance.
+Great!
+I'll send it to you.
+Well, I'm listening.
+Go ahead, rat out the others.
+Uh
+No, it's that one, it's the most
+important. That's the most important thing. But
+For example, you see, another person
+who has done a great deal, so we have
+Louis V Proddige was therefore
+in fact my real first boss, my real
+first work and moral rectitude
+and a work value
+monstrous for someone who was in
+wheelchair tetraplegic what with
+amazing.
+I've always seen it that way. I
+Obviously, I don't know anything like you
+But I've always perceived it that way.
+My son's name is Louis.
+Hm. So for many reasons, but
+One of the reasons is in reference to
+him.
+I like that about him and about many others.
+of tech in moral rectitude and will
+their work when among the best.
+Something you find among the
+journalists, for example, also when
+when they are very strong, better and
+etc. It's a very analytical side,
+listen and so forth and behind you
+transcribed something that is looking for
+the truth. That's quite interesting.
+Uh, there you go, and a few, a few
+a few people. Uh, uh, I also have
+counterexamples
+uh
+people who gave you forgiveness
+some shitty advice you have
+follow up.
+No, no, people who were quite
+close to me that I saw doing
+anything
+morally.
+Morally, in the management of the company.
+So. I also learned about management
+by seeing bad examples, people
+who shout in meetings, people who...
+humiliating sight,
+you see for example the
+Praise in public, blame in private, you
+See, that's extremely important.
+So you praise in public and you blame
+in private. You're actually criticizing it.
+private.
+Yeah. You see, these are things
+quite important.
+Uh, there was, there has been, and it's the same.
+I also like the uh
+Excuse me, I'm very much like that, but
+I also like the "What do you want?" aspect.
+"Water, here you go, and with pleasure." And this
+This time, I'm going to give you some water.
+gaseous. But she wasn't in the
+Good bottle, you see. There, I
+blame one in public. And uh no, I
+finds that the side uh
+I love, uh, the thoughtful disagreement
+and the hardcore side, the transparency
+radical and at times, uh, obviously that
+depends on the subject, but being able
+to say, uh, ah, we're a small
+team, you see, but at 4, 5, 6 one has
+done, including to me what what one has
+It hurts where you can progress in front
+everyone, it can also do
+to make progress for everyone. Yeah, but in
+in fact, one must be careful about the way
+as you say.
+So, what I actually learned is this
+It's not always the most skillful.
+Well, for example, when I
+People find me very secretive and
+that I'm messing around with a little bit. Is it that
+when I say something and you see a
+At that time people called me Jean-Pierre Cof
+computer science, uh, you see, I'm saying
+It's all crap. Never is it a
+No one, that's right, that's it, that's the
+[ __ ]. Why and how can it be improved?
+And that's very important. That's mine
+stay in the United States where in fact they
+are sometimes extreme, but there are
+Something went wrong in France. You
+spends 45 minutes explaining why
+It went wrong. It's not my fault and it's
+thingamajig and so forth, and then a quarter
+The solution is available within the hour. Americans
+They're saying OK, it's gone wrong. OK, now we
+What does it do? And that, for example, on
+Videolan was very important. There is
+many times I said OK the
+The blame is mine, it's me, it's my fault.
+While objectively it is not
+But we don't care. I don't have any
+time machine.
+Yeah.
+And this is important, I don't have any
+regret.
+You see, you're crazy because in fact
+The regret is that it's a tax
+wasting your brain. You can't do anything
+TO DO. What do you want to do? You
+I regret it. So what are you going to do?
+So unless you had a machine to
+Going back in time, which is cool. But
+I don't have any.
+Tax a tax from the past that serves no purpose
+Nothing. That's right.
+And it's like anxiety, it's a tax
+about the future. Stop. Finally,
+I know it's hard, but you see, it's
+about the future, you see. It's me
+I see, I have the little situation
+Italy of fear, you know what?
+fear and the little death of the spirit
+which leads to total obliteration. You
+You will not be afraid. That's a mantra that
+I'm quite strong. Same thing, you see that?
+It's useless. What are you going to do? Well, at
+worse, and at worst it will fail. And so to
+every time I have a decision to
+Take my vision, what is it?
+the worst thing that can happen to me. And in fact,
+you if the end is not death
+someone,
+What's worse? Okay then, well
+Your company is dying. Yeah, well, so what?
+As for work, I'll find some. There
+Most of my guys, they'll find some
+The blocker knew they were taking
+risks.
+Exactly. Finally, but at that point,
+one must be, one must be, one must be
+quite transparent, but never
+Insulting people, you see. So there you have it.
+I had some counterexamples and
+These are the counterexamples, I found them.
+very interesting because I learned
+There are a great many counterexamples. SO
+Obviously I would never give you names
+but I saw people doing
+Catastrophic management.
+I've seen people burn out, but like
+burnt out and you could see it and you could see that
+It was unstoppable.
+And that actually helped me to
+to build as well. So because, well, you
+Say it and you know your limits. I
+I know my limits quite well.
+How do you manage not to get burned? And
+Well, I'll stop there.
+You can feel it, you can feel that you're stopping.
+What. You stop. You work a lot.
+You say, "But you take vacations, you
+You stop in the evening, you
+To recharge, I don't need
+"I need a change of scenery for my vacation."
+That's quite surprising. Me when I
+I'm tired, I've only slept 8 hours for the last 3 nights.
+It's sorted, you see. But on the other hand,
+When I'm mentally tired, I have
+I need it, that's why I travel
+a lot,
+A change of scenery helps me enormously.
+So, I don't know how that happened,
+I don't know how my
+brain exactly, but I know that
+It works 100% for me
+And that's important, that's what it is
+In my opinion. That's what I actually...
+I learned, it's for me and it doesn't
+does not apply to everyone. And that
+It's quite difficult. People me
+they say, "Do you have any advice?"
+"For me?" Well, actually, maybe I have
+I have some advice, but I don't know how you
+works.
+No, but you see, we were talking about it all the time.
+the time. I don't know certain things.
+It doesn't work the same way at all. And so
+each one, but it's interesting to have
+to open the chakras and understand a
+little.
+You see, that's the whole point of this...
+This podcast, you see, is about understanding
+how each one functions and power
+choose the ingredients for their recipe
+which could work in the
+Here, you see.
+You see the only one, the only one, the only two.
+tips that work almost every time
+Time, unfortunately, is work.
+And don't be afraid of the future. And go ahead
+What.
+Why unfortunately work?
+Are you happy to be working?
+Do you like what you do?
+I don't know if I could work 10 hours.
+But that's too easy. But you see
+imagine that the whole of society works
+10 hours a week and the rest he
+cultivating would be great.
+OK, it depends on the job. It depends
+Maybe I actually work
+if you want to put it differently. I
+works zero hours per week.
+All I do is do stuff
+funny. I only ask questions about topics
+exciting with amazing people. All
+THE
+everyone was working all the time but
+that they were so happy to
+to work. So
+I work with some great people, and that's it.
+And so, to conclude, to answer your question
+how we recruit, how we are with
+They're amazing people, you know what I mean.
+to know its flaws. I have some
+defects. Um, and precisely, it's necessary
+to meet people who are
+different from you. and automation
+Quickly tell me a little about your latest...
+things there where you
+Now it's so simple with
+from lias to slack bot strikes that make
+your things that make your holidays redone that you
+uh, who will uh, make prints
+who give you summaries that do
+You'd have a really concrete one there, nice to...
+I could share that I could uh
+apply or
+I've automated my house a lot
+with home assistant and with music
+assistant of
+Home Assistant is Google
+No, it's precisely an open-source thing.
+and which, depending on the temperature
+whether or not to open the shutters, things like
+That
+recently on keyb
+wait, wait, wait, stay there
+We'll come in 2 seconds. No, no
+assistant
+Wait, if Home Assistant we could...
+spend 4 hours.
+No, but go ahead, tell me what it's like
+A quick 3-minute job. It's a
+open source home hub that
+runs on a Raspberry Pi and which...
+connect all your heating, your
+electricity, your solar panels, your
+water that lights up all the lights, that
+turns off all the lights, which changes
+the temperatures and so on and everything is
+centralized in an app.
+OK. But you, when you finally get home
+you and the lights turn on by
+examples of things like that.
+OK. And what's the coolest thing?
+Is it just geeky and is it
+Funny? Because at a certain point, indeed,
+my U lamps were flashing
+every time I had a new
+follower on Twitter. I thought that
+After 4 days my wife was going to me
+butter. Finally, I think she was going to
+I'd kill myself, by the way. So I had to
+report this to the office and at the office, they
+They almost killed me afterwards too. SO
+This Philips U has been unplugged for 10
+years, you see. But
+Yeah, but except that controlling your
+of your electricity consumption H
+because I connected it to my Linky meter and
+So I have three-phase power. Uh, you
+See, that's quite useful. It is
+not just, it's not just a gadget
+uh, turn off the lights in the houses, all the
+Lights when you leave, it's not
+gadget. Uh, but mostly, uh, you see, uh
+to be woken up, uh, just because
+Your shutters have gone up, it's
+more pleasant than having an alarm clock that
+It's the weekend. You see things
+like that.
+It's true.
+And regarding society,
+Write the processes and then implement them.
+You see. Me, I am, me, I have, I have
+almost a spreadsheet of
+When I set up a company, we use
+conta, we use Alan, we use Pfit,
+we have stuff and all that, it's almost
+automated. You could almost
+scripting the creation of the box
+uh, and everything is postponed in the same way.
+way.
+That's good, you're listing all my sponsors.
+that's great
+compit at least. Yeah.
+Alan could become that, but Charles
+listens to us
+or he came here, we know each other. Uh
+OK. Uh, yeah, no, but obviously it is
+it's all these things much more
+simple.
+Recruitment takes a lot of
+time. A good recruitment process
+It's incredibly powerful.
+What is your recruitment process?
+So first of all, we have a...
+spreadsheet actually for tracking
+huh, by the way, finally, a spreadsheet.
+Excel spreadsheet, what.
+No, it's more like Trello, but in
+In fact, it's in that, it's a kind of
+What the hell.
+It could be in
+Exactly. So, especially in fact the
+I can give Kyber one for
+So generally I recruit by doing a
+message about oneself on Hacker News on
+LinkedIn by saying that I am recruiting
+recovers approximately 100 hp.
+For every 100 hp, I keep 40 with me
+pose with someone else for the
+throw. I them
+Look at the 100 or someone else is looking at them
+Or watch them, huh. I watch them
+100.
+OK.
+Honestly, there are plenty of CVs out there.
+But you say a CV, you look at the profile
+On LinkedIn, you don't ask for a CV. resume
+if
+No, but it's the same thing. It's what
+What's the difference?
+I don't know. Actually, no, there is
+people still asking for CVs
+Today. So, well,
+There are heads. There are people who
+people who send you your LinkedIn profile send you their LinkedIn profile.
+PTV. For me, it's CV time in
+line, huh.
+Yes, indeed.
+Okay, uh, and uh, in 10 seconds actually.
+Yes. No, what?
+Okay, so you have 40 left, so you see, you have
+already divided by two a little more than by
+to rest. You sit there, we'll...
+pose a little more, especially with
+someone else in general. Often the
+For example, on Kyber the CO we look
+and then we send an email to people in
+checking if they are in the right place
+you see, uh, of
+in the right place. I have lots of people, he
+they tell me "But actually, yeah, but in
+Actually, I live in Türkiye and in fact
+Yes, of course, I'm French, but
+I am an expatriate
+and so depending on where it is not
+Definitely doable. Check that the
+salary expectations, they work
+What
+from the very beginning. Yeah
+yeah, wasting everyone's time
+world in with someone who says yeah in
+Do this to me, I want this, and you surrender.
+realize that it's not at all in your
+budget because you have a start-up in
+side. No, that's not going to work. It's not
+So there you go, you save time
+And then I manage. So at the
+That's it, you see, you have 20. And there,
+we manage to, uh, make a
+double interview. That is to say, in
+Done, you schedule a one-hour interview.
+In fact, what you did was
+that you had two interviews. You killed
+You have a Fit HR interview and a
+first technical interview you put
+at the same time. But actually, it's very
+silly, but for the candidate, it makes him
+One less interview.
+Hm hm.
+And then you do one or two
+plus interviews. So actually it's
+The guy had three or two interviews
+interviews and you hire him/her right away
+following. You see, it's you
+Give a maximum time ideally between
+So yes, but after that it's me
+My theory is that you can't get through
+more than a week.
+OK
+but in practice it's sometimes a bit
+more complicated, but you see for example
+when I was at Skalway
+one year there were 100
+people who were recruited on
+the engineering department of 300 people. You see,
+It's still extremely important.
+for what it is. It has to be
+once you have recruited the person
+In fact, you have something that generates
+automatically the contract with all
+the information and not something where
+You're still browsing Excel files
+or Word documents and then
+You get the onboarding process right away.
+At Kyber, what's your
+Um, your recruitment process? Are you going to
+Are you recruiting there?
+I'm recruiting a lot.
+And what are you looking for? You're looking for that
+Any tech for now? Um, so I
+So, I'm looking, well, I'm almost there, I have
+almost finished there for my recruits
+tech. Uh, I
+most of the tech industry, but
+I have, uh, two or three people around me.
+marketing, communication and a little bit
+You see the meadows, the preparation of the
+sales presentations. Uh, a lot of
+the act of publicizing the solution
+No, it takes a lot of time. Uh
+I have a CO who is effectively acting as DAF for the RCH
+and then lots and lots of little lawsuits
+process and then so the whole part
+sals. Me
+Who do you sell to at Kber? So in Tales
+potentially and to
+Tales, Airbus, Meta, Apple. So no
+Activision, but we have, uh, banks.
+many insurance banks that
+will really take part
+remote desktop. But perhaps
+we must, we must, maybe, we must
+explain again what it is in a little more detail
+Skyber detail. So. So I have two
+three salsa stations. Uh, uh, there
+Specifically, I'm looking for someone who
+It's more about project management, that's all.
+That's because there are actually a lot of
+projects that are quite long
+and actually I do almost exclusively
+bis dev and I fill the pipeline
+but to be sure that it converts well
+The entire pipeline is long, and well, that's it.
+very complex projects. Skyber,
+It's a huge added value, but
+So it's complex, it can be very
+far from integration. Check that
+it's practically project management
+Sales with customer relationship management.
+What does a bank buy from you? She
+buys you access to a computer at
+distance, a bit like we were talking about the
+Cloud gaming later. SO
+to prevent people from having computers
+at their home with
+Kyber, that's really about control of
+remote machine.
+OK. Uh, there is
+four large vertical lines. The first
+Actually, it's remote desktop access. SO
+that's what the banks and the
+insurance companies and many other people like
+They buy from Citrix. This thing
+absolutely horrible for the people who
+use. It's so slow, it's
+infernal.
+There was something on PC too where you
+I can take control of your PC.
+A Team Viewer. What a nightmare.
+It's very slow. Tuas your mouse that
+wiggle a squib.
+And Kyber. In fact, the goal is to have
+as little lag as possible. So in fact
+Indeed, there are times with
+Kyber, you don't see the difference.
+You see, for example, it's funny, I have
+I once gave my mother a
+iPad with Windows on it. Windows
+It doesn't run on the iPad and Windows.
+was running in the cloud and my mother she
+he said to me, "Yes, well, why not?"
+"Why are you showing your Windows?" And
+I was OK. "OK, great. In fact, you..."
+"I don't know what." And that's very, very
+strong.
+While she developed a mouse on a
+on an iPad. So there you have it. So he
+There are all the people who want one of these
+which is called a sovereign CRIX, therefore
+truly from the office to remote work. Uh, he
+There are all the people who want an office
+at a very high-performance remote control
+including, you see, offices
+studies, uh, CAD, uh, of
+3D simulations, a bit like cloud gaming.
+There you go, he has all that. And since we are
+based on VLC, FFM PEG, in fact, Kyber,
+It works everywhere. Windows, Linux, Mac
+Android, Apple TV, Android TV,
+Chromebook, it works on the web. SO,
+In fact, it's much more usable
+than in many cases. You see, the
+People, he's holding on, well, I'm looking for a
+Crux for Linux for a year now. Well
+Yeah, we actually know how to do that. H and and
+So there you have it, that's the first case
+customary. So here it's more like, so I have
+banks, insurance companies, uh, so...
+big it uh and then game studios
+potentially videos of, uh,
+people like EDF who will be in CAD
+In fact. Uh yeah, CAD, basically.
+Next I have the second topic which is
+3D or XR streaming remotely.
+That's actually XR
+uh, augmented reality, what? Mixed reiteration
+in what is called mixed reality. Uh
+actually because, well, to do the
+The result is too complicated, it consumes too much energy.
+Too much power, you need
+large cardiography in the cloud.
+So basically you do the rendering and you
+stream, you'll be able to stream it in
+glasses, in many devices
+Lighter, you see. So, this is about
+3D simulations, we have stuff
+industrial companies, for example.
+And that's pretty cool, you know. And so in
+Do what you can control, it's not a
+A computer is just a program.
+Hm.
+And so, there you have it, that's what we
+It's already sold out today, right? And
+Then, well, you can use that.
+to control robots remotely.
+Then you have lots of types of
+robots. There are rolling robots or
+flying, we call them rovers or
+drones or self-driving cars. But
+It also works for, in fact, it's just
+that are underwater too. That's where he begins
+to have quite a few submarines. So
+So this is a type of drone, finally
+He's just like Ramatan and all that.
+I imagine it must be super
+interesting. I don't know if you have them
+You know, or maybe you have the same one.
+I don't know Armatan, I knew him
+a bit like the people of Helsing, but that's what
+that kind of thing and you obviously have
+Then all the robots, so not too many
+industrial robots because the
+industrial robots, they are in
+in very controlled surroundings, they have already
+solutions so they control their
+latency but everything that is robotic
+humanoids, anything that is robotic
+surgical
+and lots of other types of robots, uh
+In life, in fact, you need
+Nothing is 100% autonomous, and so you have
+need either to monitor, therefore, the
+remote observation
+potentially, in fact, to make
+metrics or video analytics
+automatic and if necessary say "Ah there is
+a problem and so someone will
+regain control and therefore of the
+remote machine control."
+And you take that good on the hardware, right?
+we still did well
+torn apart by the Chinese who have
+put a battery pretty much everywhere. Uh
+Finally, regarding humanoids, there is
+a few Americans though, uh, with
+Tesla, Boston Robotics, Boston Dynamics,
+uh, something like that. There are some
+a few. Uh, even on drones.
+Okay, I think drone, it's starting to
+to find a way back to France
+some drones. But the ones about robots
+humanoids, there are French ones, some
+Europeans,
+There was Pollen Roboti which was made
+acquired by Ging Face.
+We have Enchant Tools, right, of of of
+Jerome from the former Dal. We now have
+even this start-up called
+Huma. Uh,
+Are you going to introduce me to one or two? How are you
+That's nice. Do you know them?
+Yeah, of course.
+And, uh, but them and all that, the Chinese and
+They already have all of that.
+what you are doing there, what you are proposing or
+no way ? H
+Not really, because right now...
+What I do is software development
+for robots and the whole stack a little bit
+Cloud-based robotics for observation.
+Not the OS, but the software.
+Yeah, I do middleman work for robots.
+and drones. And besides, we have for
+We also did our demos, by the way.
+manufactured our own drones and our
+Own robots, huh. But it's...
+very cheap 3D-printed stuff, but
+limit. My need is to show the
+ability. I'm not here to manufacture
+the stepper motor, to manage the
+battery profiling and so on. I
+I really am. Besides, what I know
+The "doing" part is software.
+First-layer software, basically. Not
+Not too much, at least the first coat.
+I don't know what you mean by first
+layer.
+No, but very close to very close to
+hardware. That's what I mean.
+Yes, absolutely. Because in fact you
+You need to understand, in fact, one
+robot, an autonomous car or a robot,
+There are 10 cameras, 15 cameras.
+Yeah. Yeah. Of the
+microphones, sensors
+temperature, pressure, lidar,
+things and so on. And you want
+retrieve all of this, save it for
+to be able to create AI models for
+the power that it is the AIs that
+control these machines or just to
+to check that everything is alright, in order to make
+telemetry for observation because
+You see, defense drones, that's
+That's why you were talking to me about defense
+But for me, that's not the main issue.
+1 but defense drones actually you
+You don't care about safety, your drone...
+he is going to die, he is on a field of
+It's a battle anyway, you see.
+It doesn't cost very much compared to
+a human life compared even to
+a submachine gun or something.
+Yeah, weapons don't actually cost anything.
+It depends on the drones. But
+Yes, yes, absolutely.

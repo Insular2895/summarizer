@@ -1,0 +1,77 @@
+[Music]
+hi
+this is nicola nabis from the technical
+account manager team
+through a quick series of videos i'll
+try to show you some
+tips and tricks to better use apm 4.js
+for these quick videos we will use a
+demo application
+written in express.js where you can
+create update
+and delete dog names
+if you look at our code you can see that
+the structure is quite standard
+and on the right side you can see that
+we instrumented our application
+with our ddtrace library which will
+auto-instrument our express.js framework
+with this austin instrumentation if we
+go to the dock platform in the trace
+module you can see this list of trays
+and we can click on any of them
+to look at the flame graph for this
+particular execution
+what we are going to do in this video is
+add an extra information an extra
+attribute
+into the top level span
+in our code i created an additional
+function called
+add dog id to rootspan
+i'll uncomment these few lines the first
+line
+get the current active span
+then we collect the parent of all those
+pans
+and we add the dog id information
+to this parent span
+this function will be called in all the
+routes where a specific element is
+selected
+get id post id and get id slash delete
+if we now go back to our application and
+generate a bit of traffic
+we will now go back to the datalog
+platform and observe the additional
+attributes that has been added to the
+new span
+created
+on one of the span where the specific
+element has been selected we can see the
+new attribute
+dog id and we have the ability now to
+create a facet
+or edit a facet in our case since we
+already created it
+we can search by these facets and
+highlight all the different actions that
+have been made on this specific
+element
+we can also go back to app analytics and
+create some charts regarding the
+utilization
+of all these elements
+you can now see which elements are
+mostly called
+in these traces collected this technique
+covers multiple use cases
+such as adding a version number to your
+applications
+to see if the application behave
+differently depending on the version of
+your application
+or maybe the customer tier or customer
+type to identify
+better which traces belongs to which
+type of user

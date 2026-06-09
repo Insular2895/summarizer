@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "0swOh5C3OVM",
+  "title": "Kubernetes Volumes explained | Persistent Volume, Persistent Volume Claim & Storage Class",
+  "url": "https://www.youtube.com/watch?v=0swOh5C3OVM",
+  "source_paths": [
+    "cache/transcripts/kubernetes-volumes-explained-persistent-volume-persistent-volume-claim-storage-c"
+  ],
+  "updated_at": "2026-06-09T18:15:55.981402+00:00"
+}

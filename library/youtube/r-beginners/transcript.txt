@@ -1,0 +1,100 @@
+Hi, and welcome to the Grafana Alloy for Beginners
+series. My name is Mischa Thompson and I'm a
+Senior Software Engineer at Grafana. In prior
+episodes, Lisa covered Alloy fundamentals and
+how you can build pipelines for infrastructure
+metrics and logs. In this episode, we will shift
+gears to application observability and cover how
+we can build a pipeline for application metrics
+with Grafana Alloy. These episodes build on
+one another. Before starting this episode,
+make sure you've watched episodes one through
+eight and completed Alloy configuration sections
+one through three in the series repo. We
+saw this slide earlier on, but to recap,
+our mythical server, requester, and recorder each
+expose a /metrics endpoint and are trying to send
+logs and traces to Alloy. Our next few sections
+will be to start scraping those applications and
+receiving the telemetry they're sending us.
+To get started. Open the Grafana Alloy for
+Beginners repo, and scroll down to section four.
+As a quick reminder, each section starts with
+starter code, then tasks to explain the config
+and what you'll need, and finally, a solution
+with the finished version. Next, I'm going to go
+over the pipeline. we'll be building visually and
+then walk through the solution. I'd encourage
+you to copy the starter code into config.alloy,
+try it yourself and compare with the solution when
+you're finished. If you haven't already, start up
+the learning environment and open config.alloy.
+Here's the pipeline that we'll be building
+today. To begin, we'll start scraping Prometheus
+metrics from our mythical server and requester
+using the prometheus.scrape component. The scrape
+component will forward metrics to a recently added
+experimental component, prometheus.write.queue,
+which will send our metrics to the locally
+running the Mimir. This component performs
+the same function as prometheus.remote_write,
+which we saw in sections two and three,
+but includes a revamped write ahead log
+that comes with some performance enhancements.
+Note that while we're using this for the demo,
+remember to stick with prometheus.remote_write
+in production until this component is officially
+stable. But now you know an exciting upcoming
+improvement. As we've done before, we'll use a
+prometheus.scrape component to collect metrics
+where before we used Service Discovery to find
+which targets to scrape. We'll be finding them
+manually in this example. Doing it this way helps
+us see exactly what targets look like under the
+hood, and it's also a perfectly viable approach
+when you have a small, static set of services
+that you want to monitor. An individual target is
+defined as an object in Alloy configuration, which
+is really just a collection of key value pairs.
+They're similar to a map, hash or dict, depending
+on your previous experience. Targets have a few
+special values that can be used to control
+scraping behavior, like the scrape timeout,
+query parameters that should be included in the
+request, individual scrape intervals, and more.
+These control values always start with a double
+underscores (_ _) and will be dropped before being
+forwarded to other components in the pipeline, so
+they will not be added as labels on metrics. The
+only required field for a target, and the one
+we'll be using today is the double underscore
+_ _address _ _ value. This defines the network
+location of the machine or service you'd like
+to collect metrics from. Any non double underscore
+key value pairs will be added as labels on metrics
+for that target. So we're going to configure our
+scrape component with two targets, one with the
+address for the mythical server, and another for
+the requester. We'll also be adding a group label
+to both with the value of mythical and a service
+label with the value of mythical-server and
+mythical-requester respectively. Moving on to the
+prometheus.write_queue component, which is where
+we're going to forward our scraped metrics to.
+It really operates the same as the
+prometheus.remote_write, that you've seen before.
+One notable difference is that the endpoint block
+is now named. We've named ours "mimir" here, and
+we've configured it to send metrics to the locally
+running Mimir instance. Once you've finished
+setting up your config, don't forget to reload
+the configuration. Once you're finished,
+scroll down to the verification section,
+click on the dashboards link, go through to
+section four verification, and you should now
+be able to see requests coming through for all of
+your different mythical services. In this episode,
+we started collecting application metrics
+from our mythical server and requester.
+In the next episode, we'll build a pipeline
+for application traces with Grafana Alloy.

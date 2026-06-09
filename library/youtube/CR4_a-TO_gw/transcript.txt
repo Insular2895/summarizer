@@ -1,0 +1,1295 @@
+hello and welcome to this aws tech talk
+my name is logan baer and i'm a cloud
+security architect with aws professional
+services
+i'm joined today by ryan tick and
+vaisnav murphy
+both cloud security architects at
+goldman sachs
+in today's talk we will dive into how
+goldman sachs leverages aws
+to perform automated digital forensics
+at scale
+for our agenda we will start with the
+learning objectives for today's talk
+then we will discuss why forensic
+artifact collection is important
+and some of the challenges incident
+responders are facing
+next we will discuss how goldman sachs
+is innovating
+in this problem space we will wrap up
+with some key considerations
+and lessons learned for those looking to
+implement similar designs
+and finally we will close with a
+question and answer
+some key lessons you can hope to take
+away from today's talk include
+the importance of having a predefined
+digital forensic evidence collection
+workflow
+how to leverage aws security services
+including security hub
+guard duty and cloud watch in your
+solution
+and the advantages of using a
+multi-threaded parallel design
+to efficiently scale your solution with
+that
+i will pass it over to ryan to explain
+some of the challenges the team at
+goldman sachs faced
+yeah thanks for that introduction logan
+so before we get
+started i wanted to discuss our problem
+statement a little bit
+here at goldman we have a very large
+global presence
+last time i checked we had a little
+under 40 000 employees worldwide
+in addition we serve a wide variety of
+clients and look to tackle a lot of
+different problems whether they're
+related to finance
+technology or engineering so the first
+challenge that we looked to tackle when
+we started building this firm wide
+evidence collection solution
+was the scale at which we operate we
+have a very large presence in the public
+cloud
+and truly operated a planetary scale
+specifically in aws
+we have over 3000 aws accounts and we
+span three different
+organizational units and these accounts
+and ous though
+have a broad range of configuration
+requirements that are necessary for
+teams to be successful
+so for example our marcus team that
+worked with apple to develop the apple
+credit card
+may have a public cloud requirement
+that's different than our transactional
+banking team
+another good example of this is that our
+development ou
+does not have the same requirements as
+our production ous so our solution
+needed to be flexible enough to be able
+to accommodate these differences
+next we onboard accounts new accounts
+daily
+so our solution needed to be able to
+handle that growth and allow for
+frequent change
+and lastly it's a lot easier to scale
+technology than it is people
+and this is going to be a reoccurring
+theme that we discussed throughout the
+presentation
+fashion i was able to pull some great
+metrics about the time saved leveraging
+this automated workflow
+and it really boils down to the fact
+that a human can only do so much work
+whereas technology can be leveraged in
+the parallel state workflow
+to accomplish a gross amount of work in
+very little time
+but more on this to fall later the next
+problem that we needed to review
+was that if you've worked in the cloud
+you know that there's an abundance of
+data to consume
+and the same is true from a security
+perspective to the first point there
+we consider cloud native data sources
+specifically aws
+our solution looks at aws config and
+cloudtrail
+probably two of the most well-known data
+sources but it also looks at dpc flow
+logs it looks at new macy s3 data events
+guard duty findings cis security checks
+and foundational best practices as well
+so our solution looks at all these
+different data sources
+and without spoiling the next slide we
+compile all these sources in aws
+security hub
+and we'll deep dive on this in a sec but
+security hub offers us a lot of
+flexibility
+to integrate with new data sources and
+standardize them with the aws security
+finding format
+as an additional benefit leveraging
+security hub allows us to easily
+integrate with third-party solutions
+such as you know maybe your antivirus
+solution maybe you have an ids an ips
+or an endpoint detection and response
+and edr solution
+all of these tools have different
+benefits and can offer great detection
+capabilities to trigger our collection
+workflow
+and having security hub at the heart of
+our solution really allows for seamless
+integration
+and lastly if you've worked in incident
+response before you know how critical it
+is to have a very low mean time to
+detect
+in a mean time to respond our solution
+is 100 cloud native
+allowing for a bunch of great slas that
+we can take advantage of from the aws
+side
+we use the aws backbone network almost
+entirely so everything is done quickly
+and securely
+uh over vpc endpoints and we have
+cloudwatch alarms that monitor various
+metrics to help ensure that our
+detection time
+and our response time is something that
+we're comfortable with
+thanks ryan um so let's talk about our
+solution
+in slightly more detail as ron alluded
+to in the last slide
+at the heart of our security monitoring
+solution is aws security hub
+and we use this solution for a couple of
+important reasons
+security hub enforces a common finding
+format
+called the amazon security binding
+format
+on all findings ingested into security
+hub uh this really allows us to
+seamlessly onboard a variety of
+detection sources
+without investing a lot of tech debt in
+developing complex
+uh extract transform and load workloads
+secondly security hub utilizes a very
+helpful master member
+pub sub model this replicates findings
+created in monitored accounts to a
+centralized master account
+and this allows us to have the bulk of
+our infrastructure in a dedicated
+security account
+that is controlled by our cloud security
+team
+security hub is tightly integrated with
+cloudwatch events which we take
+advantage of to create an event-based
+detection
+enrichment context gathering and
+remediation workflow
+every time a security finding is created
+in security hub
+from any of the sources listed on the
+slide here so cloudtrail config
+guard duty macy and third-party
+integrations a cloudwatch event rule
+picks up
+the cloudwatch event generated and
+triggers a step function that
+orchestrates the enrichment utter
+remediation and reporting
+to appropriate stakeholders in the firm
+but we'll get on uh get into that in a
+little more detail
+in the next slide as discussed in the
+last slide
+when a security event is detected from
+one of our myriad of detection sources
+we ingest it into security hub either at
+the member account level for native
+integrations
+so for example guard duty macy and cis
+findings
+which then makes it over to our master
+account through the pub sub
+architecture or at our master account
+directly via
+an integration lambda for non-native
+integrations so for example cloudtrail
+and config
+once the finding is created in security
+hub the cloudwatch event is created
+which is captured by
+a corresponding event rule which then
+triggers our enrichment and
+orchestration step function
+this step function coordinates
+enrichment and context gathering for
+various sources
+for example our deployment database
+which adds context about the particular
+business unit
+account owner its production status etc
+at every stage context is added to the
+original finding
+into the user-defined field of the
+security hub finding
+via the batch update findings api we
+then use the context gathered to ensure
+that this finding
+generated wasn't a false positive if it
+is a true positive
+the finding is then escalated to the
+appropriate stakeholders in the firm
+or auto remediated
+and this is where the evidence
+collection solution that we built comes
+in it's actually part of a larger
+initiative
+that we have underway here at goldman
+which is the detection and enrichment
+workflow that vaishnav just talked about
+but for the sake of today's talk we're
+mainly concerned with some response
+actions
+so after we've detected a potential
+security event we'll want to kick off
+our disk collection process
+and our memory collection process
+before we go any further though let's
+set the scene a little bit and sort of
+work through
+to tell a story here so on the right
+side of the screen i have an example
+guard duty finding
+that could fire in an aws account if you
+have garden enabled
+now unless your company actually mines
+bitcoin to make money
+this is probably a finding that you're
+not going to want to see
+this finding is stating that one of your
+ec2 instances is communicating outbound
+with a known bitcoin related ip
+address and you'd be surprised how
+common this is in the wired
+wild prior to goldman sachs i was at
+digital forensics and instant response
+consultant for a handful of years
+and during that time i worked on
+hundreds of different engagements and
+helped clients all around the globe
+respond to
+different types of cyber events ranging
+from ransomware to
+nation state actors and also some
+bitcoin miners
+and if you're not familiar with what a
+bitcoin miner is that's fine it's a
+piece of software that attackers can
+install
+or run on an instance that will work to
+verify bitcoin
+and by verifying bitcoin you make money
+so the more you verify
+the more money you make now this talk
+isn't centered on bitcoin but just so
+you know that a bitcoin miner has a
+legitimate purpose
+but like many other things that purpose
+can be abused
+and an attacker can do this pretty
+easily if an attacker
+is looking to make monetary gain you
+know most of them are going to do this
+as quickly as possible
+so right when they get hands on keyboard
+they're going to have automated scripts
+to download bitcoin miners
+that work on making them money quickly
+and i've actually seen this happen a lot
+in the cloud
+where companies maybe aren't as mature
+as they should be when it comes to
+detection and monitoring
+so if the attacker is able to determine
+that they're on an aws ec2 instance
+with an open security group and an open
+vpc configuration
+then they can download a bitcoin miner
+and get to work you know depending on
+the instance profile attached to the
+instance
+maybe the attacker will actually spin up
+new ec2 instances to accomplish this and
+aid in their bitcoin mining activities
+and unlike you and me the attackers
+aren't necessarily concerned with the
+price of the instance because they're
+not the ones paying the bill
+so maybe they spin up a bunch of super
+large graphic instances
+say g3 instance class types which have a
+large gpu
+which will aid them in bitcoin mining
+but will cost you a lot of money
+and before you know it they've racked up
+a six-figure bill in your aws account
+so this is kind of the attack scenario
+that i wanted to outline in this slide
+before we talk about why it's important
+to capture disk and memory evidence
+and we'll try to use this scenario to
+ground a lot of our discussion and
+explanations uh
+further along in the deck
+but i realized that not everyone
+watching this talk practices digital
+forensics and incident response on a
+daily basis
+so let's back up a second and discuss
+the importance of disk evidence and
+memory evidence
+and how they would relate to the bitcoin
+mining incident that we just discussed
+so when we talk about disk evidence
+we're talking about a point in time copy
+and a byte for byte copy of all evs
+volumes attached to an ec2
+instance once you have that forensic
+copy of disk you can treat it like your
+traditional host-based investigation
+so if this were a windows system you
+know maybe you would look at the mft
+you can look at the shim cache the am
+cache et cetera a lot of good forensic
+artifacts to start to answer questions
+such as
+you know how was the bitcoin miner
+actually installed or executed on the
+system
+you know doing a root cause analysis is
+always important so maybe you want to
+look at evidence to determine how the
+bitcoin miner actually got on the system
+in the first place
+for the third question here you know
+lawyers are always concerned with any
+sensitive data was exfiltrated from the
+system
+just because the attackers are mining
+bitcoin that doesn't mean that that's
+the only thing they're doing
+maybe they're masquerading in the
+background with that and then they're
+ex-filling a lot of your sensitive
+intellectual property as well
+so those are just some of the questions
+that disk evidence can hopefully begin
+to answer
+when we look at memory and other
+volatile data we're looking to find out
+you know different processes running on
+that ec2 instance
+as an instant responder i'd want to know
+what process the bitcoin software is
+running as
+i want to know what its parent process
+is as that would help tell me what
+process spawned a bitcoin miner
+you know another important one to answer
+here is are there any established
+network connections
+so where is the attacker sending the
+data where is their command and control
+server or their
+traffic redirector how are the attackers
+controlling the system and do they have
+hands on keyboard
+all of these questions will only help
+you find out more about the
+investigation and they'll lead to what
+we call indicators of compromise or iocs
+and from there once you start to
+accumulate the list of iocs
+you can start to scan your entire
+environment for these
+and begin to determine the scope of the
+attack you know this disk and memory
+evidence
+provides almost an unlimited amount of
+valuable information that you can start
+to gather
+so now that we know why we would want
+disk evidence vaishnav is going to start
+to deep dive on the disk collection
+workflow that we've developed as part of
+the solution
+so uh this is one of the more
+challenging but like one of my favorite
+graphics
+that ryan and i put together because it
+really does a good job of showing some
+of the pain points
+in performing a manual collection of
+disk evidence
+so all of our notification sources at
+goldman
+are tightly integrated with pager duty
+so something goes bump in the night
+and unfortunately it always seems to
+happen at night but that's incident
+response for you
+then we get page to respond we would
+then have to deal with cross account
+access
+taking and sharing encrypted snapshots
+decrypting the snapshots for analysis
+jumping through bastion hosts into our
+analysis workstations and so on
+and then we would have to make sure that
+proper cleanup was done
+documentation was maintained the hashes
+of the evidence collected matched for
+chain of custody integrity which is
+essential to
+ensure that the evidence you've
+collected can be used in a forensic
+investigation
+we will get into this a little more
+detail in a few slides
+but this process was not very efficient
+from a time perspective
+but also from a cost perspective so our
+infrastructure was always running
+by infrastructure i mean our bastions
+and analysis instances
+therefore we were paying for resources
+we weren't using at times
+this was a trade-off that we were okay
+with because we prioritized
+speed over costs but it definitely was
+not the most efficient solution
+so as this much cleaner graphic shows
+our
+automated process takes away the manual
+aspects of our previous workflow
+uh to make it more scalable consistent
+and
+auditable so just to walk through this
+uh
+firstly a trigger from guard duty or a
+third-party integration
+or a manual input gets fed into security
+hub at the monitored account level
+now due to this member master
+relationship that i discussed previously
+the finding replicates to our security
+accounts security hub instance
+and then following uh the process that
+we described earlier this event goes
+through our orchestration step function
+which adds our various enrichments and
+then triggers
+the sky collect step function this step
+function coordinates crosscam
+access into the monitored account it
+creates a snapshot of each volume
+attached to the affected ec2 instance
+it then creates an encrypted copy of
+that snapshot and shares it back with
+the security account
+finally it spins up a collector vm
+instance and we'll get into that
+in a little more detail in a few slides
+uh this
+instance mounts the volume and then
+streams a
+dd direct dump image which as ryan was
+talking about earlier is a bike or by
+copy of the ebs
+volume to an evidence s3 bucket and then
+shuts itself down and terminates
+lastly aws cloudwatch logs agent
+is installed on our collector vm
+instance which allows us to monitor
+progress
+of the collection process and again we
+will discuss why this is so important in
+a few slides
+so here is our orchestration step
+function which helps coordinate the
+various
+lambdas that assist us during this
+process this collection process
+and since we're only talking about disk
+right now i'll draw your attention to
+the right side of the diagram
+so if we start at the top of the tree
+we'll want to actually
+kick off the create snapshot api calls
+for each eds
+volume attached to the ec2 instance in
+question
+and once we kick that off aws will
+return a snapshot id
+that we can query for each snapshot just
+so we're clear
+each ebs volume would have its own
+snapshot and snapshot id
+so we move on to the next state of our
+step function which is the check
+snapshot state
+and essentially what we're doing here is
+we're querying that snapshot id
+and waiting for it to return a status of
+active and the reason why this design
+decision was made why we need this check
+state function
+is because lambdas have a max run time
+of 15 minutes
+after which a lambda function would exit
+and return a failed exit status
+but for large ebs volumes it can take a
+lot longer than 15 minutes to take a
+complete snapshot
+so this check snapshot state allows us
+to overcome that challenge
+essentially we have this check snapshot
+state retrying and reinvoking itself
+frequently
+until it returns an active state and
+then and only then
+will it go to the next step and once we
+split here and move on to our share
+snapshot state
+we're going to do a lot behind the
+scenes we're going to re-encrypt that
+snapshot with a shared kms key that is
+stored in our security account
+and we're going to share that with the
+security account so that the snapshot
+will live
+in our security account where we can
+manage it and
+do what we want with it we'll make use
+of a check state there
+similarly as before to help ensure that
+our lambdas don't time out
+and then once that snapshot is in our
+account we're going to go ahead and
+create a volume out of that snapshot
+using an hdd instead of an sd to ensure
+that our hash is matched before and
+after collection
+we'll talk about why we made this design
+decision of using hdds
+in a few slides and then the last step
+is where we'll want to deep dive on the
+next slide
+but we're spinning up a custom
+collection ami that we created
+and we'll pass that volume that we just
+created as input to this custom
+collection ami
+revision i'm going to deep dive on that
+on that in a second
+but before he does i wanted to point out
+a few things uh so first
+uh our solution leverages both
+multi-threading as well as concurrent
+executions
+um so with multi-threading we're
+leveraging multiple threads of lambda
+execution
+so that we're operating in parallel for
+example let's say there's an ec2
+instance with five different ebs volumes
+attached
+we only have one lambda function that
+runs here but each of those ebs
+volumes would get its own thread of
+execution within the lambda
+and all of these happen in parallel the
+next point here in a slightly different
+manner is that we also leverage
+concurrent execution for our lambdas and
+our step functions
+so for example with concurrent execution
+if multiple
+instances are compromised all at once
+each
+instance would get its own step function
+to coordinate everything
+so these two things multithreading and
+concurrent execution
+they both help with the scale of our
+solution
+so at this point i'm sure that you're
+all wondering what exactly the collector
+vm
+ami that we keep referring to is so
+basically the collector vm is a name
+we've given to our custom ami
+that performs the actual collection
+process
+our ami is created by a lambda function
+that uses
+the amazon linux 2 ami as the base ami
+and then updates the packages installed
+and stores the new custom ami
+id in an ssm parameter that is read by
+our
+sky collect step function to ensure that
+our image is as secure as possible
+we trigger this lambda every week to
+ensure that
+the os is patched and up to date in
+addition each collector vm instance has
+a restrictive security groups with no
+inbound rules and no ssh key associated
+with it
+so and this prevents unnecessary access
+we also deploy the instance
+in an isolated subnet with outbound
+rules only allowing outbound
+communication to the vpc endpoints
+s3 ec2 and cloudwatch logs which are
+necessary for our collection process uh
+so the process itself works as
+follows so firstly the last lambda
+function of the sub function
+that ryan was talking about spins up a
+collector vm instance
+with the volume id assigned for it to
+collect as an environment variable
+and this is done using the instance user
+data
+user data also runs a script that
+attaches the assigned volume to the
+instance
+attaching the volume triggers an in-cron
+job that runs dc3d
+on the attached volume and streams it to
+the s3 bucket
+so just a quick note about incron for
+those of you who aren't aware
+it's a very useful linux utility similar
+to a traditional cron job
+that allows you to trigger actions based
+on file system modifications
+instead of a timed trigger when you
+attach a volume to a linux easy2
+instance
+a blocked device is created in the
+forward slash dev directory
+which we then use to trigger the dc 3d
+job
+and dc3d is our disk collection
+utility of choice that creates the
+direct dump image that i was talking
+about a few slides ago
+and it'll it will basically use that
+because of
+enhanced logging that is available with
+this process
+so while dc3d is running a collection
+log showing the progress of the
+collection process
+is stream to cloudwatch logs this is
+very important because
+as i mentioned earlier we have no
+hands-on keyboard access to the ec2
+instance
+so we instead use the cloudwatch logs
+agent to monitor metrics like
+collection speed percentage complete and
+any errors in the dz-3td process
+once that process is complete the ec2
+instance
+shuts down and we have it enabled to
+self-terminate
+so once it's shut once the ec2 instance
+shuts down
+it self-terminates started slide for
+both the disk workflow section
+as well as the memory workflow section
+and our goal here is to really give you
+some actionable items to think about
+if you were to start to build a similar
+solution so diving in here
+the first point reiterates that our
+solution leverages both multi-threading
+and concurrent execution
+you know we've discussed both of these
+earlier but these allow our solution to
+scale with ease
+next you need to determine if you want
+to perform a full disk collection
+and capture everything that is on the
+disk or if you want to perform a
+targeted triage collection
+a full disk collection may be more
+complete but a triage collection is
+going to be much faster as it only
+captures the main files needed to
+perform an investigation
+so there are trade-offs there for the
+third point we wanted to point out that
+we're streaming the disk evidence
+directly to s3 as we capture it
+so no additional host-based storage is
+required to write the output
+again we're just streaming it directly
+to s3 so that really saves some storage
+costs and storage problems there
+as we mentioned earlier we want our
+solution to be as secure as possible
+so we leverage vpc endpoints to ensure
+that all network traffic is sent over
+the aws backbone network
+and we're satisfied with that because it
+provides both an increased level of
+security
+and reliability next you'll want to
+consider the trade-off between cost and
+collection speed
+essentially it comes down to the
+question of how fast do you want the
+data
+versus how much are you willing to pay
+we chose to use an m5a class instance
+because the high max network bandwidth
+so we can get the data very quickly
+but the hourly price was also pretty
+reasonable so we're getting the best of
+both worlds
+there moving on so instant store data
+just to note that that is not actually
+captured by an eds snapshot operation
+our process to collect this would be to
+execute dc3d
+locally on the target instance via an
+ssm document
+and stream the data directly to s3
+however you definitely want to consider
+order of operations here first because
+if you're running commands live on an
+instance and you haven't already
+captured memory
+you run the risk of corrupting memory
+and lastly we wanted to talk quickly
+about hash verification
+so as i mentioned earlier we made some
+design decisions around
+you know using hard disk drives as
+opposed to solid state drives
+solid state drives or ssds make use of a
+bunch of different operations
+such as trimming and wear leveling and
+while this
+helps to increase drive performance and
+longevity these operations can change
+the hash
+associated with your evidence so because
+of this when we convert a snapshot
+into a volume we make sure to change the
+disk type
+to a hard disk drive or an hdd so that
+we can verify the hash before
+and after collection
+so now that we've discussed our disk
+workflow let's shift to memory
+in our memory collection workflow
+so just like disk you know this was a
+painfully
+manual process before the automation
+took over
+we could potentially get an alert
+similar to the crypto mining example i
+gave previously
+and then i would get paige as an
+incident responder you know on step
+three i would have to go in and review
+the alert to make sure it wasn't a false
+positive
+and then i could make a jira ticket and
+from there i would have to work with a
+business owner to
+actually get access to the ec2 instance
+in question
+and as we mentioned previously with
+varying different configuration
+requirements
+you know this was not an easy step and
+that's why we have kind of a red
+asterisk here this was not a standard
+process especially
+in three in the morning when you want to
+get answers quickly you know
+i have to wake up and then i have to
+wake someone else up to find all these
+answers
+but once i finally got access to the
+instance i would have to figure out how
+to stage my memory collection tools
+while making the least amount of changes
+possible to the current environment
+i would run a memory collection tool in
+step 6 and then if it was a linux system
+i would have to go ahead and actually
+build the custom memory profile with the
+system map file and the door file
+and after that and only after that i
+might have to update the vpc
+uh that the instance is running in and
+make sure that i have the appropriate
+level of network access to write the
+evidence to an s3 bucket
+maybe i'd have to update the instance
+profile on the instance as well
+and then once those changes were made i
+could begin to move the evidence to an
+s3 bucket
+i would then do some level of
+verification to make sure that the
+collected evidence was good to go
+and then after that i would delete the
+memory dump from the target instance
+i would delete the memory capture tools
+and this is because i don't want to make
+it easier for an attacker if an attacker
+was on the system
+to take advantage of the memory down for
+the memory capture tools
+you know a lot of attackers try to live
+off the land so if you just leave that
+there for them
+they're just going to take advantage of
+that and lastly i would have to revert
+all changes that i made to the
+environment
+including the instance and the vpc
+making sure i don't do anything wrong so
+i don't cause an outage
+then i can finally update my jira ticket
+and start to begin my memory analysis
+so you can see how manual this process
+is and it's difficult for me to give a
+real-time estimate on how long it would
+take
+but i'm thankful and so is our you know
+security and instant response team
+that we've automated this process and a
+lot of its pain points away
+so just like our process to collect disk
+with our disk collection workflow
+uh the memory process is very similar so
+we would have a guard duty finding that
+fired for example
+a bitcoin mining related finding and it
+would generate a finding that we would
+want to investigate and it would assert
+itself into security hub
+in the member account uh where the
+finding took place
+and as vaishnav had talked about earlier
+because of the master member
+relationship
+the finding would replicate itself into
+the security hub master
+account in our security account and from
+there we would leverage cloud watch
+events and event roles
+to filter down which events we would
+want to collect memory for
+for example if guard duty fires on an
+anomalous api activity from a user
+obviously we don't want to collect
+memory there because it doesn't involve
+a compute
+based resource an ec2 instance so this
+event rule allows us to filter down
+which alerts actually
+we want to triage and collect memory for
+and from there we kick off our step
+function
+which we'll show in a second and that
+step function would coordinate the
+actions needed to access the compromised
+instance via ssm documents
+and perform that memory collection
+so at this stage it's important to
+reiterate that while it's always
+beneficial to an incident response
+analyst
+to have memory evidence to analyze it
+can sometimes be
+a risky proposition to collect this is
+because
+you necessarily have to play with the
+kernel to collect memory evidence
+which could lead to fun situations like
+blue screens of death
+so it's always a good idea to ensure
+that you have contingencies in place
+before taking the step of collecting
+memory and we have a couple
+contingencies
+that we are showing in this diagram here
+so the first one
+is that we do not kick memory collection
+off until we have successfully created
+snapshots of all the volumes attached to
+the ec2 instance
+this is for a couple of reasons to
+ensure that we do not have
+uh contaminated disk evidence and also
+that we don't run into situations where
+we miss out on collecting say the root
+volume
+because our memory collection caused the
+instance to crash and terminate
+the second contingency is that we do not
+automatically kick off
+this memory collection unless the
+instance is in an auto scaling group
+the last thing we would want to do is
+bring down a production workflow
+so that's why we don't take this step
+automatically
+unless the workflow can self-heal in an
+auto-scaling group
+in the case that we crash the instance
+if the instance is not in an
+auto-scaling group
+we don't perform this collection unless
+a force flag is set
+and this force flag is reserved for
+critical incidents with
+uh sign off from the business unit
+stakeholder
+once we collect memory and verify that
+we can indeed
+parse the image as ryan was saying we
+want to make sure that we can parse the
+image
+before shutting down the pc2 instance
+then we isolate the instance so we
+attach a restrictive security group
+uh to the instance and stop it so you
+might be asking why
+stop the instance if a restrictive
+security group is attached
+this is to ensure that tracked
+connections uh which can last for up to
+five days
+in the case of tcp track connections um
+as well as on track connections are
+killed and we'll get into
+what this means in a few slides so a few
+things to consider
+when building out your own memory
+collection workflow
+uh firstly similar to the disk capture
+workflow that
+uh ryan is talking about it's important
+to consider streaming your memory
+capture directly to s3 this would save
+both on storage
+as well as time to finish the collection
+while doing this it's also important to
+ensure that you have the expected size
+flag while streaming to s3
+because this flag is required for all
+objects greater than 50 gigabytes if
+you're collecting
+memory for an ec2 instance with a large
+uh
+ram you'd want to make sure that you
+have this expected size flag
+secondly as i alluded to in the last
+slide while i says investigators would
+love to have memory evidence
+to aid in our investigations it might
+not always be feasible
+because of the kernel issues that could
+result from collecting memory
+um in addition when streaming to s3
+s3 uses gateway vpc endpoints
+which require a change to the route
+table and
+changing the route table in the
+production workflow could break it
+because you know it could modify or
+break
+a job that involves writing to s3
+thirdly uh if you're going to be baking
+in memory collection tools like lime
+into
+your amis it's important to understand
+the risks associated with them and
+mitigate them where possible
+so as ryan talked about a little earlier
+a malicious actor could potentially
+leverage
+uh lime or memory collection tool to try
+and extract plain text passwords say
+from memory
+or they could even delete lime so our
+memory
+capture workflow uh couldn't take place
+um
+a file integrity monitoring solution uh
+that would prevent
+unauthorized users from modifying or
+deleting memory capture tools or running
+them
+would prevent this uh from taking place
+next as memory is volatile it's very
+important to verify that the memory
+capture you have
+taken is parsable before stopping the
+instance
+as once that is done the memory evidence
+is lost forever
+we have a job that runs a linux pslist
+command or
+regular ps list on collected memory
+capture depending on the os
+uh and this we run it with our
+constructed memory profile
+to verify that we will be able to in
+fact process the memory capture
+before stopping the instance lastly on
+instance isolation as i discussed
+previously on that last slide
+it's important to note that if you
+attached a security group to an instance
+with no inbound and no outbound rules
+traffic to and from attract connection
+to that instance
+can still persist so in order to truly
+isolate the instance
+it's a good idea to shut it down and
+stop it to kill any malicious
+connections that might still be in play
+so now that we've talked about our disk
+collection workflow and our memory
+collection workflow
+we wanted to re-center and discuss a few
+of the
+pillars of the aws well architected
+framework
+the first is cost optimization you know
+our legacy security solution depended on
+persistent infrastructure that was
+always running
+and vicente i think it talked about this
+a little early on but our jump boxes
+were always running
+our analysis instance were always
+running and this was something that we
+were comfortable with because we were
+willing to pay more money
+just to have all these resources
+immediately available but you know
+clearly this wasn't the most cost
+efficient approach so in our new current
+solution
+we're leveraging dynamic resources which
+are only allocated or used
+when they're needed and a good example
+of this is our collector vm that custom
+collection vm ami which leishnon talked
+about
+you know this is only spun up when it's
+needed when the disk collection is
+completed
+the collector vm self terminates and we
+don't have to worry about it anymore
+so that's pillar one as we move on to
+the next pillar of performance
+efficiency
+you'll see we circle back to an earlier
+point being that technology scales
+easier than people
+and in the next slide version i was
+going to show you some cool metrics some
+thought-provoking metrics
+around this but essentially this has
+allowed our automated workflow
+to reduce collection time by almost 85
+percent
+when we operate at scale and it leads to
+a more real-time detection and response
+and lastly with the reliability pillar
+so it provided a more consistent and
+audible response to findings
+with the old method it wasn't feasible
+to manually collect disk in memory for
+each and every finding
+especially as we you know unloaded
+new custom detections but with the new
+solution though
+since we optimized performance and
+allowed for parallel collection
+we can now provide a consistent response
+and collection efforts for every finding
+that we
+insert into aws security hub so now to
+talk about
+time savings a little bit and measuring
+this we saw the greatest savings
+as the number of volumes to collect or
+number of instances to process
+increased this is because you know as
+we've
+mentioned throughout this talk our
+solution leverages both concurrency
+at the staff function level and
+multi-threading at the lambda level
+allowing our solution to scale
+effortlessly with really a
+negligible increase of time to complete
+the collection process
+as the volumes or instances are you know
+added to
+our stack to collect so to measure time
+savings we use
+three scenarios just to get some
+concrete numbers out there so firstly
+one ec2 instance with one eight gigabyte
+volume
+uh then secondly one ec2 instance with
+four
+eight gigabyte volumes attached to it
+and lastly four ec2 instances
+with one eight gigabyte volume attached
+to each one
+uh to make sure that we were you know
+being fair and measuring for the worst
+case
+uh we ensured each volume in this test
+uh was completely allocated
+and no prior snapshots of any of the
+volumes
+existed in order to maximize the
+snapshot creation time
+our automated solution as you can see in
+this slide uh stayed fairly consistent
+at around 11 minutes end to end
+uh and this is basically from the time
+that the step function was invoked to
+process the
+instance um to the time where the
+evidence was available
+in our evidence s3 bucket
+our manual workflow and this was myself
+just
+acting as an analyst doing this uh same
+process manually
+uh it was fairly close for the first
+scenario so you can see
+15 minutes versus 11 minutes but then uh
+clearly got less and less efficient the
+more
+volumes and instances were added to the
+collection scenario
+and this is basically because of the
+context switching required as well as
+the documentation needed for each volume
+and in addition a thing to consider is a
+human
+a human analyst could vary in terms of
+performance based on how
+new they are and how familiar they are
+with the process
+uh how many mistakes they could make if
+they're you know new or
+you know the collection process happens
+in the middle of the night
+like we were talking about a little
+earlier uh and this these factors
+basically
+would uh take the make the total time to
+complete this process
+even longer
+those are some fascinating numbers and
+it definitely shows how this solution
+scales across multiple instantiations
+could you explain a bit more about some
+of the limiting factors for our manual
+workflow
+yeah absolutely um so it really goes
+back to the point that ryan made earlier
+uh it's
+a lot easier to scale technology than
+people so the automated workflow can
+handle multiple volumes and instances
+at the same time due to the parallel
+nature of the workflow by leveraging
+multithreading and concurrency
+a single person really has a soft limit
+of volumes or instances
+they might be able to handle in parallel
+so in this workflow
+say a person can handle even four
+volumes collecting them and documenting
+them in parallel
+as that number increases past that point
+they would really have to switch to a
+more serial workflow which would add
+time
+and in addition to that we would have to
+factor in context switching between
+processing the various volumes
+and mental fatigue which we don't
+necessarily have to worry about with our
+automated workflow
+and lastly an important thing to
+consider is that this automated process
+also performs all of the necessary
+documentation
+and verification required for a
+forensically sound collection process
+such as recording timestamps of all the
+commands run hash verification
+uh and so on uh which adds quite a bit
+of time savings when compared to a
+person doing
+all this manually in addition with
+actually collecting the volumes
+thank you vajna that was great so i just
+want to close off by summarizing what
+we've learned today
+and we'll stop for some questions first
+we discussed the challenges enterprises
+are facing in the digital forensic space
+and how difficult it becomes to quickly
+respond across multiple accounts
+and regions we reviewed disk and memory
+collection strategies used by goldman
+sachs
+and we presented some data that
+demonstrated how an automated collection
+framework
+scales across multiple instances and
+accounts much more efficiently
+than manual collection we saw that an
+automated system
+can process collection requests in
+parallel while more traditional systems
+were serial
+this allowed for consistent collection
+times in the goldman sachs design
+regardless of the backlog with that we
+would like to take some questions in the
+remaining time that we have
+you

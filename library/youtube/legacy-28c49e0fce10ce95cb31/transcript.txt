@@ -1,0 +1,389 @@
+Is your crypto wallet and the
+cryptocurrencies it contains
+safe from the quantum threat?
+You have probably all asked yourself
+this question already and it must be said that when
+we look at my latest video on the
+subject of quantum with in particular
+big names of the ecosystem who speak
+Vitalic Butterine to
+name only him well we notice that the
+quantum threat is looming more and more
+over the crypto ecosystem.  And
+you have probably already wondered
+if there are things you can do
+to try to limit
+your exposure to this
+quantum threat as much as possible.  Well, that's perfect timing because
+today I'm presenting you with
+a practical guide with four actions and
+solutions to implement right
+now to minimize your
+exposure and the risks that may be
+looming over your portfolios in the face of
+this famous quantum threat.  We
+analyze and examine all of this in detail.
+So here we go.
+To begin this video, I
+propose an action that you can easily implement right
+now, which is
+directly related to your use of your
+crypto wallets and, in particular, the
+public addresses that will result from them.
+Indeed, in the face of the quantum threat, not
+all wallet addresses
+are at the same level of security.  What
+you need to understand is that a
+newly created address, an
+address that is completely blank, is much
+more secure than an address that has
+already been used to
+receive and send funds.
+Indeed, if I take the case
+of Bitcoin for example, the encryption algorithm
+used for a newly
+created address will be the famous SH 256 which
+is extremely robust,
+even if it is not quantum resistant.
+Whereas for an address that has already been
+used to send and receive
+funds, we will switch to CDSA
+which is certainly a
+relatively secure technology but which is absolutely worthless in the face of
+the quantum threat
+.  So, as you will have understood,
+when you store funds for a
+relatively long period, I encourage you to
+use a new address each time rather than
+constantly using the same address
+which will loop endlessly, to which
+you will send and
+receive funds and so on.  and so forth.
+Moreover, at the level of your
+crypto wallet, whether it is a hot
+wallet or a hardware wallet, it is
+extremely simple, you just need to
+generate a new address each time
+and for some, this is a
+solution that is already used to
+guarantee good digital hygiene,
+in particular to limit the traces that
+could be left on the blockchain.   So, in practical terms,
+how
+can we act in the face of this?  Simply put,
+if you have stored your
+cryptocurrencies of any kind on
+addresses that you tend to
+use for sending and
+receiving, the best
+thing to do is simply
+generate a new address via
+your wallet and transfer your
+funds from this address, which has already been
+used quite a bit, to the new
+address, which is completely empty.  On that
+side, you are putting maximum
+security and guarantees in the face of the
+quantum threat.  And for those who might ask me,
+"OK, but I
+need to send something to Binance, for example,
+and then I'd like to
+get the funds back, how do I do that
+?"  Well, exactly the
+same way.  If the address you
+used initially was blank and you
+send the funds to Binance, then
+when you want to withdraw your
+funds, you generate
+a new
+address at that time.  Given that the old address,
+which was originally blank, was used
+to send the funds and therefore no
+longer guarantees the same level of
+security.  As you can see, it's
+extremely simple.  From the moment
+you store cryptocurrency for
+the long term, use a newly
+generated address.
+Secondly, I want to talk to you about what is
+called the selection filter.
+Indeed, at the time I am shooting this
+video, we have on the one hand projects that
+are natively said to be quantum resistant or at
+least partially resistant to the
+current quantum threat which, I
+remind you, is constantly evolving, and on the other
+hand, we have projects that are not
+quantum resistant but which have as their
+purpose and in particular include in their
+road map this desire to switch to
+quantum resistant.  Indeed, as a
+crypto investor, it is better to
+favor this type of project which
+has a chance of surviving the
+quantum threat rather than a project
+which would have absolutely no regard for
+this quantum threat and which would therefore be
+likely to be
+directly attacked.  So, of course,
+I'm not
+telling you that you absolutely must
+sell all your cryptocurrencies that
+are not currently quantum
+resistant in order to switch solely to
+quantum resistant projects because
+OK, resistance to the
+quantum threat is something that is
+extremely important, but the viability
+of the project is just as important, and so saying
+I'm going to switch all my cryptocurrencies
+to purely quantum
+resistant currencies if the price of this one
+collapses will do you a lot of good
+if the project is resistant to
+quantum attacks.  Here, we are therefore
+more at the stage of reflection rather
+than immediate action of saying
+"OK, the project that interests me
+either has a direct native
+resistance to the quantum threat and
+possibly even they plan to
+improve it over time since, once again,
+the quantum threat is
+not fixed, it will evolve according to
+the development of
+quantum computers."  And on the other hand
+, as we saw for example with Ethereum
+last week, Vitalic Butterine
+and the teams behind Ethereum have
+precisely this mission of putting in
+place network-level updates
+to ensure protection against this
+quantum threat.  This is also the case with
+Bitcoin.  As we have seen, things
+are being put in place at the
+developer level to ensure
+quantum protection.  Well, that's
+precisely the kind of thinking you should be doing
+about your entire
+crypto portfolio.
+The third action to be taken will
+directly concern
+crypto wallets and in particular the famous hardware
+wallets.  So here, it's a Ledger, but
+this applies to all
+hardware wallets that exist on the
+market.  What you need to
+understand is that right now,
+the quantum threat is being taken very
+seriously because it risks
+undermining the business of these
+giants of the ecosystem.  And so they have
+every interest in putting
+in place maximum
+security guarantees to ensure that their
+product is resistant to the
+quantum threat and that therefore any
+quantum computer cannot
+hack the phrase and thus
+recover the cryptocurrencies it
+contains.  And on that front, the action
+to be undertaken will take place in
+two stages.  The first part is
+simply to make sure that the
+firmware, that is, the software in
+your hardware wallet, as well as
+the interface that allows you to
+connect to it, is up to date.  Indeed,
+if Hardware Wallet manufacturers
+manage to
+release an update to
+quantum-protect their device, they will have to
+go through
+this update at the chip level.
+Therefore, it is of course important
+for you to ensure that your
+hardware wallet is up to date with the latest
+available update.  But above all, the
+second point, and this is probably
+the most important, is to make sure
+that the hardware wallet you own
+can of course perform the famous
+update.  This was seen particularly in the
+case of Ledger.  He indicated that
+the latest updates, for example,
+concerning the famous Nano S which was the
+first generation hardware wallet, would
+no longer be able to make
+updates from a certain date, which makes it
+extremely
+vulnerable to attacks and therefore, as you will have
+understood, to the
+quantum threat.  What I mean by this is that once again
+, for
+example, in the case of a Ledger, but
+this applies to all other
+hardware wallets, keeping
+older models from before, for example,
+2020-2025 could be detrimental to you
+in the face of this quantum threat.  So
+even if your hardware wallet
+works extremely well, if it is
+of an older generation, you
+may need to consider buying a new one
+if, unfortunately, the
+quantum protection update cannot be
+applied to your old model.  And I
+know what you're going to say, it's
+extremely annoying, it's extremely
+bothersome, but unfortunately, given
+the evolution of technology, in just a
+few years we've seen that it can
+really evolve in an
+extraordinary way.  So, well, on that point,
+we have to follow the movement.  Now, once again
+, if you have
+money to protect in the form of
+cryptocurrency, I don't think
+buying a new hardware wallet is
+going to be a problem in the face of
+this quantum threat and all that
+it can imply.
+And finally, the 4th point, and
+I must admit I
+hesitated a little before including it, but well, I think it's one of the
+actions we
+can use to protect ourselves against the
+quantum threat.  This is the famous not
+your key, not your coin.  In other words,
+if you do not possess the private key,
+you do not actually own the
+cryptocurrency behind it.  This is precisely why we
+tell you to
+use either H wallets or
+hardware wallets to secure your
+funds.  However, as
+you will have understood, when faced with the quantum threat, we are
+not all equally equipped to deal with it.  And
+there is a good chance that
+centralized platforms and
+institutional investors who use
+cryptocurrency on a daily basis will invest
+millions or even billions of
+dollars to create a kind of
+quantum-resistant vault.  And
+now, I think you understand where I'm going with this
+.  It is simply the
+idea that under certain
+conditions, storing part of
+these cryptocurrencies on
+centralized platforms that are secure,
+compatible with Mica and so on,
+can also be a solution
+to resist the famous
+quantum threat.  But now, let's be
+clear, I'm not
+telling you that as an
+investor you should send all
+your funds to Binance and then cross your
+fingers hoping there isn't
+the slightest hack or problem on
+that side.  No, it's more that I'm
+thinking about
+someone, for example, who either has an
+old hardware wallet and does
+n't have the ability to update it,
+or someone who doesn't have a
+hardware wallet at all, who only plays
+with high-end wallets, and therefore
+unfortunately, depending on the
+updates for them, it will depend a bit on
+how the updates are carried out
+with regard to the quantum threat.  Indeed,
+in certain
+specific cases—the cases I just
+described—it may be more advantageous
+to store your cryptocurrencies directly
+on a centralized platform rather
+than trying to guarantee your security
+against the quantum threat.  Because, in this
+case, resisting the
+quantum threat is really going to become a
+luxury for investors.
+And as always with me,
+I always assume that putting
+all your eggs in one basket is
+clearly not the best form of
+security.  In other words, faced with
+the quantum threat, in my opinion
+, the best solution is to
+own hardware
+wallets, but ideally hardware
+wallets from different brands, so that if at some point
+the
+updates take a little time or
+if unfortunately an update
+is not sufficient, you have
+the option of storing your
+cryptocurrencies on another hardware
+wallet.  So it could be a Ledger, a
+Trésor, a CFPAL, and so on and so forth.
+But also to distribute your funds across
+certain H Wallets, the most
+important of which are known as Metamask, Rabbit and
+others.  And then, well, for some
+of you, it could also mean
+storing cryptocurrencies directly
+on centralized platforms with
+all the disadvantages that this brings,
+but also all the advantages
+in the face of this famous quantum threat.   As
+you will have understood, the
+quantum threat is not an end in itself.
+It's more of a form of
+forced evolution that will do a world of good for
+the crypto ecosystem.  What you need to
+understand is that projects
+or investors who fail
+to adapt to this quantum threat will eventually
+disappear.  But those who can
+resist it will emerge much
+stronger and more mature precisely because of this
+threat that hangs over
+the ecosystem at the moment.  So,
+for art, is it too early
+to once again project ourselves onto
+this quantum threat?  For my part, I don't
+think so at all.  Look,
+simply using blank addresses
+provides a much greater layer of protection
+than an address
+that has already been reused several
+times.  It's an operation, an action
+that you can implement very
+easily and in just a few minutes.  It
+will only cost you
+transfer fees.  Well, it's on Bitcoin, so it
+might be a bit more expensive than on
+another blockchain.  But honestly,
+to ensure the protection of these
+cryptocurrencies, it's well worth
+moving some BTC or some
+Etheres to a
+newly generated address.  And of course, as always
+,
+staying informed and reacting quickly to
+all these announcements is probably the
+most important thing.  I therefore invite you
+to subscribe to this
+YouTube channel if you wish to be kept
+informed of future updates and
+future things you could put
+in place on your end to ensure
+maximum security.  I wish you
+all excellent investments in
+the world of cryptocurrencies.  It's MS
+TK.  Goodbye cryptopans.
+[music]
+[music]
+[music]

@@ -1,0 +1,272 @@
+what is going on guys my name is Hussein
+and this video I want to discuss queues
+and when to use the queues message
+queues to be specific like there are
+other type of cues but I don't I'm not
+sure what are they so I'm talking about
+RabbitMQ 0 mq Kafka when do you want to
+use this in your architecture and do you
+really need it right and that's the
+question here you always have a question
+that hey do I really need to implement
+this in my system design or not and I'm
+just trying to kind of assess that and
+help you with that if possible so how
+about we jump into it and if you're new
+here guys I discuss all sorts of back in
+engineering this channel so if you're
+interested subscribe and like this video
+and share with your friends so that's it
+let's just jump into it alright so what
+is a queue and when do we need to use it
+and guys if you if you already
+subscribed to my channel you would see
+me repeat this over and over again any
+technology out there any back in
+technology out there it exists for a
+reason and it exists to solve a problem
+so I know that might sound cliche and
+makes just perfect sense right so yeah
+of course it exists for reason and that
+also means that there is no technology
+just exists for a fun avail because it's
+cool right
+you need to use it if that problem
+exists for you you cannot just use GRP
+see because it's hip and cool right no
+you should use it when you absolutely
+the problems that GRP see addresses
+solves your problem right addresses your
+problem same thing with a queue so how
+about we talk about the actual problems
+with the queue so back to the request
+response architecture when I make a
+request to a back-end and regardless of
+the communication protocol that I use
+whether it's TCP stateful TCP raw or
+whether I'm using GRP see again stateful
+or with a mime whether I'm using a
+stateless rest architecture that
+requests
+requires some resources at the backend
+to be served right to be consumed and
+executed that request what does that
+mean it means that requests might be
+less to get all the employees right or
+an update to do a booking system right
+so hey I'm gonna book the seat that's
+that's a that's the same thing right and
+this requires a finite amount of time of
+your server to actually process this and
+we talked about the ways you can serve
+your request and one way to solve this
+problem is a synchronous execution with
+a single threat like your server has one
+thread and that thread just keeps
+working the problems that it have right
+is hose serving a request this is now
+it's listening to TCP connection this is
+now doing that that's how node.js does
+it right other other web servers does it
+differently multi-threading
+multiprocessing right regardless right
+Apache does multi-threading node.js does
+a single thread but it's asynchronous
+and we talked about that I'm gonna
+reference the video here I think it's
+here go check it out but sometimes a
+single thread in a node GS or multi
+processing or multi-threading in a web
+server could not cut it because you will
+quickly overwhelm that single server to
+execute all these requests right and it
+really depends if that occurs is taking
+a long time to process and if it does
+that if that arc was taking a huge
+amount of time and unpredictable amount
+of time to process then there are flood
+of other requests that is coming I'm not
+talking about qz8 guys right just normal
+request response there are further
+requests coming and they are waiting and
+when I say waiting they the client is
+actually just blocked because that
+access to the TCP
+connection didn't even get a response
+back okay and that could be harmful for
+a user experience right the user will
+feel it what is going on I click and
+nothing happened and users hate that
+when they click and nothing happens you
+show me something that happens or tell
+me that something is happening but don't
+tell me that I'm doing something and I
+did something and I don't see any
+results they hate that you're a user you
+probably seen that so how do we trick
+that Eric a normal request response
+architecture doesn't cut it in this case
+if you were response time is
+unpredictable right because you had a
+lot of requests coming and you might say
+hey who's saying I'm gonna scale
+horizontally and that's absolutely fun
+you can do that you can put a reverse
+proxy have it configure to be a load
+balancer and Swizzle the request to all
+the other services and if you have if
+you start waiting if you started seeing
+requests taking a long time to process
+all right then you start spinning up
+more services or containers if you're on
+a micro services architecture and then
+start serving that and people do this to
+this day without a queue without the
+idea of a queue right and as I said this
+doesn't really scale well if you're
+processing at the back in is is very
+hungry processing hungry or CPU hungry
+or even Ram hungry right because you
+cannot spend a lot of time just having
+this process takes time so if you're
+predicting that responses will always
+take a long time probably spinning up
+multiple services will not help you
+right because the requests will be the
+same whether it's going it's sending to
+other server which are which is free or
+a service there is server doing other
+things as well yeah you're gonna still
+see some mind - cool - cool that I
+reward - cool
+friends but still it's gonna take a long
+time so here's where a queue is useful
+if you really think that request will
+always exponentially go large yeah maybe
+if your database doesn't have any rows
+but as you grow large that request will
+go slower and slower slower what is such
+exponentially not necessary expansion
+just polynomially with your number of
+rows so here's where queue really
+beneficial so what do you would do in
+this case is what is what I'm gonna do
+I'm gonna employ a queue in my system a
+message queue and that means if I am
+receiving across the server I will do a
+very quick operation that is constant
+that is a Big O of 1 it's a very fast
+operation and I'm gonna respond to the
+user whether with some sort of an
+identifier right and here's that's
+that's how it works so if I you send me
+a request I'm gonna put it in a queue
+that's a big off one because writing is
+always fast especially if you're in a LS
+m 3 kind of a database right and most
+databases now especially alright only
+just right to the end
+LS m right looks doctor McMurtry you're
+right and then you respond back to the
+user hey i committed to you user that i
+have received to your request and it's
+now processing or it's now it's in the
+queue it i can't promise anything else
+but hey i received it better than having
+a request that is not served right that
+is not just waiting so check user
+experience better right okay I'm willing
+to wait as a user yeah at least as did
+they received it and now really up to
+you as an architect you can have the
+client come back and ask and Paul
+pol deaths task ID that were given sigh
+hey how's how's this job down we're
+doing how's this job doing house just
+just up down and once that response
+actually complete the response will come
+back say that job is done okay you can
+now do whatever you want to do that's
+one way of solving the problem rabbit in
+the queue doesn't do it this way
+rabbitmq does it the push way right
+where is this like a stateful connection
+I forgot what the the protocol that
+rabbit excuse it but it's a it's a it's
+a very elegant way of using channels
+it's awesome I love it
+and I'm gonna make another video about
+this compared to HTTP to their idea of
+RabbitMQ using channels it's very
+similar to streams and I don't know who
+came up with this idea
+regardez get back to the point if I
+response back if that job is DQ'd right
+or executed that could push results back
+to the client immediately as they are
+received right so this way you
+eliminated the latency of wait Inc
+client is still technically didn't
+receive the result right cuz you don't
+receive those all but I can unblock the
+user experience I can show some sort of
+a progress bar I can I can give a better
+user experience and I elevated the flood
+of requests on my server now I'm gonna
+have a nice Q yes it's a centralized
+system still but it's a nice queue and
+people people services can listen to
+this queue and start pulling jobs
+pulling tasks and execute and write it
+back to the queue right very very
+similar to a pub sub system except the
+only difference between a Q and a pub
+sub a queue is whenever you remove an
+item from the queue is gone pride that
+service owns it
+it is DQ'd
+versus the pub/sub system you have a
+topic very similarly right the brokers
+have this topics and the service can as
+infinitely consume the same item many
+services can consume the same item right
+but now each service have some sort of a
+position that remembers oh I consume
+this yes I consume this I consume this
+and the service optionally can have a
+way to go back and forth in the queue
+and then pops up system so that's our
+very quick very quick way of knowing how
+do you actually when do you want to use
+a queue versus just a normal requester
+processes system and load balancing and
+all that stuff right so very quick if
+your request is in deterministic you
+don't know how long it's gonna take a
+queue is probably a good idea for you if
+your process is by nature long running a
+queue is good for you I just queue it
+and let other process pick up the work
+and write it back to the queue or if
+it's a resource hungry if your by
+default your process back in processing
+is a resource hungry it's a bad idea to
+have the web server itself do the work
+for you the web server should do one job
+and one job only shouldn't process your
+stinking request it should just response
+back to web traffic and service web it
+is a web server it serves web traffic
+and that's it
+don't let it process your prime numbers
+or do a very complex operations in the
+web servers stuff try to separate
+concerns as much as possible all right
+guys that's a quick video just to let
+you know the difference between when to
+user queue when do not use a queue hope
+you enjoy this video subscribe if you
+like this content like this video if you
+liked it
+I'm gonna see in the next one you say
+guys stay awesome

@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "P7EUFtjeAmI",
+  "title": "Postgres Explain Explained - How Databases Prepare Optimal Query Plans to Execute SQL",
+  "url": "https://www.youtube.com/watch?v=P7EUFtjeAmI",
+  "source_paths": [
+    "cache/transcripts/postgres-explain-explained-how-databases-prepare-optimal-query-plans-to-execute"
+  ],
+  "updated_at": "2026-06-09T18:15:56.143963+00:00"
+}

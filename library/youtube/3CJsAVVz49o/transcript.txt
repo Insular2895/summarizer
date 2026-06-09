@@ -1,0 +1,641 @@
+welcome to using AWS single sign-on with
+octa active directory in AWS SSO
+identities i'm Roncalli principal
+product manager for AWS identity and I
+am yearly the company Solutions
+Architect for AWS but her on wasn't the
+title working with different identity
+sources in AWS single sign-on that's
+right but for those of you saw my
+LinkedIn post this is my surprise so
+here you tell them within the last hour
+AWS and octa announced that customers
+can use AWS SSO and octa Universal
+directory together to manage access to
+AWS later in the talk I am going to show
+people how to configure these to work
+together that's fantastic
+we've had a lot of customers waiting for
+that to come let's get started you're
+back in February you did an AWS online
+tech talk on how to use Azure Active
+Directory with AWS SSO yes we showed
+people how to connect our ID to AWS SSO
+and use permission sets to simplify
+access assigned to roles across all
+accounts in your AWS organizations using
+Azure ad as an example of an identity
+source we walk through how to configure
+permission sets and assign access to
+users and groups in multiple accounts
+for today I thought we might dive deeper
+into another aspect of this to sell and
+talk about how it works with different
+identity sources and the differences
+based on your configuration what do you
+mean is you want to look at the
+differences in how AWS SSO Ward's when
+you use octa versus Active Directory
+versus SSO identities right exactly
+today we will not spend much time going
+into permission sets instead we'll focus
+on how users and groups get into a
+device SSO how eight of ssso treats the
+source of users and groups from the
+standpoint of sources through to get
+started let's first summarize what AWS
+SSO does and take a look at the logical
+representation of the AWS SSO
+architecture the purpose of a device SSO
+is to enable you to manage users and
+groups
+you want and connect them to AWS one
+time assign your users in groups access
+to AWS accounts in AWS SSO integrated
+application centrally and provide a user
+portal where people sign in once to see
+and access all their assigned AWS
+accounts and roles and applications
+let's look at the logical architecture
+of the system first a SS SS ol needs to
+know who the users and groups are before
+it can assign access the identity store
+is where AWS SSO keeps a copy of the
+required user and group information next
+8ms SSO has an authentication service
+that directs user sign in to the
+identity system that manages user
+credentials this part of ADA best SSO is
+unique because AWS believes in letting
+you choose where you manage your
+identities when signing in to the cloud
+we give you three key options if you
+want you can create view users in groups
+inside AWS SSO and manage passwords and
+multi-factor authentication
+alternatively you can connect it to an
+external identity source where you
+manage your users now supported external
+identity sources include your existing
+Active Directory domain service and
+sam'l 2o federated identity providers
+called IDPs
+for example octo universal directory is
+a sam'l - OID P next as the song has an
+authorization system where you create
+entitlements the determine which users
+in loops can access which accounts and
+applications AWS SSO also has an
+interface that enables AWS created
+applications to use AWS SSO as its
+authentication service and a user
+directory so instead of having to
+federate to each AWS application
+separately you can connect your users
+and groups once and they are available
+to use with AWS SSO integrated
+applications - the last key part of the
+logical architecture is the user portal
+this is the URL where your users go to
+access the AWS accounts roles and
+applications to reach the SSO admin
+later has given them access let's talk
+about where you manage users in how
+authentication works or on which
+identity sources should customer choose
+and why many customers renew startups
+that don't have identity infrastructure
+in place
+AWS SSO makes it simple for them to
+create and manage users and groups
+without setting up any other
+infrastructure currently user management
+is through AWS SSO console only making
+this appropriate when the scale of users
+is small many other customers are coming
+from data centers where they use Active
+Directory to manage users they often
+want to move existing Active Directory
+dependent applications into the cloud
+and run them on ec2 to decrease capital
+expenses these customers extend their ad
+into AWS so the applications continue
+working with their ad users and groups
+frequently these customers follow the
+Microsoft enhanced security
+administration model also called the red
+forest architecture in this case they
+use AWS directory service for Microsoft
+Active Directory as a research forest
+for running the application this also
+enables them to use other AWS managed
+services like RDS for sequel server or
+workspaces virtual desktops other
+customers use AV connector to join ec2
+and workspaces instances to their AV
+domain directly once customers extend
+their Active Directory to AWS with
+either model SSO can use those
+connections to authenticate 80
+identities without the complexity of
+setting up separate Federation
+infrastructure such as ad Federation
+service other customers may already have
+Federation infrastructure like octa
+universal directory and they use it to
+access SAS applications like Salesforce
+office 365 or kit hub although they
+might federate to AWS accounts
+individually many want a simpler way to
+federate wants to use all their 8 abyss
+accounts in database applications these
+customers can connect their IDP to AWS
+SSO one time to access their roles
+in eight minutes accounts and AWS SSL
+integrated applications the bottom line
+is that AWS lets you pick which model is
+best based on where you are beginning
+your journey so how does the choice of
+an identity source effect they sign-in
+experience if you manage users inside of
+AWS SSO or you connect it to your Active
+Directory then your users see an AWS
+sign-in experience if you use a
+federated identity provider like ACTA
+then your users see the IDP sign-in
+experience so how does this affect
+multi-factor authentication use
+multi-factor authentication is part of
+the sign and experience so if you use
+AWS SNS o or Active Directory as an
+identity source then AWS sign in is
+where MFA happens when using Active
+Directory you have the option to
+configure MFA in AWS SSO or you can
+setup radius MFA in AWS directory
+service if you're using a sam'l IDP is
+the identity source then MFA happens at
+the IDP as you may know in Federation
+the identity stores is called the
+identity provider IDP and the
+application of servers that
+authenticates to the IDP is called the
+service provider core SP when signing in
+a user can initiate authentication by e
+go into the IDP first and then navigate
+to SP that's called IDP initiated
+authentication in this case the user
+sees the sign-in screen of the IDP and
+signs in typically the IDP sends the
+user to the IDPs user portal from there
+the AWS user accesses the AWS SSO user
+portal then the user navigates today AWS
+accounts roles and AWS SSO integrated
+applications alternatively the user
+might go to the SP first in this case
+AWS SSO this model is called SP
+initiated authentication if the
+user has not yet authenticated to the
+ADP a degree ssso redirects the user to
+the IDP where they sign in the IDP then
+redirects the user back to the AWS SSO
+which presents the AWS SSO user portal
+at that point the user can navigate to
+the accounts roles and AWS SSO
+integrated apps so help me understand
+another point AWS SSL integrated
+applications like sage maker studio
+notebooks has its own endpoint the user
+can navigate to directly from their
+browser how does this sign-in work for
+that use case that's right
+as we just saw a double yes SSO looks
+like an application or the service
+provider to an IDP like Oprah but AWS
+SSO looks like an IDP to the
+applications in this case the user
+navigates the browser to the application
+the dictum that user hasn't seen in the
+application redirects the user to AWS
+SSO the Tekin that user hasn't signed in
+there a SS SS su then redirects the user
+a second time to the IDP after
+authenticating the IDP sends the user
+back to AWS SSO which it turns sends
+user back to the application
+thanks URI now that we understand how a
+SS SS authenticates users let's look at
+how AWS Assessor works with identities
+to assign access in AWS SSO permission
+set is a definition for an AWS role
+ablest SSO administrators assign users
+access to permission sets in selected
+accounts this process creates a role in
+the selected accounts and assigns the
+selected users to the role in AWS SSO
+the permission in the count must exist
+in AWS SS or has to know who the users
+and groups are before you can assign a
+permission set let's see how AWS SSO
+learns about the identities from the
+identity source when you create
+the users and groups in the AWS SSO
+identity store it knows about all of the
+users and their credentials when you use
+Active Directory AWS sso uses your ad
+connection to perform LDAP read
+operations for the users and groups in
+you domain controllers directly if you
+use the sam'l identity provider the
+sam'l protocol doesn't allow you to read
+anything from IDP in this case you have
+to provision the users into a double es
+SSO identity store so AWS SSO can read
+them the best way to do this is to
+automate provisioning queues in the
+scheme protocol you can use this method
+with compatible IDP including of the
+universal directory and hid another
+option is to manually create users and
+groups in AWS SSO been careful to merge
+the user sign-in name today IDP sign in
+name this is useful if you have a sam'l
+to that o IDP that doesn't have a
+compatible scheme implementation now
+let's take a look at AWS SSO integrated
+applications in how they use identities
+okay
+some AWS applications integrate with AWS
+SSO directly this enables the
+application to use the same
+authentication experience and the same
+users in groups but without having to
+federate in synchronize users separately
+these applications often have
+fine-grained access control to resources
+inside the application although an
+administrator must give a user access to
+the application as we just discussed the
+application user may also be able to
+give access to something inside the
+application for example an IOT site
+waste monitor user can create a
+dashboard of IOT information and then
+share the dashboard with another user
+these AWS SSO integrated applications do
+this by using the AWS SSO authentication
+service and its identity store this
+enables the application user to search
+for users and groups a moment ago I
+explained that
+when you assign access for Active
+Directory users AWS SSO reads the users
+from ad directly if application reads
+the users from the AWS SSO identity
+store how do they find the ad users ad
+doesn't have a scheme interface to
+synchronize users so it's a first step
+to make that possible AWS SSO implements
+just-in-time provisioning for Active
+Directory when a user signs into AWS SSO
+for any purpose AWS SSO authenticates
+them using Kerberos it then uses an LDAP
+query to get the user metadata excluding
+the credentials and it saves the
+information in the SSO identity store
+from been on the application can search
+for and work with that users metadata
+let's summarize all of this in a source
+of truth table for the different
+configurations ok for a given identity
+source configuration this table shows
+where AWS is so authenticates where you
+control MFA where users in groups come
+from when assigning access to permission
+sets and applications and where users
+and groups metadata comes from for use
+by AWS SSO integrated applications
+when you use AWS SSO is your identity
+source AWS SSO performs authentications
+and manages MFA a SS SSO is also the
+source of users in groups for permission
+sets and applications assignments and
+for users metadata used by AWS SSO
+integrated applications when you use
+Active Directory is an identity source
+AWS SSO authenticates users using Active
+Directory and you control MFA in AWS SSO
+or in AWS directory service Active
+Directory is the source of users in the
+groups used in permission set and
+application assignments ad is also the
+source of user metadata used by AWS SSO
+integrated applications and it gets
+synchronized in only when users sign in
+if you use a sam'l IDP but manually
+provision users in groups into AWS SSO
+then AWS SSO uses the sam'l IDP to
+authenticate in you manage MFA at the
+IDP the AWS SSO administrator adds users
+in groups to the s so identical store
+which is the source for permission sets
+and application assignments and for user
+metadata used by AWS SSO integrated
+applications
+finally if you use the samel IDP with
+skin synchronization the IDP is the
+source of truth for authentication MFA
+user information for assignments and
+user information for application use
+let's show how this appears to the AWS
+SSO administrator through some
+demonstrations
+first let's look at a simple case of
+using AWS SSO as your source of truth
+I've signed into my AWS account and
+opened the AWS SSO console in the
+settings page I can see that my identity
+source is AWS SSO when I go to the users
+page you can see I already created some
+users you can also see there is an add
+user button this tells you that the
+source of truth is AWS SSO when I add a
+user you'll notice that you must specify
+a username a password a first name a
+last name and a display name the user
+name and email may be the same if you
+wish I also have a number of other
+attributes I can configure for the user
+most of these attributes are standard
+attributes from the scheme is specified
+in the system for cross-domain identity
+management if you plan to use AWS SSO to
+sign in to office 365
+there is also an immutable ID that you
+can configure
+as I add my user I have the option to
+add them to groups alternatively I can
+navigate to the group page I've already
+added some groups here as well
+here you see an add user group button
+this means that a Tobias SSO is the
+source of truth for all group membership
+as well that completes the tour of
+managing users and groups in the AWS SSO
+identity store let's take a look now at
+the active directory use case going back
+to the settings page I'm going to change
+my identity source to active directory
+this drop-down box lists the AWS
+directory service directories that I
+previously set up in my AWS
+organization's master account and I can
+use that as a source for AWS SSO in this
+example I'll use the AWS managed
+Microsoft ad directory mydomain.com
+as I make this change I receive an alert
+that this will remove all existing users
+groups and assignments now that I'm
+finished converting to using Active
+Directory I'll navigate to the SSO users
+page to see what is inside the AWS SSO
+identity store
+you'll notice there are no users that is
+because no users have yet signed into
+AWS SSO Active Directory users only
+appear in the identity store after the
+sign in at least one time
+you'll also notice that there is no add
+user button available
+that's because Active Directory is the
+source of truth for user information
+there is a remove button that enables me
+to remove users that previously signed
+in but have since been deleted from
+Active Directory navigating to the
+accounts page I will select some
+accounts to assign access
+in this case I have a search option that
+lets me look for users in any domain
+available through my AWS directory
+service in this case I will search for
+users in my AWS manage my croissant ad
+domain
+I select my user and select next I've
+not yet created any permission sets to
+assign for brevity I will create two
+permission sets using the pre-configured
+existing job function policies next I
+will select the permission sets to
+assign them to Pat and select finish
+using the permission sets AWS SSO
+creates roles in the selected accounts
+and grants Pat access I will now return
+to the settings page to get the user
+portal address to send to Pat Pat goes
+to the portal address and signs in using
+Active Directory credentials
+pat now seize the two assigned roles in
+the three accounts it can access the AWS
+console now that Pat has signed in as
+the administrator I can go back to the
+SSO admin console refresh the user tab
+and you'll now notice that Pat appears
+in the SSO identity store Pat is now
+available for use within AWS SSO
+integrated applications such as IOT site
+waste monitor now let's look at how this
+works with the sam'l IDP
+in the case of using an ADP you have the
+choice of automating user and group
+provisioning or doing it manually
+through the AWS SSO console first in
+this demo I am going to show you how to
+connect octa to AWS SSO with sam'l to
+that oh and scheme
+looking at my AWS SSO deployment I see
+that AWS SSO is my identity source I am
+going to switch my identity source over
+to octa now I choose external identity
+provider and I will save the consumer
+URL and the issuer URL to provision them
+later in octa next I'm going to the
+octet Ministry of portal and create a
+new application
+I search for AWS single sign-on
+click Add and leave the default name for
+my application now I am going to
+configure sam'l to that or integration
+with AWS SSO in the sign-on tab I click
+Edit and I enter that consumer URL and
+the issuer URL that I saved before I
+will also download and save the octa IDP
+metadata I will upload it to AWS SSO to
+complete my sam'l integration between
+okhta and NWSA so I am going back to AWS
+SSO console and will upload the octa
+metadata file I click review and AWS SSO
+prompts me with the number of warnings
+it tells me that I must complete my
+external IDP Federation configuration
+that might exist in AWS SSO MFA
+configurations will be removed and MFA
+will be handled by the identity provider
+also if I have an existing users in AWS
+SSO they will be retained but they will
+be not able to sign in if they don't
+exist in my IDP
+I confirm the change and I have my some
+alternative Federation with a double yes
+SSO complete now I'm going to configure
+the scheme users and groups provisioning
+from octa to AWS SSO I enable automatic
+provisioning in AWS SSO which creates a
+scheme and point that octa will connect
+to
+I save my scheme endpoint URL and the
+access token
+now I am going to the oktai WS SSO
+application configuration and click
+provisioning I enable API integration
+with AWS SSO and paste the AWS SSO
+scheme endpoint URL and the access token
+I test these credentials see that it's
+successful and safe I choose all the
+options in octa to pay double yes SSO
+users in groups provisioning create
+users update users attributes and
+deactivate users I also can change an
+attribute mappings here but I leave
+everything is default for this them to
+make my AWS SSO application available to
+the users I'll assign it to the AWS
+cloud access group that contains all
+users allowed to access AWS accounts and
+services and to finalize my scheme
+integration I have to choose the octa
+groups that will be synchronized with
+AWS SSO later I'll be using these groups
+to assign access to AWS accounts in AWS
+SSO all why AWS groups starts with AWS
+so I create a rule named AWS that will
+automatically include all of my AWS
+groups before going back to AWS SSO
+let's quickly check the assignments and
+see that my AWS SSO application assigned
+to all my users allowed to access AWS
+now go into the AWS SSO console you can
+see my octa users been pushed from octa
+to the AWS SSO note that I no longer
+have an add user button that tells me
+that octa is now the source of truth for
+my users and groups looking at the one
+of the users you can see that it's
+updated by scheme with the users
+attributes from my octa universal
+directory looking in the group list you
+can see that octa groups synced to the
+AWS SSO now if I add users to the groups
+or remove users from these groups or
+update users attributes in octa universe
+CEL directory these changes will be
+propagated to the AWS SSO by skin now I
+can go and assign some access to my
+users groups to AWS accounts I choose my
+dev and test accounts assign users
+select AWS developers group and use
+power access permission set if I will
+also assign some of these groups to an
+AWS SSO integrated application such as a
+wsh maker studio notebooks the users
+that octa just synchronized with AWS SSO
+would also have access to this
+application
+now that they've shown you how things
+work when you connect octal Universal
+directory to AWS SSO with sam'l and skim
+let me share what happens if you use an
+IDP that doesn't have scheme integration
+I'm going to now disable skin from my
+AWS SSO configuration I go to the
+setting page go to the provisioning link
+and disable skin
+breaking up to the setting page you can
+now see that I have an external identity
+source that uses sam'l to that all but
+the provisioning is manual go into my
+user page I can see that add user button
+came back
+that means AWS SSO is now the source of
+truth for users in groups metadata but
+because I have summoned to that all set
+up for tenth occasion my octal DP is
+source of truth for authentication at
+this point the AWS SSO administrator now
+controls which users and groups are in
+the configuration if this had been a new
+installation my user store would have
+been empty I would add the users
+manually making sure that the sign-in
+names match to what is in my IDP for
+demonstration purposes only just pretend
+I manually entered these users and
+groups
+at this point as an end-user I can go to
+the AWS SSO user portal and sign in with
+my okhta user experience and perform
+work on the accounts and applications
+assigned to me
+one thing to be aware of is that when
+you use your manual provisioning the AWS
+SSO application controls group names and
+group membership the group names do not
+have to match anything in the IDP if you
+ever envision a time when your IDP has a
+compatible scheme implementation you may
+want to keep your AWS SSO group names
+the same as they are in your IDP
+let's recap what we just covered we
+explained that you can create users
+inside of AWS SSO connect them from
+Active Directory or connect them from a
+sam'l to o ID p when you use Active
+Directory or a satellite EP AWS SSO
+always authenticates at the identity
+source AWS SSO is the source of truth
+for user metadata groups and group
+membership anytime that you have the
+ability to edit them in a tub a ssso
+otherwise the identity source is the
+source of truth and a Thomas SSO simply
+holds a copy that is synced in from the
+identity source Active Directory uses a
+just-in-time sync mechanism AWS SSO
+integrated applications only see the
+users after they have signed in at least
+one time when you use skim or you
+manually provision users and groups the
+user and group information is available
+to AWS SSO integrated applications as
+soon as you sync them in if you switch
+from AWS SSO users to an IDP AWS SSO
+preserves the users groups and their
+assignments for user names and group
+beams that match the IDP we also
+announced that octa and the in abyss SSO
+now work together for skim
+synchronization and sam'l authentication
+and finally we saw demos of using 8 of
+ssso users active directory and octa
+Universal directory users
+to learn more visit aws.amazon.com slash
+single sign-on and aws.amazon.com slash
+directory service for more comprehensive
+picture on how AWS enought to integrate
+you can visit octocamo partners slash
+AWS to get started AWS customers can
+enable AWS SSO from the AWS management
+console octa customers can search for
+the updated AWS single sign-on
+integration from octa admin thank you
+for watching

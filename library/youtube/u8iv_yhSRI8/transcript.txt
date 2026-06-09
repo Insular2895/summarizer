@@ -1,0 +1,848 @@
+hey everybody
+so in today's stream of react 2025 we
+are going to be doing a little bit of
+cleanup from the last stream we're going
+to show its host when we add the site
+successfully save some user information
+to the database with that site we're
+gonna hook up firebase on the server
+side and then potentially get into
+making an actual API route
+so that we can fetch all of the sites in
+this flame and a table and potentially
+use SWR for fetching that information
+it's kind of the high level bullet
+points of what I'd like to get to today
+so we will see how far we can get let's
+start with where we left off last time
+so last time we got the index page
+updated we got a dashboard created and
+you can now click on add your first site
+to see a modal and enter in some
+information and save that to the
+database but we didn't get to was
+actually then seeing those sites
+reflected plus having some validation
+that things actually worked successfully
+so I was able to notice that I saw some
+of you in here we're actually creating
+sites but just not seeing them show up
+yet so I saw a bunch of sites pull up in
+here so we want to see those sites we
+want to have validation that these
+things went through successfully so
+first things first I already have this
+running locally back inside the add site
+modal last time we did this on create
+site where we called up to our database
+to save the values and then we closed
+the modal when we do this we also want
+to send off a toast assuming it was
+successful we'll do some error handling
+later down the road so we're gonna do
+that with chalk or UI it has a
+toasts built into it that uses rap
+context under the hood to manage those
+toasts that appear and disappear so
+let's go ahead and get started
+I think we'll probably just stick with
+the success toast
+success we've added your site duration
+maybe five seconds that seems doable
+okay
+yeah I worked pretty well I think right
+now we're just assuming that there was
+this success when we add some air
+handling in here we could change between
+a success toast or an air toast but I
+think that worked well it's hard to tell
+300 solvents in here
+I'm gonna assume that that worked I
+could also make this a little bit more
+refresh this
+hmm I don't see the site coming through
+oh that would make sense because this
+one didn't either
+so no sight on either of these and I
+wonder if it's because I added this in
+here to get that initial input to be
+focused when you open up the modal but
+I'm wondering if screwing this up or if
+adding this screwed up the values that
+I'm getting here pretty sure it did but
+I'm just going to double-check
+did okay well I guess for the time being
+let's ditch this
+okay
+off to revisit that that's not
+necessarily a requirement it was more of
+just a nice to have but I want to focus
+on getting this wired up with real data
+so we're not gonna focus that input to
+start so we are correctly saving the
+values the next thing I wanted to do
+instead of here not only it will save
+these values but save some information
+about the user so to do that we're gonna
+[Music]
+pull in the user information again and
+then I want to this create site it's
+just going to basically forward this on
+to the database
+so I'm going to say the author of this
+site is going to be a user dot u right D
+I believe and then I also want to know
+when it was created that this was a note
+made so I believe we want to do a new
+date save off that time and then we also
+want to include we're gonna spread the
+rest of the values that we passed in
+originally if I wanted to make this
+maybe a little more obvious what I'm
+doing rather than just values and then
+spreading it I could restructure this
+and say this site and URL and
+I think that might be a little more
+clear just for future readability let's
+try this out
+success we've added your sides
+this is Oh okay so I think that works
+the time looks correct site URL or save
+author ID q ITR q ITR yep that is me so
+that's working as I would expect awesome
+to see a bunch more people in here to
+joining along so thanks everybody who's
+following along really appreciate it
+so we're staying that off correctly just
+check the chat okay so yeah we're saving
+that off correctly we're showing the
+toast now let's move on to hooking up
+firebase server side I think that's a
+good start because we're gonna want to
+show these sites in here to hook up
+firebase server side we need to get a
+service account and I've done a little
+bit this ahead of time so that I don't
+have to reexpose the keys but I'll still
+show you exactly what you need to do so
+if you go into your project settings and
+then you go to service accounts you'll
+want to generate a new private key so
+after you generate this private key then
+you can use those values to set up your
+connection to firebase admin and we need
+firebase admin because we're going to be
+using it in the node.js context versus
+on the client-side so I'm gonna add
+firebase admin
+and then we need to initialize a
+connection to that so let's make a new
+file instead of DB which is client-side
+we're gonna do DB admin and it's gonna
+be oh sorry DB was our database
+connections and firebase was our actual
+initialization it's gonna be pretty
+similar to setting up client side except
+we're gonna be importing from firebase
+admin
+and then initialize
+oh yeah I actually had this pulled up
+forgot about this I have a website
+called Jam stack functions that lists
+out some common service functions that
+you might want to use with your Jam step
+packed locations and I did already have
+one on firebase so I had some of this
+already setup import admin from firebase
+admin here's the contents of admin dot
+initialized
+and the Explorer default
+edmond firestore this is for a real-time
+database and we're not we're not using
+the real-time database you're using
+firestore so we don't need to worry
+about that I've also realized that I
+don't think you necessarily need to do
+this because this if it's already not
+initialized check would be the same
+thing as skipping this message so I
+think this might be a little bit more
+clear that's looking decent let me go
+back to documents here so what I did
+ahead of time was I generated a private
+key I took out the client email and the
+and the private key and I put him in my
+environment file and the reason I did
+that ahead of time is so I didn't have
+to show you it and then regenerate him
+and do it again so those values should
+be good and then the project ID we
+already have defined I believe in our
+process tmv if I go I also had a piece
+to the readme of what environment
+variables we're using so we already have
+the project ID from the client-side
+setup so these were the two that I added
+and just added the full list of the
+environment variables that we were using
+so we can pull that so we have email
+private key project ID and then I need
+the right database URL okay
+that looks good next thing that we're
+gonna want to do is go into our pages
+and we're gonna make our first API route
+so we're gonna make a folder at API I'll
+just pull these Doc's and you can kind
+of talk through it basically we export
+this default function it takes in a
+request and a response kind of helpers
+that have some middleware in there that
+we can use and we are able to do some
+kind of computation whether that's get
+data from firebase or say native to
+firebase and then this will get turned
+into a serverless function when we
+deploy it on purcell so we'll just take
+or something like this will say API
+sites and
+instead of doing red stuff status code
+I'm pretty sure you can do status 200
+let me find that
+yeah I feel like this just seems a
+little bit more clean to me
+won't need to do anything with requester
+right now so I'm just going to put an
+underscore marking that as the variable
+that we're not using so return to 200
+and return the JSON with this
+okay servers back up and running locally
+I'm gonna open localhost and slash API
+slash sites should hopefully see this
+JSON blob okay awesome so I see a 200
+and the JSON that we defined to return
+here so we just created our first API
+now let's actually fetch some
+information here so I just pulled up the
+firebase Docs
+see if I can find
+why am i struggling to find this
+firebase and then we looking for a
+copy-paste no not real time
+new trilogy was gonna be this difficult
+to find the doc I'm looking for
+maybe this a lot of us go to the note it
+should use the correct one so yeah we
+want to get a collection of our sites
+and then get that if it exists then do
+something otherwise log out in air so we
+will start with this
+sytze wraps will be
+let's call this database site we don't
+have a specific document that we want to
+get
+yeah get the cities where some condition
+is true and then get it we don't
+necessarily need to do this condition
+right now we can just take our rep and
+do a get on it for now
+well yeah let's just see let's just get
+this working first
+I'm gonna get rid of this else and just
+put the returned inside here dude
+so get the sites and then get the
+document if it doesn't exist there on
+air otherwise we turn that document and
+also catch any errors just want to make
+sure the table was called sites it was
+okay
+I might have not saved
+they're getting documents
+grant
+let me restart to make sure you screw
+something up live firebase admin
+looks right to me project ID private key
+okay
+it looks like it's not waiting for this
+to complete probably a lot easier if
+this was using a sinkhole way instead
+let's do that instead
+[Music]
+yeah we should be able to fetch that
+snapshot
+get all our sites and then I believe
+somewhere inside of here basically we
+can iterate over what we got back inside
+of our snapshot so for each document in
+the snapshot we want to woops
+we'll say the sites is empty and then
+for each snapshots let's actually add
+these into that array with the document
+ID and then the rest of that data
+okay that looks fine
+and we're gonna take these sites well
+something's messed up because it's not
+Auto formatting that's how I know
+so I have a syntax error somewhere
+yeah if I'm gonna use async/await I have
+to define a sink so go to cities get
+them fetch all these sites and then
+return them it should help me along the
+path to see if my firebase connection is
+just not wrong or if it just wasn't
+waiting for that it got a call to finish
+and it looks like something is still not
+right account not found so I'm wondering
+if maybe I didn't copy over my
+credentials right
+let me see if I can
+I might just regenerate these keys after
+I think that would be easier to double
+check and make sure everything's right
+here fast feedback demo best feedback
+demo client email
+private key looks all right
+Tyrese private key for this client email
+everything spelled correctly
+okay
+project ID private key client email
+I base admin was successfully added my
+yarn lock was updated that's screwed up
+my source control okay just gonna keep
+running down my list of debugging why
+this wouldn't be working
+let me make sure the client-side still
+appears to be working okay but it is not
+happy about this
+count ah sound
+I don't think I've seen this error
+before
+I'm gonna be deep down a rabbit hole now
+hmm
+so it's something to do with my service
+account appears one thing I could do is
+go back to project settings
+sir discounts
+I could try just re downloading a new
+one potentially
+what other reason could there be an
+account not found let's just try
+generating a new one
+fast feedback demo has a change
+obviously private key
+and they explained email
+Oh extra parentheses on the end there
+but that was it stuff like that will get
+you every time
+okay let's see where we're at now are we
+any closer
+yep that was it copy/paste errors are
+the worst yeah so I had an extra
+parentheses or quotation on the end
+there and that screwed up my credentials
+so that I couldn't connect to firebase
+admin but after getting that set up the
+connection worked as I expected it to
+and our API was able to fetch all of the
+different sites iterate over each one of
+those add it to this array and the ID
+and then additional information about
+the site so like here's the last one
+that we made that's looking good so this
+is a this is a pretty good jumping-off
+point for us to then actually try to
+consume this data and see it on our page
+so hook if I were a server-side API
+route for getting sites and now show
+list of site one thing I wanted to touch
+on before this I was working on some
+styling changes and I want to quickly
+run through what those look like let me
+know if you want to see me manually
+create the styles every time I did that
+exercise in a previous stream yup
+showing how I went through open chakra
+and did those Styles let me know if you
+still find that valuable otherwise I can
+just do the kind of expedited version of
+that which is just quickly show you the
+components that I generated so we're
+gonna need to show a table obviously so
+I started to build out a couple
+different react components that we can
+use to display our table with The
+Associated styling props so for our
+table I'm just composing the box
+component and giving some styles passing
+in the rest of the props and doing the
+same for a table row table data and then
+the table
+head so this will give us a jumping-off
+point for building a component that
+actually renders all of the data for our
+site I did this and I also started
+looking into a skeleton for the data so
+chakra UI provides us this really handy
+skeleton component that allows you to
+show a loading state right now we saw
+we're just showing like the words
+loading dot which isn't great so
+skeleton allows you to define a height
+and a width for what you want these gray
+bars to show up so for me I'm going to
+do the table rows and it's pretty
+composable so what I did here was
+compose these table components that I
+made the table the table head and then
+toward the body of the actual table I'm
+just gonna pass in five placebo rows so
+this should give us a jumping-off point
+to show that as a loading state instead
+of just loading so let's do that first
+and then we're going to try to hook up
+and fetched a different API route so
+right now we're just doing if off if
+there's no user show loading instead of
+that let's do what did we call that site
+table skeleton
+okay
+nice okay so you saw I've shared the
+table that time but the actual shell of
+our dashboard is still inside of empty
+state so I think what we want to do is
+actually remove this dashboard shell
+from the empty state and then let's go
+back into here and we actually want to
+wrap this
+it's okay so yeah we want it if if
+there's no user we will wrap this
+skeleton in the dashboard show otherwise
+show the dashboard shell with the empty
+state
+let's see what is that complaining about
+Oh
+the dashboard is saying while we're
+loading before we were expecting there
+to be this user and the ability to sign
+out but we're loading still so let's do
+the optional chaining here while we're
+loading and maybe we just like won't
+show this button or something oh that
+looks so good
+I'm gonna do it one more time to see it
+nice yeah let's say we only want to show
+this if there's a user
+nice okay that looks good
+we could probably now we could probably
+clean this up a little bit more yeah I'm
+just gonna leave it for now okay so the
+next thing I want to do is actually
+fetch data back and change my music
+really quick
+the next thing I want to do is actually
+fetch back data from that API route that
+we created and the way I'm going to do
+that is with a library called SWR SWR
+makes it really easy to fetch data
+through react hooks the reason I like to
+use this library is because on this
+dashboard page we talked about
+client-side rendering I'm gonna serve up
+that static shell and you know get
+something painted on the screen as soon
+as possible and then use something like
+SWR to actually fetch the information
+for that table one of the really nice
+things about SWR is that the information
+will update in the background so if I
+navigate off the page and I come back
+that information will stay up-to-date
+plus it also allows us to have local
+mutation which is probably what we're
+going to do when we actually add a site
+to make it seem really really fast so
+rather than waiting for that API call or
+doing anything on the background we can
+just locally mutate that cache for you
+know the different sites that we have in
+that table so let's set this up
+and start getting the guts imported here
+so API sites will define how we want to
+fetch here very soon either data or an
+error log out what the data is for now
+this would probably be more accurate
+than if there's no user because if
+there's no user we're probably going to
+want to redirect in the future so we'll
+stick with that if there's no data and
+we're going to return the loading state
+and then
+this is gonna be like data dot sites
+probably and then if there's no sites
+will show that empty state or the list
+the site table that we're gonna create
+so we're not gonna use air for now I
+guess we don't even really need this
+right now I'll leave it though because
+we're gonna be redirecting okay that's
+looking decent yeah one thing that's
+interesting with SWR is the fetcher that
+you want to fetch with so they leave it
+up to you for if you want to do rest if
+you want to graph QL one issue that just
+commented on was adding a default
+fetcher is most the time what I'm going
+to do is just take this and return JSON
+so I think something like this might go
+through there's kind of an example show
+you basically all I'm doing is making a
+fetch and then returning JSON so we can
+stick with that I will just put maybe
+this would be a good time to start a
+utils folder
+which I think I already defined and
+gist's no I haven't defined it yet okay
+let's do that
+okay utils that sugar you know the the
+distinction between utils and the lib or
+library code I don't know that I have a
+great description for like I feel like
+setting up firebase actually making that
+connection is more of the util and then
+the actual database logic or the
+business logic that's more of the
+library so maybe I'll refactor that
+okay so use SWR call sites use the
+fetcher that we defy and log out the
+data if there's no data because we're
+loading show the skeleton
+anybody else like Odessa yeah they're so
+good okay let's try this out
+nice so initially we rendered undefined
+while it was fetching we saw that
+loading state come to play and now we're
+getting back nineteen different sites
+Thanks so now really what we want to do
+is actually take this and create a table
+to display those sites so let's let's
+start on that let's see how we're doing
+on time
+doing great on time I'm gonna make a new
+site table J s I'll just copy over the
+skeleton
+ooh I was restructuring sites in the
+skeletons but I really don't need to
+who's it's not used so I'll get rid of
+that
+let's see basically the table head will
+be the same right we're gonna be named
+the site link feedback they added but
+then for each row in the body that's
+when we're going to iterate over the
+sites that we have so let's do that
+new sites map and then for the sites
+basically you can just take one of these
+you know that so render a table row and
+then render the data so the first thing
+will be the name oh I guess
+yeah that's not named very well site
+it's probably site that name not site
+dot sight but let's go back to here
+okay I'm gonna purge the database so
+that we can start saving things off
+accurately so I think I'm just going to
+drop this whole table and then catch so
+I returned no sites
+[Music]
+okay that's better ID name URL created
+at author ID eventually we're going to
+filter that so it's just the ones for an
+author but that'll do for now
+so site dot name the link to the site so
+we'll just do dot well feedback link so
+this is going to be a page that we
+create that will actually be the fast
+feedback specific route where you can go
+to leave feedback on your site so this
+is going to be something like
+yeah if you feedback okay and then date
+added so we have site dot created at but
+we're going to obviously want to promote
+that a little bit but let's just see
+let's see if this is looking good so if
+we go back to our dashboard right now it
+just renders an empty State what we want
+to do is we know that data is valid at
+this point because we have the loading
+check so if we have sites we're going to
+render the site table and pass in data
+about sites otherwise Cranberry the
+empty state because we have no sites
+okay let's see what we got here so this
+is just returning an array it's not
+returning any sites so depends on how we
+want to name this
+course
+I'm going to return this as sites
+so I'm getting stuff rendered on the
+screen this is a start
+okay now I'm getting air about keys and
+arrays to go to my site table want to
+iterate over these things I need to make
+sure that I've a neat key on here which
+I believe was just ID or is it UID
+just ID'd she probably be consistent
+with that
+make sure that air goes away cool I'll
+see how we know time
+good um what do I want to do now
+we can format the date and hold this so
+let's take a look at what TD looks like
+under the hood we can pass in any props
+that we want so let's pass in quality
+either medium or bold
+Helly medium cousin doesn't compete as
+much with this header yeah it looks good
+to me yeah let's start forming the date
+so I I like using date functions since
+we saved off with ISO dates it should be
+pretty simple to just parse that and
+then format it based on the string that
+we want so I'm going to just kill this
+quickly and add date functions
+you don't want to format
+and what's due
+I want the date and the time and I think
+these P ones are localized
+yeah so the P ones are localized let's
+go ahead and do do something like this
+to start capital to cabbies to lowercase
+Peas
+so the functions we want to parse an iso
+time and then the time that we're gonna
+pass in is going to be the time that we
+created at this will give us back our
+gates loose it's the date object it
+returns
+and then format takes in a date and then
+the string for how we want it format it
+so convert the iso string of created app
+into a date and then format it with the
+localized variants
+Thanks
+I don't know if I'll keep this same
+format forever but I think it's
+definitely a good start let's try and
+mutating that's something that I haven't
+worked with yet but I've been really
+curious to mess around with looks like
+it's not on the landing page so I'm
+gonna get hub
+okay so there is a function mutate that
+gets returned and it takes in the data
+and whether it should revalidate or not
+tell all silver goblets to with this key
+man that is slick Wow
+so I think I should be able to in my ad
+site modal then for this actually gotta
+move this here and then after we create
+going mutates
+hmm yeah this might be even better
+because I wonder if you can get into a
+race condition where this API call
+hadn't finished but I'm trying to you
+take this and and revalidate we can try
+it and see what happens
+I'm guessing we'll probably want to
+manually update that data oh yeah and I
+haven't hooked up this button either
+you'll probably want to do that as well
+so in our empty state we defined the add
+site modal and then in the dashboard
+we defined this button let's let's take
+this we'll change this to the ad site
+modal
+and that button was way better so
+we might want to customize
+[Music]
+yeah let's let's customize the text that
+we can pass into that button
+so whatever children repast it so for
+example in the dashboard shell
+we're going to pass an ad site but in
+the empty States
+we'll do that add your first site it
+just seems like a better call to action
+oh and there's also this on click here
+yeah we need to copy that over
+okay add say modal add your first sides
+dashboard shell here we want this button
+nice
+yeah I like it even has this nice
+transform of fact I like to feel like
+you're really pressing into the button
+click on this okay now we have that same
+mobile experience whether in our empty
+state or from here and we will add a new
+site and we'll see how that mutation
+works yeah so that's what I figured what
+happened there was it tried to mutate
+but the post hadn't finished yet so when
+I lost focus and I clicked into my
+editor and then when the focus
+revalidated when I clicked back into the
+browser then it went to update that data
+and that's just not quick enough you
+want to feel more instantaneous so it
+looks like we can pass in the data that
+we want to update with manually like
+this so where is Jade upcoming
+[Music]
+in many cases you're receiving a single
+value back from your API and you want to
+update a list of them
+I think this is basically it right I
+want to get the current cash value and
+then return the updated document
+so in this case fetch the information
+seems like we're basically doing the
+same thing as if we were to define it up
+here versus like re implementing our own
+fetcher what I'm not sure about is do I
+really want to then make this API call
+again inside of the ad site model but I
+think it's reading from the cache so
+it's not like it should affect that
+performance so I would say yes
+so let's extract out this payload for
+what the new site is create the new site
+make a toast mutate API sites with it's
+not really it's going well
+ooh yeah so the API is gonna return
+sites and that's the array so spread the
+rest of the sites and also include the
+new site and then close the modal so
+fast information of the sites and
+locally mutate it with the new site
+oh why is that taken so long
+that's strange I wonder why it took so
+long guys screw something up maybe I had
+a blip in my internet and I don't know
+it's weird let's try this out
+[Music]
+ooh
+close it worked for a second but then it
+didn't have a key so it failed
+that's tricky because there isn't there
+isn't an ID yet because we haven't made
+it and we can't use
+yeah I guess
+we should probably have some validation
+on here that you can't add multiple
+sites because you wouldn't want to
+create two for the same URL so maybe
+that means that we can change the key to
+actually be the site's URL preventing us
+from having to put in like a fake ID
+that doesn't actually exist
+oh whoa
+wonder why that's happening so
+I think it's because we're using the use
+SWR hook in multiple places for that
+same API route
+yeah that feels wrong to me
+like this might work
+returned data from mutate
+huh this one stumping me a little bit I
+might have to do I might have to do some
+more digging as we just went over the
+one hour mark because it seems like what
+I don't want to do is from the top down
+have to like define the mutate function
+here and then pass it through all those
+levels like it'd be great if I can just
+latch into the mutate function inside of
+this which I can but it doesn't know how
+to update that cache it be cool if like
+right here instead of having to know
+what the data is from here and then I
+can read from the cache which I'm not
+sure if that's what this is maybe I can
+just give this a shot
+oh wait that's your
+we already imported
+[Music]
+wait fetch your return
+[Music]
+wait where did where did where did users
+come from
+wait is it oh wait is this pulling the
+already existing value from the catch
+because if it is that we don't even need
+to make an API call you would do this
+and then sites said this is going to be
+data
+yeah we're gonna be do this God now
+maybe like naming like the key of sites
+wasn't a great idea sites gated out
+sites new site
+interesting so I got in the same
+situation where
+see works were definitely closer
+can't type today
+[Music]
+so it had it had all the site like this
+yeah this is hundred percent right so we
+should need to do that for that
+so we have all the sites and now we just
+need to return the new list so why
+[Music]
+oh I bet it's because to mutate without
+revalidation I wonder if it's trying to
+then fetch from the API but it hasn't
+finished yet
+because I mean if I unless I'm doing
+something terribly wrong here like that
+should be the same exact thing plus one
+o qu + alright fee
+sites at seven sites at eight
+yeah I'm pretty sure that worked oh and
+then it revalidate revalidated and
+changed the order so let me get rid of
+that oh this is disgusting
+okay Oh prettier you you've lost it it's
+probably because I have that freaking
+false in there come on you really hate
+to see it that is not as readable but
+all right let's let's make sure this is
+working
+[Music]
+so yeah with telling that API slash
+sites to not revalidate we're telling it
+that hey we're taking care of the local
+cache updating ourselves nice that's
+looking really good
+I'm gonna go delete Google+ out of here
+since it has the same URL and I don't
+want to get that key err
+and then we'll see if this revalidate
+isn't that amazing like then it
+revalidate swen i focus back on this tab
+and i get the new updated list of sites
+awesome so we've covered quite a bit in
+this livestream we've got the toasts
+saving the user info firebase
+server-side the API route and then
+finally SWR and we're really starting to
+make some good progress here with
+actually seeing some sites this login
+flow all finished go to our dashboard
+loading state and then see all the sites
+now I think next stream we will probably
+try to figure out how to only show the
+sites for a user that's important
+because this is my sites and yeah just
+kind of go from there
+so that being said thank you all so much
+for tuning in and yeah let me know if
+you have any more questions see in the
+next stream

@@ -1,0 +1,1259 @@
+foreign
+[Music]
+and thank you for joining this session
+preparing Cognito for the holiday season
+don't let traffic spikes and then and
+Bots ruin your holiday shopping season
+my name is Kevin Shanley and I lead go
+to market for Amazon Cognito and I will
+be your guide on today's Journey
+this session is a level 300 course so we
+assume that you already have a
+background Incognito
+um and we're going to start this off
+with a brief introduction I'll talk
+about traffic spikes and important
+defensive strategies to level out your
+traffic and handle load gracefully then
+we'll go into one of the most asked
+about topics defense against bots I'll
+demo how to set up the web application
+firewall or WAFF for bot protection
+we're going to show how to test your
+changes and how to protect your site
+with Advanced security features and
+finish up with a call to action
+okay so why are we here and what do we
+hope to accomplish well as we enter the
+holiday season large-scale Customer
+Events like Black Friday and Cyber
+Monday can strike fear into the heart of
+any it team the day after Thanksgiving
+marks the beginning of the Christmas
+shopping season and the time of the year
+when retailers pivot from red ink or
+operating at a loss over to Black Ink
+and operating at a profit it is
+critically important for businesses to
+be online and provide delightful
+customer experiences
+but it is just as important that we not
+only prepare for legitimate traffic but
+guard against bots and distributed
+denial of service attacks during this
+shopping season in this session we'll
+talk about handling that Peak usage
+cover the central role that Cognito
+plays in system performance and provide
+both strategic and tactical advice on
+how to scale your system effectively to
+meet customer demands during Peak
+traffic periods
+so we're going to start off with defense
+against traffic spikes
+here are some questions to ask yourself
+and really ask you know do you know
+these answers about your own site
+things like how much traffic can your
+site handle today logins per second
+concurrent sessions transactions per
+second what's the normal traffic for
+your site how many Cognito API calls do
+you use during a single login what are
+your Cognito quotas have you ever hit a
+quota limit do you know even know what a
+quota is uh within AWS uh do you know
+where to find uh quotas and your
+utilization and how it marks against
+that and maybe most importantly you know
+if you run an email campaign on Black
+Friday because your entire user base log
+in within a 24-hour period
+so you're probably thinking well where
+do I start
+well let's go back a little bit and even
+though I'm not going to go over overall
+Amazon Cognito uh I want to talk a
+little bit about the architecture here
+and where things like quotas and site
+limits come into play
+so let's imagine we're we're making our
+own uh mobile application with the login
+screen over there on the left and we're
+going to access some apis and
+microservices we're going to also access
+some Amazon resources on the green box
+on the bottom uh like say an S3 bucket
+or or lambdas and with this we're going
+to use Cognito for user registration
+sign in and sign up so we can add this
+functionality each of these operations
+has a quota signup has a much smaller
+quota than sign in because it entails
+database rights so if you wanted to roll
+out a marketing campaign to potential
+customers that are not already
+registered on your site then this will
+be a very important limit to know uh
+because you might be surprised at some
+of the limit sizes
+but you don't have to log in locally to
+cut and you don't you can actually use
+it as a federation Hub and log in
+externally via Google Amazon Apple
+Facebook even a Workforce provider so
+this is going to give you the capability
+to to go in and Federate over externally
+uh those Federation limits also have
+different quotas associated with them so
+you need to be aware of those as well if
+you're using that type so once you log
+in we're now going to go and generate no
+auth token and go and access an API
+once again different quotas are
+associated with that maybe your API
+needs to call other types of services
+like it's going to use an oauth client
+credential call once again quotas can
+come into play they could be different
+values than you expect uh and finally
+we'll go and access one of those Amazon
+S3 buckets or or dynamodb for this
+you're going to generate temporary
+credentials use that credentials Broker
+near the bottom and once again identity
+pools that credential broker it's going
+to use yet different quotas for that so
+depending on what types of services
+you're using what you're doing with your
+site a lot of different limitations on a
+shared service can come into this and as
+you can see you know this is a
+complicated subject that is based on
+your application architecture and it
+will directly affect your system
+throughput
+so what are we starting well most folks
+would come here to to Amazon Cloud watch
+not a bad place to start you know it
+does have a lot of metrics um it can
+generate call count throttle count
+metrics uh uh for Cognito and you can
+use these call accounts to track
+actually the number of customer calls
+related to a given category sign ups
+sign-ins token refreshes and so forth uh
+you can even use the sum metric to put
+together some of these uh metrics to
+give you get even more detailed
+information and but while these are
+great metrics uh it's not necessarily
+the best place to go to track against
+your quotas
+since October 2020 Cognito has had an
+integration with Amazon service quotas
+this is a dedicated console for viewing
+service usage it cross-references that
+service utilization data against service
+limits and even allows you to Pro Tools
+to set up alarms and request quota
+increases but before we jump into the
+console let's talk a little bit about
+quotas
+so what are quotas well these are the
+hard and soft limits that cloud
+providers use to enforce on a shared
+service and this is to ensure
+availability across its customer base
+any given AWS service will have quotas
+requests per second storage limits
+Network limits and others some quotas
+are real hard limits the service will
+not let you scale beyond that level but
+some quotas are actually soft limits and
+when you hit a soft limit well it kind
+of feels the same way as hitting a hard
+limit but you can request increases
+depending on things like you know how
+many monthly active users you have and
+how much utilization you're seeing the
+trick here you need to know your quotas
+and we're going to cover this particular
+point in the next section and we're
+going to also talk about how to iterate
+and improve on quota usage you can even
+automate soft quota expansion
+so beyond this uh Cognito publishes
+extensive documentation on service
+quotas on the top left of this uh
+screenshot you'll see the the service
+category here
+um like user authentications user
+creations and each of these categories
+or I should say quotas are enforced
+across an entire category
+um and what does that mean it means that
+if you have a quote of 120 requests per
+second for user Authentication
+then that means you'll get 120 across
+the entire section and they are
+additives uh so for an example on the
+user creation side we have a
+a quota of 50.
+um and what this means is you can have
+50 signups or 50 confirmed signups or 25
+of each
+so it is it is within a certain category
+that those quotas take take effect uh
+there's one notable exception we'll
+cover that a little bit later with this
+well let's go ahead and move forward
+so here's a screenshot from the service
+quotas console from this console I can
+see all the information that I need
+about my available Cognito capacity in
+different categories for example this
+screen shows me my user creation quota
+similar data is available for other
+categories as well like user
+authentication and user read I can
+request a quota increase right from this
+console
+and you might want to take note over on
+the left hand side of the quota code if
+you're going to call for service
+increases from an API or command line
+interface you'll actually need to use
+that value as a part of your API call
+and I can see all the data I need here
+it shows me applied quota to the
+category my usage against this quota and
+I see actually in this diagram my usage
+in this category is for the most part
+below 50 but I had a few spikes that
+reached above 80.
+um so you know these are types of things
+that I'd want to know about especially
+when we're coming into a peak day so I
+can also create alarms uh to be
+triggered when the utilization is above
+a certain threshold and I can create
+multiple alarms for say when the
+utilization is at 70 and then 80 and so
+on these alarms can take simple actions
+like notifying somebody or it could take
+an automated action like raising a
+support ticket or even automating a call
+to increase your your uh quota limit
+okay
+I wanted to show some load tests and
+actually relate the importance of it
+with testing so I ran actually a simple
+load test against this user pool to
+trigger an alarm that I had just created
+I'll actually show how to create the
+load test that I used for this a little
+bit later but I just really bombarded
+this thing with traffic and you see my
+spikes are going way up uh I I just blew
+through the default quota in place and I
+hit 139 utilization I was trying to test
+if my alarm was was working correctly
+and it wasn't no alarm was was going uh
+so even though I was getting uh close to
+60 error error rates on these calls no
+alarm was going so even though I set up
+the alarm set it up with defaults uh it
+actually wasn't working correctly
+um so I modified my load test and uh
+this is actually interesting in a couple
+ways
+uh this time when I encountered an error
+so when I'm doing a load test and I'm
+making a request for the login and when
+it fails instead of just failing and
+trying again uh as fast as it can it
+would fail and then I wait a random
+amount of time
+100 500 milliseconds two seconds and
+then I would try again and doing this
+allowed me to level out the traffic and
+and hit 100 success rate with the 90
+utilization threshold and then my alarm
+activated
+but it took 10 minutes
+which is not what I was after and this
+was my problem I needed to generate over
+an 80 service quota utilization to
+activate this alarm I left the default
+values in place which uses a one minute
+period and a 10 out of 10 data points in
+a row meaning I actually had to be above
+this threshold in a sustained manner for
+10 full minutes
+and you know so this is why alarm
+testing is incredibly important
+um it's you'll never know if these
+things are working until you actually go
+through and test them uh one more lesson
+from this exercise you know when I
+flooded this site with traffic
+I was hitting close to a 60 error rate
+uh this is something that your you know
+your customers would see as well during
+this time well once I was able to level
+out the traffic just by adding in a
+short random timer and wait cycle I was
+able to handle 100 of the load uh and
+actually with a great response times as
+well overall
+so I mentioned before that there was
+something of an exception for service
+quotas and categories and that's what
+this exception is right here
+um and it's related to user
+authentications so when you go to
+initiate an authentication uh you know
+you're limited by potentially that
+default quota or or higher quotas if you
+have higher monthly active users
+however the matching operation to
+initiating off which is responding to a
+challenge and let's say that I go to
+authenticate and I have a two-factor you
+know one-time password that I need to
+enter in uh and you could have multiple
+failed responses to this so we actually
+offer you to Triple the quota on those
+response to challenges this allows you
+to actually predict a little bit more uh
+easily you know more so what this means
+is this is going to allow you to respond
+to failure rates uh in a much more
+deterministic manner uh with a 120
+requests per second uh you can actually
+count on processing that money logins
+through and not you know some function
+of having a bunch of failed logins
+related to it so it's just a little
+footnote to keep in mind
+okay
+so talked a lot about service quotas and
+you know measuring these things out
+doing utilization
+let's consider an anti-pattern and its
+effect on service quotas
+so in this diagram this organization has
+a post authentication trigger it's going
+to read user groups from an external
+user store and then it's going to call a
+Cognito API to update the groups that a
+user has assigned now this is a super
+useful construct
+we are able to
+sync data for only those active users
+for the month that's going to reduce
+your monthly active user cost because
+we're not going to be replicating
+changes in the background on a regular
+basis we're also ensured that the latest
+data will be added to that user's
+account in the cognitive user pool
+so what's the problem
+and the problem is service quotas
+user authentication and read quotas are
+amongst the highest quotas in cognito
+and can be adjusted you know to really
+some of the highest in the industry
+however quotas for a right an ad update
+delete operation are substantially lower
+if you attach operations with a lower
+quota with operations that have a higher
+quota
+that lower quota will kick in and
+effectively limit your operations so
+after 25 requests per second
+that's where your logins are going to
+stop you're going to start throwing
+errors you're going to start throwing
+403s you're going to you know start
+throwing quota exceptions
+so you know what is the actually how do
+we fix the solution um or how do we fix
+this problem uh that user update quota
+uh is also non-adjustable so we we need
+to think of other alternative ways of
+going after this
+and there can be a number of great ways
+of doing this if the attribute's not
+changed don't update it read compare if
+unchanged keep moving
+when you need to have right operations
+during login maybe consider writing to
+Dynamo database or some other resource
+that's not your user pool something that
+can force through higher levels of
+Rights
+you know you can also consider things
+like offline or asynchronous updates to
+a user pool if something has to trigger
+during a login maybe do it as a part of
+a pre-authentication trigger set up an
+asynchronous queue and then over the
+course of that login you'll actually get
+a chance to level out the traffic and
+get those updates in
+uh you can potentially also Implement
+just what I did in that load balancing
+or that that load test strategy a
+randomized retry strategy by combining a
+lot of these different strategies or
+tactics you can substantially increase
+the login throughput
+okay
+so
+we talked about that in antibioter and
+you're going to find baldinx in your own
+system even on your own dedicated
+hardware and you'll see that even though
+you know we like to think these things
+are incredibly scalable and can go on
+forever and ever you're going to hit
+hard limits within your own
+infrastructure databases caches they all
+have right limitations Global locks will
+limit your concurrent uh rights some
+databases like documentdb that's going
+to operate in a primary replica mode and
+it's going to take time to replicate
+that data and you're you're also limited
+to a single writable node the takeaway
+is you need to optimize rights whether
+it's a shared service or not
+now another consideration is that
+elastic systems need time to scale uh
+serverless lambdas can scale really
+quickly uh with no intervention they
+just do it it's Auto Magic
+however
+ec2 instances uh elastic container
+instances can take a lot longer
+especially in the case of an ec2 where
+you need to boot up an entire operating
+system uplift the service pre-filled
+caches make all these database
+connections by the time you've called
+this thing during a spike you know 10
+minutes may pass 20 minutes may have
+passed before that service is actually
+being functional and the worst part of
+it is if you're having spikes like
+really thin spikes you might start
+firing up these services and actually
+make things even worse because the
+system is not usable and at the same
+time it's taking up database connections
+it's it's it's taking up additional
+resources so it's actually making your
+spike a bit worse so during the holiday
+season consider pre-warming extra
+capacity for your application it's a
+small amount of additional cost and can
+really buy you a lot of uh
+uh a lot of benefits
+so through this considered a number of
+technical strategies to level out
+traffic to the site
+but it doesn't have to all be technical
+uh if you have a 10 million user base
+then don't send out 10 million emails at
+8 am on Black Friday use the phase
+migration approach where I should say
+just a phased approach to attract
+customers to your site you know send
+these out over time likewise you can
+drive early access to your site to
+spread out traffic maybe encourage users
+to register self-register in your site
+before Black Friday uh to so that they
+can get access to exclusive offers this
+is going to allow you to spread out
+those database rights or those
+self-registration processes
+so uh I also gave the example of using a
+retry strategy uh executed the load
+balancer level however this strategy can
+work even better when executing code if
+a call fails do due to a quota
+restriction wait a random amount of time
+100 milliseconds 500 milliseconds uh two
+seconds
+just be sure not to be too aggressive on
+the uh the retries if you try to
+aggressively retry you can actually
+cause retry spikes and and cause your
+own outage uh so just be a little bit
+careful with that
+um but it is super handy for leveling
+out your traffic
+likewise uh mentioned right at the
+beginning know your quotas and set up
+Auto scaling uh showed how to how to
+access service console how to identify
+these API calls that could be running
+hot go through all of them look at the
+the rate of uh apis under the service
+quota screen
+and and you'll be able to set all those
+things up
+likewise pre-warm your servers that you
+expect to be hot going under load you
+know the small cost of carrying over
+capacity will pay off with a stable site
+understanding your flows and traffic
+patterns if the user creation API is
+overloaded just remember This only
+affects user creation and not logins so
+the vast majority of your customers are
+actually not being affected by you know
+a given Spike
+be aware of what your different traffic
+flows and patterns are and don't
+necessarily take over aggressive actions
+you don't you don't need to necessarily
+reboot all the systems because people
+can't register when when most of your
+customers are actually logging in and
+able to make purchases
+and similarly you want to continue to
+iterate on efficiency
+so AWS essays actually helps customers
+take their utilization from 30 down to
+three percent just by removing a couple
+of extraneous get user and verified
+token calls
+um you know reach out to AWS we can help
+get you these these better efficiencies
+and look out you know we've we've gone
+through this many times before
+and finally if all else Fair fails and
+there's simply too much load for your
+site then consider implementing a
+waiting room for over capacity
+um it's much better to have customers
+you know read a little bit rather than
+let too many in and create a poor
+customer experience or simply throw
+error messages you know what do you do
+when when you see an error message when
+you try and log in you try and log in
+again and again and faster you're just
+gonna start really to create your own
+spikes waiting rooms are a great great
+way to manage that type of traffic are
+essays uh have implemented this stuff in
+the past and can help you
+okay so now we're moving on to defense
+against bots and attackers
+thank you
+what are Bots well Bots are not
+necessarily bad while some Bots such as
+search engine crawlers are good bad Bots
+are built to carry out malicious attacks
+at scale the good Bots are primarily
+things like those search engine crawlers
+social network Bots uh aggregators
+monitoring Bots these Bots will obey the
+website owners rules as specified in the
+robot.text
+now bad Bots well they're built to
+perform various malicious activities uh
+and estimates vary force your estimates
+that at least a quarter of all internet
+traffic is generate generated from Bad
+Bots
+the graph here from Barracuda estimates
+that almost 40 percent of all internet
+traffic is generated by bad Bots
+and they range from basic scrapers to
+try and get some data off an application
+and could be easily blocked two advanced
+persistent Bots that behave almost like
+human beings and look to evade detection
+as much as possible
+now bad Bots support a wide range of
+activities from spin fraud and Bots as a
+service to distributed denial of service
+or DDOS attacks
+now before I continue some of you
+probably wondering what is spin fraud
+well spin fraud happens when Bots log
+into music websites with compromise
+credentials and then stream a song over
+and over and keep liking it to make it
+move up in the rankings
+um you know bad Bots have become really
+a regular nuisance that we almost don't
+even know goes on uh as a lay person did
+did anyone try and buy a graphics card
+during covid and then maybe come up dry
+because when when the site would come
+online and offer a card for sale scalper
+Bots barraged all the retailers and got
+all the available cards
+yeah bad Bots are kind of a bummer they
+make up a significant part of website
+traffic and detecting and blocking them
+is of critical importance to your
+business
+so you know in summary why do we care
+about them well if that Bots are regular
+nuisance
+then it's factored in the equation but
+not necessarily because bot attacks are
+a scale Vector bot traffic competes with
+your real traffic for resources and this
+is a big problem during resource Peaks
+they will attempt to brute force your
+login page with compromise accounts
+they'll scan your systems for
+vulnerabilities they can launch full-on
+DDOS attacks during your Peak shopping
+season
+and it's incredibly easy to do as well
+um you know fake accounts on the other
+hand as well they cost you money
+preventing and removing accounts can
+save you big dollars you're paying you
+know not just for for monthly active
+users but you're paying for the CPU
+cycles and storage on serverless like
+ec2 uh you could be uh paying for
+Network traffic that Bots are generating
+your real user traffic is also
+obfuscated by Bots they make it harder
+to see what your customers are actually
+doing and help them out and this is why
+a bot defense is one of the most asked
+about and requested features
+so
+in August 2022 Amazon added native
+support for the AWS web application
+firewall or WAFF the Waf protects
+applications from common web exploits
+and malicious Bots that could affect
+application availability compromise your
+security or just consume excessive
+resources the AWS WAFF gives you control
+over which traffic to a lower block by
+defining customizable web security rules
+it was previously possible to provide a
+lack protection with Cognito but that
+actually entailed using additional proxy
+layer with some other workarounds in
+contrast this is a first class
+integration in both the WAFF and Cognito
+consoles
+so questions to ask yourself you know
+what rules should I Implement what
+attacks can I protect against uh are are
+some of my URLs my application really
+susceptible to a denial of service uh
+what rates do I need to apply into this
+for for rate limiting rules
+um you know what is my normal rate of
+traffic if I had a rule could I actually
+break my application
+and ultimately you know how do I
+effectively keep attackers out but also
+keep the door wide open to my customers
+so let's talk a little bit about how it
+works
+well step one we're going to create a
+web access control list or web ACL
+inside the WAFF now this webby's web ACL
+could be comprised of many rules that
+control bot access they could check the
+request IP against Amazon's threats
+intelligence database and this is useful
+if you'd like to block sources
+associated with Bots or the threats you
+can block requests coming from an
+obfuscated Source such as Anonymous IPS
+or proxies you can block request
+patterns that are known to be invalid
+and are associated with exploitation or
+discovery of vulnerabilities you can
+even geofence an application to prevent
+access from certain countries
+you can set up rate limiting prevent
+denial of service attacks there is a
+wide range of rules available right out
+of the box from AWS Market security
+Partners as well
+so once we actually create that web ACL
+Cognito cognitive user pool is going to
+fire up and Pull It in and start using
+the Waf for incoming requests from
+clients
+now some of those requests uh could be
+coming in from different clients
+including you know the the hosted UI and
+Federation flows will be coming from
+client web and mobile applications even
+machine to machine authentications using
+the client credential flow it is also
+possible to write more sophisticated
+rules that only apply to certain
+application clients or API calls within
+Cognito and you can do this because when
+you're calling an API with Incognito
+this this available becomes available
+within the header data you can use it to
+constrain rules
+when Cognito was then receiving this
+traffic it'll then send sanitized
+traffic over to the AWS WAFF for
+inspection the wife then runs these
+requests against a web ACL that is
+associated with a user pool and it'll
+make a decision
+if the decision is to allow the request
+then Cognito will continue processing
+otherwise the waffle will dictate the
+response to the client client and this
+could be we need to block the request or
+send a customer response or in some
+cases where Cognito actually controls
+the user interface like in some oauth 2
+flows sign up and sign in with a hosted
+UI it'll send you a captcha to check to
+see if you're actually human
+um and a couple of notes to cover before
+I move on
+um once you assign a web ACL to a
+Cognito user pool it might take a few
+minutes to take effect and your mileage
+may vary on this sometimes I assign the
+rule and it just it's it's in like
+almost instantaneously sometimes you
+need to wait a few minutes so just an
+FYI when you start to test with this you
+can also only assign one webis one web
+ACL to a single user pool now this web
+ACL may be comprised of many manager
+custom rules but the standard 1500
+capacity unit limit is enforced uh and
+those capacity units are used to limit
+the processing overhead on requests
+final note
+be sure to test the limits of your rules
+and learn the system Behavior for
+example when I run a load test against a
+weight limit rule I can see that it
+tries to show me Caption to answer and
+check to see if I'm human
+however
+if I try and run that very same load
+test but with thousands and thousands
+more concurrent requests well the system
+quickly realizes that this is a
+malicious attack and it sends me
+different messages it doesn't try and
+show me a captcha it just sends me four
+or three forbiddens it locks me out so
+just be aware test around see what this
+is going to do from your from the
+traffic and client perspective
+okay so in this next demo I'm actually
+going to show you the wav console how to
+create rules that are assigned to your
+user pool and protect against bots we're
+going to keep out attackers prevent a
+DDOS attack and and limit the attack
+surface area of your Cognito UI screens
+so here we're beginning at the Cognito
+console you're going to click on the
+user pools link to show the list of
+pools and we're going to add a WAFF rule
+and so this is actually once you're
+actually in the console you're going to
+click on the user pool properties and we
+see that our WAFF rule is currently
+inactive well let's go ahead and click
+the edit button and change that so we
+here we can activate that and then you
+can actually assign a current web AC or
+rule that exists but that wouldn't be
+any fun so let's go ahead and create
+Ours from scratch
+okay
+so you'll see in the upper left hand
+this is actually coming into the AWS Waf
+console uh so we're going to call this
+our demo Cognito Rule and here you see
+right away Cognito user pools it's a
+native resource right within uh the WAFF
+and so we're going to go into this
+console and add our specific user pool
+to this web ACL you can actually choose
+more than one at this point but for this
+purpose just do the one
+okay and now for the good stuff we're
+actually going to add some managed rules
+here as we scroll down through this we
+see the first one up here is account
+takeover protection not available for
+Cognito not a problem this is actually
+available right out of the box using uh
+the Cognito Advanced security features
+next up we have a rule right for bot
+control click this and that'll actually
+save you from a majority of Bot attacks
+um it's it's a great simple rule just to
+be able to add in and and fix that now
+as we scroll through this list of
+different rules we see hey there's an
+Amazon IP reputation list we can see uh
+you know rules that are associated with
+malicious traffic Anonymous IP list
+where somebody's trying to protect their
+origin we also see things like known bad
+endpoints um and and the inputs uh here
+we're checking to see if an attacker is
+sending in like specifically bad traffic
+that's meant to probe your endpoints
+these are all great to add into your
+your cognitive user pool depending on if
+you need a Anonymous proxy or not that's
+often governed by the type business you
+do so let's go ahead and move on here we
+can actually click next to a lot of
+these screens you can set your rule
+priority which rules you want to have
+activate first you generally want to
+have your most effective rules and most
+efficient rules activate right at the
+top
+and we can go ahead and create that web
+ACL
+and success it's now created and
+actually if we go back to the Cognito UI
+at this point we'll see that Not only
+was that rule created but it's actually
+assigned already with this console as
+well and set active and as I mentioned
+may take a few minutes for it to
+actually take effect but then you'll be
+ready to rock and roll
+okay
+okay so moving on
+uh I've showed now some of the
+out-of-the-box rules offered by Amazon
+and and you you can browse other parts
+of the marketplace uh and but you can
+also create your own custom rules if for
+example you want to apply some
+geofencing uh then you can just add a
+custom rule based on matching a country
+in this particular example uh we're
+blocking access from ofac or the office
+of foreign assets control countries
+these are countries like uh Russia North
+Korea and depending on your business you
+may be required by a law to prevent
+access from these from these nations by
+the US government
+uh in this particular example added a
+custom 403 Forbidden response so you can
+actually change how how these rules uh
+will appear to your end users
+and likewise in the rule configuration
+um you know I I really just added a
+simple list of countries however you're
+not limited to that uh you can actually
+add uh and or not statements to create a
+highly customized Rule and a quick note
+about IPS on the bottom here
+unless your all your traffic is going
+through a proxy
+only use the source IP unless the
+application is behind a proxy in that
+case you should sanitize the exported
+four headers to ensure that the client
+is not able to forge the request source
+similarly
+you can create rate limiting rules to
+limit traffic coming from a single IP
+be sure to vet these requests against
+your Cloud watch Rules uh sorry your
+Cloud watch logs some countries deploy
+proxies for all their citizen internet
+traffic and can have the effect of
+having many calls coming from oneip or a
+block of ips so just make sure you're
+testing that out
+and you can tie together rate limiting
+rules with other logic
+if the standard rate limit cast may be
+too big in that so you can create any
+level of complexity of these rules to
+meet the requirements you need
+lastly as you start your journey using
+the laugh you know I've talked about how
+you can use the laugh with cognito
+but I would strongly suggest reading
+this Blog the AWS Shield response team
+they help customers who are actively
+under a DDOS attack to implement rules
+on the Fly and help resolve the attack
+now they consulted directly with the uh
+the article and it has some great advice
+on how to measure your site traffic for
+the appropriate rate based rule settings
+The Shield Response Team also found that
+most customers could have actually
+avoided a DDOS attack if they'd simply
+deployed the most basic rate rate based
+blanket rules so it's a great way to you
+know hit the long hanging fruit prevent
+easy attacks on your site
+so I'm not covering this content in this
+presentation because it's it goes beyond
+Cognito Let's scan the QR code to learn
+more
+okay well we've learned about Bots
+we learned about how to make rules for
+the laugh
+now how do we test your infrastructure
+is ready for prime time
+and a couple of considerations before
+you get started
+load testing costs money it's processing
+Cycles it's sending sms's cross-network
+cross-region Network traffic those costs
+can add up over an extended stress
+testing
+and likewise testing a production
+component and on alarms requires
+coordination
+you may have production dependencies on
+your load tests
+um so you really need to be careful
+about just running the stuff in a
+production environment
+uh it can impact your existing traffic
+so be sure to get permission funding and
+a testing window for doing this in a
+higher level environment
+uh next up you need to load test your
+limits you need to load test triggering
+the elastic scaling and understand the
+behavior of your system
+if you accidentally trigger 10 new
+containers that all create database
+connection pools then you know do you
+have enough database connections uh
+available in the database it may not
+work as you expect you may run into all
+sorts of things you didn't think about
+you need to test
+and as you test
+check the logs and understand what
+messages are normal and what messages
+are like preceding a failure
+likewise you need to test a failure
+really take your site down know what
+your app can do know what your site can
+do and what it looks like when it fails
+and what it looks like as it's starting
+to fail
+and just you know what you're testing
+for outages failovers scaling time
+during a spy Spike response time during
+loads your limits and quotas and finally
+please try it on a lower level
+environment first please don't take the
+load testing skills that I'm about to
+give you and point it at a production
+environment without production without
+approvals and coordination
+now with that said
+let's in this next demo I'll actually
+show you how to create a load test from
+scratch with free tools and generate a
+million logins in a matter of minutes
+seriously I don't even speed up the
+video you can do all this in under three
+minutes
+so here we're starting with Apache
+jmeter uh this is a free load testing
+tool and we have a blank test plan uh to
+start off with we need to create a
+thread test group
+um so we're actually going to create
+this uh this login thread group this is
+what's going to allow us to make
+concurrent requests after that we just
+need to add an HTTP request and for this
+request we're going to just do a direct
+post right to the username password
+login API
+so for this I need to put in the the
+server name and the protocol to be able
+to access it I'll just paste that in
+now we're going to do a post right to
+the base path
+and we're going to send in a raw Json
+form for this so when I paste this in
+here I'll make a little note you're just
+going to send in the auth flow we're
+calling the client ID of the application
+we're hitting and a username and
+password and the rest is just default
+there's one more component to add to
+make this test work and that's we're
+going to add a header manager and we're
+just going to set two headers one header
+is going to tell us it's going to tell
+Amazon what API endpoint we're hitting
+the initiate off and the other is
+telling the endpoint hey we're sending
+Json based data so with that we actually
+have a working test already
+now we still want to add a couple other
+components because I want to be able to
+see what the test results are and so we
+add some listeners uh we're going to do
+a result tree listener and a summary
+result listener and this will show us
+what actually happens from our tests so
+we'll just do a simple test request to
+begin and it's already working we have
+the green check mark
+um if we look at the response data we're
+generating access tokens
+that's exactly what we wanted to do uh
+we're not load testing yet so let's go
+back to the thread group and maybe have
+10 concurrent users let's just start to
+scale this thing up and uh 10 Loops
+that's going to generate a hundred
+access tokens
+and within a couple seconds that is that
+test scales up and stops I think it
+takes the three or four seconds we now
+have 100 Access tokens we've logged in
+100 times
+um and you can imagine all I need to do
+is add a couple of extra zeros on those
+clients on those loops and we can
+generate millions and millions of
+sessions in a very short time
+um it's super powerful
+so likewise to do this I actually turned
+off the laugh let's go back into the the
+console we'll assign back that web ACL
+that we created in the previous demo
+and we're going to try and run the very
+same load test
+okay so now we're going to rerun gave it
+a chance to work and now we're getting
+back different messages forbidden
+request not allowed due to Waf block
+so here you've seen in really just
+seconds how easy it is to throw load at
+a site
+you know and if it's easy for any of us
+it's easy for an attacker if someone
+wanted to come after and attack your
+site it is Trivial uh to do I'm with
+just likewise a few clicks on the WAFF
+you can enable this and prevent these
+you know script Kitty type attacks
+against your site
+okay so the last section we're going to
+cover today is Cognito Advanced security
+features
+uh the Cognito Advanced security
+features or ASF are compared excuse me
+they're comprised of three main features
+compromise credentials check adaptive
+authentication and event logging
+um these features are available for the
+local user pools only not for Federated
+users so you know some of the the
+caveats and disclaimers Below
+um and there is an additional cost per
+monthly active user to use these
+features
+so what do they do compromise
+credentials uh check this is going after
+credential stuffing attacks credential
+Staffing or is automated attacks on your
+login that attempt to use passwords that
+have been compromised and released on
+the dark web
+compromise credentials are a major
+attack vector and it's it's a major
+attack Vector that's also used by Bots
+um username and password combinations
+are checked against compromised
+credentials database during a sign up
+the sign in and change password flows so
+all those flows we're looking to see if
+users are using credentials have been
+compromised on the dark web and I'll say
+all those flows except for this Q remote
+password
+protocol because we never actually see
+the password on the server side
+uh the compromise credential database is
+managed so you can't actually import
+your own data or modify it
+um by customers
+compromise credential checks for
+compromised passwords on dark web but it
+actually also checks against all the
+weak or common passwords
+and when those uh compromise credentials
+are detected
+the flow through is an error and
+prevents the use of these credentials so
+it'll essentially set up you know
+password reset required exception
+now adaptive authentication allows a
+method of logging in with less friction
+if it attempts the the login request is
+deemed low risk this gives you the
+option to selectively challenge users
+with MFA or block the attempt if a sign
+in is flagged as risk optionally you can
+notify users of the risk and collect
+feedback valid or invalid risk
+assessment
+the recorded feedback is actually
+factored in for future risk calculations
+so for example if if I switch countries
+and I log in and I get prompted for
+stronger authentication and I authorize
+that as approved then the system knows
+that you know I that I can be in another
+country as well and as I make other
+requests from that new country I won't
+be prompted again
+event risk is determined based on
+multiple factors like event feedback
+sufficient event history context
+attributes and previous successful
+sign-ins
+and one final note MFA does not need to
+be enabled for the user
+but a phone number is needed
+finally event logging when the ASF is
+enabled all sign in sign up verification
+and password change events are logged
+and kept for two years
+event logging includes the risk level
+and other attributes like location
+Source IP user agent and events are not
+streamed outside of Cognito but can be
+accessed using apis so you can build a
+custom solution to stream this data out
+and aggregate risk metrics are also
+published in cloudwatch
+so finally a call to action you know at
+the beginning of this webinar a provided
+guidance on how to track utilization
+against your quotas and set auto quota
+increase alarms and handle traffic
+spikes you can enable the WAFF for your
+user pools and applications and this is
+the one one of the most powerful
+mechanisms to prevent unnecessary load
+and costs associated with the Boston
+attackers
+um one more word of caution do not just
+turn off the lat turn on the laugh and
+think you're done the laugh is extremely
+effective but it can also break your
+application
+when I used to run development teams in
+a previous role if we found a bug in the
+app one of the first things we did was
+to try and reproduce the error without
+the laugh be sure to test
+and you need to stress test the system
+figure out what's going on uh to uh to
+break your application and then set rate
+limit rules to ensure that you stay in
+the green
+don't delay planning for when you have a
+spike you need to understand your
+traffic expectations and set up
+realistic limits
+providing a reliable consistent site for
+the vast majority of customers is better
+than letting everyone in the front door
+and slowing your site down to a crawl
+and optimize your application
+now I mentioned that example of bringing
+in the aw uh AWS Services team uh to
+help and and we help the customer take
+their utilization from 30 down to three
+percent just by removing a couple of
+calls uh and simplifying some of their
+flows investments in optimizations pay
+off dividends over time in real monthly
+costs but also with improved transaction
+speeds you actually get a better
+customer experience with this
+and then finally not on the slide but
+after the holiday
+do a post-mortem see what worked see
+what didn't iterate and optimize the
+parts that didn't go as planned
+and before I go I just want to point out
+some other fantastic resources that are
+available to help you on your journey
+so actually at identity verse earlier
+this year representatives from the UK
+National Health Service came over and
+presented on Lessons Learned as a scaled
+Cognito during covid
+they had a scale from 20 million logins
+to 800 million logins it is an epic
+presentation highly recommended and at
+that same conference Mahmoud matuk
+presented a session on building sign
+applications in uh on Cognito in under
+an hour
+if you're more at the starting part of
+your journey with Cognito and you want
+to learn more you want to learn how to
+create an app he shows you in under an
+hour how to get up and running
+this third QR code goes right to the
+service quotas page it has all the
+documentation about quotas that are
+applied to cognito
+and finally as I mentioned Cognito is
+the front door to your application and
+an important component to secure however
+it's not the only thing to protect uh
+check out this paper on measuring your
+application and applying effective WAFF
+rules it comes with guidance from the
+AWS Shield response team and then how
+they've had to respond to massive
+attacks in real time
+and with that
+thank you for attending I hope this
+presentation has been useful please
+leave feedback about the webinar and let
+us know about other tops you may be
+interested in uh would you like to see a
+full webinar just on load testing or on
+using lambdas with Cognito let us know
+in the comments thank you
+[Music]

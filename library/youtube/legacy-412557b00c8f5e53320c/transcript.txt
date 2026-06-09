@@ -1,0 +1,530 @@
+Let's talk about int
+los
+source intelligence intelligence
+intelligence.
+I'm going to try to find his
+Snapchat account. On her Snapchat account, well,
+I'll find a pseudonym. How am
+I going to be able to pivot to this
+pseudonym?
+How to get started in INT and go from a
+beginner to a true investigator?
+Where to begin? What are the
+best resources? Which tools
+are truly useful? These are
+questions that many people ask themselves,
+yet most take the
+wrong direction from the start. You
+may think that it's enough to
+learn tools, but that's
+not what makes progress. In this
+video, I'm going to show you how to
+really get started with Ozint and,
+most importantly, how to avoid the mistakes that
+block 90% of beginners. But first, do
+you really know what
+osint is? OINT stands for open
+source intelligence, or in French, roso
+for intelligence from an
+open source. In concrete terms, it is the ability
+to collect, analyze and exploit
+information that is publicly available
+on the internet, in the media,
+social networks, websites or even
+official documents. In this
+video, I won't go into
+detail about how to retrieve this
+information, but if you're interested,
+I've already done quite a bit of content on the
+subject. Today, Laint is used
+in many fields and professions
+almost everywhere information has
+value. To give you a few
+examples, in journalism,
+investigators use it to verify
+facts, gather sources, and
+uncover information that is
+not immediately visible.
+Similarly, analysts who follow
+geopolitical conflicts use these
+same techniques to observe
+troop movements, understand
+crisis dynamics and changes in
+location over time from
+public sources such as satellite images and
+social media posts. Companies also use it
+extensively, particularly for
+competitive intelligence, monitoring
+market trends and anticipating the
+movements of their competitors, which is
+called
+economic intelligence, or in recruitment
+to better understand profiles and
+verify the credibility of candidates.
+One important point also needs to be clarified
+. Many people make
+the mistake of confusing cybersecurity and cybersecurity.
+In reality, it's clearly not the
+same thing. These disciplines can
+intersect, for example to identify
+threats or understand the context of an
+attack. But Laint remains above all a
+skill that applies well beyond
+cybersecurity in many
+different professions. If you want to
+learn how to do Losint, it is
+also important to know the
+intelligence cycle because many
+beginners jump straight into
+information gathering without knowing what to
+look for, how to sort the data, or
+how to analyze it. Its goal is
+to enable you to transform
+raw data into useful information and then
+into actionable intelligence. For
+example, imagine that you follow the
+Twitter account of a company or a
+public figure. Tweets,
+likes, photos or shared links
+are raw data. By
+analyzing them, you can spot
+trends, projects or
+partnerships in preparation, which
+becomes useful information. If you
+correlate this information with other
+public sources, you obtain
+actionable intelligence, for example
+to anticipate a launch or a
+strategic decision. Before you even
+start our inint, it is very
+important to master the legal framework.
+Many people believe that because
+information is public, it
+can be used freely. In France,
+for example, simply
+downloading data from a
+data breach containing, for example,
+usernames, passwords or
+banking information is illegal and the
+penalties are quite severe, up to 5
+years in prison and a €375,000 fine.
+Certain practices are also
+obviously prohibited, such as
+publishing personal information
+about someone, which is called
+doxing, and is also punishable by 3 years
+imprisonment and a fine of €45,000.
+To delve deeper into these topics, I
+recommend the series of blogs written by
+Marc-Antoine Ledieux, which explains
+its legal limits very well and illustrates
+everything with very well-
+made images. To begin your research, you absolutely must
+not rush in headlong
+without thinking about protecting your traces.
+For this, what is called obsec for
+Operational Security is essential. And
+the idea is simple. Before collecting
+information, you need to know
+who you are protecting yourself against and how to avoid
+leaving
+sensitive information about yourself lying around. In practice, this
+involves several methods such as
+using a secure browser
+like Brave Thor and extensions to
+limit tracking. Use
+encrypted messaging services like
+session.Oio or signal. Create fake
+identities or sock puppets. To
+interact online without revealing your
+real identity. Use
+virtual machines for each investigation to
+isolate your activities. Testing a
+secure operating system like
+Tails that leaves virtually no
+trace on your computer, having a
+disposable phone number for
+registering on different sites, and
+there are many other
+techniques. If this topic interests you,
+I highly recommend
+Michael Buzzel's book called Extreme Privacy and
+watching my dedicated video on this subject
+to delve deeper into it. And one of the
+first things I do to
+protect myself is to use a VPN. And the one I'm
+using here is Proton
+VPN. Proton is a Swiss company
+created in 2014 with one
+main objective: your privacy.
+Today they have over 100
+million users and unlike
+many other services, their
+model is not based on
+data collection. In practice, when I activate
+Proton VPN before launching this kind of
+test, all my traffic goes through an
+end-to-end encrypted tunnel. This
+means that neither my internet provider, nor
+the websites I visit, nor the
+shady stuff I download can
+see my real IP address. And in a
+video like this, it's
+essential. What is
+also interesting is that Proton, being based in
+Europe, operates outside the
+oversight of large
+Texas-based companies. This means that Proton
+VPN keeps no logs of your activity
+and all of this has been verified by
+independent audits, which their competitors
+cannot really guarantee. Their
+code is entirely open source, so
+anyone can verify what they are
+actually doing. And since they are based
+in Switzerland, your data is protected
+by some of the strictest laws in the
+world. They also have one of the
+strongest networks with over 18,000 servers
+in more than 120 countries. So you can
+connect from almost anywhere
+with very fast speeds. And
+of course it's available on all
+devices and it's super easy to
+install. In short, if you pay even a little
+attention to what you do
+online, having a layer of protection
+like that makes all the difference. If you want to
+try Proton VPN, you can get
+up to 70% off with my link
+in the description. Now that you have
+the basics, you need to understand that there are
+many subdomains of HalloSint,
+each with its own techniques and
+concrete use cases. To begin with,
+there is, for example, Sockmint for
+Social Media Intelligence. Here, we
+work on social media.
+In practical terms, it can be used, for
+example, to find all accounts
+linked to a person from a
+phone number or email address, or to
+analyze interactions, subscribers,
+and likes to rebuild a network
+and understand the behavior of a
+target. Then there is goint and
+limint which consist of analyzing
+images. A very concrete example is
+trying to find the
+exact location of a photo. For example, by
+analyzing a building's shadow on a
+sign or even vegetation. Then,
+by using Google Maps Street View or
+other services, it is sometimes possible
+to find precisely where an image or
+even a video was taken. You
+also have website recognition or
+recon. The goal here is to collect as much
+information as possible about a site.
+The technologies used, the
+subdomains are historical, and the
+IP addresses are used to understand its
+structure. It is widely used in
+cybersecurity, particularly in the
+reconnaissance phase. Another
+important area is Finint, which stands for
+financial intelligence. Here, for example, we will
+analyze a company from
+public records, see who its
+managers are, analyze documents,
+links between companies or detect
+suspicious financial arrangements. And finally,
+you have the signint for
+intelligence obtained from the interception of
+electronic signals. Even if
+part of it falls outside the scope of LosINT, it
+may involve analyzing
+public communication frequencies or analyzing
+radio data accessible in
+certain contexts. In reality, there are
+many other
+areas. And if all this vocabulary
+interests you, I recommend you go
+to the Intopia website which brings together these
+terms with definitions and
+concrete examples. Now we're going to
+talk about a skill that
+literally changes the way you
+use the internet: the Google Dark King.
+Most people, and maybe even
+you, use their search engine
+in a very basic way. You type in a
+few keywords, click on the
+first results and that's it.
+But if you want to find
+really interesting information,
+you need to learn to speak
+Google's language using search operators
+to precisely target
+results. For example, you can
+use operators like site to
+target a specific site, file type to
+search for specific formats like
+PDF, Excel or Word. Use `Intitle`
+to search for words in
+a page title. In URL to filter
+specific URLs. And the quotation marks are to
+ask the search engine to
+find exactly that sequence of words
+in the same order. Specifically, a
+search like site.tesla.com
+fileype PDF in quotes car will
+allow you to find only
+PDF documents containing the word car
+on the Tesla website. To go
+further, you have resources that
+exist such as the Google Hacking
+database which brings together thousands of
+queries already prepared to find
+specific information. There are even
+sites like DOC GPT to
+automatically generate queries based on
+your prompt. Moreover, if you
+want to go much further on the
+subject, I have already made a complete video
+dedicated to Google Ding where I detail
+many concrete examples and
+use cases that you can
+easily reproduce. But even if you master
+all of that perfectly, there is one reality
+you will surely encounter.
+Some information disappears. A
+website that changes, a page deleted, a
+tweet erased, an account that no
+longer exists. And if you arrive too late, you
+get the impression that the information is
+lost. In reality, nothing ever
+truly disappears from the internet. Tools like WB
+Machine or archive.ph PH allow you to
+view older versions of
+web pages, sometimes dating back several
+years. In practical terms, this allows you to
+see what a site looked like at a given
+moment, to see its old
+deleted versions and analyze its
+evolution over time, even if
+today the content has been modified or
+deleted. And that's precisely why
+capture and preservation are
+fundamental. A good habit to adopt is
+to archive all the
+important information you come across.
+However, be careful because it is
+possible that the page you have just
+archived may be accessible and visible
+to other people as well. To
+effectively preserve information,
+several complementary techniques exist
+. The first is
+screenshots. To do this, there
+are tools, including
+extensions capable of
+capturing and recording complete web pages
+and creating folders with
+all the information visible at a
+specific moment. Then there is
+note-taking. A tool like Obsidian is
+extremely powerful for this, to create
+a structured knowledge base with
+links between your notes, folders
+and even templates that we follow specifically
+for the purpose. But there is an even higher level than
+visualization. This is where
+tools like Osin Tracker come in
+. They allow you to create graphs
+where you can link entities together –
+people, websites,
+companies, accounts, email addresses – and
+suddenly you see
+connections that you might never have
+noticed otherwise. At this stage,
+it is essential to understand one
+fundamental thing. Methodology is
+far more important than tools.
+Tools, even the most efficient ones, are
+constantly changing, becoming
+obsolete or losing their effectiveness. In
+Noint, this methodology is based on
+several pillars. critical analysis skills
+, curiosity, and rigor.
+You must be able to structure
+your research, take a step back from
+what you find, and not be
+trapped by
+hasty conclusions. And above all, you need to be
+aware of the cognitive biases that
+can distort your perception of
+reality or lead you to make
+irrational decisions. For
+example, there is confirmation bias, in which
+you only look for
+information that confirms what you
+already believe and ignore the rest. There
+are many other biases. And if
+this topic interests you, I
+highly recommend this resource which
+explains how our brain can
+deceive us and how to remain critical.
+Once you have managed to obtain
+several pieces of information, you also need to
+learn to pivot, that is, to move
+from one clue to another. For example, an
+email can lead you to a profile, then
+to a website, then to a company, and so
+on. But be careful,
+not all information is equal.
+Never rely on a single source to
+validate information. The more
+independent sources you have confirming
+a fact, the more you can
+trust it, especially by giving preference to
+official sources. As you have
+understood, there are tons of tools
+for making osint and not all of them have
+the same use depending on what you are
+trying to do. I'm not going to go into
+detail about all the
+existing tools, but I'll give you a
+short list of all the ones I find
+really interesting and practical.
+First, to in Industries and Epios to
+analyze email addresses,
+phone numbers and pseudonyms to see the
+associated accounts. What's my name? A
+really cool tool for finding
+accounts linked to a username on different
+websites, forums, etc. Overpass
+Turbo to leverage Open
+Street Map data. Ideal for
+precise geographic searches, Search by Image.
+A very cool extension for doing
+reverse image searches and
+finding the origin of a photo,
+identifying similar images or
+finding a location. Gimple to
+analyze the exive metadata of an
+image. Google Earth Pro to analyze
+satellite images and visualize
+geographical areas in detail with a
+history to go back in time.
+Wi to retrieve information about
+domains and
+website owners. Blockchain Explorer. If you
+want to track transactions on the
+blockchain and if you want to go
+even further, I advise you to
+take a look at the toolbox of
+Belling Cat and Ozint FR which includes
+hundreds of Oosint tools classified
+by category. Learning Zint
+is like cybersecurity; it's
+not enough to just read or watch
+tutorials, you also have to practice.
+And one of the best ways is to
+start with yourself by trying to
+discover your own publicly available traces
+. At the same time, take this opportunity
+to remove anything that can
+enhance your anonymity. To go
+further, there are also small
+challenges and training platforms
+in French, also called CTFs. I
+particularly recommend sitesia,
+for fun, Isfred, which offer
+very cool challenges of different
+types. Each one has its own
+perfect scenarios for starting to
+practice. There is also the
+Sopia Santos website and videos in English with
+very educational challenges for
+beginners. And for those who
+really want to immerse themselves in it, there are
+also more official CFUIN events open to
+everyone, taking place over
+several days in teams with
+very interesting scenarios.
+Personally, I do it very often
+and it's great for making
+rapid progress. Coming soon, for
+example, there is the CTF Bleuet de France organised
+by the Ozint éveille club of the AEGE, the
+Milague 3 organised by Oscar Zuluou and
+the CTF of the 20 years of the European school
+of economic intelligence. Along the same
+lines, I recommend this book by
+Michael Bazel, which is a bit like an
+ultra-comprehensive bible for learning
+lots of things to conduct investigations
+effectively. Once you
+start practicing, you need to understand
+something fundamental. It's a
+field that's evolving very quickly. Every
+day, new tools, techniques and
+methods appear. That's why
+monitoring and following current events
+is absolutely essential. To
+stay up to date, I advise you to
+follow active accounts on
+social media, for example Project
+Fox, Blinkat or Benjamin Strick who
+regularly publish on real cases,
+tutorials, tools and
+discussions that will allow you to
+stay informed on these subjects. In
+addition, subscribe to
+newsletters that summarize news,
+tools, new publications
+and the latest tips from the
+community. Among the most useful ones
+you have are The OIN Newsletter, Field
+Notes and OIN Ambition. In addition,
+I also advise you to follow
+pages and organizations that
+regularly publish very
+interesting articles. For example, the
+Bellingat group, which I've already mentioned,
+publishes analyses that I love on
+very detailed concrete cases, particularly on
+conflicts, investigations or
+information verification,
+explaining their method precisely. And on the
+French-speaking side, you also have
+Project Fox which offers very
+interesting content, whether it be articles or
+analyses, and above all, don't stay
+alone. Joining active communities
+is a great way to learn
+faster, find people to
+progress with, and stay motivated. Once again
+, we find
+Oscar Zou, Project Fox, Blinkat and my
+Discord server which also contains a
+section dedicated to Losint. Finally, there
+are specialized training courses and programs
+that will allow you to
+structure your learning,
+including classic programs in
+economic intelligence such as those offered
+by GE and EIE. Recently, there are
+also 100% online courses like the one at
+A3 University. And in
+some cybersecurity training courses,
+there are also sometimes modules
+dedicated to LosINT. For a first
+concrete contact with the field, the little MINTIN
+FR is ideal to give you some
+nice basics. If you enjoyed this video,
+please like, share and
+subscribe to support me and not
+miss future videos.
+THANKS. Mr.

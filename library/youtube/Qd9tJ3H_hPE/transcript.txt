@@ -1,0 +1,270 @@
+How does Amazon maintain high
+availability during Black Friday traffic
+spikes? Why do financial systems rarely
+lose transactions despite network
+failures? Today, we'll explore the
+reliability and consistency concepts
+that power high-scale distributed
+system. Let's dive right in. System
+reliability isn't about preventing all
+failures. It's about continuing to work
+correctly when failures inevitably
+happen. Network partitions will occur.
+Servers will crash, hard drives will
+fail. The question is, how do we build
+systems that handle these realities
+gracefully? There are seven key concepts
+that make this possible. Let's examine
+each one. The CAP theorems establishes a
+fundamental constraint. Distributed
+system can provide at most two of these
+three guarantees simultaneously.
+Consistency. All notes see the same data
+at the same time. Availability. Every
+request to a non-failing note receives a
+response. Partition tolerance. The
+system continues operating despite
+network failures. Since network
+partitions are unavoidable in
+distributed systems, you're really
+choosing between consistency and
+availability during partition events.
+Let's look at how real systems make this
+choice. Google Spanner chooses
+consistency. It uses atomic clocks and
+synchronized time across global data
+centers to maintain linearizable
+transactions. During network partitions,
+the majority partition remains available
+for both reads and rights while minority
+partitions become read only. The
+trade-off is that notes in the minority
+partition lose right availability until
+the partition heals. Amazon Dynamo DB
+chooses availability. During network
+partitions, it continues accepting
+rights using eventual consistency and
+resolve conflicts to last right wins
+based on timestamps. User always get
+responses, but they might occasionally
+see stale data. Neither approach is
+right or wrong. It depends on your
+requirements. Banking systems typically
+need consistency. Social media feeds can
+tolerate eventual consistency.
+Eventual consistency makes a simple
+promise. If you stop making updates, all
+replicas will eventually converge to the
+same state. This might sound sloppy, but
+it's incredibly powerful for large scale
+systems. Here's why. In eventually
+consistent system, rice can complete
+immediately without waiting for
+confirmation from all replicas. This
+improves performance and availability.
+Amazon's shopping cart works this way.
+You can add items even if some servers
+are temporarily unreachable. But how the
+system handle conflicts when different
+replicas receive different updates? When
+conflicts occur, systems use different
+resolution strategies. Last right winds
+use timestamp to pick the most recent
+update. Simple but can lose data.
+Conflict free replicated data types use
+mathematical properties to guarantee
+that all replicas converge to the same
+state regardless of update order.
+Application defined merge functions let
+developers write custom logic for
+resolving conflicts based on business
+rules. Modern systems like Dynamob
+typically achieve consistency within
+milliseconds under normal conditions
+making an eventual park barely
+noticeable to users.
+Low balances distribute incoming
+requests across multiple servers. Sounds
+simple, but there's sophisticated
+engineering behind effective load
+balancing. There are two main types.
+Layer 4 load balancers operate at the
+transport layer. They make routing
+decisions based on IP addresses and TCP
+UDP ports. They are fast because they
+don't need to inspect application data,
+but they are also limited in their
+routing intelligence. Layer 7 load
+balancers operate at the application
+layer. They can examine HTTP headers,
+URLs, and even request content to make
+smarter routing decisions. More
+powerful, but also more computationally
+expensive.
+Modern load balancers go beyond simple
+roundrobin distribution. Lease
+connections routing sends new requests
+to the server handling the fewest active
+connections. Lease time factors in how
+quickly each server responds avoiding
+slower servers. For high availability,
+low balances themselves are deployed in
+primary secondary configurations with
+heartbeat protocols. If the primary
+fails, the secondary takes over within
+milliseconds.
+Consistent hashing ensures the same
+client consistently hits the same
+server, which is critical for
+maintaining session state. In the last
+video, we talked about horizontal
+scaling. Here's a problem that large
+horizontally scale systems face. You
+have data spread across multiple nodes
+and you need to add or remove nodes
+without moving massive amounts of data.
+Traditional hashing doesn't work well
+here. If you use simple modular hashing,
+then adding one node requires remapping
+almost all of your data. That's
+expensive and disruptive. Consistent
+hashing solves this elegantly. Instead
+of mapping keys directly to notes, both
+keys and notes are placed on a circular
+hash ring. Here's how it works step by
+step. First, hash each note to determine
+its position on the ring. Second, to
+find where data belongs, hash the key
+and walk clockwise around the ring until
+you hit the first note. Third, replicate
+the data to the next n minus one notes
+clockwise on the ring. When you add a
+new note, it only takes ownership of
+keys from its immediate neighbors. When
+you remove a note, it keys get
+redistributed to the next note on the
+ring. The result adding or moving notes
+only requires moving k over n keys
+instead of nearly all keys where k is
+total keys and n is the number of nodes.
+Amazon Dynamo DB and Apache Cassandra
+both use consistent hashing for exactly
+this reason. It lets them scale
+horizontally without massive data
+reorganization.
+When one service in a distributed system
+fails, it can trigger a cascade of
+failures across dependent services.
+Circuit breakers prevent this. A circuit
+breaker monitors the failure rate array
+of calls to the dependent service. It
+has three states. Closed requests flow
+normally. Open requests are block
+immediately returning fast failures.
+Half open. A few test requests allow
+through to check if the service has
+recovered. Here's how it works step by
+step. The circuit breakers tracks
+successful and failed requests to a
+service. When the failure rate exceeds a
+threshold, the circuit breaker trips to
+open state. In the open state, requests
+fail immediately without even attempting
+to call the failing service. This
+prevents resource exhaustion and gives
+the failing service time to recover.
+After a timeout period, the circuit
+breaker moves to half open and allows a
+few test requests through. If the test
+requests succeed, the circuit breaker
+closes and normal operation resumes. If
+they fail, it opens again. Netflix
+pioneered this pattern with their
+history library and is now standard in
+microservices architectures. The key
+insight is that fast failures are better
+than slow failures that consume
+resources.
+Rate limiting controls how many requests
+client can make within a given time
+window. It protects systems from
+overload and abuse. There are several
+algorithms each with different
+characteristics. Token bucket
+accumulates tokens at a fixed rate up to
+a maximum capacity. Each request
+consumes a token. This allows control
+burst while maintaining an average rate.
+Leaky bucket processes requests at a
+constant rate smoothing out traffic
+spikes. Excess requests are cute or
+dropped. Fixed window can request in
+discrete time intervals. simple but
+prone to boundary effects where clients
+can double the rate by timing requests
+around window boundaries. Sliding
+windows uses a rolling average that
+smooths out the boundary problems of
+fixed windows. In distributed systems,
+ray limiting gets more complex. You
+can't just count requests on a single
+server. You need coordination across
+multiple instances. One solution is rad
+space ray limiters that use l script to
+atomically increment counters and set
+ttls. This ensures consistent ray
+limiting across your entire service
+cluster. Many systems implement tier
+array limiting with different limits for
+authenticators versus anonymous users
+and progressively stricter limits as
+suspicious patterns are detected.
+You can manage what you can measure.
+Monitoring provides visibility into
+system behavior and performance. Modern
+observability focuses on four key signal
+types. Metrics, time series numerical
+data like CPU usage, request rate, and
+error counts. Logs structured records of
+discrete events with contextual
+information. Traces end to end request
+flows showing how a single request moves
+through your distributed system. events,
+significant occurrences like deployments
+or configuration changes. The challenge
+is processing massive amounts of
+telemetry data. Large scale systems
+generate terabytes of monitoring data
+daily. Effective alerting balances two
+concerns. You want to catch real
+problems quickly, but you don't want to
+be overwhelmed by false alarms. Static
+thresholds work for stable metrics, but
+fail when traffic patterns change.
+Modern systems use statistical anomaly
+detection that learns normal patterns
+and alerts on deviations. Composite
+alerts combine multiple signals to
+reduce noise. Instead of alerting on
+high CPU alone, you may alert when CPU
+is high and error rates are increasing
+and response times are slow. The goal is
+service level objectives that measures
+user experience.
+Not every systems needs all these
+patterns. A simple web application
+serving a few thousand users doesn't
+need consistent hashing or circuit
+breakers. The concepts we covered give
+you the tools to make this trade-off
+consciously rather than discovering your
+systems limitation during an outage.
+Start simple, measure everything and add
+complexity only when you have clear
+evidence you need it. That's how you
+build systems that scale reliably.
+If you like our videos, you might like
+our system design newsletter as well. It
+covers topics and trends in large scale
+system design. Trusted by 1 million
+readers. Subscribed at blog.by go.com.

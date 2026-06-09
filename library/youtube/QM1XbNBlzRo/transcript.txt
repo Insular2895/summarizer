@@ -1,0 +1,100 @@
+if the maintainer of a piece of software
+wants to tell their users that the code
+is vulnerable how can they reach their
+users fast and effectively is it through
+an email list chat rooms a blog post
+[Music]
+hey and welcome to security bytes a
+series of short videos from the gill hub
+security lab aiming to educate
+developers on common software
+vulnerabilities today we'll do something
+slightly different but equally valuable
+let's go the problem with publishing an
+advisory about the vulnerability in your
+code is that only your engaged users
+will see it and only a portion of those
+users will relate therefore there is a
+gap in the vulnerability visibility and
+that is exactly what hackers exploit
+otherwise attacks will fail miserably
+against the now updated back free
+version of a code base since the gap is
+inevitable what is on our hands to
+control is the size of the gap the best
+and proven way is by publishing this
+information in the form of an advisory
+to the github advisory database and by
+this your users will be notified with
+the version number that is safe to
+update to therefore the github advisor
+database solves the problem of
+vulnerability visibility we are
+essentially providing developers with a
+megaphone so that their users can hear
+this is because by publishing an
+advisory via the security advisory
+system github can ingest and publish
+this data to the advisory database
+then dependable can send out alerts to
+passive users this process minimizes the
+gap between a vulnerability being
+disclosed and the maintainers knowing
+about it therefore the benefit to the
+software developer is that they now have
+a mechanism to tell their users that
+something bad is up and that an update
+is strongly suggested the github
+advisory database is the place where we
+create actionable and high quality data
+that is easy to use to secure your
+project if we click on one of those
+advisories here we have a high severity
+unhandled exception when decoding a form
+response in json maintainers should have
+high credibility on this due to the fact
+that it has been github reviewed as we
+can see from the corresponding tag under
+the title there are now further details
+regarding the package name the affected
+versions and most notably which version
+is safe to update to called the patched
+version at the right hand side we can
+see the ghsa id which is a unique
+identifier referring to this advisory
+alongside the cvss score which is out of
+10 acting as a universal way to classify
+vulnerabilities by severity moving now
+to the body of the advisory we consider
+distract shard in such a way so that you
+can understand the impact patches and
+workarounds alongside contact
+information and references should you
+want to dig further now let's see how
+you can create an advisory for your code
+base all you have to do is to go to the
+security tab of a repo that you own
+followed by clicking on security
+advisories on the overview on the left
+or view security advisories from the
+right
+and then click new draft security
+advisory
+fill the boxes click submit and there
+you go
+your consumers can now be aware of the
+threat and for supported ecosystems they
+will be automatically alerted by
+dependable to enable dependable navigate
+to the settings tab of a repo that you
+own and click code security and analysis
+from the left hand side
+finally enable both dependable alerts
+and dependable security updates by
+clicking enable that is right behind me
+make sure dot security advisories and
+activate dependable in the meantime
+leave us a comment below to let us know
+which subjects to cover next and stay in
+the loop by following us on twitter
+remember quality code is a qr code

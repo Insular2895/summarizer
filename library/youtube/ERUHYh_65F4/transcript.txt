@@ -1,0 +1,329 @@
+welcome back to mastering next Jas in
+this module we're going to be talking
+about navigating between pages so up
+first we're going to talk about the link
+component and how we do client-side
+routing so if you're familiar with react
+you might have used react router and the
+API for next link component is very
+similar to the react router link so I
+have a basic application stood up over
+here on the right let's start off by
+making sure we have all our dependencies
+installed and then running the
+application locally ok we refresh the
+page let's take a look at what we got
+so very simple application it has a home
+page and a header that has links to
+three different pages so if we look at
+the index page it just renders the
+header and then renders an h1 saying
+we'll come to mastering next yes so if
+we dive into this header we're gonna see
+our first example of the next link
+component so after we have imported the
+next link component then you'll see we
+have three different links for home
+about in contact so the prop that we
+pass into the link to determine where to
+go is href similar to an a tag and that
+will be the relative path of our
+application for where we want to link to
+now one next yes link specific that you
+need to know is that the first child of
+a link should always be an a tag because
+when this gets compiled and outputted
+into the Dom you're actually not going
+to see that link like the first child of
+the list item is going to be an A so the
+the href gets appended into the da tag
+in the Dom so we have these three
+different a tags here now when I click
+on about you'll see that it navigates
+really really quickly and this is
+because we're doing client-side
+transitions
+and that's really the big thing about
+links of why you would want to use this
+and one specific advantage that next
+jess has is its built-in prefetching for
+links so when I load a page behind the
+scenes next jess is going to determine
+which client-side links are on the page
+prefetch the information for those pages
+so that when the user actually clicks on
+them it's gonna seem like it was
+instantaneous now in the real world
+examples this is really really awesome
+my page loads mine a vet so boom it's
+just really really fast to switch
+between all these tabs and it gives the
+illusion that your app is even faster
+which is obviously excellent so if we
+come back to here and we take a look at
+this header you'll see that then we can
+basically do the same thing for the
+contact page the about page we import
+the header and then we can have a little
+bit different different information on
+each page so this is really the most
+simple example of how you would use a
+link to do client-side routing but
+there's actually a lot more that we can
+do with link so let's talk about dynamic
+routing let's say that we have a blog
+that we want to start and we want to
+have a post for each page of the blog so
+we might say underneath pages the
+directory we make a new folder that is
+let's call it post and then let's say
+for a post we want to have a unique slug
+for that post or an ID so we would make
+a new folder and this is the dynamic
+routing syntax we use brackets to
+determine that essentially this is a
+variable that the next router is going
+to be able to swap in whatever value we
+pass in so we say post at some ID then
+we want to have an index JS file so when
+we go to post slash whatever slug then
+this is where this is where the router
+is going
+take us so inside this file we're going
+to use the use router hook from next J s
+now this is just a way to declaratively
+route between pages so let's import this
+from next router and then let's just
+make a really simple component here
+let's let's do something kind of like
+about let's take this from here and
+instead let's say let's say for a post
+we're going to invoke that hook so let's
+do let's do cost rather equals use
+router so now we have access to all the
+router and then we want to say let's
+grab the ID from that router so we can
+do router dot query so when we navigate
+to this page the next router is going to
+pull that ID and it's going to pull it
+and be able to allow us to access that
+inside of this post so let's export this
+post for this component and let's render
+what this post is giving us so we'll say
+the ID for this post is this
+okay so now if we go back to our header
+let's say that we had a couple more
+links in here now these links could be
+dynamically generated from a server they
+could be things that we fetch back from
+our CMS but maybe this is the first post
+and this is the second post we can say
+that the href for this is post at post
+at the ID all right so that's gonna tell
+next that we need to go to this file in
+our directory so it'll be similar for
+the second post
+now how we say specifically that it's
+the first post and not the second post
+is we use the as attribute so we'll say
+that this one is post at first post so
+we would do similar thing for second
+post right okay so now I save and we see
+the first post and the second post show
+up over here and now when we navigate to
+these files it's going to take us into
+this post it's gonna go to the query
+parameters and this should be a D
+structure here so it's gonna pull off
+the ID off of that object the entire
+query object and it's gonna render that
+out and show what the ID of the post is
+so if we go backwards here we click on
+first post it says that the post was
+this and the ID was first post second
+post similar thing so that's a really
+basic example of how we can do dynamic
+routing using the user outer hook let's
+look at a different example too so
+instead of doing just this static
+content let's actually pull in some real
+data via get initial props and see what
+that looks like
+so get initial props is a special
+lifecycle method for an XJS that allows
+us to fetch
+some data before the component renders
+so for example this would be for the
+post we can do get initial props and
+we're gonna want to fetch some
+information here so it's going to be
+asynchronous and return something so
+let's let's talk to this placeholder
+JSON information and fetch back some
+just kind of dummy data from a real API
+so one of the values that we're gonna
+have available and given initial props
+is the query parameter so let's use that
+and let's say let's make a fetch - let's
+see JSON placeholder this is a free API
+that we can use that will give us back
+some dummy post data and allow us to
+test what it would really look like if
+we were talking to an API okay so we're
+gonna make a fetch to JSON placeholder
+at type code compost and then the query
+ID and then now that we have the
+response from that let's actually get
+the post this API returns back JSON and
+then let's return the post okay wait
+here see this is the benefit of those
+linter setups can prevent easy mistakes
+like that so we're going to make a
+request to this JSON placeholder type
+code comm slash post at the query for am
+I D
+so let's actually take a look at what
+this would look like if we were to make
+this request and see what information
+we're going to get back so let's say the
+first post so for this post we have a
+user ID we have an ID
+title and body so those props are gonna
+be returned as post to this component so
+in our props let's use the title and
+let's use the body so we have our header
+let's do this h1 will be the title and
+then we can do ap tag that has the body
+we don't even need to do use router with
+this and now since we weren't doing any
+hooks we don't need to have this return
+we can simplify this a little bit and
+get rid of this now prettier when I say
+if we'll just Auto format it for me so
+let's go back to our header and instead
+of these made-up IDs let's actually give
+them a real ID so post that one post two
+and let's go back to here and let's go
+to first post post that one and it
+fetches back this information from the
+JSON placeholder server awesome so now
+we're fetching real data on get initial
+props and this could be anything this
+could be a github API this could be your
+own API really the options are endless
+here for what you want to do so the
+final example I want to look at is
+putting a specific page behind a router
+so let's say you're trying to build a
+dashboard and you want to make sure that
+it's only accessible once you get logged
+in so the user goes through a login flow
+they put in their information and then
+they are redirected on the client-side
+back to this dashboard how can we do
+that with next link and use router so
+let's take a look at what it would look
+like to do that first things first let's
+go back to our header we can get rid of
+these posts for now and let's change
+this to be a login page
+okay and now let's pull up our files
+let's make a new we can delete this and
+the post and let's make a new file log
+in okay
+so in this file what we're gonna want to
+do is we're gonna make a log in
+component that has an input and
+essentially allows us to redirect to the
+dashboard so first things first we're
+going to put some inputs on the screen
+so let's do let's do an input with a
+placeholder of username let's do and you
+put it the placeholder password and
+we'll even throw a type of password on
+here
+let's do a button so that we can log in
+okay and it's going to a type of button
+and on click we want to login we haven't
+made that yet but we'll just get that
+set up okay so we have a username
+we have password and a button to login
+that seems good to me so now let's make
+a login function so on login we're gonna
+get the event let's take that and first
+we want to prevent the default on click
+for the button and then you know in here
+we could do some kind of form validation
+or some sort of complex things but
+really all we care about is we're going
+to want to
+out to a new page so let's bring in
+let's bring in use router
+let's bring in use router we have access
+to that now and let's say on login let's
+do router dot push and we want to
+redirect to this dashboard page dash
+board ok this page doesn't exist yet but
+at least gives you an idea of of what
+this is gonna look like ok so we have
+this login page let's save this and go
+back to our home refresh and let's go to
+login ok perfect so we have a user name
+we have a password we have login on
+login this should redirect us to a 404
+page right there's no page here yet
+perfect next thing let's go ahead and
+create this dashboard page so in this
+page just for this demo let's let's
+actually fetch some real data for what a
+dashboard could look like and to do that
+let's use the github API so let's set up
+a component we have a dashboard and
+let's say that it's going to render
+maybe my name my bio and maybe some
+information about my blog so let's throw
+an h1 and here we'll say name we'll say
+bio equals bio and then let's do the
+same thing for log so we don't have
+these profitable yet but let's just
+assume that these are getting passed in
+via some API so we have a name we have a
+bio we have a blog awesome let's export
+this component from this file one thing
+note that we're not having to import
+react in these files and that's because
+next takes care of that for you so we
+have this dashboard component it takes
+in a couple different props let's
+actually go fetch some information about
+us from and github you can put this with
+your own username and render it out here
+so we're gonna use the same approach
+that we did for the post which is using
+get initial props and this is gonna be
+asynchronous because we're gonna make a
+fetch okay so let's let's make a fetch
+to the github API API github.com slash
+users slash your name here right and we
+have that so now we can say let's pull
+the user back from this response
+oops and let's return that user okay so
+we made a fetch to the API we grabbed
+user we pulled that information back and
+now we can render that on the dashboard
+okay let's try just a fake login and I
+click login
+it redirects me back to this dashboard
+and you can see that it pulled this
+information from my github
+awesome so that wraps up the navigation
+module you now know how to do
+client-side routing with the link
+component you can do dynamic routes for
+blogs you can do redirects using router
+dot push you can fetch information from
+api's with get initial props on page
+load and really navigate throughout your
+app on the client-side with ease now so
+thanks for listening and stay tuned for
+the next module Cheers

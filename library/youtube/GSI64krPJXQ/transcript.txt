@@ -1,0 +1,1542 @@
+[Music]
+welcome to the tech talk today everybody
+i published an internet app wait how do
+i protect it so today we're going to
+dive into
+what the considerations are and tools
+you need to protect your internet-facing
+applications on aws
+i am nick covale principal gtm
+specialist with aws and today i am
+joined by my esteemed colleague tom
+adamski who's a principal solutions
+architect here at aws
+all right so today we're going to talk
+about we're going to open up by
+reviewing the nist cybersecurity
+framework which is a good framework to
+help us contextualize our risk
+management strategy to make sure that
+we're thinking holistically about how to
+protect our assets in aws
+next we're going to go through three
+protection use cases and this is how
+trap the three different ways that
+traffic crosses network boundaries
+within aws
+that contextualize it how to think about
+the tools to use to protect your assets
+and the traffic that's flowing between
+them
+then lastly i'm going to cover defense
+in depth strategy that helps us look at
+the variety of aws services that we can
+use
+in a defense in-depth approach to
+protect our assets so that we're
+thinking holistically with a layered
+approach to protecting our assets
+then i'm going to hand it over to tom
+he's going to go through our
+foundational constructs these are some
+of the fun fundamental techniques that
+you'll benefit from by understanding
+such as vpc routing and how some of our
+load balancing services work in aws
+that's important to know as you're
+building out these reference
+architectures
+and then finally tom is going to do a
+deep dive into a variety of network
+architectures that's going to show you
+exactly how to put into practice these
+techniques and best practices along with
+the aws services that we talk about to
+to adequately protect your
+internet-facing applications
+all right so to get started the nist
+cybersecurity framework is voluntary
+guidance based on existing standards
+guidance and practices for organizations
+to better manage and reduce cyber
+security risk
+in addition to helping organizations
+manage and reduce risks it was designed
+to foster risk in cyber security
+management communications amongst both
+internal and external organizational
+stakeholders
+the framework is designed for any and
+all organizations regardless of sector
+or size
+and so it's broken down into five
+different components or phases here that
+i'm going to walk through to give a high
+level overview not comprehensive but
+high level and then talk about how it
+can work fit into the aws environment
+and there is a qr code here on the
+bottom that will link you over to the
+nist website so you can learn more about
+this cyber security framework at your
+convenience
+all right so first what processes and
+assets do you need to protect
+this is where you go through the
+mechanism the process of trying to
+understand
+what assets you need to protect and what
+are the risks and vulnerabilities that
+you want to build a strategy for
+next what safeguards are available these
+are the tools that you want to implement
+within the environment to actively
+inspect and protect the uh the traffic
+that's traversing and heading towards
+your workloads
+next
+what happens what techniques can
+identify an incident let's just say an
+incident were to occur how do we make
+sure we can detect that and then move
+forward to
+remediating the situation
+and so as we're after we detect it what
+techniques can contain the impact of the
+incidence so this is as we're building
+our automation to handle response and
+making sure that we contain
+any of the
+artifacts that are results of any sort
+of incidents that were to occur and
+lastly what techniques can actually
+restore our capabilities to bring us
+back online in a recovery and to bring
+us back to recovery phase
+now let's take a look at how aws
+services map into this framework so
+again moving from left to right in the
+identity phase aws config and systems
+manager help you identify the assets
+within your environment that you need to
+protect and those vulnerabilities that
+you want to build protections for
+over into the protect phase where we're
+going to talk spend most of our time or
+all of our time talking about today
+these are the network and security
+services that you can use to inspect
+that traffic as you're building your
+protection strategy for your workload
+you know all the
+variety of
+firewall services
+vpc services and the
+associated services to automate those
+techniques across your environment
+the next as you're detecting incidents
+there's a set of services we have that
+can actually go through event data
+within our environment to identify
+anomalies so that you can describe
+determine how to take actions on events
+that are of importance to you
+and then next as your once an incident
+is detected you're going to want to
+automate your investigation as you get
+into your response phase this is by
+using services such as lambda and step
+functions to respond to certain types of
+events that are triggered via the
+detection phase and that this is based
+off of investigative data that you can
+get from cloudwatch and cloudtrail for
+example
+and then you can build your automated
+response
+by leveraging some of our services such
+as snapshot and archive that can help
+you bring back your environment to a pre
+to a state that was previously known
+good and you can automate that with aws
+cloud formation
+and as i mentioned today we're gonna
+dive deep into a set of services that
+are in the protect phase or component of
+the nist framework
+let's talk about some of the network
+protection use cases
+so there's a variety of ways traffic
+traverses network boundaries within the
+aws environment and this helps us
+understand the ways that we want to
+deploy our security mechanisms to
+protect the traffic
+there's three main use cases first
+there's inbound ingress and this is
+traffic coming from the untrusted
+external internet users that are
+accessing your public facing application
+so basically from the outside in
+then we have outbound or egress traffic
+and this is when you have trusted
+internal users or workloads accessing
+untrusted public internet resources so
+the traditional from the outside or from
+the inside going out
+and then lastly we have lateral or
+east-west workflows or traffic flows and
+this is when you have traffic between
+workloads or traffic between an internal
+user to another workload for example
+generally within trusted environments
+within your aws and within aws
+and i want to just point out that we
+recommend implementing the different
+strategies and architectures associated
+to these use cases independently it
+offers the greatest control it offers
+minimizing the blast radius and tom will
+go into some of the details a little bit
+later on we do sometimes see customers
+combining them and that's generally to
+address
+budget and cost constraints
+often you can reduce your cost by
+consolidating them with some of the
+other trade-offs that i just mentioned
+and just to highlight today we are going
+to dive into the inbound ingress use
+case because when you publish that app
+internet-facing application the biggest
+concern you have to work you have to
+worry about is the traffic coming in
+from those untrusted users
+but we won't dive into the details but
+you should also continue to consider
+what you have to take into account when
+that workload actually has to reach out
+to the internet or when it also has to
+reach out to other resources within aws
+to do that laterally so we won't talk
+too much in detail about them we're
+going to dive into the inbound ingress
+use case today
+now let's talk about our
+our edge defense and depth strategy and
+really what we're doing here is talking
+about how to combine a variety of aws
+services to protect your workloads
+so we start with a vpc where we're going
+to host our application and we deploy
+that in a private subnet and we have an
+internet gateway and a couple of other
+subnets where we can place our security
+controls in between the big bad internet
+and our
+protected workload
+and so we're going to take a walk in a
+journey from left to right here in the
+life of a packet as it comes in from the
+internet and then it goes over to our
+private workload so on the left side you
+see aws shield which is our anti-ddos
+solution that is actually available for
+free and enabled by default to protect
+all of your aws environments for
+workloads that we're talking about here
+there is a
+shield advanced service that is
+available for customers that have access
+to response teams so you can actually
+subscribe to a premium service in the in
+the in the shield case
+but there's no architectural
+considerations to worry about or take
+into account as you're deploying your
+workloads this is an example of a
+service that is just that can be turned
+on and is transparent to your your
+reference your architecture and your
+environment
+so next
+take a look at some of the firewall
+techniques and technology that we want
+to apply
+and so you have a web application
+firewall and network firewalls and these
+are often used to protect different
+types of workloads so your waff will be
+typically used to protect a web
+application whereas your network
+firewalls will be used to protect
+non-web applications
+and we do see most times that we and we
+recommend customers to deploy them
+independently depend on the type of
+application you have
+and then moving even further in once we
+run our traffic through a firewall that
+can actually inspect the payload and
+ensure there's no malicious traffic and
+it's not coming from a bad source and
+it's going to where it should be you
+want to make sure that you can load
+balance the volume of traffic across
+your workload fleet and this is where
+you use aws load balancing services and
+here we're showing two the application
+load balancer that is
+geared primarily for web apps and then
+your network load balancer which is for
+non-web apps again
+contextualizing what type of workload
+you have will help you understand which
+load balancing technology to use and
+we'll talk a little bit more about those
+details later
+and then lastly from a security tool
+perspective you have security groups and
+network apples or access lists
+and the network access lists are a less
+granular broader way to apply controls
+at your subnet level that allows you to
+say for example
+only allow port 443
+and that just is another layer of
+protection
+on top of your security groups that can
+allow you fine grain control
+to allow access to between services
+within aws environment between
+subnets for example so for example
+security groups allow you to reference
+them reference other security groups so
+for simplicity sakes you could associate
+a security group to your workload
+security group two and only allow
+traffic from security group one it's a
+very simple way to provide granular
+control of traffic between those two
+that source and destination and you can
+use network apples on top of that to put
+a less granular control and for example
+you could say only allow 443 traffic to
+come into security group
+into your
+application load balancer for example
+into that subnet
+and that would prevent
+other people other administrators from
+adding other services onto the
+application load balancer that might use
+other ports so it's just another layer
+of protection you can add into your tool
+set
+and lastly there's a set of other
+additional services that can help you
+provide more visibility and more
+protection into your environment we
+mentioned guard duty earlier i mentioned
+that traffic mirroring is allow you is a
+tool that allows you to tap into
+the actual interface network interfaces
+within the cloud environment to send
+packet layer data off to tools for
+analysis detection and response
+vpc flow logs allow you to get
+information data about individual
+work
+traffic flows that are going between
+different network boundaries like the
+different subnets
+and a variety of other servers that you
+can use to enhance your your strategy
+now let's zoom out a little bit and
+focus on just the security tools and
+think about what we need to do to make
+sure we choose the right tool for the
+job
+so there's three different dimensions
+that i want you to think about this
+through
+first
+is risk assessment and compliance
+make sure that you go we recommend
+working with security teams and doing a
+full risk assessment on the assets and
+workloads you want to protect
+that should identify the types of
+vulnerabilities that you need to protect
+from and therefore help you map the
+individual tools that you want to
+protect use to protect those
+vulnerabilities within your risk
+assessment framework
+also in this particular category is
+taking into account internal compliance
+external compliance and regulatory
+compliance
+those different controls and
+requirements can often impose additional
+controls that you might need to put in
+place to meet your organizational
+requirements
+next
+always take into consideration budget
+and what i and things to think about
+here is that depending on uh as a result
+of your risk assessment you may
+determine you need a particular type of
+tool say a network firewall but there
+are some network firewall solutions from
+partners for example that have different
+features available for different prices
+so again make sure that you can fit
+you
+you only purchase the features that you
+need for a particular solution
+based on what you're trying to protect
+from your risk assessment in your
+previous phase making sure
+of doing that will allow you to control
+your costs
+and also note that the more tools that
+you employ adds to the complexity which
+effectively means the more resources you
+might have to put on uh the task to keep
+the the infrastructure running and keep
+things compliant so that could add
+additional cost
+to your overall budget if you have a
+more complex environment
+and then lastly take into consideration
+the deployment model for your particular
+environment and this
+is important and because there's two
+broad deployment models that we have
+that we typically see deployed that we
+see implemented in the aws environment
+that's the distributed model where you
+aggregate the securities or distribute i
+should say the security services to all
+the vpcs that you have where you have
+workloads or users deployed
+that allows you to you know reduce your
+blast radius and distribute the controls
+in the central lot and there's also a
+centralized model that allows you to
+centralize all of your controls and
+services into a central vpc for example
+to
+simplify some of your
+controls and and tom is going to go into
+details on the different deployment
+models and considerations there and so
+speaking of tom
+let's pass it over to tom so he can jump
+into our foundational constructs tom
+take it away
+thanks nick
+so at this stage you should probably
+already know what type of firewalling
+solution you need and before we dive
+into the specific architectures for the
+different firewall types i want to spend
+some time recapping some of the
+foundational constructs that are
+relevant to understand the
+upcoming architectures
+and i want to start with load balancing
+and there's three different categories
+that we'll look at
+start off with amazon certificate
+manager
+so amazon certificate manager
+is a managed service that allows you to
+generate public certificates
+and then assign them to to aws managed
+services things like application load
+balance like cloudfront api gateway and
+so on
+the good news with acm is that if the
+certificate expires it gets
+automatically renewed and then
+automatically updated on all of those
+managed services
+the bad news is you can't export the
+certificates generated in acm
+so if you want to assign a certificate
+to your third-party appliance that would
+need to have the same certificate as
+your load balancer
+and you'll see scenarios where that
+might be needed
+you can't actually generate that
+certificate in acm and push it to the
+file that's not something that's
+possible a workaround is to generate a
+certificate outside of acm so have a
+separate
+place where you generate a public
+certificate and then that certificate
+can be imported into acm and from there
+assigned to
+the aws managed construct like
+application balances in cloudfront and
+then separately you would import that
+certificate onto your firewall
+now another construct i want to touch on
+is target groups and specifically target
+groups for application balancer so if
+you're exposing your application to the
+internet you would usually use a load
+balancing construct so application load
+balancer is the most common for your web
+applications
+and it supports different types of
+targets so you can target an ec2
+instance or a container
+you can target a lambda function so this
+is effectively your pure code running
+in a serverless mode and then you can
+target an ip address
+what you can't target is another load
+balancer so there might be scenarios
+that will show in the future that
+require you to point from one
+application balancer to another
+application load balancer
+you can't do it natively the reason for
+that is that application with balancer
+has dynamic ip addresses that constantly
+change
+so there's no easy way to natively
+connect it to
+if you do need to
+point from one alb to another alb
+you can do that through integrating with
+network load balancer so there's a
+native integration where you can put a
+network load balancer in photo of
+application balancer
+network load balancer supports static ip
+addresses that never change
+so then you can point to an ip address
+and effectively achieve this
+this flow
+another option would be
+effectively putting a third-party proxy
+on an ec2 instance that's also something
+that you can do to be able to target one
+alb with another alb
+and finally i want to explain the
+concept of proxying versus bump in the
+wire which applies to the different load
+balancing technology that we will be
+discussing
+application of balancer is effectively a
+reverse proxy so if we have a user
+connecting to an application balancer
+they would be targeting explicitly that
+application of balancer
+the application of balance or terminates
+that connection
+and then initiates a separate connection
+to one of its targets so it's doing its
+job load balancing but also proxying
+with gateway balancer we have a user
+connecting to some destination and that
+destination could be an instance but it
+could also be an overload balancer
+however the gateway balancer doesn't act
+like a proxy it's completely transparent
+and you have to route traffic to it
+we'll show some examples in a second
+and that way you can effectively
+transparently insert a security function
+into your flow between any source and
+destination and i'm showing here the
+user is the client it could be
+another application that's generating
+this traffic
+and another set of fundamental concepts
+i want to touch on related to vpc
+routing we will be using vpc routing
+quite a lot in the architectures i'll be
+showing you in a second so it's good to
+have a quick recap on what are the
+different routing options inside your
+vpc
+so i'm going to start off with first
+subnet routing on the left
+each subnet inside of epc can have a
+unique route table so you can have
+multiple subnets share the same route
+table and that could be fine but you
+might have requirements where one subnet
+needs to have a different route
+to another subnet so in this example we
+have subnet one
+with a default gateway via a transit
+gateway
+or default ipv4 path effectively via
+transfer gateway and then we have subnet
+2 with a default route via internet
+gateway so these are two different
+destinations for the same route
+and
+you would typically use that if you want
+to have a different behavior for the
+resources living in your subnets
+and you'll also notice there's a local
+route that's added there by default you
+don't have to do anything for that rock
+route to pop up
+it's always representing the slider that
+you've assigned to your vpc
+and that effectively states that
+anything within that cider so all of the
+subnets within the vpc can communicate
+to one another so they can have full
+unreachability uh even though they're in
+different subnets
+so that's concept one remember if you
+want to have different routing behaviors
+create different route tables for your
+subnets and then assign them to
+different subnets therefore your
+resources in those subnets will have
+different routing
+the other concept i want to touch on is
+ingress routing
+this is specifically for where you're
+using
+different gateways i'm using internet
+gateway as an example but a virtual
+private gateway is applicable here as
+well so with ingress routing on the
+internet gateway
+what we're effectively doing is creating
+a route table that's assigned to the
+internet gateway
+and what we're saying here that instead
+of sending traffic to the destination
+subnet subnet2 where we might have some
+resource maybe a load balancer on ec2
+instance or container
+we don't want that traffic to go
+directly to subnet to we want to
+redirect that traffic through some
+network interface
+um maybe a security function maybe a
+monitoring function inside another
+subnet
+so this is a little bit like a
+redirector route
+so traffic coming in just redirects
+through this network interface and then
+hits uh subnet 2. and then we need to
+make sure that return traffic also goes
+back the same way we don't want to
+have a situation where traffic ends up
+being asymmetric
+so we see here that the ingress route is
+forcing traffic through this enix so
+this is just a network interface
+and then subnet 2 route table is
+returning the traffic to the internet
+also through enix and then finally when
+enix is done with the traffic it can
+just use the regular
+vpc routing to either send it to subnet2
+or send it out via igw
+and the final construct within routing
+inside of epc i want to touch on is more
+specific routing
+and this is a little bit
+counter-intuitive because most specific
+routing from the on-premise world is
+just routing right normally if you have
+a more specific route that's preferred
+over
+the the more generic route in the
+context of vpc the generic route is the
+local route and until more specific
+routing was launched you had no ability
+to override the local route so if you
+wanted to influence the traffic between
+different subnets in the vpc you
+couldn't do that but with the launch of
+more specific routing you can
+and let's add a network interface here
+that will be pushing the traffic through
+again this could be a firewall and we'll
+see some examples later on but think
+about it as just a representation of any
+kind of service that we want to push the
+traffic through transparently
+and then in subnet one what we'll say is
+if you're going to subnet to ip address
+block 1002 go via enix
+right and then on subnet 2 when we're
+returning the traffic back to 1001 we
+also will go back through enix
+so any traffic flow between subnet 1 and
+subnet 2 is now forced to go through ini
+x and we can deploy whatever we want
+behind enix
+okay
+moving on closer to the architectures
+we'll be discussing
+i'll spend some time showing you the
+different uh deployments for your
+security solution both in the
+distributed model and the centralized
+model so to explain distributed ingress
+and by the way we're focusing here only
+on ingress the distributed ingress is
+where you have an internet gateway
+assigned to each one of your vpcs
+and each vpc has its own kind of
+internet connectivity stack
+centralized ingress is if you don't want
+to deploy the internet gateways on all
+of your vpcs you want to keep them
+isolated and you want to create the
+central final point central vpc for
+which traffic is going to come in on and
+then will be distributed out to
+different vpcs and there's different
+mechanisms to do that so i'm not showing
+anything in the middle there but we'll
+see in a second what those different
+options will be
+now the question is should i centralize
+or should i not centralize that's i hear
+that from a lot of customers
+the pros of centralizing
+it is simpler to control your internet
+access right so usually the very
+security conscious customers are the
+ones that are worried about their
+ability to control
+a large number of vpcs and making sure
+the iron policies are correct and having
+config rules to detect any
+misconfigurations
+some of them some customers feel it's
+easier to create a centralized ingress
+however there are some cons of that
+deployment right so first of all
+we're increasing a blast radius because
+you're going through the central vpc
+maybe a central load balancer and then
+other construct
+potentially misconfiguration in any one
+of those contracts constructs can impact
+multiple things
+where before if you had individual
+internet stack for each vpc
+uh you didn't really have to worry about
+that
+you also have potential increased
+complexity and increased cost right
+because now you have traffic going
+through more components as it's going to
+its final destination where with a
+distributed model it's uh it's going
+directly so typically uh what we
+recommend is if you can go with the
+distributed model but it's also
+understandable that if you if you feel
+like this is a solution that fits your
+requirements better
+centralized is also an option and i will
+show you examples of both approaches for
+all of the firewall solutions
+um that we'll be discussing today
+okay
+so let's dive into the network
+architectures
+and we'll start off with web application
+firewall this is an aws managed service
+that allows you to inspect your web
+applications it's purely designed for
+web applications it allows you to do ip
+address blocking um uh it allows you to
+do rate limiting it allows you to apply
+uh
+mitigations against things like
+cross-site scripting sql injection
+web-specific attacks
+you can create different policies and
+you can deploy wife on a number of
+different aws managed constructs like
+cloudfront application balancer api
+gateway and aws appsync
+in the diagrams i'm going to only show
+you the cloudfront and application
+balancer deployment today
+all right so if we start with a
+distributed model which means we'll have
+a
+one vpc but imagine this vpc multiplied
+however many times you need it so maybe
+you have multiple teams multiple
+applications you create dozens or
+hundreds of vpcs each one would have the
+same model
+so here we have an application of
+balancer pointing to some targets no i'm
+showing you ec2 instances these could be
+containers these could be lambda
+functions
+any other supported constructs that the
+load balancer can target
+and then we deploy waff on the load
+balancer itself
+and again load balancer specific for
+https http http and https applications
+it terminates tls it has to terminate
+tls so it also means that it allows aws
+waff to inspect the unencrypted traffic
+so you can do deep packet inspection on
+the payload and then only if you're
+happy with the traffic forwarded to the
+target and application of balancer can
+re-encrypt the traffic again and send it
+back to the target or you can send it
+unencrypted we typically recommend that
+you keep the encryption going all the
+way
+if you're planning to manage this in a
+centralized fashion
+you can use a firewall manager it's a
+it's a service that allows you to
+orchestrate
+different firewall and security
+configurations we'll dive a little bit
+more into it a little bit later
+but effectively think about it as a way
+to create a policy in a central place
+and then apply this policy on the load
+balancers
+and wife configurations across a set of
+accounts in your organization so you
+could say i want this wife policy to
+live on all application of balancers
+that have a tag production
+in my organization and then that
+particular policy goes out to all of
+them and it's enforced
+the other option you could put
+waf on cloud front so cloudfront is a
+content delivery network if you're
+running where applications you usually
+and you care about performance you would
+usually look at a content delivery
+networks to front-end your web
+application and you can also deploy wife
+on cloudfront
+and it's a common approach to have on
+cloudfront as well as on the application
+on balancer
+the waffle cloudfront is
+is running in all of our cloudfront pops
+um where we have over 200 i believe
+right now
+where traffic can be stopped at the
+entry point and then the application
+load balancer could just run waft to
+look for particular headers that maybe
+your cloud distribution is adding just
+to make sure that traffic only comes
+from from your cloudfront distribution
+yep traffic come in it hits the
+cloudfront
+terminates the ls is terminated on
+cloudfront graph is applied
+traffic is re-encrypted sent to
+application of balancer terminated again
+waf is applied then re-encrypted again
+now with a private certificate and sends
+to the ec2 instance or a container or a
+lambda function
+so what about the centralized model so
+as mentioned earlier centralized model
+is where you have a set of vpcs they
+don't have their own internet gateways
+but you will create a central entry
+point and then connect those vpcs to it
+somehow so the first model is when you
+would use a trans gateway transit
+gateway think about
+about it as a logical router
+it's a distributed system so itself the
+transgate 3 doesn't have
+it's not a single point of failure it
+doesn't have an aggregate bandwidth
+limit because it's not a single object
+you have to think in terms of attachment
+so each attachment to a vpc can do up to
+50 gigabits a second and effectively
+this is a highly scalable distributed
+system allowing you to connect different
+vpcs
+so you connect your vpcs for transa
+gateway and then you create the edge vpc
+where you have your application balancer
+running waf
+and then as mentioned before application
+load balancer cannot target another
+application of balancer so that's why in
+the application vpcs at the bottom we
+are using network load balancers right
+we could put another application
+balancer behind that network load
+balancer just like i shown earlier or we
+could put a proxy inside an edge vpc to
+make it work and allow application teams
+in the application vpcs to just create
+albs
+as traffic comes in and hits the
+application of balance so it gets
+inspected
+applicational balancer can do host or
+path-based routing so we'll look at the
+host and say okay this particular host
+name is nlb in vpc one and it will
+follow the traffic for the transfer
+gateway so transfer gateway effectively
+creates it creates this routing
+connectivity between all vpcs
+another way
+to connect your rgb pc and your
+application vpcs is to use a construct
+called private link
+so think about private link as a way to
+expose just a particular port on your
+network load balancer as a network
+interface in the edge vpc
+it's a one-directional communication so
+traffic can only come in from the edge
+vpc down to the nlbs and application
+vpcs you can't initiate connections from
+the appvc
+so it's a very surgical way of exposing
+an individual port individual service
+versus trans gateway being more of a i'm
+opening up my network and then using
+things like security groups and that
+goes to to limit things
+so as the traffic comes in it hits the
+load balancer like before we apply our
+waff and then we forward traffic to
+the appropriate
+vpc endpoints and then that traffic is
+powered by private link landing on the
+nlb and effectively forward it to the
+target destination ec2 instance or
+container
+okay
+so moving on to the next construct and
+this is where
+you can bring in
+your own appliance into aws
+and it used to be pretty tough to do
+that you had to think a lot about
+availability and scale and often build
+your own automation for lambda to
+actually make it work we made it super
+easy with the launch of gateway balancer
+so gateway balancer is this pump in the
+wire load balancer that allows you to
+transparently insert
+any virtual appliance into the traffic
+path
+right so in in our example we're talking
+mostly about security appliances for
+effectively firewalls but customers have
+also used it for
+traffic mirroring and other use cases to
+to inspect the traffic
+so here's a set of partners that already
+have integrations with gateway balancer
+so if you are already working with any
+of those vendors it's actually very easy
+to bring their appliances into aws and
+put behind the gate build balancer
+to insert their security function
+anywhere in your network
+okay so let's see how we are adding
+those security functions into the
+network into our distributed vpc first
+so we're back to having a load balancer
+and this could be a network or an
+application of balancer so i'm just
+using the generic name elastic
+and it's pointing to some targets again
+these targets could be anything and what
+we want to do is we want to inspect
+traffic before it hits the load balancer
+so first thing we do is create a vpc
+with a gateway load balancer pointing to
+the set of third-party files and again
+pick one of the vendors that i showed
+you earlier put them behind the gate
+bullet balancer so that it can forward
+traffic to it
+and then the way to present a gateway
+balancer
+into a vpc is through endpoints so
+similar to the private endpoints
+it's effectively an extension of that
+load balancer but it's not a proxy so
+traffic sends to the gateway endpoints
+it's transparently navigated to the
+gateway balancer then to the firewall
+and then back to the endpoint so it can
+continue to the elastic load balancer so
+think about
+any time the traffic hits the endpoint
+you're applying your security function
+so all you need to do is just make sure
+you configure routing to send this
+traffic appropriately
+so we already learned about the ingress
+routing
+so here what we would say is that if the
+traffic is destined to the elastic load
+balancer
+which we know is subnet 3 on subnet 4
+that would actually be the specific ip
+range of that subnet it should be sent
+via the appropriate gateway balancer
+endpoint
+and then we need to make sure that the
+return traffic doesn't go out directly
+through the in through the internet
+gateway but it also is being sent
+through at the gateway balance
+standpoint
+and then finally uh we need to make sure
+that the gateway balance endpoints
+themselves have a route back to the
+internet
+uh i'm obviously i'm ignoring subnet
+five and subnet six routing here is kind
+of irrelevant and it's fine with the
+local route and i'm also not showing the
+locker route here we already know that
+the vpc is always going to have a locker
+route in all of those subnets
+so any application type is supported
+with this model
+depending on what you configure in your
+firewall
+tls decryption again also dependent on
+the firewall
+and then that will also determine how
+deep into the application you can go
+right if you can't decrypt the traffic
+you can't really uh
+do more inspection than layer layer
+three layer for
+uh data plane again this is distributed
+so the way you would manage this
+centrally is usually through your
+favorite vendors uh centralized tools so
+different vendors have different tools
+to manage firewalls at scale
+the good news here is you only need one
+vpc where you have your gate bullet
+balancer and a fleet of firewalls and
+all you need to do is put endpoints into
+different vpcs instead of having to
+recreate the firewalls or the gateway
+balancer
+so another option is to put
+your security function in a slightly
+different place
+and use the more specific routing
+capability instead of the ingress
+routing
+so this is not supported with network
+load balancers and
+instance targets so load balancers as i
+mentioned earlier could have target
+could be targeting an instance it could
+be targeting an ip address
+if you're targeting an instance from a
+network balancer you can't uh you can't
+use more specific grounding to insert a
+security function there but if it's an
+application load balancer if it's a
+network load balancer with ip targets
+you're good to go
+so instead of putting the gateway
+balance endpoints in between the
+internet gateway and the
+elastic load balancer we're putting it
+behind the load balancer between the
+load balancer and the targets
+we need to configure more specific
+routing to ensure that when traffic hits
+the elb and it tries to go to subnet 5
+on subnet 6 it actually gets redirected
+through the appropriate endpoint and
+then on the way back we need to ensure
+the same so if i'm returning traffic to
+the load balancer
+i will be
+sending it through the appropriate
+endpoint
+and traffic flowing through hits the
+load balancer first then the end point
+then the gate pilot balance the firewall
+then back to the endpoint and then to
+the destination return traffic flows
+exactly the same way
+so you might have a question on why
+and when would i use which model right
+should i use ingress routing and put the
+firewall
+above the elastic load balancer or
+should i use more specific routing and
+put the firewall below the load balancer
+and again remember
+you can't do the
+most specific routing with nlb and
+instant targets
+so the the approach on the left uh the
+good news is the firewall will see all
+traffic right so uh any traffic sent to
+the elastic load balancer can be seen by
+the firewall which is good and bad
+it's good because then the firewall can
+see all of the traffic you can also see
+the client ip address in the packet
+the bad news is that
+typically a load balancer would listen
+on a particular port maybe 443
+if it's an application balancer it will
+drop all other traffic by default so you
+don't really need to have a file in
+front of a load balancer you know
+dropping udp or tcp that's not bought
+for for free that gets dropped by
+default so your firewall potentially is
+doing a little bit more work here
+and in cases of when you see a ddos
+attack you may have to scale your
+firewall layer before shield advance
+kicks in or shield kicks in
+um you also here need a public
+certificate to decrypt tls right
+firewalls behind
+in front of the elb so the public
+certificate lives on the load balancer
+and you also need that same public
+certificate on the firewall
+which means you can't
+use acm to generate certificates you can
+use acm to host certificates that are
+generated somewhere else but you can't
+generate them and then export them to
+the file
+with more specific routing the firewall
+loses some visibility right it's only
+seeing traffic that's already been
+accepted by the load balancer
+so it means it doesn't have to deal with
+any traffic that's not uh
+that's not legitimately hitting the load
+balancer so different ports different
+protocols
+but it also means that it's losing
+visibility of the real client ip so the
+elastic load balancer in this scenario
+will hide the ip address and and change
+it uh the source type address to its own
+ip address
+so if you want to apply uh some policies
+on your firewall you will have to do
+that on
+things like maybe
+http headers like exfoliated for if your
+traffic is coming through an application
+or balancer
+and finally from a certificate
+standpoint between the elb and your
+target you would usually use private
+certificates so you no longer have to
+assign a public certificate to the
+firewall it can be just a private search
+that you're using on your targets
+okay
+let's talk about centralized
+architectures uh they're actually
+pretty intuitive all we're doing is
+we're moving out the back ends to
+another vpc
+so you can imagine how this is going to
+look like we have our edge vpc with
+gateway balancer endpoints i'm not
+showing the gateway balancer vpc anymore
+but imagine it's there on the side with
+all your firewalls
+then we have a load balancer
+that's public facing and then traffic is
+being sent through the transfer gateway
+to the actual destination
+we also support the private net model
+same exact scenario ingest routing we
+direct the traffic to the load balancer
+then the load balancer sends traffic to
+the private again points and those
+private again points send traffic to the
+nlp and the target
+so pretty straightforward uh we support
+the same exact scenario with more
+specific routing we're just reversing
+the order or where the firewall lives
+and where the load balancer lives so now
+we have the load balancer first and then
+the firewall uh function second and
+traffic coming in hits the will balancer
+first and then the security function
+before it's getting forwarded through
+the trans gateway to the rbpc
+again i'm not showing you the route
+tables here but you obviously need to go
+in and configure each individual subnet
+route table to make sure traffic is
+symmetric and
+traffic is flowing accordingly
+with uh private link same exact scenario
+rotating the order alb first gateway
+balancer second
+now uh we had a recent launched a joint
+launch with palo alto of cloud next
+generation firewall
+so palo alto you may have noticed is one
+of the vendors that supported gateway
+balancer from the original launch
+so now with this launch they're actually
+giving you the ability to provide and
+manage service so you see here the
+gateway balancer the palo alto vm series
+exact same architecture like with a
+gateway balancer but now palo alto is
+managing that vpc
+so you're still configuring your routes
+just like you did with gateway balancer
+to make sure the traffic hits the load
+balancer endpoint
+but you don't have to worry about
+managing that gateway balancer vpc or
+firewalls it's just all managed for you
+and
+all you need to take care of is making
+sure you put the endpoints in the right
+place
+and then configure the routing
+and there's a number of ways you can do
+that so you can use the aws firewall
+manager so i called out file manager a
+little bit earlier when we talked about
+waff is a way to centrally configure
+policies and distribute them into
+service in your account so you can also
+use it now for configuring palo alto
+cloud next generation firewall
+and you can pick which particular
+deployment model you want to do so if
+it's
+distributed or centralized and it can
+also be used for other traffic
+directions today the session is focusing
+on ingress filtering but we also have
+egress east-west all of those other
+traffic flows are supported
+and at the same time you can use the web
+interface on the palo alto uh their
+cloud portal uh to either supplement
+what you're configuring on uh on aws or
+actually completely configure your
+firewall there so you have a lot of
+options as well as the options at the
+bottom allowing you to use
+apis and terraform and cloudformation
+all of the the tools you might be
+already using for other services
+okay
+and i want to touch on a network
+firewall so you can think about a
+network firewall as an aws managed
+firewall offering that is also powered
+by gateway balancer so under the hood
+network firewall is powered by gateway
+balancer it's using a suricata engine
+so it's uh if you're familiar with open
+source circada it's using that language
+uh to configure policies uh so you can
+create your policies decide what you
+want to do with the traffic do your
+monitoring
+and again just like a
+palo alto cloud next generation firewall
+or just like waf you can configure
+network firewalls through file manager
+centrally and distribute your policies
+across your different accounts
+and because it's powered by gateway
+balancer you'll notice that the
+architectures are looking exactly the
+same like the ones i showed you with
+gateway balancer
+but now you don't have to manage that
+gate build balancer vpc or any kind of
+firewalls behind that's all the managed
+service
+so all you need to do is deploy the
+network firewall endpoints
+configure your routing and then traffic
+is going to come in and be redirected
+through the network firewall
+before it hits the load balancer
+one thing to note is today network
+firewall doesn't support tls decryption
+just yet
+so it means that it might be limited in
+terms of what you can inspect right
+often with ingress scenarios you
+actually do want to do tls decryption to
+see what's exactly in the traffic
+especially that you often own the
+certificate
+so that could be a limiting factor here
+at least for now
+uh however if at any point the traffic
+is decrypted then uh network firewall
+can actually apply ips policies um on
+the application layer and just like
+mentioned earlier management all
+centralized to the file manager
+uh you can also do more specific routing
+just like with great willow balancer
+so i'm not going to spend too much time
+on on this but you already know how this
+works traffic comes in hits the load
+balancer and then more specific routing
+forces it through the load for the
+firewall after it's hit the load
+balancer
+return traffic also uses more specific
+routing to go through the network file
+centralized models exactly the same like
+with gateway gatefold balancer
+we can use either ingress routes to send
+the traffic to
+the firewall in the edge vpc before it
+hits the transfer gateway in the
+application vpc
+or we can also deploy the same model but
+using private link instead of the
+transfer gateway to expose our
+applications to the hvpc
+and same as before more specific routing
+is also available here in the
+centralized architecture
+just the order is reversed
+okay
+and the final mode i want to talk about
+is elb sandwich
+an elb sandwich or elastic load balancer
+sandwich is a solution that's been
+available pre gateway load balancer
+pre-network firewall and it's been a
+common pattern for customers before
+gateway color balancer got launched
+it's still a valid solution for ingress
+uh uh just inspecting your ingest
+traffic and the way it works is you
+would have an internal load balancer
+pointing to your target so it's no
+longer a public facing load balancer
+like we had in the previous examples
+it's a completely private load balancer
+and then you have an internet facing
+load balancer that points to the third
+party firewalls
+however in this scenario the third party
+firewalls are actively participating in
+forwarding the traffic
+so you would usually send traffic to the
+third body firewalls on a particular
+port and you have to configure those
+third party firewalls to then forward
+traffic from that port to the
+appropriate internal load balancer
+most vendors can do tls decryption in
+this scenario
+because the firewall is explicitly
+participating in the traffic and uh from
+a management standpoint again you'd have
+to look at your firewall vendor to
+figure out how you would manage
+firewalls at scale
+uh the distributed model however is not
+that popular for this particular
+scenario so with all the other
+deployments i mentioned earlier gateway
+balancer network firewall
+and waff
+we would recommend you go with the
+distributed model because that has more
+benefits and less downsides with elb
+sandwich it actually gets very costly if
+you start deploying this pattern across
+multiple vpcs because each vpc actually
+has to have its own set of firewalls so
+that's where the most of the cost comes
+in
+so centralized models actually very
+similar we're just moving the second
+part of the sandwich the bottom load
+balancer down to an application vpc
+and you'll notice here something
+interesting in the application vpc now
+we can have an application balancer or a
+network of balancer the reason for that
+is the third party firewall can often
+forward to a host name again you'd have
+to check that with the firewall vendor
+of your choice but many of the firewall
+vendors can
+translate from a port
+they receive the traffic on to a host
+name and the back end and because they
+can use a hostname they can point to an
+applicational balancer which has dynamic
+ip addresses
+so it effectively is a way for you to
+not have to
+uh force the application vpc to present
+you a static ip address first through an
+nlb
+you can just set up an alb in the lvpc
+and forward traffic to it from the third
+party firewall
+on the right-hand side with a private
+link endpoint we have to use nlbs nlbs
+uh what power is private link and what
+allows you to deploy private link
+so you would have to use an lb in the in
+the scenario on the right-hand side
+okay so i want to spend some time
+quickly recapping the differences
+between the elb sandwich
+and the gateway load balancer
+transparent deployment just so we're
+clear on the same page
+so let's start with the elb sandwich on
+the left
+we can see the sandwich we have the
+internet facing alb we have the internal
+elb we have the firewall in the middle
+and then we have a user and the
+destination at the bottom
+so when the user and we'll have a look
+at what what's happening with the ip
+packet through every stage of the
+forwarding so if the user connects to
+the internet load balancer the source of
+the packet is the user headers the
+destination is the internet facing aob
+ipads
+then the alb will actually translate the
+source to its own ip and forward it to
+the ap address of the file own a
+particular port and that's where you
+have to configure the firewall for every
+application you have to decide which
+port the firewall is going to be
+receiving traffic on and what host name
+it needs to forward that traffic to
+once the configuration kicks in the
+firewall decides where to forward it it
+then replaces the source ip address with
+its own ip address so it's doing source
+nothing and it's forwarding it to the
+appropriate internal load balancer and
+finally the internal balancer
+is uh
+replacing the source apis again and then
+forwarding to the destination instance
+on the way back the flow is reversed
+so how does that compare with gateway
+balancer
+a user connects the load balancer first
+that's exactly the same and by the way
+this model i'm showing you is with more
+specific routing but if we were using
+a ingress routing the firewalling
+function would be already kicking in but
+this is more specific routing so the
+firewalling is after we hit the internet
+facing alb
+and what happens then so the internet
+facing alb will swap the source ip
+address to its own ip address but we'll
+have the ec2 instance as the destination
+and then gateway load balancer in any
+firewalling
+is completely transparent so you don't
+have to configure your firewalls to
+understand what ports the traffic's
+coming in on or what the what
+destination to forward it to
+all you need to do with your firewalls
+then configure what policy you want so
+what traffic you're allowing or traffic
+you're denying you don't need to
+configure any forwarding or nothing
+rules
+okay
+so putting it all together ethnic said
+uh when you are
+deciding on your security policy uh
+align it with some security framework
+and nist is a particularly good example
+always perform your risk assessment
+right you want to figure out exactly
+what functionality you need to
+cover your risks what controls do you
+require
+i see a lot of customers putting
+firewalls just because and then
+you have to think about the reward
+you're getting so the benefits you're
+getting from putting a particular
+firewalling function
+and the the the
+cost right because you're spending money
+on it this operational overhead this
+complexity so always understand what
+requirements you have and make sure
+you're not uh you're not just putting
+things into the environments just
+because the you think they have to be
+there
+and then consider the budget and review
+the available architectures we just
+covered hopefully they'll be helpful in
+helping you decide which solution to go
+for
+and with that i want to say thank you
+for your time and
+goodbye
+[Music]
+you

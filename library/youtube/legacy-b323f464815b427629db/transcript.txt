@@ -1,0 +1,367 @@
+Hey everyone, and welcome back to the
+[music] channel. So, Coinbase's CEO,
+Brian Armstrong, caused quite the stir
+this week when he revealed plans to cut
+14% of its workforce, pledging that
+thanks to AI, the future is one-person
+teams. We'll take a closer look at what
+exactly he said and what this might mean
+for the people who build products. Plus,
+Anthropic's Claude gets the ability to
+dream, Google Docs gets new powers that
+make it easier to write documents in
+your own style, and a new tool that
+promises to give teams and agents one
+place to create and compound product
+context. So, stay tuned for all of that
+and more. And as always, if you do enjoy
+the briefing, then hit the like and the
+subscribe button.
+So, we'll start this week with the story
+that got plenty of people chatting, and
+that is the announcement from Coinbase's
+CEO, Brian Armstrong, that it is to lay
+off 14% of its workforce. Now, the
+layoffs themselves are to be somewhat
+expected, given the dire state of the
+crypto economy, but what's really got
+people talking was the other elements of
+his post, which gives us a glimpse into
+how Coinbase is running its product
+teams and what this might mean for the
+future of product development. And to be
+fair to Armstrong, he does say that
+these layoffs were down to two core
+factors. The first being the state of
+the crypto market, and the second being
+AI. And it's that second part that's got
+people in a bit of a tizz. So, he says
+that over the past year, he's watched
+engineers use AI to ship in days what
+used to take a team weeks. Non-technical
+teams are now shipping production code,
+and many of our workflows are being
+automated. The pace of what's possible
+with a small focused team has changed
+dramatically, and it's changing every
+day. As a result, he says the company is
+not just reducing head count and cutting
+costs, but fundamentally changing how
+they operate, rebuilding Coinbase as an
+intelligence with humans around the edge
+aligning it. In practice, he says, this
+has three immediate implications. First
+is fewer layers and faster decisions.
+So, the company is flattening their org
+structure to five layers max below the
+CEO and COO. Layers slow things down, he
+says, and create a coordination tax.
+Second is the removal of pure managers.
+So, at Coinbase, every leader must also
+be a strong and active individual
+contributor. Managers should be like
+player coaches, getting their hands
+dirty alongside their teams. And the
+third is AI-native pods. So, he says
+that they'll be concentrating around
+AI-native talent who can manage fleets
+of agents, and then also be
+experimenting with reduced pod sizes,
+including one-person teams with
+engineers, designers, and product
+managers all rolled into one. Now, Brian
+is pretty well regarded in tech circles,
+with the likes of Paul Graham singing
+his praises in the past. So, whatever
+you think about crypto itself, it's
+possible that his decisions could have a
+ripple effect throughout the rest of the
+industry. So, if we unpack what he says
+here, we can start to get a sense of
+where things might be headed. On the
+first point, I don't think anyone will
+be devastated by the idea of fewer
+layers of management in an org
+structure. Layers do indeed slow things
+down most of the time, and maximizing it
+to five seems to be a pretty sensible
+idea, at least in theory. Then, things
+start to get a little bit more
+controversial. So, this is where
+Armstrong confirms that there will be no
+longer be pure people managers. Instead,
+managers will be required to act like
+player coaches and getting their hands
+dirty. Now, this also makes sense in
+theory, but how will this actually work?
+So, will the CFO, for example, now be
+required to write code financial
+analytical tools? Will CTOs and
+engineering managers be required to
+actually build stuff as well? One
+commentator shared this story about a
+dashboard a non-technical finance person
+built themselves, assuming that it was
+connected to production data, when in
+fact, it was just stub data.
+As well-intentioned as this change may
+be, I can see this getting pretty messy
+pretty quickly. And it also suggests
+that there is little value in the idea
+of managing people. If managers are also
+now doers and are assessed alongside
+their direct reports in terms of the
+things that they build, then this could
+potentially create strange competitive
+dynamics between managers and their
+direct reports.
+A CFO may not delegate work to their
+reports if they're also assessed on
+their output. And the last point is
+perhaps the most controversial of all,
+and this is where he mentioned the idea
+of one-person teams who act as a
+combination of engineer, designer, and
+product manager, all rolled into one,
+each managing a fleet of agents. Anyone
+who's been paying any attention knows
+that the clear boundaries between each
+of these roles has been shrinking over
+the past few months, and so it does kind
+of make sense to consolidate them. But
+this assumes that enough of these people
+actually exist. How many people can do
+the work of a product manager and
+successfully figure out what to build,
+then design it, and write code it, and
+then check the output of that model as
+an engineer to ensure it doesn't
+introduce some unnecessary tech debt or
+some security issue? Elsewhere in the
+post, Armstrong also says that
+non-technical people are now regularly
+shipping code to production, and this
+has gone down, as you might imagine,
+like a lead balloon, with plenty of
+people flagging their concerns about
+that. But to be fair, I do think it
+depends on where exactly in the code
+base these non-technical people are
+shipping code. You wouldn't want a
+marketing manager casually making core
+financial infrastructure changes on a
+Tuesday morning over a croissant, but if
+this is limited to things like text
+changes, then why not? The move from
+Armstrong is part of a wider trend that
+some people are calling AI washing. So
+this is where CEOs position cuts that
+were planned anyway as part of a wider
+strategy to boost in investor sentiment.
+Pinterest was accused of this earlier in
+the year, and right now we're starting
+to see two main camps emerging. In one
+camp is the group of leaders who are
+seeing this as an opportunity to
+implement layoffs, with the likes of
+Square, PayPal, and Meta all confirming
+major cuts. And on the other is a group
+of companies who see AI as a way to
+expand their productivity. Spotify CEO,
+for example, is firmly in this camp,
+confirming to the Wall Street Journal
+this week, "The we're keeping our head
+count roughly flat, and just doing much
+more shipping more value to consumers."
+Andreessen Horowitz's David George
+published a new piece this week entitled
+The AI Job Apocalypse is a complete
+fantasy, arguing that fears of AI
+causing mass permanent unemployment are
+just the old lump of labor fallacy
+dressed up in new clothes. So, this is
+the mistaken idea that there's a fixed
+amount of work to go around, and so if
+AI does much more of it than humans must
+do less. This is all well and good, but
+it's a difficult conversation to have
+with those people who already lost their
+jobs in 2026. And as this graph shows,
+the layoffs this year so far have been
+pretty relentless. What do you think? Is
+Armstrong right to reduce teams down to
+just one person? Should we celebrate the
+end of people managers, or do you think
+he's guilty of so-called AI washing? Let
+me know in the comments below. Elsewhere
+this week, Anthropic has released three
+new capabilities for Claude managed
+agents that help autonomous systems work
+more effectively without human
+oversight. Dreaming is a scheduled
+review process that analyzes past agent
+sessions and memory to identify patterns
+of things like recurring mistakes,
+converged workflows, and team
+preferences. It restructures memory to
+keep it high signal as agents accumulate
+experience, enabling self-improvement
+across different sessions. So, you can
+control whether dreaming updates memory
+automatically, or requires your approval
+first. Next is outcomes, and outcomes
+define success criteria as a rubric. So,
+a separate grader evaluates the agent's
+output against your standards in an
+isolated window, and then services
+specific gaps if corrections are needed.
+The agent iterates until the work meets
+your bar. This works for objective
+requirements, so things like file
+formats and completeness, and also for
+subjective criteria like brand voice and
+design guidelines.
+Anthropic says that internal testing
+showed 10-point improvements in the
+success of tasks with an 8.4% gain on
+Word documents and a 10% gain on
+PowerPoint files. And third is an
+improvement to multi-agent orchestration
+that lets a lead agent break complex
+work down in parallel tasks, and then
+delegate each of these to specialist
+agents with custom models, prompts, and
+tools. Specialists share a file system
+and contacts, enabling the lead agent to
+check progress mid-workflow. Full
+tracing in the Claude console shows what
+each agent did and why. And Anthropic
+says companies have already started to
+make use of these three new features,
+citing the likes of Harvey and Netflix.
+Harvey, it says, uses dreaming so agents
+can carry knowledge between sessions,
+and the result was a roughly 6x
+improvement in completion rates. And
+Netflix built an analysis agent to
+process logs across hundreds of builds
+from different sources. Multi-agent
+orchestration, it says, lets Netflix
+analyze batches in parallel and filter
+out the noise. And speaking of new agent
+features, Spotify also released a new
+feature this week designed to be used by
+agents called Save to Spotify. So, this
+lets you connect your tools like Claude
+code to Spotify to allow you to generate
+podcasts from any source and then store
+it in your Spotify library. Spotify has
+suggested some use cases things like
+daily briefs, where it looks at your
+calendar, the weather, and podcast
+recommendations for the commute, study
+aids, and learning series, which is
+where you get a progressive weekly deep
+dive on a topic pulling from your
+personalized notes and saved articles.
+Now, this doesn't actually generate the
+audio for you, so you still have to use
+external services like 11 Labs for that,
+but it does provide the pipeline to pull
+from your sources and then store them
+directly in your library.
+So, the CLI is quickly becoming a place
+where product teams are increasingly
+starting to experiment with new ideas,
+and I'm not sure if this will catch on
+without the audio generation, but the
+idea of a podcast creation-on-demand
+tool is pretty interesting. And Spotify
+is increasingly adopting experimental
+approaches to AI, and if you're
+interested in learning more about how it
+uses natural language interfaces across
+its APIs, then check out this week's
+deep dive over on Substack, where I
+explore how the company is using natural
+language interfaces to help its
+customers build campaigns, as well as
+over 30 other different examples of how
+product teams are integrated and
+analyzed throughout their UX.
+Elsewhere this week, Google Docs now
+lets users set persistent custom
+instructions for Gemini that
+automatically apply across all future
+interactions. So, instead of repeating
+preferences like use bullet points or
+keep it professional in every prompt,
+users can input these rules once in the
+Gemini side panel, and then Gemini
+remembers these and follows these
+instructions across all future
+conversations within that document. So,
+for product teams, you could use this
+for things like your brand voice
+guidelines to ensure things like your
+release notes always match your
+product's tone of voice. So, I'll pop
+the link to that in the description, so
+check that one out if you're interested
+in customizing Google Docs with Gemini.
+And if you're looking for a place to
+store your product's context outside of
+tools like Google Docs, here's a new
+product that I came across this week
+that you might be interested in, and
+this is called Canvas. And I hope I'm
+pronouncing that right, but Canvas is a
+centralized hub where product teams can
+connect and build on product context.
+So, rather than being a place where you
+just dump outputs,
+so specs, PRDs, meeting notes, this is
+designed to be a place where the
+reasoning behind those outputs compounds
+over time. So, the idea here is that an
+AI working in that context gets
+progressively more useful because it has
+specific relevant context to work with.
+This product is open source, so I'll pop
+the link to that in the description if
+you're interested in that. And finally
+this week, we'll end with some data that
+violates the so-called SAS apocalypse
+narrative. This week Atlassian revealed
+that revenues grew 32% to 1.8 billion in
+its latest quarter, accelerating from
+23% growth in the previous quarter.
+Their CEO also revealed that customers
+who use their AI assistant Rovo actually
+generate twice the annual revenue
+compared to non-users. So, that's a
+pretty positive story coming out of one
+of the companies that were hit pretty
+badly in the SAS apocalypse narrative.
+And another company that was hit badly
+as part of that narrative was Figma. And
+despite fears over the disruptive
+effects of AI on that company, Figma was
+actually named one of the fastest
+growing companies in Ramp's latest AI
+tools report. And this only uses data
+from Ramp's customers, but assuming that
+Ramp's customer profile is reasonably AI
+native, this indicates that those
+companies are not ditching Figma in
+favor of other AI tools. On that more
+positive note, we'll end it there for
+this week. I'll pop the links to all of
+the relevant updates in the description.
+And if you enjoy the channel, then don't
+forget you can also give us your
+precious hype points, which help boost
+the channel's presence across the
+algorithm, too. So, thanks very much for
+listening and watching. I'll be back
+next week with another briefing.

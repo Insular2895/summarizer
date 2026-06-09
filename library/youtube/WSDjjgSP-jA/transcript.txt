@@ -1,0 +1,478 @@
+you know guys uh uber in 2016
+moved from postgres to my sequel
+and one of their claim as to why
+my sequel is better was this thing
+that's called statement based
+replication
+i remember it was the thing and i also
+made a video about it
+talking about these benefits of my
+sequel
+right versus postgres and then we know
+that
+most of these benefits are not really
+that's very
+unique to uber's case but this is not
+out of question this is not the topic
+but the topic is really i want to talk
+about is how
+really bad statement based replication
+really is i i just discovered this
+really recently
+when facebook actually upgraded to uh
+mysql version 8. uh some of you guys
+thank you thank you by the way sent me
+this article that facebook is migrating
+to mysql
+version 8 and and one blib in that
+article is like hey
+we're ditching the statement based
+replication
+uh to to row based replication which is
+equivalent to logical replication in
+postgres or streaming replication i
+believe
+but why are we talking about this
+statement based on replication is turns
+out
+when i actually looked at the
+disadvantages
+uh versus its advantages like yxe
+this is the topic of this episode of the
+backend engineering show
+stay tuned and let's have fun
+learning about statement-based
+replication camera was so bright i don't
+know why
+i'm recording this early morning so
+there is sun
+uh what is going on guys my name is
+hussein and welcome to the backend
+engineering show and today's episode is
+statement based replication and how
+really nasty it is statement-based
+replication first of all replication is
+the idea of
+having your beautiful dmls
+going to a master node and this master
+node subsequently push these changes
+these dmls to some worker nodes
+thus this is the idea of replication you
+need
+more nodes having your data so that you
+can scale
+horizontally just saying the masternode
+pushes these changes
+to worker nodes means that you really
+don't know anything what you're talking
+about
+you're talking abstractly you're like a
+manager talking about stuff
+that they don't know they don't
+understand right you need to dig deep
+that's the job of an engineer what does
+that mean
+changes right do you actually
+push the statement the sequel statement
+as a string down the throat of these
+worker replicas
+or do you execute the statement
+in the uh master node give the wall
+changes or the radio changes and these
+just
+just the changes and then push these
+changes across
+the wire to the replicas or
+do you do this asynchronously or do you
+do this
+synchronously do you block the writer
+until
+all the rides of the replicas succeed or
+do you just
+wait right or or you fail if any of them
+fail
+or do you like take the maximum so many
+variables and refactors to do this thing
+this stuff is not
+straightforward right yeah this is where
+tuning comes into play but our topic is
+statement-based application where you
+essentially
+copy you replicate these sql statements
+and not necessarily as a string
+per say because dumping a string is not
+really
+it's not a good idea you parse the
+logical
+concept of the statement right the the
+the actual commands that the sql
+statement represents
+right so now i almost thought that this
+is
+always the superior better approach uh
+because
+one benefits uber uh actually liked what
+statement based replication
+compared to postgres which i believe
+didn't have that
+back in 92 or 9-1 right i forgot which
+which version
+pulse uh uber was on low bandwidth
+when you send the statements down the
+wire the network
+usage between the master and the
+replicas are very minimum because
+you're not sending the actual content
+that changed
+if you're executing this statement and
+resulted to a million rights
+i don't know why you're changing a
+million things in an
+oltp database but let's say you do
+and you ch shove these million changes
+down the network
+yikes a lot of stuff and then uh one of
+the things that uber complained about
+postcards
+postcards had this thing that's called
+write amplification which i talked about
+which any anything you touch has to
+touch multiple
+indexes updates all this stuff so there
+is a right amplification as a result of
+a single thing
+which doubles this amount or even triple
+the amount of rights
+so there is a lot of activity going on
+so statement based replication was
+always the best thing yeah just executed
+in the master and then send the
+statement and then
+re-execute it on the replicas and
+another benefit
+this besides the uh the the bandwidth
+thing
+is since it's now it's just another
+statement
+you can just shove it in just
+like another query and as a result you
+get the
+multi-version concurrency control
+because like hey someone is executing
+this
+query so you have full contents as to
+what you need to lock
+want to need what what do you need to
+isolate
+uh from this transaction you're going to
+respect the isolation levels
+you're going to respect the consistency
+rules you're going to respect the
+atomicity you can stretch or
+respect and acquire all the locks that
+you need effectively
+for for the other transactions to be in
+the proper isolation
+level this is as opposed to
+just shoving the binary changes without
+any context
+when you essentially just write the
+binary files
+that's what uh that's what postgres used
+to do by the way it's not
+it's just like hey these are the changes
+right
+it's it's a very low level changes that
+hey this is how it changes and when you
+do that
+you can't you don't really need know
+what the context of these changes are
+okay change these values uh just just
+shove this page
+wait wait a second what should i lock
+again
+you don't have content as a result you
+have to block everything it's like wait
+a second
+anyone that was trying to write wait a
+second let me write this page
+to desk and then i'm going to do with my
+stuff right so mvcc was very hard in
+postcards back in nine five this is no
+longer the case
+now logical replication is is a thing
+built in postgres so no longer a problem
+right
+we have this context now that we talked
+about the good thing about
+statement-based replication i was really
+surprised when i
+read the disadvantage and and i gotta
+get kudos to my sql team
+for actually being very explicit and
+explaining
+how really bad statement based
+replication
+can be that's why facebook is moving
+away
+and i'm i can make a bet that
+uber is going to move away from
+statement based replication to raw base
+application which is the logical version
+uh of of of uh
+my sequel so what's wrong with it
+well let's take the first one the first
+thing is when you execute the
+beautiful your beautiful statement on
+the master
+node and let's say this is a
+expensive equator you have joins and
+stuff you're you're reading from other
+tables or you're updating something but
+this update
+is is dependent on some query that you
+need to execute which is expensive which
+does a failed full table scan or certain
+index it touches a lot of stuff
+you're doing so much stuff expensive
+so you're executing this in master and
+you get
+a small set of rows two or three
+tops and now all the costs that you just
+did
+you have to do it again on replica one
+and replica two and lubricant three so
+it is the re-execution of the statement
+is cpu ram
+resources right time and
+if it's and as a result if you're using
+synchronous replication
+then you are blocked as a user you're
+just waiting for
+all these statements to be executed all
+of these
+replicas to get a consist a strongly
+consistent
+view right so state-based replication
+can be very nasty right especially with
+latency
+and resources and stuff like that
+right let's say oh saying i can deal
+with the execution it's not really a big
+deal another thing
+when you use functions in your sql
+statement
+right like now for example function like
+now or function like date or function
+functions that are non-deterministic
+right
+and let's take now as an example if you
+have a
+a query that says okay select from blah
+blah blah where
+date equal now and you execute this
+on master and now you have to send that
+statement down
+all the way to the replica the now on
+the master is different than the noun
+the replica
+that is scary you're going to get a
+different results
+on the replica versus different results
+on the on on the other versus the master
+you get a different result so if you're
+updating something
+based on a value of now like the date
+currently
+that is gonna most of the time give you
+different results you don't want that so
+bicycle fix this actually
+by by parsing the value of now
+and sending the raw value and so
+replacing the variable the vane
+variable for instead of now to actually
+the value itself when he sees now
+but the problem still exists with all
+the functions really most of the
+functions that
+the non-deterministic and depends on the
+environment that you're execution in
+so this non-deterministic behavior is
+scary
+so all of a sudden this leaky
+abstraction
+jumps in front of your face as a
+developer and you have to deal with it
+as a developer right
+not fun another thing is limits
+so when you don't have an order by and
+let's say
+for example i don't know you're
+inserting something into the
+master where select by
+uh and you have an inner select that
+does a limit
+like give me first thousand rows update
+the first thousand rows
+right when you do a limit without an
+order by
+you are at the mercy of how the database
+decided to store these rows
+you cannot guarantee the order of the
+rows
+in the table in the index yeah they are
+ordered but in the table
+not really right the entries you cannot
+guarantee the order of the entries you
+have to order them
+by by yourself and we can get to that
+why the order or not
+really it just depends on the scheduling
+aspects of the database like
+even if you insert the statements at the
+same time you can have a lock at a
+certain time which have
+one statement getting delayed after the
+other and you get
+you know you're not going to get the
+same order at the table that's why
+people use order buy
+so you guarantee the actual order
+so if you're using limit without order
+buy don't
+mysql actually gives you a warning says
+hey stop doing that
+a bad idea don't do limit without an
+order by because i can't guarantee that
+these
+you're going to get the same exact
+result in my
+and the master versus the replica right
+this is just different
+you're going to get different results
+this has come back to the re-execution
+cost of this and another thing is when
+you when you execute a statement
+the database needs to acquire certain
+amount of locks
+shared locks access locks
+to to guarantee these kind of
+values that you're going to get back
+right that's just how the database works
+but if you're going to execute the
+statement and acquire
+all these logs and then all of a sudden
+you found out that you're updating a
+single row
+and you only lock that row right
+you have to dispose of all these locks
+right because hey i didn't really touch
+any of them
+i just temporarily locked them because i
+i thought that i'm gonna need them
+and i didn't so i just released them so
+you did all this work so you
+acquire this log and then release them
+back and then and then you have now
+one lock right eventually effectively
+now and then sql server does does
+something called the lock escalations
+like oh
+i'm turning a lot of locks you know what
+i'm gonna
+lock the whole table instead you can
+disable that by
+by the way so all the stuff have to be
+re-executed
+in the replica as well so you're gonna
+reacquire all these locks again
+only to find out that you need only one
+yeah so more locks equal
+more memory right depends on you how
+your dbms does your locking
+and as a result you're gonna you're
+gonna increase the resources the part of
+the re-execution thing
+again yes statement based replication
+yikes see man and finally there's
+another one that i liked is
+when you do this uh select for update
+kind of queries like okay i'm going to
+select these kind of rows but i wanted
+to update them so i want to
+obtain an exclusive locks to uh
+did you guys see this this is actually i
+don't know if you notice this is mickey
+mouse
+band-aid i have a kit now so yeah
+so yeah when when you do a select for
+update to exp to select fields and rows
+but you want to obtain exclusive locks
+on these
+rows right and there's an option to say
+okay no wait
+if if if i can lock it fine if i don't
+then fail and this is the scary part the
+no weight
+can actually fail the sequel if it can't
+obtain the extra
+exclusive locks you
+can get into a situation where the
+statement will succeed and master
+but will fail on the replica because of
+couldn't obtain the lock for one other
+reason or another
+right you cannot guarantee that this
+will be identical
+right especially if you're executing
+reads on the other
+replica concurrently right people are
+reading from your replica right so
+you're just not you're just not leaving
+it like that people are reading from it
+right and some
+situation if you have an active active
+cluster which is very hard to get right
+you're even writing to the replica
+yikesy so you cannot guarantee that the
+state of the replica is equal to the
+master
+and as a result fail if it fails then it
+depends on
+what kind of uh replication you have if
+it's asynchronous then you got
+eventual consistency i don't i really
+doubt you're gonna get eventually you're
+gonna get weak consistency in this case
+unless you retry somehow right if if you
+have retry and place yeah you're gonna
+get a strong eventual consistency at the
+end of the day everything will consume
+if you have synchronous replication then
+your right will fail
+and the application have to retry all
+right guys
+that's it for me today i wanted to talk
+about statement-based application
+i was surprised reading about that
+apparently people are moving away
+from statement based replication for
+these kind of reasons right
+just you cannot guarantee it yeah it's
+very sexy
+that it's it's very slim to send across
+the network
+as a tiny thing but the costs
+uh people are moving to logical
+replication
+parts the statement executed tell me
+what it
+does and then replicate that these
+changes
+right uh this is part of the logical
+replication or raw based look
+replication and mysql logical
+replication and postgres all right guys
+that's it for me today i'm gonna see you
+in the next one you guys stay awesome
+goodbye

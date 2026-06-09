@@ -1,0 +1,131 @@
+Hello everyone, welcome to this agent
+memory series where we're going to cover
+how to manage your agent memory to build
+your personalized agent. So in the next
+three episodes, you're going to learn
+how to give your AI agent real memory
+step-by-step. So in the first episode,
+we will start with short-term memory. So
+the agent remembers what you said
+earlier in the same conversation and
+then we will do a demo where a trip
+planning agent forgets everything on
+turn two and then we fix it using the
+same ADK session powered by a session
+service. And in the second episode, we
+will move from in-memory storage to a
+database and build a simple user
+preference store so that the agent can
+remember things like you're vegetarian
+even in a brand new conversation. And
+the third episode of the series, we will
+build a long-term memory. We will use
+Vertex AI memory bank service so that
+the agent can remember facts from past
+conversations even from images, video,
+and audio and automatically record them
+with preload memory tool. By the end of
+the series, you will know how to build
+your AI agents that remember the
+conversation, the past experience across
+time and media. All right, let's jump
+into the first episode that we will
+cover what a session is and how to pass
+into between agents with agent
+short-term memory. First, let's cover
+what a session really means. A session
+is one continuous conversation like one
+chat thread on your phone. So in ADK web
+UI, it default use in-memory session
+service. If you create a new session,
+the agent behaves like it just met you
+every single time. It can't check the
+previous conversation thread and see
+everything you said before. Let's see
+this memory loss example. At turn one,
+the user ask, "Plan a two-day trip to
+Lisbon."
+And then the agent plans the day one.
+Great. At turn two, the user says,
+"Perfect. Plan day two."
+But when we create a new session, the
+agent starts over. It forget everything
+we said in previous conversation
+including the city, day one plan, and
+the user's interest. Now, let's fix it
+just by using the same session. And
+here, we create one session and reuse it
+across multiple turn. And now, we ask
+the same question. In turn three, you
+ask, "Plan day two." Because it's the
+same session, the agent can now look
+back at the full conversation and adapt
+the plan. Now you know the magic of the
+session, let's take a look at these two
+important components inside the session.
+They are events and state. So for
+events, this is like the transcript of
+every user message and every agent reply
+even the user's media input like image
+data. So this gives agent context. It
+can read earlier messages.
+And the second important component is
+state. You can think of this as a small
+sticky note that the agent needs quick
+access to.
+Things like a restaurant name, a
+confirmation number, or a chosen thing.
+Why do we need to use state? Because you
+don't want your model to reread 15
+messages just to find one value.
+Instead, you can store it once and reuse
+it. You can take a look at this table to
+learn more about it.
+All right, let's take a look at this
+example of how agents communicate with
+each other with session state. You can
+take a look at the link on the screen or
+QR code to find the source code. All
+right, so for this example, agent A
+finds a restaurant and then agent B
+gives direction to it. So we tell agent
+A, "Output only the name of the
+restaurant." And then we map that output
+to a key like a destination. And now
+agent B automatically receives
+destination as a variable. So this lets
+multiple agents collaborate without
+scrapping the entire transcript. So one
+thing you really need to remember is you
+should never modify the session object
+directly in your tool code. So if you do
+that, the change will not be recorded in
+the event log and the persistent service
+won't save it later. Instead, you should
+use the context that ADK gives you tool
+or callback. So when you write to
+context.state,
+ADK records the change with the event so
+it can be stored and recovered when we
+move to database and long-term memory.
+And you can take a look at the screen to
+see the correct way.
+You can also use the link on the screen
+or QR code to find the source code. Now,
+let's recap what we covered in this
+episode. Firstly, a session is one
+conversation thread and events is like
+transcript. State is like a structured
+scratch note. So if we use in-memory
+session service, we use the same session
+across multiple turns to avoid memory
+loss. And lastly, we need to write state
+through context so ADK can save it
+later. And this gives your agent
+short-term working memory like RAM. It's
+fast but temporary. In the next episode,
+we will add persistence so that your
+agent can survive in an app restart and
+still remember the user. All right,
+[music] see you there. Bye.
+>> [music]

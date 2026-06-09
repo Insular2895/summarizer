@@ -1,0 +1,1603 @@
+Hey, Max. Somebody said you sound like
+an owl.
+>> Who?
+Oh god. Well, it's actually funny that
+you make a a dad joke here because I'm
+actually going to be showing you all
+today how we can build an AI powered dad
+joke generator using Amazon Bedrock and
+the library that my team and I are
+developing called effect.
+>> Awesome. Production grade agents with AI
+using effective programming. These are
+things I love. Let's dive in.
+>> Sounds good.
+>> Where should we start? Well, maybe we
+can start with uh effect as a library
+and some experienced TypeScript
+developers might think it looks
+different.
+>> It is a little different from what
+developers are used to because it's a
+totally different mindset for how we
+program. Um can we dive into some code?
+>> Yeah, absolutely. Let's take a look. So
+maybe we can start with what effect is.
+So you mentioned that effect is an
+effect system, hence the name effect.
+And in order to be able to write our
+programs uh with effect, uh there are
+primarily two styles of writing our
+programs. One is with generators, which
+again a lot of TypeScript developers may
+not be super familiar with. Um but bear
+with us. We're going to take a look.
+>> Do generators come from the world of
+JavaScript.
+>> Uh they they're built into the
+JavaScript language. Okay.
+>> Um I'm not sure what the origin of
+generators really is, but but they are
+built into the language. So, we're using
+a native language feature here to to
+basically make writing imperative code
+with effect systems a little bit easier
+because our brains are wired to think
+imperatively. You know, if x, do y, then
+do this step, then do that step. And we
+wanted to make that possible with effect
+as well.
+>> Okay.
+>> Um, so that's kind of what the generator
+syntax is there for. It's there for what
+we usually recommended for writing your
+business logic. So things that require
+that sort of imperative if that this
+then do that kind of logic.
+>> This is like sequential things that need
+to happen in a program but are the side
+effect parts of our program. Like a pure
+function call, we don't need to put that
+into a generator. But anytime we're
+going to like call out to an external
+system, we're going to talk to our LLM
+or talk read a file or talk to a REST
+API. That's all going to go get
+sequenced into this into this generator.
+>> Yeah. anytime you're doing what we would
+call like an effectful operation, right?
+Something that you need to represent in
+terms of an effect. So maybe we can
+start even before we look at the
+generator syntax. What what is an
+effect, right? An effect is a
+description of a program that you want
+to run, right? So when you're writing a
+program with effect, you're actually
+describing the operations that you want
+to happen. You're not actually executing
+them. Once you've described all of the
+operations that you want to happen, then
+you actually run the program. And I
+think that that's a pretty common uh
+theme among effect systems in general.
+So if you are familiar with an effect
+system in a different language, you may
+be familiar with like that concept
+coming to effect as well.
+>> This is like an interpreter pattern. And
+so it's it's a way for you to add
+functionality kind of weaved into this
+thing at runtime. Exactly. And so it
+allows you to add in retries, add in
+fallbacks, add in all the kind of error
+handling things that will help us get to
+a more reliable production grade uh in
+our case agent, but any kind of system
+can be built with apex.
+>> Exactly. Um that's a really great way to
+think about it. Um we're using an
+interpreter so to speak to defer
+execution of the program later so that
+we can bake in a lot of additional logic
+at runtime.
+>> Nice. So when we're using our
+generators, uh, anybody who's familiar
+with async await syntax in JavaScript
+will probably be familiar with will
+probably be able to understand
+generators fairly easily. If you just
+mentally map this function star syntax
+and to a the async keyword in JavaScript
+and you map the yield star syntax to
+await, that's basically what we're doing
+here, right? when we want to run an
+effect which in this case we're getting
+a random number um we yield that effect
+which returns us the result. So if we
+look at the result we get back from this
+call uh we're getting back a number and
+then we do some other steps here that
+allow us to operate on that number. So,
+one of the cool things about effect, and
+I think we'll get into this when we
+start talking about why it's useful for
+uh why effect systems in general are
+useful for AI programs is the ability to
+do error tracking at runtime or in in
+your program as well.
+>> So, we're going to want to be able to
+know like, oh, uh, the inference call
+failed or my tool call failed. And we're
+going to be able to aggregate those
+errors as part of the effect system and
+then be able to decide what we want to
+do with those errors,
+>> right? And you can accumulate the errors
+over time like in the type system. So
+maybe we can take a look. Um this
+program again is grabbing a random
+number and then checking basically if
+it's over 50 we fail. If it's not we
+succeed, right? And if we look at the
+type of the program we get back, we can
+see that it's an effect that we've built
+up here. It can succeed with a number
+and it might fail with a string. We're
+going to maybe talk about this third
+type parameter a little bit later. Okay?
+>> But that's kind of the core of the
+effect type here. we can represent both
+successful operations as well as
+unsuccessful operations which becomes
+really powerful when you're dealing with
+um AI programs in general.
+>> And so if our program could fail with a
+tool call error then that second
+parameter which is currently a string
+would have that tool call failure in the
+in that but then we can also widen that
+to other errors as well.
+>> Exactly. And the more errors that you
+add into your program they'll all show
+up in the error channel of the effect.
+we call it a these these types of
+parameters channels. Um and so as you're
+writing your program, you're
+accumulating all those errors. Um if you
+handle a particular error, it'll
+actually get erased from the the type
+that's shown. So you really have very a
+very clear idea of what's actually going
+on in your program. What can my pro
+program succeed with? What's it going to
+produce? And how can it possibly fail?
+>> Awesome.
+>> Um so that's kind of the generator
+syntax. We use it again for business
+logic, for imperative logic, things that
+allow us to think sequentially like you
+mentioned.
+>> Can we actually run this that effect and
+and see what happens?
+>> Sure. Let me uh run this particular
+effect.
+>> I know you've got some other stuff to
+show too, but see like like what happens
+when we when we take that effect and and
+run it. And I think some of the time
+it's gonna fail and some of the time
+it's going to succeed with a random
+number, right? And that was kind of the
+log exciting logic of it. But gets us
+started with with how we manage um
+failure, how we manage calling effects,
+how we use the generator syntax.
+>> Exactly. And we mentioned before that uh
+when when you build up an effect
+program, nothing happens until you
+actually run it. So right now, this
+program that we've assembled at the end
+here, we'll talk about what this pipe
+syntax is doing in a moment. This
+program is not actually going to run.
+It's going to build up this effect, but
+nothing's going to happen. So if I run
+this right now, we're actually going to
+get no output. Um, what I need to do now
+is instruct the my program that it needs
+to run. And we have a bunch of ways to
+do this in effect. Um, but in this case,
+we're just going to do a really simple
+running the effect into a promise. And
+so,
+>> and that's a JavaScript promise,
+>> correct? Yeah. So, effect has uh very
+good interop with promises. Um, so you
+can incrementally adopt effect over time
+in your codebase. Um, you can import
+promises into effect and you can also
+run effects to a promise. So if your
+code is already with async await, you
+can easily adopt effect over time. So
+now that we've added the run promise
+method to our program, we're going to
+take the program, run it, and it'll
+produce a JavaScript promise which can
+be evaluated by the runtime.
+>> Awesome.
+>> So we've ran this code a bunch of times
+and we've never hit the failure scenario
+that we've described in our generator up
+above, right?
+>> Always successful. We always got a
+number under 50, right?
+>> Always succeed. Um, and there's a really
+good reason for that, right? If you
+think about the program we've written
+here, we should fail 50% of the time.
+And the program is actually failing 50%
+of the time. But we've added some
+behavior here that we didn't talk about
+previously where we're describing that
+if this program should fail, we want it
+to retry on a particular schedule.
+Right? So with effect, we mentioned that
+generators are for representing business
+logic, for representing the imperative
+aspects of your code. But if you want to
+add behavior to those programs, if you
+want to compose different behavior into
+that program, um that's where the
+pipeline syntax comes into play. So this
+allows us to to append additional logic
+into our effect or onto our effects. So
+that then when we run it, we're not just
+running the initial effect. We're
+running the the kind of aggregate of all
+the things that we've put onto that
+effect,
+>> right? And we give it a fancy name of
+pipelines, but really all it all we're
+doing is sequentially composing function
+calls. Um, and maybe it's a little bit
+easier to do look at this with a visual.
+So effect exports this pipe method which
+allows you to do this function
+composition. Um and if we were to write
+the composition of add one subtract one
+multiply by 10 without pipe um it would
+look something like this right first we
+multiply 42 by 10 and we subtract one
+and then we add one and we get 420 but
+our again our brains don't really think
+very easily in this sort of nested mess
+format right it's much easier for us to
+think about things sequentially logic
+being applied one after the other and so
+that's why we have this pipeline syntax
+Um in the pipeline syntax you sort of
+unnst everything so that you can execute
+these functions one after the other. The
+first argument to pipe is the input to
+all these functions and then all the
+rest of the arguments in the pipeline
+are the functions that you want to then
+evaluate. So every uh the input to every
+function uh becomes the output of the
+previous if that makes sense.
+>> Yeah. I mean it the word pipe kind of
+explains that this is like moving things
+through this like pipeline.
+>> Yeah. So we can do the same thing with
+effects as well because we mentioned
+before that effects are not evaluated at
+runtime immediately. We need to actually
+run them. Effects are just values. So we
+can compose behavior onto those effects.
+Uh and in this case we're composing a
+retry behavior onto our program. We're
+saying if this program fails, retry this
+10 times and you can do it on an
+exponential schedule. So this is going
+to have a do a retry with an exponential
+back off. Every time we fail, we back
+off in an exponential fashion.
+>> So there's lots of different schedules.
+You can use the exponential backoff, you
+can do a linear backoff, you can do a
+max number of times. Lots of different
+options for how you schedule that retry.
+>> Precisely. And everything in effect is
+designed to compose. So you can compose
+different schedules together as well.
+Um, but that's sort of getting a little
+bit more into like some of the different
+uh modules we have into effect and might
+be a little bit beyond the the scope of
+what we're chatting about.
+>> Cool stuff and lots more to learn.
+>> Absolutely.
+>> So, great. So, we've got our effect. We
+can run it. We can see how we can manage
+failures. That's all good. We've kind of
+got I think the foundation for effects
+and how it can help us get to production
+grade just general systems. What about
+AI? Is that is that where we're going
+next?
+>> I think that is where we're going to go
+next. So, maybe we can take a look at
+this second file. uh in our project
+here. Um and this file introduces a new
+library from the effect ecosystem. The
+core maintainers of effect maintain the
+core effect package which is designed to
+allow you to write production grade
+systems in Typescript. But we also have
+a whole ecosystem of libraries that we
+maintain that are designed to do things
+like write HTTP servers, interact with
+websockets,
+uh, run workers, and we also have an AI
+SDK that we've built that's designed to
+work natively with Effect and give you
+access to all of these cool features
+like error handling and all of the other
+cool stuff that we've talked about.
+>> Awesome. And of course, it supports
+Amazon Bedrock.
+>> It does indeed. We do have support for
+Amazon Bedrock and that's what we're
+going to use today. Our AI SDKs are
+designed to allow you to write programs
+without really thinking about the
+provider that you're going to use in the
+end. You can write your pro your AI
+logic, the logic that's going to allow
+you to interact with an LLM um in a
+manner that you don't really have to
+care about which LLM you're going to
+plug in at the end of the day.
+>> And this is abstracted not just over the
+provider but also the model. And so you
+can use uh on Amazon bedrock we can use
+the nova models or the cloud models or
+you know many other options.
+>> Exactly. So we expose this generic API
+you write your logic and then at the end
+of the day you sort of plug in like
+which provider you want to use. Um and
+we'll talk about it a little bit later
+but we also have ways that you can
+introduce like fallback logic because um
+there are cases where you might want to
+like fall back to other providers in
+certain scenarios. And so we we have
+support for that as well.
+>> Awesome.
+>> So if we look at the program we're
+running here, um for the folks that
+don't know me out there, I'm a very big
+fan of dad jokes and puns and really any
+people grown when you tell the joke.
+>> Yeah.
+>> Uh so
+>> so that part of you is easily
+replaceable with AI.
+>> I don't know if it's easily replaceable,
+but AI certainly assists me in coming up
+with content for for said jokes. Um, so
+the program we're going to programs
+we're going to be running today are
+basically generating dad jokes. Um, and
+so the program we've got here, again,
+you see the generator syntax here
+because we're going to be running a
+little bit of imperative logic. And
+right now, we've introduced this AI
+language model module from our core
+effect AI library. And this AI language
+model uh module contains all of the
+logic for text generation, for streaming
+text generation, for structured outputs.
+All of those things are baked into the
+base uh AI language model module.
+>> And that generate text uh method allows
+us to pass in a prompt. And I'm sure
+there's other parameters that we can
+pass in as well. Sure. And then that is
+an effect. And so that becomes managed
+just like the effects we talked about
+earlier. And so that then we can wrap
+the retries and the fallbacks and all
+the other ways to make this production
+grade around that just one simple
+effect.
+>> Exactly. And this program is pretty
+simple. We're going to generate a
+fantastic dad joke and then we're going
+to log it to the console and then return
+the response. This response is a special
+AI response type that comes from again
+our core AI libraries. Um, but if we
+look at the type of the program now, we
+can see a lot of information without
+really having had to do any effort,
+right? The our effect is tracking for us
+that the program is going to succeed
+with an AI response. It might fail with
+an AI error. And now we have something
+showing up in that third type parameter,
+which we didn't really talk about
+before, but that third type parameter is
+there for us to be able to track what
+dependencies your program needs. So
+something that you're going to have to
+sort of plug in at the end in order to
+make sure that that program is runnable.
+And if you don't plug in said
+dependency, you'll end up with a type
+error uh in the in the type system. So
+TypeScript helped us out there as well.
+>> And the reason why we would want to be
+able to have this expressed as a
+dependency is that maybe we want to test
+with a different thing. So maybe a mock
+thing, maybe we want to test with a
+lightweight model. And so testing is is
+probably one scenario for moving this
+into a dependency. There any other
+reasons why we would want to to express
+this particular AI language model as a
+dependency?
+>> Testing is a fantastic use case. Um and
+then the other big use case, the reason
+why this shows up as a dependency is
+because again we're writing this program
+without caring about the provider we're
+going to use eventually to satisfy this
+dependency. So in our case, we're going
+to use Amazon Bedrock, but we could
+easily plug in another provider if we
+wanted to at the end of the day.
+>> Awesome.
+>> So that's another really good use case
+for using the what we call the
+requirements channel of of the effect
+type.
+>> Yeah.
+>> And fun side note, uh we have to yield
+star that console log because log into
+the console is an effect.
+>> We do have a console module in effect
+that wraps like the JavaScript console.
+So here we've got our final dad joke
+program that we're going to run, right?
+We are producing an AI response. We
+might fail with an AI error if something
+happens and we need to eventually plug
+in a language model. So the next thing
+we're going to do here is introduce
+modules from our Amazon Bedrock provider
+integration. So you can install
+whichever providers you want into your
+project. Um but again we have the
+flexibility of plugging in whatever
+model and provider we want to at the end
+of the day. And Bedrock is great because
+like you mentioned before, we have so
+many models and providers available to
+us that we can really easily swap things
+in and out when we want to.
+>> We have a way now to create the actual
+kind of model instance and we specify
+the model that we want to use which is
+the cloud sonnet 4 model and you've
+already gone through the AWS console and
+set up the access to that model.
+Correct. And I don't know if I showed
+you yet, but there's now a way to even
+set up API keys that make it super easy
+to get an API key to talk to Bedrock. So
+I'll have to show you that later, but
+but it makes it super easy to even set
+up the the way for this program to then
+access, you know, securely access that
+Bedrock model.
+>> That's super cool. Yeah, we'll have to
+take a look later. That's awesome. Um,
+but yes, like you said here, we're
+setting up an AI language model that's
+specific for Amazon Bedrock and we're
+going to use the Cloud Sonnet 4 module
+from Bedrock. So, if we look at the type
+that we're getting back here, this is a
+specialized AI model type um, which
+basically again allows you to plug this
+into our program. And here we're using
+another method from effect, the provide
+method, which allows us to satisfy a
+particular dependency for our program.
+So in this case, we're taking our dad
+joke program and we're providing the
+Claude sonnet AI model which is going to
+satisfy that AI language model
+dependency. And if we look at the new
+type for our program, the AI language
+model is not showing up anymore, but we
+have a new requirement.
+>> So we took care of one, but we created
+another dependency.
+>> Exactly. Um, and this sort of dependency
+tracking is really important because it
+allows us to clearly express uh when we
+need to plug certain things into our
+program. So you can make like very uh
+fine grain decisions about when you want
+to plug these things in and where. Um,
+but obviously if we want to talk to
+Bedrock, we need a way of talking to
+Bedrock. And our Bedrock provider
+exposes a way to construct a client that
+can speak to Bedrock. Um, in effect, we
+have modules to deal with configuration
+values and all sorts of other things.
+Uh, secret configuration values, which
+we called redacted values. Um, and
+that's what we're using here to build up
+the parameters that we need to talk to
+Bedrock.
+>> Great. So, I love that you've been able
+to externalize this configuration. We're
+going to probably use environment
+variables to pull that in. Um there's
+I'm sure many other ways to to pull this
+configuration in. But so once we get our
+Amazon Bedrock client, then do we have
+all the dependencies we need to run this
+thing?
+>> Good question. Um so the Bedrock client
+actually needs one more dependency. Um
+if we look at the return type from this
+layer config method, the last thing we
+need to plug in is an actual HTTP
+client. So we don't want to impose a
+particular HTTP uh implementation on the
+end user. Um so we basically expose that
+as a requirement um from this uh layer
+config uh method that we have here. And
+I'm already satisfying it immediately
+with uh another module from effect which
+is called the layer module. But I'm
+basically saying for that dependency
+we're going to use just the fetch HTTP
+client layer that we expose from our
+platform integrations. Uh, but you could
+use whatever fetch implement, whatever
+HTTP client implementation you want.
+>> And it may depend on where you're
+running this because you can run on node
+runtime, bun runtime. You could even run
+this on the browser potentially, right?
+Like like you'd have to figure out how
+to, you know, provide securely provide
+access to to your credentials for
+Bedrock. But I think browsers may have
+models built into them or there were
+some experiments with that. And so maybe
+you could actually have a model running
+in the browser that you'd want to be
+able to run this around.
+>> No, for sure. Um, and that's kind of the
+key. You bring up a great point. Our
+goal with effect is not to impose any
+particular platform on the end user, the
+developer. We want effect to run
+everywhere to be able to run anywhere.
+>> It's multiplatform. It can run anywhere
+JavaScript runs.
+>> Um, and the goal here again with
+exposing HTTP client as a dependency is
+to allow you to plug in the platform
+specific one. So in this case, we're
+using the fetch uh HTTP client, but we
+could use any other one that we want. Um
+and now we end up with a layer that has
+all of the dependencies satisfied.
+>> So that never means I don't need
+anything else.
+>> Correct? And uh it could potentially
+fail if we don't have a if we're missing
+a particular config value, right? So we
+expose that as an error.
+>> Um and we produce Oops, I'm sorry about
+that. We produce
+a bedrock client.
+>> Great. And now we can take that Bedrock
+client, provide it to the final program,
+and then we have the ability to actually
+run this thing.
+>> Nice.
+>> So, why don't we take
+>> Let's get our dad joke.
+>> Let's see if it's better than yours.
+>> Let's see if it's better. Give it a
+second to reach out to bedrock and get
+everything done. Why don't scientists
+trust atoms? Because they make up
+everything.
+>> Um, so, you know, it's okay. It's it's
+not as good as maybe one that I'd come
+up with, but it's pretty good. Um, but
+the point here is to show that uh with
+effect with effect systems in general,
+but with effect and typescript, you have
+the ability to very granularly see what
+your programs are going to succeed with,
+what they could potentially fail with,
+um, and what dependencies they require
+to be able to run at runtime.
+>> Yeah. And so now I can imagine this
+being just one building block in an
+application that I can then enhance and
+grow and add the retries and add the
+failure fallback handling and add like
+just like build and build and build
+around this foundation because the one
+of the big concepts of effect systems is
+composability. Being able to compose
+this with other parts of an application
+>> 100%. Um, and one of the key things
+about the buying into the effect
+ecosystem is that everything in effect
+is designed to compose with each other,
+right? So if you are using effect for a
+particular part of your application,
+everything will compose. Um, and so here
+we've taken our dad joke program and
+just by changing a few lines of code,
+we've removed our generator and now
+we're using uh stream text from the AI
+language model. Instead of uh
+instead of getting our response as one
+giant blob, now we're actually going to
+stream the response back. So, you know,
+there was a little bit of latency we saw
+before when we ran our program because
+it has to reach out to bedrock. Bedrock
+has to generate the content, then it has
+to send it all back
+>> and we have to wait until it's all there
+to then display that.
+>> Why not stream it?
+>> You can imagine with a really large
+piece of text generation you're doing,
+you don't want to wait that whole time.
+You want to start showing things to the
+end user.
+>> Um, so here we've changed a few lines of
+code and now if we run uh this example,
+we'll see that we have streaming output.
+So the only real change here was instead
+of using that generator and doing the
+the generate text, we instead did stream
+text and then that gave us a stream
+back. And effect has built-in support
+for streams that are effectful. And so
+that's what we're building on top of.
+And I think we did see there that it
+did, you know, stream out the output
+instead of just dumping it all at once.
+Right.
+>> Gave us the same dad joke, but at least
+>> the same dad joke,
+>> but we need to turn up the temperature.
+>> That's right. Um, but yes, as you
+mentioned, uh, now we're using the
+stream module from effect, but stream
+interops with effect and vice versa. So,
+like I said before, everything in effect
+is designed to compose. So, if you buy
+into one part of the ecosystem, um, you
+can easily compose on pieces over time.
+Um, so, and again, if we look at the
+return type of our program, we're still
+tracking all of the different things
+that we're interested in.
+Um but maybe we can skip ahead one
+example here. U you mentioned before
+that one of the things that's really
+interesting about effect systems is that
+is the error tracking piece. The piece
+that allows us to sort of see the things
+that could go wrong. So maybe we can
+take a look at um at this. So there's a
+little bit more going on in in this
+example here. one way that we could
+potentially use errors as values in our
+program to our advantage, especially
+when interacting with large language
+models. Um, so we talked before about
+how there are situations where if your
+program fails or if something happens,
+you may want to fall back to a different
+provider or maybe a different model. So
+here, um, I've got a little program
+running
+that still tells us a dad joke. So, we
+still have the dad joke, but then you
+added something else in here, too, which
+was the schema.
+>> Yeah. So, I skipped uh the example from
+before because I wanted to talk about
+the error handling.
+>> Okay.
+>> But we're now using the third uh method
+from the AI language model which allows
+us to generate structured outputs,
+right? And effect has a full schema
+module that allows us to describe the
+shape of different structures um and
+allow us to do encoding and decoding on
+top of different data types. So here
+we're we're describing the structure of
+a pun. A pun is going to have three
+parameters or properties. A setup parame
+parameter which is a string and we're
+giving it a description here. These
+descriptions are critical for the LLM to
+be able to understand what type of
+information it needs to put into that
+structured property. So it'll actually
+get converted under the hood to a JSON
+schema here and get sent off to bedrock
+for structured output generation. So
+this is one way to get kind of better
+reliability in our effect based AI
+systems because now we have a schema and
+we're going to try to get the data
+that's coming from the LM into that
+schema. If it doesn't conform, then
+we're going to get an error hopefully.
+Right.
+>> Precisely. Yes. If we fail to conform to
+this schema, we'll end up with an error.
+Um and we can surface that error however
+we want. By default, it's surfaced as an
+AI error. Um which is kind of the
+default error type from the AI package.
+But we can map that error to other
+things that are more useful in certain
+cases or whatever we want to do. Um, so
+we've got a couple of other properties
+here on our pun object, but the point is
+here that we're going to be generating
+this structure for ourselves from the
+LLM and using this schema to validate
+said structure. So um, the response we
+get back now is a little bit different.
+It's not just an AI response. We have an
+AI response that has structured output
+as well. And this structured output
+response contains a value that's
+actually going to have the object that
+we're generating,
+>> the pun object.
+>> The pun indeed.
+>> Um, and so this program still looks like
+pretty similar to what we saw before
+with our basic like text generation. So
+again, you don't have to change much to
+get vastly different behavior.
+>> Yeah. Um, but I think the interesting
+part comes here where we start
+describing what type of model we
+actually want to plug in to use. So, um,
+before we were just using the Claude
+Sonnet 4 model from bedrock. Um, but
+here you mentioned if we get a pun back
+that we're not happy with or if it
+doesn't conform to our schema, the
+program might fail, right? And we could
+even do more evaluation in here to say
+like, you know, have the LLM grade
+itself and fail with a different error.
+Right.
+>> If it's a bad pun, kick it out and try
+again.
+>> Exactly. If we get a terrible pun, try
+again. Um, and so what I'm just what I'm
+using here to describe that sort of
+fallback behavior is another module from
+effect called the execution plan module,
+which allows us to describe when an
+error occurs, uh, how should we change
+the behavior of the program, right? And
+so this could actually change the
+dependencies that are being provided
+when we run that effect.
+>> Exactly. Exact. That's a great point you
+bring up. The execution plant module is
+actually designed to change the
+dependencies at runtime if your program
+should fail.
+>> Great. So our effects actual
+dependencies didn't change, but what was
+being provided to it can change based on
+failures. And so this can be a great way
+to set up fallbacks to like, okay, that
+didn't work. I'm going to try this other
+thing. And it's all done through just
+changing the dependency that's provided.
+>> Exactly. Exactly. Um the the point of
+the execution plan module is to allow us
+to swap in another uh dependency that
+satisfies what our program requires. So
+here we're saying if our program should
+the first step of our plan is saying use
+clouds on it and try it two times. And
+there are other parameters we could plug
+in here like talking about a schedule to
+use for you know trying again or you
+know describing like behavior of a
+predicate for like how long we should
+try this or if we should keep even
+trying this step of the plan. Um but
+let's say that first step of the plan
+fails. We can then describe a second
+step of the plan here where, you know,
+maybe we got a pun that was subpar,
+right? Or maybe we
+didn't generate the right structure or
+something like that.
+>> Um, we can fall back to maybe a more
+powerful model. So in this case, we're
+using claude opus. Um, and so if the
+first step of the plan fails, the
+program will be retrieded again with the
+second step of the plan. And again,
+we'll give it two attempts and and
+whatnot. So you can really control uh
+what happens at runtime with the
+dependencies you're actually injecting
+into a partic particular program
+>> and so you can define your own execution
+plan and that can be have any kind of
+logic and progression and multiple ways
+to roll through different dependencies
+and totally up to you how you want to do
+that
+>> exactly. Um and instead of using provide
+we use a special method on effect called
+with execution plan that sort of drives
+the plan behind the scenes. It'll go
+through the different steps. It'll
+provide the dependencies where it needs
+to. Um, still used the same way as
+provide, but just a slightly different
+method uh to achieve the same behavior.
+Um, and if we run this example, so I
+think we're in the error handling.
+>> Number five.
+>> So, is there actually going to be
+failure on this one or are we going to
+first?
+>> I think I think we'll get a first I
+think Sonnet's going to do pretty good
+with our with our pun.
+>> Same same uh pun same joke as before.
+>> Really likes this scientist joke. But
+yes, the the point here the the example
+is showing we can do structured output
+generation. Um but it really shows like
+how we can alter the behavior of the
+program at runtime if we need to. So you
+can use this for falling back to
+different providers, falling back if if
+one's a unavailable, you can use this
+for falling back to different models uh
+if you want higher quality output. Um,
+it's very flexible and it's not just for
+AI. You can use execution plan even in
+your normal effect programs to affect
+the dependencies that are provided to
+your program at runtime.
+>> So, we're using it for the AI
+dependencies, but you could use it for
+anything in your program. Exactly. Super
+cool. And then the nice thing about this
+is that our logic that is creating
+calling the AI and doing the dad joke
+part, that piece didn't change at all.
+This was like separated concerns. You've
+got the concern of the effect that's
+talking to the AI. You've got the
+concern of the dependencies and the
+models and how you talk to them. You've
+got the concern of the configuration and
+how you get that. And we're just
+composing all this stuff together.
+>> Exactly. And you know what's nice as a
+developer is you know you're often
+working on massive programs, right? And
+if you structure your programs in uh the
+kind of serviceoriented pattern of using
+uh services to inject business logic in
+concrete like components. In this case
+we're using predefined services that
+effect gives you but you can create your
+own very easily which we'll see in a
+moment. Um it makes not only your
+program much easier to test but it makes
+it way easier for you to reason about
+what's going on because you can see
+everything at the type level here. we
+can see easily that the things that
+we're producing, the things that we
+could fail with and the things that we
+need to actually run the program.
+>> And you can validate that everything
+type checks. So this is going to help
+make sure that when you get to
+production that you have all the the
+types are aligned that there's no you
+haven't missed anything in terms of oh I
+forgot this thing doesn't align with
+this thing.
+>> Maybe we can show that actually if we
+fail to provide for example the client
+that's required by our program right we
+need a bedrock client here. If we fail
+to provide that, we'll actually get a
+type error that says um we need to
+provide a bedrock client to our program.
+>> So we get it right there in our IDE, but
+we also would get it if we ran TSC on
+this thing, right?
+>> Exly. And we we also have a language
+service plugin for TypeScript. So you
+can install the language service plugin
+and provide it to your TS config. It's
+all it's just a few steps. Um and it
+actually enhances a lot of aspects about
+effect development. So I don't think I
+have it installed here, but it would
+show things like the dependencies that
+we're missing. It would show a lot more
+information about the types that we're
+using. Um, so we really try our best to
+improve the developer experience where
+we can.
+>> Awesome. Love that.
+>> So now, um, let's take a look at like
+maybe taking things even a step further,
+uh, into the realm of AI, right? Um, I
+know
+>> I want my agents.
+>> Well, to have an agent, we need to be
+able to call tools, right? We need tool
+calling in order to drive uh behavior
+that our LLM doesn't have by default.
+And so our core effect AI package also
+has the ability to define tools um in
+the form of what we call like a toolkit
+uh a collection of tools that you can
+give to your LLM to to call. Um and
+we leverage schema which we saw
+previously very heavily in uh our tool
+definitions um for the purpose of
+allowing the LLM to easily serialize and
+deserialize values but also for the
+purpose of allowing us to construct JSON
+schemas on the fly because a lot of
+these tool calls need to be represented
+as JSON schemas. So it for parameters
+and things like that.
+>> I love that you can use schemas for this
+because the schema is used as you said
+for two things. one is the serialization
+and deserialization and knowing how to
+handle that part, but also with those
+descriptions, it's telling the LLM what
+it needs to know for what goes into a
+field, how to like when we get into
+tools like parameters and what's going
+to be filled into into a parameter. So,
+I love that we have like one schema
+system that gets used for both of those
+things. I think it totally makes sense.
+>> Yeah. And it allows you to have the
+description alongside the code that's
+describing the object that you want to
+encode or decode. Uh so it makes it
+really easy to colllocate that
+information. You don't need to have
+things in a ton of different places.
+>> That's great.
+>> Um so here we're obviously defining a
+get dad joke tool because what else
+would we do?
+>> Of course.
+>> Um so this here is defining a a tool
+which we're calling get dad joke. Um
+it's going to get a hilarious dad joke
+from the icon has dad joke API which is
+a public API that does exist. Huh.
+>> Um
+>> maybe it'll do a better job than the LLM
+with coming up with creative jokes.
+>> We'll see. We'll see. Um we're gonna
+we're saying that this tool when it
+succeeds uh succeeds with just a string,
+which in our case will be the joke
+itself. Um but we could easily make this
+a more complicated object if we wanted
+to. Uh it can never fail, although
+obviously calling out to an API can
+fail. Um in this case, I'm representing
+the failure case as never. Um, and then
+we have some parameters that we want the
+LLM to be able to use to influence the
+tool call behavior, right? So, in this
+case, we're giving it a search term that
+it can use to find dad jokes in the API,
+>> like given a certain domain, like I want
+Star Wars dad jokes or something,
+>> pirates, whatever. We we were I think we
+were talking about scientists before.
+Maybe we can we can uh do that.
+>> Yeah.
+>> But um and then we have a bunch of logic
+here. Here, I'm not going to walk
+through this in great detail because it
+sort of deviates from what we're
+discussing now. But this logic shows how
+we can also use schema to define the
+shape of things like responses, the
+shape of things like data we're getting
+back from an API and use those schemas
+for doing serializ for for doing the
+deserialization
+um coming across the wire.
+>> Yeah, makes sense. We also have a
+service that we've defined here in
+effect that allows us to communicate
+with the icon has joke API um and it's
+using some of our other uh ecosystem
+modules under the hood. So things like
+the HTTP client and things like that and
+uh without getting too in the weeds uh
+about effect services, they allow you to
+encapsulate uh behavior to make it more
+easily testable. So you can have
+business logic that you package up into
+a service um and then you can inject
+that dependency later.
+>> Love it. So that's the effect.service is
+now we're going to have a a sharable
+service that other parts of our program
+can call to search for dad jokes against
+the I can hasd jokes.com. Uh and then
+this is also like in effect. So all the
+great things about programming we can
+add into this as well. We could add
+retries. We could add fallbacks. We can,
+you know, all the ways that we want to
+deal with potential failure
+>> work in this HTTP client essentially in
+the same way that they work with all the
+other things we've seen.
+>> Exactly. And our service here returns
+just a single method, right? This search
+method which allows us to search for a
+particular joke. But you could imagine
+that if you wanted to test this service,
+you could just return you could give
+your program a service that just has a
+mock search method, right? that always
+returns the same value or something like
+that. So using services makes your code
+one more easily maintainable because
+business logic is very nicely
+encapsulated um and you can depend on
+other services to construct the service
+but it also allows you to easily test uh
+components of your code.
+>> Mhm.
+>> So again don't want to get too in the
+weeds on services but um we're going to
+take the toolkit that we've constructed
+up here. So, we're using the AI
+toolkit.mmake constructor, which just
+takes an a bunch of tools, packages it
+up into a toolkit, which we're calling
+dad joke tools,
+>> and that's just kind of the metadata of
+the tool, right? It's it doesn't have
+any functionality around how it does
+that yet.
+>> Yeah, you can think of it kind of like a
+spec for your tools, right? There's no
+logic here. We we haven't said how we're
+going to implement this tool or any of
+the tools in this toolkit, but the
+toolkit itself is just a spec for how
+what tools your LLM should have access
+to and the shape of data that they can
+receive as input and provide as output.
+>> Nice.
+>> Um, but obviously for our application,
+if we want the LLM to be able to call
+tools, we need to provide an
+implementation. So here uh we're using a
+method on the dad joke toolkit which we
+call two layer which allows us to take a
+toolkit and convert it into a layer that
+we can then provide wherever we want in
+our program. And we're going to in the
+constructor for this layer we're going
+to grab our icon hasd joke service which
+in effect we can just yield things. You
+can just yield things in effect.
+um we can yield the what we call like
+the identifier or the tag for this
+service which is the name up here. When
+we yield that we actually get access to
+the implementation of the service so we
+can actually call methods on it. So it's
+working like a normal effect where I
+need to put it into a generator and
+yield it to actually be able to then
+access the the value which the value in
+this case is the service that can
+actually make the calls and when we make
+those calls those are also going to be
+effects. Exactly.
+>> It's great when everything's in effect.
+There is a actual side effect that we
+need to manage.
+>> Yeah. I mean the the nice thing about
+this is um when you when you want have a
+service and you want access to it, you
+just yield it and you get access to the
+service. It's like grabbing the service
+out of the effect requirements for that
+program and then you have access you can
+use it however you want. So yeah, we're
+implementing our dad joke toolkit here.
+we're con taking it and converting it
+into a layer. And in order to do that,
+we need to provide an implementation for
+each of the tools. So in our APIs, the
+way this work is we return an object. Uh
+the key of the object that we return is
+the name of the tool we're implementing.
+Um and then the value is a method that
+gets called. So this search term
+parameter is inferred from
+here
+>> from the shape in the schema of the
+schema. Right? That's great. So from the
+parameters of the tool that we've
+defined, we then infer the type of the
+parameters that we get when we're
+actually implementing. Um so you can see
+search term here is a string and then we
+can use the service we've built to
+search for that term and this will
+return us a string.
+Uh and that satisfies the requirement of
+the tool that we had above. If we were
+to change this to, for example, return
+something like a number,
+we would get errors saying that
+>> that's not going to compile,
+>> right? We're we can't compile because
+we're not returning the correct uh
+output type.
+>> I love that we're combining the schema
+with the implementation
+at like a later step because the schema
+is very important to what we're doing
+with tools and calling the LLMs. It
+needs the schema. And so like having the
+schema there in this very structured way
+is I think really helpful because it
+essentially is an API to that you're
+giving to the LLM. And so um you need to
+make sure it's right and and consistent
+with what you actually have on the other
+side. And so um so yeah, I I think this
+is going to help create much more
+reliable agents because we can't screw
+it up. you know, you've you've got all
+this type safety, but then also you've
+got the the strict schema that you're
+defining with all the type information
+in that schema.
+>> Yeah. And the other cool part about this
+is because the toolkit spec is separated
+from the toolkit
+implementation, we can actually use the
+toolkit for other things. And I'll show
+you maybe in the next example, our last
+example of how we can reuse the toolkit.
+Um, but separating the spec from the
+implementation gives us that flexibility
+as well. Plus again it's very easy to
+test. If we wanted to create a test
+implementation of this, we just call two
+layer again and export a test version of
+this our handlers uh that maybe returns
+static data or something like that.
+>> That's great.
+>> Um
+so because we've uh accessed our icon
+has dad joke service, we need to provide
+it somewhere. So I've chosen to do that
+here just to keep things nice and
+localized. So now the layer we get back
+here doesn't have any requirements,
+doesn't fail with anything, but you can
+see it produces a handler for our get
+dad joke tool.
+>> Awesome.
+>> Um,
+our
+program again is going to look pretty
+similar to all the programs we've seen
+so far, right? We we're not doing
+anything crazy here. Um, I have kind of
+moved the provision of our model like
+into the program itself, so it's not
+like a separated variable anymore. But I
+think the key point to point out here is
+now when we're generating our text, I'm
+actually providing a toolkit which is a
+separate parameter on all of our
+generation methods um that you can
+basically say, hey LLM, you have access
+to all of these tools that you can call
+my app with and then I'll give you the
+response back.
+>> Yeah. Yeah. Yeah. And so in this case,
+we're going to ask it to uh get a dad
+joke about pirates, but instead of
+having the LLM do it this time, we
+actually want to send it over to the the
+service that we know has good dad jokes
+on it. And so that's a place where where
+it's like, yeah, it makes sense. Like
+like, you know, weather data, you know,
+anything that the model is not like
+super awesome at or doesn't have access
+to, we're going to put it into tools.
+We've got the schema, we've got the
+implementation, and then the LM is going
+to figure out like, okay, now I need to
+actually make the call to the tool to
+get what you need, and then that goes
+back into the the LLM, and then the LM
+figures out what to do with it.
+>> Exactly. I mean, you summed it up like
+perfectly. The we're basically serving
+as an intermediary for more information
+that the LLM needs. Yeah.
+>> Right. The LLM saying, "I can't do this,
+>> but you can." So it calls our app, tells
+us to do something and then we do it and
+give the response back to the LLM to
+enhance that generation.
+>> And it uses the schema to fill in the
+required parameters for when it makes
+those tool calls.
+>> Yep. It uses the schema for that. It
+uses the schema to validate input and
+output so we know exactly if we're
+getting the correct success or error
+response. Um, and this is kind of the
+foundation to what you mentioned earlier
+about building more agentic systems.
+Right.
+>> Let's run it and see if we can get a
+good dad joke.
+>> Yeah, let's take a look. So, let's go
+ahead and run this.
+So, scientists finally did a study on
+forks. It's about time.
+Um, so anyways, you can see here what
+I'm actually logging out. It's not
+actually the response that the LLM
+sending back to us. We can show that in
+a second. This is the results that our
+tool call uh got from calling icon has
+that joke.
+>> Okay.
+>> Right. So we have uh when we get a
+response back that has tool calls, we
+get a special response back that has
+tool call results in it. Um and then we
+can log out those results, but we can
+also give it back to the LLM.
+>> So in this case, by default, it's not
+doing the like full agentic loop where
+it's feeding the the tool responses back
+in and then letting it get until it it
+the LM decides that it's completed
+whatever you've asked it for. So this is
+just a just generate text tool call give
+me the result. But there is some ways
+and I was experimenting with ways to do
+that agentic loop and it was pretty
+straightforward to like wrap that
+agentic loop around around this stuff.
+In this case, when we're using the
+simple AI language model, we can just
+evaluate if the response.finish
+reason equals tool calls, then we
+probably want to uh uh get another
+response. Next response equals uh
+yielding our AI language model again and
+generate some text. Yeah, just feed it
+back in
+>> and we prompt we give it we can
+literally just feed the response back in
+because um our AI uh our AI response
+type um is able to be converted into a
+prompt. So we basically load in all of
+the previous context and now we can log
+out the next response
+and we'll run this one more time.
+Here's yeah hilarious dad joke.
+Scientists finally did a study on fork.
+It's about time. At least it's a little
+bit different than the joke we got
+previously
+>> well. It did wrap it with some
+additional context like it. Yeah, it's
+um so it did augment the the response
+from the tool call with additional
+information. Right. It's interesting.
+So,
+>> and I do like that that what you've
+started with is this like granular
+approach and then you can build the
+higher level abstractions on top of that
+because that's a big part of what
+effects allow you to do is take building
+blocks and compose them together into
+larger more abstracted things. And so,
+of course, you'll be able to get to the
+like abstracted like fully agentic loop.
+But if you want something very like you
+want very granular control, you can drop
+down and just call this this API for get
+text. So I love that there's that
+ability to to stretch across kind of
+both ends of the spectrum. Thank you.
+Yeah, I mean I think that the goal is to
+give you as the developer as much
+control as possible. Um and like you
+said, there are some higher level APIs
+we can use, but um this kind of
+demonstrates the lowest level we can get
+to. Um, and maybe one thing we can take
+a look at since we mentioned it before
+is how we can reuse toolkits that we've
+already defined, right? And I think a
+great use for toolkits, uh, is plugging
+them into an MCP server, right? And you
+love MCP servers.
+>> I love MCP servers. So, yeah, let's see
+how we can use that schema and toolkit
+and all that that we already have and
+MCPify it.
+>> MCP servers are great. They provide us a
+lot of really cool functionality that we
+can then expose to our end users. And
+Effect does have a builtin um MCP server
+implementation that's totally custom and
+designed to work with effect. Um I've
+got a bunch of different examples in
+this file uh like exposing templates,
+exposing prompts that you can load into
+the uh into the MCP server. But I've
+also grabbed all of the dad joke code
+that we had before and I'm also plugging
+this into the MCP server. Um, so if we
+scroll all the way down here, we can see
+a bunch of different layers that I'm
+plugging together here. But the key
+component that I think is very
+interesting is this layer that I'm
+creating right here. So our MCP server
+module exposes methods to create layers
+for your actual server. Um, and we
+support both standard IO. Um, and we
+also support streamable HTTP.
+>> Um, nice.
+>> We're working on a client for MCP as
+well. It's not out yet, but we are
+working on it. Um, and in this case,
+we're just going to use standard IO to
+kind of demonstrate um the different
+functionality that you can then expose.
+But if you notice, the toolkit is the
+same. We haven't changed anything about
+the toolkit. So, we can reuse it for the
+purposes of MCP as well.
+>> Awesome.
+>> Um, and maybe we can actually run this
+with the model context protocol
+inspector um to kind of test it out in
+the browser.
+So just to summarize, you took the
+schema that we were using for the kind
+of local tool calls and you now are
+using that to create the MCP server
+around that. And so the the the the
+schema, the definition of the AI toolkit
+is the same. The then uh the
+functionality that you're wiring that
+with is the same. And now you're just
+going to take that whole thing and say
+MCP serverify this thing. And now like
+super easy. I love it.
+>> We can actually even see where it's
+happening if we if we look at the code.
+Um I'm merging together the layers that
+we're building for both our templates,
+our prompt, and also the toolkit itself.
+Um and then I'm just providing all of
+these layers to the MCP server layer
+with this layer provide call. So kind of
+like you said, we're literally just
+plugging everything in to the MCP server
+and giving it access to all of this
+additional information. And in this case
+using the standard IO MCP server, but we
+could use the streamable HTTP one uh
+alternatively and put this up on AWS.
+>> Exactly. Exactly. This could easily run
+on AWS as a streamable HTTP MCP server.
+Um and if we take a look at it, if we
+connect to our server, um we can list
+all the tools we have access to. And you
+can see our get dad joke tool here
+coming from our toolkit. Um the
+description of the tool is coming from
+the schema that we defined before. Um
+and we can insert search terms just like
+we had in our schema. Um so maybe we can
+do scientists again.
+>> Good old scientists
+>> and run the tool. It's the same joke.
+>> The same joke.
+>> Let's try something different.
+>> Some very non-deterministic results
+today.
+>> Let's try pirates.
+>> Yeah. Why are why are pirates called
+pirates? because they are
+>> they are but we also have access to all
+the other things we exposed from our
+server. So the prompts that we we were
+showing before and we also support
+autocomplete. So we have some like mock
+autocomplete defined in this example. Um
+but you can set up autocomp completion
+as well.
+>> Oh and I see an effect there. So of
+course I could generate those those
+autocompletes from something effectful
+>> wherever you want. Uh it's fully like
+effect. So everything here supports
+running effects to get this information.
+Um so we can do things like uh and you
+get all of our autocompleted output
+here. Um we can get prompts and then we
+also I think had resources defined here.
+Maybe it was a template uh that we can
+uh fetch or something like that.
+So full MCP server support. And uh our
+example there with the get dad jokes
+that was not actually an agent but one
+of the things I've been playing with
+which I'm going to create a sample for
+uh once we get the MCP client support is
+the ability to have tools as agents and
+this is a way to do like inter agent
+communication so that we can actually
+take an agent expose it as a tool and
+then use it in another agent and so I'm
+going to come up with the the sample
+that does that for for TypeScript and
+effect That's very cool. I would love to
+see that example when it's ready. Um,
+but yeah, I we've we've demoed a lot
+today uh about effect and all of the
+different things that u you can do with
+it. We focused on the AI use case, but I
+want to be very clear that effect is
+designed to allow you to write
+production grade TypeScript. Um, we have
+a lot of modules on top that allow you
+to do AI, HTTP servers, blah blah blah.
+But the point is to that effect is
+designed to allow you as the developer
+to write production grade TypeScript. Um
+we have a discord server with a
+fantastic community of folks that are
+always willing to help because we know
+that the learning curve is a little bit
+high with effect. It's basically like
+writing another language inside
+Typescript. Um even though it is just
+TypeScript, it looks like another
+language. Um but the community is
+fantastic. We've got a lot of really
+great folks who are always willing to
+help. Um, and going back to the AI use
+case for one last point, you know, one
+of the things that I think people are
+very interested in, you kind of
+mentioned this, is kind of the agentic
+aspects of the things that we can build
+with all of our the AI SDKs that are out
+there. Um, but one of the other things
+we're working on with Effect is allowing
+you to build um workflows that embed AI
+logic. So, durable workflows written in
+native TypeScript. um that allow you to
+do things with AI or do anything else
+that involves a durable workflow. So we
+already have an alpha release of effect
+cluster available for folks to test and
+there's an alpha release of effect
+workflows out there. Um and folks are
+already testing running AI agents on top
+of cluster with workflows to make sure
+that their agentic interactions are as
+durable and and uh consistent as
+possible. I think this is great because
+this is one of the challenges with these
+like large agent-based systems is we've
+got lots of agents. They all need to
+figure out how to interact and they have
+to figure out the right way to share
+state with each other. And that's where
+things get really tricky. And so I love
+that you're bringing this whole
+ecosystem together with factorial
+programming with AI with with durable st
+shared state across a cluster. All that
+stuff I think is really helping build
+the future of agentic workloads and I'm
+glad it works with Amazon Bedrock. So
+this is all fantastic. Max, how do
+people get started with this stuff
+particularly for running on AWS?
+>> That's a great question. Um, there are
+actually a couple of communitymade demos
+for deploying effect clusters straight
+to AWS already. Um, so it should be
+pretty easy to get started and we can
+include those links in the description.
+>> Awesome. And then what about joining the
+community? Where can I get help?
+>> Also an excellent question. Uh, I would
+go to the effect website for anything
+documentation related, anything you want
+to learn about the stable modules in
+effect, but you can also join our
+discord server from the website um to
+become a part of the really awesome
+community that we're cultivating around
+effect.
+>> Awesome. Great. And do you happen to
+know how do object-oriented programmers
+get wealthy?
+>> I'm not sure how.
+>> Inheritance.
+>> All right, that was a good one.

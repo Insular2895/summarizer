@@ -1,0 +1,832 @@
+[Music]
+hey everyone welcome to the latest
+stream of react 2025 for those who are
+joining in I apologize for the audio
+issues that I had previously starting
+this button I got it working now you
+guys can hear me leave a message in the
+chat just to make sure that I'm not not
+going crazy
+but in today's stream we're going to
+squash a few bugs a couple that I've
+already swash and I'm going to talk
+through those and then we're going to
+set up some integration tests we are
+going to add some logging so that we can
+make sure that if something goes wrong
+we have an audit trail for us to go back
+and debug the root cause and we'll start
+with that and see how far we get so with
+that being said let's let's dive right
+in the first two bugs that I started to
+look at were I switch over logging out
+should redirect back to the home page
+and logging in should redirect to the
+dashboard now before when I had a little
+bit of audio issues I actually already
+figured these ones out so I'm going to
+quickly review those changes
+inside of our off final home previously
+when we were signing and to give up
+we're signing into Google we weren't
+doing any redirecting with next chances
+router so what we wanted to do was after
+a user successfully logged in we wanted
+to then redirect them to the dashboard
+page and on the inverse when a user logs
+out we wanted to make sure that they
+then got redirected back to the home
+page so I can quickly demonstrate what
+this looks like
+I click log out I'm getting redirected
+back to the home screen I might have a
+stale session now that I've been letting
+this sit here we'll make sure this far
+still working
+[Music]
+nice okay so I already got those bugs
+squash which is great the next thing
+that I wanted to look at was when
+creating feedback we want to use our own
+ID or at least use the ID from firebase
+instead of not providing anything and
+getting an undefined value back so what
+does that look like if I create a brand
+new site
+and I click create what's going to
+happen is the optimistic UI is going to
+assume that this worked and it's not
+going to wait to get the ID back from
+firebase when we push this into the
+cache and update the cache value so new
+site when it tries to build this link
+for the feedback
+it's actually undefined and if we go in
+here it's gonna blow up so obviously we
+don't want that what we want is to
+handle that and put in the real idea of
+the site so to do that what we're going
+to need to do is go into our modal where
+we're adding sites and if you see right
+here this is the payload that we're
+sending to firebase to save off that new
+site and you see nowhere in here do we
+provide the site ID right the ID of this
+object inside of firebase but then we
+call create site and this goes into the
+database it creates that site and it
+adds the data but notice that we're not
+awaiting the result of this we're just
+gonna continue forward show the toast
+like it worked and then update our cache
+to include this new site but I did a
+little bit of research into this ahead
+of time because I wasn't sure what the
+best practice is for firebase and
+there's really a couple different
+options for how you can handle this you
+can either create your own ID on your
+side using any kind of ID generator you
+want whether that's like a gooood or
+UUID
+you can also join two separate keys if
+you
+to make a combination of two separate
+collections specifically for this I
+wanted to just know about the firebase
+idea ahead of time I didn't necessarily
+need to embed my own ad structure so
+what I found is that this firestorm
+collection sites is going to return a
+reference to that site so I'm trying to
+remember exactly what that's called they
+have a unique name for their IDs that I
+found out things called like a fast ID
+or something like that but anyways we
+can pull this out and say that the
+firestore collection sites document and
+this is going to actually create that
+document and give us the ID what we want
+to do then is rather than add we want to
+call set and add that data and then
+instead of returning that operation we
+can just return the site so now we're
+still not waiting for this to complete
+but we're at least creating the
+reference to that document so that we
+can use the ID so now if I go back
+inside here why do create site I can say
+okay this is gonna return the site which
+is an object and I want to de structure
+and pull off the ID from that response
+so we can do that get the ID back and
+then inside of here you see we're taking
+our new site payload basically what we
+want to do is then instead of just
+putting this object let's take this
+include the
+inside of that object and then spread
+out the existing properties on that
+object another thing that I'm noticing
+that we can kind of clean up here while
+we're here is this value it's just
+returning this object and we're not
+doing anything else inside of here any
+computation so we can actually just take
+this and it has an implicit return with
+the arrow function and this should
+function exactly the same way I'd love
+if the state on one line or broken down
+into another line but prettier oh nice
+sometimes you can trick prettier with
+that because I feel like this is just a
+little bit easier to read okay let's see
+if this is actually working
+hopefully okay the audio is still
+working great that makes me feel a lot
+better sight so you see this new site
+with ID is add to the bottom we get our
+toasts nice and we get that IV back from
+the object from firebase we're able to
+use that so that when we actually deploy
+this defraud we won't run into any of
+those issues where that value is
+undefined so that's great I'm pretty
+happy with that
+that's squashed a few little low hanging
+fruit bugs that I felt like needed to be
+solved the next part of this dream and
+really the the large part of the stream
+is preparing for the future of this
+application with logging and testing
+the first thing we're going to talk
+about is check Lee which is a service
+that we can use to run integration tests
+and what I want to set up is just a
+really basic browser test that's going
+to run on every PR just check and make
+sure that my site is alive and if it's
+alive then it's gonna return 200 and the
+PR will be green now in the future I'd
+like to make this more complex and do a
+full kind of login flow and make sure
+that everything is working as expected
+but for now I think I'm just gonna do a
+really basic so a couple things I've
+learned about check Lee as I've started
+to look into this is that under the hood
+it's using puppeteer if you've ever done
+any sort of integration testing or
+automated testing you might have heard a
+puppeteer before but basically at a high
+level it allows you to control your
+browser in a headless fashion so in a
+automated way where you yourself are not
+out there clicking things now there's
+quite a few different options in this
+space for how you want to do automated
+testing there's puppeteer there's
+cypress there's a few others but I found
+pretty good luck with either of them and
+the thing that I like about check Lee is
+that it abstracts away setting up
+puppeteer or any of this other
+infrastructure for you and it allows you
+to just focus on writing the tests I was
+following this guide that they put out
+for automated testing with Purcell and
+sheckly and I started to look into this
+a little bit they're using Gatsby in
+their example but basically what I did
+was I I started a free trial and I think
+one of the things I really like about
+check Lee is it has pretty reasonable
+pricing plans I'm probably gonna step up
+to this developer plan probably on an
+annual basis
+because I could totally go through the
+extra work to set up Cyprus to run on my
+PRS or set up puppeteer to run on my PRS
+and do that infrastructure but honestly
+I'm trying to offload as much of that
+work as I can and take advantage of some
+of these platforms that have a lot of
+really cool features plus something I
+want to touch on that I'm hoping to get
+to is check Lee will also give you a
+public Status page which is something
+that I'm gonna walk for this
+software-as-a-service so people can see
+if things are up or down and you can
+kind of get that out of the box so
+really what I did so far was I just
+integrated with github and I hooked up
+my account here this is my dashboard and
+it gives you this super basic browser
+check out of the box which is just you
+like your hello world and that's what I
+have here so I've had it running now for
+a few days and luckily I've had 100%
+uptime that's great and what's really
+interesting is we can even see the
+response times over different regions
+now for this initial setup I just picked
+a couple locations in the United States
+but the awesome thing about Versailles
+will see the end is that I can deploy
+this all over the world and I'm still
+gonna have really low response times so
+it's really cool that we can check this
+out and monitor at a really high level
+and let me just talk about kind of what
+this check is doing we are setting up
+puppeteer we're launching a new page and
+we're going to navigate to fast feedback
+all we're going to do is grab the title
+of the page and sure that it equals fast
+feedback so a really basic uptime check
+and then it closes down the browser some
+other cool things that we can do in here
+that I like not only can you see your
+test results but you can also take
+screenshots and I think screenshots are
+gonna be really really helpful as I
+start to do more complex tests here
+because I want to take a screenshot at
+each way along the process so I can
+understand if something is failing so I
+just ran this really quick it passed
+which is awesome
+the next piece that I was pausing on
+this because I didn't want to go too far
+was I want to set this to run on PR and
+I'm hoping that's in this example
+somewhere one other really thing that
+was cool here is this puppeteer recorder
+which is a Chrome extension that you can
+use so basically I would just go out to
+my site I would click login I would
+click you know add a site I would add a
+site I would leave some feedback and it
+basically captures all of that and then
+gives you the script so you don't even
+have to do any of the coding yourself
+you can just use the extension click
+around and then it will spit out the
+script and that's something I want to
+try for the more complex test so I have
+this check I think this is where I need
+to pick up now so on our check edit
+check see ICD tab and link github repo
+and clicking
+there we go run checks is part of your
+CI CV pipeline yes I want to integrate
+with at least four right now I think
+I'll just do it on all repositories for
+now but I might scope this down because
+I if this works really well I might like
+to add it to my own website too
+whoa there's a little lag here come on
+there we go
+okay so that connected my checking
+account with github that looks good well
+it could also go with prometheus that
+would be neat okay now that's I need to
+the link and github repo and select the
+repository where's that
+okay
+hmm it said to only pick one repository
+so I'm wondering if I just agreed that
+out because I didn't pick all of them
+let's see
+we'll go back to this event oh not that
+one this is the one that needs to check
+Li gives you by default we might as well
+just delete these
+let's call this health check oh here's
+that link github repo okay so I had to
+connect my account
+okay where are we at here okay it's
+linked to the fast feedback getting a
+repo include screenshots in PR comment
+yeah that'd be awesome
+cool let's uh let's test this out so wow
+that's really hard to see fixes the site
+ID issue and then the log and redirects
+fix login redirects and
+okay so I created a new branch I
+committed my changes
+I pushed those changes up to github and
+I'm gonna go out to the best feedback
+repo and X log in redirects and quickly
+look over this code and make sure
+everything looks good looks good to me
+all right now we get to see all of our
+integrations work their magic per cell
+will automatically deploy a preview of
+this so I can go out and test and make
+sure that things work and then hopefully
+check we will kick off and run on this
+PR
+four cells going
+did I need to create a trigger
+I might have oh no ok so it just didn't
+leave it doesn't leave a comment but
+it's down here inside of the checks ok
+awesome so let's go inspect this check
+nice that was a lot more easy than I
+expected before we merge this in I'm
+actually just gonna verify that some of
+these things are fixed let's go out here
+and login
+sweet merge away in my opinion fix login
+redirects abuse ID boom so we've made
+pretty good progress here now that we
+have this connected and set up the next
+piece what do I need to save I don't
+know what I changed but I'm gonna say
+that the next thing that I want to check
+out down the road is I'm going to try to
+figure out how to do kind of a full
+suite of logging in going through that
+full flow and making sure that
+everything works but I think we can skip
+out of this for now
+okay we can move on to lugging then I'm
+gonna check out back to master pull down
+that latest commit okay so the logging
+solution that I want to check out is
+call log Flair and kind of the reason
+for this and why I've been exploring
+this is if I go to four Cellcom and I go
+to my dashboard and I go to fast
+feedback inside of here if we go on the
+latest deployment you can view the build
+logs coming in but these are the only
+ones that are stored so if I wanted to
+see kind of live streaming logs as
+people viewed my website I can go into
+functions and get these real-time logs
+yeah so I went to the site and I see
+this real-time log come in that was a
+request to get the sites for my user
+right and this is really helpful but
+there's a couple drawbacks to this the
+logs are never stored so you can only
+view them as they stream in you can't
+really search these or query them in any
+kind of structured way and there isn't
+really a good way to go back into the
+past and look at things plus you know if
+things break I'm going to want to set up
+some kind of alerting for this so to do
+that verso has this concept of log
+drains and basically all of these logs
+that filter in not only for your build
+logs your static file logs and your
+lambda function logs all of those things
+can then be sent out to a log drain and
+sent over to some third party so log
+Flare seems really promising it has
+pretty good integration with versal
+which I like and it has a really great
+for each ear so I want to explore using
+this one thing that's really interesting
+as I've looked into log Claire is that
+in the back and it's using bigquery and
+what I like about that is that rather
+than using maybe like a AWS Storage
+bucket it's gonna be a lot cheaper for
+them to save off these logs and then
+subsequently query them as well so in
+the long run that's gonna save us money
+if we want to move up from the free tier
+to maybe the next year which I really
+like plus you're not locked into
+anything it's just bigquery so if you
+want you could just export all your data
+and move off and do it yourself if you
+wanted but what's really cool is that
+they provide some really nice features
+on top of Rachelle that you don't have
+to build yourself and in this inner
+solar cell has an integrations
+marketplace that you can kind of find
+some things and hook into and for
+logging there's a few different options
+I've decided to check out log Flair but
+you could check out really
+any of these and one of the really cool
+things about this too that I'm excited
+to try is it will show you exactly how
+long your lambda functions ran for and
+then how much you were billed on that
+duration so if you ever jump up off of
+the free tier 4 of your cell and you
+want to do something where you're trying
+to see how long you're being billed for
+that would be super helpful and you
+don't have to do that at all it just
+comes out of the box using log Flair so
+I'm really excited about that
+they're querying also seems really nice
+and I found they have a pretty good
+example that I kind of want to try to
+follow but the first thing I need to do
+looks like there's an integration guide
+the first thing I need to do is add this
+I probably need to make a count on
+locklear to sign up with github
+your app dot source name fast feedback
+sources are a large corpus where logs go
+you can name your source anything you
+want
+fast feedback dr. sell
+you need this source IP for some of your
+integrations okay I was already here
+okay AdMob Claire
+okay authorised integration
+oK we've successfully authenticated with
+log Flair log drains no log drains found
+so we want to create a log drain
+let's do fast feedback
+long flare source so that okay yeah that
+make sense so that's the new source
+inside of log flare that we created and
+this is where we're going to dump all of
+our logs
+- okay so sending logs over to there
+seems pretty good
+okay source created no locks Oh
+okay so it's been initialized let's try
+[Music]
+it straight doing some things
+does logging work
+No I just realized there's another bub
+you'll have to fix with this this is
+really interesting in a good catch so
+even though I know the ID when I was
+running this locally it was running if
+the static site generation methods gets
+that props gets tagged pass and it was
+able to fetch the data for this site but
+because I don't have this set up to have
+a fallback when I am deployed it's going
+to 404 so what I want to do is I'm gonna
+have to set up a fallback so that it
+renders into a loading State that first
+time and then it statically generated
+here on now after that so that's really
+interesting maybe I'll get some good 404
+is in here I do awesome so let's just
+look through your - we're working with
+effort we have static logs that are
+giving to hundreds and I can kind of
+check out the metadata of what we're
+working with gives me all the
+information from the Purcell CDN
+and then going further I have lambdas so
+I have a 202 API sites and like I talked
+about we can see the duration that it
+ran and then even how much we were
+billed for so it took a hundred and
+fifty eight milliseconds really a lot of
+good information here that I might need
+when trying to debug things I'm guessing
+that yeah and then even hears these 404s
+for where that page doesn't exist so I
+even get a see which path was I trying
+to go to that was screwing up and giving
+me a 404 I think this can be super
+helpful
+let's try let's try searching so this
+will group by the minute and it just has
+all of the logs coming in so most of
+them were this is like live streaming
+and basically almost all 200s with some
+four hundreds in there
+that's looking good okay where is
+I wonder if I can just search for this
+API sites directly nice okay that kind
+of works as I would have expected so now
+I should be able to take this and maybe
+I want to see the billing duration over
+time or see how long it takes to run
+over time what I think is really
+interesting about log flare is that it
+parses your logs even if you send over
+like really dynamic data and it figures
+out the schema for you so I think
+somewhere in here yeah these are all the
+fields that it parsed so maybe I want to
+look at
+we'll just say this duration that it ran
+out copy that to the clipboard close
+this and I think I would want to do like
+the average I'm kind of just winging it
+here
+average is 170 894 that's really
+interesting I wonder if there is the
+ability to kind of see all the fields
+that we have available here
+UTC conversion oh that's really cool the
+next thing I kind of wanted to look at
+with this that I think it's super
+interesting is I think obviously this is
+helpful to know when we're getting to
+hundreds for hundreds five hundreds but
+what we really want is now that we have
+this configured I think just rename this
+what I was very curious inside of this
+is this Pinot log Flair
+so from what I understand Pino is
+essentially a module that allows us to
+kind of easily send and log structured
+data it's just a wrapper that allows you
+to do like a log or dot info or a logger
+dot error and then this allows us to
+build on top of that and with one
+configuration we can do logs from the
+server or the client side so if it's on
+the server side it's going to use this
+Pino logger and send those errors over
+that come from the log stream or the log
+drain sorry and if it's on the client
+side it just sends a post request and
+sends those logs over so I think I want
+to do something like this
+the combination of this along with this
+example should get me rolling
+like this is the reality most of the
+time when I'm building applications it's
+finding examples reading tutorials kind
+of trying to dive down into the code and
+understand what is going on so that I
+can build off it and have you know
+really a good understanding for myself
+because that's the best way that I learn
+specifically what I'm looking for here
+right is if I'm in like this sites API
+and we catch any kind of error when
+we're trying to verify the ID token or
+get the user site screen firebase I want
+to know about that and I want to get
+that value and log out a little bit more
+information
+so let's we're gonna need basically this
+put this under utils blogger
+I don't understand why this is in here
+because I don't see it being used
+anywhere so I'm not gonna do that and
+we'll see if that bites me
+so I'm gonna need to add you know and
+long Blair API key and source token
+probably I need to grab those out of the
+dashboard face level debug sure
+environment variable github commit that
+seems helpful give a little prettier
+Auto formatting and eternal for my
+notifications so they don't ding okay
+that looks yarn add that'll do it
+let's go into our settings
+see if I can find out
+more than API ingest API see
+and I need a source token where does
+that come from
+now I'm gonna have to change this after
+the stream
+Oh interesting that popped out an email
+I don't want to do that
+source token and then this must be the
+source at the end
+must just be this
+source set the source at where the logs
+are set that makes sense to me okay we
+got those in stole I'm going to run that
+there was also this util which I believe
+the intention here
+yeah I believe the intention with this
+util is that bigquery only accepts
+certain type of headers in a certain
+format so like we can't have hyphens
+they have to be underscores and this is
+basically just formatting those keys so
+I think I'm gonna include this to not
+really prep will say format
+okay so we have format object keys and
+we have logger
+you know a lot of people are really
+picky about default default exports or
+named exports and I'm really not that
+picky I think in general as long as
+you're consistent with it that's really
+what matters and I try to use default
+exports for like a lot of my react
+components and then for utilities it's
+kind of nice to do named exports
+we'll see if we get our
+odd come Beach no okay
+so given the headers for this request
+it's basically format them so they're in
+an acceptable state don't need to pull
+that out to be its own variable we can
+just put that directly in here
+that looks pretty good to me eight the I
+request you like
+sites
+and then I wonder if I should spread out
+the contents of this air or just include
+it as part of the response here is like
+or passing in this object and then
+obviously some name for that hair I
+wonder if there's any helpful
+information what we want to do here
+I know there was a guide somewhere
+let's uh let's gives it this shot and
+see we can try to do something without
+verifying the ID to again and that
+should log an air
+I'll go to my local host I'll go to
+3,000
+make sure this is working as I expect I
+would also expect that this logger would
+logout to just the standard out in the
+node context we shall see okay so if I
+try to go directly to API sites this
+should fail because I'm not passing in
+the proper header so it can't get the ID
+token okay
+so in this air right we have this object
+we have a message and environment is not
+set I'm guessing that's because we're
+running locally this this looks good
+level error message air here this has me
+questioning obviously it's an error
+because it's a logger error so that
+probably doesn't do me any good this
+probably doesn't do me any good either
+maybe it's just aired on message that
+would make the most sense to me and I
+also wonder if I'm gonna be doing this
+exact same thing in multiple places and
+basically just passing in the error
+message and then doing some vlog air to
+the server then I can probably abstract
+this out and do a method to inside of
+that logger file so that I don't have to
+kind of copy paste that around because I
+know we're catching errors in a few
+different places at the database level
+when we're getting all the feedback for
+the sites the feedback API route oops
+the feedback API route and the site's
+API URL
+I I can't at least for right now I can't
+think of a good reason when I would want
+to customize this more than just knowing
+the error message and the associated
+fields so I think I might move this out
+into a helper we'll see I'm gonna give
+it a shot we'll try this out see how it
+feels
+I'm not liking it I'll move it into kind
+of shared utility really love these
+absolute imports and aliases well it
+really cleans up this whole import
+electric boogaloo madness
+okay
+so we have logs flowing in for not only
+static files bill blogs which we're
+going to be able to see here very soon
+and then lambda I think we're ready now
+to push this up and try it out all these
+probably shouldn't be hard-coded though
+so let's I'm gonna have to switch this
+out and this is going to be
+let's see
+I'm just trying to debate if I need to
+put the next public prefix on this
+because if I'm going to use this same
+log source to log things on the browser
+side what we're going to need that next
+public prefix so that it gets exposed on
+the client-side if it's only in the
+context of nodejs then we can just name
+it whatever let's do that
+next public Locklear
+so what I'm realizing now is that I've
+already went and updated all of my keys
+so I really don't want to have to do
+that again on stream so I'm gonna do
+that outside of the stream to actually
+pop these in or maybe I'm gonna have to
+switch this out anyway so maybe I just
+try this out
+now that it's written it will be have
+will have to be switched that anyway so
+I might as well just push this up and
+try it out
+by the way the command B toggles that
+side panel which is really helpful
+especially when I have the super
+increased font here okay and P no
+logging and handle sessions and API
+okay that looks good this was very
+helpful
+we'll go back to here ad logging quickly
+look over this make sure that everything
+looks good now if I go back to the log
+stream wow that's awesome really pump
+that we're also getting the build box
+coming in too so not only are we getting
+requests from people visiting the site
+the static files the lambda oh man
+that's awesome I could probably even
+create an alert if the bundle size went
+over a certain value another thing
+that's really interesting that I'm
+considering trying out would be inside
+of next Jazz 9.4 I believe there was
+this web vitals reporting so Google puts
+out these values that are really really
+helpful in measuring the performance of
+your site so for asking temporal paint
+largest contempo pain input delay and
+layout shift and next jess made this
+really easy to have reporting on these
+values so at the app.js level you can
+export a function that's going to emit
+what those metrics are every time that
+they get reported so you could send us
+over to analytics some kind of tracker
+I've done a proof-of-concept with this
+with quick metrics and I think this
+would also be perfect for log flares so
+that I could have that information saved
+over time and easily query that on a
+graph and kind of see the trends because
+you can also take this data and turn it
+into a Google Data studio graph which is
+basically like Google's bi tool on top
+of bigquery
+okay I can see my new deployment with
+Purcell I have the two routes that have
+changed my check we test passed I'm
+gonna get really used to that it's super
+nice and I have my bill blogs let's go
+to here
+okay so I see it's really easy to
+differentiate to here because of this
+immutable URL that bracel gives us
+specifically where these logs are coming
+from these logs are just flowing in I
+probably want to look for yeah I think
+what I want to do to make sure that
+that's working is to go here and try to
+delays it locally which is access to API
+sites and yeah that should blow up I
+should see this then stream in I see
+okay 500 API sites
+[Music]
+okay that's definitely what I've
+expected for the message environment not
+sent
+I feel like I think this might be no DMV
+level air that looks good our headers
+nice now what I would like to see is
+then being able to maybe go in here look
+at the schema and I know now what was it
+the status code I might want to take and
+look at the status code is I wonder if
+it works like this
+that is not how this works
+but I want to figure out a way to then
+maybe query by only these five hundreds
+and then I could create an alert for
+that I think that would be really
+helpful but I'm gonna have to do a
+little bit more research on log Flair to
+understand exactly how to run those
+queries and then set up some alerting
+but I'm pretty happy with how far we've
+got we have squashed a few bugs fixed
+some of the login and logout issues that
+we were seeing got checked we set up so
+that it will run in Gration test on our
+PR which is great I think going forward
+that's gonna add a lot more confidence
+in my deployments especially as I make
+that a more comprehensive test that
+covers the entirety of logging in adding
+feedback adding sites and then deleting
+things and cleaning it up and then yeah
+log Flair was super awesome easy to set
+up it allows me to now save these logs
+so that people are having five hundreds
+I'm going to know about it and I'm gonna
+have the ability to kind of follow up on
+this so with that I think that concludes
+this stream I'm pretty happy with what
+we've covered so far so for those of you
+who are tuning in thank you and stay
+tuned for the next one thanks

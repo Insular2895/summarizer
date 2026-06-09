@@ -1,0 +1,654 @@
+[Music]
+[Music]
+thank you guys and thank you
+for sticking it out with us
+um I'm going to say Lou I think I
+actually have the best job um no offense
+because yours is pretty good too but I
+get to do what I love with people I love
+and I've been doing it for a really long
+time and you sit through a day like we
+just went through and hopefully you just
+get a you know a sense for the
+competitive advantages that we've built
+starting with the special culture and
+the relationships that we have obviously
+we have been growing in a very
+significant pace for a very long time uh
+Tony said in his his opening remarks
+that the next 10 years should be easier
+than the last 10 years and I would agree
+we have more scale we have more
+capability we have more Capital we have
+more people we have more competitive
+Advantage than we've ever had and the
+growth in our markets is accelerating as
+well so I think if we just keep
+following the Playbook that we've laid
+out that has served us well over the
+last 30 years if we keep being Guided by
+our core principles and values um I
+think the future will be bright and
+hopefully we'll continue to enjoy all of
+the same success in the future that
+we've had in the past so we look forward
+to uh sharing that Journey with all of
+you as well and with that I'm going to
+invite Jared and Greg up and we have
+some time for some some Q&A if folks uh
+folks are interested so thanks again for
+joining us today and we'll open it up to
+questions thanks good morning everybody
+um Alex blast and golden Sachs thanks
+thanks for putting a great day together
+was great great Insight so I wanted to
+start with a question on investments um
+you guys have a history of making
+substantial investment the business that
+drove obviously the growth of youline on
+the slides today is you look forward to
+sort of achieve the growth you've talked
+about what what are the key areas where
+you expect to incrementally spend more
+clearly you have ability to expend
+margins faster but as we talked about
+before you you s of choosing to reinvest
+that without going business line by
+business line I would think that we're
+going to over index to Investments on
+the investment side of the house uh the
+combination of continuing to Outsource
+upgrade and uh centralize our
+non-investment functions in places like
+Mumbai I think give us an opportunity to
+scale without adding significant cost
+some of my commentary earlier around
+Technology Innovation Ai and the
+efficiencies we'll get there too I think
+will help reduce spend on the
+non-investment side if you remind
+yourself of my earlier comment the the
+The Binding constraint to growth and
+winning in these Market markets is going
+to be origination investment and
+portfolio management at the end of the
+day and that's not to disparage all the
+other you know critically important
+functions to get that flywheel moving
+but I think where you'll be seeing you
+know a disproportionate amount of
+investment is on the investment side of
+the
+house
+Mike hi Mike Cyprus Mor sing again
+thanks so much for uh the time and
+insights today just I was hoping you
+could elaborate on your comments on AI
+just maybe talk a little bit about how
+you're experimenting with that how many
+use cases have you identified how many
+do you have in production how many you
+think you'll have in production a year
+from now how meaningful could that be
+for the margin for the overall company
+and how do you think about that at the
+portfolio company level as well thank
+you sure so for those of you who have
+known us a long time we are not prone to
+Hyperbole and I think we have to be
+careful that with regard to AI the same
+as with everything else you have to have
+a measured view about what the
+opportunity and what the risk uh the
+technology imposes on us uh the
+acquisition of bootstrap the aggregation
+of that capability and the movement of
+that capability into our strategy group
+is an important First Step because what
+it does is it elevates that capability
+to a place in the organization where we
+can deploy it across everything that we
+do uh and I think others and we've
+learned this with things like ESG as
+well when you bury those deep into to
+the organization and it's too
+distributed you can't actually drive the
+type of change that you need to the
+first thing that we did which I think is
+key to good implementation is you have
+to set up the right governance framework
+around use cases prioritization of use
+cases data governance governance around
+use of confidential information so we've
+spent the first you know number of
+months on this journey even before the
+acquisition of the capability getting
+our governance structure right and again
+that sounds so simple but
+ultimately in order to get good outcomes
+you need to have good inputs and a good
+structure so we formed a uh an AI
+steering committee that has
+representation from uh investment
+non-investment functions
+technology uh and the SE suite and we
+set out to codify what risks we were
+willing to take uh and how we saw the
+opportunity set as I mentioned in the
+presentation the three places for the
+Innovation to play is within the
+Investment Portfolio where I actually
+think is where we will see the biggest
+bang for the buck uh and again as
+exciting as the technology is we view it
+as a supplementation of more traditional
+businesses so if we can bring good
+structured Technology Solutions to our
+portfolio improve margins and
+profitability that obviously shows up in
+performance with which then uh is a
+benefit to us so Investment Portfolio is
+one two is within the existing business
+there's a huge opportunity as I
+mentioned to leverage
+technology uh in Jared's World on some
+pretty basic uh investment operations
+functions that have been largely manual
+intensive over the uh you know the
+Decades of this business has been in
+place to name one for example kyc and
+subscription documentation that's a
+highly manual process that with very
+little technology investment could you
+know reap great benefit and then the
+third is in the investor
+experience um and that's how do we mine
+data better risk analytics better
+portfolio construction uh Etc to help
+serve our LPS better the Holy Grail of
+all of this for us will be to then
+unleash the technology on the
+underwriting of new Investments right so
+when we take all of the private data
+that we have how can we apply this
+technology to actually inform the
+decisions that we're making and I say
+holy grail because back to governance
+that is not an easy thing to do given
+the current regulatory guidance that
+exists around uh the application of the
+technology so we are building the
+infrastructure to do it but I think
+we're still a ways away from you know
+putting the technology into into effect
+um we are currently using the available
+tools that are coming through uh places
+like Microsoft for example within their
+Suite of products we're already
+beginning to see that that can generate
+significant efficiency but at the end of
+the day the the the goal is to have our
+own models that we can apply to our own
+business that would get us the results
+that we want
+Craig Craig s bank for America guys
+thanks for hosting a great event here um
+if you look at the liquid fixed income
+markets you had this Alig goly form like
+20 years ago Black Rock M go you're
+seeing the same thing form in the
+private credit markets uh with the
+leaders having depth um breth
+infrastructure credit ABF um do you
+think the gap widens between the top
+three or four and kind of five to 10
+over the next 10
+years I do um I don't know if if I would
+use the term
+oligopoly um but as I showed earlier the
+markets are clearly consolidating and
+you can see that to remind people on the
+fundraising side so if you at the
+published fundraising data The Last 5
+Years the top 25 managers took 56% of
+the capital the five years prior it was
+you know 32% something like that so
+you're already seeing that consolidation
+when you see the deployment come through
+to Mitch's slide earlier just showing
+the deployment both in terms of the
+scale and consistency we're taking share
+in that consolidating market um but
+we're doing it with a set of competitive
+advantages that are very unique unique
+so I think other people are moving to
+scale but they're doing it in a single
+segment of the market and a single
+geography I don't see any one of our
+competitors that has accumulated scale
+capability and the ability to play in
+each of those segments of the market
+around the globe it's why I think you're
+hearing such conviction that our
+leadership position even in a world
+where people are perceiving more Capital
+coming into the market you know that
+we're not actually experienced that you
+know is compromising our opportunity set
+um how many players ultimately you know
+exist at the end of the day time will
+tell but I do think the big will get
+bigger let's go with
+Bill thank you very much Bill cats TD
+Cowan uh terrific presentation thank you
+um maybe a two-part question somewhat uh
+disperate in scope you spent a lot of
+time talking about your success in terms
+of Acquisitions Black Creek and landmark
+seems like that's moving up to pecking
+order a little bit from today's
+presentation I was wonder if you could
+talk a little bit about product Gap
+where you might see the opportunity set
+and the economics associated with that
+full stop second question if
+everything's getting easier for the next
+10 years and he did a 30 some odat
+percent F ker in the last five years why
+only 15 to 20% given so much margin
+Improvement as well thank you sure um
+I'll answer the first one then you can
+answer the second one because I'd
+probably answer it in a snarky way which
+you which which you won't um so we only
+talked about two examples cuz they were
+recent but obviously we have been
+acquisitive uh and if you were to go
+back in the history of the Acquisitions
+you would see a very similar synopsis
+that we were focused on good culture we
+were focused on large
+transformational uh market dynamics we
+were focused on financial accretion and
+the opportunity to to take good
+businesses and make them great and so
+you would see similar types of numbers
+if we talked about infrastructure or
+Asia credit or even going back to um the
+acquisition of Area Property Partners
+you know over a decade ago and what
+you'll see is that because of the value
+that we bring we're able to buy these
+companies you saw at five to 10 times
+eida in a market that is trading at a
+premium to that and with a currency that
+obviously trades significantly in excess
+of that um so we will continue to lean
+on that experience in that Playbook as I
+highlighted the places that where we
+perceive gaps they're fewer and far
+between at this point just because we've
+also demonstrated that we're getting
+better at building businesses and so a
+lot of times we're going to be attacking
+these product gaps with an organic build
+but places where we see transformational
+change happening and a desire to get
+scale quickly right so if you think
+about landmark transformational changes
+the team described in secondaries we
+needed to get big quicker than we could
+have otherwise done if we did it
+organically so the two places I
+mentioned in our prepared remarks were
+infrastructure generally speaking with
+an emphasis globally on digital infra
+and then continued expansion in Asia
+because again when you you go back and
+here what Edwin talked about that's
+where the growth is so I don't want to
+oversimplify a complex you know thought
+process but if 60% of the global growth
+is going to be there uh and you
+understand how these markets mature and
+evolve we need to be there too with a
+much broader set of of capabilities over
+time thanks uh Mike had it in his slides
+and then it was the first slide for me
+that we shared with you where we have
+been the last five years and it was that
+35% growth and when we talked about our
+fiveyear plan we had laid out a 20% ker
+so you saw that that we grew greater
+than what we thought and that's
+certainly in the realm of possibility
+but Mike you also heard him say that
+we're not prone to hyperbole so we want
+to put out guidance that we believe is
+right in line with we will meet that
+guidance uh and we always have the
+chance to exceed that guidance so we're
+going to continue to grow and I do hope
+it gets easier looking at RI and the
+strength of RI and the conviction around
+RI I don't think that there's many other
+people who can look at their performance
+fees and say with conviction these are
+the performance fees that that we're
+targeting over this period we think that
+that is a meaningful growth driver of
+the business as well yeah it's an
+interesting thing I don't know many
+Industries a that are growing at 20%
+plus per year with a you know 3% plus
+you know contractual payout and I've
+been doing it for 25 years I also don't
+know many Industries with with all of
+the variability in global markets that
+have the confidence to put out five-year
+guidance to begin with let alone you
+know five-year guidance at this
+magnitude so for all of the excitement
+enthusiasm I also want to just take a
+step back because we're professional
+investors as well you know find me an
+industry that could give you that kind
+of Guidance with that you know level of
+Tolerance uh and there's just not that
+many places where you can see it so
+obviously when you're going five years
+out there's a lot of optionality up and
+down you got to put something out that
+you know that's
+appropriate let's go to
+Brenan uh thanks Brenan hin ubbs um DPI
+was referenced a few times today um and
+and it certainly is important to feed
+the fide wheeel that you spoke to
+Michael so can you speak to what you're
+doing or what you can do in order to
+maximize DPI within your own business in
+the current environment and and also
+what trends you're seeing in the
+industry uh that could maybe inform how
+that's progressing uh because we know
+how much Ops are looking for sure so DPI
+is critically important I think folks
+should appreciate it's more important on
+the private Equity side of the house and
+the business than it is on the credit
+side because when you're delivering 10
+10 to 12% current yield that is DPI so
+to Jared's context around European
+waterfall one of the reasons people are
+attracted to private credit increasingly
+is just the value of that current
+distribution both as a risk mitigant but
+also as a provider of of liquidity so
+when you look at our fundraising success
+on the private credit side it would tell
+you that if there is a DPI issue we're
+not we're not feeling it uh obviously on
+the private equity of the house we have
+to be mindful of that uh as Matt
+mentioned we are very focused on
+delivering performance first because
+that's ultimately what brings the
+capital back into the house and not
+surprisingly like all other private
+Equity private Equity managers on the
+planet we're going to look at tools
+available to Us sales of companies
+minority sales secondaries continuation
+funds Etc I would say we are a net
+beneficiary of the lack of DPI right now
+so when you think about opportunistic
+credit structured Solutions direct
+lending all of these Capital Pools
+alternative credit are going in to solve
+for that Equity Gap because you have
+owners of assets and companies that
+don't want to return capital in this
+valuation environment um that said I
+think given the economic backdrop and
+the stabilization in rates you heard it
+from Julie you heard it from the direct
+lending folks the pipelines are picking
+up and we talked about this on the
+earnings call as well well you're
+beginning to see buyers and sellers come
+together uh in real estate we're you
+know seeing an unfreezing of transaction
+volumes and I'd say on the private
+Equity side of the house we're seeing a
+pretty significant acceleration in flow
+right now you guys are seeing really
+strong momentum there given some of the
+targets that Raj had outlined it does
+suggest a meaningful uptick in
+fundraising historically you guys have
+maintained a really good discipline
+around fundraising in relation to the
+deployment opportunity that gets a
+little bit tougher to manage within the
+retail channel was hoping to get some
+perspective on how you ensure that
+you're going to maintain that
+discipline yeah it's there's a tension
+that you need to create obviously
+between capital and deployment it's it's
+it's we've talked about that a lot I
+would point out in Raj's projections he
+was taking us from six installed
+products on the platform today to 8 to
+10 right so some of that growth is going
+to come from broadening out of the
+product set and then it will come from
+further penetration the the easiest way
+to control is just the pace with which
+you bring on new distribution Partners
+right so that is our controllable lever
+so we're clearly growing and
+diversifying those relationships but we
+control the pace of when we want to put
+them on the platform and and and start
+the sales cycle that doesn't give you
+perfect you know month-to-month control
+but it gives you the ability at least
+from a forward you know forecasting
+perspective to look at you know what the
+capacity in those channels are and how
+we want to Pace
+ourselves yeah uh you know listening to
+your investor day as well as those of
+your peers you you can't be struck by
+the growth in size scale and complexity
+of what you have built here and what
+it's likely to be in another five or 10
+years and I'm I'm just kind of thinking
+what are the guiding principles and how
+do you have to think about building a
+risk and control infrastructure how do
+you manage conflicts of interest you
+know as as you use the companies like
+yourself touch different parts of the
+capital structure of you know all kinds
+of different firms you know how do you
+manage potential conflicts of interest
+and you know same as going into retail
+and you know where you where you able to
+earn performance fees on on marks as
+opposed to you know the old way of uh
+you know real realiz realizations how
+how do you manage the risk structure and
+all
+that sure i' say one of the first things
+that we do is we look to avoid putting
+ourselves in a position where we would
+have some of those conflicts I mentioned
+it during my balance sheet light portion
+of my presentation i' say that we also
+we don't lend to our private Equity
+portfolio so we don't lend to ourselves
+we're not essentially ever a self-
+dealer putting ourselves into that
+position uh we we we spend a lot of our
+money on our compliance on our legal on
+our Finance and Accounting working with
+our internal people and our external
+advisers to make sure that we're aware
+of situations where that could occur and
+how we would address it and it's
+certainly one of the things frankly that
+I believe gives us an advantage a lot of
+times because it's expensive to put
+those things in place it's expensive to
+put those controls in place if you don't
+have scale it's a lot harder to do that
+but it's also part of the culture in
+that people know uh that they need to
+share data in a certain manner they know
+when it goes to a certain part of the
+portfolio that they're also incentivized
+to make sure it's successful there so
+it's not about building little fifs
+across the organization where they're
+competing for an asset or a return but
+we're really incentivized to work
+together and to collaborate such that we
+can void conflicts like that that could
+ultimately erode your culture and er
+erode the trust from your
+investors yeah put it in perspective I
+mean we're we're a $45 billion market
+cap company that have been doing this
+for 30 years so you should assume that
+we actually understand how to manage
+Enterprise risk um otherwise people
+wouldn't give us their Capital to manage
+because everybody who invests a dollar
+with us whether you're a pension fund or
+one of the wealth PL platforms is doing
+extensive operational due diligence with
+a focus on Enterprise risk framework so
+we could spend hours talking about it
+but um I think that's kind of table
+Stakes is you have to be great at that
+if you look at our 3,000 employees maybe
+to give you another lens half of them
+are non-investment people right so we
+have 1500 people at this company that
+are not investing just to give you a
+sense for the scale of all of the
+support functions including legal
+compliance and and ERM
+Mike Mike Brown Wells Fargo Securities
+uh focusing on the alt credit side of
+the business so some of your peers have
+gone down the path to owning origination
+platforms as a balance sheet light
+player that's not your strategy but
+maybe you can expand on some of the
+advantages that you've seen to to your
+approach and as you think about perhaps
+expanding with the insurance clientele
+is that ever a strategy that we need to
+change your shift or is it you know
+truly sticking to the balance sheet
+light model sure so I'm going to give
+you our answer and this is not meant to
+disparage anybody else's approach
+because there are lots of different ways
+to bake a cake
+um we believe in the balance sheet light
+model we think it gives us more
+flexibility to navigate Cycles we think
+to Jared's point it um delivers a higher
+Roe more predictably to our investors
+number three we think it does not
+compete with other participants in the
+market like our third party Insurance
+clients and given the breath of our
+product you've heard me say this before
+if someone wants to invest in Aries
+investment product they have 25 ways to
+do it now in the liquid illiquid and
+institutional market so we believe that
+as an asset manager our responsibility
+is to deliver the Market Asset
+Management profitability not investment
+exposure um we do investment exposure in
+other parts of the business so that's
+true across the board not just in our
+insurance business number two I think
+that insurance comes with a different
+regulatory framework a different style
+of
+investing uh and a a gen generally
+different approach to how you think
+about growing those businesses and
+historically insurance companies have
+traded at Book value uh I think if you
+look at what we're doing in aseda we can
+do better than that through the use of
+Technology better investing outcomes Etc
+but we know and all of all of you in
+this room who cover financial markets
+there's been a constraint on value in
+certain segments of the balance sheet
+heavy Market Banks and insurance
+companies in my opinion for a reason so
+we don't we don't want to inherit that
+complexity and that constraint I would
+also argue when you look look at the
+body of work in financials for the last
+30 years other things that have traded
+at Book value are origination platforms
+within specialty Finance um and you
+could go across 30 years of public
+Equity market performance and you will
+see that you know small specialty
+Finance platforms trade at Book value
+um and maybe in different rate
+environments you'll see a a a general
+pop so the way we've always thought
+about it is if you're building a
+sustainable business I would rather have
+those people
+inhouse at Book value than pay a premium
+for a platform that I think is worth
+book so it's not that we don't invest in
+origination if we see a market where we
+think we can create sustainable
+origination advantages we build a
+team so we've got teams in trip net
+we've got teams in autos and then we can
+go out into the market agnostic and
+transact with other Finance Company
+platforms that we don't own so similar
+to the way we're thinking about balance
+sheet light if I go out and I set up an
+equipment leasing platform as a captive
+the other 99 equipment leasing Platforms
+in the market are not going to want to
+transact with me so it's just a
+different Capital framework and a
+different view uh from time to time we
+will invest in origination platforms
+within fund families to drive a specific
+outcome into that fund but again when
+you go back to our core principles of
+origination we want to own it and
+control it not through the equity but
+through the culture and the people so
+you know not to say that one is right or
+one is wrong but that's just the way
+that we've we've thought about it we
+have time for one last
+question
+anybody all right well thank you all for
+joining us today hopefully it was a very
+informative day and you got a lot out of
+the content and I think that wraps up uh
+our day today thank
+you okay

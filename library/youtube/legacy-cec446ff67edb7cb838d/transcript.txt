@@ -1,0 +1,235 @@
+hello and welcome to our webinar today
+on is the initial margin documentation
+focusing on rights and remedies this is
+part of a series of webinars that is
+producing on the new initial margin
+regulatory documents my name is Marc new
+I'm senior counsel at the Americas
+Forester and I'm joined today by two
+presenters we have Eleanor Boras who was
+an executive director at Morgan Stanley
+and Kevin Bell who is a senior vice
+president at the de Shore group another
+were to you thank you and so we are
+going to provide an overview of the
+rights and remedies for both the secured
+party in the pledge or under the 2018 I
+am CSA and we thought one of the best
+way to do that would be by reference to
+the remedies that currently exist for
+those parties into the 1994 CFA
+so just turning to the first slide and
+this sets out under the 1994 credit
+support annex what the triggers are for
+exercising remedies for the secured
+party and as you can see here the
+triggers are the occurrence of an event
+defaults or a specified condition which
+would include various termination events
+with respect to the pledge or has
+occurred or as continuing or an early
+termination date has occurred or been
+designated as a result of an events
+defaults or specified conditions so one
+of those two events has to have occurred
+in order to exercise remedies just
+turning to the next slide and this slide
+sets out once those triggers have
+occurred what the rights and remedies
+are that the secured party can actually
+exercise and so as you can see here they
+the secured party would have the rights
+to get to any of the cloud all that's
+been posted to it any other rights and
+remedies that it would be available to
+it with respect to other types of
+collateral such as a lot of credits
+rights to set off and then the right to
+liquidy and collateral edit Holtz
+and saw this turn over to Kevin with
+respect to the pledge of our side Thank
+You Ellen our so with respect to the
+pledge or there's a good deal of
+similarity obviously with respect to the
+triggers you'll see one sentence instead
+of two
+so effectively the requirement on the
+pleasure side is that an early
+termination date has occurred and is
+continuing as a result of an event of
+default or specified condition similarly
+the remedies look quite the same you the
+first two bullets are mirrors of secure
+party rights the differences come in the
+third so whereas the third option for a
+secured party was to set off for a
+pleasure there is an obligation of the
+secured party to immediately transfer
+all posted collateral and interest
+amounts to the pleasure and to the
+extent that does not happen then the
+pledge or may set off or withhold
+payments that remain due to the secured
+party turn back over to eleanor thank
+you so just turning then to moving on to
+the 2018 imc essay before we get into
+the details of the rights and remedies
+we just wanted to access re-highlight
+answers three primary differences
+between the two CSA's one is the
+triggers for exercising remedies are
+slightly different and some of the
+drivers for that include the fact that
+we're dealing with segregated collateral
+and there's a bilateral exchange of
+initial margin under this this
+documentation and finally that there may
+have been between the parties existing
+negotiations and agreements with respect
+to how to treat segregated initial
+margin in addition as I mentioned there
+are segregation requirements here that
+don't necessarily exist under the
+existing documentation so each party
+will select to cast
+to whom they want to post any sort of
+exercise of remedies would trigger
+delivery of notices to the custodians
+and there's a consideration of the
+interplay between the account control
+agreements and the triggers for
+exercising remedies here and then
+finally unlike the sort of 1994 CSA
+rubric here there potentially could be
+more than one CSA so parties might have
+a CMC si as well as an IMC si may have a
+VM si si with March and that's already
+being called initial margin authority
+being called as well as an IM si si and
+so it's necessary to sort of consider
+the interaction between those multiple
+CSA's when dealing with remedies and
+drafting of this new CFA so just moving
+on to the next slide and this is moving
+into the actual rights and remedies
+under the 2018 CFA for the secured party
+so as we reviewed for the 1994 CFA these
+are the triggers for exercising remedies
+and as you can see it's a little bit
+different so starting with the first one
+it's the one of the triggers is that an
+early termination date in respect of all
+transactions has been a kress occurred
+or been designated as a results of an
+event to falter access condition this
+particular trigger is similar to one of
+the triggers from the 1994 cfa parties
+then may elect to add an additional
+event as a trigger or a secure party
+rights event which is that an event of
+default has occurred as a result of the
+pledge or failing to pay an amount due
+under Section six e of the master
+agreement so that's an optional election
+and then finally the third sort of new
+election that's been added is that
+there's an ability to elect this control
+agreement secure party rights event
+which means that to the extent this is
+elected parties can choose to sort of
+have as their triggers for
+precising remedies the triggers that are
+referenced in an existing control
+agreement that the parties have in place
+and to which they're going to use for
+their regulatory I am so it's a way of
+preserving existing triggers or existing
+arrangements that the parties may have
+with respect to segregated collateral
+and just moving on to the next slide in
+terms of the actual rights and remedies
+that the secured party would have once
+one of the triggers mentioned before
+have been have been actually triggered
+the secured party can deliver a notice
+of exclusive control under the control
+agreement to request access to the
+collateral and then in addition exercise
+and you know remedies very similarly to
+the remedies that were described in the
+1994 CSA with one change which is that
+there are some limited offset rights
+with respect to collateral that's held
+in segregation and so I'll turn it over
+to Kevin with respect to the pledge or
+peace thanks Alan our just before
+getting specifically into the budget
+provisions about worth making a more
+explicit note that there is at least a
+segment of the population who in the
+context of their existing CFA's may only
+have been in one position as as pledged
+or if initial margin was posted one way
+by default here you will be both a
+secured party in pleasure and so I think
+one needs to look at both of these
+provisions and consider how that fits
+when you're in each side of the rule
+with that said the Pledge of Rights
+event the first one again does largely
+mirror the secured party's trigger in
+the sense of having an early termination
+date respect of all transactions having
+occurred and been designated the
+elections however are a bit different
+the first representing the biggest
+change parties can opt to turn on
+Fletcher pleasureful discharge
+condition which specifies that a
+pleasure rights event will not occur
+unless the bludgers provided a statement
+to the secured party in respect of the
+early termination date pursuant to
+section 6 D effectively that calculation
+of closeout and is claiming that amount
+under 6 e is either payable to them is 0
+or is payable by them but has been
+discharged in full or will be discharged
+in full effectively making sure that it
+is not a circumstance where the pleasure
+is is electing an early termination and
+yet is the sole party with a payment
+obligation finally there is the control
+agreement Pledger rights event which
+does look much like the secured party
+right the event in the sense that again
+you're deferring back to the triggers
+that you would have negotiated with the
+other party in your custodian in your
+control agreement such that reaching
+collateral is it done pursuant to those
+terms the remedies themselves are
+identical in the sense that again
+because collateral is not held directly
+at a party but rather at a custodian the
+occurrence of one of these events causes
+the secured party party or in this case
+the pleasure it gives them an ability to
+deliver an access notice under the
+control agreement to access that posted
+collateral and also has Eleanor noted in
+the secured party rights event
+potentially provides limited offset
+rights under other existing CSAs so with
+that I will turn it back over to Marc
+[Music]
+thank you Kevin so that brings us to the
+end of today's presentations if you have
+any further questions about this
+presentation or the initial margin of
+documentation generally please contact
+us by email at is the legal at is dot
+org I'd like to thank both Kevin and I
+don't know very much for today's
+presentation and thank you all very much
+for listening

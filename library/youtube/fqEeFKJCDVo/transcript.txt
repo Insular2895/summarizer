@@ -1,0 +1,88 @@
+hi guys it's just a dance from the
+solutions engineering team today I will
+be sharing with you some tips that you
+can look out for when you're trying to
+compare values that you see on your AWS
+cloud watch console with the values that
+we see on your data log dashboard we
+have customers reach out to us every
+time where they feel that the metrics
+that we are collecting from AWS does not
+line up with what they are seeing on
+their own cloud watch console now I will
+show you a few things that you can
+actually check to make sure that you're
+comparing apples with apples and you are
+not having any discrepancy in between
+what you're looking at the cloud watch
+and what you're getting on a data
+platform so for example over here I have
+plotted one particular metric from
+application ELB service which is the
+request con metric over a load balancer
+which is named this as you can see right
+on your screen over here so now you can
+see that I have a peak value at around
+2010 UTC which says 0.997 which doesn't
+seem accurate but now then if I go back
+to my own data of dashboard I look at it
+and it seems that okay this doesn't
+match at all now few things you can look
+at this particular section over here is
+you can actually go and find this
+particular metric and the AWS
+documentation and you can actually see
+that this particular documentation
+states that the most useful statistics
+for this particular for this particular
+metric is nothing but the sum so if you
+go back to the carwash console you see
+that the status is that you are viewing
+over here is the average if I change it
+now if I change this back to some I see
+ok the value seemed to line pretty much
+closer to what I'm seeing on the draw
+so one more thing that can actually look
+for is that you can see the time frame
+that you're looking on the cloud watch
+does this mattress data rock oh yes it
+does now the other thing that actually
+look for is that you can see that our
+time buckets on it - on data log
+dashboard is like every 1 minute but on
+the cloud what side you are seeing it
+for every 5 minutes so let's change it
+back to 1 minute and then you can see
+that the value seemed to change the
+graphs is changing so I can again look
+for the peak point over here which is
+at 2013 UTC and the request contest 4.3
+K go back to the data box dashboard 2013
+4.3 K so this matches on what we are
+getting from NWS and from your cloud
+watch API so the reason we do that is
+because the most granular time series we
+get from your API from AWS cloud which
+is the API is for one particular minute
+and we have to make sure that we get the
+most relevant statistics for this
+particular metric which the documents
+itself shows as sum so to compare this
+particular metric values with what you
+see on the interrupt you have to make
+sure that your scope to a particular
+proper time frame you have a proper
+stats that you that we are supposed to
+be collecting and you looking at over a
+particular time period that is the most
+granular that we collect which is one
+minute so looking at this let's compare
+one more point which is like 12 2014 UTC
+1.0 9k and it matches over here as well
+so looking at the small things like the
+stats the period and the scope you
+looking at would give you a more closer
+comparison when you're trying to compare
+your values with data Rob and your AWS
+console thank you
+you

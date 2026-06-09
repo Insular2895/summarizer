@@ -1,0 +1,255 @@
+At the age of 24, I was co-managing a
+$250 million portfolio at a hedge fund
+working 80 to 100-hour weeks. Over that
+time, I had a front-row seat working
+with veteran hedge fund portfolio
+managers and saw exactly how they make
+millions of dollars for their clients.
+And in this video, I'm going to teach
+you everything I've learned. We're going
+to cover hedge fund strategies,
+financial modeling, and finally, a
+secret that I only learned when I
+entered the industry [music]
+and it can make the difference in an
+interview whether you get the role or
+you don't. And I promise, by the end of
+this video, not only will you be ready
+for an interview at a hedge fund, but
+you'll also start to see how real
+investing professionals approach the
+financial markets. But before we
+continue, now it's no secret that hedge
+fund entry salaries start at well over
+six-figures, but the support available
+to actually break into these roles is
+practically non-existent. I definitely
+felt this way when I was first trying to
+break into the industry. That's why I
+built Delta Shark. Delta Shark is a
+platform that combines market
+intelligence with structured finance
+education solely focused on the hedge
+fund industry. The full curriculum of 46
+courses covers everything from equity
+research and hands-on financial
+modeling, where you actually build the
+models yourself through interactive
+lessons, to portfolio construction,
+hedge fund strategies, all the way
+through to interview prep and
+application support. Alongside the
+education, you get access to an
+institutional grade terminal with access
+to real-time data, company financials,
+macro, financial models, and even daily
+research reports written by former hedge
+fund analysts. On the platform, you can
+run a portfolio, upload your financial
+models, equity research reports, and
+share your Delta Shark ID directly on
+your CV when applying for jobs. It's
+completely free to try out, link in the
+description. Now, let's get started with
+the first point, which is hedge fund
+strategies. It's absolutely critical to
+understand the difference between these
+strategies when trying to break into the
+industry. And the three that we're going
+to cover today are long-short equity,
+global macro, and quantitative or
+systematic. Long-short equity is
+probably one of the most well-known
+hedge fund strategies and it's the one
+that I ran at Marble Bar, which is the
+hedge fund I worked for. The general
+idea is to buy stocks that you expect to
+rise and short stocks that you expect to
+fall and try and make profit on both
+rising and falling markets whilst trying
+to reduce overall market exposure.
+Typically, it's based on a bottom-up
+analysis, which means analyzing the
+financial documents of individual
+companies. There may also be a top-down
+analysis of the risks and opportunities
+offered in sectors, countries,
+macroeconomic situations as well. You
+can typically see the strategy running
+in a market-neutral way, which means the
+overall book [music] is hedged against
+the market. Basically means you're
+hedging the portfolio against things
+like sectors, market cap, [music]
+country, factors, etc. Factors are
+measurable characteristics of a stock
+that have historically explained the
+differences in returns. Common examples
+include value, momentum, volatility,
+[music] size, etc. So, for instance, if
+your long positions are tilted towards
+high momentum stocks, you want your
+short hedges to reduce this exposure by
+shorting momentum.
+Therefore, your returns are
+idiosyncratic rather than unintended
+exposure to a particular factor. The
+most well-known academic framework for
+this is the Fama-French model, which
+originally identified market risk, size,
+and value as the key factors driving
+equity returns. In practice, many funds
+use commercial risk models such as
+Axioma to deconstruct their portfolios'
+exposures to different factors, allowing
+portfolio managers to monitor and
+control their risks to unintended
+factors. Famous hedge funds that run
+this strategy are Point72, Marshall
+Wace, and Man [music] Group. The next
+strategy that we're going to talk about
+is global macro. This is a strategy
+where funds take positions based on
+macroeconomic views, which can include
+things such as interest rate changes,
+currency movements, [music]
+political shifts, commodity cycles, and
+so on. This usually means that they
+trade across asset classes such [music]
+as bonds, currencies, equities, etc. One
+of the most famous trades in this
+category is George Soros's bet against
+the British pound, where he shorted the
+pound in 1992, betting that the UK would
+be forced to withdraw from the European
+Exchange Rate Mechanism because it
+couldn't sustain the artificially high
+interest rates required to keep the
+currency pegged. [music]
+And he was right. Eventually, the Bank
+of England finally gave in, the pound
+collapsed, and he reportedly made over a
+billion dollars in a single day. It's
+often referred to as breaking the Bank
+of England within the industry and it
+remains one of the most famous trades
+within this category. Some of the
+largest hedge funds within this category
+are Brevan Howard, Rokos, Bridgewater.
+And finally, our third strategy that
+we're going to talk about is
+quantitative or systematic. These funds
+use mathematical models and algorithms
+to identify trading signals. Before we
+talk about this, I want to talk about
+the difference between buy-side and
+sell-side quants as they do pretty
+different things. Quants that work at
+market makers such as Citadel
+Securities, Jane [music] Street, Optiver
+work on pricing models, execution
+algorithms, and managing the risk of
+maintaining continuous liquidity across
+markets. Whilst quants on the buy-side
+such as hedge fund work on developing
+alpha-generating strategies, building
+predictive models, and constructing
+portfolios that outperform the market.
+There's a key difference between market
+making and market taking. And for
+reference, I have experience working as
+a quantitative trader on the market
+taking side of things. Some of the most
+famous hedge funds that run this
+strategy are RenTech, AQR,
+DE Shaw, etc. And if you want to learn
+all of these strategies in super detail,
+check out the respective modules on
+Delta Shark. The next section of this
+video is going to be about financial
+modeling.
+This is a skill set that many analysts
+use, especially on fundamental equity
+funds such as long-short. The three main
+models that you'll probably encounter
+working at these funds are
+three-statement model,
+DCF, and comps. We're going to start
+with the three-statement model. The
+three-statement model links the income
+statement, balance sheet, and the cash
+flow statement into a single integrated
+model. Net income from the income
+statement flows into retained earnings
+on the balance sheet. Changes in working
+capital, CapEx, and debt then flow into
+the cash flow statement. The key feature
+is that everything is interdependent.
+[music] Interest expense depends on debt
+levels and cash balance flows back into
+the balance sheet. This model is
+virtually the starting [music] point for
+all other further analysis. And the
+second model that we're going to talk
+about is a DCF. The DCF is an intrinsic
+valuation method. You project the
+company's free cash flows into the
+future such as 5 to 10 years, then you
+calculate the terminal value to try and
+capture the remaining life of a
+business. All future cash flows are
+discounted back to the present using
+WACC, and the sum gives you the
+enterprise value. The DCF [music] is
+powerful but sensitive to assumptions.
+Small changes in growth or discount rate
+can materially shift the output, which
+is why sensitivity analysis is standard.
+Comps, or comparable company analysis,
+takes a relative approach. You identify
+peers that are similar to your target
+company in terms of size, sector, etc.
+Then you examine how the market values
+them using ratios such as EV to EBITDA
+or price to earnings. Then you'd apply
+the median multiple to your target
+company, which would give you an implied
+valuation. It is efficient and
+market-grounded but relies on the
+assumption that the peer group is being
+fairly valued. And finally, the third
+point, which is the secret that I only
+learned when I entered the industry,
+>> [music]
+>> which is variant perception. The true
+difference between a hedge fund analyst
+and an equity research analyst at an
+investment [music] bank is not just
+determining whether a company is
+undervalued,
+but it is to determine if
+and when it would ever be
+fairly valued. This term is called
+variant perception, coined by the
+investor Michael Steinhardt. It
+basically means having a well-found view
+that differs from the market consensus
+and crucially, understanding what
+catalysts will cause the market to
+finally take on your view. It's not
+enough to just believe a stock is cheap.
+The market can stay wrong for a very
+long time. A variant perception requires
+you to find out why the market is
+mispricing a company right now and what
+event in the future is going to change
+that view. Whether that's an earnings
+surprise, a management change, a
+regulatory development, or change in the
+competitive landscape. And without that
+catalyst, you're holding a cheap stock
+that can stay cheap forever. And that is
+key to understand when going into a
+hedge fund interview.
+>> [music]
+>> Thanks for watching.

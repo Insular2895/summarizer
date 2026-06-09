@@ -1,0 +1,894 @@
+hi everyone so I said my name is Julian
+lein as you can hear from my accent I'm
+based in France I'm based in Paris and
+we're going to be talking today around
+how AWS directory service for Microsoft
+active directory can be used in your
+existing and new environments on AWS to
+better and more efficiently manage your
+active directory
+environments so we're going to have a
+lot of points to cover today I just want
+to get back again on the logistics the
+pr the presentation is going to be
+around 30 minutes and we're going to
+have 15 minutes of Q&A again you can use
+the Q&A pod during the entire
+presentation we have a team of
+moderators that are going to be entering
+it and in the end we're going to take
+some of the questions that you're going
+to be asking and answer them directly
+with run on the line and yes you're
+going to have the slides and again the
+videos that are going to be available
+for you for download after the
+webinar so what we're going to be
+covering we're going to see some
+examples of how AWS Cloud workloads
+actually use active directory and how
+you can build um efficient and secure
+active directory practices on top of AWS
+then we're going to see some options for
+integrating your cloud-based directory
+and your workloads with active directory
+we'll see how AWS directory service can
+help you build and use managed
+environments for your active directory
+practices which see some overview of
+identity Federation a deeper dive on
+setting trusts which is one of the key
+elements and and most um strong
+priorities for building a secure
+environment on top of on top of AWS and
+then we'll have some guidance on how to
+manage your AWS managed
+domain so let's get started why AWS
+Cloud workloads need Microsoft active
+directory well there's a few reasons why
+you need to use um active directory on
+top of AWS the first one that is the
+most required um from our customers is
+the ability to have single sign on
+provide your users with a simless way to
+use applications whether they're going
+to be deployed in your own premises
+environment or in the cloud within
+AWS then the second thing that is really
+key for our customers is being able to
+manage and access your Cloud resources
+using active directory groups and using
+the same familiar platforms that you've
+been using for years now and the last
+one is you want to be able to enforce
+policy
+whether it's for Amazon ec2 Windows
+server or Linux if you want to do RS for
+seet server with ad crew policies domain
+integration we have many features that
+are actually leveraging these ad
+platforms on
+AWS so there's multiple options for
+using active directory in the AWS Cloud
+the first one which we're going to be
+presenting today is the opportunity to
+use a managed service namely AWS
+director service for Microsoft active
+directory which we also call AWS
+Microsoft
+ad you can also deploy and manage your
+own active directory on top of Amazon
+ec2 it's more work because you're going
+to have to configure and manage and
+patch and backup and do all the heavy
+lifting of managing your environment but
+you going have full control so it's a
+fully valid
+option and finally you can domain join
+your AWS Crow resources to your on
+premises active directory domain we're
+not going to be covering that specific
+topic during the webinar today and it
+does impose some specific elements of
+high availability and latency
+specifically on the network so it's a
+practice that is still available not the
+one that we see the most often in our
+customers environment but still
+something you have to keep in mind when
+you start architecting an active
+directory platform on top of
+ec2 so one of the questions that we ask
+you in the poll and really we want you
+to consider and ask us questions around
+whether it makes for you is how do you
+use active directory with your existing
+Cloud workloads today on AWS there's
+multiple options here so you can use AWS
+directory service for Microsoft active
+directory which again we're going to be
+speaking more in detail you can use
+active directory running on Amazon E2
+Windows Server so self-built
+self-managed active directory
+environment you can use if my clicker
+works now it's back you can domain join
+your workloads to your own Prem or you
+can use those practices either not use
+active directory use one of the services
+such as AWS directory service simple ad
+or ad connector which is which are also
+valid options please give us your
+feedback on on what you're using on the
+platform and what are your key
+requirements again one of the reasons
+why we do ask that is we have the chance
+of having Ron on the phone which is one
+of the product managers for directory
+service and the way we drive our road
+maps and we drive the feedback of and
+the evolutions of our Services is by
+having Direct customer feedback so
+please get back to us on what are the
+key needs that you do have it's going to
+help us shape the product for the future
+versions and of course last one was no
+solution which is not the best solution
+definitely uh so how do you build active
+directory best practices on top of AWS
+there's four key pillars that our
+customers are mainly uh requiring when
+deploying active directory on top of AWS
+the first one is they want to have
+highly secure environment and that
+security is going to come from the
+network level by the use of Amazon VPC
+virtual private Cloud it may come with
+specific encryption needs that you want
+to have for your machines such as all
+the volumes need to be encrypted before
+being stored and all these features are
+actually provided by the AWS platform
+most of them for free so you can have
+the full benefits of these environments
+and we'll see later in the Dive In The
+Deep dive part of this webinar that you
+can even have more visib ility on the
+environment that you may even have on
+premises today people want to have
+reliability in this in the schema that
+you have uh on the left of the screen
+you see that we have created two domain
+controllers each one of them is deployed
+in a separate availability Zone each
+availability zone is a is a set of data
+centers that is completely isolated from
+one another so you have multiple sets of
+data centers that are going to be
+hosting your directory or your active
+directory
+environment that provides highly
+resilient infrastructure and they're
+going to be joined to the same domain
+and that domain can be deployed in one
+region or Go Global if you want to have
+multiple regions you can create meses
+and using the sites and topology
+features of active directory you can
+build a global environment with active
+directory and finally compliance that
+comes with all the certifications that
+we've been working on as well as the
+audit features that you do have so even
+if you work in stringent security
+environment you can build an active
+directory that actually mimics your
+exact needs and answers to the
+regulation that you're accustom
+to most of our big customers want to
+have a hybrid Enterprise they have on
+premises environment with possibly
+multiple data center so here as an
+example we have something in London and
+in Paris and what they want to have is
+they want to have that seamless
+integration between on premises and AWS
+and again we're going to be building a
+highly a available AWS based environment
+that actually we can join to the same
+domain so if your hybrid Enterprise is
+using both on premises environments and
+cloud-based environments for your
+machine it can just be exactly the same
+domain and using the costs which is
+Again part of the active directory sites
+and services and the topologies that you
+can build around active directory you
+can build a platform that is going to be
+highly resilient even in terms of multi-
+region or multi environment such as on
+Prem and aw based so that's one of the
+best practices we see within
+customers but that requires to have
+self-managed environments and here it
+requires to have a common view between
+your on premises environment and your
+AWS based environment and one of the
+requirements that we do see from many of
+our customers is to have a separation
+between their user identities that
+actually live on premises with their
+existing ad environment that they have
+maybe in their core office or in some
+data centers that they're using on Prem
+and they want to have resource-based
+environments on top of AWS because it
+makes sense on AWS you have many
+features that are not built for on
+premises which are like machines joining
+a domain and leaving a domain using
+Autos skaing groups and many of these
+features so what a lot of customers do
+is actually use and leverage their on
+premises environment and instead of
+having one Global extending hybrid
+Enterprise they're going to be creating
+an hybrid Enterprise by lever in trusts
+they're going to be creating a new
+forest or a new domain within AWS and
+leveraging the trust they're going to
+have a domain on AWS that manages their
+production environment and machines and
+via the trust it's going to be able to
+access their own premises
+machine and again that's one of the best
+practices you can use VPN or direct
+connect to have this connectivity but
+still it it's a lot of infrastructure to
+manage you're going to have to manage
+these new machines configuring the
+domain configuring the trust and
+managing and maintaining the trust which
+is a hustle if you want to have an
+Enterprise that is as agile as the cloud
+can provide you that's exactly why we
+actually built a service which is AWS
+directory service for uh managed active
+directory and directory service for
+managed active directory give you
+exactly that setup just in a fully
+automated way you're going to have a new
+domain and a forest that is going to be
+hosted on AWS you can create a trust
+with your on premises environment and
+just leverage that uh to provide s SSO
+so single sign on for your users and
+you're going to have automated patching
+you're going to have automated backup
+you're going to have automated High
+availability and Disaster Recovery by
+elaborating multi a so all of the
+features that are actually heavy lifting
+for building a secure and reliable
+environment on top of any platform is
+just provided for you as a service and
+to be able to dive deeper on this
+service I'm going to leave the floor to
+Ron that's going to present you some of
+the features that we do have within
+directory service for Microsoft active
+directory Ron up to you thanks Julian um
+so the managed Microsoft active
+directory service is a high availability
+service that is built on top of uh
+Windows 2012 R2 domain controllers when
+you create the directory you get two
+different domain controllers each in a
+different availability Zone and takes
+about three clicks to get this going you
+open it up you uh specify the name of
+your domain you specify the password for
+your administrator account and you
+specify which ver uh VPC that you want
+that directory to be in and the rest all
+just happens so um this this then once
+the directory is started you just use
+normal active directory tools to manage
+the users and computers we'll be talking
+a little bit more about that later uh
+you can use the directory either
+Standalone if you want to and have your
+users in the cloud or you as Julian
+mentioned you can have the trust to your
+on- premises directory for single sign
+on in addition to using it with um you
+know typical active directory aware
+applications you can also use the
+service to work with ec2 which we'll be
+talking about RDS SQL Server uh uses it
+for authentication and authorization you
+can use it with workspaces for vdi uh
+with quick site Enterprise or chime
+press plus and Pro
+in addition to that um the there are a
+couple things you want to know when we
+set up the directory AWS is the um
+domain administrator of the directory
+you get an organizational unit that we
+give you delegated administrative
+control over and then um there are a few
+things you want to make sure you're
+aware of there's not not every
+application will work with the pro with
+a product because there may be some
+features of the directory that we are
+unable to enable at this point because
+of the the domain Administration model
+of the system but it does work with a
+broad variety of applications including
+things uh like uh SharePoint and SQL
+Server always on
+groups um now in terms of the
+administration and management of the
+system uh you op we operate the system
+we do all of the deployments the
+patching the monitoring the DC recovery
+snapshot restore and your responsibility
+is simply managing the users that are
+inside the directory doing the gpos and
+and that type of activity all right
+we've got a quick poll question for you
+we want to understand um which of the
+following are the most important to you
+in terms of a mic a managed active
+directory service from AWS is it high
+availability uh for the managed
+infrastructure is it that it's built on
+actual Microsoft active directory or
+that it does not require you to sync
+your identities to the cloud thank you
+very much all right so as we mentioned
+earlier you can create a trust with the
+directory to your on- premises Network
+and this is done uh first by enabling it
+on your side of the network so you go to
+your uh directory and you open up the um
+properties Tab and you add the trust and
+configure that and then once you've done
+that you go into the AWS directory
+Services console and there's a tab for
+adding a trust relationship you specify
+the name of your on premises uh domain
+you add the password that is uh creating
+the trust and you specify the Direction
+whether that's a one-way trust or
+two-way trust you also configure the
+conditional forwards and then just click
+add and that that's how you create the
+trust once that's done then if you take
+a look at the detail section of the
+directory you will see that the
+directory has conditional forwarders con
+uh configured and that it has a two-way
+trust that's
+operating now one of the features that
+we've built into the product is the
+ability to use on premises uh user
+identities and have them work with roles
+for managing AWS resources so in this
+example here in the top of the screen
+you have active directory users that are
+that you're may be on your corporate um
+Network and through the trust to managed
+ad they're going to have access to the
+roles in Im so we simply uh create a
+assignment of users or groups to
+specific IM roles and then when your
+users log into the console with their on
+premises active directory identity they
+have access to those roles and can
+manage the resources in the cloud so
+that's a pretty convenient way of doing
+this without having to set up sample
+configurations so forth now another uh
+in this case what we're showing is that
+we have um an we've created a role we've
+assigned a user to it and now when that
+user logs into the console then they
+have access to uh those services to
+manage
+them if you're using the directory with
+one of the AWS applications and services
+such as workspaces or work docs or quick
+site um you have the ability to use
+multiactor authentication when you log
+into those applications with your active
+directory user identity and this is done
+in the in the directory when you open
+your directory you'll see the list of
+tabs for apps and services scheme
+extension snapshots multiactor
+authentication you go to the multiactor
+authentication Tab and that's where you
+specify the address of your radius
+server the port number for it the shared
+secret for the radius connection and the
+um protocol to be used and then you can
+set your timeouts uh for the
+authentication and then when a uh user
+goes to workspaces or tries to log into
+work docs then they will um be required
+to specify their MFA when they log
+in now as I mentioned earlier you can
+use the directory for a broad range of
+applications uh recently we added some
+new capabil ilities to the system for
+managed service accounts and for uh
+constrained keros constrained delegation
+which allowed us to enable applications
+such as Microsoft SharePoint Microsoft
+SQL Server always on availability groups
+and Microsoft Dynamics so you can run
+quite a few different applications that
+in the cloud and use a managed active
+directory rather than having to do all
+the left heavy lifting of managing the
+infrastructure on your
+own now I want to take a moment and dive
+a little bit deeper into trusts just to
+make sure that uh
+um many many people are not familiar
+with doing these and I want to make sure
+we cover a little bit of ground on them
+when you set up a trust there is a
+trusting side and a trusted side so the
+trust goes from the trusting side to the
+trusted side is shown in the upper right
+hand uh section of this Slide the access
+is in the opposite direction so the
+trusted Network can access resources in
+the trusting side of the network in this
+particular case I have uh AWS Microsoft
+ad in the cloud as the trusting side and
+the trusted side is your on premises um
+active directory now trusts are time
+tested and secure model for connecting
+two forests together and allowing uh
+resources to be shared between two
+different forests now in this particular
+case it's different than the classical
+you know back back when active directory
+first came out it was about uh doing
+trust between companies or between um
+acquired businesses in this case you're
+doing a trust between your on-premises
+network and your VPC in the cloud and
+you control both sides of this so uh
+your trust is is uh you you have a lot
+more control over your trust now the
+trusting Forest has no administrative
+control over the trusted Force so even
+though uh you've got this trust in place
+there's no way for a rogue administrator
+in the trusting side to gain access to
+control over the on premises Forest The
+Trusted users have access to Cloud
+resources as long as you've entitled
+them to do so by adding them to security
+groups that your resources in the cloud
+um will allow the user to come in
+through and and again you get to control
+both sides of that so uh you get to have
+some pretty fine grain control on
+resource access the resources that are
+in the cloud have no access to the on
+premises resources um unless
+on the on premises side of the
+trust um unless unless the resources on
+the on- premises side allow this and you
+have granted permissions to the users
+that are in the
+cloud now the way that you manage this
+typically is you create a security group
+that's in the cloud and those security
+groups are used by the resources in the
+cloud so as an example let's say you
+have RDS SQL Server that you're using
+with the AWS Microsoft ad you would
+create a security group that RDS SQL
+Server uses to authorize access to the
+tables and then in your on premises
+Network you would add your users from on
+premises to the security group in the
+cloud or better yet you create a
+security group in your on premises
+Network you add the users to that
+security group and add the on premises
+Security Group to the cloud what this
+model does is it allows you to manage
+access to the applications that are
+running in the cloud by simply adding
+and removing users security groups in
+your on premises
+Network now you need to decide whether
+you need to have a trust or have a
+one-way or a two-way and the bottom line
+is that if you don't have a need for any
+of the users from one Forest to access
+resources in another Forest then there's
+no reason to have a trust and don't set
+one
+up if you have a need let's say that
+you're using RDS SQL server in the cloud
+and you want it to work with your on
+premises active directory user
+identities then you would create create
+a one-way trust from the active
+directory in the cloud to your on
+premises directory and once you've done
+that then you can use the uh Security
+Group authorization model to access the
+RS SQL server in the cloud now there are
+sometimes that you may need to have a
+two-way trust and a two-way trust is
+needed today for some of the AWS
+applications such as workspaces quick
+site and chime and what they need the
+two-way trust for is that when you
+configure workspaces or these other
+applications s they need to be able to
+read your on- premises directory to look
+up users that they provision into that
+application once they've read the user
+and created the user in their
+application the the trust from the on
+premises side to the cloud is no longer
+used it's only used to provision those
+applications and then after that the
+trust from the Microsoft ad in the cloud
+to the on premises directory is used for
+the author for the Authentication
+uh phase of that
+communication and what you can also also
+do is make sure that you secure your
+trust as well and the ways that you can
+secure them are the following first when
+you create a trust uh and this is on by
+default whether you're creating the
+trust in your on- premises Network or in
+the cloud Sid filtering is on uh
+security identifiers um are part of
+curos tickets that get passed between
+the trusts and if a user has uh moved to
+different locations in the directory
+they may have a number of different SIDS
+that are associated with them the most
+current Sid is the one that is used for
+the authentication authorization to the
+resources in the cloud if their Kerberos
+ticket contains some of their older SIDS
+there's a potential uh security risk
+there so Sid filtering strips out all of
+the old SIDS from the keros ticket so
+that there's no way for those to be
+exploited in the
+cloud and another thing you can do is
+you can turn on selective authentic a in
+the on premises side of the trust if you
+have a two-way trust and what this does
+is it acts as a sort of a firewall to
+reduce um what users can access if they
+don't have access to a resource there's
+no way for them to authenticate against
+the resource and this uh link that I've
+provided in this slide it provides a an
+article about uh securing trust a little
+bit more it talks about Sid filtering
+and selective authentication another
+thing you can do is only per permit the
+trust ports to be opened between the
+domain controllers in the cloud and the
+domain controllers in your on- premises
+Network and that way you don't have U
+more open across your link between your
+VPC and your on- premises Network than
+is necessary and then uh finally for the
+cloud clients to active directory so any
+of the cloud clients that need to talk
+to active directory only permit the ad
+authentication ports to your on-
+premises Network and minimize all of the
+other ports from the cloud to the on
+Prem Network and that way you don't have
+uh uh users in the cloud accessing more
+resources or trying to access more
+resources in your on premises Network
+than is necessary and this link that I
+provided in this slide talks about how
+to configure firewalls for domain trusts
+and then finally don't add don't Grant
+groups in the cloud access to on-
+premises resources that will make sure
+that if you do have a two-way trust that
+they're not going to um access anything
+in your on premises Network so with that
+I'm going to turn turn it back over to
+Julian to talk a little bit more about
+some of the other aspects of managing
+the
+system thanks Ron uh so yeah we had
+already multiple questions on how do you
+manage your users and computers and one
+of the great things of using AWS
+directory service for managed ad for
+Microsoft active directory is actually
+you can use exactly the same tools so
+from any domain joined instance once
+you're in the cloud you can connect to
+your active directory environment and
+just manage it using the same tool so
+you want to use users and computers
+sites and services DNS or any other tool
+you can basically do so directly and
+same via the trust you can from your own
+Prem environment access anything you
+want and manage it using your existing
+tools so there's no new tool there's no
+new process that needs to be implemented
+within AWS uh to make sure that you can
+have instances it's pure ad and pure ad
+trust that actually help you extend your
+on premises environment to AWS or build
+a new AWS environment from scratch so
+really familiarity is one of the key
+elements
+here one of the things you can do as
+well in terms of familiarity is work
+around gpos so if you want to use Group
+Policy objects you can use them from
+your onr environment of course but you
+can on the AWS active directory create
+gpus that are going to be applied to
+your machines really important if you
+want to use for instance workspaces or
+any Amazon ec2 instance that is
+connected and if you want to have that
+SSO environment for work dos or workma
+and some of these environments and you
+want to have U fully curos integrated
+authentication you can do that and
+Define that as well using the gpos so
+all the best practices that you've been
+implementing on premises for years now
+is something that you can just extend to
+your Cloud environment and just
+integrate and use
+directly but there's new features that
+are associated with using managed ad or
+Microsoft ad on AWS one of these feature
+is actually the possibility to have what
+we call Seamless domain join when you
+start a new amazon2 instance running
+Windows you can just by clicking on one
+button which is here the domain join
+directory you select an existing AWS
+directory service instance and your
+machine is going to be automatically
+joined to that domain is going to have
+the gpos applied and all the security
+that you've defined as an Enterprise
+level you don't need anymore to manage
+the passwords and manage the fact that
+you need to connect to the machines and
+Jo them to The Domain but some of our
+customers want to use other ways of
+integrating machines to The Domain not
+necessarily just by when by joining them
+when they start machines because
+sometimes they have some specific
+processes they need to run before and we
+have other ways to do that one of them
+is by leveraging Amazon ec2 systems
+manager run command systems manager is a
+suite of seven tools that is going to
+help you fully manage and automate your
+windows Fleet on top of AWS from running
+in Comm to patching to inventory
+management and maintenance you have many
+processes that are going to be available
+for that and you can run these same
+commands of course because we're
+programmatic by using the AWS CLI here
+as an example on Linux but it works
+exactly the same using Powershell if you
+run windows-based commands so really an
+easy way to get integrated to your
+domain for your existing
+instances another thing that you can
+benefit from by leveraging AWS directory
+service for Microsoft active directory
+is the integration of SQL Server that is
+running on Amazon RS directly to your ID
+domain so Amazon RS is relational
+database service it's a fully managed
+database environment that can run
+multiple database engines including
+secet server from 2008 to 2016 on top of
+AWS so the same features that we've been
+presenting you around active directory
+you actually have for secret server and
+when you start a new secet server
+environment again you just need to click
+and select a directory once you've
+selected that directory actually you can
+directly use the security within your
+SQL Server environment and reference
+groups that are going to be on an
+external domain here EXT is my own
+premises environment and within my SQL
+Server running on AWS I can reference
+via the trust group that are coming from
+the other side of the trust and for my
+users they're just going to log in with
+their existing credentials use Windows
+integration even if it's not in the same
+domain and thanks to the trust they're
+going to be connected to the machine
+executing commands directly and just
+interacting with the database as if it
+was a non- premises database so really
+that single sign on integration you have
+from end to
+end you can also edit your AWS Microsoft
+ad logs and you have access to the
+security logs really important to know
+what's going to have what is happening
+on your environment and you can get them
+and stream them and and have them
+accessible directly to your environment
+so here we just connect to the domain
+controllers using the even viewer uh MMC
+and just connect to the machines we can
+filter them and here I'm just looking at
+the curos tickets that have been issued
+so I can know exactly what are users
+that have been connected either
+successfully or not successfully to my
+platform and you also have access to the
+DNS logs so if you want to look and and
+have more visibility again use the same
+familiar tools just connect to the
+platform and and get access to the logs
+but what we see as well is that having
+access to these logs is good but people
+want to have more visibility as well
+onto the platform and AWS provides many
+features for auditing and logging one of
+them being AWS Cloud trade so here when
+I have a users that actually uses AWS
+directory service for connecting uh to
+one service so here I'm I'm I'm just
+federating my user to have access to the
+AWS Management console I'm going to have
+a trace within the active directory
+event logs because I've just issued a
+caros ticket but I'm going to have the
+same log on the AWS side using AWS clout
+trade because there's going to be one
+API code that is going to be I want to
+sign into the console directly and here
+I have the name of my user so I can do
+reconciliation and I can have full
+traceability and visibility over what's
+going on in my environment and we have
+many other features that are provided
+you have automated daily snapshots if
+you do have specific attributes in your
+active directory schema we also have a
+managed way to extend your ad schema you
+just provide us an L file we're going to
+be managing the extension of your ID
+with automated roll back if it fails you
+have fine Grand password policies you
+have monitoring and Ting based on Amazon
+SNS so you can be notified if something
+goes wrong with your environment and
+finally we have integration and
+management of the Amazon Enterprise
+application such as Amazon Works spaces
+workma work dos and Chine
+but security as we've said is is really
+an important point but having just
+application Level visibility or API
+based visibility is not always enough
+some of and many of our customers
+actually they want to have security and
+traceability down to the network level
+so when Ron was speaking about the
+security groups and how you do configure
+your security groups to allow access
+from your on Prem to the AWS based
+envirment it's actually a pure Amazon
+ec2 Security Group you have an Amazon
+eni elastic networking interface that
+exists in your VPC so again you have
+visibility auditability and control over
+what's going in and out of your ad
+environment so here I can just select
+and manage my security group like I
+would any other Security Group within
+Amazon ec2 again familiar and simple and
+as I'm in a VPC I can actually have
+auditing I can activate VPC flow logs
+and know every single network connection
+that is coming from my own Prem
+environment from anywhere in the cloud
+to each of the network interfaces for my
+ad based environments on top of AWS so
+really again an easy way and a simple
+way to get this visibility and get
+access to these
+platforms but you're going to say
+reading net flow like logs is not the
+best experience in your life which I
+totally agree with and what people want
+to have is they want to have dashboards
+and leveraging some of the other
+services that we do have within AWS here
+we're leveraging Amazon elastic search
+service and AWS Lambda we can actually
+stream these logs directly from that VPC
+flow log format which is a net flow like
+format and just stream them to a
+dashboard so here I can have a dashboard
+that says for this machine or these
+machines I can have traceability over
+what amount of network was coming in the
+machine what what level of network was
+coming out what was reports what was
+accepted denied so you can have much
+more visibility and full traceability
+over what's going on in your environment
+so really one of the key features of
+that is this full visibility and
+auditability which is actually really
+difficult to get on premises if you
+don't use all the auditability features
+from
+AWS so what we've covered today we've
+saw some of the best practices for using
+and hosting Microsoft active directory
+for your AWS Cloud workloads how to
+extend your ad to AWS and how to manage
+your Microsoft ad domain and finally how
+to audit and secure your AWS Cloud
+environments and how to get started
+getting started is is really just one
+step away you just create a new account
+or access an account you have within AWS
+and Microsoft AWS Microsoft ad is free
+for 30 days you so you can just start
+using it test the trust test the
+features and see if it fits your needs
+just get to aws.amazon.com
+directory service access the log access
+the documentation all the service
+descriptions just test it it's really
+just one click away now we're going to
+be opening for q&as and you have
+the question pods that have been open so
+you have the polls so please fill up the
+surveys that helps us be more efficient
+and deliver better webinars based on
+your specific needs what level of
+complexity you want to have and what
+topics you want to you want to cover and
+please again ask questions um you're
+going to have answers directly from our
+team of moderators and we're going to
+take some of these questions directly
+online with run in the next few minutes
+again thanks a lot for being for
+attending today and we're going to get
+back for the Q&A in just a second thank
+you

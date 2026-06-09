@@ -1,0 +1,150 @@
+hi this is Warren from a sales
+engineering team here at data dog and
+today I'd like to walk you through how
+to set up a PM manual instrumentation
+for your Python application well data
+dog covers many of the popular libraries
+and frameworks used you might be
+interested in manually instrumenting
+your application whether that be to get
+some additional visibility into your
+business logic or because of custom
+tooling you might want to get some
+insight into too many people manual
+instrumentation sounds intimidating and
+you might think you'll have to manually
+instrument the passing of trace headers
+span metadata things like that's between
+different parts of your code base
+however by using data dogs tracing
+clients will actually be able to handle
+much of the underlying logic for you and
+I'll show you exactly what I mean
+here in this following example here we
+have a simple Python to do app nothing
+fancy here ultimately we have a
+application layer where we're
+instantiating a flask application we
+have some routing here where we're
+hitting the get to do endpoints
+ultimately bringing us to some business
+logic that we have here this business
+logic then does a query to our database
+file that exists over here in this case
+it's equal lights now in order to get
+visibility into your Python application
+all you need to do is import the data
+dog tracing clients and then from their
+instrument your code by adding just a
+few lines of code now it's actually very
+simple to get visibility where you'd
+like all you need to do is add a
+decorator to your actual function calls
+as you can see here so in this case
+we're wrapping a list to do with at
+tracer wrap where we list the operation
+name in this case flask that requests
+the service in this case flask the
+resource being get to do and then the
+span type being a web app it could also
+be something like a database cache
+anything custom things like that now now
+that we've added this code if we make a
+request at localhost
+go here you can see we already have some
+requests we hit refresh it goes to the
+dog platform and then from here right
+off the bat we'll be able to get insight
+into total execution time of that
+particular call in this case we have
+information into the Flast that requests
+operation name the resource the duration
+it took as well as the process ID and
+while this is all well and good we might
+be interested in getting some additional
+visibility beyond that and what we can
+do is actually get that set up really
+easily in the code so in this case here
+we're gonna append some additional
+metadata to that actual span and all we
+need to do is uncomment this code here
+we'll talk about this ultimately what
+this code is doing is that if a trace is
+span is being generated we're gonna
+append some key value tag data to it so
+for demonstration purposes we have blast
+key value we can also have something
+like blast that endpoint being to do the
+HTTP endpoint being gets status code
+being 200 and then the URL even being
+the URL here if we hop back to the dog
+platform we make an additional query
+what we'll see here is all of the
+associated tag data that I have appended
+to this trace now now this is really
+good because a you get some additional
+context into what exactly is going on
+with this call by having the metadata
+here and then B we also have the ability
+to kind of query on this information in
+other parts of the dog platform now that
+we have that set up we might be
+interested in instrumenting our business
+layer logic that we have up here and in
+order to get that set up all we need to
+do is add that additional wrapper trace
+decorator once again in this case we're
+having the operation amine operation
+name being to do service that list
+service being flask resource being to do
+span typing web we hit save you can see
+here the dog will automatically pass the
+trace context between the different
+parts of your code base if we hop back
+to the platform and we make an
+additional query we'll be able to see
+that right here with this additional
+piece of span attached to this main span
+here and of course to kind of finish it
+all off we also want to get visibility
+into the query that's actually being
+made on our sequel Lite database as well
+as the you know execution time it took
+and to do that we'll hop back over to
+our code and again the same idea here we
+add that same decorator to that method
+as we can see here so in this case I can
+hit save the operations gonna be a
+little difference in this case we're
+doing a sequel Lite query the service
+being sequel lights the resource being
+the endpoint or the query that we're
+hitting and then finally the span type
+being sequel or you know database and
+now that we have that saved we can
+switch back over to our data log
+platform
+make another query wait for a trace to
+come in and then right off the bat there
+if we click into this we have some
+insights into the execution time
+associated with that database call so by
+just adding a few lines of code we have
+the ability to get insights from that
+request as it comes in at the
+application layer due to the business
+logic through to the database call
+that's actually being made here all of
+this information is really great because
+we'll have some context into how long
+parts of our codebase took to run and
+then we'll also be able to correlate
+this data within the metrics and logs
+and other parts of data dog platform now
+this effectively covers everything I
+want to show you here today
+I hope this illuminates a little bit of
+how easy it is to get manual
+instrumentation up with a data dog
+tricks and clients so thank you for
+listening and have a great day

@@ -1,0 +1,288 @@
+- You've probably wondered if
+it's possible for innovation
+and application resilience to coexist.
+If you're part of a team
+that works in a silo
+and you want to fix that,
+then this video is for you.
+How do teams organize in order to ensure
+that there is both application
+resilience and innovation?
+And who in the team
+is responsible for application resilience,
+and who is responsible for innovation?
+Before I dive in to answer the questions
+I've just talked about,
+let me do a quick catch up on what I mean
+by continuous or application resilience.
+Continuous resilience is when
+teams move away from focusing
+so much on being robust,
+and they instead face up
+to the fact that applications
+will fail at some point.
+They then start to embrace failure,
+with the intention to build
+capabilities that ensure
+resilience of their applications,
+when they ultimately experience failure.
+Organizations that seek
+to digitally transform
+and become tomorrow's disruptors
+are not able to do this
+without undergoing
+cultural transformation.
+Silos in software development
+occur when various roles
+that contribute towards
+software development
+rarely talk to each other,
+and this ultimately results
+in the absence of teamwork.
+Silos within a software
+development lifecycle
+get in the way of communication
+and collaboration,
+and all of this slows down innovation
+and the delivery of
+business value to customers.
+It's also worth mentioning
+that silos can contribute
+and introduce conflicts with roles,
+and we end up with people
+saying, "This is not my job,"
+and all of this get in the
+way of a quality product
+being delivered to the customer.
+As teams seek to move out
+of this siloed approach,
+communication between teams is important.
+Communication moves teams towards
+a shared responsibility model,
+taking away the this
+is not my job culture,
+and communication is very
+important for innovation.
+So how do teams make sure
+that they communicate
+during software development?
+Teams can explore tools
+that better support
+collaboration during software development.
+Think of tools like GitHub,
+which are very popular
+among developers, as they
+offer collaborative features
+that make life easier for developers.
+Software development projects
+can be better organized
+using tools like Trello
+or Asana, which lets teams
+organize projects into boards,
+so that teams can have a view
+of what's on the to-do list,
+what's being worked on, and what's done,
+in order to eliminate
+confusion with project status.
+Good quality code is only just one
+of the contributing factors
+in application resilience.
+Performance efficiency, security,
+and functional suitability
+go hand-in-hand with good quality code
+to contribute towards
+application resilience.
+So if you decide to tackle
+these contributing factors individually,
+it's easy to fall back
+into siloed functions,
+where individual roles
+within teams are responsible
+for only some of these
+contributing factors.
+It's however more beneficial
+for everyone in the team and,
+ultimately, in the organization
+to make quality a shared responsibility.
+This approach reduces
+development costs and,
+ultimately, the customer or the end user
+benefits from a better product.
+Outdated organizational
+structures, however, tend to place
+responsibility on a single employee,
+a single team, or a single role.
+Organizing team structures around products
+instead of around projects
+will accelerate innovation
+and increase the quality
+of work, due to increased
+collaboration that is fostered
+by this team structure.
+So shared responsibility, collaboration,
+it sounds like I've gone and talked about
+another conversation, a
+very popular term, DevOps.
+So in the book "DevOps for Dummies,"
+author Emily Freeman describes DevOps
+as "A philosophy that is meant
+to build a culture of trust,
+collaboration, and
+continuous improvement."
+Emily further goes to give
+a guide on how to design
+your organization, so that you support
+this collaboration and
+continuous improvement.
+Is the culture of your
+organization healthy,
+in that the worst of
+tech culture is avoided
+with diversity of
+thought being encouraged?
+Are your team members
+empowered to make decisions
+without always consulting management
+for every decision making?
+Staying with this topic
+of DevOps a little longer,
+it is worth talking about the fact
+that to build a common DevOps team,
+or having DevOps forecast
+members in the team,
+introduces shared
+responsibility in the team.
+Over time, several essential
+practices have emerged
+when adopting DevOps,
+and these are practices
+like continuous integration,
+continuous delivery,
+Infrastructure as Code,
+and monitoring and logging.
+So now that we've talked
+about the culture,
+what technical considerations will support
+this shared responsibility in teams?
+First one is distributed architecture.
+In the book, "Fundamentals
+of Software Architecture,"
+the authors contrast
+two architecture styles,
+monolithic versus distributed.
+Monolithic is described as
+a single deployment unit
+of all your code, whereas
+distributed involves
+multiple deployments of single units
+that are connected via access protocols.
+An example of a distributed architecture
+is a microservices architecture,
+which is an architecture
+style that structures
+an application as a collection
+of loosely coupled services,
+which implement business capabilities.
+It is a way of breaking
+up a monolithic software
+into various components that
+can function separately,
+that can have specific tasks,
+and they can talk to
+each other through APIs.
+Continuous integration and delivery.
+"The AWS Whitepaper on Introducing DevOps"
+highlights capabilities
+that help you accelerate
+your DevOps journey, and
+services that can help remove
+all the work that is associated
+with DevOps adoption.
+It expands on these essential practices
+when you adopt DevOps, some of which
+I've already talked about briefly
+when I talked about
+continuous integration,
+which is a software development practice
+where developers regularly
+merge their code changes
+into a central repo.
+After which, automated
+builds and tests are run.
+GitHub Actions is a continuous integration
+and continuous delivery
+platform that allows you
+to automate your build, your test,
+and your deployment pipeline.
+It lets you create workflows
+that build and test
+every pull request to your repository,
+and when you deploy your
+merge pull requests.
+Infrastructure as Code is a practice
+in which infrastructure
+is provisioned and managed
+using code and software
+development techniques.
+And here, you can get
+version control and
+continuous integration.
+So consider tools like Terraform,
+which lets you automate
+the provision of your infrastructure,
+including your databases, your servers,
+and your firewall platforms
+across various cloud platforms.
+Monitoring and logging
+enables organizations
+to see how application and
+infrastructure performance
+impacts the experience of
+their products and users.
+OpenTelemetry is a collection
+of tools, APIs, and SDKs.
+Use this to instrument, generate, collect,
+and export telemetry
+data, to help you analyze
+your software's performance and behavior.
+Communication and
+collaboration is a practice
+that is established to
+bring the teams closer,
+and by building workflows
+and distributing the
+responsibilities for DevOps.
+And then we talk about security,
+this should be a cross-cutting concern.
+Your ICD pipelines and related services
+should be safeguarded, and
+proper access control permissions
+should be set up.
+The Open Web Application
+Security Project, OWASP,
+is a nonprofit foundation
+that works to improve
+the security of software.
+Their programs include community-led
+open source software
+projects, and they have over
+250 local chapters worldwide.
+The OWASP Foundation has
+a published list of top 10
+security risks to avoid in order to change
+the software development culture
+towards more secure code.
+It seems then that the
+old saying remains true,
+you cannot keep on doing the same things
+and expecting different results.
+Teams will have to evolve into
+a shared responsibility model
+in order to be more innovative,
+and work towards application resilience.
+If you enjoyed this video,
+please give it a like,
+and consider subscribing to the channel.
+Thanks for watching,
+I'll see you next time.
+(gentle music)

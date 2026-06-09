@@ -1,0 +1,227 @@
+[Music]
+Hi, I'm Adam Danis. Welcome to MBA Ask
+the Expert, a series where we discuss a
+timely and important issue with the
+mortgage industry leader. Today I'm here
+with Meridian Link's Mitchell Swanson,
+associate manager of product management
+for part one of our new series with
+Meridian Link. Our discussion today is
+on AI and automation and how these tools
+are speeding up the mortgage origination
+process. Mitchell, thank you for joining
+us today.
+>> Thank you, Adam. It's a pleasure.
+>> Let's kick it off. Everybody these days
+is talking about artificial
+intelligence, you know, AI. What role is
+AI and automation currently playing in
+the mortgage industry and how can users
+ensure they are staying compliant at the
+federal and state level?
+>> Yeah, that's a great great question,
+Adam. And you know that latter part
+about staying compliant is is very
+important. Uh we all know that AI is
+quickly becoming table stakes here in
+the mortgage industry. Uh the
+efficiencies that it has behind it are
+just endless. Um, and for anyone that's
+been on the borrowing side of a mortgage
+application, you know how slow and
+arduous it can be. And for those of you
+who have been on the lending side of an
+application, you know how many manual
+processes there are to get a mortgage
+application across, right? I have to
+click here, click there, move this, do
+that. Uh, and that's really where we see
+AI, you know, playing its role. It's
+going in and allowing your users to do
+their primary function, right? Allowing
+your lenders, your loan officers to
+sell, your processors to process, and
+your underwriters to underwrite so that
+they don't have to focus on all of those
+manual processes.
+Okay? And you know those AI pieces are
+not going to happen overnight, right? If
+I take an example from the auto
+industry, okay, with self-driving cars,
+it's been something that has been
+building up for decades, right? First
+they came out with cruise control, then
+adaptive cruise control, then lane keep,
+and then, you know, all the way up to
+fully autonomous driving. But it's the
+trust factor that's very important,
+right? Um, not everybody trusts
+self-driving cars, just like not
+everybody's going to trust AI with
+mortgages. And you know, here at
+Meridian Link, we see that and we
+understand how important it is to have
+trust and consistency with your AI
+automations, right? So as we are
+building tools uh to cut those processes
+down and allow your lenders to do their
+primary functions right we are keeping
+in mind the trust factor right but we
+also get that you know
+a lot of lenders can't spend time taking
+decades to get AI fully into their
+systems okay and um to to kind of allow
+us to go faster and keep up with that
+pace of change. We're allowing other AI
+tech companies to integrate to our
+products so that our customers can
+choose from the best of the best, right?
+They have the tools at their disposal to
+be able to keep up with the pace of
+change and that's very important. And
+one piece that I'll circle back to is
+the compliance side of this, right? And
+that's very important. Um, as we've seen
+just this year, a judge in Massachusetts
+ruled against a tech company who were
+was using AI to automatically decision
+loans. They found that the AI was
+actually doing uh some things against
+fair lending laws. And that's a big no
+no. And here I'm writing like we do not
+want to fall into that same trap. So
+we're committed to making sure that we
+keep the human in the loop, right? We
+want the underwriter to be the one
+underwriting. We just want AI to be the
+helper, right? Remove those manual
+processes, get those out of the way so
+that they can do their primary function.
+And I AI is just a tool to help get that
+done quicker, faster, and easier. So,
+you know, just like the auto industry,
+we're not at fully self-driving cars
+everywhere on the road. You know, fully
+self-funding mortgages is way down in
+the future. It's a possible future. Uh
+but you know we have a long ways ahead
+before we get to there.
+>> I love that breakdown there and the
+analogy with the cars Mitchell. Um
+closing loans faster is obviously a
+winning recipe for success and as you
+mentioned compliance is also very
+important. So what about Meridian Link's
+mortgage access? What measurable impacts
+have you seen on borrower conversion
+rates and time to close? Yeah. So, m
+mortgage access is a point of sale that
+we've taken the angle of trying to be as
+simple as possible, right? We want
+consumers to get to the application and
+just be able to breeze through it
+quickly and easily, right? Not only
+that, but it's fully branded to the
+lender. They can change its colors, the
+fonts, they can add their logos. Even
+the URL can be the same as the lender's
+URL. So that when an applicant goes to
+the lender's website and then navigates
+to our application, it's very seamless
+and we're actually seeing an average of
+77% of applications started complete.
+Right? So that's an average 77%
+conversion rate and we actually have one
+lender who has 93% conversion rate. So
+93% of their apps are finishing. And so
+if you think about the funnel of, you
+know, more apps in, more loans funded at
+the bottom, that's a great way uh to to
+increase revenue for the business. And
+um the next cool feature about mortgage
+access is we have a built-in rules
+engine. So as that loan gets submitted,
+that rules engine is reviewing the loan
+data to pre-request documents from that
+borrower. So for example, someone's has
+social security income, right? Mortgage
+access will request that social security
+awards letter upfront amongst other
+things. So that when the processor and
+the loan officer get to that loan in
+Murangling Mortgage, there is a list of
+documents already collected by the
+borrower. So that kind of helps shorten
+funding down using automation, okay, to
+get the documents upfront.
+So once those documents are collected,
+we have a tight integration with Marine
+Link Mortgage in order to um collect
+those documents faster. And so when a
+processor is in a loan reviewing a
+document, let's say they're reviewing
+bank statements and it's missing one of
+the pages. Well, we have an accept
+reject functionality. So a processor can
+reject it in mering lake mortgage which
+will automatically trigger it in MA in
+mortgage access send an email to the
+borrower to try again. Right? And this
+is where um we kind of separate
+ourselves where now the borrower can see
+typed in personalized message as to why
+this document was rejected so that they
+can give you what you really really
+need. Okay. Um, so that just really
+makes the user experience seamless. And
+not only that, but this is a place where
+AI can really help in. Okay, so instead
+of that processor going in and manually
+reviewing, recepting, rejecting these
+documents, AI could do that instantly.
+So now we have instant feedback to try
+and bring that time to fund down. And
+that plays in part with some of the
+volume challenges that a lot of lenders
+have.
+So, you know, as I think back when I was
+working for a bank back in 2013 where
+interest rates were low and volumes were
+high, you know, our turn times were 60
+to 90 days, right? We didn't have enough
+manpower to keep up with all of the apps
+that we had. And you know, this kind of
+underlines
+why it's so important to have AI because
+it takes so many manual processes to do
+these loans, right?
+If we can physically see turn times
+increase with volumes that just points
+out directly we need more help right we
+need to have more automations more
+things go happen faster quickly easier
+and that's AI's biggest proponent right
+AI can fit in cut those things down and
+allow lenders to scale with the volume
+so they can provide a consistent level
+of service whether it's high volumes or
+low volumes. And so I'm really really
+excited about, you know, the pace of
+change with AI and how Meridian Link is
+building these tools to allow lenders to
+succeed in the future.
+>> Those are fantastic points and as you
+can see, if we if mortgage rates do
+start to decrease a little bit more and
+you start to see that increase in
+demand, you can really see how AI would
+pick up and be very useful there um for
+that. I've really enjoyed talking to you
+today, Mitchell. I appreciate you
+chatting with me this important topic.
+Um let's do it again soon. Thank you for
+joining us.
+>> Thanks, Adam.
+[Music]
+[Applause]
+[Music]

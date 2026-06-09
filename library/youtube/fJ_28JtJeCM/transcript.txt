@@ -1,0 +1,236 @@
+This is Sally. She's an artist with a
+dream and a brush in hand.
+After years of selling her paintings at
+local markets, she finally took the leap
+and launched her very first online
+store, sallyshop.test.
+Passionate about creativity and proud of
+her work, Sally poured hours into
+building a beautiful website to showcase
+and sell her original art. Every
+painting tells a story.
+Every pixel on her site was placed with
+love. Sally thinks her website is
+secure,
+but she's wrong.
+And this is where Kim comes in.
+He is an ethical hacker, the kind of
+hacker who breaks into systems so that
+people like Sally can learn how to
+defend them.
+Today, Kim is going to intercept login
+credentials from someone shopping on
+Sally's site.
+A customer named Joshua, and he's going
+to do it using nothing but a free tool
+and a network connection.
+Let's dive in.
+Kim's main tool today is Wireshark.
+Wireshark is one of the most powerful
+network analyzers in the world.
+It captures and displays everything
+happening on a network in real time.
+Every request, every response, every
+tiny piece of data flying back and forth
+between your computer and the internet.
+Think of Wireshark like a digital
+wiretap for internet traffic.
+If your data is traveling across a
+network, Wireshark can see Wireshark can
+capture it.
+And here's the scary part. If that data
+isn't encrypted, Wireshark can read it
+word [music] for word.
+To get started, Kim opens the search bar
+on his computer and types Wireshark.
+He clicks the icon and Wireshark fires
+up.
+Once Wireshark opens, it lists all the
+network interfaces available on the
+machine.
+These are like virtual ears. Each one
+listens to a different part of your
+computer's network activity.
+For example, one interface might handle
+Wi-Fi, another might handle Ethernet,
+and others may be for VPN or virtual
+machines.
+To capture traffic from a specific
+connection, Kim needs to pick the
+correct interface.
+That's the one that's actually listening
+to the network Joshua is on.
+In this case, both Kim and Joshua are
+connected to the same local network via
+a wired Ethernet connection, Ethernet
+zero. So, Kim selects that interface.
+He double-click it and Wireshark begins
+capturing everything on that network in
+real time.
+Here's the critical detail. Everything
+Joshua sends across this network, every
+click, every form, and yes, even his
+login credentials, can appear on Kim's
+screen in plain text.
+Let's take a second to understand what
+Kim is looking at.
+In the Wireshark interface, every single
+packet captured shows up as a row, and
+each column tells you key information
+about that packet.
+You'll see the time it was captured, the
+source IP, that's who sent it, and the
+destination IP, which is who it's going
+to.
+You'll also see the protocol being used,
+which is basically the language the
+packet is speaking, like HTTP, TCP, or
+DNS.
+And finally, there's an info column that
+gives you a short description of what
+the packet actually contains. Right now,
+it's all a mess.
+Hundreds of packets are scrolling by
+every second. STP, DTP, LLC, and dozens
+of other protocols all mixed together.
+For a beginner, it looks like chaos.
+But Kim knows exactly what he's looking
+for.
+He is only interested in HTTP traffic
+because it is the unencrypted protocol
+websites use when they don't have proper
+security in place.
+So, he heads to the filter bar at the
+top and types HTTP
+and hits enter.
+Now, the view is clean.
+Wireshark will only show HTTP traffic.
+At this moment, nothing appears yet
+because Joshua hasn't done anything.
+But when he opens his browser and visits
+Sally's website,
+the traffic suddenly starts rolling in.
+We can see a list of HTTP requests going
+back and forth between two IP addresses.
+The source column shows who sent the
+packet, and the destination column shows
+who received it.
+You'll notice two main IP addresses
+here.
+192.168.1.30,
+that's Joshua's machine, the victim.
+And 192.168.1.22,
+that's Sally's server, where the website
+is hosted.
+So, when you see a traffic where source
+is .30 and destination is .22, that
+means Joshua is sending a request to the
+server.
+And when you see source is .22 and
+destination is .30, that means the
+server is responding back to Joshua.
+This back and forth is how all web
+communication works.
+Your browser doesn't just magically
+download a web page. It requests
+something, an image, a style sheet, a
+form, and the server answers.
+And the conversation continues piece by
+piece until the page is fully loaded.
+So, what we're actually watching here is
+the full conversation between Joshua and
+Sally's server, being spied on by Kim in
+real time.
+You'll also notice HTTP methods like
+get, post, and others in the info
+column. Login credentials are almost
+always sent in a post request.
+Here's the quick difference between
+both.
+A get request is what your browser sends
+when it's asking for something from the
+server, like loading a page, fetching an
+image, or opening the login form itself.
+Get requests don't usually carry
+sensitive data because anything you send
+with a get request gets tacked onto the
+end of the URL, right there in the
+address bar for everyone to see.
+A post request, on the other hand, is
+what your browser sends when it's
+submitting something to the server,
+like filling out a form and clicking a
+button.
+The data gets tucked into the body of
+the request instead of the URL, which is
+why login credentials are almost always
+sent in a post request.
+So, when Joshua logs in, the packet Kim
+is watching for is a post request.
+Now, Joshua navigates to the login page.
+He enters his credentials,
+joshua@sallyshop.test
+as the username and let me in as the
+password.
+Then he clicks login.
+As soon as Joshua submitted the form,
+something interesting appears.
+Kim spots a new post request coming from
+Joshua's machine.
+This is exactly what he was waiting for
+because post requests often contain
+login data.
+Kim right-clicks the post packet and
+selects follow,
+then TCP stream.
+This tells Wireshark, "Show me the full
+conversation between these two devices
+from start to finish over this
+connection."
+It filters out the noise and gives Kim a
+clean view of everything Joshua's
+browser sent to the server and what the
+server sent back.
+A new window pops up.
+This is called the TCP stream viewer.
+It shows the raw HTTP request exactly as
+it was sent, headers, body, everything.
+[music]
+Kim scrolls down,
+and here it is.
+Joshua's email and password in plain
+text,
+completely exposed, no encryption, no
+protection, just raw data floating
+through the air, readable by anyone who
+happens to be listening on the same
+network.
+>> [music]
+>> So, if you run a website like Sally's,
+please make sure you have an SSL
+certificate installed and HTTPS enforced
+across every single page of your site.
+Not just the login page, not just the
+checkout, every page.
+Because the moment one page loads over
+an unencrypted connection, attackers can
+exploit that gap to hijack sessions,
+steal cookies, or inject malicious
+content.
+The good news? Setting this up has never
+been easier.
+Tools like Let's Encrypt give you SSL
+certificates completely free, and most
+modern hosting providers, like
+Cloudflare, Netlify, Vercel, and many
+others, will turn it on for you with a
+single click.
+There's no excuse anymore. No, it's too
+expensive, or it's too technical.
+If you found this video helpful, smash
+that like button, subscribe for more
+ethical hacking tutorials, and drop a
+comment below telling what you'd like to
+learn next. Stay curious, stay ethical,
+and I'll see you in the next one.
+Bye-bye.

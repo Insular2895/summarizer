@@ -1,0 +1,622 @@
+hey team sid here and today we're going
+to talk about managed kubernetes
+offerings it seems like every cloud
+provider these days has one and they all
+look quite similar at face value today
+we're going to try to come up with a
+framework for thinking about these and
+analyzing the similarities and
+differences to help you understand and
+decide which one might be a good fit for
+you and your team now remember this is a
+piece of a much larger puzzle around how
+to use kubernetes effectively within
+your company
+and if we look at this there's so many
+different offerings ranging from google
+kubernetes engine to sivo cloud and i'm
+going to dive in i'm not going to try to
+recommend specifically you should choose
+this one or that one i'm going to go
+through all the different aspects of the
+offering that you should be thinking
+about and assessing against your
+specific needs and requirements
+now ironically one of the largest
+impacts or inputs to this decision is
+going to be a number of non-kubernetes
+related
+factors and what do i mean by that by
+non-kubernetes factors i mean things
+about this cloud provider that may
+influence you to choose it independent
+of whether or not their kubernetes
+offering is the best one for example you
+might already have established a large
+application base built up on that cloud
+provider
+they are your current cloud provider
+also you may have a bunch of free cloud
+credits provided from them to help to
+help bootstrap and incentivize you from
+you for using them
+you could have security considerations
+if you need to meet certain security and
+compliance
+regulations
+depending which cloud you have it may be
+easier or harder to do so based on the
+certifications that they have
+and or the level of granularity that
+they provide in their identity and
+access management solutions as well as
+auditing
+and then a fourth non-kubernetes factor
+is the availability of talent
+within that cloud so the larger clouds
+are going to have more people who have
+experience building with them
+and potentially that makes it easier for
+you to hire those people
+and then finally there may be some
+services that you find indispensable
+that that cloud provider offers whether
+that's step functions on aws or
+bigquery on google if there's some
+service that you really want to have as
+a part of your architecture
+it may be worth it to use that cloud
+even if that means you don't necessarily
+have your top choice in terms of the
+kubernetes offering itself
+now if we start to think about
+the managed kubernetes offering i would
+say that the first and probably the most
+important thing
+that you want to evaluate is how easy it
+is to use that service i'll say ease of
+use or
+developer experience slash operator
+experience and so for this there's kind
+of two main components there is
+the initial setup so that's kind of day
+day zero or day one
+and so this can be
+a few things it can be
+via the web ui but honestly because we
+want to move towards using
+infrastructure as code the most
+important thing here in terms of setup
+for me
+is infrastructure as code support
+so does it support the tools that i care
+about whether that's terraform or bloomy
+or cross plane and will the usage of
+this cluster
+lend itself well towards managing it
+with one of those tools
+slightly less important to me
+are sort of the
+web ui
+and or
+cli for interfacing with these things
+there are going to be times when maybe
+you want to spin up a cluster
+for experimentation purposes and you
+don't want to go through the full iic
+solution or system and so for those use
+cases maybe it's nice to have a good web
+ui or cli to do so however the second
+piece of this and this matters quite a
+bit as well is what i'll say day two
+plus and so by that i mean maintenance
+and operation
+and so here what are the things that we
+care about
+one of the main things that we care
+about are upgrades so kubernetes the
+project is being upgraded and
+continually puts out releases that
+improve the system fix bugs etc and so
+how you get those upgrades rolled into
+your clusters
+is very important some of these
+solutions have very
+automated processes that can take care
+of this for you and some of them are
+quite manual and so understanding what
+the approach is for this particular
+provider is an important one
+the other piece of the upgrades
+are there will be some time delay from
+the time that the upstream open source
+kubernetes project has a release and
+when the cloud provider will
+offer a version of that that is
+compatible with their current offering
+and so some cloud providers have very
+up-to-date versions others lag behind a
+bit so understanding which versions are
+available and how long it generally
+takes before a a new release is
+available is something that you'll want
+to take a look at depending on how
+bleeding edge you want to be and whether
+there's features in those new releases
+coming out that you want to leverage
+immediately versus if you're okay with
+waiting a little bit longer to have
+access to those
+now the third dimension that you're
+probably going to care about is
+essentially performance and uptime and
+whether or not they have a sla or
+service level agreement
+for their system so i'll say uptime
+sla
+and that sla could be a best effort sla
+meaning we
+hope to provide your a your kubernetes
+api with
+99.9 percent uptime or it could be a
+financially backed sla and some of the
+providers will have a financially backed
+sla and others will not and so looking
+at whether or not when you sign up
+you're getting that level of guarantee
+from them having a financially backed
+sla
+sort of
+shows how serious the cloud provider is
+about
+maintaining that up time or not
+within this there's kind of a sub bullet
+point of
+how often do nodes within the cluster
+become unhealthy
+and when they do become unhealthy sort
+of what is the impact to your cluster
+does it generally recover uh quickly on
+its own or do you need to go in and take
+some manual action uh to clean things up
+and get it into a healthy state again
+the former has less of an impact on your
+team and your application performance
+the latter can introduce a lot of toil
+in your systems if you're constantly
+having to go in there figure out why
+things are unhealthy and try and
+manually make get them to a better state
+now the fourth dimension that we're
+going to care about here is pricing
+each cloud provider will have slightly
+different pricing some of them charge
+for the control plan itself i think gke
+and eks both charge like 10 cents an
+hour you end up paying about 70
+per month
+just to have the
+control plane up
+some of the cloud providers have a free
+control plane i think aks is one of them
+with a juror and then some club cloud
+providers kind of give you the choice of
+whether you want a not necessarily
+highly available free version of the
+control plane or if you're willing to
+pay monthly then you can get a highly
+available offering but you're going to
+have to pay for it
+you're also going to pay for your
+the the worker nodes themselves so each
+each node that you bring into the
+cluster is generally representative of a
+virtual machine in that cloud provider
+some cloud providers charge more for
+memory versus another some charge more
+for cpu
+others depending on the shape of your
+nodes meaning how much cpu and whether
+they're dedicated versus shared
+will have different rates and so you'll
+want to look at the pricing of
+underlying nodes
+now i read an article a couple years ago
+comparing this
+for different cloud providers and sort
+of showed how the different cloud
+providers vary at different
+architectural choices so if you have a
+whole bunch of small clusters you might
+be better off with one cloud provider if
+you have a whole bunch of if you have
+fewer large clusters you might be better
+off with another
+and then the other place where pricing
+is going to come in is in
+uh networking and data egress oftentimes
+so if you are serving lots of traffic uh
+cloud providers often charge you for
+data leaving your network within their
+uh offering and so understanding how
+your
+data flows look and whether or not you
+will incur significant charges uh for
+moving data from the cluster either to
+your customer or to another portion of
+your architecture
+is another place where you want to look
+at at the pricing offerings and how
+that's going to impact your overall
+cost of ownership
+now a fifth dimension
+that we might care about
+is speed of launch so each of these
+offerings can vary wildly in how long it
+takes to bring up a cluster and tear it
+down
+ranging on one end with sivocloud is
+kind of the the fastest one of the bunch
+you can bring up a new cluster in about
+two minutes or less ranging from i've
+seen eks clusters take 20 minutes or
+longer before they're healthy and so
+depending how you're using these
+clusters that may be important to you or
+it might not be important to you at all
+if you generally bring up a set of
+clusters that are there for quite some
+time then that initial setup time isn't
+key if your working style is such that
+you bring up clusters and bring them
+down in experiments then having a much
+faster launch time could be important
+this could could even be a place where
+you
+use one cloud for that type of
+experimentation and another for
+uh sort of production workloads however
+i think the added complexity of managing
+multiple clouds is usually not going to
+be worth it and so
+weighing this into your overall decision
+and whether or not this is an important
+factor for you is is going to be
+something that you'll have to assess
+with your team and how you work with
+these things
+i touched on this when we were talking
+about day two
+operations and the upgrade process but
+i'll call it out here again so the
+availability
+of versions
+and how quickly the cloud provider will
+take a new upstream release and prepare
+it and package it such that you can use
+it within their managed offering
+depending on whether you are the type of
+company or person that uses those
+features as soon as they're released and
+absolutely need them this may be
+important to you it may be less
+important if you're perfectly fine
+working on a longer term stable version
+and waiting a little bit longer before
+you actually perform those upgrades now
+another difference between some of these
+offerings is the host os on the
+worker nodes themselves and sort of
+which
+underlying operating system it will be
+running some of them will be running
+ubuntu some of them will be running for
+example on google it'll be
+generally their container optimized os
+is the default although you can choose
+ubuntu as well i believe and so
+understanding if there's certain
+features that you need
+about that host os
+and some of those more specialized os's
+from the cloud providers are going to be
+especially well designed to host
+kubernetes and be locked down to
+help provide a reduced attack surface
+area within your cluster compared to
+using something like ubuntu
+now the next one that i'll call out is a
+little bit related to
+the
+uh the very first topic of like things
+that are outside of kubernetes control
+and that is the
+the location of the data centers or
+where this cluster would actually live
+and so if you have all of your customers
+in europe and you are looking at a cloud
+provider that only has data centers in
+the u.s it's probably not going to be
+the best fit and so understanding where
+the central point of your customers is
+to minimize latency as they make
+requests to your application running in
+the cluster and get those responses
+understanding and being able to place a
+cluster in a location that is proximal
+to your users is pretty important and so
+this could be a key factor in assessing
+whether or not a particular cloud
+provider is right for you some of the
+larger hyper-scale providers are going
+to have data centers around the globe
+where some of the smaller ones are going
+to have limited choices and so if you're
+going to go with one of those assessing
+whether or not they have a location that
+makes sense for your user base
+is very
+important another
+sort of
+input to this decision and from a
+security perspective could be an
+important one is whether or not they
+offer the ability to have a private
+control plane
+and so by this i mean whether or not the
+kubernetes api server has a publicly
+accessible endpoint obviously you still
+need to authenticate with your your
+proper credentials but
+some of the cloud providers can take it
+a step further and actually only have a
+private ip address for that control
+plane in which you would need to access
+it via another mechanism so maybe you
+have a vpn that is within the the
+virtual private cloud where the cluster
+lives and you can access it via that
+or use some sort of
+bastion host where you can connect
+through another machine
+another degree of security to prevent if
+there were a bug or an exploit found
+with the kubernetes api server or
+somehow a team member's credentials
+leaked
+having a private control plane would
+provide another layer of defense and
+depth that could help keep your uh
+cluster from being compromised in that
+case and so some offerings have this
+some do not
+now there's also a number of attributes
+of the cluster itself that
+a given cloud provider might have or not
+have or
+allow for more control over
+one of which is access to gpus within
+the cluster or
+compute accelerator so gpus are going to
+be relatively common across these
+offerings but not every cloud provider
+is going to have them and then also
+google has what they call tpus that are
+specific
+for kind of machine learning workloads
+that only are available on google so if
+you need access to gpus or tpus then
+looking at whether or not the
+kubernetes offering has that can be a
+very important thing to check
+and then the next thing to think about
+is auto scaling and so one
+really cool feature of kubernetes is
+that you can add and take away nodes
+from the cluster depending on your
+particular workloads and so if you if
+you have a fairly steady
+load then having a fixed size cluster is
+fine but if your workload is bursty at
+all or you're doing lots of batch
+processing
+the ability to respond to those changes
+in the amount of
+in the number of pods and the level of
+resource consumption that they are
+taking
+is really important and so
+whether or not the cluster has support
+for auto scaling built in either via the
+cluster auto scale or project within the
+kubernetes upstream or via something
+like carpenter which is a third party
+tool for doing some auto scaling which
+currently only has eks support but has
+the ability to be extended to other
+cloud providers
+but understanding whether or not you
+want to auto scale your cluster and then
+if so does it currently support it and
+does it support it in the ways that you
+want
+gke
+has a really cool feature called node
+auto provisioning where you don't even
+have to ahead of time specify the type
+of node pools it will look at the
+workloads you're running and decide
+whether or not to add a node pool and it
+actually picks the machine type to best
+fit the the shape of the workload so how
+much memory and cpu you're using that
+can be a really
+nice way to handle auto scaling and
+prevent yourself from over provisioning
+or provisioning the wrong type of nodes
+another really key aspect of these
+offerings is how they integrate with the
+cloud provider themselves so i'll call
+that cloud integrations
+and this ranges from things like
+uh networking so how how does the
+cluster networking interface with the
+cloud provider networking
+and so kubernetes has what's known as
+the cni or the container network
+interface and this is a standard
+interface that you can use to plug in uh
+different networking approaches within
+your cluster and so many cloud providers
+will have their own cni implementation
+others will use open source or
+third-party
+implementations and so which of those
+options you have and whether or not you
+want to use the native cloud provider
+option as another thing to take a look
+at
+you also will want to look at
+things like storage
+and so the ability for your cluster to
+go off and provision
+volumes behind the scenes so whether
+that's like elastic block store in aws
+or compute engine persistent disks in
+google
+having those hooks into the cloud and i
+think pretty much all of the the managed
+services will have the ability to do
+that and that's really key because you
+want any state that you need to store
+for your workloads
+off of the nodes and on some type of
+persistent storage that lives outside of
+the cluster such that if you do need to
+move that pod to another node or back
+that data up you can do so in an
+efficient manner
+the next sort of cloud integration
+that you'll want to look at is along the
+lines of how you get
+visibility into your cluster so things
+like logging monitoring
+uh et cetera and so some cloud providers
+will give you an out of the box solution
+where you can automatically just start
+collecting logs from all the workloads
+in your clusters and have those show up
+in a tool or an interface provided by
+the cloud i think google is a good
+example of this where
+they have what used to be called
+stackdriver now it's just called cloud
+monitoring i believe
+and cloud logging where you can
+configure it such that as soon as you're
+up and running the logs coming out of
+your pods will get ingested into
+this
+interface within google cloud and you
+can search them
+accordingly you can do the same thing
+for metrics so things like cpu usage
+memory usage etc some other cloud
+providers that's not going to be an
+option and you're going to need to
+either use some third-party tool maybe
+something like datadog or you could use
+like the elk stack so that would be
+elasticsearch logstash and kabana kind
+of a suite of tooling that allows you to
+collect those logs and search and work
+with them
+so understanding whether or not the
+service has a built-in out of the box
+solution for this type of visibility
+that you'd like to use
+can determine how much work you're going
+to have to put in to get that level of
+visibility that you want
+and then another piece where the
+integration with
+the cloud becomes important is in the
+container registry
+and so likely if you're building up uh
+software for kubernetes as a company
+you're going to use a private container
+registry it could be that you're totally
+open source and use a public registry
+but in most cases you're going to use a
+private container registry and so
+does the cloud provider that you're
+using have a native
+container registry that you can use many
+clouds do google amazon
+you can even set up if if your cloud
+provider doesn't have a container
+registry you can use like github
+and set up a private container registry
+there um so it's not a deal breaker if
+the
+if the cloud doesn't have one but it can
+be nice to manage your images in the
+same place that you're managing uh your
+other infrastructure and be able to set
+up access controls accordingly
+and then
+the final piece that i'll bring up today
+is along the lines of sort of either
+cluster add-ons or like a cluster
+marketplace that a lot of
+cloud providers will have
+and these are
+pre-configured applications that are set
+up to run within that environment uh
+usually there's kind of a one-click
+installer the actual implementation
+under the hood varies sometimes it will
+be sort of a you click the button it
+launches a kubernetes job which installs
+a helm chart other times it's a bit more
+deeply integrated
+however
+in my opinion
+usually if you're managing the rest of
+your cluster state with infrastructure
+as code and you're using
+something like git ops
+to manage the applications that are
+being deployed into the cluster i would
+prefer to actually avoid any of these
+types of add-on style
+click the button integrations and
+instead
+use the same approach that i want to use
+for my own applications to manage those
+third party applications as well and so
+that one is is kind of less important to
+me as i'm thinking about this and
+building out a platform on top of
+kubernetes
+but for some people just getting started
+it might might be a nice feature to be
+able to click oh here are some specific
+applications that i want pre-installed
+or pre-configured
+within my cluster to use right away
+and so hopefully this list of 13 sort of
+attributes or facets of each of these
+managed cloud offerings gives you a
+framework to assess whether or not a
+particular one is right for you and
+decide which of the cloud offerings make
+the most sense for you and your team
+if there's any attributes that you think
+i forgot or missed please leave them in
+the comment section below and we can
+have a discussion about how they should
+integrate into this framework that's it
+for today and remember just keep
+building
+[Music]

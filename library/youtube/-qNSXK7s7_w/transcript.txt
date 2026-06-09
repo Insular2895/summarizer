@@ -1,0 +1,504 @@
+what's going on guys my name is hussain
+and in this video i want to discuss
+indexing database indexing it's a very
+interesting topic and i think every
+backend engineer
+specifically if you are
+involved with databases and relational
+databases or any kind of databases you
+need to know what indexes and
+how indexings work and what is the
+benefit of indexing so in this video
+we'll describe what is indexing we're
+going to work with indexes we're going
+to work without indexing
+and we're going to see how the
+performance
+differ whether you have an index or you
+don't have an index so first of all
+what is an index guy an index is
+is a data structure that you build and
+you assign
+on top of an existing table that
+basically looks through your table and
+then
+tries to analyze it and summarizes so
+that
+it it can create kind of shortcuts right
+the the best way i can think of an index
+is like if you you know these
+uh uh if you have a if you ever seen a
+character is a
+handbook or phone book where you have
+like thick big
+book and it is labeled there's like a
+label color with a
+b c d until z right so
+the the the letter a starts with all the
+companies phone books that uh that start
+with the letter a and b
+so with all the b's right and c is all
+the c so if you want to
+look through uh find a specific company
+name phone number
+and you know it's like oh it's i don't
+know it's called zebra
+so you go immediately you go to the z
+right
+and then you start searching there it's
+that's the simplest thing i can think of
+that index right
+and basically the index guys are are
+are two types so far that we know of uh
+something called
+b3 and lsm trees
+and i'm not going to go through that the
+depth
+of how they are constructed this is
+outside the scope of this video but
+essentially it's a it's a data structure
+and you can look it up it's basically
+allowing you to search very effectively
+right
+and you find quickly what you're looking
+for
+so guys here i have a table
+called employees with around 11
+million uh rows okay
+it's a quite large table okay
+so i have a an id field
+is integer it's not null and it's
+sequential so every time i insert a row
+i don't touch this field it will
+automatically insert and
+increment the value and it's also a
+primary key
+that means unique right and it also
+has an index by default every primary
+key has an index by default
+and it's a b3 index right so
+that's what i have here and i also have
+a name
+field on this which is what doesn't have
+an index it's just a bunch of characters
+nothing fancy it's not really the actual
+name i just spent some time
+generating 100 million random strings
+right so so now if i for example do
+let's clear this up and do select id
+from
+employees where id equal
+thousand i will
+return the thousands id
+right that's that's not fancy right so
+if i do
+select star it will get everything
+back idn name and nn1
+is the name so don't don't pay attention
+to the actual name it's just the
+strength and that's the idea of the
+string here
+so guys what i want to do here is i'm
+going to go through
+steps of different queries i'm going to
+show you the performance of
+each of these queries right in order to
+do that in postgres
+that's the database i'm using by the way
+uh paul's grace
+i'm gonna do explain analyze
+which will actually explain the query
+that i'm gonna do
+and gonna tell me how long it took right
+which is which is really neat
+so i'm going to do select id from
+employees where id
+equal let's say 2 000 because the first
+one is cached i don't want to
+mess up the statistics all right so what
+happened here guys
+let's let's decipher what happened it
+says okay
+your predicate filter you're trying to
+find
+id 2000 that's the employee with id
+2000.
+you know in order i in order to find
+that
+i didn't go through the actual table 11
+million
+and i searched sequentially no i
+actually
+scanned the index which is way faster
+because the index is always smaller than
+the actual
+table because it tells you that okay it
+is structured in a way so that
+if you search and i'm going to put an
+animation here a little bit
+so you can see like if i want to find id
+number 2000
+it starts searching okay 2000 is between
+four thousand
+and and one thousand so it was okay
+uh let me go to this three so it goes it
+goes to another three and then search
+for
+from another between this number and
+this number so until you actually find
+the number right that's
+how b3s basically work right so now what
+i did i
+i only scanned the index which is
+very very effective right he pitches
+that's another interesting thing so it
+says the value that i actually queried
+which is the id i did not have to go to
+the heap to fetch this information
+because
+the id since that's the only thing
+you're selecting
+is in the index so i just pulled it in
+line that's called
+inline query if the information is
+available in the index
+that is the sweetest query to a database
+engineer
+if you can put as much information as
+you can in the index
+so that as i as i scan the index and you
+only select the led
+that is the sweetest thing you can do so
+the whole thing took
+0.6 millisecond and uh to plan the query
+and and to
+to study what we go through the the i
+the the fact of oh should we use the
+index or should you
+scan the table is a query is a decision
+and that's called the planning time
+the execution is the actual work to go
+and do the work all right
+so let's sparse things a little bit what
+i want to do here in this case
+i want to i want to select
+3000 in this case
+and you can see that took 0.1.8
+what i want to do is i'm going to change
+the id
+5000 and instead this time i'm going to
+ask for the name
+and compare that cost here guys
+look how long it took so
+selecting only the id where you know the
+id which is a kasily query
+if you ask me right it's a little bit of
+silicon because you know the id why are
+you just selecting the id but
+it's just for science guys we're doing
+this for science so it's
+pretty cool right it's 0.1 milliseconds
+less than a millisecond which is
+quite fast however when we actually
+selected the name
+which is a column in the table it is not
+the column is not in the index it is in
+the table it's in the heap it's in a
+different data structure
+right and in this case
+it took us two stinking two and a half
+milliseconds not
+m not seconds two and a half millisecond
+which is which is quite
+fast but still database speak it's a
+little bit slow
+this is a slower query and you guys need
+to understand when you execute these
+queries what it is really mean because
+i found the id in the index but i had to
+jump into the table
+row on disk which is a different
+structure by the way the table is in
+in a different place than the index the
+index is a data structure
+and the table is a different data
+structure right table is actually the
+heavier thing
+we try to avoid going to the table as
+much as possible because it's there's a
+11 stinking million rows there
+so we try not to touch it as much as pop
+but sometimes we do
+so what we did is we found the id and
+then we
+actually tried to go and seek to the
+disk
+i mean i have an ssd so there is no seek
+we go to the page
+that has this information and we
+retrieve it from disk
+so that's another read from this so it's
+a little bit slower took us two
+milliseconds
+and obviously if i execute the same
+thing again
+it's faster why because caching because
+we cache things
+cache there's so many cachings going on
+ssd caches the control ssd
+caches the the database caches everyone
+caches
+so god knows what the why is faster now
+right but
+that's why because i'm excluding the
+same query but if i
+change this to something else uh
+i might not get it right but you get the
+idea right two milliseconds again
+all right so now let's splice things a
+little bit i'm going to do
+explain analyze select
+id from employees
+where name is equal zs
+let's do it oh guys are you feeling it
+you're feeling it right that was
+slow that was that was
+deeply slow why because guess what
+the name column does not have an
+index and that means the only way to
+actually search
+through the name the value zs
+is to actually go one by one and do
+a sequential scan on employees
+table that's the worst thing it's called
+the full table scan
+you want to avoid full table scans as
+much as possible
+however postgres tries to be a little
+bit smarter by executing
+multiple threads worker threads and does
+does the sequential uh scan on parallel
+which is
+still good right so the planning took
+0.83 milliseconds which is not much
+because
+well is does this ha does this column
+which is the name equal
+this will filter does this have a where
+clause does this have an index
+nope it does not have an index move on
+full table score doesn't have a choice
+all right so it went through and scanned
+11 million
+rows well not necessary
+well yeah it is necessary i had to scan
+the whole thing otherwise how do you
+know that
+all of them right you have to check
+every single one of them which is the
+slowest thing
+how long did it took it took three
+seconds
+yikesy yike c that is
+so slow yeah so it is pretty slow guys
+to do this another another thing that we
+notice all the time
+is uh i i used to do this all the time
+without knowing
+this there's there is a command in sql
+called like
+like if you don't know hey is zs before
+and after
+you just add this percentage like
+this is the worst query
+why because it is literally
+has to go through all the rows and and
+and
+does matching in this case right it
+doesn't really matter
+because we don't have an index but i'm
+going to show you within index how does
+it does it do right
+so this what this does is it will return
+all rows that have anything in the
+beginning anything at the end but
+has to have zid capital as small in the
+middle
+slow took 1.1 second
+to do all that stuff but yeah still 11
+million row but
+we had two workers to do that work for
+us all right guys all right guys so what
+i want to do here is actually going to
+create
+an index on
+i'm going to name it employees name
+on employees and it is on the name
+column so this was going to take some
+time
+to create why because guess what guys it
+is building the b3
+bitmap index on top of all the stuff
+right so it has to fetch all the 11
+million rows and
+does all this magic to actually create
+the the fancy
+uh index
+so let's wait for it all right guys we
+finished
+creating our index so now let's try the
+same
+query that we have done just without the
+like just
+directly equal so now if i do this query
+look how fast it is still a little bit
+slow
+47 millisecond but damn
+that was quick why because now we're
+doing a bitmap heap
+scan on employees right so we're using
+the actual bitmap index scan on
+employee's name
+so we're actually scanning the
+employee's name
+index that we created and this is way
+faster because
+we have fewer rows to work with and
+we're gonna
+actually jump between few rows until we
+find exactly
+what we're looking for right and
+obviously guys the same thing applies
+where
+hey if you only pill pull the name which
+is already in this
+index is going to be faster than pulling
+the id and the name
+i'm i'm not quite sure about this maybe
+this actually doesn't hit the
+heap because the index the primary key
+i know this is a mysql i'm not sure
+about postgres but the primary key is
+usually stored with every single index
+in uh in in in other databases right so
+the name index here the primary key will
+be stored so
+pulling the primary key from the name
+index
+will be fast because it's it's right
+there right
+with it so however if you're if you have
+more than other tables
+then we had to go to the table structure
+and that will be a little bit slow
+all right guys so what will happen if i
+add
+like here what do you think will happen
+back to the slow query back to the exact
+same slow query guys
+why let's clear this again let's do
+let's do something else
+so we don't have we had the cache look
+at this
+back to the same slow query why because
+we could not scan the index why
+this is this is a lot of people make
+this mistake
+yeah the name column has an index
+but what you did is you're not actually
+asking for a
+for literal value you're asking for an
+expression
+and there is no index
+that will satisfy this expression
+because
+we cannot search the index on this on
+this expression because
+this is not a single value so
+the planner quickly detects this says
+okay planning time
+we check less than that oh sorry the
+filter
+sucks and that's why you have to do
+explain on your queries and see why are
+they actually slow
+because of this because look at this we
+did a parallel
+sequential scan again parallel not all
+databases do parallel scanning by the
+way but that
+postgres though we did we had to do it
+we had to go to the
+stinking table and scan my 11 million
+rows if i have a billion dollars it's
+going to be even slower than that
+so yeah going through all that stuff and
+i'm going to explain all this number in
+another videos because i don't want to
+make this video longer than that i'm
+going to make an advanced video
+discussing these actual numbers what do
+they mean all that stuff but
+but yeah we did a parallel scan on
+employees guys look at
+that it's so slow we couldn't do any
+lining we couldn't do any optimizations
+and this is an expression obviously so
+that's we had we had to
+do all that stuff so we took a hit we
+took a hit
+despite us having an index guys despite
+axe
+having an index so guys that's
+very quickly indexing in a nutshell in a
+very very quick video i wanted to
+explain of that yeah having an index
+does not mean that
+the database will always use it it's
+gonna plan
+and according the to the planner will
+decide to use the index or not
+it's up to you as as the engineer
+uh who's executing queries against the
+database
+to actually give hints to the database
+to actually use the index or not
+right this is a bad query in general
+select star is a bad query in general
+why because if you because if you think
+about the cost
+to go to the actual disk and pull all
+the information
+that is expensive right really really
+depends on how much like let's say you
+have a blob
+on a column on the field or on the table
+that is expensive to pull up so if you
+don't need it don't ask for it
+right and only ask for things that
+absolutely
+there and if you can ask for things that
+are in the index right
+i'm going to talk about that in another
+video where just like multi-column index
+where you can
+add other columns in the index that
+you're about to create this is called
+inlining where where
+as i search my beautiful index my neat
+efficient index
+uh i want the name for example right
+that's a bad example but
+i want the name i am searching for the
+id and i don't want the name
+oh the name is right there it's just
+literally sitting
+in my index so i just pull it and
+retrieve it to the user i don't have to
+go back
+on disk and find the location seek and
+disk if that's the mechanical drive
+or pull the page in case of ssd guys
+alright guys that's it for me today i'm
+gonna see you in the next one
+you guys stay awesome goodbye

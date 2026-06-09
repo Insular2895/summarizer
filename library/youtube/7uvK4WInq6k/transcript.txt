@@ -1,0 +1,1122 @@
+[Music]
+thank you thank you so let's talk about
+pitfalls in micro-service integration
+and actually what motivated me to do
+that talk like that we are moving
+towards distributed systems quite
+rapidly actually and this is my that
+gave the picture to the talk that's my
+metaphor for distributed system so if
+you're in that small Hut over there for
+example that's your one program that's
+your one micro service that's your one
+whatever it is that's a relatively cozy
+place to be so you can like close the
+door have your heating have transaction
+management have like one programming
+language one whatever threading you know
+what's happening there so that's okay
+that's what we can can kind of deal with
+but when we open the door then you meet
+that rough ocean and that's the network
+and the network is it's really that's a
+bad place to be and it does weird things
+and it's not totally binary it's not
+like working or not working it's working
+a bit or it's working like in a weird
+way and that's something we should
+really take into account and just a
+quick show of hands who's doing micro
+services already Wow okay that's 80 to
+90% then I don't have even asked further
+normally if it's less people I asked
+like who's doing at least one rest call
+somewhere in the architecture and then
+you have all of the hands going up and
+that means we're doing distributed
+systems and most people as far as I see
+that are not really aware of that a
+really good example and I was quite
+happy when that came up was at info
+queue there's the the architecture and
+design trends thing they do so there's
+the link you will find that in the
+Internet and they basically it's kind of
+an opinionated view from them how they
+play certain technologies on that
+adoption like curved adoption lifecycle
+and they basically said micro services
+and that's new is actually now in late
+maturity that's exactly what we saw here
+right 80 to 90 perceiver in 80 to 90
+percent of the people do micro services
+okay that's what we see but and that's
+awesome correctly build distributed
+systems
+it's on the early adaptors part so that
+basically means we're all doing
+distributed systems without really
+understanding it right that's what it
+means and that's a problem and that's
+what I can see in a lot of product
+that's what you can see when you talk to
+people and that motivated me to write
+that article which I wrote and 2018
+which basically was the basis for the
+talk so if you want to read it up there
+see article as well I feel more in
+reading then and like listening let's
+jump into that so one of the things that
+we see happening is a mindset shift that
+has to happen actually to support these
+micro service architecture so one thing
+for example is some parts of the system
+are always broken that's an assumption
+you should always make right it might
+not be the service itself it might be
+the network towards the service there
+there are so many possibilities how it
+is broken
+that means it is broken at some point in
+time that we have to accept that and
+that's a change like in how we think in
+the past it was very often like we make
+it highly available it's the assumption
+of it's there if I'm in one like one
+programming environment and I call a
+method it's there it's always there but
+that changes with our distributed system
+but the important thing now is that we
+avoid these small failures from really
+taking down the whole system right
+that's what we try to avoid and that's
+important mindset shift we have to make
+it's it starts to get more obvious to
+people but it's an important yeah
+thought to have in your mind and if we
+look at what that means on a quite
+detail or quite concrete level and I'm
+more the example guy so I want to dive
+into a very quick example I use I'm very
+often order fulfilment because a lot of
+people can relate to that in their heads
+and let's assume you have a payment
+service somewhere in the company to
+retrieve payments for certain things and
+let's assume you want to handle credit
+cards payments and that normally means
+you don't do that yourself but you
+leverage another service from whatever
+in the internet or stripe or whatever
+dad is right why arrest can you imagine
+that situation right and you wanna yeah
+right and you want to want to write that
+payments or
+I want to do that now like really in
+code I for today I use Java and spring
+boot let's see that was a good idea
+who's programming in Java here spring
+boot
+okay that's 4045 percent of the people
+so that seems to be okay I have the same
+thing and get up with a c-sharp
+I have other examples in ojf as well so
+it's it's really not tied to the
+language but if I want to do something
+in code I have to choose one so that's
+what I did
+there we are the actually the most asked
+question normally after that Tarkus why
+are you using eclipse and to answer that
+why not I mean it works for me but yeah
+I'm kind of too lazy to change that we
+are but let's look at that so what I
+have here is a spring be a rest
+controller because I want to provide a
+REST API what I do is I basically
+provide that API can you read that in
+there in the back there yeah bigger no
+okay good so I have a put method in
+order to put that payment and then what
+I do is a couple of non-dance things for
+the demo sis out of course every good
+code should have a couple of cells and
+then I charge the credit card which is
+basically the business logic and what I
+do is I just use the rest template this
+is how I can do it in spring boot in
+order to post to stripe in this case to
+charge something and then I send a
+request which I just created here get
+back a response I just extract some data
+from it and then I'm done right who has
+written code like this before okay yeah
+right this is what it what do you
+normally do let's look at that so I have
+that running in the background so this
+is my payment service this is what we
+are looking at and then I have a fake
+credit card service in order to avoid
+charging my credit card every time here
+and now we can do that put right so what
+I can see you if I move that down if I
+send that I just do the put and that
+charges the credit card so far that's
+not too surprising right quick test
+question if I shut down the stripe fake
+server
+and do that again what happens louder
+please
+again oh it's after lunch
+that's the Tesco it's easy if I shut it
+down I get an exception right because
+why it's Betty
+HTTP I 500 because this one can't reach
+that one wire network gets an exception
+and that's transported back to me that's
+an easy case the more interesting cases
+actually if the stripe fake server
+behaves let's say beard or what I can do
+here is let it behave slow and that
+should simulate a slow network
+connection actually might be the service
+is slow but normally the network is slow
+what happens now timeout probably
+probably not let's do that it's a random
+delay so I even don't know that it's 34
+seconds that gives me some time to
+explain something and what we can see is
+like it's waiting here it's blocking
+right that's the normal thing if you do
+it like this it's synchronous it's
+blocking the left service is waiting for
+the right service to respond and my
+client is waiting for left service to
+respond so I'm blocking everybody I'm
+probably not too surprising here but the
+problem I have with that is that we are
+now moving towards exactly that picture
+here because that means like we have
+that service which is low or in the
+network is slow and then we have that
+service and that anomaly had a threat
+pool in order to answer requests and
+these threats are not all blocked
+waiting for that one meaning after some
+time this gets unresponsive because
+other other ones can't call that anymore
+and that like fires that down and so on
+so forth so now we now have cascading
+problem there's an easy easy way of
+fixing that if somebody wants to shout
+it out timeout Aysen oh yeah a sink I
+talked about a scintillator let's go run
+timeout I let I let that count what I
+have in my v2 and I want to go into too
+much details here it's a so-called
+circuit breaker let's see if some people
+are nodding some people are nodding very
+good I'm circuit breakers one of the
+basic patterns you should know if you do
+rest communication this
+breaker works like the one in your house
+if something is weird with the
+electricity
+it doesn't wait for the house to burn
+down it just switches off the
+electricity right and that's what the
+circuit breaker here does as well there
+are a couple of frameworks depending on
+the language in the environment what I
+used here is history it's actually kind
+of out of life so you probably want to
+use resilience for day but I just kept
+it it's for me that does the job and
+that's a circuit breaker and what you
+can see is that I just have the code
+just wrapped within history X and then
+as soon and that's despite that the rest
+of the code is the same and then if I do
+that the behavior changes and as you can
+see this is now version to be too let's
+go there let's go there it's still
+behaving slow and if I go to v2 I send
+it over right this takes again a long
+time but what you can see on the left
+hand side the circuit breaker kicks in
+says hey that takes too long then you
+get that kind of timeout and here you
+get an exception right okay that's
+important because now you stop that
+cascading failure the circuit breakers
+quite clever actually it can also test
+like every hundred requests and is it
+life again and switch on automatically
+so there are a lot of things you can do
+there
+so circuit braking is one of the basic
+patterns and my observation is that
+people start to understand that they
+need a circuit breaker so it's not like
+new knowledge hopefully not if that's
+new for you learn that that's important
+but it's a basic and that's kind of also
+very often known as fail fast so we
+don't want to wait for everything to
+burn down we want to fail as fast as
+possible that's important but what I see
+products is actually that's where they
+stop and for me that's where they should
+begin actually that's kind of the very
+basic pattern you should definitely know
+let me tell you a short story where this
+is relatively easy to understand who has
+used an airplane before yes right I'm I
+wonder at what yeah no but that's good
+because then you know the process right
+off getting to an airplane it normally
+means you get an email invitation like
+24 hours before that hey please check
+then you click on the link you select
+the seed whatever you do have to confirm
+a couple of things and then you check in
+right that's what you do I did that for
+a flight in this case to London um it
+was your wings
+I'm from Stuttgart and that's why it's a
+german website sorry for that but it's
+very I think it's very easy to get and I
+translated it so basically what it said
+there was an arrow sending you the
+boarding pass so I could check in but it
+couldn't send me the boarding pass
+I actually what I imagine what happens
+in the background is that okay it's me
+in front of the computer I just somehow
+communicate with that web UI of
+eurowings that communicates with a micro
+service for checking me in for example
+I'm by the way I'm not totally sure
+about your wings we have other customers
+doing the same thing there are no that
+it's more or less like that but the
+check-in micro service doesn't do
+everything on its own it leverages other
+micro services to do that so for example
+a kind of an output pair management
+thing if you want to get a PDF to print
+it out or my personal favorite if you
+fly British Airways you can send the fax
+awesome there might be another service
+for that or that barcode generator
+generating the 3d barcode you also get
+to there I think that's the most used
+nowadays and what I imagine is that this
+just didn't work right so what we said
+early on can happen that's something
+that can happen and they even had I'm
+not sure if it's circuit braking or
+whatever but they had some mechanism in
+place keeping that from bringing the
+whole websites down
+so it was responsive I could check in I
+could do everything I just didn't get my
+boring path so that's kind of okay from
+the design but what I don't like about
+that is that the error they had
+somewhere down there they basically
+really prod that up to me as a user
+but and that's kind of a really bad
+design decision from my perspective
+that's not what I what I normally should
+do because um what can I do about that
+problem I mean I want to have my
+boarding pass right for the airport what
+would you do
+retry yeah f5 right for computer
+scientists for engineers that's typical
+like that's natural
+I just retry if you speak to normal
+people if you explain like just hit f5
+it's always like I have that discussion
+regularly in the family it's like why
+should it work the second time yet just
+try that it does but it didn't in that
+case it didn't I I did exactly that I
+hit f5 doesn't work again
+I like waited like a couple of seconds
+tried it again
+it didn't work so what did I do next I
+did something I call a stateful retrials
+I created a calendar entry in my Outlook
+to remind me to hit that button again in
+like four hours right and that's a safe
+full retry I I made it stateful
+persistent in my Outlook at my calendar
+to make sure I don't forget and then I
+retried right and that's a that's a
+valid pattern but the thing is it
+shouldn't be you doing that the kind of
+funny part of that story was when I had
+my onward flight from London I had
+exactly the same problem with easyJet
+but I I actually like easyJet here
+because they give you the work
+instructions it's just not an error
+message they give you the work
+instruction we're having some technical
+difficulties okay please log on again
+that's a retry alright if that doesn't
+work please try again in five minutes
+okay please and but actually that's the
+best part I think we do actively monitor
+our side we'll be working to his South
+Asia there's no need to call it's your
+problem solve it yourself right that's
+okay I mean yeah make sense but I mean
+it should be like hey okay we have
+difficult we have difficulties so we
+will sort that out it's not your problem
+I mean it's boring past I need I don't
+need that synchronous I need it before I
+get to the airport so they should to
+sort it out and send me the boarding
+pass whenever they're ready with it all
+right it's asynchronous I can get it as
+an email in the app whenever right just
+I don't want to do that retry so in this
+case I
+think the stateful retries should be
+sorry should be for example in the
+checkered micro-service and not in like
+me as a user right I think that's a much
+better design the problem is whenever I
+mean when you discuss that with IT with
+developers normally they not always but
+normally they understand that I say okay
+but look if we do that and if we promise
+to send the boarding pass on time we
+probably should do it reliably and that
+means we have to store state that's then
+the ship who's the state state is bad
+right state is best
+I mean handling state the the naive or
+obvious thing what you do I mean
+probably you're more server less and do
+different things here but the obvious
+thing is like you store it in a in a
+database or whatever an entity you build
+a persistent actor if you like a
+document I don't care there there are a
+lot of ways of storing state the problem
+is as soon as you do that as soon as you
+have that pending boarding pass stored
+somewhere you have like additional
+requirements around that like scheduling
+if it's waiting for it there for too
+long somebody should recognize that and
+probably get active or you have to do
+the retrying like periodically somebody
+has to trigger that you have to think
+about oh I want to change the whole code
+around sending boarding passes what's
+with the currently waiting ones so you
+have versioning issues you probably want
+to want to see if if then the boarding
+pass couldn't be sent for it with an
+exception for example you want to get
+that you want to see that in operating
+so there are a lot of like requirements
+around that which normally leads to
+leads to people just not doing it just
+oh that's a hot potato let's throw that
+to the user right and that's not just
+not how it should be there I mean that's
+my background I come back to that in a
+second I would normally use something
+like their tools doing that like a state
+machines or retro engines whenever I
+discuss that people are normally coming
+up with really virtual engines these BPM
+stuff like from the past is like very
+complex very proprietary very big things
+from vendors and we don't want to want
+to use that
+for these kind of technologies so there
+are a lot of conceptions about how these
+tools work and the thing is they're not
+really true anymore
+so I look at that in a second I want to
+make my personal opinion a blow of my
+personal opinion transparent here so my
+background is I'm doing an open source
+of virtual engine so that's a company
+I'm co-founded and I'm working with
+workflow engines for basically all my
+life so I contributed to a couple of
+open source workflow engines over the
+last 15 years and that means for me it's
+quite natural to look at problems
+through the lens of what could a state
+machine help here right so that's
+probably good to know that my background
+and but that means I also look at the
+virtual engine market quite closely and
+if you look at that at the moment it's
+quite interesting that there is a lot of
+movement actually going on so for
+example if you look at the cloud vendors
+so AWS is actually here so if you go
+upstairs talk to them they have it too
+called step functions which is basically
+to orchestrate serverless functions
+that's a virtual machine like a virtual
+engine basically in the background and
+the other cloud vendors have something
+comparable if you look at the Silicon
+Valley stacks what a lot of people
+currently like doing when they do micro
+services Netflix did an open source
+project called conductor uber does an
+open source project called cadence they
+are very opinionated to the environment
+the both companies live in obviously I
+mean that's why they are building it
+but they're available and they clearly
+show the need for these kind of things
+and if you look at the open source space
+there are quite a couple offer Explorer
+engines actually available quite dense
+in the Java space or not that much in
+ojs cooling or or sharp but normally
+nowadays you can communicate to them
+remotely as well so that's normally not
+a showstopper there are some of them
+that's something we do currently also
+available which really scale out
+horizontally so you can run a million
+workflow instances per second that's
+normally the question I get yeah but if
+you do that in rest calls I mean we have
+a lot of them does it work yeah that
+could work I don't talk about that today
+if you want to know about that ask me
+later on and for the demo again I have
+to use something concrete and there by
+coincidence use
+one from us but bear with me but from
+the concept it's comparable to a couple
+of the others right so I don't want to
+focus on a product but more on the
+concept but again I'm an example guys so
+I want to want to show you with what I
+mean by workflow engine for this kind of
+problem so let's go back to our code
+hello thank you your clips so I had me
+too that was with a circuit breaker now
+I can go to my virtual three what does
+the version 3 do the first you can see
+is I now basically use a red fire engine
+in case of communal just have a spring
+boot starter and added a main dependency
+and then it's just there then I can
+define a workflow what I do I do it in
+code here I could do it graphically I'm
+actually not really doing that today why
+because what I see actually when I show
+graphical models to developers is very
+often they're afraid there's some magic
+behind they don't understand which I
+totally totally get so that's why I
+start in code right but you can do it
+graphically as well so I say I'm beep a
+man come back to that and second create
+an executable workflow this is where it
+starts and this is where it ends and the
+only thing it does it's one so called
+service tasks and because I'm in spring
+or spring boot here I can attach a
+spring beam for the logic that should
+happen whenever you do that right and
+that's my so-called stripe adapter here
+and the stripe adapter is I do all the
+best practices today so it's in the same
+file right that's how you define classes
+and there's my stripe adapter the
+important part here is that the code
+within that class is exactly the same I
+had before I didn't change it I'll just
+move it to that class in order to make
+it colorful from that workflow right and
+what does that give me now I'm in a
+virtual Oh engine I'm in a state machine
+so what I can do here is that little
+thing which is interesting fail drop
+retry so whenever that doesn't work I
+can retry it and this is an ISO standard
+do it retry three triumphs with a delay
+of period time one minute right and now
+I have that stateful retry done and in
+instead of like when I charge the credit
+card in order of just doing it right
+away
+I basically kick off a workflow instance
+that's it that's all the changes I did
+if you want to want to look at that in
+more detail it's all on github I have to
+github liquid later on so don't worry
+and you can just run it yourself if you
+want to play around with it now the
+behavior changes so if I go back to that
+I have my v3 and this one is still slow
+I haven't changed that so if I go to v3
+they behavior changes you will see that
+slow you see an exception so the circuit
+breaker actually kicks in but from the
+client perspective you see a difference
+which is important I see HTTP 202 so
+that's called accepted so it's not any
+more synchronous it's not blocking it
+son waiting for anything and said I got
+your request I will get the boarding
+pass to you later I make sure it happens
+right so this is the behavior here and
+if we look closely at that and if I talk
+for long enough we will see the retries
+kicking in I wait I do that in
+background and then just because that
+normally gives you an idea what what I
+mean by virtual engine most now we all
+know there was the UI but the retry
+should kick in in a minute and then we
+can really look at what's going on in my
+workflow engine and that normally gives
+people an idea what I mean by stateful
+and brutal engine so you can see there's
+currently one instance waiting there
+that's when it entered and it keeps
+retrying after a time it probably gives
+up and then we even see that here but so
+there was a retry and so on so forth
+okay good just to make like to make that
+transparent what how you could do that
+and yes that was a very easy workflow I
+did right just one step but it's not
+unrealistic we have more and more use
+cases add customers add users doing
+exactly that right ok dan is stateful
+you can't lose it you can like in this
+case in case of comonad stored in a
+relational database we can shut down the
+engine
+turn it up again it still will be there
+good right and that's how I did it
+you will get the site's later on so what
+I did is retrying that's important
+that's a partner of retrying which is
+idempotency if you want to do retries
+you have to make sure that it can do
+retries that the other one doesn't like
+freak out if you do the same request
+twice because that what's very likely to
+happen if you do retracts right you
+might call it twice and that's actually
+one core problem you have in every
+distributed communication and every
+remote communication and it's really
+important to look for that and to give
+you an example again from the client
+perspective if you want to do something
+like in this case I wanted to book a
+flight and you probably remember these
+right they're slowly going away but a
+lot of sites still have that like hey
+your transaction is in progress like the
+loading wheel you're right it may take
+up some time please do not close the
+window and for God's sake don't hit the
+back button I'm not sure via the same
+like me but I have that evil person in
+my head saying hey just try it what
+happens then well it's always like oh
+that's and just like extend the flight I
+want to have you don't do it out and the
+next thing is like I I travel too much
+and then I'm sitting in the Train seeing
+the tunnel and this loading wheel and I
+go do it faster and that's bad design
+that's the same thing that's not like
+really designed for idempotency it
+should be like hey you want to give us
+money that's awesome we want to have
+that and we make sure it's really
+convenient for you so he can reload it
+you can hit f5 as much as you want you
+can close the browser open it up again
+it will work right and there are ways of
+doing that you have to generate whatever
+some kind of IDs or you might make up a
+proper ID out of the whatever user and
+flight or whatever you can make sure
+it's a unique idea and you recognize you
+get the same request
+but it's important to do that that's one
+of the favorite sites I'm not sure if
+you can see that there was a light at
+the zucchini
+I had a vegan part in my life like I
+tried to eat vegan like five four it's
+no must be longer six years back
+something like that and I skipped it
+when I got kids it's just not possible
+anymore the thing is there is an awesome
+dish I love that where I do zucchini
+noodles so you take the zucchini there's
+a special slicer you sliced it zucchini
+and then you get noodles out of that and
+you add some sauce and that's a dish and
+it's really tasty totally can recommend
+that I can give you the recipe if you
+like and the thing is even in the book
+they say you can eat as much as you want
+from that it's not like it's not
+unhealthy you don't grow fat so it's
+allowed in the evenings you can eat as
+much as you want from the zucchini so if
+you eat your plate of zucchini noodles
+and then you forget that you just add it
+later zucchini noodles you can eat
+another one and you forget it again you
+just eat another one so eating - keenie
+noodles it's totally idempotent eating
+pasta is not right it's it's rebadow
+that's the best metaphor I came up with
+so far for idempotency but it's firm for
+me it's one of the most important things
+you have to keep in mind so if you want
+to want to have one takeaway only from
+this talk then do audio services api's
+make them idempotent that's so important
+because you can't fix that easily on the
+client-side so if you take that example
+and you just say Church credit card like
+this if this is the API it's really hard
+to make it a tight impotant
+if you have a transaction ID and that's
+generated on the client-side is much
+easier to make it either pod right and
+that's hard to fix if you don't have it
+so whenever you create an API whenever
+you create a service make sure it's
+idempotent that's super super important
+in these distributed systems okay that's
+it zucchini don't forget about it but
+that's not it so let's move further
+let's say you have that charged credit
+card thing here and then you say at some
+anytime you normally give up it might be
+time controller said hey I tried it like
+20 times I give up
+the payment is failed I can't charge the
+credit card that's reasonable right
+thing if we're in distributed systems
+and there's one really ugly thing about
+distributed systems if you get an
+exception like a network exception there
+might be three scenarios which just
+happened right the first is basically
+the network had a problem while reaching
+the service provider so you never
+reached it right it just got lost in the
+network the next thing is you reach the
+service provider it starts you process
+your request but then it exploded right
+what did happen did it commit its
+transaction you have no idea right or it
+probably did everything correctly and
+then the response got lost and the thing
+is you have no idea which of the three
+scenarios just happened you can't know
+that and you can do the same thing by
+the way with messaging you send out a
+message never get a response what
+happened you don't know you simply don't
+know and that's important to keep in
+mind so in this in this situation even
+if you give up right you you called the
+REST API so it might went through you
+might charge might have charged the
+credit card right so it's probably
+customers are not that relaxed and you
+charge the credit card and it saying hey
+we couldn't charge you and you don't get
+whatever you're ordered right that's not
+a not a good thing so in this case you
+for example you have to think about that
+about the strategy it depends again on
+the API what's a good strategy but for
+example you want to cancel the charge or
+whatever that is right that depends but
+again you have to make sure you think
+about that first and the second is you
+have to implement it in a reliable way
+and if you think about that if charging
+was quite unreliable it's a bit naive to
+think that the cancellation go through
+with the first call right so you
+probably again have to retry that for a
+longer time and I deliberately made that
+sequence I said the payment is failed so
+the client can work nobody waits for it
+but I make sure I clean it up afterwards
+right this is kind of replacing whatever
+like a bad shop at the end of the day
+cleaning up all the canceled
+charges good and I'm using BPMN here by
+the way if you wondered what these fancy
+pictures are it's a language for
+expressing these workflows I'm
+personally a big fan of that I think
+it's a very good language to express
+this kind of workflows as iso standard
+and i think it's relatively easy to
+understand which is not unimportant so
+if you look at that for example you can
+see where things are stuck you could for
+example see 317 instances are currently
+waiting here and then you can look into
+that and there are normally like
+operators for example want to look at
+that and then they understand the
+context of what's going on it's very
+different to stacktrace in a log file or
+whatever a dead message in your
+messaging system you really understand
+what's going on not only as a developer
+also has operations people and then also
+like with business stakeholders and the
+important thing also to understand is
+that even if this is quite we talk about
+quite technical problems here the rest
+api can't be called business they called
+us don't care too much about that they
+have to think about the consequence of
+that do I have to do a cleanup or not
+can i you know that i that should be a
+decision for the developer and that's
+why it makes sense to have that
+transparency that visibility as well
+right we heard it at the very beginning
+asynchronous communication reactive that
+should solve the problem right so let's
+quickly look at that if we make our
+checking an example again and let's
+assume we are not talking rest but
+messaging it doesn't change the picture
+too much to be honest so this time I
+send out a message to the bar code
+generation if this is on fire or this is
+broken it probably never gives us a
+response right so if I don't plan for
+that the same thing happens that this
+guy has to monitor that oh I should get
+my boarding pass in my email inbox mmm
+it's not yet there do I have to retry
+bad design so you should again have you
+should do that within the checking
+service which again means it's getting
+stateful so it's more or less the same
+problem the
+thing is you can also solve that with
+these kind of technology so if you look
+at vert flow for example what you can do
+is and for example you send out the bar
+code generation command that's one
+message and then you wait for the
+response and this is again stateful so
+you really wait for that you can model
+timeouts and there a lot of details in
+BPM and so this for example means I'm
+not interrupting the waiting so I keep
+waiting and in parallel I do the retry
+for example and then I can even do more
+yeah stateful you can even do more fancy
+stuff like wherever I am in the current
+boarding pass and procedure if it's
+taking too long I give up basically I
+break I cancel that and do Plan B
+whatever Plan B is right I got that once
+from I have to add that screenshot
+actually from I think Virgin Atlantic I
+started to collect error messages from
+Airlines which is kind of a good habit
+actually because then you're always
+happy if something goes wrong that makes
+me feel better
+I've when SMS one text message from
+Virgin Atlantic saying we can't take you
+in please visit the counter that's kind
+of that thing right so that's happening
+so that's what it can do
+quick question who uses a message bus
+here I would probably probably in Kafka
+here or no method bus keep your hands up
+for message bus okay that's 20% of the
+people who has no keeps the hands up who
+has no problems operating the message
+bus do we have one two three four that's
+a good ratio actually normal it's less
+people and say I admit it's a joker to
+have no problem nobody has no problems
+with any technology but what I see a lot
+of customers struggling with is if they
+have that message bus like whatever
+rabid or or ActiveMQ or MQ or whatever
+it is then if you have a problem when
+you want to process a message and you
+get an exception what happens is that
+this is kind of a dead message it might
+be retried but after a while it's a dead
+message
+we process and you have to really
+monitor that you have to operate that
+and that normally leads to a lot of
+problems because most of the tools they
+don't have proper tooling for that
+proper your eyes where you can see okay
+these are the dead messages this is
+where they come from that's the payload
+oh there's a whatever some weird data
+and the payload I fixed that redeliver
+it's not easy the tooling is just not
+there I see a lot of companies now
+really build own tools for that
+basically every bigger customer I see
+using messaging has their own message
+Hospital
+that's what's normally called right and
+that's F word and that's weird I mean
+and still in 2019 that's still the case
+so and what I found interesting and I'm
+not trying to sell that as kind of a
+best practice architecture that's
+important to me and but what I see
+customers doing is the following so what
+we had so far let's assume you have two
+micro services and like payment and
+credit card and you call our you
+communicate by a REST API right that's
+the left hand side and we created that
+small workflow to do that right this is
+kind of a push mechanism I will call
+that push because the workflow engine or
+that service is actively calling the
+other one if you use messaging you use
+the message queue in between but you
+still from from the perspective of the
+workflow engine or the service you still
+push the message actively to the to the
+queue you can use virtual engines in the
+basically the invert direction and you
+can use a pull mechanism which basically
+means somebody else can fetch work right
+this is like you run the workflow engine
+and this guy knows hey I can do B so and
+they're normally kind of topic names
+used as well I can use B do you have to
+do something for me right that works so
+then you pull work from it and what you
+can do with that you could build an
+architecture where you say the word
+Finder is kind of distributing the work
+right which I don't want to say replace
+messaging here but we have customers
+which didn't had messaging and then they
+didn't go for it
+this solves the problem as well because
+now you can say service be it basically
+subscribes to I can do B it doesn't have
+to know anything from the workflow but
+it knows that this like activity relates
+to B so if we basically I'm subscribed
+to that whenever there's something to do
+it does it and then it goes on and that
+removes the burden of having like
+messaging here and then you have the
+tooling which I talked about earlier on
+like where you have the context of
+what's really going on in the workflow
+and that's actually quite quite powerful
+here good that gives me around five
+minutes for my favorite topic actually
+distributed transactions or consistency
+or whatever you want to call that so I
+want to refer to transactions here or
+what I want to look at is basically kind
+of that asset property and especially
+the all-or-nothing semantics which we
+sometimes need so we want to call two
+things and say either both happen or
+none of them happen right you know that
+probably and the good old days we just
+had a transaction manager set begin
+transaction do something commit
+transaction or rollback right good
+that's what we try to achieve who has
+heard of X a transactions two-phase
+commit okay 30% keep the hands up who's
+using that to who's happy with that okay
+who has no problems no okay we had one
+or two people with it which are happy
+with that which is more than normally
+normally I have one that's kind of I
+even thought about he's following me
+around but thing is two-phase commit
+tried to solve that problem but it
+doesn't really work because of these
+distributed systems and there is a good
+paper about that so I don't have the
+time to explain why it doesn't work
+pet held he worked at Amazon at that
+time he's now at Microsoft no Salesforce
+or he was at Microsoft in between and he
+wrote a really good paper about that
+it's called life beyond distributed
+transactions and he explains very well
+why
+things like XA doesn't work in
+distributed systems and they're
+basically like very very quick summary
+two reasons the first is it doesn't
+scale it gives you a bottleneck so it's
+really not the best idea to do and the
+second is it's too complex anyway nobody
+understands it so there are situations
+where operators have to fix hanging
+transactions and nobody ever understood
+how to do that and even most people
+don't know that they have to do that so
+it's just not a good idea to go that way
+so in his own quote just don't use that
+that's important to keep in mind and for
+me I mean if you want to discuss that
+read the paper happy to discuss but for
+now I would simply assume there are no
+distributed transactions available you
+can't leverage some magic technical
+infrastructure and it's done but we
+still have the problem we want to do a
+and B and it's all or nothing so we have
+to think about different strategies one
+strategy and it's not the only one I
+mean I have three minutes left so I just
+want to want to look at one possible
+strategy here and that's very often
+referred to as a saga pattern the sagas
+the pattern relates to a pattern due to
+paper in the 80s for long live database
+transactions but it's now used for long
+live transactions in a way and this the
+idea is okay I just extended my credit
+card example here a bit I say I still
+charge the credit card here but before I
+do that I look at the customer account
+maybe he has voter or some like whatever
+amount on his customer account I want to
+deduct that first and then only if some
+payment is required I charge the credit
+card that's two things right but then if
+I can't charge the credit card I need
+their all-or-nothing semantics so that
+means if I erase a payment failed and he
+doesn't get his whatever ticket or order
+he probably is not so happy if I just
+removed the money from his account so I
+have to make sure I undo this it's kind
+of a it's a let's say the business
+rolled back it's a semantic undo and if
+you look at that in bpmn it's called
+a compensation
+rotary engines can do that so you could
+define here like if this activity was
+executed then and I need a compensation
+then this is the activity which has to
+be executed in order to do that and
+here's where a trigger that write for
+for the younger people in the room
+that's a revine symbol from the tapes so
+we rewind right okay that's the idea
+here so that's compensation it's built
+in so you can design these kind of sagas
+easily and again it's stateful so if
+these are all rest calls or messaging I
+can't rely that this one at the moment
+where I want to call it is responded
+like it's available I have to probably
+wait for it right okay that's
+compensation pretty handy if you want to
+know more about that um I have a known
+talk on that which is also recorded so
+you can probably look that up I call it
+lost in transaction and it looks a bit
+more into also other strategies of
+handling these kind of things okay or if
+you want to know more discuss with me
+afterwards I mean we have a booth right
+here right in front of the of that room
+here so happy to discuss any any
+questions you have so as a summary so
+what I what I basically did now is I
+introduced timeouts but the circuit
+breaker retries also stateful retries
+and compensation right that's what the
+client can do in order to improve
+situations and as a service provider you
+have to make sure that you are
+idempotent that's so important and the
+other one that's also important that you
+offer these undo services
+that's what normally this is the problem
+you have if you integrate legacy systems
+right you can't create an invoice but
+you can't cancel it you can remove it so
+the service is simply missing so
+whenever you build a service make sure
+you provide the risk like the respective
+methods you need here of the services
+good and that's a good way to take let
+these theif three pitfalls so there are
+a lot more we could talk about
+don't forget about state that's probably
+my personal thing but that's what I'm
+thinking about so much because that's
+really forgotten very often at the
+moment a lot of these problems can be
+tackled only with having some state
+because if you don't have it
+you either do it yourself or you really
+move it to to the user of the software
+which is also not a good idea to do if
+you say oh yeah messaging request
+response rests that's all old school we
+want to go Kafka we want to go
+event-driven choreography happy to
+discuss that that as well so here's also
+the github link for the example I showed
+you there
+on the same github I do a full-blown
+order fulfillment example also
+eventually also message them so that's
+probably interesting to look at and
+that's just the the outlook thingy
+summary be aware of that complexity
+that's the first important thing and
+then really learn strategies to handle
+it I mean very basic ones like circuit
+breakers are kind of a must but I think
+these stateful things are really really
+important to have in mind as well that's
+all I have I was asked to put up that
+slide which is also important for me
+give us feedback we love feedback thank
+you so much

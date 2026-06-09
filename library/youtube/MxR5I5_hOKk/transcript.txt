@@ -1,0 +1,1514 @@
+for those of you joining who don't know
+me my name is lee robinson
+and i'm a developer a writer and the
+creator of react 2025 the course
+that we're going to be talking about
+today and really this stream is going to
+give
+an introduction to the course we're
+going to
+set up our project um set up fireplace
+and then deploy to
+vercell i'm going to kind of walk you
+through you know
+zero code to actually getting something
+out in the wild
+deployed and alias to the domain that i
+already bought
+so quickly i just want to give an
+overview of what the course is for those
+people who don't know
+react 2025 is a different approach
+to doing courses so in my last course
+mastering xjs
+i focused on showing kind of a breadth
+of different topics
+and what i really wanted to focus on
+with this course was
+showing a real world example building an
+actual
+sas product so not just something that
+looks like a sas product
+but no actually like shipping the
+product and trying to get users on as
+well too
+and i think that's the big difference
+plus i wanted to
+talk about and use kind of my vision for
+what the future of react applications
+will look like and kind of the paradigm
+shift that we have with the jam stack
+as we transition to you know sites that
+the output is static
+but how we get there is very dynamic and
+that's kind of the whole premise
+behind react 2025 just you know
+the way we currently do things in a lot
+of enterprise
+settings is really difficult and a lot
+of work
+and with this setup it makes life
+so much easier you can iterate faster
+you know focus on your product
+and i think that's one of the things
+i've been really pleased with with this
+technology stack and why i want to share
+it
+with more people so if you're interested
+if you like the stream today definitely
+check out the course
+we're going to be doing more live
+streams in the future
+uh as i kind of walk through deploying
+this application
+from you know xero to prod
+so that's the course now i want to talk
+about
+the product that we're going to build
+before we jump in and actually start
+doing the coding so you have an
+understanding of the problem that we're
+trying to solve so
+the problem we're trying to solve is
+as i was iterating on ideas for you know
+what i wanted to do for this course
+there was one that kind of stuck out
+that i really liked and that was
+adding comments is really difficult on
+static sites
+um they're just i haven't found a really
+good solution that accounts for
+everything that i would want
+so after thinking about it a lot i
+decided this was going to be the product
+for the course
+a really easy way to add comments or
+reviews or just any sort of user
+feedback
+to your static site and really what this
+comes down to
+is you know i run a blog i've been
+blogging for
+like six years and it's a really
+essential part of my life and of the
+internet
+and at one point back in the day i had
+comments with discus and discus
+had some privacy concerns uh it slowed
+down your page load it loaded a whole
+bunch of
+tracking and crap and stuff that nobody
+wanted
+so i definitely didn't want that but i
+still like the idea
+of people being able to contribute back
+to the article
+and give a little bit more feedback on
+some of my articles back in the day
+people would say hey this reminded me of
+you know another article or another
+topic here's a good
+resource much like a hacker news or
+reddit and kind of you know
+complement that discussion rather than
+just leaving crap
+but with that you also get people who
+can abuse comment systems or take
+advantage of it
+and i think that's why a lot of people
+stray away from this is
+they don't want to deal with the spam
+they don't want to deal with
+building this themselves especially if
+they're just deploying like a next js
+app or a gatsby app
+so they don't really want to mess with
+it but if there was a really easy
+sas solution that allowed you to just in
+one line
+of code no javascript add static
+comments to your site i think that would
+be a huge win
+and that's what i really want to explore
+with this course i want to build this
+product and actually launch it
+and see what happens so how does this
+actually work like how would you do it
+without any javascript
+at the bottom of your blog for example
+you would
+embed a link to this dynamic route
+of your page and what that's going to do
+is go fetch all of the comments or all
+of the feedback
+on your course or your blog and it's
+going to render out
+just a static html page and what we're
+going to talk about further along in the
+course is this idea of
+incremental static regeneration which
+actually periodically
+regenerates that static page in the
+background
+so what you get with that is a page that
+is never down
+there's no downtime and it's updated in
+the background
+and because it's static and because
+we're serving it through an iframe just
+an html route there's no javascript
+there's no embeds
+and it works for any framework and any
+language
+so it doesn't matter if you're doing
+next or gatsby if you're on javascript
+if you're doing vanilla html no
+framework
+like this can still work and that's one
+of the things that i really like about
+it and
+i don't i don't think something like
+this was really possible until we had
+the infrastructure
+with vercelle next and incremental
+static regeneration
+to allow us to really easily do this at
+a large scale
+and also on our side not incur that much
+cost because we're not pinging the
+server on every request to fetch all of
+that feedback
+so that's the product i'm pretty excited
+about it if you have any
+feedback or any ideas on it or
+suggestions
+please let me know send me an email
+leave something in the chat
+i kind of lay it out just an idea of
+what this database
+might look like and this will i'm sure
+this will probably change
+but the idea is to enforce
+um no spam people would log in with
+their social media accounts so github or
+twitter or facebook so you know you're
+putting a face to the name you're
+holding people accountable
+and on the back side um there will be
+moderation so that you can remove
+comments if people are spamming
+so you'll have a user obviously with
+some information
+about their account um and their plan
+we're going to tie into stripe later in
+the course you'll have a piece of
+feedback
+that you could even attach a rating to
+is kind of what i'm thinking which will
+be attached to a site
+and then a user could have many sites
+so what does this look like um
+i have been doing quite a few mockups
+in figma so i'm going to kind of just
+run you through
+this whole process of what this will
+look like
+here's kind of the tentative landing
+page i have very much based on the react
+2025 landing page
+hopefully just a really easy way to sign
+in with github
+and give some of the value proposition
+here on
+you know what's wrong what needs to be
+changed some kind of quote and then some
+kind of pricing
+and then with an actual real demo down
+here at the bottom
+of comments that people have left on the
+website so this would be kind of like
+the public facing version of it
+but then i also want to have like
+links to pages where people can actually
+leave their feedback so for example this
+could be
+a link for leaving feedback on my blog
+and you could send this out
+leave a rating leave comments and people
+would log in and authenticate to to go
+through this flow
+so then on the back side on the user
+side this would be my dashboard
+you know i land here i have no sites so
+i click add my first site
+modal comes up enter in some information
+having like a fancy loading screen
+um and then it shows all the different
+sites that i want to get feedback on
+i can go in and edit these or if i click
+into them
+it shows all of the feedback you know
+which route they left it on
+and then at least what i'm thinking for
+now is that each one would have a status
+of either
+active it's just playing on my site
+pending i want to approve it
+or removed i flagged this because
+xyz so then also i'm thinking
+there could also be different kind of
+settings or styling options here so
+you know maybe i want to show ratings
+maybe i want to show time stamps
+i'm debating using the styled system
+style spec to allow people to just
+dump in whatever kind of style you know
+like theme ui
+theme into here to allow you to style
+these objects which i think would be
+really cool
+hey in the chat and uh yeah i think
+something like this should work pretty
+good you could delete feedback from here
+then as a user too you could go in and
+leave feedback on other people's sites
+as well
+so for those just joining i'm kind of
+giving an overview of the product right
+now that we'll build in the course
+um and then yeah this is kind of what it
+would look like maybe if it was embedded
+on my blog post
+so down at the bottom you'd have a link
+out to go lead feedback and then you
+know
+the feedback that you've approved would
+end up showing here
+and yeah just some logos and other
+miscellaneous junk here but
+that is kind of the high level overview
+of the product that we're going to be
+building
+and i think without further ado let's
+actually jump in and start coding some
+stuff i'm really excited
+um so i'm going to turn the music a
+little bit
+let me know if it's too loud um first
+things first
+uh we will be using chakra ui yes so
+chakra ui
+under the hood uses styled system
+and styled system is based off of this
+um it's like this it's called the style
+the theme spec i think style system
+theme spec yeah
+and this system ui theme specification
+its idea is that these themes then are
+interoperable
+between whether i'm using chakra or i'm
+using themeui or i'm using anything else
+you can kind of drag and drop and use
+this theme in multiple places
+so that you're not necessarily locked
+into one
+framework um the stack that we're going
+to be building with this will be
+next.js it will be firebase for
+authentication and database through
+firestore
+we'll deploy to versel and then for
+styling yeah we're going to use chalker
+ui which is styled system and
+it uses emotion for css and js
+so yeah big fan of style system big fan
+of chocolate ui
+um first things first
+typically like just because i'm
+old-fashioned i guess the way i usually
+start projects is
+i make a repo and then i clone it
+locally and then i start installing
+dependencies
+but you can actually do it all through
+the gui on purcell
+so i'm gonna try that for the first time
+because i never usually do it this way
+but
+if it's that easy i might as well so on
+my dashboard
+in vercelle i'm gonna start from a
+template
+and i want to do next.js
+and now this is linked to my personal
+github account
+so i'm going to name this fast feedback
+okay
+i'm not gonna make it private so you
+guys can go check it out if you want
+um so i will be live streaming the
+course
+as well as the project but they're kind
+of intertwined
+so part of the course is showing how you
+build
+a real product from start to finish so
+i'll go in depth on
+you know specific next js features like
+how you do data fetching
+but then i'll also actually tie that
+into real world examples
+of how that relates back to a real
+product
+what's up greetings um so
+fast feedback is the name let's actually
+deploy this it should also
+create a new repository on my personal
+github
+so firebase has actually got a great
+free tier that's the thing that i really
+like about this setup
+is that versel firebase
+both have really good free tiers so you
+can actually deploy this whole thing
+for free to get started which allows you
+to kind of figure out
+you know are people even going to use
+this um before you waste a lot of money
+on you know setting things up and i
+think that's really a huge thing
+having a you know a single platform like
+firebase that handles authentication
+as well as the database and yes the site
+will be statically served which is
+a huge huge feature of vercell but i
+think one thing i want to touch on too
+in this course
+is that you know just because we're
+outputting a static site
+doesn't mean that we can't have really
+dynamic data tens of thousands of pieces
+of feedback coming in
+because we still can um
+you can absolutely code along um we're
+going to be going at
+you know the same speed that i'm going
+at so if you want to
+code along open up versailles create an
+account we can kind of
+um work on this together
+i'll try not to go too fast and i'll try
+to answer any questions that people have
+as we go along so i made a new project
+on the versailles dashboard i picked a
+next js template
+and i'm actually really shocked that was
+super easy normally i just do it from
+the command line
+but it looks like it already deployed my
+application
+nice i already deployed my application
+with just kind of like the hello world
+next js template and my guess
+is that it already set up
+a new repository
+[Music]
+yep oh wow so it already made the new
+repository
+that was awesome
+yeah we will talk about reducing bundle
+size that's a really nice thing that i
+like about next.js is
+it has code splitting on a per route
+basis so
+if i'm loading like the index route
+right here it's only loading the code
+for that index route even though
+you know i could have 100 pages in my
+application and some of them could be
+more expensive than others
+in terms of loading time having that
+code splitting you know for
+free out of the box uh is really really
+nice
+because technically you can do this with
+react router
+or other you know homemade setups create
+react app
+gatsby but it's nice that it's just out
+of the box included with next.js
+so this is deployed one thing i did
+before we started here was
+i secured that domain name before
+somebody tried to pull a fast one on me
+so if we go to settings for this project
+and we go to domains you see it got
+deployed to
+fastfeedback.now.sh one really
+awesome thing about mercel is that you
+can also buy
+domains through here which makes your
+life so
+easy like in the past buying domains and
+setting up dns
+was just terrible i hated doing it so
+the fact that i'm able to buy
+domains through here and like one click
+just charges my card
+uh sets up ssl sets up so you have https
+which is amazing
+and boom like you're just done so i
+already did this i already bought the
+domain
+but then if i go to my project settings
+i'm going to add this domain
+and that's it like it's already
+configured
+if i go to fastfeedback.io.com like
+we already have something in prod and
+like that took like five minutes
+which is incredible to me resell and
+next guest is such a powerful combo
+i really love how easy it is to go just
+from zero to
+production so now i want to
+actually clone this locally so we can
+start making some changes
+so let's grab this url
+usually it says copied i think um let me
+find a terminal
+okay i'm going to i think
+no okay
+we're going to clone this locally
+and i think from now i'll probably do
+all the terminal commands just inside of
+visual studio so let's open up that new
+project
+a kind i might have just seen that i
+have yes i do have a website
+for my cat i'm very proud of that
+it's literally just pictures of my cat
+oh no they're not loading
+i'm gonna have to fix that okay so
+i have the repo cloned locally now
+um let's actually install the
+dependencies and get it running locally
+so if i open up the terminal down here
+at the bottom
+i'm gonna pull this over a little bit
+we'll run yarn uh i prefer to use yarn
+over npm
+really you can use either at this point
+they're pretty close
+in terms of features i don't really want
+to mess with the whole
+yarn the new version of yarn and
+everything that comes with that
+but at least the legacy
+version of yarn i enjoy using um but
+yeah
+yarn or npm you'll be good either way
+so next thing i want to show is
+making a change locally and the workflow
+that you get
+through versailles which is um
+i think they call them deploy previews
+so i'm going to make some changes
+locally i'm going to validate that
+they look as expected then i'm going to
+make a pr
+on my repo and go
+click on a deploy preview and see a live
+snapshot
+of those changes that i can send to
+people
+send to people to review and really
+simplifies that if you know if you've
+worked in any like
+legacy applications or really
+enterprise-y where you have
+just a million steps to get something
+deployed it can be
+a little bit overwhelming so the fact
+that i can create a pr
+and get an immutable deployment that i
+can send to others and kind of view
+is really really nice um can't see the
+terminal very well because of your
+webcam
+that is a great point uh let me
+maybe i'll just move my webcam
+i think i can do that
+okay that should work i think let me
+know if that didn't work
+there's like a slight lag in the stream
+so i moved it over but i'm not sure if
+it actually went
+oh yeah i did okay there's like a
+there's like 15 second lag
+okay i can also make the text bigger in
+the terminal if
+that would help so
+we ran yarn we install our dependencies
+when we do kind of hello world for next
+it gives you some helpful scripts
+already in your package.json
+so dev will start up a dev server
+locally
+build will compile your application and
+then start will actually run that server
+in production mode
+locally so what we want to do is just
+run yarndev
+that's going to start up our server at
+localhost 3000
+and it should look exactly the same as
+what's in prod right now it does
+awesome so we have
+it running locally let's make a change
+and i'm going to kind of go through that
+whole workflow
+through github so if we open up the
+index
+route says get started by editing
+pages.index
+um let's change this instead of saying
+welcome to next.js
+we're just going to say fast feedback
+and i hit save and because we're on next
+9.4
+or greater we have react fast refresh
+which is kind of the new and improved
+version of hot module reloading if
+you're familiar with that and
+honestly after working with this for i
+don't know i think a few weeks
+since it's been out at this point it is
+seriously life-changing like it makes
+it's so much faster to develop locally i
+mean
+just watch how fast that happens it's
+insane and it remembers the state of
+your application
+so if i had you know a model open with
+some data
+or i had you know form fields filled out
+that stuff wouldn't get um removed when
+the page refresh it wouldn't be like a
+hard refresh
+so react fast refresh amazing shout out
+to the next gs team for that
+and the react team um super super
+helpful
+so we changed fast feedback
+um we have a lock file now for yarn
+since we installed our dependencies and
+we have our changes
+on the index file so i'm going to
+[Music]
+create a new branch by the way that
+keyboard keyboard
+shortcut that i'm doing is command shift
+p
+in vs code and that allows you to just
+quickly run
+actions so i personally do a lot of my
+git commands directly through vs code
+just so
+i don't have like five terminals or five
+things up at one time
+so i'm going to create yeah we can
+totally increase the font size
+um i'll make this smaller over here
+that should help a lot um
+it's i think probably like six months
+ago vs code didn't have the support to
+do
+command plus or command minus for
+increasing so i'm really glad
+that that is natively built in um
+so i want to command shift p to pull up
+my git commands and i'm going to create
+a new branch
+and let's just call this update the
+headline
+sure so i made a new branch
+and i'm going to say hello world
+this is my commit i have it so it will
+automatically
+um stage all of the commits all the
+changes that i have
+so when i press command enter it's going
+to
+actually commit this hello world and
+then i do command shift p
+again to pull up my git commands and i
+push it to the origin
+so i have a branch update headline i
+push it to the origin
+let's go back to github
+and you'll see update headline i just
+pushed this branch
+so let's check out this we're going to
+make a pull request hello world
+here's the changes i made some
+formatting changes that i'll need to set
+up prettier to take care of for me
+and then the lock file pretty
+straightforward
+let's actually create this pull request
+and what you're seeing this comment is
+actually from
+vercell and what it does is it does a
+diff
+of the routes that changed and it shows
+you a summary with a screenshot i think
+it uses
+puppeteer or some sort of web scraping
+tool to go actually take a real
+screenshot of that image
+and it leaves a comment back on the pre
+or on the pr
+so that you can view a live preview of
+these changes
+so imagine that this app was way more
+complex than it is right now
+and i had you know copy changes or cms
+changes
+or you know things that somebody in
+upper management had requested
+you can say hey i made those changes
+here's an actual preview a live deployed
+version of those changes
+let's go here and if you see this url
+you get this
+immutable deployment specifically for
+this branch
+that will live and you can send to
+anybody and it
+kind of exposes those changes and that's
+kind of the beauty of this
+versailles workflow is that you can
+develop
+then you preview it on your pr and then
+if i decide this looks great i'm ready
+to ship this
+when i merge my pr
+it's actually going to ship it to
+production alias that
+to fastfeedback.io and
+here relatively shortly we should be
+able to see
+our changes live in production one thing
+i'm going to do really quick
+as a personal preference is set up
+um squash commits
+where's that at so i prefer if i have
+like 15 commits on a pr
+i prefer just to squash it down into one
+when i'm merging that pr into master
+this is just a personal preference of
+mine
+so i'm going to set up that and if i
+look at my notifications
+it's going to say that
+brazil told me that this was merged and
+it was deployed to the following urls
+so if i go to fastfeedback.io
+i'm going to go back
+boom we just made some changes locally
+really straightforward headline changes
+went through that kind of workflow of
+viewing a live preview of our changes
+and then actually getting it deployed to
+production
+so really happy with how fast that went
+um
+versailles makes that really simple the
+next thing i want to talk about
+um actually i'll pause a second if
+anybody has any questions about anything
+that we've covered so far i haven't
+really been checking the channel
+font size is up yeah i think we're good
+let me know if you have any more
+questions in the channel i'll do my best
+to answer
+the next thing i want to talk about is
+firebase and actually setting that
+up so we can do user authentication
+and store information to the database
+so the first thing that we need to do is
+head over to firebase
+if you don't have an account you're
+going to want to create an account
+and once you create an account we're
+going to create a new project
+so i'm going to click add project we'll
+just call this
+fast feedback
+demo
+don't need google analytics
+it's going to provision
+everything for us
+it's really crazy how you can go one
+click
+to having this whole instant setup
+that's it's using gcp
+under the hood google cloud platform
+with just a much more friendly user
+interface on top of it
+okay so our project is ready
+the next thing we want to do is add an
+app to get started
+so we're going to be doing a web app
+and we'll again just call this bass
+beatback demo
+or dev i don't know we'll just go demo
+will you use swr for fetching after the
+page has been loaded ecstatically
+absolutely yes so swr is great if
+you want to load data on the client side
+like a dashboard page
+and have it so if i navigate away i go
+to another browser tab
+or i'm you know i'm stale for a little
+bit we'll come back
+and we will update that data in the
+background and that's
+really really helpful because it manages
+kind of that whole life cycle for you so
+you don't have to worry about
+you know setting that cache or figuring
+how you update that cache
+it kind of abstracts that away a little
+bit so
+we're going to be building that
+dashboard
+this dashboard and we'll actually use
+swr to
+fetch the information about the feedback
+go here and then in the background if
+new feedback comes in
+this page will be updated so it's really
+really handy for that
+[Music]
+i'm gonna kill my server over here
+and install firebase because we're gonna
+need that first before we
+configure this
+and while that's installing uh the way i
+prefer
+to segment my code is i like to have
+folders like pages obviously which is
+the next js
+routes so every file inside of pages
+maps to an actual route that gets
+deployed so index and pages
+that's you know the home route if i did
+slash
+blog that would map to blog.js
+um the way i like to set up my projects
+is i usually have folders like
+utils for utilities uh lib
+short for library for kind of the logic
+or data fetching code
+styles usually for a theme or any other
+styling related helpers and then
+i usually have a components folder as
+well too anything that's shared across
+multiple files i try to abstract out to
+there
+so the first thing i want to do is i'm
+going to set up a
+library folder and i'm going to make a
+new file
+we'll just call it firebase.js
+firebase finished installing over here
+so we have firebase.js and here
+are the keys to initialize a connection
+to firebase on the client side
+is there any reason for using
+client-side rendering or server-side
+rendering when you can just use
+static site generation and veteran
+client-side that's a great question
+very shortly i'm gonna be sharing a blog
+post as well as more information
+that goes um really in depth on
+when should i do client's head rendering
+when should i do server-side rendering
+and kind of lays out kind of the best
+practices for each
+hi um but in general you're absolutely
+right like most of the time now
+with next static site generation
+functionality
+and then the incremental static
+regeneration which i'll touch on too
+more often than not you probably don't
+need to do server-side rendering
+and as that continues to get better with
+not only next.js and gatsby
+i think we're going to see more and more
+sites that are able to be served
+statically to users even though they
+have dynamic content
+so um coming back to firebase even
+though there's a bunch of stuff here
+there's really only three things that we
+need and that's the api
+key the domain and the project id
+so the way we're going to pass these
+values
+it's kind of loud
+the way we're going to pass these values
+to firebase to initialize it
+is through environment variables and
+nextgs just
+kind of changed how they're doing
+environment variables to align more with
+create rack
+create react app and how other
+applications
+traditionally handle environment
+variables and that's through the dot
+m file so you have a.m file.m.localfile
+for the things locally and also like
+m.production
+for your production environment
+so what we want to do is we're going to
+add our root
+create a new dot m dot local
+and this is going to be the environment
+variables that we want to pass
+when we're running locally using yarn
+dev
+so i mentioned there's three that we
+need the firebase
+api key the off domain and the project
+id
+so we want to expose these on the client
+side
+and this is one uh intricacy of nextgs
+environment variables
+we're going to prefix these with next
+underscore public
+and this keyword makes them available on
+the client side so they recently changed
+this just to make it
+very clear when things were being
+exposed
+so that it wasn't lost in translation
+and you weren't
+accidentally exposing some kind of
+server-side key
+on the client side when you don't want
+to so
+we have firebase api key
+off domain and
+project id
+so i'm going to copy these over
+okay so we have our environment
+variables locally
+we have our fire firebase library file
+now that we have these values i think we
+can go back to our console
+we're going to be doing authentication
+first so i'm going to pop over to here
+let's actually install this code so
+we're going to go
+um i could go through the firebase docs
+but one thing that i want to show is i
+already have
+a little bit of a code snippet set up
+here from another application that i
+wrote
+so what i want to do is just pull this
+top part
+so that we're not pulling in too much
+stuff at once
+because i don't want to overwhelm we're
+going to import firebase
+and we're going to import firebase off
+and then if we haven't already
+initialized
+the application then we want to do that
+so we don't want to initialize it
+multiple times
+and rather than importing a file and
+doing that inside of here
+we're going to do it through environment
+variables
+so let's do um
+trying to remember what these were just
+going to copy paste it
+uh api key process dot m
+dot whatever this was
+off domain
+project id
+that looks right to me and then we're
+going to
+export firebase
+so we import the modules we
+initialize the application with the keys
+that we got from
+our console and then we export firebase
+so that we can use in other places
+um one thing i want to quickly do
+is set up prettier
+prettier will auto format your files for
+you
+and i have it set up in the s code
+where files format on save
+and this this saves me a lot of work in
+the long run because i don't have to
+mess
+around with configuring things i can
+kind of just spam things in here copy
+paste and hit save and it just
+automatically works
+so i want to copy over um i want to copy
+over some settings i have from another
+file
+inside of here
+so we'll do a dot prettier rc.js
+and these are just the settings that i
+prefer this is the total personal
+preference thing
+but i'm going to add these settings
+which will change this slightly
+to use like single quotes again personal
+preference
+so we have firebase set up the next
+thing
+that we're going to want to do is
+actually start trying to do
+user authentication so
+i'm going to make a new file
+and we'll call it um
+off.js and i'm going to kind of go
+back to this example and
+copy this verbatim strip out some stuff
+and then i'll explain everything that
+we're doing here
+this is a prevent me from having to type
+a lot
+uh okay we don't need any of this
+okay so what we're doing here is we're
+gonna set up a custom hook
+and i've used this in a couple places
+which is why i like to just copy paste
+it and reuse it
+but it allows us to provide
+authentication through firebase to our
+application
+so the way this is configured right now
+from one of my other projects that i was
+showing
+was through email and password but we're
+actually going to want to change this
+to yes 100 i can link you to the code we
+just copied
+this is just another project that i have
+on my repo
+um it's doing email and password
+auth and i use this with this is
+actually from my last course mastering
+xjs
+and i use this with hazura to set up an
+email
+login so if you're interested definitely
+check that out but we kind of want to
+take this
+and modify it a little bit so that we
+can do
+through github so i'll just kind of run
+from the top down what we're looking at
+here
+we have a couple things we're importing
+from react we're going to set up react
+context
+and react context allows us to access
+shared state
+without having to pass things down
+through multiple levels of the component
+tree so imagine that you have
+12 levels of components you don't want
+to have to pass through props
+all the way down and you know there's a
+variety of different ways that you can
+do state and react applications
+but react context makes it really easy
+then to just
+pull that state from anywhere in your
+application that you want
+so we're going to use context and on top
+of that we're going to make a custom
+react hook
+we're going to make a custom hook so
+that we can kind of encapsulate this
+functionality
+into a shared spot and then use that in
+multiple places in our application
+so this for example is going to be
+called use off
+we're going to use the context of auth
+so this provider that is making these
+values available
+to the children so at the top level i'll
+show this next but we're going to wrap
+our application with this provider so
+anything
+any child of that provider has access to
+this hook
+and it can hook into that state and then
+inside
+of this use provide off we get to
+actually define the functions that we
+want
+and then export them out so that you
+have things available
+right so we have a user id we have sign
+in
+we'll need like a sign out and maybe
+just those three
+to get started so going from the top
+let me pull up firebase
+off github
+i want to make sure i know what the
+function name is sign in with
+pop-up that might be what we want to do
+another thing that we need to do first
+is
+actually configure an application inside
+github that will allow us to do
+the authentication so
+let me quickly i have a note on this
+so if we go to github
+before we do any more code here i want
+to make sure that we have this
+application set up
+so that we can talk to it
+let's see
+we need to register our application
+okay so we want to make a new
+application let's just i can put a link
+to this doc
+inside the channel
+but we want to register a new
+application so that
+firebase can communicate with github so
+we'll just call this
+fast feedback demo
+um
+cool and then we're going to need a
+callback url
+if i go back over to authentication we
+want to set up
+a sign in method
+and the first one we're going to do is
+github eventually in the future we could
+do more here we can do facebook twitter
+but i'm going to start with just one so
+let's enable github
+and we have this callback url here
+that firebase will use to communicate
+with github get information about your
+user and then talk back
+so let's copy this go back over to
+github
+paste that in here and register
+application
+now obviously i'm going to change these
+after the live stream
+but for now we'll take this client id
+what do we got here go back to firebase
+paste that in
+take this secret
+put that inside of here and save this
+so now we have enabled github login
+through our firebase configuration and
+we have an application
+inside of github that is
+populated so that we can use this
+now we need to sign in with the sdk
+i'm just gonna move this over
+okay
+so after we get the user we want to put
+it in state so that we can
+access it later down the road but what
+we really need to change here is the
+method on how we're doing the sign in
+so let's say this is sign in with
+github instead
+and we want to export that down below
+so we return firebase but
+we need to previously we were importing
+it like this and we abstracted that out
+to a library
+so let's just get rid of that and
+we're going to need to import that so it
+should be able to automatically find
+that for me
+which it does import firebase from
+firebase
+so we don't need an email and password
+returned firebase um
+off and then i believe it was sign in
+with
+pop-up
+yep sign in with pop-up and then we need
+the provider
+so we'll do the github
+auth provider
+that looks right okay so we get a
+response
+and then we're going to set the user
+equal to
+the user that we get in the response
+okay that seems
+seems pretty straightforward sign out we
+also access
+off and we sign out which is going to
+clear that cookie out
+and then basically what this logic is
+doing is that
+if that state changes in your auth it
+will either
+update the user in your state or it will
+actually clear it out and just set it to
+false
+and this hook will run um
+when that state changes
+so let's see we could export the whole
+user
+i guess maybe instead of just the user
+id
+yeah let's do that sign in with github
+sign out
+this is looking good
+i think this is a good start the next
+thing we need to do is
+make this context available to our
+entire application
+so to do that um let me just pull up
+these docs
+we're going to do a custom application
+so this custom app file is a nexus
+specific
+file and it essentially wraps your
+application so that you can provide
+you know a shared layout or shared
+providers or shared logic
+so we can actually override the app by
+making a new file at
+pages underscore app.js
+we can under we can override how next
+does this by default and then provide
+any extra logic
+that we want so we can just take this
+code snippet
+put it inside of here we're not going to
+need to do
+any of this or any of this so we can get
+rid of that
+and right now it's it's not doing
+anything um but we want to
+make that available
+so let's go in here and i'm gonna take
+this
+cut it and we're going to
+import that provider of the auth that we
+just created
+inside of our library so import that
+i also have a vs code extension that
+auto closes tags for me which is really
+helpful so
+i can share my extensions in the channel
+after this but
+we want to provide off and then inside
+of that auth we want to render the
+component
+if i hit save it will be nice and
+magically format this for me
+which is good now our application has
+access to that off context wherever
+they're at
+so let's go back into index and actually
+utilize this off
+so we're running locally here let's just
+ditch
+let's ditch a bunch of this crap
+and then inside of here we'll just say
+um
+we'll put a div and we're gonna
+get the user
+and we'll just log it out and see what
+we get
+this is a functional component right now
+not returning anything so i need to
+change this
+too much styling so we want to
+off from use off
+pulls in that custom hook that we just
+created
+so now we have access to that hook and
+we need to
+access the sign in method from that hook
+so that we can actually invoke
+that login flow so to do that we're
+going to need a button
+and we'll just say sign in
+and then when you click on this button
+we want to
+call
+no problem see ya
+uh we want to call off and then sign
+in with
+github
+yeah let me make sure i spelled that
+right because it didn't look like it was
+giving me the autocomplete
+so this will prompt the sign in flow and
+then we should probably only try to
+access the user if it actually
+exists one way you could do this would
+just be like
+if off.user exists with tern aries
+but i actually prefer to use optional
+chaining which is a feature that's baked
+into nextgs
+which allows you to safely access nested
+properties
+so even if user doesn't exist like our
+application won't blow up
+that's a nice thing um
+what else do i need to do here let's run
+this locally oh man that formatted a lot
+of stuff
+let's rerun this locally so server
+started on 3000
+it loaded our environment file from
+m.local so that's good
+that means that our keys are available
+um one thing we can also do is just make
+sure that firebase is getting
+initialized
+i'm going to keep this console open
+okay this is looking good
+yes that warning is okay
+so we have a sign in button with those
+new chrome default styles
+and we have no no information about our
+user
+i'm also going to throw a log in here so
+we can keep track of our user
+so right now the user's false because
+we're not logged in
+let's sign in i'm probably missing
+something here
+okay so this popped me over to
+firebase which then pops me over to
+github
+which is now asking to authenticate with
+my
+personal account um the only thing it's
+requesting
+is the email address which is good um
+so i want to authorize this fast
+feedback demo
+okay so we're making progress i think
+that worked
+i was just not very smart and i tried to
+log out an object which
+obviously doesn't work um so let's log
+out like
+the email because it looks
+yeah perfect we're logged in
+let's go uh if we look here we have a
+bunch of information about the user like
+display name email
+photo url this is another then another
+one that we're probably going to want
+uh because we want to display like a
+little account up in the top right
+so we'll probably want to save the photo
+url
+but i'm probably going to save that for
+another lesson as we set up chakra and
+we actually
+do some more fancy styling but pretty
+pumped that we got this set up
+and configured with firebase configured
+with github
+and we're available to sign in we might
+also want to
+now sign out that would probably be
+helpful
+and we probably only want to show this
+if there is a user
+so if there's a user sign out
+okay let's go over to our console
+and make sure that we see the new user
+that we just created
+so inside of our firebase authentication
+console we see
+my email address with the provider of
+github was
+created and we're able to see that come
+through
+so excited that that's working
+um and it looks like we signed out
+correctly as well
+too where's my little host
+yep so let me refresh the page
+i'm still signed out and if i sign in it
+shouldn't re-prompt me for
+authentication because i've already done
+that
+and then it shows my email address and
+we're able to sign out
+so that's awesome um
+we're coming up on an hour
+so i'm thinking i might start to cut
+this one
+and wrap it up so that we don't go too
+long i'm gonna try to keep these in kind
+of hour-long chunks in the interest of
+everyone's time
+um so if anyone has any questions about
+anything that we've seen so far throw
+them in the chat
+i think i've covered most things that i
+want to talk
+through at least for this for people who
+are joining who are maybe just saw my
+tweets
+or um maybe just stumbled on this
+through a youtube subscriber
+uh if you're interested in the course
+and you want to see more live streams
+uh feel free to just shoot me a dm on
+twitter and i can hook you up with a
+discount
+um we're probably going to do
+at least
+uh probably like four or five
+more of these i've started to write up
+some documentation
+on all the different things and
+yeah there's gonna be quite a few from
+setting up firebase
+and actually leaving that feedback doing
+the admin dashboards
+hooking up stripe doing some logging
+analytics testing and then actually
+launching this product it's going to be
+it's going to be quite the process but
+i'm really happy with
+getting an application out there
+deployed to prod getting firebase set up
+with github
+authentication actually logging in users
+so
+yeah i think with that being said that's
+probably going to wrap it up for today
+um i'll hang around for a minute if
+anyone has any questions in the chat
+i haven't had a chance to look at this
+cool all right well that's going gonna
+wrap it up thank you so much guys for
+um tuning in and checking out if you
+have any more questions feel free to
+shoot me a message on twitter
+or shoot me an email and i'll be happy
+to answer anything you have
+um quick question will you use firebase
+db or hazura like datrink
+i'm planning to use the firebase
+database so that everything is contained
+inside of one i really do like hazura
+but i think that
+unless you have very relational data you
+might not need to
+go that level of complexity for
+something like this
+at least for what i've scoped out for
+the application i should be able to
+accomplish
+everything i need from a database
+perspective through a nosql database
+i have a question about using contacts
+with nexjs absolutely
+um shoot it over can't wait me too i'm
+pumped
+i'll give adam a second here if he wants
+to talk about context but
+yeah the nice thing about context is um
+i've personally wrestled with redux
+before
+and a few other state providers and
+i like context because it's a little
+more bare metal
+it's you know provided by the react team
+so you have a guarantee that it's going
+to be
+continuously worked on and developed but
+with
+you know every good thing it comes
+straight off so one nice thing about
+redux is that there's a lot of
+performance optimizations built in
+that kind of do intelligent diffing to
+understand when should this component
+render um some of the other state
+libraries out there like mob x or
+the new one recoil that seems pretty
+cool
+do a good job of that as well too
+do we have access to that product
+overview page
+this page i can send
+the community members a link to this yep
+um
+it's very much work in progress so i
+don't want to share it publicly yet
+but this will let you kind of run
+through all the documentation that i
+have so far
+um i was working on a project and i had
+a layout wrapper and i put that into the
+app.js file
+but when i tried to add context like you
+did
+it wasn't working so i had to wrap each
+page individually
+uh i set it up like adam did
+in option three
+i'm not sure specifically what you're
+talking about but
+um you should be able to have
+context provided to any application
+if you put it at the app js level for
+example if i were to make
+another route inside of my file
+structure at
+pages blog i would be able to also
+access the use off hook that i created
+here
+because i've defined this provider at
+the
+app.js level but i'd be happy if you
+want to just send me a link over to that
+after this ends and i'll i'll be happy
+to take this offline and take it to
+twitter
+you can kind of deep dive and try to
+help you figure that out
+all right thanks so much guys i'm gonna
+end the stream
+really appreciate you guys tuning in
+again feel free to message me if you
+need anything
+thanks

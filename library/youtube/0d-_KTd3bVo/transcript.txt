@@ -1,0 +1,83 @@
+you're building a company that's going
+to scale to the Moon you've decided to
+use kubernetes to help you do it seems
+that everywhere I turn these days more
+and more companies are building out
+application platforms on top of
+kubernetes that being said building such
+a system for you and your team is quite
+an undertaking it involves navigating a
+massive decision tree full of nuanced
+trade-offs and then implementing the
+right abstractions to ensure your team's
+productivity increases rather than
+getting bogged down managing gamble
+files it's starts with foundational
+questions such as which cloud provider
+to use one of the hyperscale providers
+such as AWS gcp or Azure or maybe one of
+the Alternatives like Len node digital
+Ocean or SEO Cloud do you want to manage
+kubernetes yourself or go with a manage
+service from the cloud provider of your
+choice what's your infrastructure as
+code approach terraform palumi maybe
+crossplane how are you going to handle
+environment isolation or name space is
+sufficient do you need separate clusters
+or maybe even separate Cloud accounts or
+projects how are you going to manage
+your application manifest something like
+Helm or customize to help reduce config
+duplication the list goes on and on the
+number of available tools is
+overwhelming I've spent the past few
+years of my career helping companies
+navigate these choices and build out
+application platforms using kubernetes
+now I want to take everything that I've
+learned and distill it into a project
+that I'm calling the kubernetes platform
+Playbook this will be part best
+practices guide part opinionated
+implementation and I'm going to build
+the entire thing in public I'll evaluate
+each decision document the trade-offs
+choose what I think is the best option
+for a hypothetical company Persona and
+then incorporate it into a cohesive
+application platform it will be a
+mixture of live stream showing the raw
+process including research and
+implementation as well as pre-recorded
+videos and written content to distill
+the results into something a bit easier
+to
+digest there will also be an open-
+Source repo showcasing a fully
+operational system who is this series
+for is for software Engineers who are on
+teams that are either building or
+considering building a platform on top
+of kubernetes you may have already
+started down this path but have gotten
+overwhelmed by the sheer magnitude of
+the landscape and want some help
+navigating it or perhaps you're new to
+kubernetes and want to accelerate your
+learning curve either way I'm super
+excited for this series and that you
+found your way to it this sounds
+interesting to you make sure to
+subscribe to the channel and stay tuned
+for upcoming content in the next video
+in the series I'll be focused on whether
+kuber and this is even the right choice
+for you and your team once that's
+released there will be a link for it
+over there don't hesitate to reach out
+on Twitter or join the devops directive
+Discord Community if you have questions
+along the way that's it for today and
+remember just keep building
+[Music]

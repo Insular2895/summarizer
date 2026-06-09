@@ -1,0 +1,61 @@
+[Music]
+hi this is Nick Ilana boys from the
+Technical Account Manager team through a
+quick series of videos I'll try to show
+you some trip tips and tricks to better
+use a p.m. for the GS for these quick
+videos we will use a demo application
+written in Express GS where you can
+create update and delete dog names
+if you look at our code you can see that
+the structure is quite standard and on
+the right side you can see that we
+instrumented our application with our DD
+trace library which will auto instrument
+or Express GS framework which is also
+instrumentation if we go to the doc
+platform in the trace module you can see
+this list of trace and we can click on
+any of them to look at the flame graph
+for this particular execution what we
+are going to do in this video is add an
+extra information an extra attribute
+into the top-level span
+in our code I created an additional
+function call add dog ID to brute span
+an uncommon disease few lines the first
+line get the current active span then we
+collect the parent of all those pans and
+we add the dog ID information to this
+parent span this function will be called
+in all the routes where a specific
+element is selected gets id post ID and
+get IDs let's delete if we now go back
+to our application and generate a bit of
+traffic
+you
+we will now go back to the data log
+platform and observe the additional
+attributes that have been added to the
+new span created
+on one of the spine with specific
+element has been selected we can see the
+new attribute dog ID and we have the
+ability now to create a facets or edit
+the facet in our case since we already
+created it we can search by these facets
+and highlight all the different actions
+that we made on this specific element
+we can also go back to app analytics and
+create some charts regarding the
+digitalization of all these elements
+you can now see which element are mostly
+called in this trace is collected this
+technique cover multiple use cases such
+as adding version number to applications
+to see if the application behave
+differently depending on the version of
+your application or maybe the customer
+zero customer type to identify better
+which phrases belongs to which type of
+user

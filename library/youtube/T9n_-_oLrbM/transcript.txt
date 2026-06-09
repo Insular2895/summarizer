@@ -1,0 +1,342 @@
+what's going on guys my name is jose and
+i wanted to do a quick video
+uh to discuss this topic which is very
+interesting to me
+and i think um anyone who works with
+databases should really understand
+the underlining uh data structure of
+how databases store stuff because
+it will really become really handy when
+you scale
+it will really become handy when you
+design your backend application
+how your queries uh actually access the
+path
+of uh your your
+path and then you're pulling the data
+how how the planner actually makes
+decision
+and all of this really comes down to
+indexes
+and in this video i want to discuss how
+specifically just postgres
+and how mysql specifically
+anodb as a database engine in mysql
+stores their indexes
+before we jump into that we need to
+understand
+the basic architecture of tables
+so if i create a beautiful table on my
+database
+what does that mean right a table has
+well
+it has columns and then and each column
+will have a specific
+data type which is integer string and
+then
+and number dates right
+jason i heard the uh is a good data type
+these days and you guys convinced me
+that's actually a good idea to
+to store json as a as a i just did it so
+yeah
+a table will have multiple columns and
+each column will have a specific
+size and that decide the row size and
+that row size will become either dynamic
+or
+static based on how you defined it right
+var char versus just normal text and so
+on
+and then and that the table is is huge
+that is structure just big and it's
+usually stored in disk and
+unless you can put it in memory which is
+awesome
+for fast access queries but usually it's
+in this because
+it's a blob huge of just plop right
+so now it comes to indexes
+index and i made a video about index
+check out this video right here to learn
+more about them but
+an index is is basically a date another
+data structure different than the table
+that tells us
+hey where exactly
+the rows i'm searching for are right
+and then the easiest way i understand
+the indexes is like you know these
+alphabetical uh dividers binder dividers
+which i say a
+b c d e e and tell z right and then
+you're searching for
+a specific like you know company or
+phone number right
+so if you're searching for a company uh
+zebra i don't know those companies so
+you will
+jump to the z divider and then start
+searching for that so you have a smaller
+subset so what the index does in this
+case is actually stores
+a pointer to the first row
+in in where the z starts essentially so
+that's essentially
+how the index is always like a pointer
+so the row the table the big
+stuff and there's the another data
+structure that you can
+have a quick and access index and it
+points to that
+not every database does that though
+how about we start with postgres every
+index you
+create in postgres does exactly that
+so if you create an index on column a
+it's going to create that data structure
+for you it's a beautiful data structure
+and
+each leaf each uh
+entry will be pointing directly to the
+table directly to a to a unique
+identifier in the in the in the table
+that's not the primary key necessarily
+that's just a row that is most of the
+time it's invisible
+and postcards i think it's called the
+topple id so that's
+that's the data structure so if you
+write an index it points to the row
+you might say what's the problem with
+that no really no no problem but just
+pay attention to that
+if i create another index postcard what
+is going to do
+it also still points to the table
+directly you see a pattern here right
+the more indexes you create all of these
+are actually pointing to the table
+which is pretty neat so and then that's
+what we that makes sense right if i'm
+searching something in this index
+i find it i jump to the table i pull
+if i need to jump to the table that's
+what's called index only scan versus an
+index scan
+right and then if i only need to jump a
+table um i know
+where to find my data
+so indexes and postgres all point to the
+table directly
+mysql and specifically anodb in mysql
+because
+mysql has other database engines
+that you can swizzle and can change
+which is something i love
+in my sequel and and mariadb
+something you don't see in other
+databases we can swizzle the database
+engine of a table to be something
+completely different
+my asm is a different database engine
+that it works exactly almost like like
+postgres
+it points directly to the table each
+index you create it pose to the table
+anodb which is the default mysql engine
+doesn't do that there is always a
+primary key
+in the table and when you create that
+primary key or
+if you don't anodb or mysql creates one
+for you
+and then that primary key index
+points to the table right but
+any secondary index you create or any
+other index you create
+does not point to the table directly it
+points
+to the primary key value which
+corresponds
+to the table
+multiple hops there's
+there's a design careful design choice
+for both
+and let's let's explore both of them so
+we know postgres
+every index point to the table directly
+mysql every index point to the primary
+key and the primary key
+is the only index that points to the
+table so now if i did an update
+in both databases and i
+updated a row right
+or deleted it all
+in postgres if i deleted a row right
+and and that row doesn't exist anymore i
+have to tell
+index number one index number two index
+number three index number four and
+example six
+that that row doesn't exist because
+guess what all of them actually
+are aware i are raw aware are aware of
+this table
+so there are dependencies so volska's
+when you update this it actually goes
+and updates
+all indexes that doesn't mean it's slow
+or bad it's just
+that's what it does right
+and mysql when you update
+a row or delete a row
+it just updates the primary key right
+because that's that's the only thing we
+need to do
+because these guys will still point to
+the pri of to the to the to the primary
+key indus and that's it
+they they don't have they are not aware
+that our row has been
+deleted right so that's as long as
+you don't touch a specific value
+like for for example if you updated
+another column in a row that
+the index which oh no on which this is
+created need to be aware right and that
+is in that case
+you will need to update that index
+anyway but only
+the index that you actually touch for
+the columns you touched
+right so that's that's how things work
+in general so
+hey guys hussein from editing and i
+forgot to mention one thing
+in my sequel remember every index points
+to the
+primary key and primary key point to the
+table so
+if you did a lot of updates on the
+primary key guess what will happen
+every single index will need to be
+updated
+so really careful while updating
+primary keys in my sequel so that's
+another kind of
+something to be aware of i'm not going
+to say limitation
+but just something to be getting aware
+of back to video
+in updates in my sequel versus postgres
+you can see that it's a little bit less
+scattered
+reads however if i read
+in in in postgres using an index
+i'm going to find the value i want and
+if i ask for a row that doesn't exist in
+an index
+it's not including the index i have to
+jump to the table
+and i can jump very quickly because i
+immediately look at the
+at the table i have the row that points
+to the table directly and i read it
+so reads are in postgres are extremely
+fast does not mean that
+reads on mysql or slows just just
+understand how they
+how things work right so now if i'm
+reading
+a particular
+table in my sequel and i'm using a
+specific index
+and i found what i'm looking for i
+cannot jump and i need another value to
+select from the table
+i cannot jump to the table directly
+i have to jump to the primary key index
+and then from the primary key index
+i get the row and then i jump to that
+there is
+an extra hop so
+reads are a little bit
+tiny bit slower sometimes it's
+unnoticeable but just understand
+if you're doing this a lot understand
+what's going on
+so if you're but but the beauty of this
+if you're selecting the primary key a
+lot
+in my sequel that's really beneficial
+because the primary key is
+almost always included with every index
+so that choice of what becomes the
+primary key in anodb becomes really
+critical and it can boost your
+performance in an
+in an amazing manner
+while impulse grace reads are fast right
+because
+and any heap value
+pulls like pulling from the heap or
+pulling from the table
+are also pretty extremely good
+because you're pulling to the table
+directly right
+obviously doing it over over doing it
+overdoing
+everything is just basically slower but
+that's just
+very some something that's very
+interesting to understand
+when you when you deal with these things
+right so postgres
+updating a lot of froze
+or deleting a lot of rows
+might trigger a lot of update to a lot
+of indexes so just
+pay attention to that when you do that
+and that's it that's what i wanted to
+talk about obviously i want to make this
+video short what do you guys think there
+is
+always a choice between postgres and
+mysql on any other database
+doesn't mean postgres is bad doesn't
+mean see my sequel
+is is good doesn't mean anything it
+really depends on what you're trying to
+do
+uber i believe one of their main
+concerns of moving from postgres to or
+to mysql is exactly that
+they had tons of indexes i was surprised
+like why do you have
+this much indexes like too much indexes
+too many indexes and as a result
+touching
+rows if they had to touch a lot of rows
+they've updated a lot of rows
+it just just thrashed all the indexes
+because it needs to update all the index
+you need to let everybody
+that points to the table know that
+something has changed right
+especially if you update if you insert
+if you update these
+these things are all scatting everywhere
+and postgres is like
+it's a little bit different when when it
+comes to updating versus deleting the
+they keep the rows alive for mvcc
+reasons
+all right guys going to give the video
+short i'm gonna see on the next one
+what do you think about these two
+beautiful databases what do you prefer
+let me know in the comment section below
+i'm gonna see you in the next one you
+guys
+awesome goodbye

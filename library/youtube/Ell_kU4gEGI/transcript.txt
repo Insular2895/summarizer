@@ -1,0 +1,60 @@
+[Music]
+hi Daniel Fonterra doc here in this
+video I'm going to show you how you can
+use terraform to manage a lot of
+resources for example creating a monitor
+data monitor allows you to configure
+Curie's and create alerts and looks for
+certain metadata as well in this case
+I'm looking for high CPU usage in your
+production environment of course I can
+query this monitor manually but in order
+to scale up and collaborate with other
+services you can use terraform to
+facilitate light what we are looking at
+here is a telephone configuration file
+it is using the data provider which is
+used to interact with the resources
+supported by data dog in order to use
+this provider first thing you need to do
+is to obtain your unique dialog API key
+and up key from your data portal to
+begin we start on writing a resource
+definition for data monitor and give it
+a name in this case I will just call my
+monitor as part of the data provider or
+define an M and the message and a look
+URI for the monitor all these are
+incongruent with dados api's so the
+fields you see here are going to match
+up with Derek's api's and as you can see
+in this example we can also use both
+terraform variables and their dog tags
+to create these monitors than enemy
+curly if you're not sure where to start
+you can always manually create the
+monitor in there WI first and go to list
+gear and click export and you can see
+the monitor enjoy some format and see
+how each field is defined and how you
+like to configure your monitor one thing
+is important to remember
+if you quite monitor manually found a UI
+this monitor is not going to be
+automatically imported into terraform
+state however you do have the option to
+manually map the resource using
+terraform import command first you need
+copy the monitor ID from this JSON file
+and use this command telephone import
+resource type the resource name which
+needs to match your telephone code and
+last bit here is the monitor ID
+in addition to monitor telephone also
+supports other data resources like
+creating dashboards managing downtime
+and mode for more information I
+encourage you to check out Tara forms
+documentation for data provider thank
+you for watching I hope you enjoyed this
+video see you next time

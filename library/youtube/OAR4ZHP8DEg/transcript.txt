@@ -1,0 +1,1215 @@
+all right good day everybody and welcome
+today's Tech Talk today we're going to
+be talking about authentication for your
+applications and getting started with
+Amazon kognito
+my name is Clint Van Diemen and I'm the
+business development manager for our
+identity and directory services here at
+AWS so I'd like to start our talk today
+by giving you a little bit of a mental
+picture for perhaps out the next great
+application might get started and we've
+got the aspiring out creator there on
+the left and he's talking to and I
+support a friend of his and he's got a
+great new idea for a cool new app Hey
+that's awesome man what are what are
+some of the cool new features user hey
+users are going to be able to register
+and sign in well and obviously that
+wouldn't be what's what that aspiring
+app creator would want to talk about
+right he'd want to talk about something
+really unique and novel and what was
+going to send his new app you know into
+the into the Hall of Fame of awesome
+applications and all right and that's
+what when folks set out to build an
+application that's they're excited about
+it is meaningful user features not user
+identity so user identity within an
+application isn't particularly
+interesting it also happens to be
+particularly difficult in in many
+instances all right there's a lot of
+infrastructure that needs to be built in
+terms of storing all the user
+information than there aren't their
+identities and credentials there's a lot
+of sensitive information in that in that
+as well right
+you know passwords and so on so forth
+and certainly in this day and age of
+very privacy aware we got to make sure
+we really safeguard those sorts of those
+sorts of details certainly identity has
+this kind of notion of being a tier zero
+part of your application right if you
+nobody can log in it doesn't really
+matter what else might be there and and
+the whole just world of identity with
+Federation and you know protocols like
+Open ID connect and sam'l and and token
+based off it's a little bit of black
+magic and again at the end of the day
+it's necessary stuff to make a modern
+application work but that's very much
+undifferentiated
+heavy lifting and that's where we really
+see Amazon comedo coming in and coming
+to the rescue
+right and we're gonna go through a lot
+today we're going to unpack a lot about
+what Amazon cono is but at the highest
+level it essentially is our service that
+lets developers focus on what is special
+about their application and unless
+kognito a managed service from AWS
+handle all of that authentication and
+identity all right so now before we
+drill into some of the kind of key
+features and they have you know how they
+apply in your application I want to just
+quickly level set on some of the terms
+some of the kind of underlying protocols
+and standards that are at play here
+because it will help our dialogue as we
+go go forward and first you know almost
+a bit of a come maybe a quick history
+lesson but let's let's kind of explore
+how we got to the world a standard like
+hola - for example and for those of you
+that have been are in the in the
+internet age for a while now right
+we might be dating ourselves but you
+might remember pages that look something
+like this this is an actual website I've
+kind of you know changed the name to
+protect the guilty but you would go to a
+website like this and if you want to do
+it if you wanted to collaborate with
+your friends on an on a given website
+they often would ask you directly for
+your credentials and this presented a
+whole host of problems both for you as
+the user and for for the website right
+it was just a generally a very bad model
+you know you had to really trust that
+they were gonna actually delete your
+email password they had to you know
+impersonate you and to the outbound
+services just really not a good thing
+and that essentially is is why Oh Othin
+oauth2 was were originally created and
+they are essentially a means to provide
+secure delegated access so that you can
+give rights to your data on one service
+through another eight
+the way it all gets implemented at the
+end of the day is that Roth enables
+services access whether they're coming
+from devices api's or applications they
+access this back-end services with
+tokens rather than than credentials like
+a username and password and that's going
+to be well it'll be obvious how that
+comes together as we move on
+so again o auth was this this broad
+standard that's been around for a while
+now there's all about kind of
+authorization between various parties
+now open ID Connect which is probably a
+term you've also heard these days came
+later and layered in on top of them so
+if two is a broad specification for
+authorization open ID connect or OID C
+is a very detailed specification for
+identity that kind of rise on top of
+OAuth 2 it inherits and uses everything
+that OAuth 2 is good for but I just
+layered in the notion of identity on top
+of it whereas again open a lot to it was
+kind of broad and left a lot of the
+implementation up to the you know the
+folks that we're doing it Oh IDC is very
+opinionated right there are there are
+standardized sets of tokens right ID
+tokens access tokens refresh tokens and
+there are standardized attributes and
+claims that are that are necessary and
+go within those tickets it's
+standardized some of the flows right and
+the flow is kind of the flow of
+interaction between the different
+parties between the end user the
+identity provider and the relying party
+and we'll kind of talk about with this
+terms are all in a second and so but how
+does this work in practice right and so
+I was finding that it just kind of
+simple pictures too are good at kind of
+level setting things again this isn't
+going to be a full history or a full
+education on open ID connect just enough
+for us to have a good conversation today
+so therefore when we want to do open ID
+connect Federation between two parties
+we've got on one hand that the open ID
+provider right this is the the identity
+provider that
+system that actually is responsible for
+authenticating the user and then we've
+got the relying party
+we've got essentially the the service
+that wants to consume data on behalf of
+the user and now these two get together
+ahead of time the open ID Connect
+provider provides some metadata that
+talks about known endpoints for their
+various services and things of that
+nature and the relying party will
+generally register with the of an ID
+provider getting a client secret and a
+client or client ID and client secret
+that it uses to identify itself and then
+at runtime you know when the user comes
+about all of the authentication happens
+up to the identity provider right and
+the identity providers also going to ask
+the user basic questions let's say you
+know the relying party here are on the
+right wants to use your data XYZ do you
+authorize them to do so assuming you do
+and the flow your authentication
+obviously it was completed successfully
+but the open ID provider returns back to
+that relying party as a set of tokens
+right and again we talked about a second
+ago
+normally ID access and refresh tokens so
+now let's look at what one of these JWT
+or Java web tokens looks like under that
+right and so it's an encoded a base64
+encoded JSON token that is just simply
+key value pairs right and it's got three
+basic stances to it the first stanza is
+nona and they're delineated by these
+these periods that you may be able to
+call out on the slide the first stands
+is the header right and the header
+mainly just identifies the key idea that
+an encryption algorithm that were are
+going to be used to eventually sign at
+the JWT
+right and that just gives us that lets
+us look up information about about how
+we're going to verify the choking the
+next is the payload right and this is
+primarily the meaty part of the jokin
+that you know we're going to be most
+interested in but this is to where the
+identity provider has a coded
+information that
+knows about the user you know things
+like their email address or their name
+or their even their birthday it's going
+to encode that information in the form
+of these key value pairs within JSON and
+then finally the signature right this is
+where the identity provider is going to
+take that payload it's going to sign
+that payload using that the key that was
+specified in the initial header and it's
+going to attach that signature as the
+third stands at the JWT and and this is
+essentially by verifying that signature
+you'd the recipient of the JWT know that
+the payload is came from the identity
+provider hasn't been altered and so you
+put it all together and and those three
+stands let's make it the JWT okay so
+again that was just a super fast flyby
+on some kind of core concepts that will
+will kind of be touching on quite a bit
+too as we go through things today so now
+let's turn to constant Amazon kognito
+and first I want to give you a kind of a
+deeper dive on some of the key features
+that that it enables for your
+application but before I do
+kognito is essentially a very much a
+Swiss Army knife of a of a toolkit for
+your app but there are two major
+portions right now I find that it's just
+kind of helpful to orient you to these
+two these two halves of Cognito Early's
+so that way as we go through things
+it'll kind of make sense for everything
+false so the first half of the
+functionality of kanuda is delivered to
+cognitive user pools and today that is
+honestly the majority of where you're
+going to interact with Canino and in the
+second half of comedo is known as
+identity pools now that name goes back
+away is if we had if we had it's all
+over do it if we had to do it all over
+again we probably wouldn't choose that
+exact name of kind of a new identity
+pools but it is what it is so kognito
+user pools and cognitive identity pools
+and I've drawn that line there
+to kind of both delineate where the
+breakpoint is but you'll notice that
+Federation is kind of right in the
+middle and that is we'll talk about this
+a little bit later on that is because
+there are actually are two ways to bring
+in federated identity with incognito you
+can either do it in a user pool which is
+probably more normal today or you can
+also bring them through the identity
+pool but we'll we'll discuss that as we
+get into things so now let's look at
+some of some of the you know there's
+many features of Amazon kind you know
+but let's really kind of drill in on
+some of the key ones so we're gonna
+double click on each of these but just
+to kind of give the rough framing first
+right it is essentially a fully managed
+user directory that can scale to
+hundreds of millions of users that is
+fully managed on your behalf or by AWS
+on your behalf in the cloud right secure
+low-cost and tremendously high scale the
+second is that it's got kind of a
+built-in user interface right for things
+like sign up sign in password resets
+just it's a component that you can drop
+into your application such that you
+don't have to code all of the UI that is
+associated with its normal user flows if
+you know if you don't wish to third is
+that like we talked about you know
+of--to is an important standard for how
+kind of modern web applications come
+together how they share information and
+there's there's great support for OAuth
+2 with incognito and finally you know
+again if you think about a lot of modern
+apps that you're using these days
+whether if it's a if it's a consumer
+facing application more often than not
+app developers want to be able to offer
+social login choices like sign-in with
+Google sign up with Facebook long and
+with Amazon if it's a corporate facing
+or or an employee facing application you
+might want to log in with with sam'l or
+even open ID connect as perhaps coming
+on more these days within the enterprise
+but all of those protocols prior a lot
+of kind of black magic
+if you will and kognito kind of abstract
+that away and handles a lot of that
+complexity of this federated protocols
+for you so let's dive in and look at
+each one of these individually and a
+little bit more depth alright so let's
+go ahead and double click into each one
+of these and the first as mentioned is
+our Manish user directory and so if you
+can imagine thinking about how you might
+build the sort of system for your own
+systems or the way you would have done
+this previously is you'd probably have
+LDAP servers that were up in the cloud
+you'd have to manage a lot of
+replication
+you'd have to patch them you'd have to
+turn LDAP queries you know all those
+sorts of things and with obviously with
+the serverless directory right we've
+taken that all off your hands AWS takes
+care of all of that management
+operations for you and essentially it
+just allows you to interoperate with the
+directory using familiar yes you also
+again as a managed service it takes care
+of all of the redundancy for you using
+the multi a-z banners that you're
+probably very familiar with now within
+that directory we're gonna store all the
+sorts of user and group information that
+you would probably expect all right
+there's the profile information things
+like this name email address and so
+forth
+there's the credential and device
+information such as MFA what's
+particularly neat though about the
+implementation of the directory with
+Cognito isn't instead of actually
+storing a very sensitive information
+like passwords we simply store what are
+known as secure or modes password or SRP
+verifiers
+and this is a kind of a fancy
+cryptographic technique that allows kind
+of needed a store essentially an ability
+to verify that the password was correct
+without storing the actual password
+itself and then finally you're allowed
+to you're able to essentially extend the
+default scheme as the default set of
+attributes that we've populated that
+makes sense for most applications with
+any number of custom attributes that
+kind of makes sense for you okay
+so next let's take a look at the hosted
+user interface and so we've got this
+host at UI again as a component that you
+can essentially drop into your
+application and meld it seamlessly into
+the background with customizable logos
+customizable styling and branding you
+can see kind of by some of the examples
+there that you can alter the layout and
+it essentially is there to facilitate a
+lot of the common user flows right so
+sign up so when folks when I register a
+new account for your site when they want
+to sign in when they want to when they
+want to sign in with one of their social
+accounts or corporate accounts right it
+handles all of the or forgot password it
+handles all these flows for you on your
+behalf right so you don't have to worry
+about kind of building that part of the
+UI you can either use it with your
+theirs by default there's a simple
+kognito domain that lets you get going
+and start it up quickly but if you
+really want to just absolutely you know
+have this thing meld seamlessly into the
+background of your application so that
+no one even knows it's I mean under the
+hood you can actually even use your own
+domain with it as well alright third
+let's look at some of the wat to support
+in in user pools again this kind of goes
+hand-in-hand a bit with that hosted UI
+but Cognito supports four main oo auth
+to flows now the way you choose your
+flow that's appropriate for you is kind
+of dependent on the type of application
+you're building if you're building a you
+know a JavaScript single page
+application you might use something like
+the implicit flow if you're using if
+you're building a web app where you've
+got a little bit more of a trusted
+back-end server side backends you're
+probably going to do more the
+authorization code and there's lots of
+there's lots of great resources out
+there either within the Cognito
+documentation or just the Internet at
+large that kind of help you choose the
+right flow for you but but cognitive
+supports these four flows
+and again kind of the day they go
+hand-in-hand with that host at UI and
+then the second part of the hola to
+support with incognito user pools is the
+way these we talked about in the intro
+within oo oo to the notion of secure
+delegation
+well the way a delegation is generally
+defined in to is by using what's known
+as a customs it's by using what's known
+as a scope and a scope is simply just a
+bundle of information that you the user
+are authorizing the remote site for and
+some of them are very standardized like
+open ID or profile or email that contain
+a set of attributes but with incognito
+you can also define your own custom
+scopes for your own custom resource
+servers and now you know plays but you
+know that comes into play as well we'll
+talk later on about how you do
+authorization for your downstream api's
+okay so the fourth one that we want to
+kind of double click on is this notion
+of identity Federation alright and if it
+wasn't obvious to this point you know
+actually Amazon Cognito can either can
+store either what we would generally
+refer to its native identities where
+someone is registering on your or
+through your application as a username
+and password or they can kind of
+federate in using again social providers
+or corporate providers and the two can
+actually exist in parallel you'll see
+that you know you saw that on a couple
+of the hosted UI screenshots a second
+ago and we'll see that later on in the
+demo but when at the main part that
+amazon incognito provides you well
+there's kind of two things it does for
+you and that's we're on the Federation
+one is it handles you know the world of
+sam'l and open IDE connector full of
+redirects and post backs and a lot of
+kind of complicated exchanges that kind
+of boomerang through the browser and
+it's going to manage those all for you
+but in the second thing it does is it
+kind of normalizes all of those
+identities into the standard user
+profile that's defined and these are
+cool and then out of that standard
+profile it issues its own tokens back to
+the application and kind of the so what
+here is that means that no matter when
+they're using you know oh you know any
+of the identity type speed it Sam will
+be an open ID Kinect or being native all
+of those essentially get normalized into
+one standard set of tokens and that's
+all that your application needs to know
+how to consume so your application can
+actually be completely obstructed away
+from the nuances of these various
+different types of federated identities
+your application only knows these know
+how to operate with a standard set of
+JWT s that come at a Camino now again
+we're not going to worry about kind of
+the detailed you know flows of sam'l
+here too much but just to give you an
+idea of the sorts of complexity that
+Camino is essentially masking on your
+behalf as this is something of the kind
+of standard service provider initiated
+flow and sample so you've got the user
+they started a browser right they're
+going to pop in they're probably going
+to provide email address the service
+generally has to look up you know if you
+are building a b2b out there might be
+lots of difference domains that could be
+relevant there so we've got to discover
+the identity provider that's right for
+this particular user we've got to
+generate what's known as a sam'l
+authentic west's it gets forwarded back
+to the browser and ultimately redirects
+the user to their proper identity
+provider to authenticate you know be
+that with something like ship let their
+Active Directory Federation services the
+user goes through the authentication
+process and then gets this you know
+sam'l response that again gets all
+tamale posted back to to Cognito and in
+the world of this abstraction where
+kognito handles all of this for you
+essentially you this is this all becomes
+irrelevant to you we will see in the
+demo that you
+got to provide just the very basics
+about the metadata that helped establish
+you know the identity providers that you
+want to trust but after that
+can you take care of all that process
+for you okay now you know we've talked a
+bit at this point about a lot of the
+features that are some of the features
+that Cognito supports but you know when
+we're really talking about applications
+what almost matters more than that are
+the notion of user flows right and I've
+talked about a lot of these I'm not
+gonna go through each and every one
+that's here right but but these are
+essentially the flows of user
+functionality the kognito can
+essentially ter take care for you so
+that you don't have to build it within
+your application right so obviously sign
+up and sign in are kind of the most core
+or the most primitive right we've talked
+about others about you know forgetting
+your password ones that we haven't
+looked at thus far the notion of doing
+verifications of either an email address
+or a phone number which is which is you
+know very relevant to in terms of
+protecting against fraud now we've got
+things like being able to you know let
+the user self-service and view and
+update their profile data and then
+finally looking at things about
+multi-factor right you know when we want
+to have a stronger sign-on experience
+than just a username and password
+kognito will facilitate that that
+multi-step authentication process but we
+also realized that you know not all of
+these flows are always one-size-fits-all
+now many folks want to be able to
+customize those flows to meet the very
+specifics
+excuse me specific needs of their
+application and Cognito essentially
+provides a variety of lambda based which
+is our function as a service a service
+within AWS so it provides them a number
+of these lambda hooks to essentially let
+you customize
+the these various flows and so if you
+wanted to do a completely custom
+authentication flow you know password
+Lissa's is kind of very much a hot topic
+right now within this general space or
+if you wanted to insert CAPTCHAs or if
+you wanted to do you know any sort of
+custom authentication flow that might be
+contextual to things that are outside
+the normal scope of kameno are flows you
+can actually build an entirely custom
+off flow using these lambda hooks yeah
+similarly for authentication events
+right if you want to either ahead of the
+authentication if you want to do some
+particularly unique validation about you
+know what you know about the user or
+where they are the device they're
+signing in from on the backside of
+authentication you might want to do some
+analytics you might want to reach out to
+some other systems within your brother
+ecosystem to embed other attributes that
+maybe even Cognito doesn't know about
+into the identity tokens you can do lots
+of different customization here and you
+know there there are other further
+categories again you know I won't read
+through each and every one of them been
+around you know how you can customize
+the signup process and various messages
+that occur within the various flows okay
+now the compliment to the kind of user
+flows is obviously the other person that
+you've known really got in an
+application are the administrators and
+Cognito offers also offers a broad set
+of capabilities for the administrators
+of of your application right
+probably yeah so that there are going to
+be standard things that you would expect
+like sending out password policies being
+able to search and manage users you know
+administrative actions on those users
+like administrator based password resets
+right or confirmations and then just
+managing Cognito itself right you can
+create any number of user pools to find
+those custom attributes that we talked
+about and so on and so forth so kind of
+a broad range
+administrative capabilities that help
+you manage the users that are within
+your pool okay so if that is at least at
+a quick level kind of a decent snapshot
+of some of the core features of kognito
+now let's talk about how you can go
+about integrating Cognito with your
+application and so a couple of choices
+here option one is AWS amplify and this
+is going to be particularly suited
+well-suited if you're building a mobile
+app or a JavaScript based web
+application because amplify essentially
+these days is the unified AWS SDK of
+choice for for building applications of
+that fall into those patterns it has to
+remain kind of components to it one is
+that it's as mentioned a kind of a
+comprehensive library for building cloud
+powered apps one of those modules within
+that library is authentication and
+that's obviously powered by kognito but
+it has lots of other you know really
+helpful modules as well for storage or
+accessing your KPIs or analytics and so
+on and so forth so it's kind of a great
+drop-in toolkit that really takes a lot
+of a lot of heavy lifting out of the
+effort of building an application it's
+also got you know kind of a tool chain
+that helps you you know kind of manage
+the lifecycle of an application
+you know deployments and so on and so
+forth and then it has its own you know
+kind of styled UI components for for
+various files users and you know lots of
+different kind of common UI components
+you you might expect right and so again
+if you're building a mobile app if
+you're building a JavaScript based web
+out it's probably your go-to choice it's
+a and you can find it I've got the link
+there on the screen but it's produced
+and deployed as an open source project
+that AWS sponsors all right the second
+option for how you can integrate your
+app or come you know with your
+application is them all we're going to
+see in the demo today but that's using
+the hosted UI and OAuth flows so we
+talked about kind of choosing the OAuth
+flow that's right for you
+you based on your application type but
+once you do so really all that's
+necessary to integrate you know the the
+basic portions of Cognito are just to
+construct the necessary HTTP headers and
+execute the necessary request flow right
+that they kind of go hand in hand with
+did that oh ah a flow that you've chosen
+the real benefits here are it's very
+language agnostic right it's it's it's
+very lightweight you just have to
+formulate some HTTP requests and post
+those to the Cognito endpoint and that
+makes it you know very well-suited for
+all sorts of web-based apps but probably
+wants the particularly that are non
+JavaScript based again because in that
+form in that JavaScript case you'd
+probably want to go with amplify and
+then finally the third option and this
+can you know kind of be used in in
+concert honestly with either of the
+first two but you can just directly
+integrate with the cognitive API so you
+would take the AWS SDK of your choice
+whether that's photo for Python or or
+and you know any of the SDKs that we
+have or any of the languages that we
+have an SDK option for and you would
+simply write directly to the Cognito api
+so you might for signing an experience
+you might do the initiate off API call
+and so on so forth similar for allowing
+access into the profile information
+you're just going to make raw cognitive
+API calls the big advantage here is that
+it allows you to provide or it gives you
+the ability to have complete control
+over the user experience and flows since
+you're not using the hosts at UI the UI
+is just another part of your application
+that you build to your own
+specifications and you're just using con
+you know in in the backend right there's
+kind of that managed user directory
+authentication and so forth and as I
+mentioned you know the really the why
+you would choose this option is it just
+provides kind of the maximum flexibility
+okay so now I'm 100 before we get to the
+demo and when a couple touch on just a
+couple of other quick features we'll go
+into these in as much depth in the
+spirit of time but there I think
+relevant to touch on at least a high
+level as the first are your MFA options
+right and so this applies to when you're
+doing Native identities within the user
+pool you know when folks are actually
+signing up with a username and password
+incognito today two supports two
+different stipes of MFA options you can
+either do a text message base with SMS
+or you can do a one-time password you
+know using at you know common
+applications like Google Authenticator
+for example there's there's lots of apps
+these days that support kind of the totp
+standard the second is you know in this
+kind of almost like a category of
+features but we've got a bundle that are
+called the advanced security features
+and the highest you know there's some
+really interesting stuff in here that
+community is doing about kind of
+skinning at the dark scary corners of
+the internet for things like compromised
+credentials and providing you that both
+the user and you the operator of the
+application some insight into where
+those have been detected and how you
+want to handle them and then you know
+kind of complement so that you know
+provides some really neat capabilities
+around adaptive authentication so kinda
+meters gonna calculate a risk score for
+every login attempt and you can set
+rules about various thresholds where
+maybe if it's a low risk authentication
+you'll just let them in with the
+username and password but if it's a
+higher risk event you might want to
+challenge that mfa okay and and kind of
+the third portion of these advanced
+security features is just some some
+extra and more robust security reporting
+and insights and then you know what I
+think is a really compelling story is
+you know the birth of some of these
+advanced security features really Hawks
+backs to a Genesis of where this is
+Amazon taking its years and years and
+years of identity experience with
+operating large sites
+like amazon.com and codifying those
+types of features and making them
+consumable you know to you as an app
+developer and I always think that's very
+compelling story and then last I want to
+just quickly touch on that we've got you
+know many times when folks are
+implementing Cognito they might be doing
+so for an existing application rather
+than a new application and so we've got
+to have some options for migrating an
+existing user base and incognita
+provides you two options in the space
+one is you can kind of do a one-time CSV
+style import or you can do kind of just
+in time the real the real decision point
+between the two are the batch style
+operations will require the users to
+choose a new password for obvious
+reasons we're not going to you know we
+don't want spreadsheets flying around
+your environment or anywhere else that
+have a whole you know have tons of user
+credentials in it and so just erring on
+the side of caution the batch import
+capabilities to not support importing a
+password whereas the just-in-time
+methods which really are real-time that
+it's implemented by one of those custom
+lambda hooks we can do a lot stronger
+security around kind of how we broke in
+that process and you can actually
+migrate the users in using their same
+password their same credential using
+that just-in-time option ok so last
+thing before we flip over and we look at
+the demo let's let's just kind of
+quickly walk through how we kind of this
+all comes together between your
+application incognito and so if we've
+got you know kind of I need it or your
+excuse me or your mobile app in the in
+the middle there and I've drawn it as a
+mobile but it could certainly be web app
+as well alright the first step that
+you're going to do once you've kind of
+gotten to the authenticated portion of
+your application you're going to
+generate that authentication request up
+to the Amazon canítö
+user pool if you've chosen to use
+Federation again canítö is going to
+handle all those redirects
+to the appropriate identity provider and
+receive all the postbox so and so forth
+but it's going to receive that identity
+provider token back into the user pool
+but now instead of returning it to the
+application which would mean the
+application would have to understand
+that ID token it's going to instead
+return a normalized set of Cognito
+usable or cop token right and this again
+as a standard JWT and so regardless of
+you know whether your users were native
+users or any of those different
+federated types
+everybody gets normalized into one
+standard set of cop tokens and then from
+there you can use those directly within
+the application for authentication if
+you want to display their name or their
+username and a UI or you want to use
+their identities for some very like
+coarse grain like authorizations about
+hiding tabs or showing tabs right we
+roll based type stuff you could
+certainly do that but then you know
+what's probably more prevalent is you're
+going to use these these cop tokens that
+have been provided by congedo to do you
+know authentication authorization back
+to the API so you might build right and
+we'll talk about some of kind of the
+neat integrations between kind you know
+and some of the adjacent services but if
+you're building server API is with
+things like API gateway or alb you can
+simply just pass that cup token within
+an authorization header and AWS has some
+neat just neat and simple just push
+button type configurations that allow
+you to easily add authentication and
+authorization to those back-end API but
+now if you need to access services where
+you need not you know kind of a user
+pool to come but you need AWS
+credentials the other half of Konya that
+we haven't talked about as much today
+that identity pool right you can
+actually take your Cognito user pool
+token deliver that down to the identity
+pool and give back what's known as an
+STS took and our security token service
+and this is a standard AWS credential
+that's used to essentially access any of
+the AWS API right so if your if your app
+needs to you know contact services like
+dynamo DB or s3 on the user's behalf you
+can use that STS token as a means for
+accessing them so by the way and have
+you think about it is the cup token r4
+api's that you build and the STS token
+r4 serve for API AWS builds and that's
+kind of how the whole ecosystem comes
+together so now as I mentioned right you
+know one of kognito has I think a great
+set of compelling features in a Sun
+right but it certainly is also well
+bolstered by the fact that there's it is
+it fits within this ecosystem of these
+adjacent services and has some really
+nice and clean touch points that help
+you kind of weave the entire story of
+authorization so I highlighted the API
+gate one gateway there one excuse me
+gateway one a second ago where we simply
+take the Camino tokens issued by the
+user pool and we can actually use those
+to authenticate and authorize the user
+to a back-end API right and we'll see
+how again that works and even further
+detail in the demo and but if you're
+building your api's or your back-end
+services with load balancers or even
+you're even putting a nail be in front
+of your entire application you can
+actually just kind of do check box type
+configurations within alb pointed as
+your user pool and then any user coming
+into that application will be challenged
+as necessary to authenticate with
+kognito company two returns back again
+that standard set of Cognito tokens back
+to the alb back to the application and
+then you can continue on and then as we
+saw a kind of an in previous slide right
+if you need to access in a number of AWS
+services
+you know dynamo s3s nest SQS
+think about all the various services
+that are really applicable for the
+provide functionality for building
+applications our Cognito essentially is
+your means of retrieving the appropriate
+types of AWS credentials that are
+necessary for for accessing those
+services and all of this is again kind
+of part of the package that's pre-built
+for you when you when you adopt Cognito
+okay
+so let's flip over quickly and I'm Anna
+a quick demonstration it is always a
+little bit difficult to make
+demonstrations of logging into things
+particularly compelling but we're going
+to do our best here right and so this is
+a simple little app that I built
+actually for a reinvent demonstration
+last year so forgive that that kind of
+outdated name and the in the slide there
+right but this is just a flask a Python
+flask web app running in some containers
+with an API gateway hosted back-end that
+kind of facilitates some of these demos
+okay and so the first step here eight if
+I just want to go to one of my flows
+Camilla is going to detect that I'm not
+logged in right and it's going to
+present me
+what you're looking at here is again
+that hosted UI that we talked about I
+for this application of configured that
+either I could login natively when they
+used name and password and sign up as
+relevant or as this is you know or in
+this case I've also enabled a sam'l
+Federation provider and I'm going to
+choose that option here you can see that
+Cognito essentially forwarded me the
+user with no application you know
+development you know components
+necessary over to the identity provider
+and is asking me to log into my den a
+provider okay so after I asked indicate
+Comino essentially hand managed all of
+the postback all the consuming of the
+sam'l assertion and then I essentially
+just delivered me back to the
+application and again it's probably
+subtle it looks like nothing's really
+going on there but the complexity that
+cognitive is kind of taking off your
+plate is really really you know quite
+significant you'll see now that
+you know that my application is
+essentially using the identity that's
+provided back to cotton you know to do
+some basic personalization and then what
+I'm going to do is I'm going to simply
+call a back-end API and this API is not
+particularly interesting it essentially
+just you know it takes the identity
+token that you provide as the
+authorization and just unpacks it and
+shows the various claims that come in
+that token right so you can see things
+like my username you can see things like
+my fictitious email address you can see
+how this user was authenticated and so
+on and so forth and again not the most
+terribly complex API but the real point
+here being and we'll see this as we jump
+into the abyss console is that you know
+that API was essentially authenticated
+and authorized using the ID token that
+this application passed down to the API
+okay so now now if we kind of work
+backwards from there if that was the end
+user experience now let's look at you
+know how I the application developer
+essentially integrated Kameda with this
+app right and so in this very basic mode
+I really only needed to define two basic
+functions the first was a login write
+that I you know just specified you know
+to handle that given URL path and really
+all I need to do here I'm going to be
+doing the authorization code grant flow
+and so I need to know the login
+endpoints that's a standard OAuth 2 end
+point for kognito
+that is specific to the domain name I've
+chosen and the region I'm operating in
+and I just construct that the necessary
+URL which kind of has that information
+plus a client ID
+the Scopes you know being open ID and
+profile that I've asked for and
+ultimately the redirect URI a lot of
+this these other variables are coming
+from parameter store which you know I've
+kind of not shown here but at the end of
+the day really all you need to do is
+formulate
+this URL and submit it the rest of
+everything happens within that hosted UI
+but when I get the call back from
+Cognito it's simply assuming it's all
+been successful I'm gonna get an
+authorization code and this is again the
+second half or the second leg of the
+authorization code grant flow I'm just
+going to take my client ID and my client
+secret I'm in a return that
+authorization code - in this case the
+token endpoint instead of up here you
+can see I was using the authorized
+endpoint so I returned that
+authorization code to the token endpoint
+and what I'm going to get back is
+essentially you know from the response
+I'm just gonna get you know the only two
+that I have saved here are the ID and
+access tokens right and I can store
+those in my session and go about what's
+necessary so then once I have that once
+I have that and play if I go look at
+this Who am I function that I that I was
+demonstrating all I really need to do is
+take and construct an authorization
+header that just prefixes the word
+bearer as is the convention into a
+header known as authorization and I
+simply submit that header in my in my
+API requests when I'm calling the Who am
+I Who am I API and that's all there is
+to it right that no other and this is
+pretty standard bearer token
+authorization but no other complexity
+require right so that's that's kind of
+the application side so now let's
+quickly look at kind of the kognito and
+API set gateway sides so if I again I'm
+kind of just going deeper into the stack
+here right so now let's look at the
+Cognito user pool so again there's
+pretty guided flow that'll help you set
+up the user pool you know but just to
+highlight a couple of things you know
+this is down here within identity
+providers is it provides fairly managed
+and
+a simple way to can configure these
+external identity providers that you
+want to support in this case I again I
+supported a single CML provider but if I
+wanted to turn on any of these others I
+would just go through a fairly managed
+flow there as we talked about within
+kind of introduction you know when
+you're building an auth is kind of
+enabled application you the part of the
+deal is the application needs to
+register with the identity provider so
+that's known as an app client right here
+you can see I've registered with my user
+pool I've kind of had said that I want
+to support you know Shibboleth and Mike
+you know a native users right that's why
+you saw those two options relevant in
+they hosted UI and then you can see the
+OAuth flows that I want to support based
+on the type of application I know this
+to be the Scopes and so on and so forth
+okay and then the last thing that I'll
+kind of call out in the user pool
+portion of things is that again here you
+can see kind of this composite user pool
+right now I'm looking at the users and
+groups you can see I've got one user
+here that's kind of a native user this
+is a user with a username and a password
+of MFA in my actual user pool and then
+you can see these these external users
+right that I've that I've come in and
+I've been authenticated this this string
+is is kind of intentionally opaque but
+it is consistent right so you can
+consistently recognize the same user
+back without having kind of information
+leakage about about who they were right
+at least at this level all of they're
+uniquely identifying attributes are
+present within the tokens in a way that
+you can view them and then lastly I'll
+just kind of quickly switch over and
+look at kind of the API gate with a side
+of things so you can see get a little
+sense for you know how I can you know
+once I have that kind of media user cool
+configured how I added support for that
+to my API so I built this API with
+what's known as the chalice framework
+within Python if you've not built an ABI
+API but
+all right I highly suggest that it makes
+it really really easy but to add comedo
+authorization and authentication of my
+API I really only need to come here and
+I need to do two things first I need to
+create a new authorizer and really all I
+have to do is point it at the particular
+user pool I'm interested in and then
+just specify the name of the header
+where that and you know called it within
+when we were looking at the code earlier
+authorization was the name of the header
+that I put the token into so I specify
+that there and then under the actual API
+methods if I go into this Who am I and I
+go into the get method I can just see
+that yes it comes up here if we go into
+the method I just can simply specify
+that I want to have you know kognito be
+this user pool authorizer be the
+appropriate authorization method I can
+optionally provide some roth scopes
+right so if I wanted if I was doing
+either custom scopes or if I was doing
+that kind of the built-in scopes I could
+specify those as further granular all
+right that at the basic level this will
+certainly just make sure that I'm
+providing valid tokens in that
+authorization header okay so let's
+switch back over here so hopefully that
+gave you a reasonable kind of first view
+of Cognito I want to provide as you have
+some further places for you to go
+explore and learn the first one the one
+there so on the left is a server list
+authentication authorization workshop
+that's out there hosted in in github
+that a number of our server list
+solution architects have put together
+that's and it's got a really great
+kognito module in it around you know
+that helps you you know go build basic
+app pulls down predefined source code
+and helps you kind of glue in the
+authentication authorization of specific
+pieces using amplifier using canítö so
+it's a real hands-on kind of
+thing probably 45 minutes to an hour and
+you'll be up and running but really I
+would highly highly suggest Azure great
+place to kick the tires and not only
+will that give you kind of a great
+hands-on experience of some of the
+things I've shown you today but you can
+also use that as kind of the springboard
+to explore either further into
+amplifying or further into kind of a lot
+of our different service patterns and
+then the second one there is reinvent
+session from last year around kind of
+this broader topic of service
+authentication authorization we've
+touched on it you know it and fairly
+quickly today but again it's going to be
+using all the same types of technique as
+we talked about about how you do the
+front end authentication incognito that
+generates the set of standardized tokens
+and then you can use those standardized
+tokens across an array of back-end AWS
+services to kind of complete the full
+picture of a modern application and so I
+really would highly encourage you to
+check out both of those as you move
+forward from here and with that I think
+we'll take a pause and we'll spend the
+rest of our time going into some Q&A

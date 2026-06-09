@@ -1,0 +1,308 @@
+hey guys what's up in this video I want
+to talk about how can you build an
+online booking system and not just the
+actual act of building an online booking
+system but the most important feature
+which is prevent double booking or
+prevent race condition when two people
+try to book the same seat at the same
+exact millisecond okay I've seen a lot
+of systems that actually don't have this
+problem solved right so I'm gonna talk
+about it I'm gonna talk about how to
+prevent race condition I'm gonna talk
+about exclusive locks right and I'm not
+gonna show you how I build this
+application because it's very
+straightforward
+no really magic I might I might make
+another video to actually show you how
+the how I build the application from
+scratch it's it's it's really
+straightforward I'm using Express
+node.js and Postgres as the backend I'm
+gonna go through the application right
+now the idea here as we are building an
+online system that books
+I don't know seats right you're you're
+buying tickets at a concert and this is
+one user and this is just another
+instance maybe another user right and
+trying to open that and these are seats
+seats are green that means they are
+available red or booked okay how about
+we actually try to implement this thing
+so if I click on this seat number three
+and I say hey my name is Ali I know in a
+book this seat I'm gonna get back a
+message say hey this was booked
+successfully right and we're gonna go
+through the logic and know what it or
+what exactly am I doing here if I do
+this and I'm gonna fresh here I can see
+that this now is booked by Ali you can
+see that is a tooltip here I didn't I
+really it's a bad front end I know it
+just does the tree and if I go to other
+using a refresh you can see that this
+has taken effect all right so of that
+user likes a book number Jack book
+number nine and you can see that I am
+now actually debugging this and I'm
+gonna show you exactly what happened so
+how about we go
+the cop I'm way I made a put request
+here and what we're doing here is we get
+the ID which is the seed ID and the name
+from the prompt and I am connecting
+through a post crest pool so I get a
+pickup one client from the pool and we
+talked about nodejs post grass and how
+we actually make transactions I'm gonna
+refresh the videos here if you want
+details this I'm gonna go quickly
+through them I'm gonna begin a
+transaction because obviously this is a
+transaction right and the first thing
+we're gonna do in the transaction is
+this I'm gonna select star from seeds
+I am need to actually query this seat
+and see if it's actually booked or not
+that makes sense right a lot of booking
+system actually does that
+and so we're ID is equal 1 and is booked
+equals 0 that means it's not it's not
+booked
+that's perfect when I do this query I'm
+gonna get resolved back and the row
+count is 1 that means hey you actually
+found the seat and it's available for
+you alright so far so good but if that
+seed is not available you're gonna get
+an error we're gonna send back in our
+seats already booked this is to avoid
+this double booking but we're gonna show
+that this is not enough in a minute
+right a lot of people actually do this
+this party a query and check that thing
+but this is not enough so I'm gonna go
+and once we actually pass this that we
+are safe to actually execute an update
+statement and set the go away please is
+Chris booked equal 1 and the name equal
+then we're ID equal 1 we just physically
+set that statement so it let's go ahead
+and just run this thing and we commit
+the transaction we release the client
+back to the pool right and then we send
+the result so we get back we get back
+also here booked it successfully right
+and then if i refresh here right I'm not
+gonna refresh actually if I actually
+click this 9 now and I'm gonna book it
+for which is already booked we know that
+this book right if I say I don't know
+for saying say ok we get an error
+failed couldn't book because
+is already booked and the reason is
+because we have queried and that quit
+actually failed returned nor echoed and
+gonorrhea
+all right Jose what are you doing that
+all of the stuff we know here is the
+flaw of this design the problem with
+this design is double-booking can easily
+happen not on my single machine
+obviously but if you have a flux of
+requests coming at the same time you
+will get into a situation where both
+statements actually at the same time you
+can imagine them executed in parallel
+they query the seat is available right
+the first transaction query and says oh
+the seat is available and it reaches
+here and the second query also queries
+and also finds out that the seat the
+same seat is also available right so
+both of them will succeed on this F
+statement they will pass it and both of
+them will execute the update and that's
+the problem this case last when n but
+incorrectly the client will get the
+message that actually your booking has
+been succeeded we saw a lot of stuff
+back back maybe ten years ago when
+online cinema became a thing right we
+always get double walking because of
+this problem because it's a popular
+system right a lot of people query at
+the same time so we're gonna show how to
+fix that first of all let's reproduce
+this let's show you actually this is
+gonna happen but I'm gonna do this with
+the power of debugging series what I'm
+gonna do I am going to book fit I'm
+going to book seat number 15 now and I
+am gonna assign him to wreck all right
+and this will essentially go to the
+debugging statement passes all of that
+stuff and I'm gonna pause it here I'm
+gonna intentionally not resume the code
+to go to continue but guess what it
+actually passed the Select statement
+that actually checks with their whether
+the receipt exists or not
+so the see it is available
+here's we're gonna do the seat is
+available but that guy didn't update it
+yet Rick did not actually reserved the C
+because he didn't reach that statement
+right now if I go to the other client
+and I also try to book this guy and I
+say Edmond want to book this guy this I
+don't have a debugger this guy will
+completely sexy because there is no
+debugging right well query find out this
+is available and it will actually commit
+the transaction oh this is booked now
+here's what I do now I'm gonna just
+release the code go ahead and continue
+and you can see that both of them
+actually book the same seat and that's
+the problem this is what it's called
+race condition in online system or
+double booking and here is how we can
+fix this problem guys using the concept
+of exclusive locks how about we jump
+into it and fix it
+the problem here guys is both of these
+guys are a timid to edit the same row
+technically right so the solution one
+solution at least is the first person or
+process to get to the row should obtain
+an exclusive lock on that row so that
+the other process when it tries to
+execute it it will have to wait until
+the other transaction actually completed
+and how do we do this in Postgres it is
+very simple the same thing you select it
+use your selecting this row right the
+only thing you need to do is add two
+things at the end so for update that's
+it when you do select star from select
+where ID and you query that role you
+also say for update and that is called a
+row level lock and few databases
+actually supports that not all databases
+right so this is a very very important
+feature in some databases PostGIS
+suppose I think my cycles would support
+it
+Oracle definitely supported and you do
+it for update and it and the syntax
+sequel 92 is almost identical and all of
+them so you do select start for update
+Wow all right the moment you do that the
+database will apply an exclusive lock on
+that role that means if someone tries to
+update their role or select it for
+update as well they will have to wait
+and this is what I don't like about
+Postgres Ram in Oracle because I use
+Oracle for 15 years and in Oracle that's
+why hurkos expensive one of the reasons
+is in Oracle you can actually specify a
+time out here says hey half wait for
+five seconds right here it's actually an
+indefinite wait I'm gonna show that now
+in a minute alright so let's go ahead
+and try to now that we have fixed add
+let's refresh this thing and let's also
+rerun all my second application right
+okay on port 8080 eight eight and let's
+check this up right and for fun let's
+just clear all that books right I'm
+gonna updates it equal poach what a DBA
+Emma this no no one is booking anything
+just like that alright everything is now
+on Bullock sweet guys
+alright here's what we're gonna do I'm
+gonna do the same thing we're gonna book
+seat 15 I'm gonna edit mode for example
+booking states 15 we go there hopefully
+the debugger anytime soon now okay we
+selected the same stadium but now it's
+for update there is a little bit of
+difference in the database it's freaking
+out now right we got it now here's the
+thing this guy will always be the winner
+no matter what I'm gonna find out how so
+the other process now will try to book
+15 was it 15 I think it's everything
+let's just make sure I think it's 15 yep
+15 all right so 15 if I click 15 and I
+say
+Mellissa want to book 15 hey is what I'm
+gonna do look at that we didn't receive
+anything it's just waiting now the
+process is just stuck right and this is
+what I don't like I'll pause it there is
+no option I might be wrong guys or
+correct me if I'm wrong there is no
+option to actually give up and timeout
+after after a certain amount of waiting
+right so this guy is waiting and this is
+a bad user experience that's the
+limitation of this now and this is where
+your database actually shines now if I
+go and say
+release the Kraken here go back this guy
+this is what happened ooh something
+happened here right book successfully is
+the guy who actually the person who
+actually made that transaction book
+successfully but this guy was waiting
+technically right here they were stuck
+and the moment this process actually
+released the transaction what happened
+is that lock got unblocked and now we
+selected the brand new committed change
+which was what it was actually committed
+which was there it is already booked
+that means this result is 0 that means
+the sitter is there already but all
+right and that's what happened
+essentially guys so this is now a
+bulletproof online booking system that
+is essentially erase a4 or you cannot
+get double booking with him obviously
+comes with a price but that price
+remember nobody in and that right might
+we'll put a debugger obviously and this
+will take a finite amount of 10
+milliseconds it's very fast
+so the wait will almost be unnoticeable
+right so that's already couldn't
+couldn't book already booked all right
+all right guys that was a short video
+talking about this let me know guys if
+you actually want me to build this
+application from scratch showing you how
+to hire I do it all these pieces we
+explained all that stuff before
+everything right the gate requires this
+is a port also for fun I added a delete
+but I remove
+right to delete that booking to unblock
+that thing and obviously this is very
+simple I'm gonna reference the source
+code below for you guys if you're
+interested and the database also just
+it's just a post case on docker very
+straightforward and all the tutorials
+all this post Chris tutorials we have
+done them before let me know if you have
+any questions let me know if I missed
+anything I'm gonna see you on the next
+one
+you guys stay awesome

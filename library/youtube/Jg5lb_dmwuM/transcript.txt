@@ -1,0 +1,96 @@
+There's no chance for you to see paths like
+this the same after watching this video.
+Okay, welcome to Security Bites.
+Today we learn about arbitrary file reads.
+This class of vulnerabilities allows attackers
+to access arbitrary files, including credentials
+or critical system files.
+In cases where attackers managed to leverage
+their read access to achive write access,
+they can take full control of your system.
+There are different names associated with
+this vulnerability class such as Path or Directory
+Traversal, or even Dot Dot Slash in reference
+to the syntax to traverse up a directory hierarchy.
+When you hear those names, you should be aware
+that the impact is potentially critical.
+These vulnerabilties result from the common
+software requirement to read the contents
+of a file, such as for example, a user's profile
+picture.
+Behind the scenes, these operations are backed
+by a file read for an image residing on a
+file system.
+Facilitated by the operating system's corresponding
+API.
+When an attacker controls the input to file
+system operations, such as for example, the
+path to a file, they may be able to control
+the whole path and traverse out of the intended
+directory.
+If a code base doesn't properly defend against
+such attacks, anybody will be in position
+to change the path and make it point towards
+any other system file.
+In our example advisory, GitHub Security Lab
+researcher, Jaroslav Lobaceviski, or JarLob,
+managed to read the database with user passwords
+for a popular media streaming server through
+an arbitrary file read vulnerability.
+Let's understand how.
+There were two path templates that could be
+potentially tested for such vulnerabilities.
+We can see that there are path segments that
+can change dynamically, like itemId, and segmentId.
+If there is something that I want you to remember
+after watching this video is that file paths
+depend completely on the operating system
+and use, for example, Linux and Macs use different
+slashes compared to windows.
+And this needs extra care because individual
+path segments can be placed by absolute paths
+to override the previous path.
+Jaroslav did exactly that by providing a specially
+crafted HTTP request that was using backslashes
+or % 5 capital C in order to replace those
+path segments.
+This is the crafted HTTP request that is able
+to read the database with passwords.
+Time to talk about mitigations.
+If it is necessary to pass user supplied input
+to file system APIs, use the following two
+layers of defense.
+First, it's a good practice to validate user
+input before processing it.
+In the previous episode on code injections,
+we spoke about allow lists to ensure that
+user input contains only permitted characters,
+keeping in mind any cross platform particularities,
+if applicable.
+After validating the input, you can now build
+the final path, which will be processed by
+the file system API.
+The second layer of defense is very important
+and this is all about how you're building
+the path.
+The best practice is to canonicalize the path,
+which means to simplify and reduce into a
+standard form.
+Our expert tip is to use standard libraries
+to build a canonical path as the safest way
+towards cross platform security.
+Then for one last time, make sure that the
+path you've built is valid.
+A valid path is one that: A starts with a
+base directory and B has validated user input
+appended.
+I can't emphasize enough how crucial and effective
+in terms of a mitigation is checking that
+the final path starts indeed with a base directory,
+which is what the example code on screen is
+checking.
+Make sure to comment below to let us know
+which vulnerabilities to cover next.
+In the meantime, stay in the loop by following
+us on Twitter.
+Remember, quality code is secure code.

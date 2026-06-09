@@ -1,0 +1,76 @@
+today we're going to explore API pagein
+Nation when building apis that return
+large sets of data we need a way to
+break that data into smaller manageable
+chunks that's what pagination is it's a
+way to split our results into pieces and
+let clients request them one at a time
+instead of sending thousands of records
+at once we send them in batches of maybe
+10 or 100 this helps manage server low
+reduces Network traffic and keep our
+application responsive let's look at two
+main ways to handle pagination offset
+based and cursor based with offset based
+pagination we have two forms first this
+page based where we set how many items
+we want per page then calculate where to
+start second we have direct offset where
+we use offset and limit parameters
+directly here's what a basic offset
+query looks like in
+SQL offset based pagination is easy to
+build but it has problems with large
+data sets when the offset gets bigger
+our query gets slower this happens
+because the database has to process
+every row up to our offset before it can
+return results there's an even bigger
+problem when a data set changes quickly
+offset based pagination can miss records
+or show them twice if new items are
+added they shift everything around this
+means we might not get consistent
+results between
+requests cursor based pagination fixes
+these problems let's walk through how we
+Implement cursor based
+pagination first we pick an index column
+like an ID as our cursor then we hash
+the cursor value for
+security next the client senses their
+last scene cursor value we use this
+cursor to filter and fet to next batch
+after that we send back the result plus
+a new cursor for the last item finally
+the client uses this new cursor for
+their next
+request cursor based pagination works
+really well with large fast changing
+data sets it stays consistent even when
+records are added or deleted between
+requests this makes it perfect for
+real-time feeds or any data that changes
+often some cursor based implementations
+are key set pagination and time based
+pagination key set paginations uses
+index key such as primary keys to
+efficiently retrieve the next set of
+results by directly accessing rows
+without scanning all preceding ones time
+based pagination uses timestamps as
+cursors to segment and retrieve records
+within specific time ranges this
+approach is practical for applications
+dealing with time series data now here's
+a key takeaway use cursor based methods
+for large and fast changing data sets
+they're more consistent and perform
+better than offset based approaches
+while more complex to implement is worth
+the
+effort if you like a videos you might
+like a system design news le as well it
+covers topics and Trends in large scale
+system design trusted by a million
+readers subscribe that blog. bio.com

@@ -1,0 +1,874 @@
+There's a secret about Apple style
+animation that no one talks about and
+that's storyboarding. So in this video I
+will show you exactly how I created a
+intro of an editing challenge in the
+Apple Cell and so I won't only show you
+the animation process but also the
+storyboarding process. Now let's jump
+into it. So I'm here in Milanote and I
+always use this for my storyboarding.
+And by the way Milanote is also the
+sponsor of this video which I'm super
+excited about because I love their
+software. If you don't know what
+Milanote is, it is a tool for organizing
+creative projects. You can add links,
+images, notes, to-do list, and a lot
+more in one place. They have some really
+unique features which I will also show,
+but check them out. Link is in
+description. Anyway, I have the script
+here on the left, and it really depends
+on the size of the project. If it's a
+simple project, then I don't have to do
+a lot of animation. I just use the
+script and then maybe write down some
+notes or some ideas that I have and then
+I don't even use the whole storyboarding
+feature. If it's a bit of a bigger
+project, which this was, then I do use
+the storyboarding. And it's really like
+a nice way to give a clear view of what
+you want to work with. And what I really
+like about Milano that it has some
+features that are really good for
+editors and animators. For example, the
+hex codes, uh, which is really nice to
+work with, and also the columns where
+you can just cluster some things, a
+to-do list, which is also really nice,
+and even a font card where you can
+select some fonts that you want to use.
+And not only that, you can also have
+boards and boards. So in this board, for
+example, I have some general inspiration
+that I just pasted in. And these are
+just some things that I like. Now, this
+is of course all cool, but I also want
+to show you how to create this. So,
+let's go through it. So, for the sake of
+the video, I'm just going to create a
+new board. So, let's drag that here. And
+I'm just going to call this Apple style
+storyboard. And then we can double click
+on that and we'll open it. You can
+choose a template. I'm just going to use
+an empty board for now. And then when
+you paste your script, you will see this
+unsorted column. And I think this is a
+really unique feature. I will show you
+in a bit why I love this feature. For
+now, I'm just going to drag this script
+to my board. Uh, so I have it here. I
+can look at it. I can come up with ideas
+based on it. Now what I first always do
+is I find some general inspiration and I
+do this by going to Pinterest for
+example, but you can also go to dribble
+behind. You can also find stuff on
+Twitter or Instagram. And here I just
+select some things that I think like
+okay these could be cool for the project
+but it's just like some general
+inspiration. But sometimes I already see
+some elements. For example, this I love
+these buttons. I think they're really
+cool. And then I might use it for
+specific elements. Anyway, what I do is
+I just take a screenshot uh using my
+Mac. But if you're on Windows, you can
+also just copy the image. Then we go to
+the storyboard. And if we now paste it,
+it will be in the unsorted also. And
+what's nice about this is I don't have
+to think where to place it, where to put
+it. I can just paste it all in the
+unsorted. So I can just continue going
+through my inspiration. Maybe I see
+something more, I can copy this, I can
+paste it, and again will be my unsorted.
+So this is really quick. And why I like
+this is because of workflow. Because I
+don't like to already be busy with how
+this board is going to look like. No, I
+just want to focus on the inspiration.
+This also looks super dope, bright. Oh,
+love it. Um, copy this, paste it, and we
+already have some inspiration. And now
+we can just drag it in wherever you
+want. Uh, we can just put it over each
+other. And again, we can use this as
+general inspiration, or we can even use
+some elements in here. I also really
+like these colors. So, maybe I want to
+work with these colors. Now, I'm looking
+for some other stuff. And once you have
+a bit of like a general style, you also
+want to go through the keywords. And if
+I look at my script, there's a few
+things in here. So, like eight editors.
+I want to do something with this maybe
+with the $1,000 price. And also here,
+here's a twist and results are wildly
+different. I think the keyword weld is
+really cool. We can do something with
+that. And to give you an example, I just
+search for wild or wild design. And I
+already see this really cool stuff here.
+And then when you open it in Pinterest,
+you can see also other other
+inspiration. I think this also looks
+really cool, right? And maybe we can
+create something like this. So, we can
+copy this over and paste it again and it
+will be in unsorted. In this case, I
+want to drag it already because I'm
+going to use this for our storyboard.
+And also with the $1,000 price, maybe
+going to search for like a credit card
+design, something with money. I really
+like how these cards look. So, let's
+copy this, too. Paste it. There we go.
+And already put it a bit in the order.
+Maybe I search for breakdown. Maybe for
+the breakdown, we can use some This
+looks really cool. Maybe we can do
+something like this. And again, these
+styles are all over the place. But what
+we can do is basically use this for
+these styles and then use this for the
+elements. So we already got a few
+things. Now what we can even do is
+select them. Uh I can align them to the
+vertical centers so they're nicely
+aligned. And I can connect them and they
+will just have a line between it. Then I
+can also add some notes to it. So for
+example here, what I want to do is have
+like the cards sliding up. can also use
+the drawing feature where we can draw on
+something. For example, I want like a
+spotlight around this and we can move
+this of course or delete it again. Let
+me add a quick note to this spotlight.
+We can also hold alt and then drag this
+out and then uh just type in breakdown
+blueprint effect. So these nodes are
+nicely floating around. We can just put
+them wherever we want. Now I want to
+organize this a bit better. So we can
+also select these, right click and then
+do group into column and they'll be
+nicely into a column. And we can call
+this inspo. You don't have to put it in
+like a card like this. We can also put
+this in a separate board if we want to.
+And you can do that by right clicking
+and convert to board. And then it will
+just be like a nice board already with
+the name. As you can see, it works
+really simple. Now let's also add some
+of our colors. And we can even click on
+the color and color pick it from our
+inspiration, which is really nice. And
+why this is important is because I see a
+lot of editors that have their colors
+and fonts all over the place. They use
+like 200 different fonts and colors in
+their edit. And in my opinion, that
+makes it a bit messy, right? So, we can
+literally just have a few colors that
+we're going to work with. Maybe this
+darker blue. And then maybe also with a
+off-whiteish,
+something like this. And now later on,
+we can just copy these hex codes, which
+is really nice. Now you know how to make
+these storyboards. Let's go back to the
+storyboard I made before. By the way, if
+you wanted to try Miller node yourself,
+it is available for free with no time
+limit. You can sign up using the link in
+the description down below. So now I'm
+here in After Effects and I have my
+voice over already ready in After
+Effects. Now what I like to do is to
+keep my Mila node on the left and to see
+a bit like what I wanted to have in the
+animation and also this is not set in
+stone. Sometimes I get other IDs and
+then I still change it up. Let's start
+with this uh with the cards popping up.
+Imagine this. So let's start with this
+text. Imagine this. Uh, let me just type
+it. Imagine this. Let me change this
+font to SF Pro medium. Let's make this a
+bit bigger. And then, of course, center
+this. Now, what I'm going to do is I'm
+going to right click, layer styles,
+gradient overlay. Add a bit of texture
+to this. Uh, let's reverse this. And
+also change the opacity to maybe like
+27%. I also want to animate this. So,
+let's go to animate position and then
+animate opacity. Opacity to zero and
+position to something like 150. Go to
+the range selector. Go to the advanced
+tab and let's change this to ramp up the
+ease low to 100% and then we can nicely
+animate it using the offset. So, let's
+set the key frame on the offset minus
+100. We go like one second further and
+we'll set it to 100%. So, we already
+have a cool animation. Let's set this to
+quarter. We can watch this. And I'm also
+going to turn off the audio because I
+don't want to hear myself 200 times. We
+already have this cool animation in my
+opinion. I like it. I also want the this
+in a different color. So, let's just
+select that. Let's go to our properties
+and change the fill to a orangey color.
+Uh because it's my brand color now. And
+going back to our Milode, we also have
+the hex code here. So, we can copy that
+over, making sure that we always use the
+same orange. And as you can see, this
+already looks really clean. Now, I want
+the Apple Mimojis popping up. Of course,
+we can just search like a Apple Mimoji
+pack. They exist. They're also in Figma
+that you can use or export. But the cool
+thing is using Chpt, you can also
+generate them. I ch want you to generate
+eight Apple Mimojis, all from different
+races and different genders. Make sure
+they're on a transparent background. And
+there you go. You have some Apple
+Mimojis. They're not official Apple
+Mimojis. They're copyrighted, but we can
+definitely use this. So, just save this.
+Can call our folder assets. Let's put it
+in there. Now, we can just import this.
+And basically, what you can do is in
+Photoshop cut them all out and have
+separate PGs. But you can also just in
+After Effects mask one of them and then
+duplicate it by hitting command D or
+control D on Windows. Double clicking on
+the mask and moving that. Then doing the
+same thing, duplicating it, double
+clicking on the mask and moving it. And
+you just have to do this eight more
+times. And the cool thing is is that I
+might want to use these later anyway.
+We're not just doing it for one
+animation. Now we have eight apple
+emojis and we can turn those into cards.
+Now I'm going to create a quick cart.
+And I do that by using the rounded
+rectangle tool. Let's just drag here.
+Make sure nothing is selected. Maybe
+something like this. I'm going to turn
+the fill into a linear gradient. And the
+stroke is fine. Now I'm going to go to
+the selection tool and I'm going to
+change this gradient to be more soft.
+Something like this. And the other one
+I'm going to maybe drag something like
+this. And I'm going to change the fill
+colors. Uh so let's make that maybe like
+dark orange. And then the other one
+brighter. Maybe something like this. I
+do want it to be a bit more rounded. So
+let's increase the roundness to 50. And
+there you go. We have a clean and nice
+looking card. Now we can add these
+basically on top of the card. So let's
+move this. There we go. And then I can
+link this to the card. Now in the end
+animation, I want to have eight cards of
+these and like have them fold out or
+stack out in some way. And in my
+inspiration, I actually found this
+really cool card. And this is more
+horizontal. I don't think it's fitting
+for our Apple Mimojis. And that's why I
+went with more of these like vertical
+cards, almost like a playing card deck.
+So the only thing I have to do now is
+duplicate this shape layer a few times.
+And again, command D, control D on
+Windows. Just dragging it out. And
+ideally, I want this to be nicely
+aligned. Now, I'm doing this a bit on
+the eye because it's really difficult to
+align this like perfectly. I just make
+sure that this Apple emoji is with the
+right card. In this case, it's layer
+number nine. And then we can do the same
+with the other ones. What I like to do
+is just make sure that this is above the
+layer that we want to move it with. And
+then drag that here. Then I'm going to
+link that. And the same for the others.
+Now that they're all linked, I want to
+animate them. So I'm going to select all
+the cards while holding shift. I'm going
+to press P for position. And let's set a
+key frame here. Let's go a bit to the
+front. Maybe 1 second before that. And
+I'm going to go to the align tool,
+composition, and I'm going to center
+them all in the center. So they will
+basically fold out like this. Now the
+top part is already visible. And we also
+have to animate that one in. And with
+this one, I'm just going to move it from
+the bottom. And I'll fade it in by using
+the T for transparency, setting a key
+frame, dragging this out, setting this
+to zero, and then maybe having the
+Mimoji pop up. The anchor point,
+however, is wrong. So, we have to move
+that. Let's use the pen behind tool for
+that. And let's set this to the center.
+Press S for scale. Set a key frame. Drag
+this out. Put this to zero. I'm also
+going to make sure that this is bouncy.
+You can use an expression for this or
+use a external plugin like motion tools.
+Uh so this will make it bounce. Let's go
+to the shape layer. Press U to see our
+key frames. And what I'm going to do is
+I'm going to uh move this position a bit
+more to the left. Make sure that there's
+another position key frame so it's a bit
+stationary. And then let's ease our key
+frames. So hit F9 on our keyboard. Go to
+the graph editor and make sure that this
+is like easing in. Right. So it goes
+quite quick in the beginning and then it
+like smooths out. And then for the next
+animation, select all these position key
+frames. Uh so we're going to just select
+them all holding shift, clicking on the
+first one, clicking on the last one,
+pressing P for position uh to just see
+the position key frames. Let's select
+all these position key frames. I'm just
+going to uh ease them on both sides. I'm
+going to even drag these out by holding
+Alt. And basically what I want to do is
+make sure that the other cards are not
+visible yet. So just the top one. And
+that's actually really easy. We can just
+select all of them and hit alt or hold
+alt and then do left bracket so it will
+cut them off. So we already have this
+really clean animation. The only thing I
+want to do is make sure that the text
+once the card comes in also disappears.
+And to do this I'm just going to hit P
+for position. Set a key frame. And once
+this is here, let's move this up. And
+this will be a nice match cut. I want to
+of course easy ease this graph editor
+and make sure that this is nice and
+smooth. and press T for opacity. And
+what I want to do is also fade it out.
+Right? So make sure that it's goes from
+100% to zero. What we can even do is hit
+P for position and move this a bit. So
+it uh basically starts a bit earlier
+with the animation. And as you can see,
+this animation is all really, really
+smooth in my opinion. Now I want to turn
+these cards into a line. So let's select
+all of the cards again. Let's go a bit
+further and let's go to the align tool
+and make sure it's aligned in the
+center. And we already have a nice
+animation here. And what I also want to
+do is select all the rectangles here in
+the layer contents by selecting the
+first one, holding shift and selecting
+the last one. And then we can set a key
+frame for the size. So let's go and
+start here. Set a key frame for the
+size. Go a bit further. And then unlink
+this and setting this to zero. Now, this
+will look really ugly because our uh
+mmojis will still be visible. But what
+we can do now after we done this
+animation, we can basically select all
+of our mimojis. And by the way, quick
+tip, we can just type in here PNG and
+then we'll have all the mimojis. Then
+select one of these and uh use a
+trackmat feature to uh change it to the
+shape layer. It's really easy. You just
+every time choose the shape layer below
+the Apple Mimoji and you know which one
+that is because it's grayed out. So just
+do it like this. And we do that a few
+times. Now this will also turn all the
+uh shape layers invisible. So let's
+remove our PNG search. And let's turn
+them all back on. Now nothing will be
+changed until we see the animation where
+it will mask all of our emojis. Now we
+can also easy ease this animation. Let's
+see what it will look like first. Let's
+select all of our layers by hitting
+command A and then type in uh size. So
+we can select these and hit F9 on your
+keyboard. And then you can also easy
+ease them in the way that you want. And
+as you can see, this looks really cool.
+Now I want to have a line shown up. So
+let's create a quick line. Go to the pen
+tool and I'm just going to fake it
+basically by creating a new line.
+Holding shift to keep it straight. Make
+sure nothing is selected. Make sure the
+fill is off. Uh let's set that to none.
+Make sure the stroke is set to a solid
+color. And three pixels should be fine.
+Maybe a bit more just to make sure that
+it's filling the space. So, select the
+shape layer, make it a bit thicker. And
+what I can just do is press T for
+transparency, set a key frame, and make
+sure this fades in once this animation
+is done. Now, I can also add a quick
+deep glow to this. And I don't want this
+to be that bright. So, let's set this to
+like 0 maybe like comm, 05. That's
+already bright enough in my opinion. And
+then let's add a text to this. We can do
+$1,000 because it's $1,000 on the line.
+Now, I do want this white. Uh, let's
+change this to white. And I also want to
+have that layer style over it again. So,
+layer style, gradient overlay. And
+again, go into the gradient overlay.
+Change that to reverse. And change the
+opacity to something really low.
+Something like 27. And let's move this.
+And then we'll just do the same
+animation. You can uh copy or paste
+this. But what we can actually do is
+also go to this animator. Go to the
+text. And we already have this animator.
+And you can drag this to the effects and
+presets panel. And once you did that,
+then you can actually reuse this effect.
+So I named it character up. As you can
+see, user preset. We can just drag that
+on. And uh it's really nice. We already
+have the animation. Now, of course, it
+still needs a background. And it also
+needs some continuous movements cuz
+there's quite a lot of like stationary
+shots here. And the key to have like
+smooth animations in my opinion is to
+have continuous movement. And we can
+really easily do this by creating a new
+null. So go to layer, new null object.
+Then what you want to do is select the
+layers that don't have a parent yet. And
+once we select those, we can actually
+parent these to the null. And now we can
+add some animations to this. So first of
+all, I might even like move this anyway
+to make sure that this is nicely
+centered. Now the rest won't be. So
+maybe I'll move it. Let's see here. It's
+fine. Maybe I'm going to put a P for
+position here. And make sure that once
+this animation is done, this is nicely
+centered. Probably something like this.
+Then I think the line here is also fine.
+Yeah, nice. Just have to easy ease this.
+And then what I also want to do is I'm
+going to create another null. Uh layer,
+new null. And I'm going to use that one
+just to scale with. So we can parent
+this one to this other null. Press S for
+scale. And then basically what you do is
+make sure that this is just for the
+scaling. And this one we just keep in
+the center. Uh and what we can do, for
+example, set a key frame here. Set a key
+frame here. And then make sure that it
+scales up a bit. So there's a bit of
+movement here already. And then maybe
+here it zooms out again. Then maybe here
+it zooms in again. And then maybe we'll
+zoom it out again. And again, of course,
+select all of these key frames and hit
+F9 on them. Let's move this a bit. And
+this one is a bit too much. So let's
+remove that. And as you can see, we
+already have a really nice animation.
+There's a lot of movement happening and
+is really entertaining to watch in my
+opinion. Now again, it needs some
+background, but we're already getting
+somewhere. Now for the next part, I want
+to do a match cut. So, I'm just going to
+set R for rotation key frame. We can
+move this a bit further. So, maybe it
+goes to something like this. Again,
+hitting F9 on your keyboard to make sure
+that this is nice and smooth. So, it
+goes like this. Maybe we'll make it even
+a bit more rough. And we can already
+start this key frame a bit earlier again
+to make sure that there's continuous
+movement. Now, of course, we have to
+fade this out. We can also add a layer
+on top of it. And by the way, I'm
+skipping some part because it's just
+adding more text, more layers, doing the
+same things. Otherwise, this video will
+also be way too long for YouTube. And if
+you want to see the deep dives, then
+just join the full stack editor club.
+Link is in the description. Anyway, this
+is the card where we're busy with. And
+going to the next part, I want the
+roaring tiger because it's wild, right?
+And for this, I actually recorded this
+Apple emoji on my iPhone. I'm going to
+align this a bit better. And the cool
+thing is that once we now link this
+while this is straight and the rest is
+not, it will move with the null object.
+So it will turn the opposite direction.
+And that's also how we can do a really
+nice match cut. We can either fade it
+out or cut it off. I am going to fade it
+out. So I'm just going to create a layer
+new uh solid. And let's make that just
+black. Okay. Move that below our tiger.
+And then press T for transparency. And
+basically just fading this in. Once we
+do that, this will fade in this
+background. And then what I also want to
+do is fade in the tiger. So press T for
+transparency, set a key frame, and drag
+that out. And once we time this right,
+you will see that you get this really
+nice match cut. We need to move these
+key frames a bit. So it's basically on
+the peak this happens. Maybe it goes a
+bit. Move this a bit. And of course with
+some motion blur, this will look way
+better. And we can even make this tiger
+pop up. But I think this is already
+cool. Then I'm going to add the text
+wildly different. But we can also copy a
+text that we made before. We can
+duplicate the uh $1,000. Make sure it's
+nicely centered. So go into the uh
+transform and let's reset this. I'm
+going to unlink it. Uh reset it. And I'm
+going to type here wildly
+different. Perfect. It's not perfectly
+aligned. Let's fix that first. And I
+also want to make it a bit bit bigger.
+So I can just scale it up. It's a bit
+hard to read as you can see. And that's
+basically because the tiger is quite
+bright. Uh we can just like dial the
+tiger down. So it's a bit dark in the in
+the beginning. It's a bit in the
+background. Now once it roars, I think
+we need to move this emoji movie a bit.
+So press U on our key frames and let's
+move these and then let's move this
+layer because I want it to roar a bit
+more quick. We can also link the text to
+the null so moves with it. Uh so we can
+move it a bit earlier. That's very nice.
+Now we maybe want to scale the null a
+bit here so it like zooms in. For
+example, once it roars, I want it to of
+course move to the sides. There's
+multiple ways to do this. You can also
+mask it. So, we can also go to the
+rectangle tool and then just mask
+wildly. Duplicate this layer. Command D
+or control D on Windows. And then we
+still have this other layer open. So, we
+can set this to subtract. It's really
+simple. We just set a key frame for the
+position on both. And basically, once it
+roars, it moves to the sides. This one
+to this side and this one to that side.
+And of course, easy ease this. This is
+really dope. Uh now I also want while
+this is happening to have the emoji or
+tiger scale up and the opacity to go up
+too. So basically it looks something
+like this. Uh which in my opinion looks
+already really dope. What I don't like
+however is that I also want some
+distortion in this text. Now you can use
+bolts or you can use CC lens for that.
+Let's see. Let's try CC lens. And let's
+change the size to be a bit bigger. And
+then I want the convergence to be on
+minus 100. So it basically wraps around
+a bit. Now I can even change the size so
+it even bends a bit more. And then I can
+just copy this effect and paste it on
+the other text. As you can see, it gives
+this really cool effect. Now for the
+next animation, I want these trophies.
+And I want this style specifically cuz I
+think it looks really dope. Now I can of
+course make this in 3D. It will take a
+lot of time. So we're going to use AI
+for this. And I will have a separate
+tutorial on this. So basically now I
+want to transition to the next layer and
+we can just use a circle for this. So
+let's use a ellipse. Let's make sure
+that nothing is selected and let's drag
+this. Hold shift to make sure it's
+circular. And then we can go to the
+selection tool and move this up.
+Something like this. Very nice. Then we
+can even set the fill to black uh stroke
+to zero. And then press S for scale and
+set a key frame. Basically, what I want
+to do is once it roars, it's basically
+coming from the mouth or somewhat from
+the mouth. And again, with motion blur,
+this will look uh really cool. And
+there's no background now, but if we
+have a background, uh you'll really see
+this. For example, I have this uh cool
+gradient background. I can use the
+circle that we just created uh as a
+trackmat. And then once this opens, as
+you can see, it will have this cool
+effect. Now, we can add the trophies,
+which look like this. Um I created these
+using AI. I will have a separate
+tutorial on this how I created this. The
+only thing I want to do is add a extract
+to this. Let's make sure that the others
+are not selected. I'm also going to do a
+quick rough mask and then just change
+the black point. It will make it look a
+bit ugly. As you can see, if we change
+this to full, you can see that it's not
+properly keyed out, especially at the
+edges. A quick and easy fix is adding a
+rin edges to this. As you can see, I
+just changed these settings. So border
+27, edge sharpness one, fractal
+influence to zero. And basically what
+this will do, it will smooth the edges a
+bit. And as you can see, feathers it a
+bit. It's still not perfect if you
+really zoom in. Uh but again, you have
+to really zoom in. If we zoom out,
+you'll see that it still has this really
+cool effect. Now, what's cool is that
+this trophy is rotating. Uh so basically
+what I want is to move it from the right
+to the left. So I'm just going to press
+P for position, set a key frame, and
+drag this out. and then move it to the
+right. And basically, we'll just move in
+the screen. And of course, we have to
+easy ease this. I want this to be
+really, really smooth. Go to the graph
+editor, select the last key frame, and
+drag this out. So, we have this really
+nice smooth animation. Uh, we can also
+add some motion blur to this, of course.
+Now, we might want to blend it in a bit
+better uh using a like dark mask around
+this. Or what we can even do is create a
+black solid and then uh using a ellipse
+like dragging this a bit, pressing F for
+feather, then feathering this by a lot,
+pressing T for transparency, and then
+making this side a bit darker. And then
+maybe scaling it up a bit just to make
+the scene look a bit nicer, right? And
+these subtle things, as you can see,
+will really make this trophy pop. Of
+course, we need to add some text
+animations, but this is nothing too
+crazy. So, we have the trophies, we have
+the awards. Now, I want to have the
+cards pop up with something like this.
+And I also want to have a cool 3D cursor
+flying in. That's all I want. I just
+want a 3D cursor. So, let's just create
+a new solid. I'm going to make it white
+for now. And let's cut that in. So, we
+can even have a match cut where this
+trophy moves to the left and then like
+the rest of the elements also move from
+right to left. And what we can actually
+do is select all of the cards that we
+had before and just duplicate them. What
+I'm going to do is I'm going to select
+them all by clicking on the first one,
+holding shift, and then clicking on the
+last one, duplicating that, and moving
+this all the way to the top. Now that we
+have our cards here, let's move them in
+a nice circular way. And for this
+effect, I'm going to create a new null
+object. So, layer, new object, and
+basically press R for rotation. Uh, but
+before I do, let's move this a bit like
+down. Something like this. Then, select
+all the cards. So holding shift and then
+just selecting them like that. Then I'm
+going to align them to the center so
+they're all at the same spot. Maybe like
+something like here. And then basically
+what I'm going to do is I'm going to
+link every time a shape to it and just
+rotate it a bit. So a bit like this.
+Next one. And so on and so on. Now once
+you've done this you already have a
+really cool effect and you can keep it
+like this. But I want the cards to stay
+upright. And for this I created a cool
+expression. Chic created it. And
+basically it's a simple expression this
+comp layer and then null 29 which is the
+null transform rotation. So it will
+basically use the same rotation as this.
+And by doing so it will uh make it
+straight. And we can also just copy and
+paste this expression to all these shape
+layers. Again pressing R for rotation
+holding alt clicking on the stopwatch
+and pasting it. There we go. And as you
+can see they will stay nice and
+straight. And if we now rotate it, they
+will stay uh straight, which is a really
+cool effect in my opinion. So, we can
+now set a key frame and go a bit further
+and have them pop in something like
+this. Now, to light them up, it's really
+simple. We can just add a deep glow to
+the ones that we want to light up. And
+then we can just key frame the exposure.
+Uh you might also want to add a curves
+to it just to make sure that the colors
+stay a bit nice. Something like this.
+And again, we can just set a key frame
+on the uh exposure going up. Now,
+there's two more things. The cursor and
+making it look nice. For the cursor, I'm
+actually going to create a new comp.
+Something like this. Press okay. And I
+have this 3D pointer, which you won't be
+able to see now because it's uh laying
+flat. So, press R for rotation. And I
+downloaded this from Sketchvap. Press S
+for scale. So, we can scale it up. And
+as you can see, we have this nice 3D
+pointer. And we can do whatever we want
+with this. It's it's really that simple.
+If we make it transparent, uh you can
+see it a bit better. And uh we can, for
+example, have it fly in with a P for
+position. And of course, we also want to
+set a key frame for the rotational
+values. Maybe drag this out. Uh let's
+move it towards the camera. Maybe a bit
+lower, maybe a bit rotated, so it will
+fly in. And then, of course, I want it
+to be uh upright. And you can also
+change the anchor point, but I don't
+think that should be needed. If we just
+move it a bit like this. And again uh
+maybe like have it a bit like rotate it
+to make it a bit more more cool. And
+again just select the key frames and
+then maybe ease it a bit so it goes like
+this.
+Very good and very nice. And of course
+we can add some motion blur later on.
+And you can't do that here because it's
+advanced 3D. However, there is a cool
+effect which I will show you in a bit.
+So we have the cursor coming in and then
+maybe we want it to click and we do that
+by hitting a key frame for scale. So,
+press S for scale and then maybe like
+scaling it down and scaling it up again.
+Copy and paste that key frame. So, it's
+like maybe this goes a bit too slow.
+Nice. And again, we can just go back to
+our main comp and add this comp to that.
+And uh what's cool about this now is
+that we can add a CC force motion blur
+over this. And as you can see that we'll
+add some motion blur to it. We of course
+have to align it a bit and things like
+that, but we already have this cool
+animation. Now, to finish it up, I want
+to make it look nice. And that's by
+adding some adjustment layers. So let's
+start with the beginning. I want to for
+example create a new adjustment layer
+and just add like a soft vignette over
+this just to blend things a bit and it
+will already make it look a bit nicer.
+Uh before and after. As you can see it
+will just add a bit of moodiness to it.
+Also here I think that will look really
+nice. Then of course I want to add
+motion blur to everything. So I'm just
+going to select everything and hit the
+motion blur icon. I think it also looks
+cool in this scene. Uh, in this scene,
+maybe I'm going to even add some like
+edge light to it or a CC lens. So, what
+we can do is duplicate this adjustment
+layer here. Hit alt left bracket. So,
+this adjustment layer only starts when
+this scene starts. So, that's around
+here. We remove the vignette. And I'm
+going to add a CC lens to this because I
+think here with the cars coming up,
+having some distortion can actually make
+the scene look way nicer. Let's increase
+the size so we don't see the black
+borders anymore. And then let's go to
+where the cards come in. As you can see,
+it's way too much. Now, uh so what we
+need to do is change the convergence uh
+to maybe something like this, like 16.
+Uh also make sure that this is then
+below the uh vignette, otherwise it will
+also move the vignette with it. And we
+can also make blurred edges. And then
+you get something like this. A huge
+shout out to Milanote for sponsoring
+this video. I love their software. Their
+link is in the description. So do use it
+for all your storyboarding. If you want
+to learn more about this editing style,
+then do join the fullstack editor club.
+A link of that is also in the
+description. Then of course, don't
+forget to subscribe. Thanks for all the
+support and then I'll see you next time.
+Bye-bye.

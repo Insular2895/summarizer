@@ -1,0 +1,1569 @@
+the broadcast is now starting all
+attendees are in listen only
+mode hi good morning welcome to the
+Texas NBA's for Mortgage Bankers
+association's 2023 24 education webinar
+series part of the education and
+endowment committee LED this year by Pam
+Jenkins and Dave T Bob uh my name is
+Chris Hammond um I'll be moderating
+today's webinar guardians of sec
+security navigating cyber risks in the
+mortgage industry uh this this webinar
+should take about an hour uh so feel
+free to ask questions throughout the
+webinar using the chat questions window
+um as always if you have additional
+questions you can email Carol email
+address on the on the slide um today's
+panel includes myself and Lindsay b
+nickel uh Lindsay serves as a vice chair
+of the constangy Cyber team and
+practices in Dallas um Lindsay has
+extensive experience managing responses
+to data privacy and security incidents
+although she's managed hundreds of
+responses to all sizes and types of data
+security incidents um Lindsay has unique
+experience managing incidents subject to
+the health insurance portability and
+accountability act some of us heard that
+Hippa and the health information
+technology for economic and clinical
+Health act Hightech
+uh Lindsay's managed some of the largest
+and most complex healthcare related
+incidents in the world um and she's got
+substantial experience assisting clients
+with the payment card industry data
+security standard for PCI
+DSS uh she's uniquely positioned to
+gauge thirdparty liability having served
+as a trial attorney in healthcare and
+financial regulatory matters for more
+than 15 years before beginning to manage
+responses to data privacy and security
+um in helping clients mitigate the risk
+of that liability she regularly
+facilitates training and workshops on
+data security and Lindsay holds the US
+certified information privacy
+professional for United States law
+credential and is a recognized leader in
+the Cyber risk management industry
+serving on The Advisory board for advis
+and cyber risk insights conferences uh
+she also regularly serves as a featured
+speaker on topics related to cyber
+insurance cyber risk mitigation and data
+privacy regulation again my name is
+Chris tamon I'm in Solutions marketing
+for UST um we focus on identity payments
+and data security so I'm happy to be
+part of this panel today and Lindsay I I
+look forward to hearing your content and
+seeing how we can help the group today
+so I'll I'll go ahead and hand that over
+to you let's get
+started thank you so much Chris I
+appreciate the introduction um and
+welcome everyone to this discussion
+today um we're going to talk a little
+bit about what's going on in the world
+of cyber risk uh the threat landscape
+what the significance of all of this is
+from a legal perspective um as Chris
+mentioned I am a lawyer um I I am
+technology adjacent um so I spend a lot
+of time dealing with folks that have
+techn technical experience and helping
+organizations navigate through incidents
+um we see all types of incidents and I
+want to start today with a little with a
+discussion of the threat landscape um a
+lot of what I do and the incidents that
+I work on feel a little bit like they're
+ripped from the headlines and they kind
+of are um but the reality of them is
+something that every organization needs
+to understand and particularly in the
+mortgage industry because this industry
+deals with so much legally protected and
+sensitive data it's important to be
+aware of what the risks are what the
+ramifications of incidents can be um and
+steps you can take to prepare for those
+incidents and be ready if and when it
+happens to you um I hope it doesn't
+happen to anyone listening but it's
+better to be prepared than not um so
+let's start with the top threats and
+causes of cyber security incidents that
+that are of the type and the degree that
+I end up responding to um the first one
+is ransomware and encryption attacks um
+this is the sexy topic this is the one
+that people ask me about all the time is
+it real and we're going to talk about it
+a little bit more in detail it's very
+real um the second is business email
+compromises these are not as sexy to
+talk about but they're actually the most
+prevalent and the greatest risk and
+frankly for the mortgage industry
+probably the bigger concern for all of
+you so it's important to understand how
+they happen and how they can be
+prevented service provider and vendor
+risk this is something that is growing
+exponentially these are the incidents
+that involve an attack or an incident
+that happens to someone else and it
+impacts your organization either you are
+connected to that vendor or that
+business partner or service provider or
+you're Downstream from them or there's
+Communications that are exchanged and it
+can trigger responsibilities on your
+part um even though it's not an incident
+that involves your network or any of
+your behavior or
+employees um email privacy incident
+these are situations that are just plain
+in vanilla human error um when emails
+are sent to the wrong distribution group
+or to the wrong person and the emails
+include sensitive or protected
+information
+um those are less technological and less
+cyber focused they're more privacy and
+informational focused but that's those
+are those are additional types of
+incidents that I and my team help
+respond to and then the least common but
+often the most controversial are The
+Insider threats um are are you facing a
+situation that is caused by a current or
+former employee have they leaked data
+are they in there specifically to try to
+steal data or information again not as
+common but these are the these are the
+top threat threat threats and causes
+that our team sees over the course of
+the year um I jokingly tell people that
+half of what I do is ransomware the
+second half is business email compromise
+and the third half is everything
+else okay so let's talk a little bit
+more in depth about some of these I want
+to talk about business email compromise
+first this is the single most common
+threat we see on our team um I am part
+of a team of more than 50 lawyers across
+the country that focus our practice on
+responding to incidents for clients and
+on any given week we will see 20 or more
+business email compromises coming
+through to us and we're only seeing a
+fraction of what's actually going on out
+there so what is a business email
+compromise and why is it a risk to you
+and your
+organization these are this is the
+current permutation of those old
+Nigerian print emails that we all used
+to joke about um the Nigerian princes
+are gone this this scheme is now much
+much more
+sophisticated um and much much more
+complex the goal of these thread actor
+groups is to steal credentials to an
+email account so that they can then
+access that email account usually via
+webbased access they then go through
+that account and what they are looking
+for is a financial transaction to get in
+the middle of if they can get in the
+middle of that financial transaction
+they can actually socially engineer to
+convince one or the other of the parties
+to the transaction to actually wire
+money to the bad guys bank account when
+they they usually start with a fishing
+email um often it's spear fishing
+directly to a specific person in your
+organization so whether it's a CFO or an
+HR person or particular or an accounts
+payable person or in the mortgage
+industry someone who's in charge of
+communicating about escrow accounts and
+down payments um they will spear fish or
+send fishing emails wanting that person
+to click on a link if they click on that
+link and put in their email address and
+password or their username and password
+the thread actor then seals that
+information and uses it to access the
+account they go looking for the
+transactions and then either impersonate
+the person whose email account they've
+taken over or spoof a domain um so they
+will then take your domain and create
+one that looks just like it sometimes um
+for example in the place of an L they'll
+use a number one or in the place of the
+letter M they will use an N next to an R
+um so it's difficult for the person when
+they just look at the email address to
+see wait a minute this is not coming
+from the person I thought I was talking
+to um they will also put malicious rules
+into email accounts to hide their
+activity so they'll create a forwarding
+rule that will move all emails involving
+a certain transaction to a folder in the
+email account that someone doesn't
+normally look in or they will actually
+forward emails out of the environment um
+and then what they do is they
+impersonate that person and create
+fraudulent wiring instructions and ask
+for that down payment or that escro
+balance or that invoice to be paid to a
+fraudulent account um these happen all
+the time um and so one of we also see
+them in other permutations like
+redirecting direct deposits or asking
+people to send W2 forms um but for your
+purposes for the folks on this call um
+you can expect that you will be a target
+from someone trying to do this to Simply
+get you to wire money somewhere it
+shouldn't go um a couple of things to be
+aware of of these business email
+compromises the single best thing you
+can do to protect yourself is make sure
+that you have multiactor authentication
+enabled on all email accounts in your
+environment to take that a step further
+um your multiactor authentication should
+use an Authenticator app um a lot of
+folks will use codes coming to cell
+phones or even buttons that push on cell
+phones those are effective but they're
+not as effective as the app because um
+you can actually cause MFA fatigue and
+the bad guys can get hold of credentials
+and then it pushes a bunch of push
+requests to someone and if they do it in
+the middle of the night you often will
+have an employee that just reaches over
+and bangs on their phone to make the
+noise stop and they unknowingly they
+actually just let somebody into their
+account um MFA is not 100% though I will
+tell you that the technology is changing
+and we are seeing thread actor groups
+that will steal tokens and still access
+accounts um however it is still the best
+defense you have against these the
+second best defense is to make sure that
+everyone on your team is trained to
+never wire money in Reliance on wired
+instructions through email unless it has
+been verbally verified with a known
+resource so you don't call the number in
+the email you got you call the number
+that you've known for months and months
+and months
+so that you can ask that person to
+verify that the wiring instructions are
+correct that that verbal verification
+can stop the funds from going out of the
+environment um and that saves you money
+in the long run um I will tell you that
+when this type of money gets when it
+gets wired in response to these types of
+schemes if you discover it quickly
+enough we usually can get in touch with
+the FBI or the US Secret Service and get
+that money back it's very difficult to
+do if we're outside of 48 hours from the
+transaction though and sometimes banks
+will catch it but don't depend on them
+to catch it um this is not something
+that they are set up to do so the best
+defense you have is on your home
+turf just to give you an idea this is a
+statistic from FBI's ic3 internet crime
+report for 2022 the 2023 report isn't
+out yet um but in 2022 there were more
+than $10.3 billion in losses the vast
+majority of those losses were associated
+with business email compromises like
+we've been discussing so it's a big
+industry on the criminal side and it's a
+source of big losses for
+businesses let's switch the ransomware
+attacks though this is the sexy topic um
+ransomware attacks are what I get asked
+the most questions about and the most
+common question I get asked about them
+is are ransomware attacks real the
+answer to that question is yes they are
+very real and they happen every day um
+on any given day there are anywhere
+between 80 and 100 ransomware thread
+actor groups operating around the globe
+those ransomware thread actor groups
+have a couple of goals in mind um their
+primary goal is monetization of their
+criminal Enterprise and they do it a
+couple of different ways they start by
+gaining access to your environment and
+doing reconnaissance um sometimes
+they're in there for several days or
+several weeks other times they move in
+really quickly and kind of Smash and
+grab but their goal is to first
+typically find data in your environment
+that they can steal because they're
+going to use that as part of their
+extortion effort most ransomware thread
+actor groups these days do a double
+extortion model where they steal data
+from your system so they can hold it for
+ransom and they threaten to publish it
+on the dark web if you don't pay to
+suppress it and then secondarily they go
+into your system and they push
+encryption malware that encrypts files
+Andor operating systems across servers
+and workstations in the environment they
+paralyze you so that you cannot work and
+that you cannot g generate revenue and
+then they demand a ransom in exchange
+for the decryption key and in exchange
+for suppressing the publication of data
+that is the double extortion model that
+we see most commonly there are a few
+thread actor groups that do one or the
+other some of them just encrypt and they
+don't steal data those are rare but
+they're they still exist and some of
+them only steal data but they don't
+encrypt um a good example of that if any
+of you were tuned in last summer to the
+move it issue uh move it was a data
+transfer platform that had a
+vulnerability that was exploited by the
+thread actor group Klo um Klo actually
+just stole data from literally thousands
+of organizations by exploiting that
+vulnerability they never encrypted
+anybody um so that's an that's a
+possibility and and exfiltration only as
+one model but the most common is both
+exfiltration and encryption in exchange
+for a ransom so that can recover your
+environment and prevent them from
+publicizing that you've been hit these
+types of these types of thread actor
+groups and like I said there's 80 to 100
+of them um we have big dogs we have
+small dogs um we have all sorts of
+different levels of
+sophistication um but
+realistically um they are it's a
+business model and it's a full-scale
+business model so we see um
+sophisticated Communications we
+sometimes we have a couple of these guys
+that actually have customer service
+departments sounds insane but it's true
+um that if you buy a key and it doesn't
+work right and you reach back out and
+ask for help they'll put you in touch
+with their customer service department
+to assist you um realistically they're
+they're designed to generate Revenue um
+we do see fishing emails used to drop
+malware malware in environments as um a
+Threat Vector we also see um
+exploitation of VPN connections
+particular VPN connections that do not
+have multiactor authentication on them
+um and we also see um exploitation of
+vulnerabilities um right now the world
+is dealing with a vulnerability that was
+found in the connectwise product screen
+connect and we've seen a number of
+thread actor groups exploit that
+vulnerability to get into systems and
+drop
+ransomware um we see ransomware attacks
+every day um I actually had one come in
+this morning about 5:30 A.M
+um and we're dealing now with the
+ramifications of that the client is
+working on verifying their backups I do
+want to talk a little bit because this
+is also a question I get should we pay a
+ransom and how often are ransoms paid um
+there's lots of different statistics out
+there on how frequently ransoms are paid
+from my perspective with my clients um
+about four or five years ago I would
+tell you that 60 to 65% of my clients
+actually paid Ransom that number is
+going down mainly because there's better
+preparedness stronger backup solution so
+there's less of a need to pay a ransom I
+will tell you though that it is in my
+playbook to have all of my clients
+communicate with threat actors it is a
+very very lowrisk operation with high
+reward so what do I mean when I say
+communicate with thread actors I don't
+mean that I want my clients to go out
+and start emailing the bad guys we
+actually have a number of vendors in our
+space that are professional negotiators
+and so when an incident happens and we
+are brought on board and we bring in a
+team of forensic investigators and
+ransomware Specialists that comes with a
+negotiator who is experienced with
+communicating with threat actors getting
+information about the incident um
+finding out what the ransom demand is
+Ransom ransoms are usually not
+communicated in the actual note anymore
+um they used to be um but now the note
+asks for you to reach out and so we will
+I recommend to my clients that we do
+those reach outs that we find out how
+much the ransom demand is and that we
+get as much information from the thread
+actor as we can um the thread
+actors will share information about data
+they say they have stolen they will
+provide us Proof of Life on the
+decryption process and they will show us
+that the key that they're offering to
+sell us actually works and we can get a
+lot of information from them the threat
+that the threat actors make to actually
+publish data on the dark web is a very
+real threat um when they threaten to
+publish they're not threatening to put
+it on Google and most of the time
+they're not going to put out a press
+release that's going to picked up get
+picked up by mainstream media every once
+in a while you see that and some of you
+may have recently seen black cat the
+thread actor group that actually
+reported one of their victims to the SEC
+um that was unprecedented and I do know
+from a very reliable source a friend of
+mine in a very low place that that guy
+got in trouble for doing that um the the
+affiliate owner black cat was not happy
+with that most of the time what they do
+is they publish data to a dark web
+shaming site um that may or may not get
+seen in a very public way but it is a
+place where there's no control so if
+data is published there we don't have an
+ability to go take it down or remove it
+um so when we do these communications
+we're looking for information about what
+did you steal how much did you steal um
+are you threatening to publish and then
+we're looking for what that actual
+dollar amount is what negotiation
+ballpark are we
+in determining whether we need to pay a
+ransom is a pure is a pure cost benefit
+analysis but it isn't a simple one so we
+start with the question of do you have
+valid backups for Recovery if you have
+valid backups that's usually where we
+prefer to go no one wakes up in the
+morning and says huh I think maybe I'll
+pay a ransom in Bitcoin to a criminal
+threat actor group today no one wants to
+do that that's never the first choice so
+we're going to want to know do we have
+backups to enable us to recover do we
+have other systems to a to enable us to
+recover sometimes the answer to that is
+no and if the answer is no then we need
+to look at what is the price tag for
+this key it is not illegal in the United
+States to pay a ransom there are however
+legal and compliance hurdles that you
+have to jump over the first one is you
+must report the incident to law
+enforcement typically the FBI before you
+pay a ransom you are not required to
+report ransomware to the FBI I usually
+recommend that my clients do so at some
+point um but but and this is something
+to know the FBI divides their cyber
+cyber crime task force
+into groups based on ransomware variant
+so I find it best to wait to report to
+the FBI until you know for certain who
+your threat actor is who is it that
+actually hit you that gets you to the
+right Department in the FBI um once you
+report they will usually reach out and
+ask for us to share evidence with them
+as part of their investigation very
+rarely can the FBI save the day if they
+can if they are in possession of a
+decryption key or some other resource
+our team will usually know about it
+because we are in constant communication
+with the FBI so it becomes more of a
+Cooperative effort for investigation and
+a and a compliance threshold before a
+ransom is paid if it's something that
+your organization needs to do the other
+thing we have to make sure is true is
+that we're not paying a thread actor
+group that is on the US Department of
+the treasury sanctions list so the US
+Department of the Treasury Office of
+foreign assets control or ofac um puts
+out a list that they update regularly
+that identifies various thread actor
+groups um malware other types of threats
+that have been identified as nation
+state actors or
+terrorists if our threat actor group is
+on that list we are not allowed to pay
+by law that is the only time that is it
+is illegal so we have to document that
+our threat actor is not on that list our
+forensics teams are skilled at doing
+that and they generate written reports
+that you'll be able to maintain I will
+be able to maintain and that we can
+provide to your insurance carrier to
+verify
+that your threat the threat actor group
+cleared ofac um people always ask me
+well How likely is that to happen are we
+going to be in a situation where we need
+to pay a ransom and we can't because
+it's illegal um I've been responding to
+ransomware attacks for more than 10
+years now and I have only had three
+situations come up where we could not
+pay the thread actor it's rare um but it
+does happen and it is a compliance step
+that we have to make sure we clear once
+we clear that um the vendors that we use
+have access to bitcoin wallet IDs and
+they're able to get the cryptocurrency
+that's necessary to make the payments
+and then they assist with bringing back
+the decryption key testing it make sure
+it works and decrypting an environment
+it's a lot to talk about um but
+realistically it's a question I get
+asked a lot um who pays should we pay um
+also a common question I get is well
+I've heard that if we pay a ransom we're
+more likely to get hit by another
+ransomware
+attack and my answer to that is you're
+no more likely to hit get hit than
+anybody else is likely to get hit
+because anyone is a target for
+ransomware all the time um I have not
+found that it increases the likelihood
+that you'll have a separate second
+attack and in fact um once you do a
+forensic investigation into a ransomware
+attack if you find if and when you find
+the vector of Entry you can secure your
+environment even better so you're at
+less risk than you were before um I can
+talk about paying Ransom all day but we
+have a lot of things to cover I just
+like to cover this topic because I get a
+lot of questions about it and I want to
+make sure that anyone that is
+considering their potential risk
+understands that there are options
+available there's assistance available
+and if your business is shut down
+because of ransomware it doesn't have to
+mean the end of your business and there
+are a lot of things that we can do in
+our protocols to assist you with
+recovering um and getting the assistance
+that you
+need okay sowh am I a lawyer talking
+about this I get that question a lot too
+like why do I need a lawyer if I have a
+ransomware attack and why do I need a
+lawyer if I'm dealing with Cy cyber
+security incidents that's because there
+are legal ramifications of those
+incidents so in addition to dealing with
+what a Cyber attack may do to your
+environment and due to your operations
+there's also a legal landscape that
+comes into play and with business email
+compromise and with ransomware we often
+are dealing with an incident that
+involves the access to or the theft of
+data from your environment and that's
+where we end up having to do a legal
+analysis what is the impact to data this
+involves the various State data breach
+notification statutes as well as federal
+laws that protect information like Hippa
+the GBA furpa as well as International
+laws um the gdpr the global data
+protection regulation out of the EU pipa
+is out of Canada
+um almost or most of the other nations
+in the world have some sort of data
+protection scheme that may impose legal
+responsibilities on an organization
+that's hit by a Cyber attack or Data
+Theft through an incident like this so
+if we start on us soil we're dealing
+with the data breach notification
+statute all 50 states plus the US
+territories have passed statutes that
+require organizations to notify
+individuals in the event their protected
+personal identifi personal personal
+identifiable information is compromised
+by an incident um
+what's Difficult about this is these
+statutes are a little bit alike and a
+whole lot different all at the same time
+um we do not have a Fed Federal data
+breach notification statute so when we
+look at an incident we're dealing with a
+myriad of state laws all of which could
+impact an incident that we're responding
+to the determination of the application
+of the law is based on the residence of
+the individual who is impacted so it's
+the consumer's residence not the
+location of your business so even if you
+operate in Texas and most of your
+customers or clients are or were in
+Texas when you provided services to them
+at the time of an incident they may have
+scattered all across the US and so if
+they no longer live in Texas and they
+live in another State we have to
+consider what consumer protection they
+have in that
+state so these laws have slightly
+different Frameworks um there's timing
+requirements when do you have to notify
+um most of the states require as as soon
+as reasonably practical or in the most
+expedient time possible but there are
+states that have deadlines like 30 days
+45 days 60 days um the state statutes
+have content requirements for their
+letters so if you've ever gotten a data
+breach notification statute and it has
+all that language about for residents of
+Maryland for residents of New York for
+residents of New Mexico those are the
+statutory requirements for notification
+letters coming out of the statute um and
+then the majority of the state data
+breach notification statutes also
+require notifications to Regulators in
+most situations a state attorney general
+um and those requirements also have
+thresholds so I believe the last time I
+counted it was 39 States had some sort
+of regulatory requirement and some of
+those require you to notify a regulator
+even if you only notify one residence of
+that state so for example Indiana or
+Connecticut or New York if you notify
+one person who lives in one of those
+states you have to also notify that
+State's regulator there are other
+regulatory schemes that have population
+thresholds um so Florida is 500 um
+Hawaii is a th000 Texas is
+250 um and under the Texas data breach
+notification statute you are required to
+notify the Texas Attorney General within
+30 days of an incident you're required
+to notify the residents of Texas within
+60 days those things don't match I
+suspect at some point they're going to
+fix it and make them match but right now
+they don't um so you have to know if
+you're going to notify more than 250
+Texas residents you have to actually
+notify the Texas Attorney General the
+Texas Attorney General ener has a portal
+that you do that on and so you submit
+everything online and then they shoot
+you an email and say thank you very much
+um what is kind of interesting about
+this also is that there's a regulatory
+investigative framework that goes with
+it so the AGS of each of the states have
+the authority to investigate compliance
+with data breach notification statutes
+and the circumstances underlying an
+incident not all of the states are Super
+Active um but Indiana Washington Florida
+Connecticut New York um Utah is getting
+more active Colorado um those States
+will often send data requests for
+information about the incident um and
+ask you to respond to questions another
+good reason it's nice to have a lawyer
+in response to an incident because we
+can help you with those um they can
+issue fines and penalties um those
+aren't incredibly common but they are
+possible and the states can that can
+come together into groups and committees
+and coalitions and they can investigate
+and enforce under the data breach
+notification statutes on a multi-state
+basis that's not fun most of the time
+but it happens every once in a while one
+of the other interesting differences
+under these statutory schemes is what is
+the definition of protected information
+um so generally speaking all of the
+statutes are going to protect a first
+named and last name or a first initial
+and last name in combination with a
+social security number driver's license
+number or financial account with means
+to access so take a credit card number
+it would be a credit card number plus
+the um expiration date and the CVV code
+that's on the back um but there are
+other bits of data that are protected in
+varying degrees by the state um some of
+the states protect medical or health
+insurance information some of them
+protect biometric information like
+retinal scans or voice prints um the
+most common thing we're seeing in the
+expansion of the definition is a
+username in combination with password or
+security question or an email address in
+combination with password or security
+question um I think 19 or 20 states
+includ that include that in their
+definition now um we also see other
+things like Mother's made name or um you
+know diff or electronic signature that
+one pops up every once in a while um one
+thing that's worth noting dat of birth
+is actually not protected in Most states
+it is part of the definition of personal
+information in Washington state and in
+North Dakota otherwise a name in
+combination with date of birth generally
+is not enough to trigger a notification
+obligation in most situations that's the
+most common misconception that people
+have so I like to point that out so that
+you can ratchet down the Panic a little
+bit if date of birth dates of birth are
+impacted but if this type of information
+is impacted that's going to trigger that
+notification obligation and it's also
+going to trigger that obligation to
+report information to a
+regulator then we also have some federal
+data protection laws but none of our
+federal data protection laws are
+actually Global in scope so like I said
+we don't have one single data breach
+notification statute on the federal
+level but we do have some industry
+specific things like the gram leech
+blyly act the Securities and Security
+and Exchange Commission has reporting
+requirements um FTC probably the one
+most of you are most familiar with is
+going to be Hippa the health insurance
+portability and accountability act um
+that is going to be the regulatory
+scheme that protects medical treatment
+information and health insurance
+information on a federal level and then
+the Fair Credit Reporting that it's
+important to understand that each of
+these Federal schemes while they may
+impact data protection responsibilities
+and responsive responsibilities they do
+not preempt the state statute so if
+you're doing a notification that
+triggers the triggers a federal statute
+you're also having to comply with State
+statutes at the same time and so that's
+part of what makes it complicated and
+part of why it's helpful to have a
+lawyer along who is
+experienced then we also have industry
+regulatory schemes the PCI DSS the
+payment card industry data security
+standards uh f finra is another example
+these are not actually laws or
+regulations they are industry governed
+schemes that have certain reporting
+requirements as well and those are going
+to be reporting requirements that are
+going to tie to particularly your
+licensing or maybe your access to
+information um other industry
+requirements and this is worth
+considering in this space is um actually
+I think Jenny may just within the last
+week put out their reporting
+requirements that that they now expect
+cyber security incidents to be reported
+within 48 Hours um there are also
+requirements to report to Fanny May
+Freddy Mack the VA FHA um most of those
+are going to be a combination of
+reporting a cyber security incident and
+or reporting a data breach those
+triggers are very different so it's
+important to understand what your
+obligations are so that at the front end
+of the incident you know who you need to
+report to and what you need to tell them
+when we if we use ransomware as an
+example when we have a ransomware attack
+occur we know we have a cyber security
+incident we may not know if we have a
+data breach for several days or several
+weeks um so understanding the
+distinction between reporting a cyber
+security incident and reporting a data
+breach can be really significant for
+your timing I will tell you most of the
+time on the industry side of things um
+the industry reporting is a fairly
+collaborative situation it's not
+punitive um it can impact access to
+information and access to systems but
+generally speaking the idea is we call
+them computer viruses for a reason they
+want to know about it to make sure they
+don't catch what you have um and so if
+we communicate it we can share
+indicators of compromise and cyber
+security concerns about a particular
+incident and expand protections um but
+it's important to be aware of what those
+requirements are and what information
+you're going to have to give those
+agencies Andor those
+organizations and then the final thing I
+want to mention on this on this slide is
+contractual notification requirements
+and this is something that we're going
+to continue to see increase and expand
+um a lot of contracts now that
+organizations enter into with vendors or
+business partners are including data
+data breach notification Provisions or
+cyber security incident notification
+Provisions that we are going to ask you
+to notify us within a specified time
+period if you have a ransomware attack
+or if you have a cyber security incident
+or if there is a data breach that
+involves our data um and so it's
+important to assess those before you
+have an incident because it's really
+difficult to know what your contractual
+requirements are when your contracts
+have all been encrypted by a thread
+actor group so doing an audit and an
+analysis of what your contracts require
+can help you in response to an incident
+know who do I have immediate reporting
+requirements to and what are the
+triggers am I required to report because
+I've had this incident or am I required
+to report only if I discover it's a
+breach that impacts their data knowing
+those distinctions can help control the
+communication idea once an incident has
+happened and has been discussed
+the financial implications of cyber
+security incidents and data security
+incident are are a little bit of a
+captain and obvious topic but I like to
+bring it up and talk about it so
+everybody knows what it can this the
+span of it um it starts with the first
+party cost and that's plain in vanilla
+how are we going to deal with our data
+loss how are we going to deal with
+damage to our software damage to our
+Hardware um the costs to pay a ransom if
+we need to the costs to pay for a
+forensic investigation for the legal
+expenses associated with it um
+restoration and Recovery experts we have
+those too folks that can boots on the
+ground that can come in and help you
+rebuild your machines those are the
+first- party costs that are covered
+largely by cyber insurance
+policies if you don't have cyber
+insurance I highly recommend that you
+look into it it's a very very helpful
+product to have it is designed to
+provide you immediate assistance on the
+first party side of things um not just
+financially but also bringing you
+resources so um prev vetted forensics
+vendors um negotiation vendors
+restoration vendors legal and
+notification assistant all of that is
+available through a cyber policy the
+third party costs are also becoming an
+increasingly dramatic risk um so there's
+issues about privacy liability um but
+what's becoming most common now is that
+data breach class actions so in the
+event there is a data breach that
+requires a large scale notification and
+by large scale um I would say probably
+10,000 people or more is kind of our
+trigger right now every once in a while
+we'll see someone come in and do a class
+action under 10,000 um but if you notify
+say 10,000 people or more you can
+probably expect that there will be class
+action litigation as a result and so
+having having the ability to risk
+transfer for that potential cost is
+really valuable um most cyber insurance
+policies offer and will include a third-
+party component to cover those costs um
+there may be other policies in your
+insurance Suite that would cover that as
+well but that's becoming an increasingly
+pre prevalent risk there's also the
+potential regulatory actions that I
+referenced earlier um not just the
+investigation into but potentially the
+fines or penalties um so that's a third
+party cost Associated as well the
+remediation costs for restoring your
+environment
+um sometimes you have to buy new
+equipment sometimes you need to spend
+time wiping and erasing hard drives and
+rebuilding them um other times what you
+find in vulnerabilities means that
+you're replacing all sorts of software
+or products in your environment um if
+there's a notification typically if
+Social Security mbers are involved as
+Council we're going to recommend that
+you provide credit monitoring in some
+jurisdictions it's also required by law
+V and Remediation costs I will tell I'm
+going to put a pin in this for you um
+don't go Google LifeLock um LifeLock is
+a fine product but it's a very expensive
+product so if you're going to need to
+notify people we have vendors that
+provide high quality credit monitoring
+and identity protection services at a
+much more affordable cost but it is a
+cost and then the potential for fines or
+penalties like I said it's very rare um
+I've been in this space and doing this
+type of work for more than 10 years I
+have only had two clients that were
+issued by penalties um and I've
+literally had thousands of incidents
+that I've navigated um so it is rare but
+it is a risk and one of the ways to
+minimize your risk of a finer penalty is
+to have good help helping you through
+those regulatory investigations and
+Advising you on how to respond and how
+to approach
+it okay so let's talk just a little bit
+about the anatomy of an incident I think
+it's helpful to walk away from a session
+like this with a road map for what do I
+do if that happens to me um I have had a
+lot of clients that when I eventually
+meet them were incident responding by
+Google and that's not the best way to do
+it um Google has a lot of resources but
+it's not necessarily going to hand you
+the best lawyer or the best forensic
+investigator nor is it really going to
+tell you where you should focus your
+energy first when you find that
+something like this has happened to your
+organization so let's walk through that
+road map just a little bit we're we're
+going to start with the anatomy of a
+data breach starts with an initial
+intrusion and um just because it's the
+sexy topic I usually use ransomware as
+the framework for these discussions um
+business email compromise is a little
+different but the road map is largely
+similar for what actions organizations
+should take the initial intrusion
+usually happens sometime before you
+discover it um because if you discover
+it when it happens usually you can
+thwart it and prevent it which is a
+great thing and I hope that everyone has
+the ability to do that but when that
+hasn't happened what we find is someone
+has gotten gotten into the system
+somehow some way they're looking around
+they're looking for data they're trying
+to find your backups so that they can
+delete them they're trying to find
+sometimes they actually go looking for
+insurance policies or your financial
+statements so when they demand a ransom
+from you they know exactly what you can
+afford and when you say oh I can't
+afford that they say yes you can we know
+how much is in your bank account um so
+that's going to happen in the background
+and then ultimately at some point
+and if we use ransomware as an example
+there's going to be something that
+happens that enables you to detect that
+there's a problem with encryption it's
+going to be the inability to access
+devices or files um and sometimes
+finding the actual Ransom note on your
+system so when that happens what do you
+do um the first thing I would tell you
+is have your it Department unplug your
+network don't turn off your devices
+that's going to sound counterintuitive
+but leave your servers on leave your
+computers on because there's evidence
+there that we're going to want to gather
+but disconnect from the internet and
+disconnect the devices from your network
+so that the propagation stops and then
+file your insurance claim um but there's
+some things you can do simultaneously so
+when we talk about an incident we
+necessarily talk about it in a linear
+way but realistically it's jazz hands
+lots of things happening at the same
+time so you're going to want someone in
+your organization getting this reported
+to your broker or your insurance care
+barer but also getting in contact with
+your outside legal counsel um and our
+team um we actually run a hotline we
+have a 247 telephone number that is
+answered Around the Clock we also have
+an email address that takes you straight
+to an on call team of lawyers that know
+what to do in response to an incident um
+we're going to go through our process of
+clearing conflicts and making sure your
+insurance company is on notice of the
+claim and standing up information
+standing up the resources um if you have
+cyber Insurance your cyber insurance
+policy will bring you lawyers and they
+will also bring you a forensics team if
+you don't have cyber insurance I have 10
+forensic teams that I work with on a
+regular basis any one of which I can get
+on the phone at a moment's notice like I
+said I had one this morning um we had
+forensics on the phone before 7 am in
+that situation we're then going to walk
+through your incident with you what
+happened when did it happen what have
+you done in response what is the
+timeline and we are going to scope a
+forensic investigation and get that that
+deployed almost immediately we're also
+going to set up our engagement documents
+with that forensic vendor under a trip
+party agreement so that we can protect
+the attorney client privilege um when
+you are investigating an incident you
+want to be able to control what you
+communicate to whom and when and having
+your lawyer involved at the outset means
+we can attach as much privilege to that
+process as possible so if we end up in a
+worst case scenario where we do a large
+notification and there's litigation
+involved you've protected as much as you
+can and you're in control of what you
+tell people when and so getting that put
+together gets us in a situation where
+you've got forensics experts negotiation
+experts restoration experts all on
+standby ready to deploy you've got legal
+overseeing the operation and all of that
+is communicating and coordinating with
+your internal it folks or your external
+it vendors um depending on how your
+system is set up the next thing we're
+going to do is the forensic
+investigation we're going to figure out
+what happened when and how so that we
+can close the doors seal up your
+perimeter make sure that you're in a
+better situation and understand the
+scope and depth and breadth of what has
+occurred we'll analyze your legal
+notification obligations if any there
+are ransomware attacks that occur on a
+regular basis that don't have
+notification obligation at least to
+individuals maybe they do to business
+partners or companies or Regulators but
+not all of them impact data or some of
+them impact data but it's not sensitive
+um my favorite example of that is a
+client of mine from I guess probably
+about a year half year and a half ago um
+they were in the real estate industry
+and all of the data stolen by the thread
+actor was photographs that were already
+on
+MLS okay um so they're already public
+there's nothing there we need to notify
+anybody about um but sometimes they do
+get your employee data and employee
+Social Security numbers or customer
+sensitive information and so in that
+situation we'll assess those obligations
+and then go through the consumer
+notification process that process is
+something that my team is very
+experienced in handling we have vendors
+that can assist with the process we
+stand that up get the letters out the
+door and monitor Communications on the
+back end we also assess regulatory
+notification and get The Regulators
+notified as required by law and handle
+the monitoring of that um we're also
+going to assess the business
+Interruption component if the if the
+attack that you have suffered has shut
+your business down um your cyber
+insurance policy may have business
+Interruption coverage or loss income
+coverage and that's going to be
+something that we can assist with
+putting together the documentation and
+making sure that that gets reported to
+your carrier so that you can get that
+recovery from your policy and then we're
+going to monitor for third party
+litigation um we hope it doesn't happen
+but it is an increasing reality and our
+litigation team is available to consult
+early in the process um but knowing that
+it's coming is something that everybody
+needs to be aware of so that so that as
+you navigate the process you're
+considering the risk management
+components and then that brings us to
+the end of the claim um and so that's
+the situation where we take a look at
+what is our postmortem what did we learn
+from this um what did we find out about
+our environment and how can we change it
+and improve it are there different
+software products are there different
+vendors that we need to bring in play
+and what what can we do from our
+incident response preparedness
+standpoint I do recommend that all of my
+clients have an incident response plan
+that incident response plan doesn't have
+to be incredibly complicated but it
+should map out who are the key
+stakeholders in your organization who
+needs to be involved in communication
+about an incident when it happens do you
+have a board of directors do to report
+to who are the decision makers if a
+ransom payment needs to be made I also
+recommend that that incident response
+process include an assessment of your
+cyber insurance policy if you have one
+um now is the time to go through that
+policy and figure out what it offers for
+you who are the approved vendors um and
+most of the time and I do this a lot if
+I'm An approved vendor under your policy
+and you want to meet and get to know me
+before an incident reach out we'll set
+up a call we'll do an introduction um we
+can also talk through who are the best
+forensic vendors who do I recommend for
+what why do I think one is better than
+another for another for a certain
+situation so that you've got all of that
+lined up and you're not scrambling Ling
+to figure out who you're supposed to
+call because you already know um talk to
+your broker also about whether or not
+your cyber insurance policy offers any
+benefits to you some policies come with
+add-on um with value ads like assistance
+with assistance with incident response
+planning or assistance with contract
+review sometimes they'll even offer
+complimentary tabletop exercises to walk
+you through an incident with your own
+Personnel um doing all of that before an
+incident happens can be can prepare you
+and and a takeaway that I think is
+really really critical about discussing
+this type of situation is knowing that
+just because an incident happens doesn't
+mean that your it Department did
+something wrong or that there's
+something wrong with your structure
+these criminals are extremely
+sophisticated and they spend a lot of
+time trying to break through our
+defenses we also have a lot of incidents
+every year that are the result of zero
+day vulnerabilities vulnerabilities that
+nobody knew existed until they were
+discovered by the bad guys um or someone
+else's um mistake caused an in an issue
+in your environment even when that
+happens you're still the one that has to
+respond to it if your environment is
+shut down and you're still the one that
+has to respond to it if you have data
+that's impacted that triggers
+notification obligations um so it it can
+be a very complex situation and the more
+you understand about the landscape and
+the more you do to prepare for it in
+advance the better off you will be if
+and when the incident happens to
+you and so we've left some room for
+questions actually kind of nailed it I
+left two
+minutes thanks thanks Lindsay this is
+great content to to absorb here and we
+we do have a a couple of questions I can
+I can throw out here for you you Lindsay
+you touched on um incident response
+planning a little bit can could you uh
+elaborate a little bit around maybe what
+some of those key elements are and how
+often should those those plans be
+reviewed and updated to to stay
+effective really good question so
+incident response planning um is the
+process of actually walking through for
+your organization identifying who the
+people are that need to be part of an
+incident response what information data
+and systems are most critical um and and
+what are the communication channels
+going to look like um most of the time
+it involves identifying an incident
+Response Team um and assigning someone
+to be the team lead and usually it also
+acknowledges that there are different
+levels of incidents so there may be low
+medium and high incidents and based on
+the level you'll deploy different people
+and different resources um it also
+reminds everyone to create outof band
+communication channel so that if your
+network is down you know how to get hold
+of one another and you know which
+departments need to be involved quality
+incident response planning results in a
+written incident response plan um which
+you should keep on your network but also
+make sure you print a copy and have it
+off of your network because if you're
+locked up and you can't find your
+incident response plan it's not very
+helpful to you um and I think in
+incident response plans should be
+reviewed they should at least be
+reviewed on a yearly basis they don't
+necessarily need to be overhauled every
+year but particularly when you consider
+that there can be regular Personnel
+changes you want to make sure that the
+right people are referenced and the
+right contact information is in there
+and also that you're updating to reflect
+any changes that might have been made in
+your insurance Suite as far as who your
+carrier is who your broker is who those
+critical contacts are and then we also
+recommend that once you do have an
+incident response plan developed and and
+actually our compliance advisory team um
+helps clients with incident response
+planning either starting from scratch or
+even reviewing and Advising on existing
+plans we also recommend that you do
+tabletop exercises practice that plan go
+through a rehearsal with it um there's
+never going to be a perfect incident
+response Plan and there's always going
+to be circumstances that come up that
+you can't anticipate so if you do those
+tabletop exercises and rehearse those
+plans you may find action items that you
+need to take away or you may find
+situations where there need to be
+revisions and changes made the biggest
+thing is to have at least a PL a place
+to start on that incident response plan
+and know who your key stakeholders are
+and who your key decision makers
+are that's great thanks Lindsay yeah
+it's a lot to process and it sounds like
+preparation is is really key to to get
+in front of some of these these
+incidents for sure and um we we did have
+we do have a couple of others here
+there's one uh on the topic of remote
+work um with the increasing emphasis on
+remote work what what specific measures
+can we take to ensure the security of
+sensitive data uh accessed and and
+transmitted uh by employees working from
+working from various
+locations right so rem remote work did
+did present a lot of risks particularly
+when we had to all pivot and move to it
+really quickly but it also can be really
+effective so a couple of things from a
+technical standpoint um if you're using
+a VPN into your network and your EnV
+enironment make sure your VPN has
+multiactor authentication on it um that
+will close a large vulnerability um also
+if you're dealing with remote workers
+assess what your bring your own device
+policy and practice is are you issuing
+devices to your employees so that your
+it Department can control um the
+administrative credentials to those
+devices or are you letting employees
+bring their own if employees are
+bringing their own device devices we
+recommend the very strong bring your own
+device policy so it is clear what they
+are allowed and not allowed to do um and
+particularly to consider what software
+Solutions you may want available on
+bring your on devices that your
+employees bring into the environment so
+that you can monitor and track and
+potentially wipe those devices if
+they're lost um and then from the
+transmission standpoint um depending on
+how you set up your network if if your
+employees are vpnn into a network and
+they're actually accessing your own
+servers then if your VPN is secure and
+your data is secure on your network
+that's going to be your best protection
+if you're transferring data back and
+forth um there are a number of secure
+transfer Solutions um now there's been
+some vulnerabilities with them lately so
+that's always a risk there's always
+chance that the criminal is going to
+find the back door into some product we
+all thought was really secure um but you
+want to make sure that you're not using
+e email as the default for for
+transferring data back and forth or if
+you are going to use email that you have
+an encrypted secure email solution for
+the transmission of data that is
+sensitive um we also recommend that you
+have policies in procedures in place to
+not have your employees store sensitive
+data on their
+desktops um one of the problems with
+cyber security is that cyber security
+fights with productivity constantly and
+that battle is something that we all
+have to deal with and so you're going to
+have employees that wiggle around your
+security protocols because they want
+their productivity to improve but if you
+have
+um if you have good Sol Security
+Solutions for your access points into
+your network and then secure solutions
+for the way data is transmitted you're
+going a long way to protecting
+yourself okay great that no that's
+that's helpful thanks Lindsay and um
+yeah we it looks like we have one more
+here um around the topic let's see how
+how can we effectively balance the need
+for robust cyber security measures with
+maintaining a seamless and userfriendly
+experience for for clients and and
+employees that that right there is the
+toughest challenge um so there's a
+couple of things I can recommend there
+and one of them is may seem like a
+little bit of an unusual answer but I
+think it goes a long way um Embrace a
+culture of communication regarding cyber
+security so 100% it is 100% possible to
+lock down all of your data but if you
+lock it down you can't use it so you
+have to balance that so creating
+protocols that that are clear and
+spelled out and giving your your team
+members the tools to do things securely
+so whether it's a secure file transfer
+an encrypted email platform um an
+encrypted storage place um giving them
+the access to that and then encouraging
+them to use it and also encouraging your
+staff to communicate when something has
+gone wrong um by doing that you're
+stressing the importance of protecting
+data and the importance of cyber
+security and you're also making sure
+that they communicate to you what you
+don't want is a situation where someone
+is afraid oh wait a minute I just
+clicked on a fishing email and gave up
+my credentials I'm gonna get in trouble
+and I'm gonna hide it you instead want
+the conversation and the culture to be
+constant so if someone clicks because
+we're all human and it can happen even
+to the smartest person their response is
+going to be I have to tell someone now
+so that this can get fixed that's the
+culture you want if you Embrace that
+culture that cyber security and data
+security belongs to everyone in the
+organization and if you acknowledge that
+sometimes the measures affect
+productivity realistically you're going
+to en you're going to empower your
+employees to be responsible for it in a
+way that hopefully they will Embrace um
+but it is a cost benefit analysis and it
+is a risk assessment that every
+organization has to do um and it also is
+a budget concern um you can spend a lot
+of money on cyber security and maybe you
+picked the wrong choices and your
+vulnerability is something that you
+chose not to protect from because you
+risk assessed it every organization has
+to assess what is our greatest fear how
+do we prevent it and what is our
+priority um and I've already harped on
+this a couple of times if I'm going to
+give any advice about what are the
+things that you can do to protect
+yourself it's going to be MFA on every
+every single application you have the
+option to put MFA on email VPN access to
+vendor platforms cloud-based Solutions
+if you can have MFA do MFA um a lot of
+people think it's hard but most of the
+time you can also um set parameters so
+that you're not required to use the
+tokens um if it's a known device and so
+that way you're protecting from access
+from somewhere else that's that's a big
+piece
+the other thing is going to be deploying
+a um a managed detection and response um
+program or an endpoint detection and
+response program EDR MDR um and if you
+have the capability to have that
+monitored by a security operations
+center um because those products are
+going to recognize malicious behaviors
+um your antivirus is going to recognize
+known viruses the EDR and MDR Solutions
+are going to recognize unusual behavior
+in environment that might be indicative
+of someone that's not your employee um
+so if that's in your budget uh Sentinel
+one crowd strike carbon black those
+types of products that's going to go a
+long way to protect you as
+well that's that's helpful and I like
+what you said around cyber security
+being everyone's responsibility I I
+think that that's really key but this is
+this has been great Lindsay I really
+appreciate you taking time to share your
+expertise and guidance around this
+timely topic I know it's it's on
+everyone's mind um I I guess what we
+could do I'd just like to thank you
+Lindsay uh for your time and sharing
+knowledge with everybody here today and
+i' I'd also like to thank the attendees
+uh on the call today for joining us the
+Texas NBA continues to work on bringing
+great topics like this to to webinars to
+the membership and I would encourage
+folks on the call to to check out the
+homepage at at Texas mba.org um for for
+the upcoming schedule and and watch for
+those emails from from tmba reminding
+you to register so again Lindsay thanks
+for for participating today and Texas
+MBA thank you for the opportunity here
+it's it's great content I appreciate
+everybody's time and uh with that U hope
+everyone has a great day thanks
+again thanks
+everyone take care

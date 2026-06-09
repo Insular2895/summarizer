@@ -1,0 +1,2929 @@
+Welcome to this
+DevSecOps Crash course.
+After an extremely successful
+launch of our
+complete DevSecOps bootcamp,
+which so many of you
+were interested
+in and so many companies
+are already using
+to upskill their engineers.
+After seeing this immense
+interest in this topic,
+I wanted to create a DevSecOps
+crash course for those who want
+to get an idea of what that is,
+to get a basic understanding
+of DevSecOps concepts,
+DevSecOps tools,
+and get their very first hands
+on experience with actual
+practical implementation
+of DevSecOps.
+So in this crash course,
+we're going to go through
+the fundamentals
+of what DevSecOps is,
+as well as see some hands
+on examples with a demo project.
+So you get an understanding
+of it.
+And then if it spikes
+your interest,
+you can decide if you want
+to actually enroll and do
+a full DevSecOps bootcamp
+to learn this extremely
+demanded skill set
+and basically just get
+way ahead in your career.
+So let's get started.
+Security is important
+at all levels of software
+development lifecycle.
+In the application itself,
+the application's
+runtime environment
+and underlying infrastructure,
+which could be on premise
+or cloud platform.
+And it's important to the level
+that when companies fail
+to properly secure things
+and they get hacked
+or some data gets leaked,
+et cetera.
+Where their user data or company
+data gets compromised,
+or their systems get attacked
+and aren't accessible anymore,
+the price they pay
+for that is way more
+expensive than actually
+implementing the security.
+And it's expensive,
+both financially but also
+reputation wise. And of course,
+that means all companies
+should implement security.
+However, it is pretty difficult
+and there are two
+biggest challenges companies
+have in terms
+of security and what may be
+the reason why they fail
+to actually implement
+the security.
+First of all,
+often feature development
+and providing business value
+is more incentivized
+because that's what brings
+in customers.
+That's what provides the direct
+value for users.
+And very simply,
+that's what brings in money
+for the business.
+So security is like
+a necessary evil.
+You don't get so much
+reward and pat on the back
+for implementing great security.
+But if a security
+incident happens,
+you get real punishment.
+So security stays
+an afterthought
+in application development
+or even
+infrastructure configuration
+process.
+The second issue is,
+even if you and your
+team are dedicated
+to implementing great security,
+you still have a challenge
+because the application
+systems themselves are becoming
+more and more complex.
+Think about the modern
+tech stack.
+In our application systems,
+we have a large
+containerized microservices
+application that is running
+in Kubernetes
+cluster on cloud platform,
+using tons of different
+services with data
+persistence in ten different
+types of databases.
+You may have like a
+primary database,
+a SQL database, NoSQL database,
+a caching or memory database,
+and so on,
+and tens of external
+services that your
+application may be talking to.
+Additionally,
+we have a streamlined CI CD
+pipeline that deploys
+to the cluster.
+Imagine how many entry
+points and how large
+of an attack surface such
+a complex system has that may
+allow different
+types of attacks.
+These levels could be within
+the application itself.
+So your own code or third party
+applications and libraries
+that allow for SQL injection,
+for example,
+or cross-site scripting
+or forging requests
+from clients or even worse,
+from servers,
+then you may have security
+issues within your
+application container
+image like the image
+operating system layer,
+the image configuration,
+all these different third
+party operating system
+packages that you may need
+in that container
+environment that may have
+security vulnerabilities.
+Now that container will
+have to run somewhere
+like Kubernetes cluster.
+So here we have
+the security challenges.
+Like is the access to the
+cluster security.
+Is server publicly accessible
+or only from within
+the internal network?
+Have you opened any unneeded
+ports on worker
+nodes that allow access into the
+cluster nodes directly?
+Now that's just outside
+the cluster.
+What about inside the cluster?
+Once an attacker is inside,
+do they have wide open
+network where
+thousands of pods can all
+talk to each other freely?
+Can the control plane
+processes be easily
+accessed from within
+the cluster?
+Is the pod two pod
+communication encrypted,
+and so on.
+Now Kubernetes is not just
+floating around on the air,
+right? It's running
+on actual infrastructure.
+Let's say it's a cloud
+infrastructure on AWS.
+So now the security continues
+over to the servers.
+Then the underlying
+infrastructure.
+Are people able to ssh into the
+worker nodes directly.
+If they can do that,
+they could potentially access
+the Kubernetes processes
+on that server directly,
+or the container processes
+or even cloud
+processes running
+on those servers.
+Or what if access is generally
+are badly managed,
+like permissions are not
+strict enough,
+and credentials are spread
+around the company
+on different platforms
+and developers machines,
+so attacker may easily access
+them on other internal systems.
+Continuing with the CI CD
+pipeline itself,
+what about CD accessing your
+cluster to make
+deployment updates?
+What permissions does your CD
+tool have?
+Is it able to delete
+components in all
+Kubernetes namespaces?
+So basically if an attacker
+hacked into one
+system like ci CD platform,
+will they attacker then get
+access to credential?
+Stored in your CD platform
+to your private repositories.
+Kubernetes cluster.
+Account basically all
+the platforms
+that it connects to. And if yes.
+What permissions do
+those credentials have?
+Are they restricted or can
+they do a lot more damage.
+And we can go on and on with
+these security
+questions around different
+tools and platforms and so on.
+We'd like secret
+management tools,
+credential rotation
+certificates and so on.
+But I think you got the point.
+Security is complex
+because the systems
+have become complex.
+Security is.
+Afterthought means
+that those potential
+security issues get analyzed
+after the main work is done.
+And there are two problems
+with this approach.
+First of all,
+this creates long iterations
+and slows down
+the release process compared
+to if we checked and found
+security issues earlier during
+the development process itself.
+And second,
+when you're checking all
+security at once of 50 new
+features and bug fixes and 50
+configuration changes,
+you may more easily oversee
+stuff because you have
+way more things to test,
+and more issues may slip
+into production as a result.
+Also, naturally,
+you have high chance of human
+error when this kind of checks
+are done manually and less
+frequently compared
+to the automated approach.
+Now you remember my
+simplified definition of DevOps.
+Basically,
+what it really comes down
+to eventually is anything,
+any tool or concept use
+to remove any bottlenecks
+on the way of releasing
+and delivering changes
+to the end user fast
+and with minimal bugs.
+And this applies whether
+it's application
+or infrastructure changes.
+So naturally,
+if security is a bottleneck
+in that release process,
+that should become part
+of DevOps issue that we have
+to eliminate this showstopper.
+So DevOps naturally
+should include security.
+But as I often say,
+reality in theory or how
+it's supposed to be are two
+different scenarios.
+So in practice,
+it's so happened that DevOps
+left out the security,
+it focused on development
+and even bug fixes
+and efficiency and speed
+in those areas.
+But security teams and external
+pen tests stayed in later steps,
+not streamline, not automated,
+and still done mostly manually.
+So as a reminder to kind
+of highlight
+the importance or bring back
+the importance
+of security in DevOps,
+the DevSecOps concept emerged.
+And as you know,
+DevOps affects entire software
+development lifecycle too.
+So DevSecOps is naturally
+taking that overarching
+security and integrating
+it in all
+DevOps steps from start
+to finish,
+along with application tests,
+build steps and so on.
+So the responsibility of fixing
+security issues and secure
+implementation still lies
+with individual teams
+and different engineering
+roles who have the expertise
+in those specific areas.
+But DevSecOps creates
+an overstretching process
+and automated steps
+that measure what's
+called the security posture
+across your systems,
+basically giving us a visibility
+of how secure our systems are.
+So how does DevSecOps do this?
+Automation is the key
+here as well,
+just like it is in DevOps.
+So with DevSecOps,
+we automate checking
+and validating all these
+layers of security
+in different parts
+of the software
+development lifecycle.
+And there are tools
+and technologies to run
+those automated tests.
+So what are those automated
+checks and where
+in the release pipeline
+are they?
+Edit first we want to check
+security of our code.
+Do we allow for SQL
+injection because we're
+sanitizing user input?
+Are we using weak
+or outdated encryption
+algorithms to encrypt
+user passwords.
+So all these checks that we're
+doing in our code
+to validate for any such
+security
+vulnerabilities is called
+static application
+security testing, or Sast,
+where various SAS tools
+will validate the static
+code for any of these issues.
+So it basically scans
+the code base for known
+patterns of allowing
+SQL injection,
+cross-site scripting, and so on,
+and common coding mistakes
+that could lead
+to such security issues.
+And in the DevSecOps
+bootcamp itself,
+we cover the individual security
+issue types in detail.
+So you actually understand
+what a SQL injection looks like,
+what it is,
+exactly what a cross-site
+scripting is,
+what client or server
+side request forgery is,
+and so on.
+And we even learn how to fix
+some of those issues in code.
+So instead of just having
+an abstract idea,
+just in theory,
+you actually see hands on how
+it looks like and how it can
+be fixed in the code itself.
+Now we also want to check our
+code for any hard coded secrets.
+And this happens way too
+often that developers
+forget to remove API keys
+that they use for testing,
+or hardcoded passwords
+for database connection, maybe.
+And they basically end
+up in git repository
+in the commit history,
+and secret scanning tools can
+be used to go through
+the code and identify any hard
+coded secrets
+like access tokens, API keys,
+or various platforms,
+any credentials, certificates,
+and so on. Again,
+in the bootcamp,
+we go into detail
+and learn various use
+cases of when this happen,
+as well as how to use
+these tools as pre-commit
+hooks so they don't even
+end up in the code repository.
+Commit history because they get
+validated before the developer
+can commit the changes. Now,
+apart from our own code,
+we also want to check whether
+the code from other
+people that we use in our
+application has any such issues,
+like libraries,
+frameworks that we're
+using as dependencies.
+They are code as well, right?
+That other engineers wrote.
+So those engineers may
+also write insecure code
+just like our engineers.
+And this is called software
+composition. And.
+Allergies or SCA.
+So we use SCA tools to scan
+all our application
+dependencies for any
+publicly known,
+already discovered
+vulnerabilities.
+And we identify whether
+we're using any outdated
+versions of third party software
+with security issues.
+And again,
+here we have a whole
+section in the bootcamp.
+Or explain how these
+publicly known
+vulnerabilities are documented
+and where are they accessible,
+how the SCA tools actually
+go through these
+dependencies and identify any
+issues, how to analyze them.
+Once you found that you
+have such
+vulnerabilities and more
+importantly,
+how to actually
+fix those issues.
+Now these are all static checks.
+So we're checking the code base.
+But there are some security
+issues that can
+only be caught
+when the application
+is actually running.
+And this is called dynamic
+application
+security testing or Dest,
+which is a testing method
+that basically evaluates
+a running application
+to identify
+different vulnerabilities.
+Again,
+this could be SQL injection
+or manipulating URLs
+with different parameters
+to get data
+that you are not
+authorized to see.
+So the Does tools basically
+send various requests
+to the application
+and they observe how
+the application responds,
+what data it returns
+to those requests.
+And this way they can identify
+any potential security
+weaknesses in the application.
+We also want to validate
+the image
+artifacts that we're producing.
+Again,
+there are tools that scan
+the image layers to find
+any security issues on the
+container runtime level.
+For example, are we using
+a root user?
+Are we using a deprecated
+vulnerable
+operating system package?
+Are we using a bloated
+image with lots of tools
+that we don't actually need.
+So we are increasing the attack
+surface and risk unnecessarily.
+So there are all these tools
+out there that help us automate
+these type of security checks.
+And again,
+in DevSecOps bootcamp,
+we basically go into details
+and very importantly,
+the practical application
+of introducing
+and implementing those tools.
+One of those concepts
+important in the practical
+usage of the tools
+is managing what's
+called the false positives,
+as well as how to visualize
+the scan reports
+and analyze them
+in vulnerability
+management tool.
+We basically combine all
+the reports from different
+tools and see what issues
+you have in your application,
+with what severity levels,
+where exactly in the application
+are those issues,
+and some recommended options
+of how to fix those.
+Understanding what's called
+the quiz and CVEs
+that are a big part
+of analyzing and fixing
+the discovered issues.
+And also what's very
+important to me
+is to reference the real world
+projects and understanding
+wherever relevant,
+whether there is a
+difference between
+how the things should work,
+the theoretical part,
+and how these tools are actually
+used in real life scenarios.
+Things like how to balance
+the additional checks
+that increase
+the pipeline duration,
+and when to run separate
+nightly builds for full scans,
+for example.
+So I go into detail in this kind
+of examples in the boot camp.
+So these automated security
+checks are done in multiple
+phases of release and can
+start as early as pre commit,
+even before the developer
+has committed the code.
+And the CI CD pipeline
+was triggered.
+So it gives us fast feedback
+on any security issues we may
+be introducing in our systems,
+through changes in code or
+in infrastructure configuration.
+This is called shifting security
+to the left,
+because another important fact
+is that the later
+in the release stage we discover
+security issues,
+the more expensive it is
+to fix it.
+So instead of reactively
+fixing issues
+in production and patching them,
+we are proactively reducing
+the possibility
+that they end up
+in the production
+in the first place. Now,
+talking about reactively
+checking for security
+issues in your systems,
+I want to give a shout
+out to chef,
+the sponsor of this video,
+which is one of the important
+tools for security
+and compliance automation
+as part of DevSecOps.
+If you've been in DevOps
+long enough,
+you probably already know
+that chef
+is a well-established
+and widely used
+technology in the industry.
+Chef compliance provides
+packaged CIS benchmark profiles,
+and these profiles can be easily
+customized to support your
+organization's specific security
+and compliance requirements.
+You can schedule those
+compliance scans for single
+or multiple environments,
+and you can run them
+regularly or on demand
+to basically automatically
+detect and notify
+about any configuration, drift,
+or errors in your environments.
+For example,
+running a profile that checks
+that 44 controls are set
+properly and two
+of the controls fail
+because of a misconfigured.
+API server dot Yaml.
+To remediate
+this misconfiguration,
+chef can automatically reset
+the controls to the proper
+configuration based
+on the profile.
+Chef uses the concept
+of cookbooks,
+which provide flexible recipes
+with template and attributes
+files to specify the correct
+values for the cube
+API server Yaml.
+Using a simple chef
+knife command,
+we can confirm the managed
+Kubernetes control plane
+has the correct cookbook
+and recipe in the run list.
+When the chef compliant skin
+is run again,
+the Kubernetes system meets all
+of the necessary requirements.
+And by the way,
+the whole Kubernetes security
+compliance checks and CIS
+benchmarks themselves
+are super interesting
+topics which you also
+learn with practical use
+cases in our DevSecOps bootcamp.
+So as you see,
+DevSecOps is a huge exciting
+topic where on top
+of the DevOps, which is already
+a huge thing,
+you explicitly integrate
+security implementation in your
+engineering processes. So large
+processes automated.
+That means lots of tools
+and concepts involved.
+So 1 or 2 hours is really just
+a drop in this large
+DevSecOps ocean to learn
+all about it.
+So I try to take out
+this part from the entire
+DevSecOps bootcamp to teach
+about the fundamentals,
+and I have carefully
+created the demo to give
+you the basics to get started
+and see the benefits
+of DevSecOps,
+and get the understanding
+of how the entire
+DevSecOps can be implemented
+in an organization.
+So now enough with the theory.
+Let's get to the practical part.
+We're going to be working
+with one project
+for the entire demo,
+and that is an open source
+project from OS Foundation,
+which is a Python based project.
+And this application
+is intentionally vulnerable
+so that it can serve as a demo
+for various security scans.
+So we can actually see
+the security
+vulnerabilities discovered
+by those scanning results.
+So that's the project
+that we're going to use.
+Since it is Python specific,
+we're going to see how
+to select and then use
+various scanning tools based
+on the language or tech stack
+that an application is using.
+And in order to work
+with this project,
+I actually forked the project
+and made my own copy.
+So we can start from a clean
+state without any
+skins whatsoever.
+So I removed all
+the pipeline code,
+I made a couple of adjustments
+and we can build the demo
+step by step from the start.
+And I'm going to link
+both of these repositories
+in the video description.
+So you can easily follow along.
+So in this demo we're going
+to build a pipeline
+a release pipeline
+that is going to have
+security checks
+for this application.
+So we're going to build
+a DevSecOps pipeline.
+And we're going to do
+that with GitHub actions.
+Since we are on GitHub.
+If you don't know
+GitHub actions,
+I actually already have a crash
+course on GitHub actions.
+So you can watch this video
+first to learn the basics
+and get some
+foundational knowledge.
+Of course,
+I'm going to explain some
+details as well in this video,
+but that should give
+you a starting point.
+And as I said,
+I do not have any pipeline code
+in this project,
+so we're going to build
+it from scratch.
+So here you see we have
+a tab called actions.
+So if I go here and you actually
+learn this in the crash course,
+you have some templates
+that you can start with.
+So instead of writing the GitHub
+actions file from scratch,
+you can just go with one
+of the templates.
+And templates are based
+on the tech stack
+of your application.
+And as you see
+it actually detected
+what we are using
+in this application.
+And it is suggesting us
+to use either Python
+template or Docker image
+template and so on.
+And we're actually going
+to build this pipeline
+from scratch. However,
+I still want to show you how
+the template will look like.
+So for example,
+if we choose a continuous
+integration template
+with Pylint since we're
+going to be building
+continuous integration pipeline.
+So CI pipeline actually
+and if I click on configure
+this will do two things.
+First one is in my
+project it will
+automatically create
+a dot GitHub folder.
+So this was not there before.
+And inside that it will
+create workflows folder.
+And then pylint dot Yaml file.
+So this path will be
+automatically created.
+This is the location where
+GitHub actions detects
+a pipeline code automatically.
+So we can automatically
+trigger it and run it.
+And the second thing
+is that it generates
+a boilerplate code
+for the continuous
+integration pipeline. And this
+is what it looks like.
+Again, if you go through my
+GitHub actions tutorial you will
+understand the syntax as well.
+So basically we could take
+over this template code.
+But I want to show how
+to build it from scratch.
+So first of all I'm going
+to rename this to main dot Yaml.
+So we're going to build multiple
+steps in that pipeline.
+And second of all I'm
+just going to mark all
+of these and just remove.
+So we're going to start
+from scratch.
+And as you learn in the GitHub
+actions course
+the application
+release pipeline,
+whether it's a CI or CI,
+CD pipeline is one of the
+GitHub workflows.
+That's why we have these
+workflows folder.
+We can name our pipeline
+workflow in our
+main dot Yaml file. So I'm going
+to call it CI.
+And then we want to configure
+when this pipeline
+will get triggered.
+And we wanted to get
+triggered on push.
+And you can actually specify
+which branches you want
+to trigger this pipeline for.
+So for example,
+if I had multiple
+other branches,
+except for the main,
+I can say I only want these
+pipeline to trigger. For.
+A list of specific branches,
+whatever that is. However,
+because this is a continuous
+integration pipeline,
+it makes sense to always run it,
+no matter whether it's a main
+branch or feature branch.
+So that means we can.
+Basically say whenever there
+is a push in the repository,
+no matter which branch that is,
+we always want to run
+this pipeline.
+And now we can start writing
+or adding our jobs.
+And this is going to be
+a list of security scan
+jobs that we're going to run
+against our application.
+And the first one we're
+going to be adding is going
+to be assessed job.
+So we're going to run static
+application security
+tests on our Python application.
+So let's call it Sast skin.
+And we're going to use
+a tool called bandit,
+which is a popular tool
+specifically for Python
+applications to run static
+application security tests. Now,
+as you know already,
+I always repeat that the tools
+are not
+as necessary as knowing
+the concepts.
+So you could theoretically
+use whatever tool you want.
+However, of course,
+when you compare the tools
+and evaluate them,
+you have to consider
+a couple of criteria.
+So first of all, the adoption,
+right?
+If it's largely used
+by a community,
+there are a lot of people
+who are contributing
+to this project. If it's an open
+source project,
+for example,
+then that is definitely
+a plus for the project,
+because you don't want to be
+one of the few engineers
+who is using a tool that nobody
+else is using or knows about.
+Another one is, of course,
+how easy it is to integrate
+to use the tool.
+Is there already official
+Docker image for the tool?
+So basically this simple
+criteria should be enough
+to decide what tool to use,
+because beyond that,
+like the specific features
+and so on do not matter
+as much because most of the
+tools are pretty similar.
+They can be configured
+in a very similar way.
+So for most common use
+cases they should work
+pretty much the same.
+So bandit is a very popular
+tool for Python specifically.
+And it's also pretty
+easy to use and that's
+why I chose that one.
+But again you can choose
+whatever you want.
+You can also choose multiple
+tools for the same job.
+So you can actually
+have 2 or 3 different
+tools that do sass scanning.
+And basically you can compare
+the results and see
+maybe one of the tools
+finds vulnerabilities
+that others were not
+able to detect.
+That is a common
+practice as well.
+So let's go ahead and write
+our script to use bandit. Again,
+you learn in the course
+that within a job you have
+multiple steps or actions
+that you want
+to execute during the job.
+So let's configure all
+those steps.
+So first of all let's
+add a description or name.
+We are running bandit skin.
+We also want
+to specify that we want to run
+it on an ubuntu machine.
+Because then the installation
+of the tool Cetera will
+depend
+on which operating
+system we are executing
+the job or the steps on.
+So we want an Ubuntu Runtime
+environment for our job,
+and now we can write
+those steps.
+We're going to start by checking
+out the code, obviously.
+So again,
+as you learn in the course,
+the jobs get executed on fresh
+new environments,
+on GitHub hosted machines,
+and you can choose
+what operating system
+that machine should have.
+And that means it's a fresh
+new machine.
+It doesn't know anything
+about your application.
+It doesn't have any tools
+that you need
+pre-installed on them.
+So you have to explicitly
+install things on it.
+Plus check out your application
+code so you have that available.
+And obviously we want to scan
+our application code.
+So we want to have the code
+on that machine
+where the job is going
+to execute.
+So check out the code and we're
+going to use an action here.
+Called check out. Version two,
+and this will take care
+of checking out
+our repository code.
+The second step will be.
+To set up Python on this job
+environment. As I said,
+no tools are pre-installed,
+so we have to explicitly install
+anything that we need
+for the job.
+And we need Python because
+bandit is a Python package.
+So we're going to install
+it using Python's
+package manager called pip.
+So we have to install
+Python first.
+Or basically prepare the Python
+installation and setup.
+And again,
+for this kind of common
+regular use cases
+they are actions.
+So we're going to use
+one of those actions.
+That is called setup Python.
+With this version
+for the action,
+and we can specify a version
+of the Python
+that we want to set up use,
+which is logical,
+because whenever we are
+installing a tool,
+obviously we want to have
+an option to specify
+which version of the tool
+we want, right.
+So we're going to define
+Python version 3.8.
+That's the version
+we want to use.
+And by the way we can find
+those actions here
+as well to see what attributes
+and parameters you can use.
+So if I search for setup
+Python there we go.
+This is the action.
+And you can see all
+the attributes
+that you can set here.
+So Python installation
+is done here.
+Now we want to actually
+install bend it so we can
+execute the bended skin right.
+So as I said it's a
+Python package.
+So we're going to install
+it with Python's
+package manager.
+So it's going to be
+install bend it.
+And for this we're going
+to actually run a command
+directly on our ubuntu machine
+where the job is executed
+using pip install
+bandit command.
+Super easy
+and straightforward right.
+And finally we want to run
+the bandit
+command or bandit skin.
+With a command called bandit.
+Minus R dot.
+So this basically scans
+everything
+in the current folder.
+So this is a location where
+we are pointing bendit to.
+We're saying everything
+in this current folder.
+All the files that it contains
+should be scanned recursively.
+So whatever folders
+we have here,
+subfolders that contain
+Python files,
+all of that should be scanned.
+Very simple and straightforward
+as you see.
+And the folders or the code
+that we have available has been
+checked out with the first step.
+So that means the application
+code will be on the machine.
+And after installing bandit
+we can just run
+bandit scan against that entire
+application code.
+So it will check and scan
+every single file
+in the application code
+and give us the results.
+And this is how you set
+up and run a security scan.
+And now we want to commit
+those changes.
+And as I said because we have
+this Yaml file in GitHub
+or GitHub slash
+workflows folder,
+GitHub will automatically
+detect this location.
+And it will know there is a
+workflow to automatically
+execute on code push.
+So this will trigger our zest
+scan job.
+So let's do that.
+Commit the change I'm going
+to work directly in the main
+branch for simplicity
+for our demo.
+So let's go ahead and do that.
+And if I switch to actions
+as you see
+the workflow is already running.
+It's in progress.
+So let's wait for its execution.
+So run bandit scan
+job was executed.
+And if I go inside,
+we're going to see
+the execution results.
+And as you see, the job failed.
+And that is good
+because it means
+the bandit scan actually
+found security
+vulnerabilities in our
+Python application.
+And it failed the job marking
+our application
+is not releasable,
+which is the purpose
+of security scans. Right.
+So let's go ahead and check
+out the results.
+And right here in the run
+bandit scan logs you see
+the test results listed
+with some detailed information.
+If I scroll all the way down,
+you see all those are possible
+security issues
+that it detected.
+And right here we have a summary
+that says how many
+lines of code it scanned and how
+many issues it detected.
+And one helpful thing that the
+tool also gives us
+is it doesn't only tell us, hey,
+there is a security issue
+or possible security issue here,
+but it also marks it with
+the severity level
+because not all issues
+are equally
+important or equally risky.
+And that's why we need
+to differentiate between them.
+So we have the severity
+level that basically
+says these are some issues,
+but they are low severity
+so they won't
+cause as much damage.
+And they are high
+severity issues.
+So this could be a more risky,
+highly exploitable
+security issue.
+And this is an important
+metadata about the findings
+because as you see,
+we have way more low severity
+issues than high
+severity issues.
+And in practice this creates
+a lot of noise and distraction
+from the actual severe issues.
+So usually in DevSecOps
+we want to configure
+the scanning tools
+to only focus on high
+severity or medium
+severity issues,
+especially when we are first
+introducing these
+scans to the team,
+because we imagine we're going
+to the developers and saying,
+now we're going to start
+scanning the application,
+and if there are any
+security issues,
+you have to fix them.
+And the tool finds hundreds
+of security issues,
+most of them low severity level,
+so developers don't have
+much value from the scan,
+and they don't know
+how to handle these
+hundreds of security issues.
+Right.
+So this may create a lot
+of unneeded effort
+and just destruction
+without bringing
+much value to the team.
+You won't be too popular
+with developers if you do that.
+Instead. If you show hey,
+we ran this and it detected
+two severe issues that's
+manageable for the developer
+team and proves
+the usefulness of the skin
+to the developers
+that aren't fully bought
+in the DevSecOps concept yet,
+and the tools can be tweaked
+to teach them or to configure
+them to only focus on what's
+important and mature those
+tools to the level that we 100%
+can rely on their findings.
+Another metadata
+that we are getting
+here along with the severity
+level is confidence.
+So confidence is basically
+the tools level of confidence
+about the discovery itself.
+So it found a high issue
+with low confidence
+means it may be an issue.
+But the tool itself
+is not 100% sure
+that it detected
+the issue properly.
+So it could be a false positive.
+So for example here we have
+an issue
+that is medium severity.
+But the confidence is low,
+which means the tool
+is not actually confident
+that the issue is and actually
+issue with medium severity.
+So that could be a false
+positive. And as I said,
+we can configure the tool
+to ignore everything that is low
+severity or low confidence
+and just concentrate
+on the important findings.
+And all security scanning tools
+have that configuration option.
+As I said,
+most of them work
+in a similar way.
+So let's configure bandit
+to ignore and not display any
+low severity issues as well
+as issues with low confidence.
+And for all these tools,
+of course,
+you have the official
+documentation pages where
+you can see the command
+options and how to tweak
+and configure those
+tools to your specific
+needs for your application.
+And right here, as you see,
+it has an option to configure
+what level of severity
+we want to focus on and
+what confidence
+level want to focus on,
+and let the tool ignore
+anything else.
+So we're going to use
+these options to tweak
+our bandit configuration.
+So going back to the repository
+this is our workflows folder.
+And let's.
+Edit or bend it command
+with this configuration.
+So basically we're going
+to tell bend it to only
+focus on medium and high
+level issues and only medium
+and high confidence findings.
+So we're going to add
+those two options.
+So we're going to copy them.
+Add them here.
+Take this one and that's it.
+Basically that's
+the configuration.
+Let's commit the changes again.
+Let the pipeline run.
+The bandits again failed again.
+However,
+now let's see how many issues
+it actually printed out
+so the summary stays the same.
+So we get the information
+about how many issues we have.
+However, the logs themselves,
+you see we only have medium
+and high severity issues
+with high or medium confidence.
+Right. So our list of.
+Findings have. Decreased,
+which means this is more
+manageable
+for the developers now.
+So they can actually go
+through this and analyze
+those issues one by one,
+because they're just a handful
+of them.
+And again, if you're just
+starting out.
+So this is the very first
+introduction of DevSecOps
+tools to your project team.
+You can even start with only
+high security issues.
+And once you have those fixed,
+then move on to medium findings.
+As the next step,
+we're going to configure
+our bandit scan to produce
+a reports file and to
+provide all
+the findings of the scans
+in the reports file,
+instead of just displaying them
+in the job logs.
+Again, we can find
+that configuration here we have
+two options for that. First
+of all is the output file.
+So that's going to be the name
+of the report file.
+We can name it whatever we want.
+And the second one is the format
+of that report.
+So you can produce reports
+in multiple formats.
+This could be CSV, HTML, Json,
+XML, whatever.
+And note that all of these
+formats are meant
+for machine consumption
+and not human consumption,
+which means there are actually
+tools where you can
+upload these scanning reports,
+where you can visualize in a
+nice UI and analyze your
+findings there in one place.
+And I'm going to explain
+that in detail
+later in the demo. But for now,
+let's produce those reports.
+So we have the findings
+in the reports file.
+So we're going to export
+it in Json format.
+So let's go ahead and do that.
+It's going to be
+EF or format Json.
+And we're going to produce
+an output. Or output file.
+And let's call this benefit
+report. Dot Json.
+And as I said,
+the purpose of generating
+a report file
+is so that we can take
+that report's file
+that has the findings inside
+and we can fit it or upload
+it to a vulnerability
+management tool
+such as Defect Dojo,
+that will then consume
+that file and display all
+the contents of it in a nice
+UI and a nice list with all
+the information
+about the finding,
+the description,
+the fix recommendations,
+and so on.
+Whatever the tool
+basically provides,
+which makes the analyzing
+and fixing of those
+issues way easier.
+And as I said,
+if you run the pipeline
+multiple times a day,
+if you have multiple tools,
+you have to have a central
+place where you can view
+and manage all those findings,
+or the team of developers can
+view all
+those findings in one place,
+as well as compare
+the findings between
+the pipeline runs
+in a vulnerability
+management tool
+because you can't
+manage them through the logs.
+So this is a very central,
+very important part
+how to upload reports
+and how to consume them,
+how to analyze those
+issues in Defect Dojo,
+which is one of the most
+popular vulnerability
+management tools for DevSecOps.
+And you learn all of these
+in the DevSecOps bootcamp.
+So right now we are generating
+the report. However,
+to make it possible to download
+that report,
+we have to create an artifact
+or the job artifact that will be
+uploaded for the pipeline at
+the end
+of the pipeline execution.
+And for that,
+we want to have another step
+to upload
+that artifact and make
+it available for download
+for us.
+So let's call
+this upload artifact.
+And there is an action for that,
+of course,
+because it's a very common use
+case or common step.
+It's called upload. Artifact.
+Again,
+you can check what the latest
+version is.
+And we can provide the name
+of the artifact.
+So how it should be called
+when it's exported.
+Let's call it banded findings.
+And of course we need to tell
+it which artifact to export.
+Now, as I said,
+the jobs in GitHub actions run
+on isolated,
+fresh new machines that spin
+up for that specific job.
+All the steps get executed there
+on that machine,
+and when the job is done,
+the machine gets thrown away.
+Everything that we
+generated there,
+including the reports file,
+everything is gone. Right?
+So that means
+we upload artifact.
+We're taking the file
+that we generated
+on that machine.
+It's going to be thrown
+away after the job is done.
+And we're going to say you take
+that file and upload
+it as an artifact so we can have
+it available
+after the pipeline has run.
+So even when the machine
+is gone,
+we still have
+that file available.
+So the path points to the actual
+file or folder on that machine.
+And this is just what we want
+to call it.
+And they will make this file
+available after
+the pipeline run. However,
+there is one more thing we need
+to do for this to work,
+which is the way GitHub
+actions works,
+is that whenever any
+step in the job fails,
+the next steps will be skipped,
+right? So for example,
+if the Python installation
+didn't go through
+because of whatever reason
+or the bandit installation,
+so this command failed, the next
+steps will be skipped.
+Which makes sense,
+because usually this is an order
+of executing
+the tasks where the next step
+kind of relies
+on the previous one.
+And that means when the bandit
+command fails,
+which it will fail
+because we have
+security issues in the job,
+this will not get executed.
+However, we want the findings
+or the reports file to be
+uploaded with those findings.
+So even if it fails
+and that means we have
+to explicitly tell GitHub
+to execute this step always,
+which means whether the previous
+step fails or succeeds,
+it doesn't matter. Always
+execute this last step.
+So let's commit this. And now,
+when the pipeline runs,
+we should have the bandit
+report dot Json
+file available there. So let's
+go back to actions.
+There you go. So the job failed.
+And if I scroll down here.
+You see the artifact section?
+And now we have this bandit
+findings artifact.
+I can show that it was not
+available for the other jobs.
+So here we don't
+have the artifacts.
+And this is the Json file.
+So in the zip file there
+is bandit report dot json file.
+And here we have all
+the information
+about those findings.
+Additionally to was displayed
+in the logs.
+So that's how it looks like.
+As I said this is
+for machine consumption
+or for those vulnerability
+management tools where
+you can upload the reports file
+and you can
+display those results in a UI.
+Awesome. So we have scanning
+for our application
+code using bandit, which does
+sass scanning.
+But we also learned that not
+only the application
+code or the dependency code,
+but also the application
+runtime environment,
+may have security
+vulnerabilities
+that will allow the hackers
+to hack into our systems.
+And since in the modern
+application development,
+Docker and containers
+have become a standard,
+the artifacts that we
+are producing
+in our release pipelines
+is Docker images
+and Docker image.
+As you have probably already
+learned from my Docker videos,
+you know that it's built
+with layers,
+so every single image
+layer may actually have
+a security vulnerability.
+An image layers,
+just as a reminder,
+are basically whenever
+we're using a base image.
+Could be a Linux Alpine
+base image,
+which is a lightweight
+operating system layer.
+And then on top of that,
+we install a bunch of other
+stuff like Python
+for our Python application
+image or various operating
+system packages and tools.
+All of that basically add
+as layers on top of each other.
+And just like in
+application code,
+we have libraries
+and dependencies
+with vulnerabilities.
+We may have operating system
+packages and software
+with vulnerabilities.
+So we may actually be using
+outdated images like base
+images or operating system
+tools with security issues.
+And the same way we want
+to scan the image
+to understand how secure
+is the Docker image
+that we are building
+for our application.
+And we have various tools
+for scanning Docker images.
+And in this demo,
+I actually chose a Docker
+native tool that actually
+part of Docker itself that is
+called Docker Scout,
+that goes through the image
+layers and scans
+for security issues.
+And it does that actually
+on multiple levels.
+So let's add a job for Docker
+Scout and see
+how vulnerable or how
+secure our Docker images.
+And of course,
+to be able to scan a Docker
+image we need to first
+build a Docker image.
+So we're going to extend
+our current CI pipeline
+to build the Docker image.
+And then we're going to scan
+that newly built Docker image.
+So let's go ahead and do that.
+So right here we're
+going to add a new job.
+And this job will contain
+the steps for building the image
+and then scanning that image.
+Now this could be
+two separate jobs.
+So for example we can push
+that image
+to a Docker repository.
+And in a separate job
+we can pull that image
+from the repository and scan it.
+However, to make this simpler,
+we're going to have one job
+where the image is built
+on that job execution machine.
+So we have the image available.
+We don't have to pull
+it from anywhere.
+And then on the same machine
+we're going to run
+scans against that image.
+So I'm going to call
+this job image scan.
+And I can
+actually just copy this.
+Configuration from here.
+Let's call these build.
+Image and run image scan.
+We're going to run
+on ubuntu latest.
+And here we're going
+to define our steps.
+The first one is again going
+to be checkout
+because we need our application
+code with the Docker
+file to build the Docker image.
+So we have the checkout step.
+Now for this job we actually
+don't need Python.
+Instead we need Docker installed
+on the machine where
+the job is executing
+because we're going
+to execute docker build
+command to build the image
+and later Docker scout command.
+So the same way we set up Python
+in this machine for this job
+here we're going
+to set up Docker.
+So let's create a step.
+Let's call it set up Docker.
+And let's actually search
+our marketplace for the action
+to install Docker. So.
+I'm going to look for set up
+Docker and let's
+see what comes out. And we have
+this one here.
+This is the location
+of the action.
+So basically just
+going to copy that.
+And paste it here.
+And as I said,
+for any actions or any
+steps that are very common,
+like installing
+Python or Docker,
+they are prepackaged or ready
+actions that you can just
+reference from the marketplace,
+which just makes the creation
+of the pipeline easier.
+But of course, alternatively,
+you can just run a command
+for installing Docker as well.
+I prefer to use this action
+for the setups,
+just easier cleaner code,
+especially if something changes
+in the installation of the tool.
+You don't have to worry
+about that.
+And then of course you have
+these parameters that allows
+you to specify additional stuff.
+So for example I want
+to define Docker
+version for our installation.
+And I'm going to do that with
+the width attribute.
+And. This is the Docker version.
+And I'm going to set it to one
+of the latest Docker versions.
+Let's do 2010 seven.
+And that makes Docker
+available on our
+job environment,
+which means we can now
+execute Docker commands.
+And the first command will be
+to build the image.
+And for that we're going
+to simply run
+docker build command.
+And you know the drill.
+We need to specify the Docker
+file as a blueprint
+for building the image.
+We can also specify
+the name of the image
+so we can reference it later
+when we want to scan the image.
+So we can call this my
+app or Pi goat or whatever.
+And we can tag it with
+the latest tag.
+And then we have to specify
+the build context,
+which is the location
+that Docker will
+take as a build context.
+And this is going to be
+the current directory
+where the application code is.
+And that's our Docker build
+command. Awesome.
+The next step will be
+to scan that build image
+for any security issues.
+And as I said we're going to use
+Docker Scout
+from Docker itself,
+which actually does a very
+thorough scanning
+of the images on multiple
+layers to find
+any security issues.
+And we can actually use two
+different
+commands of Docker scout.
+One of them is called
+quick view.
+Quick view command will
+basically show you that your
+base image is outdated,
+and it will give
+you a recommendation
+of how to update it to make
+your image more secure.
+And then there is a more
+extensive or more thorough
+scanning that you can do
+with the
+Docker Scout CVS command.
+It basically gives
+you a complete view
+of all the vulnerabilities
+that your image contains.
+And just like the other
+tools that we've used,
+you can tweak it and configure
+it to add
+additional flags
+to basically limit
+that you are only
+interested in certain
+severity level and so on.
+So let's go ahead and add a step
+for Docker Scout commands.
+So we're going to add
+a step here.
+Let's call this Docker scout.
+Skin.
+And we're going to run a command
+here that basically
+is a multi-line command.
+And this syntax basically
+allows us to write multiple
+commands one after another
+instead of just single command.
+And here we're going to first
+install the Docker
+scout command line tool.
+And then we're going to execute
+Docker scout commands.
+And I'm going to copy the URL
+which points
+to the installation.
+So this will basically
+download the installer
+for Docker scout cli.
+So install scout dot s h
+file will be created locally.
+Then we can execute
+that installer file
+that shell script to actually
+install Docker scout.
+And here we can then execute
+Docker scout commands.
+As I said we can use both
+commands for a quick view
+as well as to scan the complete
+image for any vulnerabilities.
+So this is actually the main
+command that scans the image.
+And that's what we
+are executing.
+Now let's actually try to run
+this and see what happens.
+So I'm going to commit
+the changes and let's actually
+see the execution result. Again.
+You see that by default these
+two jobs will actually be
+executed on two
+different machines.
+That saves time because these
+jobs can
+be executed in parallel
+instead of waiting
+for the previous
+jobs to execute.
+So your pipeline
+is overall faster.
+So the job is running.
+Let's wait for that.
+The image is being built.
+And we can also
+check the docker file.
+So this is a pretty simple
+Docker file actually.
+We just have a couple
+of commands.
+So each one of those commands
+basically creates a new layer.
+And we may be configuring
+the Docker environment
+or installing tools
+that are vulnerable
+because they're outdated.
+And those things will be scanned
+with the scanning tool.
+And the Docker scout scan
+failed. And you see,
+the reason for that is because
+we need to log
+in to Docker to execute
+Docker scout.
+So we need to authenticate
+with the Docker ID
+and email address.
+So that's what we need to set
+to authenticate with Docker.
+So we can execute Docker
+scout commands.
+And that leads to another
+interesting concept in GitHub
+actions which is project secrets
+or projects environment
+variables that you can
+use to basically store
+secret or sensitive data.
+As you know,
+in release pipelines, CI
+pipeline or CI CD pipeline,
+you have to integrate
+with multiple tools, right?
+So you are maybe pushing to a
+Docker registry,
+maybe you are deploying
+to an environment
+and you have to connect to these
+platforms with credentials.
+Right? So you need a proper
+way of storing
+those credentials.
+And obviously you don't want
+to hardcode them in the code.
+Right. So in the settings
+of the project you have
+security section.
+And in that security section
+you have secrets and variables.
+So if I open that and
+open actions.
+So these are where you can
+create secrets and variables
+for GitHub actions workflows.
+And we're going to create
+a new repository secret.
+So basically whatever secrets
+and variables we create here
+will be available
+as environment variables
+in the GitHub workflows.
+So you may have multiple
+workflows for GitHub actions.
+And you can use these
+secret values or variables
+in all your workflows.
+So here I'm going to create
+variables secret
+variables for my Docker
+user and Docker password.
+So basically these are the ones
+that I use
+to log into Docker Hub.
+So if you don't have an account
+you can just sign
+up here and you get your
+Docker ID and Docker password.
+And I'm going to call
+this repo user.
+You can call this whatever
+you want.
+And this is my Docker ID.
+And now I'm going to create
+repo password.
+And with the value
+of my Docker password.
+So those two values are here,
+which means I can now reference
+them in the pipeline
+or in my workflow. So going back
+let's edit.
+So before we execute
+the Docker scout commands
+we need to first
+log in to Docker.
+And you probably already
+know docker login command
+from various of my previous
+tutorials where I have
+showed this.
+So a safer login
+is not to provide
+password directly with password,
+but rather read it from
+the command line.
+So we're going to do echo and.
+Our password variable
+and the syntax
+for referencing environment
+variables or project variables,
+repository secrets or repository
+variables in GitHub.
+Actions is very simply
+dollar sign and double
+curly braces like this.
+And inside that you have
+secrets object
+that contains all the secrets
+that you have defined here.
+Like this.
+So this is referencing
+the value of the password.
+And then we are piping that to
+Docker login command.
+So we have the username
+which again we're going
+to reference like this.
+Repo user.
+And we're going to read
+this password using. Password.
+Stdin standard input.
+So this is going to read
+whatever we echoed
+here and that's it.
+We don't have to provide
+the repository for Docker
+login because by default
+it is Docker or docker.io.
+So this login command will
+automatically go
+to Docker itself. And that's it.
+We are authenticating
+with Docker.
+And after that we can execute
+Docker scout commands.
+So now we're going to commit
+those changes.
+And we're going to see
+the results of Docker
+image scan our pipeline ran.
+So now let's actually check
+the logs to see the findings.
+First of all you see
+that the job is green.
+Let's see what it means.
+So we have the build Docker
+image a new image
+was built and then we have
+Docker Scout results.
+This is the login part.
+And this is basically
+an output of Docker Scout
+quick view command
+which basically gives
+you an overview of what image
+you're using.
+What is the base image.
+That we have defined
+in our Docker file
+that we are building on top of.
+And then it also tells us
+whether our base
+image is outdated,
+the size of the image.
+As you know from security
+best practices of Docker,
+we don't want to use bloated,
+unnecessarily large images
+because it just increases
+the attack
+surface unnecessarily,
+especially if we don't use
+or if we don't need most
+of the tools in that image
+for our application and so on.
+So this is like a
+quick overview.
+And this is a more detailed
+overview of analyzing the image.
+And this is the Docker
+scaled CVS command.
+And here you see a whole
+list of the things it found
+which are a lot of issues.
+So basically.
+For different tools that we're
+installing or using
+in our Docker image.
+For example, this one here,
+the curl package.
+Or this package
+with this specific version
+have all these vulnerabilities.
+And this is actually similar
+to the dependency scan,
+because just like you
+have libraries
+in your code that have
+dependencies on other
+libraries and so on.
+So you have these
+transient dependencies.
+Here we have a couple of tools
+that we're installing. However,
+since we're using
+this as a base image,
+which depends on another
+base image
+that has some tools installed,
+Docker Scout basically goes
+through all these image layers,
+including whatever base
+image this one is built on,
+and it looks at the tools
+that not only
+the tools that we're installing
+on top of this image,
+but also whatever tools
+this image itself comes with.
+And that's why we have
+so many issues here.
+We have a pretty large list
+of vulnerabilities
+that we found,
+because it basically went
+through multiple layers all
+the way to the initial image,
+and we can actually check
+that ourselves as well.
+So if we look for Python
+image in Docker Hub.
+So this is the official
+Python image.
+And in text we basically look
+for this text specifically.
+This one right here. As you see,
+Docker Hub itself shows
+you this vulnerability scan
+results for the base image,
+and this one is also supported
+by Docker Scout.
+And here you see the exact
+breakdown of which packages
+in this specific image
+are included
+and what vulnerabilities
+those packages actually have.
+And as you see we have
+curl Python open SSL.
+All of these are basically
+part of this.
+And the thing is if we don't
+need curl for example,
+or git in that image,
+then there's no need to use
+this larger image as a base.
+Instead, we can use a slimmer,
+lightweight image with a less
+libraries and less libraries
+automatically means less risk
+for finding vulnerabilities,
+right? And this is
+the Docker file
+that is used to create
+this image that installs
+all those tools and so on.
+And again you have
+this differentiation
+with critical high
+level medium and low
+severity vulnerabilities.
+So you can kind of prioritize
+and see
+if you have critical issues
+which libraries are affected
+by those critical
+issues and so on.
+So that's one thing using just
+smaller images.
+But also this is one
+of the older versions.
+The newer version
+is already at 3.13.
+So of course upgrading
+to a new version often
+would mean that some
+of those issues
+and vulnerabilities
+were actually fixed.
+But you can also
+introduce new ones.
+So we're not going to go
+into the remediation part.
+But this kind of scan basically
+gives you a really
+good overview of whether
+you are using
+an outdated image or whether
+your image is too large.
+So you have lots of libraries
+and packages inside which also
+have vulnerabilities.
+So you end up with a huge
+list of security issues
+in your Docker image scan.
+And also as we saw,
+we have this severity level
+for each security finding.
+And we have 23 critical
+issues and 267 low level
+issues or low severity issues,
+which means again this creates
+a lot of noise.
+Look how large the list is.
+That means,
+especially at the beginning
+when it's the first time
+running an image scan for your
+application your engineers
+probably don't want to deal
+with, in this case,
+hundreds and hundreds
+of vulnerabilities and just
+fix them so you can focus
+on the critical and high ones.
+And then basically step by step,
+move on to the less critical
+ones. So in this case,
+again, it makes sense
+to configure Docker scout
+command to only print out.
+Those two severity level issues
+and basically
+ignore the other ones.
+And as you see here,
+you can even use
+the Docker Scout
+recommendations command to give
+you suggestions of how to fix
+those issues
+that were discovered.
+And one more interesting
+thing that I want to draw
+your attention to is that for
+the issues
+that are discovered.
+So for example,
+this one right here,
+apart from the CV link,
+you also have the fixed
+version attribute.
+So it tells you which version
+you are using which is less
+than or smaller
+than this version.
+And it tells you that there
+is a version
+that has this vulnerability
+fixed already,
+so you can upgrade to that one
+to basically get
+rid of this security issue.
+And you also see that for some
+issues the fix
+has not been done yet.
+So there is no safer
+version for that for now.
+But again,
+many of these apply to the low
+severity issues,
+which means we can now go
+back to our workflow
+and configure Docker Scout
+to basically just
+ignore all of those.
+So we don't have
+this overwhelming
+list of issues,
+but we can kind of filter out
+and just focus on the real
+issues and have them in the
+logs. However,
+before we add these
+configuration
+options directly here,
+I want to show you an
+alternative option
+of running Docker Scout
+commands with a ready GitHub
+action from the marketplace.
+And this is another good example
+to show using the ready
+actions from the marketplace.
+And of course,
+the main advantage of using
+actions from here
+is always that it's high level,
+it's more abstract,
+and it's just easier
+to configure than directly
+working with the tool.
+Less flexible sometimes,
+but if you just want to run
+the tool with a couple
+of parameters and configuration,
+it's basically the easiest
+way to get started.
+And if I look for Docker scout.
+You'll actually see that there
+is one from Docker itself.
+So this is an official action,
+which is always good to use
+the official ones.
+Now obviously the installation
+of Docker Scout
+itself was pretty simple,
+as well as running the Docker
+scout commands,
+so there is no requirement
+or need to use action
+instead for simplicity
+because it's pretty
+simple already.
+But generally speaking,
+these ready actions make
+it easier to use any tool
+with a high level configuration
+so you don't have to worry
+about installing the tool.
+You know,
+making sure that these curl
+link is up to date and so on.
+So I just want to switch
+to this one for demonstration.
+But to make sure you guys
+still see this code
+snippet in the repository
+when you follow along the demo,
+I'm actually just going
+to comment this out.
+And I'm just going
+to create a new step.
+And this is going to use
+the action. There you go.
+So this is Docker scout
+action with this version.
+And then we have a couple
+of configuration options.
+Obviously we need to configure
+the login
+data just like we did here.
+So for that we have Docker Hub
+user and Docker Hub password.
+So we're going to do
+with and then we're
+going to set all those
+parameters that we need.
+So Docker Hub user is going
+to be.
+Referenced like this.
+Then we have Docker
+Hub password,
+and I'm just copying this stuff
+so that I don't
+make any spelling mistake.
+There you go. So we have
+the login data.
+And finally we have the command
+because we actually have
+to execute some kind of command.
+And this is a list of commands.
+So we can basically execute
+multiple Docker scout commands.
+We just need two of them.
+So I'm just going to.
+List them here like this
+separated by comma.
+And that's it.
+So this is basically exactly
+the same as this part here.
+Looks a little bit
+cleaner nicer.
+That's the only difference
+in terms of what they do.
+However when I execute this we
+will actually see one
+more difference of using
+this action instead
+of running the Docker
+scout commands like this,
+which is an improvement.
+So let's commit the changes
+and let's
+wait for the job execution.
+Okay. So our pipeline executed.
+So this is the one with Docker
+scout action.
+And this is without. And let's
+compare those two.
+So this is the workflow
+with Docker scout action.
+And this is without.
+So if I scroll down here
+we basically have our
+artifacts and some information
+like annotations.
+And when we execute
+it the build image
+and scan image with the official
+Docker scout action.
+If I scroll down we see these.
+Visualization of results
+in the user
+interface view itself.
+So instead of having to go
+and check the logs,
+we can basically see
+the entire thing.
+Here we see the breakdown
+of what libraries got scanned,
+how many critical, high,
+etcetera issues
+each library had,
+as well as the base
+image and total summary
+of the entire image scan,
+which is actually pretty nice
+because this makes it way
+easier to analyze and kind
+of dig in into your image
+and what libraries you're using
+and what you may need to update
+to fix those issues and so on.
+So for example,
+you see all these libraries
+actually do not
+have any critical issues,
+so you can just ignore them,
+etcetera. So it gives
+you this nice overview.
+So that could be another
+advantage of using
+the Scout action.
+And finally
+with that configuration
+let's now tweak our Docker Scout
+action to only report
+critical and high level issues.
+And also in addition to that,
+we want to create this report
+file that we have
+generated for other tools.
+So let's do those two changes.
+I'm going to edit
+this again and again.
+If we check out the official
+documentation to see
+what configuration
+options we have.
+But this time for the Scout
+action itself.
+And again if I bring
+up the Scout action.
+We're going to see all
+the configuration options here.
+However, if you want,
+for example a more detailed
+overview with examples
+and so on, we can also search
+it online.
+So this GitHub repository
+for example that has Scout
+action gives you a more detailed
+description of the inputs
+for different commands.
+So this one for example.
+And as I said we only
+want to focus on certain
+level of severities.
+And this is option
+to configure that.
+So we have only severities.
+And we can basically just
+choose or provide a comma
+separated list of what severity
+levels we want to focus on.
+So I'm going to copy this.
+And edit here as a parameter.
+And I'm going to choose
+critical and high.
+So that takes care of ignoring
+all the low
+and medium level issues.
+And we also want to configure
+the report file.
+And we have this sorry file
+which is a specific format.
+And again if I check this here
+it basically
+expects a file name.
+So we can set this parameter
+as well.
+And we can call this Scout
+report. Dot.
+Serif and. Of course,
+we have to upload
+that artifact as well
+so that it's available after
+the workflow runs. And.
+Let's call these
+Docker Scout findings.
+And of course the name
+of the report.
+And that's our configuration.
+Now with this we're going
+to commit the changes
+and run the workflow again.
+And now up
+to this configuration,
+we see in the scan results
+that only critical and high
+level vulnerabilities
+were displayed
+by the tool and the list
+of libraries that were scanned.
+We see that only those
+that have either
+critical or high vulnerabilities
+are displayed here.
+So we don't have this huge
+list anymore,
+but we have rather manageable
+list right now.
+So we can even limit that only
+to critical issues.
+So we would basically be
+working on fixing and updating
+these libraries here. And again,
+we still see the overview on all
+levels of security issues,
+including low and medium.
+However,
+the specific issues are only
+limited to those two,
+so it's not
+overwhelming anymore.
+And additionally,
+we also have these Docker Scout
+findings which were exported
+as an artifact.
+And again we can download
+it and import
+it in a vulnerability
+management tool
+along with other reports.
+One more optimization we can
+do with Docker Scout
+is to basically fail
+the job when security
+vulnerabilities are found.
+And again,
+if we go back
+to the documentation,
+we see there is this exit
+code parameter
+that is by default set to false.
+And we can set this exit
+code to non zero value
+which will be unsuccessful
+or error
+result which will fail the job.
+So again let's adjust
+our configuration.
+And instead of default false,
+I'm going to set it to true.
+And let's commit the change.
+And wait for the result.
+And if we check
+our pipeline run,
+you see that our image
+scan job is also red
+because we have security
+issue findings in the result.
+So we optimized that as well.
+Awesome.
+So our pipeline is doing
+all the static code checks,
+is scanning the image artifact
+that we are building
+for any vulnerabilities.
+And we're producing these
+two different scan reports.
+And when you are implementing
+DevSecOps in your
+organization you have to use
+vulnerability management tools,
+because otherwise
+it will be really
+inconvenient and hard to analyze
+and fix the security issues,
+or to basically just see
+the security posture
+of your application
+and of your systems
+based on the security
+scans that you are doing.
+So it kind of unnecessarily
+making your work harder.
+And as I said,
+there are different
+vulnerability management tools.
+One of the popular ones,
+which is an open source project,
+is Defect Dojo,
+which is the tool I teach
+in the DevSecOps bootcamp.
+And of course, every time we run
+this workflow,
+it will produce new reports.
+That means you don't want to be
+manually downloading these
+reports from each
+workflow execution,
+and then importing that manually
+in the dojo.
+Either you want to automate
+that process
+because it just happens to often
+and it's a repetitive task.
+So in the DevOps bootcamp,
+of course,
+we want to learn things as they
+are done in production
+in a proper way.
+So actually show how to write
+a Python automation
+script that takes the reports
+from each pipeline
+execution and automatically
+connects to the Defect Dojo API,
+and automatically uploads
+and imports those
+reports in the defect dojo.
+And again,
+you can group that per
+application version.
+So we have a history of scan
+results and see whether your
+issues are increasing over time
+or as you are fixing the issues,
+or they decreasing and getting
+less over time.
+The second important
+point is now that we've
+discovered the issues, those
+issues need to be fixed,
+right. So first of all,
+who fixes those security issues?
+Is it a DevSecOps engineer?
+Is it a DevOps engineer?
+Security engineer?
+The application team itself.
+So who is responsible for fixing
+the issues in the code,
+fixing the issues
+in the libraries,
+or upgrading the library
+version so we don't
+use vulnerable, unsafe
+or insecure libraries?
+Who fixes the Docker
+image issues and so on.
+And this is important
+to understand.
+To know how DevSecOps
+is implemented,
+how the responsibilities
+are divided among the team
+members in a practical, actual,
+real time project.
+So in the DevSecOps bootcamp,
+we go into the topic
+of dividing the roles
+and responsibilities
+with DevSecOps principles,
+and also how
+to pragmatically approach
+this in an organization
+to implement DevSecOps
+and involve all of these
+other roles
+in the implementation
+process as well,
+and to kind of motivate
+them to join in and not
+can resist against it.
+What's also super important
+is we see different
+issue types like SQL injection,
+vulnerable code,
+vulnerable third
+party libraries,
+and how to fix those including
+the transient dependencies.
+Same with the Docker
+image scanning.
+How to fix security issues
+found in your Docker image.
+And here it's important
+to understand
+the CVEs in dependency scanning
+and image scanning.
+So we go into detail in all
+of those areas and learn how
+to analyze and find such issues.
+And then of course
+fix those issues.
+And we actually use
+completely different
+project and completely different
+application in the bootcamp.
+So these Python application
+on GitHub actions
+is just to demonstrate the basic
+principles in DevSecOps.
+So we are actually not
+repeating anything
+from this crash course
+in the DevSecOps bootcamp.
+So this should already give
+you a pretty good basis
+and understanding of DevSecOps.
+So you can actually
+go ahead and start
+implementing this already.
+However,
+you may want to know what the
+next steps would be
+that DevSecOps also
+encompasses and also
+more advanced scenarios.
+Diving deeper and really
+getting to the production
+grade DevSecOps processes.
+So of course,
+the obvious one is that
+the continuous
+deployment part comes after
+that we're deploying
+to servers on an
+infrastructure will
+open up another world
+of security concepts
+like cloud security,
+infrastructure security,
+server administration,
+secure deployment to the servers
+and so on. And as you know,
+in today's world,
+no DevOps topic is complete
+without Kubernetes, which again,
+is its own separate world
+of various different
+concepts that are security
+relevant and security related.
+So starting from security,
+handling, data encryption,
+network security within
+the Kubernetes cluster,
+access control management, and.
+And DevOps and ops is anyways
+about automation.
+So policy is code, cloud
+infrastructure is code,
+compliance is code and so on.
+So there is a ton
+of concepts and tools
+and topics involved
+in DevSecOps that takes
+this whole thing to a completely
+new next level.
+And that's exactly why
+we have a complete
+bootcamp to teach
+you all of this,
+because it's a huge subject.
+It's a very interesting
+but very complex skill set.
+So you need a proper guide
+with easy explanations,
+with real life production use
+cases and examples to become
+really good at this subject.
+So all these advanced topics,
+plus the monitoring and logging
+on cloud level,
+on application level,
+on Kubernetes,
+cluster level
+for security specifically.
+So all of that is in
+the bootcamp.
+That means if you need
+this for your career,
+for your position,
+or if you work at a company
+and your company or your
+projects actually need this,
+then DevSecOps bootcamp
+that we created gives
+you complete picture
+and complete skill set
+of everything you need to learn
+and know about DevSecOps.
+We worked on this for almost
+two years
+and there is way more content,
+and the topics and projects
+are way more
+comprehensive than anything
+that you can find out there.
+So as I said,
+if this is a topic
+of interest for you,
+then I definitely recommend
+our DevSecOps would come
+as a next step to completely
+uplevel your
+career for just a fraction
+of the price of what an engineer
+with this skill set will earn.
+So definitely check out
+the information about
+the bootcamp in
+the video description.
+But if you just needed
+to get the conceptual
+understanding of DevSecOps,
+understand what it is,
+and get your first practical
+experience with DevSecOps,
+then I hope I was able
+to give you exactly that.
+And this will help you in
+your job,
+in your project.
+I'll be very happy
+about that as well.
+And if it did,
+please let me know in the
+comments what you liked
+about this, what value you get
+out of this,
+and as well as share
+it with other engineers
+who you think will also
+benefit from this knowledge.
+And with that,
+thank you for watching
+Till the End and see
+you in the next video.

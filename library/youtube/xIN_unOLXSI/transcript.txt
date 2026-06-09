@@ -1,0 +1,568 @@
+I'm going to show you how to build an
+app using tools that simplifies the
+development process. Tempo and Subbase.
+Tempo is an intuitive AI powered
+platform that lets you quickly design
+and develop apps. And one of the
+strongest feature is how it makes
+building apps a collaborative experience
+for your entire team. I'm going to walk
+you through creating an app using Tempo
+as the front end and Superbase as the
+back end. Let's see how these two tools
+come together to make an app development
+faster and more efficient.
+So to get started with Tempo, you can
+head over to tempo.new. This is their
+website. As you can see, there's a lot
+of collaborative things going on here.
+Um, you know, backed by W cominator,
+which is super cool. Uh, but yeah, we
+can just press get started to get
+started with our project. And, uh, you
+get two options. You get generate an app
+or you can just connect it to a GitHub
+repository to get started with working
+on existing code bases. I'm going to
+start from scratch. So, I'm going to
+click get started with an app. And you
+get a few options here. You can start it
+with V, Nex.js or Expo. I'm just going
+to um keep it as V. And for a DB, you
+get a few options. We will be using
+Superbase, but we can just leave this
+blank for now. We can just get started
+with a blank template. And later on, we
+can add uh Superbase. Let me get started
+with this. So the tool or app that we're
+building today, I think we're going to
+build a CRM because it has it's somewhat
+complex. So I get to show off some of
+its um you know development capabilities
+of Tempo. It's easy way to showcase a
+lot of the features that are available
+with the two tools that we're going to
+be using today. So let me just start
+with
+that. Create a CRM tool that the sales
+team can use to manage their leads. Add
+a sales pipeline to manage their deals.
+Make sure we can track the revenue or
+revenue
+projections and add features to track
+activities uh for our sales team.
+So just like that I got my initial
+prompt. Let's hit
+next. And we are in here within the
+tempo uh dashboard or the page where all
+the magic
+happens. So there's a few things going
+on but uh in the middle we have this uh
+PRD. So Tempo's creating a nice looking
+diagram that kind of breaks down how to
+go about creating this application. And
+once that's done, it then moves on to
+creating the design um based on those um
+diagrams.
+And what's cool with tempo is we can um
+kind of go back and refine the diagrams
+and then we can ask AI to update the
+design or app based on that those
+diagrams.
+And within this design, what's cool is
+um you not only get the initial uh
+landing page or the homepage, but it
+creates the design for all the pages or
+all the subpages that are available and
+kind of displays it to you in a nicel
+looking UI and the AI has done doing its
+thing. And so we have three tabs up
+here. We have the P tabs which we can
+see the diagram. If I can zoom
+in. There you go. So we have a CRM um
+dashboard which has I guess three
+sections or four section leads manage
+lead management
+panel interactive sales
+pipeline revenue dashboard and activity
+tracker and quick actions.
+And each one of them has uh you know
+other branches spamming off of it. But
+we can jump into the design tab which we
+can view the core design of what's going
+on within this uh CRM app. So within the
+homepage I guess we have a few menu
+items pipeline leads revenue activities
+and within the pipeline we have the
+sales pipeline where the sales team keep
+keeps track of um deals in a cam board
+style
+page. So here's the sales pipeline.
+Here's the lead management tab. Not not
+exactly sure how you can Okay, so I
+guess lead management is this lead menu
+and then revenue dashboard is this
+revenue button. So that should open this
+page. And there was another one, wasn't
+there? Activities. Not sure where the
+activities went to.
+But what we can do is we can press this
+um play button to view a full screen
+preview of the app that the AI created.
+So we can click le revenue
+pipeline and I guess there is an
+activity uh tracker going on as well. I
+found that temple generally does a
+really good job of creating the initial
+version. Uh but the idea is that you can
+from here kind of add on top of what um
+the initial uh version gave you and like
+for example if you you know didn't like
+certain design or certain you know
+whatever aspect of it you can kind of
+ask the to modify
+it but for now I think this is a really
+good starting point. I am pretty happy
+with what the gave me. So I'm going to
+connect this to Superbase. So uh right
+here there's a connect to Superbase
+button. We can just click that and it'll
+take you to authorizing um tempo to
+access your Superbase um orgs. If you do
+not have a Superbase project yet, you
+can create one by heading over to
+database.new and create your first
+Superbase project. But I've already
+created one. Uh so I'm here in the
+authorization page. I'm just going to
+authorize my examples
+or and once I do that I need to
+authorize which um project I want to
+connect it to. So I'm going to choose
+this Tempo CRM that I've created for
+this particular project. So you need to
+create your project first and then come
+back and connect it to Temple. And yeah,
+connecting to Temple shouldn't take that
+long. It should just take a few seconds.
+But once everything is connected, we can
+go back to chatting with AI. So this uh
+purple logo up here brings up this um
+text field that allows us to chat to the
+AI to update the app. And we can just
+ask the AI to I have connected Superbase
+to this project. So please create the
+tables, triggers, functions, whatever
+necessary to set up this application
+um on
+superbase and also set up authentication
+too. So let's see if you know how good
+of a job the AI does this and you know
+uh generally in any kind of AI
+development there's there could be some
+hiccups and if there are that's that's
+part of the process and that's why um us
+humans are still here right uh AI hasn't
+entirely taken over our jobs yet so
+let's see what it can come up with so I
+am back here after AI did its thing as
+You can see we now have a login page and
+a uh register page. So you can see that
+it setting up authentication. If you
+look at the chat window over here, you
+can see that you know it's it did
+certain things set up super tables and
+whatnot. I implemented
+authentication database triggers
+functions
+uh and secure the tables using roller
+security. That's great. That's very
+important. But it also has some uh
+remaining subtasks. And at the end it's
+asking me would you like me to continue
+implementing the remaining subtasks.
+Let's see what the subtasks are. Update
+the lead management component. Use
+superbase for data fetching. Yeah. Yes,
+please. Uh update sales pipeline to use
+superbase. Okay. So it's pretty much it
+set up all the superbase tables and
+authentication but it hasn't connected
+the front end to superbase meaning it's
+it's not actually fetching all the data
+from the superbase database yet. So
+let's ask AI to just continue doing its
+thing. Uh so yes
+please I suppose did I misspel please?
+Yeah that's fine. Let's take a look at
+the superase table that we have. So we
+can just head over to the dashboard from
+within the sub I mean tempo menu and we
+can see the activities table ID title
+description activity type scheduled at
+completed
+at lead ID deal ID so it's able to you
+know generate uh foreign keys as well
+awesome and user ID I suppose this is
+assoc associated to the authorized or
+authenticated
+user deals. I think it's something
+similar. We have a company field, value
+field, so how much the deal is worth,
+probability, how likely the deal is
+likely to close. The standard sales, um,
+you know, deal management stuff. Um, and
+I assume we have a user ID as
+well. So the user ID is key here because
+it's it's what associates the supervis
+authentication to this table. and
+restricts you know who can view uh this
+table and who can't and stuff like that
+leads something similar we have a use ID
+name company email phone status
+priority and users table I suppose this
+is the okay so this is the users table
+within public schema so in superbase we
+have a users table within the o schema
+as well but this is just user this table
+in the public schema to manage the users
+of this CRM application. So you know it
+obviously multiple people can use the
+CRM application and this just handles um
+all those users that are using this CM
+applications. Um, but let's go back to
+our dashboard of tempo and it's still
+doing its
+magic. Um, so yeah, we can just come
+back after AI is done doing its thing.
+And I'm back here and it seems like
+there are still a few remaining
+subtasks. So I'm just going to ask AI to
+just keep going with it. So yes, please.
+And we are finally done with everything
+I believe. So I updated the deal card
+component to import deal type superase
+blah blah blah. Um yep comp. So it has
+updated a few things here and there to
+make it compatible with the table that I
+created on
+superbase and it sounds like it has done
+all the integration. Let me just check
+one thing in
+authentication. So if we go to sign in
+sign up providers in
+email. So this is one thing that uh any
+of any of these AI editor um kind of
+trips over. And so I'm assuming this app
+uses email plus password sign in which
+it
+is. Uh so in a production
+application you can use whatever u sign
+in you want to use right um usually
+these days I personally try to avoid
+email plus uh password sign in whenever
+possible I try to go with Google signin
+just because it's easier and you know
+who doesn't have a Google account but
+for these type of application when you
+just want to get up and running uh
+setting up Google authentication takes a
+few more steps just because you have to
+register this thing on Google Cloud and
+get this some kind of key and register
+it over here and whatnot. And it it it
+does take a few more overlaps um than um
+just doing just going with the email
+plus password authentication. So email
+plus password authentication is by far
+the easiest to go with. However,
+especially when you're just testing
+things out, uh this confirm email field
+in a production app, you want this to be
+on. What this field does is when it's
+turned on, when a user signs up to your
+service, it'll Superbase will send them
+a confirmation email saying, "Hey, did
+you sign up for this um whatever service
+this is? Uh here's a link that you can
+click on and you can confirm your email
+address by clicking onto that link. Now
+uh by turning this off, I get to just
+sign up and get started using the
+service. I don't have to go through that
+email uh sign up and um doing whatnot.
+So if you're just quickly testing things
+out, it kind of makes things faster. But
+in a production app, you should always
+have it enabled. I'm just going to have
+it disabled because I just want to, you
+know, quickly demo this application
+quickly take a look at uh, you know,
+this application uh, whether how exactly
+it's working and whether it's actually
+working out or not. So, I've gone ahead
+and gone into the preview again. We have
+a nice login page or I can jump over to
+the signup page. I'm going to sign up
+with my name and email address
+tyler@sup.io. I'm going to use my secure
+sec secure
+password and that is
+a super
+secure
+password. Create account. Um let's not
+remember that. So I'm in this CRM.
+Obviously everything is blank because
+I'm just I just signed up. Um I haven't
+really added any data. We do have some
+data in here which is which shouldn't be
+there because it should be blank. I just
+sign up signed up. But uh we can just go
+back and fix that maybe. So let's start
+with uh adding a lead. So here's a add a
+lead and here's add new lead. I don't
+know what the difference is. Um let me
+try. Yeah, let's Okay, I guess this
+button doesn't do anything. So, maybe
+that's one thing we can fix. But let's
+add a new lead. Um, Tyler
+Sugar Superbase email is Tyler
+at superbase.io Hey yo. 0 0
+0 status new
+priority super high
+value two
+billion. Oops. How did I delete this?
+Zero 200 USD. Why not? I don't
+know. So, we have a lead in there. Let's
+go check out our Superbase database.
+And we can see this new lead coming in
+there, which is great. Now, I wonder if
+we can create a deal that is associated
+to a lead. And it's looking like this
+add deal button. Neither one of them are
+working. So, there's
+that. Export report. Sure. schedule
+activity. So these buttons are not
+working
+either. Okay. So maybe that's that's a
+homework that we can take back to
+um our
+AI. Great. So within the P pipeline page
+and activities page um the button to add
+pipelines and activities uh are not
+working. So, make sure they are properly
+working. Also, for the leads page,
+there's extra button that does not do
+anything. It doesn't pop up a dialogue
+to create a new lead or anything. So,
+maybe just get rid of any of the extra
+buttons that are u not
+working. Should be good.
+Let's let the AI do its magic and come
+back once it's uh done again. So, it
+says AI has finished uh fixing all the
+stuff. Let's go back and check it out.
+Let me refresh the page just in
+case.
+And guess there are still
+two deal button to lead page. Okay, I
+guess both of these are
+functional. I wish if it removed one of
+them at
+least. Um, in
+[Music]
+activities, I wonder if I'm doing
+something wrong. And it's supposed to
+meant to work like
+this. Let's see. So add a functionality
+to add new lead button to the lead
+management component by giving it ID
+that can be
+targeted. Fix the
+buttons
+H. So we can preview these
+dashboards like interact with these
+dashboards by pressing this uh preview
+mode. And let me see if I can make it do
+anything.
+No, it's
+not doing anything. When I click on the
+edit
+button, so I can add a new
+lead. That's cool.
+Um, let me go back to the previous page
+or let's see.
+Add new lead. Fix the buttons. Set the
+home component header. May the add lead
+button trigger the lead
+dialogue. Toast notification. Okay. Fix
+the floating action button in the bottom
+right. Made it trigger. Add lead
+dialogue when it's in the lead tab. So
+if we're on the lead tab and press
+this, this triggers adding a new lead.
+Okay.
+But when we're in pipeline, it doesn't
+do anything. Fix a floating action
+button. Fixing the schedule activity
+button in the activities card to show a
+toast
+notification in the sales pipeline
+component to show a toast
+notification. There's no way to add a
+new deal or activities. So, make sure
+there is a way for us to add deals and
+activities to this
+app. So, let's see. The AI has done its
+thing. It has
+implemented add dialogue. Add activity
+dialogue. Activity checker component.
+It looks like it did what I asked it to
+do. So let's refresh the page and see
+what we have. So within the
+pipeline. Okay. So we have this add
+deal dialogue.
+Now stage priority profitability contact
+person. The question that I have is
+within deal we have okay I guess within
+deal we only have reference to user ID
+but activities we have
+um deal ID and lead lead
+ID. So activity is associated to a deal
+and a lead. Uh so let's just create a
+deal with
+superbase contact person Tyler. Maybe
+it's kind of confusing that I'm using my
+name for
+everything. Deal value 200 probability
+20%. Prospect medium priority high and
+add deal button is not working. I wonder
+if we
+have some kind of console error and
+surely we do
+error creating a deal role security
+issue. So let's take a look at what kind
+of role security policies we
+have and okay surely we don't have any
+rollable security policies for deals and
+activities. I wonder if that was the
+reason
+why it wasn't working earlier, but okay.
+Uh I'm getting rollable security issues
+with deals and activities. And I looked
+at the Superbase dashboard and saw that
+there was no rollable security policies
+for deals or the activities table. Make
+sure proper roll security policies are
+set for those tables and make sure
+they're secure, too.
+All right, let's wait for Temple to do
+its thing then. And now we got some
+issues it seems like. Let's see. It
+tries to tried to run some
+SQL and it failed. Not sure what what
+exactly the SQL was, but um so it's
+trying to add tables to real time
+publication. Basically enabling real
+time for the table. Not exactly sure why
+exactly it wanted to do that. But we can
+uh whatever the problem is, we can just
+ask it to uh fix by clicking this fix
+with AI button. And nice thing about
+tempo is that it doesn't charge you
+anything for fixing errors that it has
+detected like this. So we can just click
+it without any hesitation and it has
+returned. It seems like it resolved all
+the issues that ha it had. Um let's
+check out the roville security policies.
+It has a users can only see their
+activity policies. So it has a single
+all policy that um off UID equals UID
+which works in this case. Yeah, that is
+a valid uh role security policy for this
+particular applications. As far as we uh
+have gone so far, the only person that
+ever is ever going to open this
+application is um that user.
+If we were to take this application to
+the next level, we might want to add
+like a role based authorization where
+you CRM are not that helpful if I'm just
+using it by myself. Instead, you should
+share these data with your colleagues at
+your company um with your sales team or
+across all the teams or whatever. So in
+that case, this particular role security
+policy isn't going to work. But for the
+sake of this demo today, I think it's a
+good start and I'm just going to stick
+with it. So, we have a lead. Let's see
+if we can create
+a deal. Contact person Tyler deal value
+200 probably. Um, that's all good. Okay.
+So, now we can create a deal. And it
+looks like here is how I can create an
+activity. So, if I call this person, I'm
+assuming I can just click this or click
+this. I wonder what this is. Advanced
+deal H. So, I clicked a few of them.
+Couldn't really do anything, but uh this
+schedule activity dialogue is now
+working. And it looks like we have Oh,
+so an activity can be associated to
+either a deal or lead. This is pretty
+cool. I didn't really think about this.
+Um activity title.
+Um kickoff
+meeting call date. That's good. Let's
+have it associated to a deal. Um, it
+went
+awesome. And we can hit schedule
+activity. And there you go. We have a
+kickoff meeting. Um, that was scheduled
+or that
+was in this case in my mind, I had it
+thinking that we did it. But either way,
+we have it right here in the database.
+And do as well, we have it right here in
+the database. And if we take a look at
+this uh activity the there's a deal ID
+and we can click open the associated
+deal of this do ID and we can confirm
+that this activity is associated to this
+deal. Very cool.
+Okay. Uh so yeah that is the basics of
+how you can build an application with
+superbase and tempo and I know that we
+have some homeworks fixing maybe this
+revenue dashboard making sure that it
+properly fetches fetches the data from
+superbase
+um hopefully from the deal and maybe
+does some kind of forecasting or
+something but doing that implementing
+that particular feature is just a matter
+of uh just talking to the AI a few more
+times and I think by this point you get
+the idea of how easy it is to build a
+fullyfledged application using tempo and
+superbase. I love the beautiful UI that
+it was able to create pretty much it had
+this uh beautiful UI on the initial
+prompt, right? I love the fact that it's
+able to spin up this beautiful UI with
+the simple prompt that we started with
+and it's able to add these features just
+by asking the AI, you know, fix this,
+fix that, do this, and whatnot. And it
+was able to make my robo security policy
+very secure. How far you want to take
+this tool is really up to you. Uh but
+yeah, Tempo is for very serious
+development teams. I didn't have the
+chance of diving into this collaborative
+aspect of Tempo, but do check it out.
+very awesome tool and make sure to
+connect it to Superbase and keep
+building cool

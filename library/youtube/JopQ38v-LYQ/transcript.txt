@@ -1,0 +1,144 @@
+- In this video, you're
+going to learn about
+a common application vulnerability
+called Insecure Direct
+Object Reference, or IDOR.
+I'll show you what it is,
+why it is a security risk,
+and most importantly, how
+you can protect yourself.
+To put it simply,
+an insecure direct object reference
+occurs when an application
+exposes sensitive data
+or functionality by
+referencing an internal object
+such as a database record
+or a file without proper access control.
+When attackers exploit
+either vulnerabilities,
+they can gain access to sensitive data,
+potentially modify critical information,
+or compromise the entire application.
+Imagine you have an E-Commerce website
+and users are granted access
+to their shopping cart.
+In this scenario, a
+typical IDOR vulnerability
+would allow an attacker to
+view someone else's cart.
+Let me demonstrate this
+using the OWASP Juice Shop,
+which is an intentionally
+vulnerable web application
+that you can use to learn about
+many different application security risks.
+This is the shop where I
+can buy all sorts of juice.
+I'm already locked in.
+And I open my basket, which is empty.
+For a regular user there is
+nothing special about this page,
+but an attacker might likely assume
+that each shopping basket
+is associated with some kind of an ID.
+To find this id they might start
+one of their automation tools
+or maybe just the browser's
+native developer tools.
+Let's do this and have a
+look at the network traffic
+by reloading the page.
+Now look at this request to the API,
+including the basket and the number six,
+which may be an actual ID.
+I'll open the response
+and we can see that this looks
+like the basket information,
+including the likely basket ID, a user ID,
+and the list of products, which is empty.
+Now let's see if we
+can change the request.
+Let's set the basket ID to five
+and resend the request.
+Now look at this.
+We can access the basket
+of a different user
+with the user ID 16,
+and they seem to like raspberry
+juice and egg fruit juice.
+Now, this basket ID is an
+insecure direct object reference
+because it allows an attacker
+to retrieve other people's information
+by guessing their basket IDs.
+A seemingly easy fix might
+be to use more complex,
+hard to guess IDs like a UU ID,
+but this would mean that the security
+of your application depends on secrecy
+or hidden aspects of the system.
+This is what security experts
+call security by obscurity,
+and it's considered weak and unreliable.
+Attackers can often discover obscured IDs
+through analysis or reverse engineering.
+So an IDOR vulnerability
+is not about the ID itself.
+It's a type of broken access control,
+one of the most common application
+security risks to date.
+To protect against this risk,
+it is important to implement
+robust authentication and authorization.
+This means in our example that
+the application should check
+if the basket's user ID is equal
+to the locked in user's id.
+I've cloned the repository
+and we're looking at the
+source of our basket API.
+As you can see, it's
+simply retrieves the basket
+using whatever ID has been sent
+and then returns it to the
+client as adjacent object.
+What it doesn't do is check if the user
+that sent the request is
+also the owner of the basket.
+Let's fix this.
+First, we need to get the user ID.
+And then we need to check
+if the basket's user ID
+is the same as the current user's ID.
+If basket user ID doesn't equal
+the locked in user's id,
+we want to simply return a 403,
+including the error message
+that the access has been denied.
+Otherwise, we can safely
+return the basket.
+To summarize with this
+small authorization check,
+if the user doesn't own the basket,
+all they get is an access denied.
+This was just a simple example,
+but imagine this was a
+function that allows the user
+to change their password
+and an attacker would be
+able to guess the admin ID
+and change their password,
+giving the attacker access
+to the entire system.
+The way to protect your app
+against this type of attack
+is to implement proper
+access control mechanisms
+just like you've seen in the demo.
+Thank you so much for watching.
+If you've enjoyed this video
+and learned something new,
+make sure you hit that like button
+and subscribe to this channel.
+See you in the next video.

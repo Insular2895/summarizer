@@ -1,0 +1,32 @@
+How many hours did you spend last week
+creating architecture diagrams and
+infrastructure codes? I spent
+Let me show you how can you do it in
+just 2 minutes and even AWS stand agent
+just a basic app description. Create a
+web application with a database, just
+that. This solution used three
+stand agents working together. Agent
+number one automatically generates and
+enhances architecture description with
+AWS services and application flow. Agent
+number two takes that description and
+creates a detailed mermaid diagram
+automatically. But here is where it gets
+really good. Agent number three
+generates production-ready Terraform
+templates following best practices
+through an MCP server. All of this
+happened while I made coffee.
+From manual architecture task to
+infrastructure as code ready for
+deployment in literally minutes. This is
+what I call going from zero to deploy
+ready. Enhanced description, visual
+diagrams, and Terraform code all
+generated automatically by these three
+agents working in sequence.
+Want to see how I configured these stand
+agents? Full setup details are in the
+description below. What manual task are
+you automating next?

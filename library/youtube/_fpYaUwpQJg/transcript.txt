@@ -1,0 +1,74 @@
+[Music]
+hi I'm Bart McAlister enterprise
+strategy analyst at data dawg I've got a
+tip for you that comes from an
+enterprise customer Thomas did Murr head
+of engineering at money supermarket
+group in the UK data dog helped Thomas
+cut is cloud infrastructure costs by
+more than 50% I'll show you how let's
+jump into our host map the host map is a
+helpful bird's-eye view of your
+infrastructure here we see all the hosts
+in our environment colored by CPU
+utilization underutilized hosts can add
+up to a lot of unnecessary
+infrastructure cost many enterprises use
+only a very small percentage of the
+infrastructure capacity that they
+allocate sometimes just one or two
+percent in David dog is easy to see your
+infrastructure utilization the key on
+the bottom tells us that green means low
+utilization and red means high there's a
+significant amount of green on this map
+which means the utilization overall is
+pretty low if we hover over the group we
+see that we have over 5,500 hosts an
+average utilization is just 14% we can
+slice and dice these hosts by any number
+of variables or tags as we call them to
+see where utilization is particularly
+high or low let's group first by
+availability zone here we see some
+patterns Mo's owns have pretty low
+utilization but some are high this one
+us West 3a is running pretty hot at 78%
+utilization so maybe there's an
+opportunity to rebalance resources
+Thomas also talks about how we saved a
+significant amount of money by
+eliminating redundant test and staging
+environments we can view our hosts map
+by environment as well
+in this environment turns out that we
+have a large production environment at a
+fairly small staging environment so
+there's not too much to streamline we
+can also go into individual hosts if I
+click this host I can see the
+utilization is 9% and by the way I can
+also see what's running on the host and
+an intact associated with this host
+another common issue that Thomas
+identifies in his article is the
+tendency for teams to oversize instances
+meaning they select more powerful
+instances that are necessary for the
+task instance type is another tag
+available in Dave dog so if we go back
+to our host map we can group by the
+instance type tag here we see a lot of
+large Excel and double-xl instances
+which are all running a fairly low
+utilization this suggests we might be
+able to resize these instances you can
+get a lot deeper in data dog but this
+shows just how quickly you can get a
+high-level understanding of your
+environment and begin to right-size in
+order to save money and increase
+efficiency if you want to learn more
+check out the e-book in the link below
+to get the full money supermarket story
+thanks for listening

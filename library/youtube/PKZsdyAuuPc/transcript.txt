@@ -1,0 +1,160 @@
+Hey everyone. What happens when you have
+a load of tests that are failing because
+you've modified your application? You've
+made some changes. You've improved stuff
+and now the tests are failing. That's
+great because the test should fail if
+you make those changes. But when you're
+sure that the code has changed and the
+test is now not going to match, then
+basically you can use the healer agent
+to improve this. So for example, I've
+got a get by roll menu item. I know I
+changed the menu item because that was
+the wrong accessible um code for for
+this the wrong element. So I've made
+some changes and we've modified it and
+I've gone through all of these um these
+error messages here and I can see yeah I
+get old text box. I know this is
+actually a combo box because I know I've
+watched the agent do the job. The agent
+actually improved the website for me. So
+now I'm clear these tests need to be
+fixed and I can go and manually tweak
+them. I could fix with AI. I could use
+the copy prompt button. But I'm going to
+use Playright agents. Now I've already
+got Playrite agents installed. So check
+out the docs for more info on how to
+install them with the latest version of
+Playright. And now I've got the
+Playright planner generator and healer.
+But I've already got tests. I don't need
+to generate anything. I just need to
+heal. So let's go ahead and click on
+that one. And then I can basically um I
+can have the actual um one open here,
+the test that I want to work on. And I
+could say uh fix this failing test.
+Um, so I can go ahead and just fix this
+one test if I wanted to just make sure
+it focuses on one test or I could
+basically say just go ahead and run and
+fix all tests. Now I've already got um
+the run tests already um included here.
+Um and now I've got to improve this one.
+The tool result for run it's running a
+list of tests. So I'm going to say allow
+um allow without review because I really
+just want it to go ahead and do its
+thing. So this is um it's running the
+test to see what's failing. It's now
+running the test in debug mode. This is
+really cool. So it's the creating new
+lists uh create list with valid details.
+That's the file I have open here. So
+it's found the right test and it's
+running two tests. Two tests. Why two
+tests? Because I have a login first.
+It's got a login to be able to do it. So
+it's run the the um test here to be able
+to log in. Uh that's the setup test. And
+you can see that um this is the the
+output in here. It doesn't have access
+to my credentials because I'm using uh
+project dependencies. So it can log in
+without actually seeing any login
+details. And then it's got to this test
+here. The locator get by roll text box
+name public list expected yes and a
+timeout because the element is not
+found. Expected to have value. So it
+sees the issue. The test is looking for
+a text box uh with a name public list
+and it should be a combo box like we
+mentioned. So now it's asking me to
+approve uh this the console um the page
+snapshot. It's taking a page snapshot of
+everything that it needs to see. So
+that's great. And let's go ahead and do
+that. Um I'm going to have to zoom down
+a bit just so I can see the button.
+There you go. So I'll go allow um always
+without review because I wanted to go
+ahead and let's zoom in back in again.
+Okay. So now it's got the page snapshot.
+It can see exactly um what is on the
+page, what that element is now called.
+And it can see the field is a combo box,
+not a text box. The test needs to be
+updated and it's going to go fix that
+test.
+And now it's going to restart the test
+to verify the fix. This is really
+important. It doesn't just fix it. It
+then runs it that debug single test
+again to just make sure that that is
+actually the fix. Maybe there's another
+error. Maybe it's going to find
+something else, but it's running it.
+It's fixing it. And uh it comes along
+here and it's basically said yes, this
+has run. The test has run. You can see
+it here. Uh the output two tests passed
+and um
+and then we can go ahead and just it's
+showing me it's changed it from this to
+this test now successfully navigates to
+the crate list. It does etc. blah blah
+blah. We can go ahead and keep that uh
+for our own check. If we're unsure and
+we don't believe that the AI did exactly
+what it was meant to do, we can go ahead
+and run that test ourselves and see for
+ourselves that that did pass. And then
+we could basically just continue um this
+procedure uh with all our other tests
+that are failing. We can do them one by
+one. Um or we could ask it to just
+basically go and um run and fix all
+failing tests
+and then it will just go ahead and it
+will run all the tests. It will find all
+the ones. Now it first needs to identify
+which ones are failing and then fix them
+systematically. Now couple of things to
+notice here. If you are running the
+test, I am running in headless merge.
+How I've done that is over here. Over
+here when you install the um mcp.json,
+you've got I've got headless in here in
+the args. So when you're including um
+the playright test mcp server, you can
+go ahead and add d- headless so that you
+don't have that browser window popping
+up. And that just means everything is
+going to run behind the scenes so you
+can continue um doing what you want to
+doing. Um if you want to see what's
+going on, just remove that and then you
+be able to watch everything. So it's
+going to run the tests here and it's got
+the two projects. There's quite a lot of
+tests that it needs to run here under
+the hood. So it's going to take a little
+bit of time to do that. It's going to
+find the tests that need failing. Again,
+you could totally go along here and just
+drag in the test into context and then,
+you know, go through it one by one and
+keep an eye on it. And of course, make
+sure you're using git to then um see
+that this is exactly what you what the
+change that you made so you're able to
+push that to production correctly and
+easily uh see the changes, etc. Um so
+that's it. Happy testing with the
+Playride Healer. Uh get those tests
+healed. Um, it's totally amazing to
+watch it in action.

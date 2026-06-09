@@ -1,0 +1,1130 @@
+right boy nice and Loud awesome all
+right yeah so we'll talk about Advanced
+authentication and encrypted connections
+uh inside of postc uh I'm stepen Frost
+I'm CTO at crunchy I've done stuff uh in
+postr uh but let's not dwell on that
+let's kind of dive right into it so
+postr has a number of different
+authentication methods that are
+available and I'm going to kind of go
+through and talk through ones that I
+feel are really the recommended ones
+right this is kind of the advanced
+ication side of things uh and then we'll
+talk through ways of configuring uh
+postgres with these different options
+and ways of controlling uh things on
+both the client and the server side uh
+because when you're thinking about
+authentication and you're thinking about
+encryption uh these things are important
+to consider uh from both the client and
+the server side a lot of people look at
+things as like well we care about the
+server being super secure well you want
+to make sure that the client is secure
+too because otherwise you end up with
+problems like man- inthe middle attack
+and things like that so in terms of
+authentication methods that I would
+recommend uh the big ones are GSS um
+also known as gssapi also known as
+Kerberos or sspi uh which is essentially
+the same thing but using the windows uh
+environment um so GSS uh integrates with
+MIT and heimu uh Kerberos that also
+integrates with active directory uh so
+this is what I strongly recommend for
+really like any kind of proper
+Enterprise deployments right where you
+have an active directory environment you
+really should be using GSS or
+sspi um that's what uh Windows uses for
+all of its authentication um and that's
+what is really strongly recommended
+another really strong approach is to use
+certificate based authentication so this
+is tls/ssl where we have client side
+certificates and we also have server
+side certificates and these are used to
+cross validate each other we'll talk a
+lot more about certificates later
+um you can also do uh what's called
+mapping and I'm going to talk a bit more
+about that but you can map what are
+called CN which is your common name
+inside of a client side certificate to
+postc usernames to keep things a little
+bit more sane last but certainly not
+least is scram this is The Salted
+challenge response authentication method
+this is the password-based method that
+you should be using these days uh if
+you're using any other password-based
+method uh you really need to move off of
+it and I'm going to talk through some of
+the other ones here here in a moment
+last uh and then finally Pier this is
+only over local Unix socket uh we'll
+talk a little bit more about that but um
+it's basically passes through what Unix
+user connected so if you're not using
+these authentication methods then you're
+doing things that I would argue are not
+secure um and I'm going to talk through
+why right uh so the ones that I would
+say are not ideal uh are methods that
+send clear text passwords to the post
+credit server right so big one on this
+list is pam pam has got all kinds of
+other issues because the Pam modules run
+as the postc user not as root so that's
+problematic but one of the biggest
+issues with Pam is that it sends the
+user's password over the wire right
+which is terrible you can use things
+like sazzle D um to be able to run some
+of those methods uh some of those
+authentication um routines that you can
+get with Pam um
+obviously if you're using Pam you're
+going to have to be using TLS or SSL in
+order to be able to provide some kind of
+encryption on the wire but still it's a
+bad idea to send clear text passwords
+it's also a bad idea to save clear text
+passwords uh on any system uh radius is
+another method it's a little bit better
+because typically it's used with a
+one-time password system but it still is
+sending that information over the clear
+uh to the server which is not great so
+you want to be using SSL here too
+password is your traditional
+password-based authentication method
+again sending passwords over the wire is
+bad even in even through encrypted
+connections it is bad to be doing that
+is it is not a good thing to do now
+these are methods that I would strongly
+strongly say you should be avoiding uh
+md5 is the biggest one right it's old
+it's deprecated md5 is known to have a
+lot of issues in terms of uh
+how good a hashing algorithm it is and
+you really should just move to scram
+right there there's not a lot of reason
+not to um and it is uh you know scram is
+now widely supported in all the
+different client libraries and that is
+really what you should be moving to um
+md5 also suffers from something called
+pass the hash uh which is an issue and
+so that's another reason to uh to avoid
+it um and what that basically means is
+that you don't actually need the
+password all you need is the hash in
+order to be able to use uh in order
+order to be able to authenticate against
+the post server ldap lots of people use
+ldap I don't like it um it uses a simple
+bind connect to the ldap server the way
+that it does this is that the users
+password when they are authenticating is
+sent to the postc server and the postc
+server then turns around and uses that
+to uh in proxies those credentials to
+authenticate to the ldap server and you
+should just be using GSS API instead or
+sspi depending on if you're on a Windows
+environment um almost always this is
+because somebody's got it in their head
+that ldap is the way you authenticate
+with active directory yes it's possible
+to do that no it's not how you do it
+it's not how Windows does it it's not
+how any of the windows services do it
+it's not how any of the more secure
+environments do it because passing that
+password across the wire even through an
+encrypted connection is insecure right
+the postp server has no need to ever see
+the user's password that doesn't happen
+with scram it doesn't happen with gssapi
+doesn't happen with sspi and there's
+good reason for that uh ident is is
+ancient and old nobody should be using
+it these days and don't use trust right
+A lot of people you know you look at
+trust and you're like oh trust is SEC No
+No Trust basically is a it's a developer
+hack inside of postres it it should be
+pound defined from you know even
+compiled into the binary if you ask me
+um because it just basically bypasses
+all authentication just forget it um so
+just a really quick kind of review of of
+pgba I'm not going to harp on this too
+much because this is a kind of an
+advanced uh advanced class but your
+basic pgba authentication or
+configuration allows you to control
+authentication based on these different
+options we read it from top to bottom
+the first match uses you know host SSL
+is if SSL is being used there's some
+some special database Nam special
+usernames and the addresses that you can
+specify here you can use a CER mask
+which with um Advanced authentication
+does include some pgba stuff I I think
+not enough people use the reject method
+right reject is actually really useful
+because you can carve out whole SAS of
+address space and like if I ever see a
+connection from any address in any space
+like this I'm just going to reject it
+outright right um like that are are good
+to do so that you minimize the risk that
+uh something ends up getting through a
+little bit farther than you
+intended uh PG ident is next um this is
+for mapping uh system users to postgres
+users right so here you can specify some
+regular Expressions uh or you can just
+map you know bare names you can say the
+Unix user Joe can log in as the postc
+user Bob if you want um client side
+certificates so this is uh your you know
+this would be your CN common name you
+can control what that ends up being in
+the postgres side of things and then
+keros principles are really cool because
+you can use these regular Expressions to
+say I want to allow a capture here with
+this do star and the regular expression
+and then that is replaced with the back
+slash one to allow you to then uh
+authenticate as as whatever user at that
+particular realm um you know into the
+postc system uh you specify what map to
+use inside of your PGH HBA using a map
+equals and then specify whatever the map
+name is that you want for that
+particular PGH HBA line so that's you
+know a lot about the server kind of side
+of things I'm going to talk through a
+bunch of the client side stuff now so a
+bunch of client side options that I
+think people don't consider uh and don't
+think about uh and they're really
+important because a lot of the options
+that we initially have set are meant for
+more compatibility not for sec security
+so first option when we're talking about
+this from libpq is channel binding so
+Channel binding prevents man- inthe
+middle attacks the way that it does this
+is that it binds the TLs encryption
+layer into the scram exchange this is
+only really sensible when we're talking
+about TLS and scram uh if you're talking
+about client side certificates if you're
+talking about GSS API en cryptic
+connections those things are already
+handling this for you uh but when you
+have TLS and scram you want to be able
+to prove both directions you want the
+server to be able to prove that it's the
+real server and that you're actually
+talking to that server and you want the
+client to be able to prove that it's
+actually the correct client that's being
+um
+authenticated uh and you get that with
+Channel binding um so the options are
+require prefer and disable and you
+really want to set this to require on
+your client when you're using TLS and
+scram this is a a really big deal in
+order to prevent those man- ofth
+the-middle attacks now I have people who
+ask ask me this sometimes and they're
+like well what about PG Bouncer and what
+about other proxies and yeah that's
+going to it's going to not
+work right it's kind of the point
+because those are man- ofth the- midds
+right um so if you're using those it's a
+bit more complicated to deal with but um
+sorry right this is more about security
+uh those are are different options for
+other other op you know other
+environments maybe you can use those in
+but I do recommend using requir when
+you're using TLS and scram together a
+new option in pg16 that I'm really
+excited about is the require off lipq
+option this allows the client to specify
+what authentication methods they're okay
+with right previously post would just
+kind of like well we're going to ask the
+server and the server will tell us
+whatever they want to tell us so the
+server might say well I want to use
+password clear text password off well
+sure and it attacker is going to do that
+because then guess what that that
+attacker is then going to get your
+password right uh you can specify
+multiple methods uh these are the list
+of valid options um this doesn't really
+apply for client side certificates or
+for GSS API encrypted connections um
+that's what the nun is for uh but
+recommendation ideally set it to exactly
+the off method that you are expecting to
+be using here right if you're in a
+Kerberos environment you should set
+Quire off to GSS or to none if you're
+using encrypted connections which
+obviously you should be if you have the
+option to um but at least at least use
+it to exclude things like password and
+md5 right there's no reason to have
+those enabled so you know if it was up
+to me I would probably have this as the
+default in
+postes but it's not up to me um so yeah
+as mentioned none doesn't prevent TLS or
+or GSS API but you can use this to
+prevent clear text passwords from being
+sent over to the postes server which is
+a big big deal and something I strongly
+recommend everybody
+do all right I'm going to talk through a
+few other options here uh so
+crls certificate revocation lists when
+you're using TLS or or SSL you're using
+some kind of certificate Authority that
+certificate Authority should be
+publishing a crl a list of certificates
+that are no longer valid no longer
+trusted you should be downloading that
+and using it strongly recommend that you
+set SSL crl to a maintained and
+regularly updated crl other options
+exist like ocsp um there are upsides and
+downsides to using it O ocsp is a way of
+actually the server can reach out and
+check with a uh CA to see whether or not
+the certificate that's being presented
+has been rejected or not but at least
+have a crl uh or use uh the SSL crl dur
+uh which is a way of having a directory
+of crls uh that you can have specified
+so that op SSL can go look up and see if
+there's anything there that if the
+certificate should be
+rejected the next one is again this is
+client side SSL mode SSL mode has a
+whole bunch of different crazy options
+and there's only one that you should
+use and that is verify full right um the
+options for you know allow prefer
+require verify CA none of those actually
+make sure that the certificate presented
+by the server matches the host that
+you're trying to connect to this is a
+big deal you want to verify that the
+host you're connecting to is giving you
+the certificate that you're expecting if
+it's not presenting the certificate
+You're Expecting things should blow up
+there should be a big warning saying hey
+no that's not the right CT this is a
+problem strongly recommend setting SSL
+mode to uh to verify full it's kind of
+an interesting one because it also has
+require but require doesn't do what
+verify full does so you really want to
+be using verify full for SSL
+mode um now in New and6 there's also an
+SSL CT mode uh which allows the client
+to choose whether or not to send a
+client certificate
+um I I do recommend setting this to
+require when you're using client side
+certificates but it doesn't really
+provide any proper additional security
+because the server can just ignore it um
+but it's a it's a new feature in 16 so
+people might be interested in
+it require peer um this is only valid if
+you're on like a unic system and you're
+connecting uh using the peer
+authentication method but this basically
+says I want to actually connect to the
+post credit server I don't want to
+connect to some random socket that some
+other person has dropped into a
+directory that maybe they're trying to
+use to get my information or perform
+some kind of man- in-the-middle attack
+over sockets um of course the
+recommendation here is set it to
+postgres or whatever the OS user that
+postres is running as a lot of this is
+addressed through directory permissions
+most distributions will actually put the
+socket into a secure directory um that
+only the postgres user has right access
+to that's fantastic still a good thing
+to do is set require Pier when you're
+using Pier
+authentication uh similar to the SSL
+mode there is a gssc mode uh which
+allows the client to require that GSS
+API encryption be used um of course if
+you're using GSS API my recommendation
+is set this to require so that on the
+client you are actually forcing it to go
+and use encryption over you know with
+GSS API when connecting to postgrads
+okay so now let's talk a little bit
+about these authentication methods in
+particular we're going to talk a good
+bit about keros and then we're going to
+talk a good bit about TLS and SSL
+because those are the methods that
+provide encrypted connections to postres
+so how does keros work keros worked by
+having what's called a KDC um in active
+directory this is your domain controller
+right um and I'll talk a bit more about
+that in a second you then have ticket
+granting tickets so as soon as you log
+into a post into a Windows and IR you
+get a ticket granting ticket there are
+then these things called principles and
+you have user principles and service
+principles so a user principle would be
+like me right my my principle is s Frost
+at snowman. as an example right service
+principle would be the postgres service
+okay so this would be the postgres
+service running on a specific host in
+fact the key tab file contains the
+service principle information I'm talk
+more about key tabs in a minute it but
+just be aware that that's really the
+anchor between the service and the KDC
+right it's their shared secret
+essentially uh and that's what allows
+them to uh validate against each
+other now when you're running postres um
+on Unix inside of an active directory
+environment if you want to have it be
+actually directly integrated with the
+active directory system that is you want
+the postgres service to be available
+inside of the realm that ad controls
+okay this is a very typical setup all
+the services end up being inside of one
+big realm and all the users exist inside
+of that
+realm in order to set this up you need
+to have a user account in active
+directory and the service needs to exist
+in active directory then you have to map
+that user account to that service this
+is all kind of Windows Active Directory
+fund the Unix system
+or systems will need a key tab file that
+has that service principle information
+in it again that's the trust and the
+shared secret between the KDC and the
+and the
+service and then so you'll have to
+export that key tab file and copy it to
+the Unix system so there is actually a
+pretty simple Windows command to do all
+of that in one shot and it's called KT
+pass um Kerberos on Unix systems I say
+typically means MIT keros or hle here
+for the libraries we sto supporting
+heyle uh the reason is that they don't
+maintain it properly um they they they
+forked MIT Kos at one point essentially
+and started rebuilding all of it and
+then they kind of stopped maintaining it
+once MIT Kerberos could be exported out
+of the US and so it it really it's not
+properly maintained if anybody really
+really loves Heim and wants to argue
+with me about it I'd be happy to talk to
+you but as of 16 we no longer support uh
+heimel
+um and very few people have really
+complained about it as far as I'm aware
+I haven't heard a lot um almost always
+it's MIT cros these days on Unix systems
+so in order to create that service
+principle in Windows uses KT pass so you
+have an out right that's like the key
+tab file I mentioned you then have the
+principal name so principal name is
+going to be postgres right that's the
+well-known service name uh for the
+postgres service then you have the the
+server uh and it's fully qualified
+domain name and you have at and then
+whatever the realm is right you then as
+mentioned you need this map user right
+whatever the user was that you created
+inside of a such as maybe it was PG
+server right or pg1 server uh and then
+you can uh specify um Rand paath to
+choose a random password which of course
+is what you should do and then you want
+to specify the cryptology or like um
+crypto to use for this which is aes256
+um and then this now is supported by
+windows and MIT geros and an older
+versions of post
+gimle so this is basically you run this
+and then you can go and copy that key
+tab file over to postgres and now all of
+a sudden you have this uh key tab file
+and a service inside of active directory
+that you can then authenticate against
+using uh gssapi on the server side
+coming from SPI on the client side uh or
+possibly from gssapi on the on the
+client side too uh unic systems can
+actually request tickets from the uh
+Windows KDC as
+well um so when you're using an MIT KDC
+it's a little bit different it's not
+hugely different but you do need a
+service principle in the MIT KDC you
+don't need a separate user uh principle
+uh when you're talking to a a MIT uh KDC
+uh KD admin is the tool to use uh for
+creating principles and basically you
+can just run this ad prank Command right
+specify Rand key so that it doesn't
+prompt you for uh a key and that's it
+off you go right you create the key tab
+file using a KT ad Command right uh
+inside of K so the ad prank and the KT
+ad are both commands that you run inside
+of
+kadmin um but then that's it right you
+you create the principle you add you
+know create the uh key tab file by
+exporting it using KT add and you copy
+that key tab file over to the postc
+server so now to install that you do
+need to configure your etrb 5.com a lot
+of systems like especially in like
+active directory environments Enterprise
+deployments like that will have
+everything in DNS already for you right
+it'll have the realm it'll have what KDC
+is to talk to depending on what realm a
+lot of that will automatically be
+managed for you in inside of a Windows
+environment uh because just that's just
+stuff that active directory just does
+for you but if you need to you can go
+and configure a tkb 5 um again you have
+to copy that key tab file uh it does the
+key tab file is a binary file so be
+careful when you're copying it
+around uh and then you can tell postgres
+where that key tab file is using the krb
+server key file option in your postgres
+ql.com you could store it in the PG data
+directory if you want it must be
+readable only by
+postgres uh it also can be used by
+multiple different postgres instances on
+that system if you want right so if
+you've got 15 uh different clusters of
+post running on a particular system you
+could have all of them use that same key
+tab file if you want uh in kind of
+Kerberos active directory world you have
+typically a a
+distinct plus poost name U They Don't
+Really contemplate the idea you could
+have independ
+say GSS with the server on a Windows
+plat form you say sspi and I'll talk a
+little bit more about if you're running
+Windows uh and you're running postgres
+on Windows I'll talk a bit more about
+that in a bit because uh there's a few
+things that are a little bit
+different all right so now let's talk a
+little bit about GSS API encryption so
+this was added into postgres 12 uh it's
+only currently supported for cases where
+the client and the server are both using
+uh GSS API uh it will work with keys
+provided by an active directory
+environment um but it won't work if
+you're coming from an sspi system so if
+you're coming from Windows going to uh a
+Unix system today that support doesn't
+exist there's no reason why it can't
+work right um it's just somebody needs
+to go write that code and I haven't
+gotten to it yet um if you're interested
+in having that definitely come and talk
+to me though uh in your pgba you can
+specify that uh connections must using
+GSS encryption by saying host
+gssc so that will only match connections
+that are coming in over a encrypted GSS
+connection um you can specify the
+inverse of that too if you have any
+particular reason
+to all right delegation support so this
+is a a very cool new feature that I like
+a lot that I added into uh postgres 16
+and is part of the reason why we drop
+support for heimel uh because heimel
+doesn't have the the
+the recent which is a decade old
+uh functions for for doing delegation um
+in the way that I was doing it with MIT
+Kerberos and the way that the rfc's say
+you're supposed to do it currently only
+works for GSS uh when it's GSS client
+and server again it'll work with keys
+provided by active directory though if
+you want um it only works for gssapi
+using connections you can't forward your
+credentials over a a scram connection or
+something uh on the server you do need
+to enable it explicitly by setting GSS
+accept delegation and on the libpq side
+you have to enable it uh using GSS
+delegation uh these delegated
+credentials are then able to be used for
+postgres fdw
+dblink other things right there are
+other things that it that uh could be
+used for
+um not supported by anything else yet
+today that I'm aware of um but it
+actually would probably just work in
+some cases it it kind of depends um but
+the whole point here is that I as a
+user authenticate to postgres using GSS
+API over an encrypted connection and now
+I can tell um I I can delegate my
+credentials to that postgres server and
+now the post server has my credentials
+in you know a time boxed manner because
+it's a a time limited ticket that that
+uh post server is getting from me and
+that post server can then turn around
+use those credentials to authenticate to
+other systems on my behalf right so if I
+log in is s frost on server a and I've
+got a a foreign data wrapper set up with
+another postgress server uh server
+B passwords never have to be set
+anywhere right I can log into a delegate
+my credentials those credentials can
+then be turned around and used to
+authenticate to uh the B server when I
+query that forign table it's very very
+cool without user so you do still have
+to I mean you need to set up the fdw as
+usual with a user mapping and and
+everything like that
+yes you don't have to specify a
+password
+yeah because the there isn't going to be
+a password right the credentials that
+are going to be used are the delegated
+credentials that have been delegated by
+the user to the post server
+H you do still have to specify the the
+user mappings because we need to know
+what the what the user is to to log into
+the remote side yeah but very very
+cool okay um so in terms of active
+directory again this is very similar
+right there's a KDC ticket granting
+ticket user and service principles
+service principles come from the
+sspi uh interface so couple options on
+Windows environments if you're running
+postgres on a Windows Server right you
+can use a domain account for postgres
+right the way that you do this is that
+you actually have to go create an
+explicit account in the domain for posts
+and change all of the ownership and
+everything over to that um and then you
+can change the the service log on
+credentials to make postc run as that
+account uh and then you have to tell
+active directory that you've done this
+by using set SPN um again this is for
+setting up a postgres server on top of a
+Windows environment that you want to
+have sspi authentication working with uh
+which I do recommend except I don't
+recommend running post GPS on Windows
+sorry um if you want to use a network
+service instead of a domain you can do
+that also um it's not as secure due to
+using a shared account but it is the
+default that some of the installers
+already use it's a simpler setup um
+because it's kind of the default that
+some of them use and it just works by
+just telling you know you just got to
+set the SPN right tell active directory
+this service exists um and then it can
+start using
+it all right so that's going to cover
+pretty much sspi active directory gssapi
+and Kerberos now we're going to get into
+certificates so when we're talking about
+certificate based authentication the
+first thing you've got to deal with is
+setting up a certificate Authority right
+um and this is all going to be using op
+ssl-based
+um uh commands to be able to set this up
+so every CA starts with a self-signed
+certificate uh that's the root of the ca
+then we can create some intermediates
+then you can create uh client and server
+certificates uh and then you have to
+install those and configure the system
+to use
+them so setting up aert Authority in op
+SSL is little bit hokey but it's not
+terrible you do need to make sure that
+you uncomment the key usage in your open
+SSL CNF file uh it'll be under V3 CA as
+the stanza uh and then you have to have
+it set to crl sign and key search sign
+so that it can be a signing CA and then
+you create a key and create a
+self-signed certificate using these two
+commands uh that first one is creating
+uh the key the second one is actually
+creating the uh self- signed certificate
+all right next we're going to create
+some intermediate Casa this is very
+typical in larger environments when you
+have uh a certificate based um
+authentication you have intermediate
+certificate authorities so that the root
+CA is hardly ever used right you go put
+that into some big Vault somewhere um so
+the way you do that is that you have to
+create a key for it and then you create
+a certificate signing request for the
+root CA to then sign sign um and then
+after that you can create the uh server
+intermediate uh certificate by signing
+with the ca
+certificate so first one generates the
+key for the server side intermediate um
+so we're creating two intermediates
+right we're creating an intermediate
+that's going to sign that's going to be
+used for signing postgres server
+certificates we're going to have an
+intermediate that's going to be used for
+signing client side certificates just so
+people are are clear on what doing here
+um so after we create the server
+intermediate key we then create the
+request the the CSR and then the uh
+certificate that's a certificate signing
+request and then the CSR is then used to
+uh create the actual certificate for the
+server by having the root CA sign that
+uh CSR uh and generate the server
+certificate so now I have a root CA I
+have a ser server intermediate
+CA next I'm going to set up same thing
+but on the client uh right so I'm going
+to create a client intermediate
+CA same basic thing right create the key
+uh create a certificate signing request
+have that signed by the root
+CA now we're going to go create the
+actual server certificate right and this
+is going to create a key create a CSR
+and then we're going to sign it using
+the intermediate server
+so now I've got three levels right I've
+got root I've got server intermediate
+and I've got the server certificate the
+server certificate is what's going to
+actually be given to postgres along with
+uh the the intermediates and the root as
+necessary uh same thing but on the
+client side here we're going to create
+the client certificate and a CSR for it
+and again we're going to sign that CSR
+using the intermediate client
+certificate Authority
+okay so now we've got all of that
+boilerplate op SSL magic out of the way
+for anybody who wants to try to set this
+up on their own a lot of times if you're
+working inside of an Enterprise the
+Enterprise if they're doing SSL and TLS
+and certificates they're going to have
+all of this all figured out for you
+already right you could just tell your
+certificate Authority for your
+Enterprise I need to search for this box
+and they'll be like here's your CT and
+your key but this allows you to have a a
+play-by-play for how to do it yourself
+so how does this all work right so slsl
+is based on public key uh
+cryptography um certificates are these
+public documents that are signed by a
+trusted third party each certificate has
+a key right and if you have the key you
+can prove that you are who you claim you
+are right or who the certificate claims
+you are right again as mentioned I have
+a root CA intermediate CA and then a
+client or sorry two intermediate C and
+then a server certificate and a client
+certificate
+all right now let's talk about setting
+postgis up with all this right so you
+need to put the the certificates and the
+keys in place you do need to provide the
+root CA so postgres the way that this
+all works just so for people have an
+understanding right is that the postr
+server needs a certificate to trust
+right that is the root CA okay and then
+it also needs to be able to prove to the
+client
+right that's connecting that it is a
+trusted system and it may need to
+provide the client with the intermediate
+Casa it to lead all the way back up to
+the root okay the client is the same way
+right the client needs to have the
+trusted root CA anchor that's the ca
+that it trusts and then it when it needs
+to prove that the client certificate is
+valid it needs to include with the
+client certificate any intermediate Casa
+that the server may not be aware of okay
+and so the way that this is done is you
+copy the the server certificate into
+place you copy the server key into place
+of course the server key needs to be
+have appropriate permissions on it and
+then you need to create this uh server
+certificate file right sorry you need to
+copy the ca certificate the server key
+and then create the certificate file and
+that is done by combining the server
+certificate right this is what's going
+to be sent to the client any
+intermediate Casa that are needed to get
+from the server certificate up to the
+trusted route and then you can include
+the trusted route as well it's not
+strictly necessary but I usually do
+anyway so that you have a complete
+chain so you combine all of those very
+simple by catting them together and then
+you drop it into place and then when the
+client connects we're going to send them
+this server CRT file right because that
+that is going to prove to the client who
+has a copy of the ca independently that
+R certificate is signed by a CA that
+they
+trust a couple other parameters right
+you just need to set SSL true set SSL
+cert file and uh set SSL key file and
+then SSL CA file now again the SSL cert
+file that's what postgres will send to
+the client the key file is the server's
+key and the ca file is the trusted root
+certificate all right and when you're
+setting this up if you want to use
+client side certificate you would use
+host SSL uh that will only match uh SSL
+encrypted connections and cert is what
+you would use for saying to post hey
+authentic uh the authentication method
+here is client side
+certificates you can also do client side
+certificates with scram as well if you
+want um and you can specify that by
+saying scram and then client seert
+equals one there are a couple of uh new
+options in 12 um which are even better
+and again as always I would say you
+should be using verify v um these are
+similar to The SSL mode options um so
+you really want to use verify full to
+make sure you get uh full verification
+um that the certificate is the correct
+one that's being presented and not just
+any okay now on the client side we also
+need to do something similar right we
+need the root CA right that's who what
+the client is going to trust we need the
+client's key right and then we need to
+put the certificates into the search
+File uh I say order matters here this is
+a this is the case I think it was
+tls1.1 uh and then 1.2 I think is where
+they allowed uh it to vary but uh yeah
+if you're running older systems make
+sure you get the ordering correct um
+it's less of an issue on on more modern
+systems uh but again the theer here is
+what the client is going to present to
+the server you know it is our
+certificate plus all intermediate Casa
+and the root CA to get that full chain
+all the way back
+up now when you want to run the postr
+client right again you really really
+really really want to be using verify
+full right this is really important this
+is really key this is another way of
+specifying that SSL mode here uh you can
+also use an environment variable if you
+want um by doing uh PG SSL mode equals
+verify full and then you can just use
+psql
+DH um again don't use verify
+CA or you know really you should be
+using verify full for for all of these
+things that's what I I certainly
+strongly recommend all right and that is
+going to bring me to the end of this
+disc discussion and we have 10 minutes
+or so for
+questions
+yes where's the
+question oh there one up here too yeah
+either
+way thanks for the excellent talk uh my
+question is focused on the certificates
+life cycle m one day it ends and we have
+to refresh them yes and I expect that we
+have to deploy the new certificates
+before all one expires so we need all of
+them to live together so could it be
+done online and how it works thanks so
+yeah so um the way that certificates
+work is that you're basically you know
+what you're trusting inside of the CT is
+really the CN so as long as you uh
+create a new certificate with the same
+CN right same common name and install it
+you can just install it kind of anytime
+and then restart postgres and it'll pick
+up on the new CT and and off you go
+right so there is not a you you don't
+really need the kind of overlap that I
+think you're talking about when you're
+talking about certificates you need that
+for like scram right and that's actually
+an effort that's underway is allowing
+support for multiple different uh
+passwords to be stored so that you can
+do password rotation and stuff but the
+same doesn't really apply to SSL because
+as long as you just basically have a new
+certificate that's got an extended um uh
+uh you know expiration date all we're
+really looking at is that the
+certificate presented was signed by RCA
+and that the common name matches the
+host that we're trying to connect to so
+there's not a you you don't need to have
+multiple certificates be supported
+concurrently um if you think you still
+do please talk to me later yes or was
+there a question back there
+sorry either
+way hi among those authentication
+alternatives it's any option for a two
+Factor
+authentication two- Factor
+authentication um so there is an
+argument that can be made that radius uh
+will give you two Factor authentication
+because you can have a pin and a
+one-time password with that admittedly
+you know that
+has there's could be some debate about
+that I I don't really recommend radius
+because that pin gets sent over and over
+and over again but with the onetime
+password it's not so bad so radius is
+one approach the other approach was the
+one that I was just talking about where
+you have both a password provided by
+scram and a client side certificate um
+that is a a uh typically um approved
+approach for having two Factor
+authentication as well everybody has to
+have a client side cert that client side
+cert with verify full has to match you
+right that you're Loy you user that's
+logging in and the user has to provide a
+password as well so that's the other
+approach for for for two-factor o um if
+you've got other questions about other
+two-factor off methods I'd be happy to
+talk about it there's people who are
+working on things like ooth and other
+things for postgres too but that's not
+in postgres yet yes yes one thing is
+authentication another thing is if you
+for example have an ad or free IPA to
+keep groups mapped to roles in the
+database do you have any good advice for
+for uh PG ldap sync is uh what I've seen
+a lot of people people use and it seems
+to work work but I should probably just
+try again okay I mean if you're having
+trouble with it let me know but I I have
+seen it work pretty well um that's an
+area that post crit could really use
+someone to spend time on um so just to
+be clear with people like ldap should
+never be used for authentication in my
+opinion using it to store groups is
+perfect that's what it's for right I
+have no issue with that and using
+something like PG ldap sync or in an
+ideal future world postgres would get
+support itself or somebody would write
+an extension to basically just because
+you can actually have post you can have
+a client of the ldap environment of the
+active directory environment that just
+connects and listens for changes and as
+soon as a change happens gets it gets
+pushed down and then you can you know
+you could have there just a matter of
+you know simple matter of programming
+right but somebody has to go do that but
+you can have that change uh be be fed to
+you and then could automatically go
+create or adjust the users and you know
+groups and whatever in postc for you
+like it it
+say it's not even that hard but it's
+dealing with ldap
+and pgab thinks on
+GitHub yeah yes in first part of your
+talk you mentioned that it's very
+important to check certificate
+revocation lists yes however in second
+part where you did samples you
+conveniently admitted it do you have any
+tips on dealing with revocation lists if
+I would be be a person to deal with them
+for example I don't want to use cloud
+provider managed service or no one else
+in my organization currently provides
+like so op SSL does have support for
+generating crls and and all of that I I
+didn't want to get into there was enough
+open SSL commands
+here um but yes absolutely you should uh
+look into the open SSL documentation and
+figure out how to use you know how to
+create crls with OP SSL so that you can
+have a a crl in place um I I
+don't I'm not going to go into all of
+how you do that here but it is it is
+something that open sell sports
+yes two simple questions with hopefully
+short answers jdbc clients and cron jobs
+okay so what I think you're talking
+about with regard to I'll take the
+second one first with regard to cronjobs
+if the concern is about having Kerber's
+tickets that are renewed ongoing K5
+start is your friend right K5 start is
+the tool to use uh you can provide it
+with a key tab file and it will just
+constantly renew uh the tickets um
+provided the the KDC allows it to right
+but as long as that is still a valid
+principle it'll keep renewing it forever
+and it works great so no issue with that
+jdbc also supports keros um and DSs API
+authentication um not sure what else you
+had about jdbc but it does support kose
+okay yes time for one or two more
+questions yeah I got one up
+here I thought about including jdbc but
+I had enough stuff in this talk already
+yeah to go back to the uh to elap again
+to the to ldap yeah um I guess what
+you're saying is that ldap should never
+uh authenticate users but you can use it
+to authorize access yes that would be
+that would be correct you can use it to
+gain the information for
+authorization right such as group
+membership and things but you should not
+be using ldap as the off method inside
+of postgres because if you do that the
+user's password gets sent in the clear
+to the postc server which is
+bad yes down here in
+front so when you're using a caros to a
+Windows Server would you then use the
+Elbert to talk to the Windows 8
+to get the groups
+mapping so yeah you need to yeah you
+like you need to have both then because
+other support hang on so I log in I
+authenticate with with the ad and then I
+need I have some roles that I want to
+put those authenticated into
+automatically so they get their
+privileges right so that would be a role
+but the first authentication doesn't use
+ldap right right the first
+authentication uses sspi if you're on a
+Windows system or you know keros
+essentially right and then yes you would
+still need to have something like PG
+ldap sync or have some way of pulling
+the group membership out of ldap and
+creating those groups inside of the post
+credit server okay thank you
+sure all right we could do one more or
+we can call it and go get some coffee
+any other questions I like coffee
+Stephen thank you so much all right
+thank you
+everyone

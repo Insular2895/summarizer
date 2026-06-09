@@ -1,0 +1,168 @@
+Hello.
+Today I'm going to show you
+how to use Patterns
+and exclusion filters
+to improve log utilization.
+This is a tip
+I've shown customers
+to help them understand
+how Patterns work,
+where they can make changes
+so logs are easier to work with,
+and potentially
+even reduce costs.
+Later, I'm going to show you
+one way to stay ahead
+of unexpected log volume spikes.
+Without further delay,
+let's begin here on the Logs
+Explorer.
+Well, right away I can show you
+that I have in my demo
+environment over 14.4
+million logs from the past hour.
+So what I'm going to do here
+is click this Patterns button.
+And what we're going to see
+is that I have over 450,000 logs
+coming in from my web store
+using this star slash
+star pattern
+that are informational,
+and they're probably not
+bringing me too much value.
+So what I'm going to do is I'm
+going to click into this example,
+and I'm going to click this
+Add Exclusion Filter button.
+What this is
+going to allow me to do
+is create an exclusion filter.
+My exclusion filter name here
+that I've already added is "tips,"
+and this query is pre-populated
+because I hit the Add
+Exclusion query button
+on the previous screen.
+It's already set to exclude 100%
+of all of these logs.
+What that means is
+these logs will not be indexed
+for long-term
+searching in Datadog.
+They will exist
+only in this Live Tail.
+You can still see them
+in the Live Tail
+in case you need to do
+any troubleshooting on them.
+So what I'm going to do
+is show you
+how I can prove
+that this filter has worked.
+So I'm going to go straight
+into the Logs
+Explorer, where I can use
+this button here to verify.
+Here we can see a query
+and you can see in the past
+15 minutes
+there are no logs based upon
+the query that we just have.
+I can now say go to the past
+15 minutes and boom
+I have those logs again.
+So that is one way
+that you can reduce log volumes
+from some noisy
+logs, such as informational logs,
+as we see here,
+maybe a health check
+or something like that.
+Now I'll show you
+how to stay ahead
+of unexpected increases
+in log volume
+by setting up an alert
+for ingestion spikes.
+Be sure to use a threshold
+that works for your environment
+so you're alerted
+only when log volume increases
+in a meaningful way.
+Your log volumes are going to
+vary, and I'm using a threshold
+just to highlight
+from my demo environment
+what an alert state looks like
+and what a warning state
+looks like.
+We can see this measured here
+in this graph, where I have
+an alert state of 1.44 gigabytes
+for this product
+recommendation service.
+You can see the thresholds that I
+set for warnings and alerts.
+I've defined
+a metric to use for this alert
+here, it is
+Datadog dot estimated underscore
+usage
+dot logs
+dot ingested underscore bytes,
+and I'm summarizing
+that by service.
+That's how I was able to see
+before that my product
+recommendation service
+is sending a whole lot of logs
+over the past five minutes.
+So one thing you want to do
+is set an alert condition
+that will warn you
+when your metric goes above
+a value above a specific amount
+for any given service.
+Here my alert
+threshold is one gigabyte
+and my warning threshold
+is about 800 megabytes.
+Again, I'm setting these numbers
+to highlight
+what an alert could be within
+my demo environment.
+I've gone ahead and named
+my alert
+"log volume is rising."
+I set the first portion here
+to be "is warning"
+with some text in between
+these two curly braces.
+This is going to be the message
+that will send
+along with which specific service
+is sending a high volume of logs
+based on the warning criteria.
+The data
+between "is alert"
+is the information that will be
+sent to you when it crosses
+the alert threshold.
+One thing you need to do
+is be sure that you set something
+like a Slack notifier
+and email notifier to your alerts
+to make sure that the correct
+people are notified.
+And that's how you can use
+Patterns and exclusion
+filters
+to improve log utilization.
+I've also showed
+how you can set up an alert
+to stay ahead of unexpected
+log volume increases.
+Thank you for watching.
+Check out the video description
+for more resources and how to learn more
