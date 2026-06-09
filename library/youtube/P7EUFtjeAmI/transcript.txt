@@ -1,0 +1,309 @@
+welcome guys today we're going to
+explain explain
+in postgres get it so
+there is this command in postgres that
+is called explain and it is used
+to retrieve information about what query
+plans
+postgres will use for a given sql
+statement
+how about we jump into it i have a
+beautiful table here it has to be
+beautiful
+if it's not beautiful i send it back
+michael scott this table is called
+grades and there is an id
+and there is a grade there's a name so
+it's like a bunch of students
+there's a lot of rows here i think over
+200 million
+and i showed many times how to create
+such table and insert this much
+volume of rows so there's an index on
+the
+id there's an index on the g
+the grade but there's no index on the
+name of the student
+so here's what we're going to do so
+we're going to execute a bunch of
+queries and we're going to explain
+them and see what postgres will do so
+let's start with
+explaining the select star the worst
+query you can
+ever do when we do that we get this
+beautiful one liner and let's explain
+let's let's demystify what's going on
+there
+so the first part is usually the
+query plan and this is called a
+sequential scan and this is
+equivalent to a full table scan in other
+databases
+essentially what what the database
+decided to do is like okay you're
+selecting everything and there is no
+filter so i'm going to go directly to
+the table
+i'm going to go directly to the heap and
+fetch everything that's the sequential
+scan
+sometimes postgres do a parallel
+sequential scan with threading they spin
+up multiple threads just to do the
+scanning
+on grades and here this the cost
+and the cost is usually has two numbers
+almost has two numbers separated by two
+dots the first number and the second
+number so let's explain what this means
+the first number means how many
+milliseconds
+it took me to fetch the first
+page right and in this case it took
+zero why because postgres immediately
+went to the table and
+fetched the first row and immediately
+got results so it cost you
+almost nothing to get the first result
+so if you're doing some sort of a limit
+right select star from grades with limit
+one you're going to get a result very
+very quick
+this number can increase the startup
+cost can
+increase if postgres decide if the
+database decides to do
+some work before fetching such as
+aggregating i said order by
+right things has nothing to do with
+actual fishing work
+that precedes the actual things that you
+want to do
+so that's you're going to see this
+number if you see this number go up
+that means you're doing a lot of stuff
+before fetching
+and this number is essentially the total
+amount of time that
+it thinks because remember it didn't
+really execute the query right
+it just tells you hey i think i'm going
+to do this right
+and this is the total amount of time
+which in this is in milliseconds so
+it ex it estimates that it's going to
+finish the whole thing in 289 seconds
+essentially and this is the another
+estimation this is very valuable by the
+way
+right this is not an accurate number but
+it gives you a quick number approximate
+based on its own statistics that this is
+the number of rows that are going to fit
+that's what i always recommend when you
+want to do a count
+and you don't really care about the
+actual number
+like you're doing at it you know you're
+building instagram and you you're
+counting the number of likes
+use this don't you don't do select count
+the set account will
+kill your performance it's actually go
+and physically do the count
+on all your rules and if you have
+billion rows tough luck counting that
+stuff right
+that's why a lot of people use this
+explain give me an estimate
+return that and there's the width
+the width of the row so this is the sum
+of all the bytes for all the columns and
+i have
+three bytes if you sum them you're going
+to get 31 because there is text there
+all right so that's the first one let's
+spice things up a little bit
+let's do an explain select star from
+grades and we're going to do
+an order by this time we're going to
+order by g and g is the grade
+what do we do what do we get you see
+like this number bumped up a little bit
+it's a it's a 0.43 millisecond
+so it it did postgres did some work or
+it is attempting to do some work before
+fetching the row and that work is what
+is actually doing the sort order by g
+and it's not so bad because it did use
+the
+index that is on g to do the sorting and
+guess what
+the index is already sorted so the work
+is very very trivial
+right but it is work none of the less
+and that's the total number of thing
+the rows in this day the time this is
+almost the same number
+should be better b and then the wealth
+is also the same okay
+now let's price things a little bit and
+do explain select
+star from grades
+order by name something that has no
+index and you can see
+there's a little bit more cause in this
+case
+possibly says ooh you want me to sort by
+the name the name is a column that is
+not
+index so i have to go to the heap and
+guess what i'm going to
+pull everything to in order to sort it
+so it started to first of all it did a
+parallel sequence scan
+always read it from bottom going up
+right this is how we do it
+don't read it from up let's start from
+the inner
+thing going up up up up okay so the
+parallel sequential scan on grades
+it took nothing to do that because hey
+i'm going directly stable right
+caused nothing to go there again we
+didn't sort yet uh this is how much time
+we're gonna take so it's estimating that
+it's gonna take me 200 seconds 218
+seconds
+and this is the number of rows that
+we're going to get back 31
+got it all right now we're going to sort
+on the name
+look at that look how much it
+took just to get to the point to fish
+something
+the sorting took man that's a lot that's
+that's a thousand seconds
+yike c right so you can see that this
+number is very critical
+the first number the second number is no
+not so much that's the last one
+right but the first number is everything
+that you need and then obviously
+we plan two workers so there's two
+parallels doing this thing
+and since we had two threads two
+processes doing the work
+we're gonna merge the result at the end
+of the day right and that's the total
+results
+obviously we get this number and
+that's the final result and 31 width so
+you see that there is more work that
+need to happen to get
+to get to the actual thing all right
+let's play a little bit with the
+other stuff guys what i'm going to do
+here is i'm going to do explain select
+id not just the whole thing just the id
+from grades let's just try this thing
+what do we get
+obviously we get zero because it costs
+nothing to go to the
+table it costs nothing to go to the
+table to fetch the first page that's
+almost nothing zero right and the rows
+but look at this
+look at the width we get four y four
+four bytes is the result you're asking
+to return only
+the id and the id by default is an
+integer and the integer is four bytes
+by the way careful don't put your primer
+key as
+as just integer if you're expecting this
+law or table to grow
+beyond 2 billion right that's what
+happened to parlor by the way
+they grew up beyond 2 billion
+notification and then blew up their
+table
+yeah so there are four bytes in the id
+okay
+let's do explain select name from
+grades you can see
+that the i the average row size is 19
+because the name is
+is taxed right and depends on the name
+of the students
+can go 19 you just they took the average
+and say hey we are expecting that's
+going to be 19 but
+so be careful with this number
+especially if you're
+returning this across the wire to your
+backend application
+right the largest this number the larger
+the network you're gonna take
+the the higher the tcp packets right
+i mean don't put like a blob and do
+select star when you don't use this
+thing that's why
+it's insulting to do a select store to
+the database only
+to pick one row or one column from those
+right
+only select what you need and you can
+see if i do for example the g
+it's eight that's the that's the number
+of bytes in the double
+value all right let's do and how was i
+was indexing working
+in the in postgres select star from
+grades where id equal 10.
+so there's an obviously there is a
+unique index on the id
+here so we're expecting this to be fast
+obviously we scanned the index and we
+jumped to switch we jumped to the heap
+to fetch some row
+value and took us 0.43 seconds
+and the total time to talk uh talk the
+whole thing is
+eight milliseconds again this is not
+actual terms there is another command
+that we're gonna explain in another
+lesson or video where we're gonna show
+analyze that's the actual time token
+this is
+this is just an estimation so we did an
+index scan
+and we used the index condition like
+this one in this case
+and you can see if we played with this a
+little bit and say okay
+this is a silly query but bear with me
+here so now when i do explain select id
+from grades where id equal 10
+silly query of course because i you just
+said id equal 10
+but you can see that now we're getting
+an index only scan which is a faster one
+right
+that the work we didn't even need to
+jump to the heap to do the work right so
+that's just another
+type of query i i i did many videos
+talking about that as well all right
+guys that was a quick video explaining
+explain and this is the very very basics
+of the basics of the stuff right maybe
+i'm going to make a few or
+more lessons and more videos to explain
+the analyze explain the buffers claim
+the shared heads and other stuff as well
+let's let's keep this video short and
+sweet
+gonna see in the next one you guys stay
+awesome goodbye

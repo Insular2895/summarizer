@@ -1,0 +1,2568 @@
+[Music]
+welcome to Capital decanted in this show
+we say goodbye to tired Market takes and
+superficial sound bites because here
+instead of skimming the surface we Dive
+Into the Heart of capital allocation
+striking the perfect balance and
+exposing the subtleties that reveal the
+Topic's true Essence prepare to have
+your perspectives challenged as we open
+up the issues that resonate with the
+hearts and minds of those shaping
+Capital allocation we've Enlisted the
+wisdom of visionary leaders in the
+industry and just like a meticulously
+crafted wine will allow their insights
+to breathe unfurling their hidden depths
+and Transforming Our
+[Music]
+understanding this is season 2 episode
+three of capital decanted artificial
+intelligence and the investment
+professional I'm John Bowman and I'm
+Christy Townsen and we are your hosts as
+always a huge thank you to our returning
+title sponsor Alternatives by Franklin
+Templeton so grateful to have them back
+partnering with us with over 40 years of
+va investing and over 260 billion of
+assets Center management their
+specialist investment managers have
+expertise across six different asset
+classes real estate private Equity
+private credit hedge strategies venture
+capital and digital assets and of course
+all of them operate with the client
+first mentality that has always defined
+Franklin Templeton to help prioritize
+investment outcomes so thanks as always
+Alternatives by Franklin Templeton we'll
+talk with them again at halftime so stay
+tuned for that so as of this recording
+Nvidia the Computing company that fuels
+artificial intelligence is the most
+valuable company in the world at about
+$3.5 trillion US Open aai the originally
+open source not for profit that went
+mercenary and Commercial and then of
+course gave the world chat GPT is like
+an ugly leadership and govern train
+wreck that we in the front pages can't
+seem to take our eyes off of meta Google
+Microsoft Amazon Tesla and of course
+Invidia again are expected to spend well
+over a trillion dollars in AI R&D over
+the next few years it's tough to read a
+financial periodical or attend an
+investment conference these days without
+AI discussions dominating often to
+excess we see Sensational headlines like
+here's the robot that will steal your
+job or charges of disrup transform or
+die these headlines fill our feeds and
+they raise fear-mongering narratives
+that channel Isaac azim's iRobot or
+James Cameron's Skynet from the
+Terminator series i' encourage all of
+you to listen to our blockchain
+Computing session episode last season
+that's episode 13 we provide a more
+wholesome discussion of Technology hype
+Cycles but it certainly feels like we're
+in the midst of what Carla Perez called
+the frenzy phase or what Gartner calls
+the peak of expectations now for context
+at the time I described those phases as
+quote being defined by fervor as hype
+outpaces sensibility gobs of VC money
+pour in and Retail narratives take on
+grandiose conclusions that seems pretty
+accurate frankly for AI as well but we
+also said at the time that historical
+Tech platform breakthroughs always feel
+outlandish or like toys when they start
+and nothing in Tech History ever
+proceeds without first a whole lot of
+excess so while we should be circumspect
+we also need to be open-minded as
+investors the tendency to overestimate
+the effect of technology in the short
+term and underestimate the long term is
+famously known as Amara's law and it's
+named after the Stanford computer
+scientist and amar's law chrisy as you
+know is undefeated we always
+underestimate the long term even though
+we are skeptical rightly so in the short
+term so let's be honest AI processing
+power provides organizations with
+massive advantages common wisdom
+suggests machines process at roughly
+2,000 times the speed of humans and of
+course they don't need lunch breaks they
+don't need to sleep or take weekends off
+they don't even desire holidays with
+their families and that Computing
+Advantage has been a gift to the world
+in powering algorithmic convenience and
+relevance in our social feeds in our
+Netflix recommendations and our Amazon
+purchases and now in generative AI tools
+just to name a few but of course it has
+a dark and underbelly too data ethics
+privacy team mental health more
+existentially its net impact on the
+value of the human race just to raise
+the drama quotient here a bit these are
+deep and very relevant concerns so this
+topic is enormous it's even Transcendent
+across Civic social business and
+Military sphere so when chrisy and I
+scoped this we had to make choices on
+our angle so our assignment we've landed
+on today with AI is specific to the
+industry we occupy to our daily lives as
+investment professionals Tech heavy
+Industries like law and marketing have
+already begun incorporating tools to
+streamline their processes and closer to
+home of course Quant shops hedge funds
+algorithmic trading firms have embedded
+AI in their models but have we hit a
+Tipping Point where use cases and
+applications of these accelerated
+Computing capabilities are ready to
+invade the more traditional Asset
+Management business said another way
+just as Video Killed the Radio Star in
+the popular 1979 song will AI render the
+investment professional obsolete that is
+our challenge today now here at Capital
+decanted if you're a regular listener we
+don't tackle provocative topics just to
+be provocative or to provide clickbait
+our goal is to more deeply explore
+complex topics that need nuance and
+texture as we often say but once in a
+while we seem to get handed an
+intellectual powder cake like this one
+you might remember that we started this
+show all the way back in episode one
+last season with the relevance and
+accuracy of private Market marks and we
+also later last season took on private
+Capital regulation and I think you could
+say that this is the third in this
+category that likely will cause some
+Division and maybe raise some blood
+pressure and we're going to of course
+strive to be calming and informative
+balm as we always do but nonetheless
+this is a debated topic and a divisive
+Topic at times so here's our GPS map of
+today's episode where are we going today
+as I mentioned our scope today can't
+possibly nor frankly would we be the
+right people to wax poetic on the full
+history of artificial intelligence
+however I'm going to give a brief
+history of the recent progression of its
+use in the investment industry
+specifically and I think that's
+important to provide a sense of where we
+are and the uptake and the acceptance in
+our particular trade then I want to
+introduce a few categories of use cases
+that could or May and I emphasize that
+Define its value and more importantly
+its intersection with human intelligence
+in our profession christe is then going
+to take the rank and play what you might
+call hype critic is there a limit to
+machines how do we sift through the real
+and the exaggerated the signal and the
+noise as we often say and that's of
+course based on some of her current
+conversation Tech advances fundraising
+Trends implementation ideas Etc and as
+always I should say that I'm excited to
+hear from her specifically given she's
+sat in this seat which of these use
+cases that I summarize or frankly ones
+that I don't mention she finds the most
+attractive and the most impactful so
+that will embody our what we call intro
+segment and then after a short halftime
+we'll invite our expert guests in for
+more on the ground perspective now for
+you loyal listeners you know that we
+often try to balance an LP and a GP View
+and we've done that again for you today
+and further however for this particular
+topic we wanted to make sure we had a
+range of both belief and progress in
+this topic itself and we think we've
+done that too with these two guests so
+it will be a multi-dimensional
+discussion with our guests today and
+those guests are Martine escobari the
+President of General Atlantic the 90
+billion growth Equity manager and Dave
+Morehead the CIO of Baylor University
+the two billion plus university
+endowment of the Waco Texas University
+and what I might call The Little Engine
+That Could Dave and his team were
+recently profiled in the Wall Street
+Journal as the small endowment kicking
+the tails off of the much bigger ivy
+league ows so we are honored to have
+those two guests with us in a little
+while so Christie with that introduction
+in place I wanted to maybe turn to you
+as a kickoff to our discussion and ask
+whether there was a moment for you you
+can remember a trigger whether you read
+a news story you had a conversation you
+saw a case study where the conversation
+on AI shifted from I think what most of
+us still think about amorphous modeling
+technology hyperquant model to a tool
+that actually might invade traditional
+normal Asset Management can you remember
+that moment was it in fact a moment it's
+funny it's hard for me to think to a
+specific point I do remember being
+captured by the amazingness that was
+rnch back in the day when there were
+inklings of what they were doing behind
+the scenes but interestingly it really
+hasn't been until the past couple of
+months when I've actually been
+researching for this episode that I
+started to think beyond the hype because
+I see the hype in media and how
+everything's going to take our job but
+then I had to understand the specificity
+and then bring it back up and realize
+that there are really great use cases
+but I don't think that necessarily
+headlines right now are capturing those
+use cases which is why I'm really
+excited about this episode actually what
+about you having sat in the analyst seat
+many years ago I think I can't remember
+the timeline but I think it was these
+unstructured data AIDS or helpers and
+ESG maybe is one that's most obvious to
+me weather patterns just as an example
+that would not have been something you
+could source and organiz I and draw
+insights from in the old days and tools
+to be able to do that are just so
+exciting we're going to highlight a lot
+of these use cases in a few minutes but
+I think that was the one that resonated
+with me because I'm not walking through
+parking lots anymore in the Target
+looking at cars which is the
+stereotypical job of old for the retail
+analysts that I embodied for many many
+years but let's take a look let's back
+up and take a look at that history and
+then we'll get to use cases in a moment
+as I mentioned the larger Arc of AI
+history is mostly outside the scope of
+this combo but we should debunk a couple
+of myths AI first of all was not born
+with the consumer release of chat GPT in
+November of 2022 AI was not born at the
+2015 summer dinner at the Rosewood hotel
+in Silicon Valley when Elon M famously
+raided Google's data science team to
+create what we now call open Ai and AI
+did not even begin in 2006 with gaming
+GPU company back then Nvidia entering
+the AI space with the release of their
+Cuda platform AI by the way is usually
+attributed to two computer scientists in
+the early 50s Alan Turing whose Turing
+test now to finded whether a machine can
+demonstrate human level intelligence and
+gentleman by the name of John McCarthy
+who had a summer research project at
+Dartmouth apparently coined the term
+artificial intelligence and of course in
+more popular lore the Department of
+Defense in the 50s and 60s began
+significantly investing in training
+computers to mimic basic human reasoning
+and by the way this history speaking of
+the Turing test it does probably Force
+us which is wise to Define what we're
+actually talking about given that this
+whole Space is so fluid and frankly
+complicated so maybe a definition here
+just to frame the conversation when we
+say Ai and it's various Offspring so
+large language models Big Data machine
+learning deep learning natural language
+processing we're going to use a lot of
+these acronyms and phrases largely to
+mean elements or facets of the same
+thing what we we mean by all of those
+that collection of terms and phrases is
+broadly describing the ability of
+machines to exhibit humanlike
+intelligence and a degree of autonomous
+learning more tangibly it's a suite or a
+family of Technologies enabled by
+adaptive predictive power that
+dramatically advances human's ability to
+recognize patterns to anticipate future
+events and to identify non-linear or
+what you might call non-obvious
+relationships so given we're recording
+this during election I thought a
+fascinating yet somewhat Sinister
+application of these early machine
+learning models was company called
+simatic I'm not sure if you've heard of
+this history chrisy but this was a cold
+war startup so way back then and this
+group of data scientists built a people
+machine you cannot make this up the
+people machine was aimed at predicting
+everything from Vietnam war strategy to
+election results to probabilities of
+riots based on White House race policy
+and it was the first AI tool that was
+wielded to manipulate consumers and
+destabilize politics during both you're
+not going to believe this the JFK and
+the LBJ campaigns this is decades folks
+before Cambridge analytica or the social
+media heavy campaigns of Obama or Trump
+more recently and this captivating and
+disturbing story I might say is told in
+the book If then by Harvard Professor
+Jill aore and it's a great read it
+really portrays the early seeds of the
+tribal division and the fake news poison
+that dominate today's national politics
+so just an aside and a commend for that
+particular book back to our story here
+the history of AI and Investment
+Management has a much more abbreviated
+life so quantitative hedge funds started
+employing more sophisticated use of AI
+tools and their models in the 2010s
+Christy just mentioned rentech
+Renaissance technology Bridgewater aqr
+Man Group Citadel others have long
+utilized computerized algorithmic models
+at high speeds to analyze Market
+patterns run economic simulations
+monitor trading rhythms and that was in
+order to predict and trade on future
+price Behavior but about a decade ago as
+I said machine learning and natural
+language processing were added to this
+Suite this big monster model to help
+them expand their data set analysis
+their forecasting speed and scenario
+modeling now these models are heavily
+proprietary to each of those firms they
+are guarded like Fort Knox but they are
+massively robust today the other strand
+here of History around the same time was
+sentiment analysis products chrisy I
+don't know if you remember this but this
+started to show up particularly in
+relation to social media activity
+especially when Twitter got really
+popular with fin twit you might say I
+remember beginning to see these products
+appear in exhibit Halls of major
+investment conferences maybe in the mid
+teens 2015 2016 and given the captive
+audience of their platform Bloomberg was
+an early leader they launched their
+product in 2009 and as machine learning
+has grown up these products can now
+tackle other issues Beyond social media
+capture such as search topic clustering
+theme detection Market impact analysis
+Etc and then finally in October of 2017
+the aeq fund officially known as the AI
+powered Equity ETF was offered by an
+organization called ebot and built on
+the IBM Watson technology from what I
+can tell this is the first fully powered
+AI investment product the change traded
+fund was designed to leverage artificial
+intelligence to actually make investment
+Decisions by using Advanced machine
+learning algorithms to analyze large
+amounts of data including company
+fundamentals market trends news
+sentiment and based on the outcomes and
+the insights of these AI models this ETF
+identifies stocks and constructs
+portfolios that it believes Will
+outperform based on a variety of factors
+and indicators aeq now manages close to
+150 million today and while there's some
+mixed messages as I read through some of
+the news stories it seems to be
+outperforming the markets since
+Inception so we shall see if that gains
+more traction so as I just summarized
+that short history I don't want to
+downplay ai's impact on the profession
+but over the last decade since this
+technology has been what you might call
+consumer ready the utilization as you've
+heard I would say has mainly been
+constrained to large already techsavvy
+computer sciencey black boxy mostly
+Quant hedge funds that were already
+running models machine learning has just
+enhanced efficiency its processing power
+its speed of said models you might
+remember from our blockchain episode
+that technologists call this type of
+enhancing of existing work skoric
+whereas transformative Technologies
+substitutionary Technologies are called
+native and we're going to ask our guests
+whether they think AI will remain in
+this incremental speed and efficiency
+category or do they actually think it's
+going to graduate to something much more
+disrup a new Computing platform for
+example so as we posed in my
+introduction the question really about
+its acceleration and its disruption
+level is really dependent upon whether
+we are finally at a Tipping Point
+similar to the question I just asked
+Christie for the broader investment
+industry have we reached a transition in
+the life and the tech hype cycle where
+some of these tools used by the first
+movers are now ready for broader
+acceptance for Alpha generation purposes
+for Capital allocation and I would say
+the jury is very much still out and
+consistent with that hype cycle this
+stage of the evolution we should expect
+comes with a lot of division and
+disagreement on broader acceptance
+nonetheless a mental charting of the
+progression of survey results over the
+last 5 years does seem to send a clear
+signal at least on sentiment progressing
+so let me just give you a couple of
+those Trail markers 2019 so six years
+ago now CFA Institute released a report
+that outlined some really interesting
+what they called quote pioneers and
+early adopters in the space but in the
+associated survey of their members as
+part of the report they found only 10%
+one out of 10 had used machine learning
+or other AI tools in the previous 12
+months so not particularly compelling
+there fast forward to 2021 two years
+later the investment Association this is
+the trade group for the UK fund
+management industry 83% of firms
+surveyed argued Ai and Investment
+Management significance will be either
+very high or high within two years so
+that was 2021 so of course the end of
+that period would have been 2023 perhaps
+they were a little over their skis there
+in their prediction but clearly we see
+momentum directionally shifting
+significantly and then finally earlier
+this year 2024 Mercer released a survey
+where they talked to 150 asset managers
+and they revealed that the use of AI
+across investment strategy and research
+has expanded far beyond the traditional
+Quant cohort that we've been talking
+about in fact 91%
+of managers are either currently or
+planning to use AI within their
+investment strategy or their asset class
+research so look this is not a
+scientific study these three surveys but
+you do see growing self-reported and
+what you might call conviction
+acceleration that seems to support a
+view that we may be near that
+broad-based inflection point that I keep
+talking about or as deoe recently put it
+in a report the next Frontier of
+investment management now when you use
+language like Frontier that that
+suggests a much more foundational
+platform transition than just making
+existing tasks cheaper and faster so we
+shall see and we leave a lot of that to
+you the other Factor here that we
+haven't talked about on this episode is
+perhaps how what you might say the
+current state of the industry May
+provide extra incentive and pressure to
+innovate or to save cost or to discover
+more efficiencies according to a 2024
+report by Boston Consulting brace
+yourself for this stat since 2006 so
+almost 20 years almost 90% of Industry
+Revenue has come from Market
+appreciation let that sink in the post
+GFC risk on free money Easy Button
+environment for the capital markets has
+created a Goldilocks reality for the
+pnls of investment management firms and
+of course this has all changed in a
+postco world with structurally higher
+inflation and interest rates not to
+mention geopolitical uncertainty and of
+course at the micro level wage and other
+fixed cost inflation
+stagnant revenues a generational shift
+to passive investing and continued fee
+compression is in fact squeezing
+leadership to find other avenues of
+growth if they can't depend on the
+capital markets moving up and to the
+right every year all the time will AI be
+the answer to that I don't know but you
+could certainly point to it as a natural
+Tailwind that pressures folks to rethink
+their business so that leads me to the
+second portion to segue to Christie of
+what I want to cover in my segment which
+is a few categories of alpha generation
+that AI may be able to provide as far as
+a benefit going forward so some of this
+is being experimented with and others
+are much more in their formative stage
+so take this as food for thought and I'm
+certainly intrigued Christie to hear
+what you think of each of these and
+again even ones that I don't mention and
+we'll press our guests on these as well
+so these three categories look there's
+no perfect mental map for all of this
+and some of this overlaps they certainly
+are interdependent and build on each
+other but I've organized these as I said
+into three categories number one is
+efficiency number two is unstructured
+Data Insights and third and finally is
+recommendation and these are somewhat
+Progressive in the sophistication you
+might say so efficiency what I'm trying
+to get out here is exploiting computing
+power to what you might call short
+circuit or FastTrack what are largely
+rudimentary manual and timec consuming
+processes that the typical investment
+professional is already responsible for
+this is mostly wielding natur language
+processing and voice recognition
+programs to scrape or highlight or
+transcribe and summarize things like
+earnings calls annual reports sell-side
+reports issuer filings public records
+Etc now some of these NLP programs can
+even directly populate your valuation or
+earnings model right into your Excel
+spreadsheet and of course generative
+tools could even take all of this now
+organized data and draft investment
+memos to give the practitioner a huge
+head start on that burth burden as well
+so the metaphor here is somewhat akin to
+a cockpit that summarizes all this
+information at the analyst or the PM's
+fingertips and it frees them up to
+redirect their time away from data
+Gathering to actually judgment and
+higher order strategic thinking around
+recommendation and insight what do I
+make of all this data rather than
+wasting all my time Gathering it think
+of it as a machine that is your co-pilot
+that augments existing capabilities and
+exponentially improves efficiency quick
+and unique case study here because I
+find these interesting is American
+Century and this is actually from that
+same CFA Institute report that we'll
+note in the show notes American Century
+employs a sentiment model that analyzes
+the language coming from Management in
+its quarterly conference calls their
+deception model which is really
+fascinating as they call it is made up
+of four components Omission so when is
+management failing to disclose key
+details spin exaggeration overly
+scripted language could play a role
+there obs ation so overly complicated
+storytelling and blame or deflection now
+obviously there needs to be significant
+human intervention here to consider the
+industry the personalities of those
+particular managers but what an
+interesting input with a bit of a
+psychological twist so fascinating use
+case there with American sentury so
+that's efficiency second again
+progressing here unstructured Data
+Insights and honestly Christy this is
+the category I noted in my answer to you
+that I find the most fascinating the
+canvas that I think is is just so
+creative it is estimated that as much of
+90% of data is unstructured and
+therefore not easily accessible
+manipulated or frankly even discovered
+yet we sometimes call this big data or
+alternative data and unstructured data
+are sources or patterns from
+non-traditional places so the most
+common examples are data sets through
+web scraping social media activity
+satellite imagery credit card purchases
+weather patterns I mentioned that
+earlier other ESG factors
+Ecommerce activity Etc so these new
+tools can both capture sift and organize
+the alternative data but they also then
+can take a step further and through
+machine learning technique draw insights
+from these patterns or time series
+perhaps even identify relationships
+across these otherwise randomly isolated
+data sets so I alluded to this earlier
+when I first started the industry
+primary all data sources consisted of
+walking through physical parking lots to
+check out the number of cars versus last
+week or Channel check calls to get a
+read on inventory turnover call all the
+suppliers call all the retailers you're
+trying to get a sense for whether the
+inventory is moving imagine now instead
+of that utilizing shipping container
+tracking and credit card purchases and
+Freight movements where you can paint a
+much more accurate and holistic picture
+of the velocity of a business that to me
+is just mind-blowing Wellington has
+built some of these sourcing and
+synthesis tools for their Central
+research team but the most fascinating
+case I'd like to show you on this one
+was schroers again from this CFA
+Pioneers piece so the UN released a
+report a few years ago on the promise of
+what they called smart cities and this
+caught the attention of a fund manager
+at schroers and he wanted to explore
+whether the portfolio could take
+advantage of this theme of global
+urbanization so using again natural
+language processing tools they pulled
+thousands of articles that mentioned two
+phrases
+either smart cities or future and then
+they extracted the sentiment the
+concepts the topics and the keywords
+that were mentioned in the article and
+most importantly they began capturing
+patterns of particular companies that
+were being mentioned as either players
+actors or beneficiaries of this whole
+movement the machine then could use
+those patterns of words and phrases and
+of course those frequently mentioned
+company names to pull even more adjacent
+or related or similar articles so in the
+end you got this visual colorcoded map
+laying out a huge quantity of news
+articles on the screen and the Clusters
+in that colorcoded visual map identified
+a handful of high potential small and
+mostly under the radar companies to
+conduct a more traditional financial
+analysis of its business again that
+cockpit I feel like I'm an Iron Man
+laying out this visual map and it gives
+you a bit of a massive head start you
+might say on where to go with your
+traditional company assessment so
+finally finally recommendation thirdly
+this is the final frontier you're not
+only hunting down and organizing data
+for the human that was the first
+category and you're not only providing
+some insights and relationships across
+that data you've hunted down that was
+the second but this is autonomously
+considering that Mosaic of information
+and actually beginning to make
+independent decisions so some of the
+predictive models embedded in the Quant
+examples we gave probably Verge on this
+as does the ETF product that we
+mentioned earlier now whether humans can
+override or veto the recommendations or
+trade considerations are variations of
+this theme but the point is that the
+machine has now move from the co-pilot
+to the captain seat in many ways and
+this is the category as we think about
+our guests today that led us to General
+Atlantic I don't want to spoil the
+interview with Martin because this guy
+is an epic Storyteller very animated and
+just enjoyable to listen to but the
+short version is that they have fed the
+machine with 20 years of Atlantic
+investment committee decision making and
+votes and that machine through both the
+history and of course newly presented
+data from investment memos and elsewhere
+now opines at the investment committee
+table on each prospective investment and
+provides a supporting explanation about
+why she agrees or doesn't agree now
+Martine will probably caution us I'm
+guessing that these machines are only as
+good as the inputs and they're not a
+Panacea by themselves there is still
+plenty of noise in there the human
+element the critical thinking the
+creativity the Nuance understanding that
+is still brought by the five investment
+committee members that are humans that
+Still Remains essential but this I
+thought was one of the most compelling
+early examples of a collaborative
+relationship between Ai and investment
+analysts that leverages what you might
+call the collective intelligence of
+machines and humans and I might just say
+chrisy as I hand off to you that that is
+taking cognitive diversity to a whole
+new level so those are my three
+efficient
+unstructured Data Insights and
+recommendation so I will end there I'm
+excited to hear what you think of those
+use cases and then the broader hype
+cycle and Trends overall now I actually
+really appreciate that and I like the
+categories that you laid out so when I
+go through my thoughts and use cases in
+a minute I'm definitely going to pull
+those categories back in so thank you
+for sharing those and I will also say I
+appreciate your specificity when you
+were explaining that because one thing
+that I've noticed is that I get the
+sense that when people even super smart
+people talk about AI there's a lot of
+conflation of words and Concepts there's
+a lot of using something from one side
+of machine learning to explain something
+else and I get it it's still an evolving
+technology it's still a massive umbrella
+which all of these terms are under so
+when I first started prepping for this
+one of the things that I needed to do to
+build the framework of where everything
+fits was to think about the different
+ages of AI and I'm just going to run
+through these very quickly so just
+thinking about it in the broader sense
+and I'll also we're probably going to be
+posting a Blog with my show notes in
+this so people could go back and
+reference and see my charts and stuff
+and how I lay it out maybe even argue
+with me but when I think about the
+Modern Age of AI in particular going
+back to the 80s that was the start of
+these three parts and each of these
+pieces now then build on each other so
+what happens in the 80s is that you have
+these expert systems you have fuzzy
+logic systems you have rules-based
+natural language processing you have
+optimization and a lot of that now is
+just basic logic in software is how we
+consider it but I mean at the time they
+were very groundbreaking insight
+from there we had this second wave where
+as companies of mass data through the
+90s we started to have an understanding
+of how valuable this data might be and
+that was the rise of machine learning so
+we called it big data at the time now we
+use it for Predictive Analytics and
+predictive Ai and it's mostly model
+Centric and then third as data computing
+power and our understanding grew it led
+to this introduction of deep learning
+through the 20110 and is now
+transitioning into the age of foundation
+models that present so llms if you will
+so it's hard for me to call this a hype
+cycle so much as just multiple waves of
+Peaks and valleys of just building on
+technology that to John's point we
+started in the 19 what 40s 50s somewhere
+around there so everything that you read
+about present day stands on the
+shoulders of research that started 80
+years ago and again it's not like one
+single hype cycle although individual
+elements are throughout the hype cycle
+if you will but ultimately as I think
+about that and I think about the broader
+umbrella of AI I start to look at it in
+terms of each of these models or
+building blocks ultimately falls into a
+what is this artificial intelligence
+algorithm model used for and that is
+broadly predictive or generative as we
+see and these aren't clean John I think
+you said this before too these aren't
+clearly distinct buckets because then
+you have things like autonomous driving
+that uses a little bit of both at times
+or uses hybrid of the different types of
+machine learning so again it's not about
+the what type of model are you using
+it's the ultimate and goal of what is
+this being used for John to your point
+about categories so working and building
+on your idea of these three of
+efficiency unstructured Data Insights
+and recommendations I think one of my
+best use cases throughout all of my
+research that I came up with having set
+in the seat is just a retrieval
+augmented generation system so a rag so
+just imagine a chat GPT like interface
+but it's all of your investment office
+or your portfolio research performance
+due diligence notes CR notes email board
+meetings manager decks random macro
+notes that you wrote on a sheet of paper
+on an airplane recordings of things and
+being able to then search that through a
+chat GPT like interface and you can do
+that now I actually I have not built one
+obviously because I'm not sitting in
+that role currently but there's a really
+great YouTube video on how you can use
+meta's llama model to basically then
+feed all of your documents through and
+you have a searchable interface for all
+of your notes so if you're like what is
+the average return of this kind of
+manager over this time there's a lot of
+different insights you could pull from
+that instead of to your point John
+having your analyst go track down that
+data and put it into an Excel file so I
+would say that that's probably in terms
+of efficiency and unstructured Data
+Insights I think that is one of the top
+things you can do and you can do that
+with publicly available models I think
+you can actually even do it with chat
+GPT as well you can upload all of your
+documents and stuff and you'll be able
+to do a very similar thing I don't know
+about the security there in terms of if
+that gets put into their future models
+or not but is definitely doable so I
+would highly recommend that and then
+just beyond that I would actually focus
+on the efficiency side so process
+automation enhanced research and
+Analysis pulling data from large amounts
+of text is another one of my favorites
+after you input all of your lpas and ddq
+and such into the system you can then
+train it on certain types of text to
+where in these tens of thousands of
+pages of documents particularly for
+public pensions it'll pull out the fee
+data it'll pull out interesting terms
+items that you might want versus one
+person having to go through every single
+document and pull that out it's actually
+even great because a lot of funds use
+similar legal teams and similar
+nomeclature so you don't have to train
+it on unlimited amounts of data you can
+actually do it pretty quickly with a few
+examples with that all said in this
+third category that you brought up with
+recommendations I am much more hesitant
+about using it for that and I say that
+because to date there's not a great
+particularly on the predictive side
+where it's telling you what you should
+do there's no actual data in many cases
+behind whether or not the AI is better
+so I actually be curious to talk about
+General Atlantic and the way that
+they're using it because it's one thing
+to use it as insight as a recommendation
+tool or as a maybe you should look at
+this and it's another thing to say oh
+the model said this so we're going with
+this there's actually an interesting
+example of this in healthcare records
+where one of the companies basically
+said that they had an algorithm that
+identified patients that are at an
+heightened risk for sepsis and they said
+it was 80 plus per accurate and it turns
+out it was 80 plus% accurate because of
+data leakage and by that I mean it was
+actually in its data was noticed when
+doctors would prescribe antibiotics
+which is obviously showing that the
+patient had a higher chance of having
+sepsis so it wasn't actually identifying
+sepsis patients it was identifying
+doctors who had already written scripts
+for said patient so I think that that's
+one of my hesitations and limitations
+and models and then I will also say that
+the problems with data leakage in
+particular are something that give me
+pause and it's just one of the
+considerations that makes me hesitant on
+The Wider spread usage of predictive AI
+models Beyond like this really narrow
+set of problem solving and then I'll add
+right now it's interesting because
+particularly in the media it seems as
+though there's this widespread belief
+that there's going to be a linear
+increase in the benefits unlocked by
+model scaling and I get the sense that
+actually when you look at the research
+particularly more recently in the past
+few months that the huge step changes
+that we've actually seen in large
+language models are actually mostly
+behind us so the step changes are
+getting smaller and smaller which is why
+we're actually seeing this kind of
+increased focus on the idea of Agents so
+agents are actually interesting like an
+interesting deviation from our broader
+conversation because I do think that the
+development of these specialized agents
+could be useful in leveraging large
+language models to Aid in the investment
+process for example in theory you could
+program an agent to edit your investment
+memos and then have that agent also
+write alternative investment memos to
+the tune of thousands of drafts and then
+go in and pick that best memo or the
+memo that it thinks best fits your needs
+I could see where a use case like that
+in a broader investment office might be
+helpful but that's one of the narrower
+benefits that I could see just at the
+moment just in terms of where we are
+technologically speaking I will also
+point out I think one of the biggest
+things that's weigh of my mind during
+the discussion of artificial
+intelligence is this idea that data
+compute energy are all still finite
+resources so I'm not sure that we're
+going to see giant increases in model
+efficiency and reliability without some
+massive increase in the data and the
+energy that required to actually
+generate these models so I don't see
+that happening in the next couple of
+years and I remain skeptical in
+particular that artificial intelligence
+will actually displace humans because of
+these bottlenecks and then also because
+of some broader issues in particular of
+generative AI where Beyond data
+extraction and first drafts there's only
+pretty limited use cases that they're
+helpful because at least at this point
+we've noticed that the model
+hallucinates and this is not a new thing
+I mean this hallucinations happened in
+the first few iterations of of chat GPT
+and it's interesting because some of
+them are absolutely hilarious so I think
+a lot of us have heard the example of
+the lawyer that used fake court cases
+and a briefing that he actually
+submitted to court but interestingly
+also on open AI Whisper app which is
+this application that you can speak to
+when it recognizes the language and
+transcribes it into text but they've
+even seen hallucinations in that use
+case and I think it was the University
+of Michigan that found when researching
+whis wrap in particular and this use of
+AI that 80% of their actual text that
+they pulled out to look at had
+hallucinations in it so again this is
+another huge reliability problem that I
+think is going to limit the broader use
+of AI and particularly limit the use of
+its ability to displace humans with all
+of that said in closing my thoughts I
+kind of broadly just list through them I
+think the first big thing is that pretty
+much all algorithmic and Tech advantages
+eventually get competed away I think
+that just every other Miracle of modern
+technology we're probably going to call
+a lot of this software and it will
+likely change our lives and how we
+interact with the world obviously but
+it's not going to Doom us at least not
+in the next 5 years at least in my
+opinion and I actually I think it's
+funny because in John's portion I think
+John you said something about the CFA
+report on AI usage where in 2019 only
+10% of managers were saying that they
+used it but actually I mean if any of
+them used a spam filter then that
+percentage is going to be a lot higher
+so I think sometimes we just because we
+call it soft where we don't look at it
+as a modern Marvel of artificial
+intelligence we just look at it as oh
+yeah that's the thing that stops people
+from taking my money or from doing some
+sort of scam and then beyond that I
+would say instead of finding the Silver
+Bullet that predicts everything maybe
+focus on improving efficiency improving
+your ability to capture data improving
+and augmenting your job and then from
+there to the extent that you have the
+data and the technological understanding
+and the ability to limit these data
+leakages that happen then go build the
+system that potentially predicts your
+best ideas in terms of investments in
+terms of recommendations in terms of
+portfolio construction and I'll close
+with the fact that the massive flesh
+between your ears is so amazing it has
+taken us as a species billions of
+dollars and more computing power than I
+think the researchers in the 40s could
+have ever imagined available to be able
+to approximately do what you do but not
+even in the same way so I would say just
+use that when you evaluate these claims
+because one of the things that always
+surprises me is people say okay well
+artificial intelligence can pass the
+elsat and we're like oh my gosh but the
+elsat is not what a lawyer does and the
+elsat maybe isn't even predictive of
+like what makes a good lawyer so we do
+have to be mindful of that and same
+thing with imcat it doesn't make the AI
+a good doctor to just be able to
+regurgitate by predicting the next word
+so again I would say really think about
+logically whether or not these claims
+even make sense to you or if maybe the
+framing is creating a bias in GB Brer
+narrative and with that I will pause
+I think that reminder of orders of
+knowledge is really important and that
+the MCAT I think there was a test on the
+CFA too the experiment I should say that
+in which they passed the CFA and you're
+right you talk to most employers
+hospitals investment professionals
+they're not hiring based upon your CFA
+pass your MCAT score because that
+automatically assumes you're going to be
+amazing or Elite at said job rather it's
+a signal for grit and hard work and
+diligence and the higher order work and
+synthesis and contextual decision making
+all comes through on the job work so I
+think that's a really good reminder and
+I don't know whether the machine will
+ever be able to do that you mentioned a
+couple other things it comes through
+interacting with the real world and
+that's a thing that AI can't do yet
+can't do yet you mentioned a couple
+other things that I think are really
+important and I don't want to lead the
+witness into our final sip where we'll
+talk through whether we're truly will be
+replaced or how much will be replaced of
+the investment professionals work but
+this r for infrastructure the race for
+computing power to fuel all of this you
+mentioned that both energy and computing
+power is still a finite resource and I
+think that's something we should talk to
+Martine and Dave about how far along are
+we still dancing on the knife's edge of
+the limit of computing power or have we
+put in enough bandwidth for lack of a
+better word for this thing to continue
+to evolve and the other thing I'd say
+just on the connection or intersection
+of human and machine work is that even
+the purist Jim Simons who sadly we lost
+this year the founder of rentech adapted
+the model tweaked the model added his
+own views thought about using judgment
+ways that we could improve upon the
+machine so there's no one out there I
+might say very few but not even Jim that
+would suggest that we can just defer
+completely to the machine at least yet
+so I will leave that there and we are
+now going to move to halftime before we
+get to Dave and Martin we're going to
+have a short conversation our title
+sponsor Franklin Templeton we'll see you
+back here in a
+minute all right welcome back to Capital
+decanted as promised we are now here
+with George Stefan who is the newly
+named Global coo wealth management for
+alternatives for Franklin Templeton
+welcome to Capital Dean George John
+thank you so much for having me it's our
+pleasure and we're extremely grateful
+for the partnership of course that we
+have with Franklin Templeton I should
+welcome welcome you to Franklin
+Templeton for that matter you're only
+two short months in from KKR and I know
+they're excited to have you in this seat
+and we're excited to exploit and take
+advantage of your wisdom both at KKR and
+now what you're attempting to build at
+FT I thought as a result of that we
+could maybe very quickly survey the
+state of play in product development in
+wealth management it's certainly a
+priority for you at Franklin Templeton
+and for many of your contemporaries
+across the industry so maybe I'll start
+George both as a function of your
+experience in previous lives and now
+freshly into ft is that we've seen much
+of the product Innovation to date to
+bring alts to wealth management has been
+variations of what I would call some
+form of a interval structure where
+you've got some level of limited
+liquidity at certain intervals hence the
+name with periodic Gates meaning there's
+a maximum to it what do you think we've
+learned as an industry generally about
+the advantages and disadvantages of that
+particular structure absolutely really
+if you think about the structuring side
+I think about five core structures or
+variations of the interval fund like you
+alluded to all of which give individual
+investors the ability to access alter
+investments in investor friendly way so
+you have the interval fund tender offer
+non-traded re BDC and operating company
+all of which have similar attributes
+with slight deviations but before I get
+into the advantages I think you need to
+take a step back and think about the
+history of these products so if you take
+a step back and think 10 to 15 years ago
+there's obviously been this massive
+evolution in the semi-liquid products
+the prior vintages or the 1.0 versions
+of these products were built by less
+experienced managers they had high
+upfront fees multiple layers of
+management fees they didn't value
+portfolios frequently and they didn't
+utilize leverage appropriately but what
+you've seen over the last several years
+is large GPS have come in and redefined
+how these products look and feel so
+they've essentially learned from a lot
+of the various mistakes that previous
+managers have made which I think has
+really tightened up the investment
+access and the client experience so if
+you think about today how managers view
+these products there's really a couple
+of core guiding principles it's
+institutional style pricing
+institutional investment access more
+transparency and a lot of Education
+these structures make it easy for
+individual investors to purchase these
+products which has been critical for
+adoption there's no Capital calls these
+structures deliver instant exposure to
+season portfolios one eligibility two Ty
+they're offered to accredit investors in
+some instances the mass affluent these
+products are continuously offered on
+either a daily or monthly basis they
+have low minimums to invest from a
+liquidity perspective they're probably
+providing liquidity in quarterly
+intervals roughly 5% simplified tax
+reporting and a more frequent and robust
+valuation process really helpful and I
+think listeners will know that episode
+two of last year we outline much of what
+George is saying as far as the pitfalls
+and some of the challenges that liquid
+alts 1.0 faced and it's so great to hear
+that what you've just articulated
+validates our experience that some of
+those lessons are being applied so I
+appreciate that overview George and so
+maybe part of this is addressed in some
+of the solutions that have been based
+upon what we learned and where we made
+mistakes the first time round but as you
+look out so that's a bit of a
+retrospective George if you look out a
+few years and you think about whether
+it's Franklin templeton's own product
+Ambitions or other Act ity and velocity
+you see across the industry where do you
+expect to see the most Innovation either
+in product spec for the current interval
+variations or in asset classes or some
+combination of both so maybe we start
+with the structuring question then we
+could go into where the puck is going
+from an asset class perspective and
+where the Puck's going from more Dynamic
+portfolio Solutions I mentioned the five
+structures before I think what you're
+going to see in the future here is a lot
+more focus on the Pure Play interval fun
+and tender offer you're going to see
+them predominantly pop up the reason
+being is they trade very similarly to
+the mutual funds so it makes it easier
+for advisors and clients to do the
+business I.E no suboc it's click and
+purchase they sit on the mutual fund
+chassis more GPS are going to try to
+offer solutions to the massive fluid
+audience and it's probably the ideal and
+best way to do that today I think you
+will also see fintech companies continue
+to make it easier for investors and
+advisers to utilize the other core
+interval fund structures but I think
+from a pure play structure and
+perspective you're going to see more
+inal funds and tender offers pop up on
+the asset class side what I would say is
+real estate equity and direct lending
+are the most established asset classes
+and investors are going to continue to
+allocate to them real estate has had a
+slow down over the last few years given
+all the obvious fundamental reasons but
+you will probably see an uptick in
+demand overall at the next one to two
+years as fundamentals get stronger
+direct lending and private credit more
+broadly will continue to be high in
+demand and grow at a fast pace what you
+are going to see in private credit a lot
+of managers are going to start to add
+additional Standalone flavors such as
+asset-based lending and real estate
+credit which are a nice complement
+diversifier to direct lending and
+another way to essentially get 9 to 11%
+yield on the PE and infrastructure and
+PE secondary side what I would say is
+you're still seeing a lot of entrance
+come into the market and those are
+probably three of the fastest areas of
+growth over the next few years at
+Franklin we are extremely excited about
+the opportunity in PE secondaries
+institutional investors need for
+liquidity given the slowdown in broader
+exits is a very real theme and I don't
+think there's been a more exciting time
+to be an investor in PE secondaries in
+infrastructure it's such a unique asset
+class and one that's been
+underpenetrated by individual investors
+the way I think about true private
+infrastructure it's resilient to
+economic shocks and it has low
+correlation to other asset classes so it
+has a real need within a portfolio as I
+mentioned it's not an asset class that
+historically individual investors had
+access to so I do see a lot of demand
+coming there the next and this is going
+to be a Comon theme for years to come
+it's this notion of public private
+accommodation fund you've seen a couple
+of things in the news as of late but
+essentially a combination of public and
+private Securities predominantly credit
+driven for now wrapped into one
+portfolio it feels like a trend we're
+going to see over the next couple of
+years and going back to the structuring
+point I think the interval fund
+structure is probably the most
+appropriate structure for this today
+because it allows you to have a higher
+allocation to privates but still go down
+to the mass of fluent I think we're a
+few years away and Regulatory easing and
+relief from being able to facilitate
+privates and ETFs more than what we've
+seen what I would say is there's still a
+large cohort of advisers who have not
+yet adopted Alternatives think about a
+multi-alternative solution where either
+through a managed Solutions or through
+one offering you can provide that cohort
+of advisors the ability to invest across
+a broad pool of Alternatives across
+every single one of the asset classes
+we've talked about I think there are
+going to be managers that figure out how
+to create these model portfolios or how
+to create a product that delivers one
+holistic solution across all asset class
+is in a simplistic way George I couldn't
+agree with you more on that last point
+the multi- manager solution I think is
+the Holy Grail of course that's a whole
+lot easier said than done with all the
+mismatches and toggling between
+underlying asset liquidity and of course
+the liquidity Gates that are on the
+overall rapper but we'll leave that to
+the product experts but that's been a
+fascinating tour of where we're going I
+think if nothing else as we've seen from
+the tsunami of news flow that you
+alluded to we're in for a lot of change
+and a lot of new opportunity and
+Innovation so George thanks for helping
+us think through this and listeners will
+be back with our guest segment John
+thank you so much for having
+[Music]
+me well welcome back to Capital decanted
+and we now are as promised in studio
+with Dave Morehead CIO of Baylor
+University and Martin escobari who is
+President of General Atlantic gentlemen
+welcome to capital decanted thank you
+thank you John thank you Christie well
+as you know guys in the introduction we
+talked through a bit of the history of
+AI particularly as it relates to
+Investment Management over the last
+decade which is really when this has
+accelerated we even channeled one of my
+favorite songs back from 1979 Martin I
+don't know if this was big in Bolivia
+but did video kill the Radio Star is
+kind of the theme we're channeling for
+this particular episode which is does AI
+kill the investment professional so
+that's really in somewhat of
+sensationalist language what we're
+trying to tackle today is what will be
+the peaceful coexistence of the human
+and the Machine as we think about our
+industry in the future so that is our
+job today so we're going to have a
+wholesome discussion and we're grateful
+to have lpgp perspectives to have folks
+that have thought a lot a little and
+have I'm sure very important captivating
+views on this so Dave I'm going to start
+with you if that's okay perhaps this is
+semantics but last season we interviewed
+Chris Dixon who I'm sure both of you
+know over at a16z on blockchain and its
+computing power and whether that's going
+to be the next platform and he
+distinguished the way technologists
+often think about new technologies he
+said there is a category that really
+extends existing Technologies it makes
+it easier it makes it faster but they're
+incremental improvements to help
+existing processes and he called that
+skoric but then he also said and think
+of mobile as an example of the second
+one there's these pioneering
+transformative technology that really
+substitute that shake up the whole world
+these are novel I mean these really
+change the way that we do things
+completely so Dave I'm interested as a
+starting point before we get into some
+of the specifics where would you put AI
+tools on this spectrum as you pull out
+your crystal ball and why would you put
+it in one category or another let me
+start by saying
+I'm not a technologist I'm an allocator
+so whether it's a16z or Martin they're
+likely to have better idea than I at
+what exactly works and how it works Etc
+but as we've stepped back and looked at
+AI I think there's been some commentary
+in the Press about perhaps it being as
+impactful or more impactful than the
+internet and we agree with that the way
+that we talk about it internally is that
+the internet BAS basically provided a
+bulletin board that people could go
+stick notes you'd see walking around
+College there's at least College when we
+were there there were push pins with
+papers hanging at the note and Company a
+has their Direction about how to use
+their products on there Company B has
+order forms on there Etc but thinking is
+actually a uniquely human trait and to
+date like we don't see that in the
+animal kingdom we haven't seen it in
+technology but it appears that we're
+moving into machine learning machine
+capability to actually do some of the
+things that humans do so I think we're
+in the nent stages of that and we had CH
+GPT 2 3 4 there a 10x productivity
+capability increase with each version so
+I suspect that as we go forward yeah I
+think that ultimately it will be
+lifechanging I think that it's not right
+now and that's where investors are
+trying to sort out what's going to work
+and not but yeah we think that it's a
+whole new ball game so we've got a vote
+Martin for novel from Waco Texas I want
+to continue that maybe ask you a similar
+question in a different way and we spent
+some time both in this episode in the
+intro and with that a for mention Chris
+Dixon episode talking about the tech
+hype cycle it's something I heard you
+talk about as well and you have
+articulated this as these hype Cycles
+while painful in the moment are also
+important and critical because they
+mobilize resources they accelerate
+investment even over investment that
+leads to consolidation and
+rationalization I think I've heard you
+say they make the future happen faster
+these Tech hype Cycles as hard as they
+sometimes are to Fathom so as you think
+about this in the context of previous
+hype cycles and technological platform
+turnover how would you compare AI this
+is my third hype cycle in in my adult
+life so right as of we were graduating
+we had the beginning of the internet and
+that was massive and transformative and
+I agree with David it started as a
+clipboard but it really did touch most
+of us in ways that were incredibly
+exciting about a decade later we had the
+cloud and the mobile internet and
+another cycle begun and it was equally
+transformative this is the third one and
+of the three I think this is the most
+transformative because it will touch all
+corners of the world it will touch all
+Industries it will change most of the
+activities of businesses in ways that
+are perhaps yet to be fully understood
+but are going to be completely
+transformative the Quantum of capital
+that's necessary to develop this new
+technology is gigantic just Chad gbt 5
+which is the fifth version will cost
+between two and three billion dollar to
+train and this is incremental learning
+based on the previous four chbs and this
+is just one of the players the data and
+energy consumption of all these new
+players developing models and using
+models is projected to represent 10 to
+15% of all Global energy consumption
+within a decade these are big big big
+gigantic numbers in every cycle we get
+excited early adopters flock it attracts
+a lot of interest threats a lot of
+capital always and it's been true of the
+previous three and it's probably going
+to be true of this one there is a period
+of overe excitement and over investment
+there's a period of unfulfilled
+expectations because we all thought that
+AGI was upon us and drugs were going to
+pop out of the machine without much
+human interaction and we are scared that
+the machine is going to lead to the
+extinction of humanity and that doesn't
+happen in the first five years so we get
+disappointed and then there's a
+correction and it leads to some pain and
+blood but out of the ashes of that
+correction the reality of it is
+transformative enough that when looking
+back at it we say wow that was great
+what's different about this one first is
+the Quantum of capital and the globality
+second is the speed and I'll give you a
+few numbers so you can feel the
+acceleration of speed it took Facebook
+four and a half years to reach a 100
+million users in the old internet and we
+are Facebook users chrisy maybe is an
+Instagram user my daughter likes neither
+of them Instagram half that a little
+over two years Tik Tok did did that in 9
+months so half again Tik Tok which is a
+turbocharge mobile n months Chad gbt did
+that in eight weeks got to 100 million
+so it is a massive tsunami that is
+happening in eight weeks to get to the
+Tipping Point of critical scale it's
+more Capital faster so buckle your seat
+belts and yes there's a lot of hype and
+there's going to be a lot of blood but
+at the end there's going to be a
+transformative change now I appreciate
+that context and I will add though I was
+in College I think it was my freshman
+sophomore year when it was the Facebook
+and you had to be invited by college and
+because UT wouldn't let their students
+on Facebook was open to every other
+university in the state of Texas to
+force you to adopt so I have one of
+those weird Facebook profiles that
+started in 2004 which makes me feel
+incredibly old so yeah Facebook is over
+20 years old kids so with that though I
+would like to switch to how we think
+about using this so Dave I'll start with
+you it seems like Baylor has a top down
+approach that identifies strategies or
+markets first versus being bound by a
+broader asset class but then it sounds
+like you layer in a more bottomup focus
+on due diligence and then
+personalization from the team I will say
+having been on that side it seems like
+with limited resources and Manpower
+that's a lot so have you thought about
+how AI tools might really help and maybe
+sourcing or due diligence or parts of
+that process and where have you thought
+about incorporating these and where they
+might assist yes we have thought about
+it but we haven't implemented anything
+the bits that I think that we've run
+into or at least the use cases that
+people have given have been more along
+the operational lines so say you feed in
+the subscription docs or the OPM that
+you're pleased with and then feed in all
+of the other docs and see where they're
+different and can you negotiate terms
+with the manager make sure you're not
+missing anything to make sure that
+they're aligned our perspective is that
+what we're doing probably does not hinge
+on what fees we're paying or what the
+liquidity terms are or the nuances of
+the verbiage that's in the documentation
+we do things from a top- down
+perspective and I think that that is
+more discretionary than systematic so
+for example at the moment I believe we
+don't have any systematic strategies in
+the portfolio that's not to say that
+they can't work for other people and
+whatever but in terms of how we do
+things in other words if South America
+potentially had a crisis or something
+and the markets in South America
+declined in value and we can witness
+that we can see it on the screens then
+we would be immediately pushing money
+into that space so from the standpoint
+of an execution on our investment
+approach it's not clear to me that there
+would be any particular benefit that AI
+could provide that we wouldn't already
+see on the screens it could provide
+something say in very Niche markets of
+course maybe something that wasn't on
+our screen but we also don't invest in
+those markets because of the lack of
+liquidity so by how we put up guard
+rails to make sure that we have
+liquidity and that we can get out and
+also from a top down perspective we
+haven't Incorporated AI into our
+approach and then I would say that in
+general the other bit that AI has been
+talked about is in sourcing but we're
+actually trying to go the other way and
+have more concentration rather than less
+so that works against the whole AI bit
+as well because we if we're going from
+80 managers to 60 managers we can simply
+move on from some managers Etc and we're
+happy with the ones that we have for
+instance so again we're not the early
+adopters of anything we tend to be a
+highly suspicious group that wants to
+let other people try it and see if they
+come back alive and then will
+participate so maybe we can pass it to
+Martin and he'll tell me all the things
+that I should be doing I'll say maybe we
+should talk again in a year and see if
+you're still alive and then we can go
+from there well building on that Martine
+one of the major enabling dependencies
+of this entire narrative is the race to
+build out infrastructure and computing
+power is this still a race though and I
+ask that because I would like to know
+where in your opinion are we with this
+journey how do we overcome it and then
+also secondary to that as a growth
+investor how are you approaching AI
+investing and kind of evaluating new
+opportunities with the tech we've
+learned from previous cycles that the
+early stages of the cycle are very risky
+because the winners are not yet clear
+and the valuations get way ahead of them
+and the infrastructure phase of the
+cycle is the most capex intensive so
+there's a lot of dead bodies of Brave
+Young funds that are pioneers in the
+infrastructure and Pioneers in the
+emerging business business model so our
+strategy at every cycle is to meet
+everybody and wait until we have Clarity
+that necessary infrastructure has been
+set and the winning business models are
+beginning to emerge and hopefully the
+valuation bubble begins to crack so that
+we can buy things at reasonable prices
+so we've been talking to everyone for
+over three and a half years there are
+three types of investment opportunities
+you can build data centers and energy
+providers to the data centers provided
+you have off-take contracts that
+guarantee you demand regardless whether
+you end up with other capacity that's a
+good area and we have a sustainable
+infrastructure sleeve within the four
+products that we offer to endowments and
+institutions and families and that seems
+okay provided you've got locked in
+demand then there's the other type of
+infrastructure which is actually
+building the chips and building the
+large language models where we're
+talking billions and billions of dollars
+we're talking about a dozen of players
+trying to achieve Supremacy you're
+talking about different approaches to
+building these large language models
+some people want to boil the sea and
+create the AGI some people say forget
+the sea I'll just boil this Pond just a
+good part of the sea and I'm going to
+get you better faster answers with one
+100th of the investment and that's all
+playing out to play it's 10 billion
+dollar table Stakes we don't yet think
+there's enough Clarity to play in that
+table Stakes are too high and there's
+the third layer which is the application
+layer people that are leveraging someone
+some else's data centers someone else's
+llms to build new applications that
+leverage AI to render services that are
+new and different and Innovative and
+differentiated relative to those that
+are not embedded AI into the application
+that longterm is the most exciting pond
+in which to fish for growth Equity it is
+thriving there's two problems right now
+with that one is chat gbt incorporates
+most of the functionalities that you've
+been developing in the next version of
+Chad gbt so you get rolled over by one
+of these gorillas that is constantly
+innovating and creating new
+functionalities so that's that and but
+more importantly because you can protect
+yourself from that it's Venture stage
+companies with growth Equity valuations
+three five 10 billion dollar revenues
+two three million dollar a thousand
+times Revenue it rarely is a fair price
+for a young company so it's still a
+little early however we are finding some
+opportunities in the third layer we can
+give you some examples but I think the
+third layer the third bucket of
+investing is beginning to become
+attractive valuations are becoming more
+attractive and companies are becoming
+more proven and after three years we
+just did three investments in AI
+application companies which we think are
+going to be great yeah and if I can pick
+up on that so what I was talking about
+before is what we're doing at Baylor but
+in terms of investing we do have
+investments in the ground in the first
+category which Martin was talking about
+we do not in the second category and
+then in the third category we would rely
+on managers like Martin or VC or growth
+Equity or whomever we don't have the
+wherewithal of sorting that out we can
+see the first one and we can make
+investments there and we have along the
+lines of what Martine is talking about
+off take agreements Etc so we're bullish
+on that the second one like Martine was
+saying seems like a battle and someone
+will win but we don't really know who
+and the third bit is then there's a
+million companies and we have to rely on
+somebody like Martin to go figure out
+which three of those million are going
+to work Dave I think chrisy can press
+you a bit more on some of those use
+cases in a couple minutes but I want to
+stick with Martine just on one more
+subject and by the way speaking of dead
+bodies now as I've admitted on this show
+Martin now that I've turned 50 and I'm
+in therapy on my mistakes and my early
+adult life I was one of those dead
+bodies that felt like the gorilla rolled
+over me with the web van Rec
+recommendation at 23 years old you know
+that was one of my shiniest moments and
+as I've often said maybe I was just 22
+years too early versus wrong but hey
+we'll let history make a judge of that
+but thanks for picking that scab
+nonetheless speaking of use cases and
+the way we've been pushing Dave I want
+to ask you about the use case that we
+hinted about in the intro that was the
+Catalyst for me reaching out to you at
+first on this particular subject which
+is your friend aah and of course is a
+new voice at the table of the general
+Atlantic investment committee and as I
+understand it and I'm going to let you
+tell the story with your typical South
+American Pizzazz that I've grown to love
+but 20 years of data youve fed this
+machine and she is now speaking and
+influencing at the investment committee
+table so talk us through that history
+and maybe what you've learned what
+pitfalls have been and maybe a couple
+examples of how she's played a role in
+your decision- making we are a growth
+Equity investor we managed about hundred
+billion dolls we've been around for 43
+years we have scale we help our
+companies in many ways over the last
+three years the most popular way in
+which we're helping our companies is to
+embed AI into their core operations and
+there are lots of things that are
+working really well we can spend time
+talking through that but we challenge
+our CEOs to think carefully how AI is
+going to dramatically change the way you
+compete you have to have an AI project
+and we looked at our El and I said how
+is AI is going to change the investment
+profession and we said let's try out
+using AI as a co-pilot for the
+investment committee which is the most
+critical function within the private
+Equity Fund you decide where to deploy
+your Capital based on a universe of
+opportunities so we've been training the
+machine over the last three years with
+43 years of investment outcome data on
+this 560 companies we've invested over
+our lifetime we've trained her with 15
+years of voting records of our
+investment committee members which are
+historically for the last 15 years have
+been our best investors who vote a
+certain way on the app used to be on
+email but now it's on the app and they
+reason they justify the reasons why they
+voted a certain way and we have this
+data and so forth now the way run our
+investment committee it's open to all
+investment professionals it's every
+Tuesday for five hours we go typically
+through three to five opportunities that
+are being discussed it's open to
+everyone on Zoom it's a great teaching
+moment for our young investment
+professionals and then we go into
+executive session where all the partners
+are invited the investment committee
+members on video the rest on listening
+mode we vote on the app and we show the
+votes at the same time so we don't
+influence each other and then we discuss
+and try to change each other's minds
+because two negative votes would kill a
+deal when a deal is being killed we try
+to see there's some convincing to do for
+the last three years we've had the
+computer vote and justify her vote we
+named her a it was crowdsourced it was
+someone in our team who wanted to honor
+aah Lovel which is an incredible woman
+born in 1815 one of the first computer
+programmers in the world and she threw
+out this bold statement that machines
+could do more than simple math and it
+took about 150 years for that dream to
+come true but now it's very clear that
+machine can do more than simple math so
+aah has been voting for the last three
+years she's more negative than us so she
+says no a lot more than we do she she's
+100% fact-based so she will say things
+like we've never seen a software company
+grow margins so quickly ever and you're
+like we could say this plan looks
+aggressive she says I've looked at 500
+data points and it's never happened
+before I mean maybe this time is
+different but probably not aah is not
+persuaded by Charisma a doesn't care if
+you just did a home run deal and
+therefore you're walking on water when
+you bring your next deal a is cold a
+base she speaks truth to man to person
+now we've back tested a to see if we had
+listened to a over the last decade would
+we have done better we would have done
+significantly better if we had just
+followed aah on her decisions is that
+because you would have made more right
+choices or because you would have
+avoided more wrong choices both more the
+second than the first but both are true
+now what's the catch a has been trained
+on the past she's very good at
+predicting the past the true test of
+adaa is as we make decisions
+concurrently with the human are you
+better at predicting the future and we
+won't know as you know David and and
+John and Christie in private equ it
+takes five to seven years to know if you
+are truly right because Mark to markets
+are nice but cash on cash is right and
+it takes a while for that to do I
+suspect she's going to be less brilliant
+than in the past but having her as a
+co-pilot I think is M making us think
+slightly different and she's likely
+going to get better with time one more
+question did you train her on the deals
+that you invested in or did you train
+her on all the deals that were up for
+the committee to vote on a 1.0 just has
+a data of what we actually did a 2.0
+tracks the things we said no to and we
+should have not done it adaa 3.0 is
+going to partnership with some of our
+friendly LPS and say we' like to use
+your data as well and Ada 4.0 is going
+to talk to us and interrupt us and say I
+don't agree with you just said so
+there's a development plan I don't know
+if we're going to get to 80 4.0 but
+we're playing with it and it's part of
+that playful experimentation which I
+think gives us sensitivities of the
+challenges of embedding AI into complex
+processes it's not there yet but there's
+enough there that I'll retire before Ada
+let's just put it that way I was getting
+make a joke about AA taking over all
+critical infrastructure of the world I
+think she's a co-pilot this idea that
+computers are going to replace humans I
+don't think it's correct pilots in
+airplanes have been using idle pilot for
+30 years we still need pilot but 80% of
+the time it's the machine driving the
+plane but you need the pilot for that
+critical five minutes absolutely
+couldn't agree more and Dave having said
+in a seat similar to yours obviously you
+said before that you're not quite doing
+what Martine and their team is doing or
+really integrating any of it into your
+process yet but it does seem to me that
+the lowest hanging fruit in terms of use
+cases would be improving efficiency or
+developing some sort of unstructured
+data Insight so building a retrieval
+augmented generation system Rags if you
+will for your personal notes or data
+summarizing investment committee or
+other meetings taking first stab at
+drafts of communication do any of these
+actually resonate with you or do you
+think that they would help we run things
+so differently for example you said your
+notes and commentary I don't take notes
+so that doesn't work and in general our
+offices run from the standpoint of if
+you're not going to get a 10x return on
+what you're doing then stop doing it I
+know a lot of people in the industry
+that will go to conferences and then
+they come back and they spend half a day
+or more inputting their notes into some
+system so obviously if you were doing
+something like that then yes please
+address that because like you said
+that's low hanging fruit that's fruit on
+the ground molding and buying but we try
+to dispense with a lot of that just in
+the structure and approach that we take
+so a lot of that loow hanging fruit that
+you're referring to in our particular
+case doesn't particularly apply Martine
+you described the end of the process
+with a meaning the decision point of the
+investment committee and I maybe ask you
+to go back Upstream a little bit to each
+of the small decisions that interact and
+compound before a potential perspective
+deal even gets to that table where a is
+going to slap you around a little bit
+and tell you why you're wrong and why
+you're too emotional and so forth as you
+talked through are there other tools at
+the more micro level that your partners
+or other invest professionals are using
+along the way other use cases that are
+helping them strengthen the pitch that
+goes to Ada and the five humans AI comes
+into our process in three ways it's
+affecting how we find companies it's
+affecting how we build value how we
+decide whether to invest in those
+companies and how we build value in
+those companies so we talked about the
+middle bucket let me talk about two
+other buckets we buy 90 data sets from
+the universe and we use AI to produce 19
+dashboards of interesting companies that
+are popping up that Merit someone giving
+that company a call and getting a little
+more information than that which is
+available in data sets that we can buy
+in the market any given year we meet
+12,000 companies we do due diligence
+superficial due diligence get under NDA
+with 2,000 companies and we'll invest in
+20 to 30 so we're saying no 500 700
+times for every yes where do we find
+these companies we use Big Data
+augmented by AI things like we have a
+robot that scrapes LinkedIn if the
+number of people who say they are
+working at Baylor goes up 500% month on
+month we're like we got to call those
+guys a ba I don't care what they're
+doing but they're sure as hell are
+growing because they hiring a lot of
+people that would be a problem that
+would in your case perhaps but if you
+were selling widgets perhaps not a
+problem if app downloads go up if credit
+cards receipts go up if mentions of you
+in bulletin boards go up it triggers
+something that makes us call so we're
+using for sourcing in terms of value ad
+this year we'll do about 500 projects AI
+projects in the portfolio what's really
+working implementing co-pilot to augment
+productivity of computer program
+check using AI to augment productivity
+of your digital marketing why humans do
+AB testing that's how they improve their
+online marketing machines do a testing
+faster cheaper sooner and the third one
+customer service chat Bots are much more
+efficient than humans that's solving
+whatever it is you need to do with your
+travel agent or with your bank account
+manager or your wealth manager and the
+fourth one is enhanced decision making
+making credit decisions making
+predictive chur decisions making supply
+chain decisions about the optimal level
+of inventory of a particular product
+based on the demand curve that you're
+seeing the computer can give you
+insights to make those decisions better
+so we're using it across the three
+dimensions and I think that there's a
+lot to be said for what Martin began
+with in terms of scale so General anic
+obviously is one of the gorillas in the
+space we have five investors here and
+endowments in general their expense
+ratio is is less than 20 basis points a
+year somewhere between 10 and 20 basis
+points a year even if you took UT utimco
+or Harvard management that have the
+largest endowments and you apply 10 15
+20 basis points to that you still don't
+have the resources that Martin has to
+push against the challenges that exist
+in trying to get something that's
+workable so we'll sit back and talk to
+companies and come up basically with the
+same four categories that just said war
+these are the areas that AI really works
+really works in healthc care with claims
+management Etc it really works with
+coding and assisting with that doing it
+faster it really works in customer
+service and potentially eliminating the
+need for a human these are like what you
+were talking about Christy in the
+corporate world the lwh hanging fruit
+and I think obviously we see anecdotes
+about this all the time from companies
+that is where AI is being deployed first
+now I also think that that's internet
+1.0 that's what everyone sees now and
+the question in the marketplace is yeah
+but how much benefit do you get if you
+replace your customer service staff or
+unit or whatever with chatbots it
+improves margins but it doesn't
+potentially grow Revenue it actually
+does but it doesn't grow Revenue by 200%
+or something like like that I think the
+push pull in AI use case and benefit to
+investor is everyone sees the potential
+but the use cases today don't make full
+use of what that potential could be that
+doesn't mean it's not going to happen to
+Martin's Point the first big cycle was
+the internet and in 2000 we were told
+that we would be able to download any
+movie whenever we wanted where ever on
+any device whatever and then it took 15
+years for that to happen and I think
+that AI will happen faster but it will
+still take some time even if you go back
+and you say autonomous driving there
+were a bunch of people in 1718 who were
+saying this is going to be fully online
+way to go insurance companies are going
+away in 2020 well we'll get there wayo
+is making strides and Etc but it's still
+going to take a while can I react to two
+things you said David first the comment
+around you need to have scale to develop
+these capabilities we're 100 billion we
+barely have enough scale to be able to
+afford the infrastructure we think it's
+necessary to have to create Al you
+barely have enough scale to cover the
+number of GPS you need to cover and the
+pressures on you are so high so the rise
+of the minimum efficient scale and how
+stretched you already are will lead to
+massive consolidation in my industry we
+have 6,000 GPS in the United States by
+the end of the day decade we're probably
+going to have half of that and 10 years
+after that 10% we are in the early
+stages of the consolidation phase and
+it's going to change our industry and
+force us to get a lot better but I think
+this issue the rising minimum efficien
+well is one of the factors and you being
+very spread thin are the two factors
+that are driving consolidation in the
+world and your second point about wayo
+an interesting story about how we really
+are in the early Innings of
+understanding Ai and developing the
+capabilities of AI we do a lot of
+investing in life sciences as well the
+second most exciting Trend currently in
+Innovation but way more to decide
+whether to stop at a stoplight when a
+baby troller is moving through needs
+10,000 pictures and that's why it has
+all these cameras and with 10,000
+pictures the computer says I must stop
+the human brain which has a million
+years of evolution in the making with 10
+pictures gets to the same decision with
+a lot less energy and a lot less speed
+so there are things in the way the
+neural networks work biologically that
+we are so far behind to understand how
+to do it digitally but within a decade
+those two will converge and AI will
+become 10 times 100 times more power
+Martin maybe I'm going to give you the
+last word here one of the elephants in
+the room you've talked about a lot of
+gorillas but we're going to talk about
+the elephant in the room that we haven't
+really touched on is data privacy data
+accuracy overfitting to use a buzz
+phrase despite all these exciting future
+use cases and potentials for efficiency
+and the Machine and the human singing
+together and improving investment
+outcomes how do you make sure that this
+moral and ethical issue is not breached
+in the meantime how do you balance those
+two very important elements this is a
+complicated issue how much time do we
+have no regulation in time will protect
+privacy it has to regulation needs to be
+Global it is not enough for California
+to regulate if California regulates and
+New York doesn't they're all moving to
+New York if America regulates but China
+doesn't we're all moving to China so
+there has to be a global regulatory
+framework which will take time to
+develop on the way there we're running
+the risks with deep fakes increasingly
+the AI is breaking into your password
+the AI is breaking into your Biometrics
+the AI will soon create a avatar of John
+I actually have one in my phone one of
+my companies created an avatar of me I
+showed it to my wife like look what I
+just did yesterday it wasn't me but it
+looked exactly like me that's really
+scary because in the postco world a lot
+of what we do is digital when was the
+last time you went to a bank branch to
+do anything with the bank you did
+everything over here and if I can
+pretend to be you better than you I can
+take all your money so that's really
+really risky and that technology is
+evolving very very well gladly they are
+the white kns there are companies and we
+have a couple in the portfolio we have
+one in Brazil That's is really really
+exciting because it's the white nights
+the antivirus of deep fakes those are
+developing and those need to have more
+resources and more capabilities than the
+guys working on the Deep fakes that's
+coming the third one is the one I worry
+more about because it's hard to predict
+which way it will go you made reference
+John about how the music industry
+changed and so for let me tell you a
+story of two industries one was
+decimated one was empowered by a
+cyclical a new wave the newspaper
+industry was destroyed between 2000 and
+2020 number of subscribers in the US
+went from 50 6 million to 24 million
+half ad revenues went from 50 billion to
+10 billion 80% reduction quality of
+Journalism diversity of Journalism in
+that period Facebook and Google went
+from zero to 90 billion in ad revenues
+without producing their own content just
+aggregating content that was produced
+for free by the newspapers that's not a
+good precedent we blame social media for
+disinformation and for the vision in
+this country the death of The Newsroom
+is also at fault we decimated the
+revenue model of newspapers now the
+music industry faced the same challenge
+with the naspers of the world you don't
+longer need to buy your CDs or your
+tapes or your laser discs chrisy laser
+this you and I and David LPS it saw
+initially in 2000 when this digital
+distribution started overall music
+revenues dropped 50% but then we figure
+out a model where we could distribute
+digitally and reward the producers of
+music through the Spotify and the Apple
+music and the new platforms who were
+paying per click and we were all gladly
+making sure that we were paying the
+producers and last year we're back to
+$30 billion so it took us a decade one
+decade to drop and then one decade to
+return and growing 20% plus and music is
+alive and well and thriving whereas
+newsrooms are dying the same is true
+about these large language models it's
+being trained for free on all these
+content producers in the world I hope we
+figure out a way that this is not the
+final nail in the Cuffin of the
+newsrooms and the influencers and the
+experts that are writing things on the
+internet and we find a way to like the
+music industry did that we can ethically
+share the spoils with this new
+technology and I think that last
+statement Martin is such an illustrative
+symbolic statement to show that we are
+at the of this frenzy that we all know a
+lot of rationalization a lot of
+sensationalist narratives need to sort
+themselves out and just as we've seen in
+the last two as you described there will
+be some big big Winners and a whole lot
+more losers and I think that is what
+we're all trying to figure out what I
+did hear and I thank both of you because
+you're two of the most intellectually
+curious and self-reflective
+Professionals in the industry that I
+know and Dave's a perfect example that
+we were just talking offline about his
+social media feeds he is teaching the
+world about not being entrenched in his
+thought process being open to new ways
+of doing things leaving behind things
+that don't work and that's exactly
+what's needed to approach with
+circumspect but open-mindedness this new
+wave of doing business and I think both
+of you agree all of us agree there will
+be some level of coexistence with the
+machine and the human and how that plays
+out in which use cases is certainly Up
+For Debate so we're going to leave it
+there thanks to both of you you have
+tremendously helped I know the users I
+can speak for the listeners and Christie
+and I that this has been just a delight
+thanks for teaching us and sharing your
+wisdom listeners we'll be right back
+with the last
+[Music]
+sip well welcome back to caners we are
+down to our last sip one little bit of
+juice a bit of sediment left as we
+finish off and summarize a great journey
+through the intro and then through that
+last discussion christe they're just
+superstars in my view every time I talk
+with them I learned something and I
+think what I hope all of you saw was a
+glimpse into their passion for learning
+themselves that's what makes them great
+and I think we got just a small picture
+of that in that conversation but what
+did you learn anything change any big
+takeaways or Revelations from our
+conversation with them so I think a
+couple of things the first big one came
+from Dave and that is that any
+implementation of machine learning or
+any Tech Under the Umbrella of AI is
+going to be pretty specific to your
+unique organization or the unique needs
+of your organization so if you have a
+giant portfolio with hundreds and
+hundreds of GPS and you need some sort
+of automation to help with that I think
+it's useful if you are consolidating
+your portfolio into best ideas and it is
+a much narrower number of line items in
+your portfolio then maybe you know
+having that system in place doesn't
+really make as much sense I will say on
+Martine side while I still have
+hesitation in terms of just AI Flatout
+predicting I do appreciate that
+implementing A system that both tracks
+your Investments that you went into and
+then starts tracking the Investments
+that you went into and didn't and then
+iterates on itself I think could
+actually be a really useful tool even on
+the allocator side to the extent that
+the capabilities become cheap enough to
+provide that Insight because I do think
+it provides a level of intellectual
+honesty assuming no data leakage of
+course but it creates an intellectual
+honesty in terms of being able to figure
+out how your decisions actually impacted
+the portfolio because right now that's
+really hard to do I'd love to hear your
+thoughts too I think your point from
+Dave is so good it's just a reminder
+maybe a big asterisk on much of what I
+talked about in the use case is that
+look this is going to be different for
+everyone and maybe further developing
+your point if you're a traditional small
+endowment meaning few people and mostly
+outsourced external managers some of
+that unstructured data stuff just is
+unnecessary because you're relying on
+your managers to do that as he was
+mentioning that are much more resourced
+and probably have a lot more computing
+power that you can expect and is part of
+that that relationship is that that's
+part of their due diligence that they do
+for you similarly I think in the way
+that Baylor has this velosophy of human
+engagement in the way that they think
+about leaving a lot of cash dry powder
+on the side being very opportunistic
+having this very collaborative ongoing
+always on generalist approach to
+allocating Capital dynamically it's just
+different and that's just Baylor as an
+example but I think everybody has their
+own fingerprint or snow flake use your
+metaphor that just because these use
+cases sound great doesn't mean they're a
+good fit for everybody so I think that
+was just a really good reminder but I
+think more broadly speaking I think they
+all agree even Dave who's just starting
+this journey that intellectually the
+coexistence of these tools plus the
+human is going to make both better the
+human's not better than the machine the
+machine's not better than the human but
+together they're better than one or the
+other the only other thing that came to
+me as I heard Dave speaking and was
+thinking about his
+passion for and commitment to fostering
+a really healthy organizational design
+and culture is what does the impact of
+the machine at the table whether it's
+Ada or whether it's more Upstream in the
+day-to-day lives of the analysts what is
+that mean for organizational design for
+culture and morale for even things like
+performance evaluation are you rating
+the machine are you rating the hum use
+of the machine you're rating the hum's
+choice of the machine so I think it just
+begs a few questions that we've never
+had to consider because there's other
+inputs that have quite literally a mind
+of their own that are now influencing
+the performance of the human and the
+team and therefore the Corpus of assets
+and I just think that's a really
+interesting but very challenging HR and
+organizational design dilemma that's
+going to have to be addressed in the
+next decade I completely agree and I
+will add it's funny because you use the
+term with the mind of its own but we
+know from the structure that the way
+that it's ly iterated it's just
+predicting the next word but even beyond
+that so that small point I will say
+1,00% agree with you in terms of the
+impact because I think one of the
+biggest things that I worry about too is
+just the training of a new generation
+and granted the new generation always
+takes on new tech I mean back in the day
+there was no email now it's a part of
+our lives back in the day you had Lotus
+weight one 123 or spreadsheets and now
+Excel is this foundational tool on which
+pretty much every piece of Finance or
+the whole entire financial industry is
+based off of but within that having had
+to build those spreadsheets I know where
+the skeletons are I know how rates can
+impact them I have been the person who
+gets to make those decisions and I think
+to the extent that we ever turn over
+those decision making that setup to the
+artificial intelligence or any tool that
+we then consider software I think could
+be a danger to how future Generations
+learn the craft but then again the
+industry may change completely maybe
+we'll learn new insights I'm certain we
+will just on that last phrase but I
+think you bring up a really profound
+point which is the vulnerabilities in
+the Achilles heels of models and
+machines are just harder to discover
+than the rubric in which we use to
+evaluate humans or more specifically
+investment professionals or analysts I
+mean we just don't have a pattern or a
+lens by which to do it and it's just
+less tangible it's harder to get inside
+of ones and zeros in a digital world and
+codes than it is the human mind even
+with all of its foibles and faults so
+lots of big existential question there
+that I'm sure are beyond the scope of
+this conversation so Christie we've got
+a fun question that is somewhat timely
+based upon the fact that this will drop
+just before us Thanksgiving so I thought
+I would ask your favorite Thanksgiving
+dish I love green beans but not fresh
+green beans so my grandmother would make
+them and I think a lot of families do
+this but just the way that CU I'm the
+person in the family now who makes them
+but it's a piece of bacon for every can
+of green beans on the stove top for1 12
+hours or you could do it in a pressure
+cooker in like two and they turn into
+basically a level above mush it's green
+beans and bacon just fused together and
+I love it I do not eat it for the rest
+of the year because I want to look
+forward to it what about you so first of
+all anybody that suggests that turkey is
+a good dish much less the best dish is
+just wine or still somewhat under the
+guise of tradition I'm just kidding but
+as a result The Bowman abandon turkey at
+Thanksgiving a long time ago it's just
+dry and gross I mean let's just be
+honest but that's not the answer to the
+question we have all kinds of fun
+Replacements as the main dish but I
+think the answer to the question is I
+make a mean Ninja level stuffing myself
+now I don't do this every year but this
+recipe has some sausage in it it's got
+hazelnuts in it which is a little bit
+more traditional celery and carrots in
+it and it is Fluffy not the mush that
+typical stuffing comes with so as you
+can tell I'm very proud of this
+capability it's one of the very very few
+cooking assets that I bring to the table
+no pun intended see what I did there and
+my versatility at the stove is really
+weak but this is one that I think I've
+mastered so there you go so join me for
+my stuffing I want that recipe now here
+that listeners John is inviting all of
+you over for Thanksgiving live capital
+de canted from the table oh we should do
+that at some point maybe not
+Thanksgiving but I think it we get
+pretty crowded given the listenership
+these days which we're thankful for very
+thankful for well Christie that was
+outstanding thanks for all your prep
+your great research of course your
+contributions and thanks to all of you
+listeners for hanging in there with us
+as I say every single episode I hope you
+learned as much if not more as we did
+it's been fun to walk through this with
+you so hope you're well take care and
+we'll see you next time on Capal de

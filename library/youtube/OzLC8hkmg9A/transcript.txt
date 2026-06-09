@@ -1,0 +1,1359 @@
+the way i actually became very
+passionate about this topic uh
+had to do with a personal experience
+where i tried to contribute more than a
+one-line patch to postgres as related to
+scram and it ended up opening a new code
+execution path that led to a
+vulnerability disclosure
+that forced us to do an out of release
+cycle based upon the nature of the
+vulnerability so i learned a few lessons
+in that
+one stick to the one line c patches and
+postgres and you know i can i try to
+contribute in other areas of the project
+but two it really made me want to dive
+deeper into how scram worked and really
+what was you know what was the the
+purpose of you know adopting this
+password method
+and you know with that you know i really
+start to explore and ask the question
+you know what happens when you try to do
+password authentication and postgres
+it's such a common operation so we're
+going to dive deeper into that today
+we're going to you know look at some of
+the other password methods that have
+been available in postgres you know you
+know why they were used what their
+weaknesses are and then we're going to
+dive into scram look at that
+and you know learn how to upgrade older
+systems to using scram
+so that all said
+uh just a few things you know before we
+start um i'm with the amazon rds open
+source team
+uh one of the great things about amazon
+rds is that it lets you focus on
+actually my previous world being an
+application developer your schema design
+your
+you know your query construction you
+know writing queries and making your
+application sing
+while aws focuses on everything else to
+keep your data up and running and
+available
+you know we we offer a variety of
+databases uh postgres of course my
+favorite as well as my sql maria db you
+know oracle sql server and there's
+amazon aurora
+with my sql and postgres compatibility
+and again the idea is to make it as
+simple as possible for you to manage
+your data so that way you can focus on
+building out your applications and
+having them deployed
+so as i said you know the talk today you
+know we're going to focus on password
+management and postgres
+and then we're going to look into how
+scram works because you know
+understanding how it works it's actually
+a general purpose method that goes
+beyond postgres you might actually want
+to consider including you know this
+algorithm in your at the application
+level when you're dealing with
+password-based authentication
+so let's lock into postgres
+very common operation i was doing it
+this morning to actually prepare for the
+talk
+now typically you know you might use
+psql you might use an ide but you know
+you put in a username postgres request
+for a password you might fat finger it
+putting it in and then you try again and
+ultimately you log in
+but there's a question of what just
+happened like what is actually going on
+when this happens like is it secure am i
+you know what data is being stored when
+i actually set up my passwords and you
+start like asking these questions and
+it's like really like what is going on
+so there's actually you know before
+postgres version 10 there were two ways
+for you to manage your passwords in
+postgres there was plain text and there
+was md5
+there was a method available called
+crypt which uh integrated at the
+operating system level but that was
+removed a long long time ago
+but the the main two methods were plain
+text and md5 so let's talk about plain
+text first and then we're going to md5
+and plain text is quite simply stored in
+plain text if your password was password
+then in the database it was stored as
+password you know you know no big secret
+there
+and this method was actually kept
+available for a long time it was
+deprecated i think in the in the eight
+series
+but left so people could upgrade to the
+md5 method because the md5 method
+actually has a special protocol that the
+the connection drivers had to implement
+in order to use
+what's interesting is you can actually
+still use plain text-based
+authentication in postgres but not in
+the way that you think so if you're
+using ldap as your authentication method
+is actually sending a plain text
+password over the wire and then over to
+your ldap server your postgres is
+basically just relaying it using the
+plaintext authentication method if you
+really want to use ldap you should look
+into the gss methods or kerberos because
+typically that's ldap is used to connect
+to active directory and
+the gss method will let you do that in a
+secure way
+oh kerberos so they're those those terms
+are interchangeable um krb5 is one of
+the abbreviations in the postgres stocks
+for it as well as a gss
+so how does plain text password
+authentication work
+basically
+as a user i'm going to say hey i want to
+authenticate postsource is going to say
+great use the plain text method send me
+your password
+if your password's data like it sends it
+over the wires data lake and postgres
+will either confirm or deny it you know
+it's a simple you know equals you know
+within the database
+and you know great this works
+kinda
+the first major problem is eavesdropping
+if you have someone next to it who
+overhears the conversation basically
+that person has your password and can go
+through that whole authentication flow
+and can log in as you
+so
+you know we're not really well protected
+against that if we don't use any other
+methods
+but we can use tls
+tls you know protects us from
+eavesdropping so we can encrypt you know
+we basically can encrypt our
+communication so
+uh you know anyone trying to listen in
+can't necessarily hear what's going on
+um you know the slide details you know
+how you're able to configure this in
+postgres and you know these slides are
+written to be a reference you can look
+back at later uh you know as you need
+the notes
+one cool thing i want to mention as a
+postgres 12
+is how you can actually force your
+client to present a certificate
+with another authentication method so
+postgres has something called
+certificate-based authentication you
+would specify it using the cert
+parameter in the hba conf file
+but in postgres 12 you can actually
+specify something called client search
+equals verify full
+what that means is that you want your
+client to present you with a certificate
+where the common name is you know the
+client's username
+and postgres will verify if that is a
+trusted certificate within the
+certificate authority that it's using
+what's cool is you can combine that with
+another method such as scram
+and actually have a two-factor
+authentication system within postgres
+this is
+this is almost kind of a talk in itself
+working with certificates and postgres
+is a talk in itself i like to mention it
+because it's kind of cool that postgres
+has a built-in 2fa mechanism
+there's probably more work we need to do
+on that but you know it's a start
+now when you're using tls you know an
+imposter can't necessarily eavesdrop
+you know it's you know it's walled off
+but
+there might be a different way for the
+for the impostor to try to get the
+information
+and here's a very common request hey and
+i'm in a development environment there's
+a bug in production can't just get a
+copy of all the data so i can inspect it
+and you know and and you know try you
+know try writing like my ui against it
+make sure i can you know find the bug
+so you can do a pg dumbbell
+and when you do a pg dumbbell
+you look in the file part of what you do
+with the pg dumbbell is you're logically
+recreating your database so it's a
+series of sql statements to you know
+reconstruct your data as you might see
+it in a different system
+which means you need to recreate all the
+users
+and when you look in and create all the
+users what is that
+there's a plain text password and this
+is your production data you just gave
+you know your production passwords into
+like a development or a test environment
+which means that someone who's you know
+you know has mao intent as they say
+suddenly has your production credentials
+so this is what led to md5
+authentication because there is too many
+ways for users to be able or i just say
+users with malintent to obtain
+credentials
+so md5 authentication stores a password
+using the md5 hashing algorithm so you
+know there's some cryptographic uh some
+cryptographic security against with it
+and simply what it you know in order to
+set it up you take your password
+you use the username as assault and then
+you append the literal string md5 to it
+this you know as i mentioned earlier
+postgres uses something called the md5
+protocol in order to do this
+authentication mechanism it's very
+specific to postgres you know we'll look
+at an example of that on the next slide
+but you know one thing i want to point
+out you know an immediate weakness of
+this method is the salt
+the salt is the username
+so this is so basically your md5
+password
+if you use the same username and
+password on multiple database systems
+which is common if you you're in a you
+know in a larger environment you might
+be using some sort of sso technique you
+actually have the same md5 password in
+every single database
+so if any of those databases get
+compromised and and an attacker is able
+to learn that password they can
+basically have access as that users to
+all the databases in your fleet
+so that's one reason why you know we had
+to phase out this method
+the workflow is actually fairly
+straightforward if you're a user you say
+hey i want to log in
+postgres says cool
+we're going to use the md5 method i'm
+going to send you four random bytes
+so the user has to do a two-step process
+and by the user i mean you're you're a
+connection library or your client you're
+probably not doing this manually
+it's like okay well i supply this
+password a data lake here's my user name
+that's my salt you know make an md5 hash
+and then append md5 to it
+then i take the hash from that step
+i append the four random bytes to it
+uh i add you know the literal md5 string
+and i send it over to the server
+the server as you may recall already has
+this stored or at least it has the you
+know that that first md5 hash here
+stored
+so all the server has to do to verify it
+is basically take those four random
+bytes append it to what it has stored
+you know take the hash of it add md5 and
+if it matches this then we know that's
+the user
+this does protect against eavesdropping
+because if the eavesdropper is going to
+hear
+uh you know that you know that final
+string that comes through
+and if they try to append those four
+random bytes to it
+authentication is going to fail so we
+stopped that
+but
+in through the outdoors they say
+peachy dump all you know i need to debug
+my debug my information
+and we have that original you know
+username password hash with md5
+encrypted to it this is the credential
+this is how you log in and granted you
+know if you're using psql your ide yeah
+this isn't going to work but an attacker
+is not necessarily going to use that
+they're going to have a script that's
+going to just you know you know put this
+into the correct form you know speak the
+protocol and use that to log in
+so
+we're a little bit better but we're not
+that much better because you know as i
+mentioned too you know there is actually
+a fairly wide service area of attack
+particularly if you're using the same
+credentials across your fleets of
+databases
+and once you know once the imposter has
+that credential you know they can log in
+you know very easily
+but wait there's more there's other ways
+that you can compromise your credentials
+you know this here's a typical way to
+create a password i'm sure everyone has
+done this here i mean i certainly have i
+did it today in fact no i put in the
+plaintext password you know on my in a
+sql statement
+this gets logged
+and if someone has access to your server
+logs they have your credential
+even
+the better method is if you're using
+psql use the backslash password command
+what this does is that this pre hashes
+the password on the client side so that
+way you're sending over the hash
+password to postgres
+however it's still not perfect using
+this method because
+you're still logging the hash password
+to the server logs and as i said with
+the md5 method that is your credential
+it might not seem like it but that you
+know anyone can log in once they have
+that credential
+additionally if you queried the pg auth
+id table
+you basically have you know if you're
+using the nb5 method you have all the
+credentials in that regard
+now it requires a privileged user and i
+can you know i can say with confidence
+amazon rds prevents users from reading
+this table
+but you need to keep in mind that if
+someone has you know those privileges
+that you're trusting them not to
+impersonate anyone else in your fleet
+these password methods need to scram we
+need to get rid of them we need to do
+something different and as postgres
+version 10 we did something different we
+added the scram method the salted
+challenge response authentication
+mechanism
+what is really cool about this
+the coolest part is not this big wall of
+text the coolest part is all the rfcs
+being used postgres being an open source
+database likes to adopt open standards
+in particular you know the sql language
+is a great example that's where postgres
+you know changed its name in you know
+1996 in order to say like hey you know
+we are implementing the standard
+language and we try to stay as close to
+the core implementation as possible i
+think we're at what it's like 160 out of
+179 you know sql core standard blocks
+and we keep adding more things too to it
+like you know the sql json work uh which
+i have a talk about that later today
+with jim
+uh sql medford uh dealing with you know
+remote data
+but the idea was let's use the standard
+method it's well looked at it's well
+supported
+and
+the kicker is it's gonna allow for two
+parties to verify they both know secret
+without ever exchanging the secret
+and that is a very powerful notion think
+about it let's say you know i'm gonna
+pick on jim here since you know i've
+known him for a long time let's say i
+know the secret well he i know a secret
+i want to prove that he knows a secret
+but i don't actually want to exchange
+that secret directly you know it's
+almost like i want to like
+telepathically communicate it to him
+this is kind of what scram is doing
+scram is going to use a bunch of
+different cryptographic proof methods
+to be able to let two parties verify
+that each other knows the secret
+it's almost like telepathy but you know
+in the world of computers because we
+don't have no quantum teleportation yet
+we do need to exchange some data
+so there's two things we need to build
+up here
+the first is we actually need to build
+up something called the scram secrets so
+that way
+postgres can be able to do scram
+authentication with a client
+then we can talk about the verification
+process
+so first let's see how we build up a
+scram secret
+there are there are five parts that we
+need we need to know what our algorithm
+is uh the number of iterations that
+we're going to go through a
+cryptographic salt and something called
+the stored key and a server key
+so we're going to dive a bit deeper and
+see how all these things are built up
+the first is the digest
+which right now in postgres is just
+scram sha 256
+this allows us to add additional scram
+algorithms or potentially other password
+algorithms in the future
+and but for now it's just the scram shot
+256 algorithm so other other ones in the
+standard i believe there's scram sha
+384 512 etc etc
+we introduced scram shot 256 plus in
+postgres 11 for channel binding which
+we'll touch on in a in a little bit
+and below i'm showing what you know what
+all the examples are if you want to try
+implementing this on your on your own
+later
+next is iterations
+this is based on the password-based
+hashing algorithm we'll talk about in a
+few slides and how many times that
+you're going to iterate over performing
+that method
+postgres by default uses four thousand
+uh four thousand ninety-six iterations
+it's a fairly high number fairly
+standard in a variety of environments
+but what's cool is if you're building
+your own scram secret you can set this
+the number of iterations on your own so
+you know i've tried it before i said
+this to 8192 and it works postgres is
+able to adapt and you'll be able to
+perform the the password hashing
+correctly
+or the client i should say
+then we need to build a salt and assault
+is just a bunch of random you know
+random bytes postgres by default uses
+16. again you can choose your own your
+own value i forget if there is a limit i
+don't think there is
+though
+thinking back to uh that vulnerability i
+was mentioning i think that's where we
+discovered that oh there was a there was
+a buffer overrun like right in this part
+that is now closed so as long as you're
+on a
+some uh newer versions of postgres 10
+and postgres 11 you're not affected by
+that
+now it's going to get a little bit
+deeper we need to build out the stored
+key and the server key and this is where
+we start working with you know the
+original plaintext password
+the first thing that we need to do is
+something called sassl prep
+this is specified in uh the scram rfc
+uh
+for you know how effectively it's
+normalizing the password before you
+begin hashing it so it's in a normal a
+fairly normal form
+the thing with this is that
+the scram rfc thinks about strings being
+encoded in utf-8
+postgres can encode strings in way more
+than utf-8 um anything from you know the
+sql ascii mode which is kind of postgres
+way of saying you know encode in
+anything i don't care
+uh to a variety a variety of different
+collations
+and i'm going to show what the algorithm
+looks like on this slide and again this
+talk has been used as a reference for
+how to implement scram so i don't expect
+to for everyone to read all the slide
+right now
+but the algorithm basically says this
+if you have a utf-8 password
+go through sassel prep
+if you do not skip and just return the
+password
+now
+you know and again within postgres this
+is already handled so you don't need to
+stress about it but it's like kind of
+it's kind of cool to see you know how
+this works
+all right so we've now normalized our
+password
+what we need to do is then generate the
+salted password first
+so this is you know this is like the
+same thing as what we did well it's
+similar to what we did with the md5
+password you know this is you know
+ultimately your secret you know in a
+hash form
+and it uses the pbk df2 algorithm or
+effectively very similar to it
+um you know again you know this the
+slides basically say you know how we get
+started with it
+and how we iterate over it and you know
+this is really to like follow along at
+home if you want to try to build your
+own scram secret
+um as mentioned it it follows ppk df2
+pretty closely and you know it's
+actually it's fairly simple to implement
+once you have generated the salted
+password
+you then have to create the stored key
+and the server key
+the stored key
+follows this method and like what is all
+this so we're at this step here
+the store key is going to ultimately be
+on the server to verify this thing
+called the client key so what's the
+client key
+the client key is when you take an hmac
+and use your assaulted hash password as
+the key to the hmac and the literal
+string client key is the message you
+have the client key
+what does that mean
+so
+the client key
+the client key server key and stored key
+are gonna be an important part of what i
+call the scram dance in terms of how a
+client and server can verify that they
+know the secrets we're basically
+cryptographically transforming the
+salted hash password
+into you know into this thing called the
+client key
+um using hmac and the h what an hmac
+algorithm does it lets you both verify
+the integrity of
+a message as well the authenticity based
+upon the stored key
+sorry based upon the salted hash
+password
+now the client key is something the
+client is going to use during scram
+authentication
+and we need to put this into a form that
+the server can use as part of this
+verification so that way we don't
+actually have to transmit the client key
+because the client key is also good
+enough to be a credential instagram so
+we take a we take the shot 256 hash of
+the client key and turn it into the
+stored key and this puts in in a way
+where
+you know unless you're doing some
+advanced man in the middle techniques
+you're not going to be able to
+uh
+decrypt like this part
+or decode that part
+so then the server key the server key is
+similar to the client key where we we
+use the hmac
+we take the solid hash password as the
+key
+we then take server key as the message
+and then the the literal string and that
+gets out toward the server key
+again
+this is just to understand how we you
+know formulate all of this crypto
+you know we'll go we'll walk through how
+this all works in the algorithm the good
+news is that you don't need to worry
+about this when using scram unless
+you're trying to implement the algorithm
+now that's how so now we've actually
+built up the scram secret but
+uh postgres has some shortcuts backslash
+password will if you're using psql and
+password encryption is set to scram shot
+256 it will build it on its own
+and what's cool is that
+you know when that even if that uh even
+if that is logged into your server logs
+that's okay we're going to see why that
+is
+if your postgres driver supports it it
+can actually create the password and
+prehash that password for you as well
+like for instance the cycle pg2 library
+does that
+the drivers may delegate to lib pq uh
+that's the general c library that
+implements the the postgres protocol
+uh many of them do that because all of
+that latch gets built in and they don't
+have to go through all these steps that
+we went through
+now what happens is someone eavesdrops
+on this like do we actually care and
+this is actually a very good question
+uh
+the identifying information that we have
+about the credential on this is the
+stored key which is hash of an hmac
+using the computed salted password and
+client key
+which is a mouthful right i think even
+that explanation as i tried to give it
+you could see like yeah there's a lot i
+have to think about there like this is
+something that crypt folks who
+specialize in crypto look at same thing
+with a servo key there's a lot of crypto
+there
+that said an attacker does have a few
+methods
+to be able even even if they have that
+scram secret there are some ways they
+can break the password one of them is
+brute force
+and if you if you're following you know
+generally good password methods using a
+lot of entropy trying to keep them
+longer you know within of course within
+the scope of the the hash that you have
+yeah you know it's going to be very
+difficult to brute force
+for now you know compute is getting
+stronger
+if they're very good they can do an mitm
+attack during scrum authentication and
+derive the client key
+that's the biggest risk there
+the best practice is to use tls when
+transmitting the scram secret you should
+generally be using tls anyway to connect
+to your databases
+i can have a very long debate on that
+after but i generally try to push people
+in this direction for a lot of reasons
+tls you know is and there is a little
+bit of overhead but you know it's very
+marginal
+and
+it's better to protect your information
+going over the wire than uh necessarily
+expose it and be vulnerable to things
+like this
+even better if you are using tls with
+postgres use uh ssl mode verify full
+because that makes sure it basically
+you're validating that you're connecting
+to the server that you want to be
+connecting to if you use a lower mode
+like ssl mode equals require
+all you're saying is that okay i'm over
+tls but i'm not verifying who i'm
+connecting to
+which okay well your ali stereo traffic
+is encrypted you just don't know where
+your data is going
+yes
+sure
+so the stored key is a sha-256 hash of
+the client key
+so correct but we're going to see what
+the client does with the server key
+later on this is just basically all
+we've done for now is that we've
+encrypted the secret or sorry we've
+created the secret that postgres stores
+that's going to be used in the actual
+scram verification process
+the fun begins
+now
+so remember our goal is we need to
+verify that two people know a secret
+without ever verifying the secret sorry
+without ever exchanging the secret
+we also need to make sure you know and
+the key the key is making sure we don't
+exchange the sensitive information
+and also we got protect against other
+things too like replay attacks
+a replay attack is basically when
+you have you know if the information
+doesn't change when you're exchanging
+you can basically try as many times as
+possible to you know crack a password or
+decode a password
+um
+and you know eventually the server might
+authenticate if you're not you know
+refreshing information and
+the best way to guard against replay
+attacks is use nonces or like one-time
+strings or you know random bytes that uh
+you know have to change between session
+and session
+and that's exactly what scram does
+so how does the authentication work you
+know first you say hey i want to
+authenticate
+postgres now it goes back and says cool
+we're going to use uh sassel which is
+the
+uh
+which is a standard for exchanging uh
+you know authentication information and
+specifically we're gonna use scram
+so the user is gonna say great we're
+gonna scram
+and here's my nonce this is the client
+nots
+postgres is going to come back and say
+okay well i'm going to generate my own
+nonce because we want to make sure each
+of us is you know in this unique session
+i'm going to append it to your non so
+we're going to so we're going to have
+one super nonce
+we have a hashing you know we're gonna
+be you know we have this hashing method
+we need to use in order to for you to
+you know create you know take your plain
+text password and get it into the crypto
+that we need
+so here's the number of iterations that
+we have and here's the salt
+go for it
+prove that you know the password
+so the first thing we got to do is we
+need to go through pbkdf2 again and you
+know take our plaintext password
+and convert it into that salted hash
+password
+so this is what it looks like if you're
+trying to do this at home
+so remember the client key
+the client key is
+we're going to take an hmac
+the salted hash password is our key
+the literal string client key is our
+message and we're going to generate that
+something called the client key
+remember that i said the client key is
+as good as being your credential for
+logging in so technically if we sent
+this over you know if i took the client
+key and i took the shot 256 hash of it
+that's the stored key
+and you know if we compare the two then
+we would be good but remember that's
+what we're already doing in the md5
+algorithm in a different way so we need
+to be better we need to make sure that
+we're not just sending this over
+and you know giving you know essentially
+you know doing no better than we did
+before
+we need to prove that we know what that
+stored key is to the server without
+actually sending this over in this form
+and this is where we get something
+called the client signature
+the client signature in the scram
+the scram rfc is defined as the hmac
+using the stored key as your key
+and something called an authentication
+message as uh the bits in it and the
+authentication message is a bunch of the
+one-time information that's available
+when you establish the scram session
+uh between the server and the client you
+know it includes the nonce includes some
+of the authentication headers
+uh
+you know in you know what we do is i
+used to actually print all this out here
+but like it was you know there's a lot
+of text so
+you know if you want to look up how it
+works i would say uh you know check one
+of the implementations or read the scram
+rfc itself
+so we have our client key we have the
+stored key and we create the client
+signature
+we then are going to do one more thing
+and create something called a client
+proof where we take the client key
+and we xor it against the client's
+signature and this is how we're going to
+transmit that we know the client key
+stored key without sending it over
+because we take the client signature
+which is the crypto mess xor to client
+key and have the client proof so
+we're not actually sending over the
+client key we're sending over
+a jumble
+that if postgres knows the password it's
+going to be able to unpack it it's be
+able to generate the client signature on
+its own
+unpack the client key
+and then take the shot 256 hash of it
+and see if it matches the stored key
+and this is how we're going to you know
+have the server verify we know the
+secret without ever exchanging the
+secret in this case the password
+we also have to keep extending the nonce
+over to the server so that way we know
+we're in the same session
+now how can the server actually do that
+you know i'm making a very big claim
+right here
+the thing is that the server can derive
+the client's signature from the stored
+key and the session info because
+remember
+the server has the stored key already
+stored
+and server has all the all the session
+info because we've been exchanging it
+back and forth so it can derive the
+client signature
+and if we xor the client proof with the
+client's signature
+we get the client key
+presuming that you know everything's
+done correctly we have the actual client
+key and the shot 256 digest matches the
+stored key
+cool we've determined that the client
+knows the secret
+we did it the client is authenticated
+we're good
+are we good though
+because all we've done so far is show
+that the server knows the client's
+password does the client know
+does the client know that the server
+knows its password like how do we know
+that
+the server doesn't just say like oh
+you're authenticated give me the data
+so the client needs to prove that the
+server knows the password and
+i will just make a side note if you're
+looking at different scram you know
+different postgres drivers that
+implement scram
+you want to make sure that they do this
+following step i actually saw an example
+of one driver that did not and i had to
+open up a ticket and say like hey no
+like you can basically just have you
+know your clients now connecting to
+random postgres servers that claim they
+know your password that's not good
+because suddenly they might be you know
+start sending them data and then you
+know who knows what's going on there
+fortunately this step is not too
+difficult
+so what this so there's something called
+the server signature which is the server
+key hmac
+the server key is the key with the hmac
+algorithm we take the one time all the
+one-time information and the
+authentication uh you know message and
+we use that to get the server signature
+because remember
+i think i have
+the remember the server key just replace
+the word client with server i'll find
+where my diagram went but as a you know
+as the client if i have the correct
+salted hash password i can derive the
+server key too
+so the server is going to send the
+server signature over
+and from there i can generate the server
+key from the salted password as i just
+mentioned
+and then i can generate the server
+signature using the server key you know
+based upon you know what we see over
+here you know it's just server key the
+one time info and we get the server
+signature
+and the service signature that the
+server sends matches the server
+signature i generated then i know the
+server knows my password it's not just
+claiming that like oh you're
+authenticated it actually knows what's
+going on
+and we did it
+we never exchanged the password
+that is really cool
+this is why postgres adopted scram
+now
+let's just recall one more time what was
+transmitted
+the only identifying information was
+that client proof which as i mentioned
+the client key is something that we can
+identify like if you have the client key
+you can log in as that person within
+that session
+or actually in other sessions if you're
+doing scram correctly
+but when xored with the client signature
+it's a little bit harder
+then you need to have the actual scram
+secret to be able to decode the client
+proof which is why i say you should
+protect that scram secret when you
+transmit it
+then we have the the server signature as
+well
+and you know similar rules apply but
+if you have you know it's suspect you
+know it's still that same cryptographic
+message
+what else was uh sent you know a nonces
+they're only good for that session
+authorization headers about the session
+they're only good for that session
+so these are the two things you need to
+be concerned about with eavesdropping
+they have the original scram secret
+and they're able to intercept you know
+the client-proof and one-time headers in
+which case you know this one's a little
+bit harder because this is a
+timing-based attack
+this one they can do some offline work
+so again make sure you protect that
+so what about a rogue server
+yeah the one thing with scram is you do
+need to consider this case i mean you
+need to consider rogue server cases in
+general but in the context of scram
+authentication you need to consider this
+case
+the first one we've already discussed
+that
+postgres actually says when it verifies
+the client proof your it says that
+you're authenticated
+so that's why you need to make sure you
+verify the server actually knows the the
+password and again this is general
+instagram
+tl you can say well wait a second i'm
+using tls tls verify full you know you
+know i know which server i'm connecting
+to
+okay but what if that server has been
+compromised in some way and you know all
+you've done is that you verify that you
+connected to the server you haven't
+verified that the server actually knows
+your secret so that's why you have to do
+that additional step
+now tls
+you know tls itself as we said you know
+the main thing of tls is verifying
+identity of a server
+and
+uh you know preventing eavesdropping
+other people listening in
+so how do we know that the server
+instance is the correct one
+tls verify full is actually a very good
+way of doing it but
+you know postgres11 adds something
+called channel binding which is another
+rfc that defines you know how do you
+know how do you know that you know when
+you've made a connection you know over
+the network that you're still connected
+to the same instance
+essentially this uses uh information
+that's available in the tls handshake
+that gets passed you know gets passed
+into postgresql from you know the you
+know the handshake layer and you know as
+a client you can you know basically the
+the postgres client will specify if it
+wants to use channel binding or not
+uh in my opinion channel binding became
+very useful in postgres 13 where the
+client can force channel binding up
+until then there's the potential for a
+downgrade attack where a client would
+just request for channel binding and a
+postgres server could say well no i
+don't support channel binding let's just
+use regular scram which then leaves you
+potentially vulnerable to the first
+attack that we talked about which is i
+can just claim that i know your password
+and you start sending me your data
+and again my personal opinion like i
+think channel binding is great you could
+use it with s's mode ssl mode verify
+full in general for your tls handshakes
+this should be good enough but channel
+binding does add that extra layer of
+protection because you know that
+throughout your tls handshake and your
+authentication that you are connected to
+the endpoint that you believe you should
+be connecting to
+so how do you upgrade because hopefully
+if you're not using scram at this point
+i've scared you all into wanting to
+upgrade to it as soon as possible
+the good news is that postgres 14 is
+acting as a bit of a forcing function of
+this because scram is now the default
+authentication method
+first ensure that your driver supports
+scram there's a wiki of a list of
+drivers that
+supports scram
+it's maintained lovingly by the
+community and right now there's only one
+on this list that does not support scram
+it was actually a driver i personally
+became aware of only uh i think was
+earlier this year or late last year and
+now they actually uh the driver author
+has a draft of scram ready for it
+the next thing you're going to do is in
+postgres.com you're going to set
+password encryption to scram shot 256.
+now there's multiple ways you can do
+this we're going to go through a demo in
+a second you can use alter system you
+can edit the file directly
+if you're on uh if you're on amazon rds
+uh i would say i recommend this blog
+that shows how to do it on uh on this
+system
+the one thing is as you upgrade you're
+gonna keep md5 as your authentication
+method in
+why
+postgres was coded so that
+you know while you're upgrading all of
+your users from md5 to scram
+both md5 and scram can work at the same
+time when you select this as your
+authentication method in pghb.com
+what postgres does is that it's going to
+check to see if you first if a user has
+a scrim secret stored as their password
+if it is it's going to use the scram
+method
+if it isn't it's going to use the md5
+method
+so then the next thing is you have all
+of your users
+rehash their password using backslash
+password or prehashing the password
+locally sending it to the server
+and then once all the passwords are
+rehashed you can safely switch phpa.com
+to use scramshaw256
+simple
+hopefully
+yes sir
+hi john
+correct well i will show one method that
+could be used to force the change but
+you're not going to like it
+yep
+and i just realized i can't demo it
+because i'm not on my computer
+oh all right so
+we
+i mean effectively talk through the demo
+hold on
+so there is one way you can force people
+to upgrade their passwords to scram and
+it's
+you basically
+set the pghba.com file to scram shot 256
+and if they've not upgraded they can't
+log in
+like not a friendly method but that is
+that is the forcing function now
+there have been you know discussions of
+you know how can you help with the
+transition like for instance if i know
+their md5 password
+you know can i put something in the can
+i put a layer in the middle where
+you know they log in with the plain text
+password it gets converted to the md5
+password and then i take that
+and i convert that to scram password you
+can do that but then you have to
+maintain that middleware yourself
+that's a that's probably the easiest way
+to go but
+you know it's really uh
+you know this is one of those things
+where you you know you need to quote
+brute force it you need to have all of
+your users in whatever way rehash their
+password
+but this is actually probably a good
+discussion for the postgres mailing list
+to see if there's anything we can do on
+the server side or even the pq side to
+make this a little bit easier
+now i had a really cool demo i worked it
+on i worked on it this morning and
+unfortunately i wasn't able to get my
+laptop to successfully connect so if you
+want to see a live demo after this talk
+i'm happy to
+do a one-on-one or one-to-many session
+on it with all my tiny little 13-inch
+monitor
+so with that let's conclude
+the biggest takeaway for me from this
+asides from avoiding making multi-line c
+patches that open up uh cves
+is that not all password authentication
+methods are the same
+it's something i actually i think i've
+really taken for granted you know being
+you know coming from an application
+developer background and yeah i mean
+certainly like when i was a teenager
+hacking on web apps i would store
+passwords in plain text unfortunately
+those were not like production apps but
+then i would do simple things like you
+know just have an md5 patch of the
+password then an mp5 patch of a password
+and you're in a random salt but then you
+know think about just the flow of the
+information and like questioning like
+why does this just work does lead to
+better solutions
+and in fact even with scram you know you
+might as i said the general purpose uh
+method you can use this for let's say
+web applications and i was thinking
+about that like oh you need a back and
+forth for that you know that's typically
+not your your web workflow and sure
+enough there is an rfc for doing scram
+over uh http which lets you do scram in
+a single call and response step
+which is pretty cool it's something it's
+something that actually i want to dive
+deeper into personally it's been on my
+list to read that rfc but
+this is what's pretty cool is that you
+know by constantly questioning can we do
+better uh we lead to better solutions
+and as i've pointed out even with scram
+like scram is awesome i think you know
+scram is certainly state of the art for
+postgres for a while but it's not
+perfect you know we've pointed out a few
+weaknesses in the algorithm you know to
+be aware of and there's ways to work
+around them
+but you know you still need to be
+mindful of it you know hopefully we can
+get to get to a point with uh password
+authentication
+where
+no nobody needs to know the secret in a
+way that you're able just to like
+exchange you know non-identifying crypto
+but then you know multiple parties can
+verify that they know the secret
+you know and even if someone has you
+know the the crypto used to do that you
+know they're not able to do that
+and i mean and there's other you know
+passive authentication methods as well
+in postgres that are certainly worth
+exploring particularly
+if you're dealing with you know larger
+fleets of of databases you know as i
+mentioned kerberos gss api i'm a huge
+fan of certificate authentication but
+with postgres certificate authentication
+does take work to be able to manage your
+pki
+um as mentioned postgres14 made
+scrambled default
+you can still use md5 passwords with
+postgres14 but you really know this is
+really us trying to say like hey like
+you should be you know this has been
+available for five years now you should
+upgrade to scram
+and
+even if you're on you know postgres 10
+and you know and and up and you're not
+using scram you know you should make
+plans to upgrade it you know there's
+enough weaknesses in the other methods
+that
+you know it will give you you know a
+little bit more peace of mind in terms
+of those credentials getting out there
+so thank you for attending i'm happy to
+answer any questions
+that's a good question i
+i just generally i it's funny is i just
+generated it too i think it's somewhat i
+believe it might still be set to md5
+just to help facilitate the upgrade but
+i need to double check on that
+it's also up to the package managers as
+well so for instance if you're
+installing from debian you know the
+debian packages might have their own
+opinion for the default hba file
+i mean uh brewster jim do you know off
+the top of your head
+yeah i
+see i'm trying to remember if we changed
+it in the hba default as well i don't
+think
+yeah yeah yeah i was gonna say i don't
+yeah i would be up to it it would be up
+to the package managers
+yeah yeah so it's up to the pet which in
+itself has been its own debate but um
+that i think for it's up to what the for
+the package managers
+yeah
+yes if i need to move a user from or not
+move but just duplicate a user with the
+password
+from
+one non-replicated system to another
+replicated system
+what technique do i use to never know
+the password and not make the user log
+into all 45 of my
+potential systems
+that's a good question
+likely in your case you would need to
+have some sort of middleware in place to
+you know
+effectively have them set it once and be
+able to move that password in between
+now you could do something similar where
+you prehash this grand password and then
+send that credential to all the
+different systems you know that makes it
+an easy user management problem
+from a security standpoint you know one
+of the benefits of scram over md5 is the
+fact that you have a variable salt
+and with a variable salt that means you
+know the scram secret would look
+different on all 45 systems so if you
+just make it once and send to all 45
+effectively it's not as bad as if you
+have one you have them all because you
+still need to do some uh cracking once
+you have that scram secret
+but you know it's not a you don't have
+the full benefit of being able to
+randomize all the crypto but in the case
+whenever when you're dealing with a
+large fleet and you need to upgrade and
+you want to you don't want to use to
+lock into all 45 systems you out they
+need to have a middleware
+where you either prehash the password or
+use some other crypto and then you know
+convert you know convert into random
+scram across the board
+or they have to lock into all the
+different systems
+yeah you're welcome
+we have about four and a half minutes
+any any other questions
+okay well thank you so much and i hope
+you enjoyed the talk

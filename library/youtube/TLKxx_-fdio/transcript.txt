@@ -1,0 +1,1040 @@
+Anthropic announced that cloud code is
+now out of beta and since then it has
+been everybody's favorite AI coding
+tool. Its hands-free experience feels
+great using it and combining it with
+superbase allows us to build interactive
+apps with minimal effort. Now I came
+across this awesome demo app of a game
+that is being played through
+handtracking and instantly I wanted to
+replicate it for myself but I have never
+created any kind of apps involving
+handtracking or whatsoever. So let's
+have cloud code help us out to build it.
+Getting started with cloud code is
+incredibly easy. You just have to run
+this mpm install command which will
+installed the cloud CLI onto your
+machine. Cloud code runs on your
+terminal. So you can run it within a
+terminal or you can run it within
+terminal within an ID. And that's how a
+lot of people are using it and that's
+how I like to use it as well. So I've
+gone ahead and created a empty directory
+called
+handtracking and opened up terminal.
+I've already run the command to install
+cloud code. So the way we can start the
+cloud code session is to literally just
+type
+cloud and that's how it
+starts. When you run it for the first
+time, it's going to run you through
+different
+configuration themes and whatnot. Uh but
+once you are done with that you can jump
+into
+um jump into just typing cloud to get
+started with things and um this is the
+first thing that uh it asks every single
+time whether you want to have claude
+access this folder. Uh in this case it's
+yes because this is a dedicated folder
+that I have created for this particular
+project. Now, the way I'm going to go
+about this is I'm going to start out
+with the front end and try to create the
+hand tracking features. So, to be able
+to see that the app is uh tracking my
+hand locations and from there on I think
+I'm going to add some kind of superbase
+twist to it. Um I still haven't thought
+about it too much, but something like
+you can, you know, you maybe you can
+just pinch and dump in a few tables and
+it'll display a nice chart or something.
+I think that's something I I'm going to
+do. So, the way it works with cloud code
+is like this. Uh, every single time
+you're given a a prompt window that you
+give a prompt and it'll basically ex
+execute it. But before we jump into the
+actual prompting, there's a few setup
+steps that is recommended. And one of
+the setup step is to create cloud.md
+file. So it's a markdown file that it's
+kind of like all those AI rules file
+that is giving general instructions
+uh for the LLM to um you know use this
+use that don't do this don't do that
+that type of thing. So I think I'm going
+to start with that we can either
+manually create it or we can just create
+one with a prompt. So create a claw MD
+file. And for as far as the UI goes for
+this particular app, I for sure want to
+use Tailwind CSS and pretty much every
+single project that I worked on, I also
+include SHTN, but it's it's not like
+we're going to have like typical buttons
+or typical UI elements. So, I think I'm
+just going to go with Tailwind CSS,
+plain T1 CSS, and React V. Um, all the
+good usual stuff. And instead of just
+typing it out, I'm just going to use my
+voice AI. Include instructions to use
+Vit, React, TypeScript, and Tailwind.
+And also use Superbase as the back
+end. I think that's good enough for uh
+now except Tailwind. Didn't pick up
+Tailwind. So I'm going to have to go in
+and fix that manually possibly. But
+basically, yeah, so you give it a
+prompt, it executes it all in the
+background and you kind of just wait and
+later on come back except uh you need to
+give it permissions here and there to
+run certain things or write in certain
+files. In this case, I don't mind cloud
+editing the cloud MD file. Let's see.
+Styling it. Yeah, it picked up Tailwind
+CSS. So it was smart enough that that
+whatever that word was
+taywan was tailwind. So yeah it created
+a cloud MD file project setup
+instructions technology stock react
+typescript v tailwind
+subbase node.js JS mpm. Sure. Not sure
+if we need all these
+pre-erequisites
+installations because
+um this MD file will be included with
+every single prompt. So you want to keep
+it brief.
+And getting started guide isn't really,
+you know, something that you shouldn't
+you should need in every single prompt.
+Um, that should that's more like a
+GitHub read me type of content. So, I'm
+just going to delete that. What else do
+we have? Superbase
+configuration project structure. Sure,
+let's keep that. Superbase
+configuration. Not sure if we need this.
+Sub client
+setup. Probably don't need this
+either. Uh, development guidelines.
+Sure. TypeScript use strict mode safely.
+Sure. Define interfaces. Avoid using any
+type. Great. Let's include that. React
+best practices. Functional components.
+Implement proper boundaries. Keep
+components small and focused. Use React
+memo for performance optim
+optimizations. Sounds great. Tailwind
+util utility class. Create custom
+components and computer theme. Sure. I
+think that'll work except except for the
+le recent Tailwind. Um breaking change I
+ran into multiple
+issues but let's see let's see how it
+does state management uh keep components
+small
+consider
+redux use react context for global
+state not sure if I like redux
+um that seems like oldfashioned testing
+not sure if we need testing guide build
+project npm build deploy the
+disf
+management let's see um and here I'm
+just using uh regular cursor um with
+cloud why not cloud force on it uh so
+update the state management instructions
+to include a more modern
+um solution for state
+management. Let's see if that does
+it. Okay, I'm just going to I'm just
+going to go with set
+3.5 and I think that's
+good. Sure. Let's just accept it and
+edit it. Use React context for simple
+global state. Consider
+tack query. Just just plain React query.
+Can just can we just do that plain react
+query? Yeah. Okay. I think that is a
+good cloud MD file. Let's close that and
+let's get started with the actual
+development. So I want to say something
+like uh let's see I want to create a
+hand tracking app where
+user interacts with the elements within
+the screen um through handtracking. To
+get started, let's just focus on the
+hand tracking component. Implement a
+basic handtracking UI. Nothing on the
+viewport except a preview of the webcam
+as well as the canvas being
+drawn for the hand
+skeleton overlay on top of the hands.
+I don't know if that's a good prompt.
+Let's just go with it. I think that's
+good enough. So, basically, we want I
+want to be able to interact with
+different elements using my hands. And I
+want um kind of like this uh skeleton
+being drawn on top of my hands whenever
+they are on they are within the
+viewport. Okay. So, uh it's it's asking
+me if it's okay to run this command. I
+should have started out with that. I I
+should have started out with creating a
+new project, but yes, don't ask me again
+to mpm create yashir. So, it's just
+going to create a blank
+uh v application within the
+root. And I've
+had a few problems here and there
+whenever it's trying to create a
+application at the root directory. Uh so
+let's see if cloud code can overcome
+this obstacle. So I think it has created
+or it's trying to create a V
+project. It's not even using the V CLI.
+Uh it's just manually creating all the
+all the files. Um
+which might
+work. I think it's going into rabbit
+holes, but let's see. Let's see. Let's
+see if it can do
+it. So, the way I should have started is
+I probably should have started out by
+creating a blank feed application and
+then take care of the cloudnd file and
+everything else. Uh because when you
+have a file already existing within the
+directory, it kind of messes up. V CLI
+doesn't let you do that. Um, V CLI
+doesn't let you create a new V
+application within that directory, which
+I feel like is a bit too strict. You you
+should be allowed to create a blank
+application within any kind of folder.
+Um, I didn't know that V actually cared
+about that until I started using cloud
+code, but
+anyway,
+it's it's doing it.
+So it even has eslint. Uh let's run mpm
+install to add the
+dependencies. Let's see
+package.json. We
+have okay so it has the media pipeline
+hands library. I believe this is the
+same library that um AA was using in his
+uh sample
+application.
+So hopefully it's going to work. But I I
+just saw a bunch of warning or
+something. So one thing that's nice is
+uh you get this to-do list of you know
+set of set of things that cloud code is
+going to work on. Uh it initialized V
+project and then install the
+dependencies for handtracking. set up
+stale in CSS and then creating a hand
+tracking component with webcam access
+and then it's going to implement hand
+detection and skeleton drawing and then
+it's going to update the app.tsx file to
+display the hand tracking
+component. So, so I'm sure I'll have to
+accept an edit or to install this and
+that here and there, but let me let's
+let's jump ahead to Okay, you know what?
+I think cloud code is almost done. So,
+let's wait and see if it can do its
+thing. Do I want to
+install media pipe drawing utilities and
+media pipe camera
+utilities? Sure. So media pipeline media
+pipe I believe I haven't really really
+looked in too much into it but
+apparently it's like this uh library
+that Google worked on um to do all these
+awesome things hand tracking and
+interact with interacting with webcam
+and drawing skeletons and whatnot but I
+believe it has finished what it was
+doing so let's run the application using
+mpm
+Um, okay. Is it doing
+something? Didn't even Okay. So, let's
+reset permission because earlier I was
+playing around with
+um same technology, but it doesn't look
+like he has anything going on, does it?
+I'm not seeing anything on the screen.
+So let's go back and tell that to
+claude
+code. I don't see any preview of the
+webcam. Make sure that the preview is
+shown full screen within the viewport
+and hand tracking is
+working. Let's let's get rid of the hand
+tracking port part. uh we can just
+say uh within the viewport and done.
+Let's just focus on one thing at a time.
+So, by the way, you can get started with
+cloud code uh using the $100 max plan,
+but you can also get started using the
+um API key. So, you can provide your own
+cloud API key uh to get started with uh
+cloud code. And that's what I did when I
+was first trying out. I didn't want to
+pay $100 right off the bat. I just want
+to kind of I just kind of wanted to see,
+you know, how things were and what not.
+And once I liked it, I I I fully
+committed. Um but yeah, I did consume
+surprisingly a lot of tokens on my API.
+Um after one few hour session, uh it
+charged me $5. So, uh Maxplung comes
+with unlimited usage. I I believe
+there's like um some kind of limitation.
+Okay.
+So, oh great. This is great. This is
+great. So, okay. This is right now
+showing my laptop webcam. I wonder if I
+can have it change to my nicer camera,
+but this
+is great. Um, yeah, let's ask Cloud Code
+to allow us to pick a camera. When
+multiple cameras are available, um, have
+the user select a camera before jumping
+into the preview.
+But yeah, I like I really like what I
+see so far.
+Pinch. And I believe it detects a few um
+hand gestures on the palm, the fist, and
+point if I'm correct. But yeah, pretty
+cool stuff that you can do right off the
+bat. So add camera enumeration and
+selectivity functionality and create
+camera selection UI component update
+hand tracking component to use the
+selected
+camera. Pretty cool and pretty fast too.
+So coming back to the plan details but
+um yeah yeah you can get started with
+the API. I did it for a few hours. It
+consumed $5 and at that point I was like
+okay this is this is worth $100. Uh, but
+okay, Cloud Code is done with its thing
+and it now allows us
+to select a camera. So, I'm going to
+choose this 4K nice camera that I have
+going on. And that is not the nice
+camera that I have. This
+is This is a nice camera. This is This
+is not
+So, let's let's let's go back. No matter
+what camera we choose, it seems to just
+pick the webcam instead of um the other
+available cameras. So, make sure that uh
+the selected camera is
+respected. One thing I kind of want to
+try is uh let me just kill this feed
+session and uh restart it
+again. I've ran into this weird issue
+that
+Okay. Uh, it's it's not working this
+time,
+but for whatever reason, you would think
+that if it if if the underlying code is
+updated, it would just just use the
+updated code automatically, right? But I
+ran into issues where um and maybe those
+uh JavaScript we wizarders out there can
+explain this to me but um uh whenever I
+updated the code via cloud code uh the
+the updated new fresh code wasn't
+reflected on the running uh dev server
+of the uh V application that I'm running
+on.
+So here and there I had to kill the V
+session and restart it. Okay. Boom.
+There you go. There you go. So, now we
+are playing around in the high quality
+camera. And this is pretty cool. This is
+pretty cool. This is really nice, right?
+Uh it's it's pretty accurately try
+tracking my hands. I can move it around
+and it's still kind of there. Hello.
+From under the under the microphone,
+over the
+microphone. Great. I think this is a
+good starting point. I would like to
+make the UI a bit uh you know cruel
+looking like I don't know Iron Man or
+something. But I guess we can work on
+that uh later on.
+So So let's see. Let's try to start out
+simple. Let's try to have like a circle
+object right here in the screen. And I
+can and let's have it um so that I can
+pinch it and move it around in different
+places because eventually I think that's
+what I want to do with whatever Subaru
+stuff that I end up um doing. I want to
+kind of pinch and move things around and
+and let it go and do awesome stuff. So,
+let's go back into into our code editor
+and have our junior dev senior dev
+um do the thing for us. So, now place a
+circle object within the screen and I
+want to be able to pinch and move that
+object within the viewport.
+Okay, let's see if that prompt does it.
+Okay, cloud code is done with its
+thing. And let's see if I can
+pinch. Okay. Okay.
+Okay.
+It's seems like it's uh consuming a lot
+of machine
+power. H
+It's doing what I asked it to do,
+but Okay, let's go back and see if we
+can fix this. Or let's let's scroll
+through what it
+did. Uh, circle object, blue circle
+appears on the screen. Pinch detection
+works. thumb and index finger. Drag
+interaction when you pinch near the
+circle turns green to indicate it's
+being
+dragged and move your pinch fingers to
+drag the circle around the screen.
+Release the pinch. Uh visual feedback
+semi-transparent green indicator appears
+on your pinch
+location. See that semi Oh yeah. Yeah.
+Semi-transparent green look.
+Okay.
+[Music]
+Sure. Yeah. Honestly, I'm not going to
+go back into the code and try to de
+debug this. I'm just going to ask Cloud
+Code to um try to fix it.
+So, dragging works, but whenever we are
+dragging an object, the there's heavy
+flash
+um happening on the screen. I'm
+wondering if that's because it's
+consuming a lot of machine power or
+uh or whatever other reason. But uh try
+to debug
+um what is going on and try to fix
+it cuz you should be able to do it
+except maybe one possibility is that you
+know this this webcam is 4K and
+um it's it's analyzing this 4K video in
+real time and that's kind of taking a
+toll on the machine. That's one
+possibility. That's a case a bit. It's
+It's a bit unfortunate, but we can try
+the uh regular webcam version. You know
+what? Let let us try that. Let's Let's
+do the regular
+webcam. Except now it's already editing
+the code. So, it's it's kind of too late
+to go
+back. Let's just wait for Cloud to do
+its thing and then see see if it fixes
+it. All right, Claude is done fixing the
+code. So, let's just jump in with the
+same 4K
+uh
+resolution webcam. And now, oh, okay.
+Whatever it did, it's it's way smoother.
+So, I guess it knows what it was doing,
+what it was not doing correctly
+or inefficiently. And we can drag this
+cute
+little Oops, it's a bit blurry.
+Okay, there we go. Drag this cute little
+object around the screen. That is great.
+I think we can try to connect this with
+superbase to
+um I think I'm going to do this. I'm
+going to have it display all the tables
+on the right or on the left or
+something. And then I'm going to have
+like a region where I can just drag and
+drop those tables or maybe columns
+within the
+tables. And then from those I'm going to
+have it automatically generate awesome
+looking charts or something. Should it
+be columns? Should it be
+tables? Let's try with tables first and
+then if it doesn't work then let's let's
+try to do it with um columns. So, let's
+let's jump back in. Great. Now, now that
+the hand tracking and dragging is
+working, remove the circle because we'll
+be adding something else later on. But
+for now, just remove the circle from the
+screen. We should still be able to drag
+things uh across the screen, though.
+I'm trying to play it safe by kind of
+doing one by one.
+Um, I'm sure Cloud Co can take a bit
+more than just, you know, remove a
+circle from the from the app.
+But, you know, I just I just want to
+play it safe. uh since this is being
+recorded in video but if this was me uh
+doing my own private for fun project
+I'll I'll be going a bit wild I'll be
+like move the circle and then connected
+to superbase display all the list of
+tables within the UI
+uh and
+whatnot but while cloud code is doing
+that I do have a did it do that blink
+thing again no okay I do have a sample
+lease project that we can work with. So
+this project happens to have a whole
+bunch of tables that's all publicly
+readable. So it has all select to uh
+rollable security policies and it has a
+lot of data with a lot of
+um some of them are junk but some of
+them are plausible uh data. So we it's
+it's kind of nice project for uh us to
+just kind of use it and slice it and
+dice it into different charts um to
+different to to look at different data.
+So yeah, I think just I'm just going to
+connect connect this project to uh this
+app. So it has done it's it's done
+removing the circle. So now let's ask
+cloud code
+to let's
+see now connected to superbase the
+superbase credential will be provided by
+me through thev file but if you could
+create av or evenv example file uh that
+would be great now
+uh with those superbase credentials
+fetch the list of superbase tables
+available
+and display a table icon for each one of
+them within the viewport. It should be
+aligned on the left side of the screen
+vertically. Let's see if this does it. I
+feel like my prompt isn't too great too
+specific. But then again, um, working
+with cloud code, honestly, any kind of
+AI engine agent, they're really, uh, at
+this point good at picking up all these
+missing small details and making
+assumptions. Sometimes those assumptions
+do go wrong, but uh, most of the time
+it's able to make the right assumption
+and it's able to just just improvise or
+add extra context that's missing. So, I
+haven't had too much trouble
+um not having to provide too much uh
+details. This is perfect amount of
+details that they can do a great job of.
+And what's nice with cloud code is it's
+unlimited usage. So, if something
+doesn't work out, it's just another
+prompt to fix it up.
+All right, cloud code is done doing its
+thing. So let's see. I guess I do have
+to provide yet the super credentials. I
+promised that it has a
+m.ample. I can just create
+av file and
+provide the go to connect tab app
+frameworks react and select fe and just
+copy
+this and that is
+good is okay. Oh yeah, I have an
+initialized git repository in
+this directory which is kind of scary.
+So I'm just going to do
+that. And can I just com commit
+everything in it?
+Commit. All right, so it is done doing
+its thing. Let's go back to the app.
+Give it a refresh just in case.
+Okay, so we see the list of tables. I
+should go with my left hand all the way
+to
+far all the way to the
+right. Can I
+uh let's see what did it
+do. Subies client table fetching hook.
+Uh I guess it
+okay. Show the actual sub
+tables display example tables. It's
+fallback. Each table's blue table icon.
+Hovering shows a table
+name. Hovering is in hovering my
+cursor.
+Okay, I should have been a bit more
+specific. And I I'm probably going to
+have all the tables on
+the on the right uh because that's
+easier for me to reach. But maybe maybe
+at the
+top. Yeah, maybe at the top. Maybe at
+the top like this.
+display the list of tables at the top of
+the screen instead of on the left. And
+they should be able to be pinched and
+dragged around using the hand
+gestures. Okay, let's let's see what
+Cloud Code comes up with. All right,
+hopefully it fixed it. So, we see the
+list of tables at the top. If I can
+pinch
+this. Doesn't seem like it's allowing me
+to pinch it and drag it around, right?
+It doesn't actually even seems like it's
+even in in the
+viewport. Uh, let's see. Add your superb
+base credentials. Yeah, I think I did
+that. the
+uh let's try to
+kill the session because it needs to
+reload the
+um environment
+variable. But
+uh okay, when I click it, it shows
+up profiles, events, and whatnot. And
+then now I can uh drag and drop it
+anywhere.
+That's okay. That works. That works. All
+tables are on the canvas. Okay. So I
+guess I can ask it to just have all the
+tables on the canvas by
+default. Have all the tables be on the
+canvas by default. The entire viewport,
+entire window, uh should be the canvas
+and there shouldn't be any UI elements
+outside of the canvas. Now, uh by
+default have all the tables aligned at
+the top and the users should be able to
+just drag in and drop him using hand
+gesture and pinch uh motion.
+Okay, so cloud code has removed all the
+UI elements. Autopop populated
+tables. Autopop populated tables. All
+available t tables are automatically
+placed on the canvas. Okay, did not
+sound like what that was what it was
+doing, but great. It
+is it's it has done what I asked it to
+do.
+Beautiful. This is beautiful.
+Um, okay. at this point.
+Um, yeah, I think I want to be able
+to I'm thinking whether I should work on
+the feature first or make it look cool
+first cuz I I kind of want to give it a
+futuristic sci-fi Iron Man type of uh
+UI. But yeah, why don't we do that
+first? Just just
+because I think that'll be super super
+sick. Update the UI design. give it a
+futuristic sci-fi type of um color
+scheme and design
+overall. Maybe something inspired by
+Iron Man, but don't like use the term
+Jarvis or any particular specific terms
+from Iron Man. Just just the general
+vibe should be something along that
+line. Maybe that's something I should
+have included in the claw.md file. the
+the general direction of the UI should
+be kind of futuristic
+sci-fi, you know, Iron
+Manish, I mean, type of thing.
+But yeah, if if this was a long tail
+project that, you know, we are going to
+keep working on it, I probably will edit
+the cloud. MD file to include that. But
+at this point, I'm I'm just going to I'm
+just going to fix it with prompts. All
+right, it has done its thing. Okay, it's
+Oh, yeah. I'll take it. I'll take
+it. I think Oh, yeah. Yeah, I like it. I
+I like this UI. I think it's pretty
+cool.
+Um,
+okay. I think that's a take for the UI.
+Uh, now let's um add more features to
+it. So, at this point, I think I'm going
+to start working on the charting feature
+that I've been talking about. Um, and I
+think what I'm going to do is I'm going
+to
+have I don't know, should I have like a
+drop zone on the lower right corner or
+something? And I can just drag and drop
+few them in there. And once I
+hit chart generate generate button or
+something using the point gesture maybe
+um it'll generate a nice looking chart
+in the full
+screen. Yeah, let's let's see let's try
+to do that and let's let's see if that
+works. So coming back to cloud code. So,
+at this point, I want to be able to
+create a new feature where the users can
+create charts off of the table data,
+create a drop zone within the screen
+where users can drag and drop different
+tables into the drop zone, and also add
+a generate button uh near the drop zone
+where the user can press using the point
+gesture. For now, let's just stop there.
+Okay, hopefully hopefully it can create
+a nice looking drop zone and hopefully
+it kind of sustains this futuristic
+cyber type of um UI as well because I
+don't want to have to go back and say
+make this drop zone
+futuristic as well. So hopefully it
+keeps that. But let's come back and see
+what happens.
+Okay, it seems like it did what I asked
+it to
+do except now there's lots of errors
+happening. That's one thing about cloud
+code. It doesn't have access to the
+browser context. So
+um so yeah it's not able to kind of
+automatically get these uh context of
+there like like some of those apps like
+level or bolt can do.
+Um but other than that it's it's really
+powerful. So, detects when index Yeah.
+point gesture detection detects when
+index finger is extended and other
+finger is curled. Yellow gold visual
+indicator line from hand to fingertip
+when
+pointing. Nice button highlights. Small
+golden circle appears as
+fingertip. Table collection. Drop table
+are checked and counted. Pointed button.
+Visual feedback.
+It looks like it did what I asked it to
+do. Drop zone is located at the lower
+center of the screen. Interesting. Sure.
+Cyan dash border seems a holographic
+glow. So I I'm guessing it's somewhat
+futuristics.
+Futuristic semi-transparent background
+shows the count of drop
+tables. Okay. Yeah. Yeah. Yeah.
+It It
+should All it needs to do is to
+um fix the error. Now this the
+error. If this doesn't work, I'm
+gonna try to kill the session feed
+session and restart
+it. But hopefully it can can do the
+thing. But yeah, during this session, I
+I literally haven't opened any of these
+files at all.
+So earlier when I was creating the cloud
+MD files, I don't know why I was so
+obsessed about not using Redux and using
+React Query or something. I like got
+quite honestly I couldn't care less I
+guess. But um okay, the air is gone. We
+have this drop zone
+and I can
+pinch drag it into this drop zone. Let
+it go. One table. I was hoping that it
+just stays there,
+but sure. Uh, and then Okay. So, when I
+have one of the fingers
+extended, it changes into this yellow
+color. So, if I point at generate
+button, we see this
+indication. I guess that works. Yeah.
+Generate. Uh, generate. Generate. Oh,
+it's kind of hard. Generate. There you
+go.
+Um, I might wanna I wanna I might want
+to fix this drop zone thing. So, I I I
+want the tables to just just be there
+when I when I drop it in. Um, I don't
+want it to disappear, go back to the
+original location. I just wanted to have
+it there.
+So when tables are dragged into the drop
+drop zone, have the icon just stay
+there. Don't have it go back to the
+original
+position. I guess that's
+it.
+Now, now we wait again. Okay, it seems
+like it did it. Uh, let's hit refresh
+and do it
+again.
+pinch. Drag it in there. There you go.
+Um, I don't know if I like that one
+table text there, but yeah, let's not
+worry too much
+about too much about it.
+Um, there you go. There you go. And we
+can hit generate.
+Hit
+generate. Sure. Um maybe I can just
+pinch the generate button as well. Maybe
+that should be the
+gesture.
+Um instead of instead of pointing at the
+generate button, have the gesture just
+be pinched. So I should be able to pinch
+the generate button to have it
+activated.
+I swear this is going to be the last UI
+update. Um, once we do this, we are
+going into the charting feature.
+So, yeah, hopefully I haven't really
+thought too much about it. I It's It's
+not like I have AI connected in the back
+end. So in this ideal world where if I
+had unlimited time or if I had more time
+I could just maybe use superbase edge
+functions to create an endpoint where I
+feed in all the tables and schema
+information and have uh some kind of
+large language model in the background
+going to take all those table schema and
+suggest a a uh suggest a x-axis and
+y-axis or suggest a nice chart that kind
+of makes sense with the given tables and
+then have the app generate a chart based
+on those um suggestion from the large
+language
+models. I want to keep it simple so I
+don't want to go that
+far. So, for as as far as this this demo
+goes, I think I'm going to keep it
+simple and just going to
+um step one, I'm just going to have
+Cloud Code do the thinking for me. I'm
+not even going to think what kind of
+charts I I want to generate. Uh so,
+whatever Cloud Code can come up with, um
+hopefully that that's that's plausible
+enough, that's good enough. Um but if
+it's not good enough, I I don't know. I
+don't know and maybe we can introduce
+some kind of feature where we can just
+choose select a column
+um on our own um so within the selected
+tables we can select the columns and
+then those selected columns becomes a
+nice nice looking charts but
+um let's
+see so let's see the UI update um so
+it's just uh I should be able to
+pinch and have it activate Okay, that is
+great. Now on to the meat.
+So now once the user hits the generate
+button and there are more than one
+tables within the drop
+zone,
+have the app create a nice looking chart
+with the given tables that are within
+the drop zone.
+That chart should take up the entire UI.
+Um, so everything else like the drop
+zone, generate button, the table should
+be dismissed and it should just create a
+nice looking charts with some decent
+animations. Now we wait. That was faster
+than I expected. Every single time uh
+cloud code works on creating some some
+kind of code, I'm amazed at how
+quick how quickly it gets it done. So,
+let's try out. Let's see if I can get
+this
+profiles
+profiles.
+And let's just do profiles and be done
+with it. Hit generate.
+Okay, let's hit refresh just in
+case. Let's get
+the
+profiles
+and
+generate. It's not doing anything. So,
+let's check what Cloud Code
+did. Visual design, full screen
+takeover, blah blah blah.
+Animation bars smooth animation creates
+far bars per table. Alternating scion
+gold pinch anyway to return instruction
+at bottom. Pinch gesture exist
+exits.
+Huh? Drop two plus tables in the drop
+zone. Okay.
+uh profiles
+and
+registrations.
+Oops. Now
+generate. Oops.
+Because this is
+out. Okay. Now
+generate. Is it still using the point?
+No. Right.
+It's
+okay. Two
+plus. Two plus means two or more, right?
+Or does it mean three or
+more? Yeah, it's not doing it. So, let's
+go back. Um, when there's one or more
+tables within the job zone and the user
+pinches the generate button, a chart
+should be drawn. Currently, I dragged
+three charts, three tables into the drop
+zone. Pinch generate, but nothing
+happened. Make sure chart is chart gets
+properly drawn.
+All right, let's see if it can fix it.
+Okay, so let's try out what kind of
+thing it
+fixed. We can drag events
+and Okay, this is a chart that I came up
+with. It's
+just numbers going up and down. Um
+h really
+seriously this is okay I know my
+instruction wasn't specific
+but just is data
+visualizations
+tags that
+is that is unfortunate let's let's fix
+that okay
+so even within The charts UI, the webcam
+preview should be shown in the
+background. The charts UI should be
+half
+transparent. Now the chart needs to be a
+actual chart. It just it cannot just be
+a random chart going up and down. It has
+to pull in data from the table that was
+specified by the user and it'll have to
+display a meaningful
+um
+data. Okay. Uh that was the biggest
+disappointment uh for me so far using
+cloud code. But again uh at the same
+time my prompt my instruction of asking
+it to just create charts out of random
+tables is is kind of horrible. So I feel
+sorry for
+it.
+But I
+mean you should be able to come up with
+something something better than that.
+just even like randomly choosing two
+different columns and then fetching the
+count and just displaying it would have
+been nice. But yeah,
+um yeah, worst case I think I'm just
+going to do that. I I think I'm just
+going to have created add is the x-axis.
+Just fix that on the x-axis.
+um don't know what I'm going to do with
+those tables that doesn't have a created
+column but and then y-axis can be just
+count or something during those those
+duration. Um
+but yeah let's see let's see if cloud
+code can um do its magic. All right
+let's take a look at what it did. So
+let's see let's take the
+events and let's generate a chart of
+this. Okay. So x-axis is the UU ID. By
+the way, am I being displayed? Um maybe
+maybe not. Um and the y-axis is
+capacity. So I mean yeah it's it's it's
+a decent chart. And can I go back? No. I
+guess I I'm gonna have to refresh the
+page. But that's all right. Let's Let's
+see. Let's see if we
+do a few tables. So, event
+tags, event
+tags, and
+events. And hit generate.
+Interesting. So the y-axis in this case
+is count and x-axis
+is half of it is events and half of it
+is event
+tags.
+Um I suppose maybe that's the
+limitation. I was I was hoping that it
+performs a join query and kind of
+automatically fetches, you know,
+interesting
+information through those join query.
+But uh maybe maybe that was asking too
+much cuz like I I wouldn't even know how
+to go about implementing that. Um but
+uh let's see. There's a few fixes that I
+want to um do. one I want to fix the
+aspect ratio of my myself
+um because I I look distorted. I think
+it's because the the screen dimension
+screen aspect ratio and the webcam
+aspect ratio is different.
+So make sure for the full screen preview
+of the webcam the aspect ratio of the
+original webcam is preserved. So it's
+okay to have certain region of the
+webcam being
+cropped off
+um if that is required to preserve the
+aspect
+ratio. Okay. So I'm going to do some uh
+UI fixes here and there and then come
+back uh to show you the final version of
+what I have created. So here's what I
+have. At the end we can start the
+session
+and grab for example events generate it
+and we have a nice looking charts there.
+I can wave my hand to have it go away
+and have something
+else. Tags
+maybe seems all
+right. Couldn't really get it to display
+a nice looking chart with anything more
+than two tables. Honestly, it
+was honestly you probably need to have
+like a proper backend connecting talking
+to LLMs to analyze
+uh what kind of data to pull in and
+whatnot. Um but other than that, uh this
+entire project was I think a success.
+I'm having so much fun with these
+handtracking and pinching things and
+whatnot.
+So, thumbs up and I hope you learned
+something new through this video.

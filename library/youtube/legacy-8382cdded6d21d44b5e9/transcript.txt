@@ -1,0 +1,863 @@
+[Music]
+hello and welcome to the Insight by
+oakry Capital I'm Jennifer Marquez and
+I'm the head of strategy inst
+structuring for Oak's asset backed
+Finance
+business today we're going to be
+discussing O's recently published
+performing credit quarterly who are the
+lenders
+now it's a pleasure to be joined here
+today by our panosian Oak tre's co-ceo
+and head of Performing credit and
+Brendan beer portfolio manager of Oak
+tre's asset-backed Finance
+strategy Arman Brendan thank you so much
+for joining me thanks Jen Thanks Jen
+good to be here so Arman before we focus
+in our main topic of asset-backed
+Finance could you perhaps provide a
+quick overview of where we are in the
+credit markets right now and for our
+listeners benefit I should note that we
+are recording this prior to the result
+of the US election and prior to the US
+federal reserves meeting on the 6th and
+7th of November well thanks Jen um you
+know in terms of the markets as well as
+the economy I would say things are
+looking reasonably strong in the economy
+and they're looking even better than
+reasonably strong in the markets there's
+been a lot of liquidity pumped into the
+markets through the years of stimulus
+that we had during covid and a
+relatively benign economic and market
+environment since then there were
+concerns around inflation those concerns
+appear to have moderated but the capital
+that was deployed through stimulus into
+the economy following the pandemic has
+stayed in that economy and has
+accumulated into the hands of investors
+and Savers and those individuals those
+corporate treasuries insurance companies
+that may be originating annuities and
+other types of investors are pretty
+actively looking at credit as a way to
+get a contractual return that is quite
+attractive today relative to five or six
+years ago and therefore
+against that backdrop of liquidity and
+demand for credit products and combined
+with a relatively resilient economy one
+where corporate performance I would say
+is reasonably strong I wouldn't say it's
+anywhere near 2019 levels in terms of
+its strength or growth but certainly
+better than what people thought it would
+be the combination of the capital
+available to deploy and relatively
+benign performance in companies has
+resulted in a pretty meaningful
+tightening of spreads in credit across
+the board both publicly traded credit
+namely high yield bonds and Senior loans
+but also in direct lending specifically
+corporate direct lending where the
+borrowers are owned by private Equity
+firms or being bought by private Equity
+firms and we are seeing a pretty
+meaningful contraction in the spreads
+available in that particular part of the
+private credit market and with that I
+think we are seeing investors now
+looking for more complex parts of the
+private credit Market to deploy Capital
+into where there is some additional
+return and there's some potential
+additional safety in the form of
+structural protections so we're seeing
+that 2.0 evolution of investor appetite
+in private credit into the more complex
+areas where they could get as good or
+better a return than corporate direct
+lending and with some additional either
+protections or diversification benefits
+and I think in that light there's been a
+fair amount of excitement recently
+around asset back Finance or ABF for
+short and I want to come on to talk
+about some of the SE trends that we
+believe may be driving that but ABF as
+an asset class is not new so to start
+Brendan perhaps we can take a step back
+and talk a little bit about the
+evolution of the ABF industry and how
+we've got to where we are today sure Jen
+I think as I talked through asob back
+Finance it'll become clear that this
+isn't new at all if you just zoom out
+every time a bank or a non-bank
+specialty lender makes a new loan or a
+mortgage AG or a lease they are creating
+or originating an asset that's the first
+word in that asset back Finance so if
+origination is the business of extending
+credit or making a loan asset back
+Finance is the business of funding the
+loan where the money comes from in past
+decades securitization has allowed for
+the creation of rated Securities which
+allowed insurers and other rating
+sensitive investors to participate in
+asset Finance in addition to lending
+Banks themselves provide senior
+financing to other non-bank lenders more
+recently alternative investors have
+partnered with specialty lenders in
+customized private asset financing
+Arrangements what's new today is the
+changing role of banks in response to a
+number of forces and hopefully we'll get
+into these a little bit more
+quantitative tightening regulation
+deposits becoming a little less reliable
+for all but the largest banks and some
+headaches in their existing portfolios
+the banks find themselves needing to
+shrink their footprint in the asset back
+Finance Market which creates new and
+pretty interesting opportunities for
+non-bank Capital providers so we're
+really talking about then a very
+established existing financing Market
+financing if you like the breadth of the
+global economy but for those listeners
+that might be less familiar with private
+ABF as an asset type Brendan can you
+help us understand how we at Oak Tree
+Define private ABF sure and I'm going to
+try to describe this in a few ways from
+a few directions to orient The Listener
+so think of ABF as the private version
+of structured credit structured credit
+is ABS Clos cmbs rmbs in direct lending
+the collateral is Corporate Enterprise
+Value in real estate debt the collateral
+is real estate value now this is the
+leap it might be a little disorienting
+in private asset back Finance the
+collateral is pools of contractual cash
+flowing assets contractual cash flowing
+assets include loans leases mortgages
+receivables royalty agreements our
+assets are someone's liability someone's
+obligation to pay now we know that some
+managers refer to hard asset vertical
+within their asset back Finance
+strategies but hard assets don't
+represent an obligation to pay so some
+contractual assets reference hard assets
+like an aircraft lease or a Home
+Mortgage but some asset types like a
+credit card receivable are just backed
+by a promise to pay some asset types
+like a royalty agreement might reference
+intellectual prop proper which makes
+this even a little more interesting but
+we're focused on pools so not one but
+pools of contractual assets of like type
+we're not mixing together auto loans and
+solar leases in the same pool so some of
+the key features that are attractive
+about asset back Finance some LPS today
+are a little frustrated with how slowly
+some of their funds are returning
+Capital particularly Venture Capital
+private Equity private real estate but
+also private debt
+strategies because ABF relies on the
+contractual cash flows ABF investors are
+a little less reliant on a building
+being sold or a company being refinanced
+to get their Capital back also we can
+argue about whether aircraft leasing is
+attractive today we can argue about
+subprime Auto lending whether that's
+prudent today but what we can't argue
+about is if they're the same risk
+they're clearly not so you can build a
+diverse portfolio within ABF and an ABF
+allocation should be pretty diversifying
+from your other private credit or real
+estate lending allocations a couple of
+other attractive attributes of ABF worth
+mentioning in corporate credit you may
+have heard of CV light or liability
+management exercises diluting recovery
+for lenders fortunately ABF remains
+today a CV heavy Market with pretty
+strong protections for lenders and then
+lastly ABF when compared to other
+private credit strategies and private
+real estate Lending strategies ends up
+being a little bit shorter in duration
+and tenor than those
+strategies um in the essay we address
+some of the challenges banks have been
+facing and the compounding pressure that
+regulatory changes have placed on
+certain lending activities for banks do
+you think this is likely to be a
+short-term Trend though or the start of
+a more secular shift in their lending
+activities and if banks really are
+reducing their role in the ABF Arena who
+else is well placed to provide the
+essential Capital here well if it was
+really only one reason that was causing
+the banks to withdraw from the market or
+step back from the market I would say
+chances can be that it would be
+short-term but there are many reasons
+that the banks are stepping away there's
+regulatory reasons there's bosel 3
+endgame which the US is in a comment
+period on and we'll see some final rules
+in mid 2025 we've seen bosel 3 in Europe
+and have a sense for what it means for
+the banks the punitive Capital
+requirements that arise because of these
+types of Investments for banks there's
+quantitative tightening with the FED
+just generally wanting to reduce its
+balance sheet that results generally
+speaking in Banks reducing their lending
+activities because their reserves could
+be reduced as part of the overall
+quantitative tightening that the FED is
+engaging in there has been sector
+specific stress including in real estate
+Regional banks are exposed to real
+estate lending and they're for now at
+least kicking the can down the road but
+the size of their exposure relative to
+their Equity Capital remains very
+elevated and therefore their lending
+activities in areas like real estate and
+other types of assets where for example
+the specialty lenders where they might
+also be Overexposed is the subject of
+much consideration and essentially a
+little bit of a freeze on lending we saw
+some Regional banking issues as well
+with the collapse of Silicon Valley Bank
+and a couple other Banks following
+Silicon Valley Banks fall and that has
+also caused the Risk Managers and The
+Regulators to look closely into how
+banks are using their balance sheets to
+earn fees and earn returns and a lot of
+that mismatch in assets and liabilities
+specifically deposit flight and how
+quickly nowadays with technology deposit
+flight could occur is resulting in just
+a multifaceted approach to a more
+conservative banking environment in the
+US and globally but certainly I think
+the the move in the US is most
+considerable over the last couple of
+years now we expect all of these to
+continue maybe not in lock step but
+certainly we don't think that any of
+them are going to materially reverse
+such that the banks will be expanding
+into asset back Finance in any level
+that they were in let's say pre covid or
+pre- discussion of bosel 3 endgame but I
+think big picture also just given the
+sheer size of the private credit market
+and given how large asset back Finance
+is within that private credit Market in
+the trillions just given the breath of
+the underlying industries that it
+Services as lending whether it's
+aircraft or rail cars or royalties of
+different types or Consumer Finance and
+auto finance and even modest pullback
+from the banks given the sheer size of
+that market results in a huge lending
+opportunity for investment managers and
+other investors to step into that void
+insurers are going to be part of that
+solution insurers already participate in
+asset back Finance there are rating
+sensitive investors for sure but some
+portion of where the banks are stepping
+away could be serviced by insurers
+stepping in and mainly an investment
+grade deployment if there is a senior
+lending opportunity where a bank cannot
+provide that Capital anymore or quite
+with the same loan to value but an
+insurer can as long as it's rated
+appropriately insurers can expand what
+they do in asset back Finance but I
+think the depth of the need for
+alternative capital is just too great
+for even insurers to really pick up that
+slack and certain types of transactions
+won't be a fit for insurers anyway
+things where rating agencies will have a
+tough time of coming up with a rating
+will probably result in an insure not
+being interested in stepping in or it
+will probably create a situation where
+an originator of these underlying loans
+may not want to deal with that ratings
+process because of the handcuffs it
+would give them with respect to their
+deployment so the big picture outcome
+here is that private alternative capital
+is starting to just emerge to fill this
+void because of the retrenchment of the
+banks and it really reminds me at least
+of what direct lending felt like in the
+few years as we were emerging from the
+global financial crisis the 2010 to 2013
+time frame where clearly the banks had
+stepped away from certain types of
+lending they were doing in the corporate
+direct lending landscape creating the
+need and the opportunity for direct
+lending to fill that void especially in
+the Middle Market but even expanding
+above the Middle Market private asset
+back Finance feels much the same way
+but I think it's even more exciting
+because of the range of opportunities
+globally but also the range of
+collateral that is brought into asset
+back deals again rail cars Life Sciences
+royalties music royalties equipment
+Finance consumer there's just such a
+huge range of collateral that could be
+brought into asset back finance that we
+are very excited about the private
+investment opportunity that is emerging
+as a result of this banking retrenchment
+thanks Alman yes it does feel a little
+bit like we're in the position that we
+were a decade or so ago when the bank
+started to retrench from corporate
+direct lending but as you say perhaps
+with a far larger addressable market and
+so Brendan as we look then across that
+investable ABF Market where do you think
+the most interesting opportunities lie
+right now sure Jen in this follows on
+what Armen was saying you have to
+remember the opportunity that's emerging
+for private investors is really driven
+by Banks changing their posture their
+footprint in the asset back Finance
+markets so as the banks retrench the
+opportunities that are available some of
+those absolutely can be filled in by
+insurers and you don't have to look too
+far in the headlines to see alternative
+managers aligning with buying being
+bought by insurance companies to go
+after this opportunity but we deal with
+a lot of players in the asset back
+Finance Market that for one reason or
+another Insurance solution is not the
+right solution for them and insurance
+capital is highly regulated and the
+insurers favor rated securitizations and
+in Europe it's not explicit ratings but
+it's very similar and some transactions
+some Capital holes some business models
+they just don't fit and where we think
+is most attractive is where the banks
+just left where the insurers cannot step
+in and where there isn't a prudent path
+to take that opportunity and turn it
+into something that fits a private
+Equity Fund an opportunistic credit fund
+a distressed fund the special situations
+fund so where the returns look like
+advertised private credit returns but
+there isn't a path to rating or Capital
+efficiency for an insurer and there
+isn't a path to very high returns very
+high multiple and we find this to be
+pretty uncrowded right now and expanding
+so Brendan within that space can you
+give us a few examples of ABF investment
+types that you're particularly excited
+about at the moment well we like to wear
+a relative value lens so we're always
+considering all the sectors with a focus
+on the ones that we know and have
+expertise in without getting wed to any
+particular sector but I'll give you a
+sense of how we think about it and I'm
+going to give you two sort of examples
+one is where the fundamentals are very
+strong and Aviation Finance so right now
+in aviation Finance continuing from Co
+you have a reopening of the global
+commercial Aviation markets and we are
+through 2019 levels of demand for air
+travel which is obviously a positive on
+the revenue side globally also you have
+the two large oems Boeing and Airbus are
+just way behind in delivering aircraft
+Boeing has been in the news obviously so
+you have strong demand for air travel
+and you have limited Supply and this is
+really a fundamental Tailwind for
+aircraft lease and aircraft lending
+which are two ABF verticals that's on
+the fundamental side now let's talk on
+the market dynamics or technical side
+Home Improvement loans Home Improvement
+loans can be loans made to home owners
+to install energy efficient Windows
+maybe solar panels maybe a new HVAC or
+water heater and these loans until
+recently were commonly funded by or lent
+against by Regional Banks and Credit
+Unions those are two investor types that
+have recently found deposits as
+unreliable as a source of funding and
+that's a new thing and so Home
+Improvement loans are made to
+individuals to Consumers to homeowners
+and if you look at where we are today we
+are at low unemployment it's kind of
+hard to imagine unemployment going down
+200 basis points but it could go up 200
+basis points so you have a little bit of
+an asymmetry in terms of the credit
+performance going forward of consumers
+but even with that said the credit
+unions and Regional banks have stepped
+back from being the financing provider
+for these kind of loans that is a
+Tailwind in the market dynamics that to
+us overwhelms and allows you to extract
+cushion against concerns you might have
+on the credit side so I give you two
+examples one where the fundamentals are
+very strong and we're very excited about
+that opport Unity another where the
+fundamentals aren't necessarily strong
+there's nothing to be concerned about
+right now but the market setup is
+favorable and we're always looking for
+those relative value indicators that can
+come in a variety of formats thanks
+Brendan so for my next question Arman
+I'd like to zoom out a bit we've talked
+about various attractive pockets of ABF
+but big picture how would you think
+about ABF as part of a private credit
+portfolio allocation and in comparison
+to direct lending for example I think a
+lot of investors have enjoyed now for
+over a decade the stability of returns
+and income and pretty low defaults in
+corporate direct lending I think that
+was the first large foray into private
+Credit in a concerted way and I think
+initially maybe the jury was out whether
+it will be quite as advertised in terms
+of it being stable and dependable income
+but I think we're now more than a decade
+into the evolution of corporate direct
+lending following the global financial
+crisis and I think a lot of investors
+have come away saying this is a very
+strong asset class with some illiquidity
+premium that gives them a incremental
+return above the liquid credit markets
+as well as stability in marking the book
+to fundamental performance so it's been
+a good experience but now as investors
+say well how do I diversify my exposures
+I do want to continue to deploy in this
+type of asset class this type of stable
+income generating low default asset
+class how do I do that how do I do more
+of it but diversify and there really
+isn't a good way to diversify other than
+either you know regionally or by maybe
+certain sectors if you go into a sector
+specific fund and perhaps that's
+insulated from GDP correlation and
+therefore correlation with the rest of
+the private credit or direct lending
+portfolio but another way to diversify
+is in something like asset back Finance
+where you're attaching to a contractual
+cash flow stream as Brendan mentioned
+not the Enterprise value of a particular
+borrower so if you think about it
+there's a value chain in the economy a
+good is produced there's costs
+associated with it there's overhead
+expense to running that business and if
+that business generates an adequate
+level of cash flows then your loan to
+that business is worth more and more
+stable it will recover your Lo balance
+when the maturity happens and hopefully
+in the meantime it's been paying its
+interest as it comes due but there
+certainly is a terminal value exposure
+in corporate direct lending that doesn't
+exist in asset Finance because in asset
+Finance you're attaching to a a revenue
+stream in the case of royalties you're
+attaching to uh particular assets that
+are critical to running your business
+irrespective of your profitability in
+running that business if you're an
+airline or if you are a aircraft lesser
+you must must own the aircraft and
+therefore the cash flow streams attached
+to those aircraft must be paid if you
+are in business and that changes as an
+investor lending into that space it
+changes your attachment point as to
+where in the value chain your exposure
+resides is it on the revenue line is it
+higher up than the net net net end of
+the day corporate cash flows and we're
+not saying that corporate direct lending
+is a bad investment by any means but for
+those investors that have enough
+exposure that they're looking at ways to
+diversify their exposure in uncorrelated
+ways asset back Finance gives you that
+opportunity to do it in scale and with
+underlying diversity one investment to
+the next again music royalties are very
+different than rail cars or subprime
+Auto that's really how investors should
+be thinking about this as a diversifier
+against what has already been a very
+successful fora into private credit
+through corporate direct lending so Aman
+I'd like to pick up on something you
+said there around the repayment profile
+of private ABF Brendan perhaps you could
+talk a little bit about the way that a
+lot of these private ABF transactions
+repay principle right we do get a
+question from our clients would you
+consider this more of a total return
+product or an income generating product
+and because we're focused on these
+contractual assets loans leases
+receivables this is decidedly an income
+product yeah maybe I would add to that
+it's different than corporate direct
+lending in corporate direct lending you
+get a coupon and you get maybe 1%
+amortization per year for 5 six seven
+years until your maturity there
+certainly are repayments and
+refinancings that occur well in advance
+of that maturity date and so your cash
+flow return could be faster than the
+stated final maturity on the loan but
+typically and especially during periods
+of dislocation a corporate direct loan
+has extension risk it could be out seven
+years and maybe even longer to the
+extent that seven-year period hits an
+air pocket in the refinancing markets
+and you as a lender need to extend but
+in the case of asset back Finance every
+payment that is received by investors
+has some component of income and some
+component of Return of capital and it's
+usually because the underlying asset has
+some element of depreciation associated
+with it and therefore the structures
+that we invest in often times have cash
+flow returns in addition to income
+generation and so the duration in terms
+of just the contractual duration is
+meaningfully shorter or within our
+control in asset back finance and so
+that combination of income plus return
+of capital and the contractual nature of
+that combined payment gives you a better
+lens and potential in terms of repayment
+speed but it also gives you the ability
+to express your sensitivities at that
+point in the market to certain types of
+duration like do you not want to take
+extension risk at this point in the
+cycle do you want to actually shorten up
+your duration in your portfolio then
+originate shorter lived assets that is
+all possible in asset back finance and
+it's not really possible in corporate
+direct lending at this point in the
+maturity cycle of corporate direct
+lending versus asset back thanks Al
+absolutely and Brendan you and I were
+saying the other day that it's actually
+a fundamentally different underwriting
+question that you are asking with ABF as
+compared to corporate direct lending and
+that provides a natural diversification
+between the asset types Brendan can you
+perhaps elaborate a little more on how
+you think about that sure Jen if you
+lend in corporate credit the fundamental
+question you're asking is will this
+company be worth meaningfully more than
+my loan amount when the loan is due we
+study ebit eaah adjustments comps we
+look at the leverage but in the end you
+want the business the Enterprise Value
+to meaningfully exceed the amount you
+have lent to get repaid in real estate
+similar thing will the building will the
+property be worth meaningfully more than
+I have lent when my loan comes due so in
+real estate in corporate credit you are
+asking the fundamental question what is
+it worth what will it be worth in asset
+back Finance it is a different question
+the fundamental question is will they
+pay this is something that creates a
+barrier to entry that this is the
+fundamental question to traditional debt
+investors coming from the corporate side
+or the real estate side trying to come
+into asset back finance and this is a
+nonrisk source of depressed competition
+which we think drives additional return
+yeah we certainly like areas where we
+feel we can get over paid for risk so
+Brendan how do you think about building
+a portfolio in private ABF well in a
+perfect world I would just design a
+model portfolio with a little bit of
+senior lending against Auto and some
+mezzanine lending against aircraft and
+maybe some buying loan pools on Flow
+against mortgages but that's not the way
+private asset back Finance works you
+can't make a portfolio and then start
+filling buckets we are approached by
+borrowers by Originators by sellers by
+banks with capital needs and we have to
+respond to those Capital needs and apply
+our diligence our relative value lens to
+understand if those fit our portfolio so
+what we do is we have to respond to
+opportunities as they come in and we
+have to consider our existing exposures
+we have to consider the exposures that
+are likely coming in the future so we
+want to leave room in particular for
+some of the PO potentially higher beta
+structures or sectors and we want to
+have a variety of formats and underlying
+asset types we have to think about how
+correlated are two different Investments
+even if they're not in the same sector
+do two Investments have exposure to the
+US consumer the two investors have
+exposure to Energy prices so we're
+thinking about cross asset correlations
+across our portfolio it sounds like in
+order to do that then you really need
+quite a broad range of opportunities to
+consider how do you approach sourcing
+well that's right I think you do need to
+see a lot of opportunities in order to
+build this portfolio that's as diverse
+as you want it to be and has the
+characteristics that you want it to have
+one of the things we focus on and this
+is a business decision is there are
+Originators and the creators of assets
+and there's something to be said for
+very formal Partnerships with particular
+Originators so you have more certain
+access to Collateral we choose to go in
+a little bit different direction we want
+to maintain the flexibility where we
+have a strong relationship without the
+obligation to continue to fund a
+particular originator the danger is if
+you're really wearing a relative value
+hat in the future at some point it may
+be the case that whatever the sector is
+rail car leasing or Prime Auto lending
+that someday in the future it's not a
+good idea to commit Capital to that
+particular sector but if you have overly
+prescriptive or formal relationships
+with individual Originators you can find
+yourself functionally stuck having to
+supply them with capital and even in the
+case where the sector remains attractive
+you may be discouraging other partners
+from bringing you opportunities so we're
+trying to maintain flexibility and it's
+important to take advantage of the
+breadth of your platform and all the
+relationship that are available and then
+the last thing that we have to consider
+is what is our Market position and
+really take advantage of the different
+kinds of calls and situations that might
+come to a place like oak tree because of
+our special reputation and Market
+position and we want the ability to be
+selective and as you say Brendan take
+the right calls at the right time so
+Arman any final thoughts for our
+listeners I think the main takeaway for
+me and listening to this conversation as
+well kind of hammers at home there's
+just so much within asset back Finance
+there's so many different underlying
+types of collateral
+sectors
+geographies senior Junior expressions of
+risk and return in asset back finance
+that there isn't any singular way of
+Prosecuting the investment opportunity
+and that's I think what makes this the
+most exciting it is an area where
+there's a level of inefficiency that is
+happening unfolding before our eyes
+because of what we discussed in terms of
+bank retrenchment but there's also not
+an accepted one-size fits-all way of
+going about getting into asset back
+Finance some investment managers will
+favor consumer lending because that's
+their background and they like the
+statistical nature of a big pool of
+contractual cash flows others will focus
+on certain types of end markets where
+they built a business around and yet
+others will say I want to have a broad
+range but I want to focus on end markets
+where I have an advantage in terms of
+either information or knowled of
+management teams and a level of comfort
+around structure and underwriting of
+particular types of assets and that
+inefficiency will help to drive alpha or
+outsized returns with risk under control
+with that breath of capabilities or
+breath of investment opportunities
+combined with such different ways of
+going after that range of opportunities
+and the sheer size of the market this is
+one of the most attractive investment
+areas I've seen in a very very very long
+time and as a firm we've been investing
+in asset back Finance in our opportunist
+to credit group for many years so we
+know a lot of end markets very very well
+we know what some of the pitfalls are we
+know what to look for when the markets
+appear to be overheated in a particular
+area and and attractive or full of what
+we would call Bargains at other points
+in time and with that history looking
+more opportunistically at asset back
+Finance through that particular lens we
+are super excited to see a more regular
+way credit opportunity and we look
+forward to discussing with our investors
+with our origination partners with our
+employees and other stakeholders in the
+evolution of asset back Finance thank
+you amen and thank you both so much for
+joining me it's been a really
+interesting conversation and I hope
+everyone has enjoyed it as much as I
+have thank you to everyone for listening
+[Music]
+notes and
+disclaimers this recording and the
+information contained herein are for
+educational and informational purposes
+only and do not constitute and should
+not be construed as an offer to sell or
+a solicitation of an offer to buy any
+Securities or related financial
+instruments responses to any inquiry
+that may involve the rendering of
+personalized investment advice or
+affecting or attempting to affect
+transactions and securities will not be
+made absent compliance with applicable
+laws or regulations including broker
+dealer investment adviser or applicable
+agent or representative registration
+requirements or applicable exemptions or
+exclusions there from this recording
+including the information contained
+herein may not be copied reproduced
+republished posted transmitted
+distributed disseminated or disclosed in
+in whole or in part to any other person
+in any way without the prior written
+consent of oak tree Capital Management
+LP together with its Affiliates Oak Tree
+by accepting this document you agree
+that you will comply with these
+restrictions and acknowledge that your
+compliance is a material inducement to
+Oak Tree providing this document to you
+this recording contains information and
+Views as of the date indicated and such
+information in views are subject to
+change without notice oak tree has no
+Duty or obligation to update the
+information contained herein further oak
+tree makes no representation and it
+should not be assumed that past
+investment performance is an indication
+of future results moreover wherever
+there is the potential for profit there
+is also the possibility of loss certain
+information contained herein concerning
+economic Trends and performance is based
+on or derived from information provided
+by independent thirdparty sources oak
+tree believes that such information is
+accurate and that the sources from which
+it has been obtained are reliable
+however it cannot guarantee the accuracy
+of such information and has not
+independently verified the accuracy or
+completeness of such information or the
+assumptions on which such information is
+based moreover independent thirdparty
+sources cited in these materials are not
+making any representations or warranties
+regarding any information attributed to
+them and shall have no liability in
+connection with the use of such
+information in these materials copyright
+2024 oak tree Capital Management LP
+audiation

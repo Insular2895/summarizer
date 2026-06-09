@@ -1,0 +1,683 @@
+I'm Lukas Fittl, founder and CEO of pganalyze.
+We're going to talk about
+how to optimize slow queries in Postgres.
+Specifically, when you have an EXPLAIN ANALYZE
+output and you don't know how to interpret it,
+I'm going to give you a few tips and tricks
+and a better mental model
+for working with slow queries in Postgres
+and how to fix them.
+Alright, let's dive in.
+So there's five things
+we're going to talk about today.
+First, how to debug why a query is slow.
+Second, how we can benchmark queries
+with EXPLAIN ANALYZE with the BUFFERS option.
+Third, how planner costing works
+and why it really can never be perfect.
+Fourth, we'll talk about JOIN order and how
+parameterized index scan greatly affect
+query plans.
+And last, we'll talk a little bit about how
+we can guide the planner to the right plan.
+So generally, you know, I think it's important
+to have a good sense
+for how you go about debugging, right?
+Like what a good debug loop
+is that you can think of.
+And usually I start in debugging when I'm saying,
+well, is a query always slow
+or is it just sometimes slow?
+Typically, you know, here we have a query
+that has 1.4 seconds of average execution time,
+but the outlier took 14.6 seconds, right?
+So this is usually a good starting point
+saying, well,
+why did it take 14.6 seconds in that one case?
+Oftentimes, I/O Time can be a problem.
+So I/O Time might be, you know, a particular node
+just taking either loading more data
+or maybe the disk is overloaded.
+And that greatly influences,
+of course, the total runtime of the query.
+And unfortunately, especially in the cloud, I/O
+latency can be pretty bad.
+Postgres 18, which is the upcoming Postgres
+release, will make some of these things better.
+But for now, on most production
+systems, we'll have really inefficient I/O
+on some of these cloud provider
+network storage options.
+Also, sometimes what we see is not
+necessarily IO being the problem,
+but the plan having changed, right?
+So a query might have a good query plan
+and a bad query plan.
+For example, maybe an ANALYZE ran recently
+and changed the internal statistics
+or other things caused the plan to change.
+And so really where we're starting with,
+we say, well, we had a slow query.
+It's slow.
+What can we do?
+So we start a benchmark query with
+EXPLAIN ANALYZE,
+which is basically put
+EXPLAIN ANALYZE in front of the query.
+We form a thesis on
+what to change based on that EXPLAIN ANALYZE.
+Then we try out a change, which might be rewriting
+the query or other optimizations.
+And then hopefully, what we're trying
+to get to is that we actually made the query fast.
+And then we figure out a way to make that
+change permanent, right?
+This is a loop that people go through day to day
+all the time with Postgres, right?
+As they're debugging slow queries.
+So this shouldn't come as a surprise to you
+if you've had a slow query in your life before.
+But what I want to give you is basically better
+tools of working in each of those steps.
+So just in case you're not familiar,
+I want to repeat
+maybe the most important things
+about how to interpret EXPLAIN ANALYZE.
+So EXPLAIN ANALYZE, right?
+We just, you know, either put EXPLAIN
+without the ANALYZE in front of a query,
+EXPLAIN (ANALYZE),
+or then EXPLAIN (ANALYZE, BUFFERS).
+In the upcoming Postgres 18 release,
+BUFFERS will be a default.
+So if you just run EXPLAIN ANALYZE without
+specifying BUFFERS, it will automatically be set.
+You can do buffers off if you want to turn it off.
+Now, an EXPLAIN output without the ANALYZE
+just gives us the query plan that Postgres
+wants to use, but it doesn't tell us anything
+about, you know, the actual execution statistics.
+For that, we have to add EXPLAIN ANALYZE,
+which in this case
+shows us that the query executed
+in 307 milliseconds of runtime.
+And it also tells us things like,
+did a particular plan node perform,
+you know, worse than expected?
+Did it remove a lot of information after,
+for example, scanning the table and such?
+And then when we add the buffers option,
+or again, if you're in Postgres 18,
+then you'll actually get information
+like I/O timings and how much data was read.
+This is really important
+because it helps you understand
+whether the slowness of the query comes
+from the amount of data it's working with that
+it had to load from disk,
+if the data was in the cache and such, right?
+So it's really important information
+for debugging.
+Now, when we see buffers,
+we mean if a buffer is an 8 kilobyte buffer page,
+basically the internal, you know,
+storage of Postgres is structured this way.
+So each time you load data,
+even if you load just a single row,
+you'll have to load a full 8 kilobytes of buffer
+page from the disk or from the memory.
+Now, the number of
+how many, you know, rows you have per
+page is greatly influenced by table bloat.
+So if you have a lot of, you know, dead rows
+and then your table bloats
+and you have a lot of empty space in your table,
+that greatly influences
+how effective your scans are.
+And so it is important to watch these buffer
+counts if they're unexpectedly high.
+Also, the other thing to note
+is if you see a hit counter in the buffers output,
+that means it's a cache hit.
+That's generally a good thing,
+but it can be confusing because the problem is
+if you have a nested loop, the loop loops over
+the same, basically, data over and over again.
+What can happen is that it
+basically double counts the same buffer block.
+So in this case, for example,
+it might have been that
+there were only 12 buffers uniquely loaded,
+but 1,200 buffer accesses occurred.
+And so you've got to interpret
+these hit counters when you see them.
+The other thing to know with
+EXPLAIN ANALYZE is that it has overhead.
+So when you run a query without EXPLAIN ANALYZE,
+and it's a query
+that doesn't work for a lot of rows,
+usually the measurements are pretty similar,
+right?
+However, once you have a query
+that's very slow, in this case,
+you know, the query just from measured
+from the client side takes 340 milliseconds.
+But if you measure the query
+with EXPLAIN ANALYZE in the picture,
+without timing, which means no
+per node timing information, it's similar, right?
+It's 404 milliseconds,
+so we added a little bit of overhead here,
+but where it gets really bad
+is if you have timing on
+and the buffers option on, then Postgres basically
+measures each repeated access to a plan node,
+and that just takes a lot of time.
+And so when you benchmark,
+EXPLAIN ANALYZE will give you the
+insights into what's going on,
+but you should always run it without the
+EXPLAIN ANALYZE also to get the
+true performance basically
+without the overhead of measuring this.
+Now let's talk a little bit about Planner Costing.
+So Planner Costing is basically the mechanism
+the planner uses internally to decide
+which query plan to use.
+So, you know, core mechanism here, right?
+It's like we looked at,
+you know, we have a bad query plan,
+we found it in EXPLAIN ANALYZE,
+now let's form a thesis on what to change.
+That thesis has to interact with how the planner,
+you know, comes up with a plan.
+And so as Tom Lane said in the presentation
+many years ago,
+ultimately the planner's task is fuzzy, right?
+So there can be many valid plans
+for the same query,
+but it's not always clear
+which one is the best query plan.
+And so basically
+the planner has to find a good query plan,
+but it also shouldn't
+spend too much time or memory finding it.
+And it also needs to support
+the extensible aspects of Postgres, right?
+And especially that last point means sometimes,
+you know, Postgres has to do more work
+to figure out which data types being
+used and such, which index access methods exist.
+And so some limitations exist
+because the planner is extensible, but then also
+wants to consume finite CPU and memory.
+So most important thing to know is
+the planner does not find all possible plans.
+It actually discards plans
+that look bad pretty quickly.
+Also, it doesn't change plans
+when expectations don't hold true.
+So if your row count is off,
+then it doesn't fix that.
+It doesn't rerun.
+And also it doesn't know if past executions of the
+same query had a bad plan that performed badly.
+It will happily keep doing the same slow query.
+So really cost
+estimation is how the planner makes decisions.
+Ultimately garbage in, garbage out, applies here,
+as Tom said in the mailing list comments
+some time ago.
+So basically, if you, you know, put bad data
+into the query planner, as in bad statistics,
+you'll get a bad query plan.
+Now, quick information here is we can
+look at the costs on each of these plan nodes.
+The cost basically has a startup cost component,
+which is the first row you're fetching.
+And the total cost is if you fetched all the rows
+with that particular method.
+In this case, index scan,
+if we basically scanned for all those rows.
+Now here, we estimated that there's
+10,000 rows being fetched,
+which is the output of that plan node.
+Then we also, the planner also estimates
+how wide each of these rows is.
+But what is cost really?
+Cost is not really a specific unit.
+It's more a currency that the planner uses
+when it does its cost-based search, right?
+So it doesn't like, you could argue that maybe
+what it means is the cost of sequential scan.
+So one of the core things, if you look at how
+Postgres internally costs a sequential scan on a table,
+it basically multiplies the sequential page cost,
+which is set to one by default
+with the number of pages you're looking for.
+So if you have a table that has,
+you know, 8,000 pages,
+the sequential scan costs will be 8,000, roughly.
+So you could say that, you know, that base
+sequential scan cost basically is
+what all the other costs are based on.
+Most importantly,
+what's the cost of an index scan?
+Well the cost of an index scan is dependent
+on which index access method you're using.
+So if you use a B-tree index, it's going to be
+different than if you use a Hash or BRIN index.
+And because, again, Postgres is extensible, this
+passes down to the particular index access method.
+For example, in the case of a B-tree index,
+we have the btcostestimate() function.
+That function ultimately tries to figure out
+how selective is
+the part you're looking for in the index
+with doing a selectivity calculation,
+and then it multiplies
+that with the number of tuples,
+and then it, you know, factors
+in the regular costs.
+Now, this function here, this clauselist_selectivity
+function is one of the key facts
+that will impact your query plan's
+performance, or the query plan's quality, rather.
+So this here basically works
+from limited information, where it's like,
+you're looking for this, you know, kind of,
+we have these filters on this table,
+and you're trying to say,
+is this likely to be found, right?
+Like,
+am I looking for something that's very unique?
+Or am I looking for something
+that's very common in the table?
+And that then drives how selective your query
+is, how selective your search is, basically,
+in the table or the index. Now,
+this, you know, then drives the cost, right?
+Because the cost basically multiplies
+with the selectivity number.
+So for example, the way we can see the selectivity
+number is kind of indirect, because it's
+the total number of rows times
+the selectivity, right?
+That's the row number you see in the plan.
+The most typical issue why you get bad row
+estimates is because clauses are not independent.
+What that means is if I'm saying
+“a=1”, “b=1”, “c=1”, “d=1”, and “e=1”,
+then basically,
+if all the 'a' that are 1 also have “b=1”,
+or there are no “c=1”s that have “d=1”, right?
+So basically, if there's dependencies between
+those different conditions,
+Postgres does not know that by default.
+And so because of that, what Postgres will do
+is will think if you add more conditions,
+things become more specific,
+so it will underestimate the rows.
+Now, we can improve this
+by using the CREATE STATISTICS command.
+So the CREATE STATISTICS command basically
+tracks additional information,
+specifically this dependency between columns that
+lets us then improve the situation.
+Another problem on selectivity,
+though, is join estimates.
+So join estimates are really complicated
+and often wrong.
+I won't have enough time in today's
+talk to really go through all the details here.
+But suffice to say, if you want to look for this,
+look at the Postgres source.
+One of the things to know about joins is that the
+most common value lists are being used for that.
+So Postgres, when it does an analyze run,
+will collect the most common values in a table.
+And then if those basically align with,
+you know, the two tables being joined,
+that is used to drive,
+you know, some of the join estimates.
+But one of the ways you can improve,
+you know, the quality basically
+of a join selectivity estimate is you can increase
+what's called the statistics target.
+That then increases the number
+of most common values that are collected.
+And that way you might get a better estimate
+of how many rows get returned by a joined node.
+Now let's talk about joins
+in a little bit more detail.
+So ultimately, when we talk about joins,
+we have to think about two tables,
+in this case, A and B being joined.
+So here we see a sequential scan on A,
+index scan on B,
+and we join those two
+together in a nested loop join.
+Oftentimes joins are more complicated, right?
+So in this case,
+maybe we join the result of that A and B join
+with another table C,
+and then it becomes A, B, C as a join.
+This here is what we call the join order.
+So in this case, the join order is A, B, C.
+We can also turn this around.
+So maybe,
+just to illustrate the difference here,
+maybe the join on C happens earlier
+and then the join on B happens last,
+and so the join order becomes A, C, B.
+This performs differently, right,
+because you basically filter things out
+earlier or later depending on a join order.
+This ultimately drives a couple of things.
+So, for example, join order can influence
+which scan methods get used.
+We'll talk about parameterized
+index scans in a moment.
+Join order itself also can just, by virtue of,
+you know,
+eliminating information earlier or later,
+influence the performance of a query plan.
+And then join methods,
+like whether you have a nested loop join,
+a hash join, or a merge join, also, again,
+you know, are a choice
+the planner makes and are influenced
+by the join order and the scan methods, right?
+So all of these are kind of interdependent
+with each other.
+One of the things you can do,
+and we've done some kind of
+prototyping around this ourselves at pganalyze,
+is you can detect the join order in captured EXPLAINs.
+So imagine you use auto_explain,
+you're looking at all the slow execution outliers,
+you can actually analyze
+which join order is being used by your queries.
+And so the one thing that surprised me
+when we did this
+is that it actually does change for the
+same query, right?
+So you might think Postgres
+chooses one join order and keeps it,
+but the reality is
+that depending on the input parameters,
+Postgres will use different join orders
+because it thinks that
+maybe the data being returned from one part of
+the join is going to be less in one case.
+And so mapping this out can be useful for
+highly frequent changing queries, basically.
+The other thing to...
+think about is
+how can we filter on particular parts, right?
+So here in this query, we have a sequential scan,
+and you can see that in this case
+we have a hash join, and so the hash join is
+the one that basically does the merging
+of the two, and the filtering happens on t2.
+There's no filtering when we load the data,
+it's really when we join the data that we filter.
+Now, the most important thing to think about here
+is that we might have what we call
+a parameterized index scan,
+where basically, here's a nested loop, and
+parameterized index scans require nested loops.
+And basically what happens is that you first load
+the data from the one table, and then each of
+the result outputs from, in this case, t1,
+gets passed to the index scan on the second table.
+And so this means that, for example,
+when our query says,
+load from table 1 and also load from table 2,
+and then match up the table 1 ID with the table 2 ID.
+Postgres doesn't know what the value
+is it's searching for,
+and so the choices you have
+here are basically very limited, right?
+But if you have an index, in this case, on t1 ID,
+on that second table that you want to use,
+you have to first know
+the values you're looking for.
+And so it's going to get the values
+first from the first table,
+and then put them into the second table
+to basically locate
+the actual rows.
+Another way of putting this, right, is like,
+these are basically the same query,
+just two different plans.
+Here you have a hash join,
+and then if you have no index scan
+that's usable without the value being known,
+then you basically either have to hash join
+a sequential scan on the left side here,
+or you have a nested loop join
+with an index scan on the right side.
+And the index scan uses this parameterized index
+scan, parameterized because it inputs
+the values from the other table.
+Parameterized index scans
+must be on the other side of the nested loop.
+So this is where a join order comes back, right?
+If we have a bad join order,
+we're not going to get this.
+Now, let's think a little bit more about
+how we can guide the planner to the right plan.
+So when we think about query being slow, right?
+We formed a thesis,
+we understood kind of the costing,
+what's going on, the join order, like,
+we looked at all these attributes.
+Now we're trying to say,
+what can we try to improve this, right?
+How can we actually get to a better plan?
+One of the things I like to do
+is trying to force a good plan,
+and then seeing why Postgres chose a bad plan.
+So one way you can think about
+this is you have this query, right?
+The planner produces,
+for a particular value, a good plan.
+But then there's also always a bad plan,
+ultimately, right? The bad plan has a cost.
+And what you're hoping for with a cost-based
+estimate by a planner is that
+the estimate models, the reality, meaning the bad plan
+doesn't get chosen because it has a higher cost.
+Now, what can happen, right, is like
+you might have different input values.
+So in this case, they might have
+different object_id that you were looking for.
+And so the bad plan gets chosen
+because the cost is different, right?
+And so even though basically it's the bad plan,
+because of the input value having different selectivity
+we're getting the bad plan
+because there's lower cost, right?
+So again, this case, bad plan has cost 300,
+the good plans cost 500.
+Postgres doesn't know ahead of time
+which plan is going to be better.
+And so it chooses the worse plan, basically.
+So one of the things we can do to improve
+the situation is we can turn off planner features.
+So planner features
+are, for example, sequential scans.
+So let's say we get a bad plan that's a sequential
+scan and a good plan that's an index scan.
+Well, we can say “SET enable_seqscan = off”,
+which means Postgres
+basically makes the sequential scan
+extremely expensive in old versions.
+Or in Postgres 18, this is changed
+with an explicit disabled plan nodes setting.
+So it's just visualized a little bit differently.
+But the fact remains the same.
+If the sequential scan is the only viable option,
+it will still give you a sequential scan.
+It's just extremely unlikely to do that
+if there's any other way
+to basically give you a query plan.
+Now, in this case,
+what we see, right, is like we get the good plan.
+And most importantly,
+we know that the good plan has a cost of 500.
+So once we have the right plan, we can
+then look at the right plan with the wrong costs.
+We can find out where our mis-estimate
+is happening.
+For example, another thing you can try
+is if you're seeing your hash
+or merge join being used,
+but you wanted to use nested loop,
+you could turn off merge and hash joins
+and see what the nested loop plan looks like.
+Now, sometimes this works really well,
+and sometimes it doesn't work well.
+And where it doesn't work
+well is when you have complex queries
+where maybe you want to turn off nested loops
+for one part of the query plan,
+but you want to keep nested loops
+for another part of the query plan.
+And so for this, we can use pg_hint_plan.
+So pg_hint_plan basically lets us specify specific
+parts of the query to be done differently.
+So here, for example, we have a bad plan with a
+particular join order that we don't think is good.
+And so we can,
+we also know that there's another plan
+that worked better.
+And so what we can do is
+when we look at the good plan, basically,
+we come up with an idea
+of how exactly to force the order.
+And in pg_hint_plan, look it up.
+It's going to take a long time
+to explain all the details,
+but basically, pg_hint_plan has things like,
+for this table, use this index.
+For joining these other tables, use this order.
+So it's basically prescriptive
+about how the planner should do things.
+And so in this case, now we know that the
+good plan, for example, had a cost of 1.4 million.
+The bad plan, in this case,
+without the Memoize function,
+had 14 million cost,
+so that actually would have been fine.
+It would have been worse.
+But because of the Memoize feature in Postgres,
+the bad plan was chosen because the bad plan
+had a cost of 900,000 instead of 1.4 million.
+And so now you know that, okay,
+what happened was Memoize made that difference,
+basically, between those plans.
+So to summarize, there's basically 6 ways
+to guide the Postgres planner that I can
+think of right now
+that I would like to give you on your journey.
+First of all, if you have simple scan
+selectivity issues, so if you
+have a problem where the Postgres planner
+gives you the wrong row count,
+look into using CREATE STATISTICS.
+CREATE STATISTICS collects additional information.
+This doesn't work for cross-table situations,
+but it works well if you have these
+functional dependency issues.
+If you have join selectivity problems,
+increase your statistics target
+to increase the number of most common values
+to help the join improve selectivity.
+Sometimes with join selectivity,
+you can also force materialization,
+which is another technique
+I sometimes like to use.
+Reviewing cost settings can help.
+So as I mentioned, these Postgres settings,
+like random_page_cost, sequential scan costs,
+they do significantly influence
+what the planner does.
+And so, again, one common problem might be that,
+for example, random_page_cost
+is still set to 4 by default, and so
+random_page_cost being high means that you
+get certain indexes being used versus others.
+Like there's lots of details to this,
+but basically reviewing those settings
+and sometimes lowering
+random_page_cost in particular can make sense.
+Sometimes,
+and we didn't talk much about this today, but
+it makes sense to understand
+what particular biases the planner has. So
+one common situation
+I've encountered is ORDER BY limit.
+And so sometimes that causes a bad query plan,
+and so creating multi-column indexes
+in the right way is a good thing to think about.
+As mentioned,
+materialization is a way to fix things.
+So if you don't want to use a planner hint,
+which you shouldn't,
+if you can avoid it, using the materialized
+keywords for CTEs lets you control
+which part gets loaded first in Postgres.
+So that's kind of a neat hack sometimes.
+And then one trick
+that I would give on the journey
+for anybody who runs a multi-tenant app,
+where you have different customers,
+but they're all in the same database, right?
+So you have a shared kind of table
+for all the customers.
+It makes sense
+to basically give more of your tables
+a customer ID identifier or something
+that basically identifies the tenant,
+and then adding explicit clauses
+and duplicative clauses to your query plans.
+That seems a little bit nonsensical,
+but the reason you do it
+is that the planner basically has more choice
+in terms of query plans, because it's not forced
+to use a parameterized index scan.
+And as a kind of overarching principle,
+I would say choosing better statistics
+or rewriting queries is always better
+than choosing planner hints, right?
+So planner hints
+really should be a method of last resort.
+pg_hint_plan works.
+Some people use it in production,
+but it is not efficient.
+It causes overhead on each query we're using it.
+And so I would only use it
+if you have no other way of fixing a query.
+And that's basically it, right?
+So query plan optimization isn't
+magic necessarily, right?
+It is, in a sense,
+a deterministic process that Postgres does.
+And so I'd really encourage you
+to basically experiment,
+try to get a better mental model
+of how Postgres comes up with these query plans.
+And if you're interested, pganalyze helps
+you make these things easier.
+But I do think that there's a lot of things
+you can do just with psql shell or pgAdmin
+and just running EXPLAIN and having
+a good mental model of how row estimations work.
+I'm looking forward to talking more about this.
+If you want to reach out to me,
+feel free to email me, lukas@pganalyze.com.
+I'm always happy to talk about
+how to optimize Postgres queries.
+Thank you.

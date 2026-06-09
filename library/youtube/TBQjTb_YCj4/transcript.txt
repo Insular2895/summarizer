@@ -1,0 +1,88 @@
+[Music]
+hi this is Jeff quiet from de dogs
+technical solutions team and today I'll
+be sharing with you a tip on how to use
+the de dog command-line interface on
+kubernetes to perform some basic tasks
+including how to check the status of the
+agent how to start and stop the agent
+and how to send a flare to support when
+you require more assistance assuming
+you've installed the agent using the
+instructions on the agent installation
+page the agent should be up and running
+on all of your nodes I've installed the
+agent using the helm chart but the
+daemon set or operator approaches are
+also fine let's check locate the agent
+commands document and the corresponding
+command for kubernetes then open up a
+terminal window on the host rain the de
+dog agent and run the status command on
+that pod
+so here I'm at the terminal window and
+I'm just gonna run that keep CTL get
+pods command to see that the day dog
+agent is running then I'm gonna grab
+that pod name here and around keep CTL
+exec IT pod name and then run that agent
+status command and what this is going to
+do is show me all the details related to
+the day dog agent and so if I scroll up
+to the top I can see the version of the
+agent that is running I can see any
+configuration files and the paths for
+those I can see the host and the host
+name how I'll appear on the web UI I can
+see any of the out-of-the-box checks as
+well as any custom checks that I
+currently have running and the
+out-of-the-box checks are gonna give you
+your system level metrics such as CPU
+utilization disk space file i/o etc for
+both your house and pods and then down
+further I can see whether or not our
+logs agent is enabled or whether or not
+we are collecting any custom metrics
+through our doc stats de extension so
+now that we've seen the agents current
+status let's enable the logs in the
+event collection and restart the agent
+see the change take effect we'll open up
+the de dog values um we'll file in a
+text editor here I'm going to use the I
+but any text editor will do now I'm just
+going to enable the log section true
+container collect all set that to true
+and then for event collection we're also
+going to set these parameters here to
+true
+and I'll uncomment these
+now we're just going to save the file
+and then before using helm we're going
+to upgrade the helm chart if you are
+using a daemon set you'll just apply
+these changes to your pod finally if we
+need assistance from data support team
+they may ask us to run a flare to help
+them troubleshoot a flare is a
+compressed copy of our configuration
+files and agent logs to run this command
+simply type agent flare from within that
+pod so here I'm gonna run that command
+you'll see I'll be asked for my de dog
+email address so I'll type that in here
+and then I'll be asked for confirmation
+to upload the flare to the de dog
+support team if you are not already
+speaking with an engineer a ticket will
+be created in our support system and a
+support engineer will reach out to you
+for more context I will type no here so
+we do not alert the support team the
+data agent command-line interface offers
+many other commands as well which you
+can check out using the help command I
+hope this video has been helpful for
+more tips and tricks please subscribe to
+our Channel Thanks

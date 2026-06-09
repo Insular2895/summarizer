@@ -1,0 +1,1041 @@
+[Music]
+this is the memo by Howard
+marks lessons from Silicon Valley
+[Music]
+Bank this isn't going to be another
+history of the Meltdown of Silicon
+Valley Bank dozens of those have
+appeared in my inbox over the past month
+as I'm sure they have in yours thus
+rather than merely recount the
+development
+I'm going to discuss their
+significance my sense is that the
+significance of the failure of svb and
+Signature Bank is less that it prends
+additional bank failures and more that
+it may amplify pre-existing weariness
+among investors and lenders leading to
+further credit tightening and additional
+pain across a range of Industries and
+sectors oneoff or a harbinger of things
+to
+come a number of things about SV B made
+it somewhat of a special case which
+means it probably won't turn out to be
+the first of many the bank's business
+was heavily concentrated in a single
+sector Venture capital-backed startups
+in Tech and Healthcare and a single
+region Northern
+California many Regional Banks
+businesses are similarly concentrated
+but not usually in sectors and regions
+that are both highly
+volatile the Boom in its sector and
+region caused svb's business business to
+grow very rapidly in recent years
+startups were a major destination for
+investors cash a good deal of which they
+deposited at
+svb this caused svb's deposits to Triple
+from $62 billion at the end of 2019 to
+$189 billion at the end of
+2021 for the same reason many of svb's
+clients had so much Capital that they
+had little need to borrow as deposits
+piled up at svb there wasn't offsetting
+demand for loans few other banks have
+customers with similar cash inflows and
+consequently so little need to borrow
+money because svb had few traditional
+banking uses for the cash that piled up
+it instead invested $91 billion in
+treasury bonds and US government agency
+mortgage back Securities between 2020
+and
+2021 this brought svb's Investments to
+roughly half its total assets
+at the average bank that figure is about
+one
+quarter presumably to maximize yield and
+thus the bank's earnings in what was a
+low return environment svb bought
+Securities with long dated maturities
+svb designated these Securities as hold
+to maturity HTM assets meaning they
+wouldn't be marked to Market on the
+bank's balance sheet since it had no
+intention of selling
+them when the federal reserve embarked
+on its program of interest rate
+increases last year bond prices fell
+rapidly and of course the longer the
+tener of the bonds the greater the
+decline in value in short order the
+market value of svb's bond Holdings was
+down $21
+billion word of the bank's losses caused
+depositors to start withdrawing their
+money to meet the withdrawals svb had to
+sell bonds consequently the bonds could
+no longer be considered a H TM instead
+they had to be categorized as available
+for sale AFS meaning a the bonds were
+marked down on svb's financial
+statements and B actual sales caused the
+losses to be
+crystallized the recognized losses
+helped hasten the spread of negative
+rumors throughout the tight-knit Venture
+Capital Community which led to further
+withdrawals an unusually large
+percentage of svb's deposits 90 4%
+exceeded
+$250,000 and thus weren't fully insured
+by the
+FDIC this meant they were more
+institutional than
+retail additionally svb's customers were
+highly interconnected they had many
+backers in common lived and worked near
+each other and could exchange
+information almost instantaneously
+through social media the sum of the
+above rendered svb particularly
+vulnerable to a bankr run if adverse
+circumstances developed and they
+did however many of these factors were
+peculiar to svb thus I don't think svb's
+failure suggest problems are widespread
+in the US banking
+system what did svb have in common with
+other
+Banks I just talked about some things
+that distinguished svb from other Banks
+but it's as important to consider the
+elements they
+shared asset liability
+mismatch Financial mismatches are
+dangerous and banks are built on them
+deposits are banks primary source of
+funds and while some have longer terms
+most can be withdrawn on any day without
+prior notice on the other hand making
+loans represents Banks main use of funds
+and most loans have lives ranging from
+one year commercial loans up to 10 to 30
+years mortgages so while most depositors
+can demand their money back at any time
+a no banks keep enough cash on hand to
+pay back all their depositors B their
+main assets don't pay down in a short
+time frame and see if they need cash it
+can take them a long time to sell loans
+especially if they want a price close to
+par maintaining solvency requires Bank
+managements to be aware of the riskiness
+of the assets they acquire among other
+things but liquidity is a more Trent
+quality by definition no Bank can have
+enough liquidity to meet its needs if
+enough depositors ask for their money
+all at once managing these issues is a
+serious task since it's A bank's job to
+borrow short from its depositors and
+lend
+long this mismatch like most other
+mismatches is encouraged by the upward
+slope of the typical yield curve if you
+want to borrow you'll find the lowest
+interest rates at the short end of the
+curve thus you you minimize your costs
+by borrowing for a day or a month but
+you expose yourself to the risk of
+rising interest expense since you
+haven't fixed your rate for long
+similarly if you want to lend or invest
+in bonds you maximize your interest
+income by lending long but that subjects
+you to the risk of capital losses if
+interest rates rise if you follow the
+yield curves dictates you'll always
+borrow short and lend long exposing you
+to the possibility of an svb type
+mismatch High
+leverage banks operate with skinny
+Returns on assets they pay depositors or
+the FED a low rate of interest to borrow
+the funds they need to operate and they
+lend or invest those funds at slightly
+higher rates earning a modest spread but
+they literally make it up on volume they
+employ heavy leverage meaning they can
+do a lot of business based on little
+Equity capital thereby translating a low
+return on assets into a high return on
+Equity however having a high ratio of
+total assets to equity Capital means a
+modest decline in asset prices can wipe
+out A bank's Equity rendering it
+insolvent there's no source of meltdown
+in any sector as potentially toxic as
+the combination of high leverage and an
+asset liability mismatch banks have them
+both Reliance on trust
+since depositors put money in banks in
+pursuit of safety and liquidity and in
+exchange except a low return faith in
+Banks ability to meet withdrawals is
+obviously Paramount depositors
+ostensibly can get liquidity safekeeping
+and low interest from any bank that is
+one bank's offering is essentially
+undifferentiated from those of others
+thus most depositors are perfectly
+willing to change Banks if given the
+slightest reason and there's no
+offsetting reason for them to leave
+their money on deposit if A bank's
+safety is
+questioned you may be familiar with one
+of my favorite sayings never forget the
+6ft tall person who drowned crossing the
+stream that was 5 ft deep on
+average surviving on average is a
+useless concept you have to be able to
+survive all the time including no
+especially in bad times borrowing short
+to invest long powerfully threatens that
+ability being highly levered is another
+reason why metaphorically tall people
+sometimes drown in streams that are
+shallow on average and for financial
+institutions customers loss of
+confidence is a
+third the bottom line is that banks are
+essentially highly levered fixed income
+investors any long-term fixed rate loans
+or bonds they own which for most banks
+aren't a large percentage of total
+assets are subject to declines in
+economic value in a rising interest rate
+in environment Banks don't have to
+recognize price declines on assets they
+intend to hold to maturity but any bank
+that is forced to sell those assets to
+meet withdrawals would have to show the
+declines on its financial
+statements looked at this way retaining
+depositor trust is an absolutely
+essential ingredient in A bank's
+activities and that means assets
+liabilities liquidity and capital have
+to be skillfully managed in svb's case
+its Equity went up in smoke when Rising
+interest rates reduced the value of a
+good part of its
+Assets in that vein I'm going to share a
+personal anecdote when our son Andrew
+went off to college in 2005 Nancy and I
+concluded it would be great to live
+outside the United States for a while
+something neither of us had ever done we
+chose to live in the UK for four months
+of the year during which I worked in Oak
+tre's London office to generate income
+to cover our living expenses we moved
+cash to a UK bank and asked that it be
+deposited in CDs at several building
+societies what we in the US call Savings
+and Loans one of those was Northern Rock
+in September 2007 as the financial
+crisis was brewing Northern Rock had
+trouble securing the financing it needed
+in the wholesale funding Market on which
+it traditionally had depended that
+prompted depositors to queue up to close
+their accounts I called my banker on a
+Friday afternoon to ask whether I could
+move my funds elsewhere and he told me
+there would be a 2% penalty for early
+withdrawal it took me about 1 second to
+say please move those funds first thing
+Monday morning a 2% penalty sounded like
+peanuts relative to risking my entire
+principle at Northern Rock now imagine
+the thinking of svb depositors who could
+withdraw their money without any penalty
+as it happens the UK government
+guaranteed Northern rocks deposits over
+the weekend in question elimin the need
+to move the funds but that was my
+closest brush with the bank
+failure another new trend that has added
+to bank's precariousness is the
+emergence of digital Communications
+including social media 16 years ago it
+took days for Northern rocks depositors
+to become aware of its difficulties and
+when they decided to move their money
+they had to go to their Branch during
+banking hours what a quaint notion ceue
+up and submit a withdrawal request in
+svb's case word of the bond losses
+traveled quickly through unusually
+interconnected depositors who had the
+ability to request withdrawals online as
+a result more than onethird of the
+bank's deposits departed in a single day
+all banks have to contend with digital
+communication and online withdrawals
+these days but svb's depositors were
+particularly High Flight risks given the
+bank's region and the nature of its
+clientele
+about 20 years ago my partner Sheldon
+stone shared an interesting Parable
+imagine you're on a boat Crossing Lake y
+the captain comes on the loudspeaker and
+says everyone run to the left side of
+the boat a minute later he says everyone
+run to the right side and a minute after
+that he says run back to the left it
+would make for an unusually Rocky
+Crossing today the internet and social
+media are the loudspeaker which almost
+anyone can take over disseminating any
+message they choose this digital hering
+as Jillian tet of the financial times
+has labeled it can have a huge impact in
+many fields particularly those that run
+on information and
+Trust was svb's collapse
+inevitable to close the loop I'm going
+to recap the interrelated factors that
+caused svb to
+fail if the bank had made more loans
+relative to the size of its deposit base
+it wouldn't have bought as many
+potentially volatile bonds if the bonds
+the bank bought hadn't had such long
+maturities it wouldn't have been as
+exposed to price
+declines If the Fed hadn't raised
+interest rates as much as it did the
+bonds wouldn't have lost so much value
+if the depositors hadn't exited on mass
+the bank wouldn't have had to sell bonds
+and realize the losses you wouldn't
+think a portfolio consisting of bank
+loans and high quality Treasury and
+mortgage-backed bonds could be
+vulnerable to a meltdown that would
+render a bank insolvent but the scale of
+svb's bond Investments the length of the
+maturities and the extent of the fed's
+interest rate hikes put svb at risk and
+the rapidity of the withdrawals caused
+the problem to run far ahead of the
+solutions when looking at svb's demise
+the decision-making behind its Bond
+purchases stands out as particularly
+flawed and probably the primary cost of
+the bank's
+failure according to public reports svb
+management made a bet that interest
+rates would Hold Steady or fall while
+that expectation is implicit in its
+actions I find it hard to believe it was
+a conscious considered decision as
+opposed to an example of mindlessly
+chasing yield perhaps Abed by wishful
+thinking the bond purchases took place
+in 2020 and
+2021 in that 2-year period the yield on
+the 30-year treasury ranged from
+0.99% and
+2.45% how could anyone have thought
+rates that low were more likely to Hold
+Steady or fall than rise determining how
+to move forward is always challenging in
+economics and investing however when the
+fed and treasury flooded the economy
+with cash in 2020 and inflation began to
+rise in 2021 the one thing that should
+have been obvious was that there was no
+good reason to hold longdd bonds at
+pitifully low yields which presented
+profound risk and minuscule potential
+for
+return comparisons to the
+GFC svb's failure along with the
+collapse of Signature Bank the rescue of
+First Republic Bank and credit s's
+forced sale to UBS royed markets in
+March this resulted from fear of bank
+failure contagion along the lines of
+what saw during the global financial
+crisis of 2007 to 08 when Bear Sterns
+maril Lynch Leman Brothers wacovia Bank
+Washington Mutual and AIG either melted
+down or required rescues there were
+times in that span particularly in the
+last four months of 2008 when investors
+were forced to contemplate the
+possibility of an Unstoppable series of
+failures that could have endangered the
+entire Financial system nobody but wants
+to face that
+again while I want to State clearly that
+I'm not an expert on banks or their
+regulation I think the similarities
+between 2008 and 2023 are limited to the
+mere fact that in both instances
+problems existed at a few financial
+institutions I find the common elements
+mostly superficial what follows are the
+differences by far most importantly the
+GFC occurred for the simple reason that
+in investors and financial institutions
+experienced temporary insanity with
+respect to Residential
+Mortgages
+they accepted unquestioningly that
+mortgage's low default history could be
+extrapolated forced massive amounts of
+money into the mortgage Market loaned
+lots of it to subprime borrowers who
+couldn't or wouldn't document income or
+assets built tranched and levered
+mortgage back Securities using subprime
+mortgages and and in many cases invested
+their own capital in the riskiest
+tranches of the
+rmbs to enable the formation process to
+be
+repeated these parties ignored the
+possibility that excessive faith in
+mortgages and the resultant lowering of
+lending standards could precipitate
+massive numbers of mortgage defaults
+further they ignored the fragility of
+the structured Securities built out of
+those mortgages investors bankers and
+rating agents agencies which awarded AAA
+ratings to thousands of rmbs issues
+naively trusted that people who were
+willing to pay extra interest to obtain
+mortgages without disclosing their
+financial condition would repay those
+mortgages even if the prices of the
+homes they bought fell this led them to
+conclude that mortgage defaults wouldn't
+be sufficient to jeopardize the
+mortgage-backed Securities viability
+subprime mortgages were totally lacking
+in substance yet many of the world's
+leading financial institutions were
+happy to make those loans and invest in
+Securities built out of them looking at
+the current situation I can't think of
+anything that's highly analogous to the
+subprime mortgages at the heart of the
+GFC there are things here or there that
+have been overhyped or are short on
+substance some people will point to
+spaxs or cryptocurrencies but they're
+not as massive in scale perhaps not as
+lacking in substance and certainly not
+held on the balance sheets of America's
+key financial institutions in amounts
+sufficient to endanger our financial
+system indeed I think it's safe to say
+the most glaring Market excesses were
+corrected in 2022 and aren't hanging
+over us now however for a caveat please
+listen to this Memo's last few
+paragraphs in addition whereas the list
+of Institutions that disappeared during
+the GFC included some that clearly were
+systemically important I don't think
+that can be said of svb I doubt our
+financial system was highly reliant on
+promises made by svb and thus subject to
+extensive counterparty risk the GFC
+affected some truly large Banks
+household names and most people believed
+it was on the way to jeopardizing even
+bigger ones before the government
+stepped in there's no reason to think
+the failure of svb poses the same
+risk finally it should be borne in mind
+that even though huge Banks appeared to
+be endangered in 2008 the fed and other
+Economic Policy makers were able to come
+up with rescue plans for the
+institutions and for the economy and
+they
+worked in that vein it's worth noting
+that the fed's response to svb's
+problems included a guaranteeing all svb
+deposits B making additional liquidity
+available to Banks C injecting extensive
+liquidity into the economy and D letting
+its balance sheet grow even though it's
+been in the process of winding it down
+from its post-pandemic high thus I find
+it hard to believe that svb or the like
+can set up a chain reaction sufficient
+to trigger an irreversible financial
+crisis on the subject of the problem's
+scale I want to mention a new pet peeve
+of mine increasingly we hear the media
+say things like this was the best month
+in the stock market since 2020 or we saw
+more new daily lows today than on any
+day since October the media like this
+kind of dramatic sounding comparison and
+the latest is that svb is the biggest
+bank to fail since the GFC but these
+comparisons don't always mean much in
+the case of svb it should be noted that
+while this is the second biggest bank
+failure in history
+svb was only 23 the size of Washington
+Mutual the biggest further since the
+financial sector has expanded
+meaningfully in the last 15 years wamu's
+$37 billion of Assets in 2008 were much
+more significant than svb's $29 billion
+today a word on
+regulation in March 2011 in the
+aftermath of the GFC I published a memo
+called on regulation its basic thrust
+was that Financial regulation is highly
+cyclical crashes meltdowns and
+widespread misbehavior bring on calls
+for increased regulation they also make
+increased regulation pable to most
+parties but when the new regulations
+succeed and thus appear to make the
+financial environment safer and better
+functioning free marketeers and people
+with vested interests typically start to
+argue arue that such strong regulation
+is no longer necessary and that it
+restricts the financial systems
+Effectiveness for example in response to
+the great crash of 1929 massive new
+regulations were enacted between 1930
+and 1940 to constrain conduct in the
+wild wild west of Wall Street but by the
+1990s the pain of the crash was long
+forgotten and belief in the efficacy of
+the free market was riding high as a
+result multiple regulations were
+dismantled enabling conduct that
+contributed to very painful experiences
+in the
+GFC the GFC in turn inspired another
+round of Regulation one of the governing
+principles was that financial
+institutions that are too big to fail
+and thus will by necessity be bailed out
+if threatened shouldn't be permitted to
+engage in Risky activities as this
+creates a situation where heads the
+shareholders and management win tails
+the taxpayers lose that proposition
+seems reasonable on its face and was
+implemented via the dod Frank act and
+its vulker rule in general Bank
+regulation was significantly
+tightened As Time passed the normal push
+back against regulation emerged the
+aspect that's most relevant here is the
+regulatory threshold following the GFC
+all banks with assets above $50 billion
+were subject to the strictest standards
+but in 2018 Regulators were convinced to
+raise that figure to $250 billion thanks
+in part to the lobbying of svb's Chief
+Executive Officer as a result svb with
+assets around 50 billion dollars at the
+time the threshold was raised faced a
+looser regulatory regime this helped it
+expand massively until it failed in a
+matter of
+days nevertheless thanks to the post GFC
+rules the major US Banks today are well-
+capitalized and have significant
+liquidity and healthy balance sheets
+this makes it less likely that we'll see
+a GFC type round of bank
+failures I've heard it argued that
+current regulations and the resultant
+Financial condition of banks aren't
+robust enough but I believe most banks
+and especially the majors are much
+stronger than they were before and
+during the GFC and typically much
+stronger than
+svb interestingly Canada Australia and
+Britain function very well with far
+fewer Banks than the US Canada for
+example has two trillion do of GDP and
+just 34 domestic Banks 17 per1 trillion
+of GDP and it seems to get by in
+contrast in 2021 the US had
+4,236 FDIC insured commercial banks for
+its $20 trillion of GDP or 212 12 Banks
+per $1
+trillion could Regulators do a better
+job if there were fewer Banks to monitor
+we'll see what happens to the number of
+US Banks if big ones absorb smaller ones
+and deposits become concentrated in the
+bigger ones but given the role of
+private parties and their money in our
+system of government I don't expect to
+see a major
+change moral
+[Music]
+hazard one problem with government
+solution of any kind like the so-called
+greenpan put is the possibility that
+they'll generate moral hazard that is
+players will conclude that they'll be
+rescued if they make a mistake this
+suggests they can freely engage in
+highrisk high return Behavior if it
+works they'll get rich but if it fails
+they'll be bailed out people sometimes
+refer to this as privatizing profits and
+socializing
+losses on March 9th when svb was hanging
+by a thread while experiencing massive
+withdrawals people started talking about
+a possible government guarantee of all
+deposits one of the arguments against
+such a bailout was that it would create
+moral hazard if people know they'll be
+protected from losses they'll have no
+reason to examine the solidity of a bank
+before depositing money meaning the
+diligence function won't be performed
+consequently poorly run poorly
+capitalized banks will be permitted to
+stay in business and
+grow but we simply cannot expect
+depositors to perform that function
+since Banks operations are characterized
+by mismatched assets liabilities and a
+dependence on depositors trust it's
+terribly hard to assess their Financial
+Health from the outside maybe sometimes
+from the inside too since svb succumbed
+to what in retrospect seem to have been
+obvious managerial mistakes
+in the 28 years that oak tree has been
+in business we've invested in relatively
+few deposit taking financial
+institutions other than in cases where
+we've become insiders we've generally
+avoided investing in Banks because they
+complex often impenetrable Financial
+disclosures and Reliance on trust make
+them harder to evaluate than we
+like few people are capable of studying
+banks financial statements and
+determining whether they'll remain
+solvent and liquid expecting depositors
+to do so could cause banking to grind to
+a halt that's why Deposit Insurance was
+introduced during the Great Depression
+for the same reason the government's
+decision to fully guarantee svb's
+deposits was quite
+appropriate notably however management
+and shareholders weren't bailed out
+rather in today's parlament they were
+bailed in or left with their losses we
+can hope their losses will encourage
+other investors and bank managers to
+apply greater Prudence in their future
+decision making
+[Music]
+a1s while not at all related svb's
+failure gives me a chance to discuss
+another topic involving financial
+institutions that's recently been in the
+news alternative tier one bonds or
+a1s on the heels of the GFC European
+Regulators required Banks to raise new
+Equity capital year 1 capital and D
+lever however given the risks
+surrounding the banks potential
+providers of capital demanded
+inducements with at1 these came in the
+form of bond likee yields a promise of
+repayment at maturity and debt holder
+status so far so good in ubs's recent
+takeover Rescue of credit swis finma the
+Swiss bank regulator determined that a
+shareholders would receive modest
+compensation and B the holders of the
+$17 billion of at1 would get nothing
+there was an immediate outcry along with
+threats of
+litigation although at1 are clothed as
+debt Securities it seems finma had the
+power to alter the at-1 priority
+relative to the shareholders and even
+eliminate their value in this case they
+chose to put the at- ons behind the
+shareholders wiping out investors who
+thought thought they were creditors as
+Bloomberg noted on March 23rd this
+shouldn't have come as a
+surprise a prospectus for the credit s
+a1s highlights from the very first page
+the possibility of a Wipeout when there
+is what's known as a write down event in
+this scenario interest on the notes
+would stop acre and the full outstanding
+amount of the bonds would be
+automatically and permanently written
+down to zero finma has the power to
+decide that a type of write down event
+known as a viability event has occurred
+if A bank's efforts to improve Capital
+adequacy are inadequate or unfeasible or
+if there is extraordinary public support
+to avoid a bankruptcy insolvency or halt
+to regular
+business Bloomberg's Matt LaVine
+explained how this worked in credit s's
+case if the bank's common Equity tier
+one Capital ratio a measure of its
+regulatory capital Falls below 7% then
+the at-1 is written down to zero it
+never needs to be paid back it just goes
+away
+completely these Securities are
+basically a trick to investors they seem
+like bonds they pay interest get paid
+back in 5 years feel pretty safe to
+Regulators they seem like Equity if the
+bank runs into trouble it can raise
+Capital by zeroing the
+at1 if investors think they are bonds
+and Regulators think they are Equity
+somebody is wrong the investors are
+wrong in particular investors seem to
+think that at1 are senior to equity and
+that the common stock needs to go to
+zero before the a1s suffer any losses
+but this is not quite right you can tell
+because the whole point of the at1 is
+that they go to zero if the common
+Equity Tier 1 Capital ratio Falls below
+7% % Bloomberg opinion money stuff March
+20th
+2023 were the investors misled to me the
+answer is no in this regard let's
+consider the way the perspectus for one
+such credit s issuance A2 billion US
+7.5% at1 issued in 2018 was labeled per
+Matt
+LaVine
+7.5% Perpetual Tier 1 contingent write
+down Capital notes there shouldn't have
+been much doubt about their riskiness
+when write down Capital notes was in the
+title I once wrote of Bernie maid off
+that you can say you did thorough due
+diligence or you can say he passed the
+test but you can't say you did thorough
+due diligence and he passed the test
+likewise in the case of credit s's -1s
+you can say you read and understood the
+prospectus or you can say you thought
+they were like ordinary debt Securities
+but you can't say
+both maybe there's a third path maybe
+you could say I knew The Regulators had
+the power to zero me out but I didn't
+think they ever would it seems to me
+that if people can take value from you
+legally and especially if doing so isn't
+unambiguously immoral you shouldn't be
+surprised if they
+do holders of high yield bonds have for
+many years dealt with an analogous
+phenomenon called event risk which
+refers to actions undertaken by company
+management for the purpose of
+transferring value from Bond holders to
+stockholders in the case of credit s The
+Regulators likely gained the cooperation
+of shareholders by paying them a few
+Franks per share while wiping out the
+at-1 under the circumstances that
+shouldn't have come as a complete
+surprise it's all part of protecting
+Banks which as just stated are risky by
+Nature psychological ramifications of
+the svb
+collapse as I previously mentioned I
+don't view svb Signature Bank First
+Republic and credit swis as having been
+connected other than by the fact that
+they were in the same general line of
+work that did give them one thing in
+common since they're all financial
+institutions events involving them can
+broadly impact depositors and investors
+confidence or lack thereof people seem
+to have trouble dealing with multiple
+problems at once and the near
+simultaneous challenges at four Banks
+caused people to string them all
+together like beads crafting a narrative
+that included a potential systemic
+meltdown while they don't seem to me to
+be connected in tangible ways the for
+bank's recent crises certainly had the
+power to shake things up and when
+participants in the economy or Market
+are shaken up the implications can be
+serious as President Franklin D
+Roosevelt said in his 1933 inaugural
+address during the Great Depression the
+only thing we have to fear is fear
+itself things don't have to be connected
+physically or even economically in the
+markets a series of scary events can
+have a very powerful
+impact the credit crisis during which my
+partners and I have invested over the
+last 38 years generally have resulted
+from some combination of a negative
+economic developments B excesses in the
+markets C adverse exogenous events and D
+Rising fear among investors and finance
+industry
+professionals the failures of svb and
+the other Banks likely aren't enough to
+bring on a credit crisis but they could
+contribute to one as a result it seems
+inescapable that some Financial
+institutions will reduce the amount of
+credit they make available causing some
+borrowers to be left out in particular
+svb's failure could mean the startup
+world will have a tougher time getting
+financing in the months
+ahead Regional and Community Banks are
+likely to undergo increased scrutiny and
+experience deposit flight as cash flows
+to money market funds and larger banks
+are perceived to be safer their
+importance as the main financers of real
+estate makes it likely that the going
+will get tougher for property owners and
+developers just as Office Buildings
+brick and mortar retail and perhaps even
+multif family are coming under pressure
+in many
+regions combined developments like these
+with the reality that a interest rates
+are no longer declining or near zero B
+the FED can't be as accommodative as it
+was in the last few crises because of
+today's elevated inflation and C
+negative developments are popping up in
+portfolios
+and I think the case made in my previous
+memo C change December 2022 has been
+bolstered the Easy Money environment of
+the last few years has been blamed for
+among other things the difficulties at
+svb and its peers their failure is
+likely to bring stricter scrutiny to
+banking meaning things are unlikely to
+be as easy in the period ahead and to
+paraphrase Warren Buffett now that the
+tide has gone out a bit we've CAU a a
+glimpse of some who were swimming naked
+near shore the remaining questions are
+how many more are out there and will the
+tide go out far enough to expose
+them when investors think things are
+flawless optimism rides high and good
+buys can be hard to find but when
+psychology swings in the direction of
+hopelessness it becomes reasonable to
+believe that bargain hunters and
+providers of capital will be holding the
+better cards and will have opportunities
+for better
+returns we consider the Meltdown of svb
+an early step in that
+[Music]
+direction while I don't foresee
+widespread contagion either
+psychological or financial arising from
+the svb failure alone I can't end a memo
+on US Banks without mentioning one of
+the biggest worries they face today the
+possibility of problems stemming from
+loans against commercial real estate CR
+especially office building
+the following factors are influencing
+the CR sector today interest rates are
+up substantially while some borrowers
+benefit from having fixed interest rates
+roughly 40% of all CR mortgages will
+need to be refinanced by the end of
+2025 and in the case of fixed rate loans
+presumably at higher rates higher
+interest rates call for higher demanded
+capitalization rates the ratio of a
+property's net operating income to its
+price which will cause most real estate
+prices to
+fall the possibility of a recession
+bodess ill for rental rates and
+occupancy and thus for landlord's
+income credit is likely to be generally
+less available in the coming year or so
+the concept of people occupying desks in
+Office Buildings 5 days a week is in
+question threatening landlord's
+underlying business model while workers
+may spend more time in the office in the
+future no one knows what occupancy
+levels lenders will assume in their
+refinancing
+calculations total US Bank assets exceed
+$23
+trillion Banks collectively are the
+biggest real estate lenders and while we
+only have rough ranges for the data
+they're estimated to hold about 40% of
+the $4.5 trillion of CR mortgages
+outstanding or around $1.8 trillion at
+face value based on these estimates CR
+loans represent approximately 8 to 9% of
+the average bank's assets a percentage
+that is significant but not overwhelming
+total exposure to CR may be higher
+however as any investments in commercial
+mortgage Bank Securities have to be
+considered in addition to Banks Holdings
+of direct CR
+loans however CR loans aren't spread
+evenly among Banks some banks
+concentrate on parts of the country
+country where real estate markets were
+hotter and thus could see bigger
+percentage declines some loaned against
+lower quality properties which is where
+the biggest problems are likely to show
+up some provided mortgages at higher
+loan to value ratios and some have a
+higher percentage of their Assets in CR
+loans to this latter point a recent
+report from Bank of America indicates
+that average CR loan exposure is just
+4.5% of total assets at banks with more
+than $250 billion of assets while it's
+11.4% at banks with less than $250
+billion of
+assets since banks are so highly levered
+with Collective Equity capital of just
+2.2 trillion roughly 9% of total assets
+the estimated amount the average bank
+has in C loans is equal to approximately
+100% of its capital thus losses on C e
+mortgages in the average loan book could
+wipe out an equivalent percentage of the
+average bank's Capital leaving the bank
+under
+capitalized as the BFA report notes the
+average large bank has 50% of its
+risk-based capital in C loans while for
+smaller banks that figure is
+167% notable defaults on office building
+mortgages and other CR loans are highly
+likely to occur some already have but
+that doesn't necessarily mean the banks
+involved will suffer losses if loans
+were made at reasonable LTV ratios there
+could be enough owner Equity beneath
+each mortgage to absorb losses before
+the bank's loans are jeopardized further
+mortgage defaults generally don't signal
+the end of the story but rather the
+beginning of negotiations between
+lenders and landlords in many cases the
+result is likely to be extension of the
+loan on restructured
+terms no one knows whether banks will
+suffer losses on their commercial real
+estate loans or what the magnitude will
+be but we're very likely to see mortgage
+defaults in the headlines and at a
+minimum this may spook lenders throw
+sand into the gears of the financing and
+refinancing processes and further
+contribute to a sense of heightened risk
+developments along these lines certainly
+have the potential to add to whatever
+additional stress materializes in the
+months
+ahead April 17th
+2023 thank you for listening to the memo
+by Howard marks to hear more episodes be
+sure to subscribe wherever you listen to
+[Music]
+podcasts this podcast expresses the
+views of the author as of the date
+indicated and such views are subject to
+change without notice oak tree has no no
+Duty or obligation to update the
+information contained herein further oak
+tree makes no representation and it
+should not be assumed that past
+investment performance is an indication
+of future results moreover wherever
+there is a potential for profit there is
+also the possibility of loss this
+podcast is being made available for
+educational purposes only and should not
+be used for any other purpose the
+information contained herein does not
+constitute and should not be construed
+as an offering of advisory services or
+an offer to sell or solicitation to buy
+any Securities or related financial
+instruments in any jurisdiction certain
+information contained herein concerning
+economic Trends and performances based
+on or derived from information provided
+by independent thirdparty sources oak
+tree Capital Management LP oak tree
+believes that the sources from which
+such information has been obtained are
+reliable however it cannot guarantee the
+accuracy of such information and has not
+independently verified the accuracy or
+completeness of such information or the
+assumptions on which such information is
+based
+this podcast including the information
+contained herein may not be copied
+reproduced republished or posted in
+whole or in part in any form without the
+prior written consent of oak
+tree audiation

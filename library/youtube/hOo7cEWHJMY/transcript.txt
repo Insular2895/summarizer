@@ -1,0 +1,135 @@
+[Music]
+hi
+this is malo from the solutions team at
+datadog today i would like to speak to
+you about a very important subject
+introduced by aws
+based on the vast experience of aws with
+customers moving to cloud or even
+burning cloud
+aws introduced some guidelines in a
+framework called
+aws well architected framework
+this framework is built around five
+pillars security
+reliability performance efficiency cost
+optimization
+and operational excellence each player
+has a significant value
+and they definitely complete each other
+so for example
+operational excellence is the ability to
+run
+and monitor systems to deliver business
+value
+and in the same time to keep improving
+the processes and procedures
+real ability it's how to make sure that
+your systems are resilient to failure
+so the ability of a system to recover
+automatically
+from any infrastructure or service
+disruptions
+performance efficiency the ability to
+use computing resource efficiently
+to meet some requirements and also
+leveraging new technologies
+security while delivering the business
+value needed
+how to make sure that you are protecting
+not only your information
+but also your system and your assets
+finally cost optimization how to deliver
+the same business value with the lowest
+possible cost so
+when looking in general a diagram of
+your technical stack
+the main question will always be is my
+stack
+well architected or not well
+detroit can help you answer this
+question
+so beside alerts dashboards
+can be a great resource to help
+monitoring the five pills
+here is an example of a dashboard which
+represents
+the main metrics to monitor to help
+achieving a well architected framework
+starting by the operation excellence
+pillar
+so monitoring your builds and
+deployments
+is essential from the total number of
+bills
+to more in-depth numbers about
+successful and failed bills
+and the average build and deployment
+times
+on the top of that it is crucial to have
+the eyes on the health checks
+of your whole stack in one place
+moving to the real ability pillar
+understanding your workload the services
+quotas
+your data life cycle and also trying to
+avoid single points of failure
+will help you achieve a full tolerance
+system
+which will also be resilient to failure
+so available resources auto autoscaling
+a disaster recovery plan will be your
+best companion here
+there is also the notion of rto and rpo
+to take into account
+heading to the performance pillar it's
+not only the system performance
+which is crucial but also your
+application performance
+and the network performance as well
+which can be the root cause of several
+performance failures
+data dogs application and network
+performance monitoring
+will be an added value here to help you
+monitoring the performance
+of your application and your network
+for instance monitoring the total number
+of errors
+the latency the hit rate will be a good
+indicator on
+how well your stack is performing
+moving to a very very important pillar
+security
+most of the engineers will focus on
+securing the data
+but what about the infrastructure
+resources
+outside the data and the application
+security it is mandatory
+to have the eyes on the infra security
+the security feature of datadog can help
+you monitoring that
+out of the box not to forget about
+monitoring those authentication
+events to finalize
+with the cost optimization pillar
+you should understand where you are
+spending most of your money
+on which services and if you are using
+all these resources or not
+should i use smaller ec2 instances
+can i move some workload to lambda maybe
+i will need to add some
+s3 life cycles to move some data to
+glacier
+also trusted advisor from aws will run
+some checks for you
+and you can monitor all the above with
+data dog
+as a conclusion datadog is able to
+collect loads of information
+which will help you achieve a well
+architected framework
+thanks for listening and see you next
+time

@@ -1,0 +1,130 @@
+hello this is et solutions engineer with
+data dog here with a quick video to show
+you how to configure a custom check on
+your data dog agent which can be
+deployed anywhere in my case a raspberry
+pi so the main ingredients are the
+raspberry pi 2 files that need to be
+configured as you can see here you can
+get the information from our
+documentation site writing a custom
+agent check there will be two files I'll
+show you you need to create place into
+your data log agent directory and then
+the third item is a utility that will
+check the network speeds from wherever
+the agent is installed back out through
+your service provider to give you an
+idea of the network speeds on the device
+so with that we will connect in to a
+Raspberry Pi that by the way is one of
+the latest versions using one of the
+latest CPU processors AR m 64 and
+actually image with an Ubuntu operating
+system for the Raspberry Pi you can see
+here it's a Raspberry Pi and running an
+arm 64 processor so the data dog agent
+can monitor many things we are going to
+create a custom check the location of
+the data dog agent will be Etsy data dog
+in here will be two subdirectories conf
+d and checks d it's in here that we will
+place our custom files but before we
+show you that you need to first install
+a utility called speed test - CLI this
+can be installed on multiple operating
+systems available from yum from apt etc
+and the way we're going to run it is
+with a simple option
+- that simple what this will produce is
+three custom metrics the custom check
+will be run by the data dog agent every
+two minutes it will run this utility it
+will parse the three metrics that come
+out and then generate three metrics that
+go back into your account for you to use
+for any purpose for monitoring
+dashboards analytics and so as you can
+see here we have the pink speed at 7.8
+milliseconds the download speed at 70
+megabits and a pretty horrible upload
+speed which are interesting things to
+capture and track as you run this agent
+check and so with that the the idea is
+inside checks d all this is explained in
+our documentation writing a custom agent
+check there is a section here that
+explains how to write the actual check
+as well as the configuration that
+controls how often to run the check and
+so the checks dot d directory will
+include your file that will begin with
+the word custom underscore followed by
+whatever it is you're looking to do
+speed check in my case script itself
+again is copied right out of our
+documentation the relevant sections for
+me is going to be a section where we are
+telling the agent to run this custom
+check using this CLI and we simply parse
+it we get the ping speed to download the
+upload speed and we convert that into
+three custom metrics one for ping
+download and upload and notice the name
+space it's system net something that's
+already very familiar to you if you use
+data though you're gonna have a lot of
+other system net type of metrics we
+simply use the same name space and add
+it our own and so now that the script is
+there there's one other item the file
+that will tell the agent
+how often to run this check and so once
+again custom speed check and custom
+speed check dot py the Python script
+they both have the same name one is in
+camp D and the other one is in the
+checks dot d directory and so this
+particular file will tell the agent to
+run every two minutes the custom check
+so now that we've done that you can also
+double check that the agent itself is
+stable and good and running your custom
+check just like any other check you can
+go up and find the one that you just
+created here is the custom check it's
+running fine it is ok various other
+items that you can use just like any
+other check and at the end of the day
+the results go back into your account so
+in my account one of the first places to
+go confirm things is metrics Explorer or
+we can look for system dotnet you can
+see many other metrics there for the
+namespace but we care about the ones we
+created system net dot ping got upload
+and download so you can see the metrics
+coming in the last 15 minutes you can
+run this custom check with the speed
+test CLI utility installed on the system
+from any platform that runs a data log
+agent and you can see here whether it's
+a macbook or the raspberry pi look and
+feels the same and we're starting to
+track a useful set of metrics for our
+isp network speeds and finally any of
+the dashboards that you might be using
+you can enhance them simply add the
+custom metrics that you just included
+again system net ping download upload
+perhaps use anomaly detection as the
+graph is showing here and then finally
+leverage all the useful aspects of the
+Dashboard such as template variables
+scoping it right to the in this case the
+raspberry pi and as you can see here
+there's already some interesting
+anomalies being detected
+so with that happy monitoring and may
+your isp perform at its best
+you

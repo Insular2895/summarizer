@@ -1,0 +1,1324 @@
+foreign
+[Music]
+thanks for joining us today we're going
+to talk about new security services that
+exist for container threat detection on
+AWS
+my name is Scott Ward I'm a principal
+Solutions architect I work on our
+external Security Services team so this
+is a product team that is building
+Security Services that customers use to
+help them detect and monitor threats in
+their AWS environments
+in today's session we're going to focus
+exclusively on security services or new
+features within security services that
+exist to help you with security for
+container workloads and detecting
+threats uh in those container workloads
+containers have continued to grow and
+are becoming a normal feature of many
+customers production workloads they're
+using them to modernize existing
+applications or they are the foundation
+for brand new applications that
+customers built so as we work with
+customers one of the the common
+questions we get from them are or how
+should they be securing their container
+workloads that are running at AWS and
+really want to understand what are the
+best practices for securing those
+container workloads and running on AWS
+so that's going to be the complete focus
+of our of a remainder of our session
+today
+and so to start off with the first
+service feature that I'd like to talk
+about is the Amazon guard Duty
+kubernetes protection feature this is an
+extension of the overall guard Duty
+service and it's designed to allow
+customers to get more insight into
+threats that are taking place against
+their kubernetes workloads and
+specifically the their eks clusters that
+they're running on AWS
+so to start off with just a quick
+overview of guard Duty as a whole guard
+duty is there to help you identify uh
+malicious or anomalous uh or or
+potentially compromised Behavior that's
+happening against your accounts guard
+duty is a one-click uh service one
+button one click you can turn that
+service on or or one API call it allows
+you to easily get up and running guard
+Duty takes care of all the heavy lifting
+of integrating all of the various log
+sources that it needs to be able to
+detect threats you don't have to worry
+about turning those log sources on you
+just start using them and and through
+that integration guard duty is
+continuously analyzing these log sources
+and is able to produce uh threat
+detection across various spaces which
+include Amazon S3
+your ec2 instance workloads your AWS
+accounts and the users within those
+accounts uh and then with uh with the
+the new kubernetes protection we can
+also identify threats against container
+workloads
+those are those threats are identified
+in a couple different ways one is
+through anomaly detection using machine
+learning algorithms uh as well as thread
+intelligence that is integrated into the
+guard Duty product and that's based on
+internal threat research that AWS is
+doing as well as threat information from
+our third-party Partners in crop strike
+at fruit point
+and
+guard Duty once it identifies threats
+it's producing detailed findings that
+you could look at in the car duty
+console or you can integrate into you
+know amazon security Hub or even just
+consume through uh an event-based
+approach with Amazon event Bridge which
+allows you to take action against these
+findings and integrate them into
+whatever operational workflows you have
+uh that when you want to go in and
+remediate or investigate threats uh in
+your environment
+so let's talk specifically about the
+kubernetes protection feature and what
+it does so the kubernetes feature is
+focused on control plane uh activity and
+is using the kubernetes audit logs
+feature so with every kubernetes cluster
+that gets launched there is a central
+control plane API that is used to query
+the configuration of a kubernetes
+cluster or manipulate the configuration
+of that cluster or even the objects that
+exists within that cluster and so you
+can learn a lot about a cluster you
+could control that cluster and even
+components within a cluster will
+actually interact through this control
+plane API so it's a very powerful API
+customers use the cube cuddle CLI to
+interact with this or or even just
+standard rest calls are used to interact
+with this API and because of the power
+of this API it's really important to
+understand
+what's happening when uh with the API
+calls that are made to make sure that
+they are legitimate uh and that you can
+uh better understand what's happening
+with your cluster from an operational a
+security uh and a compliance perspective
+and so the audit logs feature of
+kubernetes uh is intended to help give
+that visibility and so these provide uh
+a time-based view of all the API
+interactions happening against your
+kubernetes cluster giving information
+around what happened uh when did it
+happen who did it uh who initiated it
+what were they trying to do were they
+successful on which resource did that
+happen against I look at this as uh
+cloudtrail for kubernetes it's giving
+you that that control plane visibility
+around the configuration of your overall
+cluster and so we use this uh as a
+foundation for being able to do our
+kubernetes protection uh and threat
+detections uh within guard Duty
+so what now that we know what Guardian
+is using and and what that is
+um based on with the kubernetes audit
+logs let's talk a little bit about what
+guard duty is detecting and giving you
+information into
+and there's three main buckets that
+guard duty is using uh the kubernetes
+auto logs to create uh threat detections
+from the the first area is around policy
+so this is really around the
+configuration of your kubernetes cluster
+and where you might uh have exposure uh
+with the way that the customer is
+configured so it could be that the your
+your kubernetes cluster dashboard is
+exposed publicly uh it could be that
+Anonymous access is being granted uh
+into that cluster uh it could be that
+there's some default access to service
+accounts at the admin level things that
+would be you know configurable through
+the kubernetes policy or where
+somebody's being given a little bit more
+access than they need
+there's also the malicious aspect access
+aspect where a actor might be looking to
+do data Discovery learning more about
+your cluster where they might be trying
+to take data out of your cluster and it
+could be that they're trying to do that
+through a Tor exit node a known
+malicious IP address or they've got some
+sort of an anonymous access that's been
+granted to them and they successfully
+have accessed uh your kubernetes cluster
+and then there's a suspicious Behavior
+aspect where
+we're seeing a container all of a sudden
+launched with privileged uh permissions
+that is not normally observed or there
+is a kubernetes pod that is starting to
+execute system commands that are uh not
+normal uh for a kubernetes cluster or
+could be suspicious commands so we're
+trying to give you visibility around
+these three main areas and
+we're continuously analyzing your
+kubernetes audit logs in order to be
+able to accomplish this and so as you
+use the eks service car duty will
+automatically consume all those audit
+logs into the the guard Duty system if
+you're using one cluster 100 clusters it
+doesn't matter guard Duty will
+automatically consume that you don't
+need to turn on the auto logs feature of
+eks in order to make this integration
+happen I wonder if you do want to have
+the audit log information yourself you
+would need to turn that on and set a
+storage location
+so guard duty is continuously analyzing
+uh all of this data coming out of your
+eks clusters and then at the end it's
+generating findings uh using the the
+miter attack framework uh as a guideline
+so you can see the uh the different
+finding types that car duty creates
+based on eks analogs down here at the
+bottom things around uh trying to get
+exploited
+escalated privileges uh trying to do
+discovery that they have access to
+credentials or they're trying to get
+more of a persistent foothold uh inside
+of your cluster so a lot of information
+that guard Duty can give you and help
+you understand around what's going on
+with threats against your your eks
+clusters
+now I'm going to walk into a little bit
+more insight into what you get when you
+look at a guard Duty kubernetes finding
+and this is uh I've taken a couple of
+screens here to break down one overall
+finding to highlight some key details
+here enough so this first screen is just
+the overall detail around the actual
+finding type so in this case we could
+see that uh somebody has actually gotten
+successful Anonymous access uh into uh
+an eks cluster I'm going to get an
+initial overview or how to win was this
+first observed which of my my kubernetes
+clusters this actually is for in which
+region and which account uh this was uh
+was is located in as well as a quick
+overview of the particular uh threat
+that was observed
+digging a little bit deeper into the
+finding I'm going to get more
+information about the actual resource
+that was impacted so to get more details
+about the actual cluster uh the unique
+identifier which PC I have it uh
+deployed into the specific workload uh
+that was impacted and the specific
+kubernetes user that was associated with
+this particular finding
+and then I'm going to get more detail
+about the actual action that was
+observed so in this case it's a
+kubernetes Epi call so I'm going to get
+some more information around the actual
+uh parameters that were made in that API
+call the status uh and the uh you know
+the action they were taking in this case
+it was a create of creating an actual
+Cron job in my kubernetes cluster so a
+lot of detail to help you really truly
+understand what was that threat and and
+what were they trying to do or what did
+they do uh in order to raise that
+particular threat that resulted in a
+guard Duty finding
+foreign
+so after a threat's been observed you
+ultimately want to go in and remediate
+it and with the guard Duty kubernetes
+protection feature we are providing uh
+multiple areas of guidance around what
+each particular guard Duty finding type
+means and how you can go about
+intermediate those and so we are
+publicly published a couple of different
+documents this first one here are is
+part of the Guard Duty public
+documentation and so every finding type
+that guard Duty raises for kubernetes
+protection we'll have an entry uh in
+this guide that highlights What that
+particular finding type means and what
+are the steps you can take to remediate
+that those remediation steps will often
+then point to the second document which
+is the amazon eks security best
+practices this is an open source
+document that we have published that is
+really aligned with just best practices
+in general for eks when it comes to
+security and how you can go about and
+actually remediate or adjust the
+configuration of your kubernetes cluster
+to align with security best practices
+and so some things that you might find
+that are remediation guidance here are
+making that API endpoint private so if
+somebody's interacting with your
+kubernetes API in the first place uh
+just making it private so that uh you
+are limiting who can access that or if
+it needs to be public uh guiding you
+through how to actually put in the right
+white listing so that only safe
+addresses are accessing that but it
+could also be that you're reversing
+actions that were taken on the cluster
+could be guiding you on rotating
+credentials or Secrets uh for the users
+that might have been impacted here could
+be around guidance around patching or
+redeploying or terminating uh the
+resources that have been impacted by
+this threat actor so a lot of uh very
+detailed guidance that we're going to
+give you here to help you understand how
+to remediate these as you go through and
+understand these and even have to
+perform some of these remediations
+yourself I definitely recommend keeping
+track of the steps that you took and
+wherever you can of building out
+automation this could be automation to
+actually perform the entire remediation
+it could also be automated to go in and
+collect the additional details that you
+need to be able to give a thumbs up or
+thumbs down on on performing that
+particular remediation
+the other thing I would actually
+recommend on as well as you go through
+these uh these remediation steps is
+identify where you might be able to put
+some preventative measures in in the
+future so if you are having to change
+the configuration of a particular
+kubernetes cluster
+that may be something that you actually
+want all your future clusters to adopt
+as well and so pushing that
+configuration back into the definition
+of an actual kubernetes cluster and
+ensuring that that configuration is
+followed from the beginning uh through a
+deployment uh and enforcing that through
+any sort of pipeline or automated checks
+that you have around the configuration
+of a cluster before it's deployed can
+actually help you ensure that you are
+not dealing with this Remediation in the
+first place because you're enforcing the
+proper configuration from the very
+beginning
+so let's talk about where you can use
+the guard Duty kubernetes protection
+features so the the most obvious answer
+here is your production account and your
+production workloads you'd want car duty
+turned on there monitoring uh those
+resources and making sure that your your
+production environments uh are are
+protected or that you're aware of
+threats in your production environment
+but there's actually other opportunities
+here to use guard duty to ensure that
+you're getting the right level of
+visibility around kubernetes clusters
+that are being deployed throughout all
+of your environments and it might even
+actually give you Insight uh or early
+warning about threats before they ever
+make their way into production
+so first of all many customers give each
+of their developers their own sandbox
+environment their own AWS account that
+they can work with and do their
+development work and get things ready
+before they ever push things to be
+deployed uh into production and so you
+could have guard Duty uh and the
+kubernetes protection feature turned on
+in there and keep an eye on any eks
+clusters that your developers might be
+building out and give you some early
+insight into configurations that they
+might be trying to use that might be
+deemed a risk or a threat to later
+environments
+we also have customers who have
+deployment pipelines that are building
+container images and are deploying those
+container images through various
+environments uh before they actually
+make their way into production so you
+could have a deployment pipeline that is
+build a container image maybe deploying
+that into a development environment
+first to get some initial confirmation
+that the deployment works and that it's
+good you could have the guard Duty and
+the kubernetes protection feature turned
+on there to start getting some early
+Insight uh into any threats that may be
+observed you can also deploy this into
+your test environment through your
+pipeline kubernetes protection can be
+turned on there as well and then finally
+into your production environments where
+you can also have that feature turned on
+and so every one of these particular
+deployment stages you could actually be
+leveraging card duty to help you
+understand any threats that have
+happened and also for those
+non-production environments uh it would
+be an opportunity for you to actually
+pause a particular deployment if certain
+threats are being observed so you can
+remediate those and apply the
+configurations before that ever moves on
+its way into production
+and as uh I mentioned before guard duty
+is integrated with AWS organizations and
+so you have the ability to have a single
+delegated administrator account that can
+view all the guard Duty findings across
+all of your accounts and so using guard
+Duty across many different environments
+you can then actually consolidate all of
+those findings into one Central account
+in this case we have a security account
+where that security team would have
+visibility around findings that are
+happening for all these different
+environments and they'd be in a position
+to take action or reach out to the
+appropriate owners for any threats that
+are being observed
+okay
+let's move into another feature of guard
+Duty that was recently announced uh that
+has a container aware uh aspect of it
+and this is the the guard Duty malware
+protection feature
+so the guard Duty malware protection
+feature is a fully managed component of
+the Guard Duty Service uh it is focused
+on being able to detect malware within
+your AWS environment specifically it's
+focused on ec2 workloads and will
+produce malware specific findings in
+your guard Duty environment and this
+service uses a combination of
+third-party engines as well as our own
+thread intelligence and some machine
+learning to identify malicious content
+which could then be
+a Potential Threat to your uh your
+environment and the workload that's
+running on
+so
+this feature it's there to detect
+malware there's various types of malware
+that exist out there whether it be
+Trojans worms Bots cryptominers Etc
+this is focused on detecting that
+malware on your file system uh and
+presenting that as a new finding in the
+car duty service
+I mentioned before that it focuses on
+ec2 workloads this also
+uh is applicable to containers that are
+running on an ec2 instance and so this
+feature is container aware uh and it
+will be able to provide container
+specific details for uh managed features
+such as the Amazon eks and Amazon ECS or
+if you're running self-managed
+containers on an ec2 instance we can
+help report on malware for all of those
+use cases in the when you have an EBS
+volume attached to the ec2 instance that
+is running the container workloads
+and then a really key thing here about
+this particular feature is that it's
+agent list you don't have to go in and
+install any additional security software
+for this feature to to start adding
+value and to first start doing its job
+you just enable the malware protection
+feature you accept the service link role
+which gives a little extra permission to
+certain resources uh and then guard Duty
+malware protection takes over uh and
+does its work on the side so no security
+software no impact to Performance of
+your ec2 instances
+so with that in mind let's talk a little
+bit about how this particular feature
+Works uh so that you understand the
+interaction between guard Duty uh and
+your ec2 instances
+the first thing here is that if you are
+using uh
+KMS encryption to encrypt your EBS
+volumes at rest
+the service link role that you accept
+for this feature will share allow the
+guard Duty service team account
+to access a copy of that KMS key so that
+it can work with your encrypted EBS
+volumes currently the service only
+supports EBS volumes that are encrypted
+with a customer master key if you are
+using the default KMS key for EBS guard
+Duty uh malware protection will not be
+able to support those particular volumes
+if you're not using encryption at all on
+your volumes the car diddy malware
+Protection Service will actually
+temporarily encrypt that data while it's
+in the car duty service team account
+so let's take a scenario where we have a
+customer running an ec2 instance they've
+got a couple of EBS volumes attached to
+that instance and then those EVS volumes
+are encrypted at rest with a KMS key
+card Duty raises a finding uh card Duty
+uh this would be an ECT related finding
+guard Duty will perform its malware
+detection Services based on any ec2
+findings that are
+a likely related to malicious activity
+or or malware find files that might
+exist on your infrastructure and so
+there's currently 29 different guard
+Duty finding types that would trigger a
+malware scan things like Bitcoin mining
+things like communication with a a
+command and control server things like
+your ec2 instances now Port scanning uh
+other infrastructure those types of
+findings would actually trigger a
+malware scan to happen so in this case
+we have a guard Duty finding that's been
+generated against your ec2 instance
+what's going to happen here is using the
+permissions from that service link role
+the guard duty is going to create a
+snapshot for each of the EBS volumes
+that are tied to your ec2 instance and
+then is going to share that snapshot
+with the guard Duty service team account
+guard Duty will then launch in its own
+account a new compute resource and
+attach EBS volumes to that instance that
+are based on a snapshot that was shared
+with the service team account this will
+do its work to then scan uh the EBS
+volumes for malware files using the the
+techniques I talked about in the earlier
+slide
+if any malware is detected that will be
+produced in and sent into guard Duty as
+a brand new finding type
+gardeni will then delete that Snapshot
+from your uh from your account
+and we will then terminate uh the
+compute resources and the EBS volumes
+and the guard Duty service team account
+that were used to perform that malware
+scam
+so let's talk a little bit about what
+are some of the the key pieces of
+information you would get from this and
+how does that relate to containers and
+so on the left here I have a finding
+type uh on it from ec2 related that is
+indicating that the Bitcoin mining is
+being observed on a particular ec2
+instance
+uh and then I have on the right a
+finding for a detected malicious file so
+the first thing we're going to get here
+is in the bottom right here is that
+threats detected area that's going to
+highlight this is the name of the
+malware file I found and this is the
+path to that particular malware file
+we're also going to correlate to you the
+particular resource that was on in this
+case it's the ec2 instance you can see
+on the left hand side I have a Bitcoin
+mining observed on an ec2 instance and
+on the right hand side I actually have a
+malicious file that's been observed for
+a particular ec2 instance and these are
+the same ec2 instance so it's giving you
+the ability to have a stronger signal
+that you have multiple things going on
+with a particular ec2 instance that
+might warrant more of your time or
+attention to be able to investigate and
+intermediate that particular threat
+we're also going to give you uh more
+information to actually correlate those
+those findings uh in a different way so
+on each finding that is generated by
+guard Duty has a unique finding ID
+we will also in the malware related
+findings give you the trigger finding ID
+so if you are ever looking at a malware
+related finding and guard Duty you want
+to know exactly which finding
+originally triggered this malware scan
+you could use that trigger finding ID
+from the malware scan details to get to
+that whether you search through your
+findings based on that finding ID or
+just clicking on that plus symbol next
+to the trigger finding ID it would
+automatically populate the the guard
+Duty filter and bring up the other
+findings that are related to this
+particular malware finding
+and then I mentioned earlier that uh the
+malware protection feature is container
+aware so whether you're using ECS eks or
+running your own customer managed
+container workloads on ec2 will provide
+you additional detail about that
+particular resource and the containers
+that are impacted so in this example
+here I have an ECS cluster where we're
+also being able to give you the details
+about the actual cluster and the task
+and the actual containers within that
+task where we actually observed the
+malware that is on your ec2 instance so
+this gives you the ability to go and get
+exactly to the source of that malware
+and identify exactly where you're going
+to be able to take action uh both for
+remediating the initial threat but also
+about potentially some preventative
+controls around addressing how that that
+malware got into the Container in the
+first place
+okay
+next let's talk about Amazon inspector
+and some of the key features that
+inspector has that enable you to
+actually uh
+apply security and get security insight
+for your containers
+so we relaunched the Amazon inspector
+service in November of 2021 at the ews
+re invent conference an inspector is
+focused on giving you continuous
+vulnerability assessments against the
+workloads that it supports it's a
+one-click enablement you go in Click one
+button and you turn the inspector
+service on or make one API call its
+Vector is integrated with AWS
+organizations you can have full
+visibility uh from one account for
+vulnerabilities that exist in all your
+other accounts of an organization
+uh and then inspectors continuously
+scanning workloads and so today
+inspector supports uh vulnerability
+scanning for ec2 instances and container
+images that are stored in Amazon ECR and
+so inspector is continuously scanning
+these resources at any time a new
+vulnerability is identified we'll
+provide those findings in the inspector
+console as well as those findings can be
+sent to Amazon secure AWS security Hub
+or Amazon event bridge and we give you
+context around that particular
+vulnerability not only what was the
+vulnerability observed but uh which
+particular resource it is and we'll get
+into it in a minute but we'll give you a
+lot more detail about where in that
+container image we actually identified
+that particular vulnerability so you
+could go in uh and have a very
+fine-grained View and ultimately figure
+out what's your right path to
+remediating that vulnerability
+so specific to container images
+let's talk about what inspector is
+actually doing to be able to scan these
+images and and to detect and identify uh
+vulnerabilities in those images so the
+first thing that's going to happen is
+after you've you've pushed an image into
+Amazon ECR which is the elastic
+container Repository
+inspector is going to go in and pull a
+copy of that image from ECR so they can
+do its scan
+it's then going to take an extract and
+Pull Apart each layer of that image and
+it's going to look at each image on its
+own we're going to look at the operating
+system that is actually installed for
+that particular container image as well
+as all the installed packages that are
+that are part of the the normal package
+manager of that particular operating
+system
+but inspector's actually going to go
+beyond that inspector will actually look
+through the rest of the file system of
+that particular container image looking
+for other files that may have vulnerable
+software uh in them and so inspector has
+support for 10 different programming
+languages that allow it to go beyond the
+the standard package manager and look
+deeper uh into the files of your
+container image and help you identify
+where vulnerabilities might be present
+uh in other places besides the
+traditional
+installation paths
+and then we're going to take all of that
+information that's been extracted and
+we're going to compare that against our
+vulnerability database to produce uh the
+ultimate uh list of findings for a
+particular container image
+now there's a couple of key pieces of
+information I want to highlight here
+when it comes to configuration for
+inspector and its container focused uh
+vulnerability detection
+the first one is that you can for ECR
+configure the repositories that you're
+using for continuous or on push scanning
+so on push means that anytime you push a
+container image into ECR inspector will
+pull a copy of that and scan it and and
+produce any vulnerabilities that were
+found
+but you can also go for continuous if
+you'd like to have inspector every time
+it's vulnerability database is updated
+rescan your container images to see if
+there's any new vulnerabilities that are
+that are uh you know now exist in your
+images you can choose the continuous
+option and we will continue to scan your
+container images uh until the time frame
+that you've identified
+and you can also if you don't want to
+scan all of your repositories or you
+only want certain repositories scan on
+push you can use the filter option to
+narrow that down to specific
+repositories that you care about this is
+all configured within the Amazon ECR
+uh service in the private registry
+option
+we talked about the continuous scanning
+for your container images and so you
+could either choose to have your
+container images scanned rescanned
+for the lifetime that that container
+image is in ECR
+or you could choose to do just for the
+first 180 days or for the first 30 days
+that we would continuously scan that and
+so there's a lot of flexibility for
+customers here some customers they were
+placing their container images so
+frequently that they don't want that
+continuous feature because the container
+images are already out of date based on
+how active they are with with updating
+their images
+some customers prefer to have that
+visibility for a much longer period of
+time so you have a lot of flexibility
+here
+so key thing to keep in mind is that
+after you've hit that
+continuous window so if you've got the
+180 days or 30 days option configured
+what's going to happen is an inspector
+we're going to change that image status
+to inactive and we'll indicate that it's
+expired giving you very clear Insight
+that we are no longer scanning that
+particular container image
+inspector is also going to close the
+findings for that particular container
+image you'll still be able to find them
+in the inspector console but they'll
+have a status enclosed and then after 30
+days uh those closed findings are
+actually deleted entirely uh from the
+the inspector service and they're no
+longer visible to you in the console
+so when you go into the inspector
+console there's a couple of key pieces
+of information that we are going to
+surface in the actual dashboard of
+Inspector that are going to help you
+prioritize and get the right insight for
+your containers so the first one is
+we're going to give you a list of all
+the repositories that have most critical
+findings so this allows you to identify
+where you could have a significant
+impact or or where you may want to start
+your vulnerability management Journey
+for your containers we're also going to
+give you information on the actual
+container images that have the most
+critical findings and so this will also
+allow you to go out and figure out where
+you want to start your vulnerability
+management and which areas you're going
+to address first and where you might
+have the most impact to reduce your risk
+when it comes to vulnerabilities
+digging a little bit deeper we actually
+produce findings for each container
+image that has vulnerabilities and so
+this view here is for one particular
+container image giving me insight into
+uh the critical high and medium findings
+uh that were were found for this
+particular image and so the view I have
+here is the buy finding tab which is
+just listing every single vulnerability
+that was identified for this particular
+container image
+but I can also choose
+a different View and that's the by layer
+tab so if I want to see how things are
+actually impacted within the layers of
+my particular container image I can
+choose by layer it will show each layer
+and a summary of the findings that were
+observed for each layer
+and then I can actually expand each
+layer and go out and find and see the
+exact vulnerabilities in which packages
+are impacted at that particular layer so
+this could really give you insight into
+where you're going to exactly go out and
+and patch and remediate your container
+images for the vulnerabilities that you
+want to ultimately address or which are
+the most impactful to your organization
+so when it comes to remediating uh
+container findings that are identified
+by inspector there's a couple of steps
+you can take first one is just deleting
+the image from Amazon ECR will
+immediately close all the associated
+findings that exist in inspector and
+they'll be removed from the active
+findings View
+and then you go out and you do the work
+and you you patch that particular
+container image and then you publish a
+new version of that that will be treated
+as a brand new container image in ECR
+and inspector would re-pull that image
+and rescan it and produce new updates
+either reporting back new
+vulnerabilities are what the current
+vulnerability state is or reporting no
+vulnerabilities uh if you've completely
+patched and addressed every single item
+in that particular image
+so our customers
+often have automated processes in place
+or want to be able to interact with the
+vulnerability management aspect for
+their containers to be able to use that
+to influence uh if containers are
+actually deployed into production
+environments or to be able to react
+quickly when a container image is
+identified as having vulnerabilities and
+so I want to highlight what's the
+workflow a little bit more between ECR
+and inspector and then show you how you
+might incorporate this into a a
+deployment a build and deploy pipeline
+so to start off with Let's uh let's
+imagine we have an ECR uh image that's
+being pushed into ECR
+the ECR service is going to receive that
+image it's going to send a notification
+out via Amazon event Bridge that's going
+to go to the inspector service
+inspectors going to receive that event
+that uh that a new container image
+that's been pushed into ECR it's going
+to scan that image using the the
+techniques we talked about earlier and
+produce a final report and this is going
+to be the scan status event and that's
+going to be sent out to Amazon
+eventbridge and then that scan status
+event you could build rules in
+eventbridge which are looking for
+certain patterns and and route that on
+to a particular Target uh if that
+particular pattern is matched
+so key thing to keep in mind here is
+that all of these pieces up to the scan
+status event being sent to Amazon
+eventbridge are managed by AWS as soon
+as you turn on the inspector service all
+of this configuration is put into place
+uh and takes place automatically you
+just have to focus on putting the rule
+uh in place an Amazon event bridge and
+routing that to a particular Target
+so here's an example of that scan status
+event that's that's being produced by
+inspector and sent to a vet Bridge so
+there's a couple key pieces of
+information here you can see the scan
+status itself which is indicating that
+the initial scan of the container image
+is complete
+and then also you have a summary of the
+finding severity counts that were found
+in that particular container image this
+message would also contain the actual
+repository that the image was located in
+as well as the unique identifier of that
+particular image
+so this is all really important to to
+know and understand because the scanning
+that inspector does for a container
+image is asynchronous from the actual
+push of an image to ECR you can't push
+an image to ECR and immediately call
+inspector to say what are the
+vulnerabilities there's a a period of
+time that you have to wait for an
+inspector to actually pull the image and
+do the scanning in an inspector tries to
+get that done uh in just a few minutes
+but you do need to give it a a little
+bit of time to be able to produce that
+final vulnerability summary uh to use to
+actually trigger the next events that
+you might take for a particular
+container image
+so let's take an example here of a
+deployment Pipeline and so in this case
+I have it configured with AWS code
+pipeline uh it's got a source uh based
+on a code commit repository it's got a
+build stage using AWS code build we've
+got an approval step that is focused on
+assessing if the uh container has
+vulnerabilities and if with the
+thresholds uh how that looks versus
+thresholds that we've defined for
+vulnerabilities and then ultimately
+deploying the container image in the ECS
+if the no thresholds have been breached
+when it comes to vulnerabilities so we
+have a situation here where a customer
+uh has users that are they can get
+pushes in this case we're using AWS code
+commit
+code commit sends a notification to
+eventbridge that there are new pushes
+that have been made to that particular
+Repository
+the vent bridge is configured to uh have
+a Target uh of our code Pipeline and so
+when uh new pushes are made to code
+commit that will trigger the the code
+Pipeline and the source stage will
+actually reach out into the Repository
+uh and pull out the necessary files that
+are needed to perform the rest of the
+steps of the pipeline in this case it's
+going to pull the the build spec yaml
+file that's going to tell the code build
+service which commands to run as well as
+the actual Docker file that will have
+all the instructions on how to build uh
+the docker image
+and so the AWS built the build stage of
+code pipeline will then build that
+particular container image based on the
+instructions retrieved for the code
+commit repo and it will then push that
+image into Amazon ECR
+what's the builds done it will then kick
+off the uh the approval stage uh this
+approval stage will send out a message
+via Amazon SMS containing uh some key
+information around the actual code
+pipeline itself the unique uh token that
+is associated with this approval stage
+and that token will have to be sent back
+uh when setting an approve or deny as
+well as the uh Shaw uh image ID of the
+particular image that was just built by
+the code build stage
+so you can use a Lambda function
+attached to that SNS topic that will
+consume all of that information about
+the uh the container stage and the uh
+the container image the pipeline stage
+and the overall Pipeline and store those
+uh in a dynamodb table
+additionally now that we have that
+container image pushed to Amazon ECR we
+have inspector doing all its goodness
+around being able to scan that
+particular container image and report
+back on vulnerabilities
+we'll use that scan complete message
+that I had talked about earlier as a
+trigger uh in Amazon event bridge to
+then call in this case a Lambda function
+now Lambda function is going to read
+that scan status message
+look at the summary information provided
+and compare the summary of each of the
+the high critical or medium items
+against a threshold that is defined as
+an environment variable in the Lambda
+function
+and if any of those thresholds are are
+breached as far as how many findings of
+a particular type or severity uh exist
+that container image would then be
+rejected or if no uh thresholds are
+exceeded all then that container image
+would be approved and so in either case
+this Lambda function would pull the the
+key details about that particular
+pipeline from that Dynamo DB table that
+we populated earlier
+and then send the approved or reject
+message along with the uh the
+information about the stage back to the
+code pipeline service and if an approved
+message was sent
+the deploy stage would be initiated in
+that container image would actually then
+be deployed uh into an Amazon ECS
+cluster if uh the container image was
+rejected that would all be uh the
+pipeline would be uh stopped uh and have
+a uh completed uh in error status
+so this is all actually uh related to a
+blog post that will be coming up here in
+the near future that will dive deep into
+how to use inspector for this particular
+scenario it will have cloud formation
+templates as well as code samples that
+you could use to actually simulate this
+in your own environment and get a better
+sense of how you could use inspector for
+your particular processes around how you
+deploy and manage containers in your
+environment so keep an eye on the AWS
+security blog for this in the near
+future
+okay so the last service I want to talk
+about is Amazon detective and its
+support for Amazon eks and so
+detective is a uh threat hunting and
+investigation Service uh in AWS uh it's
+uh built to collect data from various
+AWS log sources and so today that is
+Amazon guard Duty Amazon cloudtrail PPC
+flow logs and now eks audit logs
+just like guard Duty detective is
+automatically consuming all of this
+information as soon as you turn on the
+detective service you don't need to
+configure any of these log sources or
+turn them on detective will
+automatically consume them for you once
+again if you do want to have the data
+available to yourself you would need to
+turn on those log sources and configure
+where the the data should be stored
+so detective is going to consume all of
+this information it is going to perform
+some automated analysis by taking that
+information and putting it into a graph
+database and establishing relationships
+around which types of resources are are
+part of any one particular log file or
+or guard Duty finding and what are the
+relationships uh to other resources from
+the same log file or or other log files
+and then ultimately uh detective is
+going to give you the ability to get
+more visual insights uh into the data
+that it's collected and allows you to
+start an investigation from a guard Duty
+finding or from scratch based on a
+particular areas that you're trying to
+look and see whether it be IAM roles IP
+addresses ec2 instances Etc allowing you
+to identify what's the root cause and if
+you actually have a security incident or
+issue going on so they could identify a
+response in a remediation approach
+so specific to detective for eks we
+talked about it suggesting the eks audit
+logs
+it's going to give you a view of what
+are your eks clusters and what are all
+the interactions that have been
+happening with that cluster over time
+and detective maintains a Year's worth
+of log data so once you turn on this
+feature detectable start consuming those
+eks audit logs and over time get you up
+to a 12-month window where you'll be
+able to see what is the activity and
+identify where some abnormal activities
+that might be happening uh from that
+time series
+guard duty is a key source of
+Investigations for Amazon detectives so
+you could take a guard Duty kubernetes
+related finding and begin your
+investigation and detect it from there
+or start your own search if you're
+trying to just identify more about
+what's going on with a particular
+cluster or a pod uh within your
+kubernetes environment
+uh we mentioned it's helping you get to
+the root cause of those issues and this
+feature is going to give you two new
+tabs when you're doing an investigation
+one is giving the actual kubernetes
+activity uh the other one is actually
+allowing you to investigate what are the
+actual kubernetes API calls that were
+made by a particular resource or or
+towards a particular resource so you can
+get a better sense of what may have
+happened or is happening against your
+kubernetes cluster
+so I've got some screenshots here to
+help articulate
+so this feature and what are some of the
+key pieces of information you can get at
+uh when investigating uh your KS
+clusters and so this first screenshot is
+really the the search screen uh of
+detective and so we're highlighting uh
+in this case we're looking for guard
+Duty findings uh we've got two findings
+here that are specific to kubernetes
+workloads coming from car duty and I can
+actually see uh I've got some successful
+Anonymous access uh against one of my
+clusters here that may be a key area
+that I actually want to investigate
+further
+clicking on and choosing any one of
+those findings from a guard Duty
+perspective will actually give me all of
+the entities that are related to that
+particular finding and that goes back to
+the the uh taking those that blog or
+finding information and putting it into
+a graph uh database so that we know over
+what are all the different areas that
+are related to that particular finding
+in this case I'm highlighting that I can
+actually see the actual eks cluster that
+that finding was for as well as the
+specific kubernetes user uh that is uh a
+part of or or or impacted by that
+particular finding clicking on C profile
+will take me to the detail page for that
+particular entity uh in the detective
+console so in this case I've chosen the
+actual eks cluster and so this is going
+to give me more details about the actual
+uh cluster in my environment as far as
+where it's deployed which network it's
+in which account it's in we'll also give
+you details about all the containers
+that we're running on that cluster
+during the time period so in the upper
+right you can see I've got a particular
+time scope that I'm operating against
+for this investigation
+I could see all the different containers
+that were running at that particular
+time
+what was the specific image I can go to
+click on and go to the profile of that
+particular image and if I launched that
+container image with any sort of
+security context I can also view the
+details of that as well here
+if I'm looking at a particular pod
+or investigating that I can actually do
+a filter to actually tell me what were
+all the container images that were
+associated with a particular pod whether
+it be from a registry or a workload or a
+repository so allowing me to to get more
+insight into a particular pod and all
+the containers associated with that
+if I am looking at a particular user so
+in this case I'm going back to that
+Anonymous user that we saw earlier uh
+this is an example of the kubernetes Epi
+call tab that I highlighted earlier when
+I'm looking at that particular user I
+can actually say what were all the
+kubernetes API calls this particular
+user made show me the various patch
+lists create gets that they may have
+executed then I can actually expand
+those in this case I'm expanding the
+create option and that can I can
+actually see that this particular user
+created a Cron job and that they were
+successful uh in doing that and that may
+be my indicator or that may be the thing
+that tells me okay I've got something
+that I need to investigate deeper
+because I now can see that somebody
+anonymously has done this and I can see
+specifically what they've done uh
+against my kubernetes cluster
+I can also investigate by a particular
+IP address so if I'm investigating a
+suspicious IP address uh that maybe uh
+my security team has brought to my
+attention I could put that IP address
+into detective and go search on that and
+actually once again go and see what are
+the specific API calls that that IP
+address made uh and what were the
+various API actions uh that that IP
+address took which might help me better
+understand what are they trying to do or
+what have they done against the
+particular clust cluster or against uh
+kubernetes environments as a whole
+oh I can also use that IP address
+feature to actually use the kubernetes
+activity tab to actually tell me
+which pods well we're running against
+this particular uh IP address or with
+this particular IP address and which AWS
+accounts were they deployed in
+I can also if I'm doing an investigation
+about a particular ec2 instance
+I could actually use that instance ID as
+a resource and detective and use that
+kubernetes activity tab once again to be
+able to see
+for the cc2 instance for the time frame
+that I'm investigating what were the
+particular pods that were deployed onto
+that particular instance which accounts
+were they in so they could dig deeper
+into the actual containers that might be
+on those pods or understand uh where I
+may have uh impact uh against or coming
+from a particular resource on that ec2
+instance
+okay so the last thing I'd like to leave
+you with are a couple of resources that
+you can use to learn a little bit more
+about some of the items that I talked
+about today the first one is a Blog
+that's published specific to the Amazon
+guard Duty eks kubernetes protection
+feature so this is a deeper dive blog
+and how to actually use some of the
+findings to arrive at uh you know an
+identification of what's Happening
+against your environment and how to
+remediate that uh and then for the guard
+Duty malware protection feature we uh
+recently launched that at AWS reinforce
+uh there's a YouTube recording that
+introduces uh that new feature and talks
+more about how that works uh and how you
+might use it uh for both your ec2 and
+your container-based workloads
+okay with that I'd like to start off by
+thanking you for your time uh I really
+appreciate uh you taking time out of
+your day to actually come and learn more
+about this I hope this was very helpful
+to you uh and I look forward to talking
+more with you about these features and
+services in the future
+thank you
+[Music]

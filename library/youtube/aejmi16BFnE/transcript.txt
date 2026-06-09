@@ -1,0 +1,860 @@
+[Music]
+great to be back in Chicago it's been uh
+too many years and u a great community
+and really a pleasure to have the chance
+to interact and talk with you um since
+now feathers is abandoned and he's busy
+you
+know you know doing AI I'm sort of the
+last man standing of the fossils will
+talk about Legacy systems but
+um part of the reason I still do it uh
+it's because I still get every few years
+I get asked but because for me Legacy
+systems and those of you know a bit
+about my background I work with a lot of
+exotic Technologies I used to call them
+weird but a customer said Dave you
+should call them
+exotic um so these are everything from
+Vector functional programming to to a
+urban programming and a lot of different
+things and the reason I've been able to
+do that is because often I've been able
+to use them in a really um you could say
+challenging or ugly Legacy
+environment and I've come to call this
+uh Innovation and Legacy and so this is
+just a talk about one approach to a
+problem that's important
+now um I think we all know the story of
+migration that's something you know what
+about the migration data M what about
+the data migration that's no problem
+it's just going to be a few scripts at
+the
+end and that's how the story begins
+so
+uh
+okay me this will work so I don't think
+I need to go through this basically
+these are stats from BL and Gardener and
+whoever else you pay to give you an
+opinion um that you would like um uh
+they were done I think particularly for
+Oracle uh but basically U most
+migrations uh don't end up on time or a
+budget and I'm sure that doesn't
+surprise
+you and so what I want to talk about is
+one uh customer I've changed the
+names uh to
+protect the
+guilty um this a company which we'll
+just call Erp R Us and they do entes
+resource planning and they're the
+dominant leader for people who do have
+things like uh planes uh military
+vehicles uh uh big uh construction
+equipment and all the parts inventory to
+support these things
+globally um eprs has been around for a
+while they're you know hundreds of
+customers they're very successful in
+their
+area and they built uh made a very
+shrewd
+decision uh at the time to use what was
+called a network
+database a network database has the
+property that you can see this you
+everyone in this room I assume knows
+what ER diagrams are but I perhaps
+should not do that um but basically the
+network databases were really designed
+to deal with this
+recursive uh relationship where
+basically something can be made of
+something or something can have some
+things in it so basically and this is
+done by um representing something called
+a many to many relationship something
+that most programmers don't think exist
+because collections you know only work
+one way so one of the big design
+problems we found with people with data
+is that um programmers don't you know
+they don't like SQL and they don't want
+to know about data models in general but
+they're still important in some
+places so these ER diagrams actually are
+realized fairly straightforwardly in
+these Network
+databases and because of this
+implementation essentially of rings of
+rings uh so it's a pointer walking
+navigational database much as uh for
+those those of you that are in fashion
+with the Neo forj U are doing that so
+this this talk although it's historical
+in
+context uh with L I predict that some of
+you in the not too distant future will
+be trying to figure out how to get out
+of a very inefficient and navigationally
+complicated uh graph database and put
+that into a very efficient Vector store
+so you can actually get your knowledge
+out of it after you put it in your
+knowledge graph so
+um and that's even a harder problem
+because property graphs are
+instance-based not type
+based so basically their problem
+customers have two concerns the first
+one is uh navigating around a u Network
+database is not easy programming you
+have to know how to do this uh there's
+there's no query
+language um the second one is that all
+these databases are running on Hardware
+that's
+obsolete with the vendor that's a
+problem so it's your your typical uh
+Legacy
+problem uh
+so the first problem was to try and
+solve the reporting problem basically
+the way it worked is the in order to
+satisfy the customers erpr us takes
+requests and they have programmers who
+know this data data manipulation
+language and then they they write the
+reports for the customers with the code
+and send it back and publish it in other
+customers get
+it um they of course did the obvious
+thing which is you
+know I have one trick that I'll mention
+if you want agile to go away just don't
+use the word
+anymore so it's kind of like os2 Lotus
+123 just just don't mention
+it anyway they went and did this thing
+and of course they got marginal
+improvements and then they tried to
+develop their own SQL query engine very
+ambitious effort really good Engineers
+but they're MRP Engineers they're not
+data Engineers they're not uh data SCI
+not uh database
+scientist so the
+solution uh and I think this is one
+that's pretty well known I call it SQL
+ify it basically is if you have some
+ugly data
+source the easiest thing to do is
+basically replicate out of you know for
+those of you that made the mistake of
+using no SQL some you may been still be
+doing it um you know you can actually
+make it consumable to people so they
+have to write parsers to adjacent by
+actually replicating the data
+interesting out to a good relational
+data source so that's the first thing
+very easy to do the second thing is that
+there are still some applications that
+have to go at this complicated Network
+database and the solution there is to
+take there's a three or four companies
+in the world that make OEM SQL engines
+so they're SQL and the client and inside
+you basically build the code to navigate
+so they contracted with one of those
+companies and so they're able to do this
+so the good news is they have a
+near-term victory and going back to
+vcat's talk it's very important to
+always have a shortterm something gives
+people a ha especially when you're going
+to do something quite risky which we're
+about to do this was not
+risky so the customers were very happy
+they all went to the customer meeting
+everybody saw the demo they were going
+to be able to do their own reports with
+whatever Crystal Reports whatever your
+favorite pro you know query tool was at
+at the time and uh able to move ahead so
+the customers get new
+confidence
+however the real ticking Time Bomb is
+this
+Legacy Network database
+um by this point they were the only
+major customer on the Ln
+DB and the vendor was
+limping and quietly even called up and
+said how would you like to buy
+us the customers heard this and they
+panicked this situation by the way is
+not
+uncommon you may think it's so there
+hundreds of large customers
+essentially many all of them have on
+Prem multiple on-prem databases and
+Geographic
+locations um so they're not running
+SAS right some place far away in the
+cloud and the customers are saying how
+are we going to take our
+data from our lndb and get it into a
+modern Source modern in this sense is a
+you know relational platform that runs
+probably on Microsoft or or perhaps
+IBM so that's that's the small challenge
+they worried
+about now of course the conventional
+approach and the one that the Erp
+engineering team and there's no fault
+these are very talented people but
+they're not database Engineers I just
+want to make that clear so they're
+application Engineers who know how to
+really use this database so their idea
+was to
+write all the queries that need to be
+write to and then once you've got all
+the data out put it in a really nice
+format like Jason and then you know take
+it and write SQL queries and stuff it
+in um this is a really hard
+problem um it's very hard it's even
+harder to test and the performance
+really
+sucks this is guaranteed to be very
+slow the other problem is the customers
+allowed to have
+extensions and this all has to run at
+the customers D customers on Prem
+database uh in some cases like military
+customers you can't even get people into
+the room because you need security
+clearances to do
+this so they make it a little harder to
+do
+so need an Innovative
+solution the first solution is if you're
+going to move
+you know you know terabytes well
+pedabytes of data you're not going to do
+that using random access
+technology and you're not going to do it
+without batch and
+binary so we need a simple solution so
+The Simple Solution I'll be going
+through it is essentially use physical
+access you know read The Naked pages off
+the disk you know bypassing the schema
+use sort merge because we know that
+works and it's fast and it'll work no
+matter of scale because some people's
+machines don't have very much memory in
+them and old search s merge algorithms
+could be done on machines with 16 kbytes
+of memory not advocating that and the
+inspiration we take is from something
+I'll call the humle Linker Linker if you
+know about a linking loader basically
+you have refs and deps in your program
+and what the Linker does is take
+multiple binaries and connect those
+together and put them and produces an
+executable so it just resolves these
+name matches and so
+on so just a
+brief
+segue uh no matter what you're using SQL
+pick your favorite query
+language uh walk the
+database Through The Logical schema is
+painfully slow and error
+prone so the easy way to do this is to
+get
+physical actually understand what the
+database Pages look like and turns out
+that uh a network database and the
+latest Oracle database the D the pages
+are essentially the same they've got
+check some blocks at the top they've got
+floating records with IDs in them
+there's a free space list and so
+on so when you actually look at these
+things just at DIS Pages they don't look
+very different so we're going to take
+advantage of
+that and we see we have all these Rings
+The
+implementation all these ring structures
+are actually pointers inside the
+database because that's how the
+navigation
+works now obviously we're going to
+relational databases so those pointers
+have to go poof into something and
+that's going to be joined
+table so the essence of this approach is
+very simple we're going to read
+physically all the pages in The Legacy
+database we're going to move those pages
+uh you know block by block sort of block
+move them over and re reshape them as
+relational database
+Pages quite a straightforward operation
+we're going to capture the mapping you
+know what what was the disc address in
+the old database what's the disc address
+in the new database and what were the
+types of the
+records and they're also going to
+capture the pointer mappings
+because the picture disappear but
+there's lots of pointers in this network
+database so we'll we'll essentially keep
+track of where those pointers pointed to
+in the old database and we'll keep the
+types and we'll also keep uh the record
+that they're going to
+given these we can just block by block
+move the
+entire you know Legacy database to the
+new database and the really exciting
+thing because my machine's already
+saturated I can actually do this from a
+dump tape or dump block or parallel
+access to the S the the actual disc
+controllers I can you do it on the new
+hardware so I'm not going to break
+production of the existing system
+because if I'm going to be moving you
+know terabytes and terabytes of
+data uh I don't want to be interfering
+with the production system that's one of
+the
+key so the end then we just do a sort
+merge essentially like this ref def
+match except we're doing it over a huge
+amount of dis space and we basically go
+and just patch fix up all the fix
+physical records
+very simple
+algorithm still pretty scary but
+simple and I just move along I think
+everybody know that binary is better
+than bat binary is better um if you know
+nothing else please do not use Json
+unless you have a
+permit you want to find out how to waste
+a lot of machine Cycles uh you know
+basically how to make your data so you
+can figure out what it is make sure it's
+schema less by the way that way when you
+add some Fields you'll have to know what
+day you added them because you don't
+have a schema to see them I can't
+believe how many people still do this
+the other thing is batch is better if
+you really want to go fast if you really
+want a high throughput you're not going
+to have a real-time system unless it's a
+batch
+system you'll process like a thousand
+transactions at a time and people in
+Chicago know this in the financial
+Community already um and you it's a
+couple of Aeron messaging things from
+Martin Thompson that barely very much
+has B this so this really favors
+processing the other thing is much
+simpler so correctness is much easier to
+reason
+about now one of the things that's very
+important here is that we serialize
+things
+quickly and so the best serialization
+technique I'm aware of goes back before
+protocol buffers and actually it's much
+like something now called Captain
+Proto but basically you have a set of
+objects or records in memory or dis and
+what you do is you grab memory a chunk
+of memory and you pack them into that
+memory and you just change all the
+pointers to offset pointers once the the
+the things are converted to offset
+pointers you can transmit the data in a
+block and then you can just relocate
+those pointers and then you can uh if
+you you have to do this you have to have
+access to the underlying sort of GC
+mechanisms but basically you can lay it
+out in your Java space or your c space
+and you can say okay I've got this
+physical chunk you know become
+objects um which is very straightforward
+to do with the I mean you have to know
+something about the JPM or the C but
+it's still pretty
+easy so the big thing is that some
+people would think of this as a risky
+operation so we want to give the
+customer some some confidence um not
+only want to give the customers
+confidence we're actually terrified that
+this thing might not work right we're
+going to be moving you know hundreds of
+thousands of database Pages at every
+customer
+site
+unattended so first thing is the
+algorithm is specified using a very old
+technique called decision
+tables um TBL driven programming is
+still one of the easiest ways of R
+things since basically you can have
+state tables decision tables and
+constraint tables and uh much of life
+can be done with
+those these are very straightforward to
+verify and Implement in fact the
+implementation can be automated the
+other thing is we wanted to prototype
+the algorithm to see whether it
+worked so to prototype it we basically
+wrote A U prototype code in a functional
+array
+language so if you see some J Code up
+here in a second you'll know what what
+it was for and we were very easy very
+quickly able to prototype using a large
+in memory implementation that the
+algorithms actually worked so our
+confidence is getting up you know we
+reviewed the decision tables did
+implementation um and the other thing he
+said well when we moving all the code
+because we're going to be we're going
+taking bit pack fields and various other
+things in the ugly old database and
+doing something else weird with them
+when we put them in the newba
+database um you know that migration that
+simple moving could be bugs so what we
+did is we generated from the two schemas
+we generated the source code so we could
+actually see in the source code of the
+language and we can generate the source
+code for you know C on one side and you
+know PLS on the other side you won't
+know what PLS is but there is a language
+called PLS which is what you had to use
+to talk to this database
+so and having the source code means you
+can efficiently you know it'll run as
+fast as you can run in the platform um
+it's straightforward to review because
+it's basically just move
+operations um and the other thing is you
+can actually now do database
+restructuring because this is the place
+where you can put in the code to split
+records add Fields uh do all those
+things that you wish you could have done
+through a restructuring activity
+so I think
+the let just go
+back so that it turns out that um this
+is one of the few times that you can
+actually refactor have you ever seen a
+database refactoring
+tool because there're aren't
+ining that I know
+of but it turns out that using the
+exactly the same techniques you can
+basically transform that existing schema
+and a new schema and all of the
+operations can be done by essentially
+just putting extensions here to move
+remove add records whatever because
+they're all just something that can be
+done on the physical store with the fix
+UPS so you can do the refactoring as
+well um we didn't mention that at the
+first time because we didn't want to
+offer that feature but it's really quite
+straightforward to to provide
+it so the question
+comes how do we have confidence in
+this because these are not the sort of
+things that you get to you know let's
+try it oh didn't work we'll try it again
+right we we sent it to 10 customers and
+you know the first 10 customers didn't
+know what they were doing so they just
+let it run and until it finished nobody
+checked
+it so first thing we need to do is look
+at the design so the design basically uh
+we have these decision tables that's
+what they look like uh that's actually a
+fraction of the real code the tables are
+quite
+small uh and then we had a prototype and
+for those who we a vcat fan of
+functional program that's some J
+Code uh
+and then we did
+something remember we generated all the
+source code to move the blocks from the
+you know Legacy system to the new system
+so then we reviewed that source
+code and um since this stuff is pretty
+scary we actually reviewed it with two
+independent teams all these things were
+done by having two teams looking at this
+it's a very old technique but um
+many you know old people have found that
+you can write the same program twice
+with two different people fairly
+quickly especially if you mod modularize
+it in tables uh and so on like this so
+that we're using a technique called ivnv
+which basically is two different teams
+writing not all of the code but some of
+the code and I'll explain what I mean
+there in a
+second so having done the review now we
+have
+confidence we can start looking looking
+at the
+implementation so the implementation
+testing first of
+all uh before we do anything else
+um databases are out they're spinning
+around for a long time and believe it or
+not not every page or relationship in
+the database is in great shape you know
+there are just a lot of places where the
+elephant came in at night and stomped on
+a lot of your database pages
+and that's why one of the reasons why
+you can't also write queries because
+often there's pages in the database that
+you can't read because they've been
+stomped on for some
+reason and if you try and migrate data
+that's been stomped on um you end up
+throwing exceptions all the time now
+some people think that's fine but when
+you're moving you know hundreds of
+terabytes of data you really don't want
+you know the thing to stop and say well
+let's run it over or see what this
+problem is so before you do anything you
+write a health
+check and the health check uses exactly
+the same algorithms because essentially
+all you really have to do is validate
+that those pointer rings are accurate
+and that the check sums and everything
+that are on the physical data pages are
+correct and the other thing you can do
+is you could health check routine can
+usually fix up the database in the sense
+that it can at least fix up the page so
+it's not going to cost the the migration
+software to crash not going to throw an
+exception so now you got the health
+check in place this is also handy
+because you can run the same
+implementation on the new database to
+make sure that it also you know you
+didn't smash the database pages in or
+put them in
+incorrectly because again most people
+don't ever see physical database
+pages so you you want to be very careful
+about doing
+this I'm I'm not a this is something
+everybody should go back and say you
+know I think we should do this but it is
+the only way out of this hole that I
+know of if you really want to deal
+it then we do lots of tests first we
+test that uh we produce the files
+correctly which is easy to do that we've
+got these sort merge files produced
+correctly we look at the source code we
+check that we can actually move that we
+can actually take a physical page from
+one page one database move it to the
+other one and actually go and look and
+verify those
+bits and
+then once again re review the actual
+implementation now we get to the
+migration
+validation and how do we test this
+Michael had to run away I could and talk
+about you know hey let's write some unit
+tests for
+this come on you have fill your boots
+you will die trying to unit test
+something like
+this you have to come up with a
+different
+idea and the different idea again
+involves the same principles one is we
+need to check to know things are there
+that's an aggregate
+check and the
+other is that we need to be able to
+inspect this and verify it
+ourselves so we can do random inspection
+for
+that so
+validation I mentioned there were two
+teams one of the
+teams doesn't is going to they're only
+worried about doing the validation so
+they're going to write a quick and dirty
+version of the migration thing because
+they're not going to actually move any
+of the records they're just going to
+check some of
+them so they're essentially going to
+construct a set of invariants over these
+databases which have to be true going to
+implement those
+invariants uh which means looking at the
+data and also looking at the
+relationships that are being
+there they'll use the same file
+structure that I talked
+about and they will run that completely
+independently as soon as the database
+has been migrated they'll run the
+validation algorithms
+on the new uh Target
+database this provides Rock Solid
+assurance that the data has come
+across from the Legacy system to the new
+system and being preserved
+so this is
+really uh it was a really a fun project
+I mean a little scary at
+times I have to say that the the the um
+my grad
+students uh that worked on this re
+recent hires didn't know how scary it
+was this say I'm a big fan of Seymour
+cray you know hire them young they don't
+know it can't be done they were
+terrified when they actually lose
+learned what the algorithms were going
+to be doing in the scale that they were
+running but the Assurance we had through
+validation was invaluable because it
+found all sorts of bugs during the
+implementation and the first few runs
+and so on so we gained a very very high
+confidence level through doing this and
+I just mention it because I think it's
+interesting to think about you know
+people have all these approaches I mean
+property based testing is the best
+practice which the agile community may
+learn someday um but you know there are
+other ways to test systems besides
+writing classical test cases and Le well
+this the validation is in fact an
+implementation of a kind of property
+based testing where we're certifying
+these invariants so this is a very
+powerful way to go so job
+done great ship it out to the customers
+no problem oh there is one other
+problem um these customers have Legacy
+code that reads and writes this
+database
+oh okay Dave what's your magic trick for
+doing
+this well I'm going to disappoint you
+because not everything is a free lunch
+with magic tricks some things are just
+we've got to rewrite some
+code but we can try and apply a diff
+discipline approach for doing
+this first thing is that when we analyze
+the Legacy code we identify all the
+readers and
+writers customers can have that too so
+they can verify their own code if they
+got so again we get essentially tables
+large ones databases of reader and
+writer
+identification now of course we wanted
+to write something it would
+automatically translate these DML
+queries and the network database and
+turn them into relational queries and so
+on and that was a very interesting
+research
+problem but there's a lot of risk that
+it would go
+wrong and since most of the query code
+was already replaced by people going to
+SQL so they didn't need the you know the
+most of the reader problems are just
+solved by people just migrating to SQL
+code and using reporting generator so
+for this customer uh this wasn't a big
+problem
+but for the complicated queries which
+you know had to do these recursive uh
+you know transitive you joins over the
+transitive
+closure U which were done through
+pointer walking uh there was no solution
+uh we had no magic had to rewrite
+those in you know modern SQL for which
+there are things to do operations over
+the transit of closure
+and in a couple of cases we had to go to
+essentially embedded SQL where you know
+you've got you know C code which is
+basically talking to moving cursors and
+things like that not something you want
+to do for many things but again we
+reduce the percentage of that to some
+small
+bit and so what um that allowed is
+basically to
+migrate a whole lot of
+customers with a complicated problem off
+of uh scary but risky technology and
+risky technology uh to a uh modern world
+well modern to them a relational
+database world right I think most things
+are going to end up looking like
+relational databases
+so I think S no SQL will probably be
+dead within you know
+2025 so the point of this talk is not
+that this was a
+brilliant decision I was you know I had
+some brilliant students graduate recent
+grads who helped um but rather it was
+just looking at a very scary problem and
+trying to break it down with different
+techniques and using things from
+different Generations in time decision
+tables come from the
+1960s 7s at
+best functional
+programming uh you know Jay was pretty
+Advanced thing to do at the time time
+now it still is but it allowed us to do
+this moving the physical pages and doing
+that those are tricks uh basically if
+you worked a lot on garbage collectors
+and systems for managing uh large uh
+modern object stores these are
+techniques that come from that area
+era generating the source code is
+basically a way to make things to be
+transparent so you can read it and also
+get
+portability and sort merge is just a way
+to not be Memory bound you know for
+actually dealing with this and the
+algorithms are
+established
+so the Innovation here is
+thinking coming up with a way to take a
+very risky problem and break it down
+into small bits that you and a small
+team of
+people um
+or ideally just
+them go off and
+do and you know take into account that
+you couldn't take these systems down
+they're running live and since they're
+running on Legacy machines those
+machines are maxed already so finding a
+way to say well perhaps we can run the
+migration on the new hardware as opposed
+to keep trying to stress the old
+Hardware so the other thing about this
+is it was a really fun
+project was very satisfying wonderful
+engineering
+experience and there's tons of these
+opportunities out there so when someone
+says you know oh you know you know I'm I
+got it put on a legacy team on this old
+system that really sucks you know they
+don't even program and C
+right um don't think of it NE
+necessarily is a really bad job U I have
+to say I've learned a lot more working
+on uh some of these really complicated
+messes U than I have working with some
+of the newer sexiest
+Technologies and the customer
+satisfaction you know if something turns
+you on for me it's building an
+application that a customer
+uses you know you know there there there
+were customer
+virtually in tears because they didn't
+believe the problem was solved they just
+they saw somehow manually they going to
+have to rewrite the whole system and do
+it and the other sort of point is please
+don't rewrite and please stop lying when
+you say refactor when you're
+rewriting you know technical debt and
+refactoring you'll hear from Kent I'm
+sure have a meaning and when Ward and
+Kent Coast those terms but and vcat
+mentioned it's basically cleaning up the
+little bits over days it's not fixing
+your mess that you've ignored for days
+because you're busy you know doing agile
+stuff and then you basically have a mess
+so you have to beg for technical debt
+cards stop telling your Executives we're
+going to solve our business by
+refactoring the
+code when you're lying it's not
+equivalence preserved
+there are no decent refactoring re there
+are no decent rewrite
+tools and for large code bases there are
+very few decent refactoring tools or
+practices most of these things end up in
+a mess most of them take two or three
+years this was done in a period of
+months often you can make a difference
+by looking at that part of the Legacy
+system which really has the value and
+which is the bottleneck and inserting
+new technology new
+algorithms at a few
+points rather than rewriting repl
+platforming any anyway thank you very
+much for your time
+[Applause]

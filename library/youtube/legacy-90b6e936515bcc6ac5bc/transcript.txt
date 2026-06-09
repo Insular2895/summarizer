@@ -1,0 +1,358 @@
+[music]
+Welcome to Brookfield Perspectives, a
+podcast that explores the [music]
+Brookfield ecosystem's role in creating
+sustainable wealth on a global scale.
+For our last episode of 2025, we're
+taking a look back and turning towards
+what's next. In November, over 400
+private market investors joined us in
+Phoenix, Arizona for our annual investor
+conference. Today, we'll share some of
+the top insights from our general
+session, which featured senior
+leadership across our businesses and
+reflect on major themes and trends on
+[music] the horizon. First, let's begin
+with a look at how long-term investment
+themes [music] take shape. Here's Connor
+Tesy, president of Brookfield Asset
+Management.
+It was over a decade ago that we
+identified data as the fastest growing
+global commodity. One that would needed
+to be transported, stored and processed
+at unprecedented levels. It was towards
+the end of the last decade that we saw
+that corporates would create a new era
+of energy demand that would require any
+and all or all of the above type
+generation solutions going forward.
+At the same time, we identified private
+credit as an important pillar to grow
+the economy and would become a permanent
+fixture in the financial system,
+providing capital to drive growth across
+businesses and asset classes that we
+focused on. So this process of
+continuously focusing on what's next and
+continuously evolving our business is
+ongoing and continuous. And today, what
+does that mean? It means new products
+like AI infrastructure, one of the
+largest capital needs of this generation
+where we can build the critical
+infrastructure that will drive business
+productivity across assets and economies
+and we get to invest these significant
+sums of capital against long-term
+corporate offtakes with the largest and
+best institutions and governments around
+the world. Similarly, we focus on
+private credit, but the sectors of the
+private credit market where we see the
+best riskadjusted returns and where we
+believe we have a competitive advantage
+to win. Connor highlights how major
+investment themes rarely appear
+suddenly. They build over much longer
+time horizons. The ability to recognize
+those inflection points early can
+influence how investors deploy capital
+and how new sectors form. Of course, one
+of the most salient shifts in nearly
+every business and industry recently is
+the growth of AI. For Brookfield, that
+means an enormous growth opportunity in
+the backbone infrastructure needed to
+power this technology revolution.
+Several speakers pointed to how AI is
+extending beyond software and into the
+physical world. Stuart Upson, head of
+Brookfield's global strategy group,
+emphasized how quickly this shift is
+accelerating.
+What we think is that AI is evolving
+right now into agentic AI and that is
+kind of the now. That is the thing that
+is happening and impacting the world and
+the global economy in a big way. As we
+think about AI though, we think about it
+as a flywheel of technology that is
+making the world advance faster and
+faster. And it's even more important now
+than it ever has been before to stay on
+top of these key trends. We think it's
+likely that in the fullness of time, the
+humanoid or embodied AI robotics could
+be an even bigger market than AI in the
+software form.
+>> With all the momentum behind AI, the
+question is everywhere. Is all this
+growth actually sustainable? Here's
+Sicander Rasheed, global head of AI
+infrastructure.
+For us over the last 3 to four years in
+our power business and our data center
+business, we've seen exponential growth
+and it has all contracted. So the way we
+think about this is we're investing
+capital, large scale capital and
+building hard infrastructure for some of
+the best technology firms in the world,
+some of the best sovereign governments
+in the world. And that's unprecedented.
+I think we can go back and look at all
+the previous bubbles including the
+dotcom bubble but the offtakers and the
+contracted nature of the buildup is what
+makes this one different than are there
+bubbles around the edges? Yeah. Uh but
+fundamentally again this is a long-term
+trend and we expect over the long term
+it will change the world and without
+this infrastructure we'll never get
+there. While the technology evolves
+quickly, the physical systems behind it,
+power, land, networks, and operating
+platforms must scale just as rapidly.
+These areas of focus shaped much of the
+discussion at this year's conference.
+Natalie Adam, chief operating officer of
+our renewable power and transition
+business, summarized the needs from an
+energy perspective.
+The most important thing for us right
+now is providing as much power as we can
+quickly and I would say it's not just
+providing the scale of power which is
+absolutely going to be required over the
+next decade but the power market is
+becoming more complex and therefore our
+customers needs are equally changing and
+adapting to that that new power dynamic.
+And so one of the things we're seeing is
+an increased focus not just on uh not
+just on affordability, which has been
+the real driver for a lot of renewable
+power capacity that's come online over
+the last decade, but increasingly it's
+affordability mixed with reliability
+mixed with the ability to get that power
+as fast as possible to the grid.
+Nearly 90% of global clean energy demand
+for data centers is with hyperscalers
+like Amazon, Google, Microsoft, and
+Meta. At Brookfield, we have seen our
+business with these partners double in
+less than 2 years and expect electricity
+demand forecasts to keep rising. Here's
+more context.
+>> We signed a 3 gawatt partnership with
+Google around our hydro portfolio. We've
+executed other framework agreements with
+other major providers in both the
+technology sector as well as other
+technology sectors. And of course, the
+$80 billion partnership we've now signed
+with the US government to scale the roll
+out of nuclear. I think these are all
+great signs to show that being able to
+combine the different technologies
+within our portfolio and to scale that
+quickly can be done.
+>> Meeting that level of demand isn't just
+about generation. It also requires the
+transmission systems to move that power
+where it's needed most. Here's Gail
+Miller, head of strategic investor
+engagement for Brookfield's global
+client group. We heard that compute
+moves faster than power. We can build
+compute faster than power. So, can we
+actually accomplish these goals knowing
+what we know and how fast it's moving?
+Those of us that have worked in power
+for a long time have never seen these
+step increases. 22% increase in data
+center demand alone. That doesn't
+include electric vehicles, computers,
+regular day-to-day activities. And the
+other big constraint we have around the
+world is this question of the grid. The
+grid didn't anticipate this power. And
+in fact, we didn't build power for 10
+years. We stopped building in 2012
+because nobody knew what was about to
+come.
+>> Gail and Natalie underscored a central
+point. Meeting rising global demand for
+electricity will require a mix of
+technologies, faster development cycles,
+and long-term planning across markets.
+Next, we'll hear from Sam Pollock, CEO
+of Brookfield's infrastructure business,
+who has a front row seat to the upgrade
+of power transmission infrastructure.
+>> The vast majority, 50 of maybe the top
+75 utilities in the United States have
+increased their capital expenditure
+programs for the next 5 years by about
+50%. I mean, that's a staggering
+increase in their capex. And these are
+not companies that are known for making
+dramatic changes. So that tells you what
+they're faced with.
+>> Brookfield CEOs wrapped up the general
+session with a wide-ranging conversation
+across the private markets. Here's
+Brookfield CEO Bruce Flat setting the
+scene.
+>> I'd say there's really three things that
+that encompasses that are really
+important. The re-industrialization of
+economies to I'm going to say reshuffle,
+but move around supply chains in with
+what's going on in the world. the
+continued enormous buildout of real
+assets both new infrastructure that's
+coming but everything around the
+backbone of the global economy and then
+third something that's happened in
+finance in the last 10 years which is
+the rising influence of private credit
+is really important and it's I'd say um
+it's one of the largest changes that's
+occurred in global finance in a long
+time
+>> no conversation about real assets is
+complete without real estate Bruce and
+LOL Baron CEO of our real estate
+business shared their perspectives on
+the market dynamics in the current
+cycle.
+>> I've been around the investment business
+for real estate in particular of people
+that think the world is coming back and
+it's amazing and the ones that think
+that the world's coming to an end. What
+happened? Why is that? And is that true
+or am I just behind the times? I think
+the reality and the right way to think
+about it, the way we think about it is
+actually that the decrease in value
+happened three or four years ago
+already. And it's just a matter of the
+time that it takes for that loan to go
+into default, the maturity to come, the
+foreclosure to happen, the asset sale to
+happen. And in fact, that signal is
+really positive if you think about it
+because it means that real estate prices
+have reset. They're much more
+attractive. It also means that now you
+have people who are selling, buyers who
+are buying. So the market has converged
+where there's real transaction flow.
+That's pretty important. Demand is
+pretty healthy across almost every asset
+class and supply is severely cretailed.
+The probably the most important thing
+that's happened in the last four years
+is that the cost to build real estate's
+gone up probably 40%. And so we're in a
+really good place for fundamentals. And
+now that the transactions are coming
+back, it's probably a great time to be
+investing.
+>> Next, Craig Noble, CEO of Brookfield's
+credit business, talked about the state
+of the private credit markets.
+>> Private credit markets are still
+relatively young. It's really in the
+last 5 10 years that the private credit
+markets have been growing as an
+important part of the market. Banks have
+been retreating. Banks in many areas are
+no longer in the lending business or at
+least not to the same extent that they
+have been. And that's been the window
+for private credit to come in and offer
+very often much more flexible solutions.
+Both Connor and Craig touched on the
+headlines around the credit markets
+today and what the impact is for private
+credit investors.
+>> While there are certainly segments of
+the private credit market that are
+seeing more compressed spreads and maybe
+some covenant loosening today, we're
+focused on real asset and assetbacked
+finance that is driven by those same key
+global growth trends that drive the
+expansion of our equity business. and
+where there continues to be a supply
+demand imbalance in favor of the capital
+provider ensuring attractive spreads and
+the appropriate lending protections.
+Asset based lending is one of the bigger
+growth areas. the banks continue to
+retreat requires a highly specialized
+skill set to lend into whether it's
+aviation, consumer, industrial companies
+and that's an area where there's also
+because of that specialization the
+opportunity for excess returns and
+really private credit is all about
+getting excess return relative to the
+liquid market. There's no doubt these
+are risk assets. There have been
+defaults. There will be defaults. A few
+of them have been more high-profile, but
+I would put that in the context of the
+credit markets, not the private credit
+markets.
+>> Wrapping up today's episode is Anuj
+Ranjan, CEO of private equity on where
+we're seeing opportunity across the
+sector and the importance of operational
+expertise in value creation.
+>> The key word there is industrials. I
+mean, we really need to see productivity
+gains in all of these companies and I
+think the future we're trying to invest
+and create future global champions and
+before we were doing that in many ways
+and technology was always a part of it.
+But with AI, humanoid robotics, some of
+the advancements we're seeing the future
+industrial champions going to be those
+that connect the dots. They learn and
+they get data off of their machines,
+their energy grids, their logistics,
+their customers, and they use that to
+make realtime decisions and to run their
+businesses better. And it's important as
+an investor to be able to have scale and
+operational capability to actually
+implement that in the real industrial
+businesses.
+[music] As Anous said, success will come
+to those who connect the dots. And
+that's [music] what we've tried to do
+for you all today. Thank you for
+listening and stay tuned for more
+Brookfield perspectives [music] in the
+new year.
+This podcast is for educational
+andformational purposes only and does
+not constitute an offer to sell or a
+solicitation of an offer to buy any
+securities or related financial
+instruments offered or sponsored by
+Brookfield. The information and views
+discussed are subject to change without
+notice. Any investment involves
+significant risks including loss of the
+entire investment.
+>> Audiation

@@ -1,0 +1,311 @@
+aggregating large entries in the
+database to perform account for example
+is a lot of work the database has to
+sort through large number of records
+whether it's in an index or in the raw
+heap
+table itself doing this too often can
+impact the performance of both your
+database and your application
+let us discuss why count can be sloped
+and an alternative if you really don't
+want
+the actual comp but yes you want an
+estimate let's just jump into it all
+right guys so there are
+many ways you can execute a count on
+your database so i have here
+a grade stable our famous student grade
+stable
+so there is a g which the grade itself
+that's the idea of the students
+right and i think it has like around 60
+million rows that i created so what i'm
+gonna do here is
+do a select count g
+from grades where id between thousand
+and four thousand give me the grades of
+those people but
+i just want an account if you execute
+that
+it's so fast right now don't pay
+attention to the speed because
+i have caching going on i executed this
+query many times but i want to pay
+attention to the number that come back
+two thousand and nine hundred and the
+reason this number is a little bit low
+from
+comparing two thousand and four thousand
+which should be around three thousand
+because count g will return
+entries that are not null and just just
+think about it i have an index on the id
+field that means the database have used
+that index
+to pull the rows in order to count them
+so we're on the index
+but we asked the database to do a count
+on g that means we had to go to the
+table
+to check those um the value of g
+whether it's null or not let's do an
+explain
+let's just add an x plane analyze before
+these puppies
+let's see what happened here why do that
+let's pay attention to what happened
+here we're doing an index
+scan on postgres right we have returned
+3001 rows
+because guess what we're in the index
+right
+the actual index entries i i don't have
+any deleted rows by the way here so
+3001 is about right but
+the that final count has been reduced
+because we
+went back to the table to get the value
+g because that's what we
+asked it we asked hey count the value g
+and when you use
+when you do count g here account any
+field the database will
+filter through the fields and only count
+the not null values and i have few nulls
+there
+okay so now it uses an index
+scan and that tells me that hey
+i scanned the index but i had to go to
+the table it's not an index only scan
+right let's spice things up and see
+do the same thing here but i'm going to
+do a select
+star this time and a lot of people have
+a misconception that
+count star actually goes to the table
+and
+fetch all the fields and count the
+fields no
+almost no database do do this anymore
+right count star
+essentially means just count whatever
+entries you have right
+this will include null values if you're
+scanning an index give me the values
+right and you can see that we got a
+higher number
+so let's take a look at the plan that
+did
+that that postgres used to do that stuff
+what did you use
+postgres tell me
+if we look at the plan now look at this
+it's an index only scan and always index
+only scan
+always drums and always it's better than
+the actual indexes scan because i don't
+really need to go back to the table
+again don't pay attention to these
+numbers because i have caches
+all over the place right i just want you
+to the most important thing is to
+understand the plan
+running these numbers don't mean
+anything right now
+because first of all i'm in a container
+i i have a large
+amount of memory so every the database
+will start caching these pages if i
+execute them over and over again
+but just understand that plan is the
+most important thing
+and you as as a result the larger the
+number of rows come back
+the more work the database is doing so
+118 not a second index only scan
+all right i say what are you trying to
+do here here's what i'm gonna do
+i'm gonna do an update now i'm gonna do
+an update
+grades set g equal 20
+where uh id is between
+thousand and four thousand so those rows
+between thousand and four thousand
+i'm going to slam all of them and update
+them
+all right change this let's see how the
+postcards will all freak out now
+what will happen i'm going to execute
+this count star
+and then let's see what will happen all
+of a sudden
+guys look this number jumped again
+not by much but it is significant the
+more rows the more
+actual real data you have this will go
+up
+but look at that it still says index
+only scan
+but look at this keep fishes
+i want you to pay attention to this the
+moment you start seeing heap fishes that
+means
+index only scale yeah we did only scan
+the index but we had to go back to the
+table
+6000 and two times right
+for these amount of values right i'm not
+sure this
+these are the blocks or the actual rows
+i'm uh i have to
+i have to go back and check but we had
+to go back this amount of time which is
+expensive right why because
+we have updated the values the
+visibility map
+told the index scan or that hey by the
+way yeah you're scanning the index
+and i have i'm going to give you only
+values in
+index which is usually fast again if
+you're not scaling the whole index
+but these rows that i'm scanning in the
+index
+might have been updated might have been
+deleted
+so i have to go back to the heap
+where the actual visibility of the row
+exists
+to check if the row is actually deleted
+because
+when you delete something in postgres
+the index is not
+immediately marked as deleted it just
+adds uh it
+adds a new record and just uh
+and keeps the old records for uh for
+mvcc uh uh reasons so multiple
+concurrency controls so other
+transactions can't see those
+old tuples all right so how do we fall
+how do you solve this problem very
+simple you just vacuum
+the table vacuuming the table will
+update the visibility map saying that by
+the way
+those tab those old rules that you just
+updated nobody's reading them
+no there are no running transactions
+that are reading them
+right in a production system there might
+be but not now
+so if i do now the same ex query again
+so if
+we do it again you can see that we got
+he features
+zero all right and guys
+every time i increase that number 3004
+you can see that this is going to get
+slower and slower and slower just
+just to show you that for example now it
+took half
+one and a half second to execute and
+then if i increase that number a little
+bit
+you can see oh you can feel it so count
+is not cheap
+right it was cheap for the three
+thousand rows that i'm going to return
+but
+every time you do that that the plan now
+change
+says okay uh we're still going to do an
+index but
+i'm going to use threading the database
+decided to do multiple threads
+multiple workers unnecessary threads
+multiple workers
+to scan that index so okay i can give
+you the results right
+still we're good we didn't do any heap
+switches but it took six seconds to
+return
+this many rows right so every time you
+increase that number goes
+larger that operation is going to go
+slower it's just
+it's a proportional it's just super
+large so all right
+so what if i i'm saying i don't care
+about the actual raw count right
+i don't really care about giving the
+actual
+exact value right but
+here's what i want to do i want you just
+to give me an estimate
+if you do just an explain right
+and let's just format this so it's jsony
+right
+if you do that that
+without an analyze again without an
+analyze analyze actually execute the
+query
+explain will not execute the query but
+it will estimate it
+it will estimate that hey i'm going to
+use the index
+i'm planning that
+i might get this much
+rose back 2868
+right so compared to
+the select count so it's not an accurate
+number
+it's it's 200 values up and
+a lot of people use this and i actually
+got this trick from a blog that i'm
+going to reference below let's remember
+that the table itself has some
+statistics
+to to update itself right so the
+postgres actually without
+actually looking at the table it knows
+roughly how many rows are on the table
+roughly how much rows will come back are
+this
+are these actual correct numbers
+absolutely not
+but if you're building instagram or
+you're building something that la
+account that likes or something like
+that this is way better right
+so i can quickly estimate this stuff and
+as you
+update your table obviously a good idea
+to do an analyze on your grades
+table or your table that will update the
+statistics
+to the correct numbers and obviously
+this operation is going to take a long
+time
+all right guys that's it for me today
+that was count and how count is
+is essentially a lot of work for the
+database and if you really don't need
+an actual count correct number
+especially if it's in the millions why
+would you show
+the the user 60 million and
+320 exact number right almost no one
+does that right and let's see yeah so
+it's on estimate
+always matter if you're working with a
+fewer rows you can do an actual count
+but if you expect it's able to grow
+avoid you using a select count use it do
+an estimate with a planner
+like that if that works for you hope uh
+that that's way more than enough all
+right again guys i'm gonna see you on
+the next one
+you guys stay awesome goodbye

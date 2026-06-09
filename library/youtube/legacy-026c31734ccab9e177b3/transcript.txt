@@ -1,0 +1,907 @@
+A few days ago, the ecosystem
+woke up to a title that's enough to make
+your stomach turn.  Largest
+quantum attack on elliptic curve
+cryptography toe.  Project 11, a
+start-up specializing in
+post-quantum cryptography, had just awarded its
+Qday Prize, a nice little envelope containing
+one Bitcoin, to an independent researcher,
+John Carlo Lelli.  His proof was that he had
+cracked a 15-bit elliptic curve key
+on an IBM quantum computer
+accessible from the cloud.  And right away,
+we were sold the Big Thrill,
+a jump of a factor of 512 compared to the
+previous 6-bit record achieved in
+September 2025. A demonstration on
+real equipment.  All presented in Netflix trailer style
+.  Still far from Bitcoin's 256 bits
+, but the gap is no longer a
+problem of physics, it's an
+engineering problem.  Inevitably, in the aftermath,
+the media went into overdrive and
+alarmist S-lists popped up everywhere.  The 6.9
+million Bitcoin at risk is on
+everyone's lips again.  Except, well,
+there's still a small problem.
+All of this is very quickly dismantled by
+developers.  A 15-bit key can be
+easily broken with a very
+shaky computer.  You don't need quantum mechanics for that.
+In Joan Carlo's case, the
+quantum circuit in question was working properly.
+Yes, but what it produced was
+statistically indistinguishable from a
+random draw.  Classical calculation
+disguised as a quantum suit and tie,
+to paraphrase Rodolpho Novac.  So let's
+be clear, no Bitcoin has been
+broken and 15 bits is
+light years away from the 256 bits that
+protect your keys.  And at this point, you're perfectly
+entitled to ask me, "But
+Richard, if all this is nonsense,
+why are you making a video about it
+?"   Well,
+precisely because behind this
+little media drama, there is a real
+subject that is not pretending, and
+it is precisely the confusion between the
+two that bothers me because while we are
+arguing about noise of force
+disguised as a quantum exploit, at the end of March,
+Google Quantum AI published a much
+more serious paper, Securing Eliptic
+Curve Cryptocurrencies against Quantum
+Vulnerability.  Therefore, securing
+elliptic curves against quantum attacks
+in cryptogams.  And in the
+wake of this, a few weeks later, a
+proposal for the evolution of the
+Bitcoin protocol, BIP 361, returned to the center
+of the debate with the idea of ​​organizing a
+post-canticle migration of Bitcoin, even if it meant
+freezing certain addresses with the
+vulnerable freeze.  There, on the other hand, there's no more
+magic tricks, just real, hard paper
+signed by Google researchers who don't
+pretend.  So, let
+'s start again calmly.  For more than a
+decade, the quantum threat has been based on
+a simple framework.  In theory,
+the shorting algorithm would make it possible to
+recover a private key from a
+public key, in other words, to break the
+cryptographic mechanism that protects
+Bitcoin.  But but but but but but but but but
+in practice, the problem
+seemed out of reach.  Estimates
+suggest machines requiring
+tens of millions of cubic meters with
+constraints so significant that the subject
+was relegated to a distant horizon.
+almost abstract.  Now, be careful, when
+I say abstract, it's mainly for the
+general public because the subject has never been
+ignored by the developers who have
+been working on it for years
+precisely because they know that this
+type of risk is not dealt with when
+it becomes critical, but well
+upstream.  What this paper shows above all is
+that the order of magnitude is
+changing.  In some
+optimized scenarios, they show that the
+cubic meter requirements are about 20 times lower
+than what was imagined a
+few years ago.  What is changing is
+not the nature of the problem, which is well
+known, but rather that the horizon at which
+we will be confronted with this problem is actually much
+closer than expected.  And
+on this trajectory, Google gives its
+own post-quantum roadmap
+towards 2029. When we cross-reference this with the
+estimates cited in BP 361 which
+places the risk window between 2027 and
+2030, the community is now talking about a
+risk that is no longer in 20 years but
+potentially in something like
+3 years.  Much
+closer right away.  It's definitely not the same.
+Moreover, what is fabulous is
+that since this announcement, the speed at
+which
+proposals, leads, plans, and
+solutions to make Bitcoin
+quantum resistant have multiplied is absolutely insane.
+That joke about X made me
+laugh.  There have been more
+post-quantum proposals in the last 24
+hours than a quantum computer
+could count.  So there is no shortage of ideas and
+solutions.  The main
+problem is that even if it
+protects the new UTXOs, it does
+nothing for the old corners that are already
+exposed.  We have already talked on the channel about the
+old format address reused,
+lost coin, Satoshi Nakamoto's coin, in short,
+all that part of Bitcoin which, if the
+quantum scenario were to
+materialize, would simply be at
+risk.  And it is precisely this point
+which, well before this paper, brought to the fore
+a deeply controversial idea in
+the Bitcoin community: the idea of ​​a freeze.
+Except that today this idea takes the
+form of a draft proposal to
+be exact, namely a first G, the BIP
+361. And be careful, what this BP proposes is
+not just the idea of ​​a
+freeze.  Moreover, the term freeze is
+not a freeze in the sense of "We target
+someone and freeze their Bitcoin".
+This proposal states, "This type of
+signature is no longer valid from such and
+such a date."  So the freeze is an
+indirect consequence of the
+rule change, not an explicit decision on
+specific addresses.  Put another way
+, upgrade to
+Bitcoin, post-quantum, whatever.
+Otherwise, your Bitcoins will be frozen,
+you will never have access to them again.  In
+reality, it's a
+transitional mechanism.  First,
+the use of vulnerable formats is gradually made
+more restrictive.  Then,
+after a pre-announced period,
+the expenses
+that are still based on the old
+signatures are simply invalidated.  Basically, we're talking about a
+planned phasing out of the old
+signature rules for
+vulnerable UTXOs.  And from there, we move beyond the
+technical framework and into
+something much more
+philosophical, a debate that touches on the very
+nature of Bitcoin and, ultimately,
+our definition of property.  So
+today, I'm not going to go over
+the entire technical history of
+quantum risk for Bitcoin again.  We've already
+covered this in numerous videos on the
+channel, which you can find here, here, or
+here.  What interests me is
+debating this admittedly bizarre idea
+of ​​freezing and then seeing where all
+this can lead us.
+Very quickly though, to
+put some context in place and so that everyone
+starts with a basic understanding, a
+quantum computer could only
+attack Bitcoins in cases where
+the public key is already known.  With a
+conventional computer, tracing from a
+public key to a private key is simply
+not possible.  But quantum computing is a
+game changer because it allows us to execute
+algorithms that
+classical computers cannot
+efficiently exploit.  And among them, there is one
+that poses a problem, the famous
+short algorithm.  In the history of Bitcoin,
+we have had several
+address formats because yes, the protocol
+aims for a certain [standard],
+but the developers are not twiddling their
+thumbs.  Therefore,
+continuous improvement measures are always in
+place.  There are updates.  And
+besides, a small but important point, whether it's
+the old ECDSA signatures
+or Taprout's with Schnor, the
+problem is the same because everything is
+based on the same mathematical foundation,
+elliptic curve cryptography, which
+quantum has theoretically broken.
+Historically, the format used at the
+beginning of Bitcoin was the P2PK format.
+Here, the public quest is directly
+recorded and visible on the blockchain.
+Therefore, all bitcoins in these wallets
+are permanently exposed.  It is estimated
+that approximately 1.7 million Bitcoins are
+in this situation, including the famous 1.1 million
+Bitcoins of Satoshi Nakamoto.
+With this address format, it's easy;
+the public key is directly visible
+everywhere on the blockchain.  So,
+the attacker just has to help himself.  Then,
+things change.  We move on to
+formats like P2, PKH, then this variant
+with Segit in 2017. Here, the logic is
+different.  The public key is no longer
+directly visible at the time of
+receipt of funds.  Instead, what
+is recorded on the blockchain is an
+H from the public key.  As long as the funds
+are not spent, the public key
+remains unknown.  Phew!  Saved!  Yes,
+well, as long as you don't spend your
+Bitcoin because as soon as a single
+outgoing transaction is made, the
+public key is publicly revealed
+in the transaction.  You can see on
+the screen that when an expense is
+incurred, the public key appears as if
+by magic.  And with that, the
+problems begin too.  If an
+address is reused after having already been
+used, then the public key is already
+known and therefore new funds
+sent to that address
+also become exposed.  Well, in the meantime,
+a little aside, if you want to
+secure your Bitcoin against
+quantum risk, well, you create a new
+blank address, you send your Bitcoin
+to it and while waiting to find a
+solution, in any case, if you do not
+make any outgoing transactions, your
+bitcoins are untouchable.  So in
+itself, there's no need to get
+all worked up about it because
+even if a quantum attack were to
+happen the day after tomorrow, you would still have
+tomorrow to simply transfer your
+BTC to a blank address.  Then
+came the P2TR format with Taprout in
+2021. Again, I won't go
+into the technical details, but for
+our purposes, it doesn't solve
+the problem either.  Standard root outputs
+also remain vulnerable.
+In short, in all cases, as soon as a
+public key is known, it becomes
+vulnerable in the model where
+the short algorithm is applicable.
+Overall, Google's research paper
+tells us about approximately 6.7 million
+Bitcoins.  So it starts to add up to a
+hefty amount of money.
+The situation can be summarized very simply.  Part
+of Bitcoin is already permanently exposed
+, another part becomes exposed at the
+moment of use.  From
+there, there are two types of attack.  The
+first target of Bitcoin whose
+public key is already known, what is
+called a long range attack, is a bit like what
+I call the One Piece of
+Bitcoin for the first
+quantum attacker on Bitcoin who succeeds in
+the exploit.  And then there is a second
+type of attack which concerns
+wallets whose public keys are
+hidden but which could take place
+when a transaction is broadcast on
+the blockchain while waiting to be recorded
+in a transaction.  Ah yes indeed,
+even if you have secured your Bitcoin by
+putting it on a blank address,
+the moment you announce on the
+blockchain that you want to make a
+transaction, you necessarily publish
+the famous public key and it becomes
+visible in what is called the same
+hen, namely the transaction waiting room
+, if you will among the
+miners.  So an attacker can then
+try to derive the public key and
+offer a competing transaction
+with much higher fees to
+get ahead of you and at that moment
+grab your Bitcoin.  It's cruel, I know.
+Well, there is a solution for
+that too, but we'll talk about it in another
+video because it involves the
+mining industry.  So I still need to
+explain a lot of things to you.  But
+even without that, if you are really
+worried and can't sleep
+for fear of the
+quantum attack, know that we will give you the
+solution in another video very
+soon.  In short, you can see it on
+the screen.  I can go into the same
+pool, open a block that is not yet validated,
+browse the transactions, take
+one at random and find the
+public key.  And it is precisely in this
+way that an attacker could
+theoretically carry out a short-range
+attack.  So yes, this attack is
+highly dependent on the execution speed of
+the quantum computer.  Depending on
+the architecture, it may be more or
+less realistic, but well, you get
+the idea.  So this is the real
+starting point of the problem.  Bitcoin is not
+uniformly vulnerable, and it is
+precisely on the basis of this
+asymmetry that some, like Jameson Lop,
+justify the idea of ​​a freeze.
+However, as I mentioned in the
+introduction, some approaches already exist
+and there are even new ones that have
+very quickly been added to
+the list after Google's paper to
+address quantum risks.  So
+rest assured, we have solutions to
+offer signatures that remain
+secure even against a
+quantum computer, or others that aim
+to limit the exposure of
+onchain public keys.  This is the case with the BIP
+360, for example.  We are also seeing the emergence of
+other approaches such as those
+explored by Olawa or Sudokun which
+would allow a
+user to prove that they control a
+wallet without using the
+vulnerable signature mechanism thanks to
+cryptographic proofs and knowledge proofs.
+In other words, even if
+current signatures became breakable, there
+might still be a way to recover
+some funds, but it might
+not apply to all
+address formats.  So, of course, all of this comes at a
+cost.  There are compromises to be made in
+terms of complexity, deployment,
+signature size, and so on and so
+forth.  But I really want to emphasize this
+, we're not in the lurch, there are
+solutions.  So there you have it, no
+matter what solution might
+protect your Bitcoin in the future and
+prevent the creation of new
+attack surfaces, current proposals do not
+change anything for bitcoins already
+exposed today.  That's a fact.
+All corners whose public key is
+already known, old format or
+reused address, remain vulnerable by
+definition.  In other words, the freeze does
+not occur because there is no
+solution.  It appears because
+existing solutions do
+not allow everyone to be saved.  And from the
+moment certain areas seem
+doomed, part of the ecosystem
+is tempted to say, "Since we can't
+save them, let's at least prevent them from
+being recovered."  But at that point,
+we are no longer solving a technical problem.
+We are starting to make political choices about
+which spending rights should
+survive and which should be
+suspended.  And that's where we touch on
+something much deeper
+and much less funny.  Because as
+things stand, whatever we do
+, there is a matter of principle involved.  Either
+we agree to freeze coins and
+violate the principle of non-confiscation,
+or we do nothing and accept that an
+actor can appropriate funds
+without having initially had the keys to them.
+Okay, before criticizing this idea of
+freezing, because as you will have understood, it really
+bothers me, we must first
+properly frame the subject and look at what
+arguments are put forward by this
+segment of the community.  First, you should know
+that the idea of ​​Freeze is absolutely nothing
+new.  It was already circulating long
+before Google's paper.  In February
+2025, developer Peter Will, one of the
+main contributors to Segwi,
+said on the Bitcoin Mailing List that if
+a
+quantum computer were to become credible, then
+yes, we would have to confiscate those
+risky BTC because we would have no
+other choice.  This would inspire
+Jameson Lop's article a month later, "
+Against the Lowing on term recovery of
+Bitcoin."  Even the Human Rights Foundation
+also places the subject at the center of
+its report on the quantum threat and
+explicitly speaks of the burn or
+steal dilemma.  So no, Google didn't invent anything.
+They simply
+accelerated a debate that had
+already begun.  And while we are
+historically accustomed to debates
+of a technicality that few people
+master, the advantage here is that
+we fall more into philosophy,
+into politics than into tech.
+The main argument of the freeze camp
+is one of lesser evil.  The day
+a machine becomes capable of breaking
+a public key, part of the
+Bitcoin supply becomes vulnerable.  And from that point on
+, according to them, inaction is no
+longer neutral.  This is no longer
+simply about respecting the rules.  This is an
+implicit decision to allow some
+Bitcoin derivatives to be transferred to the
+most technologically advanced players.
+actors who, well, let's be honest
+between us, will most likely be
+either states, or big tech companies, or
+why not a mix of both.
+Moreover, Google's paper
+explicitly mentions digital
+salvage frameworks.  In other words, the idea that
+some states could treat a
+portion of dormant Bitcoin as
+abandoned assets, like
+shipwreck or unclaimed treasure.  In
+this logic, if the Bitcoin community does not
+neutralize its coins itself,
+then governments could
+try to legally legitimize their
+recovery in the name of law,
+public interest, or even
+national security or whatever the current argument may be.
+As an aside, this also raises
+more general questions because from the
+point of view of the protocol, a
+transaction resulting from a
+quantum attack would be valid but from the point of
+view of the law, it could be
+classified as theft and this could also
+be valid for the freeze for that matter.
+Okay, anyway, let's close this parenthesis.
+So this issue of free access is also,
+for these supporters, a way
+to prevent external third parties from
+legally redefining the ownership
+of dormant areas.  The argument is that
+if this coin, say
+Satoshi Nakamoto's million BTC, is stolen
+thanks to quantum supremacy, then the
+very notion of ownership of Bitcoin
+would be called into question, and with it
+its monetary credibility.  In addition to that, there is
+an argument for coordination.  Without
+explicit constraints, migration can
+remain slow and largely incomplete.
+In this sense, the freeze is not
+only a defensive measure, it is
+also a mechanism to force the
+system to converge before it is
+too late.  Therefore, proponents of FRIS
+believe that the protocol must
+intervene because a lack
+of intervention would amount to surrendering
+ownership to those who
+best control quantum power.  That is
+absolutely true.  The problem, at least in
+my opinion, is that all of this
+assumes that Bitcoin would have to be saved by
+making it cease to be neutral.  Because, deep down
+, the Freeze supporters
+are saying something along those lines.  There
+are exceptional circumstances,
+tatiti tatata, in which Bitcoin
+must suspend some of these principles
+to preserve its overall consistency.
+But I think it's very similar to the
+type of argument that villains
+use in movies anyway.
+And that's precisely where
+I personally lose interest.  My opinion
+on this debate is that the bitcoiners
+who want a freeze in one form
+or another are whiners.
+And I explain why by
+adopting a provocative tone in order to
+push the arguments to their limit.  By
+its very nature, Bitcoin is not subject to any
+national or international law.  Just as
+Bitcoin has no friends or enemies.  Bitcoin
+is a simple monetary technology on
+which humanity tends to
+agree.  That's all.  From this perspective, it
+seems more than necessary to
+leave everything as it relates to the
+forgotten bitcoins.  Bitcoin's great promise
+is the total freedom offered by the
+protocol.  And by its very nature, this freedom
+is without anyone's permission.  Of
+course, this freedom is regulated by
+the laws of the states in which Bitcoin
+is used.  But even so, on
+the level of the protocol, the big
+promise is that no one will come and
+tell me to do or not to do anything
+.  So if I want to
+put my Bitcoin on an address whose
+public key is unknown or known,
+that's my problem and my responsibility,
+and nobody else is responsible for the problem
+.  I have the right
+to forget my BTC and have it
+stolen if I'm a bit of a slacker.  As they
+say, the biggest danger to Bitcoin is
+not quantum computing or Croocen
+in the closet, but rather the bitcoiners
+themselves who want to change the
+protocol every other day.  We need to
+stop with all these
+nutty beeps.  Phil Geiger, the
+business development manager at MetaPlanète,
+summed it up in one line that
+deserved a patent.  We have to steal
+people's money to prevent others from stealing
+their money.  Once you have
+accepted the principle that
+certain expenses can be
+suspended in the name of a greater good,
+ah, then you have already crossed a threshold into the
+dark side for me.  That's chop.
+Today, it will be the
+quantumly vulnerable corners.  Tomorrow,
+why not the corners of a state under
+sanctions, the corners of an actor deemed
+problematic, the corners of an
+organization considered hostile.
+Monetary history is full of this
+kind of abuse.
+And once again, Bitcoin was
+specifically designed to escape this.
+And that's why, for
+many, the main danger is the
+precedent that would introduce a freeze on
+Bitcoin.  Ah, I can tell you if the
+community did something like that, there are a
+whole bunch of states and
+international organizations that would be all ears
+and say, "Oh, if we did it once, maybe
+we could do it twice, three,
+four or five times, or on demand."
+Immutability cannot be partial.
+It is either a principle, or it
+becomes a variable for adjustment.  But
+then in that case, let's ask the
+following question.  What about the acquisition
+of, say, 6 million Bitcoins by a
+large company or a state, or even by
+Gargamel himself returned to Earth?
+Well, we don't care, we couldn't care less
+.  Yes, this entity reportedly has
+6 million Bitcoins.
+OK, the unfortunate ones who lost their
+BTC will have lost it forever.  And so, that's
+exactly what we call
+freedom, damn it.  and even more.  That is why
+freedom is regulated
+in states where groups of people
+need to live together in a
+healthy social order.  But that's not what we're talking about here
+.  We are talking about a
+monetary technology that must serve as
+neutral ground everywhere and at all times for everyone
+.  By its very nature, this space
+must be a space of
+technological freedom where no one can freeze someone's
+Bitcoin for
+whatever reason.  In any case, that's how
+I see it.  Okay then
+, but I understand the
+frustrations because the price of Bitcoin
+could be driven down for a
+very long time if this player were
+content to sell Bitcoin to
+monetize its quantum technology.  And
+so, if he doesn't want his bitcoins,
+the real bitcoiners will be
+happy to buy them from him little by little
+and this entity will have made a good living
+thanks to its quantum technology.  Where
+is the problem?  Would that
+prevent you from making a transaction
+without permission?  Absolutely not.  Tell
+those people, you're just a bunch of crybabies.
+If the answer to this risk is that we must
+suspend the rules to avoid a
+shock, then it means that at the moment
+the cost becomes too high, we
+cease to believe in the neutrality of the
+system.  And in this case, the problem is
+no longer quantum mechanics.  The problem is
+that we want Bitcoin for its
+rhetoric, but not for its
+consequences.  And yes, I understand
+the heartbreak that a Michael Sailor
+might feel if an entity
+suddenly appeared with 6
+million Bitcoins when he had
+taken x years to acquire 800,000 or whatever
+.  And so, as they say,
+Bitcoin don't care.  Everyone disagrees
+.  Do you understand?  He tells Sailor
+every time he can support
+this idea in any way, "You're a
+[ __ ] crybaby."  And yes, I
+understand that such a capture of
+wealth by an already extremely rich company
+like Google, for example, makes the world go mad,
+forgetting in passing to see that this
+is done by deploying marvels of
+quantum technologies that we should
+celebrate because they will transform the
+world.  And you know what?  Well, you
+'re all crybabies too, and that's that.  That's why
+I titled this video "
+Bitcoiners are crybabies."
+Fundamentally, what tickles my
+nose is seeing so-called
+monetary anarchists intellectually going around in circles to, let's be
+clear, protect their little
+turf and their little short-
+and medium-term advantage.  Realize that if
+6 million Bitcoins
+are frozen, it's a huge loss
+for everyone who owns bitcoins,
+and this loss will impact
+large holders much more than small holders.
+So don't tell me that
+the big players who want free do so
+to protect the
+bitcoin community from
+excessive centralization.  My knee, yes, that's
+pure and simple egocentrism and selfishness
+.  As always, my fear is
+that greed is the real key driver of
+this lunar Freeze story.  There, I've said it
+.  And it will make a nice, very
+long YouTube short that you can
+send to the head of any
+papier-mâché bitcoiner who is ready to
+side with the institutionalization of the
+protocol.  Yes, sir, provided he makes
+a small profit from it.  Three pieces of silver
+for treason, isn't that right?  And
+to push the provocation to the very
+end.  Remember that honor cannot be
+bought, even if it can be sold
+once.  That said, we need to
+address a counter-argument from the
+freeze camp because it is the most solid or
+the least fragile of them, whichever you
+prefer.  It's not just that the price
+will fall, it's that if a
+significant portion of the supply becomes
+recoverable, the founding narrative of
+Bitcoin with a fixed supply of 21 million and
+mutable ones would take a hit.  Basically,
+we are being told that doing nothing will
+kill Bitcoin's etos money.  But I
+hear it, but my answer remains the same.
+This narrative has value
+precisely because it is
+unconditional.  The day we say 21
+million, unless an actor threatens the
+suppla on the other hand,
+it is no longer 21 million.  That's 21
+million minus one asterix.  And
+once this asterisk is written, it never closes
+.  There, I've said it.  You know what
+I'm thinking, I can calm down now
+.  My office neighbors
+thank you because I think I
+shouted a little.
+Well, you know what they
+say.  When a problem seems to offer
+only two solutions, there is always
+someone to look for the
+middle way.  An intermediate solution that
+involves neither freezing corners nor
+allowing an actor to instantly recover them
+.  That's where
+glass comes in.  Instead of completely preventing
+the spending of certain Bitcoins, we will
+simply limit their flow over
+time.  In concrete terms, this means that
+outputs considered vulnerable,
+more specifically older formats
+like P2PK, can only be spent at
+a limited rate.  Typically, a
+cap of one Bitcoin per block, which would
+correspond to approximately 144 BTC per
+day.  If we apply this to just the 1.7
+million Bitcoins exposed via
+P2PK formats, we spread their
+potential mining over several decades.
+So we don't confiscate, we don't block
+, we slow down.  On paper, the idea
+is clever; it doesn't eliminate
+the attack, it transforms it.  Instead
+of a potential shock, we get a
+slow extraction, spread out over time
+and predictable.  And where it gets really
+fun is with the
+economic consequences, especially for Bitcoin which
+could even come out on top because
+it would be the biggest ode we've
+ever organized.  Basically, an
+actor who manages to exploit a
+vulnerability seeks to maximize extraction
+as quickly as possible.  With
+Hourglass, this is no longer possible.  The
+return on investment is spread over
+years, or even decades, but the
+cost of acquiring
+quantum capacity remains high.  So that
+completely changes the equation.  Well, more or
+less, because if we take into account
+that the price of Bitcoin increases more and
+more sharply over a few decades,
+well, that really makes for a pretty good
+savings strategy for them.  Then there is
+another effect to consider, the
+fee market.  With Aborglace, these
+transactions do not disappear, they
+become limited, therefore by definition
+more competitive.  Since each block is
+a constrained space, this opens the door
+to competition between
+regular users and those seeking to
+extract its corners.  So at this point, we're starting
+to feel that this idea is
+a bit flawed around the edges.
+Limited-time releases are
+becoming rare, and therefore competitive.  And
+scarcity in a limited space means
+competition for fresh produce.  So, me, a
+Bitcoin miner, uh, that suits me fine,
+but I'm not sure it's really
+ethical because we're creating a
+rather cynical alignment.
+Securing the network also involves
+the gradual absorption of these flows.
+Therefore, in addition to not targeting all
+vulnerable addresses, it does not resolve
+the philosophical question.  He
+bypasses it, or more precisely, he
+wraps it in economic engineering.
+We no longer say we are freezing, we say we are
+slowing down.  Alright.  But here again,
+a distinction is introduced between
+areas where traffic can circulate freely and
+others where circulation becomes
+conditional.  This introduces
+a form of discrimination into
+the spending rules, and that is
+obviously not something that is universally accepted.  Fortunately, too
+.  For some, Hourglass
+normalizes theft because by
+directly redistributing part of the
+stolen value to the miner, there are costs involved,
+the problem is not solved.
+The principle of "your keys, your corners" is always violated.  And for
+others, it is also an attack on the
+permissionless nature of Bitcoin.
+precisely because the ability to
+spend according to the historical rules of the
+protocol is replaced by an
+artificial regulatory mechanism.  As far as I'm
+concerned, yes, it's still more elegant
+if you want that kind of
+hair, but it doesn't
+fundamentally change much because from
+the moment Bitcoin starts adapting
+its rules to correct an
+undesirable result, it ceases to be a
+neutral infrastructure.  So to all
+the people who are in favor of a
+glass-type approach, I want to
+tell you that you are still
+whiners.
+And now, as I said
+in the introduction, the goal here is not to
+give a technical presentation but to
+reflect on the philosophy behind all
+this.  But I also know that everyone is
+wondering if something like this really has
+a chance of succeeding.  First of all,
+a BP is not a law and this is
+even more true here because BIP 361
+is currently in draft form and of an
+informational type.  In other words, it
+can change all the time.  But beyond
+that, the fact that a proposal is
+published, numbered and discussed does
+not mean at all that it will be
+adopted.  On Bitcoin, a PIP can
+exist, be debated for months or
+years, and then never be activated.
+And even without that,
+a credible post-quantum proposal must first
+exist upstream since BIP 361
+itself depends on a future BP that would
+introduce post-
+quantum signatures.  Next, there need to be
+implementations, reviews, tests,
+debates, and then an
+activation mechanism.  And most importantly, it requires
+something much harder
+to achieve in Bitcoin:
+sufficient social consensus.  And let me tell you,
+given the stakes, well, it's anything but a
+consensus, you only have to see how
+I react.  So
+personally, all of this seems quite
+unlikely to me, at least as things stand.  In my
+opinion, the political cost of such a
+change is simply too
+high.  Even James Lop,
+co-author of the BP in question,
+readily admits that he did not like the idea and that
+he hopes never to have to
+consider it for a real adoption.
+Basically, he's doing this for lack of a better option.  Then
+afterwards, there are a whole bunch of questions
+about the consequences of all this, between
+soft fork, hard fork, but I'm not going to
+venture into that because otherwise we'll be here all
+day and above all we'll be getting
+into considerations that are not
+relevant.  So we'll talk about it again, or not, when
+the time comes, if the opportunity arises.  As you will
+have understood, in my opinion, the best
+thing to do is probably to
+do nothing or more precisely to give
+developers time to do what they
+know how to do, improve, propose
+standards and above all make
+migration to
+quantum-resistant formats as easy as possible.  And at the
+same time, accept that yes, it is
+possible that one day a state, a big
+tech company or whoever you want will appropriate a
+portion of the dormant bitcoins.  Yes, it
+could create a shock in the market,
+but to that, I want to answer
+exactly the same thing as to those who are
+worried about seeing BlackRock, Binance
+or Strategy accumulating too much Bitcoin.   So what
+, who cares?  No.  Again
+, does this prevent you from
+making a transaction?  No.  Does this
+prevent you from using the network?
+Absolutely not.  I pushed the envelope to its
+extreme in this video because the
+neutrality of the protocol is non-negotiable for me
+.  Yes, more than ever
+, I understand that these questions are
+worrying, troubling, and disturbing.
+But deep down, beyond these debates,
+beyond my lyrical flights of fancy, there is
+only one thing that
+really matters.  No one can stop you
+from transferring value without
+authorization.  And that's perfectly fine
+.  If you want to understand why
+Bitcoin neutrality is so
+important, go watch this video where I
+explain why owning Bitcoin
+is like owning the world.

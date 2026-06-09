@@ -1,0 +1,936 @@
+all right hello everyone so we're here
+to talk about devsecops mainly devsec
+Ops in postgres all right so I'm here
+representing the global Center of
+Excellence from Fujitsu
+my name is Tim Steward I'm a principal
+data Enterprise architect with Fujitsu
+so devsecops so when I thought about
+devsecops and tried to understand
+exactly what devsecops was I looked for
+a definition so here's a quote that I
+came up with or I found actually so
+devsecops is the use of traditional
+development
+security and operations functions to
+increase the security of applications
+and digital services so if we think
+about this quote
+here it's actually saying that you have
+your traditional development
+the development that most people are
+used to and then you're combining
+security but what you're actually trying
+to do is increase the actual process so
+we'll focus on increase as we go further
+so as an agenda we're going to talk
+about an introduction to devsecops we're
+going to touch on Jenkins and why it's
+important and then we're going to get
+into some postgresql database security
+we're not going to touch on all the
+database security within postgres but
+we're going to touch on some key things
+that can help you with your pipelines
+and then we're also going to touch on
+some compliance and controls and then
+some Automation and management as well
+so an introduction to devsec apps so
+when we think about learning anything
+new right it's all about learning
+your wealth of knowledge and trying to
+figure out how can I learn this because
+new topics can be overwhelming
+but if you think about it there was a
+time
+when they said you can put a pillow take
+your pillow excuse me put a book under
+your pillow and you could absorb this
+knowledge
+I'm not sure if that actually works
+right you can listen to a YouTube video
+while you're sleeping and try and absorb
+that knowledge as well right but anytime
+you try and learn something new it's
+like the knowledge overflow right so
+education is not the filling of a pale
+but the lighting of a fire
+often when you learn something new it's
+like drinking from the fire hose
+so thinking about deaths at cops and
+introducing that into your ccid
+what we have is common things that
+you're used to today there are two
+typical challenges that Industries are
+facing the first challenge
+is what's going on with devsecops right
+we have this traditional development and
+now we have to try and figure out how
+can we take this traditional development
+and move it into devops even right
+before we even get to the SEC Ops right
+we're moving it to devops and then
+there's also vulnerabilities that we're
+trying to plug so companies are trying
+to plug these vulnerabilities and take
+these two together and figure out what's
+next what's our next step
+the whole time what you're trying to do
+is identify code defects identifying
+code defects and try and figure out when
+can we identify these code effects can
+we do it in the beginning can we do it
+in the middle do we have to do it at the
+end you're trying to increase the amount
+of time it takes to find these code
+effects you want to find them faster
+if not later right so if you think about
+it if you want to fail you want to fail
+fast so you want to find the defects as
+fast as you can
+now we think about compliance right we
+all have compliance so we're trying to
+find defects so we can still meet our
+compliance and understand that if we're
+trying to meet our compliance we can't
+compromise on anything from a security
+standpoint we can't make any compromises
+on our software delivery
+so when we combine the security not
+making any compromises
+that's what you get with your Dev secots
+that's when security comes into play
+because what you're actually talking
+about is a continuous flow of security
+right so when doing your entire software
+development life cycle you want to add
+security into the process
+security not at the beginning of the
+process not at the end and not at the
+middle but it has to be a continuous
+flow of security that you're trying to
+add throughout the process
+and while you're doing that there are
+several things that you have to do
+there's monitoring and Security checks
+that you have to put in place as well
+to increase your pipeline and increase
+that security within your pipeline
+now there are a lot of tools in the
+industry there are a lot of tools that
+you can use the application development
+team has several tools that they use and
+so does the DBA team
+but when you think about this devsecops
+process everyone needs to know what the
+other team is doing because now it's the
+responsibility of everyone security is
+everyone's responsibility so as an
+application developer you need to know a
+little bit about what the DBA tools are
+and the DBA needs to know a little bit
+about what the developer tools are why
+because these tools have some key
+features that will affect the other
+teams so it's important to learn a
+little bit about what those tools are
+when you take these tools
+if you're an application developer from
+that standpoint you're always taking
+your tools you're applying your tools
+you're moving your source code
+into a Version Control System a lot of
+times people forget about the database
+the database itself the database has to
+be versioned as well so your database
+schema should also be moved into your
+Source Code system and has some
+versioning as well
+right so if your application is on
+version
+11.2.1 you should have a schema
+associated with 11.2.1 as well that
+you've moved into your pipeline as well
+so that's something you want to fully
+integrate into your pipeline
+now Jenkins
+Jenkins is probably the most popular
+tool within the postgres industry right
+now why is this so popular it's popular
+I believe because of its flexibility
+just like the postgres database is
+pretty flexible Jenkins is also a pretty
+flexible tool that you can use
+so the flexibility that it offers it
+also offers some Innovation so if we
+think about this quote here put
+Innovation at the heart of your thinking
+process
+so if you look the author of this quote
+is the CEO of agilium we think agilium
+we think agile
+so he's thinking Innovation putting
+Innovation at the start of your process
+so when it comes to using Jenkins jinkus
+needs to be a part of the process but
+not only in the beginning and not in the
+end but it has to be the heart the focal
+point of your process right the Hub of
+your whole system so if you think about
+your human body you have your heart your
+heart is not necessarily in the center
+it's off-centered but everything flows
+throughout your heart right all your
+blood is going to pump and flow
+throughout your heart so everything
+within your pipeline has to flow through
+Jenkins
+if it's not Jenkins any tool that you're
+using everything should flow right so it
+has to be the center of everything that
+you're doing so it has to be a critical
+part
+of what you're doing and that's the
+Innovation that it provides
+now part of that Innovation will allow
+you to do things that you don't
+necessarily have to use it for
+everything that it offers you may just
+want to use it for the CI portion of
+Jenkins right you may want to do some
+manual deployments through Jenkins you
+have that capability as well
+right because you take the framework and
+apply it to what you need because that
+framework has to be a part of everything
+that you do so you adopt the entire
+framework within your infrastructure
+now if we think about some of the
+flexibility for it as well there are
+several plugins as you can see that it
+actually uses right
+within the last six to nine months I
+would say one of the most popular ones
+that I've heard was hashicorp fault
+right hashicorp Vault very popular some
+of the other ones such as terraform
+bitbucket they've already been there and
+they've been in use a lot right so
+people have already adopted them so just
+showing the many plugins that you can
+use shows the flexibility The Innovation
+that Jenkins can offer and if you take a
+look at the graphic and we look at this
+we'll say
+if this is your cycle you have to make
+sure that that Innovation is at every
+stage every stage of your cycle right so
+you have to have Innovation not just at
+the build phase or the test phase but
+innovation has to be a true part of
+everything that you have within your
+pipeline
+so touching on some of the benefits of
+Jenkins right you have the flexibility
+to
+issue your code and push your code your
+code can be pushed via shell scripts you
+can have bat files as well when you're
+trying to push your code in or you can
+do some filtering of things to help with
+some of the little minor work so that
+you don't have all of the minor work
+with Jenkins and utilizing the scheduler
+that comes with Jenkins as well right so
+Jenkins has a pretty nice scheduler and
+then that's going to help you with your
+scheduling of your test when it comes to
+testing
+there's functional tests there's
+performance tests there's also load
+testing is very critical one of the key
+tools that's used for load testing is
+Apache jmeter Apache jmeter is pretty
+popular now as well so from a load
+testing perspective that's something
+that can be implemented and also
+utilized within your pipeline as well
+now from integrating into Jenkins
+Jenkins jobs or if it's ansible jobs you
+have that ability to do that type of
+integration Jenkins is going to give you
+a pretty nice console to use so you can
+utilize the console of Jenkins it's
+going to help you with adding new hosts
+managing nodes adding new nodes as well
+you're going to have that flexibility
+all from within the console of Jenkins
+now Jenkins is going to be able to help
+you from a deployment standpoint right
+whether it's your single or multi-tier
+deployments as well and then you can
+also add some P SQL commands as well so
+if you have some p-sql scripts you can
+have those commands and use Jenkins to
+help you with that as well
+now I have a little example here in the
+middle
+this is an example of how you can
+actually create that deployment script
+using the release number the release
+number is going to be key for
+identifying what you're trying to deploy
+foreign
+database security
+now here's a quote
+security is the essential roadblock
+to achieving the road map to peace
+so
+peace is very important
+especially when you think about the
+security standpoint
+you need peace peace with each other
+peace of mind is going to be critical so
+if we think about this
+how can you achieve that peace peace
+with other teams other teams within your
+environment so the DBA needs to have
+peace with the applications team the
+applications team needs to have peace
+with the operations team so what you
+need is a baseline a security Baseline
+so you need to create a security
+Baseline now every CSO from your
+Security Group may have their own idea
+of their security Baseline their
+security Baseline their security
+policies are the policies for the entire
+company
+but within your own groups you need to
+have your own Baseline your own Baseline
+standards your Baseline standards May
+incorporate some of the items from your
+company's security policy and if you're
+on the application side they may
+incorporate some items from the database
+teams policy as well but you need to
+create your own Baseline standards
+Baseline standards with the security
+items that you need for your application
+now when it comes to where do you get
+guidance from
+the industry on how to create this
+baseline or information to put into your
+Baseline here are some key things that I
+listed to help you get that guidance
+there is the center for Internet
+Security
+there are some CIS benchmarks and one
+thing I skipped here that I want to talk
+about is The Stig security technical
+implementation guide so a lot of times
+when you try to bring in a new vendor
+into your companies one of the key
+requests is to see if that vendor has a
+security technical implementation guide
+that's very critical but one of the
+things that they may not have is an app
+Dev stick an application development
+stick a lot of people Overlook that Stig
+that's going to be critical as well
+because typically if you're thinking
+just about the database and how to
+implement the database what about the
+application the app Dev stick is
+something that directly affects the
+application it may have some key
+database things in it as well but the
+app devs dig is going to be important to
+your environment as well
+now
+when it comes to reviewing your new
+Baseline standards you need to compile
+everything from all teams and all teams
+need to collectively
+understand and review these standards
+because remember
+security is not just the responsibility
+of one person anymore it's the
+responsibility of all teams the security
+team the database and the development
+team so all teams should be included
+when it comes to reviewing these
+standards
+and then what goes on your Baseline
+standard your Baseline standard if you
+create a template for it it should
+include things such as the security item
+number and a description
+description should contain not only what
+the name of an item is but where and
+what area does it affect the application
+right if it affects the application
+login then you need to have that type of
+information in the description
+and then there's also an item status and
+the frequency of when is checked right
+so the check frequency is going to be
+key because if you're releasing every 90
+days
+but if your check frequency is a hundred
+days then you're going to have a problem
+you might miss some things so you need
+to make sure that those things are
+actually in sync
+so automation automation of post
+security so poster security you take
+your Baseline standards
+and then you want to automate them the
+reason is you want to have these things
+automated is we can well we can actually
+just focus on the flow chart here right
+so everything within the flow chart is
+typically a pretty smooth process but at
+any point in this flow chart if you have
+a breakdown you're pretty much starting
+from the start all over again right so
+you want to have a process that's
+automated relieve any manual
+intervention and then your process can
+be pretty smooth as you go through your
+security applying your standards your
+Baseline standards which are going to
+follow all the way through your flow
+chart
+that's going to help with the
+consistency building consistency helping
+you meet any compliance regulations as
+well
+so all of your security hardening that
+you have to do is going to be included
+into your Baseline standards whether
+it's password lengths the amount of time
+your password has to be changed
+application field lengths all of that
+type of security hardening are things
+that you can include within your
+standards
+now security patching security patching
+is done at multiple levels
+typically if you're on the application
+side you typically will think about just
+your application and the frequency when
+you have to buy your application and
+what affects the application
+but if you're in the OS layer or the
+database layer you also have packet
+packages patches excuse me and then they
+have a certain frequency as well so
+understanding the frequency of the
+patches understanding the detail of the
+patches from either group so the
+applications team needs to understand
+what type of patches the database team
+are doing what type of patches the OS
+layer is doing if the OS layer is
+packaging a package or binary or
+affecting some library then that could
+possibly affect your application so you
+need to understand what those patches
+are doing too and then understand that
+frequency you know a lot of times people
+will apply patches based off the
+frequency and urgency of what their
+needs are not necessarily the complexity
+and how it'll affect your application so
+understanding those key areas of
+complexity
+urgency frequency and also the detail of
+those patches will be critical
+and then understanding if those patches
+are applied using a program or if
+they're going to do some manual level
+patching as well those things are going
+to be critical
+so there are various things that are
+needed from a security standpoint
+encryption is one of those things
+there's various levels of encryption
+so some of the types of encryption would
+be your data address encryption some
+examples like your PG Crypt using PG
+crypto your full disk encryption
+transparent data encryption and then
+your data in transit encryption as well
+and we'll touch on some of these things
+there's also data masking so data
+masking is critical to your environments
+as well so you want to make sure that
+you have the capability to add some
+masking in place as well so if you don't
+have a masking tool or a masking utility
+those are things that you can actually
+do manually through a program as well
+you can use some kind of random number
+generator transforming the code as well
+manipulating the field data so that the
+data is truly Mass within your
+environments but this will help you with
+your standards especially your PCI
+standards and help you predicting data
+that's online and offline as well
+and then understanding what type of
+masking data is needed or why you're
+actually masking the data whether it's
+the pii information whether it's your P
+PCI whether it's your IP that you're
+masking and then now in today's time
+your Phi data is critical as well
+so those are some key things that should
+actually be masked
+and then the masking types what type of
+masking are you going to do do you need
+to do some full masking or do you need
+to do some partial masking right or is
+it going to be your regular expression
+type of masking where you just need to
+mask an address or something to that
+nature
+so understanding these types of values
+and what the true need is is going to be
+important in your environment
+and then if you're using transparent
+data encryption or seeking out
+transparent data encryption looking
+forward to 156-bit encryption is going
+to be key and definitely trying to use
+data at a rest encryption is going to be
+key if your data walks away from you at
+some point I know a lot of times we
+think our data won't walk away but
+nowadays most people are working remote
+anyway so if they're working remote some
+form of your data is sitting on the
+laptop right some of your data is
+sitting on the beach somewhere basically
+because somebody's working remote
+now the transparent data encryption
+there are some key things
+from the encryption standpoint that are
+that really need to be included Your
+Wall Files your backup files
+your temporary files as well there's a
+lot of key data stored in temporary
+files a lot of times temporary files are
+overlooked right temporary files is
+basically your workspace your workspace
+for your data so there's a lot of key
+things there so you need to make sure
+that those things are also a part of
+your encryption as well and keep those
+in scope
+PJ crypto is pretty easy to implement
+building out the PG crypto extension
+it's going to give you the flexibility
+to
+utilize a particular column that you may
+want to encrypt so if you want to
+encrypt a social security or national
+identifier column using that to
+specifically use PG crypto to encrypt
+that data is going to be handy as well
+and then with that you have several
+modes whether it's the md5 shot or
+within two-way encryption AES or Des
+algorithms that can be used as well
+and then your full disk encryption
+options
+using the Lux system Lux is a great
+feature for encrypting your data so this
+is going to allow you the ability to
+decrypt the master key which is also
+going to be important when you're
+talking about bulk level encryption so
+the decipher key is used here for Lux as
+you can see but Lux is important it's
+the rail supported option so it's
+probably already available to you on a
+rail system that you may be using so
+it's something that you can definitely
+take advantage of
+and then file system level encryption so
+encrypting the entire file system is the
+other mode so this is going to give you
+the ability to encrypt individual files
+individual directories where you have
+key directories with important
+information so encrypting what you want
+to use and what you need to be encrypted
+on a full disk level it's also important
+and then there's compliance and controls
+so from a compliance standpoint
+looking at
+the controls that you need to have in
+place I found this quote we need new
+Partnerships for peace and security
+so Partnerships before we talked about
+basically Partnerships and being making
+peace with our internal departments such
+as the security the database team right
+the applications team but also there are
+some other groups as well
+the executive management
+your internal audit groups things that
+people that need to be help you enforce
+your compliance and your regulations
+right so in order to do that one of the
+things you have to focus on is your
+configuration management so everything
+that you do should be properly
+documented and maintained so that you're
+securing things the same way every time
+every time you build you're building the
+same way every time everyone in your
+your team that's doing a build should
+build the same way as you did your bill
+because everything is based off the
+configuration management
+right one of the things you don't want
+to happen is you end up with what's
+called snowflake servers so if you have
+your process and then you build out your
+environment using the proper
+configuration management and then now
+somebody applies changes on top of your
+configuration then or on top of that
+build and then you end up with a
+snowflake server because now those
+things are not properly tracked within
+your configuration management so you
+don't want to end up with snowflake
+servers so what you want to do is do
+some proper configuration management
+make sure you have some examples within
+your config that shows everything that
+you need whether it's a special Mount
+point or directory that your application
+needs whether it's special port numbers
+and users everything that needs to be
+built out from a configuration
+standpoint should be built into your
+configuration management
+now if you're using Jenkins Jenkins has
+a nice console gives you a nice web UI
+that you can use but you can also use
+the text formats as well to build that
+out
+so from a compliance monitoring
+standpoint
+you really should Institute checks
+everyone needs a good checklist so
+instituting checks within your process
+so your checks for everything that's
+actually done from a security standpoint
+config standpoint as well but definitely
+from a security standpoint so your
+checklist should follow along throughout
+your software development life cycle So
+within your checklist you want to have
+things that are directly related to
+what's happening with your build and
+actually within your release
+item numbers
+item description status
+the last time that check was actually
+ran right who ran it what time those
+things are going to be critical as well
+when you think about the compliance
+level because if you run a Check and
+that check was actually done by the
+security team
+but you're having a problem with your
+application now you know you can go back
+to the security team and say hey what
+happened with that check because you
+said the results were this this was the
+status but now this is affecting my
+application
+so you want to be able to track all of
+those things so you understand what was
+checked when it was checked and by who
+it was actually checked by
+now within their templates there are
+several types of templates or tests
+within your environment that you
+actually perform
+there's your white box right your white
+box or your static application testing
+and then there's also your black box or
+your Dynamic application testing so
+the key thing here we'll talk about the
+Dynamic application testing because
+that's the one that we don't really hear
+about so running through those types of
+tests that's not the test to test your
+application code that's the type of test
+to test your application as if you were
+an outsider or as if you were a hacker
+testing your application like a hacker
+would test your application basically
+that's going to help you flush out
+issues because now you're testing it
+like it would really be hammered on
+right not your traditional functional
+testing that somebody might do
+when someone knows your system they're
+going to do traditional functional
+testing they know exactly what screen
+feels to hit so that testing
+you're not really going to flush out a
+lot of issues but you want to do the
+dynamic application testing
+then there's your SSL and TLS
+encrypting your data that's in transit
+is going to be important as well so
+postgres works really well from a SSL
+standpoint so that's something that most
+people are using but if you're not
+something you definitely should be using
+as well all right and if your TLS it's
+usually typically the most common
+version is like TLS 1.2 that's supported
+that people are using today
+there is centralized access control as
+well so centralized user access control
+basically knowing who's accessing your
+system how they're accessing your system
+and at what levels they're accessing
+your system and if they should still be
+accessing your system
+understanding that understanding the
+advantages of password management
+understanding the time savings that it
+takes if your access is actually correct
+right the convenience and The Time
+Savings that you'll have utilizing
+things that are available to you
+single sign-on and ldap
+single cyanol is one of those things
+highly used in most environments but it
+also creates a major hole as well right
+in most of our environments we use a
+single sign-on that's going to help us
+connect to multiple applications with
+that one sign on
+well if someone gets your One login
+you're one sign on now they have access
+to maybe five or six of your company's
+systems
+so it really is used by everyone but
+it's going to be critical on the
+password management for single sign-on
+type of applications
+Automation and management
+so here's a nice quote from Bill Gates
+automation applied to any inefficient
+operation will magnify the inefficiency
+so if there are any flaws within your
+system
+if you utilize the automation that's
+going to help you flush out what those
+flaws are
+one of the key things is Key Management
+all right so how you manage those keys
+has to be an efficient process all right
+key management is something that you
+can't afford to be inefficient all right
+so you can decide that we're going to do
+key management and half do it it has to
+be fully implemented
+all right
+this is the main thing that's going to
+end up to protect you from security
+breaches no one wants to end up being
+affected by one of the government's
+security breaches that came out that day
+now the government keeps track of
+security vulnerabilities there's a
+database full of them but nobody ever
+checks that all right I'm willing to
+guarantee that ninety percent of the
+people here at the conference today may
+not know that the government has a
+database of security vulnerabilities or
+are they checking it on a regular basis
+to see if those vulnerabilities are
+affecting their application
+so Key Management because you don't want
+those breaches to actually affect you is
+going to be critical
+right so understanding the key store
+key store lists again such as hashicorp
+Vault Nitro key or UBS HSM those are
+some critical ones that can be utilized
+as well so being able to manage a key
+store
+locally and externally right keeping
+that key store in a separate location is
+going to be critical to help you with
+your key management and your key
+management has to follow along
+throughout your life cycle as well
+foreign
+best practices from a security
+standpoint
+never use any default values default
+values for ports default values for
+usernames those are things you
+definitely don't want to use revoking
+any access that's not needed things you
+definitely do not want to have out there
+as well
+understanding your pghba.com
+not leaving It Wide Open to the world
+restricting access to understand who can
+connect to actually connect to your
+database is going to be critical
+some other things would be
+understanding the Privileges
+we know that certain application users
+certain dbas have access to a system
+but truly understanding what application
+access they have what database access
+they have do they still need that
+Authority maybe they've moved and
+changed groups do they still need to
+have all of those privileges right never
+giving up something like a super user
+privilege right understanding encryption
+or there's one way or two way what
+method do you need what method are you
+actually using
+and then your sensitive data are you
+going to mask that sensitive data
+putting together the proper security
+Baseline standards to control your
+entire security best practices and what
+you have in place
+now implementing
+devops or devsecops right all of these
+things that we talked about should be
+implemented
+through a program of some sort you don't
+necessarily have to use Jenkins but they
+should be implemented through a program
+right you don't want to go around
+implementing these things manually it
+needs to be done programmatically if
+it's not done programmatically then how
+are you going to maintain it it makes it
+more difficult so you want to make sure
+that you're doing it through a program
+some type of scripts that you can
+automate that will help you with things
+like applying changes any type of
+changes or updates that you want to
+apply and then if you have to add new
+security checks as well that's going to
+be critical
+so are there any questions
+yes
+yeah so from
+yes so how does hashicorp flop ubhsm how
+do those type of products compare it to
+the AWS secret management right so I can
+only talk from what I've used
+um I know about the AWS product but I've
+only used the Ashley Court fog product
+so
+um from an implementation standpoint
+it's easy to use I know that um so I
+don't know the level of difficulty that
+the AWS product has to it I mean I
+wouldn't imagine that it would be that
+difficult but I haven't used it myself
+personally
+manager
+without
+yeah so it basically
+it's more of a plug-in that you can
+actually use to implement it with
+no I do not at this time so yeah
+two
+are there any other questions
+yeah so depending on the database that
+you're using
+oh sorry so are there any type of
+particular tools for auditing and
+logging
+right so other than using something that
+postgres itself offers
+um there are particular database
+versions that offer some logging
+features for you right so using PG audit
+is one of the key things that would be
+available from an auditing standpoint
+Within postgres
+yes
+yeah so
+that would depend on which key
+management tool that they're actually
+using right to bring your own key
+bringing your own key today is pretty
+popular as well so
+um and I do believe within hashicorp you
+can utilize to bring your own key
+function
+yes
+from asking
+so
+I don't really have a recommendation and
+I'm not sure of the company there is a
+postgres based company that has a
+masking tool
+that I'm not sure if it's open source I
+think they actually sell it though
+um
+I'll try to remember the name for you
+and I can get that for you afterwards
+but I don't necessarily have a separate
+recommendation for the masking
+um
+foreign
+yes
+well with any with any type of disk
+encryption you're going to take a
+performance hit
+um I mean I would say
+you're gonna have like a five maybe five
+to seven percent performance hit but
+it's it's performance over
+the security value is what you have to
+weigh out
+um when they have that type of situation
+right
+yeah
+foreign
+so
+so one thing
+this was pretty nice
+security is not a product but a process
+so there are products that you can buy
+Open Source Products you can download
+but you have to understand that it's
+going to be a process so it's not just
+something you can buy and it's going to
+fix all of your security issues so it's
+key
+and the last thing
+all right definitely so the last thing
+here is the way to be safe is to never
+be secure
+so you can never go to sleep on security
+there's always going to be some type of
+security fix that you need to apply
+thank you
+[Applause]

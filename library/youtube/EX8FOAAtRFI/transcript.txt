@@ -1,0 +1,20 @@
+GitHub Copilot for Security! You can use it to
+write safer code. I coded this without Copilot.
+It is vulnerable and generates a code scanning
+alert because attackers can extract sensitive
+data through a SQL injection. Let's delete
+the vulnerable code and let Copilot suggest
+something else. Copilot now implements filters to
+take out vulnerable suggestions. And yes! Wow! In
+the proposed suggestion the use of parameterized
+statements prevents SQL injection. Copilot however
+is an AI assistant not a secure code expert. Even
+if the suggestion is much safer than the initial
+code thanks to the vulnerable code filter, there
+is still room for improvement. In JavaScript for
+instance attackers can pass objects instead of the
+expected input types and still achieve injections.
+To defend against that, I added a type check
+ensuring that the input is a string or I could
+also ask Copilot to add it for me. Thanks for
+listening and hit the follow button for more!

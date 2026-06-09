@@ -1,0 +1,506 @@
+hello and good morning everyone it's
+exciting to be here with you all and
+talk about ushering in this new era of
+Agents welcome to developer week
+2025 I hope you're enjoying the day so
+far my name is shiv RI and I'm the
+president of op
+zero now I want to begin this uh this
+talk with uh a demo to set the
+context of what a generative AI or agent
+experience could look like and all of
+the learnings that we've had along the
+way uh on building this type of
+application and type of security
+considerations that you may need to have
+so I'm going to switch to the demo mode
+here so First Market zero is a
+fictitious J part application that
+allows you to trade stocks so I'm going
+to set up my demo here go ahead and log
+in with my
+credentials I will take uh few seconds
+here so given Market zero is an
+application allows you trade stocks I'm
+really interested in this uh company
+called ziko so why don't I first start
+with understanding what the stock price
+of ziko
+is so as you can see goes ahead and
+generates this beautiful UI telling you
+what the St stock price is now I'd like
+to understand could this be a good
+investment well let's go check the
+forecast for
+ziko now what's happening in the
+background is that market
+zero it generates a forecast using rag
+on earnings documents it fetches the
+documents from this database and feeds M
+to an llm to generate the earnings
+report it seems like I don't have access
+to analyst reports and I can easily fix
+that I'll go ahead and join the market
+zero
+newsletter so that analyst reports can
+be included next time I ask for forecast
+so there you go go it has subscribed me
+to the newsletter and it's asking me
+would you like to read the forecast
+analysis for zon now I'm going to say
+yes let's go ahead
+and do
+that so now if I ask for the forecast
+again I get something more valuable
+because I can access more documents now
+behind the scenes Market zero updated
+the documents I had access to when I
+subscrib to the
+newsletter then it it retrieved them to
+generate the new report giving me a more
+improved and detailed
+answer and so you can see do doents here
+uh you know there are three different
+documents it returned and uh when you go
+back you can see there was one
+additional document um added and so that
+means that my permissions change
+dynamically without requiring me to log
+out and log back
+in now that's the experience I want as a
+user so it should be easy to implement
+as a
+developer now let's get back to my
+investment given those forecasts I the
+monitor is equals price to earnings
+ratio and purchase shares if it falls
+below
+15 so let's go ahead and do
+that and while it's doing that you know
+Market zero can do a lot but he can't
+tell the future uh uh quite
+yet like this action may take a day a
+week or a month and so what it's asking
+me to do here is to
+enroll in a push notification and
+essentially confirm the operation as a
+human in the loop whenever this
+condition is met so I'm going to pull up
+my phone here going to my
+authenticator I'm going to
+add the ability to scan a QR code so
+let's go ahead
+and enroll in this and you'll see it
+gives me an option to scan a QR code I'm
+going to take my phone
+scan the QR code and just so you know I
+have already added this to my
+authenticator uh
+app okay so now it's monitoring for this
+condition and uh we'll we'll get back to
+this uh in a little
+bit now I'd like to keep up with zikos I
+want to be reminded of upcoming events
+so first let's see what events are
+coming
+up so let's see show me zoo events
+now when I do that I can see that there
+are quite a few events coming up but
+it's giving me an option to connect my
+Google
+account and so I'm going to go ahead and
+and do
+that and what's happening here is that
+it's asking Google to consent access to
+Market
+zero um so that what happens is and
+Market zero has access to my calendar so
+you can call the Google Calendar API on
+my
+behalf and you can see now I have the
+ability to add events I'm going to go
+ahead and say add
+events so I'm done with this research
+but there is one last thing I want to
+share this investment idea with a friend
+I'll share this chat session with them
+by entering their email and send it I'm
+going to go to chat session here and
+I'll put in my friend Daniel OCTA
+do okay now I just got an authentication
+request on my phone so you can see it
+here and Market zero is essentially
+asking to approve buying 10 shares of
+ziko remember we set that condition
+earlier so I can go ahead and uh hit uh
+approve here and it will go ahead and
+purchase those
+shares
+now we are basically implementing the
+human in the loop agenda pattern where
+the user is asked to approve or reject
+an AI agent operation but
+asynchronously now as a user I don't
+want to wait in front of the chat window
+for operations to finish to interact
+with
+them now that's a nice futuristic app it
+generates UI based on my inputs
+integrates with my apps seamlessly can
+handle long running tasks and lets me
+know when it's done it's collaborative
+my permissions are also handled Dy
+dynamically that is what is claimed
+about co-pilots and agents but why
+aren't all apps like that yet with Genai
+building a good-look working demo or
+basic application is
+Trivial now many of you have probably
+seen it or done this year in a hackathon
+a weekend project or a few hours of
+doing a PC at work and that F fantastic
+speed at which you get the basic version
+working is what makes social media and
+startup World filled with demo apps and
+products that look amazing so we all
+think that everyone else's J apps are
+more advanced than they really are it's
+a mix mix of availability bias and
+confirmation bias but the reality is
+that most of those aren't ready to
+handle production
+scenarios let's look at one popular
+example from these past few months that
+will bring much value to building J
+applications a model context protocol or
+mCP provides a standardized way to
+connect AI models to different data
+sources and
+tools their first
+release did not include support for
+off so you could do some things but not
+off this is just part of being in the
+nent space and iterating our team in od
+zero and others are collaborating as as
+part of the NCP Community Define a for
+mCP but let's think about
+it protocols and web Frameworks have
+evolved so many over so many years to
+where we are now but with AI things are
+moving incredibly
+fast we see similar things in gen
+Frameworks like L chain Lama index and
+gen kit with which we also
+collaborate they don't yet have mature
+implement ations for authentication and
+authorization features which is expected
+because the ecosystem is in its infancy
+and quickly
+changing now you will notice these gaps
+once you start building production
+applications with Gen for example David
+Fowler distinguished engineer Microsoft
+who worked onnet among other things also
+noticed
+this so do Executives like Mark benof
+Salesforce
+CEO and investors like
+edsim authentication and security for J
+apps is not optional and we are not yet
+where we want to
+be but you might wonder haven't we
+solved authentication
+already isn't that what ozero was
+supposed to do well we've done a very
+good job at
+it however apps that leverage geni like
+chatbot or AI agents use user
+interaction and authentication patterns
+unique to web and mobile
+apps to understand the identity
+requirements to build g into application
+securely we've been talking with experts
+experimenting and watching this industry
+very
+closely we've identified four critical
+requirements where
+identity is crucial
+these Iden requirements are not brand
+new they just became a lot a lot more
+relevant with Genna
+applications let's take a look at each
+from a user's
+perspective first user authentication
+remains essential the agent or app needs
+to know who I am for example a chatbot
+might need to display my chat history or
+know my age and Country of residence to
+C ciz
+replies this requires some way of
+identifying users which is done via
+authentication second I want AI agents
+to do things for me this means AI agents
+must interact with other applications on
+my
+behalf because they can easily perform
+actions and fetch data based on natural
+language
+inputs AI apps Connect to far more
+applications than a typical web applic
+application but agents don't need user
+interfaces they only need
+apis and as gen applications integrate
+with more products alling apis on behalf
+of those users will become
+critical third AI agents may take longer
+to complete tasks or wait for complex
+conditions to be
+met think about the new and incredible
+opena reason models like 01 and 03 that
+require additional time to provide
+answers to better reason through prompts
+and replies to
+them now it might be minutes or
+hours but it could also be days and we
+all know users won't wait that long in
+front of a
+screen these cases will become
+mainstream and will be implemented as
+asynchronous
+workflows with agents running in the
+background for these scenarios humans
+will act as
+supervisors an asynchronous human in the
+loop approving or rejecting actions went
+away from a
+chatbot but from a security
+perspective you don't want J apps to
+keep user credentials around for
+whenever the condition might be
+met you want on demand asynchronous
+authentication uh we saw the is in the
+market zero demo app with the shares
+purchase notification based on the price
+to earnings ratio
+condition
+finally almost all gen applications feed
+information to AI models from multiple
+systems to implement retrieval augmented
+generation or commonly known as
+rag now that happened when I asked for
+Zik's forecast Market Z retrieved files
+from its database and fed them to the
+llm to generate the
+report thus to help keep gen application
+secure and avoid sensitive information
+disclosure all data fed to AI models to
+respond or act on behalf of the user
+must be data the user has permissions to
+access authorization must be enforced
+forag at the level of granularity at
+which the data is retrieved
+that means you don't want to retrieve
+all data that matches a query or
+retrieve data based on a user's course
+role you want to do authorization at the
+document
+level now that seems like a lot but we
+see all these use
+cases today simply put as an industry we
+need to solve all four requirements to
+realize gen's full
+potential and we need this solv whether
+you're building your own custom gen
+framework on top of a language like
+python which many developers and
+companies are doing or you're using one
+of the many fast growing and changing
+Frameworks that have Arisen in the past
+two
+years at odd zero we've always looked to
+make it easy for developers Implement
+identity authentication and
+authorization in their applications
+and apps leveraging gen are no
+exception so we set out to solve these
+problems using secure identity standards
+and Industry best
+practices that app that I showed you by
+the way
+exists you can try at demo.
+zero. and it's open source at github.com
+azer dlab
+Market
+Zero Market zero is a demo app we built
+to show how jna powered apps can offer
+amazing
+experiences while adhering to Identity
+best
+practices so let's dive into how it
+works Market zero generates a forecast
+using rag on public earnings documents
+this means it retrieves documents from a
+database using an embedded search and
+feeds them to the llm context as part of
+a larger prom to provide
+answers and to ensure that the documents
+used to generate answers are only
+documents I have access to Market zero
+leverages fine grain
+authorization now fine grain
+authorization means performing Access
+Control checks at a very granular level
+and in this case at the document level
+instead of typical course role based
+Access
+Control documents users don't have
+access to that were returned by the
+search are filtered
+out because rag is oriented toward
+content in document retrieval finding
+authorization capabilities are
+Paramount it will be expected in most
+applications using rag for different
+users across different
+documents and to enable collaborative
+scenarios and great user experiences
+finding an authorization must be dynamic
+reflecting permission changes instantly
+now Market zero allows me to connect my
+Google Calendar and automatically adds
+events to it how after showing me the
+upcoming events it needs an access token
+for the Google Calendar API so it can
+call it on the users
+behalf and it obtains it by asking me to
+login with Google and consent for Market
+zero to get access to my Google Calendar
+using Google to log into Apps is very
+common the difference with Market Zer is
+that users do not need to use login to
+access the App instead I connect my
+Google account and Link that identity
+whatever method I use to
+authenticate now you can imagine users
+connecting their HubSpot account their
+slack account GitHub accounts and many
+others giving AI agency ability to call
+those apis on the user's
+behalf once the Google access token is
+obtained Market zero can add the events
+to my calendar
+Market zero also supports an
+asynchronous human in the loop pattern
+when the user requests work that might
+take a while like many minutes hours or
+days it is not reasonable to expect them
+to remain in front of the application or
+chat window waiting for it to
+complete instead Market zour asks the
+user to enroll to receive
+notifications and starts monitoring the
+purchase condition afterward
+when Zik's PE is over 15 Market zero
+sends a push notification to the user's
+phone and asks if they want to approve
+or reject the purchase of ziko shares
+but this is not a regular push
+notification we're actually performing
+ond demand authentication using secure
+identity standards the same ones used to
+secure Financial grade
+applications users can approve or deny a
+purchase with one tab when they approve
+the purchase they are actually
+establishing a session and can obtain
+tokens to call
+apis this means Market zero does not
+have to keep user credentials around
+until the agent is ready to perform the
+purchase pretty neat
+huh as asynchronous workflows become
+prevalent in gen applications async
+authentication is required to make these
+interactions more secure Timely and
+userfriendly
+and how do we enable all that
+collaborative chat sharing experience
+well this is also fine way and
+authorization but instead of it being
+for documents it is for specific
+chats when I open the share dialogue and
+input Daniel's email Market zero writes
+data to our find and authorization store
+to state that Daniel is a reader of my
+chat
+session later on when Daniel opens that
+Link in his browser Market zero text
+permissions in fga to ensure Daniel can
+access that chat
+session Daniel can only read that chat
+not write so Market zero renders a chat
+in readon
+mode as I said before you can take this
+demo for a spin and check out all the
+patterns in the market zero open source
+repo now here's the interesting
+thing we've discussed these challenges
+es and solutions with companies of all
+sizes including Fortune 100 compan
+companies 2 person startups fast growing
+businesses and established
+Enterprises and we've learned two things
+the first is that while these pain
+points come up when building b2c and B2B
+SAS
+applications one use case that kept
+popping up that we did not expect was
+internal
+applications those that leverage
+internal data sources and connect to
+each company's SAS
+applications and the second thing is
+that the four identity requirements for
+jna apps are generally
+applicable to companies of all sizes and
+all
+Industries so we're focused on creating
+a new product to make it easy for
+developers to solve these as well
+we call that product o for
+Gen o for Gen package is what we've
+learned working with Gen Frameworks and
+product Builders and builds upon odd
+Zero's decade of experience in identity
+and building for
+developers it helps solve authentication
+and authorization requirements for Gen
+applications a for Gen is built using
+secure identity
+standards and of course it will ship
+with SDK for languages and Frameworks
+and clear and easy to understand doc
+documentation so you can enjoy securing
+your gen apps with the developer
+experience OD zero is known
+for OD for Gen is coming to Early Access
+in March of
+2025 with the rise of an AI agent
+ecosystem Au for Gen will help
+developers build J applications
+securely you can scan the QR code to the
+right to join our Au for geni wait
+list I am personally looking forward to
+the age of AI agents and I'm convinced
+enabling you
+Builders to quickly and securely
+authenticate users connect to their
+different apps and data will be our
+great contribution to the
+industry R zero we'd love to help you in
+this journey and if you have feedback
+please let us know via our social or
+support
+channels thank you and I can't wait to
+hear from all of you soon
+[Music]

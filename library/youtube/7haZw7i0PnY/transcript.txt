@@ -1,0 +1,55 @@
+hi this is Brian from data Daleks
+technical solutions team today I'll be
+sharing with you a tip on how to
+identify an alert Onslow store any
+queries with app analytics analytics
+allows you to extract metadata from your
+ATM events in order to create metric
+based visualizations by which alerts can
+be created from to do this begin by
+selecting your desired database using
+the service tag within the facet panel
+on the left hand side of the page once
+the event aggregations are properly
+scoped to your database service we can
+change the dimension measure from a
+count of events containing queries from
+the database to a measure of duration
+showing how long the average query takes
+the graph as it stands shows the average
+duration across all queries for our
+database so we'll need to add a second
+dimension using our resource attribute
+this can be thought of as a particular
+action for a given service thereby
+allowing us to graph the average latency
+for the individual queries and there we
+have it we can easily identify which one
+of our queries is experiencing the
+highest latency and if we wanted to we
+could change the way we visualize this
+data by turning it into a top list or
+table this gives us a more readable
+approach that the slowest query will
+always be at the top of the descending
+order list now if you wanted to drill
+into the actual events that produced the
+query with the slowest latency you can
+simply select the query hit view traces
+and this will give you a list of events
+showing you in what requests did that
+latency occur these graphs whether
+timeless top lists or tables can be
+exported directly to dashboards or even
+a monitor so if you wanted to trigger an
+alert anytime this threshold frost say a
+second length you can export to the
+monitor that we were used to define that
+time series graph will be automatically
+exported for you and now that all you
+have to do is define the alert
+conditions as well as what kind of
+notifications do you want to trigger as
+a result of each one of these threshold
+tiers tree
+you

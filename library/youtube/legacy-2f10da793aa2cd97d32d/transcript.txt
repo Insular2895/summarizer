@@ -1,0 +1,647 @@
+hello and welcome to our webinar today
+on is the initial margin documentation
+focusing on custodian risk and the
+relationship with the account control
+agreements this is part of a series of
+webinars that history is providing on
+recently published documents to allow
+parties to comply with their initial
+margin regulatory requirements my name
+is Mark nu I'm senior counsel at the
+America's sister and I'm here today to
+introduce our speakers we have Douglas
+Donohue who was a partner at Linklaters
+and Blair graver reins who's a vice
+president and associate general counsel
+at Oppenheimer funds Doug over to you
+thank you Mark so we will take a look at
+slide two and slide two is really an
+overview of what of where we'll start
+today but even before we do that we
+should probably give you a sense of what
+the entire presentation will cover so
+today what we'll try to do at a high
+level because all of these items in and
+of themselves can be complex and some of
+them will actually be covered in future
+webinars what we will attempt to do is
+give you an introduction of the concept
+of independent custodians and really
+focus on how that will affect the
+negotiations that you'll have in the Reg
+i.m space we will talk about custodian
+risk allocation we will identify when
+parties can actually access collateral
+held by their independent custodians
+what the consequences may be of one of
+the two trading counterparties breaching
+any of their agreements under the CSA or
+the account the relevant custodial
+documentation and finally the relation
+will touch on the relationship between
+the account control agreements and the
+is the collateral documentation and I
+should say you'll hear us use some of
+the terms that are very common under the
+New York law documentation like pledge
+or and secured party note you've already
+heard me say and I'm times CSA and
+you'll hear me say account control
+agreement those terms are really just
+being used for ease the concept behind
+all of those terms is really what we're
+trying to get across so just to give you
+a quick example of what I mean when I
+si si what I'm really talking about is
+the New York law si si the English law
+CSD or the the jointly published
+collateral transfer annexes or CPAs and
+security agreements that is the has
+published so some of the things we'll
+some of the things that we need to keep
+in mind when thinking about custodians
+and independant custodians is a really a
+key decision at the beginning of a
+really beginning of a preparation
+process for regulatory initial margin
+even before you think about negotiations
+is who will my custodian be and the
+reason that decision is so important is
+because that will then drive a lot of
+other decisions that you'll need to make
+both from a documentation perspective as
+well as from an internal operational
+perspective once you know who your
+custodian is a key question will be well
+for each of my trading relationships who
+is my counterparties custodian and again
+that will drive documentation choices as
+well as operational choices this time
+rather than at your firm in general
+really at a trading relationship level
+and then finally I would say well we can
+all say who the who the custodian is
+you'll also want to know what sort of
+custodial platform you are using as well
+as your counterparty and the two
+platforms that are out there are try
+party and third party and just a quick
+note as to what each of those parties
+what each of those platforms do under a
+try party platform the custodian takes a
+much more active role they'll value
+collateral they'll move collateral on an
+automated basis under a third party
+platform it's much more manual for each
+of the parties they need to direct the
+custodian to do things things don't
+happen on an automated basis what many
+of you may be familiar with are actually
+third party custodial platforms because
+that has been sort of the norm in the
+derivatives world for segregation prior
+to reg I am once we've moved into phases
+one through three of the right I am
+space we have seen really the market
+stands there come try party platforms
+because again a lot more of what's going
+on in the background is automated
+so looking at the slide first of all
+thanks Doug and thanks mark
+you'll see the relationship sort of in a
+relatively well for some of you it will
+be actually fairly common in simplistic
+form for those of you who are used to
+posting collateral on a bilateral basis
+this may look a little bit intimidating
+so let's just go through what this
+diagram shows it shows in each case you
+have the trading relationship party a
+and party B that are going to be
+exchanging initial margin pursuant to
+the terms of the credit support annex as
+Doug said before this doesn't have to be
+a CSA but for ease we're going to just
+refer to it as the CSA and
+this relationship will allow for back
+and forth of pledging regulatory initial
+margin now the pledge is done under the
+CSA but the account there's going to now
+law no longer just be you're not going
+to be pledging directly to a
+counterparty where the counterparty is
+perfecting by holding the collateral now
+you have an account with a third-party
+custodian that's independent of the
+party that you're trading with and the
+security that you grant under the CSA is
+going to be perfected under an account
+control agreement now as mentioned just
+a little while ago for some of you this
+can be fairly common the buy-side has
+been segregating independent amounts for
+some time using what are now known as
+third-party account control agreement
+setups and so this may be familiar for
+some of you under this diagram as you
+can see there's a custodial account so
+Deol agreement related to the segregated
+account for the custodian up at the top
+or party a and party a is going to have
+to be posting I am piece and collateral
+is coming out of the custody account
+which is unpledged and it's being moved
+to the segregated account which is
+pledged at its bank custodian now I
+would point out here now this may be the
+same custodian or it may not be you may
+try to institute a special custodian a
+sort of solely for the purposes of
+posting I am or it may be the same
+custodian that you have been using for
+some time that will in part depend on
+your relationship with your dealer
+though in part depend on your
+relationship with your custodian and it
+may depend on your commercial choices as
+you move as the party a.i.m amount goes
+into the segregated account the security
+interest that has been pledged under the
+CSA is being perfected in favor of party
+B and you can see that up at the top at
+the same time and this is what's new
+about this reg I am space is that party
+B also is a pledge or under these
+documents and it has a similar
+relationship going down along on the
+bottom now there may be two account
+control of cream
+there may be one account control
+agreement that will part that it depend
+in part on the documentation you're able
+to agree with your custodian right now
+the market has been creating two
+separate documents for each of the
+pleasures that doesn't have to be the
+case now again you'll see the same basic
+relationship what the documents you'll
+see in that we're going to describe
+allow for a great deal of flexibility
+between the parties so you could have
+different custodians you can have
+different account control agreements and
+you can have different custody
+relationships all within the same
+trading relationship thanks Blair so as
+we look at example two we wanted to show
+a variation of the illustration that
+Blair just went through and well all of
+the concepts are generally the same
+there are some important differences on
+the illustration you have in front of
+you and where our focus everyone's
+attention is really right down the
+middle of the illustration so as you
+will have noticed on the slide that
+Blair previously went through there was
+a single I am credit support annex and
+that was because we had to bank
+custodians were both located in New York
+in this example we had we still have one
+bank custodian who is located in New
+York but the custodian for Party B is
+actually you're a clear clear stream in
+the example and what that means and how
+that affects the documentation getting
+back to one of the the high level points
+for reg I am negotiation that we wanted
+to touch on today which is how how the
+choice of custodian will impact the
+documentation that needs to be put in
+place you'll see that the parties now
+cannot cannot rely on just putting in
+place a single I am credit support annex
+but they will be required to put in
+place the I am collateral transfer
+agreement as well as a security
+agreement now that's required because
+the I am CSA or the I am CSD published
+by is the do not work with either of the
+euro clear or clear stream platforms
+instead is that a Euroclear and
+Clearstream separately Co published
+documentation in the form of the CTA and
+spirit agreements that are specifically
+tailored to work with those platforms in
+addition to that I would just note that
+rather than having an
+account control agreement as you do
+between the three parties for purposes
+of the the bank custodian at the top of
+the illustration where we have Euroclear
+and Clearstream the three parties are
+really shot signing up to the membership
+documents and that's an important
+distinction because that negotiation
+actually doesn't happen for every single
+for every single trading relationship
+those membership documents are really
+agreed once you're not looking at a new
+set of membership documents it for each
+trading relationship so that's an
+important distinction as between euro
+clear clear stream as custodian and
+having a bank custodian under New York
+law in this context
+so moving on to the next slide the
+allocation of custodial risk in
+relationship with the account control
+agreement what one of the important
+considerations that everyone faces when
+you have this third-party custodian in
+the relationship is who bears risks
+associated with the custodian performing
+or not performing or withdrawing or
+being removed and the documentation as
+consistent with documentation has been
+on the market sort of pretty independent
+amount up until now deals with those
+risks and allows for the counterparties
+to the CSA to allocate risk as they see
+fit so who will bear the risk of the
+default what happens if a custodian
+defaults or withdraws or is removed what
+happens if the the counterparty says
+that they won't touch your collateral
+but asks for the collateral anyway from
+the custodian the relationship between
+the control agreement and the CSA or the
+other IM document what governs if
+there's an inconsistency who has to make
+the calls about what the value is all of
+these options are available within the
+dua NCSA so one obvious question then
+becomes well who bears the risk of the I
+M custodian either defaulting or
+resigning and it has become market
+standard that the Pledger
+chooses their custodian and as a result
+is the one bearing that risk now there
+is no regulatory requirement that the
+Pledger choose the custodian that's just
+how phases 1 2 3 have developed and how
+I would expect at least it can continue
+to develop because the Pledger needs to
+create a relationship with their
+custodian that then they then branch out
+to all of their trading relationships so
+in general the way that the documents
+are set up is that they put the risk of
+a custodian failure or resignation and
+what that may mean on the pleasure and
+there is a general statement in B is the
+documentation that the pleasure will be
+liable for action omissions of the
+custodian unless the custodian event is
+applicable
+and the custodian event was a way for
+people in the market to really agree
+exactly what would happen if a custodian
+defaults or if a custodian resigns if
+custodian event is not applicable then
+we would just have the statement in the
+documentation that says that the Pledger
+will be liable for the action emissions
+of the custodian but we would not have
+kind of an agreed-upon process to one
+terminate the trades and to understand
+what the exact remedies are and damages
+so looking at the left sorry the right
+hand of this screen we have we've
+quickly gone through what would
+constitute a custodian event as you will
+see other than number three in that
+definition all of those are some sort of
+a fault or breach by the custodian
+number three is actually a custodian
+resignation and that's interesting
+because that's not a that's not a breach
+or the fault by the custodian instead
+it's a voluntary act by the custodian
+and thus far what we've seen is all of
+the Reg I am custodial documentation
+will give the custodians the option to
+resign with X number of days notice and
+so the market needed to address that and
+the way they've addressed that is that
+they've made that part of the custodian
+event provision and now really a
+question then becomes at least for me
+what are the consequences of this odeon
+event
+so you're the pledge or you don't want
+to be liable for all acts and omissions
+of stowed Ian's without knowing exactly
+what that means so you and the secured
+party have agreed to make a Stoney an
+event applicable a custodian event now
+occurs well what is it what does that
+what's the consequences of that well
+first and foremost it's important to
+know that it's not an event of the fault
+in fact it's a mid-market 8te
+with one and there is an exception for
+the delivery of a timely statement but
+in general it's a mid-market 8ee in
+respect of all covered transactions and
+that's that's important because it does
+not terminate or does not provide either
+party the right to terminate all
+transactions in the entire portfolio
+between the two parties instead it only
+allows
+the parties to terminate cover
+transactions which earns actually that
+are in scope of reg I M which makes a
+lot of sense at least to me because
+really the event or the event that's
+causing the a te only in respect of
+those transactions and as a result the
+consequences should only be in respect
+of those transactions now you may be
+asking yourself well okay now that I
+know what the pledgers obligations and
+and what the results of a obligations
+are with respect to the custodian and
+what the results of a custodian default
+or presentation have in general how
+about the secured party well from the
+secure parties perspective their only
+obligation with respect to the custodian
+is to provide appropriate instruction so
+that the custodian can move collateral
+they don't take any risk that the
+custodian will fail to actually act on
+the instructions their obligations are
+satisfied as soon as they give
+appropriate instructions
+so moving along on the next slide we see
+the the basic provisions or a basic
+illustration related to collateral
+access showing the party is pleasure as
+you can see here there's a gated account
+that's held by an independent custodian
+and delivery amounts I am and return
+amounts I am are going back and forth
+from the pleasure to the segregated
+account now how exactly the return
+amounts come back whether it's just an
+instruction of the secured party or
+joint instructions that'll be something
+to pursuant to commercial negotiations
+that's decided between the parties
+that's the everyday back and forth now
+in the event that something bad is
+happening you have in the IMC si the so
+called secured party rights event and
+then you have pledged your rights event
+now what that's intended to do is allow
+either the secured party in the case of
+bad events occurring or in which you're
+going to be closing out the pledge or
+and taking the I am to access the
+collateral the pledge or simultaneously
+to extent against as there's issues with
+the secured party may want to pull its
+collateral back but it's posted in which
+case it will exercise its pledge your
+rights event we're going to talk about
+each of those concepts more in a second
+but the idea is basically the same as
+what's occurring right now under a third
+party account control agreements right
+now you have access conditions in which
+your party can foreclose and you have
+access conditions in which the pledge
+were can gain access back to its initial
+margin this is both on a bilateral basis
+that both parties can be pledged or or
+secured party at the same time and will
+be moving to the next slide which is the
+collateral access provision side so what
+I will say is this is really a sneak
+preview there will there there is an
+entire webinar that is going to drill
+into secure party and pledge rows rights
+and remedies that will go into this and
+a lot more detail but given that we've
+been talking about the custodians and
+and there
+documentation and and the relationship
+between that and the is the
+documentation we thought it was
+necessary to at least give a give people
+kind of a sense of what the collateral
+access provisions say and when they're
+activated so I'll do that in really
+short order and really point people to
+the webinar that we'll talk about this
+in much more detail so from the secured
+party as well as the Platt Ledger's
+perspective access to what I should step
+back a little in the 2016 documents the
+only thing you had are really those that
+the top two boxes they're the notice of
+exclusive control in the security rights
+event as well as the pleasure rights
+event definitions and those definitions
+were hardwired in the documentation
+those definitions continues to be
+hardwired in the 2018 and nineteen
+documentation but there's an option
+actually to turn them off and replace
+them with previously agreed concepts
+that get at the same point but let me
+explain a bit so under both secure party
+access rights and pleasure access rights
+in event of the early termination date
+in respect of all transactions must
+occur before either the secured party or
+the pleasure as applicable can access
+any of the collateral that segregated in
+either of the set the two segregated
+accounts that's the base rule that is
+what's hardwired into the 2016 documents
+as well as the 2018 and nineteen
+documents but on the basis of feedback
+that we received during the the
+consultation and drafting process for
+the next generation of the 2018 and
+nineteen is the documents people said
+well you know what I have negotiated
+very similar concepts in the past into
+my control agreements and I would like
+to preserve those agreements as opposed
+to using the forms of these access
+provisions that are hard-wired into the
+documentation so what was added to the
+next generation documentation was really
+a what I would call a switch and that
+switch allows parties to replace the
+hardwired security act secured party
+access right
+and Pledger access right provisions with
+those that they've previously agreed in
+their control agreements and now this
+obviously is only going to be applicable
+if you have actually previously agreed
+these types of provisions but if you
+have and you would like to retain them
+and we received a lot of feedback that
+there is some appetite for that you now
+have a very user friendly way to
+incorporate those provisions into your
+CSA CSD or CPA whatever the case may be
+so that you get the benefit of your
+previous negotiations one thing I would
+also highlight is that these elections
+are really collateral Direction specific
+or collateral flow specific and what I
+mean by that is a party as Pledger and
+and the other party a secured party can
+agree to flip one of these switches but
+when that when each of those parties are
+in the other role they don't have to
+flip the switch and that's important
+because in most cases in the past only
+one of the two parties but it not in all
+cases but in most cases one of the two
+parties would have a segregated account
+so would have agreed these or
+potentially have agreed these types of
+provisions so we are not forcing people
+to kind of apply the provisions to both
+sides of the relationship but instead
+you really have maximum flexibility and
+can customize to follow what you've
+agreed in the past one of the other key
+concerns is again - there's a extent
+that you have these agreements in here
+where the secured party will not access
+your initial margin which as we know is
+sort of generally over collateralization
+you're concerned about that over clause
+they shouldn't be being taken when it's
+not supposed to and both parties should
+be because they're both secured parties
+so the question is how do you prevent
+that from occurring well there there are
+covenants that you will not deliver a
+notice of exclusive control until one of
+these events occurs there's similar
+things on the Pledger side but
+and there also be covenants in the
+account control agreement most likely
+that says you will not deliver
+instructions or entitlement orders
+assuming that this is a u.s. document
+absent an event of default occurring or
+specified condition you'd like it so
+that that earlier condition if there if
+someone gives an instruction that
+they're not the post due causes a breach
+under the credit support document a CSA
+or CSD and there's different ways to
+accomplish this one you can make the
+control agreement the credit support
+document where in breach of the control
+agreement leads to credit support event
+of default as it's noted on this slide
+you can have it so that it's a a breach
+for one but not the other similarly
+there's a new concept here in the I n
+CSA which is called a collateral access
+breach the collateral access breach
+indicates that if you do not if you
+violate a covenant and you provide and
+you cease the collateral create
+instructions when you're not supposed to
+that it leads to an 80 e here at
+collateral access breach and all
+transactions will be affected
+transactions the idea being again if
+you're delivering a secured party or
+wrongful instruction to deliver a
+collateral to you the other party can
+try to close you out they don't want to
+deal with you anymore
+the new collateral access breach
+provision in the IEEE NCSA does allow
+for a cure period you know parties are
+expected to probably make that quite
+short if there's any at all but that
+will be a commercial negotiation the
+relationship between the control
+agreement and the IM documents now you
+might ask what happens if I have
+different provisions in my control
+agreement than I have in the CSA again
+as to when I can access things or I
+can't access things or how value is
+going to be created or not value is B
+going to be created is going to be
+measured and the IM csa allows for
+flexibility on that as well again to the
+extent you have legacy documents or you
+have a document which says that the
+the custodian is going to calculate the
+value as would be the case in the
+tri-party account control agreements you
+can state that the where the control
+agreements inconsistent with the CSA the
+control agreement prevails or you could
+have it the other way whereas the CSA
+prevails and that's an election that the
+parties can make and they can make it
+with respect to each party as the
+posting party or they can not make it as
+the case may be B similarly this
+provision that allows for the control
+agreement to to begin the dominant thing
+extent the CSA would calculate value one
+way or require each party be calculating
+value and exposure the the custodian
+itself under the tri-party custodial
+platforms will be doing this on a
+regular basis and the idea would be that
+the custodian itself is moving
+collateral back and forth between the
+unpledged long box account to the
+pledged account and back and forth as
+the case may be and therefore the
+custodian calculations rule again that
+really works on a tri party temp control
+agreement basis not so much for the
+third party and you can have different
+elections just like each party can have
+one can have a third party account
+control agreement the other can have a
+tri party you can have different
+elections on this point now my personal
+opinion is that it's going to get pretty
+hairy if each party has different
+elections it may be difficult in
+practice to make that work but the
+document allows flexibility so that
+parties can make their own commercial
+judgment common point Thank You Blair
+that brings us to the end of the
+presentation for today I'd like to thank
+both Blair and very much for today's
+presentations if you have any further
+questions regarding this webinar or any
+of initial margin documentation please
+do contact us at is the legal at is door
+that brings us to the end of today's
+webinar
+thanks very much for listening

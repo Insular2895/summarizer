@@ -1,0 +1,108 @@
+[Music]
+Hello everyone, welcome to the series of
+multi- aent system with Google agent
+development kit ADK. Have you ever
+wondered what exactly is a multi- aent
+system and how can multiple AI agents
+actually work together or how does
+Google ADK makes it easier for
+developers for you and me? And if you
+have those questions, you're in the
+right place. By the end of the series,
+you will understand what is multi- aent
+system and you'll be able to build your
+own multi- aent systems with ADK. So in
+today's episode, we will cover three
+parts. Firstly, what is multi- aent
+system? Secondly, how ADK support multi-
+aent system development and thirdly is
+the foundational concept of agent
+hierarchy. All right, let's get started.
+So the first part of this episode is
+what is multi- aent system? At its core,
+a multi- aent system is when individual
+agents work together. And to really
+understand it, let's break it into three
+key ideas. The first is decentralized
+control. There's no single boss. Each
+agent just decide for itself. You can
+think of it like a flock of birds
+swirling in the sky. There's no leader
+but together they form amazing
+incredible patterns. So the second point
+is local view. Each agent only know
+what's around it but not the whole
+system. Imagine yourself standing in a
+crowded stadium. You can only see and
+react to the people nearby but not the
+entire crowd. And the lastly is emerging
+behavior. This is where the magic
+happens. You know for those single local
+rules amazing global patterns emerge and
+in this scenario agents work together to
+solve a complex problem that not single
+agent can solve easily. So the second
+part of today's episode is how ADK
+support multi- aent system. Google agent
+development kit ADK was built in with
+multiple agent support in mind. Instead
+of you just hack things together, it
+gives you three main types of agent and
+each with specific roles. So the first
+type is LM agent. So those are like the
+brain. They use large language model
+like Gemini to understand users input
+and reasoning about it to decide what
+tool to pick and what to do next. And
+the second type is workflow agent. Those
+are like your manager. They orchestrate
+how agents working together to get the
+task done. They have three type of
+workflow agent. The first type is
+sequential agent. They run agents one
+after each other in assembling line. And
+the second type of workflow agents are
+parallel agents. They run multiple tasks
+all at once. It's like calling several
+APIs in parallel. And the third type of
+workflow agents are loop agent. You just
+repeat a task until it's done. And the
+last type of agent for ADK is custom
+agent. They're like the specialists.
+Imagine you can write your own Python
+logic by inheriting from base agent when
+you need to have the full control. Okay.
+Now if you want to try those agent,
+check out the links and QR code on the
+screen to try them yourself. The third
+part of today's episode is about agent
+hierarchy. They're the backbone. So when
+you build this ADK, agents form a
+hierarchy like an oitional chart. So how
+does it work together? They have parents
+and sub agent and a parent agent can
+manage multiple sub aent and they follow
+single parent rule that is each sub aent
+only have one parent agent. You can
+think of it like a company. The root
+agent is a CEO and the sub agent are
+VPs, managers and workers. Everyone
+knows their roles and together they get
+the job done. All right, let's wrap up
+today's episode. We talk about what
+exactly is multi- aent system. They are
+decentralized. Each agent only have
+local view and they have complex
+behavior emerge globally. And we also
+talk about ADK support with three
+categories like LM agent, workflow agent
+and customer agent. And lastly, we
+covered agent hierarchy, the org chart
+of your system. So this is a foundation.
+If you want to practice, don't forget to
+check the link in the description. And
+in next episode, we'll go deeper into
+workflow orchestration and how agents
+actually communicate with each other.
+And I will see you there. Bye.
+[Music]

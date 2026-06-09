@@ -1,0 +1,47 @@
+there are a couple of things about the
+typescript default config that let you
+do some quite unsafe things
+and specifically this one which is where
+you have let's say an object and your
+object has like a key which is a string
+and then every element of the object is
+an array of strings and let's imagine
+that you want to push something to this
+so let's say you want to go my
+object.foo.push
+bar
+now if my object doesn't have a key of
+foo on it and you try to push to it this
+will result in a runtime error but we're
+not getting any of that inference here
+it's not telling us that it might be an
+error well there happens to be a
+typescript config option for this which
+my man anders told me about
+and here what you can do is you can go
+into here and you can say
+no
+unchecked indexed access which by
+default is false but let's set it to
+true
+now let's go back into our file here and
+it says the object is possibly undefined
+this is pretty cool we can do this i
+guess we can but this won't actually
+have the result that we want because it
+will say okay my object.foo if it exists
+then push to it but actually what we
+want to do is if it doesn't exist
+already we want to create an empty array
+so let's do that if
+my obj.phu
+then myobj.phu
+equals an empty array
+and typescript stops erroring so
+typescript is smart enough
+to know now that myobject.foo has an
+array in there so you don't need to do
+any extra kind of generic stuff or any
+other like crazy helper function it just
+knows and it's crazy that the inference
+is this smart

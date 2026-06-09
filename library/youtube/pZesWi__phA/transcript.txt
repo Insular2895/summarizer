@@ -1,0 +1,75 @@
+[Music]
+hi
+this is malo from the solutions team at
+datadock
+today i want to speak to you about one
+of our new
+features one of the main steps that you
+will meet in the datadock platform is
+the integrations page
+with over 400 integrations and even more
+to come
+it becomes more and more challenging for
+our customers
+to be aware of all the integrations
+running across their stack
+this is the reason datadog decided to do
+the heavy lifting
+with our new feature the auto detected
+integrations the datadog agent is
+installed on your host
+and collecting processes datadog will be
+able to detect
+the applications running on that host
+this is the reason why it is important
+to enable
+the processes collection on all the
+hosts
+reporting to datadog
+like that you will be sure not to miss
+any issue within your stack
+there are two different statuses for the
+auto detected integrations
+the detected mode and the partially
+installed
+mode for any integration in data dock
+you will be able to see an overview of
+this integration
+the configuration steps the list
+of all the metrics collected by this
+integration
+and mainly for the auto detected
+integrations
+you will see the hosts tab
+for the ones in detected mode it means
+that
+this integration is not enabled in any
+of the hosts
+listed here on the other hand
+for the ones in partially installed mode
+the host tab mean that this integration
+is enabled on some but not all the hosts
+running this integration and this is the
+list
+of hosts missing this integration
+this is why it is important to enable
+the processes collection on all the
+hosts reporting to
+datadog this feature is important for
+our customers
+because it can help them identify
+all the data dog integrations that are
+relevant
+and useful for monitoring the third
+party softwares
+auto detecting the integrations will
+speed up the onboarding process
+if you are a new customer and if you are
+an existing customer
+it will let you take full advantage of
+the data dog integrations
+and to collect the maximum amount of
+information
+across all your stack thanks for
+watching
+and see you next time

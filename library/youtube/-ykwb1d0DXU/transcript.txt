@@ -1,0 +1,317 @@
+in this video I'm gonna explain all the
+main concepts of helm so that you're
+able to use it in your own projects also
+helm changes a lot from version to
+version
+so understanding the basic common
+principles and more importantly its use
+cases to when and why we use helm
+will make it easier for you to use it in
+practice no matter which version you
+choose so the topics I'm gonna go
+through in this video are helm and helm
+charts what they are how to use them and
+in which scenarios they're used and also
+what is tiller
+and what part it plays in the helm
+architecture so what is helm helm has a
+couple of main features that it's useful
+the first one is as a package manager
+for kubernetes so you can think of it as
+apt yum or home brewer for kubernetes so
+it's a convenient way for packaging
+collections of kubernetes DML files and
+distributing them in public and private
+registry now these definitions may sound
+a bit abstract so let's break them down
+with specific examples so let's say you
+have deployed your application in
+kubernetes cluster and you want to
+deploy elasticsearch additionally a new
+cluster that your application will use
+to collect its logs in order to deploy
+elastic stick in your kubernetes cluster
+you will need a couple of commands
+components so you would need a stateful
+set which is for stateful applications
+like databases you will need a config
+map with external configuration you
+would need a secret where some
+credentials and secret data are stored
+you will need to create the current it's
+user with its respective permissions and
+also create a couple of services now if
+you were to create all of these files
+manually by searching for each one of
+them separately on internet be a tedious
+job and until you have all these yellow
+files collected and tested and try it
+out it might take some time
+and since elastic stack deployment is
+pretty much the standard across all
+clusters
+other people will probably have to go
+through the same so it made perfect
+sense that someone created this yellow
+files once and packaged them up and made
+it available somewhere so that other
+people who also use the same kind of
+deployment could use them in their
+communities cluster and that bundle of
+yellow files is called helm chart
+so using helm you can create your own
+helmet arts or bundles of those yellow
+files and push them to some helm
+repository to make it available for
+others or you can consume so you can use
+download and use existing helm charts
+that other people pushed and made
+available in different repositories so
+commonly use deployments like database
+applications elasticsearch MongoDB my
+sequel or monitoring applications like
+Prometheus that all have this kind of
+complex set up all have charts available
+in some helm repository so using a
+simple helm installed chart name command
+you can reuse the configuration that
+someone else has already made without
+additional effort and sometimes that
+someone is even the company that created
+the application and this functionality
+of sharing charts that became pretty
+widely used actually was one of the
+contributors to why helm became so
+popular compared to its alternative
+tools so now if you're if you have a
+cluster and you need some kind of
+deployment that you think should be
+available out there you can actually
+look it up either using command line so
+you can do helm search with a keyword or
+you can go to either Helms on public
+repository helm hub or on helm charts
+pages or other repositories that are
+available and I will put all the
+relevant links for this video in the
+description so you can check them out
+now apart from those public registries
+for helm charts there are also private
+registries because when companies start
+creating those charts they also started
+distributing them
+monk or internally in the organization
+so it made perfect sense to create
+registries to share those charts within
+the organization and not publicly so
+they're a couple of tools out there
+they're used as hell charts private
+repositories as well another
+functionality of helm is that it's a
+templating engine so what does that
+actually mean imagine you have an
+application that is made up of multiple
+micro services and you're deploying all
+of them in your convenience cluster and
+deployment and service of each of those
+micro services are pretty much the same
+with the only difference that the
+application name and version are
+different or the docker image name and
+version tags are different
+so without helm you would write separate
+EML files configuration files for each
+of those micro services so you would
+have multiple deployment service files
+where each one has its own application
+name and version defined but since the
+only difference between those llamo
+files are just couple of lines or a
+couple of values using helm what you can
+do is that you can define a common
+blueprint for all the micro services and
+the values that are dynamic or the
+values that are going to change replace
+by placeholders and that would be a
+template file so the template file would
+look something like this you would have
+a template file which is standard EML
+but instead of values in some places you
+would have the syntax which means that
+you're taking a value from external
+configuration and that external
+configuration if you see the syntax here
+dot values that external configuration
+comes from an additional llamó file
+which is called
+values dot Yemen and here you can define
+all those values that you are going to
+use in that template file so for example
+here those 4 values are defined in an
+values yamo file and what dot values is
+it's an object that is being created
+it based on the values that are supplied
+via values EML file and also through
+command line using - - set flag so
+whichever way you define those
+additional values that are combined and
+put together in odd values object that
+you can then use in those template files
+to get the values out so now instead of
+having yellow files for each
+micro-service you just have one and you
+can simply replace those values
+dynamically and this is especially
+practical when you're using continuous
+delivery continuous integration for
+application because what you can do is
+that in your built pipeline you can use
+those template the ml files and replace
+the values on the fly before deploying
+them another use case where you can use
+the helm features of package manager and
+templating engine is when you deploy the
+same set of applications across
+different kubernetes clusters so
+consider use case where you have your
+micro service application that you want
+to deploy on development staging and
+production clusters so instead of
+deploying the individual DML files
+separately in each cluster you can
+package them up to make your own
+application chart that will have all the
+necessary ml files that that particular
+deployment needs and then you can use
+them to redeploy the same application in
+different communities cluster
+environments using one comment which can
+also make the whole deployment process
+easier so now that you know what helm
+charts are used for it let's actually
+look at an example helm chart structure
+to have a better understanding so
+typically chart is made up of such a
+directory structure
+so it have the top level will be the
+name of the chart and inside the
+director you would have following so
+chart that yamo is basically a file that
+contains all the meta information about
+the chart could be named and version may
+be list of dependencies etc
+values the demo that I mentioned before
+is place where all the values are
+configured for the template files and
+this will actually be the default values
+that you can override later the charts
+directory will have char dependencies
+inside meaning that if this chart
+depends on other charts then those chart
+dependencies will be stored here and
+templates folder is basically where the
+template files are stored so when you
+execute he'll install command to
+actually deploy those yellow files into
+kubernetes the template files from here
+will be filled with the values from
+value store demo producing valid
+kubernetes manifests that can then be
+deployed into kubernetes
+and optionally you can have some other
+files in this folder like readme or
+license file etc so to have a better
+understanding of how values are injected
+into helm templates
+consider that in values the demo which
+is a default value configuration you
+have following three values image name
+port and version and as I mentioned the
+default values that are defined here can
+be overridden in a couple of different
+ways one way is that when executing helm
+install command you can provide an
+alternative values yellow file using
+values flag so for example if values the
+mo file will have following three values
+which are image name port and version
+you can define your own values yellow
+file called my value study mo and you
+can override one of those values or you
+can even add some new attributes there
+and those two will be merged which will
+result into a dot values object that
+will look like this so would have image
+name and port from values or demo and
+the one that you overrode with your own
+values file alternatively you can also
+provide additional individual
+values using set flag where you can
+define the values directly on the
+command line but of course it's more
+organized and better manageable to have
+files where you store all those values
+instead of just providing them on a
+command line another feature of helm is
+release management which is provided
+based on its setup but it's important to
+note here the difference between helm
+versions 2 & 3 in version 2 of helm the
+helm installation comes in two parts
+you have helm client and the server and
+the server part is called tiller so
+whenever you deploy helm chart using
+helm install my chart helm client will
+send the yellow files to tiller that
+actually runs or has to run in a
+kubernetes cluster and tiller then will
+execute this request and create
+components from this yellow files inside
+the currents cluster and exactly this
+architecture offers additional valuable
+feature of helm which is release
+management so the way helm clients
+server setup works is that whenever you
+create or change deployment pillar will
+store a copy of each configuration
+clients and for future reference thus
+creating a history of chart executions
+so when you execute helm upgrade chart
+name the changes will be applied to the
+existing deployment instead of removing
+it and creating a new one and also in
+case the upgrades goes wrong for example
+some yellow files where falls or some
+configuration was wrong you can roll
+back that upgrade using helm robic chart
+name comment and all this is possible
+because of that chart execution history
+that tiller keeps whenever you send
+those requests from helm client to
+tiller however this setup has a big
+caveat which is that tiller has too much
+power inside the governance cluster it
+can create update delete components and
+it has too much permissions
+and this makes it actually a big
+security issue and this was one of the
+reasons why in helm 3 they actually
+removed the Tila part and it's just a
+simple helm binary now which was solving
+the security concern loses the release
+management feature of helm or makes it
+more challenging and it's important to
+mention here because a lot of people
+have heard of tiller and when you deploy
+a helm version 3 it shouldn't be
+confused that tiller isn't actually
+there anymore thanks for watching the
+video I hope it was helpful and if it
+was don't forget to like it if you want
+to be notified whenever a new video
+comes out then subscribe to my channel
+if you have any questions if something
+wasn't clear in the video please post
+them in a comment section below and I
+will try to answer them so thank you and
+see you in the next video

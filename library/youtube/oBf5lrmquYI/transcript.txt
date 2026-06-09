@@ -1,0 +1,720 @@
+in this video we're going to talk about
+a super important topic which is
+security in kubernetes and what are some
+of the best practices for securing your
+kubernetes cluster
+the big challenge that we see in terms
+of granite security is that it's already
+so challenging to set up a kubernetes
+cluster and to configure it to deploy
+the applications in it that security
+often becomes the afterthought adding on
+top of that already complex
+configuration
+however we can't deny the importance of
+security especially when the systems are
+so complex so first of all let's talk
+about security in cloud in general we
+have a trend that more and more
+workloads are moving to the cloud and
+often there is a misconception that
+cloud is secure by default so people
+think that because the application is on
+cloud it is protected but it's important
+to understand that you have to secure
+and manage the infrastructure and your
+applications on the cloud just the way
+you manage them on premise the
+difference is that on cloud you simply
+have different tools and technologies to
+configure that security and often many
+organizations aren't aware of those
+tools or aren't using the tools that are
+available for
+making your cloud environment secure
+so with all these things combined cloud
+applications actually become
+a very attractive target to a lot of
+hackers
+and this growing number of cloud native
+applications
+mostly use kubernetes as a platform and
+that's where the relevance of knowing
+how to secure kubernetes clusters comes
+into play so the question is how secure
+is kubernetes by default so if i don't
+do anything explicitly and take the
+defaults what is my security status so
+what are we starting from and what are
+the vulnerabilities or security gaps
+that we have in kubernetes and what are
+the security best practices to protect
+and close those gaps in kubernetes to
+secure our systems
+the common number one issue is when
+someone gets access
+from kubernetes platform to the
+underlying operating system
+in which case an attacker can do a lot
+of damage to the whole system and this
+can happen because of various
+misconfigurations and we're going to
+talk about those and how to protect your
+kubernetes so that this doesn't happen
+in this video when we talk about
+security it's also important to
+understand that security is a
+combination of multiple things on
+multiple levels so it's not just one or
+two things that you do that basically
+just secure everything in case of
+kubernetes we have the underlying
+infrastructure then the kubernetes
+platform that is running on that
+infrastructure and the applications
+running inside kubernetes platform so
+all these levels need to be secured
+individually which is quite a
+challenging job
+and one of the main challenges of
+security in general is that the
+attackers have an advantage because they
+just need to find one security weak link
+in the system to attack
+while a defender has to defend every
+single point maybe multiple times
+to prevent that from happening in many
+cases we would need to defend each point
+with multiple different mechanisms so
+while coding best practice is not to
+repeat logic security best practice
+generally is actually to be redundant
+so use many security mechanisms in place
+to protect
+every attack point so this way an
+attacker will have to do multiple things
+in order to get into your system or
+access your valuable resources and
+basically do some damage to your whole
+environment now before we dive in the 10
+security best practices i want to say a
+huge thanks to castin for sponsoring and
+making this video possible they have an
+amazing tool called k10 which is the
+kubernetes backup and restore solution
+it is a kubernetes native application
+and has a lot of really good features
+for backup and restore use cases and
+apart from backup and restore being an
+important part of
+security mechanism itself and we're
+going to talk about that in this video
+k10 actually has a big focus on all the
+security aspects in kubernetes so it
+integrates with various tools and is
+basically engineered to make it easy for
+kubernetes administrators to secure the
+k10 service itself in the cluster so
+with that let's dive in our 10 security
+best practices for kubernetes
+first of all what is the main purpose of
+kubernetes it is to run applications
+inside right so we have built an
+application and we need to deploy it in
+kubernetes as a container and securing
+workloads in kubernetes starts before
+they even get deployed there when we
+build a container image which will
+eventually run in the cluster so
+building a secure image in the cicd
+pipeline is the first step so what
+security issues do we have here
+images are built in layers and each
+layer contains a command or a tool
+configuration etc so they're things that
+basically go into building the image
+we install different tools maybe we
+create some users and so on
+so we need to be thinking about
+everything that goes inside that image
+and what is the security impact of that
+first of all
+code from untrusted registries
+we may be using a code or a library in
+our application
+which comes from an untrusted source so
+we have an untrusted code that may
+include some virus or backdoors that
+could unintentionally grant access to an
+attacker we may also be using some
+packages for an operating system in our
+docker image so these dependencies and
+tools may also have some vulnerabilities
+or the base image that we're using to
+build our own application image may have
+some vulnerabilities
+so this means we need to be careful what
+goes inside the image what libraries and
+dependencies and tools we're using when
+putting together our application image
+generally when we're building images
+developers should eliminate any
+unnecessary packages libraries
+and dependencies that application
+doesn't necessarily need
+or it may need in a build time but not
+necessarily in runtime and also they
+should choose leaner and smaller base
+images
+with less tools inside to build the
+application image because mostly you
+don't need so many tools to run your
+applications if we do build an
+application image with some
+vulnerabilities and it gets deployed to
+the cluster that may introduce serious
+security issues for example an attacker
+may use a vulnerability in an image
+to break out of the container and get
+access to the host
+or the kubernetes worker node and from
+the host they can access all the other
+containers running on that host
+so they will be able to do much more
+damage if they
+manage to break out of the container
+they can read data in the host volumes
+they can read the file system and so on
+they could also read the configuration
+of cubelet that is running on that host
+including cubelet's authentication token
+and the certificates that it uses to
+talk to the kubernetes api server and
+that will give an attacker a chance to
+further damage the cluster and escalate
+privileges
+so a lot of serious security issues may
+arise if you have vulnerabilities in
+your image that will allow an attacker
+to access the underlying host from a
+container for example so how do we
+prevent any such vulnerabilities and
+issues from slipping in to the image
+when we're building that well we should
+do what's called image scanning so the
+first security best practice is to do
+image scanning and make sure to build
+secure images and there are a lot of
+tools out there that can help you in
+that for example you have systick and
+sneak etc that basically have a database
+of vulnerabilities that get updated
+regularly and they will basically do the
+scanning of your image against those
+known vulnerabilities so you need to
+make sure you're constantly scanning for
+vulnerabilities so how do you do image
+scanning exactly using the image
+scanning tools that i mentioned you can
+scan the images in the ci cd pipeline
+for example before pushing the image to
+the repository so once the image is
+built you can run a command of that
+image scanning tool that checks the
+image for any insecure tools or packages
+for dependencies with any
+vulnerabilities as well as it also
+checks for an insecure configuration and
+any hard-coded secrets for example so
+once the image is built and it basically
+passes that vulnerability scan or
+security scan it can be pushed to a
+repository however it could happen that
+a vulnerability gets discovered after an
+image was scanned and pushed to the
+repository as i said tools like sneak
+for example they have a database of
+vulnerabilities that gets updated
+constantly when new ones get discovered
+so a lot of image registries like docker
+hub and so on actually have a feature
+for scanning images in the repository
+itself which means it's also important
+to scan images
+regularly that have already been pushed
+to a registry to make sure there are no
+vulnerabilities that appeared after the
+image was built another security best
+practice is to avoid using root user in
+your containers and running your
+containers with privileges if you have a
+vulnerability in an image and it's
+running with a root user the attacker
+can much more easily use that to break
+out from the container and access the
+host or the kubernetes worker node so
+when building your image you should
+create a service user and run the
+application with that user instead of
+using the root user but note that even
+if you build the image like that you
+could actually override that in the pod
+configuration itself so you might have
+an image that runs with a service user
+but you can actually configure or
+misconfigure a pod to allow it to run
+with root or run it as a privileged
+container or even allow access to the
+host network which is not a good thing
+and if this kind of misconfiguration
+slips into the cluster your pod now
+becomes very insecure
+so avoid running privileged containers
+to make it harder to break out from it
+because this way the attacker will have
+to first get access to the root user
+inside the container and then they will
+be able to break out and access the host
+now once our application is deployed and
+running in kubernetes we have a number
+of things to secure inside the cluster
+itself
+first of all who can access the cluster
+which human or application users
+once inside the cluster what can these
+actors do what are their privileges this
+becomes more relevant if an attacker
+steals an identity of one of these
+authorized parties because the question
+is what can an attacker do in the
+cluster what permissions do they have
+therefore we need to manage users
+roles and their permissions in
+kubernetes and we need to keep these
+permissions as restricted as possible if
+someone in the team needs access to
+troubleshoot or debug
+pods in myapp namespace then they should
+be given read-only permission to
+kubernetes resources in that namespace
+only so how do we manage users and their
+permissions in kubernetes for that we
+have rbac or role-based access control
+and these are kubernetes resources that
+allows you to create roles in kubernetes
+with certain permissions for example a
+role that allows viewing creating and
+updating deployments
+services config maps in a namespace
+called database
+so there will be one role right so what
+can you do with which resources in which
+namespace
+or you may have a role that allows only
+viewing and listing pods in a my app
+namespace
+now the roles need to be attached to
+actual users like a team member sarah
+who is deploying and managing database
+services in a cluster can get the first
+role associated to her user and a junior
+developer tom can be granted the view
+only role to be able to see what pods
+are running in a my app namespace
+in kubernetes there is actually no
+resource for user so you can directly
+create user components in kubernetes
+instead the users are indirectly created
+by either importing a list of
+users into your cluster or for example
+by generating a client certificate for
+the kubernetes api server
+for a specific user so in our example
+client certificates will be generated
+for both sarah and tom for the
+kubernetes cluster and the user for that
+certificate will be registered as a user
+in kubernetes and once you have that
+user sarah user tom both with their own
+client certificates associated to the
+cluster you can then attach those roles
+with the respective users now you also
+have a kubernetes administrator that
+needs to be able to create and update
+resources in multiple namespaces or
+maybe the whole cluster and for that we
+actually have cluster roles which are
+the same as rows but they apply to the
+whole cluster instead of a specific
+namespace so for example kubernetes
+administrators kate and mark can both
+get cluster rows associated to their
+users that allow them to create
+view and delete a list of different
+resources in all the namespaces in the
+cluster as i mentioned you also have
+non-human users for example if you're
+deploying to kubernetes cluster from a
+jenkins pipeline or running a
+third-party service like istio for
+example that needs access to kubernetes
+resources and needs to talk to
+kubernetes api server you need to give
+those tools access to the cluster as
+well and for non-human users there is
+actually a kubernetes resource dedicated
+for that called service account so the
+way it works is that every pod in
+kubernetes gets a service account which
+they can use to talk to kubernetes and
+service account just like human users
+has roles associated to it with some
+permissions and while users have clan
+certificate to authenticate with api
+server the service account uses token to
+authenticate so it's important to know
+exactly and limit the permissions a
+service account has because if an
+attacker got access to a pod they can
+use the service account token of that
+pod to send requests to the api server
+and create change and delete resources
+if they have permission to do it so as a
+security best practice you need to use
+rbac to manage access permissions in
+your cluster and know exactly who has
+access to what and also use the least
+privilege approach
+now using rbac will manage the
+permissions of external users and what
+they can do inside your kubernetes
+cluster but what about inside the
+cluster itself the communication between
+the services by default in kubernetes
+each pod can talk to any other pod
+inside the cluster this means if an
+attacker gets access to one port they
+can access any other application pod
+now in reality not every pod needs to
+talk to all others so we can actually
+limit the communication between them and
+create network rules in the kubernetes
+network layer that determines exactly
+which pods can talk to which other pods
+and also which parts they can receive
+traffic from and you can do that with a
+current this resource called network
+policies
+so using network policies you can define
+a rule that for example a front-end
+service can only talk to the back-end
+service but it cannot talk to database
+or an authentication service that
+are running in the cluster and you can
+define the database pod can only receive
+traffic from backend pod and so on so
+for maximum security you can apply the
+least access allowed rules here
+so you define each and every
+communication rule between all the parts
+so now if an attacker gets access to one
+of the parts they won't be able to talk
+to all others that may be running
+sensitive applications and holding some
+sensitive data and also know that
+network policy resource itself is
+actually implemented by a kubernetes
+network plug-in like calico or weave etc
+that you deploy in the cluster
+now network policies configure
+communication rules on a network level
+but if we want to define these rules on
+a service level or an application level
+which is a more logical level so to say
+we can use a service mesh like istio for
+that so istio uses proxies in each
+application pod that will control the
+traffic coming into the application as
+well as traffic going out of the
+application so you can configure
+communication rules between the services
+on a logical level that will then be
+controlled or checked by the proxies
+that istio uses so using network
+policies or service mesh
+to define stricter communication rules
+between the pods is another security
+best practice
+another part of pod communication is
+that by default
+the communication between pods in
+kubernetes is unencrypted so if an
+attacker manages to get inside the
+cluster they will be able to see all the
+internal communication between the pods
+in plain text because none of it is
+encrypted with service mesh like istio
+in addition to defining the
+service communication rules you can also
+enable mutual tls between the services
+so all the communication between them
+will be encrypted and that means if an
+attacker sees the traffic inside the
+cluster they won't be able to read it so
+encrypting cluster internal
+communication is another good security
+practice that will give you an
+additional layer of security another
+thing which is not secure in kubernetes
+by default is the secrets you probably
+already know that for sensitive data
+like credentials secret tokens private
+keys etc we have a secret resource in
+kubernetes however by default secrets
+are stored unencrypted they are
+basically for encoded so anyone who has
+permission to view the secrets can
+simply decode the contents of a secret
+and see them in plain text so again if
+an attacker gets in a cluster with an
+access to the secrets they will be able
+to read all the sensitive content so how
+can we secure secrets in kubernetes well
+there are several ways the kubernetes
+own solution is to enable
+and configure encryption using the
+encryption configuration resource
+however this still has an issue because
+you still have to manage the encryption
+key itself and store it somewhere
+securely so some third-party tools can
+be used for this like aws kms which is
+key management service for example can
+be used to manage the encryption keys or
+a service like volt from hashicorp can
+be used to securely store the secrets
+themselves and vault would actually take
+over storing and managing the secret
+data so securing and encrypting secrets
+is important and another security best
+practice
+now secrets and all other kubernetes
+configuration data are actually stored
+in a key value store in kubernetes
+called etcd
+so kubernetes uses this lcd store to
+keep track of and update its
+configuration and all the resources like
+services deployments pods etc and every
+single update gets saved into the cd
+store and the same way any change
+directly to that city will lead to
+changes in the cluster this means if an
+attacker can get access to that cd they
+can bypass the api server and make
+changes directly to that city store
+which will then result in kubernetes
+resources being updated and this would
+be actually an equivalent of having
+unlimited access to the whole cluster
+where they can do anything they want
+destroy update resources get access to
+the data and so on so another good
+security practice is to secure your etcd
+store there are a lot of ways to do that
+there are a lot of alternatives of how
+an lcd can be run for your kubernetes
+cluster whether inside the cluster
+itself or outside managed separately but
+generally speaking it's a good practice
+to put your hcd behind a firewall and
+allow only the api server to access it
+with proper authentication in addition
+to that the whole etsy data can be
+encrypted so even if the attacker gets
+access to it they won't be able to read
+it
+now etcd stores the cluster
+configuration data so these are all the
+kubernetes manifests that define the
+kubernetes resources like deployment
+services pods etc but we also have the
+application data like data stored by
+database services and the biggest
+security damages for any company are
+related to data especially the personal
+data stealing data like credit card
+information of your users or medical
+records or leaking of any private data
+is the worst scenario for any company
+when an attack happens but in addition
+to that you also have risks of attackers
+wiping out your data or corrupting it so
+you basically lose all your application
+data this means you can't recover your
+application after the attack because all
+the data is gone so one thing that
+attackers commonly do is taking your
+data and requesting a ransom for it so
+you have to pay them to get your data
+back and you have to be protected for
+all these scenarios and that's the next
+security best practice to have a proper
+automated backup and restore system in
+place for your cluster that regularly
+backs up your data and stores them
+safely so that you can use it to restore
+your cluster when a disaster happens and
+castings k-10 is actually a kubernetes
+native
+tool
+that you can use to configure this
+automated backup and restore and since
+as i mentioned k10 is so focused on
+security they have all the mechanisms in
+place to both transfer the data as well
+as store that backup data securely and
+encrypting it throughout
+now in addition to attackers corrupting
+or stealing your data the attacks may be
+so advanced that they will try to get
+the backups as well so they will corrupt
+the database data plus all the backups
+that you have for the data this means
+again you are not able to recover your
+application and maybe have to pay ransom
+to get back the data so you need to
+protect those backups as well
+and what k10 offers as a solution is
+that you have immutable backups which
+means they can't be manipulated or
+corrupted and a big advantage of k10 is
+also that you can backup all the
+kubernetes related data with it so not
+only the application data in kubernetes
+but also the data outside kubernetes
+plus the etsy store data and this is
+great because you have one tool and one
+automated mechanism for all your
+relevant backups for your cluster if you
+want to know exactly how k10's backup
+and restore mechanism works i actually
+have a separate video on that so you can
+check out the link here or in the video
+description
+now let's say as a kubernetes
+administrator you know and apply all
+these security practices and try to
+protect your data and your cluster by
+configuring everything properly
+but kubernetes cluster is usually used
+by developer teams who deploy their
+applications and services in it so you
+may be doing everything right but how
+can you make sure that all these
+developers also apply these security
+practices when deploying their
+applications maybe their pod
+configurations are super insecure
+because they don't have enough knowledge
+about security configuration best
+practices and you can't just manually
+check everything they deploy to the
+cluster so how can you deal with such a
+scenario well for that there are what's
+called security policies in kubernetes
+with security policies you can define
+some rules such as
+pods that run privileged containers or
+container with root user cannot be
+deployed or that a network policy needs
+to be defined for every pod and so on
+security policy resources in kubernetes
+are implemented by third-party tools
+like open policy agent or caverno and
+usually the way it works with these
+tools is that you create this security
+policy definition in kubernetes with all
+the rules and security policies hook
+into the kubernetes admissions
+controller component
+which decides whether the deployment can
+go through based on the policies that
+you defined so it's like a gatekeeper
+that validates deployments against the
+policies defined by you and this way you
+can have automated validations for
+various security configurations so
+creating security policies to automate
+validation for security configuration is
+another security best practice
+now let's say we apply all the security
+practices but you cannot always 100
+percent protect everything right as i
+said in the beginning an attacker just
+needs to find one weak spot to succeed
+in the attack and do some damage so you
+may still get an attack that messes up
+your cluster and here it's important to
+have a proper strategy and mechanism for
+disaster recovery so what do you want to
+do in an attack scenario well you want
+to restore your cluster with the backup
+data and get it up and running within a
+short time and make your application
+available to your users again with
+minimal effect on user experience so the
+last security best practice is to have a
+mechanism
+when an attack actually happens
+and for that you need a tool that allows
+you to recover the cluster in the same
+state with the latest backup so again
+tool like k10 has a feature to take the
+last backup and let you do the disaster
+recovery in an automated way an
+important emphasis here is on the
+automated recovery because in such a
+scenario when your system is under
+attack you don't want to be manually
+recovering your cluster under time
+pressure instead you want to have a tool
+that automatically does that for you and
+ideally you actually test your k10
+recovery so you know exactly how it will
+work and what results it will give you
+when you run it in case of a disaster so
+executing an automated well-tested
+recovery plan can minimize the effect of
+the attack and get your application up
+and running very fast and note that k10
+also allows you to recover your cluster
+to any environment
+so it doesn't have to be exactly the
+same environment with the exact same
+kubernetes version as you had instead
+you actually have a freedom to choose to
+recover your system in a completely
+different environment using maybe a
+different storage class etc so you're
+not tied to a specific type of
+underlying storage infrastructure or
+even a specific governance distribution
+now i could talk for hours about
+security practices in kubernetes and
+going into detail because there are a
+lot of topics around it which we will
+actually be covering in our upcoming
+devsecops course if you're interested
+generally in security in devops then you
+can sign up for the waiting list and be
+notified when we release the course
+well i hope the security practices that
+i explained in this video were already
+super helpful please comment and share
+your experiences with security in
+kubernetes and which security practice
+that i haven't mentioned here is also
+very important and with that thank you
+for watching and see you in the next
+video

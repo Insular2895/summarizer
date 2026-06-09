@@ -1,0 +1,443 @@
+Ledger has just released this new hard
+wallette and we're going to talk about it in this
+video.  Hey there, I hope you're doing well
+because today we're going to
+talk about the Ledger Nano Gen 5, the new
+hardware wallet from Ledger.  I'm going to
+tell you everything you need to know about
+this new hardware wallet, its
+features, its advantages, but
+also its disadvantages.  In addition to that,
+Ledger made a few small announcements
+and we'll talk about them at the beginning of the video.  You'll
+see, it's very interesting.  But
+before we begin, and as always
+when I present a new
+Wollette hardware, I would like to make a few
+small clarifications.  First of all, Ledger did
+not pay me at all to make
+this video.  Let's be clear, they
+'ll discover this video at the same
+time as you, and you'll see, I also have some
+negative things to present.  However, they
+sent me this hardware
+wallet for free for the purposes of this video
+and by the way, I really thank them
+from the bottom of my heart because they
+sent it to me as a preview and there were
+very few of us in that situation.  So, a big
+thank you to Ledger for their
+trust.  And finally, the only way
+I would actually make
+money is if you decide to buy
+a Ledger product through
+my link that I will put in the
+description and in the pinned comment.
+A big thank you to everyone
+who does this, it supports my work.
+Okay, that was just a little bit of
+transparency.  So
+now we're going to quickly talk about
+Ledger's announcements because there are a couple of
+interesting things.  First of all, the
+first announcement is that Ledger's software suite
+will be renamed Ledger
+Wallet, meaning it will no longer be called
+Ledger Live.  And for the second
+announcement, what you need to know is that
+Ledger will use the term wallet less and less
+to refer to its products.
+Instead, they will likely use the
+term "sign".  Well, that's perfectly
+consistent with what
+their products actually are, right?  And that's why
+Ledger is doing this.
+For what ?  Because today, when
+we talk about wallets, we inevitably have this
+image of the wallet in which we will
+store our cryptocurrencies.  Except that's
+not how it works.  In
+reality, cryptocurrencies remain on the
+blockchain.  But what about our wallet
+?  He signs
+transactions in order to move our
+cryptocurrencies and perform certain operations.
+So in the end, Ledgers wants to be more
+consistent in this regard.  So
+now, is everyone going to
+follow this?  I'm not so sure.
+By the way, I'm curious to know
+your opinion.  Leave it in the comments.  And
+finally, the third
+important announcement will inevitably concern this
+new Signer.  You'll have understood.  So
+what does this Nano GN5 have under the
+hood and what does it allow us to
+do?  Well, to present it to you in a
+more natural way, I'm going to
+compare it a lot with the flexed one on this
+channel because in the end they are quite similar
+.  So to
+put it simply in one
+sentence, the Nano Gen 5 is a
+less pretty but also cheaper Flex.  Yes,
+because it costs €70
+less, and that's quite a
+saving.  So when we see
+this price difference, we can
+ask ourselves, what does it lack
+compared to the Flex?  And in reality, it has
+almost the same features.
+That is to say, we will find a
+2.8-inch screen like the Flex.  We'll
+see the return of NFC and Bluetooth.  We will
+also find the same autonomy of
+10er.  The Ledger Recovery Key that I
+also presented to you on this
+YouTube channel will be provided free of charge.
+It also has the same secure element
+as the Nano S+, the flex and the stax.
+So, by the way, that's something you
+really need to understand with Ledger.
+They make no concessions in terms
+of security, meaning that the Ledger
+Nano S+ will be just as secure as the STX.
+So, there will still be some
+small differences, right?  So, first of all,
+the chassis will be made of plastic, right?
+So it will be made of slightly less
+premium materials, but there is also the screen which
+is of lower quality.  That is to say,
+yes, it has the same resolution but
+not the same definition, meaning there are
+slightly fewer shades of
+grey than on the Flex.  So you can see that in
+the photo I'm going to show you
+.  I used the same
+wallpaper for the flex.  and the nano Gen 5.
+And you can see that there are a little less
+detail on the new
+Bolette hardware.  So the font
+is also a little less pretty.
+It's a little less rounded, isn't it, if
+I can put it that way.  On the other hand, I
+also find that it stands out better because
+it has more contrast against
+the white background of the screen.  Now, between
+you and me, is this really going to
+change how you use the
+hardware wallet?  I'm asking you this
+because, honestly, I don't care at all about having a
+slightly prettier wallpaper
+.  Another difference
+with the Flex is that there is also no
+audible beep.  That is to say, on the flex and
+the stax, when we have certain
+operations, we will have a small additional beep
+.  So it's an
+added convenience in terms of ease of use.  Now, will this
+change your life?  Hey, I'm
+asking you the question.  Honestly, I don't care
+.  And finally, the
+last difference I found, and
+this is purely aesthetic, is that
+you can see there is a small hole at the very
+bottom of the hardware wallet.  So, it's not
+for attaching to our keychain, but
+on the contrary, it's made for putting
+badges on to decorate our hardware
+wallet.  So, they are available on
+the Ledger website.  Honestly, I
+think it's a bit expensive for what it is,
+and I don't care at all about
+decorating a hardware wallet.  On the contrary, I think
+Ledger will
+distribute these as promotional items for
+events, but that's just speculation on
+my part.  Time will tell if I'm
+right.  So, another question we
+could ask ourselves is, will
+the box contain exactly the same
+thing as the flex?  And the answer is
+yes.  So I'll show you a picture of the
+complete kit that's included in the box.
+But basically, when you open it
+, you'll find
+the wallet first, as usual.
+Next, you will find the Lederger
+recovery.  So, let me clarify, this is very
+important.  It's another way
+to protect our portfolio.  Let's be clear, that doesn't
+replace the good old phrase
+.  And by the way,
+if you look at the floor below, you have
+a box with documentation, a
+USBC to USBC cable, but we will
+also find the cardboard sheets to write down
+our site phrase.  So, regarding
+the initialization of the hardware
+wallet, I haven't been able to test that
+simply because I received the
+hardware wallet as a preview and I
+used it.  in a rather
+developer-oriented mode on Ledger Life.  So, I have
+n't used it in a typical way
+yet.  So what I
+propose is that I'm going to make
+another video with this hardware wallet
+to show you how to set it up,
+but this time from a smartphone.
+It doesn't change anything compared to the Flex, but
+I'll do it on my smartphone.  This way
+, people who want to use
+their harddoir wallette mainly
+from a smartphone will be able to discover
+how it works.  As for the advantages
+and disadvantages, what
+can I say about this sign
+?  So, as usual, we'll start with
+the advantages.  So the first one, I would
+simply say, well, it's his
+screen.  And yes, a touchscreen
+is definitely a real convenience.  This is
+really something that will change
+the way we use a
+hard wallette, I think.  So we'll have
+better visibility on the
+transactions we're going to sign, right?  I am
+thinking especially of people who already have
+vision problems on small
+screens like the Nano X or the Nano S+.
+But also more generally,
+when you're going to do lots and lots of
+transactions during the day, it gets a
+little annoying navigating on the
+buttons of the Nano S+ after a while.
+Whereas here, with this type of screen, well,
+it immediately appears much
+clearer.  And I'll also add a small
+feature that
+Ledger touchscreens have: when you
+sign transactions on DeFi, for
+example, make a swap, you also have
+the transaction check option that you can
+activate, and in fact you can simulate
+the transaction, meaning that your
+hardware wallet will generate a QR code
+that you can scan with your
+phone and see what
+the transaction will do to you.  And we're going to tell you, "
+Watch out, this stinks a little bit, you're
+on a slightly dubious contract."
+So this is an extra security feature
+offered by Ledger, and it can be really
+nice, especially for beginners.   The
+second advantage of signing this contract
+is simply its price.  And yes,
+believe it or not, it costs €180.  So it's going to
+be a price for some people
+and we'll come back to that, but I still think that this is
+much more
+affordable than a Flex and definitely even more so than a
+Stax.  Besides, that Stax one
+, I don't recommend it
+precisely because of its price.  It's a very
+good wallet, but frankly, for what it
+offers, I find it overpriced
+.  Whereas this one, at €180, I
+honestly think is very good value for money
+.
+Another advantage I found is
+the Ledger ecosystem.  First of all,
+French is available.  So
+people who are allergic to
+English will find what they're looking for
+.  And above all because the
+Ledger Wallet software suite, formerly
+Ledger Live, is very practical.
+It's an all-in-one application that will
+allow you to do just about
+anything.  So for the most
+advanced people, it may be a little
+limited after a while, but
+for people at a beginner
+or even intermediate level, it also offers a
+much
+safer environment.  And I think that's something we don't emphasize enough
+.  That is to say,
+I found that there are many
+people who, when they go on the
+DeFine, they sign their
+transactions, they say to themselves "Yeah,
+OK, it's to do a swap," but they do
+n't really look at what they are signing, and in the
+end, some of them end up having
+their wallets slashed.  So, some people
+will say, "Well, it serves her right
+, she'll be careful."
+But on the other hand, Ledgers don't really like
+seeing that either.  And
+they have developed an ecosystem that
+allows for much better
+visibility on what you sign and that
+avoids all these
+blind transactions.  So, I
+made a video on the subject, I invite you
+to go and see it if you want more
+details, but basically for
+beginners, it's better to stick with
+Ledger Live.  Another advantage, and in my
+opinion, I'm going to have people who
+will completely disagree with me on this,
+is regarding the security of Hard
+Warte Ledgers.  They are highly regarded
+in this field.  So, I know some
+people are going to tell me "Well, that's
+not true at all, they've already been
+hacked, their database has been compromised and
+so on."  So, I'll just ask those people if it was
+the hardware wallets that were hacked,
+huh?  Because what we're talking about here, right?
+Securing our
+cryptos.  At no point did these products have
+a vulnerability that was
+exploited, and that's what you need to
+understand.  So yes, Ledgers, they
+totally messed up on this very
+specific aspect and they know it very
+well too, believe me.  Now we
+also need to put things back into perspective
+and understand that when we talk
+about securing our cryptos, we are talking about
+hardware wallets and currently
+Ledger hardware wallets have
+never been hacked.  So what you
+also need to know is that Ledgers
+are the big leaders, they've been around
+for 10 years and everyone wants to take
+them down.  So naturally, they
+have a Hard wallet that is among the
+most tried and tested, if not the most tried and tested on
+the market.  And finally, one thing should not be forgotten
+: Ledger probably has the
+most competent team for developing
+hardware among all other
+manufacturers.  Hey, they're all top-notch
+.  I invite you once again to
+go and type Ledger Donjon on YouTube and
+you will see the technical profiles and the
+equipment they have available.  And
+finally, one last little advantage
+I found with this hardware wallet
+is that the plastic rim around
+the screen is a
+little thicker, even much thicker than
+on the Flex.  And I think that in
+some falls, it will be better protected
+than the flex.  Now, this is where I
+will allow myself to transition to
+the disadvantage section.  It's not
+Vergori, mind you.  That is to say,
+I think The Signer will be
+much more susceptible to scratches and
+direct impact on the screen than the Flex.
+So that's something we also need to be careful about.  I
+think we'll have to take a
+little more care of it than the Flex, even though we
+normally take care of it because it's still
+relatively expensive.   The
+second drawback I noticed
+is the side button for
+locking and unlocking the device.
+I don't find it very pleasant.  You have to
+force it a little bit and honestly, I don't
+think it looks very Cali.
+Now, I think it's pretty
+solid, you know, let's not get carried away.
+But here's the thing, I don't find it very
+pleasant compared to the Flex and the Stax, for
+example.  Another drawback, which
+was also one of my advantages,
+was simply its price.
+So yes, I said it was very
+good value for money, but I still think
+this Hardware Wallet will be
+too expensive for quite a few people.
+In other words, if your goal is
+just to hold Bitcoin for the long
+term, a little bit of land and
+occasionally make a trade on
+DeFi every 6 months, then I think an
+AnOS Plus will be more than
+enough.  There's no point in buying
+more.  On the contrary, keep the
+price difference you would have spent to buy more
+Bitcoin or other cryptocurrencies
+or to treat yourself; it will be much more
+profitable for you.  Honestly, I prefer
+to be honest about it because I think
+getting this hardware wallet would be
+overkill for quite a few
+people.  For me, the Nano S+ will be
+more than enough for at least 50%
+of crypto users.  And finally, the
+last drawback I wanted to
+highlight with this Signer is
+that if you look a little
+closer, it doesn't look very Ledger-like.  In
+reality, we are used to having
+quite beautiful products made with
+aluminum.  So, I'm not saying it's
+ugly either, but it's true that it's
+the least attractive Ledger design.
+Now, is that what
+you want again?  Do you want to have a
+beautiful product?  Well then, in that case,
+go for the flex or the stax.  But
+otherwise, honestly, this one will do just fine
+.  And that, in fact
+, is my conclusion
+regarding this signature.  For me, it's
+excellent value for money.  If
+I were to buy a
+wallet today, it would probably be this one
+or the Flex.  For people who do
+a little bit of crypto, who
+occasionally trade DeFi and
+who just want to hold,
+the Nano S+ will be more than
+enough.  Don't overthink it.
+So there is also one last thing
+I wanted to point out, which is that I
+think this new Signer will
+eventually replace the Ledger Nano X.  When you
+think about it, the Ledger Nano X is the
+only hardware wallet now that has a
+different security feature than an
+older generation.  So for me, it
+will always be updated.  I hope
+Ledger will actually do it because this is
+n't a memory issue.  He has
+everything he needs stored in his memory, right?  I
+even believe it has a
+superior memory compared to the new
+secure elements.  It's just that it's a
+little less efficient and so,
+naturally, I think Ledger
+will withdraw it and it's not for nothing that
+this hardware wallet is positioned in roughly
+the same price range.
+So if you were ever planning to buy a
+Ledger Nano X, I would
+really recommend that you go for this one instead
+.  I think that will be more
+consistent.  So once again, for
+those who are interested in
+Ledger products, I put my link
+in the description and in the
+pinned comment.  A big thank you to everyone
+who uses this service.  And
+if you want to learn more about
+the Nano S+ and the Flex, I have these two
+videos to recommend.  I'll tell you everything you need to
+know about these clever Willette.

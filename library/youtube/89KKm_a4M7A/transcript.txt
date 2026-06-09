@@ -1,0 +1,180 @@
+Hi, welcome back to this agentic pattern
+series. In last part, we covered some
+use case with agentic pattern from
+single agent to multi-agent pattern with
+sequential workflow agents and parallel
+workflow agents. And in today's video,
+we'll explore advanced patterns with
+code example and demo to showcase review
+and critique with loop agent,
+hierarchical task decomposition with LM
+agent, and agent as tool. So, by the end
+of today's video, you will learn how to
+design multi-agent system that gives the
+agent the ability to iterate,
+self-correct, and dynamically choose the
+right tool for the job. All right, so
+for the first part of today's example is
+the loop review and critique pattern.
+Then we design an agent system to plan a
+trip.
+What if you need the agent's output to
+meet a certain non-negotiable
+requirement? For example, you need to
+plan a trip to an event, but the hotel
+and event venue must be within 30
+minutes of travel time. And in this
+case, we can use this loop pattern, and
+often implement it as a review and
+critique workflow. And here is how it
+works. So, first, we have a generator
+agent that creates an initial trip plan.
+And then we have a critique agent
+evaluates that plan against our
+condition. For example, if this travel
+time is less than 30 minutes. So, if
+this condition isn't met, the loop sends
+it back to the generator with feedback
+for revision. This loop will continue
+until the plan is approved or we hit a
+maximum number of iteration to prevent
+infinite loops. And this is a form of
+iterative refinement. So, here is code
+implementation to demonstrate this
+agentic pattern. As you can see, they
+implement the critique agent with loop
+agent and then put together the
+generator agent and critique agent with
+sequential agent. And now let's test
+with 80K web UI by type 80K web. We will
+type our request here and in the tracing
+tab, you can see this loop in action.
+The planner generates a trip and the
+critique checks the travel time and
+rejects it. And the planner tries again
+with a different plan until it meet the
+condition. And this is really powerful
+when we need a task to be actually
+meeting certain conditions. The
+advantages of this pattern is that it
+can ensure output meets specific quality
+standards and any constraints. It is
+helpful when we prioritize certain
+criteria. However,
+by getting into this many iterations, it
+increases latency and cost for the whole
+system.
+And we need to be really careful
+designing this exit condition, which can
+add complexity to our system. So now we
+learned this review and critique
+pattern. The next is very common popular
+one, which is coordinator router
+pattern. And so far our multi-agent
+workflow have been predefined with
+sequential agent, loop agent or parallel
+agent. You can think of this coordinator
+agent as a smart project manager. They
+analyze user's request and then
+delegates to the correct specialized
+agent from a team of experts. And let's
+take a look at this example with
+hierarchical task decomposition. This is
+where a coordinator breaks a large task
+into smaller subtask and delegate those
+to the other agents. Imagine we have a
+top-level coordinator agent and the job
+is to plan a full experience. And below
+it, we have specialized sub agent. We
+have a food and transportation agent,
+which is a sequential agent that we
+built last video, and you can check this
+link to review last video. We also have
+this nearby places agent, which is a
+parallel agent that we also built in
+last video. We also have this trip cost
+agent. And you can see in from the code
+on the screen that we put the agent as
+sub agent for this coordinator agent,
+where we use LM agent to implement it.
+Now, we can see it in action in ADK fab
+UI. And if I ask the main coordinator
+plan a trip to find a sushi in San
+Francisco and find my way to getting
+there,
+this coordinator knows that this
+requires both food and travel. So, it
+delegates the entire task to this food
+and transportation sub agent. And that
+agent then ask you his own sequence,
+first finding the food and then the
+transport. Now, I can continue the
+conversation. Okay, I also want to find
+a museum and concert. The main
+coordinator understands this new request
+and then delegate it to this nearby
+places agent.
+And that agent then run its own parallel
+workflow, searching for both at the same
+time, and then summarizing the result.
+The benefit of this design is that it is
+extremely flexible, and it can solve
+very complex problem by breaking them
+down. However, it has higher latency and
+cost because we use actual model cost
+for routing, and this modular structure
+can be more complex design and
+troubleshooting. And now, let's get to
+the last part of today's video, which is
+agent as tool pattern. So, let's talk
+about this subtle but very powerful
+alternative to the coordinator, the
+agent as a tool pattern. On a surface
+level, it looks very similar to
+coordinator.
+You have a primary agent and several
+specialized sub agent. But the key
+difference is in control and state
+management. In a coordinator pattern,
+the main agent delegates the task, the
+sub agent take full control and solve
+its piece of puzzle. But in the agent as
+tool pattern, the primary agent treats
+the sub agent like simple stateless
+tool.
+You ask a sub agent to perform a
+function, get a result back, and the
+main agent retains full control and
+manage the overall state. You can think
+of it like a coordinator is a manager
+who gives a project to an employee. And
+that agent as a tool is a craftsman who
+pick up a specific tool
+and to do one part of the job before
+picking up the next tool. And you can
+take a look at how we rewrite this
+coordinator example in the agent as a
+tool pattern in the code on the screen.
+All right, there you have it. We have
+covered everything from the simple
+single agent to the dynamic coordinator
+pattern.
+And each design has its trade-off
+between control, flexibility, cost, and
+complexity. And here is the summary to
+compare those pattern.
+So in summary, you use a single agent
+for simple prototypes. You use
+sequential and parallel agent where you
+need a reliable and structured workflow.
+And you can use loop where you want to
+meet certain criteria and use a
+coordinator or agent as a tool when you
+need dynamic flexible routing to solve
+complex problems. All right, I hope now
+you have a much better understanding of
+how to design and build your own agentic
+AI system with different design
+patterns. All right, thank you so much
+for watching and see you in future
+[music] videos. Bye.

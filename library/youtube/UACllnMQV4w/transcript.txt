@@ -1,0 +1,835 @@
+[Music]
+hi everyone welcome to this tech talk on
+the topic of architecting for internet
+of things with acm private ca
+my name is rasheer patel i'm a worldwide
+security specialist at aws focused on
+data protection and cryptography
+services i'm co-presenting with omar
+zoma senior security special solutions
+architect
+so this talk is geared towards people
+who are aws security builders people in
+certificate management or pki roles or
+those who have a general interest in the
+iot industry
+our goal with this talk is for you to
+come away with new insights about iot
+security aws private certificate
+authority service and its relationship
+with iot
+and some hands-on guidance on how to get
+started with building with this service
+and the benefits that it provides
+so what we'll cover over the next hour a
+quick overview of the iot industry and
+the role that certificates play for
+providing device identities and the
+security use cases that are enabled by
+device certificates
+next we'll walk through how certificates
+are provisioned in a manufacturing
+environment and the pros and cons of
+different pki ownership models
+we will show how the aws service ac and
+private ca can simplify certificate
+issuance in an iot manufacturing
+environment
+and then we'll have a live demo of this
+service to show how easy it is to get
+started set up a shared certificate
+authority
+and customize certificate templates
+and then finally we have extra time at
+the end to answer questions feel free to
+drop questions into chat we'll be sure
+to answer them before the session ends
+so getting started just to frame the
+conversation uh we have seen iot devices
+explode in popularity over the past
+decade or so
+new use cases are constantly springing
+up from smart home devices like amazon
+echo and ring doorbells
+to even automobiles as connected devices
+that are very intelligent you know with
+more automation self-driving over there
+software updates etc
+and as the iot industry continues to
+advance these devices are becoming
+smarter more powerful more capable which
+also means that the potential for misuse
+becomes greater
+so security of these iot devices should
+stay top of mind for anyone who operates
+in this space
+both consumers and device manufacturers
+so one thing that all of these iot use
+cases have in common
+is that they all involve physical
+hardware devices
+pretty straightforward
+but those devices do use digital
+certificates for device identity and
+trust so this may be a little 100 level
+but for anyone wondering what private
+certificates are
+and what they do well you can think of
+certificates as a digital id card that
+we assign to an endpoint or a device and
+it allows us to authenticate that
+endpoint and create a secure encrypted
+communication channel with it
+it enables encryption for data and
+transit so that a distributed network of
+devices can communicate securely with
+one another and with your centralized
+servers
+so how exactly do these private
+certificates help with security
+well there are a handful of different
+threat vectors that certificates can
+help mitigate
+so first there's data exfiltration if
+your device operates over unencrypted
+networks well
+you know someone could sit on your
+communication channel and collect any
+data that's being transmitted by a
+device
+and now that we have things like
+wearables and smart watches that collect
+personal information and health data we
+obviously want to we don't want that
+data to fall into the wrong hands
+next there is the threat of
+impersonation a malicious actor could
+pose as a trusted device
+using uh stolen credentials which can
+lead to a number of different problems
+from
+transmitting false data to having
+unauthorized access to your internal
+networks
+so having a system in place to manage
+certificate revocation and renewal
+can be effective strategy against this
+and this last one device malware
+it doesn't exactly tie in with
+certificates per se but rather digital
+signature verification which is a
+similar cryptographic technology
+so i thought it would be worth worth
+touching on just briefly
+with this type of attack a malicious
+actor could try to install malware onto
+a device
+that could be used for surveillance or
+ransomware or even hijacking that device
+for cryptocurrency mining
+so being able to verify software updates
+with digital signatures is one way to
+mitigate that risk
+if you know that you have a device
+compromised by malware you can also
+revoke the certificate for that device
+to remove it from your network
+um and this is just really skimming the
+service on the topic of iot security
+we could really spend all day on this
+but we'll move on to a practical
+application
+of provisioning certificates for iot
+devices
+so as we mentioned earlier
+every iot use case involves a physical
+device that has to be manufactured
+and the device maker has to decide at
+what point during the manufacturing
+process does the device receive its
+unique certificate and private key
+so to understand this decision we should
+start with
+you know just going through the
+different entities that make up a
+manufacturing supply chain
+first you have your device maker
+these are this is the organization
+responsible for you know product design
+and development sales and marketing
+distribution sometimes
+and often they will have a lead role in
+the manufacturing process
+but in many cases they will also
+outsource this piece to a contract
+manufacturer who sources components and
+builds the physical device
+and then those components chips
+processors batteries come from component
+suppliers
+so with this you know layout of
+different companies it's typically
+either the device maker or the contract
+manufacturer who takes ownership over
+provisioning certificates
+to embed in the hardware device
+and this delegation varies by industry
+and by use case
+also the discretion of the device maker
+for instance a cell phone maker might
+have an external manufacturing partner
+who builds the actual phone
+but an automaker who sells your car also
+owns the production line and
+manufacturing process in-house
+so all that to say um just like there's
+no single universal type of supply chain
+there's no single best way to provision
+certificates for your devices
+it is important to understand
+the nature of the relationships in this
+industry to understand different pki
+setups
+so with that framing let's look at some
+example scenarios of different public
+key infrastructure setups
+so in this scenario we have our two
+parties device maker and the contract
+manufacturer
+the device maker owns software and
+firmware development for the product
+that's pretty standard and in this
+scenario they own the public key
+infrastructure for provisioning private
+certificates onto devices
+so for each device they want to build
+they provision a unique private cert
+embed it onto a firmware image so if
+they want to build 100 devices they have
+100 unique firmware images that they
+then pass over to the manufacturer
+who's then responsible for loading the
+firmware onto the device processor as
+it's being built
+this scenario keeps the route of trust
+under control of the device maker which
+is from a security and risk management
+standpoint
+a pretty good thing however it does add
+complexity to the manufacturing process
+and the device maker is also taking on a
+lot of the operational burden
+um you know operating outside of their
+primary line of business which is
+something that um you know we in the
+world of cloud try to move away from or
+help customers move away from
+so if they're multi uh if they are
+operating multiple product lines with
+say thousands of devices and multiple
+external supply chain partners
+this setup does add a great deal of
+complexity to the overall process
+so
+let's look at another option
+in the second scenario we have the same
+two parties except now the contract
+manufacturer owns the pki
+this is great for the device maker they
+can essentially outsource that entire
+piece of the manufacturing process to an
+external party
+the device maker simply has to provide a
+golden ticket firmware image
+with an interface for injecting
+credentials to the manufacturer
+who can then go and provision
+certificates for each device during the
+manufacturing process
+this setup is a little more streamlined
+and efficient however you do need a high
+level of trust with those external
+partners that work with you
+if someone external owns the root ca for
+your device certificates
+then you have to trust them absolutely
+to maintain that root of trust securely
+and it can also present challenges
+around certificate expiration and
+rotation you are reliant on the external
+partner to handle all of those tasks
+and so while this is a nice option
+from a supply chain security standpoint
+it does introduce a lot of risk
+so this third scenario uses some of the
+built-in features of acm private ca to
+offer a nice middle ground from the two
+previous scenarios um
+and while this diagram looks a lot more
+complex in practice it's really not that
+different from the other scenarios
+so in this scenario the device maker is
+using acm private ca and owns the root
+ca in a protected aws account they set
+up a ca hierarchy to have subordinate
+cas in separate accounts signed by the
+root so that they aren't issuing end
+user certificates directly from that
+root ca and that's a standard best
+practice
+now the secret sauce here is leveraging
+a tool called aws resource access
+manager which allows you to share any
+subordinate cas across multiple accounts
+so the device maker is able to create
+another separate aws account under their
+organization
+and they can really limit the access on
+that account
+with policy settings and so they can
+take that account provide it to any
+third-party manufacturers in their
+supply chain
+um and again being able to set the
+policies on that account so it can't do
+anything except
+issue certificates from the shared
+support and cas
+and so a contract manufacturer with with
+access to that very restricted account
+can still use it to provision
+certificates to load onto devices during
+the manufacturing process but that's it
+they're pretty much restricted to doing
+just that
+and the beauty of this is you know the
+device maker can provide separate aws
+accounts to any number of external
+partners which is really good for
+complex supply chains
+or say if you are changing manufacturing
+partners or if you add a new one because
+your business is growing rapidly
+this is a really
+you know simplified way to manage that
+growth
+the access to those certificate issuing
+accounts can be revoked at any time and
+the device maker is the true owner of
+the root ca so they have the ability to
+monitor everything taking place within
+their pk environment
+through the aws console
+one thing i do have to mention this
+isn't a perfect risk-free solution the
+contract manufacturer still has to be
+trustworthy since private keys can be
+exposed during the manufacturing process
+that is you know an inherent risk for
+any manufacturing environment
+it's the nature of the industry
+but with the solution at least what it
+does is it helps to minimize risk from a
+control and observability and business
+continuity standpoint
+so let's go into some of the
+differentiating features of ac and
+privacy that make it a good fit for iot
+device manufacturing
+first benefit is the ability to set up
+complex ca hierarchies um and this can
+all be done with a few clicks in the aws
+console you can add or remove cas
+without worrying about the
+infrastructure needed to support them
+this can allow you to have a single root
+ca for your organization but multiple
+subordinates and issuing cas for
+different lines of business and
+different use cases
+you can have a ca for internal you know
+development and testing and a separate
+isolated ca for production and live
+devices
+with this feature you have the ability
+to scale up and down easily taking
+advantage of aws elastic resources and
+it also gives you central control
+through your aws console for monitoring
+visibility you can track who what and
+where certificates are being issued
+through your pki
+and it does support up to five levels
+within a hierarchy so you can get
+pretty granular with your setups here
+the next benefit as we mentioned earlier
+is the ability to use aws resource
+access manager to share cas across
+multiple aws accounts
+without racking up bills for having new
+separate standalone cas for every
+account
+you know each ca typically would cost
+you 400 a month so sharing cas across
+accounts can help reduce that upfront
+upfront cost
+this is a really good feature for cost
+optimization again
+and it is really the feature that
+enables this iot manufacturing use case
+the device maker can control what aws
+accounts or roles that an external
+partner has access to
+and what api calls those accounts can
+make so this really delivers that fine
+grained access control aspect
+and then finally you know acm privacy
+has the ability to customize
+certificates that are issued so you can
+assign custom lifetimes for certificates
+maybe you want it to expire after one
+week or you want it to be valid for the
+next 100 years both are possible
+you can also now as of march 2022 assign
+custom subject names extensions and name
+constraints for your certificates
+and this feature has a lot of
+interesting applications
+from making it easier to manage and
+identify certificates at scale to
+tagging and categorizing for say
+analytics or machine learning use cases
+one other use case that i find really
+interesting
+is the ability to meet industry
+standards so you may be familiar with
+one called matter which is a new
+standard for smart home devices
+that has you know a number of different
+requirements but one of those
+requirements is
+being able to set custom identifiers on
+your certificates
+so from the perspective of a device
+maker if you want to stay aligned with
+new industry standards
+be a part of the matter ecosystem for
+connected devices this feature can help
+you do that
+so
+enough overview
+with that i'd like to turn it over to
+omar for a demo of the capabilities we
+just talked about in acm private ca
+show you how to set up resource sharing
+across accounts
+as well as issuing certificates to an
+iot device
+yeah thank you so much for sharing so
+like for sure said my name is omar and
+i'm a specialist uh security solutions
+architect here at aws
+and i'll be doing a demo today
+of essentially what the
+certificate hierarchy looks like
+right here on the right side
+what i'll talk about is a few things
+number one we'll talk about this
+architecture
+and
+you can see here that we have a root ca
+that exists in a separate account
+and that root ca has a support in ca
+that's also in a separate account that's
+also owned by the device maker
+and
+this device maker subordinate ca is then
+shared with the contract manufacturer
+and so this architecture is scalable
+in that you can add additional
+manufacturers
+and share additional additional
+subordinate cas
+and so
+what you can expect to see here is
+potentially a multitude of contract
+manufacturers and a multitude of
+different supporter nca so this gives
+the device maker the ability to share
+their subordinate certificate authority
+and allow the contract manufacturers
+to go ahead and start to issue
+certificates
+so i'll talk through this architecture
+and what happens is i'm going to
+demonstrate how
+you can control access
+from the device maker side and limit
+what the contract manufacturer can do
+for example in the demo
+i'll be showing you an attempt at the
+contract manufacturer to disable
+uh the certificate authority or delete
+the certificate authority which they
+should they aren't able to do so there
+are sets of permissions
+that the device maker sets up that will
+limit the ability for the contract
+manufacturer to do that
+on issue certificate in
+the iot space
+there are
+customers that
+require very custom attributes inside of
+their certificates and so i'm going to
+show you how to pass custom attributes
+into the certificate as well
+i'll walk you through the issue
+certificate api and this will all be
+done in the cli
+so why don't we get started and uh i
+will walk you through uh an issue of a
+certificate
+all right so now i'm going to show you
+how to issue a cert
+and i'm going to walk through
+passing in
+the
+ability to pass in custom object
+identifiers
+and these can be passed into
+private cas or certs in this example i'm
+going to
+show you how to issue a certificate and
+i'm going to pass in
+the custom attributes via json file so
+uh let me show you the issue certificate
+api call and what's your of the
+parameters that you are
+validating here are validity the signing
+algorithm and here's the csr that i've
+already
+created beforehand this is my csr
+and i'm using uh this api passthrough
+command to
+pass in my custom
+attributes.json here and i'm going to
+pull up the custom attribute dot json so
+you could take a look at it
+and
+this is what you could pass in and of
+course you could you could use that sdk
+as well or you could create a template
+that looks just like this
+one thing to note here um is
+in the world of manufacturing and iot
+devices uh there may be attributes
+things like maybe module id or factory
+name
+that the manufacturer or the device
+maker
+wants to validate or wants to be passed
+into the certificate and so
+ac and pca allows you to do just that
+one thing i want to make note of is
+notice here that this is not a custom
+attribute this is actually a standard
+attribute so when you do pass in custom
+attributes you're not going to be
+creating two separate templates
+or passing in standard attributes and
+custom attributes um in the same file
+you'll just uh call the
+you'll essentially just call custom
+attributes here and then put in both
+standard and custom attributes so here i
+have my um my custom
+attributes here these latter two are the
+custom attributes and then here is the
+standard attribute
+and so um these are uh designed to to
+help um conform to uh whatever the
+manufacturer and the device maker as
+well as the supplier have agreed upon
+and so
+i'm going to pass that into uh my
+when i'm issuing my certificate
+and then i'm also passing in this this
+template so there are a number of
+templates that are supported um a
+multitude of different
+certificate templates uh that we support
+and this particular one allows for api
+and csr passthrough
+and then i'm just going to uh use the
+certificate authority arn and this will
+return back the um arn of my certificate
+so we're not done yet we have to now
+uh get this certificate
+and so um in order to get the
+certificate we need to run the get
+certificate
+api call so let me walk you through that
+so here
+we're
+using the get certificate api call and
+notice
+if you go to the second line i this
+certificate arn path is blank because
+what needs to go here
+is the
+certificate arm that you generated above
+so i'm going to copy this arn
+and i'm going to pull up visual studio
+code
+and
+i have rewritten out that api call and
+i'm just going to paste that after
+certificate arn just so it looks clean
+so i'm going to paste this uh it looks
+like it let me just delete that and then
+what i'm doing at the end here is i'm
+just
+piping out
+uh the chain to just
+pull the
+certificate
+that i issued
+so i'm going to copy this
+and i'm going to
+take that and
+it's that full
+okay that seemed like it worked so that
+should have generated the cert.pen and
+that cert.pem is going to be
+uh in the
+directory that i have
+here acm pca
+and so let's take a look at
+this uh directory and it contains the
+cert.pem file it has my custom attribute
+json and a few other files that i've
+generated and you can assume that my
+machine is an iot device so it has the
+private key in this case it was the
+private key was
+securely put on the on the device and
+then um i'm going to be communicating
+with an mtls endpoint and so one of the
+obviously most common use cases here is
+that i am trying making sure that my
+certificate is presented to an endpoint
+that can
+validate the certificate
+so let's just really quickly take a look
+at the
+certificate that i generated with
+openssl so we're going to do openssl
+here and we're just going to take a look
+at the certain file
+okay so a few things got passed in and i
+just want to focus on a few uh ideas and
+those are the custom uh
+names here that we've passed in and so
+this here is useful as uh there are
+certain special subject name attributes
+that uh we were interested here of
+course i passed in uh this could be
+whatever uh the organization divide the
+desires in this case it was module id
+and factory name
+and so um i wanted to just demonstrate
+that by uh showing the certificate
+itself
+so let's actually run the test now that
+we have our certificate and on the
+server side i've already set up an
+endpoint that requires mtls and so it's
+just an api that i have set up and so
+first let's make the api call so it's my
+first and last name and i'm gonna make
+this api call
+to uh hello world uh this lambda
+function and what this lambda function
+actually does that's fronted by uh an
+endpoint that requires
+mtls is it's just going to actually
+print out
+uh the serial number um of the
+certificate and so
+when i uh hit enter here obviously i
+haven't passed in my certificate i'm
+just doing a curl because you know i'm
+making the request via curl command just
+for
+visualization purposes so when i hit
+enter as you would expect
+i actually can't connect to this site
+because i haven't presented the
+certificate here
+so let's go ahead and pass in the
+certificate
+as well as the private key um and then
+try and see if i'm able to uh make the
+request and so if this is
+works what you should see is the serial
+number
+of the certificate returned back to me
+and there it is so when i passed in the
+certificate to the endpoint i was able
+to
+receive the
+serial number so this means that i was
+able to connect to
+that endpoint via mtls
+okay and so i kind of mentioned earlier
+that this is the supplier
+here my machine is acting as the
+supplier
+and i'm actually authenticated as the
+supplier
+and via this machine i have admin access
+however i only have limited ability on
+the subordinate ca
+because the device maker is provisioning
+my access and the whole
+kind of um draw of using acm pca with
+ram is that we are able to uh sort of
+put fine green access controls on what a
+potential supplier can do to the support
+in a ca so that could be you know just
+just revoking and we sort of have these
+permissions that have templates around
+them that
+are uh using least privilege and so in
+this example i can obviously issue a
+certificate like you saw
+and the question is can i delete a
+certificate so i'm gonna try to delete a
+certificate um
+and and on the on the manufacturing side
+and so i'm going to pass in
+this api call the lead certificate
+authority and i'm passing in the arn of
+the subordinate ca if you remember we
+had the root ca and then we have the
+subordinate ca which is then shared to
+the supplier so let me see uh what
+happens if i try and delete the the
+certificate authority
+so as you would expect um
+when sharing the subordinate ca uh the
+supplier won't be able to run these sort
+of these higher privileged commands like
+um deleting uh or uh revocation unless
+you grant the permission template that
+allows them to do that and you could get
+more information about those templates
+as well if you if you just look at um
+you know ram resource access manager
+templates
+okay so the last thing i want to show uh
+in this demo is i want to show you how
+you can generate
+um
+a report about what's happening in terms
+of what api calls and what search are
+being
+requested by which accounts
+so sort of this observability use case
+so many customers you know want to know
+if they are going to be
+sharing subordinate cas across multiple
+suppliers observability is critical and
+aws provides the ability to do that and
+i'm going to demonstrate this in the
+console you could also do it in the api
+but i'm going to show you uh how
+generating an audit report looks like
+from the actually from the device maker
+side
+and let me pull up uh the ac and pca so
+here is the architecture that i showed
+you uh there's the root ca and then
+there's the subordinate ca and this
+subordinate ca is being shared with the
+supplier as we showed in the
+architecture and so
+to generate an audit report you can just
+click on actions here on the subordinate
+c and remember that the account that i'm
+in right now is actually the device
+maker
+and you can see that this tab here says
+generate auto report you can just click
+on this
+tab and you have the option to select
+the bucket or create a new bucket uh
+keep in mind that if you are creating a
+new bucket
+you'll have to grant permissions for acm
+uh to generate an audit report and put
+that audit report in the s3 bucket so
+that would be done on the bucket policy
+level and then you have the option to do
+csv or json
+and i've already generated an audit
+report um so we can actually just take a
+look at that audit report
+so you would select one of these and it
+would generate an audit report
+and so let's take a look at this and
+i'll uh
+just show you what it says and this is a
+json report you could have done a csv as
+well
+but it tells you the account id
+as well as uh the arn and it gives you a
+bunch of information
+uh about uh what details uh in terms of
+what was issued so you can see here that
+this account id issue to serve
+and you could see um over here you have
+this account id and it tells you the
+different account id so some of those
+fields are
+what the aws account id is
+and which certificate
+arn
+it was it used to issue the certificate
+uh as well as uh some of the not before
+not after and when it was issued as well
+um so this is sort of uh concluding the
+demo and uh just to kind of recap
+because there was quite a few things
+that we went through
+we talked about the architecture of
+sharing certificates across from a
+device maker to multiple suppliers
+we also showed how to issue certificates
+with custom object identifiers
+passing in those custom object
+identifiers
+i showed you how to get a certificate
+after you issue a certificate
+and then we curled to make sure that
+what the certificate that we passed in
+was being validated properly
+and that was indeed the case
+and finally i showed you how
+the
+manufacturer had controlled permissions
+on the supplier so that they could not
+disable the certificate
+and then finally um we looked at
+the
+observability of
+which certificates were issued by which
+accounts
+by generating an audit report into s3
+so that concludes
+the demo on acm pca and i just wanted to
+say thanks all for watching and i hope
+you all have a great day
+[Music]
+you

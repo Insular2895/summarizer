@@ -1,0 +1,886 @@
+[Music]
+welcome to educational Alpha I'm Bill
+Kelly CEO of Kai Association and your
+host bringing you on the ground
+conversations with Business Leaders
+Educators and Industry colleagues from
+around the globe educational Alpha is
+sponsored by I Capital the financial
+technology company with the mission to
+power the world's alternative investment
+Marketplace part innovator part Ed
+educator and part Navigator of the
+Alternatives industry I Capital offers
+intuitive scalable digital solutions
+that have transformed how private market
+and hedge fund Investments are bought
+and sold with ey Capital financial
+advisors wealth managers and asset
+managers around the world now have
+access to everything they need to
+deliver the return and diversification
+potential of alternatives to high net
+worth investors to learn more visit I
+Capal
+.c in this episode of educational Alpha
+Bill welcomes Zoe Cruz a Pioneer in the
+financial World Zoe shares her
+invaluable experiences from Morgan
+Stanley to the establishment of her
+Venture manai shedding light on the
+digital asset Revolution the importance
+of regulatory Frameworks and the
+evolving nature of Finance the
+discussion explores the potential and
+pitfalls of digital currencies the
+impact of techn ology on traditional
+finance and the profound implications
+for future Generations in global markets
+Zoe's insights illuminate the path of
+innovation inviting you to consider the
+vast possibilities that lie ahead in the
+world of finance and digital assets
+listen
+in Zoe Cruz welcome to educational Alpha
+thank you very much Bill you've got a
+great story to tell at a very
+interesting time I think you and and I
+are probably about the same age and my
+post collegiate career spans over 40
+years and you probably are in that same
+territory and I think we are for good
+better and different reasons products of
+where we once came from and maybe we can
+start with a little bit of your
+background and and some of the
+opportunities you saw in career one if
+it's fair to put it that way and what
+that may be meant to Career two and then
+I want to move on to manai I would say
+the fortunate position I have been in to
+actually be joining Morgan Stanley one
+of the better investment Banks right out
+of business school is by and large luck
+and within that the timing that I joined
+ironically was made an offer by three
+interview with three investment Banks
+Goldman Morgan Stanley and Solomon
+Brothers so for a different conversation
+cultures matter I'm glad I joined Morgan
+Stanley in terms of culture fit but at
+that time the offer came from to be in
+corporate finance to be an investment
+banker I was already a working mother a
+few months of that cured me of that
+disease being an investment banker and
+again I was lucky and luck I would say
+you talk to anyone who is modest enough
+to recognize luck yes smart enough and
+yes hardworking those are table Stakes a
+lot of people are smart and a lot of
+people work very hard but I joined
+Morgan Stanley when it was a private
+Investment Banking Boutique 1,800 people
+three offices Tokyo London New York when
+I left in 07 it was 60,000 people and it
+had offices everywhere the revolution I
+was lucky to participate in at the
+bottom rank of the latter was finance
+globalizing and at that time they
+actually were setting up a brand new
+business that has relevan to our
+discussion today the foreign exchange
+business before that City Group I mean
+commercial Banks did FX investment Banks
+did not do that post glass Eagle if you
+remember the glass Eagle act that we got
+rid of so I joined a firm with a unique
+perspective over four decades as you say
+roughly speaking give or take a few
+years of actually the world
+globalizing globalization not
+fragmentation which was prior to that
+was the world we lived in gave me that
+perspective of going to China and
+actually having a joint venture with the
+Chinese on teaching them how to do FX
+business so fast forward to today
+obviously that world that I was very
+privileged to participate in is going in
+reverse so how I got to basically by
+Luck get involved in the digital asset
+Revolution and for me this revolution
+bill as you can see from the passion in
+my voice it's as big if not bigger than
+Finance globalizing it's as big as that
+and it's not the revolution of the
+Bitcoin maximalist which is by Bitcoin
+and you'll be rich maybe or you could
+lose a lot of money or the other
+nonsense which is 75 to 85 year old men
+mainly men saying this is all a bunch of
+crap if I'm allowed to use that word
+neither one of them describ rbes the
+Revolution and for me you never went
+wrong investing in high growth
+businesses that revolutionize business
+models all kinds of business models
+through technology you never went wrong
+and that is what this is the digital
+acid space so head hunter called me
+after I got off a bunch of traditional
+boards like all Mutual PLC and Man Group
+Etc and I was on the board of Morgan
+Stanley as well when I was an executive
+member of the board to say Ripple this
+is basically four years ago wanted a
+board member with my
+experience and I said you know what I
+don't believe in that I think blockchain
+is interesting but all this
+cryptocurrency I have zero interest and
+thank God the Head Hunter said you know
+what just fly to California and listen
+to the story and thank God I did that in
+the story and then I'll let you
+basically take this discussion wherever
+you want to take it the story that I
+heard and I joined that board and then
+four years later I was setting up my own
+business in this industry was the fact
+that you and I can exchange value not
+just money value if I am a journalist a
+painter I'm a content provider and your
+content buyer whatever the content is
+with just a phone and not a bank account
+that's a big revolution
+and what I say to people when they say
+this is full of uh ignorant and arrogant
+people which is true and a lot of shyers
+which is also true but there is a lot of
+us me included in the space that
+understands given my previous background
+that the Swift system and correspondent
+banking system works fine even now if
+you're sending half a billion dollars
+from Morgan Stanley to Goldman Sachs if
+you're NE me Nigeria not so good so for
+me you're talking about access to half
+of the world that's under banked or
+unbanked getting business models where
+you and I if I'm a musician Spotify
+doesn't get to keep 30% of everything I
+provide that's a very exciting
+Revolution and with that I'll stop
+pontificating about why this is great so
+much to work there with Zoe and and you
+could talk a little bit about the
+origins of the name but it is a bridge
+Mani is literally a bridge from trafi to
+Defi and as you said if you and I decide
+to exchange an asset for cash or
+anything else or barter or otherwise why
+do we need several middlemen between us
+and that's I think the basic premise of
+moving to defi I don't know if we can
+rinse out nor do we want to rinse out
+perhaps some of the underlying
+principles and protocols that make
+transactions safe for end investors and
+I don't think you or I would ever be a
+sping that but building a bridge to
+greater access to all assets I think
+could be very interesting and maybe you
+can comment in that but maybe to serve
+it up a little bit too that when I think
+about digital assets at least from my
+semi informed opinion the proxy is
+Bitcoin and maybe the business model is
+SPF and I think you either here or past
+used about do have a lot of frauders and
+shyers in this space and I think
+whenever you have Innovation maybe they
+are going to be at the doorstep we' got
+to get them out of the way and then take
+a step back and say what is the value
+proposition and and I'm not an anti-
+Bitcoin person by any stretch of the
+imagination but it's a lot easier for me
+to understand taking a non-tradable
+asset in the private markets creating
+some kind of a token equivalent and
+being able to trade that freely on a
+blockchain technology and for good b or
+and different reasons that might be a
+very simplistic description of Mani the
+bridge but I'll let you run with all of
+that
+yes manai is a bridge my daughter
+actually helped me choose that because
+all the Greek names were taken I'm Greek
+I was born and raised in Greece so all
+the great Greek names were taken but
+also Mani I love beautiful architecture
+manai is a suspension bridge in Wales
+that actually spans very treacherous
+Waters it was built in the 1830s
+1860s a Marvel of human human Ingenuity
+that basically Bridges two areas and for
+me bridging traditional Finance with
+this new world was a very up name plus
+it's a beautiful Bridge that's how we
+got the name man I the traditional
+Finance where I feel although my story
+of
+manai basically is unique I would say in
+this industry and when I started the
+business and I would say regul s are
+right to want Frameworks move fast and
+break as they say in Silicon Valley
+doesn't work in finance it's good if
+you're going to create a new phone and
+so for me that overarching philosophy
+that I still have the reason this
+industry will continue to grow and
+Achieve escape velocity is Regulators
+around the world frankly a lot more
+progressively than the us but the us
+there is a upset of people that are
+believers in what I'm about to say
+there's a framework out there where they
+say broadly speaking Bitcoin to bitcoin
+knock your socks off the Fiat on and off
+ramps wherever you are we're going to
+regulate you the way we regulate City
+group and if you get that concept that
+the Fiat on and off ramps for example if
+you're in exchange binance a little late
+but they're getting the point you're
+going need the centralized entities like
+exchanges you need them I think coinbase
+is a very well-run exchange ironically
+FTX Sam for whatever his other host of
+real big problems he built a good
+exchange my prediction is people that
+have a lot of money and know how to run
+businesses will buy FDX and create
+another centralized exchange and so this
+centralized and decentralized finance
+the concepts that are best in class for
+both is what will enable this industry
+to achieve escape velocity we're in our
+way let's not obviously underplay FDX
+and there's been a lot of fraud a lot of
+fraud but sadly when there is a lot of
+money usually in finance as I say to
+people the largest fraud in my financial
+history was from a regulated public
+company called Enron second largest
+fraud also public regulated company
+Worldcom made off none of these had
+anything to do with crypto Celsius
+another one where a lot of Pension funds
+and legitimate players lost a lot of
+money had nothing to do with crypto and
+fraud in crypto he borrowed short and
+lent long it's called Finance balance
+sheet management 101 so if we
+acknowledge fraud exists you need to
+first understand the space understand
+the riskiness of it and you've alluded
+some of it to me the biggest risk isn't
+the shyers which of course there are
+plenty of them it is actually the lack
+of robust infrastructure that still
+exists so if you're a retail guy and you
+want to buy Bitcoin and sell this or
+that with your wallet chances are you
+can have your Bitcoin stolen a lot more
+easily
+than my CIO where we have cold storage
+our hot storage is if not nanc it's a
+few hours and we're dealing with
+coinbase not some godforsaken entity in
+the middle of nowhere so for me it is
+the biggest risk is counterparty credit
+risk in this industry and so you need to
+have people that understand what are the
+risks you're taking and as you know my
+career was taking risk I am a very big
+believer you don't make any money if you
+don't take risk but you must be paid for
+it the riskier the investment the
+smaller of a percentage you should
+allocate to it to State the obvious but
+much more importantly you need to get
+paid for it and this is what brings me
+to now I would say Bill the best risk
+reward in terms of a symmetry of risk is
+the digital asset space which is yes
+it's still risky and that's why as I say
+to people zero allocation to the space
+is the wrong answer more than two to 5%
+of your liquid net worth is also the
+wrong answer because it is risky but
+then you can make a
+100x this is in a context where last
+year it's the first year in my lifetime
+well my financial lifetime where stocks
+and bonds you lost money on both sides
+of that equation that's a first so you
+talk about a symmetry of risk reward the
+new new theme as you know is private
+credit I look at the opaqueness of it I
+look at how much or how little you're
+getting paid for it I'm sure it's a
+great big theme you're not getting paid
+enough for the risks you're taking so
+that's the way I look at this it's not
+riskless as long as you don't have
+permanent loss permanent loss you don't
+come back from we're very proud to say
+that the infrastructure we put in place
+at Mani we had zero Luna zero Tera H
+because my CIO writes 60 page papers for
+every token we put in a portfolio real
+research and when we looked at Luna even
+though it was the top 10 in market cap
+we said no to it because he very quickly
+realized if you enter into a Vortex the
+way it was structured you go to zero in
+weeks which is what happened zero FDX so
+permanent loss you don't come back from
+marketto Market loss you do I think that
+an overarching theme Here is always is
+embracing Innovation and disruption and
+I think that our world is in better
+place with Airbnb and Netflix and Uber
+because they disrupted State Industries
+and I think what we have Happening Here
+is the disruption of trafi but when you
+have a consumer like you or I or any
+committing Capital to this business
+model which is highly regulated it
+brings on a whole new set of risks but I
+think you underscored table Stakes for
+investing is taking risk and you want to
+make sure you're being appropiately
+compensated for that risk and I think
+your point about having at least a small
+position I think an offset to that is if
+you don't you could effectively have a
+short position inside of your
+portfolio that's brilliant bill because
+it gives me an opportunity to say the
+following that actually and we've had
+discussions with institutional client
+for a long time all of our investors at
+the moment are multibillionaire family
+offices where they get what I just said
+and they don't have investment
+committees to worry about but we're
+getting calls along the lines of what
+you just said increasingly reverse
+inquiries because obviously I don't want
+to be falsely modest I don't know of
+anyone in this space that ran
+multi-billion dollar businesses globally
+and ran regulated businesses so I
+understand that world and what's
+interesting is what they're starting the
+conversation you can see swung from I'm
+going to get fired if I do this to
+actually if I don't do this and you're
+right I am short this thing so that's
+exactly right Bill those conversations
+are beginning they're picking up their
+pencils they haven't written any checks
+yet I'm talking about broadly the
+institutional space but I think that's a
+matter of time and I'll give you the
+statistic that shocked even me our
+research group did a lot of work on the
+space first of all the Mani index that
+we created the framework of which the
+CIO is basically deciding what tokens
+he's going to put in and what tokens
+he's not going to put in by
+diversification of use cases that index
+is correlation is oscillating slightly
+above zero meanwhile we looked at the
+90day correlations to the S&P 500 of
+every major asset class high yield
+Emerging Markets real estate Commodities
+the thing that shocked us is treasuries
+the old riskless asset class two things
+shocked us the 10year average
+correlation of treasures to your
+portfolio was negative
+negative4 the numbers here say it is now
+positive
+.25 think about that and if you invested
+in the long end of us treasuries in the
+last three years you lost 40% of your
+money I mean let that sink in in terms
+of the riskless part of your portfolio
+that's what happened to you you made
+three and a half% 4% coupon or you lost
+almost half of your money so it's in
+that context that this asset class given
+its uncorrelated returns and the
+asymmetry of risk where and again I'll
+give you some numbers that we've done
+this is as of October so November is
+even better the last three years if you
+invested in Bitcoin because that's the
+proxy you made
+151% and that's as of end of October
+NASDAQ 21% SNP
+34% gold which shocked me minus 3% real
+estate index plus 7% and long term US
+Treasury is minus
+42% and so the 10 years is even I mean
+Bitcoin is up
+21,000% and with that what I will say to
+you Bitcoin it sucks the air out of the
+room I think it's an interesting use
+case stra Miller and I who are macro
+people I never used to go on gold in my
+family office I mean why if it doesn't
+give you any returns I believe 2%
+inflation we're never going to see again
+that's what I believe so I started
+buying gold two years ago to my shock so
+if you're my generation you buy gold if
+you think inflation is going to go up my
+25-year-old buys Bitcoin it's a use case
+it's not the only use case and in fact
+it's the least interesting use case
+Bitcoin actually has done a lot better
+than gold as I just told you so bet with
+the young the new generation but it's
+only a use case such least interesting
+one the reason it's becoming interesting
+I believe we're witnessing viar Republic
+type of Fiat currencies being debased
+that's why it's so interesting but
+Brilliant Minds actually are writing
+code on ethereum and other protocols and
+they say you know yeah I own some
+Bitcoin but there's nothing I can do
+with it they're writing code on other
+protocols that will change the world and
+that's what I'm excited about 30% % of
+our portfolio is Bitcoin but the 70%
+that's not Bitcoin is where the real use
+case Revolution is happening there's an
+old saying Zoe that you've heard about
+history rhyming or repeating and I think
+that's largely true but uh Howard Marx
+in one of his recent memos reminded his
+readers that for the vast majority of
+people working today so we're talking
+now from 1980 to 2020 that 40-year
+period either interest rates were
+historically lower at zero or in a rapid
+descent and the opportunity there was
+enormous and now we have uh fed trying
+to manage inflation trying to manage
+employment demographics have shifted
+what's driving interest rates might be
+the enormous debt and deficits were
+lugging around and your old job FX and
+currency around the world so I don't
+know if it's going to rhyme the same way
+and I think we've got to embrace this
+Innovation not so much for speculation
+for an early win from holding something
+in a short period of time but this whole
+Trend marries up very nicely to
+something we've talked about in this
+platform many many times which is
+democratization and and if I want to
+have access to private Equity another
+correlation is probably 0.9 to public
+Equity so unless I have some kind of an
+edge or an opportunity I might as well
+own the S&P 500 but if somebody could
+help do the due diligence and put that
+private Equity company or that early
+stage V onto a blockchain where I can
+get access to it I think that could be
+very very powerful and something you
+said earlier if that is the outcome I
+probably need a permission blockchain
+because somebody's going to have to help
+me with price Discovery somebody's gonna
+have to maybe fill that role as a
+specialist to provide liquidity if we
+want to trade with each other because we
+may not know each other but I think that
+if I marry everything we've talked about
+up against democratization I think
+there's a very very powerful story to be
+told there yes
+absolutely and in addition to that just
+to put the numbers Howard Marx is saying
+when I said I join the firm Morgan
+Stanley when he was a private small
+investment banking Boutique overnight
+rates were 21% and 30-year Treasures
+were 15% on their way to two a monkey
+could do what we did and we were not
+monkeys to State the obvious what he
+says to me the reason it's critical for
+us to understand how big the statistic I
+just mentioned is so from my lifetime
+given where I began finance my career uh
+4% 10year treasuries it's on the low end
+of the thing you have an entire
+generation of decision makers that say
+it's going to go back to 2% and what I
+would say even if you don't accept my
+view of inflation when you have 33
+trillion dollars worth of public debt
+and adding two trillion every 12 months
+to it the yield curve can steepen the
+FED can actually ease and that's why I
+think ultimately Bitcoin does deserve
+something in your portfolio you
+shouldn't have so much what it will save
+you the ignominious end of your liquid
+assets getting blown away by detrimental
+moves because ultimately for me you can
+have failed auctions at the long end
+where the US government
+starts issuing billions with an S of
+auctions and the Chinese and the
+Japanese far from they're not selling
+they just don't have to be the marginal
+buyer and you can have a yield curve
+steepening in that environment you can
+have higher interest rates and Bitcoin
+still going up or this sector still
+going up what I'm saying is the
+headwinds that we've had up until now
+the Sam bankman free
+disasters and the fact that higher
+interest rates why would you invest in
+Bitcoin because it's higher interest
+rate environment I have a lot of my own
+money oneyear t bills I was able to get
+five in a quarter perc why would I
+invest in anything else that gives me
+risk but I'm saying the macro
+environment is such where this industry
+to address your point the bigger point
+about the Evolution we're going to have
+Tailwinds now instead of
+headwinds a quick but semi-related aside
+to what you just said Zoe So if we've
+got a national debt here in the US of 30
+some odd trillion not an insignificant
+number and running massive deficits and
+China's already moved in this direction
+but do you have a view on Central Bank
+digital currency and good thing bad
+thing look it's a good thing the way the
+Western world is doing it there
+experimenting at the moment some of them
+more than experimenting the way the
+Chinese are doing it is to control the
+population with they will know whether
+you bought your coffee in Shanghai from
+Starbucks or the Chinese guy that's what
+cbdc in China is in the Western World
+frankly it's Reinventing the way
+traditional rails technologically work
+but as long as monetary policy is
+executed through commercial banks that
+that's much more relevant to current
+Finance than cbdcs JP Morgan and City
+group is much more important than cbdcs
+and the Fed so does that whole value
+proposition though does a fly in the
+face of what a a digital currency was
+meant to represent in the first place
+where if the US has a central bank
+digital currency they can confiscate my
+wealth if they decide to do that the
+concept of having to file a tax return
+may become quaint because they can
+decide what I owe them and maybe that
+sounds conspiratorial to some degree but
+having an open network away from a
+central bank is really what digital
+currency was all about in the first
+place how did the two of those get
+reconciled well look I think that
+nonsense frankly is I commend the young
+because I'm not one of those people like
+Charlie Munger God Rest Your Soul at the
+age of 98 Charlie I didn't I used to say
+get off the stage I guess you did but
+for me this nonsense about you invent
+this thing to fight the man yeah but
+that in finance you don't get to fight
+the man and that's what actually
+Regulators around the world are focused
+on I would say the real evolution is
+traditional Finance is going to continue
+to work the way it's working currently
+in fact I think the oligopolies like JP
+Morgan where they're charging you as
+much as they want to if they W accept
+you as a client and the nice thing about
+this space of giving access to finance
+bill is JP Morgan has zero interest in
+covering the basket Weaver in Kenya and
+Nigeria so that's the beauty of that the
+Nigerian government has an interest in
+creating new rails so I would say this
+world isn't because you can avoid to pay
+taxes you avoid to pay taxes with a good
+old dollar suitcases full of dollars a
+lot of the thev happens with the
+traditional Fiat
+currencies it's really about that that
+actually if you're an
+intermediary and you're gouging you're
+the go between the user and the provider
+you better worry if you're a central
+bank you're not going to worry they have
+all the cards and as I said if you want
+to live in Bitcoin land forever fine but
+the moment you decide to sell your
+Bitcoin and to buy Singaporean again US
+Dollars you're going to pay the same
+taxes as any other stock and bond holder
+so all that is nonsense frankly so maybe
+just a little bit of probably more of a
+longer term Outlook so again you and I
+have been around long enough where asset
+management and even banking to some
+degree were cottage industries there
+weren't a lot of dominant players the
+SNL space and maybe some of the
+listeners don't even know what SNL
+stands for there were banks in every
+corner but then then mergers
+Acquisitions and balance sheet
+commitment came in and now we have a
+couple of multi-trillion dollar Asset
+Management firms the barriers entry got
+more difficult banking consolidation
+even through last year with Silicon
+Valley and Republic has continue to
+accelerate too what is the future of
+digital assets it's right now very much
+of a cottage industry people buy a lot
+of entrepreneurs and it's great that
+you're there and they're early but do
+you see a consolid and then what are the
+Morgan Stanley of the world doing I
+doubt they're sitting on their hands
+saying I hope Zoe's wrong and we're
+going to be the dominent player maybe
+there's going to be m&a there but how do
+you see this all sorting itself out in
+the broader scheme of things well the
+way I see at 10 years from now because
+this is early on a scale of 1 to 10
+we're maybe at three or four but 10
+years from now they'll be I'm going to
+say 10 years from now who knows but my
+vision is the way it's going to work is
+the current big players like JP Morgan
+and City Group will continue to play and
+Barkley I mean European huge you look at
+UBS and credit Swiss
+oligopolies they will stop being
+rentiers of a system and there will be
+utilities well-regulated
+utilities and I think the decentralized
+finance world and where I see basically
+I call these tokens that we invest in of
+the 19,000 tokens out there
+very quickly you can deduce
+18,500 are a joke BS of the 500 you need
+to do some research to get down to
+150 and those
+150 they're pointing to use different
+use cases as one of our tokens that we
+only have 50 basis points in is
+basically AI data token because as you
+know AI require s huge data and if
+you're a guy in India and you have
+something to work on you can actually
+borrow this on a decentralized basis so
+the tokens in my view 10 years from now
+that create a community a network of
+hundreds of millions of
+users and they're taking that token of
+micro payments I can pay you
+instantaneously 5 cents or a dollar at a
+time those tokens will be very valuable
+you're going to have exchanges that will
+make you a price in that token because
+you're now
+successful and so that's what's going to
+happen there will be the dollar there
+will be the European who knows where the
+European currencies are going to go back
+to Dollar Sterling and dollar French in
+Paris dollar French Frank but I see the
+traditional World being powerful but
+less oligopolistic I think Anti-Trust
+will be a very big thing I said to a
+friend whose daughter is going to law
+have her study antitrust it's going to
+be a full employment opportunity and I
+think the asset management Community the
+idea that you run $6 trillion dollar
+where you're making an assumption that
+liquid asset classes are in fact liquid
+not if you need to move 10 trillion
+dollar in a space of a week it's called
+long-term capital fallacy that's how I
+see the world coexisting and right now
+frankly there's a lot of nonsense not
+just from my industry the digital asset
+industry but also the rentier industry
+whether it's the asset managers and I
+don't want to be quoted on that maybe
+widely whether it's the asset managers
+or the banks that are just using this
+technology to cut costs and to create
+the modes they have around the world to
+be much bigger modes they're close to
+them moving toward wrap-up so I want
+maybe finishing a lighter note but an
+important one too so you've had a very
+very successful career no matter if you
+partitioned between what you did at
+Morgan Stanley what you did at these
+very prominent Asset Management firms as
+an independent director and now at Mani
+but it has been just a remarkable career
+you did mention in passing you came over
+to the us as a very young woman at the
+age of 14 the daughter of immigrants
+immigration is topic dour we've got very
+poor demographics around the world China
+is maybe the casee study as is Japan but
+the US is getting older more and more
+quickly could a 14-year-old version of
+Zoe Cruz today have the same opportunity
+that you had when you came over with
+your parents back in the day probably
+not it's possible but we deal in
+probabilities in life probabilistically
+speaking not for two major reasons one
+is I was almost 15 and when you think
+about in hindsight even for me it's
+incredible I didn't speak a word of
+English my parents were immigrants I was
+almost 15 I didn't speak a word of
+English the country and we went to
+Boston the country had these schools
+that taught immigrants like me English
+onee program where at the beginning
+there were Italians and Chinese we were
+communicating the students with a
+teacher sign language practically three
+years later I went to a public high
+school then after that year I was at the
+top of the class not very hard to be at
+the top of that class 3 years later I
+was at Harvard College on a full
+scholarship and 25 years later I was
+running Morgan Stanley I would submit
+probabilistically speaking that's hard
+but that's because as I said I locked
+into two things one is this country had
+infrastructure for immigrants legal
+immigrants by the way my dad had to
+provide a letter that if he couldn't get
+a job it wasn't the government that was
+going to feed him it was actually the
+small company of Greeks that said I'm
+going to employ him and I'm going to
+feed them so that immigration seamless
+process of at that time it was late 60s
+early 70s this country needed blue
+collar workers so they invited us in so
+it was win-win we went for a better
+opportunity in the country had young
+labor but at their Rules of Engagement
+do you see the difference as opposed to
+I just don't think as controversial I do
+believe that just because you're poor
+you don't deserve to overtake any
+Sovereign Nation just because you're
+poor so that's one thing that at that
+time I was lucky that America wanted us
+it's not that we came in and they didn't
+want us and the other luck as I said I
+completely by luck got into foreign
+exchange and within a great firm so the
+advice I give to people to have the
+career I had is know where the puck is
+going so the mega Trend isn't joining
+Morgan Stanley Investment Banking group
+it's a nice little job if you want just
+the money but if you want to make a
+difference you've got to take risk and
+in fact just to leave you with that
+thought I went to Harvard Business
+School and my Investment Banking cohort
+there were getting promoted to VPS I was
+still toiling away in a brand new
+business called FX and I used to say
+what have I done to my career so I took
+risk I took risk with a nent industry
+that could have gone nowhere so that's
+what I would say there is a new
+opportunity and I think that opportunity
+is the the digital asset space the
+digital Revolution well I think that's a
+great way to conclude it and luck and
+skill I think are highly correlated and
+I think if you keep your eye not the
+near-term prize but the longer term
+Horizon have a sense of where you're
+trying to go Nothing in life is a
+straight line but certainly you're a
+test case as to how that's worked out at
+least times two and maybe more so as
+your next stage of your career and
+hopefully mine continue to develop but
+but Zoe you've been a great Advocate
+content provider you've done a lot on
+the Kaya platform so I appreciate that
+you and I have met several times through
+sbai so I think you are a poster person
+for why we need to do things right in a
+transparent way but Embrace not run away
+from Innovation so thanks for all of
+that and it's great to see you again in
+this platform thank you for your time
+and I will leave you I promise with this
+last thought unimpeachable Integrity is
+a core value that you must have as an
+individual and as a business people have
+your number you can't pretend you have
+integrity nothing is resilient nothing
+is steady in terms of building anything
+if you don't have integrity well said
+and a good way to con Zoe thank you okay
+bye-bye thank you for listening to
+educational Alpha I'm your host Bill
+Kelly learn more about the K Association
+at subscribe to the show at ca.org
+that's C
+aia.org see you next
+[Music]
+time

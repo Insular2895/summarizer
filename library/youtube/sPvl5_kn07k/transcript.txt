@@ -1,0 +1,89 @@
+Templates! Templates are everywhere!
+They are widely used in email and
+web apps because they save tons of time and
+effort, but are they always safe to use?
+Hey! Welcome to SecurityBites! Today we’ll learn
+about template object injection. Our research
+shows that this critical vulnerability occurs
+in the wild and not only affects the template
+rendering APIs but also the applications
+consuming those APIs! Let’s take it step
+by step though and start from the basics!
+Behind the scenes, templates are provided
+with content in the form of objects, with
+template rendering APIs, also known as template
+rendering engines, used as intermediaries
+to insert the content into the templates.
+The impact of this flaw depends on the
+underlying rendering engine used. We have
+verified through past cases that attackers
+can take full control of a system via Remote
+Code Execution. Even in cases where remote code
+execution is not possible, attackers often use
+template injection as the basis for numerous
+other attacks such as Cross-Site Scripting,
+and arbitrary file read that we covered
+in our previous, very exciting episode!|
+Today in our demo we feature Mailtrain.
+Mailtrain is an open-source newsletter
+software that is great for sending
+emails to millions of subscribers.
+For this to happen, Mailtrain’s rendering API
+will be given an object to process. This object
+contains what is blank on the email template such
+as a subscriber’s email address and first name.
+This vulnerability results from two
+common template features. First,
+when the object that is passed to the rendering
+engine is an arbitrary object. Specifically,
+an object that instead of just containing the
+absolutely necessary data to serve its purpose,
+has the ability to supply additional data or any
+data to the rendering engine. By allowing such an
+object to enter the rendering API, applications
+can inadvertently introduce malicious behavior
+by overwriting both the configuration
+keys and values of the engine. This
+happens due to the way the API merges
+the incoming data with internal settings.
+The second feature is when templates are open
+to customisation in an intentional attempt to
+offer richer functionality. This is very
+common between content management systems
+but it drastically amplifies the attack
+surface if not designed with security in mind.
+In this real-world example, our researcher Agustin
+Gianni, demonstrated that Mailtrain was vulnerable
+to template object injection. As explained,
+he was able to supply an object via a URL
+that overwrites the internal
+configuration of the template.
+This happens because of the function on screen
+(router. get) populating the object
+data by parsing a user-supplied URL.
+Agustin used the following
+URL as proof of concept,
+that pops up the classic Cross Site
+scripting alert on the victim's machine.
+A real attacker could have used the
+same technique in a phishing email,
+where a malicious URL would trigger the execution
+of a script aiming towards critical impact.
+In the same way, the following URL could
+show the contents of a file unintentionally.
+A mitigation in the context of Mailtrain, would
+be to strictly accept objects that only contain
+the data the template rendering engine
+expects, and only accept those objects.
+In other use cases, we suggest separating
+the logic from the presentation elements
+of a template. Users will be able to
+only influence the presentation element,
+and this isolation will make it impossible for
+a malicious actor to intervene with the logic.
+However, this is sometimes unavoidable
+due to business requirements.
+Make sure to leave a comment below to let us
+know which vulnerabilities to cover next! In
+the meantime, stay in the loop by following our
+twitter. Remember, quality code is secure code!

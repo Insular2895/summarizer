@@ -1,0 +1,1367 @@
+foreign
+[Music]
+G and isda webinar regarding automating
+the release process for collateral and
+segregated Accounts at third party
+custodians I'm Amy Caruso head of
+collateral initiatives at isda and along
+with my counterpart Elisa newellave vice
+president AMG we welcome all of our
+members and an extended audience to this
+webinar and for our members we will have
+this session recorded and sent along via
+email probably later this week maybe
+early next week now before we begin with
+our content we'd like to open with a few
+housekeeping items first we open the
+session to everyone we put it on social
+media we all advertised it as much as we
+could and because of that we may have
+some press attending maybe maybe not uh
+and with that we'd like to follow
+Chatham House Rules as a reminder the
+Chatham House Rules participants are
+free to use information received but
+neither the identity nor the affiliation
+of the speaker or speakers nor that of
+any other participant may be revealed
+and if you are from the press and you'd
+like to have a more formal interview
+please contact Elisa or me via email or
+LinkedIn and we'll be happy to set that
+up
+now also we welcome your questions we
+want to get you all very involved in
+this process so please use the chat
+functionality on your screen I'll
+monitor the questions throughout our
+session and try to work them in and we
+also have a section at the end just for
+questions if any of your questions are
+very specific to your firm or if we run
+out of time I will get back to you don't
+you worry
+now today we will review what the
+industry challenge is with the
+collateral release process why now is
+more critical than ever for this problem
+to be solved and we'll explore some
+solutions to automate the process which
+can reduce operational liquidity and
+counterparty risks
+I'd like to take note that sifma AMG and
+is the we don't recommend nor endorse
+any vendor or commercial opportunity or
+solution but we do appreciate that our
+panelists today may be sharing some of
+their specific experiences as examples
+that can be implemented
+and we have a number of passionate and
+well-versed experts to join the session
+today we have Jason Brazil vice
+president from State Street and he's
+also a board member of the international
+Securities Association for institutional
+trade communication
+we call that a zitsy for short
+we also have Mark christiani director of
+investment operations from BlackRock
+John Montgomery senior specialist Global
+derivatives and collateral at Vanguard
+Emma Mills head of margin strategy at
+Goldman Sachs and Anna minetti vice
+president in the custody and product
+manager area at JP Morgan excuse me
+custody product manager now I am fully
+convinced after knowing these folks and
+working with them on this session that
+if you aren't already automating your
+collateral release process these
+panelists will get you motivated to do
+so in short form
+in addition
+um we also want to point out although
+it's not an area that we at Stephan AMG
+or is it is uh are are very focused on
+but we have seen that there are some
+regulations around Telecom
+Communications that may be going away in
+the future in the U.S and the UK so even
+if you're not sold on counterparty and
+operational liquidity risk
+your telephone provider may not actually
+be able to provide you a fax in the
+coming year so why don't you come along
+and get on the ax the facts movement
+earlier rather than later
+so first let's review The Challenge I've
+hinted at it a little bit but I'd like
+Mark and Emma to share their perspective
+so Mark will give a buy side view and
+Emma will give a sell site view so Mark
+start us off thank you very much Amy and
+and thank you for organizing this this
+is an actual topic that has been near
+and dear to my heart for several years
+now and it's caused unneeded stress
+throughout those years so I'm all for
+eliminating it where we can
+um in order to set the scene a little
+bit here I think it's important to
+understand why you might have a
+segregated collateral account
+40 act mutual funds are one area that
+are not new it's been around forever and
+they require a segregated model so when
+we are posting cloud or we being the buy
+side or posting collateral out to the
+sell side it's required that it's posted
+into a third-party segregated account
+similarly now you have uncleared margin
+rules initial margin coming into scope
+and a one of the posting options for
+segregation is also a very similar
+third-party segregated account
+in those segregated models you typically
+have the collateral provider and in
+these instances it's typically the buy
+side posting out to the collateral
+receiver or the secured party being the
+sell side and in order to get your
+collateral back it's essential that the
+sell side releases it to you and
+typically the way that works is that the
+sell side has to instruct the custodian
+of the segregated account to say we're
+okay to release X collateral back to the
+portfolio's main custody account there's
+a couple different models and I think
+we'll get into those a bit further into
+this discussion but it's essential to
+have that release instruction happen in
+a timely manner we're often calling our
+collateral back because we need it for
+something else right like either to
+settle a market trade a corporate action
+event you name it there's several
+different reasons why you might recall
+collateral out of your segregated
+account we typically have a very small
+window to get it back to make sure that
+we don't have additional issues down the
+the risk chain from us so I I think from
+a buy side perspective you know the more
+we can get focused on this for with the
+industry to
+speed up that process the better and you
+know I mean there's probably people on
+here don't even know what a fax machine
+is so it's time for the industry to
+really move past that I think one thing
+it's important to call back call out is
+we're not really asking the industry to
+move into any crazy new technology that
+nobody's ever heard of before we're
+still looking to utilize uh
+parts of the infrastructure that are
+that have been there for ages it's just
+a matter of moving away from the facts
+so so with that I'll pass it off to Emma
+uh to to go on a little bit more about
+the sell side issues
+thanks yeah so
+um GS it's a manually intensive and
+horrendously open to error process so
+I'll just describe what it looks like a
+little bit
+um a collateral specialist has to type
+up a Word document and in that word
+document they have to put all of the
+settlement details that have been agreed
+with the uh between the parties to
+settle the uh Margin Call for that day
+so any part of that could be typed up
+incorrectly
+um so as a result we have an approval
+process so the document there needs to
+be forwarded to an approver for them to
+double check there's no guarantee that
+they'll catch any mistakes
+um then it can be printed off stand by a
+fax machine type in the number wait for
+it to send sometimes you get a
+settlement confirmation back to say that
+it's successfully sent which is good as
+long as you've sent it to the right
+number
+um but that whole process takes about 10
+minutes in total each time to do that I
+know a lot of other firms use eFax and
+East we use e-signatures that helps but
+um really to use the facts
+infrastructure picture and use those
+Telecom lines you have to stand by fax
+machine and send it that way
+um and once it's sent who knows whether
+it got there or not so we have
+first-hand experience of problems where
+um either they've run out of paper on
+the other end so they never know that we
+sent them something uh the papers rolled
+under the fax machine and it's gone
+missing uh you have no confirmation that
+it's been picked up and processed on the
+other side so it might be sat on the fax
+machine for a really long time before
+someone is able to retrieve it and
+process it and we've got to bear in mind
+the market cut off times you know a lot
+of the time we're sending these things
+later in the day it's getting closer to
+Market cutoff times and we really want
+to make sure we're minimizing that
+window to make sure that things are
+processed as quickly as possible
+um one of the other problems with faxes
+is the authorized signatories need to be
+kept up to date so there's a list of
+authorized signatories that are allowed
+to sign a fax and often you know people
+leave the department or leave the firm
+those need to be updated we need to make
+sure we've got a manageable number in
+case people are out on holiday or leave
+that um are able to cover that signature
+process
+and during the pandemic when we were
+working from home people didn't have fax
+machines we didn't realize that we would
+have that need and so at that kind of
+brought along along its own challenges
+and I think you know 20 years ago faxes
+were considered secure messaging methods
+they ran on this specific Network that
+couldn't be hacked a telephone Network
+that was considered safe and secure but
+the technology has changed from 20 years
+ago and the secure methods that are
+available
+um are better and those Telecom
+providers are wanting to digitize their
+networks and so potentially they're
+going to be disappearing completely so
+there's there's many different reasons
+why we need to be moving away
+um and yeah as I said eFax Solutions
+whilst they're readily available they
+don't leverage those networks in the
+same way and we need to be careful about
+not leveraging email for this type of
+kind of safe and secure authenticated
+communication
+well how did you two just put a black
+cloud over this whole process but not to
+dwell on the negative Jason you've got
+some solutions right so you've been
+working on this for quite some time and
+uh I'm going to share via the chat
+the um the uh Market practice that folks
+can access after the call and if you're
+listening to this via recording uh it
+will be in the email that was sent to
+you but Jason tell us a little bit about
+how how this came about and is it sea
+and the market practice that was
+developed years ago yeah I was surprised
+when we were digging through our notes
+it was actually 10 years this past
+October that we started working on this
+so iterations obviously over the course
+of years but I really understood early
+on that we needed Global adoption and we
+needed a lot of adoption across the
+actors so when we talk about actors and
+roles the secured Party The Pledger the
+account servicer and that being whether
+it's a broker a hedge fund a prime
+broker as an account service or a
+custodian making sure that we were
+getting all the different constituents
+out there and engaged in this so we were
+working across the city but also smpg
+globally is though had multiple working
+groups looking at this if my AMG was
+very involved across their collateral
+working group and their custodian group
+so we continue to vet it and we
+continued to talk through it but let me
+talk a bit about Market practice and how
+we typically structure these we look at
+as I mentioned the actors in the roles
+and and how how they interact with each
+other across the business process and
+then what are the messaging options that
+we could do across those those business
+processes and is there something that
+already exists today that we could build
+formatting recommendations around so
+when we were looking at this and working
+with Swift and others we we talked about
+the Mt ISO messages for the Securities
+as well as the fin messages for the
+cache where you're pledging and you're
+really recalling the the cash and
+securities back and forth between the
+seg account
+so we try to Define what the business
+process was of those message types in
+mind and we worked through multiple
+surveys across the constituents and we
+realized that there wasn't a consensus
+and that happens sometimes with these
+Market practices that you you don't see
+an overwhelming majority saying this is
+how I prefer to do it
+um so we built the recommendations in
+the market practice addressing two
+different models and you'll see that
+within the scope that lays it out it's
+how the business process works across
+those two message models as well as the
+the field by field recommendations if
+you're going to use one versus the other
+so at least there would be consistency
+if you're using one model versus the
+other I won't talk too much about those
+two models because I know Anna wants to
+get into that but just we'll highlight
+that that there are variations across
+those two models as well if you're
+starting to talk about a middle office
+provider or a vendor that's sending them
+on behalf of either the secure party or
+The Pledger that could exist that are
+also outlined event Market practice
+um so Anna you'll take us through the
+two different different messaging
+formats that Jason hinted at
+single and dual authorization can you
+review a few details about those
+absolutely thanks Amy uh yeah and I'm
+going to be mentioning some formatted
+message types as well so from a
+custodial perspective most custodians
+are able to accept uh both workflows so
+if a client decides together with the
+secured party that they both want to
+control the assets and or cash movements
+out of the control account they would
+set up a dual control authorization
+model right and this would allow our
+client to send us an mt542 message for
+example for Securities
+um free of payment message to deliver
+collateral from the control account that
+would then match to the mt527 released
+authorization message from the secured
+party most custodians have also built
+the Dual matching capability where if
+the secured party is unable to send an
+mt527 both parties can each send the
+mt542 for example again for Securities
+and those instructions would match as
+well allowing the collateral to then be
+released from the account so most
+custodians do have the flexibility here
+with respect to the release
+authorization message type
+especially since we've noticed that not
+everyone in the industry has the
+capability to use the mt527 message at
+the present time
+um but if instead both parties want to
+use or employ a single authorization
+model on the account where either the
+pledge or the secured party is solely
+responsible for the release of
+collateral that could be accommodated as
+well and and this workflow would only
+require one party send uh the mt542 or
+202 let's say if it's a cache message
+to release pledges from the account so
+simply one message from an authorized
+party would be sufficient to release
+collateral
+of course all of this would need to be
+documented via the ACA the account
+control agreement so that custodians are
+aware of the model that needs to be
+followed we of course are indifferent to
+whether clients choose single or dual
+authorization
+um most agreements that we negotiate
+today though do contemplate dual
+authorization
+um however keep in mind that generally
+speaking this would not be a
+one-size-fits-all solution you can have
+agreements with you know certain Brokers
+that allow for a single authorization
+flow and others that allow for dual so
+it's it's again not one size fits all we
+do understand that there are differences
+that may need to be accommodated between
+the parties
+thank you Anna and for those of you who
+are new to this messaging that may be a
+little overwhelming of the five two
+sevens and the 542s please do go through
+the market practice that Elisa had
+posted and there's some great visuals
+that help break this down now John from
+maybe I'm sorry just uh I'm sorry I know
+you're on a rhythm I just want to
+highlight when you first opened the
+document and you see it's 73 pages long
+don't fear I think you're going to see
+it broken into sections exactly what
+Anna was talking about with the the
+trade instructions recommendations that
+in the second phase we then went back
+and put status and Confirmation messages
+and um so which are also in there which
+adds some some length to the document
+but it covers both the instructions as
+well as the status and confirmations
+very good point Jason it's the length of
+it should not be intimidating and
+there's great visuals in it right
+there's great pictures to show all the
+actors and and how it all works together
+so
+um it is some very good content uh so
+for those of you who may not have
+encountered this before or just thinking
+wow it sounds like a lot I've got to get
+my custodians involved I've got to get
+my counterparties involved
+um but there's some real quantifiable
+benefits and John vanguard's been
+working on this for a while what are
+some experiences that you know really
+bet are shown as benefits to your form
+and also to your counterparties
+yeah so we think there are a ton of
+benefits when it comes to automation
+especially for the segregated accounts
+so let's just start with purely the
+operational efficiencies that we can
+gain with automation so when I think of
+these faxes and the impact that it has
+on our day-to-day operations I think of
+settlement fails first it can be
+settlements as Mark was saying anywhere
+from substitutions also just the regular
+collateral calls and how does that
+impact our operational teams how does
+that impact our operations overall
+well it impacts a lot of teams and let's
+start with settlements so they're
+monitoring our daily trades and any
+exceptions or fails we'll push them to
+investigate the cause of the failures
+after a lot of Investigation which takes
+a bunch of time it'll pass it along to
+our collateral team who by then is also
+investigating it uh trying to determine
+what the cause of the failure after that
+investigation thought and oftentimes
+have to reach out to the custodians as
+well as a broker dealers to identify the
+cause there's a number of different uh
+ways that'll these fails can happen as
+Mo is alluding to anywhere from losing
+the facts to us not sending it correctly
+um so it does take some investigation
+and time to look and do it and then also
+on top of those is failures will have
+impacts to our reconciliations because
+it might cause issues with cash or
+security position breaks in our best
+book of records so that introduces the
+third team our reconciliations team so
+so far we've been talking about it a
+single settlement fail has already
+impacted several teams both internal and
+external so what does this mean for
+operations well it means taking our
+cruise time to spend resolving issues
+that are entirely avoidable and as they
+say time is money which is why we're so
+focused on this initiative
+we also don't want to take time away
+from more important initiatives like UMR
+which Amy you'll say has just begun it's
+it hasn't ended so we want to continue
+to look into that
+now Beyond just saving time which is I
+count as I was mentioning alluding to
+earlier we also want to reduce
+settlement base
+and tpmg fees have been around there for
+quite some time and in our inability to
+recall collateral in a timely manner to
+settle treasury trades for example will
+result in increased fees reducing fund
+performance for our clients additionally
+with the recent launch of cscr we're
+also seeing a whole new swath of fees
+related to trade failures this is not
+even to mention any miscellaneous claims
+made by counterparties due to other
+failed trades
+now those are two I'd say more explicit
+costs uh increase head count and also
+fees but they're also other uh less
+explicit costs or funds due to
+settlement fails so let's take Security
+Financing so we might lose out on
+opportunities with Securities lending
+repo and other financing trades they're
+also liquidity concerns if we're unable
+to settle a market chain if you look
+back a few months at the guild crisis
+for example there were situations where
+a vast amount of collateral needed to be
+recalled and filling those trades would
+not be a pleasant experience to say the
+least
+Beyond those fees beyond the risks
+Securities financing we also have areas
+of focus that we're looking at in the
+future such as collateral optimization
+this is something we've been talking for
+a while and in the industry and just at
+Vanguard as well
+so how do we look at that well it's the
+next big thing and it's opportunity for
+operations to enable front office to
+implement complex strategies for a
+collateral program which also ultimately
+will generate Alpha for funds
+I think we could talk about optimization
+for a while and I'm sure we'll have an
+is the
+um webinar one day for this or
+conference topic but high level what are
+we looking at it's something as simple
+as cash flow Securities or it could be
+something like not letting those
+Hardware Securities or recalling maybe
+an equity or fixed income uh security
+that is a little bit hard to borrow
+and with these Cloud optimization
+strategies there's going to be a lot
+more implementation of algorithms that
+will rapidly suggest substitutions
+throughout the day for pledge collateral
+now with these Algos firing on cylinders
+there will be a huge increase of
+movements so we'll need automation or LC
+strategies will need to be shelved
+that's going to be a big thing and and
+as we talk about optimization it's how
+do we how do we implement this and
+enable it operationally
+and then lastly I think kind of the
+reputational impacts that are less
+spoken about continually failing trades
+is not something that a risk management
+group loves nor does it give your
+collateral group a you know create
+internal or external reputation I also
+can say with certainty about our
+settlements team really isn't happy with
+any of these scale collateral calls if
+it takes up their time as well
+throughout the day that's kind of
+unnecessary
+also any any time of crisis when a
+dealer looks to be failing which is it's
+a very big deal obviously we want to do
+everything we can to get our claddle
+back and avoid something like being on
+uh the front of the Wall Street Journal
+so that's a big thing for us
+um lots of issues out there a lot of
+benefits that we want to you know
+realize from getting rid of the uh
+basically asking the facts we'll find a
+theme for this so we're definitely
+committed a lot of resources to making
+sure that's going to happen
+thank you John you covered quite a bit
+there Emma is there anything that John
+missed that maybe from a dealer's
+perspective are there quantifiable
+benefits that you've already realized
+with implementing with some
+counterparties and custodians or did he
+cover everything I think he pretty much
+covered it um it's just that kind of
+transition to real time real-time
+transparency on your risk real-time view
+on what's going on in the world so that
+you can minimize your settlement fails
+minimize your uh being exposed at the
+end of the day really kind of minimize
+any risk in the process at all and get
+that by instant connectivity safe and
+secure guaranteed delivery all of those
+things get you kind of the reduction in
+risk as well as the efficiency gains
+foreign so for those of you who are
+watching this now you'll get a recording
+of it so you can go through all of what
+John and Emma had reviewed and and look
+through and say wow do I have that
+challenge yes okay this Pro this
+solution that they're talking about can
+help do I have that challenge at the
+firm yes and so just kind of knock down
+all of those
+um benefits for your cost-benefit
+analysis presentation now I just want to
+remind you that we are taking questions
+I think earlier I said via the chat
+functionality I should have said q a so
+if you do have any questions please
+submit them and I'll make sure to come
+back to those towards the end of the
+call
+um why now why is now the time for
+Action to implement automation for
+releasing collateral from segregated
+accounts you know why didn't it happen
+when Jason first worked on this well
+we'll say nine years ago because it took
+a little bit of time to get to get
+finished and to get published and we'll
+start with Anna and then we'll go to
+Emma and Mark and John so Anna you're up
+first why now thanks Amy I think the
+question is why not now
+um that's what we should be asking
+ourselves here right it's definitely in
+all of our best interest to automate
+processes wherever possible and
+obviously remove the risks associated
+with manual intervention uh and now we
+actually have the automation
+capabilities to be able to do so
+um you know one of the key things coming
+down the road is uh t plus one
+settlement uh time frame in 2024 and of
+course the industry is moving to short
+and settlement time frames in many
+markets so there's an expectation that
+all of us should be prioritizing
+settlement efficiency and obviously
+faxes are definitely not efficient right
+especially when the operational process
+is depending on multiple parties to
+authorize the transaction
+so of course we've mentioned there are
+instances when a collateral substitution
+is required because there you know a
+client may want to trade a particular
+security that's pledged uh being able to
+turn that around quickly would be
+instrumental in ensuring that trades are
+settling on a timely basis right
+especially with C plus one looming right
+around the quarter with automation this
+can happen in near real time right as
+long as all the parties are instructing
+their purchase their portion of the
+transaction in a timely fashion
+thank you Anna and Emma you're up next
+why now or why not now
+it feels like right now we're only five
+minutes away from the next Crisis
+so we've experienced a few Market
+volatility caused by crisis there's been
+kind of Russia Ukraine the ldi crisis
+who knows what the next one will be but
+that kind of Market volatility and
+Market disruption really shines the
+light on why we need speed and scale in
+these processes to help us see what our
+value at risk is early in the day avoid
+the settlement fails firm is able to
+kind of get control over their
+settlement fails or dispute values
+accurately reflected in their systems
+um so that that kind of can be
+accurately managed like from a liquidity
+management perspective during periods of
+Market volatility
+thank you Emma let's hope the next
+Market crisis is further than five
+minutes away
+um yeah or not for quite some time but I
+do appreciate that those times really
+show cracks in the operational Factory
+or the process right
+um so Mark share with us your your
+answer to why not now
+I agree that it is a why not now is the
+question I like that better
+um
+to me
+UMR took the focus for the last several
+years right like I think we took our
+foot off the gas with respect to things
+like axing the facts like that being one
+key thing that we probably could have
+done away with a few years back had we
+not had to focus on regulations
+as John put it UMR is not over it's just
+beginning but the effort in order to get
+UMR live is behind us now right so we
+should have some more resources freeing
+up whether that be legal resources if
+like a one-page Amendment needs to be
+done to your account control agreements
+in order to allow for additional means
+of release letters they should be
+freeing up a little bit now
+and even just the effort from your
+operations teams to making sure that you
+can have the different conversations
+across custody and Brokers and internal
+to put a new model in place I think
+everybody should have a little bit more
+time on their hands now and probably the
+other thing to call out here and John
+mentioned this as well but the treasury
+market Practice Group tmpg fails charges
+that are out there in the U.S
+specifically they they are key and one
+of those reasons why I mentioned earlier
+that we have a very tight window to
+recall our collateral right so it's it's
+essential that when we are expecting to
+get our collateral back whether our
+portfolio managers have made a decision
+to sell the piece of asset we have out
+on collateral it has to happen
+immediately so the more we can reduce
+the friction the better that
+tmpg piece and the UMR piece that we've
+now implemented this problem is growing
+it's not shrinking right so it's it's
+important that we utilize some of these
+freed up resources focus on the problem
+again and finally put it behind us
+thank you Mark and John
+yeah so on top of the tpmg fees I think
+um the startup cscr also kind of put a
+more focus on what are our fees and how
+do we better track those three times
+could you just say what csdr is just in
+case folks uh essentially those uh it's
+a regulation that what the acronym is
+such a good question which is depository
+reporting I think yes that's not my
+ultimate wheelhouse from the settlements
+perspective but okay we'll go on it is a
+big initiative that it got brought in a
+lot of times
+um and I spent a lot of time talking
+about collateral and how it plays into
+it but essentially those fees there are
+a lot more fees that are required now
+for the industry from a settlements
+failure so there's a lot of processes
+that were implemented to track those and
+I think there's been a lot more
+attention to say hey well these are a
+lot more fees what about these tpmg fees
+and the cocr fees they're kind of adding
+up so it's something leadership on our
+side is definitely looking more at
+um also just to reiterate what
+everyone's been said uh that's been said
+it's just been too long like we've been
+talking about this forever and we're
+sitting here with faxes and I I honestly
+selfish I just don't want to sign facts
+anymore I'm just kind of getting sick of
+it but
+um especially for us given where a large
+40 act firm maybe I'm a little bit
+biased but we do have a lot of cigarette
+accounts and I think we just need to fix
+it you know post Umar we have more
+resources that are freed up
+um and just right now it's getting that
+across the line how do we automate it
+especially when it comes to UMR we have
+these new segregated accounts out there
+um and as I was mentioning earlier we
+can't really move on to this collateral
+optimization what is the future of
+collateral when we can't even handle
+some of these substitutions manually and
+they're going to be shooting
+substitutions back and forth so that's
+another big reason
+um
+I also think more than ever firms are
+really starting to dig in and understand
+the impact collateral processes you have
+on our funds so you'll see as I was
+mentioning that increase in optimization
+and more and more you're seeing new
+stories that show weaknesses and
+collateral processes causing systematic
+issues in the market the ldi issues and
+even issues when it comes to certain
+hedge funds that might have had a bad
+process that have caused issues there so
+really that's it's getting for us it's
+increasing the issues
+um focusing more something that's going
+to be on the table of our senior risk
+leadership saying how do we stand with
+our counterparties how do we extend if
+there is a big issue a market disruption
+event
+a large dealer that goes under and are
+we prepared for it uh so we want to make
+sure operations overall has the ability
+to do substitutions has the ability to
+recall collateral where needed or else
+it'll just sit there and that's going to
+be concerned if there actually is a
+large Market event
+thank you John now Jason as you are
+reflecting a bit 10 years ago
+where do you see that things have
+changed
+that
+why not now
+yeah I I think the big thing now is is
+the ROI on it right so every year you go
+through your prioritization and your
+budget you've got limited dollars you
+can spend right if you look at what's
+happened over the last five or six years
+because of these regulations because of
+these different initiatives
+transformation initiatives
+now you have more custodians who have
+fill out the automation so there's that
+economies of scale now you have more
+secured parties that are willing to send
+the 527 or pledgers that are demanding
+it of you as a custodian so whether
+you're a custodian or you're you're a
+secured party or you're a Pledger I
+think you'll see that Roi you should
+look at your metrics again even if you
+looked at it before and said the volume
+is not painful enough right now you know
+every year it's just going to get worse
+and there's an opportunity to to look at
+see if there's cost savings there and
+what that Roi would be on the build
+I do remember a conversation you and I
+had I think it was about six years ago
+when we were at a conference and you had
+specifically said that it's not painful
+enough but now I think everyone can say
+it is painful enough and you weren't
+speaking for a specific firm but
+um although we didn't get any questions
+I got another point of view to add about
+you know why not now
+um and this is uh from one of our
+members said it's also worth noting that
+in addition to the other considerations
+paper record keeping is also discouraged
+for many reasons so if you have to store
+the paper faxes and or scan them into
+some system manage retention or report
+them to Regulators that also adds to
+burdens along with all the other costs
+mentioned so another item to add into
+your cost benefit analysis is your
+record retention on those faxes coming
+out of the machines
+and Amy I think it's also worth noting
+that you know the big the way we get
+across and we really ask the facts is by
+all kind of moving at the same time so I
+think given you know we're talking about
+resources but it's not only for the
+asset managers it's for the dealers it's
+for the custodians so
+it's something that we can all really
+focus on we can develop the subject
+matter expertise around it we can start
+the communication as we'll talk a little
+bit about how to best approach it but I
+think it's the industry as a whole isn't
+a great opportunity to just push this
+through and and maybe it's like kind of
+a cultural thing we still like faxes I
+don't know but it's I think it's time to
+just kind of break that and just say
+let's all do it at the same time and
+push it across the line
+we all can have a much more a bigger
+effect if we join forces right uh
+exactly so John and Emma you've been
+through this but it hasn't been easy
+what are some Hang-Ups or some
+challenges and I know Mark and I think
+Anna had mentioned about the account
+control agreement so we don't want to
+lose sight that there is a documentation
+and an operation slash I.T element here
+um but what are some kind of Lessons
+Learned or pain and Agony you felt that
+you don't want others to experience
+so we'll go with Emma first
+yeah
+um definitely you you need to get that
+program prioritized you need to get the
+cost benefit analysis out there people
+bought into it um all of the points have
+been raised today hopefully will help
+firms do that
+um but with the the scale is there
+because of UMR umr's helped us and so
+the scale is there to be leveraged now
+where it wasn't before
+what um what we are challenged with is
+where you've got existing acas and
+you've got existing Legacy documents
+with some of them have got very um
+Legacy wording in them that specifically
+say that has to be sent via fax that can
+be quite hard to uplift so that needs a
+bit of attention on making sure that
+what is worded in your existing Legacy
+documentation can be leveraged for new
+means of communication
+um and sometimes it can be and sometimes
+it needs to be reworded and sometimes
+rewording it can be as simple as a side
+letter saying it says facts in the dock
+now it will be swift or whatever the
+method of communication is
+um and sometimes it's a bit more complex
+than that in that it could be as we've
+seen examples of side letters at the GS
+legal entity level for example so
+multiple site letters or we've seen
+actual custodians asking for each um
+account control agreement to be uplifted
+individually and where that wording is
+specifically just saying facts so we
+just need to be where area of what is
+the themes around uplifting of
+documentation and the effort involved in
+that and then once that's done the kind
+of onboarding re-upgrading of the
+account so that they can leverage the
+new digital messaging
+um but it's just the coordination effort
+it's a project and it's one that's
+definitely worth it once you've got um a
+handle and buy into the return on
+investment
+thank you Emma and John from your
+perspective what have been some
+challenges that you have started to
+overcome or have overcome yeah so I
+think there's been a lot of lessons
+learned so far this initiative
+um but I do feel like we're making
+pretty good progress hopefully us
+reaching out to every broker dealer we
+know about this topic will help everyone
+uh at least on the asset management side
+um but let's just talk kind of with the
+first step and just kind of walk through
+how we've been approaching it so first
+for us was finding the right person
+people or group of the custodians and
+broker dealers to talk about automation
+right
+asset managers will normally have
+contacts at the broker dealers
+operations group but most of the time
+that's not the right group to go to to
+work on this sort of initiative instead
+you'll want to find maybe it's the it
+group maybe it's the durable product
+team or even the product owner to start
+the conversation so that took some time
+um for some broker dealers it depends uh
+we'll also found the custodian's a
+little bit easier to engage just because
+again get us to the right context right
+away
+um but Adam I might be a little bit more
+biased because we don't use as many
+custodians we actually use pretty few
+compared to the rest of the industry
+compared to the size of the broker
+dealers we work with
+um also once you have the right contact
+the conversations around the initiative
+can be quite technical so it is
+important to have someone online whose
+experienced with you know Swift we've
+been talking about a little bit about
+and the workflows that generate them in
+the collateral management tool uh and
+their experiences with their own
+collateral system we find that well the
+collateral workflows are highly
+customizable they can come become
+quickly complex
+so let's move kind of we've identified
+the the right people so let's just talk
+about the models and the discussions
+around them we've seen a fair amount of
+confusion with them mainly between both
+the Brokers dealers and the custodians
+more so the broker dealers because this
+is going to be fairly new which is
+completely understandable as the models
+are as I was mentioning brand new for
+many so often becomes an uh educational
+exercise walking them through the models
+at a high level or getting into the
+nitty-gritty when it comes to the Azizi
+document which was shared by Amy
+um
+you know one thing when we've come
+across with education is what is the
+best model right so we have these
+conversations with the broker dealers
+and the custodians and I think that's
+kind of challenging with this there's no
+like we're going to move here we're
+going to move there and I think that a
+lot of ambiguity comes up but we find
+that you know there might be an answer
+somewhere out there to that question
+um in our opinion the better
+discussioner is around which is the
+easier model to implement which will
+depend on the technology and system
+capabilities of all parties now
+um and it did mention most custodians we
+found to be the case will support both
+models
+but from a dealer's side or as the
+manager side
+um if one or both of the models are not
+supported by a vendor or collateral
+system it is really important that we
+they go to the the vendor or system or
+it whoever develops and owns that system
+for an enhancement as soon as possible
+now
+obviously other models we've talked
+around how swift integrates to them but
+it is actually surprising and it is
+important to dig into this dealer Swift
+capabilities you would think that most
+broker dealers would support Swift but
+that's not the case
+um it tends to be with us mainly with
+the smaller Brokers um but if they do
+not then we aren't making any progress
+on this right so that the whole goal of
+automation isn't attainable
+but it is a great opportunity to start
+that conversation of how they're going
+to whether get a system or start using
+electronic messaging in the Swift format
+to move collateral so that's something
+that's that's come along
+um and then to reiterate a point I had
+earlier if one asset manager is having
+the conversation it might not get
+anywhere with a broker dealer but if
+many asset managers are reaching out
+then we will get some more traction so
+now is better than ever to have that
+conversation
+um now even if the dealer supports Swift
+or the asset manager custodian they may
+still have the challenge of not being
+able to support the workflows to
+generate the source with either the
+right data or in an automated manner so
+for example mt527s might be supported
+for a triparty model which is very
+common with the dealers but not the
+third party model
+um same goes for the other model and the
+required Swift so it's something that
+they'll have to talk to their vendor
+that they'll have to understand how what
+are the system restraints that I have
+and how do I get past those
+now lastly this is something that I
+think we've been really good at and I
+think my project manager out there is
+tracking progress for the initiative but
+there's a ton going on we have lots of
+stakeholders that we need to manage
+primarily operations at the broker
+dealers and custodians but that could be
+a huge number
+it is also worth considering that we'll
+need to enable every broker dealer and
+custodian combination to be live on this
+and also is excuse me Emma was
+mentioning we'll have to dig into every
+single one of those acas which now are
+bringing a legal team at the custodians
+and for the asset managers
+and that might mean amendments which is
+a lot of work so that's going to be a
+big lift working with the legal teams of
+custodians working with that internally
+um
+so we have everything down we've chosen
+the model we've walked through the
+process we have the technology go uh you
+know to go live but now we actually have
+to get there
+so you're going to have to check and
+Implement all those
+um you might for us personally we have
+thousands of collateral counts thousands
+and thousands of agreements so it's
+going to take a while so just having
+that ability to track what is the setup
+where we send with the broker dealers
+with the custodians is going to be
+necessary
+so overall I've kind of talked through a
+lot of these Lessons Learned hopefully
+some will stick but I really focus on
+three areas communication education and
+project management
+this isn't going to be the easiest thing
+but it will be worth it in the end and I
+think if we all start moving along
+especially at the same time we will be
+able to communicate ax effects
+thank you John
+um I don't have any additional questions
+although someone had sent me an email
+off to the site or a message stop to the
+side I'll get back to you directly
+um but now's the opportunity to talk
+about next steps so I've asked each one
+of the panelists to cover just briefly
+what you think is the most important
+Next Step so Jason you're up first
+yeah I think John hit on it well I the
+importance of prioritizing the project
+team you're going to have to work across
+your client service teams here across
+your legal teams so getting that and
+making it a priority across the company
+I think is important there's a lot of
+documentation out there we've talked
+about the market practice there's these
+onboarding checklists that help you
+navigate some of the things that maybe
+you haven't thought of like a
+third-party consent form or an ACA
+document that needs to be signed with
+your account servicer so
+um between the different industry
+associations I think we all know each
+other pretty well that we can point you
+to where the documents are stored on
+different websites if you need help but
+uh obviously the panelists here
+representing all the different actors in
+the model I think we'd all be happy to
+help too and see the adoption happen so
+that's right so if you do need a contact
+UM at your dealer or your custodian
+between Elisa and I we can certainly
+help
+um again not vendors or commercial
+Endeavors but um if you need to get to
+the right person at a specific custodian
+especially we can help with that
+um Anna
+what is your tip
+so again clients should be reaching out
+to their custodians directly right
+confirming the approach they want to
+take with their secured parties first
+and foremost everyone's mentioned the
+client documentation right the ACA it
+has to be reviewed and updated
+accordingly uh to allow for the
+electronic instructions and this can
+either be done via an amendment or a
+side letter as we've mentioned um
+custodians really want to make this as
+efficient as possible because as you can
+imagine there are going to be thousands
+of accounts that we'll all be looking to
+automate right but custodians will take
+a different approach right not everyone
+uh does this the same way
+um so it's imperative that you speak to
+each of the custodians separately and
+not assume that everyone's following the
+same uh process for that right our
+clients should also be working closely
+with their Brokers to you know to
+determine what automation capabilities
+they do have
+um and and prioritize those changes on a
+broker by broker basis so if a broker is
+ready you know move forward with that
+and automate and not wait for you know
+some of the other Brokers right to catch
+up
+um and additionally if you want to make
+changes to the Dual single authorization
+model right we're reviewing the
+contracts now so this is the time uh for
+you to also make changes there if if you
+feel that that's what you want to do
+thank you Anna and Mark you're oh Emma's
+you're up next
+yeah I think just in parallel it's
+really important to have that
+conversation with the custodian and the
+dealer in parallel
+um because you're going to have to know
+what type of um uh methods the dealer
+supports if they're automated already if
+they prefer dual or single and marry up
+that conversation with custodian
+capabilities and make sure it kind of
+all happens together so
+um you're going to need as as Jason said
+as well to involve kind of legal teams
+probably counterparty risk teams if
+there's renegotiation of documents so
+just really at the beginning getting the
+buy-in everybody agreeing that it's
+worth doing and then project managing it
+through all of the important
+conversations and
+um you don't want to start stop you want
+to work through it all together so
+whatever the best method is for marrying
+a custodian and a dealer and onboarding
+and doing it in the most efficient way
+um and you know however we can help as
+you said
+thank you Emma and Mark how about you
+yeah thanks Amy um I think
+from a buy side perspective the the area
+you need to worry about the most is your
+technology provider this is a great
+opportunity for me to take a Shameless
+plug for the Aladdin platform
+um we have the capability to send a
+dual-sided swift message so you book one
+transaction and we can message both our
+main custody account and the segregated
+account you need to think about
+messaging that segregated account from
+the buy side perspective it depends on
+the model you might not need it
+depending if you choose single versus a
+dual release model but in the event you
+have a dual or even a single where the
+buy side is the one making that call you
+need to ensure you can make that
+um messaging happen
+um so as you're in those conversations
+with your custodians and your Brokers
+don't forget about your technology and
+making sure that you can send the right
+messages to uh to your custody accounts
+as needed and bring your technology
+provider along for those conversations
+to ensure you don't get to the end of
+the conversations and the negotiations
+for account control agreements of things
+and then realize you can't uh fulfill
+your end of the bargain so I think
+that's where I would focus on making
+sure that you are bringing your
+technology provider one one additional
+thing to call out here we've been
+talking a lot about Swift there are
+other options out there right it's
+important to move away from Facts but
+some custodians offer portals that you
+can access to do release letters you can
+use fixed messaging uh SFTP files
+there's other ways to get around uh the
+fax machine so like I think it's
+important to call out other options if
+you can't or some for some reason do a
+swift 527
+there's still other options to just have
+the conversations
+thank you Mark and I think that is
+important just to remind folks that uh
+neither sifma AMG nor is to endorse or
+recommend any specific vendor or
+commercial Endeavor but we do want you
+all to stop using faxes that is across
+the board absolutely and we're not I
+don't want to say we're anti-fax machine
+but we kind of are we really are
+um so I just want to thank all of the
+panelists again for participating today
+and being such enthusiastic uh
+spokespeople for this topic
+um remind folks to please access the is
+Itsy Market practice and review that
+speak with your custodians with your
+Brokers with your counterparties
+um or your buy side firms depending on
+which firm type you represent and if you
+do need help with a contact at a special
+a specific custodian um Elisa and I can
+get you to the right people if um you
+know you should start with your
+relationship management manager but
+sometimes even still they might not know
+the right person on this project and we
+have those names for all the major
+custodians so on behalf of isda and
+sithma AMG we thank you all for joining
+the actors
+movement and again we'll have this on a
+recorded version just in case you loved
+it so much you want to listen to it
+again or if you want to send it along to
+your fellow isda or sifma EMG members so
+thank you all have a great day

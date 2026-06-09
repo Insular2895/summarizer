@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "uuQELBw8uDo",
+  "title": "Hitchhiker",
+  "url": "https://www.youtube.com/watch?v=uuQELBw8uDo",
+  "source_paths": [
+    "cache/transcripts/hitchhiker-s-guide-to-row-level-security-in-citus-posette-an-event-for-postgres"
+  ],
+  "updated_at": "2026-06-09T18:15:55.654039+00:00"
+}

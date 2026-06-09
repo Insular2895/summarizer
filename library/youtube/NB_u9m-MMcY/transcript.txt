@@ -1,0 +1,474 @@
+[Music]
+before we get started with this video i
+would like to mention that you can get
+started with part two of this series
+which is the blue team series by
+clicking on the link in the description
+section where you'll be required to
+provide your first name last name email
+and company after which you'll be
+provided with instant on-demand access
+to the videos included in part two of
+this series uh these videos include
+host-based intrusion detection with os
+sec
+memory acquisition with lime memory
+forensics disk analysis docker image
+analysis and incident response with fire
+eye redline so do
+be sure to check this out the video is
+100 free all you need to do is register
+and you'll be able to access the videos
+all right so uh we've been able to take
+a look at the logs and the log format uh
+what we now need to take a look at is uh
+because i think that's pretty much it in
+regards to what we needed to do we
+actually need to configure suricata and
+wazoo right so i already have set up a
+wazoo server just for this demonstration
+uh this is not the one we used in the
+previous video so i'll need to add the
+system as an agent so i'll just log in
+for the first time so you can see what
+that looks like so again
+elastic stack here
+and we'll give this a couple of seconds
+and
+this should be running without any
+issues i'm just going to let it query
+all the or you know run all the checks
+it needs to perform
+uh looks like we have an issue here
+uh yeah it looks like it's okay now so
+let's just restart that let's perform
+the health check again
+okay that looks like it's done checking
+correctly
+what we can do next
+is
+we can go ahead and you know make a few
+configurations that we need to perform
+uh ideally in this case we do not really
+need to perform or enable vulnerability
+uh vulnerability detection so i'm going
+to add an agent here
+and before we do that i think we need to
+configure an option under the
+configuration here
+so
+if we take a look at the configuration
+we can see that
+that
+json output yes that's for os
+sec
+uh the logging format uh that's fine
+policy monitoring that's fine as well
+uh what's the
+other option that we needed to
+uh we don't need os query here
+vulnerability detector is enable is
+actually disabled we don't need that
+right now
+um let's see file integrity file
+integrity is enabled
+that's perfectly fine
+i think we need to configure the options
+so
+i think we need to configure the options
+on the agent itself so let's go back
+into agents
+and i'm going to add this ubuntu system
+so i'll say debian this is x86
+within the ip address of the wazoo
+server here
+if you have a domain that will be
+applied i will just add it to the
+default group and i can copy this
+command
+and
+that should install it so
+uh what we'll do is uh yeah let's just
+hit enter that's going to download the
+debian package and install it there we
+are unpacking the wazoo agent and it's
+going to set it up with the correct uh
+parameters
+and then
+system ctl daemon reload
+and you know we can essentially enable
+and start the wazoo agent so i'll say
+sudo system ctl stop
+surikata first because we don't need
+that running right now
+sudo system ctl daemon
+reload
+sudo system ctl if you want the wazoo
+agent to run on system startup we can
+say uh enable wazoo
+uh let me just type that in correctly
+correctly so wazoo what's the name it's
+uh the wazoo hyphen agent
+there we go
+and we can then start it
+and then we need to make uh it looks
+like we had an issue here so let's just
+check the status here because for some
+reason
+status
+it looks like we have
+an issue
+with the configuration
+uh that's not been being displayed here
+wazoo log collector
+invalid uh value element for log
+collector let's see if we can modify the
+configuration so that is under
+vim
+sorry that's under var
+um sorry not see var
+we can say oss ec or os sec at c
+um i believe it should be under that
+directory
+let's just list the contents of it
+because
+the file should be contained within it
+so
+i know we have the etsy directory it
+doesn't exist here that's very
+interesting
+um yeah it actually exists so etsy
+and the name of the file is osec.conf
+i believe we need to configure a few
+things so sudo
+of vim
+uh all right so that looks like it's
+fine
+uh what we need to configure in terms of
+log collection which i think was what
+was causing the issue
+system inventory sys collector disabled
+no
+startup yes packages ports that's fine
+um let's see
+synchronization is fine
+sca is enabled file integrity is enabled
+let's see what else we have here
+database synchronization
+uh local this is yeah so this is where
+we can specify our own logs so uh the
+lock the actual log files
+so this is the log file that is correct
+that is actually collected uh so that's
+uh the netstat command
+active response it looks like we don't
+have anything there okay so uh we can
+add
+um our own log format so this is for
+active response this is snort syslog
+local file we need to add the actual
+uh we need to add another local file
+option here so i'm going to say
+local file
+i'm just going to add in the lines and
+then i'll show you what i've added
+all right so this is the configuration
+here that will allow us to or will allow
+the agent to send back the logs within
+uh var log surrekata eve.json because we
+want them we want them in json format
+so i'll just write and quit uh and let's
+see if we can actually start that uh
+wazoo agent it looks like we still have
+the issue here so i'm just going to zoom
+out a little bit
+uh and if i say status let's see what
+the issue is invalid element
+for log format which is snort
+and then we have another configuration
+error so configuration error at c os uh
+sec.conf
+uh and then
+another one on the following line so one
+two zero two uh
+okay so let's fix the first one
+all right so i managed to fix the issue
+this was to do with the actual snort log
+location which was what was causing the
+issue so i managed to remove that line
+from the configuration file the os sec
+configuration file so
+all i did was at the bottom here where
+you know you can essentially specify the
+log files that you'd like wazoo to
+essentially import or to you know
+essentially display
+i got rid of the um the snort
+uh the actual snot configuration here so
+you know we have syslog we then sorry we
+have the active response log we have
+auth.log
+syslogdpkg.log kernel.log and eve.json
+logs so i can write and quit and we can
+then say sudo systemctl start
+suricata
+surikata.service so now the intrusion
+detection system also rikata is running
+in the background and it's going to
+detect any
+suspicious network activity
+all right so once that is done
+if we click or we go back to wazoo here
+and we click on agents that agent should
+communicate back there we are
+uh you can see it there and we take a
+look at security events
+and
+this is where we can then click on the
+actual events themselves
+and then we can filter based on what we
+are looking for specifically so the
+indexes was alerts
+we then have uh the ability to
+essentially uh you know bring in the the
+eve.json files produced by
+uh what what's it called uh produced by
+a suricata
+one additional configuration that you
+need to make in order for this to work
+as i've seen with my own experience is
+to also add the actual
+uh you know the actual uh surikata log
+file here uh the actual specification
+within the wazoo configuration
+so i'm just going to save that there
+and we're going to restart the manager
+now
+so i'll just click on that there and
+we'll give that a couple of seconds so
+i'm just going to wait for this to
+restart and then once that is done it
+should get those
+those events or alerts that are being uh
+logged by surikata
+so after a couple of seconds uh you will
+be able to
+essentially view the suricata
+alerts and you can view that by again
+clicking on the agent itself so in my
+case blackbox security events clicking
+on events
+and
+we can add the filter here and the
+filter that we want to add is call is
+going to be called
+rule.groups because we only want to view
+this ricotta
+log so we're going to say
+ruler groups is and we should have the
+surikata option here because
+it should actually be displayed so
+suricata for some reason that isn't
+being displayed that's very weird
+although that is highlighted here as you
+can see we have the latest suricata log
+so as you can see icmp ping that was the
+rule that we essentially generated
+that's very weird that it isn't actually
+here
+um
+that's interesting so let me just
+refresh this because i think that's one
+of the issues here
+with the filter but it should actually
+allow you to specify the rule group as a
+surikata
+uh if not you can still view those
+events so you can see we have the
+surikata alerts here
+so yeah it's actually added now
+fantastic so we can head back over into
+events and add the filter there
+uh just wait for this to
+bring that up here so we can say rule
+dot group
+is um and we can then say surikata it
+should actually exist here that's very
+weird that it doesn't
+uh
+ruler groups is uh let's see uh
+i know we need to specify the group so
+rule dot
+uh description gdid
+rule dot description is uh let's see
+there aren't any options here so
+uh we can say in this case uh
+hold on so let's actually use the
+previous filter so
+rule dot group
+rule or groups is
+and
+you know we can then say
+that actually should exist here but for
+some reason that's not being displayed
+as i said it should actually be
+highlighted there um
+we can say exists
+and in this case uh you know we can say
+let's just say it is there but that as i
+said that's not being highlighted there
+if i show the syslog
+the syslog events because we're using
+syslog to get those those ones there you
+can see it doesn't display that there
+and that is because we should be able to
+specify the
+the actual filter
+um so you know let me just say
+rule.groups
+is
+again that should be highlighted
+although i think that that might be an
+issue with the actual
+uh zoom manager so if i restarted it you
+would be able to see that but if you
+click on security events here
+you can see that that actually is
+highlighted so we have surikata being
+displayed here in terms of the alert
+groups
+uh
+well should we actually use alert groups
+i'm not really sure so we can say maybe
+alert
+dot group
+alert no that's not so we can say
+alert
+yeah that's uh i don't think that'll
+actually tell us that there because
+alert gid if we say is and we select
+that there yeah yeah so that's not going
+to work um
+so if i say rules.group
+rule.group
+not groups is equal to
+in this case yeah it's still not
+highlighted so let me just restart to
+record if it doesn't work it doesn't
+work but you can see that the suricata
+alerts are being logged here uh which is
+great so you know
+they're also being highlighted here
+under the rule groups which is very
+weird so let me just restart that so
+management
+uh
+configuration and uh i think we can
+actually restart the manager there so
+just restart that
+just wait for it to restart
+um so i've just restarted the manager
+and uh i think we can just say surikata
+here just to have it displayed so if i
+hit save then because that's not an
+added rule group you can see that's
+actually being displayed now so we click
+on events
+even though surikata is not coming as a
+coming up as a rule group we can
+actually get those uh
+those alerts or events being displayed
+here by adding the rule group so we can
+just say
+if i uh sorry let me just click this
+here including results uh and i click on
+it again edit this filter you can see
+rule groups is and then just type in
+surikata and that should work um so we
+can just test one more time a uh you
+know i'm just going to run the same um
+one of the same tests that we performed
+earlier on
+whereby we essentially made a curl
+request to the actual uh to a website
+called testmynids.org
+where we're essentially just checking
+the user id or getting a user id
+response back so
+i'll just open this up and you know i
+can say for example curl and we can then
+say http
+you know test my
+nids.org
+and uid index.html
+and let's see if this actually works so
+i'll just hit enter and let's see
+whether that is actually logged here so
+uh you know we can refresh that
+and i know it usually takes a couple of
+seconds for surikata to also uh
+to actually have that logged and then
+you know it should actually be
+highlighted here so i'm just going to
+give it a couple of seconds
+there we are we can actually see it here
+so you've got alert gpl attack response
+and the great thing because we used json
+uh we have the table information there
+we have the json tab there you can see
+that we actually get the json data here
+so
+we can essentially view information
+regarding that particular alert
+in this case so yeah that's uh really
+what i wanted to highlight in regards to
+suricata it's a really really powerful
+ids ips
+solution so that's going to conclude the
+practical demonstration side of this
+video
+so thank you very much if you have any
+questions uh please leave them in the
+comments section or you can join the
+hack exploit forum and i can give you a
+response there the link to that is in
+the description section if you want to
+register for part two of this series
+which will be on linux on 24 platform
+for free you can do that by clicking uh
+you know on the link in the description
+section as well uh with that being said
+in the next video we're going to be
+taking a look at security event
+monitoring with splunk so
+essentially what we'll be doing is
+taking a look at how to set up splunk
+through linux which is really awesome
+and then how we can get the same logs uh
+the various uh snort logs and uh you
+know the suricata logs into splunk for
+monitoring
+uh and you know it's essentially just
+going to be the similar process with uh
+as we just saw with wazoo the only
+difference is we're going to take a look
+at how we can use splunk for security
+event monitoring and how to essentially
+uh you know have those logs uh you know
+get sent to splunk so that they're
+actually displayed in real time so
+that's going to be it for this video and
+i will be seeing you in the next video
+i just want to take a couple of moments
+to thank our patreons thank you michael
+hubbard dustin empress jerry speds doozy
+sid saab ryan carr shamir douglas jojo
+bibi palangos kush kev rs nino boykov
+and david bricker you guys are really
+awesome thank you very much for
+supporting us and you guys make these
+types of videos possible
+so we really appreciate it and we look
+forward to producing even more high
+quality content
+[Music]

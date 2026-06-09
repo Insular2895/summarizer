@@ -1,0 +1,984 @@
+Good morning. Thank you very much for
+joining me. So this is C4 model beyond
+the basics. I have a book about the C4
+model uh which is on lean pub. As a
+token of my appreciation for coming
+along, feel free to use this code uh to
+grab a copy for free. I'll just wait
+till the cameras come out. I will show
+the slide again at the end.
+There is a caveat though.
+You need to be quick. So, this book uh
+is disappearing off Lean Pub at the end
+of the year because I'm pleased to say
+I'm publishing it with O'Reilly. So, I
+signed a contract earlier in the summer.
+Uh the book's about half done and this
+will be coming out in about July 26 and
+I thought it's going to be a lift and
+shift from Lean Pub, but it turns out
+I'm actually rewriting a whole bunch of
+things. Some of those things are in this
+talk essentially.
+So, who who's using C4 here? Quick show
+of hands.
+That's like 20%. Awesome. So there's a
+whole bunch of you have not got to yet.
+Perfect. So I'm going to do a quick
+intro to C4 and then we'll get to the
+beyond the basics things. So
+architecture diagrams are historically
+very very bad. I'm sure you've seen
+examples of these in your own
+organizations. And the C4 model is
+really a way to bring some structure to
+those traditional boxes and arrows
+diagrams in a postl era. There are a set
+of four abstractions that sit behind C4.
+software systems, containers,
+components, and code. And C4 is actually
+named after the static structure
+diagrams, the four levels of static
+structure diagrams, which are context.
+So system context, containers,
+components, and code. I'm going to show
+you some examples of these in a second.
+But essentially what we're doing is
+we're starting at the big picture and
+we're doing the Google Maps pinch zoom
+thing to drop down to each layer in
+turn. So we're narrowing our focus,
+reducing the scope. The concept here is
+diagrams as maps. So, as you can tell
+from my accent, I'm not from around
+here. I live in Jersey in the Channel
+Islands. If you open up Google Maps and
+you do a search for Jersey, you're
+likely going to get this picture. Now,
+this is great if you want to know where
+the airport is and where the main town
+is and how to get from one to the other.
+If you've never heard of Jersey before,
+it's too much information. You've zoomed
+in too quickly. How do you fix this with
+Google Maps? You pinch zoom out. Zoom
+out a little bit. And this is the coast
+of France. This is Gernzie, our
+neighboring island. We don't talk about
+them.
+Funny story. So the Jersey and Gernzi
+are about 160 170,000 people in total.
+My wife and I were in the hotel in the
+lift this morning chatting to some
+locals and they said, "Where are you
+from?" We said Jersey. The lady in the
+lift turns around and says, "Oh, I'm
+from Gernzi." Amazing, huh? Come all
+this way, meet someone from from
+Gernzie. So yeah, if you zoom out a
+little bit, Jersey Gy gets smaller, but
+you get some context. Zoom out even
+further and Jersey disappears entirely.
+It's only 9 miles by 5, 15k by 10. On
+the flip side, you can keep zooming and
+zooming and zooming and eventually drop
+into Google Street View, which is a
+onetoone mapping with the real world
+when the photos were taken. And I
+essentially want to do the same thing
+with software architecture diagrams. I
+want different levels of zoom that allow
+me to tell different stories to
+different audiences. The high level
+diagrams are suitable for literally
+everybody. As you progress into the
+layers, you get more and more technical.
+[sighs]
+The C4 model is notation independent.
+Some of you may have seen my previous
+diagrams with blue and gray boxes. You
+don't have to use blue and gray boxes.
+You can use any shapes, any colors. That
+is worth pointing out. And I have a
+number of new example diagrams I'm about
+to show you very briefly. So this is an
+example system context diagram. This is
+from the C4 model website. This is
+showing you uh an internet banking
+system. That's the thing we are
+documenting, the thing we are
+describing. It is used by a single type
+of user. In this case, it's a personal
+banking customer. They are using the
+internet banking system to do things
+online, view their account balances and
+make payments. The internet banking
+system itself uses a core banking system
+to get data and present it to our
+customers via the web and we send emails
+via Amazon web services simple email
+service. So that's an example of a
+system context diagram. It's showing you
+the system we are describing and the
+world around it in terms of users,
+roles, actors, personas and other system
+to system integration points. Now we can
+take that internet banking system, the
+blue box, pinch the zoom, drop down to
+level two, and we can draw a container
+diagram. A C4 container diagram
+essentially shows applications and data
+stores. So these are things as
+developers that we build and essentially
+run our system.
+In this case, we have a single page app
+uh JavaScript and Angular UI that is
+delivered from a bunch of static
+content. In this case, it's a folder of
+HTML, CSS, and JavaScript. The UI uses a
+JavaScript boot backend. So there's a
+JSON over HTTPS API endpoint or one or
+more endpoints. The backend attorney
+uses a MySQL database schema for storing
+lots of data and an Amazon S3 bucket for
+storing u pre-built PDF statements.
+Some tech choices. We got some protocols
+on the arrows. This is a nice at a
+glance view of the how the interns of
+the system work, but still at a high
+level. We take the back end in this
+case. We pinch the zoom. Now we can open
+up uh the backend application and show
+the components that sit inside it. And
+it's really the same sorts of thing. Now
+we're showing the highle constructs that
+exist inside that application. We'll
+talk more about what these are in a
+second. And for completeness, we can
+take a single component, open it up,
+zoom in, and show code. Once you get
+down to the code level, if you're using
+an O language, you can just use UML.
+Although C4 defines four levels of
+static structure diagrams, you don't
+need to use all of them. Most
+organizations only use the top two.
+Quick to create, don't change rapidly.
+That doesn't mean there's not value in
+the bottom two levels. Uh but you need
+to look at things automatic generation
+if you want to use them.
+Naming's hard. We probably heard this uh
+already today. C4 actually defines seven
+diagram types. Sorry. Um there is a
+dynamic diagram that allows you to show
+how uh an individual feature works at
+runtime. There is a sequence diagram
+version.
+There's a UML collaboration style
+version if you like that in instead. So
+this is just showing you how a
+collection of C4 things interact at
+runtime follow the numbered ordered
+arrows. Let me do that instead. There we
+go. So that tells you a story.
+There is a deployment diagram that shows
+the mapping between C4 containers onto
+things in the infrastructure and you can
+do your fancy cloud architecture
+diagrams if you want to with all the
+nice icons. Uh and there's a system
+landscape diagram we'll see later. So
+beyond the basics
+containers
+I see a lot of confusion about the C4
+container concept and also we have that
+clash of naming with Docker. I keep
+making this joke that I got the name
+first, which is true, by the way, but I
+kind of wanted to prove it. So, there's
+a post going on to the C4 model website
+soon. And what I've done is I've gone
+through my old slides from conference
+talks and I've tried to find when the
+container name popped up and it turns
+out it was March 2010. So, in March
+2010, I have a presentation and the word
+container was used in one of the slides.
+Docker came out what, three years later.
+So, I got the name first. You heard it
+here first. Uh so C4 containers what
+what is a C4 container? It's an
+application or a data store. So it's a
+single page app in a browser, a mobile
+app, a serverside app, a batch process.
+That's what I mean by application. Data
+store, it's a database schema, Amazon S3
+bucket, Azure, blob storage container,
+bunch of folders, etc., etc. [sighs]
+So in the simplest case, a UI talking to
+a database is a C4 container diagram.
+Now,
+technology choices are important.
+I ran my my diagramming workshop a few
+weeks ago and somebody crafted this
+diagram
+and I said, "Right, are you going to put
+some tech choices on this?" And they
+said, "No, because we're solution
+architects and we don't want to tell
+developers what to do,
+right?" But I I kind of pressed them to
+add some tech choices to the diagrams
+because I wanted to check whether this
+design was going to work. And you might
+be thinking, well, yeah, of course it's
+going to work. It's a UI talking to a
+database. It's a very, very common,
+simple pattern. So, I pressed them for
+tech choices and they said, okay, we're
+going to have an Angular front end
+talking to a MySQL back end.
+Anybody see the problem with this? It's
+not going to work for a whole bunch of
+interesting security reasons. So, this
+is why it's really important to make
+sure your C4 container diagrams
+particularly includes technology
+choices. So, this is not going to work.
+this one here with a serverside
+application will work. So by adding the
+technology choices, we could already
+start to evaluate and review and
+critique the potential solution here.
+[gasps]
+If you're still struggling with the con
+with the concept of containers, you can
+think of it as an operating system
+process boundary.
+Now there's a number of specific reasons
+I didn't use the term process when I
+came up with the C4 set of abstractions
+and and I'll explain that in a second.
+So what's the implication here? If you
+consider a container to be a process
+then container to container interactions
+are out of process
+typically using a a network connection
+between them. So JSON of HTTPS or maybe
+gpc.
+The further implication here is when you
+zoom into the boundary of a container,
+an application, component to component
+interaction is typically in process.
+And this is true of many languages. If
+you're building a C app and you have a
+number of C# components, component A
+will talk to component B in process,
+typically via
+a method call or function call. That's
+how most component to component
+interactions work. That does not mean
+that component A can't send a message
+out of process and component B can
+subscribe to that out of process. But
+typically in most cases component to
+component interaction is in process.
+[gasps]
+So does the process analogy work? Yeah,
+if you have two applications uh two Java
+applications if you look at these things
+running you've got two Java virtual
+machines. Those are the processes and so
+therefore as I said container to
+container interactions are out of
+process.
+like code in app one can't talk to code
+in app two without going out process.
+[sighs]
+So why didn't I use the term process?
+Well, imagine we have two Java EE web
+applications. The same thing is probably
+true of um ASP.NET applications. So you
+have two Java E applications running on
+a single Apache Tomcat web server. So
+the process now the operating system
+process is actually still the Java
+virtual machine but there's only one of
+them but we have two applications but it
+turns out that application to
+application communication still must
+happen out of process. Why? Because
+Apache Tomcat is using some very funky
+clever class loading stuff and
+essentially it loads both applications
+into their own space and provides some
+degree of isolation. Um I haven't done
+net for a while but in the IIS world
+when I used to do net I think the term
+was app domains so it's a similar sort
+of concept there's a boundary of
+isolation around those applications so
+you can't call functions across them so
+maybe an isolation boundary is a better
+term but it just sounds a bit clunky uh
+so hence I used the term container
+so now with this knowledge we can start
+to critique some diagrams I'm not going
+to do a show of hands because some of
+you might think I'm tricking you here,
+but if you ever see a C4 container
+diagram and it says we have a service
+and it's Java and MySQL, that's wrong.
+Why? Because Java and MySQL cannot run
+in the same process. They're two
+separate things, aren't they? You have a
+Java application in a JVM and a MySQL
+database server running somewhere. So,
+this is incorrect.
+This could be correct. So, H2 is a
+database written in Java. It can be run
+as a standalone server so out of process
+or you can actually run it in process.
+If H2 is running in process essentially
+the codes in your application and H2 are
+running in the same JVM. So therefore
+this could be correct.
+So C4 containers are separately
+deployable things separately deployable
+applications.
+But my recommendation here is that the
+C4 container diagrams themselves should
+not show deployment concepts.
+And this piece of advice sometimes
+confuses people as well.
+I've seen a bunch of diagrams that look
+like this. We have service A and the
+container is Docker.
+Docker is a deployment thing.
+What's the real thing we're trying to
+see here? Well, what's running inside
+the Docker container? That's the C4
+container that we're kind of hunting
+for. So, whenever you see Docker as a
+technology on a C4 container diagram,
+that's typically wrong as well.
+Similarly, this Amazon EC2 is a is a way
+to run stuff on the cloud. That's a
+deployment thing. And similarly, Amazon
+Web Services Fargate. Fargate is a
+containers as a service service.
+So that raises the question where do you
+show these concepts? And the answer is
+on your deployment diagrams. So here's
+one of the example diagrams from the C4
+model website. And you'll see we have a
+Java Spring Boot back end here. This is
+the C4 container. It's the application.
+The separate deployment diagram shows
+how that thing runs on in this case
+Amazon's infrastructure. So we have the
+back end. It's running in a Java virtual
+machine inside a Docker container inside
+Amazon Web Services Fargate
+API gateways.
+I sometimes see API gateways modeled as
+C4 containers and again this is
+typically wrong.
+What do most API gateways do?
+Authentication, logging, routting, or
+routing, depending on which country
+you're in.
+[laughter]
+We got there eventually. Um, and most
+times you don't need the API gateway in
+your dev environment. Most API gateways
+are really just in the production
+environment to do uh all of these things
+in the production environment only. So
+therefore modeling the API gateway in a
+C4 container diagram is kind of
+unnecessary.
+So the other way to think about the C4
+container diagram is that it's showing
+the subset of all of the things that
+exist across all deployment environments
+dev test staging prod.
+If any of you have seen the example
+diagrams on the C4 website, you'll
+notice there's an Amazon S3 bucket on
+the container diagram which is modeled
+as a container and you have an Amazon
+SES simple email service which is
+modeled as a software system. So one
+Amazon thing is a container, one Amazon
+thing as a software system. Why? Here's
+your answer. This is the example
+container diagram.
+There's SCES. So that's modeled as a
+software system. And here is the S3
+bucket. its modeled as a container
+inside our software system boundary.
+How do you think about this? What's the
+huristic you use to decide whether
+something is a system or a container? I
+like this when you're talking about the
+difference between libraries and
+frameworks. You use a library and a
+framework uses you. The framework calls
+your code. So when you use a framework,
+your code is much more tightly coupled
+to the framework. You know, libraries
+you can often switch out quite easily.
+And the same thing is true of the
+software system versus container debate.
+And what you have to ask yourself is
+what is the type and strength of the
+dependency that we have here. Amazon SCS
+is a service we're using. So we write
+some code. It makes use of the Amazon
+SCS API to send emails to our customers.
+It's an opaque box. We can't see inside
+it. We're just using it as a service. We
+could switch it to something else if it
+had same API. We have a dependency sure
+but it's quite a weak dependency
+compared to S3.
+The S3 bucket although it's running on
+Amazon infrastructure it's hosted by
+Amazon Web Services. When we provision a
+bucket that bucket is ours we have
+complete control and responsibility over
+what goes in that bucket. The objects
+the data formats. The S3 bucket is an
+integral part of our software system. We
+can't do anything without it. So
+therefore, it's a much tighter coupling,
+a much tighter relationship. So
+therefore, I've modeled it as a as a C4
+container inside my software system
+boundary.
+So that's thing one, a long discussion
+on containers.
+Thing two, perspectives.
+I get a lot of questions like this. How
+do we model like ownership and security
+and levels of technical debt and and
+maybe size and complexity on top of
+these architecture diagrams without
+making them super cluttered?
+And the answer is to use perspectives.
+So there's a great book on software
+architecture by Owen Woods and Nick
+Rosanski. It's called software systems
+architecture. And in that book they talk
+about perspectives.
+And all of perspective is is rather than
+defining a new diagram type, a new view
+type, we have additional levels or
+layers of information and data on top of
+these diagrams. And it's a really really
+powerful concept.
+So we can just do that. So here's an ex
+uh an example system landscape diagram
+again from the C4 model website. Imagine
+we want to figure out who is the owner
+of all of these different systems. So
+this is a nice simple diagram. We could
+start adding more information about team
+names and things on this diagram, but it
+would start to get cluttered quite
+quickly. So what we can do is we can add
+some metadata to the things in this
+diagram, an ownership perspective, and
+then we can toggle that on and off. So
+now we're only seeing the items that
+have a perspective associated with them
+and you kind of have some interactive
+thing in your tooling and says oh that's
+owned by team C. So tooling supports
+this. You've got modeling tools that
+support this. You've got diagramming
+tools. You can have layers on top.
+There's a whole number of ways you can
+do the kind of layering and perspectives
+thing. Security example imagine we've
+got that statement store the Amazon S3
+buckets and we want to ask questions
+like well how is the data secured? Is it
+encrypted on the server for example?
+Yeah, we just add a security perspective
+and add that metadata uh next to that
+object somehow. So, it's a nice way to
+add additional metadata requires your
+diagrams to be interactive, but it it
+reduces the clutter on the diagrams.
+Number three, messagedriven
+architectures. This always gets people.
+Uh it's very tempting to draw a diagram
+like that. So, imagine you're modeling a
+service-based architecture. You have a
+bunch of services on the left hand side
+that are producing messages and a bunch
+of services on the on the right hand
+side that are consuming messages. It's
+very tempting to draw the message bus as
+a C4 container. This is true. This is
+factual. This is accurate. But the
+problem here is everything looks like a
+hub and spoke architecture.
+So we're missing the couplings, the
+dependencies between the individual
+services. It's all hidden in that fanin
+fan out architecture. So how do we fix
+this issue?
+Don't model the message bus as a C4
+container. Model the individual cues and
+topics as C4 containers. So now in this
+particular example, we can see there is
+a pointto-point coupling, a onetoone
+dependency between services A and C via
+a Q called X. And there's a a similar
+but different uh pointto-oint coupling
+between B and D via a separate Q. So I'm
+modeling the Q's here as C4 containers.
+And this is nice because a Q is a
+bucket.
+It's a data store. Some processes put
+meshes into the buckets. Others pull the
+meshes out of the buckets.
+This doesn't tell me anything about
+deployment either. So in my dev
+environment on my laptop, I could have
+both these cues running on a s single
+rabbit MQ bus. My live environment might
+be one bus for qx and one for qy because
+they're super super high scale or
+throughput or something. So again,
+having the cues as containers gives me
+the flexibility tool about deployment
+separately, which I quite like.
+Arrows go from left to right. If you
+have a onetoone mapping between two
+services via a cure or topic, you could
+argue that that box in the middle
+doesn't really add much. Agreed. You
+have options. Just remove it. So now we
+can see there is a a coupling a
+dependency between the services. And
+what I've done here is I've said via qx
+on the arrow. This is much visually
+simpler. The tradeoff here, and it's all
+trade-offs, of course, is that some
+people might miss that there's a queue
+in between the two things. But you have
+some options. Try both. See which one
+you like. If I go back a second again,
+arrows go from left to right. Similarly
+with this one here, you could also
+experiment with flipping the arrows
+around and changing the text to tell a
+slightly different version of
+essentially the same story. So now we
+can see that service A is publishing
+messages
+to the queue and service C is
+subscribing to messages from the queue.
+So we got each pointing to the queue.
+Now I think this works well when you
+have like I have at the bottom here,
+you've got a one to many relationship.
+So I think that works really well with
+pub subt type architectures. So that's
+how you model messagdriven architecture.
+Essentially you have a bunch of options
+but treat the cues and topics as
+containers.
+Number four, abstraction versus
+organization. When C4 diagrams start to
+become big and complicated, people look
+to add more abstractions to reduce the
+complexity and therefore create simpler
+diagrams. Is that a good idea? Probably
+not. So, what are my thoughts on
+modeling addition uh additional levels
+of abstraction? Essentially, I think a
+lot of the things people want to
+describe and model are actually not
+abstractions in their own right. They're
+just groupings of the additional
+abstractions.
+So, organizations, groups, or
+departments.
+Here's a good example. Imagine we have
+this system landscape diagram from
+before. We have a number of different
+systems.
+But where does each system sit? Is it in
+internal to our organization or
+external? You can't really see that from
+this diagram. So what you can do is just
+add a bunch of dash boundaries
+representing the organizational
+boundaries.
+So now we can see that all of these
+things here including the internal staff
+see it in the context of the bank and
+Amazon web services includes SCES. You
+could add nested things to show smaller
+groups and departments. So yeah,
+entirely up to you.
+Architectural layers. Imagine you have a
+C4 component diagram that has a number
+of controllers, some services, and some
+repository components. And maybe you
+think you want to draw this diagram
+instead.
+I've drawn many of these diagrams during
+my career. Are they useful? Arguably
+not. Doesn't really tell you much. All
+the complexities hidden inside the the
+layer boxes. But nonetheless, what if
+you want to show architectural layers on
+your diagrams? Again, you just take the
+same approach. So here we have our
+components and I've drawn a dashed
+boundary around the components. Say this
+is the controller layer. This is the
+service layer and this is the repository
+layer.
+If you have particular module boundaries
+or DLS or jar files that your com
+components are coming from, you could do
+the same thing. So here we've said that
+the controllers are coming from an
+app-controller.jar
+file. So yeah, feel free to add
+additional uh organizational groupings
+on your existing C4 model diagrams.
+DTO banner context. People ask me how do
+you model bounded context in C4?
+Hopefully you have a bounded context and
+it nicely and neatly includes some C4
+things. In this case, uh software
+systems, but yeah, just add some dash
+boundaries representing each of the
+boundary contexts. I know in the real
+world that banner context slice systems
+in half, but that's a different problem,
+I guess.
+Microervices.
+This always gets people too.
+So, how do you model microservices?
+bunch of options but very simply
+microservices should either be modeled
+as a software system or grouping of
+containers. That's it.
+I'm going to walk you through a scenario
+and then we can see each of these things
+in turn. So imagine we're a small
+startup. We have no money and we want to
+build something quickly to get some
+money and deliver features to some
+potential customers.
+Because of sense, we're going to stick
+with a monolithic architecture.
+So we're going to build software system
+X and it's going to
+expose features A, B, and C to some type
+of user. So that's our C4 system context
+diagram. Nice and simple. When we pinch
+to zoom onto the software system, we're
+going to use a serverside rendered web
+application monolithic approach,
+business logic and UI for features A, B,
+and C. And we're going to store
+everything in a single MySQL database
+schema. That's our C4 container diagram
+showing a monolithic architecture.
+Stage two of our company's journey.
+We're now hiring more people. We're
+starting to change the same parts of the
+codebase and we're starting to get merge
+conflicts and things are just getting a
+bit awkward because we're increasing in
+scale. So we want to go from monoliths
+to microservices. So now I have to
+answer the tricky question of well what
+is a microser? I'm going to do this by
+going back to the original James Lewis
+Martin Fowler blog post on Martin
+Fowler's website and they say this. In
+short, the micros service architectural
+style is an approach to developing a
+single application as a suite small
+services each running in its own process
+and communicating with lightweight
+mechanisms. [sighs and gasps]
+Now, I like this, but I want to make it
+more C4ish. So I'm going to change the
+word application to software system. So
+what I'm doing here is I'm saying well a
+microservices architecture is we're
+defining a single software system as a
+collection of smaller services. So now
+with this
+we can draw some diagrams. Our context
+diagram is the same. We're one big team.
+We're building a single system as one
+big team. It's the same diagram. Once we
+pinch to zoom, now we can see we've
+broken up the business logic and the
+data into three separate services. One
+for A, one for B, one for C. Because we
+don't want to get into microrends quite
+yet, we're going to stick with the
+original server side rendered UI. So now
+we have a collection of microservices.
+There are three of them. What I've done
+here is I've used color coding to denote
+the pairings of the API thing and the
+database schema thing. but it's not
+explicit. So, how do we fix that
+problem? How do we make those pairings
+explicit? I already told you the answer.
+Just add a add a grouping. So, here we
+have a a dashed boundary. And now we can
+see that the API thing and the database
+schema thing are service A. Repeat for
+services B and C. So, in this case, we
+have three microservices. Each microser
+is a group, a pair of containers.
+Imagine we add feature D. Feature D is
+going to be implemented by a stateless
+AWS lambda written in Python. We can
+just add that to the bottom of our
+diagram. There we go. But the same thing
+applies. ServiceD is a collection, a
+group of containers, but that number is
+now just one.
+Now imagine we got tons of cash coming
+in. We're growing really quick. We're
+going start up to scale up. And this one
+big team is not it's not going anywhere
+fast. It's just slowing us down. So,
+we're going to break into separate teams
+and do the Conway's law thing. So, I'm
+going to stick with team X building that
+original software system called X. And
+all of you lovely folks are going to
+disappear onto separate teams. We're
+going to carve up the git repo. You
+folks here are going to be team A
+looking after service A, B, C, and D.
+Now, we have to draw our architecture
+diagrams from our perspective only.
+And here's my context diagram. So I'm
+working on team X building software
+system X. My context diagram now looks
+like this because I have a dependency on
+all of your services.
+So what I've done here is I've promoted
+your services to be software systems
+rather than groupings of containers.
+Why? Because I can't see your code
+anymore. It's all completely out of my
+context. I can't see your implementation
+details. You can't see mine. So I'm
+treating your services as opaque boxes.
+When I pinch to zoom in, my container
+diagram is really straightforward. It's
+that it's really just the original
+serverside rendered web app again
+talking to all of your services as
+software systems.
+So that's my view on the world.
+Team A's view on the world over there.
+This is your context diagram. So you are
+building service A and you have an
+inbound dependency for my thing called
+X. when we pinch the zoom on your
+software system. Now we can see the pair
+of the API thing and the database schema
+thing. Repeat for B C for D and we're
+happy. So that's my thoughts on modeling
+microservices. If you own those things
+then treat them as internal to your
+system boundary. If you don't and you've
+got like a corn thing going on, treat
+them as external software systems from
+your perspective.
+[sighs] What about doing that? Showing
+that a container in my world talks to a
+container in your world. but we're two
+separate teams. My advice is don't do
+that because it's a form of coupling. It
+shows that I know something about your
+internal implementation details and vice
+versa. If I finally do the serverside
+render rendered web app to microrends
+thing and you have this diagram in your
+repos, your diagrams are now wrong. You
+have to change it. So it's volatile.
+It's a form of coupling. So I don't
+recommend doing that.
+Number six, the C4 model at scale.
+So adding the additional levels of
+abstraction is one of the techniques
+people try to use to scale C4. Uh but I
+have some other options for you. So
+imagine we have a single software system
+that in this case is comprised of eight
+microservices.
+They're all different colors. Same thing
+as before. A service is an API thing and
+a database thing. This diagram is
+essentially showing you the entirety of
+the software system boundary. They're
+showing you all of the containers inside
+the software system boundary. This
+diagram works now, but as we add more
+services, this diagram would start to
+get quite complicated, especially the
+arrows between things. So rather than
+having one diagram showing eight
+services, you could draw eight diagrams
+showing one service each. And that's a
+very valid approach. So here is a C4
+container diagram showing the internals
+of that same software system but we're
+only showing service one which is that
+pair things coming into service one and
+things leaving service one. So the
+inbound and the outbound dependencies
+the afrant and the effort couplings. Uh
+if you've used my structurizer tooling
+that's how you do it. You say include
+service one things coming in things
+going out. Nice and simple. You can't do
+this so easily with a tool like Vizio
+because you have to copy and paste all
+the boxes across all the different
+diagrams and keep things up to date. So
+if you take this approach, you really
+need to drop into using a modeling tool.
+The service 2 version is exactly the
+same includes service two inbound and
+outbound dependencies. Service 3, you
+get the idea. So that's option one.
+Craft a smaller number of diagrams
+focusing on a single slice of the thing.
+The trade-off here, again, it's all
+trade-offs, is you lose the big picture.
+You've got the detail, but you lose the
+entirety of the big picture. So, option
+two is to use a different visualization.
+This is a screenshot of a nice
+interactive D3JS force directed graph.
+It all the small bubbles are C4
+containers. So, this view is showing you
+the same thing as that all containers
+diagram, but everything's very small
+now. And it's interactive. So, we can
+drag things around, move things around.
+We can click on something to show its
+nearest neighbors.
+This is really useful because many of
+the times we draw architecture diagrams,
+we're doing it to answer questions if
+this changes, what's the impact of
+change? So using a different
+visualization allows you to explore that
+question much more easily. And again,
+you could add metadata and have tool
+tips. So yeah, maybe think about
+different visualizations. And here's
+another one for you. So my tooling uh
+doesn't export to the isograph tooling
+uh which again this is a static
+screenshot of a very nice kind of
+interactive tool. It shows you
+everything and you can click and zoom in
+and show nearest neighbors and all that
+sort of thing. So different
+visualizations of a bigger data set
+allow to uh showcase and explore your
+model in different ways.
+And finally number seven how do you make
+this work in enterprise?
+Imagine you have a bunch of teams and
+they're all using C4 and they're
+producing some nice diagrams.
+This works well, but maybe your
+enterprise architects come along and
+say, "Well,
+we want a big picture like we want to
+see all the things talking to all the
+things. We want a top- down view of our
+entire organization, but all the teams
+are managing their diagrams and models
+in a decentralized fashion. So, how do
+we make that work?"
+These pictures show what the individual
+teams see.
+If we rearrange the boxes so they kind
+of look the same. What we want to do is
+we want to get that view on the right
+hand side. So we want that the
+aggregation of everything. So how do you
+do that? Very simply you have some sort
+of a system catalog. This could be in my
+tooling or backstage or some other
+tooling. You define all the things in
+the environment. You have that as a
+single dictionary, a single definition.
+You ask all your teams to push their
+definition to some sort of an
+architecture repository so you can find
+them easily. This could be just a file
+system or some tooling doesn't really
+matter. And then you write some code to
+basically start with the system catalog
+and then you aggregate all of the
+relationships between all of the systems
+from the teambased models
+and essentially that gives you this sort
+of picture down here on the right hand
+side. So does this work in the real
+world? Yeah, I've got many clients who
+are doing this sort of thing and it's
+really nice because their teams can
+model things in a decentralized way,
+have all their diagrams checked into
+their own git repos, but the EAS are
+happy because they can get a top- down
+view of everything, track dependencies,
+etc., etc.
+A final note, I've been working with a
+number of clients recently to improve
+their software architecture diagramming
+and I came up with this maturity model
+thing. Level one is where half the
+industry is. They're not doing anything
+which is awkward. Uh level two is where
+we have some degree of diagrams but
+they're ad hoc boxes and narrows. Just
+using C4 gets you to level three. So now
+we have defined things in a uh in a
+structured way. To get to level four you
+have to switch from diagramming to
+modeling. Once you switch to modeling a
+whole number of different opportunities
+open up to you. and to get up to level
+five where you're sharing models across
+organizational departments and groups
+and teams and you're reverse engineering
+your uh observ
+observability logs and your source code
+to kind of generate these models.
+There's tons of really cool stuff you
+can do there. So that's all I have to
+say. Uh again that's the uh code if you
+want to grab the book. Thank you very
+much.
+[applause]

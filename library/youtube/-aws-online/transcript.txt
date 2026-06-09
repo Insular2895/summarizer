@@ -1,0 +1,1273 @@
+[Music]
+hello everyone and welcome to this tech
+talk
+in today's topic we will cover what are
+the best practices for protecting
+sensitive data in aws with amazonbasey
+my name is himanshu varma and i'm a
+worldwide security specialist in the aws
+wwbso security services team
+the agenda for today will be one to
+highlight what is amazon macy and how
+customers can leverage macy's data
+protection as well as sensitive data
+discovery features
+some of the best practices to discover
+sensitive data in aws
+and more importantly how customers can
+orchestrate workflows that can help
+discover sensitive data in their data
+workloads
+i will also be sharing some tips and
+tricks for data governance data
+protection and data loss prevention use
+cases
+with that let's jump right in
+a quick overview on amazon may see
+amazon macy is one of our key services
+that is focused towards sensitive data
+discovery it is a fully managed data
+security and data privacy service that
+leverages a combination of machine
+learning and patent matching to discover
+and protect sensitive data at scale
+first and foremost macy provides
+visibility to customers as to where all
+the data is with regards to providing
+visibility it collects the inventory of
+all of their s3 buckets and the objects
+that are stored in s3 and presents them
+in one single dashboard
+additionally it also enables customers
+to evaluate the security posture of
+their buckets
+when it comes to discovering sensitive
+data macy leverages a combination of
+built-in managed data identifiers as
+well as custom data identifiers to
+identify what all is sensitive in the
+data
+customers have the full flexibility as
+well as control in defining inspection
+jobs which can be leveraged to identify
+sensitive information
+mesi allows for centralized management
+at scale
+it is an account based service which can
+be enabled at the aws account level
+for larger organizations and especially
+customers who are using aws
+organizations
+macy can be enabled in a centralized
+management account
+by using a delegation feature
+and from there the centralized data
+protection or data management
+teams can enable the service seamlessly
+across multiple accounts
+using the simple aws organization's
+integration
+centralized management teams can enable
+macy on multiple member accounts and
+which makes the onboarding of member
+accounts easier as well as enabling the
+service on multiple accounts at scale
+easier as well
+with the use of managed data identifiers
+mesi provides the scale to customers
+that can highlight sensitive data types
+that match to most of the sensitive
+information that is required or covered
+by various different regulatory or
+compliance requirements across the globe
+whether it's pii information personally
+identifiable information or financial
+information or
+healthcare information these are all
+built into the managed data identifiers
+for scale as well as regional and
+geographical coverage is available
+in addition to that maci also provides
+the ability for customers to define
+their own custom data identifiers that
+can be leveraged for identifying
+sensitive information that might be
+custom to their applications
+and finally the api coverage of the
+service as well as native integration to
+aws automation services and tools
+provides customers the ability to
+automate and take actions
+macy provides findings in the events of
+uh
+in in the form of events through event
+bridge uh which are automatically sent
+to services like security hub and are
+also available for automation in
+downstream operations that can be easily
+constructed
+when it comes to service pricing macy
+has two dimensions of service pricing
+enabling the service by default enables
+the inventory evaluation feature this
+feature
+is free for the first 30 days on each
+account and after 30 days it's a 10
+cents per bucket per month pricing
+the second pricing is only incurred when
+customers create jobs to inspect for
+sensitive data
+inspection of sensitive data and the
+creation of jobs has its own standalone
+pricing which is based upon the total
+volume of data which is supported by
+macy for scans and hence inspected by
+macy for sensitive information
+this is based on three different volume
+tiers on per gb per month basis
+additionally each month in addition to
+the 30-day free trial for inventory
+evaluation macy also provides up to 1gb
+of sensitive data inspection at no
+charge
+after the 1gb there are three different
+volume tiers up to 50 terabytes it's a
+dollar per gb per month and as the
+volume increases to more than 500
+terabytes the price goes down to 25
+cents per gb per month
+this also allows customers to easily
+enable the service across all their
+accounts
+from where macy starts collecting all
+the inventory information as well as
+continuously starts monitoring the
+security posture of the buckets
+when we move into some of the best
+practices that i want to highlight there
+are three easy steps that customers can
+take to onboard to macy
+first and foremost we recommend
+customers to enable enable macy on all
+accounts
+enabling macy at the aws account level
+is very simple and straightforward with
+only a few clicks
+in addition to that using the delegated
+management feature customers can also
+enable the service easily on multiple
+accounts using aws organization
+integration
+by delegating a centralized management
+account
+large data protection teams as well as
+data governance teams across
+organizations can now view the inventory
+across all of their member accounts
+easily
+secondly customers can now evaluate the
+bucket security posture
+when customers ask for recommendations
+on how to construct a data loss
+prevention solution as well as a data
+governance solution using amazon macy
+the first and foremost requirement for
+any of those solutions is to gain
+visibility into where all the data is
+and then secondly have visibility into
+who all is accessing or what are the
+current control plane policies on that
+data
+which is where the second element comes
+into play
+once enabled customers can then
+continuously evaluate the bucket
+security posture of who all has access
+to what data and where could be the
+potential high-risk sources of their
+buckets
+additionally any time a change is being
+made to the control plane policies mesi
+will automatically generate a policy
+finding which will alert and notify the
+teams
+once customers have visibility into
+where all their data is and what all are
+the security policies on that data is
+where they can then prioritize
+to run inspection jobs
+so the third feature or the third
+element is to now run inspection jobs on
+data sets
+these inspection jobs provide full
+flexibility and coverage on deciding
+various different conditions of how much
+data how often
+and where all does it need to be scanned
+to highlight what is sensitive in that
+data
+so using this three-step approach
+customers can also optimize their macy
+cost
+enabling the service only enables the
+default functionality and that is
+continuous based on monitoring the
+buckets
+on a per bucket in the account uh per
+month basis
+that is also a very nominal cost to
+provide visibility into the full
+data inventory as well as the bucket
+inventory for customers accounts in one
+single dashboard
+secondly customers can now prioritize
+where exactly do they want to scan for
+sensitive information and highlight what
+is sensitive in those buckets or
+locations and that is priced separately
+based on the scope of the jobs that are
+being defined
+let's look at how we enable macy at the
+aws account level
+once navigating to the service choose
+the option to get started
+here if you're using the aws
+organization integration we recommend
+using the multi account management as
+well as the native integration with aws
+organizations
+at your aws organization management
+account you will have the option to
+delegate a centralized management
+account
+this is the account which can be
+delegated for centralized management
+centralized onboarding of additional
+member accounts and activation of the
+service easily from there as well as
+aggregation of macy's findings and
+running macy's data classification jobs
+for multiple member accounts easily from
+that centralized management account
+i'm going to go ahead and delegate one
+of my organization accounts
+as the centralized management account
+for the service
+once i've delegated mesi will be enabled
+into that account
+let's pivot into that account now
+navigating back into my centralized
+management account i can notice that
+macy is enabled
+macy starts automatically bringing in
+information from s3 data such as the
+total number of buckets total number of
+storage size of the objects in those
+buckets as well as the total number of
+objects
+the first step i want to do here is go
+into the settings and from the
+centralized account management i can
+view all of the accounts that are
+natively integrated with aws
+organization listed here
+i can easily now select one or many of
+these accounts and onboard them to the
+service
+once i add them to the service mesi will
+be enabled on these member accounts as
+well
+additionally i can auto enable the
+service option so that any new accounts
+that are added the service is
+automatically enabled on those accounts
+as well
+with these simple steps i can easily
+enable macy on multiple member accounts
+and easily onboard any new accounts to
+the service using the aws organization
+integration
+so let's dive into some of those details
+now
+when it comes to evaluation of bucket
+security the two features that maci
+provides is one
+gaining visibility into the full bucket
+inventory as to what are the total
+number of buckets how many objects are
+there in those buckets what is the full
+storage size of those objects and then
+how much object count is there that
+customers should be aware of
+once enabled at the account level macy
+will bring all this information from
+multiple accounts in one single
+dashboard and highlight that for
+customers to easily navigate as well as
+filter based on various different
+criterias
+secondly macy will start continuously
+monitoring for any changes to these
+bucket policies
+for instance not only highlighting where
+the current publicly accessible buckets
+and or the non-encrypted or unencrypted
+buckets or shared externally buckets are
+there but anytime those policies are
+being changed it will report a policy
+finding in the console and will also be
+available as an event to trigger alerts
+and notifications or other automated
+operations
+this feature is continuous and
+automatically takes into consideration
+any new accounts that are coming on
+board
+or any new buckets that are being added
+or as new objects are added to those
+accounts
+it is also updated continuously
+and the dashboard updates every 24 hours
+with this information
+from here customers can start
+visualizing which could be the potential
+high risk sources where they need to
+ensure that there is no sensitive data
+available for instance if there are
+public buckets and or unencrypted
+buckets or buckets which are shared
+externally could be high priority
+sources where customers can go and start
+taking actions
+now that the service is enabled across
+all my accounts using the centralized
+management dashboard i can review
+what macy has collected as the default
+feature in this dashboard
+in the summary dashboard mesi will
+gather the information across all the
+accounts and start presenting
+information with regards to the first
+feature which is inventory evaluation
+and security assessment across all the
+s3 buckets
+the native integration with amazon s3
+populates the information such as total
+number of buckets storage size and
+object numbers
+as well as the current security posture
+across these buckets in one place for
+instance from here i can tell which one
+of these buckets have public access
+which do not what are the encryption
+policies on these buckets for example
+which ones are not encrypted with
+default encryption the others that have
+encryption enabled either server-side
+and or using kms managed keys and then
+what are the access control permissions
+on these buckets for example which ones
+are shared internally or externally
+with this continuous evaluation macy
+also automatically monitors for any
+changes in the control plane policies
+for instance anytime changes are being
+made to either access control access
+permissions as well as to replication
+policies macy generates a policy finding
+in near real time for instance on this
+bucket the encryption policy was changed
+and hence a policy finding was generated
+this default functionality also gathers
+this information across all the accounts
+where we enable the service
+additionally from here i can pivot to
+any one of these filtered bucket
+information
+for example i want to navigate to the 34
+buckets which are listed here with no
+encryption when i click there this will
+take us to the s3 buckets tab
+the s3 buckets tab can be filtered based
+on built-in filter criterias
+or customers can use their own
+additional filter criterias such as
+account id or bucket name to narrow down
+the scope of what they want to see here
+this s3 bucket tabs also brings in
+information along with the metadata per
+bucket that represents object statistics
+as well as bucket statistics with
+regards to encryption policies with
+regards to total number of objects that
+are in those buckets the volume size of
+those objects
+as well as attributes such as access
+control encryption
+and replication policies
+any one of these options such as
+effective permission can be used as a
+filter criteria by easily clicking on
+these options
+this will then filter the list of
+buckets across all accounts based on
+those filter options and they can be
+removed using this simple option as well
+using the management apis customers can
+fetch all this information from here and
+also use that either in third party
+visibility tools and or leverage this
+information for intelligent decision
+making process around data protection as
+well as data classification policies
+the summary tab also provides customers
+the prioritization that is needed as to
+where should they now be inspecting for
+sensitive data
+or leverage these policy changes to
+automate the discovery of sensitive data
+now that customers have visibility into
+where all their data is and how the
+security posture around that data is
+currently assessed
+some of the high risk sources could be
+publicly accessible buckets
+buckets with default encryption disabled
+or buckets that are being shared outside
+this allows customers to easily filter
+to those locations
+select those data sources and then
+proceed to the second main feature set
+of the service that is discovering
+sensitive data at scale
+when it comes to taking actions on
+discovering for sensitive information
+this is done by creating inspection jobs
+on the data sets
+as macy highlights the various different
+bucket inventory across all the accounts
+as well as highlights the objects in
+those accounts customers can then select
+targets either based on the selection
+criterias from the s3 catalog that is
+displayed and natively integrated into
+macy
+or they can create policy-based
+inspection jobs
+for instance if there are buckets that
+satisfy a certain policy condition
+which means their effective permission
+is being public or their effective
+access control is shared externally
+those can then be leveraged to trigger
+inspection jobs in macy
+customers can make that selection either
+by choosing manually the selection
+targets in the form of s3 buckets or by
+creating policies which will take into
+effect and automatically select those
+buckets for them
+once the buckets and the targets are
+selected the next step is to define the
+scope of the job
+the scope of the job is where customers
+can define the frequency whether it's a
+one-time job or it's a recurring job
+the main difference between the two is a
+one-time job will scan for the sensitive
+data and the objects and report any
+matches that it finds
+and report the findings
+whereas if there are use cases where
+customers need to
+constantly or on an ongoing basis
+reveal or detect sensitive data they can
+then use an ongoing or a frequent job
+macy allows for defining the frequency
+of either daily weekly monthly in an
+ongoing or a frequent job messy will
+only charge for
+scans which
+are in the form of new data landing into
+the bucket for instance in the initial
+scan it will scan all the supported
+objects but then in ongoing scans it
+will only scan for the supported objects
+or the new objects that are landing in
+the bucket
+customers can also define object
+criteria so for instance if they do not
+want to scan the full bucket and all of
+the supported objects in that bucket
+they can further narrow down that scope
+by either using object criteria in the
+form of object tags or modify time frame
+file type extensions size as well as
+prefixes in the buckets
+these options in addition to some of the
+additional options like sampling size
+can allow customers to further narrow
+down the scope of where all do they want
+to scan for sensitive data
+once the job is submitted missy also
+allows the ability to define what all
+identifiers need to be identified as
+part of that job run
+so for instance if customers only want
+to identify
+or adhere to certain regulatory
+compliance requirements that need them
+to find personally identifiable
+information in the form of names address
+contact information they can selectively
+choose either one of those data types
+that are categorized in the manage data
+identifier formats
+these are built-in data types in macy
+for example financial which includes
+bank account information credit card
+information
+national ids such as passports driver
+licenses health care information in the
+form of medical identifiers such as drug
+agency numbers insurance ids etc and
+also credentials and secrets such as aws
+secret keys or private keys and pins
+these manage data identifiers are also
+available for selection in the job
+criteria now
+additionally customers can define custom
+data identifiers in the form of regular
+expressions which can then be included
+in the inspection job scope
+after submitting the job mesi will then
+start reporting any findings that are
+matched to the definitions of the job
+scope and will also execute the job on a
+recurring basis if it's scheduled versus
+one time
+after the initial setup and then
+reviewing the inventory evaluation using
+the default feature of macy once it's
+enabled
+now customers can make intelligent
+decisions of initiating sensitive data
+discovery jobs
+before i go into the job creation
+process
+and then deciding the scope of the job
+there are two best practices that are
+recommended
+first customers should configure the
+discovery results repository
+the discovery result repository is a
+location that can be configured using
+either an existing or a new s3 bucket
+where mesi will store a detailed json
+line report of all the audit operations
+performed once the sensitive data
+discovery job executes
+this will also be the detailed location
+where macy will output
+and write a result of all the objects
+that were scanned
+all the objects that were not scanned as
+part of the job configuration
+as well as the closest location of where
+a match was found for the sensitive data
+this also helps customers to have a
+long-term retention with regards to the
+audit of the service
+and can be used for downstream
+automation as well
+the second best practice is that
+as macy uses the built-in managed data
+identifiers
+that are a set of data types already
+built into the service to match and
+highlight any sensitive data
+in addition to that
+missy also allows the flexibility to
+define custom data identifiers
+custom data identifiers are specific to
+customers applications
+which can also be used to match
+regular expressions
+as well as keywords and ignore words to
+identify sensitive data which might be
+custom to the application or the data
+stored in sre
+using these custom data identifiers
+customers can define regular expressions
+define the appropriate keywords that
+will be also looked for during the match
+ignore words to improve accuracy and
+then decide what kind of severity level
+and then the thresholds they would want
+to associate to that severity once that
+finding is reported
+the combination of managed identifiers
+which are built in as well as the custom
+identifiers are the ones that will be
+leveraged once the jobs are created
+once these best practices are enabled
+and customers have configured these two
+settings
+then you can go back to configuring jobs
+to create a job
+the first
+option is to select the s3 data source
+or the s3 bucket source
+this can be done by either filtering the
+bucket criteria based on bucket policies
+by selecting specific buckets based on
+these criterias
+or another option is to specify a bucket
+criteria
+a bucket criteria is a combination of
+buckets based on either account id the
+bucket name
+the effective permission on the bucket
+for instance all publicly accessible
+buckets
+not just the ones which are publicly
+accessible right now
+but also the ones that will be publicly
+accessible in the future
+these bucket criterias automatically
+select the buckets and then can
+add them to the job criteria for future
+runs as well
+once the bucket source is selected
+the next option is to refine the scope
+of
+how often
+do the customers want to scan the data
+how much of the data in the bucket needs
+to be scanned
+and what all objects in that bucket need
+to be scanned
+there are two options when it comes to
+the frequency of the scans the first one
+is a one-time job
+where macy will scan the objects report
+the results
+the second option is a scheduled job
+which could be a landing bucket so for
+instance if there is a bucket where the
+data source is constantly changing
+or in the case of migrations from
+on-premise data to the cloud customers
+want to scan that data classify that
+and then
+move it into their appropriate data lake
+a scheduled job is recommended
+in the case of scheduled job macy also
+keeps a state of what it has already
+scanned in that bucket source
+so in subsequent scans it's only
+scanning for new objects in s3
+and it will not scan all of that data
+again which has which it has previously
+already scanned
+the frequency of these scans can be set
+to either daily weekly or monthly
+additionally there is option where
+customers can choose to either scan what
+is already there in the bucket
+or only scans for newly landing objects
+once the job is configured
+additional options such as sampling
+depth provide flexibility for customers
+where they have known data sets or
+structured data sets of similar type
+and they only want to evaluate the risk
+assessment on these buckets by doing a
+random selection of
+certain number of objects
+in this case if my bucket has 100
+objects
+which are of similar type i can simply
+choose a sampling depth of 10
+which will randomly select 10 objects
+from those 100 and scan them
+and report the results
+if i have a scheduled job then in the
+subsequent scan mesi will pick up the
+next 10 random objects which are
+supported for scans
+and have not already been scanned and
+then report results on that
+there are additional settings on the
+object level that can further refine the
+scope of what macy's job can scan
+for instance customers can define file
+name extensions which can be exclusively
+included or excluded
+additional options included are lost
+modified date
+s3 prefixes or folder structures
+storage size of individual objects or
+the limit of size of objects
+and then tags on the objects
+i'm going to use an example of prefixes
+where i'm going to add prefixes
+that can be included
+and then prefixes in that s3 bucket
+that can also be added for exclusion
+the next option in the scope is to
+define what all managed identifiers
+would we want macy to match for
+this is a list of all the built-in
+managed data identifiers
+categorized by sensitive data type and
+sensitive data category
+if customers don't want to report
+findings on known data sets for instance
+first name last names or locations
+they can only choose specific data types
+that they are interested in reporting
+findings on
+this will simply limit the number of
+findings macy generates
+it has no impact on the total cost or
+the inspection cost related to the
+object
+for this example i'm going to select all
+built-in managed data types to be
+matched
+the next option is to allow for
+including any custom data identifiers
+that have been defined
+these can also be selected selectively
+to be either in the scope of the job or
+not in the job
+after that
+you give the job a name
+review the details of the job
+and then submit the job
+as soon as the job is submitted you can
+view the status of the job as well as
+its status
+is reported in the metadata of the job
+if it is a recurring scheduled job misu
+will also report the number of runs that
+that scheduled job has executed with the
+details of the buckets that are included
+either by selection criteria or by the
+bucket policy that was originally
+selected
+once the job is executed
+missy's findings are reported in two
+different finding types
+the first one are policy findings as
+part of the default feature where macy
+is consistently and continuously
+evaluating the security posture it will
+report any policy changes on the buckets
+the second finding types are the
+sensitive data finding types which are
+matches to any of the sensitive data
+that macy finds
+the types of sensitive data findings are
+aligned with the data types that are
+defined in macy in the form of personal
+financial credential
+or a combination of all of those in the
+form of multiple
+additionally macy will find custom data
+identifiers in the form of custom
+identifier sensitive data findings as
+well
+now these findings are available in the
+console for 30 days and we also
+recommend customers to define their own
+detailed discovery location in macy
+each account can define their detailed
+discovery location in the service which
+is where a detailed json line report is
+written with the details of what macy
+has scanned for and what are the results
+the findings include full metadata
+around what objects
+were the findings found in and then what
+were the matches of the data type that
+were found in these findings
+in addition to being available in the
+console for 30 days the findings are
+also reported in event bridge and can be
+used from there to then trigger alerts
+notifications or downstream automations
+when it comes to best practices and
+prioritizing the sensitive data
+discovery jobs
+we recommend customers to first enable
+the service and then start gaining
+visibility into where all the data is
+once they have visibility into the
+security posture of the data and how
+that is currently aligned or changing
+customers can then make intelligent
+decisions based on either public buckets
+or shared buckets or unencrypted buckets
+these can be potentially high risk
+sources where sharing sensitive data can
+lead to
+security issues
+additionally we recommend customers to
+start where they don't have visibility
+into what all could be potentially
+sensitive so for instance if there are
+log buckets or buckets where customers
+already know that they're collecting
+sensitive information or customer data
+they're applying the appropriate data
+protection policies
+those might not be the best places to
+start with discovering for sensitive
+data
+but if there are bucket sources where
+data is incoming and as large amounts of
+data is coming in through the
+applications and customers don't have
+visibility into what all potential
+sensitive data could be there and they
+need to adhere to certain compliance and
+regulatory needs that is where they can
+start and select either the target
+buckets or define the appropriate bucket
+policies by which the selection process
+can automatically be triggered
+and then customers can also define the
+appropriate scope and fine-tune what all
+needs to be scanned
+i often recommend customers to not scan
+for all of the data in a bucket for
+instance and then further narrow down
+the scope either by
+intelligently mapping
+what type of sampling they can use and
+or other options that are available to
+either include or exclude based on
+criterias that are based at the object
+level such as
+tags that can be used and or file
+extensions or within a bucket if there
+are folders and or prefixes that can be
+leveraged to further narrow down where
+they want to scan for sensitive data
+the scalability as well as the
+performance of the native cloud service
+comes into picture
+and macy will start reporting findings
+based on the matches to any of the data
+types
+these findings will be reported in the
+console and will be available by
+severity as well as finding type
+the findings can be categorized and can
+be filtered based on types
+and the finding types are synonymous to
+our managed data identifiers such as
+financial data types which includes
+credit card numbers bank account numbers
+etc personal information which includes
+personally identifiable pii information
+such as first name last name national
+ids
+such as passports driver license numbers
+across various different regions and
+geographies
+credentials and secrets such as api keys
+pins etc
+any custom identifiers that have been
+defined and a combination of any of
+these as multiple
+healthcare information is also
+categorized under personal data types
+these findings have metadata and details
+associated in them
+for instance clicking on one of these
+findings reveals the metadata right here
+in the console as to which object was
+the finding reported in in this case
+this is a csv object type
+machine will report the mime type of the
+object
+additionally it will report what was the
+results of the match of the data type
+for example in this case personal
+information was reported of data types
+name
+48 counts or 48 matches of the data type
+name
+and a us social security number with 47
+such matches
+these findings are individual events
+and are retained in the console for 30
+days
+they are also written in detail in the
+discovery result jsonline report
+and more importantly are individual json
+objects
+where
+api integration or they are
+automatically sent to event bridge from
+where downstream automation can be
+configured
+in the case of the structured object
+or the csv missy also reports the
+closest or the nearest location
+where it finds the match for the
+sensitive data
+for instance in this case the cell
+reference number the column number
+column name and the row number are
+reported for the matches of the
+sensitive data type
+for other object types such as documents
+macy will report the closest location in
+the form of either page numbers or
+record index in the form in the case of
+parquet files
+etc
+using this metadata of what was reported
+as a match and where it was reported
+and the attributes of the bucket where
+the sensitive data was reported
+and the object
+which matched for sensitive data such as
+its access control policies or the
+encryption and access policies
+downstream operations can be automated
+to take actions on either the object or
+the bucket
+similar to the s3 bucket filter criteria
+these findings also have several options
+for filtering
+additionally
+any of these options on the right hand
+side in the metadata can be used to add
+filter criterias as well
+in this case by adding the sensitive
+data type name
+reports for findings where there was a
+match for name reported
+another best practice is to
+suppress the findings for which
+customers know are obvious data types
+that you do not want to include either
+in their downstream automation or alerts
+and notifications via eventbridge
+they can add these criterias and create
+a suppression rule which will only
+report these findings in the console
+and will suppress them from going
+downstream into event bridge or the
+automation rules that are created
+we will now go into seeing how these
+eventbridge findings which are also
+automatically sent
+to other security services such as
+security hub
+can be used to automate additional
+operations for data protection
+and or data governance
+now let's look at some of the downstream
+automation and operations that can be
+triggered using macy and the findings
+from ac
+once enabled at the account level macy
+will start automatically monitoring for
+s3 buckets for any security policy
+changes
+additionally if a job is triggered from
+ac for sensitive data discovery it will
+then also report any sensitive data
+finding matches to either the managed
+data identifiers or the custom data
+identifiers defined in the service
+all of these will be reported in the
+form of findings the policy findings as
+well as sensitive data findings can then
+from there on be used to either trigger
+basic alerting and notification or
+ticketing using ticketing tools such as
+jira or slack
+customers can also orchestrate tagging
+using the native s3 feature of tags by
+either invoking a step function or a
+lambda to tag buckets with or objects
+which have sensitive data and then those
+tags can then be used to initiate data
+protection policies that can always be
+mapped to within a data lake
+customers can also visualize these
+findings in more interactive formats
+like dashboards using amazon quick sites
+or cabana etc
+and finally they can trigger more robust
+operations and actions to orchestrate a
+full data loss prevention and or data
+governance policy by using the inbuilt
+interactions or integrations with aws
+step functions or aws lambda
+let's share some of these examples
+the first one is a pretty
+straightforward way to use the findings
+from macy through the amazon event
+bridge to then create custom rules that
+will invoke a lambda to initiate
+third-party ticketing as well as sending
+those findings for alerting and
+notification into a ticketing tool such
+as jira
+these findings can then be used by the
+security teams to get alerted on any
+time a bucket policy is being changed
+or if the bucket contains sensitive
+information and has been tagged as such
+then those notifications the combination
+of policy as well as sensitive data
+findings can be used to take further
+downstream operations
+similar to jira macy can also be used
+for alerting into an ongoing slack
+channel
+the findings from macy can be sent to
+eventbridge from where an sms topic can
+alert uh the slack channel chatbot and
+can make sure that the the security
+teams or the data governance teams are
+fully aware of all the changes that are
+being made to the bucket policies and or
+the findings that are being reported by
+the service
+as i mentioned earlier in addition to
+these findings being reported in the
+console they're also reported in a json
+line report
+mesi provides the option to configure a
+detailed result repository which is also
+a recommended option where in an s3
+configured bucket mesi will store all
+the detailed results encrypted using
+customer managed keys with kms
+these results include a full log or an
+audit log for long term retention as
+well as audit purposes as to what all
+jobs were initiated and what objects
+were being scanned which objects were
+not scanned or skipped and then what
+were the findings that were reported in
+those objects
+not only are the findings reported but
+also the closest location of where the
+sensitive data was reported
+customers can then use this json line
+report in a detailed log and then using
+the combination of athena or an ongoing
+glue set they can actually run
+custom queries on on that data and then
+build their own custom visualizations in
+the form of dashboards or graphs or
+charts
+above here you'll see a link of a github
+repo where amazon may see results
+analytics can be used to then
+get access to some of the custom queries
+that are available where customers can
+use the json line report via the athena
+query set and then build their own
+custom dashboards and reporting
+moving on to some of the other
+more robust actions that can be taken
+in the case of triggering alerts and
+notifications one of the criteria as i
+mentioned earlier could be where
+customers can tag either the buckets and
+or the objects where the sensitive data
+is detected or found
+let's assume in this scenario when an s3
+bucket is scanned by macy and or is
+being continuously monitored by macy the
+findings are then used to trigger
+tagging function which is native to s3
+functionality
+customers can then use that same
+functionality to now get alerted anytime
+there are policy changes being made on
+the bucket so for instance if this s3
+bucket included sensitive data and the
+objects were tagged such
+the policy findings where any time the
+bucket is changed from encryption
+policies or access and control policies
+or being shared internally or externally
+those events can then be used to trigger
+a custom function
+via event bridge or a rule that
+initiates a step function that evaluates
+the tags on those buckets or objects
+using that step function a lambda can be
+invoked to review the bucket tag
+and in this case there are two tags that
+are being evaluated
+one whether or not the bucket has
+already been scanned by macy in this
+case it's scan is equal to true and if
+there were any sensitive data findings
+not reported versus reported it can be
+tagged as pii or personal
+identifiable information is equal to
+true or false
+if the tags are scan is equal to true
+and pi is equal to false
+in that condition macy had already
+scanned the bucket and no sensitive data
+findings were reported
+then simply another lambda can be
+invoked to notify and alert the security
+teams
+in a similar scenario
+when that s3 bucket did have sensitive
+data and hence the the tagging was
+appropriately applied to scan is equal
+to true and pii is equal to true
+more downstream automated operations can
+be performed so for example if that
+bucket was now shared externally or
+being made public
+a policy finding can trigger a custom
+rule that will then invoke a step
+function workflow
+using that step function workflow we can
+review the bucket tags on the macy
+bucket
+and inspect those tags
+in this case it will report scan is
+equal to true and pii is equal to true
+now this could be a security incident if
+a bucket with sensitive information is
+now being shared externally or shared
+publicly
+and hence you can invoke lambda in this
+case to revoke that share and or revert
+that action and then also notify and
+alert the respective stakeholders
+so this is an example of how the
+findings from the service can now be
+leveraged and the combination of those
+findings between policy as well as
+sensitive data findings can be joined
+together to take much more robust
+downstream security operations
+a similar example is when a bucket has
+been made public and has been scanned by
+macy earlier and has sensitive data now
+that can be used to trigger
+the policy finding for making that
+bucket public can be used to trigger a
+custom rule via event bridge that then
+initiates a step function workflow to
+now review the bucket tags and if the
+scan is true and pii is true to revoke
+the public bucket and then send a
+notification alert to the security teams
+now let's see a scenario in the case
+where the bucket has not been scanned
+in this case a bucket is being shared
+externally and macy detects that change
+and then triggers a policy finding
+the policy finding is then sent to
+eventbridge which initiates a custom
+rule using the step function
+when the bucket tags are reviewed on
+this bucket
+there are two tags which is scan is
+equal to false and there is no tag for
+sensitive information
+since this bucket has never been scanned
+with macy using the macy management api
+we can also now automate and create or
+initiate a macy scan job retrieve that
+job id
+and then wait for that job to complete
+or finish
+once that job reports the findings for
+sensitive data
+in the form of personal financial
+credential or custom identifiers
+accordingly the bucket can then be
+tagged based upon those findings
+in this case the bucket is now tagged
+but scan is equal to true and pii is
+equal to true using that information
+now
+the appropriate action to revoke the
+share and then send a notification alert
+can be initiated as well
+so you can see how these findings can be
+used to trigger not only alerting and
+notification or reporting functionality
+but also taking downstream automation
+actions to ensure that data protection
+and or the leakage of sensitive data can
+be prevented inadvertently
+to dive more deeper into macy and
+leverage some of these examples hands-on
+we also recommend customers to use our
+hands-on workshop that is available in
+the workshop catalog online
+going to this url uh at data dash
+discovery dash and
+classification.workshop.aws
+customers can leverage a hands-on
+workshop uh using macy
+this is a simple event engine based
+workshop that can also walk through how
+to leverage these functions of macy and
+then orchestrate some of this automation
+some of the other resources that i
+recommend customers to take a look at
+are our security blogs
+we have several different security blogs
+covering basic use cases of ticketing
+and alerting all the way to more robust
+scenarios of using macy with fully
+integrated automated data pipelines and
+then discovering sensitive data amongst
+those
+this is just a subset of the security uh
+blog resources with tag amazon macy that
+customers can go and reference as well
+with that i recommend customers to go
+ahead and start using macy
+using the default functionality to at
+least start assessing the security
+posture and then continuously monitoring
+their bucket inventory for any changes
+and then from there on leverage some of
+the best practices to define the scope
+of the various different jobs
+that they can construct using the
+options available in macy to either
+select these bucket targets
+where they don't have visibility or by
+defining automated policies of scanning
+those buckets and then identifying
+sensitive information
+mason will report the findings but the
+most important element is to construct
+the downstream automation on ensuring
+that automated response and remediation
+can be taken
+for more information on this please
+visit the mesi product page as well as
+the documentation
+if you have any questions feel free to
+reach out and we'll be happy to address
+those as well
+with that thanks a lot for joining us
+today
+[Music]

@@ -1,0 +1,518 @@
+Observe the graph on the screen.  If you
+are active in crypto, this is
+probably the most
+important chart you will see today.
+What you are seeing is not
+just a market crash.  This is a
+reaction from investors to the announcement
+by Entropique last February, which
+presented a tool capable of modernizing
+Cobol.  This programming language
+comes from 60 years ago, still powers
+almost all
+global banking transactions, and IBM has
+historically been one of the
+highest-paid guardians of it.  This announcement was enough
+to send the stock plummeting by more than 13%
+in a single session, its worst performance
+since October 2020. Here you can
+see the overall impact of the advance
+of Agent I on the shares of
+software companies.  The MSCI World
+Software and Services Index has lost nearly
+20% since the beginning of the year.
+So why am I talking to you
+about cloud code, IBM, and AI agents on the
+big Bitcoin tank?  Well, because
+AI is producing on big tech the
+exact effect we expected from Alcoins on
+global finance:
+creative destruction.  In both cases, a
+disruptive technology emerges, challenges
+established rents, and promises to
+redistribute value.  Except that, well, when it comes to
+crypto,
+it's the opposite.  the SNP500 Financials
+Index, which is a sub-index of the SNP 500,
+grouping only companies in the
+American financial sector, and at a
+historic high.  But at the same time,
+the Total 3 crypto index, which excludes
+Bitcoin, Ethereum and Stable Coins,
+is trading at relatively
+low levels.  Traditional finance has not
+been destroyed by crypto.  She helps herself to it with her whole
+hand.  In other words, the
+disruption did take place, but it did
+not benefit the insurgents.  It was
+absorbed by Wall Street.  But then, let's start again
+.  Initially, money was
+a raw material.  Gold,
+silver, something tangible, something
+final.  Then we built a first
+layer on top, a first layer, the
+paper meant to represent the underlying
+physical structure.  A more practical,
+more portable abstraction, but already less
+real.  Then, technology
+led us to create a second layer, a
+new layer through digitization.
+Today, the money you have in
+your Société Générale account is
+a digital representation of this
+paper, which is becoming ever more fluid and
+practical.  In other words, a form of
+tokenization even before blockchain.
+What crypto is doing today with
+tokenization and RWA is
+simply adding another layer,
+a third layer.  We are moving from a
+physical currency to a
+paper representation, then to a
+digital banking representation and now to a
+programmable onchain representation.
+In this video, I specifically mentioned
+the idea of ​​value capture,
+saying that although not all
+crypto projects are useless, the
+final value they bring would end up being
+captured not by token holders but by
+institutional investors.  all the most
+traditional ones will implement
+and use these new standards.
+We have begun to see
+the opposite movement to the one
+that led to crypto emerge recently.
+Projects initially built around
+a strong, almost ideological desire for decentralization
+are
+gradually returning to
+much more pronounced forms of centralization.  Maker
+is the most emblematic example.
+The project behind the first
+decentralized stablecoin, the dai, made the
+choice during its rebranding as Sky.
+to integrate a freeze function on its new stablecoin
+USDS, the same
+logic as that found on
+centralized stablecoins like USDC
+or USDT.  In practical terms, Skype can
+now block your USDS.  So, we
+can stomp our feet, but it's a
+purely pragmatic decision.  Yes,
+it's a concession to the spirit of
+crypto in a way, but at the same
+time, how do you expect to
+attract institutional investors who are just
+waiting for means of
+control?  In the same vein, we have
+witnessed in recent months a
+real debacle on the part of
+AV's governance.  A protocol which
+nevertheless represented one of the best and
+most credible examples of an
+operational DAO, and whose governance
+cracked under the weight of an
+assumed return of power to the hands of its
+founder.  Decentralization is becoming
+a burden for the project.  And there is also
+the example of cross-protocol.  And here I'm going to
+stop for a moment because this is
+a symptomatic case which, in
+itself, is indicative of the current cycle.
+We don't really care about the protocol's activity,
+but remember that it's a
+bridge solution that allows you to send
+cryptocurrencies from blockchain A to
+blockchain B. We're talking about a solution
+that has generated over $35 billion
+in volume, that has helped
+create major technical standards
+for the industry, and is supported by large
+venture capitalists like Paradigm and
+Coinbase Ventures.  So this isn't some half-baked
+initiative.  We're
+talking about something at least somewhat
+serious.  And yet a few
+weeks ago, the team proposed
+dissolving the DAO and transforming the
+token into a classic share of an
+American company.  A Scorp, to be precise.
+which is roughly the same as a
+SAS in France on the grounds that a
+traditional entity would facilitate
+institutional partnerships and
+revenue agreements.  In short, after
+years of development, tens of
+millions of V, a functional
+and used protocol, the DAO plus token structure
+has become a burden for business.
+And this is far from being an isolated case.
+Various analyses show that a
+growing number of projects are considering or
+have already begun a shift from the
+token model to more classic share structures
+.  For what ?  Because in the
+holidays, the token never really
+solved the fundamental problem, that of
+capturing value.  And the most
+surprising thing about all this is that this
+announcement did not cause the token to collapse
+.  No, no, it's quite the opposite.
+The token jumped by about 80% with
+trading volume climbing to about 3.5 times
+its market value.  The
+market applauded the end of the token because the
+market follows values ​​and not
+ideology.  What the market has
+actually priced in here is not
+just a change in structure,
+it is a change in the nature of
+economic law.  In most cases, a token
+offers no rights to
+cash flow, no legal recourse, no
+priority in case of liquidation, nothing at
+all.  It is a floating asset
+dependent on social consensus and
+uncertain use.  An action is part of
+a hierarchy of
+legal capital, economic law,
+legal protection, and so on.  In other words,
+the market has arbitrated between a
+speculative asset without legal rights and an
+imperfect asset, certainly, but one anchored in
+reality.  And that's a fundamental trend
+that's emerging.  Where many expect
+more and more projects to
+eventually behave like
+classic software companies.  Some might
+say, "But US regulations just
+stated that most
+cryptocurrencies aren't
+financial instruments, securities.
+So they can distribute income
+freely, right?" Well, actually, no. A
+token may not be a
+financial instrument in itself, but as soon as it
+starts distributing returns,
+capturing cash flow, or
+creating an expectation of profit, it
+immediately falls back under the umbrella of
+traditional financial markets. In other words, it's
+not just the nature of the token that
+determines its regulation, but also, and
+above all, its use. And that's precisely where
+the difference lies. By
+being classified as
+digital commodities, these cryptocurrencies lose their
+rebellious status and become
+standardized assets. A token remains a
+digital object dependent on
+consensus. A share is a contract
+governed by the laws of a
+country's jurisdiction. What this regulation
+brings isn't a victory for
+decentralization or anything like that;
+it's standardization. The market is
+removing
+superfluous layers that don't actually serve any purpose.  to
+nothing about the innovations brought about by
+blockchain technology. If you were
+attached to the notion of decentralization,
+then don't hold it against this project too much. Once again
+, the market follows
+value, not ideology. So, we'll talk about this again
+soon on the channel
+because there's a lot to say about
+decentralization. But know that
+history shows us that every
+attempt at decentralization carries within
+it the seeds of future
+recentralization. This isn't unique to
+crypto. We see it absolutely
+everywhere. And I will, of course, talk about the
+very specific case of Bitcoin in
+this next video. But beyond
+that, this recentralization isn't
+just a concession to
+institutions; it's also a
+direct response to the users themselves.
+Because in reality, contrary
+to the initial narrative of crypto, the
+majority of people don't place
+fundamental importance on
+decentralization. Today, it's estimated
+that 41.2% of Bitcoin holders
+keep their funds on
+centralized exchanges, and this despite FTX, despite the
+hacks,  Despite everything we know,
+the "not your keys, not your
+coin" principle doesn't resonate with as many people as one might think
+. In other words, the model of intermediary services, particularly
+through banks, remains
+deeply entrenched.
+And this isn't a bad thing, because for
+the average user, self-custody isn't
+perceived as freedom but
+as a responsibility, even a
+constraint, because it's a risk.
+Losing your key, making a mistake, incorrectly signing
+a transaction—in these cases, there's no
+customer service. So, even in
+systems designed to be
+trustless and disintermediated,
+users spontaneously recreate
+forms of intermediation and seek
+trustworthy actors. They don't want to
+be their own bank, and since
+real demand doesn't favor
+decentralization, it becomes
+perfectly logical that the supply will eventually
+adapt as well. In short, all this
+to say that we must once again
+differentiate between what we would like and
+the reality of the world we
+live in. We must demonstrate...
+Pragmatism. The arrival of
+traditional finance in the ecosystem
+inevitably implies a desire for
+partnership, and therefore a need for
+contracts, clear legal counterparties, and
+legal responsibilities. These are things
+that a DAO
+simply cannot provide as is,
+let alone with the efficiency and
+fluidity of a traditional company.
+So, having said that,
+what have we gained? Who has to hope
+that crypto will join
+traditional finance at least as much
+as traditional finance seeks to
+join crypto? Well, failing to
+capture the value promised by the
+crypto revolution, I think that
+value will be reflected in a
+revolution in how we
+use financial products.
+This is exactly what Larry
+Fink, the CEO of BlackRock, confirms, explaining
+that tomorrow investing will be as simple
+as paying with your phone.
+Look at what's happening with
+tokenization. Since the beginning
+of the year alone, the value of
+tokenized assets has increased by 66%,
+exceeding...  $23 billion, and
+we're only in the first quarter.
+More importantly, the tokenized stock sub-market
+has grown by 2900% year-over-
+year. Sure, it's easier to
+go from 0 to 1 billion than from 1
+billion to 100 billion. So, naturally,
+that creates mind-blowing multiples. But
+the hype is definitely there. You also have
+Franklin Templeton telling you that
+basically, if you're not tokenizing by 2026,
+what are you going to do? Robin Hood,
+Kraken, even mainstream platforms
+are starting to offer
+tokenized stocks. Even the NICE, the
+world's largest stock exchange, is developing a platform that
+allows 24/7 trading of
+tokenized stocks and ETFs with
+instant unchain settlement. And
+now, the SNP 500 is going
+directly unchain with a license
+provided by SNP Dow Jones Indices. And
+you literally get news like this
+every other day. The
+latest at the time of writing...  Of these
+lines, it's the World Gold Council,
+the player that industrialized gold through
+ETFs, that is now working on a
+standardized version of
+gold tokenization. And that's just the first
+building block of the revolution in uses
+I'm talking about. We're now seeing
+integrations with lending
+and borrowing solutions that allow these
+tokenized shares to be used as collateral to
+obtain a line of credit. When you
+combine the rising demand for
+this asset class with the
+pronouncements of industry giants
+telling us that the age of
+speculation is behind us, and if we allow ourselves
+a touch of irony, we
+might think that it's
+stocks that could benefit from a
+potential new cycle, and not the trendy
+new cryptocurrencies of the moment
+. And at the same time, it's
+understandable. Why persist in
+finding the anomaly that would make a fuss in
+a haystack of a dying Alcoin when
+you can use the expressiveness of
+blockchain to multiply tenfold?  The efficiency of
+traditional capital has been rising
+for a century. Then, for a bit more
+volatility, well, you have Bitcoin.
+Look at what happened recently
+on Hyper Liquid, an on-chain platform
+initially designed for trading
+cryptocurrencies. When activity records
+exploded, it wasn't thanks to cryptocurrencies
+but to oil.
+In a context of geopolitical tension
+and high volatility in the
+energy markets,
+oil contracts took over, pushing
+the platform's open interest beyond
+$1.4 billion. But there's
+another dimension as well. Now,
+this is pure speculation on
+my part and would be difficult to
+measure. But it's the
+psychological aspect. During
+previous cycles, in 2017 or 2021, crypto
+was a gray area, legal certainly,
+but still marginal, complex, almost
+transgressive. And this type
+of environment naturally attracts
+early adopters. It's no coincidence.
+By individuals who tend to
+value what is  Rare, difficult
+to access, or reserved for a minority.
+Investing in crypto back then was
+also a way of sending a signal:
+being ahead of the curve, understanding something
+others hadn't
+yet grasped. But as crypto becomes more mainstream,
+with altcoin ETFs launching
+every few months, it inevitably
+loses that
+transgressive edge, and by losing that
+edge, it also loses some of
+its appeal. Now
+, I'm not saying there will never again be a high-
+performing crypto, one with solid
+fundamentals, or that any project will be
+decentralized or otherwise. Some continue
+to fight and work for that, and
+that's great. The most motivated will
+always have access to the most powerful tools, just as the
+internet does today. But what I'm
+talking about here is the masses. The 90 or 95
+%, not the anarchist geeks who were doing
+very well before
+Wall Street and who will
+probably do very well after.
+Personally, what I envision is a
+world where crypto infrastructures and
+certain protocols are adopted and
+used integrated by
+traditional finance, then stripped of all
+their complexity by being integrated by
+neobanks or savings solutions
+via ultra-streamlined applications,
+paving the way for new
+financial uses that were previously
+inaccessible to the average person. That's roughly what we
+gain after
+these years of crypto frenzy:
+an update to how we
+understand and use
+financial products. So yes, the
+permissionless aspect we've known until
+now will necessarily be abandoned to
+meet compliance requirements. We're
+already seeing this with standards like
+RC 3643, designed to integrate
+compliance constraints directly
+into tokens through
+whitelisting and
+identity verification mechanisms. This is exactly the logic
+used in
+institutional tokenization. For example, funds
+like Build BlackRock are reserved for
+qualified investors. In
+practice, if you're not authorized,
+you can neither access the asset nor
+Transferring it. So yes,
+institutions use public rails
+without permission from the ceium, but
+recreate gated communities on top of them.
+They benefit from the network's liquidity
+without suffering its anarchy.
+As for the dream of absolute pseudonymity and
+total resistance to censorship, yes,
+it's clearly likely to be
+forgotten. But is it really that
+serious? So, before you criticize me in the
+comments, what I
+want to say is, in this specific case,
+what is your frame of reference? If you
+take Bitcoin as a point of
+comparison, then yes, we'll be very
+far from it, and this world will seem
+completely closed off to you. But is it
+really relevant to
+compare a currency, a decentralized store of
+value, in this
+purely financial use case? For me, it doesn't
+really make sense. Let's compare apples to apples,
+and compared to a
+traditional bank, we might
+gain in transparency.
+But above all, it's about far
+superior capabilities and financial uses. What
+was difficult to access in
+banking and financial services
+could become much more
+accessible to a much larger
+number of people.  People. And when you think about it,
+it's simply the logical continuation of
+financial innovation. Before the arrival
+of mainstream brokers and then
+neobanks,
+countless hurdles had to be overcome for the average
+person to gain exposure to the
+stock market. It was slow, expensive, and intimidating.
+Today, any 18-
+year-old can open an account with a
+neobank and buy SNP 500 in 30
+seconds. I see this as a simple continuation
+of this trend, where
+orders can be placed more easily, where
+preliminaries can be obtained, where
+new sources of
+returns and access to new
+markets will be available without any friction and with
+negligible amounts. In short,
+more accessible and, above all, much more
+comprehensive finance. All this without anyone
+ever mentioning crypto, blockchain,
+private keys, or 24 words that belong on
+a bookshelf. While crypto
+failed to replace Wall Street with a
+token-holder utopia, it has
+nevertheless  It even forced the traditional world to
+become more efficient, faster, and
+more technologically open—which,
+let's face it, is no small feat.
+So, we've gained a major upgrade
+to our financial infrastructure,
+and that's about it. But that's already quite
+good. And if your primary desire lies
+in censorship resistance,
+decentralization, and access to a
+safety net, well, you have Bitcoin. And
+speaking of Bitcoin, and
+especially its current price drop as
+I write these lines, many
+see the shadow of
+market manipulation. Those who appropriate
+crypto innovation are supposedly manipulating
+Bitcoin's price with their left hand. Well, that's what
+we're looking to investigate in
+this video.

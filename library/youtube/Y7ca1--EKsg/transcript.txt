@@ -1,0 +1,394 @@
+hey everybody it's derek martin from
+codeopinion.com
+there's a blog post titled don't let the
+internet dupe you event sourcing is hard
+it's been getting a lot of attention but
+unfortunately it conflates both event
+sourcing and event driven architecture
+event sourcing is about using events as
+state a venture of an architecture is
+about using events to communicate with
+other service boundaries i'm going to go
+over this blog post to hopefully clarify
+the differences between the two this
+video is brought to you by eventstoredb
+the stream database built from the
+ground up for event sourcing cqrs and
+event driven micro services for more on
+event store db check out the link in the
+description
+so this is the blog post in question
+i'll have a link in the description but
+what i'm going to do is i'm going to
+highlight some key points so that i can
+add some clarity to what they're
+actually talking about because in some
+cases as the title says they're talking
+about event sourcing here but it's
+really not event sourcing that they're
+talking about in a large portion of this
+so let's get started so this first part
+is saying how the core selling point
+event sourcing is largely an
+anti-pattern why they're saying that is
+they're saying that this particular
+diagram here which is often shown when
+talking about event sourcing but not in
+my videos because you will not see this
+in mine is showing all these different
+services which are publishing and
+consuming events
+from an event log or an event stream
+and where i suspect this kind of diagram
+is often shown is when referring to
+using event sourcing
+when
+using something like apache kafka
+and the reason i say that is because
+lower down here they make mention of
+you wouldn't let two separate services
+reach directly into each other's data
+storage when not event sourcing
+now this is the thing is that again
+event sourcing is about state and how
+you record state in a venture of an
+architecture and using something like an
+event log is how you want to communicate
+between services so let's clarify what
+event sourcing is and why i'm saying it
+relates to how you record state
+is let's say we're recording current
+state how most people typically do
+in a relational database or a document
+store we have this product where we have
+a sku say some quantity on hand when we
+last received and when we last shipped
+it so this is what represents current
+state
+with event sourcing however we're
+recording a series of events for a
+particular unique aggregate
+of all the things that have occurred
+that can get us to current state so the
+events themselves are what we're
+recording as state so for example if we
+have an event that is we receive product
+of quantity 10 on a particular date we
+receive more product of another quantity
+so now we technically our current state
+is 15
+and maybe we ship some product so now
+we're down to nine and then we did an
+inventory adjustment where we added 50
+more because we magically found some in
+the warehouse so now we're at 59. you'll
+have each unique aggregate have its own
+event stream is what it's often called
+so for example for our product sku
+abc123
+it has an event stream which are all the
+events that occurred for it and then a
+separate product entirely of yyz897
+has its own event stream
+if you want more on what event sourcing
+actually is and some of the patterns
+around it check out my playlist on event
+sourcing but the key here is event
+sourcing is about how you record state
+now an adventure of an architecture
+you're going to be using a message
+broker or an example of this blog post
+an event log to communicate with other
+boundaries
+so that means that as it was applying
+you wouldn't have another service go and
+reach to another
+systems database and that's because each
+service decides how it records state
+that mean that we could have one
+boundary here that is using event
+sourcing and that is using an event
+store but maybe another boundary is just
+using a relational database maybe
+another service boundary is using a
+document db of some sort
+how they persist and how they maintain
+state is completely up to them
+you aren't going directly to their
+database what you're using event log for
+or
+a message broker is to then publish
+events but you can be publishing events
+and using event driven architecture
+without doing event sourcing
+this middle
+service boundary here if it's using a
+relational database it can still publish
+and consume events it doesn't need to be
+doing event sourcing so again event
+driven architecture is about using
+events on how you communicate with other
+service boundaries so jumping back to
+this blog post
+this is exactly describing what i'm
+talking about and that's why they're
+confused is that it says under normal
+development flows you operate within the
+safe cozy little walls that make up your
+service you're free to make choices
+about implementation and storage and
+then when you're ready deal with how
+those things get exposed to the outside
+world exactly what i'm referring to
+because you're conflating event sourcing
+and event driven architecture together
+that's why they're thinking this but
+again if you've if they're completely
+separate which they are you are in the
+zone of being defined within your own
+service boundary about how you record
+state and then you decide what events
+you want to publish to that event log or
+to that message broker so if we go back
+to this diagram now you can see where it
+goes wrong where it's using persistence
+of an event stream as also a way of
+communicating with other services those
+are two separate orthogonal concerns so
+the second point in this post is that
+the up start costs are large so it's
+kind of mentioning that you're probably
+going to build the core components from
+scratch frameworks in this area tend to
+be heavyweight overly prescriptive and
+inflexible in terms of tech stack now
+again i don't know if they're conflating
+what side of the equation they're
+talking about are they talking about
+event sourcing or event driven
+architecture if we're talking about
+event driven architecture you will use a
+library don't go down the road of
+building your own so don't go down this
+road of building your own why
+because once you get into messaging
+there's a lot of messaging patterns that
+you'll realize you'll need in messaging
+libraries out of the box apply those
+patterns for you
+so don't use the sdk directly use a
+messaging library because it's going to
+give you things like the outbox pattern
+process managers
+default tolerance for retries and dead
+letter queues use a messaging library
+now on the event sourcing side of things
+how you want to store your events to the
+event store that you're using
+isn't overly complicated and you don't
+need to build a library or framework
+around this it's simply building a
+repository like i've showed in other of
+my videos to persist your events use
+optimistic concurrency i even showed how
+to do snapshots and creating a separate
+stream for snapshots
+so you don't really need a framework and
+you don't need a library for how you're
+going to do event sourcing and how
+you're persisting your events so the
+second part of this article is that
+event sourcing needs the ui side to play
+along specifically stating how you want
+to have a task-based ui and i've done
+videos about this and the reason why but
+this applies to both event sourcing and
+how you're recording state and event
+driven architecture of how you're
+publishing events because
+there's different types of events there
+are events that you can be using for
+workflow or long-running process
+business processes that you're having
+other services be a part of that
+workflow and those are going to be
+driven by business events or business
+concepts things are actually happening
+but there's also this other side of it
+if you're creating crud based uis that
+you're going to be publishing crud type
+events so things like a product was
+created or kind of property based where
+product name was changed or updated
+these are generally used for kind of
+data propagation between other services
+so services have kind of a local cache
+so i've done again videos about this
+about the differences between events but
+the thing is is yes
+a task-based ui will end up deriving
+more behavioral type events than a crud
+based ui will but this isn't necessarily
+about event sourcing or event driven
+architecture it ultimately leads to how
+you're going to create events in either
+scenario so the next part of this is
+potentially building two entirely
+different systems along each other
+talking about that you don't even source
+everywhere and that figuring out where
+and when to draw those architectural
+boundaries through your system is quite
+tough in practice
+so when this it's kind of not an either
+or but again you've got to distinguish
+whether we're talking about state or
+communication with other services
+each boundary you can decide how you
+want to record state as i mentioned
+before
+oftentimes i find that more in a
+supporting role of just a boundary
+that's more in a supporting role for
+kind of referential data that you need
+maybe crud fits well
+and you don't need to event source you
+don't need to record state that way
+in more of the core of your domain maybe
+you do want to record state that way but
+again we're talking about state we're
+not talking about how you're
+communicating with other boundaries via
+events
+so
+if we're talking about you have crud
+you're likely if you want to communicate
+those changes with other boundaries
+you're likely going to create cruddy
+events like i was talking about but
+maybe you're doing a task driven ui but
+you're not event sourcing so you're
+still communicating and publishing
+events that are going to be more
+specific to the behaviors of things that
+have actually happened
+and maybe that's appropriate in those
+places if you're using event sourcing
+and you're creating a task-based ui
+that's how you're recording those but
+that doesn't mean necessarily that
+you're publishing those same type of
+events i've posted another video about
+this before of the difference between
+domain events and integration events and
+where you should use integration events
+and maybe where it's applicable maybe
+you can publish domain events that you
+are event sourcing that you are storing
+as state but a lot of that comes down to
+how stable those business concepts are
+of those events so yes defining service
+boundaries is really difficult i often
+say that it's one of the most important
+things to do yet it's really hard to get
+quote unquote somewhat right
+but again differentiate here between how
+we record state and how we communicate
+with events to other service boundaries
+all right so next up we have past system
+states from the audit log will often
+have fidelity problems and it kind of
+mentions oh so these events are no
+longer relevant at all situation
+now this is an interesting one because
+if you're talking about event sourcing
+then that particular concern is confined
+within that service boundary that's
+doing the event sourcing
+you're going to have separate concerns
+of if you want a version when you're
+talking about a venture of an
+architecture and publishing that event
+that other
+boundaries are consuming so they're
+completely different concerns and you
+can version them completely differently
+now having said that about the no longer
+relevant part under both circumstances
+of event sourcing and event driven
+architecture
+is how are you defining these events i
+most often see this when developers are
+defining what the events are
+and they're based on more technical
+concerns rather than actual business
+concepts or behaviors that are actually
+happening in the system as i mentioned
+if you're basing these off actual
+business concepts and stable business
+concepts they're not going to change
+that often all right so lastly we have
+you'll deal with materialization lag and
+this is talking specifically about event
+sourcing when you're creating a
+projection which is a read model from
+your event stream
+and you're using that read model in your
+ui so there can be kind of a lag between
+what your event stream is with your
+point of truth and what your read model
+is what you're showing in your ui now i
+mentioned this in other videos is that
+it's a fair concern but it's how you're
+actually dealing with it and most often
+times people have this issue not all the
+time but most of the time when they're
+developing crud based uis
+and the user has the expectation because
+of the workflow that they're saving
+state of some sort and that you're
+immediately going to read your write and
+it's going to be up to date and if you
+kind of do that and it's not users are
+throwing up their hands saying well it
+didn't save well that's just because
+you're doing it in your you're
+developing your application away that
+you're expecting to be able to read your
+right when there is lag there so a lot
+of this again goes back to
+user expectations and how you're making
+that expectation and how you're actually
+creating your ui in a task-based way so
+if you move out from crud and you move
+more twice towards task space
+and don't expect to read your right
+things change a lot here this isn't
+unique to event sourcing though you're
+under the same type of situation if
+you're using a read replica that has a
+lag meaning you won't be able to read
+from your right this blog post had a lot
+of valid points and concerns
+the issue is is that it's directing them
+specifically at event sourcing when it's
+really conflating event sourcing and
+event driven architecture hopefully i
+illustrated that event sourcing is about
+using events for state a venture of an
+architecture is using events to
+communicate with other service
+boundaries that's not to say that event
+driven architecture and event sourcing
+don't have their difficulties they do
+but as mentioned in this post
+don't conflate the two because you're
+talking about two different concepts
+that are completely orthogonal from each
+other if you enjoyed this video please
+give it a thumbs up if you have any
+thoughts or questions make sure to leave
+a comment and please subscribe for more
+videos on software architecture and
+design thanks
+you

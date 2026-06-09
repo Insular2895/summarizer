@@ -1,0 +1,216 @@
+[Music]
+Hi, I'm Adam Danis. Welcome to MBA Asks
+the Expert, a series where we discuss a
+timely and important issue with a
+mortgage industry leader. Today I'm here
+with Lender Price founder and CEO Dara
+Almi for part two of our ongoing series
+with Lender Price. In part one, we
+discussed modern pricing engines and how
+they are shaping the current market
+landscape. Today, it's all about AI,
+artificial intelligence, and how it's
+transforming mortgage pricing. Dir, it's
+so great to talk to you again today.
+Welcome.
+Thank you. Thank you for having me. It's
+great to be part of the series.
+Of course. Now, let's dive in. What are
+the key advancements that distinguish AI
+powered product and pricing engines or
+PPEs from traditional pricing technology
+in the mortgage industry? and how do
+these innovations reshape the experience
+for both lenders and borrowers?
+Yeah, it's a good question. Um, you
+know, I think that AI is more than a
+buzzword this year compared to last
+year. I think that you're seeing a lot
+of companies embrace AI and figure out
+how to how how they can incorporate AI
+at every uh part of their company. Um
+here with us at lenderpric when it comes
+to a pricing engine we're really looking
+at real time and real time AIdriven uh
+price optimization. So we're figuring
+out how to embrace AI uh when it comes
+from comes from a p pricing optimization
+perspective. We're looking at using AI
+to provide personalized borrower
+experiences. So, we've got our AY
+product and uh that provides loan
+officers the ability to provide custom
+um uh you know you know custom loan
+scenarios that they that they weren't um
+that they didn't know before. So it
+provides uh options like and this is
+really important in today's world where
+nonQM is somewhat dominating the space
+because refinances have been really low
+uh you know uh with you know with rates
+being high and and and and now you're
+seeing loan officers really going
+outside of the box and trying to
+understand nonQM products better looking
+at those self-employed borrowers and AI
+can really help them in providing them
+these loan options. that they weren't
+that they didn't know before. Um, and it
+and AI is also helping them is helping
+educate them. So, with with our AI with
+our AI AI tool, uh, we're able to give
+them answers, underwriting questions,
+uh, you know, normal questions that that
+they would ask an underwriter in regards
+to nonqu products. You know, Ayah is
+able to, you know, answer those
+questions. And for the cap markets
+folks, we're able to use AI to
+streamline and provide them with
+intuitive workflows that you know
+provides better efficiencies and drives
+you know these loans faster to closing.
+Yeah, I think you know the tech and
+innovation going on right now through
+the entire origination process of course
+is incredible. So how can lenders
+deliver more personalized mortgage
+solutions and what impact does this
+level of customization have on borrower
+satisfaction and lender competitiveness?
+Yeah. So I mean really just looking at
+AI drive AIdriven borrower profiling,
+right? Um
+and it's some of the things that I've
+already discussed and regards to dynamic
+scenario analysis. So really just
+looking at these different scenarios and
+figuring out, you know, what's the best
+product that not only can a loan officer
+match a borrower, but how can cap
+markets use this to drive ROI.
+So we're seeing a lot of use case that
+and the when it comes to positive user
+feedback. Um, you know, what we're
+seeing is that we're seeing our clients
+provide, you know, information back to
+us in in the surveys and they're saying
+that they're seeing greater efficiency,
+higher borrower satisfaction because of
+various products that AI is, you know,
+able to provide uh uh the loan officer
+um and to them and uh they're seeing a
+higher conversion rates as a you as a
+result of using AI. Those are some good
+insights there. As we both know, the
+mortgage industry is already highly
+regulated. So, how should we address
+regulatory and compliance concerns
+associated with AI adoption while
+ensuring that forward-thinking
+institutions that you've been talking
+about can leverage AI to their fullest
+potential?
+Yeah. So, it so you know this is a
+really interesting question because
+there's a huge debate about this, right?
+you know, when it comes to regulation
+and you're seeing the C, you know, CFPB
+providing their feedback in terms of
+being careful in terms of how you
+actually adopt AI. Um, back in, you
+know, there was actually an NBA series,
+and I'm not sure if you remember,
+there's an NBA series where you guys had
+various pricing engines showcase their
+product, and we were one of them.
+And uh uh our sales uh our head of sales
+Dustin Mlen was demoing our backend and
+how we use natural language processing
+and and you know and demoing uh you know
+uh rule writing and how it you know we
+could you know create a lot of
+efficiencies in rule writing by using
+NLP and I remember like one of the PPE
+vendors like they came you know it was
+you know it was our demo and then there
+you know they demoed right after us and
+they're like yeah we don't use NLP
+because because they knew that we used
+NLP. Now they're using the word NLP and
+machine learning and AI and um you know
+uh and it was interesting because back
+then when we had mentioned NLP nobody
+really had a problem with it but now
+they do because now they're looking at
+compliance. Um what we're doing is we're
+looking at flexible deployment options.
+So, we've created our AI tools as a
+plugin that can be plugged into those
+lenders that want to adopt it. So, if
+you don't want to adopt it, you don't
+have to. It's a complete plug-in. It's
+not part of our core infrastructure.
+Um, our tech stack from the very
+beginning was developed to embrace AI
+and machine learning. And as a software
+engineer and my co- you know my
+co-founders you know we've been you know
+you know we've uh kind of uh looked at
+this as being something that could
+potentially be used in the future but
+it's just amazing because it's happening
+at such a you know fast pace that
+everyone wants to embrace it. Um but
+going back to uh compliance um we also
+have a strong compliance framework. So
+like I said, we developed, you know, our
+tech stack was made for AI from the very
+beginning and having a strong compliance
+framework helps us when it comes to
+these larger institutions that want to,
+you know, implement it. Um, and there's
+this other uh thing where you've got
+some lenders that really don't care
+about comply. It's not that they don't
+care about compliance, but they want to
+they want to see immediate value as
+being an early adopter. So, they're
+willing to say, "Okay, well, we're going
+to take a portion of our company,
+certain users that's going to start
+dabbling with AI solutions, and we're
+going to be early adopters." I think
+those companies that do that are going
+to be much better off in the future
+because they're going to be ahead of the
+rest. But I would not be surprised if
+2025 2026 we see a lot of leniency when
+it comes to those lenders that were
+concerned embrace AI much more because
+it's happening. I mean you're seeing
+Meta doubling down on AI hiring a lot of
+open AI's uh engineers. you're seeing a
+lot of doubling down and a lot of a lot
+of investments in AI not just within our
+industry but outside the industry. So um
+I think a lot of the regulatory concerns
+although valid are are not going to be
+you know are you know uh there's going
+to be a lot of answers to those
+compliance concerns in the future. I
+think you make some excellent points
+there, Dir. And you know, I think the
+regulatory path forward, it may be
+bumpy, but it's clear that AI is here to
+stay and like you've really outlined
+this for us today. I've really enjoyed
+talking to you about AI and I look
+forward to our conversation in the near
+future for part three of our MBA Ask the
+Expert series with Lender Price. Thank
+you for joining us again today.
+Great. Thanks for having me.
+[Music]
+[Applause]
+[Music]

@@ -1,0 +1,685 @@
+[Music]
+Welcome to Brookfield Perspectives, a
+podcast that explores the Brookfield
+ecosystems role in creating sustainable
+wealth on a global scale.
+AI is everywhere, yet its exponential
+growth will require equally rapid
+development of digital infrastructure
+like data centers and renewable power.
+How can governments, hyperscalers, and
+private capital work together to meet
+these needs? To dig into the task at
+hand, we're joined by Cicander Rasheed,
+global head of AI infrastructure, and
+Peter Thal Larson, the global editor of
+Reuters Breaking Views. Here's their
+conversation.
+>> I'm Peter Thalen. I'm the global editor
+of Reuters Breaking Views.
+>> My name is Cander Rashid. I am the head
+of AI infrastructure for Brookfield. So
+Cander AI it's a massive topic but
+there's a lot to talk about but let's
+just zoom out a little bit to begin
+with. I mean you can barely move these
+days without someone confronting you
+with a new AI application or some sort
+of tool that they've developed or
+companies talking about what they're
+going to do with it. But I think what's
+interesting to me is this frenzy of
+activity is also a massive
+infrastructure challenge which is where
+you come in. So talk just just a little
+bit to begin with about how you think
+about the scale of that challenge and
+the activity.
+>> Yeah, Peter, the way I think about this
+is over the last 250 years, the world
+has seen six general purpose
+technologies including steam engines,
+electricity, semiconductor chips, and
+the internet. And there's two common
+themes across all of these general
+purpose technologies. The first is that
+they stimulated many industries, created
+millions of jobs and led to enormous
+economic productivity gains. The second
+common theme is they're all capital
+intensive. So if you take electricity
+for example in the early 20th century,
+first half of the 20th century,
+electricity buildout required half a
+trillion dollars. And you fast forward
+to late 90s, early 2000s, the internet
+boom required investment of almost $800
+billion dollars into the fiber backbone.
+$800 billion in those days.
+>> Those days. Exactly. And you fast
+forward to today, artificial
+intelligence is the next frontier. It is
+the next general purpose technology. And
+similar to the previous technologies, it
+will also require massive buildout. And
+our estimates suggest that buildout will
+be north of $7 trillion in the next 10
+years alone. So to your point, the
+capital needs will be immense. And our
+view is this is once in a generation
+investment opportunity for digital
+infrastructure and power investors.
+>> Yeah. Also a once in a generation
+investment challenge as well just
+mobilizing that kind of capital. Just
+break that down a little bit that 7
+trillion very roughly. How much of that
+is chips? How much of it is data centers
+and how does that work?
+>> Yeah. So it's total capex encompassing
+the entire AI value chain. Data centers
+would be two trillion of the 7 trillion.
+>> Behind the meter dedicated power is
+probably half a trillion or so. Chips
+for graphic processing units GPUs which
+are central to training as well as
+inference of AI will probably be around
+3.5 trillion. So half of the total capex
+is really chips
+>> and then the remaining trillion is other
+strategic agencies whether it's
+dedicated fiber buildout liquid cooling
+technologies and other capital
+partnerships with semiconductor chip
+manufacturer and design companies.
+Before we dig into this just tell me a
+bit about your background. How did you
+end up in this role and dealing with all
+this technology? Yeah, look I started my
+career after finishing a mathematics
+degree at the University of Wateroo.
+>> It's a technical school in Canada and in
+university I probably learned the
+mathematical foundations of what today
+is artificial intelligence. So that
+would include algebra, comnatorics,
+applied probability and calculus. And I
+joined Brookfield uh 13 years ago and
+over the last few years I've led many of
+our global digital infrastructure
+initiatives. And today I probably am
+doing focusing on two to three things.
+One is stitching together frameworks for
+sovereign governments whether in Europe
+or Canada or select Asian countries that
+entail the creation of local AI
+ecosystems and stitching together
+frameworks for hyperscalers and other
+technology firms that would allow them
+to hopefully reduce the cost of capital
+and help facilitate the buildout of the
+large scale infrastructure required for
+the adoption of artificial intelligence
+technology. So you talked about the
+hyperscalers which is sort of the the
+industry word for the big tech
+companies. Basically we hear a lot about
+what they're doing. I mean that's a big
+focus in terms of AI what they're doing
+and what they're investing in and and
+what they're spending. I mean I think is
+it Microsoft, Alphabet, Amazon and Meta
+will collectively spend $300 billion
+this year or something like that. But
+these are big very profitable companies
+and they're funding a lot of this out of
+their own cash flow or by borrowing. So
+where does a firm like Brookfield get
+involved in that? What role do you play
+in their investments?
+>> Simply put, I would say technology firms
+are building the brain whilst Brookfield
+is building the body and a brain cannot
+function without the body. The brain
+cannot communicate or articulate
+concepts or ideas without the body.
+Hyperscalers to your point, their
+capital spend on compute and data
+centers has doubled in the last 5 years.
+It's almost touching $400 billion today.
+>> So, it's gone up by 100 billion since I
+last looked at it, which is uh this is
+seems to be what's happening happening a
+lot at the moment.
+>> Exactly, Peter. And I think there's a
+couple of things that sometimes get lost
+in these big numbers. $400 billion a
+year, no doubt. That's an enormous
+figure. Loss of capital and often times
+technology firms who are not supposed to
+be capital intensive businesses get
+scrutinized for their capex needs. And
+where we come into the picture is we
+just want to build a backbone of AI
+infrastructure for these companies. You
+want to build the body which will allow
+them to put the brain to work. So I like
+the brain body analogy. So just just
+explain that a little bit more. What are
+the components of the body that BrookFed
+is involved in building? If you break
+down the AI value chain, Peter, it
+really is four things. Land, power, data
+centers, and compute or GPUs. We have
+been active across all of those
+categories. Today we are one of the
+largest hypers scale data center
+developers in the world predominantly in
+the Americas and Europe. We are also one
+of the largest private renewable power
+developers in the world. On the data
+center side our pipeline is north of 10
+gawatt. We have funded a few compute
+companies through structured
+instruments. And a couple of years ago,
+we teamed up with Intel to build the
+first advanced semiconductor chip
+manufacturing facility in Arizona, the
+US. So the value chain is simple. It's
+comprised of four components and we've
+been playing across all four of those
+components for the last several years if
+not decades.
+>> So just thinking about the financial
+challenge then because this is enormous,
+right? I mean I was looking at a recent
+Morgan Stanley report but they were
+talking about just data centers the
+requirement being $3 trillion over four
+years or something like that and their
+assumption was half of that would be
+funded by the big tech companies and
+basically the other half would have to
+come from firms like Brookfield and
+financial markets and so forth. So how
+do you assess those investments? There's
+an element here of you know you're
+trying to sort of figure out where the
+world is going and what the future looks
+like when you're trying to make a
+decision about a data center or or a
+power source or something like that.
+What's the analysis that underpins that?
+>> There's generally two key principles
+that we tend to follow whether we're
+investing in a power asset, a data
+center asset, a comput asset or a
+foundry for that matter. First is we
+want to make sure for any large scale
+development, there's an offtake
+agreement with a highly credible
+investment grade counterparty on the
+other side.
+>> And the second is in an absolute
+downside scenario, we get our money back
+and a minimum return on it. As long as
+we follow those two principles, the
+addressable market is large enough for
+us to continue to deploy large scale
+capital in the AI space and continue to
+be a dominant player.
+>> So then just coming back to those
+numbers trillion half dollars is not all
+going to come from Brookfield. So how do
+you sort of see this capital coming
+together?
+>> You're right, Brookfield alone will not
+be able to fund it all. This will
+require combination of public markets as
+well as private markets. There will be
+need for creation of secondary market
+vehicles for stabilized data centers. We
+recently did that here in Europe through
+our portfolio company data 4 where we
+carved out a portfolio of 250 megawws
+which was highly long-term contracted
+and sold it off to investors that have a
+different risk profile for those types
+of assets. In addition to that of course
+on the debt side we will need the
+support of or the sector for that matter
+we'll need the support of the US PP
+market CNBS market ABS market and as
+well as project finance market and then
+the last source of capital or support
+rather will come from sovereign
+governments there's a huge push towards
+ensuring security of data sovereignty of
+compute for national security purposes
+as well as economic productivity
+purposes and that will probably require
+the federal ederal and provincial or
+municipal governments to step in with
+some level of support. Just want to talk
+about energy because that comes up a lot
+and it seems to be a really big
+challenge. I mean clearly these data
+centers consume a lot of electricity. I
+think the international energy agency
+reckons electricity demand from data
+centers worldwide is going to double by
+2030 to 945 terowatt hours. I mean that
+is a huge amount of electricity. What
+are the big challenges you think that we
+face in terms of supplying that
+electricity and I guess making sure that
+we don't run out of power in other parts
+of the economy at the same time?
+>> Yeah, look there's a few challenges,
+right? I think the first thing I would
+say Peter is capital will not be a
+constraint and power generation will not
+be a constraint. The real constraint
+will be or the grid rather. The question
+then is how do you solve the grid
+equation? So in the US for context the
+next 7 years there is expected demand
+for data centers of 50 gawatt but only
+20 gawatt of the 50 gawatt has already
+been identified meaning only 20 of the
+50 gawatt has readily available grid
+capacity. So there's grid shortages for
+more than half of the expected demand.
+Now the question is how do you solve for
+that? I think there's two potential
+solutions and we're seeing some of that
+play out already. One is interimm power
+solution whether it's fuel cells or a
+combined combustion gas generators or
+another type of interimm solution and in
+fact in the last 12 months alone 3 gaw
+of interimm power solutions have been
+announced in the US and Europe alone and
+the second solution is will probably
+become a long-term trend which is take
+compute where the power sources
+historically power was brought to the
+computing centers going forward network
+supercomputers will be taken to the
+power sources. Those are two ways to
+solve the grid problem. Right? There is
+an issue there though, isn't there? As I
+understand it, if you're training a
+model or something like that, you can do
+that anyway. You can build a data center
+in the middle of a Norwegian fjord or
+something and have the power locally and
+and all that stuff. But if you and I
+like pinging a large language model or
+something with requests, then that needs
+to be reasonably close to where we are.
+And that sort of inference data center
+use is the challenge because in London
+obviously or New York or Paris or
+whatever there's just less space to
+build those data centers and the power
+associated. So how are people going to
+solve that?
+>> Yeah, you're absolutely right. Proximity
+of inference workloads will be of
+paramount significance because the
+reality is going forward today more than
+half of the demand in the US is training
+driven. However, a couple years from
+now, our expectation is 75% of the
+demand will come from inference or
+applications which to your point require
+a closer proximity to the end user. I
+think what we're going to see is a lot
+of the training demand will get pushed
+out to the power sources. So whether
+it's northern Europe, Finland, Norway or
+Texas in the US for that matter will
+probably end up consuming a lot of the
+training demand. the inference demand
+which will be supplemented as I
+mentioned earlier through interim power
+solutions where grid just doesn't simply
+have the capacity will support inference
+demand
+>> and just to be clear on that sort of
+interim power that's literally like you
+put an energy source right next to the
+data center or something is that right
+>> that's right yeah so there's been a few
+examples of interim power solutions
+being put at work in the US and Europe
+recently as I mentioned 3 gawatt just in
+the last 12 months but it is as simple
+as you articulated which is CCGT
+solution or a fuel cell solution located
+in close proximity to the data center
+itself. Amazing. I want to get your view
+on the broad investment case cuz there
+is a build it and they will come aspect
+to this. These investments are all being
+made in anticipation of use cases for
+this technology that maybe exist in sort
+of embriionic form or in some cases
+don't really exist yet at all and sort
+of an assumption that people will pay
+for this and that's what the big tech
+firms are betting very heavily on and
+obviously everybody else who's involved
+in this is betting on too. So you
+mentioned at the beginning there've been
+various investment waves of kind of new
+technologies. You mentioned electricity
+you know and that's the internet. I
+mean, my other favorite one is the
+railway boom in Victorian England in
+1840 when everybody went nuts and built
+lots of railways. And those investment
+booms created infrastructure which then
+later was used and became useful, but it
+didn't necessarily work out so well for
+the people who put up the capital
+initially. So, is there a danger here
+that we just end up with way too many
+data centers for a period of time?
+>> The risk of overestimating demand and
+missing the timing is real. Those are
+very important considerations. And the
+reality is the next phase of AI at the
+moment AI is really as you and I use it
+a chat bots. You ask the chatbot a
+question and you get a smart answer.
+Over the last 2 years, those answers
+have become more sophisticated. They've
+become smarter, which is great. At the
+same time, the next wave of AI, whether
+it's agentic AI agents that hopefully
+will run our operations one day or
+physical AI or robotics, those use cases
+are developing, but they haven't been
+executed on a large scale just yet.
+We're optimistic that they will be
+implemented ultimately. But today, as of
+right now, agentic AI and physical AI
+for that matter are still relatively in
+their infies. But I would say Peter at
+the same time what's different compared
+to for example the dotcom bubble when
+$800 billion of capital were invested
+into fiber infrastructure and led to
+many bankruptcies. There's a few
+differences compared to the dotcom
+bubble. The first is unlike the internet
+or the electricity for that matter
+artificial intelligence is not a single
+vertical really. It touches or is
+expected to touch every sector in the
+world. finance, healthcare, education,
+public sector, you name it. So it's much
+broader the application than just a
+single vertical. The second big
+difference I would argue is today we're
+seeing in our business at least off
+takes on the other side. So we're not
+building speculatively. last two years
+or three years rather both in our power
+business and our data center business we
+have seen unprecedented demand for
+compute for clean power and it's all
+been driven by long-term take or pay
+contracts with highly credible
+investment grade counterparties both
+hyperscalers as well as the enterprises
+the third big difference I would argue
+compared to the dotcom bubble is the
+results of the users of the technology
+so Gentic AI and physical AI are in
+their infancy. There's no doubt about
+that. Just last week, you look at the
+results. Microsoft reported almost 20%
+jump in Azour revenues thanks to
+integration of AI into the Azour
+products. Meta once again the business
+model hasn't changed. Their geographical
+footprint hasn't changed, but thanks to
+AI, they reported a 20% jump. And those
+are two of the companies with some of
+the highest capex needs. Embed spending
+70 billion, Microsoft spending north of
+80 billion. So the point is history
+would suggest there is the potential for
+many to lose capital, but there's a few
+nuances here. We're watching all the
+risks. There's a few nuances here that
+give us the confidence to continue to
+invest, especially the fact that we have
+offtake agreements on the other side.
+>> Yeah, that's interesting point. You're
+not laying a cable across the Atlantic
+in the hope that someone will then use
+it. Just before we sat down, we were
+talking a little bit about this concept
+of the Jevans paradox which you raised
+which has come up a few times. I know I
+think Satcha Nadella at Microsoft raised
+it and stuff in this context. Can you
+explain a bit like what is that and how
+does it fit into this whole discussion?
+Jas paradox is arguably the most
+important concept we need to grasp in
+the context of AI infrastructure. So not
+the technology itself but also the
+buildout of this artificial intelligence
+infrastructure. Jeans paradox a concept
+was coined by a British economist called
+William Stanley Jevans in 1865 and what
+he noticed was as steam engines became
+more efficient the demand for coal
+increased it sounds counterintuitive at
+first glance but what really means is
+over 20 to 30year period Mr. Javans
+noticed that the demand for coal far
+exceeded his expectation because the
+demand for steam engines as they became
+more efficient increased exponentially.
+And honestly you fast forward to the
+20th century we saw that with
+electricity as well. Over the last 70
+years the price of electricity on a per
+unit basis has decreased by 65% whilst
+the demand for electricity has increased
+15fold. That's one five times and the
+population has not grown by 15 times.
+It's really been driven by the fact that
+as a resource becomes more efficient,
+the demand for it starts to increase.
+And that is what Satia Mandela was
+referencing when he first on the back of
+deep seek when the market was
+plummeting. He tweeted these two words,
+Javin's paradox. And today I would say
+Javin's paradox is playing out right in
+front of us in a couple of ways. One is
+the demand the cost of inference in the
+last 3 years alone has decreased by 99%.
+And it's still not cheap enough. I think
+it will continue to decrease and that is
+very important for the adoption of the
+technology. And the second important
+component of Javin's paradox today is
+the cost of compute and the cost of
+capital itself. When you break down the
+AI value chain, interestingly 60% of it
+is not data centers or power. its
+capital needs to onshore chip
+manufacturing its capital needs of chip
+design companies for the benefit of
+their own customers and it is GPUs or
+compute infrastructure itself and it is
+very important that cost of capital for
+60% of the AI value chain is decreased
+over time and that is an area where we
+believe we can play a very important
+role through financial engineering and
+through our structuring capabilities and
+if you do that in conjunction with the
+cost of technology coming down I think
+that only be positive for not just AI
+infrastructure but also for the adoption
+of the AI technology itself.
+>> Okay. You mentioned a couple of times
+and at the beginning you talked about
+governments getting involved in this
+technology wanting to have control of
+data centers, chips, you name it.
+Obviously we've also got the US talking
+about imposing tariffs on imports of
+semiconductors trying to bring
+manufacturing back on shore. There's
+potentially sort of fragmentation going
+on also with governments getting
+involved. How does that affect this
+growth? because I guess economists would
+say this is potentially less efficient.
+You're going to get duplication and so
+forth. How do you see it?
+>> I think there's a couple of trends
+unfolding here. So one of course as you
+mentioned is geopolitics or you know
+tariffs. I put tariffs in that category
+and that is leading to countries wanting
+to onshore a lot of the capacity whether
+it's chip manufacturing
+uh capacity or the compute itself. So
+onshoring of critical manufacturing,
+onshoring of critical resources, I would
+put compute in that category is the
+first major driver here. The second
+driver is the sovereignty of data and
+the security of that data. And this is
+where the need to create local sovereign
+AI ecosystems is critical and that is a
+fundamental thesis of ours and has been
+the backdrop to some of the
+announcements we have made including the
+$20 billion announcement in France in
+partnership with the French government
+and a $10 billion announcement with the
+Swedish government and there's a few
+more of these coming.
+>> I see. Okay. You're a neutral party in
+the sovereign contest then.
+>> Yeah. Look, as I said, we want to build
+the backbone. We want to build the body
+and we want to build it for some of the
+largest tech firms in the world. And we
+want to build it for sovereign nations.
+Just to wrap up, this is a very rapidly
+changing field. Things are moving
+incredibly quickly. While we've been
+sitting here, probably the value of open
+AI has gone up by another few billion
+dollars. What are the applications of
+the technology that you are most focused
+on, most excited by that are coming up?
+Yeah, look I would say Peter from a
+business standpoint the area we are most
+excited about is sovereign AI and
+sovereign AI is really application of
+the technology in the public sector in
+Western Europe there's a huge
+opportunity to enhance productivity
+productivity has been an issue in many
+of these countries including the UK
+where you and I are based over the last
+few years but artificial intelligence
+can really help with that and sovereign
+AI as a business model for us basically
+entails building out integrated compute
+for the governments who want data
+security, data sovereignty and that is
+really exciting because it requires
+large scale capital and requires
+operators who can build and finance this
+large scale compute. So that's from a
+business standpoint what's exciting from
+a technology standpoint I would say
+near-term we talked about chat bots
+having mesmerized us over the last two
+and a half to three years next layer
+aentic AI and physical AI is actually
+quite exciting particularly enantic AI
+near-term and what that means is AI
+agents helping us with our tasks making
+us more productive on a daily basis and
+hopefully adding enormous levels of
+productivity as they are adopted more
+widely by enterprises and governments in
+the coming years and we'll probably see
+enormous improvement in AI agent
+technology in the next 12 to 24 months
+and medium-term I would say in addition
+to physical AI or robotics healthcare is
+an area that I am watching quite closely
+myself faster drug discovery you know
+reduction of trial periods from multiple
+years to 12 months is really really
+exciting I would say for the humanity in
+general in addition to agentic AI and
+physical AI I Peter, what about you? You
+are quite wellversed in the technology
+and the implications of it yourself. So,
+what are you excited about?
+>> I think that that the the healthcare
+thing you mentioned is interesting and
+in some areas that's arguably already
+where we've seen the most real advances.
+But that alpha fold exercise that
+Google's deep mind did as I understand
+it that's led to the development of
+drugs which either are or in the process
+of entering into clinical trials. So
+that to me is more interesting than
+chatbot that can write a limick in the
+style of Taylor Swift or whatever it is.
+Personally, if these AI agents can come
+anywhere close to being something that
+can filter my emails and my team's
+messages and my text messages and all
+the different forms of communication
+that I get pinged with on a daily basis
+and basically say, well, okay, this one
+you need to know about now. That one you
+can ignore completely. That one you can
+deal with later on. That would be
+transformative. So if there is an AI
+assistant that can actually do that,
+then I will begin to believe in this
+stuff.
+>> They're coming and I cannot wait for one
+of those myself.
+>> But hopefully we'll see a lot of
+progress in that in the next 12 to 24
+months.
+>> All right. Well, maybe we can come back
+and we reconvene at that point.
+>> Exactly. Yeah. It's great to talk to
+you, S. Thanks very much.
+>> Likewise, Peter. My pleasure.
+This podcast is for educational
+andformational purposes only and does
+not constitute an offer to sell or a
+solicitation of an offer to buy any
+securities or related financial
+instruments offered or sponsored by
+Brookfield. The information and views
+discussed are subject to change without
+notice. Any investment involves
+significant risks including loss of the
+entire investment.
+Audiation.

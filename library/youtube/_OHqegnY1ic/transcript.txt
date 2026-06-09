@@ -1,0 +1,98 @@
+[Music]
+hi this is Jeff quiet from de dogs
+technical solutions team and today I'll
+be sharing with you a tip on how to use
+the de dog command-line interface on
+Linux to perform some basic tasks
+including how to check the status of the
+agent how to start and stop the agent
+and how to send a flare to support when
+you require more assistance today I'm
+using the Ubuntu operating system but
+the same commands apply to Amazon Linux
+Debian and Red Hat distributions in a
+follow up video I will show you these
+same actions on a Windows host of course
+if you are using another supported
+operating system check out de dog's
+basic agent usage documentation assuming
+you've installed the agent by following
+the instructions on the agent
+installation page the agent should be up
+and running
+let's check find the basic agent usage
+commands in the de dog documentation for
+your operating system and open the
+terminal window on the host running the
+de dog agent and run the status command
+so here I'm at the terminal window and
+you can see I'm running the aboon 2
+operating system I'm just gonna go ahead
+and run that sudo Deo agent status
+command and if I scroll to the top I can
+see the version of the agent I am
+running I can also see the location to
+de dog's configuration file as well as
+the directory that contains all of de
+dog's core integrations and if I have
+any custom checks that I want to add
+that are relevant to my business I would
+include them in the checks D directory
+down below I can see the host name as it
+will appear on de dog's web UI we're
+going to make a change to this in just a
+minute down further I can see any checks
+that are running from the de dog agents
+so these are all out-of-the-box checks
+collecting system dot CPU utilization
+disk space file input and output down
+further I can see whether or not our
+logs agent is running and if I have any
+custom metrics that I'm submitting I can
+see those listed here under our dog
+stats D extension so now that we've seen
+the agents current status let's change
+the hostname and restart
+the agents see the change take effect
+we'll open up the daily ammo
+configuration file we saw previously in
+a text editor today I'm going to use VI
+but any text editor will do now we'll
+just search for hostname and then we'll
+go to that line and we'll change it to
+something that is more specific to us
+data dog demo will save those changes
+and now we're just going to use the
+documentation we saw earlier to restart
+that data on agent service so sudo
+service data dog agent stop and sudo
+service de dog agent start and now we're
+just going to check the status again and
+if we scroll up we should see the
+hostname has been updated here and this
+will also be reflected in the day a dog
+web UI finally if we need assistance
+from de dog support team they may ask us
+to run a flair to help them investigate
+a flair is a compressed copy of our
+configuration files and agent logs to
+run this command simply type sudo day
+dog
+agent Blair you will be asked to provide
+your email address and confirmation to
+upload the flare the day dog support
+system so here I will type in the email
+address for my account and if you are
+not already working with the engineer a
+ticket will be created in our support
+system and a support engineer will reach
+out to you for more context I will type
+no here so we do not alert the support
+team now the de dog agent command-line
+interface offers many other commands as
+well which you can check out using the
+de dog agent help command I hope this
+video has been helpful for more tips and
+tricks please subscribe to our Channel
+Thanks
+you

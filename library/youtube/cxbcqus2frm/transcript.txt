@@ -1,0 +1,561 @@
+Most video editors don't realize that
+editing trends actually matter. In 2026,
+motion graphics in Apple style are the
+viral cheat code. And learning that
+style to perfection is almost a
+guarantee more people will see your
+work. So, if you're serious about your
+editing career, I'm going to give you
+in-depth techniques most people don't
+talk about. Since Apple just released
+their new products, we're going to use
+it for our practice to create a seamless
+UI animation. You just need to go
+through this tutorial once to understand
+how it actually works. Then you're going
+to have the tools to build your own
+animations from scratch. So, turn on the
+focus mode for the next 15 minutes and
+let's get straight into it. Once you're
+in After Effects, create a new comp. Set
+the resolution to 3840 by 2160 for a
+crispy 4K. Set the frame rate to 30 and
+then duration can be set to 10 seconds.
+Then hit okay. By the way guys, quick
+interruption. I'm cooking an update for
+my products and this is the last time
+you can get the three-in-one bundle with
+all the current assets. Some of them
+will be gone forever. For example, I'm
+completely removing version one of
+Motion Essence and it's not only that.
+But if you get the bundle now, you're
+going to get all the assets plus you're
+ensuring to get the free future update.
+So, make sure to check it out before the
+timer hits zero and it's gone. Link in
+the description. Now back to the show.
+And now we're going to go ahead and
+create a background. So, for this I'm
+going to go to new, solid, and you want
+to rename it to BG. The color doesn't
+really matter because we're going to
+apply the effect called fill,
+and we want to use that effect because
+we can easily shift between colors with
+the help of keyframes. But first, you
+want to change the color to white, then
+hit okay, and we're going to go over to
+the project panel. So, let's go ahead
+and grab iPhone and we're going to drop
+it on the timeline. I'm going to
+probably scale it down a bit and place
+it somewhere here. And then we're going
+to proceed to creating the button. So,
+in terms of the button, we're going to
+need to create a shape. So, for this I'm
+going to go over here to the round
+rectangle tool, and we're just going to
+create a shape over here. Then I'm going
+to turn off the stroke and in terms of
+the color, we're going to change it to
+something blue.
+I think this is going to be good enough.
+Let's hit okay. And as you can notice,
+we got it very sharp on the edges. So,
+we want to head over to the roundness
+and we're going to set it up to 95.
+Also, we can rename the layer for
+clarity. This is going to be our frame.
+And actually, right off the bat, we can
+add the text. So, I'm going to grab the
+type tool, and here you want to add
+iPhone
+17E.
+All right, I'm going to re-center and
+make sure it's in the middle of our
+button. Then we want to change the color
+to white, and hit okay. And then also,
+I'm going to uncheck constrain
+proportions, fix the settings a little
+bit over here. Maybe something like that
+should do. And then an important thing
+we want to do is parent our text to the
+button. So, for this, I'm going to go
+over to the parent link, and I'm going
+to attach it to the frame. So, that way
+whenever you move the frame, you're also
+going to move the text. So, now we're
+going to need an animation for our
+button. So, what I'm going to do is
+click on this, then go over to round.
+This time, I'm going to hit alt shift P
+in order to create a keyframe for
+position. Then also, I'm going to hit
+alt shift R, and also, we're going to
+need a keyframe for size. Then we can
+move over to the beginning, and we're
+going to squeeze it in a little bit.
+Probably play around with rotation, and
+drop it a little bit lower. So, that's
+what you should have. So, now what you
+want to do is head over to the comment
+section below, and grab the expression I
+left for you. Once you've copied the
+expression, make sure to hold alt and
+click on the stopwatch. That way, you're
+going to have an expression window over
+here, and I'm going to paste it by
+hitting control V. Then you want to do
+the same thing with other properties.
+So, I'm going to hold alt, click on
+this, paste it over here, and we're
+going to do it also for rotation. All
+right, so that way it's going to get
+that bouncy movement. We can definitely
+speed it up a little bit. And something
+I really like doing to make it, let's
+say, more unique is actually changing
+the timing for the keyframes. So, if I
+place this one over here, and that one,
+let's say, here, we're going to achieve
+a different look.
+In my opinion, it's looking a little bit
+better already. So, you can just create
+stirs like that. All right, so whenever
+we got the movement for the button, we
+also need the movement for the iPhone.
+So, what I'm going to do is again copy
+the expression from here, so we can hit
+U,
+open it up,
+copy, and then I'm going to go over to
+the position in our iPhone. Actually,
+it's here.
+And I'm going to alt-click the
+stopwatch. Then let's create a keyframe,
+move back, and we're just going to drop
+it a little bit lower.
+All right, I think this is looking
+already pretty cool, so we're going to
+leave it like that. And then at around
+the time whenever everything's stopping,
+we're going to start another movement.
+So, what you want to do over here is
+again create a keyframe for position.
+Then I'm going to hold shift, click S.
+We're going to create a keyframe for
+scale. And right off the bat, we can
+actually add that expression over here
+as well.
+And we're going to need to turn that
+button into a bigger frame. So, what I'm
+going to do is create a keyframe for
+size, also for position and rotation
+this is going to be helpful. Then let's
+go ahead and move forward, and we're
+just going to start expanding our
+button. So, let's do it like that.
+Then it's going to be helpful to open up
+proportional grid, and we're just going
+to push it upwards. And then we're going
+to need to set up a keyframe for
+rotation. Let's put it to a negative
+value. I'm going to probably put it
+somewhere in the middle, and then I'm
+going to go back to zero.
+Okay, so we're going to have something
+like that, which is very intense, so we
+might want to spread it out a little
+bit. I'm also going to play around with
+that rotation over here. Just want to
+find the sweet spot. All right, I think
+this is looking good enough. And then we
+also want to fade out the text. So, for
+this I'm going to hit T on the keyboard.
+I'm going to create a keyframe, move
+forward, and let's fade it away by
+changing it to 0%. All right, it's not
+looking bad. I really like it, to be
+honest. But then what I'm going to do is
+turn off the proportional grid, and we
+want to place iPhone on top of other
+layers. So, now in terms of the iPhone,
+I'm just going to add rotation keyframe.
+Then I'm also going to borrow the
+expression. Let's paste it over here.
+And then I'm going to move forward, and
+we want to place that iPhone over here
+on the left-hand side. So, I'm going to
+go ahead and do that. Maybe let's make
+it bigger. I feel like the frame could
+be bigger as well.
+Okay, not bad. Then we're going to
+decrease the value for rotation. Then
+And need to copy that one, and paste it
+over here so it goes back to zero.
+All right, so this really nice but I
+feel like these corners over here, they
+are too sharp. So, I'm going to go over
+here to the roundness and we're just
+going to fix it a bit.
+Maybe something like that. And now we're
+missing one component which is basically
+making UI animations way better and I'm
+talking about color change. So, we're
+going to set up a keyframe for fill
+color over here. So, let's go ahead and
+do that. And then at around this time
+we're going to apply a different hex
+code. You can copy and paste then hit
+okay. And that way we're kind of getting
+into more of a vibe of that iPhone.
+Right, this is starting to look really
+really nice. So, now we need to
+introduce our icons which I prepared
+over here. So, again link in the
+description. So, let me just grab these
+three. I'm going to drop them on the
+timeline and you want to make sure that
+the time indicator is at the moment
+whenever everything stops. This is going
+to be helpful later on. So, what I'm
+going to do is select these three then
+definitely I'm going to scale them down.
+You kind of want to keep it minimal
+because if you put the battery like that
+it wouldn't really look that great. But
+now what you want to do is grab the
+arrow. We're going to place it on the
+right over here. We can put the arrow on
+top and then we're going to take these
+two. We're going to place them somewhere
+in the middle between the arrow and the
+iPhone. So, maybe a bit more towards the
+left. And then the battery is going to
+go lower. We definitely need to adjust
+it a bit. Now, let me just push it
+upwards and we're going to need to
+create a text. So, for this I'm going to
+grab the type tool and here you want to
+type in 6.1
+and then quotation mark. So, we got the
+inches. Then I'm going to place it over
+here in a similar distance. Okay, I
+think this is looking pretty good. I'm
+just going to make sure the order is
+right. So, you want to keep it like
+that. Then I'm going to probably just
+scale it down a bit more. Yeah, looks
+pretty cool in the full window. And then
+I'm going to add the text from Apple
+page which is Super Retina XDR display
+and you want to use this color this
+time. And also in terms of the font we
+want to have something thinner. So, here
+I use regular and yeah, I think this is
+going to be good enough. I'm just going
+to change the paragraph and I'm going to
+keep it over here. Then we're going to
+duplicate the text, drop it below, right
+below the chip. And what we're going to
+do with this is paste the text from
+Apple, which is four-core GPU with
+neural accelerators. We're just going to
+change the paragraph. And yeah, this is
+going to be good. Then let's copy it one
+more time, actually duplicate, drop it
+below the battery.
+And here we have up to 26 hours of video
+playback.
+So it's looking pretty cool. I'm just
+going to take these three texts and I'm
+going to scale them up because we can
+barely see what's written there. So now
+pay attention because we're going to
+need to make some order over here. So
+first are the inches, so we're just
+going to drop it right above our iPhone.
+Then we're going to take the text Super
+Retina, drop it above. Then the next
+thing is the chips, so we're just going
+to drop it here. We're going to need
+four-core GPU with neural accelerators
+on top of our A19. And as for the last
+thing, we're going to take that text and
+put it right above the battery. So now
+what you want to do is trim these texts
+to the position of our icons. And then
+we're going to use parent and link. So
+I'm going to take the text for our
+inches and we're going to parent it over
+here. Then we're going to do the same
+with accelerators.
+And then we're going to attach this one
+to the battery. Okay, I think we got it
+right. Then we're just going to trim
+that layer over here. I forgot about it.
+And we're going to need to create
+keyframes for position for the icons. So
+we're going to select the inches, A19,
+and the battery. Then hold Alt Shift P.
+That way the keyframes are going to pop
+up. We're going to move them forward.
+And then we're just going to drop it
+lower. So we're going to have something
+like that. And also we're going to need
+to apply a position keyframe for our
+arrow. So let's move it over here. Then
+we're going to drag X to the middle.
+And we're going to have something like
+that. Okay, this is pretty cool, but
+also we need to use parent and link one
+more time. So for this I'm going to
+select arrow, battery, A19, and the
+inches. And we're going to parent it to
+our frame. So that way whenever our
+frame is growing with the bounce
+expression, it's also going to be
+affected. So, let's go ahead and select
+all of that and we're going to place it
+over here. Actually, we need to find
+these key frames. So, I think around
+this time is going to be good.
+Okay, looks pretty cool. I'm just going
+to take these key frames. I'm going to
+expand it a bit.
+And then what we're going to do is
+borrow the expression. So, I'm going to
+hit you for the frame. I'm going to open
+up size, copy the expression, and let's
+close it down, and I'm going to go over
+to our main icons and also the arrow,
+and I'm going to hit P. So, here if we
+all click this stopwatch, we're going to
+be able to paste the expression. So,
+let's go ahead and do that.
+All right. And that way everything is
+going to be nice and bouncy, but we're
+not done with this. So, what we want to
+do next is offset the timing, so it kind
+of goes from the top to the bottom. So,
+for this, I'm going to make sure to
+select these. I'm going to push it
+forward by two frames, and then this is
+going to be pushed by four frames.
+So, this is already looking way better,
+way more bouncy. And remember, guys, we
+haven't even added motion blur, so it's
+going to look way better. So, now around
+the time whenever everything is stops,
+which is probably somewhere here, we're
+going to add the key frame for scale in
+our arrow. So, let's go ahead and do
+that. Then I'm going to move forward,
+and I'm going to scale it down because
+we kind of want to create a pressing
+movement. So, we pushed it down, so it
+needs to bounce back. So, I'm going to
+copy the first key frame, paste it here.
+And that way we have that button press.
+So, now whenever this happens, we're
+going to need to start another movement.
+So, what I'm going to do is go over here
+with the time indicator, then I'm going
+to hit you for the frame, and I'm going
+to create a key frame for size. Then
+essentially, we're going to travel with
+that iPhone to the right-hand side, but
+at the same time, that iPhone is going
+to disappear, so we're going to trim the
+layer, and we're going to introduce our
+MacBook. And we look you want to have a
+different window, so we're going to
+squeeze in the frame, and also we're
+going to extend it in the width. So,
+first we're going to need to set up some
+key frames. So, here we definitely need
+a key frame for rotation, then also the
+color. Then since this layer has
+disappeared, I'm just going to trim it
+to this position so it doesn't confuse
+us. And then moving on, we got the
+iPhone over here, so I'm going to create
+a key frame for position. Then we're
+going to take all of the icons over here
+and also the arrow, and I'm going to
+create a key frame for position. So now,
+if I move over to the right, we're going
+to start creating our movement. So,
+something I'll probably start with is
+the frame, so let's see how it's going
+to look. We're just going to probably in
+Y, then expand it in X. This might be
+good. We're going to go back a little
+bit, and then I'm just going to adjust
+rotation to a positive value this time.
+Probably went overboard. Now let's copy
+first, paste it over here. So, this is
+going to be side rotation, which is
+cool. And then in terms of the color,
+we're going to set it up to white. So,
+we're going to do it like that. Let's
+hit okay. And now we're also going to
+set up a key frame for our fill. That's
+why we created it in the beginning, so
+we're going to go over to the effect
+controls, and here you want to set up a
+key frame for color.
+Then let's hit U, and over here we want
+to change the color to kind of
+white/green, so we're just going to
+paste that hex code. This is going to be
+in the vibe of MacBook Neo, so let's see
+if you like that. And then the next step
+would be pushing that iPhone to the
+right. So, what I'm going to do is take
+the position from here, and I'm going to
+just push it like that.
+Okay, so that's what we have. It feels a
+little bit too slow simply because we're
+going to swap the iPhone, so we need a
+rapid movement so it's more seamless.
+So, what you want to do is select all
+these key frames, push it back a bit,
+maybe just adjust the rotation.
+Yeah, this is going to be way better.
+And now at the same time we need to
+select these three key frames, and we're
+going to push our icons to the right,
+just like that. And together with these
+icons, we're also going to need to push
+our arrow, so I'm going to do it like
+that. And now we have a problem because
+we can still see our icons. So, what
+we're going to do is select everything,
+then hit U, and I'm going to go over to
+the modes. So, here what you want to do
+is select all icons and also the text
+for them and also the arrow and we're
+going to use the track mat. So, I'm
+going to parent our track mat to the
+frame. That way everything disappeared
+but also our frame so we're going to
+turn it back on. And now whenever the
+icons are beyond the frame, they are
+just going to disappear.
+All right, so everything seems to be
+good. I'm just going to take that iPhone
+over here and we're just going to push
+it a little bit towards the left like
+that.
+And now what you want to do is have the
+time indicator over here whenever
+everything stops and we're going to grab
+the MacBook and drop it on the timeline.
+Then I'm going to scale it down and we
+want to fit it in the right corner just
+like that. And now this is important.
+We're going to place it right above
+iPhone and then we're going to use
+parent and link and we're going to
+parent it to our iPhone.
+So, that way Mac is going to follow the
+movement of the iPhone. So, we're just
+going to need to place it over here. And
+actually what you need to do in the
+middle of these two keyframes is trim
+our iPhone and start our MacBook. So,
+it's just going to swap in the middle.
+It's already looking pretty cool. I just
+feel like it could be a bit smaller. So,
+it's going to be very seamless whenever
+we add motion blur which is cool. So,
+now we can control our Mac with the
+iPhone over here even though it
+disappeared. So, if I go over to this
+keyframe, I'm actually going to push it
+a little bit towards the left.
+Okay, I think this is going to be
+better. So, now here we're going to need
+to add the text which is going to look
+like that. MacBook Neo 13 inches and we
+want to make sure that it starts around
+the time whenever we got the split.
+All right. So, now I definitely need to
+place it over here.
+And then I'm going to hit enter over
+here and we're going to add another text
+which is going to be A18 and then Pro
+Chip. Then we're going to hit enter one
+more time and we're going to add new.
+And now we're going to need to fix some
+settings. I'm going to take the bottom
+two lines and I'm going to decrease the
+font size.
+Something like that should do. Maybe
+that middle text should be a bit bigger.
+And then in terms of that text, we're
+going to select it and we're going to
+change the color to this hex code. Then
+hit okay, and it looks pretty cool, but
+we also need to add an expression over
+here. But for this, we're going to need
+to create an animator. So, I'm going to
+go over here to the properties, click on
+animate, position.
+>> [music]
+>> In the Y value, type in -50, and also
+we're going to need to add one more
+thing, which is opacity. Where is it?
+Here. Then I'm going to change it to 0%
+just like that. And then I'm going to go
+over to add, selector, and we're going
+to pick expression. So, now we want to
+open up expression selector one, and
+we're going to change it from characters
+to words. Then I'm going to open up
+amount, and here we have the expression
+window. So, now if you head over to the
+comment section again, you're going to
+find another expression, which is the
+second one, and that expression needs to
+be pasted here. So, that way the words
+are going to nicely drop, but at the
+same time we low-key want to have the
+movement of the frame. So, I'm just
+going to close it down, and then I'm
+going to use parent and link, and I'm
+going to attach it to the frame. So,
+that way that rotation we used here is
+going to be also applied to our text.
+And then we could do is actually use our
+arrow one more time, but this time I'm
+going to duplicate it. So, let's hit
+control D, then I'm going to hit U, I'm
+going to delete everything, but just
+make sure to leave that expression over
+here. Then we're going to re-center,
+then we're going to place it over here,
+and we're going to go over to the
+rotation, and here you want to set it up
+to 180. So, that way we have a back
+button, and we're going to probably have
+it here. Let's just move forward, then
+I'm going to create a keyframe for
+position, and then also I'm going to
+drag it lower. So, we're going to have
+something like that, but we need to
+speed it up a bit.
+All right, I think we have a finished
+animation, and now my favorite part,
+which is adding the motion blur. So, I'm
+going to go ahead and select it
+everywhere, and now let's let it load.
+All right, so here you have the final
+result. Hopefully you enjoyed the
+tutorial, and I'm going to wrap it up
+here because my PC is going to explode.
+So, yeah, check out the video on the
+screen, and I'll see you in the next
+one. Cheers, guys.

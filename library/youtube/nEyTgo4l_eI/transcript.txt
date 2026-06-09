@@ -1,0 +1,925 @@
+cursor is a foral vs code and it's the
+AI code editor that everybody's been
+talking about these days I have been
+using cursor for some time now and I
+wanted to see how far I can get without
+doing much of the traditional coding by
+relying on the cursor's AI features and
+of course at the end we need a database
+to host all the data so we'll be using
+super be for that there are some superbe
+specific tips when it comes to using
+cursor with superbase so I'll be sharing
+them along the way okay so I jumped into
+my cursor editor and there's a few
+things that we want to get started with
+the first thing that we want to do is
+start our project so let's open up the
+terminal and here uh by pressing command
+K we can actually write the instructions
+in plain English for example something
+like uh create on next JS
+application in the current
+directory so now this writes the command
+we can just hit
+enter to execute it we're just going to
+choose all defaults app router
+tailwind and it's going to install all
+the
+dependencies all right great we can
+close that
+terminal one thing that will improve the
+accuracy of everything that curser does
+is by adding a do cursor rules file so
+so if you go to cursor and docs you can
+find the rules for AI section and here
+it says any prompt that's written in the
+doc cursor rules file will be sent along
+with all the prompts that we um enter
+ourselves so let's go ahead and create a
+DOT cursor rules file now what should we
+add here well uh we want to add
+something like you know you are a
+experience type script
+developer um blah blah blah something
+like that but what's nice is there is a
+uh directory of nice uh cursor RS files
+created by the
+community uh called cursor directory so
+you can come here and you can find uh
+various Cruiser rules that will fit your
+use cases in our case we want to work
+with uh probably nextjs maybe so let's
+um there's a few examples but uh let's
+just choose CH this first one and paste
+it right in there in the production app
+you can go ahead and uh you integrate
+over this uh Cy Wheels files as you work
+on the project but I think this is a
+pretty good starting point so that's a
+great a little bit of prep that we can
+do is adding the documentation that will
+be used within this application so
+within this application we want to
+create a nice Twitter like social
+networking app uh using nextjs and
+superbase so we'll be working with nexs
+and superbase and it'll be helpful to
+load uh both documentation on cursor so
+let's just do that we can actually bring
+up uh any kind of prompt I press command
+I to bring up the cruiser composer and
+then hit add
+docs and then we can add a new docs here
+you can view all the existing
+documentation as well as uh the docs
+that I've already added superb splutter
+and um the entire superb stocks but let
+me add a super basee so we can go ahead
+and fetch the super base um JavaScript
+reference
+documentation and get the
+URL we can paste it right in
+there and make sure the prefix is uh
+yeah reference SL subscript it looks
+good confirm the name super base is
+already taken super base
+JS that looks good now this is going to
+um in the background load the super be
+JavaScript um documentation and have it
+available for us to um add it to various
+prompts now this point I think we are
+ready to get started with uh
+implementing the actual features so we
+have a source SLA and inside the app
+directory we have a page. TX which is
+the root of this web applic
+application so let's actually open the
+terminal and hit command K to write all
+the terminal instructions and human
+language and ask cursor to run the
+application so run the application
+locally great let's run it and we can
+view the application right here awesome
+let me bring it over okay so we have the
+browser window right next to our um
+cursor editor
+let's get started by um using the
+composer so we can hit command I and
+it's always nice to give as precise
+instruction as possible to cursor so we
+can get started with something like uh
+we
+are creating a Twitter like social
+network app
+create update the and then we can give
+it the
+source. page. TSX
+file file so that it
+displays a list of posts no need to add
+likes or comments at the
+moment so let's keep it simple let
+started by having a simple list of
+timeline um on the
+homepage create some dummy data for
+now let's see what this uh brings
+us and we can expand the
+view okay so expanding The View isn't
+really working but we can take a look at
+the
+Page hit save and then look at what's
+going on so error invalid Source
+prop next image host name
+what is going
+on well you know what I think I am just
+going
+to so it's keeping the fed and it's
+updating the main section basically so
+it's complaining about the domain that's
+used on the next JS next image which is
+happening right right here I presume so
+post Avatar
+URL and post is coming from okay yeah so
+right here right um okay for now I'm
+going to ask cursor to not use next
+image just it's a bit of a a quick and
+dirty solution but I just want to have
+something visual so uh do not use next
+image
+component and use the image
+standard image tag
+instead so we can minimize it by hitting
+command
+M and we should see an update coming
+through right there okay so I think we
+saw it it's using a standard image
+tag it's using the image tag for the
+footer images but yeah I think that
+looks good let's just accept everything
+and already we are getting something
+something nice actually so we can
+probably get rid of the top head
+as well as the footer so let's just ask
+for that get rid of the hitter and the
+fter um or should we have
+a yeah let's just get rid of
+it okay great that
+works great that seems
+awesome now what can we do what can we
+do to prove this thing uh we can
+probably everything's centered so let's
+have everything aligned to the top and
+let's also have a few more sample uh
+post so that we can kind of scroll
+through the timeline create um create I
+don't know 10
+more uh
+dummy
+posts make sure the posts are aligned at
+the top
+so you can see this flow right now right
+uh I'm mainly using the composer to
+implement basically the big picture now
+we'll be using the command K later on
+which allows us to um fix small things
+here and there but I like to start out
+with the composer because it allows us
+allows me to create the bare bone of um
+my
+project so that looks good everything's
+aligned at the top and we have some
+dummy uh posts basically now at this
+point there's a few directions that we
+can go to with this application but I
+like to um actually get into the backend
+development so what we can do is we can
+add authentication to this app using
+superbat and um make sure that the user
+is signed in first and then once the
+user signed in they can actually compose
+a new uh post so let's do that let's add
+let's add a header uh and a sign-in
+button or or a display of a username or
+something when the user already signed
+in so add a
+header where if the you user is not
+signed
+in a signin button is
+displayed when the sign in button is
+clicked the user is taken to the signin
+page I'm wondering if we should create a
+signin page first but let's see how far
+it takes uh we can always go back with
+the cursor so that's nice that's the
+nice thing about cursor right we can go
+back easily so when the sign in buttons
+click the users taken to the signin page
+when the user is signed in The Hitter
+should
+display a hello Miss message to the
+user with their
+username also create a new signin page
+as a separate
+file let's see how this does
+um I've noticed that sometimes curs like
+to use the Pages directory just because
+I I think it it's been around longer so
+the AI knows more about the pages page
+directory and not about the
+objectory but let's see where the signin
+TSX is created so it's created under
+Source app sign in. TSX which is which
+is
+close but uh let's fix that
+so let's actually take a look at the
+code first
+minimize the
+window
+okay so the page the update is down
+here okay so it's checking if the user
+signed in and sign not signed in we have
+not added super be sign in yet so that's
+it's good that it's
+doing it's basically mocking is sign in
+process using State uh it looks all
+right right
+does the okay if we hit
+save has some minor I guess but what is
+going on you importing a company that
+needs use State ah right right we need
+use
+client yep that
+works that should do it no air next
+router was not
+mounted oh God
+that I don't know how to fix it up the
+top of my
+head but that's all right um sign in
+okay so handle sign in this should just
+be
+a button so there's a few things we need
+to fix let's go
+back the button on
+the uh the the page. TSX file for sign
+in should just be a link and not a
+button okay let's do one prompt at a
+time so
+so now it's a
+link uh I guess we don't really need I'm
+just going to manually delete this
+oldfashioned writing code with blood and
+sweat but other than that it looks okay
+so now let's go to signing. TSX and this
+looks
+fine except the file name so or file
+directory I
+guess so so
+um this project uses the app router of
+uh
+nextjs suppose I should have added the
+nextjs uh documentation as well uh but
+uh
+we name the
+sign sign in
+tx2 source
+app what is it uh sign
+in maybe o just o because we we'll be
+handling sign up as well and page.
+TSX hopefully this does
+it so it's creating a page. TSX file
+somewhere that's the problem with app
+directly using it you you have no idea
+which page TSX file it's working on so
+sign in page we name
+to
+y. page. TSX file that looks good we
+don't need that so I'm just going
+to
+delete that one now this page looks
+good this sign in page is under Source
+app o which is
+fine and the content looks fine I'm just
+going to save it accept
+all all right so now let's go to this a
+right here and try to fix it njs router
+was not mounted so again I'm going to
+bring
+up the
+composer create a new window
+new session whatever it's called copy
+this error message
+and page. TSX file this one the root
+page. TSX file
+throws this a when the app is
+running fix
+it let's see if it can do the magic
+Imports okay so I changed the import
+path let's accept
+everything hit
+refresh and it has it still has a error
+invalid link with a
+child right okay okay let's fix that
+uh no need to
+add anchor tag inside the
+link
+tag we move the a tag and move all the
+attributes to
+link okay I'm just going to hit accept
+everything and okay it it's looking
+really good so we have a header which
+contains a signin button and we
+can uh hit sign in and get a error so
+it's going to the off page which is
+great now uh yeah it's it's the same
+thing use client uh use
+client and then next router was not
+mounted what was the issue uh next
+navigation
+navigation okay some
+oldfashioned some oldfashioned fixing
+manual fixing but now we have a signin
+form um let's make this a sign up/
+signin form so
+let's
+see create a new composer window and
+update the signin form so that users can
+also sign
+up first time users can also sign
+up
+okay um I'm just got to blindly accept C
+everything so don't have an account sign
+up it changes to a sign up form sign in
+sign up sign in great uh it's working
+great so at this point we can probably
+get started with adding super
+authentication to this signup form sign
+in/ signup form so we can say something
+like um add a email
+plus password sign up and sign in
+feature using superas off uh reference
+the do
+here uh docs of superbase JS and then
+maybe add something like uh store the
+username as metad
+data upon sign
+up let's see if uh CER can do its magic
+with this okay so it's giving us
+instruction of you know adding
+superbase uh npm install superbase JS
+which is yeah something we need to
+do and then it has updated bunch of code
+I'm just going to should I check it
+maybe I should check it let's
+see okay so email password and then it's
+adding a whole bunch of
+stuff sign in and sign up
+looks good I'm just going to accept it
+accept it and worry about the details
+later so let's
+add
+[Music]
+the let's add the dependencies
+here mpm install super Bas JS found zero
+vulnerabilities great now we need to get
+the super base UGL and en en key and
+come to think about it we don't even
+have a do we have a super base sance
+somewhere okay so it did it create a
+okay it did create a lib directory with
+um all this except why is
+the why is the import not
+working so let me just close the
+terminal
+here and it's saying it couldn't find
+the Cur responding um module which we've
+already run the installment right uh
+super be you can see it there so I'm
+guessing this is some kind
+of sometimes you need to close it and
+reopen it or
+something or
+huh what is going on here
+so asking here's a chat uh how to fix it
+to resolve the ER cannot find basically
+you need to install it so we've
+done
+that you know what
+let's it's only the editor that's
+complaining the code is actually able to
+load the create
+client um it's and it's throwing errors
+that you know Super V URL and anun
+doesn't exist so let's just ignore this
+error it's uh it's probably more of a
+bug on the editor
+itself um so we don't even have a m
+local file do we let's have cursor
+created let's see let's go ahead and
+create a new superv project first we can
+head to database.
+new to create a fresh new superbase
+project just going to choose my
+examples
+um
+organization and and what do we call it
+uh cursor cursor social sure database
+password we might need that later and
+I'm just going to choose a region is
+Japan because I am based in Tokyo and
+that's just the closest for me but you
+should choose what whichever region
+that's
+closest uh from you or from your user
+ideally I guess uh so while that is
+spinning up let's see create a
+M.L file with
+the m
+variable referenced in lib slash so we
+client TSL I was lazy to copy and paste
+this next J uh next public super base
+and next public uh subus Anon key so
+I've just asked cursor to
+copy and paste those basically but did I
+create
+a n file didn't did it okay maybe my
+prompt was a bit too
+ambiguous so let's create
+a
+new file at D root of the
+project with environment variabl uh
+variables referenced
+in that file let's see if this does
+it h okay guess it's not doing it for me
+um I may have been a bit too lazy I'm
+just going to copy that over create a
+new file do M do
+local and paste it right in there now at
+this point we should be able to get the
+superv credential we can go to superv
+dashboard app Frameworks nextjs and just
+copy this entire thing guess I didn't
+really need to have the next public
+Subarus URL and then next public uh
+Subarus Anon key text right there but
+that's okay so we have loaded the sign
+in/ signup form uh another thing that I
+want to do is disable email confirmation
+so let me just zoom in a bit and we can
+go to authentication providers and we
+have email just because I want to keep
+this example simple I don't want to have
+to go through confirming emails every
+single time a new user signs up so we
+can disable confirm email and hit save
+you don't want to do that this for a
+production app but for a
+for a quick testing it's uh totally
+fine so at this point we should be able
+to sign up a user if everything's all
+right so we have super Au sign up
+passing email password and
+option uh data username so the username
+is being passed as
+a as
+a
+metadata and then upon sign up we are
+going back to the rout of the page uh
+root
+page it looks all right let's uh give it
+a try so it has sign up and sign in
+right okay okay let's give it a try um
+so
+Tyler at superbase doio okay font color
+let's fix
+that
+so the font color of the for
+field fields are hard to see make them
+black yeah this is how lazy we've uh
+become uh we don't even want to update
+the F color by
+yourself but uh to be fa it's it's kind
+of a kind of nice cuz there's a few
+different places that you have to update
+here there you know all the all the form
+field uh so and I guess we are using
+bear Tailwind when not using a UI
+framework like uh
+Shaden so uh this is kind of nice being
+able to bulk update um all the form
+Fields all at once and my username is D
+Sher Jr that's my Twitter handle as well
+so give me a follow if you want to and
+we can sign up and we've come back to
+the homepage now I've set my password is
+password obviously that's Google's
+telling me that's a really bad bad idea
+which is fair but now I am signed
+in and back to my homepage one thing I'm
+noticing is the signin button I think
+I've
+told uh curser to update the button to
+greet the user when the user sign in but
+uh the the reason why it's not showing
+up there is because we haven't hooked up
+super beast o to this rout page yet so
+let's do that uh let's open up a new
+cisal
+window and uh
+update uh update the root
+page so that it
+listens
+to super base State
+and stores its
+state in a state
+variable H supposed
+that's
+good enough uh
+reference doc uh super
+JS for how to do
+so so hopefully this as the feature of
+um property least listening to the
+authentication state of a user on the
+client side
+application
+okay did it update the M local file as
+well no it didn't did it it
+did yeah
+that's no so so if curser did
+something partially
+that you don't want it to do you can
+actually go to the file
+and
+hit uh command n to partially reject or
+command y to uh partially accept so we
+can hit command no for this one and then
+everything else let's let's take a look
+did did a lot of things didn't
+it this is the okay so this is the root
+page
+okay it edited the root page super
+client which suppose looks
+fine um
+okay the root page it just updated the
+okay so it has a username and is signed
+in and within use
+Effect one might argue it's the wrong uh
+use case to use us use effect but but
+we're listening to the onof state change
+and we're probably unsubscribing at the
+end so it looks good let's do that
+accept o
+listener Subs unsubscribe is not a
+function so what is going on here on off
+State
+change super base are we so we are
+loading super base I thought we are
+so we have the sub variable right
+and we are importing the super variable
+right
+here so why is the
+type any it's type any
+because because I guess
+this weird bug
+thing okay so h
+event in
+session is never
+read okay
+session
+no uh implicitly has any type which is
+not
+true let's see if uh reloading this
+editor works okay so I reloaded the
+editor and it looks like uh everything's
+properly loaded so what we need to do is
+we have the off
+listener. subscription do unsubscribe
+okay
+unsubscribe pretty close close enough
+this should do it right okay so all the
+sessions gone I have to reboot it um in
+PM Dev
+okay so the user signed in I guess it's
+showing the email address instead of the
+username which we can change to the user
+metadata. username
+okay okay so now it's greeting the user
+with uh their username which is
+great I think at this point we can
+actually connect the superbase databases
+well so let's do that so the way we're
+going to uh connect super be database is
+um I guess there's a few different ways
+we can take but uh the way we're going
+to do it is we're going to have cursor
+write proper super base migration files
+for us uh so let's actually initialize
+super base
+within within here what we can do is
+let's open a new terminal session and
+hit command K to open up the uh c a
+command and initialize super
+base is this going to do it let's
+see NPS superbase MPX superbase in it
+great so let's run that yep
+proceed so this is going to uh
+initialize superv in our uh directory we
+can hit no to both of these settings and
+now we have a new subv directory this
+contain means a few different things a
+c. SQL file and it can contain a
+migration file which it doesn't have yet
+so usually we create migration files
+like this uh create a new super base
+migration
+file which uh writes a terminal command
+to uh create a new migration file in
+this case called initial schema we are
+not going to do this but we are trying
+we are going
+to um do something uh slightly fancier
+so we can close the
+terminal and couple our
+CEO created this uh markdown file
+basically it's instructions for cursor
+to follow when for creating sub
+migration file let me just actually uh
+view file uh because it's kind of hard
+to
+copy and paste it and copy the let's see
+let's let's copy both of them and we
+can I guess add it right here maybe
+prom and then we can no not there
+prompts and we'll have
+a what is it um so this one is code
+format
+code format do uh
+MD code format uh
+SQL and then we have another one
+database create migration MD so code
+format SQL MD and database
+migration
+MD so we have two basically in
+instuctions of uh what to do for uh
+specific specific actions and what we
+can do is we can bring up the
+composer uh as
+usual
+and we can ask um we can
+ask cursor to create a migration file
+for us so we can reference um create a
+migration file for posts reference
+the so we can reference the page. TSX
+within the so root page. TSX file
+contains the post file right reference
+the page page. TSX file for specific uh
+columns follow the
+instruction on database
+migration for how to create a migration
+file in
+follow the
+guideline on the file code format uh SQL
+file okay so let's see if this does
+it okay did not create a new migration
+file
+looks
+great just create the file as a new file
+okay
+so I find cursor sometimes does this it
+instead of creating a new file it just
+outputs what it needs to
+um create but that's all right
+so we can go
+to super base okay in that case let's
+use the command
+line so where did it go uh create a
+super base
+migration uh called post
+table and let's run that which creates a
+new migration file under
+migrations right here we can paste what
+we got here so we have a post table with
+ID username content and avar
+URL uh looks good except let's add a
+user ID to this file so we
+can we can actually I was going to use
+command K but then I noticed that we're
+going to have to update the RO of
+security policies accordingly as well so
+let's just use the
+composer update the table definition to
+include a user ID column which
+references
+the uh AA users
+table update
+the DAT
+the RO security
+polies
+accordingly let's see if this does the
+magic
+so it's updating the
+file it updated the update and insert
+policy so it added a user ID us ID
+references all that users not null great
+let's accept all and I would also add
+a uh let's see ID B in that's
+fine let's also add a default value add
+a default value of a
+uid okay
+great that looks good roel security is
+enabled policies can be selected by
+everyone
+policies let's see select policies for
+Anon roll authenticated Ro sure
+authenticated rooll um
+post for insert yep users has to be
+themselves update user has to be
+themselves and delete users only the
+user who posted the post can uh Delete
+so great we have the migration
+file we
+can let's see so we
+can
+link let's find the superbase
+project and get the project refence now
+what we can do is link this project to a
+remote super base project with ref
+of this
+one so this gives us npx superbe link
+project ref that
+ref which we can run and it's asking us
+to copy and paste the database password
+which I had it but then now I lost it
+because I've cop and paste a whole bunch
+of stuff but we can reset it so go to
+settings
+database and database password and we
+can reset it we can generate a new
+password and let me copy this hit reset
+and paste and there you go now super
+base is linked now uh let's see push the
+local
+migration up to remote
+mpf super DB
+push and would you like to push this
+migration yes and let's take a look at
+the table editor so we have a post table
+with all the columns that we've defined
+locally username content Avatar
+URL looks good
+looks pretty nice now we can
+probably have
+uh let's generate some uh seed uh SQL
+file so let's
+see generate some dummy data for the
+Post table
+in files of this one post table add 10
+rows okay
+so it
+added user ID uh right right user ID has
+to be something that exists which in
+this case it wouldn't
+work but yeah
+username that that that
+looks
+good except I guess Avatar wouldn't work
+but um let's see
+use
+a free
+AAR
+service that uh
+displays
+PL
+AAR
+image let's see if it's able to bring up
+um
+actual Avatar service okay so dice SP
+adverti I feel like I've heard of
+that let's see which is is it not doing
+it okay now it's doing
+it looks good let's see if it actually
+works so if we do
+this outdated
+endpoint okay so apparently we have an
+outdated endpoint and now I guess we
+can
+H can you just do that
+so let's see let's
+[Music]
+see does that make sense
+.x 9 do
+X and
+then pixel art
+pixel art SL
+SVG see if I can just complain that we
+got an error saying it
+was using an outdated end
+point exix set
+okay seems confident that it fixed it
+let's let's take a
+look
+nope no we are not we have not fixed
+it okay
+can probably copy this format
+over so let's
+[Music]
+see paste it in and we
+can
+one uh change the seed on
+every Avatar
+URL so what did it do it changed the
+didn't a mess with the URL which is
+great and then okay use a one through 10
+that looks good let's accept that and
+then accept uh except the user ID
+problem
+we have a some working dummy
+data which is fine so we actually have
+a working user right in here so we can
+just use this user's user ID copy that
+over
+and let's see
+paste it right in
+there great we should be able to take
+this and just
+um add it to our
+table okay success no issues found let's
+go to table editor and we can confirm
+that we have the
+okay 10
+post great now we can go back and close
+that finally connect the page. TSX file
+to superbase and proberbly load the data
+from my remote super base instance so
+again I'm just going to use the composer
+for that we can say something like um
+instead of having dummy
+data
+locally load the data from super base
+using
+the from super base this should be
+sufficient right from super
+base let's do
+it uh let's say accept everything and
+think about the consequences later okay
+so it's loading
+something and is that the actual okay
+this is sample post content 1 through 10
+so it looks like it's loading the data
+from
+superbase what is this oh yeah it's
+using the old
+syntax great uh updated now what is
+going on with the
+AAR URL so we have an image tag posts
+post Avatar
+URL which should work right because for
+example this
+one is a proper image
+so let's see let's see let's see
+everything else is working
+the reason why Avatar URL is not loaded
+is because we have a cam case Avatar URL
+here where is the column name is a snake
+case so we need to fix that uh I'm just
+going to do it manually instead of
+having AI do it
+Avatar
+URL um so that should update everything
+and we have a nice Fe
+okay great so obviously this is a very
+simple application without much uh table
+joins or anything going on and we even
+have the username stored within this
+table which is not uh the best practice
+but uh you see the flow of uh how we can
+how we can have the AI write our
+migration file so from here on I might
+something one thing I might do is I
+might have another migration file which
+separates the username to its own
+profiles table and then maybe set up
+some triggers that will copy the
+username to the profiles table up on
+user signing up and then um load the
+post data join by the profiles table uh
+up here within the fets post that the AI
+wrote for me or stuff like that there's
+a lot of directions that we can go to
+but uh the point that I wanted to
+outline is uh you can use the superv
+documentation within the cursor and
+there's a
+techniques here and there that you could
+use to you know make your life easier
+using cursor and yeah uh you get to make
+awesome applications fairly fast without
+writing much code and superbase is a
+great companion to cursor because it
+lets you um create a back end in seconds
+and it's very intuitive you don't have
+to it has all components so like CLI and
+stuff to push the migrations and things
+like that so yeah great
+and that's how you can use cursor to
+build fullsack applications using nextjs
+and subes

@@ -158,6 +158,22 @@ Reprendre un job :
 ./runyoutube "https://youtube.com/playlist?list=..." --resume
 ```
 
+Créer des briefs et prompts Motion MCP sans modifier le mode résumé :
+
+```bash
+./runyoutube "https://youtube.com/playlist?list=..." \
+  --mode motion-director \
+  --product-type "iPhone case" \
+  --target-format "9:16" \
+  --target-duration "15s" \
+  --tutorials-last 8 \
+  --mixed-indices "9"
+```
+
+Le mode `motion-director` écrit un JSON par vidéo dans `output/motion/`. Pour une playlist,
+`--tutorials-last 8` classe les 8 dernières vidéos comme tutoriels et `--mixed-indices "9"` classe
+la vidéo 9 comme référence mixte. Les autres vidéos restent des références visuelles.
+
 Écraser un output existant :
 
 ```bash
@@ -180,10 +196,87 @@ Puis lancer :
 
 ## Cleanup
 
+Voir ce qui serait supprimé sans rien effacer :
+
+```bash
+python -m src.cli cleanup --cache --dry-run
+python -m src.cli cleanup --outputs --older-than 30 --dry-run
+```
+
+Après avoir intégré les connaissances utiles dans Maxi Brain, supprimer les transcripts et
+extractions temporaires :
+
 ```bash
 python -m src.cli cleanup --cache
 python -m src.cli cleanup --all-temp
 python -m src.cli cleanup --outputs --older-than 7
+```
+
+Politique recommandée :
+
+- conserver dans Maxi Brain les synthèses, playbooks, checklists, URL et provenance ;
+- supprimer régulièrement `cache/`, qui peut toujours être reconstruit ;
+- conserver les outputs longs uniquement s'ils sont marqués `keep_cold_source` ;
+- déplacer les sources froides importantes sur SSD plutôt que les laisser dans ce repo ;
+- ne supprimer `output/` qu'après vérification de l'import dans Maxi Brain.
+
+## Bibliothèque YouTube Canonique
+
+Les transcripts réutilisables sont conservés une seule fois dans :
+
+```txt
+library/youtube/<video_id>/
+  transcript.txt
+  subtitle_source.srt
+  metadata.json
+```
+
+Le pipeline consulte automatiquement cette bibliothèque avant tout téléchargement. Une même vidéo
+peut donc être réanalysée avec un autre prompt sans retélécharger ou dupliquer sa transcription.
+
+`output/videos/`, `output/books/` et `output/motion/` sont des résultats dérivés régénérables.
+Ils ne sont pas la source de référence. `output/graphipy_ready/` est réservé aux exports explicites
+temporaires et n'est plus généré automatiquement.
+
+Inventorier la bibliothèque :
+
+```bash
+python3.11 -m src.cli youtube-library-status
+```
+
+Simuler le tri des anciens transcripts :
+
+```bash
+python3.11 -m src.cli migrate-youtube-library
+```
+
+Appliquer la migration après lecture du rapport :
+
+```bash
+python3.11 -m src.cli migrate-youtube-library --apply
+```
+
+Réparer les anciennes références déduites depuis les résumés existants :
+
+```bash
+python3.11 -m src.cli repair-youtube-library
+python3.11 -m src.cli repair-youtube-library --apply
+```
+
+Nettoyer les anciens exports redondants et doublons de résumés :
+
+```bash
+python3.11 -m src.cli organize-outputs
+python3.11 -m src.cli organize-outputs --apply
+```
+
+Cette commande range aussi tous les anciens résumés vidéo qui ne viennent pas d'une playlist
+identifiée dans `output/videos/playlist-before/`.
+
+Pour placer la bibliothèque sur un SSD, ajouter dans `.env` :
+
+```env
+YOUTUBE_LIBRARY_DIR=/Volumes/MonSSD/youtube-library
 ```
 
 ## Aide Rapide

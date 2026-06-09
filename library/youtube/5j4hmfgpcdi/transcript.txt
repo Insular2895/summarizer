@@ -1,0 +1,213 @@
+In this video, I'm going to teach you
+how to create clean Apple style visuals
+like these. But before we start, we need
+to go back to where the style came from.
+This
+>> is one device and we are calling it
+[applause]
+iPhone.
+[music]
+>> Apple has always been known for its
+design. Some people love their products.
+>> Out of control lines, people waiting
+hours, even days. Things in LA even
+turning violent.
+>> [music]
+>> Check out this brawl that broke out
+after one man discovered someone had
+been paying homeless people to hold
+places in line. [music]
+>> And some people criticize Apple and
+instantly take it to social media.
+>> It's only been 2 days since Apple
+released their iPhone pocket. And it's
+already becoming the most controversial
+product of the year.
+>> Do you spend a penny on the iPhone
+Pocket?
+>> But regardless of opinions, Apple became
+the most successful company in the world
+for a reason. The Apple Pocket just sold
+out [music] in all 14 colors.
+>> I take a redeyed flight to New York to
+be first in line for the Apple Pocket
+just to find out. It instantly sold out.
+>> It is $229.95.
+It was just released yesterday.
+>> And recently, one part of Apple's
+identity has been blowing up on social
+media. The animation style. Clean UI
+motions, smooth animations, minimal
+layouts. This look has been trending
+everywhere and a lot of creators have
+been making their own inspired versions,
+including me. And now you want to create
+visuals like these. Apple's look starts
+with color. They usually use white or
+black backgrounds. Both give that clean,
+modern, minimal look. In After Effects,
+just create a solid layer and set your
+background to either white, black, or a
+very light gray. Apple rarely uses loud
+or complimented colors. Also, I put
+together a free Apple style color
+palette with the exact hex codes. Link
+in bio if you want to download it. And
+with the palette done, let's move on to
+the second piece of the Apple style, the
+font. Apple uses their own font family
+called SF Pro Display. Bold is used for
+titles or headings. Regular or medium is
+used for subheadings and smaller text. A
+white background with this font already
+makes it look like Apple. And actually,
+these Apple UI animations are the number
+one style businesses and content
+creators use for the ads and content. If
+you know how to do it properly, you'll
+be able to track clients on command,
+just like how I did with my recent
+challenge where I landed a client in 2
+weeks using the naughty Hua method that
+I've been gatekeeping for a while now.
+But now, I'm actually finally opening
+slots for my one-on-one mentorship. This
+isn't cheap and I'm only taking on a
+limited number of students, but if you
+want to apply to see if you're a good
+fit, click the first link in the
+description. But now, let's talk about
+shape layers. You can use shape layers
+to create Apple style UI panels, and
+you're able to morph one shape to
+another using one layer and key frames.
+It really is that simple. Make sure you
+keep that clean color palette we talked
+about, and always use rounded corners to
+match Apple's design style. From here,
+you should be able to start adding
+shapes, icons, numbers, or other things,
+and use nles to control everything. But
+now, let's talk about spacing because
+this is where the design actually
+becomes Appleike. Apple always leaves
+breathing room. Nothing feels cramped.
+Nothing feels accidental. That space is
+what makes everything feel intentional,
+simple, and easy to understand, no
+matter who's watching. So, whatever
+you're working on, strip it down and set
+it up in the simplest way possible. Your
+main layout should almost always stay
+centered. That's how you lock the viewer
+in. If things are offbalance, people
+don't know where to look and confusion
+kills attention. And only after your
+layout feels clean, that's when
+animations brings it to life. Apple
+animations are subtle, smooth, and
+quick. Nothing is flashy or dramatic.
+Some of the most common Apple style
+animations are text slide up animation.
+In After Effects, add key frames for
+position. Go to the start and position
+it either up, down, or left and right.
+In this case, we're going to position it
+going up. Add easing or graph to your
+key frames and use a square mask so it
+reveals clean. The next animation is
+word by word reveal. In After Effects,
+add your text and separate the words
+into their own layer and then use
+position to key frame them like we did
+earlier. And as an option, you can also
+add opacity key frames and then stagger
+them so they reveal word by word. Here's
+how to make this Apple style text
+animation in 30 seconds. Add your text.
+Go to your text layer. Click animate.
+Add opacity and position. Set position
+to 100 and opacity to zero. Go to range
+selector. Then advance. Change
+characters to words and shape to ramp
+up. Set the ease high to -50 and the
+ease low to 100. Then add a key frame to
+the offset from 100 to 100. And boom.
+Also, to make this easier for you, I put
+together a small Apple style animation
+pack and it includes the shakes,
+bounces, and micro animations that I use
+in my own edits. So, if you want these
+exact movements without building them
+from scratch and want to support the
+channel, link in description. Moving on,
+we have effects. Here are a few examples
+Apple uses. Bevel and emboss in After
+Effects. Right click on your clip, go to
+layer styles, and here there's some cool
+options, but the one we're looking for
+is bevel and emboss. It works for text,
+logos, and basically any other layer.
+Just play around with it. Next is
+[music] the glass morphism effect.
+Create a shape layer. Activate
+adjustment layer mode and add the fast
+box blur effect. Then increase the blur
+radius to your liking. Then I like to
+duplicate the layer, disable fill, and
+add a white stroke. Remove adjustment
+layer mode and remove the box blur
+effect. And change the blend mode to
+overlay. Then lower the opacity to
+around 30. It just gives it a nice
+border. Then you can link the stroke to
+the main shape or new so you can move it
+around easier. Now this effect works
+best when there's a cool background
+since technically it's only blur. So on
+a solid background, it'll basically just
+be transparent. Next is drop shadow.
+Drop shadow can really make your visuals
+stand out, but it needs to be very
+subtle if you want it to be apple-like.
+The last touch is sound effects. They
+add even more to the visuals. Sound
+effects make your visuals feel alive. In
+fact, I've been using sound effects this
+whole video, and by now I'm pretty sure
+you think this video is super high
+quality. If your animation is smooth,
+then your sound should be smooth, too.
+There are many places you can find sound
+effects and usually the best ones are
+going to be on the subscriptionbased
+websites where you can search up these
+terms. Honorable mention, but Apple also
+does 3D animations. If you want a
+tutorial on how to make 3D animations
+with cool camera motions like these that
+I've made and make sure to subscribe and
+most importantly give this video a
+thumbs up. It really helps out the
+channel and is free. But yeah, those are
+some of the many things that are part of
+the Apple style. Best to start simple
+and work your way out to more complex
+animations. But once you understand the
+colors, the spacing, the smooth motion,
+and the subtle interactions, everything
+you make starts to feel more intentional
+and more premium. And if you want to
+become [music] my student and start
+easily lending high-paying clients in
+the next 60 to 90 days, and learn from
+someone who's generated over $200
+million views online and charges over
+$6,000 for a 30-second video. Click the
+first link in the description, and we'll
+see if you're a good fan. I hope this
+video helped you understand the Apple
+style a lot better. Let me know other
+videos you want to see. Thanks for
+watching, and I'll see you in the next
+one. Deuces.

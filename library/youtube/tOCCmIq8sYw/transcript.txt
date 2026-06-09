@@ -1,0 +1,1212 @@
+uh great to see everybody my name is
+Bruce momjin I have
+one of the postgres core team members
+and I've been working for uh Enterprise
+DB for 16 years which seems like a long
+time but hey it's uh it's where I fit I
+guess uh
+I'm here to talk to you about security
+the slides that you're going to see
+today are at this URL right here so as I
+mentioned in the keynote there are 58
+presentations here
+over 100 videos and 650 blog entries
+which uh the person from time scale was
+kind enough to mention so
+um a lot of interesting information
+there this presentation if you see
+Magnus hagender out there uh some of the
+ideas originally came from him I believe
+it was a talk he gave
+I want to say in 2008 in Portland Oregon
+or Seattle
+I don't remember which he may remember
+but he always reminds me that I took
+some ideas from him so I always keep the
+name there because I like to give people
+credit and I wouldn't have thought of
+some of the things uh had he not uh sort
+of made me start thinking about security
+uh security obviously is a really
+complicated topic if you go to my that
+website there there's a there's a tab
+about security uh over 300 slides about
+security from the mathematics of of
+cryptography public key cryptography TLS
+application security
+um Crypt cryptographic Hardware uh all
+the way up to using it in postgres and
+other uh applications so if you want
+sort of a ground tour of cryptography
+from the bottom to the top that's also a
+URL you can go to
+but what we're going to talk about today
+is specifically postgres security and
+specifically postgres security related
+to external attack
+because
+a lot of people
+um and myself included until I wrote
+those 300 slides kind of approach
+security I don't know if it's like you
+but you know I've been in the industry
+database industry since 1990 and
+um you know I really didn't
+I can't say I fully understood security
+yeah okay there's hashes and there's
+one-way encryption and public encryption
+and symmetric encryption and there's TLS
+and there's certificates and uh but but
+every time I talk about it I didn't
+fully understand exactly what it was we
+were doing so fortunately my employer a
+couple years ago I said you know we
+really need somebody on the postgres
+team who who's dug into security all the
+way down to the mathematics and he said
+fine just just take a couple months and
+read some books that's exactly what I
+did came out 300 slides later and um was
+able to basically present this talk and
+to really dig into the security not just
+from a check box perspective but to
+actually understand what are the what
+are the threats
+um what how do the how how do you
+correct the threats right how do you
+make sure that you aren't
+a lot of times people think oh if I just
+do x uh my security problems are over
+not really uh it doesn't really work
+that way you have to really understand
+kind of what you're doing and a lot of
+people unfortunately don't and they just
+kind of check box the security oh I got
+this I got that I'm done uh but what
+this talk is to try and break that down
+and work through the actual actual
+things that are protected here uh so
+that your systems can be more secure uh
+the other nice thing is we've got 50
+minutes so I'm going to be stopping
+taking questions we're going to walk
+through a lot of this stuff if you're
+confused about something we have time to
+talk about it unlike my keynote right 20
+SEC 20 minutes to go through uh this
+many slides now I have 50 and it's
+really interesting to get your questions
+okay uh any questions before we get
+started
+okay
+so
+um what are we going to talk about we're
+basically going to talk about external
+attack vectors like how what how do
+people attack the database and how you
+can you prevent it from uh being
+compromised uh external attack vectors
+can relate to have security set up it
+can relate to how we set up passwords or
+authentication theft
+um it can be something like Network
+snooping we're going to talk about that
+we're going to look at think about how
+the network communication happens
+between the client and the database it
+can be something called spoofing which
+is different than snooping okay we're
+going to talk about how to protect
+against that
+and then to finish up we're going to
+talk about some some larger issues like
+backup theft and uh administrative
+access okay
+uh what are we not going to cover so
+again we have to have a limited scope of
+what we're doing what we're not going to
+cover are internal attacks this is these
+are cases where somebody already has
+access to your database you've given
+them access you've authorized them and
+then they've somehow increased their
+access I'm not saying this is not
+important it is just isn't what I'm
+going to cover in this talk okay things
+like application vulnerability SQL
+injection database object permissions
+yes these are important but again it's
+outside the scope of what I wanted to
+cover all right
+so um let's talk about authentication
+security and what I'm going to do is I'm
+going to start very simply and I'm going
+to work my way up to more and more
+Secure Solutions when we eventually come
+to a solution which pretty much closes
+all of the possible attack vectors now
+you may not want to go this far you may
+decide these other vectors are not
+important to me but you should
+understand what vectors still exist if
+you decide to allow certain attack
+vectors to be unprotected right if that
+makes sense the other thing is that the
+postgres documentation is very good
+about this I've worked for several years
+actually and sort of trying to improve
+that so again if you go to the postgres
+docs it will give you similar uh
+training about how to look at this okay
+so let's start with a very simple case
+um and that is the connection uh control
+so the connection uh control file is
+called PG underscore hba.com
+HBA stands for host based Authentication
+and it effectively sets up a way of
+specifying what type of connections can
+happen to what databases for what users
+from what IP addresses and how do we
+authenticate them now this file if you
+install from source is going to be what
+you're going to get
+and this is in many ways very simplistic
+and unacceptable all right it's fine for
+a development machine where you're
+basically saying no one outside can
+connect to the this machine and I'm
+happy with anyone who does have access
+to this machine to connect to this
+database using typically localhost or
+Unix domain sockets okay no nothing
+wrong if that's what you want but again
+that may not be you what you want you
+may need something more sophisticated
+um so let's take a look at how
+um one of the authentication methods is
+the password authentication method many
+of you may have heard of the password
+authentication method it is actually a
+pretty poor method to use for
+authentication particularly if you're
+not encrypting the traffic with SSL
+okay because effectively what would
+happen is that you have a client who
+makes a connection request and the
+server will actually basically say I
+need a password and the password will be
+sent back in clear text
+uh again assuming we're not using SSL or
+TLS
+clear text back to the client okay to
+the server is that a problem maybe maybe
+not you might be on a secure network you
+might be in an environment where that's
+not an issue but if you have other
+people unauthorized people who can see
+network traffic and if you're aware
+tcpip by default is pretty much in clear
+text
+um
+if they're going to be able to use that
+password that they saw sent and replay
+it to connect a later time all right so
+this would be like a replay attack and
+again vulnerable to snooping yes we
+encrypt it when we store it in the
+database but that's not maybe sufficient
+okay because we've passed that clear
+text password or at least we haven't we
+haven't in this case we've literally
+passed the clear text password
+so some of you may say okay that's bad
+so I'm going to use md5 so md5 is going
+to solve my problems
+um it's not but that might be what you
+think okay so you say okay I'm going to
+use md5 okay so we send uh we the clock
+the database comes back and says I want
+md5 and I'm going to give you a random
+salt and the database client will return
+a random salt and the random salt will
+then help to prevent that password from
+being reused because effectively that
+password
+um is salt is going to change every time
+you connect to the database okay
+however the problem is that the salt is
+is actually for md5 in postgres is only
+a four byte integer
+so that means they're 30 there's
+basically four billion option four
+billion possible salts any of you who
+have studied mathematics knows the
+birthday problem uh what is the
+probability that two people have the
+same birthday in a in a room it is
+surprisingly low
+I'm not going to go into why that is but
+effectively the birthday problem of
+actually happens here and it turns out
+within about sixteen thousand uh
+comparisons you are now ready to your or
+32 000 comparisons you actually
+um start to duplicate uh you know your
+your your your salt and then you kind of
+can replay the song because you got the
+salt that was used so not not a great
+solution again we designed this back in
+the early 2000s it was a great maybe at
+that time most of our systems didn't
+have eight byte integers right we're
+back in the stone ages
+um so again it was good for what it was
+but certainly not today
+so postgres 10
+started with something called scram how
+many of you have heard of scram before
+good okay so scram uh Peter do you
+remember what scram stands for anybody
+thank you perfect that's wonderful I
+forgot
+um and Simon Riggs actually was also
+very instrumental in getting this into
+postgres uh 10. so scram is basically a
+way of doing what md5 does but in an
+industry standard way and in a much
+longer salt way so you can't replay okay
+so think of what we're doing with the
+random salt extrapolate that out to an
+industry standard and make the salt much
+larger so there's no replay potential
+that's effectively what we have in
+postgres 10. so most people
+um when postgres tendon forward are no
+longer using md5 they're effectively
+using the this this new scram method
+what's really interesting is in postgres
+13 you actually have something called
+Channel binding and I'm going to go I
+can go in a little bit of this but what
+channel binding effectively does it is
+it allows the the two endpoints to prove
+that they know the password
+so it actually eliminates one of the
+sort of uh
+man in the middle attacks we'll talk
+about later I'm not going to go into
+that right now but again Scrambler
+Channel binding is sort of scram with
+like superpowers in terms of preventing
+men in the middle attacks which you're
+going to talk about in a minute any
+questions
+okay great okay so let's look at what
+scram looks like this is the standard um
+and again oh yeah actually yeah here it
+is salted challenge response
+authentication method mechanism there
+you go salted yeah kind of cool anyway I
+I just know I I did not set you up I
+forgot that you were always there
+um when you use uh scram you're
+effectively getting the connection
+request it's saying I want scram so the
+client sends a username and then a a
+number used once so like a random number
+pretty long one and then the the server
+sends back the same number that it
+received and then a server random number
+and then the salt and then the client
+sends back the client non-stick on up
+here and then the server nods and then a
+client proof which effectively mixes
+the
+it mixes the certificate data with the
+password and proves that when we mix the
+password and their certificate data
+together and we we give it to the other
+end we're proving that we know that
+we're proving that the owner of the
+certificate private key knows that
+password
+and that's how you prove that you're you
+and there's no way to repeat that
+because you would have to have you'd
+have to know the private key of the
+certificate and only you know that right
+so again it's it's really
+um it's really a very very clever way of
+basically
+sending a password in a way that is not
+reproducible and also proves that you
+know something it proves that you that
+there's nobody in the middle basically
+messing up in the middle of your
+communication
+however postgres does not have a typical
+protections for passwords I talked about
+it this in the in the keynote in the
+morning postgres has the tendency to be
+minimal in in the features that it adds
+so it's if it can do something
+externally it has a tendency to favor
+that external solution so there's no
+real built-in capability for weak
+password detection password reuse
+protection or even Brute Force password
+attacks if you need that type of
+protection we're going to recommend you
+use a tool uh like ldap or Pam or sspi
+that's designed to protect from these
+type of cases okay yes we could have
+built them into postgres it would have
+made postgres larger we chose to defer
+the problem if that's what you're
+worried about uh to those external tools
+you may already be using ldap anyway so
+why not just use it with postgres right
+I mean you've already got some
+infrastructure anyway which probably
+manages that we're better off just
+allowing postgres to use that facility
+than to build it in
+um
+uh there are some difficulties with
+connection pooling but
+um again it is uh it is that's kind of a
+good good way going at it
+so
+um
+we might have protected
+the password from going from being seen
+going back and forth is our job done
+um maybe maybe that's all the protection
+you need but be aware that once you've
+authenticated all of your queries and
+all of your data if you're not using SSL
+is going to be seen in clear text so all
+the all the numbers all the output is
+going to be just sent across the network
+okay so you might have gotten the
+authentication protected but you might
+not have protected your data
+so um this is vulnerable obviously to
+snooping uh where somebody can watch the
+data coming across
+any questions
+so people say okay I've I I I protected
+my passwords or my authentication method
+um now I'm going to use SSL or TLS it's
+the same thing and I'm going to encrypt
+everything that goes across maybe I'll
+even use the as256 a little on the heavy
+side but okay fine that works we're
+going to send our queries with uh
+encrypted with as256 or some secret that
+we've negotiated a shared secret for the
+two ends to negotiate and my queries are
+going to come back
+um basically encrypted right so I think
+okay I got my authentication locked down
+I got my uh my data locked down uh I'm
+done right I'm just you know I'm gonna
+go home and just relax
+right but no no you can't relax
+uh why can't you relax uh it's because
+of this guy uh this is our spoofer
+remember so we had snooper which is the
+sort of person who's always snooping and
+watching the data cross but the spoofer
+is more complicated more sophisticated
+the spoofer pretends to be someone else
+right so how actually can that work well
+this is the this is the most simple
+spoofing problem uh that I can imagine
+imagine your server's down maybe it's a
+maintenance Maybe
+maybe uh you it's offline there's
+Hardware problems who knows
+so your server is offline okay
+so your client here connects to the
+server and it says I want to connect
+you're sure it comes back and says I
+want a password and you just send the
+password
+and the client the server says oh I'm
+sorry uh we have a network problem I'll
+come back later
+okay
+so what happens well the server comes
+back online
+Mr spoofer has the password so he's like
+oh I'm just going to go connect is that
+user he's not even here right now it's 2
+A.M and I'll just connect and pull the
+data off
+not a good system is it right not not
+good
+um but it's very easy to do I mean the
+server's down in fact you can even kind
+of play with the sockets if you want
+um to kind of like kind of fake it out I
+mean there's a whole bunch of weird ways
+you can kind of fake out a server
+pretend you're the server uh here's
+another one
+um
+uh so uh with with with a fake server so
+here I I servers up but somehow I I I I
+pretend I'm the IP address of the server
+maybe I can use ARP any of you use ARP
+like the address resolution protocol and
+you say
+um this IP address over here I I have my
+this is my Mac address and then all of a
+sudden the traffic goes to this fake
+server instead of the real one
+um and PS3 gets sent right
+um or do you do this this is this is
+even better
+um here
+the client never knows that it's not
+talking to the real server because
+effectively uh the database says Oh I
+wanna I wanna I wanna connect and he
+says I want a password okay here's the
+password and what the fake server does
+it sends everything to the real server
+they call the queries all the results
+real server has no if the client has no
+idea it isn't talking to the real server
+it's obviously not a position you want
+to be in
+um now you may say oh this is this is
+too sophisticated most people won't do
+it
+true but it's possible it's possible
+shouldn't allow it right I mean that's
+that's my logic it's like
+yeah okay I would it's maybe
+sophisticated to set up but you know
+people set up tooling they set up root
+kits and no matter how sophisticated is
+if there's one it takes one smart person
+to set it up
+and then you're done because everyone
+downloads it solves it and
+Scoops up passwords
+any questions
+Okay so
+you might say okay so how do I fix this
+ah I know what I do I'm going to use SSL
+right I'm going to I'm going to use SSL
+and then oh my problems are solved right
+so here I say prefer SSL uh which is the
+fall if you turn ss1 and fake service
+say no I don't support SSL and the
+client just says okay here's
+we're back to where we were and it just
+sends a non-ssl thing over there and
+everything goes back and forth to the
+real server and we're probably no better
+off than we were before
+so that's the default mode for SSL but
+you may say no I'm going to use SSL
+require there's a special SSL mode in
+the connection string if you've never
+seen it and you say ssle you can require
+and you're like oh that's probably going
+to solve all my problems and the
+database client says I'm going to
+require SSL you can't say no in the fake
+Services okay here's SSL and we do an
+SSL connection between these two and the
+real the fake server creates an SSL
+connection between these two and where
+are we and we've been we have we gained
+anything no we have not okay so my point
+is that there's this feeling and this is
+what I talked about in the beginning
+there's this feeling like if I just
+sprinkle the right magic dust on either
+it's encryption or whatever password
+security whatever it's going to fix the
+problem right but unless you really dig
+in and understand exactly what the the
+threats are you really don't
+um and that's why I kind of wrote this
+talk because it the solution appears to
+be really simple but
+once you kind of dig into it it's not
+very simple now you might say well I use
+SSL with a browser right I mean many of
+you use you know https which is using
+SSL or TLS but you have to realize that
+those all of that communication over
+your browser and I have it in my slides
+is really using much more than SSL it's
+using certificates certificate
+authorities that are built into the
+browser if you've ever looked in your
+browser there's actually a certificate
+Authority list of what certificates what
+certificate authorities it trusts
+you if you're going to do that you have
+to do that if that that's the only way
+to do it right and unfortunately you
+have to do the same thing in postgres
+I'm going to show you why yes sir
+fake database server will open up
+uh
+right so I haven't really talked about
+certificates yet that's my point right
+that we're turning on SSL see this is
+the this is why I wrote this because
+there's a sense that if I encrypt I'm
+secure
+right and what I'm trying to get at is
+that postgres gives you the tools to
+secure it but if you just turn on
+encryption without doing the identity
+management then you're really not secure
+and and people unfortunately if I don't
+give these type of talks they're of
+course you're going to set it up
+thinking I'm secure it's an SSL
+connection
+not not really oh I'm gonna make I'm
+going to make it require no you're still
+not you're still not safe right so this
+I'm trying to walk through the logic
+here of exactly how to do this properly
+right
+um this is how to properly perfect setup
+um
+what you what to do it right you have to
+have some type of certificate Authority
+that effectively allows you to verify
+that the server you're talking to is a
+legitimate server that deserves to
+receive the password from you deserves
+to receive your queries and return your
+results okay so the way that typically
+works is you have a root you have a
+certificate Authority who is signing a
+certificate for the server okay and then
+you have the root certificate of that
+certificate Authority not the private
+key of this certificate Authority
+because nobody has that but the but the
+owner but we have this certificate right
+here okay and over here we have the
+certificate and we have the private key
+which goes with it and effectively what
+happens here when you say verify CA you
+send it to the fake server it cannot
+send back a sign certificate Advocate
+because it doesn't have the private key
+of this
+and the client will say I will not
+connect because that certificate you you
+fake certificate you sent in the server
+that's not signed by that root
+certificate okay and without this final
+step you're not really secure just using
+SSL TLS
+um this is done internally for you when
+you're using a browser
+I in on my slides I actually have
+screenshots of Firefox and chrome and I
+I and if you dig down in the little menu
+tabs you can actually see trusted
+certificate authorities in your browser
+and you'll see them all sign all the
+banks will get them signed let's encrypt
+those of you using that the let's
+encrypt root certificates are in the
+certificate store for all modern
+browsers digicert
+um give me another one uh they're very
+signed thank you the big ones are all
+out there they're all in there and
+they're validating and preventing that
+snooping that spoofing problem uh and we
+need to do the same thing here the
+postgres docs are very clear about how
+to basically do set this up with
+detailed instructions including how to
+set up intermediate certificates
+if you go to my website and look at the
+blogs under security there's a cat I I
+know I have 650 blog entries but you can
+actually look at them by category so
+there's a particular category called
+security blogs and it talks about why
+how to set this up how to use
+intermediate certificates
+um because typically you would not maybe
+use a root certificate you might use an
+intermediate
+um and and a chain certificate chain if
+you're familiar with that but the
+postgres docs when I originally started
+this project were a little hazy on these
+issues the instructions were not fully
+clear but we through the through the
+team and I think Peter you might help me
+a little bit on that too uh we kind of
+narrowed down exactly what commands work
+and why they work and exactly what it's
+doing so I'm very comfortable uh we
+haven't had to modify those docs in a
+couple years but if you look at any
+modern version of postgres it'll be very
+clear the importance of this and how to
+set it up
+questions
+yes sir
+so we'll rely on your connection when
+you see the successful on the client
+enforce postgres does
+not accept any SSL
+uh
+they can prefer it in HPA and maybe many
+Cloud providers give you an easier
+option to force this
+is size not reliable definition from
+yeah so back in that HBA file you can
+basically say SSL only and only SSL
+connections will come in the what you
+really need though is there is a and I I
+didn't even cover this I probably should
+there's a there's a little flag you can
+put in the HPA which forces the client
+to verify that it has a certificate
+signed by the certificate Authority
+so it verifies not only SSL but it
+forces only it only allows clients which
+have verified or have certificates
+signed by this root certificate
+Authority
+I'm going to maybe add that little slot
+I should have added that it's it's kind
+of an awkward thing because it's a
+server setting but
+um
+make sure that the users use the samples
+that's all the deployments for for the
+clients is automated so you don't
+control your client and then do whatever
+you want so you force them to use this
+mode so to make sure that even them is
+using verified CA on a control jump post
+it comes out like any laptop or any Mac
+or any other yeah typically
+um the cleanest way to do that I think
+is to create a Services file
+that's Global and therefore everyone is
+using a Services file and you manage
+what what what's in that Services file
+and you can make sure every line has
+that requirement we have had some people
+who wanted us to modify lid PQ
+in a way so only see we haven't gotten
+any farther I might have a blog entry
+about that I can't remember but that's
+something we maybe need to still talk
+about
+secure right you would you would require
+Olympic you to only use this verify CA
+um and how do you do that we've we've
+kind of been back and forth I'll take a
+look at my blogs and see if I have one
+a couple of you
+tell you which is as a secure uh type
+like which certificates that they are
+using or their music system or not some
+people monitor resistance for any chance
+there's a connection that's using yeah
+so the alarm
+yeah it's very very interesting stuff
+other questions
+yeah sure
+here
+like for a big Enterprise because you
+run your own
+so that's a great question I do have a
+Blog I'm sorry the question was do you
+run your own certificate Authority
+um I have a blog entry about that the
+answer is yes
+um and it's a little
+uh how do I say
+counter-intuitive a lot of people think
+that
+okay if I get it from a well-known
+certificate Authority a public
+certificate Authority that's somehow
+more secure but the problem is by
+getting the certificate from the
+certificate Authority you're effectively
+saying that certificate Authority could
+potentially create their own
+certificates that would access your
+database
+which you probably don't want right
+certificate public certificate
+authorities are very useful when you are
+basically have distributed people who
+have no connection to your organization
+okay who you want to connect securely to
+your website makes sense but in the case
+of a database that's almost never true
+and therefore you're better off creating
+your own certificate Authority than
+creating an intermediate certificate
+Authority which then would sign the
+certificates and then have an expiry set
+up so that you would expire every six
+months or six years or whatever
+if these intermediate certificate is
+compromised you only put the root
+certificate on the clients and therefore
+you can replace the intermediate
+certificate and the other certificate
+and the leave certificates on the server
+and what you typically do in the
+postgres stocks are clear about this you
+basically create a certificate chain in
+the on the server and it sends the
+intermediate and the leaf certificate to
+the client the client only needs to
+verify the root certificate because that
+doesn't change
+so you see what I'm saying you may have
+thousands of clients you may only have
+10 you know 20 server certificates right
+and you can therefore rotate those those
+server certificates much more
+efficiently without having to interfere
+with potentially thousands of clients
+Because unless unless this is
+compromised this one remains good you
+just flop flop change in the
+intermediate and that whole process of
+when does the intermediate certificate
+get shipped to the client was I don't
+know if Peter you remember but it was a
+huge amount of research and we even had
+regression tests now that run which
+shows what to make sure that the API
+that we have is property shipping the
+entire chain
+to the client so you don't need to have
+intermediate stored here you just put
+the route you leave it there and if you
+want to change intermediates or leave
+certificates you just do everything on
+this end and the chain goes across yeah
+and my my blog entries have a lot of
+gory detail about that but I thought it
+was important because again it's it's in
+terms of management of certificates it's
+actually really interesting and I think
+gives you gives you a power as an
+administrator that you don't really have
+with passwords and stuff like that
+yes ma'am
+so that what's the best practice for
+renewing these certificates or do they
+expire so um that's a great point so
+what we typically we think about
+passwords right passwords typically like
+it's either password a or it's password
+B and as soon as you change from A to B
+everyone's got to change at the same
+time right which is awkward so what you
+typically do is you set your
+certificates for let's say 18 months
+okay and then 12 months in you start
+rotating out these certificates and you
+have some kind of monitoring which you
+can query typically query the
+certificate to find the expiration date
+there's a whole bunch of tools that do
+that so you can have a little thing just
+goes out and say where are all my
+certificates that are less than six
+months to expire and you can go in and
+swap them out nobody needs to know
+there's no change the new certificate
+the old certificate they behave exactly
+the same in fact Peter you did some work
+where you can effectively put in a new
+certificate and just reload the database
+or even Peter is it just does it look
+the modification time no we decided you
+have to do a Reload
+to force the server to see the new
+certificate because we didn't want to
+sort of get it while it's copying or
+something like that yeah but again
+there's been a lot of management in here
+about getting that to be a smooth
+process
+um classic case is let's suppose a
+certificate gets compromised you have an
+employee who leaves something like that
+you can effectively just press a button
+go through your roots or tip your
+intermediates issue brand new
+certificates they push them out to all
+these servers any certificate that was
+sitting there before is invalidated
+right and then you can have a
+certificate revocation list a crl they
+call it and what you effectively do is
+if you have an employee who left and you
+don't want their certificates to be
+valid anymore you put them in this crl
+file
+and postgres can read those files and
+will no longer accept any of those
+certificates that maybe you you know so
+again there is not only is there an
+expire but you can force invalidation
+again impossible to do really with
+passwords very simple to do with these
+certificates yes sir
+okay
+so that you have some time which is
+right
+so the question is have we uh considered
+the ability to have multiple active
+passwords with some kind of expiry time
+yeah
+um we have talked about it I think
+there's certainly a vet it wouldn't be
+hard to do
+um I think we have a tendency to default
+back to like an ldap kind of case and
+say well let that manage it there's no
+reason we couldn't do it Peter I haven't
+we've talked about I haven't it's never
+really gotten any traction but there's
+there's nothing no aversion to it am I
+right
+yeah yeah
+we can work through it but it's not
+something that we couldn't do yeah good
+point other questions yes sir
+I
+don't know
+so okay so are you talking about
+certificate authentication yeah
+so that case like if we have multiple
+certificates okay from the developers
+and different certificates applications
+all right let me let me get to that in a
+minute because I'm it's kind of mobile
+questions there okay so um let's let's
+okay so you have any questions about
+this so far because I he's getting into
+a different area I didn't want to get
+through yet
+all right so um let me talk a little bit
+about Channel binding because I've I've
+kind of talked about this whole
+certificate fixed problem right how do
+we fix the problem of of these
+certificates okay of of preventing the
+spoofing right you can see how that
+would work and I looted earlier the
+channel binding as the scram with
+Channel binding has a similar capability
+I just want to show it to you here
+effectively the way Channel binding
+works is it gets the requests needs
+scram it actually asks for channel
+binding and what happens is that the
+shared secret well basically
+um the certificate hash which is
+basically part each each end of an SSL
+TLS connection has a certificate okay so
+what it does is it takes the hash of the
+certificate and it mixes it with the
+password and sends it to the other side
+and what that does it when you think of
+the word Channel binding it's taking the
+TLs Channel and it's binding it to the
+password right it's taking the shared
+secret that the two certificates have
+negotiated binding it mixing it with the
+password and sending it back and forth
+to prove that the person on the other
+end knows the password
+instead of you just blindly sending a
+password you require the server to tell
+you before you I send you a password you
+tell me you know the password you don't
+send the password but you can prove that
+you know the password because the shared
+secret that we used or the hash that
+you've used proves that you know the
+secret and when that happens you prevent
+that man in the middle attack
+okay from happening
+um so this so if you don't like
+certificates this channel binding
+capability actually fixes that problem
+for you okay
+um now I think this is what the
+gentleman here was talking about
+um and it's something else I wanna I
+wanna and Magnus loves this thing so
+just
+whatever we can tell them how much he
+loves it I love it too so there you go
+um we've talked about sending passwords
+back and forth right but passwords as I
+said to this to the woman here they're
+awkward you change the password and all
+of a sudden the old one goes away and
+okay maybe we can have two passwords and
+we can have both of Matthew at the same
+time yeah we can kind of do that but
+then you got this awkwardness that the
+the two passwords are active and then
+once everyone's using the new password
+you really should shut off the old
+password because it's kind of a
+vulnerability right like how do you know
+when to shut them off and so one cool
+thing about
+about postgres is you can actually use
+certificates for Authentication
+on the client so basically the database
+server says I want an SSL certificate
+that is signed by the route signed by
+one of my trusted root certificates and
+in fact if the client will send back an
+SSO certificate that has a is signed by
+one of the trusted
+um certificate authorities and that
+proves that this is a valid client so no
+need even for passwords okay can't
+replay because these certificates are
+huge numbers okay you can't randomly do
+it plus this is actually getting back to
+I think what you said you can rotate
+these passwords as much as you want
+because the old certificate works the
+new certificate works you just plop it
+in your certificate right and then if
+you want another one you do it again
+right and you can specify that the
+length of how Val how long that
+certificate is valid so by definition
+within six months all of the old
+certificates are invalid by definition
+so when you ship the certificate it only
+is good for six months so you don't have
+to go back and turn it off you know in
+six months it'll be no good if you want
+to revoke it you have this certificate
+relocation list you put that certificate
+in the crl
+postgres understands those files and it
+will actually prevent it from being used
+from there forward instead of waiting
+six months okay but this is a fantastic
+way of doing authentication far superior
+to passwords I think and easier to
+manage I do have a blog entry about this
+and the ability to rotate them out I
+think is is key
+um there's there is no one certificate
+any certificate signed by that
+certificate Authority is valid you don't
+have to have one by used by everybody
+you would never do that frankly you
+would create one for each individual
+each service each machine and have them
+automatically expiring of course you do
+have to go and reinv reinstall those but
+that's part of the beauty of it because
+you don't have passwords sitting around
+being reused for years and years as
+employees leave and so forth questions
+so the certificate certificate is is
+public I can download a certificate for
+IBM tomorrow anybody Google certificate
+itself is public what is in public is
+the private key that matches the
+certificate
+okay so those private Keys have to be
+kept and I'm going to show you in a
+minute how they can be kept okay other
+questions
+okay
+um so let's talk about
+um I'm sorry let's talk about data
+encryption to avoid theft uh hold on
+yeah okay so I'm going to get to it a
+minute so
+um one thing uh that I want to kind of
+highlight here is that
+um if you
+if you are storing your data on some
+type of removable media that media has
+your data on it so be careful I remember
+being young in my not you know in
+1993 or something wondering why there's
+a box of backup tapes just sitting in
+the server room like why are they why
+they just in the corner I'm like why are
+they there herb I mean like he's like
+well if somebody picks up a tape they
+just walk out the building they got all
+our data
+like oh I gee I never thought of that so
+from then I was like okay so again make
+sure your your media is secure because
+that's another vulnerability you could
+potentially have
+um one capability that uh we have and
+Peter Eisen trout you're working on an
+improved version of this soon I think
+um is the ability to do column
+encryption so we have something called
+PG crypto uh which allows you to encrypt
+a column I have a bunch of blog entries
+about this there's uh PG sodium is a
+great solution for that uh which allows
+you to kind of do per column encryption
+and postgres a little different than
+we've talked about before but again if
+you need a single column encrypted that
+is a excellent solution
+uh one of the gentlemen asked how do you
+where do you store the key where if you
+have a secret where do you put it well
+one option is to put the key on the
+server
+maybe good maybe bad the problem is your
+key is with the database so if they take
+the database right
+um another one is to put it in some type
+of uh cryptographic Server Like A you
+know Secure Vault or something
+um and and pass your queries through
+there
+um another option I think a cleaner
+option is to put the key on the client
+so therefore the data is encrypted going
+across and back so the the data over
+here is always kind of uh either well in
+this case we're passing the key this is
+a better option where we're actually
+encrypting as we send over and then back
+again so this basically This Server
+could be stolen and there's no way to
+access the data because you don't have
+the key obviously the problem here is
+the client has the key so what you can
+actually put is put it on a hardware
+device
+I would recommend a PIV device if
+familiar a CAC uh yubikey makes them uh
+Google makes them a bunch of different
+Hardware vendors make them I have a
+separate slide deck about cryptographic
+Hardware
+the beauty of putting the key on a
+hardware device is there's no way to
+extract the key from the device
+you know if you put a key on a USB stick
+somebody can copy the USB stick
+you put a key in a Hardware security
+device
+even the manufacturer cannot get the key
+out of the device you can decrypt and
+encrypt and decrypt using the key using
+an API to the car to the CAC to the
+hardware device but you can't just
+extract it out and copy it and that I
+think is the dramatic change between uh
+just storing it in the file system or
+storing it a USB device store yes it's
+storing it in a PIV device or a CAC uh
+UB key Google Authenticator or whatever
+type of device okay
+and that is all I wanted to say I do
+have about a minute left so I'd be happy
+to take any additional questions that
+people have
+um the bad news is that people already
+queued up for lunch so I was hoping to
+get done early and we'd be the first
+ones out there because we're right there
+and I failed and I'm sorry about that
+any questions
+yes sir
+so
+um for with the keys do I I would use
+multiple keys for a backup strategy so
+um I actually covered that
+in
+um in one of my blog entries and in the
+in the slides what I typically recommend
+is not to create the key on the hardware
+device
+but to actually create the public
+private key
+in a on a USB stick okay
+copy the key it probably private key
+into the hardware device
+take the USB stick out put it in a bank
+vault
+because that way if you lose a USB stick
+you get another USB stick you put the
+USB key in you copy it to a new USB
+stick and then you put it back in the
+vault uh that's I think the cleanest you
+can create the keys directly on the you
+on the on the hardware
+cryptographic devices but as I said
+before there's no way to get it out
+there's no way to back it up it's just
+in there and that may be okay if you're
+doing things like signing or there's a
+couple ways where it actually doesn't
+matter if you lose the key but in the
+case of encryption it absolutely does
+matter if you lose the key so you'd want
+to probably generate it off device
+make it physical backup of it put it in
+a secure location and then put that
+store that on a hardware device yeah
+please
+so it's not like you can use a specific
+way it is
+and even if you are in the cloud how to
+use this in the cloud you can make
+brightness or on-premise standard
+sensors to these devices that you can
+use it and requisite and so it depends
+on the industry also and the regulation
+great
+well thank you everybody I'm sorry yes
+so uh the question is about TDE uh it is
+something I've been working on for about
+five years
+um I don't know if we're gonna get it in
+16 or not we have some patches uh but I
+still have some convincing to do and
+we're continuing to work on it I do
+think it's important but
+it's not a universal understanding in
+the community yet so thank you very much
+appreciate your time have a great lunch
+[Applause]

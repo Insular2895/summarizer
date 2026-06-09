@@ -24,12 +24,20 @@ playlists/
 
 # Pipeline local
 cache/
+library/*
+!library/youtube/
+library/youtube/*
+!library/youtube/*/
+library/youtube/*/*
+!library/youtube/*/transcript.txt
+!library/youtube/*/metadata.json
 input/pdf/*
 input/youtube/urls.txt
 
 output/videos/*
 output/books/*
 output/graphipy_ready/*
+output/motion/*
 
 *.srt
 *.vtt
@@ -41,6 +49,7 @@ output/graphipy_ready/*
 !output/videos/.gitkeep
 !output/books/.gitkeep
 !output/graphipy_ready/.gitkeep
+!output/motion/.gitkeep
 !requirements.txt
 !requirements-dev.txt
 !requirements-pdf.txt
@@ -50,3 +59,5 @@ output/graphipy_ready/*
 !tests/fixtures/*.txt
 !tests/fixtures/*.srt
 !tests/fixtures/*.vtt
+!library/youtube/*/transcript.txt
+!library/youtube/*/metadata.json

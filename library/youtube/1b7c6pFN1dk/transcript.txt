@@ -1,0 +1,2651 @@
+[Music]
+hello out there
+my name is brett this is my channel and
+i'm here every thursday talking about
+docker
+containers kubernetes all things devops
+in
+container land so if you haven't been
+here before
+ask your questions early because we tend
+to get a lot and i tend to
+only stay on for an hour some days some
+days we're on here two and a half hours
+answering questions
+so um today is not gonna be one of those
+days so we'll try to keep it to an hour
+i've got specific topics i want to talk
+about
+but i'm i don't have a guest today so
+i'm welcome to take questions on
+anything
+but what i'm going to be focusing on is
+talking about an example repo that i'm
+building
+for focusing on github actions and then
+specifically today
+talking about github
+uh something they they built called
+super linter which is a linter of
+linters
+or a package of mini linters that makes
+it really easy to just sort of blanket
+your repo and everything you might have
+in it with linting
+and then security scanning your images
+before you send them off to
+you know your docker registry what or
+wherever you're keeping your images
+right
+so those are things that i'm trying to
+add to every one of my projects
+and i'm also working on them with
+various clients of mine that
+are considering github actions as an
+alternative or a future
+of their continuous integration
+and so this is a topic on the top of my
+head i'm working on it all the time so i
+thought let's
+let's talk about it let me share some of
+the things i've learned i've mentioned
+it several shows recently you can
+actually go back
+on the bret.live right there you can go
+back and
+you can see previous episodes i've
+talked about github actions
+quite a bit this year uh especially
+recently in the last few months
+but today i wanted to focus specifically
+on the linting and the security scanning
+because those are two things that
+linting maybe people do but security
+scanning doesn't necessarily
+come automatically in the ci
+workflow of people like they usually
+will if they're gonna add some sort of
+security scanner it may be code only it
+may not be image based it may be
+in their image registry like if you use
+something like harbor which is
+an open source registry for docker
+images
+that harbor has an integration that
+where it can run an open source scanner
+inside it but that's only when you push
+the image
+and then it scans so what if we shift
+left as we
+talk about it shift left security where
+we bring that even closer to the
+developer by scanning
+while we're doing a pr for example where
+we're building our
+our software and we we can see the
+results
+of our dependencies maybe we've added
+npm dependencies into our app
+and we want to see those nci alerting us
+of potential security risks before
+it gets into an image registry or
+potentially on a server in production
+so these are all things i think about
+and i work on with teams this is
+very much a part of the devops
+life cycle where you are shifting your
+you're wearing many hats and you're
+shifting
+your focus maybe one day you're you're
+focused on
+images in a registry getting on a server
+but on another day like today i'm
+focused more on
+on ci and how can i take tooling
+that maybe not every developer is
+running locally and how can i make that
+consistent
+on every pr they're doing so if they're
+they create a pr
+start running these things right array
+right away and then
+run it on every commit in that pr
+and then once the pr is merged into the
+specific branch that you're
+shipping then that's when things like
+images
+ship into your registry right that's a
+very typical
+modern container workflow is that we do
+a bunch of things in ci but we don't
+ship that image
+until certain patterns of exist like
+maybe it's a part of an epic so it
+ships as an image automatically with a
+specific name in it
+or maybe we only ship the image up to
+the registry we only push it
+once code is accepted in the main branch
+or something like that
+so i'm well i'm happy to talk about any
+questions like that today we already had
+the very first question
+before the show started up from biker
+asking around
+github actions and gitlab which is he's
+considering as well as apache airflow
+which
+is a code-based workflow engine rather
+than a yamo based
+i have seen some of these before and
+there's a couple of immediate thoughts
+one i've never used airflow i've never
+i don't think i've ever actually heard
+of it so i'm not going to have a strong
+opinion on that
+at all but i would say that
+the choice of your github i'm sorry the
+choice of your
+continuous integration platform is very
+much
+what i from what i see a culture
+decision as much as it is a tool
+decision
+because the ci workflow tool is
+something that
+it is something that in some teams i see
+every developer
+adding gamble you know stuff maybe if
+you're using uh
+ci platforms like um
+like we had travis back in the day um
+there's other ones that are yaml-based
+i'm trying to think of
+code ship um circle ci and
+maybe some of the jenkins stuff although
+but i'll get into jenga's in a second
+a lot of these paths based solutions
+maybe even drone which is an
+open source solution and it's the ammo
+base actually
+is it yellow based yeah it's a drone
+file
+um a lot of these tools allow the
+developer to easily add
+modifications to ci in their pr of their
+code so if they
+add new code and they need to run an
+additional test they can do that in the
+same pr
+and that's the way you should be doing
+it i in all the teams i work with
+allowing more people to help
+enhance and the ci solution as well as
+monitor what's happening in ci the
+better what i
+tend to see in what i will call legacy
+teams or
+sort of pre especially pre-container
+teams
+because if they're not yet doing
+containers they tend to have other older
+processes like ci
+is they have a jenkins solution and this
+is not necessarily jenkins fault but
+this is the way i see that i tend to see
+it implemented
+jenkins is so complex that they'll end
+up being one person who's the jenkins
+person or maybe two people if you're
+lucky
+they tend to be the people that write
+the pipelines and write the
+scripts and you know the groovies and
+all these different things that go into
+jenkins and they become
+the bottleneck because any new developer
+that wants to help
+write some new code doesn't understand
+the ci they may not even have
+access to look at jenkins they maybe
+needed you know an account to see
+jenkins or they might have to be on a
+specific vpn
+to see jenkins and so they uh and then
+the jenkins workflows don't always
+highlight and show up
+inside of your github pull requests
+or your gitlab or whatever and if they
+do usually when you want to click on
+details then it takes you to the jenkins
+system of which you have to have an
+account
+right so if you've heard me in this
+channel lately i've been talking about
+github actions
+either to supplement or replace a lot of
+these other ci tools because
+if your code wherever your code lives
+if your ci is there too that's one less
+bottleneck that's one less
+thing that's going to get in the way of
+developers by
+telling them basically they are
+responsible for their own testing and
+their own linting and they're
+all the things of their pr so if their
+pr starts to fail
+because you've had all this stuff then
+it's their job to modify these things
+not reach out to the ci person and say
+i need you to add a new workflow because
+my jobs are failing in the pr
+or whatever and that's what i start to
+see happening so what we want to do is
+we want to enable everyone in the team
+whether they're dev
+or ops or in the devops team or sres or
+any of these titles
+we want to enable them to
+see everything they can inside of your
+let's say github today just github could
+be git lab could be bitbucket
+but github see everything in the pr and
+then
+including the logs of everything running
+inside of ci and then be able to modify
+it on the fly
+change things and try to fix them inside
+their pr so that's what we're going to
+go through
+all that um
+see if i got any questions yet
+what does linting linting is
+basically tools that check various files
+for best practices so if it's
+a code linter it's going to check based
+on
+your team's way of developing so for
+example if it's a json
+um or sorry if it's a javascript linter
+it might look to make sure you don't
+have semicolons
+anymore at the ends of your lines
+because that's grown out of fashion it's
+no longer necessary so
+that is something like that you might
+have a markdown linter that looks at
+your readme files to make sure that
+they're proper markdown formatting
+you might have a file linter like the
+more popular hadoo lint
+uh that will look at your docker file to
+make sure you're following all the best
+practices as practices
+and that there's no errors in your file
+so
+it's one way of preventing errors before
+testing starts
+i don't tend to run linting before
+testing i run it in parallel
+because a lot of times linting is more
+about syntax and less about errors
+so i i tend to design the workflow so
+that my linting happens in parallel with
+whatever testing is going on
+and some linting failures may not
+be a stopper for code testing right a
+lot of them won't
+so i don't want them to be in the way i
+don't want to fail a linter because i
+edited a readme and it won't end up
+testing my code or testing a docker
+build just because i
+didn't end line correctly in a markdown
+file so
+i don't want that stuff to happen um
+but let's get into it hello everyone in
+the chat
+um hello there everyone
+look at all the haze all right
+so let me pull this up
+uh by the way if you're new to this
+channel uh this channel is sponsored by
+patreon
+i have a patreon membership uh you can
+buy me a coffee
+every month if you'd like and then you
+get access to some special perks
+or you can just follow so you click that
+follow button and then you'll get about
+a weekly
+update of new things i'm creating this
+week we're announcing i think we'd kind
+of
+technically announced this last week
+that all of my courses
+are they now support apple m1
+architecture which is an arm 64
+architecture
+and then now we're also supporting in
+99.9
+of everything i'm supporting raspberry
+pi's
+that are running a 32-bit architecture
+so that's arm
+v7 so what this means now is that you
+can take you should be able to take any
+of my courses on an apple
+m1 as well as regular intel stuff as
+right as well as raspberry pi's
+aws graviton you know i think oracle now
+has arm instances like there's all these
+arm things cropping up lately and
+uh i wanted to support them so
+that announcement's going to go out this
+week if you're in the courses uh we
+should be getting that out pretty soon
+and yeah so anyway you would hear about
+that if you were on patreon so just
+click the follow button
+that's free to use to follow and it's
+kind of like
+an email once a week kind of thing
+all right so this is my example repo
+that we're going to work on we're going
+to iterate on today
+and i'm going to go through real quick
+what is already in there because we've
+covered some of that before so if you
+want some of the basics around github
+actions
+then i did go through some of that a few
+weeks ago if you just go to brett.live
+over there and break that live and then
+scroll back in the videos you'll find a
+github actions
+talking about docker and we we go
+through some of the basics of getting
+started
+but essentially with github actions
+which is
+i would say largely right now it's
+really just a continuous integration
+system
+it's a ci system it replaces a lot of
+what jenkins would do
+or circle ci but it's not yet
+a great deployment mechanism so
+there's some great stuff out there which
+i have mentioned in a previous video
+around the limitations of using github
+actions
+as a way to deploy your software and
+your servers so maybe using it for
+terraform
+or for using it for kubernetes files to
+use cube control with manifest and stuff
+like that
+it's not great at that largely do around
+the idea of environments
+and that you will have multiple
+environments and that you need to keep
+things
+confined to environments and stuff like
+that they recently added some features
+you can see all these in settings you
+can see down here
+this is where i'm storing secrets you'll
+see that i have three secrets today i
+have my
+docker hub token for accessing that and
+then we're going to talk about security
+scanning so i'll talk about sneak
+and i put their token in just a few
+minutes ago
+we also now have this thing environments
+which is
+github starting to integrate some of its
+deployment stuff or
+advanced testing stuff into
+environmental focused
+actions right so that you can now have a
+staging and
+a testing or dev dev testing one and dev
+testing two you can have these different
+environments
+have different uh secrets and different
+stuff happen in your actions for that
+right so that's just the beginning
+from my understanding it's not near as
+advanced as things like azure pipelines
+or maybe really custom stuff that you
+would write in jenkins with a bunch of
+plugins
+so it's not there yet i'm not too
+terribly worried about that one i think
+that they're investing a ton of time
+into this so we were going to
+continue to see them try to take you
+know
+take away all the reasons to use other
+deployment workflows
+i do see a trend where microsoft is
+shifting some of the
+tooling out of azure specific into
+github so i think that's
+probably going to happen with some of
+their devops and azure pipeline stuff
+which they've kind of already announced
+um and the other thing i'm seeing here
+is that if you're in cloud native if
+you're truly doing stuff with containers
+and kubernetes
+then you probably are interested in git
+ops now we've talked about git ops
+a lot over the last year year and a half
+on this channel
+and get ops is something where the
+infrastructure itself looks at git
+and self corrects rather than
+always the push model of you running
+commands in ci
+that then pushes changes right and so
+the get ops workflows work well
+with github actions because github
+actions
+will not kick off those workflows it'll
+just be git itself the
+the web hooks of github will kick off
+your
+get ops workflows and that's
+something we've talked about before you
+can probably search in my channel for
+other git ops videos
+um but that's not we're not gonna talk
+about that today
+we're gonna we're gonna talk about this
+stuff so all i have is a simple repo
+here
+we're going to ignore the license in the
+docker file this is just the boilerplate
+stuff in order to
+have something to run i need a very
+generic docker file that we can build
+and ship
+so you'll see here all i have is i'm
+building i'm using an alpine image i'm
+running a curl command
+and by default if you don't specify
+something on the end of your docker run
+command line it'll just spit out the
+curl help or something so
+super little uh easy docker file but
+all of your github action stuff will
+happen inside the dot
+github folder this this directory is not
+new you can actually put
+templates for your pull requests and
+your issues you can you put other
+templating github
+stuff in here but the first thing i want
+to talk about is linting so we get that
+out of the way
+so how i do linting
+and this is not specific to github
+itself but github
+has something called the superlinter
+and to me what superlender does is
+it it does a couple things one is it
+doesn't require me to be an expert in
+every linter
+for every piece of code or text
+in my app um it automatically pulls in
+sort of the best of breed linters and
+they have a huge list
+and it these will automatically detect
+in your repo
+you know if it looks like a c file it
+will lint the c file with cpp
+uh if it looks like a docker file it
+will actually use two linters
+i'm i am more of a fan of hadoolint
+and we can get into that if someone's
+interested in the differences between
+the two but i find that docker file lint
+is it needs maintainers it hasn't been
+updated in years
+and it's got lots of bugs that i
+continue to find so i'm not using it
+anymore
+i'm just using hadoop lint anyway so
+there's you can see there's lots of
+linters here for all sorts of
+things there's even a linter here that i
+tend to disable sometimes
+called jscp so jscp
+looks at your code or any file you're
+using really but mostly code
+and it looks for repetitive code blocks
+or text blocks
+and will warn you that hey you probably
+should consolidate this because you're
+copying pasting in a lot of different
+places
+i do a lot of example apps so i tend to
+have lots of examples that have
+repetitive stuff
+because it's showing off examples of
+things and so this one will trip on me
+and fail my linting so i tend to disable
+that
+so we'll talk about that in a minute on
+how you do that how do you disable those
+but back in our repo
+you have the concept and github actions
+of workflows and in each workflow you
+have
+jobs and in each job you have actions or
+steps
+so in my i have a workflow
+just for linting and the cool thing is
+if you go
+over here or if you just
+scroll down you will find actually that
+they will give you this boilerplate
+code and so i just copy and paste from
+here right this is a workflow
+i copy and paste that into my
+linter.yaml
+and all of your workflows go inside of
+this directory
+and it it basically fills all this by
+default you'll want to specify
+your branches here if they're not main
+it's not named main
+but essentially what i'm saying here is
+don't lint on every single branch all
+the time
+you might want it to but i'm only going
+to lint
+if it's either a commit
+on my main branch which is my my
+shipping branch
+or a pull request against that so for a
+developer
+that might be working in their own
+branch if you do branch based
+development
+then i'm not going to start running any
+of these things
+until they create their pull request
+and i i'm much more in the style of the
+github
+flow where you are making a pull request
+at the beginning of your work
+so that people can see your work in
+public
+and so i would expect in this type of
+workflow where you make the pull request
+when you have a new feature idea a new
+change and you're making that and then
+you're committing against that branch
+and that pr is getting updated and this
+is running every time that you make a
+commit
+all right so scrolling down it does two
+things it simply checks out the code
+and then it runs the linters so their
+package
+is a github action and every github
+action is a docker image
+so it's running this action and then
+that linter will go through and do
+several things it
+it looks at every letter will run it'll
+basically look at the code analyze
+the different files you have and then
+we'll run specific linters
+in two two things have to happen one is
+it has to see files that are related to
+that lender before it will run that
+this just doesn't just run them all
+blindly it will only run the ones that
+it sees files that match the pattern
+secondly it will only by default run
+those
+linters if there's changes in that
+commit
+and that's important because you maybe
+don't want to lint every file on every
+commit
+in the entire repo that's that would be
+a lot of work
+so they have this little value by
+default that says validate all code base
+false so i'm saying that here so
+that it only
+checks the changes in my commit and not
+every single file in that commit right
+and then i'm i'd specify my default
+branch just so it knows where that's at
+you need to add your github token in
+there and this is a standard line
+that doesn't mean you have to go get a
+github token it just automatically
+pulls this in this is a convenience
+feature of github actions
+and this is an example because it's
+going to run every one of these linters
+and so when you first try this it's
+going to complain there's going to be
+problems with your linter right it's
+going to
+there's going to be imperfections in
+something that you did if you've never
+linted before
+so it's in this one i don't want to use
+the docker file linter i want to use
+hadoolint
+remember me mentioning that that there's
+two of those linters for dockers
+dockerfiles so i'm disabling the one i
+don't want to use so this is
+how you would disable linters now if you
+want to customize linters
+you back up a directory and there is a
+directory called oh i don't see it here
+okay so there should be a directory here
+called linters
+and let me let me see if i can push that
+um
+i'm gonna copy some code in
+because you're gonna need to customize
+some of these linters and
+let me i'm going to copy in some files
+first we're just going to
+in the github directory
+um let's see what is it called i'm going
+to backup the directory
+docker
+i have another one by the way where
+there's two repos are going to
+eventually be examples one is going to
+be a mono repo where you have many
+different apps in the same repo which
+requires a little bit different setup
+and then this one which is a single app
+per repo
+is it's a more simple example and then
+so yeah it's linters
+and so in here we need to make a
+directory
+called linters and what you're going to
+do in that directory
+is in the linters directory you're going
+to dump for each linter you want to
+customize
+its customization file in the format of
+it
+so the cool thing is if you're moving to
+this and you have linters already
+you you'd probably already have custom
+lint files for each one of those linters
+and you know if you're a javascript
+linter then you're probably going to
+have that customization file
+it's either a default that you use on
+your computer for everything you do in
+js
+um i'm sorry javascript i keep saying
+json in javascript
+um but you might have one in the repo so
+you can copy those into here or move
+them into here
+and what the super liner does is it
+moves them
+it copies them into the linter in the
+right place before it runs it
+so it now gives you one subdirectory to
+keep
+all your linter customizations and it's
+it's in the same format as each one of
+those linters so each one of these files
+will be named differently will be
+formatted differently
+and they have all those details over
+in the super linter
+readme they talk about where to put
+those files and
+you and some of them some of these
+linters support
+a custom location or a custom file name
+for their linter
+customization so you might be able to do
+that as well you can actually
+see if you scroll down um
+let's see docker file
+see like some of these you can you can
+do the conf the config location with
+environment variables so that you can
+uh change the location of those so
+but i love the fact that i can put all
+my linter customizations in a single
+directory hidden under dot github so
+it's not
+clogging up the space in my repo root
+for all the especially if you have a
+mono repo right it can really get
+complicated in there
+so what we need to do is
+i'm going to
+copy over my examples
+into this directory
+oh
+um do i have any files in there
+maybe i don't
+ah all right so i need actual linter so
+i'm gonna borrow from one of my other
+projects
+and i think which one i could use
+um
+we're gonna go over to my sh pod if
+you've taken my kubernetes mastery
+course
+i have this tool called shpod or shapod
+[Music]
+and i have i know i have linters in
+there
+[Music]
+all right now i've got to find them
+[Music]
+i'm gonna open up another visual studio
+code uh
+window
+by the way i'm going to look at
+questions
+while i'm doing this
+let's see
+oh that's why because they're dot files
+all right we're gonna copy those
+i'm gonna have two windows open
+hopefully that's not too confusing
+and then it's the under linters all
+right i'm going to copy these in
+all right so i'm not going to use the
+dockerfile linter
+i'm going to use the hadoolan so i don't
+need that linter example but this is a
+good one
+because i actually have a bunch of rules
+that i ignore in this one already
+so what i'm doing here is i'm adding in
+for hadoolint
+let me zoom in on this so
+lent oh
+why did my theme change all of a sudden
+[Music]
+all right all right so what i'm
+doing here is i've got ignored rules and
+this is these are things that are
+basically
+tweaks to this linter that i don't
+recommend
+they be your defaults i'm not
+recommending this as defaults uh they
+i'm so i'm gonna put some comments in
+here that basically say
+these are things that i have to use for
+example apps because a lot of things i
+do in example apps are not what you
+should use in production for example
+i don't pin versions a lot of times
+because i want the example
+to not be four years old right so i
+don't
+i want them to be evergreen as a term
+that we use as to
+be modern and supported as long as
+possible so i don't want to pin the
+version specifically and i'll often make
+comments like
+don't do this but i'm going to pin to
+the generic version or no version
+so i will disable all those rules
+because a lot of these rules will
+complain hey you're not pinning your app
+versions you're not pinning your npm
+install versions
+and so i disable all those rules um
+there's also some advanced things you
+can do in docker files that these rules
+maybe don't
+recognize especially when you're doing
+multi-stage
+stuff where you're copying things in
+with permissions and all that it
+sometimes trips up rules it's basically
+the rules are bugged and they don't
+always support every example so i've got
+that stuff commented out
+but as long as i have this in here the
+super liner is going to copy it in and
+run it
+on every pr commit
+um peter's asking do you have a lint or
+yammer within your workflow directory
+no oh okay sorry i'm seeing your comment
+never mind misread that yeah so you
+don't have to so um
+inside of that workflow this is where
+this is where all the linting happens
+and this right here again it's going to
+be designed
+so that over on my website
+you can see here under actions
+that my linting see where it says lint
+code base so
+that that is the workflow it we get that
+title
+if i zoom out just a little it'll
+actually change the interface
+so i have two workflows right and those
+workflows are two different files but it
+gets the name of the workflow from the
+very
+top so we that's the name the friendly
+name of the workflow so that's what i'm
+seeing in here
+and if i just want to look at my linting
+workflow i can see that for each one of
+these commits
+it is going to run this linter i can
+also see this stuff in the pull request
+which is what i love so
+so i don't have pull request yet so
+we're going to create one here
+for specifically for the security stuff
+because i've already done the linting
+as a part of creating this repo but
+we're going to add security scanning
+to my image so
+if we look really quick um let me go
+back to my code editor
+if you look really quick we talked about
+this weeks ago again in the docker hub
+docker github actions video
+from two or three maybe four weeks ago
+we went through this whole file
+and this file basically
+it ignores some things and it runs and
+specific things
+mostly just pull requests and pushes but
+we can we also have this one run on a
+schedule
+using a cron schedule so that it runs
+even when nothing's happening in the
+repo
+and then we we do a workflow dispatch
+which technically allows us to run it
+anytime we want by clicking a button
+that's a pretty neat way to run it so
+that's what this on statement does here
+that array
+so the job itself is this one long job
+that runs
+synchronously and it sets up
+qemu so that i can emulate different
+platforms it sets up docker build x
+which is the new build kit
+type of thing it sets up the github
+caching so that my docker builds are
+cached for
+faster building it logs into docker hub
+it logs into github container registry
+because i now
+store all my images in both docker hub
+and on github
+so that if people no longer want to use
+github because of the
+sorry they don't want to use docker hub
+because of the limits because
+sometimes you might hit limits on docker
+hub with free accounts
+then you can still use github for my
+images
+then i use docker metadata action
+to add labels and tags
+to my images and then i use
+the build and push action which does the
+actual building of the image
+using caching and it will only push the
+image
+to my registries when it the pull
+request is accepted
+on my main branch that's what is is
+right here basically
+push only when it's not a pull request
+and then there's a work work around for
+caching uh there's a caching quirk
+that is affects your size of your caches
+over time and slows things down
+so uh there's a bug fix essentially in
+there and that
+that repo talks about those links do and
+then i print out the image digest
+so in just in case i want to see exactly
+the shaw hash
+of the image that was made and then
+pushed my registries
+inside here i do this at the very end um
+to do that all right
+so we talked about that before but what
+i want to do is i want to add a step in
+here
+that security scans and there's two ways
+we could do this
+we could make a workflow that does a
+security scan
+on its own and nothing else is dependent
+on that workflow basically if it fails
+security scans so what
+things are going to still get built and
+tested but
+you could put in a step here that does
+the security scan
+after you build the image and then it
+scans the image not the code
+but the stuff in the image um so it'll
+can it'll scan packages right so
+most cve scanning isn't scanning your
+code it's not a code scanner
+it's scanning dependencies so npm
+dependencies
+apt dependencies the the the from image
+right that you're coming from stuff like
+that
+so what we're going to do today is we're
+going to look at two
+back over to my browser my two favorite
+security scanners
+are sneak which is a a paid product with
+freemium features so you can use some of
+it for free and then they add on a layer
+of paid features
+that are more comprehensive in the realm
+of security because they are a security
+focused company
+but and the other one that i'm
+specifically going to do first
+is trivi trivi is a free
+scanner open source made by aqua
+that it was sort of my first favorite
+i go back and forth between sneak and
+trivia in fact i often will use both
+because if you've learned anything about
+security scanning
+especially about cve scanning is that it
+can be opinion based
+and that scanners will show you
+different results based on two things
+one are they capable of scanning all the
+things because they're not they're not
+they don't all have the same features
+they can't all scan every single thing
+so in your case with your code and your
+repo
+you might get different results because
+one scanner has more capabilities than
+the other
+secondly when it comes to the
+cve database and scanning for
+vulnerabilities these tools all have
+defaults
+and settings that they set and so they
+may tell you about things
+that other scanners won't tell you about
+not because they can't find it
+because maybe they don't consider a
+four-year-old
+low-risk vulnerability something that
+they should warn you about
+right and and so they have opinions and
+that's okay
+which is why it's kind of good to always
+run to
+it's kind of like antivirus scanners
+remember we remember antivirus scanners
+you can get tools that will run multiple
+ones um
+i in my life i can remember back in the
+email days there was a
+email tool that would pull down
+different engines in the background so
+it would pull down multiple
+antivirus companies scanners and run
+them all concurrently
+which was really cool because different
+ones would detect different things
+so that's kind of my bit of my approach
+to security scanning and
+stuff like this vulnerability detection
+is it's hard to trust just one system
+so what we're going to do is we're going
+to make a new workflow and i'm just
+going to
+pretend and this is not pretend because
+i've actually never done this with trivi
+in github actions so this isn't pretend
+uh i'm going to act as if i
+have never done this before and i know
+nothing about it so
+this is showing me an example like a lot
+of these marketplace actions do they
+show me an example
+of how to use this and
+i already can see that there's some
+things i want to change because i want
+to use
+a more modern ubuntu i want to probably
+have this running on a 2004 rather than
+so this is a little dated but um i'm
+just going to copy this
+and make a a new one
+now there's other ways you can do this
+in fact i'm not even sure if i can do in
+here inside of
+vs code there is an add-on for github
+actions
+and it allows you to see their status
+well this is really cool you don't have
+to leave your app to look at your ci so
+now your ci
+is in your development tool so i
+recommend this github action here
+uh this extension but one thing that i
+may even be possible that i don't know
+is that when you're in your app if you
+go to actions
+you can say new workflow and then
+um does it allow me to search it may not
+allow me to search
+and there's pro trivia is that probably
+on this site
+so it'll uh sorry give me back
+my um my gui so
+you can do this in code in your local
+machine but if you're on the website
+they have this workflow where you can
+click new workflow you can just
+click on something that you see here
+that if you want it but the one i want
+is not here
+so i'm just going to say set up a
+workflow yourself
+and it then takes you straight to the
+editor
+and i'm going to use a search here
+to find the official aqua security
+trivia repo
+and is it letting me let's see what does
+it let me do
+um
+yeah so it's not letting me copy in the
+full
+file kind of hope it would let me do
+that
+anyway so i'm going to copy this in
+because this is an action
+so this example file here is a way the
+way you could build it
+so i'm going to take out all of this
+stuff and just add in
+their stuff here so this is
+uh let's see well and of course it
+didn't comment it it's tabbed
+so let's get that tab fixed
+there we go all right so
+um in here i now have
+their example inside of a new workflow
+now this is all super generic and it's
+not it's everything's commented out
+so it might be in this case it might be
+faster for us to simply take their
+example
+which it has specific stuff in there
+and this might be a little bit easier
+than using all their comments
+right and all their options so i'm going
+to copy this instead
+we should probably talk about github
+code scanning at some point but that's
+not related to today
+because we're not really scanning code
+we're scanning dependencies with most of
+these tools
+sneak may have an ability to do code
+scanning
+but we're on trivia and trivia is
+focused on
+dependencies as far as i know unless
+they've added a new feature
+so i'm going to go in here and i'm going
+to do it the hard way
+inside of my code repo so i'm going to
+add a new workflow
+file i'm just going to call it
+trivi
+and i will paste that in so already i
+can see
+on push to certain branches so i need to
+change
+a lot of these things right name i want
+to make a friendly name for this thing
+so i'm going to call it
+something like that and then i'm going
+to do i'm actually going to copy this
+out of my
+other linter because this is probably
+the same thing i want
+so i'm going to copy out of my linter
+and then paste that stuff in here
+so this is all about the triggers right
+this on statement is about triggers
+when does this thing when is this thing
+supposed to run
+and then this is going to be not build
+but
+i'm just going to call it scan
+now on this one um everything
+happens inside of an image that github
+actions creates
+and so we're checking out i'm going to
+go over to my docker
+build and push and i'm going to copy
+their
+stuff out so run runs on and steps i'm
+going to use that specific checkout
+action trying to keep things consistent
+right
+so go back to my trivia
+and i'm going to do that
+so that it's running ubuntu latest not a
+hard-coded
+one and then the checkout
+ubuntu 1804 is a little old so we if you
+were going to pin a version there
+to basically this is the thing that all
+your future steps will all run in
+so you could pin to ubuntu 2004 or
+something like that
+now what this is doing is interestingly
+enough
+this one is doing a docker build command
+to build the image and then it's going
+to scan the image
+now in this case a trivia can be used in
+multiple ways
+but in this case if i was going to do
+this
+then what i probably would do is i would
+have this scanner
+go as a part of my other workflow so it
+might
+be something that
+i use somewhere else so over here
+i might have to put it down here so what
+the interesting part here is that the
+i have this build in push step and i'm
+doing that all at once
+so what i'm going to need to do now is
+we have to break apart the build and
+push steps i'm going to build
+then scan then push um ideally this is a
+separate workflow but it seems like
+their linter example wants to let me get
+rid of that
+get rid of that their linter example
+wants to use an actual image
+my understanding was um if i'm
+and i get sometimes i get these scanners
+a little confused so on
+actually this is i'm on no i'm on trivia
+yeah i want trivia
+so let's see if they have an example for
+so no see it's still using a docker
+build over here
+um
+using trivia to scan your git repo okay
+so maybe this is more what we
+want
+in repo mode
+and this is an interesting effect i
+didn't even know i could do this this
+allows me to upload my results to the
+github security tab that's actually
+really neat
+private registry we don't need to do
+that see what other
+elastic container registry google
+registry
+cell phone hosted registry all right so
+i think what we want to do here is if we
+just want to scan the code and not the
+image itself
+then let's go ahead with the example
+up here that they give for repo mode
+um
+i'm going to use i only need this part
+right here this is their
+specific step
+and so i'm going to in this trivia file
+do that
+and then i don't know why okay
+it just it's giving me an error in the
+coder
+um that it's giving me a code of vs code
+because if you didn't know vs code by
+default will
+look up yaml syntax for each file
+uh using a service a standard service so
+it already knows how to manage this file
+and it's already detecting problems but
+it's basically saying that trivi
+has not uh added essentially their spec
+to their step so it can't figure out if
+this is
+syntax is correct right you can't figure
+that out so
+one of the things that you want to do
+here is this step is probably the most
+important
+the severity so you you tend to want us
+when you're starting your scanning you
+tend to want to start
+only finding the most critical things
+because the reality is is
+every app i've ever used has some
+vulnerability in it that is known
+inside the cve database so
+that may not even be necessarily
+relevant so i'm going to
+only show critical here and that's their
+default if i
+change the severity let's see if what
+options they have for severity
+uh so critical high you know
+i maybe i don't maybe i can start with
+critical and then
+once i'm okay with the results of that
+then i can start looking for high
+and then once i'm okay with that i can
+maybe go whatever
+other if they have medium or low
+yeah medium low unknown um because if
+you just
+left this by default and you let it scan
+everything
+like unknown low and medium all of them
+you will probably get hundreds of
+results and almost
+most real world production apps will
+have hundreds of vulnerabilities
+and there's nothing you can i mean a lot
+of times a lot of them you can't do
+anything about it because there is no
+fix so
+one of the things you have to learn
+about these tools is
+um by the way i'm over here looking at
+their documentation so
+unknown low medium high um
+that you you kind of this is an
+imperfect science and so you're never
+going to have
+all of your apps zero vulnerability zero
+low vulnerabilities
+um and the only way i ever really see
+that happen is when people build
+for example golang binaries in a
+container image
+that are all their own source code
+node real dependencies of other golang
+libraries which is rare
+other than maybe the official go
+standard libraries and then
+something like that where it statically
+compiles a binary that can't be scanned
+right because this is not a code scanner
+inside of a compiled binary
+this doesn't do that so if you do that
+and then you put it in a scratch image
+so that technically your docker image
+is only shipping your one binary maybe
+it's a golang maybe
+it's a c plus binary and that's the only
+thing
+in there because it's statically
+compiled so there's no other
+dependencies
+then your security scanners are always
+going to show green because there's no
+way
+for your image to have any
+vulnerabilities in it
+other than your own in the binary but it
+can't detect those
+because it can't scan a binary so in
+this case what we're doing is we're
+scanning the source code
+not the built image so you will get
+different results
+based on both and i recommend eventually
+once you get super advanced
+you do both um so we're going to try
+this one
+all right so we're going to do this here
+and one thing
+that we want to do is maybe we want to
+run this locally
+to see if it's going to work before we
+even commit it
+right and one thing i could do is i
+could just run trivia the command line
+so you could go download trivi
+you could put it on your file of system
+you could run it against your source
+code
+or we could run this github action
+locally
+and there's something called act it's
+not an official github
+tool i wish it was i'm not i wish that
+they would adopt it
+but it's a very popular the only one
+that i'm aware of
+but a very popular tool for running
+github actions locally
+it's not perfect but it gets you very
+close
+to just being able to do local runs of
+your ci which
+i believe is very important to enable
+developers to
+scan things and do things like ci
+locally
+before they commit code in case they
+want to but if they don't want to
+ci will do that for them but don't make
+them wait on ci
+if they want to run it locally right
+give people options give them both
+so usually you'll have act on your local
+machine
+so if we go back to the repo and we pull
+up
+inside this repo i have the act command
+line
+and what i need to do
+is act it depends on docker so i don't
+have docker running i need to start that
+and all you do is run the act command
+line and it's smart enough
+to look up essentially
+it knows because it's specific to github
+actions it will look up your actions and
+try to run them
+all right
+let me wait for docker to start
+so if we look a little bit of the syntax
+of
+this command line there's lots of
+options
+and i don't really get into much too
+much of the customization of act
+i run it if it doesn't work oh well i
+commit my code and
+wait for ci to finish but usually i just
+run it
+all right so now my
+docker is actually running so let's just
+see what happens
+that's going to run those things i also
+should have made sure that this file is
+saved
+okay yeah not sure if that was actually
+fully saved
+um
+while we're waiting on that i don't know
+if you know but github actions also has
+its own command line tool but it's not
+specific to actions
+that there's the github command line
+tool so i highly recommend you get that
+uh it's just called gh but it's it's the
+official github
+cli and one of the things you can do in
+gh
+is you can look at results of actions
+workflows and um
+different stats right so there's there's
+stuff specific to that command line
+if you don't want to use like the github
+actions built in features so
+essentially all the gh command line is
+doing is it's talking to github and
+giving you
+information about what you can see on
+github inside your command line in case
+you're a command line junkie
+so let's see what's happening over here
+the problem is is i'm running three
+different
+ones so it's going to give me a bunch of
+logs
+so i see oh let me uh let's
+get a little bit better so we're looking
+for in this case it's colored in blue so
+we're looking for the blue log lines
+inside of running all of our workflows i
+could probably just run that workflow
+specifically
+so we're seeing the security scanner run
+here
+all right
+and this is this is the disadvantage
+here is that it's
+we're technically building the image
+twice i think is what one of the things
+we might be doing here
+and we don't really want to do that
+we go
+no it doesn't it doesn't show that it's
+doing a docker build because it's in
+file
+system mode so hopefully it's not having
+to build an image
+all right success um
+so that's all i get back is success
+i have very little um so yeah so it
+looks like it is running a docker run
+because github actions automatically
+comes with docker so any action can do
+docker commands
+all right and that's what the this
+scanner seems to be doing
+is it's running their trivia scanner
+inside of a docker container
+and it's running the trivia command
+inside it you can actually see that it's
+passing command line values into the
+image
+and it gave me no complaints
+and of course i'm failing on some of my
+other workflows because i don't have
+environment variables for secrets and
+stuff like that
+which you could totally do but we're not
+going to do today so one of the things i
+want to
+look up real quick is how to run
+um
+for a specific workflow okay so i can
+use um
+list workflows detect
+path to workflow files yeah so i don't
+see where it's
+letting me act just run just one here
+yeah i don't want to do that again
+do we have any trivia fans i'm sorry we
+have any act fans in the
+chat that might know i'm looking to run
+just one workflow
+which i don't normally end up doing
+it lets me list workflows
+but it doesn't let me just use one
+workflow
+oh well like you know what actually let
+me try that let me try the act
+dash w
+uh see
+[Music]
+then trivia let me see if i do that
+maybe it'll yeah there we go so it's
+just going to run if i use
+w
+so it's not the detecting anything what
+would be interesting to do
+is if we go inside the trivi linter and
+we say
+critical high
+medium low and we try that again
+see if we can't get something to pop on
+my simple example here
+it may not actually show results locally
+it may only
+upload those or put them in a file
+yeah success so
+and now it's giving me an error
+oh it can't upload results because it's
+not running in github so this is another
+example of like act
+being limited so it's trying to upload
+results
+so let's go ahead and upload this and
+we're just going to see what happens i'm
+going to commit this code
+and we're basically adding trivi and
+we're adding
+the ignored stuff all right
+and then i did this in the main
+so instead of doing a pr which i should
+have done in a pr
+um we're just going to do a push
+and what we will do is we will see that
+happen
+over there's our dashboard
+oh up here all right so in my example
+repo
+i'm going to go over to actions and we
+should see
+stuff running get the little circles
+yellow means it's currently active
+or uh cued you can see over on the right
+whether it's cued or not
+so um it looks like i'm running over
+here
+the linter is queued but this one the
+scan is running
+and has finished so
+it doesn't show me the results in line
+maybe that's because i chose to upload
+the results
+so maybe that's why it's not dumping out
+the results so if i go over here
+let's see what i probably don't
+there we go there we go
+and nothing
+hard to believe i am using alpine
+edge so maybe there truly is no
+dependency vulnerabilities in that image
+um if we went over
+[Music]
+and here's a good example of what
+would happen if you did something like
+let's go into my docker file
+and let's see if i do
+a really old ubuntu image right
+i don't think 1604 is getting security
+updates anymore
+so if i do that
+um again we're going to try to run it
+locally see what happens
+see if it pops any results
+um gabriel asked do you know if there
+are any differences between ecr image
+scanning and trivi
+uh i do not know i don't know what ecr
+uses by default
+so a quick google might
+tell us you see our image
+[Music]
+um
+let's look at the user guide okay so
+they're using claire
+uh claire is another option
+i don't mean is very very popular i tend
+to like trivia over
+claire my reasons are possibly out of
+date because
+years ago claire was not supporting
+alpine images nearly as well as it
+should
+and trivi was trivia was properly
+supporting alpine images and properly
+finding vulnerabilities
+and so i don't know the stats of claire
+it probably supports alpine now in a
+much better way
+as alpine has gotten more popular as a
+docker image so
+that's not so i would just look into
+that um that's again that's
+one of those things where the two things
+that will determine your results on
+image scanning
+or any code scanner is can it what can
+it detect
+and in the case of claire years ago like
+every other scanner other than trivi
+they were all ignoring alpine
+dependencies so any apk
+install install dependencies in the
+alpine images weren't getting scanned
+for
+so if you installed a really vulnerable
+version of open
+open ssl or something it wasn't alerting
+on that in alpine
+because it didn't know how to read the
+packaging formats
+and trivia was one of the first to come
+up with a solution
+for how to do that that was a few years
+ago i'm not sure how well that's changed
+and how well everyone else is caught up
+um anyway so yeah it looks like claire
+over there
+and like harbor can use i think multiple
+ones they might be able to use claire
+and trivi i just know that i've seen
+harbor which is an open source container
+registry
+i've seen it used with trivi
+and i believe also with claire
+all right so what we're going to do is
+we're just going to commit this code and
+see if we get any different results
+all right let's go back over to our
+actions
+over here back to our actions
+since we're only focused on trivia i'm
+um
+yeah so we're going to wait on that one
+all right i'm glad you found this
+interesting and you are welcome gabriel
+all right so this scan is finished took
+19 seconds let's see
+it's so it's uploaded it's stuff let's
+go over to security tab
+security code scanning
+and it's weird so i the one of the
+things is
+because i'm integrating this with code
+scanning which is github a specific
+github feature sorry i need to be over
+in my browser tab
+uh a specific feature inside of github
+code scanning
+uh it may not be working as i expect
+because i don't have
+code scanning set up yet if you just
+look up github
+code scanning so there's a specific
+uh feature
+is like yeah about about a year ago so
+this is a github action and
+they have their own like code ql is
+their own thing
+so you can look at the code ql web
+website
+and i would assume what's
+supposed to be happening here because i
+have not used
+uh trivia in github yet like this with
+github actions
+normally i'm using trivi locally or in
+some other ci solution
+so what i would expect is that it's
+going to flag
+those problems here so instead of it
+just being
+stuff inside of my logs inside of my ci
+runs in the workflows
+it's actually putting it in the code
+scanning alerts over here
+it's definitely picking it up and
+showing that this thing is running but
+um
+you know i don't have other
+tools now you can see
+a lot of these other tools are already
+here
+like sneak
+yeah so yeah so they've got the trivia
+here so we're going to go ahead while
+we're waiting on
+trying to figure out trivi let's go
+ahead and do a sneak
+workflow and
+okay we'll keep that default name sneak
+container analysis that's fine
+and
+it automatically pulls in the cron and
+the push and pull which is pretty cool
+in their example
+we're running on ubuntu latest which you
+if you remember that's what i wanted to
+use
+and again their tool
+is defaulting to building the image
+and then running the scanner so
+what what interesting part about all
+this workflow is if the scanner
+is focused on scanning images which is
+something that i recommend you do
+then you you have you have to build the
+image now
+in real world apps building images often
+will take minutes
+like 5 10 15 minutes to build the whole
+image
+so we already do that in a different
+workflow
+and when you start to learn around what
+github actions does
+is when you start a workflow it's
+probably in a different vm running in
+the cloud
+than a different other workflow so if
+you want to take advantage of build
+caches where
+you're only building the image once and
+then you're doing stuff
+and then you're
+when all that passes then you push the
+image what you're probably going to need
+to do
+is put it all in the same workflow so i
+was talking about that earlier
+and we might as well just do that now
+because it seems like that's what these
+tools want me to do or prefer that i do
+i also like scanning the images because
+the scanners
+in addition to scanning your code
+dependencies also
+look at applica at the um os
+dependencies and
+in images they can do that they can't
+really easily do that
+inside of a code repo because there
+isn't really a standard for installing
+apt dependencies
+in a code repo right we do that in a
+docker file but often
+apps might use a make file they might
+have a shell script that installs app
+stuff it might just be stuff in the
+readme
+so so these code scanners if they're
+just scanning a file system repo they
+don't get the advantage of
+os dependencies which a lot of apps have
+right
+in php apps or ruby apps these are all
+types of apps that need os dependencies
+and we want those scanned too
+so you're going to get better long-term
+results by scanning images
+not file systems but it's cool that at
+least trivi has that option right that i
+can do this thing here
+and i don't have to build an image to do
+it so
+we're going to leave the trivia side we
+got our docker file set up
+so what we're going to do is we're now
+going to go back to our docker build and
+push
+and we are going to what we can
+do is we're just going to add steps
+now there's an alternative way to do
+this where we create multiple
+jobs in this workflow and the jobs
+depend on each other
+but again you have to make sure that
+you're taking advantage of caching and
+so
+docker image caching can be a problem
+when you try to
+do things in parallel or do things on
+multiple machines so one of the negative
+attributes of doing it this way
+is that you're ending up with this long
+process here
+is building an image and if you're going
+to do other stuff with that image
+you're going to have to make sure it's
+in the same vm running altogether
+because that's where the image is cached
+so as you get more advanced you will
+graduate from this workflow that i'm
+about to build to one
+where you build the image you then ship
+it to a temporary registry
+maybe you use github container registry
+temporarily
+and you ship it with a temporary name
+and then your
+other jobs or other workflows that you
+depend on because you can make
+dependency trees of all this
+those will then pull that image and do
+the things with that image
+that will allow you to do many things in
+parallel like
+you can lint stuff in the image you can
+test the image you can securely scan the
+image you can do functional testing and
+then
+while you're also doing unit testing in
+a different way
+and you can do all this in parallel and
+the way that you have to get that
+workflow to work
+is to store the image this artifact that
+you're going to use you have to store it
+somewhere temporarily
+and that usually is a temporary registry
+maybe it's a place
+that you have the registry set up to
+destroy the image after a few days of
+not being used
+or maybe you're using a specific naming
+format so that everyone knows
+to never use that image format but you
+need some cleanup
+so you might actually have these things
+that once they're all done
+uh you use a tool that will go delete
+that image
+and that specific tag of that image to
+clean up
+after yourself but it has to go to the
+registry now to do that
+what i'm doing here is not that advanced
+workflow yet
+this is simply me building it on a
+server
+and it will stay in the docker image
+cache on that server until this job is
+done
+and then once this job is done it's
+deleted that's the default
+that's how it works by default so in
+order for us to do what we need to do
+this little part has to be broken up
+into two
+parts i right now this is build and push
+what i need to do is build
+then scan and if all that's successful
+then push
+okay and the way we do that is you can
+just copy and paste it
+so i'm going to copy this out
+and paste another one right below it
+for pushing and then we're going to put
+stuff between these two
+so all of our image scanning is going to
+go between them
+and so i'll just create some space there
+and
+i need to format my yaml
+and so on the first one
+um i'm never going to push
+right it's always going to be false
+because we don't want to push the image
+we just want to keep it here
+for us to now scan it so
+i'm doing all this here you can see that
+we're actually going to be doing this on
+three different platforms so technically
+separate video go back in my youtube
+timeline
+the separate platforms will all be built
+in parallel
+each one will be built in its own tree
+so this is actually going to happen
+three times
+and it's going to stay in the build
+cache
+now the problem i'm just realizing the
+problem here is because i'm doing three
+platform builds
+i'm um
+i need to pick one that's going to be
+scanned because i'm technically building
+three images here for three different
+platforms
+i don't need since they're in theory
+these are all going to be the same code
+and all the same dependencies
+i don't need to scan all three probably
+we could argue about that we could
+debate but um so what i need to do is i
+need to add a new feature
+to this docker build that is owned that
+is going to
+take a specific platform image
+and then export it out to docker
+so that when i do docker run commands
+later for these image scanners
+it will use that image all right and
+i don't know the way to do that off the
+top of my head i know that it exists
+so we're going to go back to
+the github docker
+build and push action
+so this is the one that i'm using
+and there's a bunch of options
+let's see what we've got customizing
+outputs
+now
+load all right here we go
+load i believe is what i want to use um
+oh martin i'm just now seeing your
+comment sorry that was a a few minutes
+ago
+um the fs parameter is the problem
+um i'll check into that thank you for
+the tip
+um yusuf asked can you do a stream on
+copilot
+and your thoughts saw tweets on how much
+change it brings especially to writing
+yaml and manifest
+so i technically have um i just got
+approved for copilot yesterday
+so uh what would be interesting to see
+is how well it i have not even had the
+chance to use it yet i just enabled it
+yesterday
+i don't know why it keeps changing my
+theme
+um so i'll have to try i have to check
+that out
+and yes i'll if i see anything cool with
+i'm not really gonna do a stream on
+development but
+if uh if we're talking about some of
+these ci tools in yaml and mana
+and manifest and stuff like that i would
+i'm i'm all about that that's a great
+idea thanks yousef
+um
+so what i need to do here getting back
+to this example
+is i need to i need i think i need to uh
+load
+load is a shorthand for output type
+docker
+uh let's see so load
+no i don't think that's it
+all right so yeah this is explaining
+what my problem is going to be is that
+if you do a standard docker build
+command
+what's actually happening is that the
+image cache is building it and then
+loading it into the docker images cache
+so that you see it in the list
+but when you use buildex like we're
+doing it doesn't automatically do that
+at least it doesn't do that locally so
+what i need to do is figure out how to
+tell it to load the image in to the
+image cache after it's being built
+and type docker so i don't
+the local export type writes all results
+to a directory in the client
+tar what i want is
+docker
+uh oh no that's what we want is the
+image we want the image
+it will also appear in docker images
+name
+boolean automatically push the image
+so name name references for the new
+image so
+[Music]
+not sure about the format of this
+so what we might need to do is load
+true
+back here in my load true
+so it seems to like that
+and so what i think i'm going to do is
+on this initial one
+i'm not going to build all three because
+i'm not going to test all three
+i'm not going to build all three i'm
+only going to build
+the amd64 and then when we push
+i'll build all three all right
+because this is about security scanning
+so we gotta also change the name here
+so docker build for scanning
+and or i could just call docker build
+and then this is just
+docker build and then down here
+really docker
+build and push
+so i'm going to change the idea here
+id here
+sucker build and push and down here at
+the bottom i also have to change this
+because
+this uh is dependent upon that
+okay so what i've done now is this is
+the original one it's gonna stay the
+same
+and then the docker build is just
+building so we can scan
+so i'm only building the standard amd
+intel compatible
+um i need this is a little cache
+workaround thing that i need to do
+so that we are sticking with the cache
+um yep
+and then
+yeah that's going to create a problem
+with the cache i have to figure out how
+to do that later
+not everything might be everything may
+not be cached there if i
+do it that way so yeah
+um all right so anyway load true means
+hopefully that any future docker build
+command will have that image
+so we won't have to rebuild it and now
+i'm gonna add in
+uh let's let's do
+let's do sneak since we were working on
+sneak
+and
+yeah so there's their action
+is right here so line 27
+um right there so that's two different
+steps
+it's first scanning it then and it's
+using my token which i've already stored
+i've already gone and logged into my
+sneak account got my token
+i have a free account i'm not paying for
+this so i'm sure it has
+very limited scanning or it will
+complain when i
+hit my limits or whatever and then
+back over here i'm going to paste that
+in
+then
+i'm going to change the formatting just
+so it could be consistent
+all right so now we're getting somewhere
+all right so now we have
+this
+action so we're using their action
+we have their token and then
+your image to test so
+what i can do here is i know up here
+this is the name i called
+the image this is where i define my
+image name because i'm using the docker
+metadata action
+so now i need to tell it to name that
+image to scan
+all right
+image is not allowed
+um all right so this may work
+let's actually run it locally and see
+how far it gets
+so we're going to do the docker
+build and push
+and i probably messed something up
+that's going to complain
+but let's see how far we get
+any questions so far anyone still
+hanging out with me
+we're about an hour and a half in i
+thought i was going to get this done in
+an hour but it's taking a little longer
+now this may complain yep yeah this is
+going to automatically fail because i
+don't have my local stuff so we're just
+going to have to commit this code
+because i'm not i'm not going to bother
+putting all my keys in local
+environment variables just so that i can
+log into things
+so
+um that's this time let's actually make
+it a pr
+so
+i'm going to let's see source control
+i'm going to call this
+add
+add sneak scan and then
+we're gonna push
+and then i'm now going to create a pull
+request
+and i can do that if you have the github
+add-on
+you can do pull requests inside of
+visual studio code
+so there's i have two add-ons that are
+github related i have the github
+add-on extension and then the github
+actions extension
+so what i'm saying here is i want to
+take changes from
+the add sneak scan into main
+and we're going to add
+sneak scan
+all right so that was a pretty nice
+workflow that actually took me out a
+little bit
+of having to use git command line so if
+you're
+we're getting to the point now with vs
+code that if you understand the git
+workflow enough you can just
+completely avoid the kit command line
+and do your commits and your pushes
+and your pr's and all that just from the
+gui um
+i've been trying to do that this year
+i'm i'm a command line person so i've
+been trying to force myself to learn the
+ui and what it can do
+it's still not intuitive i still get i
+still struggle
+uh with that all right so if you go back
+over to our repo and go to pull requests
+we should see my new pull request that
+little
+orange dot that you see over here or
+yellow dot is
+telling me that it's currently doing
+github actions on that pull request
+and i can now go in the pull request and
+see each one of my
+jobs running
+and we can see i'm linting uh trivia is
+doing its thing in its own workflow
+remember we had a workflow for trivi
+and then now we're putting the sneak one
+inside
+of this workflow so if i dig in here
+we can see that it's it's
+almost done yeah it's cleaning up
+and
+all right so down here
+so we did the docker build what's what i
+love about this too
+is that i'm putting it all in yaml which
+turns into
+docker commands and i can see the
+command that it's
+telling me that i'm running so i
+sometimes when i don't have the ammo
+formatted correctly i have to
+troubleshoot
+and i can see the actual docker command
+which makes more sense to me
+than the yaml formatting so um
+i can see that it's doing some things
+with caching it's adding in a bunch of
+labels that's my docker meta action
+adding in a bunch of labels
+and then it does its thing this is the
+build
+kit showing me that it's built it and it
+says okay it's importing to docker
+and
+then over here it's
+running we're doing a docker run of the
+sneak
+image with all the options that it sets
+up
+and inside there it's actually you can
+see that it's actually controlling
+docker so that the sneak can do
+something else with docker
+and it let's see where's it saying test
+docker file
+it also um with sneak
+this is a specific feature of sneak if
+you tell sneak hey
+look at this image but also use this
+docker file as the basis for how that
+image was built it gets smarter
+so it knows uh the from image and it
+it doesn't have to sort of reverse
+engineer the history command and
+try to figure out what your image came
+from it can actually just look at the
+docker file and how that was used
+so it gives it a little bit more uh
+intelligence
+so it's now here's the cool thing it is
+dumping results right here in my log
+which i like i
+i want this in the log as well as
+if we go up to security and we go down
+to code scanning alerts let's see what
+we have here
+so nothing um
+we can see results 365 alerts
+but it's not it's not throwing in those
+alerts here
+so 365 crazy
+like that's a lot um and that's largely
+due
+to you know my choice of using the
+ubuntu
+old image 1604 right it's not because i
+didn't add any source code in that
+docker file
+so if i want to get this down let's see
+what happens
+if in the same pr um
+i'm going to add another commit to this
+pr and push it and what i'm going to do
+is i'm going to go back
+into the docker file and i'm going to
+change it back
+to alpine edge
+which is like the latest latest freshest
+alpine
+all right and then i'm going to commit
+that
+and i'm going to push that
+and then what i should see is the pull
+request again
+is going to run through
+run through changes all right here we go
+so it's running again
+and so i can go and wait
+inside the details for this
+and we'll see it scan again and what i
+hope what i expect to happen
+is that a list of vulnerabilities 300
+and whatever
+we had is going to be very small to
+almost nothing
+because alpine is one of the smallest
+images you can get
+not everything works great in alpine i'm
+actually not a huge fan of alpine in
+production for
+custom code because a lot of things i've
+seen issues with python i've seen issues
+with node that are
+specific to alpine images because of the
+way
+that alpine uses its compilers and
+because of the way that it's built
+using a smaller little image
+that it's based on so it doesn't always
+work
+so i don't always do alpine in
+production some people swear by it and
+say that
+you gotta use it but i've had i don't
+know a dozen
+major issues over the years maybe the
+last four or five years
+with using alpine that some of them have
+actually caused production failures
+because of because we chose alpine as
+our base image so
+you got to really know what you're doing
+i would prefer by default when people
+are starting with containers that they
+just start with
+the official images that are debian
+based and stick with those
+until they get smart enough to try
+alpine with more education
+understanding how alpine works how the
+what the real differences are in alpine
+and why it's so different to use in a
+container than something like
+debian or ubuntu or centos um
+and that takes skills time you know
+takes lots of time there
+all right so let's go to our
+security over here and see see what we
+got
+go to our code scanning and ooh we're
+down from 330 to 39
+all right so um this will take me back
+and i then have to find
+the sneak log and
+what the advantage of using something
+like sneak does
+is you can have this stuff i believe
+not a sneak expert but i know one and
+sometimes
+he's hanging out in chat um
+uh to get the this information
+showing up in their sneak portal because
+you can use their dashboard
+and so that might be a paid feature i'm
+not really sure
+but that's an advantage of using one of
+these uh more enterprise paid products
+versus an open source scanner
+is that in instead of staring at these
+logs and looking for all the
+vulnerabilities as you can see like this
+is a medium vulnerability
+um this one's a high vulnerability
+instead of staring at these logs and
+dealing with them one by one
+wouldn't it be nice if i had a place
+that i could see each one of them listed
+and i could find more information
+um it's nice that they at least put the
+links to their their knowledge database
+on for each one of these results but you
+know the only the only workflow i would
+have to
+to deal with this issue now is i have to
+look at each one of these
+go and try to address it in my source
+code or in my my docker file or whatever
+and then re-upload this
+and see the results and then look
+through the log again to see if that
+one's there right like it would be a
+very
+tedious workflow but um the dashboard
+if you've ever this is a free account
+again you can poke around their
+dashboard
+it's looking at my github repos and
+um you know this
+these are all got tons because this is
+stuff that i do
+don't it's all example repos that i
+don't always well maintain so
+it's going to run me through uh each one
+of the vulnerabilities
+and allows me to filter them and and do
+all sorts of things
+that's way better than looking at a log
+you know
+so check that out um
+and i think that's it so at this point
+it works
+things complete and it's not
+failing if you actually look at
+um continue on
+excuse me continue on error is true
+inside of this image so
+or sorry inside this action so the last
+thing i'll point out here is that
+once you get mature in your security
+posture you will want to turn this to
+false
+so that let's say i only have it looking
+for
+critical vulnerabilities critical and
+high and i will turn this to false which
+means that it will break my builds it
+will prevent
+pushing the image if there is a high
+or critical vulnerability that requires
+a lot of work on your part
+because like again this is a simple
+docker file that's three lines
+and i have 39 vulnerabilities so i have
+to go address those understand what they
+are can i even fix them
+do i need to ignore them and then i have
+to work through that process of fixing
+those things and i may not want my
+source code
+to get hung up in that delay like maybe
+i'm just now implementing security
+scanning
+so often when you start this is a great
+default is
+i just want to be notified of problems
+with images scanning
+but i don't want to fail my builds or
+prevent me from publishing code or
+merging my pr or any of those things
+and then once you get a really
+established process for dealing with
+these and once you've addressed all the
+existing ones
+then you can turn this to false and
+it will break your builds right this
+would
+this would only allow me to push images
+which is a step
+lower where i push images it would only
+allow me to push them
+once it succeeded in passing whatever
+whatever stuff i have set up here so
+i think the next thing i'd want to do is
+just like with trivi the next thing i
+i'd want is to change
+the defaults so that it's only looking
+for maybe critical and high
+and
+maybe we look for level um
+i'm not seeing that in their
+documentation um on this readme
+so i'm sure there's customization here
+that allows me to filter
+uh let's see settings page yeah
+green account
+yeah it talks about the continuum on
+error
+so yeah i'd have to i guess look up in
+their uh documentation uh
+further to see what that's how that's
+going to be surely they have that
+surely um
+somewhere all right well anyway i've
+don't see any questions in here
+uh let's see actually i do maybe i do a
+biker is there a way to use github
+actions
+with a private code repo
+we host our own bitbucket server but may
+move to azure repos or github or gitlab
+um github actions as far as i know
+only work on github repos it works on
+private
+or public github repos i don't believe
+you can run github actions
+on non-github repos
+i've never seen a way but um because
+you know in theory
+i guess in theory it's possible
+i could be totally wrong about this now
+that i think about it because
+these are all kicked off but you know
+one is github actions is repo based so
+you would have to have a repo for the
+actions
+secondly it's normally done on a pull
+and push
+and commit uh action like that's how
+it's triggered
+and so if your code is getting pull
+requested and committed and all that
+stuff in another
+place then what you're gonna have to use
+is github
+web hooks and the way that you use those
+are with the you saw me do this earlier
+the dispatch so there's the workflow
+dispatch
+and there may be more information in
+there on how to use
+the web hooks the problem though is that
+i would get into there is i would say
+this is breaking a lot of the reasons of
+why you use github actions because
+github actions is very similar to a lot
+of other modern cis
+but if i'm if my ci is in one location
+and my
+my code and all you know my issues and
+all the things that i'm doing are in
+another location
+that already has create though that will
+always already create problems of
+friction and functionality and so if
+you're on gitlab
+use theirs right use their ci if you're
+on bitbucket
+i don't even know just get a get bit
+bucket have a ci i don't actually even
+know
+um yeah so i would i would probably look
+at built-in options of whatever tooling
+i'm have instead of trying to use github
+actions i don't
+i don't think at the end of the day
+github actions
+would be near as good if you were able
+to
+put together a solution for it to work
+on some other uh
+product but that's just me i haven't
+tried it so
+that's just an impulse but the great
+question
+um if you change the branch in that
+screen you should be able to see the
+alerts
+oh are you talking about um
+[Music]
+in the code scanning alerts
+no yeah i'm not that's not
+that's what you're talking about uh who
+um or sorry that was peter
+um peter was suggesting i don't if
+that's what you're talking about is in
+the code scanning i don't see anything
+on that
+either i don't know why it's not showing
+those
+um who i'm not sure what you're asking
+uh when you click login nothing happens
+on github i'm
+not sure i can help with that
+peter says bitbucket has a product
+called bamboo okay
+yeah i did that peter um
+i changed the branch change the branch
+down here and it's still not showing
+anything
+that's what you're talking about
+um because by default the filter is on
+all branches i believe
+so it's not filtering to just the main
+branch
+all right um i'm gonna peter in case you
+get more
+information uh oh i'm scrolling down
+sorry i didn't see the
+comments
+oh you're talking about vs code who's
+talking about vs code yeah
+sometimes you do have to restart after
+extensions
+yeah so i tried that didn't work
+um yeah i might i might reach out to
+sneak and ask him about that
+so it also might be intentional i don't
+know
+where maybe i mean it didn't work for
+aqua either
+so neither one of the tools have that
+ability
+can you imagine though wait now that i'm
+thinking about it can you imagine
+creating 39 issues
+every automatically uh
+yeah so maybe there's a switch or maybe
+i have to do something else or maybe
+it's just not something that is
+recommended because it would create a
+whole bunch of issues here that
+uh i would have to deal with
+um it is cool so yeah
+okay so there we go that each tool
+showing zero alerts
+oh look at that rules
+so
+wow so there's lots of rules
+but it's not creating an alert it's just
+showing
+that's interesting
+anyway uh i don't have a lot of
+experience with the code scanning
+interface so
+i will spend more time in that
+cause i've never used code qi with a
+project so
+i'm scared of what it'll say about my
+code because i'm not the world's best
+okay thanks peter yeah
+got it all right well so this
+has this is me wrapping up because we've
+talked about linting we've talked about
+security scanning
+uh we've got something here and we need
+to build on that so maybe my next steps
+will probably be to read more
+documentation on the security scanners
+and the functionality
+how in the sneak one can i only show
+high and critical that's something i
+want to figure out
+can i get those results in here um
+can i have these in the actions
+running as like some of it scanning
+before i've been parallel one of the
+problems i'm having here is that in my
+main action
+my main job sorry my main workflow it's
+all linear
+and there's a lot of steps there so it
+turns into let's see the build and push
+well it only took for this example it
+only took
+47 seconds to build but
+most real world projects you're
+constantly trying to it
+speed up your builds and so anytime you
+can parallelize
+tasks and so ideally
+you know in my jobs i don't have if i'm
+going to use multiple scanners
+that they're you know if i have to build
+a docker image fine
+but i don't want the scanners i want the
+scanners running in parallel
+you know i want to minimize the delay
+right so that'll be an exercise
+in figuring out what things can i run in
+other workflows what things can i run
+that have to depend on an image and so
+on so
+anyway i'll be playing with that um next
+week
+guest special friend nirmal mehta is
+going to be here next week so docker
+captain nermal
+will be on the show uh we will be
+talking about devops things in general i
+don't think we have specific topics
+but he is a professional devops
+consultant
+and we will talk about devops jobs
+and all things like that so join us next
+week at the same time we'll be
+focusing on that and i will see you
+same time same place next week here on
+youtube live ciao everyone thanks for
+joining
+see you soon
+[Music]
+you

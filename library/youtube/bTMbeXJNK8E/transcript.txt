@@ -1,0 +1,121 @@
+hackers can't pretend they are you and
+perform online actions on your behalf
+all it takes is a cross-site request for
+joy vulnerability also known as csrf and
+you visit or click on a malicious url
+[Music]
+hey and welcome to security bytes a
+series of short videos from the github
+security lab aiming to educate
+developers on common software bugs csrf
+is about the malicious site a sending a
+request to victim site b while using the
+cookies of the victim site to see the
+attack in action consider the imaginary
+scenario where political elections are
+happening via electronic voting in
+vote.com upon authentication of every
+citizen the site provides the browser
+with a unique cookie and then only
+accepts one vote per user a hacking
+group dropped numerous helper urls on
+how to vote that were heavily spread
+across the internet on the election day
+targeting authenticated citizens while
+those urls had indeed helped thousands
+to vote through step-by-step guides what
+could go wrong well done if you guessed
+it right if vote.com is vulnerable to
+csrf then the hacking group will be in
+position to vote on behalf of
+authenticated citizens this could be
+done through a script on the malicious
+url sending a post request to vote.com
+benefiting from a citizen's cookies
+let's now see a real world example
+uncovered from our researcher yaroslavlo
+bachewski he noticed that ishabonweb was
+based on a template vulnerable to csrf
+under cve 2018.0785
+where a locked in user with enabled
+second factor authentication could lose
+their recovery codes when clicking a
+model issues url or visit a site that
+makes a request without the user's
+consent as a result the user may be
+permanently locked out of their account
+after losing access to their tfa device
+as the initial recovery codes will no
+longer be valid you might think that
+csrf can be prevented by the same origin
+policy also known as soap soap prevents
+interaction between resources where
+their host names protocol and port
+numbers don't match
+but sop does not prevent csrf because by
+design it prevents scripts originating
+from elsewhere from reaching in but web
+pages can always choose to reach out to
+elsewhere with authentication cookies
+being included to prevent csrf ensure
+that valid state changing requests are
+unguessable
+do not reinvent the wheel and use the
+anti-csrf functionality that is coming
+with the web framework you are using it
+will handle it for you safely it is
+important however to understand how
+anti-csrf protection works behind the
+scenes so let's dive into it under the
+hood the protection treats each post
+request as a special snowflake that only
+works once in the context of its
+intended use this can be achieved by
+including in all forms a hidden field
+for a secret token so that every time a
+post request is received there is a
+check on whether the secret token is
+indeed the one corresponding to the
+specific web session
+the hidden csrf token field doesn't
+appear on screen but is included in the
+post request the value of the field is a
+base64 encoding of a
+sha-256 hash of the session cookie but
+any per client secret would work here's
+the python code that created the
+anti-csrf token for the session that is
+derived from the session cookie
+since the same origin policy prevents
+the malicious url from knowing a user's
+cookie in vote.com it would be
+impossible for hackers to come up with
+the token that should be included in the
+malicious post request a slightly
+different way would be to generate a
+token that has nothing to do with the
+session cookie but you will have to bind
+it to a session by storing it in an
+index table
+upon a post request a lookup needs to be
+done to check if the token received is
+binded to the session
+in order to change the design of how
+browsers share their cookies and to
+mitigate csrf a same site cookie
+attribute was introduced nowadays most
+modern browsers apply a secure default
+value of the cookie attribute so your
+web application is less prone to csrf
+even if it doesn't set the value
+explicitly although it is a great
+improvement there are ways to bypass it
+by triggering top-level navigations in
+order to create the same side request
+thus using the anti-csrf tokens remains
+the primary defense against this attack
+tell us in the comments which
+vulnerability you want us to cover next
+in the meantime stay in the loop by
+following us on twitter and remember
+that quality code is a qr code

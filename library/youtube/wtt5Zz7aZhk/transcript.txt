@@ -1,0 +1,116 @@
+today I want to go over one tip that I
+like to use in day to dog which is using
+span hooks to add additional tags and
+metadata to my traces generated from
+application performance monitoring and
+this allows me to do additional business
+intelligence or business analytics
+queries and app analytics so to
+demonstrate this I'm gonna be using nude
+and I've built a little sample
+application to demonstrate just a basic
+Express application as you can see I
+require in the data dog tracer DD Tracy
+is I bring in you know my dependencies
+and then the application Excel itself is
+just a really basic one route
+application all it's doing is sort of
+simulating what an e-commerce store
+might do so it receives a request it
+determines how much the customer spent
+somewhere between ten and a hundred
+dollars and then it maybe applies a
+discount and it sends a response saying
+hey thanks for shopping here is what you
+spent today here's how much you saved
+and so we can see what this looks like
+and date it all by just starting the
+application and then testing it with a
+little bash script I wrote which just
+generates a fake first name and then
+makes a request to our application with
+the name attached to the query parameter
+so you can see I make a request says hey
+thanks for shopping today here was your
+order or hey Newton thanks for shopping
+your order or you saved five dollars and
+we make a few requests to simulate some
+traffic and then if we were to go into
+data dog you could see these requests
+start to flow into our application okay
+let me sort by the right environment
+here just make a few more requests
+and here you go and so if we're looking
+at these traces one thing you don't
+notice is that they're now particularly
+useful when it comes to sort of learning
+about our business and so for example we
+don't see whether the discount code was
+applied we don't know the name or any
+details about the customer who visited
+and so we want to fix that and I'm gonna
+use span hooks today to do that so it's
+really easy to add span hooks first you
+just want to enable app analytics
+I'll set analytics to true in the
+tracers initialization code and then all
+we're really doing here is we're
+bringing in essentially a integration
+specific function we in this case
+Express and all this function does is it
+gets invoked just before the span
+finishes and it allows you to add any
+sort of arbitrary tags or metadata or do
+any filtering you might want to do so in
+this case it's just a little anonymous
+function it checks whether the customer
+has made a request with a name attached
+to it and if so it sets on the span that
+customers name and I'm setting it on
+there the tagged customer name so now if
+I start to I restart my application with
+analytics enabled and this span hook
+attached and I make a few more requests
+simulating some more traffic okay thanks
+for shopping Maisie Jaden Stevie etc now
+if we go into data dog we're going to
+notice that I'll just make a few more
+we're going to notice hopefully when
+these spans flow through that now the
+customer name is attached really easily
+and it's attached to the correct span
+too which is important this top-level
+span which is enabled for a Penta Linux
+so if I were to hop over into have
+analytics now maybe I want to see a
+breakdown of every customer that visited
+recently with a name that contains the
+letter Y and so because I've already
+added as a facet this customer name tag
+I can just update my search and say
+customer name and I'll do some file
+carting for any customer name with the
+letter Y in it and I can go you can see
+okay there's six traces I could maybe
+group by the customer name itself I can
+view this in a table example of great so
+now I see all the customers who have
+visited it looks like Cassidy and Dudley
+have all visited recently so as you can
+see this can be pretty powerful I could
+add any arbitrary attributes here I
+could add maybe details about the
+checkout I could add details about the
+customers address for example and so
+then maybe I was experiencing latency I
+could see okay is this latency coming
+from a particular region or a particular
+state because I can group and filter and
+sort by these arbitrary tags so that's a
+span tags in a nutshell I suggest taking
+a look at our Docs and try it out
+yourself and you'll find I think that it
+adds a lot of value when you want to use
+app analytics to do business
+intelligence or business analytics
+queries Thanks thanks for listening

@@ -1,0 +1,79 @@
+Imagine you're short on time and need to use an AI agent to help you answer some questions
+quickly and accurately. You grab your mobile device, type in the first question, and
+nuhhh! The agent replies, "Sorry! I don't know enough to answer your question." Aren't AI
+agents supposed to know everything on the internet? You've probably heard someone say large
+language models are powerful, but on their own, they're kind of like brilliant interns with
+literally no memory and no access to your systems. They can talk, but they don't know your data, and
+they certainly cannot act on your behalf. You know how everyone's always saying AI is only
+as good as the data you give it? They're actually totally right. Today, we're going to unpack
+two different ways to give agents access to data. I hope you're excited for more acronyms because
+we're talking about RAG and MCP. Now both aim to make models
+smarter and more useful but in very different ways. RAG helps models no more by pulling in the
+right information, while MCP helps models do more by connecting them to tools and systems that
+drive work. Retrieval augmented generation and model context protocol, or RAG and MCP,
+are two methods that allow AI to be able to provide more insight, answer questions, help users
+while being grounded in actual information. That information could be all kinds of things:
+documents, PDFs, videos, websites, even systems or
+applications. While these two seem similar at first glance, they have some significant
+differences that set them apart. Let's use an example to explore this. Imagine: you're using
+AI to get assistance because you are going on vacation as an employee. Yes, I've been needing a
+vacation. You'll probably need to get some information about the vacation policy.
+Perhaps check how much information that you have, review the vacation accrual policy and even
+request time off so that it's logged correctly. Based on this example, let's dig into how
+MCP and RAG are similar and different. We're going to double click on three different categories: purpose,
+of course, then data, and lastly, process.
+Let's talk similarities first. I'll bill-build these into let's say a Venn diagram. I'll put the
+similarities in the middle. RAG and MCP are very similar in many ways, some of which we just talked
+about. For example, they aim to provide information, of course. And the data they're accessing doesn't
+actually live in the large language model, but is instead provided by outside knowledge.
+Both can also reduce hallucinations by grounding the model in real-time or specialized information.
+But, these same areas are where they truly start to differ. We're going to start with RAG
+and then, we'll talk about MCP. Now RAG's main purpose is to
+add information, okay? I'm talking about providing large language models with additional
+information living inside context. It allows large language models to access and reference
+proprietary or specialized knowledge bases, so that the generated responses are grounded in up-to-date
+and authoritative information. RAG is all about getting data that's static,
+semi-structured, or even unstructured, like documents, manuals, PDFs, and more.
+RAG also provides the user with the source of information from an answer, helping ensure that
+the answer can be checked and verified. RAG works in five different steps. I'll outline them
+over here. We'll start with ask, of course. This is when the user submits their question or prompt to
+the system. Leaning on our vacation example, this would be, for example, "What is our vacation policy?"
+Next, we'll go into retrieval. This is when the system transforms that prompt into a
+search query and retrieves the most relevant data from a knowledge base, perhaps from an employee
+handbook. Let's assume it's in PDF format. The next piece is all about return.
+This is one that return passage that was received, right, or sent back to the integration layer for
+use in context building. Then we'll move to augmentation. This step is all about when the
+system is building an enhanced prompt for the large language model, combining the user's
+question with all that retrieved content. Andlastly, of course, the part that we know the most
+and well: generation. This is when the large language model is going to use that augmented
+prompt to produce a grounded answer and returns it to the user. For example, let's say there's a
+passage in that handbook that says employees accrue one day of vacation time every pay period.
+Building on our example of vacation time for an employee, RAG would help us read through the
+employee handbook, any payroll documentation to understand maybe the company's vacation policy,
+how it works, how employees accrued time off, and more. MCP, on the other hand, is different. MCP's
+main purpose is to take action. It's a communication protocol that allows the agent to
+connect to an external system, either to gather information, update systems with new information,
+execute actions. It's even orchestrating workflows or going to get live data. So I'll put systems
+here. MCP works in a different set of five steps.
+We'll start with discover. This is when the large language model is connecting to an MCP server, and
+takes a look at what tools, APIs, and more are available. For example, if you asked for our
+vacation story, "How many vacation days do I have?" it would take a look and see if it had access to
+maybe the payroll system or wherever that information lives. The next step is all about
+understanding. This is when it's reading each tool's schema. I'm talking about the inputs
+and outputs to know how to call it, how to reach out. Then we'll go into plan. This is when the
+large language model is deciding which tools to use and in what order to answer the user's
+request. Moving along, we'll go to execute. In this phase, it's all about sending
+structured calls through the secure MCP runtime, which runs the tools and returns the results.
+And lastly, integrate. This is when the large language model is using those results I was just
+talking about to keep reasoning, make more calls if needed, or of course, finalize an answer or an
+action. When it comes to the process of vacation time for an employee, the AI would use MCP to
+pull the employee's open number of vacation days from an HR system and perhaps even submit a
+request to their manager for additional days off through that same system. We've unpacked the
+similarities and differences between RAG and MCP today, and it all comes down to their end goal,
+data and how they work. RAG is all about knowing more. While on the
+other hand, MCP is about doing more. If you're thinking ahead, you may be
+wondering 'Could these ever work together?' AI use cases need all kinds of data after all. You're
+on the right track. There are times that MCP uses RAG as a tool to be even
+more effective at information return for a user. If you're planning your next AI project, the key
+isn't choosing one pattern or the other. It's understanding when to retrieve knowledge, when to
+call tools and how to architect both for things like security, governance and scale.

@@ -1,0 +1,506 @@
+Six months ago, I made a
+blind decision that cost me €4,000 in months
+of work and broke my buffer zone for
+months afterward. I
+went from three sales per week to
+almost nothing at all, one per
+month. And believe me, that was the last
+time something like that happened to me because this is how
+I run
+my business today.
+[music] A
+few months ago, I decided to
+embark on a huge RFONte
+UX mission for my platform. I had responded to a
+proposal from a freelance UX designer who had
+contacted me with a
+speculative application to tell me, "Hey, your
+platform works well, but it
+could work even better if we
+did this, this, this and this, you'll see,
+it would be amazing." So, I was going to
+work with him, €4000 for the mission
+to improve the overall experience
+on the platform and everything he had
+submitted to me, it seemed
+perfectly logical and very
+interesting to me. So without asking myself too many
+questions, I just threw myself into
+making these models for a month and a half. Huge
+projects on my part,
+successive committees, a bit messy and all because
+I really wanted to deliver everything at
+once in "Bay, go ahead, we're here, we
+attack and overnight, we see
+our sales quadruple." That's it. Yes,
+[laughs] actually, we did all this
+blindly without really relying on the
+data and we delivered everything too fast,
+too hard, too much at once. And the
+consequence of all this is that
+overnight, everything collapsed, no more
+sales. I already
+talked about it in this video which said "I
+broke my airlock", it was true and it was
+a rather horrible time. And in
+this video, the
+most frequent comment was, "But you stupid idiot,
+why don't you just do a revert?
+Why don't you go back to the old
+version?" Well, what I didn't say
+in this video is that, well, since
+I worked a little bit crazy,
+all fired up like a pig, super
+motivated by the fact that I had
+UX mockups for the first time in my
+life, that it was too clean and all, I
+threw myself into it completely without hesitation.
+To doubt is to cheat.
+You see the look on the guy's face,
+regretting everything. So there you have it, the problem
+wasn't really redesigning it,
+it wasn't the idea of ​​redesigning the
+platform, it was more the way
+I did it. What should have been
+done was, rather than
+acting as a developer, to act as a
+founder. And what is the founder doing
+? Generally, if he
+wants his company to succeed, he works
+with data. The data validates
+his hypotheses. So today, I have
+a new way of doing things, a new
+system, a new device. I have a
+new golden rule that I am putting into practice
+. I no longer deploy anything that is not
+based by [music] data. And
+in the rest of this video, I'm going to
+show you how I set this up
+. In concrete terms,
+[music]
+what we are going to see right now is
+a bit like which came first, the chicken or the egg
+. But in itself, if you
+want to navigate with data, you need to
+track data. And so for me, it all
+starts there. It all starts with
+tracking. And the way I found that
+works super well for me
+to never run out of data and
+always be able to consult something
+when I need it is that every
+time I develop something
+now with AI, every time
+I vibe code an invoice, well at
+the end of the invoice, before putting it
+online, I ask Claude the question in black and white
+. I told him, "Okay, so this
+invoice we just set up,
+which you know very well since you just
+developed it, what would be
+interesting for us to track?"
+Before, it was a real hassle because you had to
+think of every
+possible place you
+could put tracking, you
+had to go and set it up yourself,
+and so on. It was a pain, and as a result, only
+projects with a
+lot of resources could afford
+to do it. But today, there's no
+reason not to do it
+yourself. The guy gives you a
+list, you think, "Yeah, that seems
+good." Maybe you say, "Oh,
+and I'd also like to know if
+the user does this or that." He
+replies, "OK, no problem." And he
+'ll put it everywhere in the
+codebase where it's needed. He'll
+track the different elements and everything,
+and so on. It's fantastic, and for
+tracking, don't go there. Not for the sake of economy. Up until now, I've
+always been a bit of a stingy developer
+. I always wanted to
+optimize everything, do the bare minimum
+to use as few events as
+possible, minimize quotas, stick to the bare minimum,
+and so on. You don't care,
+go ahead, slap on as many
+events as you can because it can never be too much
+. And tracking too much data didn't
+create a mess, I realized
+. And above all, when
+you're building the system, you'll think of one
+or two textbook cases that will be
+interesting to track. So
+you'll implement those. But in
+fact, nothing tells you that six months
+later, you won't say, "Oh, it would have been
+great if I'd tracked that," because it would have
+allowed me to know if my
+users are doing this or not. Like,
+is this page that I
+struggled to code actually being used by
+my users? And in particular,
+are they using the last
+column? Lost, or did I
+develop this for nothing? This is
+exactly the kind of thing I might want to
+know about six months
+later, for example. Well, here you have the
+data, and you can run your search on it six months later
+. Track as much as possible,
+and do it with the best tool in the
+world. Do it with Post, my friends.
+It's the tracking service I
+'ve been using from the start. You've
+seen it in my videos many times, and I'm incredibly
+lucky that they've seen me talk about
+their products several times in
+my videos, and they loved it. So
+now they're becoming my
+official partners. So we're going to
+use Post Hog. We'll see how to
+track and how to access the data
+on Post Hog.
+It's difficult for me to be
+exhaustive when I talk about
+Post Hog because, first of all, Post Hog is, in my opinion,
+the developer product with the
+funniest,
+coolest interface; they've recreated a
+computer and So you can
+see everything by clicking here and there.
+I just clicked on pricing, but
+you'll see that I've been using
+Post Hog for eight months
+now. I track absolutely everything on
+my project and I haven't spent
+a single penny because
+Post Hog's capabilities are literally infinite.
+You can track up to 1 million
+events per month. You can
+record 5,000 user sessions
+per day. I'll show you
+how user sessions work.
+It's amazing. You can use
+feature flags. You can track your
+errors. So there's no need to use something
+like Centri or anything like that anymore.
+You can have everything in one place
+in Post Hog. In short, you have tons and tons
+of features. Post Hog looks like
+this. They
+recently changed their homepage.
+Now it's like a GPT chat;
+you can directly ask a question
+about your data, and Post Hog will automatically find something for you, like, "
+How much do I have?" How
+many users complete the
+YouTuber onboarding funnel
+? You type your question in
+natural language like this. There you go, it's very
+intelligent; it automatically captures all my
+onboarding events. So it
+tells me that over the last 30 days, I have
+900 people who select a
+YouTuber during onboarding. So,
+my onboarding is going very well. I have a
+90% completion rate, which is great. Then,
+it gives me other little
+cross-functional analytics. We love it. Besides that,
+you can create lots of
+dashboards. If I come back here, I'll
+have dashboards that I
+created. So this is the
+general onboarding completion. This is the
+creators' funnel. Okay, this is the agents' funnel
+. You can track errors,
+as I was saying. But also, the really interesting thing is that
+you can replay your users' sessions.
+Here, I can... Click here. Curacy, that was
+18 minutes ago. The guy just finished his
+onboarding, no problem. Now he's going to
+check out the sponsors we're
+offering him. Okay, I can see his whole
+journey like this, I can see everything he's
+doing. It's absolutely
+fantastic. But so, the point,
+as I was saying, is to track as
+much as possible in your
+project because after about 6 months
+, you're like, "Oh
+yeah, do they come through here?"
+Are they using c or that? You
+can either ask Post AI here,
+or if you're a founder/
+developer, you'll be able to use
+the most absolutely fantastic thing in the
+world: Post Hog's MCP. You
+'ll be able to use it from the cloud.
+And I'm going to show you how that
+works right now.
+[music]
+I was using Post Hog up until now
+. But where I really started to unleash
+its power was when I started
+using it with the MCP integrated
+directly into the cloud. So you go there,
+you go to customize, you
+create "connect your apps" here, they have it
+right here, it's perfect. We say "
+connect." You say, "OK, I
+agree that Claude should have access to
+all of this." And then, if you have Super
+Whisper, you can say, "
+With the data from Post Hog, can you
+tell me how many visitors I had
+last month and how many
+visitors I have this month, and give me a
+quick overview of my
+platform's health?" Thank you. I'm going to ask
+something extremely broad on purpose. We'll
+see how he handles it. I'm going to
+retrieve the POST data to compare
+April 2026 and May 2026. While he's
+thinking about it—and this is where I'll
+tell you something—I find it
+fabulous. You can find your way around the
+whole Hog dashboard if you have
+events everywhere and all that, which
+can be a little difficult to do, to
+take a step back, to know where
+you need to look for
+things or whatever. But by
+asking Cloud questions in natural language
+, and especially if you have
+MD points in your project that
+explain the product, what it is
+, Cloud can very quickly grasp it, get
+an intuition about what to look for, where,
+and how. He knows how to look at
+all the POST events. He then knows
+how to relate them
+to each other and everything, and that allows him to
+find fantastic things for you.
+A little later in the video, I'm
+going to show you at least three
+examples of Moments when Claude with
+Post Hog's MCP left me like this, uh, you know what
+I'm reading, but it's blowing up
+the scores at the bottom of the funnel. Contact
+revealed, email generated is exploding, these are
+actions that signal real
+commercial intent. That's where you
+want to see growth more than on
+page views. It's true, it's
+something I've put a lot of
+effort into lately, so it makes me really
+happy to see that it's going
+better. Saved sponsors are stagnating,
+either the slime is less, or
+users are going straight to the
+email contact without going through the save button. That doesn't
+bother me too much. [laughs]
+All long reads. Damn good, but it's going well
+, the machine is running and especially the
+bottom of the funnel, the part that's in
+great shape. It's going to seem
+strange to you, but my metric lately has been to
+increase the perceived
+value of the platform and encourage
+people to see more things on the
+platform so that they They're thinking,
+"Oh yeah, well, that's
+definitely worth paying for." So I
+improved those stats, but maybe
+I'm giving a bit too much, so
+maybe that's resulting in more
+sales. I'll have to talk
+to Claude and Post Hog about that. The
+three of us will get together to see what's going on
+and
+decide what to do next.
+It's about making small adjustments little by little,
+but at least now I'm
+doing it with data. What a joy!
+I said I was going to show you some
+examples where Post really surprised me,
+and what better way to do that than to link it
+to the little anecdote I just
+told you about how
+lately I've been trying to create more
+depth of exploration, and that's what
+I'm focusing on rather than
+the final sale. Why?
+Literally, through this little
+conversation. One day, I simply asked
+Post Hog's MCP to find out what
+triggers the most sales
+at my users. And my question
+was poorly worded or whatever,
+but he understood perfectly and
+actually did a
+correlation analysis between actions and purchases, and
+it's amazing. He went and found the
+most important, most
+significant events himself, and then he
+realized that seeing
+sponsored pages had an impact
+on sales. Like, the more people
+look at sponsored content, the higher the
+chances of conversion. Very interesting.
+That's why, by the way,
+I'm currently trying out
+this kind of progress bar down there that
+encourages exploration of sponsors and
+gives you encouragement and tips as
+you do it. And the same goes for
+generated emails, and so on. So
+basically, he gave me the
+most important things to show
+the user to demonstrate the
+value and thus make it easier for them to
+pull out their credit card and
+give me money. So I
+loved this discussion, and what's
+really interesting is that It's that
+in one discussion, uh, Claude, you can
+discover this thing, in another,
+apply the modifications to make it go
+better, you deploy it and everything,
+and then, uh, like a week later,
+you come back to this discussion,
+exactly this one, and you say, "Okay,
+I made the changes
+last week, now compare between
+last week and now, if there have been
+improvements, if people
+are exploring more, exploring less, if it
+translates into more sales or not, and so
+on. And so, thanks to this kind of
+discussion that you keep like this and
+that you run through time, a week
+later change, a week
+later change and so on, well, you
+can iterate on your product in a
+data-driven way. What a joy!
+Example 2, I told him exactly
+that. I just had a Lemon
+Squeey sale. I want to know exactly
+what the user journey and
+events were like to see what the customer liked.
+I told Claude to find the last
+sale and describe the process to me so I could
+see what worked and what didn't.
+And then he described the thing to me exactly.
+He told me, "Well, between the time
+the guy registered and the time he
+bought it, 41 minutes passed, he did this, that, and that, and so on, and
+so maybe you
+could improve here, here, and all that."
+Fascinating, I love it. This is the ultimate.
+Ah yes, reading this, I realize
+that there was something that used to be a pain
+when you were doing tracking,
+which is that you put in the code all
+the places where you said "Well, I
+want to track this." After that, you had to go to
+your platform, go through the whole
+user journey, making sure to click on
+all the things like that, and then
+you yourself would go into the post,
+check that the events were correctly
+retrieved, and so on and so forth.
+What's really cool right now is that
+I'm having Claude implement the
+tagging plan. I'm doing my little test,
+clicking on all the things and everything, and
+then instead of going into the post section myself
+to check that everything has been
+tracked correctly, I say, "Okay, bro, you know
+exactly what we're tracking now. Go
+see if the path I just
+created triggered all the events." He
+goes, checks, and tells me yes or no.
+If he says no for certain things, it
+means we have a small bug somewhere
+. And there it is! It's awesome,
+guys. It's crazy. I don't really know
+how to convey my
+enthusiasm and tell you how
+amazing Post HOG plus MCP with Claude is. It's never been easier to
+have your eyes wide open to
+all the hidden corners of your
+project. It's so great, and it adds an
+extra layer of intelligence that you
+might not have. Before, I had my
+head in the clouds. Data that was being tracked, but I did
+n't know what to do with it. And he
+knows, if you ask him the right
+questions, or even if you ask him
+rather vague ones, he'll manage to
+extract intelligence from your data.
+[music]
+Okay, after all these examples, I think
+you understand the value of all this.
+And now, my honest feedback on all this
+since I've been using this
+post-hoc cloud iteration
+data-driven approach, let's say, the thing that's a little
+complicated is always
+keeping in mind the iterations
+you do because you don't get
+feedback right away. These things, you
+always have to leave a week or
+two of leeway so that people on
+your platform can try it out and
+generate enough data for you to
+realize if what you've
+done is good or not, if it's going in the right direction or not.
+We're not talking about
+huge volumes of people. So things
+like A/B testing are useless. A/
+B testing only works with
+thousands or tens of thousands of
+visits. per day. I get 30
+sign-ups a day. That's not
+enough to get a good idea.
+So I don't use A/B testing. But even so
+, 30 people using
+your platform and everything is enough to
+give you a trend, and your intuition
+plus the trends on your platform
+allow you to navigate in the
+right direction. It's incredibly
+reassuring to move forward under these conditions
+with this data harness that
+allows you to measure things. You're no longer just guessing
+. And if you do something and
+you see it's not going in the
+right direction, you revert, you cancel it, you
+do something else instead, and you
+can test all your ideas that way. I
+think it's fantastic. I
+recommend it to everyone. Especially since, once again
+, the chip shop
+is practically free. I haven't
+paid anything yet. I think that when you
+code your own product, your real job
+isn't really development, but
+[music] the Decisions. And
+decisions without data are just wild guesses
+. Today, I
+still navigate with intuition, but an
+intuition grounded in data, not replacing it
+. So, I
+hope this video will prevent you from
+making the same mistake I did and
+sailing blindly like
+[music] and losing all your
+money for nothing. If my mistakes can help
+you avoid making them, then I'm thrilled to have made them for
+you
+. This was B code, ciao.
+[music]

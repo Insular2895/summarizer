@@ -1,0 +1,447 @@
+So, a bit over a year ago, on this very
+YouTube channel, I made a video where I
+got Claude to order me a pizza. I was
+super excited about this at the time
+because this was experimental, right?
+The idea that these models, large
+language models, multimodal models,
+could actually control the computer that
+you have and perform actions for you.
+And I got it to order me a pizza. Now, a
+lot's changed since [music] I made that
+video. And in this video, I want to
+bring us up to date with what we can do
+because there are new products out there
+and
+I'm hungry again.
+So, I've built myself another agent and
+[music] and this also has browser use.
+And so, I'm going to prompt it again to
+order me a pizza. So, we're going to get
+this pizza delivered. Hopefully, it's
+going to go through all the way through
+this automation flow and
+>> [music]
+>> actually order a pizza by using the
+website. Okay, one of the things that
+hasn't really changed over the last year
+is the speed in which agents can use
+these tools because of course, it has to
+load web pages. We have to click things.
+We have to wait for the website to do
+something. So, we're going to leave that
+be and we're going to come back and take
+a look at it in a while. In the
+meantime, let's look at what I built and
+how I built it and look to see what's
+changed over the last year.
+In the first video I put together on
+this subject, I gave Claude access to an
+entire browser session. In fact, more
+than that, I gave it access to
+an entire monitor output of my actual
+laptop, which is a super bad idea and I
+said so at the time. This isn't a good
+idea and we don't really want to do
+that. Of course, anywhere near
+production, we wouldn't do anything
+remotely like that because we don't want
+to give an agent access to that much
+power and capability of being able to
+open up my email client and sending
+something to everybody in my contacts
+list. Of course not. No. We need to
+scope it down. So, what we need to do is
+we need to have that browser inside of a
+sandbox. Um and of course, most people
+that were playing around with this at
+the time would use a browser inside of a
+Docker container and do just that. But,
+how do we actually manage this at scale
+if we want to have an agent that has
+access to a browser, but we don't want
+to have to put together a browser farm?
+And that's what this video is about
+because I've got here Amazon Bedrock
+Agent Core. Now, you've heard me talking
+about this before. You've heard my
+colleagues talking about this before on
+this very channel. Amazon Bedrock Agent
+Core is a set of capabilities that you
+can just pick and choose the ones you
+want and build them into and use them
+with your agentic workloads, your
+agentic flow that you're building your
+own agents. So, we've talked about
+runtime and memory and these other
+things. In this video, I want to talk
+about the browser tool. So, if you have
+a look inside of the Agent Core console
+page here, um you can see all of those
+things that I mentioned, so runtime and
+memory and other things that you'll have
+seen videos on. And if you want to see
+more, subscribe to this channel, click
+the bell notification because more are
+coming. But, if I scroll down here,
+you'll see in built-in tools, we have
+browser. And that's what I'm using here.
+So, if I click in on browser, this tells
+you all about how it works. There really
+isn't very much you have to do in the
+console to get this working because if I
+just scroll down, um you'll see in
+browsers, I've got one. It's the Agent
+Core browser tool. It's the default
+instance. It's there for all of us
+inside of our accounts. So, this means
+that we can just actually hit the APIs
+and start using this right now. Let's
+talk about what those APIs are. Um so,
+start browser session. So, we can call
+this to say that we want to start a
+session. It will then essentially spin
+up a browser um session um and make that
+available to us. We then get to go and
+control that. So, if we call um get
+browser session, you'll see as part of
+the response parameters here, we
+actually get these streams. And these
+streams are web socket endpoints that we
+can stream on automation protocol. It's
+the Chrome DevTools protocol. I have it
+written down there. Um it's not
+something I'm an expert on, but that
+protocol allows you to be able to
+connect to a browser, in this case
+Chrome or Chromium, and send commands to
+it to get it to do certain things. Click
+here, scroll here, but also get
+information back, like get the source
+code of the page, and also get
+screenshots. So, that you can see what's
+going on, or more importantly, so the
+agent can see what's going on. So, with
+this in place inside of Agent Core, um
+with the browser tool, we can just go
+and hit the API and spin up an
+environment and just start to use it.
+So, let's go and have a look at doing
+just that. Here I've got my um IDE. I'm
+not going to do any vibe coding right
+now, so let's get rid of that. And
+inside of here I've got some code, which
+of course will be linked in the
+description below. Um first of all,
+let's take a look at this simple use
+case here, where I've got my simple
+browser agent. And you can see here some
+code. I'm going to whiz through it and
+then zone in on little bits and pieces
+of this. But this is basically using
+Strand's agents, so the Strand's agents
+SDK. It's a free SDK, which is super
+easy to be able to build really quite
+powerful um agents and agentic
+workloads. So, that's one I'm using
+here. And it actually abstracts away
+from me a lot of the complexity, if it
+is complexity, of using that API that we
+were looking at before, of getting the
+actual browser instance and then
+streaming to the web socket. You can
+totally do that if you want, the
+documentation's there, but the
+integration with certain frameworks
+already exists, and Strand's agents is
+one of those, and I'll show you just how
+simple it is to build it into your
+agent. So, most of the code we're
+looking at here is actually just the
+Strand's agent and making it work. So,
+you can see I've got a system prompt in
+here. Um I've got an agent definition
+here. But essentially, here's my agent.
+Um it's got access to some tools, and
+it's got that system prompt. It's that
+tool which we are focusing on here. It's
+the browser tool. So, it's actually
+something that we uh imported up above,
+where we imported uh from Strands tools
+browser, we import the agent core
+browser. And so, if we're looking here,
+oh, no, went too far. If we look here,
+um, I just literally have to call the
+agent core browser. Now, because I'm
+using the default one, which is already
+created in my account, I don't need to
+specify the name like that. I just tell
+it the region that I want to use, and
+that's the browser tool ready to go, and
+I can give it to the agent. And that's
+it. Everything else in here is actually
+just about me interacting with this
+agent. So, you can see this is just a
+very, very basic command line interface
+to this agent. So, let me go and create
+a new terminal here, so we can just go
+and run this. So, I'm just going to
+change my directory to simple. Um, and
+I've got this with UV, so if you've
+downloaded this code, do a UV sync
+before hand. Um, but I'm going to say UV
+run
+Python, and this is called uh browser
+browser agent. So, if I run this, it
+looks just like that one we ran just a
+second to go that's working away in the
+background trying to order me a pizza,
+but this is a much simpler version of
+it. Um, so, I can just interact with
+this as an agent, but it has access to
+that tool to be able to open up a
+browser. So, if I say, "What is on um
+example.com
+today?" And I'm saying today because I
+don't want it to know exactly what's on
+there already. The some of these um
+agents, some of these models are smart
+enough. And you can see what it's done
+here. It says it's immediately gone off
+to use the browser tool. So, let's jump
+back into the AWS console. Let's
+navigate into this browser tool, and
+then let's go down to sessions. And you
+can see I've had a lot of sessions open
+doing a lot of things, but let's click
+on live session, view live session, and
+you can actually see a stream coming
+back from this browser that's hosted up
+in the cloud. So, it's just taking a
+while to load and there it is. And there
+it is and it's opened up example.com
+and it's showing us the example domain.
+So, if I now go back to my agent, we
+should see yeah, it's come back and said
+based on my visit to example.com today,
+here's what I could currently on the
+site. And so, he can actually see this
+website, right? It's got the title and
+it's got the content and it can even see
+that the link is on there as well. Now,
+one of the things inside of this browser
+view which I quite like is if I just
+scroll up here, um I can actually take
+control of the session. Um and this is
+obviously something I can do in a
+browser, but it's also something you can
+do with the API cuz part of the stream
+back from this um cloud-hosted browser
+is that I can um get a stream of the
+actual vision back of this actual
+browser session and so I'd be able to
+interact with it. So, I can say take
+control of session here and this is just
+showing me I can do it here and I can
+navigate up. Um and yeah, I could go and
+click on the on that link there. So, I
+just clicked on the link and I'm
+navigating around. And this is kind of
+useful for passing control back to the
+the user if you are doing a sort of
+collaboration between an agent and a
+user depending on what your use case
+might be. And one of the reasons why you
+might want to take control um is to be
+able to log in. So, if we go back for a
+second to browsers
+um and scroll down, we can look at
+profiles. So, if I click on profiles
+here, you can see I've got a couple of
+profiles. And what these are, these are
+a new feature of Agent Core browser tool
+which allows you to store session states
+like cookies and the fact that you've
+logged in inside of a browser. So, you
+can connect together a profile with a
+browser session and then when you come
+back the next day, if it's one of those
+websites which maintains your login,
+then you will be logged in. But, you can
+use that ability to be able to take
+control to actually do the login so that
+the username and password never actually
+goes into the hands of the agent because
+typically you wouldn't want to do that.
+Now, this is quite new. So, let me just
+go over to the code just for a second
+and open up this other project which
+I've called profile. And you'll see that
+this is a bit more complex. There's a
+bit more going on here. This is actually
+the agent which I've got running at the
+moment ordering me pizza. And so, you
+can see that I've extended out the
+browser tool to actually support
+profiles. So, it's got the ability to be
+able to go back and use the same profile
+each time
+and the profile name is set here inside
+of this
+default profile name here, user 123123.
+If I go back to the console, you can see
+that
+profile name is just there. So, I've
+been using this
+and I did actually use this to log in to
+the food ordering site beforehand so
+that when the agent goes back to that
+site, it can just go straight in and get
+on with ordering stuff for me. Now,
+hopefully in the near future, the actual
+Strands agent's integration with browser
+tool will do this automatically, but for
+now because it's so new and I didn't
+want to wait, I set about writing some
+code that would help us out with this.
+So, I've extended out that browser tool.
+So, we have the profile browser.py is
+the code I've got in here. You can
+navigate through this and see how this
+works and see a little bit more
+information about I guess how the
+standard tool currently works through
+that.
+But, I'm I'm calling this I'm importing
+this. I've got a bit more of a system
+prompt in here which is going to
+basically
+work through a couple of the kinks that
+I've realized as I'm trying to use some
+of these sites. Now, I'm pushing this to
+the limits here and I'm saying don't
+necessarily rely on the DOM of the
+actual website itself. That might not be
+very reliable because trying to execute
+JavaScript sometimes doesn't work well,
+especially if the website doesn't really
+want to be automated. So, it's okay, you
+can fall back to just taking screenshots
+and clicking on things. It might be a
+bit slower, but you can get there in the
+end. These are the kinds of things I'm
+explaining inside of that system prompt.
+Um then some other things, and I need to
+call this out before you go running this
+code. So, one of the things that I've
+got down here is I do explicitly load a
+specific model that I want to use, and
+I'm going to use the Claude Opus 4.6, so
+the biggest and baddest model you can
+find.
+But in addition to that, I'm also
+passing this extra header where I'm
+opening up the 1 million token context.
+So, this is huge, and it has the
+capacity to cost a lot of money. So,
+just be careful about this. Don't run it
+if you don't need to. Just watch this
+video many times and watch me running
+it. Um this can get expensive. Now, one
+of the reasons for this is because as
+we're doing this agentic flow of
+actually using a website, especially if
+we're taking screenshots and shoving
+that into the context, you know, one
+screenshot is not one token, it's many
+tokens. Other thing I've done in here,
+um if we just look up here is when I'm
+using the browser tool, and this is
+something which is accessed through the
+subclass that I've done, um is that you
+can set the viewport size. So, you can
+set the width and the height, um so that
+you can I did that to try and constrain
+the amount of information I'm pushing
+through. I don't necessarily need a 1920
+by 1080 picture, I can get away with
+something a bit smaller. And those are
+some of the customizations I've done to
+this piece of code. And this is the code
+that in the background here is ordering
+me a pizza. So, maybe it's time to go
+over and have a look and see how well
+that's doing. And so, what we can see
+here is as soon as I hit go, it said it
+was using the tool called browser as far
+as it was concerned. And now what we
+know is that that's using agent core
+browser tool. So if you look inside of
+the console at that time, a browser
+session had started and we can actually
+watch along in the console as it's
+ordering. So we can sort of see side by
+side, we can see the code going and we
+can see the use of the browser. Let's
+speed up all the way through this
+because it does take about 10 minutes to
+order the pizza. There's a few things
+going on here.
+>> [music]
+>> So it did manage to navigate through and
+find me a pepperoni pizza, which is
+great. Um I didn't specify what kind of
+pizza, so pepperoni's just fine, I
+suppose. And I also I noticed that it's
+coping okay with these modal windows
+which come up over the top of the main
+site. It's navigating through all of
+those. It's clicking the buttons and on
+we flow.
+And by the time we're getting towards
+the end, there's actually a small
+problem happening here. And that's that
+the minimum order value hasn't been
+reached. I guess just ordering one
+pepperoni pizza to be delivered as far
+away as I am, maybe it doesn't work. And
+so we are a dollar and five cents away
+from reaching that minimum order.
+[music]
+What's the agent going to do about this?
+So the agent has actually spotted the
+problem. It said it can see that there
+is a dollar and five missing from the
+order in order to make it eligible for
+delivery. Um and it says, "Let me see if
+there's a way to proceed."
+And it's come up with the idea of of
+going back to the store and seeing if we
+can get a small drink or a dipping
+sauce. That's awesome.
+Okay, it's found dipping sauces on the
+site for a dollar 50. It's It's decided
+it needs to add that in order to
+actually fulfill its destiny of ordering
+this pizza. It adds it in and yes, the
+order has been completed. It's been
+placed. Hang tight.
+Pizza's on its way.
+>> [music]
+>> And my pizza's been delivered
+>> [laughter]
+>> along with the the creamy garlic sauce
+which was a nice touch. Okay, so there
+you go.
+If you enjoyed this video, then please
+do give it a like and maybe consider
+subscribing to this channel. Hit the
+bell notification so that you get
+notified when more videos drop just like
+this. Maybe not quite like this, but a
+little bit like this. All of the code
+for everything that we've talked about,
+of course, is linked in the description
+below. Thank you so much for watching
+and I will see you in another video
+really soon.

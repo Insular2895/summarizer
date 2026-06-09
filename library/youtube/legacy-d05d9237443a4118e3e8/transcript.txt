@@ -1,0 +1,1258 @@
+Jensen big thank you for uh taking the
+time today I have to say I'm normally
+very excited when I record this podcast
+but uh
+wow um when I did the preparation for
+this incredible you really are in the
+middle of all the important things which
+are happening in society just now how
+does it
+feel uh it is it is uh
+gratifying and uh rewarding and I'm
+happy for our company to be able to
+contribute to so many different areas of
+Science and
+society and so it is a it is a thrilling
+time now you um delivered well you hand
+delivered actually the first
+supercomputer to open AI some years ago
+was it like five six years ago I think
+um tell
+2016 yeah 2016 well uh we we were just
+getting into um artificial intelligence
+ourselves and we're working on
+autonomous vehicles and so we were
+imagining what kind of computer uh has
+to be built for this new way of
+doing um software you know as the
+audience probably know by now that
+artificial intelligence is a
+computer that works with a works with
+software programmers to write software
+that is refined from data and that
+software is impossible for humans to
+write it's a gigantic body of
+code and and it requires a special type
+of computer and so uh when deep learning
+first came
+along we reasoned
+about how it would fundamentally change
+computer science because the early
+effectiveness of of um the first deep
+Learning Network that we that the
+industry a lot of people saw was alexnet
+and alexnet was uh designed for computer
+vision and its Effectiveness was so
+incredible it shattered records and
+shattered the effectiveness of computer
+scientists of several
+decades and and it was a piece of
+software that required Nvidia gpus to
+produce and we were so so inspired by
+that um we reasoned about what kind of
+computer what kind of software is this
+where can it go what kind of problems
+can it solve and what is the
+implications to um everything about
+computer science from chips to systems
+to operating systems to Data Centers to
+networking to the algorithms all the way
+to
+applications and we came to the
+conclusion that that um a new type of
+computer had to be created and we
+created this new computer we call dgx is
+a deep learning um system
+and it's it's a AI supercomputer if you
+will and I delivered the world's uh very
+first one when I announced it that we
+were building it for
+ourselves I I was I thought that some
+people would be interested but it turned
+out a lot of people were interested and
+so I delivered the very first one
+outside of our own company to open
+AI what were the um the big
+breakthroughs that you had to go through
+to get
+there well the
+the the way that the software is written
+uh it
+processes a giant amount of data to find
+patterns and
+relationships patterns and relationships
+in the data and the data is ones and
+zeros um and somehow using
+these architectures of deep learning
+models and the way that the Deep
+learning um neural network is is
+constructed it was possible to scale
+into very large models very large
+networks and process a gigantic amount
+of data looking for patterns and
+relationships and and so so the question
+is is what kind of computer uh would be
+good at that and and
+um and so we reasoned through the
+computer
+architecture and came to the conclusion
+that that every aspect of the computer
+has to change from the way the the
+processor is designed um our gpus our
+Graphics processors which simulates the
+world uh was a a almost a perfect
+starting point for understanding the
+world you know a chip a graphics chip
+that was designed to simulate the
+virtual world as it turns out is fairly
+good at understanding the world of
+mathematics is
+similar and uh but yet uh the size of
+the amount the size of the data and the
+amount of computation necessary to do it
+to find to go through all of that data
+is enormous and so we we broke broke it
+down chip by chip and the CPU was no
+longer the the ideal processor and so we
+evolved our GPU to become a deep
+learning if you will a artificial
+intelligence processor the PC
+architecture is is suited for personal
+Computing but it's not suited for giant
+AI systems to learn from data the io has
+to change the networking has to change
+um we bought a company called melanox so
+that we can change the way computers are
+connected and the way can computers can
+work together instead of instead of
+maybe uh a handful of CPU cores working
+together we have millions of GPU cores
+working together to process the data to
+find patterns and and to learn what is
+called a
+representation to learn the language of
+the subject that you're you're trying to
+learn you could be learning the language
+of music you could be learning the
+language of uh language human language
+or the language of uh the ver the world
+the the the physical world um to learn
+computer vision we can learn proteins we
+can learn chemicals um we can learn all
+kinds of things
+now and of all these things what what
+were the biggest
+challenges well the biggest challenges
+um it and it remains now is that the the
+problem space is
+gigantic and whereas whereas um uh an
+application for a phone can fit in a few
+gigabytes uh you know or a PC a few
+gigabytes the the software that we're
+talking about here you know chat GPT is
+100 well chat
+gpt3 uh is
+billion parameters and each one of the
+parameters could be a floating Point
+number and so 175 billion parameters
+just for the the neuron math you know
+the neuron Network math not to mention
+the applications that sits around it and
+so this is a giant application that
+doesn't fit in one PC doesn't fit on any
+phone doesn't fit on one PC and it takes
+many computers working together just to
+run it it takes a giant data center to
+learn from it and it it takes an entire
+uh you know it takes a a large number of
+computers just to run it and so this
+this type of
+application has never existed before and
+so every aspect was was changed we we uh
+literally rearchitecturing
+it takes uh it takes weeks and weeks to
+to um
+process um the data so that we can learn
+from learn from the data and learn its
+representation learn the model if you
+will the the model of the of the of the
+the subjects that you're the world model
+that you're trying to learn from from
+the data um it takes so much time to to
+uh train these models that if you could
+even shave you know half of the time off
+it's measuring in weeks and and you you
+mentioned gpt3 what's the the progress
+from three to four just in terms of
+complexity I well the complexity is is
+um hard to hard to estimate because
+because open AI hasn't really described
+it but there's there's a great number of
+new breakthroughs uh one of the one of
+the ones is uh the fact that it can
+learn from both language and images at
+the same time just as just as with
+humans we we learn more about anything
+if we could see if we could you know
+read the words and see the images and
+and um you know one one good example one
+good example is is uh if you've only if
+you only if youve only seen horses uh
+and you've never never seen a zebra but
+I told you that a zebra is like a horse
+um but uh with black and white stripes
+the fact that you have knowledge of both
+modalities images and language allows
+you to connect the two and learn
+something in your brain even though you
+know you imagine a zebra in your brain
+even though maybe you've never seen one
+actually and so the ability for us to
+learn from multimodality is very
+important and um gp4 has has a has uh
+learned that
+capability you mentioned recently that
+we have now reached the iPhone moment
+for artificial intelligence what do you
+mean by
+that well uh over the last uh 40 40
+years or
+so that I've been in in the computer
+industry uh we
+transitioned we phase shifted you know
+at first slowly and all of a sudden
+abruptly just like the just like water
+turning to ice or water turning to Vapor
+um at first the temperature kind of you
+know increases linearly and then all of
+a sudden at some phase
+shift uh the structure of the molecule
+changes all of a sudden and instantly
+something
+happens it happened when we went
+from mini computers and workstations
+client servers to personal computers the
+very first four or five years it grew
+linearly all of a sudden Windows 95 came
+and everything about the personal
+computer changed and yet the personal
+computer was introduced some 10 years
+before that
+and the same thing happened with the
+internet the first five six eight years
+uh scientists and researchers were
+already using the internet and an Allon
+one day mosaic came along Yahoo came
+along and Bam there's a pH shift in the
+way that that um the internet was
+perceived and used in every single one
+of these transitions then Cloud then the
+iPhone the mobile cloud in each one of
+these transitions
+the computer itself is programmed
+differently it's easier to program let
+me give you one example the number of
+Mainframe applications in the world is
+not that many but the number of iPhone
+applications is over five million and so
+the fact that there are so many
+applications must suggest that it's
+easier to create amazing
+applications and is absolutely true the
+applications we have on iPhones and and
+the mobile devices is is surely uh
+Beyond expectation Beyond imagination
+just 30 years ago and yet you know
+people are creating these applications
+obviously um very very quickly the and
+so the programming models changed the
+application capability has changed and
+the reach of the Computing has changed
+and so let's apply that to uh GPT let's
+apply that to artificial intelligence as
+we know it the way that you program this
+is just with human language this is the
+only computer the first computer in the
+history of humanity that everyone can
+programed the computer to do something
+and there's no programming language you
+you don't have to use basic you don't
+have to fortrend Pascal C C++ Java you
+don't have to use any of those
+programming Lang python you don't have
+to learn anything well which is good
+which is really good because I tried to
+Learn Python last year and it didn't
+quite work out that's right and and so
+the number to the extent that I know
+have to to the extent that I know have
+to sing at the uh at the uh summer
+party the number of programmers in the
+world just increased from from tens of
+millions to several billion and so we've
+we've narrowed we've narrowed um if you
+will we've democratized computers we've
+democratized computer programming and
+we've closed the gap between the half
+and the half not access to technology
+the technology divide has now been has
+now been closed what what are the J what
+what are the what are the implications
+of this
+democratization well you know when you
+democratize technology and you put in
+the hands of of almost everybody you
+Empower
+everyone look at the number of
+applications that are coming out now
+that are based on on chat GPT uh where
+people are are connecting it to
+Applications making the applications
+better um people are are using it to uh
+write stories create music um write
+programs uh so instead of writing a
+program you tell chat GPT to help you
+write a program you tell the progam the
+problem you're trying to solve and it
+writes you a Python program or you write
+it writes you a you know a SQL query and
+um it might even well it even creates a
+website for you and so if you want to go
+into business and you don't know how to
+create a website you can now just tell
+jbt to help you create a website you
+describe what you want and it connects
+it all up for you and it's operating and
+so so here's a computer that could help
+you write programs solve problems
+Empower you and so that's one of the one
+of the greatest things of of
+democratization of Technology we've now
+put this amazing tool in the hands of
+everyone what do you think it will do to
+society well the first thing that's
+going to happen is our productivity will
+go
+up you know any profession that relies
+on knowledge and the access of
+knowledge uh the application of
+knowledge uh will now be boosted
+and and so if you if you have domain
+knowledge and most most companies in the
+world has very very deep domain
+knowledge is the reason why they're
+they're a company their domain knowledge
+can now be um put in the hands of their
+employees and applied and accessed and
+applied uh in a much more rapid way uh
+of course there's a lot of mundane
+information um tasks that are now if you
+will monetized and it's automated you
+know we're one of the things that that's
+really incredible about artificial
+intelligence and the reason why this is
+definitely going to be the next
+Industrial Revolution is instead of
+producing um uh uh steam to electricity
+instead of mass producing physical
+things we are now going to be producing
+the most valuable asset the most
+valuable commodity that we know as
+Society information
+knowledge and so the the the produ ction
+of
+intelligence is going to be what what
+all companies do in the future uh we
+have Nvidia has AI factories we put data
+into it and improved software and the
+software is artificial intelligence
+improved intelligence software comes out
+every single day I go to sleep and it
+keeps producing it and we keep refining
+more data we keep improving the the the
+software the software helps us design
+chips it helps us operate robots like
+self-driving cars it helps us uh do
+computer vision for Quality Inspection
+it helps us develop software that helps
+us you know design and manufacture chips
+better and so every company will be able
+to do that for their own particular
+domain so I think the the next
+Industrial Revolution is going to be
+about the the production of intelligence
+and and for for industries that relies
+on intelligence our productivity will be
+insanely boosted
+how much and of course of course of
+course there will be some jobs that will
+be changed there some jobs that will be
+created right now we're creating a whole
+lot of jobs for artificial intelligence
+data scientists and people who who
+understand this field um of course some
+jobs will be will be um uh displaced and
+so so um uh we have to make sure that
+that as society that we understand what
+this technology is and take advantage of
+it um as fast as we can so that we
+understand it and um uh apply to to uh
+uh to social benefits how how much do
+you think um I how much do you think
+productivity can increase on the back of
+this well there's there's a few ways we
+can measure it so let me give you a
+couple examples um uh one of the hardest
+things that we do in in our company is
+designing chips the chips that we build
+are the largest chips the most complex
+chips the world builds today no no
+singular entity builds such large L
+enormous semiconductor chips and these
+chips are simply impossible to build
+anymore without artificial intelligence
+and the reason for that is because the
+the number of transistors and the way
+that we can connect up those transistors
+the combinations is just is so insanely
+great and because so many people work on
+it um the
+optimization of of the mathematics the
+optimization of how to place you know
+it's it's kind of like imagine imagine
+um uh New York City but it's a thousand
+times bigger than New York City and
+you're trying to figure out um uh how to
+organize uh New York City from the
+ground up uh such that it is the most
+optimal placement of every single
+building and and then you have to
+understand which you know where the
+traffic goes from building to building
+you have to understand which buildings
+associated with other building and you
+know what building are
+what buildings are necessary to support
+certain buildings and certain
+infrastructure where do you put the
+parks where do you put the restaurants
+it's insanely complicated as you can
+imagine you know it's the number of
+combinations is off the charts and we
+can't solve these problems anymore
+without artificial intelligence on the
+one hand it lets us do things that we
+can't otherwise do on other hand let me
+give you another example we use
+artificial intelligence right now to try
+to better understand climate
+change and um in order to understand
+climate change you have to simulate the
+weather uh a lot more you know a lot
+more quickly because you're trying to
+further extrapolate the implications of
+of climate uh out in the distance not
+not just not just next not just tomorrow
+but ideally next month next year next 10
+years uh next 30 Years so in order to do
+that we have to do weather simulation a
+lot lot faster and so we've created
+artificial intelligence that helps us
+simulate the multi physics of of um of
+weather and we're already simulating
+weather now 10,000 50,000 times faster
+than you using numerics and so that's
+another way of thinking about
+productivity when you can do something
+10,000 times faster you're doing it you
+know you're doing a 10,000 times faster
+one last for the okay I'm sorry take
+your last example one last example um uh
+the single greatest expense in our
+company is software engineers and now
+with uh Microsoft's
+co-pilot you could you could um and and
+they've estimated that some 40 50% of
+the software that's now written in
+GitHub is produced by AI it's a little
+bit like um text completion it's a
+little bit like grammar correction on in
+our in our word editing documents um
+except this is for program completion
+and so the AI can suggest based on what
+you've already written and what you
+intend to write um it can write the
+program for you and so so if you could
+imagine the single most expensive um
+population at Nvidia is now Amplified by
+a factor of two that's incredible and so
+our our our estimate is you know we're
+going to improve the productivity of our
+Engineers by a factor of 10 when you
+talked about um complexity being 10
+being a thousand times the complexity of
+New York City that you put in on what
+kind of area what's the how big is one
+of your chips your chips are probably
+um you
+know it comparing it to a stamp is it's
+it's a couple of inches per side it's a
+couple of inches per side and and um uh
+what is what is a couple of inches per
+side it's kind of like a it's smaller
+than a cof you know coffee cup a coaster
+probably you know probably a 2third the
+area of a coaster if you will just to
+get put in perspective and so and it it
+um uh the R&D budget for it is probably
+something like $5
+billion and then then we hit you know
+it's it costs more to build one of these
+Generations than for example to build
+rocket and you know it's the R&D budget
+is very
+high when you put together everything
+you said about productivity gains um
+when you look at the whole
+society how do you think this could
+drive productivity gains in the whole
+society if you were to put number on
+it um I I I don't know how to do that um
+but but one thing for sure the the
+countries that don't have act don't have
+the richness of of computer
+scientists and and haven't benefited as
+greatly from the the enormous
+capabilities of
+computers um this should be a reckoning
+moment for them this should be just an
+extraordinary opportunity for them uh
+the the upand cominging economies the up
+andom Industries um I think India
+southeast Asia um uh Africa this these
+are these are regions and economies that
+I I think has a real benefit from uh
+from artificial intelligence uh
+enhancing the capabilities of the entire
+industry and their and their economy and
+then you know driving driving
+productivity to the limits and so I I
+think um for the rest of the world for
+for the developed countries the ability
+to reduce cost is incredible not to
+mention um accelerating everything that
+we
+do so when you look at the most
+important problems that AI will solve
+over the next five to 10 years what are
+they the two biggest ones and we're
+we're um uh investing actively in built
+of them uh the one of the one of the
+most important ones is uh digital
+biology drug
+Discovery just as we've learned the
+language of humans we've now learned the
+language of
+proteins and we've learned how how um
+how to understand proteins and we've
+learned how to uh from the desired
+function the protein is a machine the
+the the biological machine
+the way that it's connected the amino
+acids the chain of amino acids and the
+way that it comes together the 3D Shape
+of that protein determines its
+mechanical functionality if you will
+it's kind of like you know the
+difference between the shape of a of a
+motorcycle in the shape of a car in the
+shape of a you know unicycle the fact
+that they different shapes their
+functionality is different a plier and
+Hammer the fun the functionality is
+different because of their shape and so
+proteins have different shapes and
+different functions we can now
+from the desired function of a protein
+synthesize other proteins other
+potential proteins that have properties
+that are maybe better for temperature or
+better for Sol solubil solubil ability
+so that we could it goes into our
+bloodstream better or maybe we can use
+it to uh synthesize energy from light uh
+maybe we can uh break down Plastics uh
+maybe it could uh
+uh break down um oil in the oil leaks in
+the ocean or um you know whatever
+whatever the the um the interesting
+problem is we can now use uh protein
+machinery and protein engineering uh to
+go help solve that problem I think that
+that's tremendous incredible potentials
+uh we can understand the language of
+chemicals uh so that and now that you
+can understand chemicals and proteins
+you can understand their interactions
+and um uh and uh do a better job
+discovering drugs you know drug
+Discovery still cost enormous amounts of
+money and takes a very long period of
+time and our success rate is very low
+and so now we can improve the odds of
+that and so drug Discovery is one the
+other one's climate change as I
+mentioned both in understanding the
+impact of human factors uh to climate
+change U predicting uh climate change uh
+and the climate effects in Regional uh
+uh Regional climate um impact whether
+whether it's um extreme weather in the
+in the uh Gulf of Mexico or um the
+number of fires that that uh because we
+just have so many dry days in Northern
+California climate climate change has a
+different impact in different parts of
+the world and you know people are
+interested in an average climate change
+but not really you know people want to
+know what climate change has an impact
+on them and their their local economy
+and their Agriculture and their water
+supply and the the quality of life and
+the impact of extreme weather and so on
+so forth and so so we want we want to
+have a better understanding of the
+future of climate and by doing that the
+side effect is that the the algorithms
+the mathematics that we uh and the the
+way that we do computation of physics uh
+can have a tremendous impact in just
+about all other physical Fields uh in
+reducing the amount of computation
+necessary to do it and so on the one
+hand we use um we have the ability to
+predict climate on the other hand we use
+less energy to predict climate and so
+that artificial intelligence makes that
+possible when you look at the your
+predictions of climate what do you what
+does it make you
+think well uh we we have to we have to
+get to it you know I think the the it's
+hard to do something about about a
+problem you don't understand and if you
+you can simulate a problem uh your
+understanding of it is much more
+profound and uh helps you prioritize uh
+the actions there are so many
+well-intended people and they want to do
+so many things to uh change the Arc of
+climate uh but the question is is uh
+where do you put your resources and
+first those decisions are really hard to
+make you know well-intended
+Investments um may not be the best
+outcome you know some of it could uh
+slow down economy some of it drives
+inflation some of it some of it of
+course um doesn't have the the necessary
+the impact that people hope that it has
+uh and and so having a simulator uh
+allows us to understand some of these
+some of these um very difficult to
+understand challenges uh a little bit
+better and so hopefully I'm hoping that
+that the the climate the climate um uh
+research Community uh and all of the
+efforts that are associated with this
+area um will have give us a better
+insight and and and and very importantly
+a model that allows us to uh uh simulate
+emulate uh the the um uh uh the
+decisions that we want to make and and
+um the the priorities maybe and the the
+local impacts um better it has a it also
+has a great great use to uh the various
+Industries you know where should you
+invest in
+infrastructure um do you need to invest
+in infrastructure so so that so that um
+uh to avoid flooding and you know is is
+building dams of great urgency and and
+are the dams going to be effective and
+uh you know what is the impact to
+insurance companies and reinsurance
+companies and um you know is this is
+this a is this a region that's going to
+be great for you know wine country is
+this going to be great for certain
+agriculture um you know those kind of
+decisions I think I think um would
+really benefit from having a
+simulator talking of simulator we had
+Bill Gates on the podcast recently and
+he talked about um you know personal
+agent in a way like a digital personal
+assistant um how are you how do you see
+that oh well we'll have um uh personal
+digital assistant we'll have a group
+digital assistants maybe maybe uh we
+have a study group and we have a digital
+assistant to help us uh we'll have a
+company uh digital assistants of all
+kinds somebody who is a digital
+assistant for HR somebody who's a
+digital assistant for it somebody
+digital assistant for you know for uh uh
+programming somebody who just wants to
+uh you want to understand you want to
+you want to model our our um company's
+business or U model the the uh potential
+effectiveness of a new product or a new
+service or you know and so there's
+there'll be digital assistance of all
+kinds okay how um how close are we now
+to artificial general intelligence I
+think Microsoft said that they have seen
+some Sparks of it what um
+what's going to happen
+here well I'm anxious I'm anxious to see
+the
+paper and uh it's 150 pages and so I'm
+looking for I'm I'm getting I've
+downloaded in in one of these weekends
+I'm I'm going to go through it
+U there
+the intelligence is about perception
+reasoning and
+planning um we have done an
+extraordinary job with perception and
+and but we still have a long ways to go
+in order to in order to uh really have a
+you know the goal of perception is to
+create a a model of the world around you
+a model of the world around you in in in
+in a static form but also in its Dynamic
+form you know what are if I did this
+what would happen to that you know we we
+do this all the time and today the
+conversation is you're you're imagining
+if you ask this question it might lead
+to this answer which leads to another
+question which leads to another answer
+and we do this we do this in human
+interaction we do this in company and
+Industrial interaction we do this all
+the time and we have a we have a mental
+model uh some of it is supported by
+simulation a mental model of of um how
+the world behaves uh we have to go
+create that model that model of the
+world and and there's so many different
+worlds there's the world that is the the
+the human scale World um but there's the
+world that is is a molecular scale
+there's the world that's atomic scale
+and then there's of course the there's
+the world that's Galactic Galactic scale
+each one of these worlds are uh
+described but uh sometimes by different
+physics right at some at some level you
+have to go to quantum physics and all of
+these understanding these different
+worlds uh all matter and so so the first
+thing is just understanding the world
+the second part is how do you reason
+through problems um uh in a way that in
+a way that is that um achieves the
+objectives but our support
+and and um within the within the Realms
+of your core values uh your
+principles um uh keeping other people
+safe uh that's explainable un you know
+interpretable and um uh that's in a
+transparent way uh you know how do you
+reason how do you reason through all of
+this uh with those things in mind and
+then and then how do you come up with a
+plan that that um is uh efficient and
+cost effective and you know all of the
+things that we do we do as as humans and
+and as Industries and so those those
+three those steps if you
+will um AI is making tremendous progress
+along that entire Arc uh robotics is
+making great progress and and that's uh
+understanding the world and being able
+to to plan your your motion uh we're
+making great progress in autonomous
+vehicles uh we're making great progress
+uh uh chat GPT uh obviously the fact
+that it can it can um uh take a problem
+that you described and be able to break
+it down into a computer program
+obviously suggests it has the ability to
+reason through several steps uh it might
+not be able to reason uh through as many
+conceptual steps as we can um but it's
+is surely demonstrate demonstrating the
+the ability to um do some uh you know
+early level reasoning and so so the
+progress is is quite F quite
+fast changing um tab bits and zooming in
+on on the ethical side of this now we
+just had a a letter um recently from a
+thousand really well respected people
+who said it's time to slow down um
+think and
+reassess what what do you think about
+it AI is a is a um very powerful
+technology and it's a very powerful
+technology because it can perform tasks
+and do things that that are of Great
+Value and and uh technology that has
+that has this level of capability
+obviously can also be um applied to do
+harm um and so regulation is necessary
+we regulate seral for god sakes you know
+we should regulate Ai and and um uh uh
+this technology of course is moving very
+quickly and and so it's sensible that uh
+Regulators really have to get engaged
+and um uh understand the technology uh
+uh to the best of their ability put but
+put some guardrails in put some
+regulation in so that so that um I so
+that the the technology can advance in a
+way that's helpful to society and not
+hurtful have we got any God whales in
+place
+now uh no not really not really um who
+should put them who should put them in
+place well the same people that that uh
+are governments
+there's really no choice but for for
+governments to step step in and um
+regulate this uh we regulate food we
+regulate drugs we regulate
+transportation we reg regulate um uh
+Industries the creation of of of uh
+chemicals the creation of um you know
+materials that could be toxic we
+regulate just about everything we
+regulate electricity we regulate
+Communications uh we regulate uh um you
+know the broadcast of Television there
+are certain things that you can't
+broadcast um there should be certain
+things you can't generate you know
+generative AI generates information
+there's uh there certain things you can
+generate on the one hand it's hard to to
+uh regulate um people expressing
+themselves uh because of open speech
+however uh it is possible to regulate
+what information you produce um and so
+the regulation of of the production of
+things and now we're producing
+information using computers uh you can
+regulate that and there's there are many
+things that you can
+regulate when you look at this arms race
+we are having now in in Ai and you know
+uh powered by your
+technology um are you are you
+afraid um putting the whatever
+technology whatever power of Technology
+there is uh we should try to democratize
+it as best we can um if it were to land
+in the hands of one company it's it's
+obviously less good um than um than
+being available to
+everybody uh it's less likely that in
+the near term that AI is going to
+displace our jobs it's more likely that
+someone uses AI is going to displace our
+jobs and and um I and and the same thing
+could be taken to all kinds of extremes
+and so so when a new technology that
+comes along that that Pro produces so
+much productivity gains you know whether
+it's the steam engine or or um uh you
+know heavy machinery it gives it gave us
+superpower attractor gave us superpower
+forklift gave us superpow human
+strength and and
+um now we have this capability to give
+us um amplifier intelligence and and um
+uh help us solve problems a lot more
+quickly uh we've got to find a way to
+use that technology as soon as we can
+and but make sure that that technology
+is is available to everybody who would
+like to use it and regulate it um you
+know regulate it um as soon as we can
+you said it should be um democratized
+but um and and of course open AI was
+meant to be open right um now it's
+turning into a commercial product uh you
+were more guarded when you talked about
+the specifications you know there's a
+lot less disclosure about uh the
+underpinnings of it how do you read
+that well that's that's a that's a
+company choice of theirs and they have
+the right to do that um in the meantime
+in the meantime there's a there's a
+great deal of of um uh AI research
+that's still done in the open the number
+of the number of large language models
+that are available in the open is is
+quite abundant and so it's it's not
+about access to the technology that is
+keeping anybody back it's it's simply
+The Willpower to go and and um the
+Insight that this that that um the
+technology is at a very close to useful
+useful state that Insight was terrific
+the Insight that that between gpt2 and
+gpt3 is a very useful product the
+difference between a marginally useful
+product to an Incredible use useful
+product that was a great Insight those
+are those are the same insights that
+that um you know led to the iPhone or
+that led to the PC that led to the
+internet um before each one of
+those before you know that led to Google
+search uh the the the Insight that led
+to each one of those those uh
+Innovations is really about timing you
+know technology was invented early on
+and it was even cultivating and and um
+brewing in in in certain so certain
+circles for quite some time and and yet
+the innovators are the ones that realize
+the timing is now and to jump on it and
+um industrialized it and turned it into
+a really great product chat jpt is
+unquestionably the single best software
+product the world's ever made and and by
+that definition uh let me let me let me
+defend that you know a great software
+product is something that does amazing
+things and surprisingly amazing things
+and a great software product is also
+easy to use this is the easiest product
+to use on the planet anybody's anybody
+could use it you know over 100 million
+people have used it and there's no
+instructional manual you don't read
+anything you just start typing into it
+and um if it's not sure what you what
+you meant it asks you questions back and
+it tells you that it's not sure you just
+keep you know talking to it with your
+whatever language you use
+and
+um and it produces amazing things
+surprising things it is the single most
+useful best application the world's ever
+written and and how is this going to how
+is this going to change geopolitics how
+is it going to change the relationship
+between the US and
+China well hard to say um hard to say I
+think the there there's a there's a
+genuine there's a genuine um har that
+can come from uh uh fake F news that's
+being generated fake information that's
+being
+generated and um uh that could that
+could cause real harm
+um the same harm that's currently
+happening in in social media and and uh
+fake news and um some of it is generated
+by human uh um some of it well most of
+it is generated by human today and so so
+um you could imagine that that this AI
+has a better ability to detect human
+generated fake
+news um but this technology also has the
+ability to generate fake fake news and
+so both both of those both of those um
+uh possibilities exist in in in
+[Music]
+abundance changing T here let's talk
+about the young Jensen who were you when
+you were
+young
+uh let's see I was I was uh I'm not
+saying I'm not saying you're not young
+still
+really yeah statistically I'm I'm on the
+other side of that Hill I let's see the
+the um I I was focused I was focused I
+was curious um I was a I was a a
+perfectionist I wanted to do everything
+well um I worked hard I mean those I
+would say that those things characterize
+me do you think hard work is uh do you
+think it's understood how much hard work
+that goes into great
+achievements oh yeah I mean the amount
+of the amount of hard work there's hard
+work and then there's insanely hard
+work in order to in order to be where
+are you and where are you on that scale
+I'm on on the insanely hard work you
+know and what does that mean what does
+that mean what does a day look like I I
+work every day there's not a day that
+goes by I don't work and if I'm not
+working I'm thinking about working and
+when do you kick off in the
+morning
+uh well you know I wake up I wake up at
+5 o'clock and and uh the moment I wake
+up I start working and and so I work I
+work every single day there's not a day
+that goes by I don't work when do you go
+to as early as possible I I um I'm in
+bed probably by I'm asleep probably by
+9:30 and I I like my sleep and and uh
+sleep is really important to me and do
+you what do you do to relax or do you
+relax uh I relax all the time I I um I
+enjoy relaxing at at work just yes
+working is relaxing for me solving
+problems is relaxing for me uh Achi
+achieving something is relaxing for
+me um and the most relaxing just hanging
+out with my family uh doing anything is
+relaxing for me yeah I I relax in a
+whole bunch of ways reading about things
+that that uh that's important to me is
+relaxing to me um you know so just
+hanging out with my family's relaxing I
+relax in a lot of different ways I'm
+pretty
+relaxed what do you
+read let's see I just I just read chip
+Wars
+um I skim through a lot of AI papers I
+don't understand all of them but I try
+to understand all of them um
+I you know I try to I try to read uh
+everything that that
+um that that's of curiosity to me you
+started Nidia in 93 you were 30 years
+old if you were to boil down the essence
+of the success what type of
+characteristics is it that the company
+has
+that makes it so successful your your
+your your perspective about the future
+has to be you know on a on a fairly long
+Arc um pretty important and and it has
+to be it has to be somewhat
+directionally right and we were we were
+um I would say absolutely directionally
+right now the question is along that
+direction there are a lot of different
+paths and and um those some of those
+paths would have been easier if you had
+better if we had better skills you know
+I didn't know how to be a CEO and no
+nobody in the company knew how to build
+a company and we didn't even know what a
+PC looked like at the time I i' never
+even used one before and so there were a
+lot of things about about the company
+that the skills that that we didn't have
+uh we that we had to we had to develop
+those skills uh how to raise money how
+to organize the company how to how to
+recruit people um you know th those were
+all all skills that I that that we had
+to develop along the way
+I think that those skills are probably
+uh skills are learnable I think the you
+know the attitude of an entrepreneur and
+attitude of somebody who does something
+new uh is how hard can it be you know
+and my attitude has always been you know
+how hard could it be to learn learn PC
+how hard can it be to build a company
+how hard can it be to hire people how
+hard could it be to to create an
+organization it turns out all of those
+things were super hard all of those
+things were super it turned out it was
+super super hard um but I think you want
+to go into it with the attitude how hard
+can it be you know and so when we when
+we got into the Journey of artificial
+intelligence we got into the Journey of
+scientific Computing we got into the
+Journey of autonomous vehicles you know
+we we started with the attitude how hard
+can it
+be and and so if it's a solvable problem
+how hard can it be and we reasoned about
+everything from first principles and and
+um I and if anybody could do it I'm sure
+we could we could and you know we'll
+just learn as fast as we can
+and and so I would say I would say I
+would say we didn't have any of those
+skills but but if I had to boil
+down um uh what led the company to be
+successful uh our vision was right um
+but but the character of the company is
+probably the most important thing a car
+the character of a company
+um is what makes it ultimately
+successful and you know how resilient is
+it
+um how does it deal with
+adversity uh how does it deal with
+learning uh you know when it's presented
+with new assumptions if the conditions
+change how agile is the company you know
+when the world changed around us
+continuously and how do you those um
+those values um The Learning the agility
+the ability to change how do you install
+those values into the
+company you you T talk about it you
+teach it you you live it um Nvidia is
+really
+fortunate we are we are we are genuine
+as a as a long-term successful company
+um we we have we have excellent chance
+and the reason for that is because we
+suffered so greatly in the
+beginning for the first 15 years of our
+company um it was one adversity after
+another and then every you know and
+after that uh there were adversity after
+another um but the company was able to
+deal with it the first 15 years the
+adversity were incredible maybe five six
+seven times it was
+existential what what's what's the key
+to coping with
+adversity I think the the
+um in the beginning of a company forming
+those forming the corporate character
+the corporate culture it's people it's
+the people's resilience it's the
+character of the people there right
+unfortunately there's just you know a a
+company is made of people and um it's
+not made of the document that describes
+the culture it's not made of the
+document that you know the the the
+inscription of the core values um on the
+building and that's not what makes the
+company's culture is the people and how
+how the company
+overcame existential crisis how the
+company
+overcame um uh the incredible adversity
+that it was presented at the time um
+both in in um uh the agility of the
+people the cleverness and the creativity
+of the people the Ingenuity of the
+people and then also the the the will of
+the people the the the um uh the
+countless times that our company has
+been presented with challenges and The
+Willpower the utter incredible ability
+to suffer you know willpower to to be
+able to to do something even in just
+extraordinary
+pain that is Corporate character in 20
+in 2003 at Stanford you said um my will
+to survive exceeds almost everybody else
+will to kill me yeah right exactly that
+what is that where does that come from
+what is
+that well you know I I think everybody's
+everybody's upbringing is is um unique
+to them i' I've just always had that uh
+you know it's it's pretty hard to
+discourage
+me and if I believe in something
+um I'm just gonna if I believe in it I'm
+just going to keep on doing it until
+it's done until until we're great at it
+uh it's hard to deter me it's hard to
+distract me it's hard to you know
+discourage me and uh uh in my mind it's
+always how how hard can this be and it
+turns out every time I say how hard can
+this be it turns out it's incredibly
+hard and and U and I'm surrounded by
+amazing people helping me uh and it
+remains incredibly hard and last
+question what is your advice to young
+people well there there are a lot of
+things to to
+learn um I I would just I would advise
+uh be be a be a learner um but but um
+probably the best advice that that I can
+imagine is is um think from first
+principles uh don't worry about anybody
+else's advice you know I I I've been
+given a lot of advice over the years uh
+uh some of it some of it have been very
+good um most of it has been irrelevant
+and the reason for that is because it
+was either the advice was either an
+opinion um it was perspective of the
+time
+uh it was it was um uh it was uh um it
+was based on on wrong
+assumptions um and and my advice would
+be you know think for yourself think
+from first principles and and um I and
+and a lot of people say you know find
+something you
+love uh I I don't know about that I
+guess I guess I Fallen fall in love um
+and many things that I do I loved it
+when I was a dishwasher I loved it when
+I was a bus boy I loved it when I was
+delivering papers I loved it when I was
+waiting tables um I've loved every
+single job that I've ever had and I
+loved every single day at Nvidia that
+I've ever had and um uh I just learned
+to love what I'm doing and so so I I
+guess it's probably harder to to find
+something
+that that you love but it's easier to
+fall in love with what you're doing and
+once you fall in love with what you're
+doing because you just desperately want
+to do a good job at it um it's easier to
+do a hard it's easier to uh to do it
+well and do it
+hard well I think that's um that's a
+beautiful place to end um I have to say
+this has been one of the most intriguing
+and interesting conversations I ever had
+in my whole life and I think you know
+when we look back at this time 20 years
+from now 30 years from now you could
+potentially have been the person who's
+changed the world the
+most I enjoyed our
+conversation thank you so much thanks
+for the time thanks for the opportunity
+keep it up thanks all right take
+[Music]
+care

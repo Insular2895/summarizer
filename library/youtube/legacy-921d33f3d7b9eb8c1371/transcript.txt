@@ -1,0 +1,596 @@
+It's 2018. You're on Facebook. You open
+the menu, scroll down, and spot this
+little protect button. [music]
+Sounds like a good idea. You tap it.
+Millions of others do, too. You're
+prompted to install something called
+Onavo Protect, a free VPN that protects
+your privacy, allegedly.
+If only you knew.
+>> I'm proud that we've given people who've
+never had a voice before the opportunity
+to be heard. Facebook accused of spying.
+>> A VPN app called Onavo.
+>> His VPN spied on almost everything users
+did and sent detailed data to Facebook.
+Potentially a giant wire tab.
+>> It gets into the root access of your
+phone.
+>> Any websites you went to, any apps you
+used, things along those lines.
+Everything you did on your phone was
+open to Facebook.
+>> And so far, there have been almost no
+legal consequences.
+>> We're heading into a no privacy future.
+>> We're already there, aren't we?
+>> I mean,
+>> but this story is even bigger than
+Onavo. It's a story about betrayal of
+trust, surveillance of minors, and
+corporate espionage, all in the race for
+market dominance. This is the Facebook
+scandal you've probably never heard of.
+>> Confirmed.
+>> Though VPN providers sometimes sponsor
+our videos, they aren't involved in the
+production of this video in any way.
+They didn't finance this story or
+suggest this coverage.
+Double rainbow. Oh my god.
+>> When it comes to the internet, a lot of
+people remember the last decade as a
+simpler time.
+>> Those were the years of the Harlem
+Shake, the Ice Bucket Challenge, that
+one celebrity selfie.
+Compared to today, it all seems so
+wholesome. Back in the 2010s, many
+people still believed something that
+seems impossible today that Facebook of
+all companies could be trusted. So when
+their users saw a friendly seeming
+protect button, by 2018 millions of them
+had tapped in.
+For many years, Mark Zuckerberg has been
+open about his goal of making Facebook
+[music] the ultimate platform for
+connection. By 2013, that's going well.
+Facebook is bigger than ever and the
+most popular social network. In 2012,
+they cracked a billion users and they
+pulled off the largest tech IPO in US
+history, raising $16 billion in a single
+day. But users in the US are losing
+interest, especially younger ones.
+They're usually the first to flock to
+newer apps. Zuckerberg is under
+increasing pressure. You really can't
+risk losing these users to other social
+media companies. So, his strategy
+becomes, as it would later be described,
+copy, acquire, and kill. In 2012, he
+made Instagram an offer they couldn't
+refuse.
+>> Americans share photos on Instagram, a
+company with only 13 employees bought
+today by Facebook for $1 billion. The
+acquisition was ridiculed at the time. A
+billion dollars for a cute photo app
+that doesn't turn a profit. Investment
+bankers were puzzled. It was a risky
+move right before Facebook's IPO, but
+the move will end up paying off
+massively.
+Instagram will deliver billions of users
+and billions of dollars in yearly ad
+revenue. Just 6 years after the
+acquisition, Instagram's estimated worth
+will be a hundred times what Facebook
+paid.
+For a while now, Zuckerberg is at
+another target in sight, Snapchat.
+The app was launched in the fall of 2011
+by Stanford friends Evan Spiegel and
+Robert Murphy. Spiegel is the CEO,
+Murphy the developer. Snapchat is yet
+another photo sharing app, but with one
+key difference. The images shared
+disappear after just a few seconds and
+can't be screenshotted without the
+sender knowing. Snapchat's appeal is in
+its impermanence. And unlike on
+Instagram, the photos aren't meant to be
+perfect. They can be awkward, funny, and
+messy. [music] Teenagers love it, and
+Zuckerberg wants in. At the end of 2012,
+he invited Spiegel for a chat. At the
+time, Facebook was building a competing
+app called Poke. It launched in December
+2012 and failed badly.
+People briefed on the matter told the
+Wall Street Journal Zuckerberg then
+offered to buy Snapchat for a billion
+dollars. Now in late 2013, he comes back
+with a new offer, $6 billion for the
+app, six times what he offered
+Instagram, a huge sum for an app that's
+only been around for 2 years and isn't
+profitable with no guarantees that it
+ever will be. Spiegel and Murphy mull it
+over but eventually declined the offer.
+Spiegel will later say he didn't want to
+make the same mistake that Instagram
+did.
+>> Our view was that Instagram had been
+wildly undervalued in that um
+acquisition ultimately had given up like
+a massive massive opportunity.
+Fine then time for a new approach.
+You know we cover a lot of tech stories
+in this channel. Almost all of these
+stories feature code and recently you
+might have heard of vibe coding. You're
+always going to be ahead if you actually
+understand how things are built and how
+systems work. Kotti is the platform to
+get into coding. Whether you're a
+beginner or an aspiring dev, Kotti
+offers bite-sized, gamified lessons.
+Instead of overwhelming you with theory,
+it creates a personalized learning path
+right from the start. When you sign up,
+you get a journey tailored to your goals
+based on just a few quick questions.
+Then you learn by doing. There are short
+challenges, real code, and instant
+feedback if you get stuck. [music] It's
+kind of like a certain language learning
+app, but for programming. There's even a
+streak system to keep [music] you
+consistent. And it's free to use with
+the daily limit. Start learning with
+Kotty Techch now. Check out the link in
+the description or scan this QR code.
+Use code Fern 20 for 20% off.
+In 2013, Facebook acquired an Israeli
+startup called Onavo. Zuckerberg's
+company reportedly spent around hund00
+million on it. Back then, mobile data
+was expensive, [music] especially in the
+US. Ono was known for two products that
+saved consumers money by helping them
+stretch their data plans. Ono Extend
+could compress emails, photos, and app
+data. Ono count allowed users to see how
+much mobile data different apps were
+consuming. Both required users to send
+their data to Anavo servers. And a few
+months before getting bought, they had
+launched their [music] latest product, a
+VPN called the Novel Protect. But
+Facebook was probably interested in the
+startup for more than just data
+compression or traffic rerouting.
+Originally, Facebook made money by
+tracking user behavior on their site.
+They did this with so-called cookies.
+Cookies are small files that websites
+store in your device to remember login,
+preferences, and activities. This data
+can then be used to sell hyperargeted
+ads. But smartphones changed the game.
+People started using apps instead of
+browsers. And apps often store data
+internally. They track behavior through
+appsp specific systems, making
+traditional browser cookies less useful.
+Facebook was lagging behind in the shift
+to smartphones. It was struggling to
+monetize mobile usage, [music] so it
+needed insights. At the time, it was
+hard to know how well apps were
+performing. You could see how many
+people downloaded them, but that didn't
+say much about how often or how exactly
+they were used. When Navo saw an
+opportunity to fill this knowledge gap,
+thanks to the traffic that was routed to
+Extend and Count, the company was
+sitting on a treasure trove of
+engagement data.
+By acquiring the company, Facebook
+suddenly had a secret window into their
+competitors, and one app immediately
+stood out. Ono [music] data showed that
+99% of Android users in Spain had
+WhatsApp installed on their phones. In
+the US, far more mobile messages were
+being sent through WhatsApp than through
+Facebook. WhatsApp was powerful
+competition, yet it also promised
+incredible growth. This is likely one of
+the reasons Zuckerberg decided to pay
+$19 billion for it.
+>> Facebook is making a major move into
+mobile this morning. The social media
+behemoth is buying the messaging company
+WhatsApp.
+>> WhatsApp was uh also both a competitor
+and complimentary.
+>> It's a messaging app that is incredibly
+popular. They send billions of messages
+a day.
+>> Zuckerberg made no apology for what he
+considers a very good deal.
+>> Facebook also used to gain insights into
+Snapchat, their arch nemesis. And there
+was so much they wanted to know. Perhaps
+most importantly, which features people
+actually used. But there was a problem.
+All the traffic sent through Anavo's
+apps was increasingly hidden behind
+encryption.
+A year before the acquisition, Snowden
+revealed that the NSA was spying on the
+world. Concerns about online
+surveillance entered the mainstream, and
+suddenly everyone wanted more
+protection. As the decade marched on,
+the internet moved toward increased
+security, including Facebook's main
+competitors.
+Enter the rise of HTTPS.
+When you visit bank ofofamea.com, your
+browser doesn't just take the website's
+word for it. It verifies that you're
+actually connecting to the site you
+intended to visit. It does so by
+requesting the website's security
+certificate, its digital ID. This
+contains information such as domain
+ownership, the issuing authority, and
+its validity period. Once a certificate
+is issued, the site keeps it for a set
+period of time. To verify these
+certificates, your browser relies on
+digital judges, the so-called
+certificate authorities or CAS. They
+issue digital IDs and verify that
+websites are really who they claim to
+be. Every time you visit, your browser
+checks whether it's still valid. See
+this little icon in your address bar? It
+means your browser has checked the
+website certificate against its trusted
+list and confirmed that it links back to
+a trusted authority. Everything is
+legitimate. Then they agree on a
+temporary secret key for your session.
+From now on, only you and the site can
+read the traffic. Your communication is
+encrypted. Any data you type into bank
+of america.com travels safely to their
+server. Eavesdroppers can't read it. On
+your phone, things work similarly.
+Tucked deep inside your phone is a
+highsecurity vault called a trust store.
+It's maintained by the company that
+makes the operating system. Think Apple,
+Google, or Microsoft.
+>> [music]
+>> By default, your phone trusts a built-in
+list of so-called root certificates, but
+users or companies can sometimes add
+their own trusted certificates. Some
+apps trust only specific pre-approved
+certificates. This is called certificate
+pinning. Even if a new certificate is
+added to your phone's trusted list, the
+app won't accept it. Like many others,
+Snapchat started using HTTPS.
+However, they didn't use certificate
+pinning for their analytics domain. This
+was Facebook's way in.
+In June 2016, Zuckerberg sent an email
+to three senior executives demanding
+that they figure out how to get around
+Snapchat's encryption. Whenever someone
+asks a question about Snapchat, the
+answer is usually that because their
+traffic is encrypted, we have no
+analytics about them. Given how quickly
+they're growing, it seems important to
+figure out a new way to get analytics
+about them. This effectively kicks off
+Project Ghostbusters.
+A few weeks after the email, the Onavo
+team comes up with a solution.
+Say you're at a library. You see free
+Wi-Fi. And since it's 2016 and your data
+plan is tiny, you connect. Just down the
+aisle sits a man in a hoodie named
+Elliot. He's about to hack you. He might
+be running a device from his backpack
+that pretends to be the library Wi-Fi,
+or he's just quietly monitoring the
+network looking for traffic. Either way,
+he can read the unencrypted info you
+send over the network and steal things
+like login credentials or credit card
+data.
+Elliot is a so-called man-in-the-middle.
+Because these man-in-the-middle attacks
+are really scary and easy to pull off,
+more and more people start using VPNs.
+They create a secure tunnel between the
+user's device and the VPN server. Along
+the way, all the data that passes
+through it is encrypted. From now on,
+it's harder for hackers to intercept or
+read your traffic. A VPN also hides your
+IP address by routing all your internet
+requests through its own servers.
+On the surface, Onavo Protect seems like
+a great option. It's free, [music] it
+protects you, and it offers some data
+compression features. Plus, Facebook
+itself is promoting it, [music] and tech
+experts are singing its praises. But a
+novel protect is doing something very
+sneaky. The following is based on an
+analysis by an Australian hacker who
+publishes under the alias Hacksro. We
+cannot independently verify the results.
+It all starts with a nudge. When you
+install the app on Android, it says,
+"Your privacy is a top priority." Then a
+novel reportedly prompts you to install
+a trusted root certificate on your
+device. Once permission is granted, the
+root certificate is installed. It will
+then be trusted by many applications on
+your phone. Now, whenever your Snapchat
+app wants to send some analytics data to
+their server, Onavo forces that traffic
+to its server first because it's a VPN.
+[music]
+HR reports that a service called Squid
+places itself between the app and
+Snapchat's analytics server. It presents
+a certificate to your phone. Yo, I'm
+totally legit. Your phone accepts
+[music] it because of the judge powers
+Facebook gave itself. Yeah. Yeah. This
+is totally legit. Normally only Snapchat
+would be able to decrypt this data.
+[music] But because Anavo installed its
+own trusted certificate, it can unlock
+the traffic first. Now all these
+Snapchat analytics from your phone get
+decrypted and land on Anavo servers.
+Detailed inapp activity ripe for the
+taking. Next, Squid uses a separate
+HTTPS connection with Snapchat's real
+server [music] and reencrypts the
+traffic. From the app's perspective, the
+connection appears normal. According to
+HackRob, it isn't clear whether all app
+users were targeted or just a subset of
+users. We asked Metaphor a comment on
+Hacks Robb's findings, but didn't
+receive a response.
+So, in a startling case of irony, a VPN
+marketed by Facebook to protect you,
+presumably from man-in-the-middle
+attacks was itself an enormous
+man-in-the-middle. These aren't our
+words, they're [music] Facebooks. This
+is a man-in-the-middle approach.
+>> For Facebook, the intercepted data is a
+gold mine. After launching Instagram
+stories, they observe that Snapchat's
+growth slows. Its stock value plummets.
+Facebook appears to be winning the war.
+But it seems a novel was useful beyond
+just crushing arrival.
+According to the Wall Street Journal,
+Facebook could tell that live video was
+picking up through apps like Mircat and
+Periscope. This helped guide their
+decision to add live video to Facebook.
+But over time, their certificate
+shenanigans became more difficult to
+pull off. The security of iOS and
+Android improved, so Facebook had to
+look for new ways in. According to court
+filings, Facebook internally considered
+exploiting Android's features designed
+to support users with disabilities.
+[music]
+When we asked Facebook to comment on
+this, they didn't get back to us. And
+maybe all of this could have just been
+forgotten, buried [music] tech history.
+But over the years, the public slowly
+started to realize what Facebook was up
+to.
+In a sense, users were warned. In the
+app store description, Anavo did tell
+users it was tracking them, but they
+framed it as a way to build a better
+experience. Based on that language, it's
+doubtful users really understood the
+level of access the company had. When
+Project Ghostbusters launched, not
+everyone at Facebook was on board. The
+heads of the infrastructure engineering
+and security engineering departments
+both expressed their concerns by email.
+One wrote, "I can't think of a good
+argument for why this is okay. No
+security person is ever comfortable with
+this. No matter what consent we get from
+the general public, the general public
+just doesn't know how this stuff works.
+People familiar with the technology
+spoke to the press anonymously. In
+August 2017, they told the Wall Street
+Journal that Facebook had an internal
+early bird warning system, one that
+alerts them to potential new threats.
+It's a no. At the time, according to
+Facebook insiders, don't be too proud to
+copy became an informal slogan within
+the company. Speaking to the public,
+Zuckerberg would claim it was normal for
+tech companies to build off of each
+other's innovations. In early 2018, a
+security researcher named Will Strawfac
+took a closer look at how a NAVO
+functioned on iOS. He discovered it was
+even more intrusive than the Wall Street
+Journal had reported.
+Wyard also warned against the Navo.
+Nothing happened.
+But then 3 months later, Apple
+introduced new developer policies. It
+strictly banned apps from collecting
+data about other apps in a device unless
+it was strictly necessary for the app to
+function. Apple warned Facebook that a
+novel protect violated this policy and
+Facebook had no choice but to remove it
+from the app store.
+>> Many of our competitors have hundreds of
+millions or billions of users. Some are
+upstarts, but others are gatekeepers
+with the power to decide if we can even
+release our apps in their app stores to
+compete with them.
+>> But it turns out was just the tip of the
+iceberg.
+Back in 2016, next to a novel protect,
+Facebook launches a shadow operation to
+specifically collect data on how teens
+use their phones. After all, they're
+often the first adopters of whatever app
+might become the next big threat. A
+project later called Project Atlas is
+born. Facebook offers teens and young
+adults up to $20 a month to install a
+VPN called Facebook Research. This app's
+code is later found to be suspiciously
+similar to that of Onavo Protect.
+[music] Once installed, the app grants
+access to a user's internet history,
+including encrypted information and
+private messages with other users who
+have never given their consent. The
+whole project is shrouded in secrecy. An
+assessment to Facebook spokesperson
+later disputed. There was nothing secret
+about this. It was literally called the
+Facebook Research App. However, Facebook
+doesn't promote the app publicly.
+Instead, they rely on intermediaries who
+often don't reveal Facebook's
+involvement until users are already
+signing up. The VPN is also not listed
+publicly in the app store. Instead,
+Facebook leverages the Apple Enterprise
+Developer Program, a system meant only
+for company's employees to download work
+apps. By having users install an
+enterprise profile, Facebook bypasses
+the security measures Apple has in place
+for regular users. To join the so-called
+research program, users are guided
+through a complex installation process.
+When Apple's system displays a warning
+that the software could access their
+private data, Facebook tells them to
+ignore it. Users are told they're part
+of a social media study, but Facebook
+never discloses the true scale of the
+project. TechCrunch reports that users
+faced legal threats if they disclose
+details, part of an effort to keep the
+project hidden.
+[music] In January 2019, Facebook
+research was finally exposed. TechCrunch
+worked with security researcher Will
+Stra. He analyzed the full level of
+access the users, many of them miners,
+were granting Facebook. It became clear
+that this access even included private
+videos and messages as well as realtime
+location data. And all that data went
+straight to a server using the same IP
+as a novel protect. [music] When we
+asked Meta to comment on this, we didn't
+receive a response.
+7 hours after the article was published,
+Facebook told TechCrunch it would shut
+down the iOS version of its research
+app. Facebook accused of spying and
+using teenagers to help them.
+>> People between the ages of 13 and 35
+were paid up to $20 a month
+>> to spy on their phones.
+>> Photos, videos, location, web browsing
+history.
+>> The teens signing up to this don't know
+what they're getting into.
+>> A month later,
+>> Facebook is pulling its virtual private
+network, a VPN app called Onavo from
+Google Play. US senators demanded
+answers, accusing Facebook of exploiting
+minors and sidestepping basic privacy
+safeguards.
+>> Um
+uh
+>> they condemned the program and
+questioned how meaningful consent could
+be when users were as young as 13. In
+2023, Australia's federal court ruled
+that Facebook Israel and Anavo
+Incorporated had engaged in conduct
+liable to mislead consumers. Today, the
+AC has instituted proceedings against
+Facebook in relation to the way it
+promoted its Anavo Protect app. The two
+subsidiaries of Meta had marketed Anavo
+as a privacy tool while secretly using
+it to harvest data for Facebook's
+business purposes. The court ordered the
+companies to pay a combined $13 million
+in fines.
+We don't know who actually paid the
+fine, but for their parent company,
+Meta, which turns a profit of way over
+$50 billion a year, this is pocket
+change.
+As technology becomes more
+sophisticated, privacy often takes a
+hit. It's become increasingly normal to
+sacrifice personal data for convenience.
+A lot of [music] people are fine with
+facial recognition at the airport if it
+means shorter lines. And the more we
+accept these trade-offs, the more
+[music] they become standard until
+opting out is no longer an option.
+Social media makes this pattern
+especially stark. Over the years, heavy
+Facebook users have been shown to
+exhibit increasingly relaxed attitudes
+towards privacy. They're slowly growing
+more accustomed to sharing, tracking,
+and surveillance as the default. Mark
+Zuckerberg has said that Facebook's
+mission is to connect the world. He
+seems to hope that this will be his
+legacy, but maybe a better fit would be
+move fast, break privacy.

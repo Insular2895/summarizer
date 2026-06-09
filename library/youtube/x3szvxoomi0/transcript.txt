@@ -1,0 +1,569 @@
+This is how you can create amazing UI
+designs for After Effects. Most
+animators struggle with design. So, in
+this video, I'll show you three
+different methods that will help improve
+your design skills. Make sure to watch
+till the end as I'll reveal a secret
+technique that will allow you to create
+stunning UIs in seconds. The assets for
+this project can be found in my Discord
+server. Let's get started. All right.
+For our first method, we're going to
+take a screenshot and then break it up
+into different sections using Photoshop.
+You could do a similar technique in
+After Effects using masks, but Photoshop
+is just easier to use and gives us a lot
+more options. I'm going to start by
+taking a screenshot of this Instagram
+page. Since I'm using a 4K monitor, the
+elements on the screen are quite small.
+So, we can just zoom in a little to
+about here. And then I can take a
+screenshot of the page using command
+shift 3. Then hit copy. Now, we can open
+Photoshop and create a new document. Hit
+File, New. When you take a screenshot or
+copy an image, Photoshop automatically
+sets the size of your document to the
+width and height of your clipboard. To
+keep the screenshot quality as best as I
+can, I'll leave these dimensions as they
+are and then hit create. Then we can
+press commandV to paste in the
+screenshot. One thing I should mention
+is that if you use this method, make
+sure your UI has a solid background as
+gradients or image backgrounds would be
+too difficult to break apart. Let's
+start by removing any unwanted elements
+from this screenshot. Select the
+rectangle marquee
+tool. And we can select this bottom
+portion here. By holding shift, we can
+select multiple sections at once. So now
+let's select the top. And you can see
+that both sections are still
+highlighted. Whilst holding shift again,
+let's select this scroll bar. Then hit
+backspace to delete those parts. Click
+anywhere on the screen to get rid of the
+active selection. All right. Now we can
+make the background of our design the
+same color as the screenshot. So select
+the background layer and then the color
+picker tool and choose the background
+color from the screenshot. Hit al or
+option backspace to fill in the
+background. Now we've got something
+closer to what we're going for. But it's
+not centered vertically. So we're going
+to trim the top and the bottom of the
+design and then align it to the center.
+First hide the background layer and then
+select layer one which is our
+screenshot. Then select the marquee tool
+again and highlight the top section just
+above the buttons. We can zoom in and
+make sure that the selection is going up
+to the very
+edge. Now hit backspace to remove that
+section. Then we can delete the bottom.
+Making sure we're going right up to the
+edge. All right, perfect. Now select
+layer one and let me turn the background
+layer back on. Whilst holding command,
+select the background layer. Then select
+the move tool and we can hit this button
+to align our image vertically. Since
+this image is quite large, you probably
+won't be editing in 4K. We can crop it
+down instead of scaling it up to
+preserve the image quality. Select the
+crop tool and then from one of the
+corners, hold shift and option to crop
+the image from the center of the canvas
+while maintaining the aspect ratio. So
+about here is fine. And then press enter
+to confirm. All right, that's looking
+great so far. It's time to break it up.
+Let's make some rough cuts first and
+then we'll fix them up after. Make sure
+you have layer one selected. And with
+the marquee tool, I'm going to highlight
+this avatar. Press command X to cut and
+then command shiftV to paste the image
+in the same position. And then we can
+rename this layer to avatar. Let's do
+the same for the username. Command X and
+then command shift V. Rename to username
+and then
+[Music]
+follow then
+message then free
+dots
+posts
+followers and then
+following. For the description I'm going
+to cut out the entire block. But if you
+wanted to animate each line separately,
+then you need to cut it out line by
+line. It's all up to you. So, command X,
+command shift V, and name that
+description. I'll just cut out this menu
+as one section as well. There's a small
+dividing line between each post. So,
+let's cut them out, too. So, we have
+post
+one, post
+two, and post three. Let's just rename
+those. Since we cut out all of the
+different sections, there's nothing left
+in layer 1 anymore, so we can just
+delete that. With the move tool
+selected, make sure you have auto select
+turned on, as it will allow us to select
+layers directly from the canvas. Now,
+you can see that everything can be moved
+around on their own, which makes it
+perfect for animation. One thing you
+should know, and it will make sense if I
+hide the background layer, is that all
+of these layers are irregular shapes.
+So, the anchor point isn't in the center
+of the actual graphic. If I show you
+with this layer, for example, the anchor
+point is in the middle over here. So,
+when I scale this up, it's not scaling
+from the center of the following text.
+To fix this, all we do is trim this
+layer down on each of the sides. So,
+let's just do that real quick.
+And now when we transform it, it's
+scaling from the middle of the followers
+text. I'll just finish off cutting down
+the rest of these
+layers. All right, now it's all set up
+and all the anchor points should be in
+the middle of each of the elements.
+Let's get this imported into After
+Effects. Hit command S to save your
+file. And I'm just going to name it
+Instagram UI.
+Open After
+Effects and drag in the Photoshop
+document. You'll get this popup which is
+very important when it comes to
+importing PSDs. You always want to make
+sure that the import kind is set to
+either composition or composition retain
+layer sizes. I prefer the third option
+as it keeps the anchor points of the
+layers where I want them. The layer
+options doesn't really matter for our
+design. So, I'll leave it as it is and
+then hit
+okay. Let's open it up. And as you can
+see, all of our layers are able to be
+controlled separately, ready for
+animation. And the anchor points are in
+the center. So if we transform any of
+these layers, it scales from the middle
+of the graphic. And that's how you can
+prepare a screenshot for After Effects.
+If you're finding this video helpful so
+far, then be sure to hit the subscribe
+button. And if you want to start earning
+thousands of dollars every single month
+with video editing, then sign up to the
+editing launchpad. I'll be releasing a
+full beginner to mastery After Effects
+course that will help grow your personal
+brand and land you highquality clients.
+Don't miss out on your chance. Sign up
+with the link in the description below.
+All right, for our second method, we're
+going to trace over screenshots using
+Adobe Illustrator. A lot of you guys
+have been telling me that you have no
+idea how Illustrator works, but it's
+super simple and I'll break down
+everything you need to know to get you
+up and running. Start by creating a new
+document, file, new. And I'll keep the
+size at 1920x 1080. I've got a
+screenshot ready that I took of iMes
+from my phone. So, we can just drag that
+in and place it in the middle. To the
+right, we have our layer panel. This
+works slightly different to Photoshop as
+within these layers, we have sub layers.
+When we import Illustrator files into
+AE, all the sub layers are merged into
+the parent layer. So everything inside
+of this parent layer will only be one
+layer in After Effects. It's important
+to make sure that we split up our design
+into multiple different parent layers.
+If you're confused, don't worry. It will
+make more sense when we import our file
+into AE. Start by selecting layer 1 by
+pressing this square on the far right
+side. This will target all of the sub
+layers within layer 1. I always like to
+reduce the opacity a little so that it's
+easier to trace. and then press this
+square besides the colored line to lock
+the layer in place. This will make sure
+our image stays locked and doesn't move.
+Now we can press this button down here
+to create a new parent layer and rename
+it to message bubble as we'll be
+recreating that first. Select the
+rectangle tool from the toolbar. And
+before we create the shape, let's fix
+the colors. I'm going to remove the
+stroke by pressing the white box with a
+red line going through it. And for the
+fill, I'll just use any contrasting
+color so that it's easy to see. We can
+change it later on. All right. Create a
+basic rectangle. It doesn't have to
+match up yet. And then press the
+selection tool. Use the bounding box and
+drag each side into place so that it
+matches up with our
+screenshot. Something like that. Now,
+using this circle, we can drag it all
+the way in to create our rounded
+corners. And that's the shape done. Now
+create a new layer. And we're going to
+work on this flick. So we can name this
+message
+flick. This is an irregular shape. So
+we're going to have to use the pen tool
+to create it. Select the pen tool and
+let's set our first point about here.
+You can hold shift to create a straight
+line. And then set your second point.
+Now we can set the third point which
+would be at the tip of the flick. Hold
+it down and drag to create a curve. That
+looks good. Since we made a curve, you
+can see that our pen tool line has
+changed. We can fix this by holding Alt
+and pressing on the point to remove the
+handle. And then we can set our fourth
+point here and drag it out to match the
+curve. And finally, we can connect all
+of our points together. All right,
+that's the flick done. Now, let's create
+the text that will go inside the message
+bubble. I'll just hide both of these
+layers. Select the text
+tool. Create a new layer and name it
+text message. Make sure the text tool is
+still selected. And then we can just
+type in some
+text. We can change the font and spacing
+in the properties tab. Apple uses the SF
+Pro font which usually has 20 pixel
+spacing. So from character, change the
+font to SF Pro regular and set the
+spacing to 20 pixels. I will also align
+the text to the center. Now we can scale
+the text by dragging the corner. Make
+sure to hold shift to scale it
+uniformly. Then we can match it up with
+the text
+below. That looks good to me. Let's just
+turn everything back on. And you can see
+it's coming along nicely. We can change
+the colors right at the end. The text
+around the shape are still remaining. So
+let's just do those. Create a new layer.
+Press T to select the text tool. And
+let's just put in our text. 12 17. Let's
+just scale that up into
+position. Something like that. Hold Alt
+and drag whilst also holding shift. That
+will allow you to duplicate the text
+layer and drag it in a straight
+line. This font looks slightly heavier
+than the time. So, I'll change the
+weight to
+medium. We can put that into
+place. That looks fine. Then hold Al
+again and drag the text to
+delivered. Then we can change it. This
+font also looks slightly heavier, so we
+can change it to semi- bold. Hold shift
+and drag to scale it into place. Cool.
+We've got our general design done. Let
+me hide the screenshot layer. The date
+would look better higher up. You can
+mess around with your designs at this
+stage to get the look that you want. All
+right. To finish up, we can use the
+original colors from the screenshot.
+Unlock layer one and turn it back on.
+Target it by pressing the box over here
+and make the opacity 100%. Then we can
+drag it off to one side like this.
+Select the message bubble and press I to
+select the eyropper. Then press the
+message bubble on the screenshot to copy
+the color. Then we can select the
+message flick and color pick that. Then
+we've got the text message which is
+white. And for the text layers, we can
+take this gray
+color. Perfect. Since we've recreated
+the screenshot, we can delete it from
+our file. So in the layer panel, select
+layer 1 and then press on the delete
+button. Let's make sure that these free
+text layers are also in their own parent
+layers. Open up layer 5 and create a new
+layer. Name it delivered and put the
+delivered text in there. Make another
+layer, name it today, and put the text
+in there. And this one we can just
+rename to time. So now all three of
+these layers are split up. And let's
+just drag this text down a little. All
+right. Lastly, we need to add in the
+black background. So I'm going to create
+one more layer and name it background.
+Drag it to the very bottom of the
+layers. Select the shape tool and change
+the color to
+black. Place your cursor to the corner
+of the artboard. Your cursor should
+automatically snap to the corner. And
+you can see there's pink lines
+indicating we've reached the edge. Then
+just drag it to the opposite corner to
+create your
+background. And there we go. We've
+created our iMessage scene and we can
+now import it into After Effects. Hit
+command S to save. I'm going to name it
+iMessage
+UI. Now let's open up AE and drag this
+iMessage UI file into the project panel.
+Just like Photoshop files, this pop-up
+will appear. Under import kind, you want
+to make sure you select composition so
+that you can access all of the layers.
+The layer option section should be
+grayed out. And under footage
+dimensions, you can choose either layer
+size or document size. I usually go with
+layer size so that the anchor points are
+in the middle of the different elements.
+Then hit okay. Open up the composition.
+And as you can see, all of our layers
+have been successfully imported. Let me
+show you why Illustrator files are so
+great. So let's say we wanted to
+increase the size of this message
+bubble. Usually the graphic would lose
+quality and the edges especially will
+become very blurry. But we can hit the
+check box here to continuously rasterize
+our layer and that will give us the best
+possible quality. It makes quite a big
+difference. We can also rightclick the
+layer create and create shapes from
+vector layers. This will create an after
+effects shape from the illustrator layer
+which will give us options to mess
+around with such as the path and fill
+settings. So, we could change this path
+around and use it to shape morph. You
+can even add shape modifiers to this
+layer and create some pretty cool
+animations. The only downside is that we
+can't make these text layers editable.
+If we go to create, we can see that the
+option is grayed out. But there is a
+workound to this. Let's head back over
+to Illustrator. We can export this file
+as a Photoshop document and then copy
+those text layers over to the
+Illustrator composition. Let me show you
+how. First go to file export and then
+export as and from this dropown select
+Photoshop. Make sure you tick use
+artboards as this will include the
+entire canvas. If you don't tick it,
+your file will be cropped to the edges
+of your design. Hit export and then
+okay. Go back to After Effects and drag
+in the Photoshop document that we just
+created. Set the import kind to
+composition retain layer sizes and hit
+okay. and then open it up. Inside of
+these comps, we'll find our text
+layers. Hit command C to copy. Then go
+back to the Illustrator comp. Select the
+deliver text and press commandV to paste
+the Photoshop layer. Then we can simply
+delete the Illustrator layer. Now we've
+got this in its place, which we can
+convert to editable text. You can apply
+your text animations or presets to this.
+Make sure you do this for all of the
+text layers you want animated. One quick
+tip for when you're trying to recreate
+complicated UIs is if we wanted to
+create this YouTube page, it would be
+difficult to recreate some of these
+icons such as the bell or the
+microphone. And there's a super easy way
+to extract these from the website, which
+is by using this Chrome extension called
+SVG export. Simply add it to Chrome and
+it will add this icon up here. We can
+head back on over to YouTube and press
+the icon to extract all of the SVGs.
+Download whichever ones you need for
+your designs by hitting this download
+button. Go back to Illustrator and from
+our downloads, we can import it by
+dragging it in. It's white, so we can't
+really see it. I'll just select it and
+change the color. And there you go. You
+can copy this into your designs and use
+where needed. We'll be covering more
+complex designs and animations in the
+editing launchpad, so stay on the
+lookout for that. All right. And now for
+the method all of you guys have been
+waiting for. How to create complicated
+UIs in the fastest way possible. We're
+going to be using an app called Figma
+for this. Figma is a vector graphics
+editor usually used for creating
+websites and app interfaces. And there
+are tons of free UI kits available
+online for us to take advantage of. All
+right, first open up your browser and
+search for any UI you want followed by
+Figma. I'll just search for Mac OS
+Figma. And that gives us lots of results
+for different Mac OS UIs. We'll just go
+for the Mac OS Big S UI Kit. You might
+need to create a free account and log in
+here. And once you've done that, hit
+open in
+Figma. Right away, we've got a bunch of
+different UIs to use. If you want to
+take the easy way out, you could use the
+free AUX plug-in to import these designs
+directly from Figma into After Effects.
+There are tons of videos on YouTube
+showing you how it's done, but
+personally, I don't use it as sometimes
+it's a little buggy or it doesn't import
+correctly, and I like to modify and set
+up my files in a particular way using
+Illustrator before importing into AE,
+which is what I'll be showing you how to
+do now. We'll use the Finder for this
+example. Keep double clicking until the
+blue outline is around the Finder
+window. You can move it around to check
+that you have the right thing selected
+or you could even look to the left panel
+which shows us that the finder group is
+highlighted. All right. Now we can right
+click copy as and copy as SVG. We can
+now go into
+Illustrator file new. 1920x 1080 should
+be fine. And press command V to paste in
+the design. Under the properties tab we
+can use the alignment buttons to get it
+centered. Then from the corner, drag it
+up whilst holding shift to increase the
+size. Since we're using vector shapes in
+Illustrator, we can make it larger
+without losing quality. All right, so
+when we copy SVGs from Figma, it imports
+them into one parent layer. I'm going to
+open up the groups within this layer
+until we can see all of the objects.
+Select the first one, scroll to the
+bottom, and whilst holding shift, select
+the last one. This will highlight all of
+the layers and just drag them out of the
+group like that. Some of the groups were
+clipping groups, which is why these
+icons have spilled out, but we don't
+really need these ones, so we can just
+delete them. Cool. Before we split up
+our design into different layers, you
+can take this time to customize the
+design to your liking. Whether you want
+to change the colors, swap out icons,
+make things bigger or smaller, you can
+use the techniques I showed in method
+two to modify the design. Now, one more
+thing I should mention is that text
+layers imported from Figma are vector
+layers and not actual text objects. So,
+we will need to replace them using the
+text tool if we want to animate them in
+After Effects. Select the text tool and
+make a text layer. I'm going to copy the
+text already here and change the font to
+Apple's font, which is SF Pro. This is
+probably SF Pro regular.
+We can set a spacing of
+20 and then scale it into
+position. That looks good. Then we can
+drag it down, delete the vector text
+layer, and replace it with this. Now,
+when you import it into After Effects,
+you can use a Photoshop export as shown
+in method 2 to convert it into editable
+text. Do this for any text objects you
+need. For the sake of time, I'll just
+keep it as this one. All right. Now that
+we've made all of our changes, we need
+to split all of these layers into their
+own parent layers. Trying to do it one
+by one would be way too timeconuming.
+But there's a trick to doing it really
+fast, which is by selecting layer 1,
+then press the free lines icon up here,
+and then we can press release to layers
+sequence. That's just created a bunch of
+layers within layer 1. Hold shift and
+select all of the layers and drag them
+out of layer 1.
+Now each layer is separated and ready to
+be imported into After Effects. I won't
+do this right now, but make sure you
+name your layers so that they're
+organized and will make it easier to
+animate. Let's save our design and then
+head on over to After Effects. Drag the
+Finder file into the project panel. Make
+sure it's set to composition and hit
+okay. Let's open that up. Here we have
+every single element split up into
+different layers and you can animate
+each one however you'd like.
+Remember that to edit these text layers,
+you need to export a Photoshop file and
+copy it over. And that's how you create
+different UIs using Photoshop,
+Illustrator, and Figma. I want you guys
+to take what you learned from this and
+my previous videos and tag me in some
+cool UI animations on Twitter. Hope you
+guys found this video helpful and I'll
+see you next

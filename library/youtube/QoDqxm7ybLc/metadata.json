@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "QoDqxm7ybLc",
+  "title": "Setup Prometheus Monitoring on Kubernetes using Helm and Prometheus Operator | Part 1",
+  "url": "https://www.youtube.com/watch?v=QoDqxm7ybLc",
+  "source_paths": [
+    "cache/transcripts/setup-prometheus-monitoring-on-kubernetes-using-helm-and-prometheus-operator-par"
+  ],
+  "updated_at": "2026-06-09T18:15:56.252289+00:00"
+}

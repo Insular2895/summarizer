@@ -1,0 +1,217 @@
+[music]
+So, first create a new composition and
+rename it to main. [music]
+Then grab a rectangle tool.
+Draw a clean shape.
+Change the color. And here is a pro tip.
+Always save your color codes. top
+designer reuse colors to maintain brand
+consistency. [music]
+Now select the circle
+and move into place. [music] Then adjust
+this until it looks smooth.
+[music]
+Now go to rectangle one and change their
+roundness value to 90.
+Now right click the shape. [music]
+Go to layer style. Go to inner glow. Use
+these settings. [music]
+Change the size value to 60 and the
+range value to 60.
+[music]
+Change the color to white. This creates
+the soft luxury glow.
+Next, go to effects and add these
+effects. Bevel alpha, deep glue to
+noise. [music]
+Set the deep glow exposure value to 0.06
+and uh change the noise value to seven.
+Let's add text. Paste your main title.
+Duplicate this. For the second line, set
+the scale value to 87 and rename it to
+AirPods. Now import this Apple icon.
+Change the scale value to 1.3.
+Add [music] field effects. Change the
+color to white. Align [music] everything
+to the left.
+Duplicate the price text and rename it
+to $120.
+Duplicate it again and rename it to USD.
+[music]
+Then move it right.
+Use this scale values.
+Now bring the ear pods.
+Adjust the [music] scale
+and rotate slightly on Y-axis. [music]
+Tiny rotation and depth. Now the fun
+begins. Select the text layer. Open the
+text [music] evoke. Download link in the
+description.
+Go to transform and the [music] position
+value is - 79. And set the scale value
+to - 52
+and the opacity is zero.
+Now [music] select this key frames.
+Right click key interpolation. Change to
+linear. [music]
+Move the timing closure to make
+animation smooth.
+Then go to bounce
+and apply bounce it.
+Now copy [music] this expression.
+Select this text layer.
+Click source text and paste it [music]
+here. Now animate the position. Add a
+key frame. Then [music] move three
+frames forward.
+Then [music] shift the previous one
+downwards. Apply bounce it.
+Then parent this layer to this one.
+Refit for the same for second text but
+animate from the left.
+Finally, parent the Apple icon to the
+text. Select the 3D earpods. Press R for
+rotation. Create a key frame here. Go
+backward [music]
+and rotate from the left. Select these
+both key [music] frames. Hit F9. Then go
+to graph editor and uh create a smooth
+curve. Remember one thing the graph
+editor is where average [music]
+animation become aligned.
+So let's animate the shape wall. Add a
+scale [music] key frame
+and set the ear value to zero. Select
+this key frames and bounce it.
+Parent the Apple AirPods to the shape
+one. Then select this all layers and
+trackmat to shape one. [music]
+Now pre-ompose everything and rename it
+Apple earpods. [music] Hit Ctrl D.
+Duplicate the comp
+and rename it to iPhone 17 Pro. [music]
+Replace the text from source text. Never
+rebuild from scratch.
+[music]
+Bring the iPhone into the main comp.
+[music]
+Scale it up. [music]
+Push it right. [music]
+Rotate slightly.
+[music]
+Go to 26 [music] seconds. Add a key
+frame on Y rotation. Go backward and
+slide it from the left.
+Apply F9. Then go to graph editor.
+Refine the graph editor,
+then parent it to the shape one. Step
+six, cinematic lighting. Most beginners
+skip this, so go to new, then lights,
+then environment lights,
+then import this HDR light to the comp
+[music] and select this one.
+Turn on the cast shadow.
+Intensity value is 157.
+Shadow diffusion is 11.
+Copy this lights and paste it into
+AirPods comp
+and change the light setting.
+Change [music] their intensity to 100.
+Shadow darkness is zero.
+Then go back to iPhone comp and select
+the shape one
+and paste the color.
+The rest of the follows the same
+structure. So we will skip ahead and
+keep a pace fast.
+So step seven, select these four coms
+and shift it right. [music]
+Create a new null object. Move it down
+at 18 seconds. Add a position key frame.
+Go backward. [music]
+Slide it from the right.
+Parent the air pods
+and increase the scale value through
+134. [music] Select these key frames.
+Hit F9. Go to graph editor and make the
+smooth curve.
+Now select these four corners and
+increase their scale values also.
+Now bring the iPhone there at 39
+seconds. [music]
+Rotate it to minus5°
+and drag it down.
+Now create another null
+and penetrate
+and add 39 seconds position and rotation
+key frame
+by 50 seconds. move upward [music]
+and rotate it to 15°.
+Now select these [music] key frames,
+apply bounce, go to 1.29 seconds. Now
+add another null and parent this to this
+null.
+Hit R on this layer and rotate it to
+minus 10°.
+Then drag it down.
+Pend the apple wash to this null.
+[music] Hit P and shift R. Let's add a
+key frames. Then go [music] to one. Then
+go to 1.39 seconds and move it upwards
+[music]
+and change their rotation value to minus
+8°. [music]
+Then select these key frames and [music]
+apply bounce.
+Add another null.
+Then go to 2.16 seconds. Bring the
+MacBook layer here. Now select the null
+and hit P and shift [music] + R. Add a
+key frame. Then go to 2.28 28 seconds
+and parent it.
+And also parent this null to this one.
+Drag [music] it upwards
+and rotate it to 80°.
+Then select the key frames and apply
+bounce.
+Move this layer at this point.
+Add a null and hit P plus shift + R and
+add a key frames. [music] Then bring
+this layer at this point.
+[music]
+Then drag this down and rotate it to
+minus 8°. Parent it to the null. And
+also parent this null to this one. Then
+drag this upwards.
+>> [music]
+>> and change the rotation value to 8°.
+[music] Select this key frames and apply
+bounce.
+Move this layer at this [music] point.
+Let's add our transitions.
+>> [music]
+>> Go to Jerry Flow effects
+shakes
+and apply [music] bouncing shake at 38
+seconds.
+[music]
+Then go back two frames
+and move this layer here.
+Now go to 48 seconds. Select the flash
+layer and change the opacity value to
+zero.
+[music]
+Trim these layers. [music]
+[music]
+Paste your [music] transition two frames
+before FD cuts.
+And just like that you have created a
+premium apple style animation that looks
+client ready. If you are learned
+something new today, hit the like and
+subscribe button for highlevel motion
+graphic tutorials. [music] And if you
+want a next level advanced version of
+animation, let me know in the comments
+and I will drop it soon. See you in the
+next one.

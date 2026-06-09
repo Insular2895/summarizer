@@ -1,0 +1,1235 @@
+wind surf is a forco vco that claims to
+be the first agent to IDE it aims to be
+independent from humans it analyzes a
+codebase searches the web as necessary
+runs terminal commands and writes code
+in this video I wanted to take it a spin
+and create a app using wind Surf and
+super base so I'm going ahead and create
+a blank um react app using V and for
+today's video I'm going to be creating a
+Twitter clone using super bases the back
+in so let's Dive Right into Cascade the
+wind surf AI agent we can ask for it to
+create the UI for the Twitter clone
+which is what I typically do I create
+the UI first make sure all the features
+are working locally um using State and
+then once I'm happy with everything I
+proceed to connecting the back end so
+let's start from there I'm working on a
+Twitter clone app using super base
+create the UI for the app H it's a bit
+ambiguous but let's see what Cascade can
+do for us so it's starting out by
+analyzing the project and then it
+understands that it's a typescript
+project created by feet which is great
+so now it's just using Tailwind CSS to
+get started with the
+UI it's analyzed The Source folder and
+then it's creating a modern Twitter
+clone
+interface by updating the app TSX file
+which
+looks good let's just accept everything
+and see what happens accept
+accept we can accept Mass accept this
+whole chunk of
+change
+H let's npm install here icons yep that
+sounds good I wonder what this are is
+just six Implement he has any type
+because the
+interface
+um this is app. TSX
+file okay that should be fine CSS is
+[Music]
+fine
+but okay okay okay maybe that was just
+some glitch on the
+ID but yeah it installed um the
+necessary packages to get started with
+the
+styling and then now it's moving on to
+yeah creating Tailwind configurations
+[Music]
+and and what's the other
+one post CSS
+configuration I never personally used it
+but uh sure let's try it out and then
+it suggests me to run npm run Dev which
+spins up the local server to take a look
+at the actual
+app sounds great I can just copy this
+and paste it in my browser to take a
+look
+okay I I can see some stuff happening
+but the UI is a bit um messy at the
+moment I guess these are the
+messages I can post stuff I guess this
+is the
+dialogue that's supposed to be in the
+center but somehow it's in the
+left and yeah there's there's definitely
+some something wrong but uh that's okay
+let's tell the prom to uh fix it so the
+UI see I always struggle with how I can
+phrase um you know what's going on on
+the UI side to AI but the I don't know
+let's just let's just give it very
+ambigous uh prompts the UI looks
+off make
+sure all the UI
+code are working
+fine a maybe a bit too ambiguous but
+let's see let's see if I can figure out
+what's what's going wrong
+the main TSX looks correct let's check
+the HDM I noticed few issues to be fixed
+it's editing the app. TSX
+file let's take a look at what's going
+on I like how it it got uh Twitter Trend
+feature as well uh let's see if we can
+get that far today but
+it has the all the navigation
+menu and what else does it have it has
+the main component right here
+right I wonder if it's stuck on
+something and it's airing out but let's
+give it another
+minute so we have the home it just says
+home oh it's
+going all right I'm just going to
+blindly accept everything and check it
+out on the browser
+I guess it's better the image not
+showing up is fine maybe this is the
+expected you okay oh wow okay okay okay
+I guess it was still doing its job oh
+yeah it was doing its job on index. CSX
+CSS
+and Tailwind
+configuration great great lot better lot
+better wow okay that that was that was
+really nice I really didn't give much
+information to the
+AI um but yeah I was able to do that um
+guess I already have local server
+running
+but is it the same address no it's not
+okay I probably should have not ran that
+but uh that's okay I suppose is see a
+way I can stop it go to the
+terminal I guess I can stop it manually
+okay
+awesome awesome awesome
+awesome wow the the UI looks great I
+wonder if I can post
+something okay maybe not but uh that's
+okay that's okay maybe we can that maybe
+that's something we can ask
+now um I'm a bit concerned about this
+app. TSX file getting a bit large it's
+over around 190 yeah around 200 lines so
+let's see uh break up the app dot I
+wonder if I can reference it yeah files
+app. TSX file break up the app. TSX file
+into multiple
+components so
+that the
+file size is reasonable
+it's really important to break out um
+the files into smaller chunks whenever
+whenever possible when working with AI
+because AI can only take in so many
+tokens and if the file is too large
+it'll start um getting lazy especially
+claw so you have to make sure that um
+you know your your file sizes are file
+size are
+reasonable okay I'm just going to accept
+everything it's creating a tweet
+component yeah so it created a nice
+components folder we have the sidebar
+and tweet component in
+there
+and so this is The Tweak component
+we have tweet and tweet component so
+tweet contains the props for the tweet
+and I guess single
+tweet looks like a single tweet right
+article Tim stamp handle and tweet
+component oh tweet component is the
+component to tweet so it's it's the
+component up here it's the form to post
+a new tweet
+um and what else did it to it
+edited I'm just going to accept all and
+read it later but uh okay so Tweed
+component uh trending section component
+and updated the main app. TSX file great
+that looks awesome I can verify that the
+app is still working awesome now I am
+going
+to jump into a new Cascade
+window and ask it
+to uh make this Twitter work locally um
+yeah so maybe for today we wouldn't
+worry too much about messages maybe
+notification maybe not um but yeah uh we
+want to make sure we can tweet something
+and that uh new tweet is persisted
+locally so let's do that so
+okay I guess that's a tweet
+component and I'm assuming we don't have
+any do we persist a state for the tweets
+we have
+Trends we have
+tweet so we literally just have a s
+single tweet right here but this should
+be a list of tweets okay great uh so
+okay uh
+um update
+the
+currently there is only a single tweet
+that is hard coded in the code
+in app do uh TSX
+file make it so that the
+the list of
+tweets
+um is a
+state
+and um add a
+feature to
+enable posting a new
+tweet I wonder if I miss something I
+guess another thing we can ask for is
+break down these um
+extract these navigation items or maybe
+Trends or tweet model interfaces into a
+model component but maybe that's
+something we can do later so
+yeah let's see what um wiip can do for
+us okay so it's taking a look at the
+app. TSX file it took a look at the
+Tweet component tweet composer. TSX oh
+it's not tweet components tweet composer
+okay that makes sense that makes
+sense so yeah it has edited
+the app. TSX file it has edited the
+Tweet composer let's just accept all
+in oh okay because we open a new window
+now the ter sessions turn enough
+um that
+is that is actually a bit inconvenient
+but uh mpm R de yeah let's just keep
+that one running right there and I
+believe it's the same address
+yep okay let's try out test
+run post great test run shows up there's
+a bit of blink when I posted it but yeah
+let's not worry too much about it for
+now I think it looks beautiful I wonder
+what this err it's likely that you're
+missing a comma to separate these two
+template
+Expressions huh let's see if we can
+let's see if wind surf can fix this
+yeah I don't think it matters that much
+cuz the code is
+working oh I have this thing shoot okay
+yeah uh whenever I try to open a
+terminal that happens but all right
+let's go back to the other one updating
+tweet
+functionality I suppose now that uh the
+Tweet is working locally that is all
+good
+um I suppose we can work on maybe
+likes retweet I don't know if we want to
+go that far but uh yeah comments okay
+likes So currently the Tweet model this
+is this is what a tweet looks like right
+um right
+tweet where's the Tweet def find it okay
+tweet oh it's not really defined okay
+Twitter tweet
+props username handle time stop
+content okay let's just ask it to add
+likes um add like feature as
+well I suppose we can't really jump to
+the user's profile at the moment
+okay so it updated the app. TSX
+file yeah it has likes count is like
+false to Boolean looks good it updated
+the model up here looks
+great accept
+all and let's see if we can like a
+post maybe not yet okay make sure that
+when the like button is
+pressed the State
+updates
+and the UI changes so that the like is
+reflected
+notice that the onclick handle is on the
+SBG element instead of the button
+element okay so if I had click the oh
+interesting interesting yeah um I guess
+good call wi Sur um I didn't I didn't
+take I didn't look the code that far but
+good cat so now the entire button is a
+clickable uh region so I can just click
+to toggle like on and off great um wow
+that was actually impressive I you know
+I thought the like feature was just not
+implemented but it was actually there
+except on click was uh for some reason
+implemented on the SVG and not the
+entire button and wi was able to self
+correct that um and not get confused by
+my uh prompt which is
+impressive okay um
+yeah I wonder if I should take as far as
+uh being able to tweet the profile but
+um and maybe we can work on that once we
+connect super base to it
+so um let's not worry too much about
+comments and retweets for now I we have
+a basic timeline um with a feature that
+we can like the post I think that's a
+pretty
+good pretty good point to get started
+with super base let's jump into adding
+super base to this app so um yeah I
+think we can just ask something like uh
+add super base to this
+app I don't know um let's let's see if
+that does the magic and if it does it's
+great uh very easy if if something
+doesn't work we can always go back and
+give it more uh detailed prompt yeah it
+looked at the package. Jon notice that
+super package was missing so it went
+ahead and installed it now it
+initialized super base in a superbase
+dots file great created a n
+file with yep some basic
+values and it's importing is it
+importing yet anywhere not yet right to
+complete the setup you'll need to sign
+up super B it okay okay so it's asking
+me to create a remote super be project
+which is okay we can certainly do that
+but uh just for the fun of it let's um
+actually use a local version of
+superbase I want to actually use the
+local version of super base let's see if
+it brings up the super base CLI with
+this um prompt so it's installing
+super base npm install super base to Dev
+okay let's go ahead and do
+that so it's adding super base is the
+dev
+dependency um and now let's install the
+superb CLI globally H it's kind of what
+we did earlier but sure
+and I already have sub installed locally
+but uh let's accept and see what happens
+what does what does happen when you try
+to install something that you already
+have auto updating home
+bre blah blah
+[Music]
+blah super base is already installed
+upgrading super base okay sure
+great I guess now I get the latest
+version of super
+okay now initialize local Super Bee
+project yes let's run super be in it
+which creates this Super Bee directory
+on the left
+side
+and for this can I do I just type it
+here settings for Dino we don't need
+it where do
+I answer this or do I have to open it in
+the terminal
+hm maybe I do have to open it in the
+terminal nope nope okay super B it is
+complete super be start yep let's do
+that it's starting the local super
+container okay so it discovered that
+there was a super project running
+already locally so it decided to run Sub
+Stop which is amazing which is what
+exactly you need to do
+and then once superbase is stopped
+locally that other superbase project is
+stopped locally you can run super base
+start except the other
+one didn't stop so now it's specifying
+the particular
+project um to
+stop now it's specifying the project ID
+and Tiding that project is to be
+stopped and
+then now let's update the super base
+configuration to use different
+ports
+huh I wonder if we
+are going into a bit of
+a bit of a loop
+but yeah
+okay sure sure let's do it let's do it
+h
+it's struggling to stop the running
+super project so I'm just going to
+manually stop the project okay I've
+actually stopped the uh superbase
+projects let's see if we can roll back
+the
+changes
+on the configo file cuz we want to keep
+the original original one and let's
+actually start over let's just start
+over
+so um we have kind of added super here
+and there right uh so I guess we can ask
+her to uh run super
+slowly for this
+app oh nice it's checking if superv CLI
+is already
+installed wish if it did that earlier
+we've already run superet but uh okay so
+it's good and then we can run super
+[Music]
+start okay update
+the
+M file with the
+credentials of local super
+base instance
+it's checking the status of the EMV file
+and it's
+updating the environment
+variables that I think that looks
+good all right
+um how can we verify I guess we're not
+really loading any
+data
+from what did the
+terminal okay why does the terminal keep
+[Music]
+stopping interesting so I guess every
+time every time
+you open a new Cascade window the
+terminal
+session the entire set of terminal
+sessions that you had is gone and and
+you just have to start over which
+is H it would be nice if it just kept
+the terminal
+running
+but that's all right okay run the app
+[Music]
+locally great mpm and run
+Dev and the app is up and
+running now let's um let's add all the
+let's create all the tables that we need
+for this app um and let's ask when to
+Surf if it can do all the all the hard
+work so create all the super base tables
+triggers and functions necessary to run
+this app on super
+base create all the super base tables
+create all the database migration files
+for creating super base tables Trigg and
+functions necess to run this app on
+super I think that's a good
+prompt let's give it a spin
+[Music]
+okay it's analyzing tweet. TSX and app.
+TSX
+file and it's creating the uh migration
+file and wow it's it has the dates
+correct as well
+um which is actually kind of challenging
+for large language models I I've tried
+letting AI create migration files but
+the dates is something that uh they
+could never get get it right but I guess
+I guess wind surf has some um magic
+behind the scenes to get the uh current
+date which sounds like it shouldn't be
+that hard right but um yeah all the
+other tools that I've worked with um
+have struggled with that so that's
+something that's impressive so we have
+profiles tweets likes trending topics
+sure uh and it's enabling Ro level
+security for all of them
+great and it's cre a policy so public
+profiles are viewable by everyone
+profiles so basically anybody can select
+it users can only update insert their
+own profile users can update their own
+profile and tweets are viewable by any
+everyone users can insert their own
+tweets users can update their own tweets
+and users can delete their own tweets
+great likes are avable by everyone yep
+sounds good users can insert their own
+likes yep users can delete their own
+likes sounds good and then trending
+Topics aable by everyone yeah sounds
+good wow so likes table has an user ID
+and Twitter ID tweet ID and they
+reference the profiles table and tweets
+table great
+that that looks really good wow uu ID
+extension sure
+um with the latest posters um you don't
+really need this extension to generate
+uu IDs but yeah it it works it
+works I'm just going
+to accept it because it looks really
+good fail to
+loadem file because I maybe didn't
+hadn't
+accepted
+[Music]
+the
+change and then now it's running uh sub
+DB reset which resets the superbase
+database
+to and applies all the schema so if we
+go to Local Host
+54323 we can view the uh super be
+project running locally and we can see
+all the tables in our table editor so we
+have the tweets table training topics
+profiles and everything looks great um
+okay perfect the migrations have been
+successfully applied the schema is
+designed to be scalable and secure yep
+um it's secure for sure um all right uh
+accept all what have I not accepted you
+know what I don't care let's just accept
+it uh so at this point we
+can I guess it's not really truly
+connected to Super Bas yet right or is
+it tweet compos tweet composer does it
+actually fly off to super base and
+compose the
+Tweet set new
+tweet set new tweet
+is it in the app TSX file
+tweet
+composer set new tweet
+is huhh okay okay so it's it's not
+really it's not really doing anything
+right well I guess we can try it
+out except
+okay maybe I I zoomed in just a bit okay
+um something got posted but that's just
+the local state updating right okay yep
+so it's not really uh connected to super
+base
+yet but we can just ask it to do so so
+um connect the app to super base so that
+the should we start from the profiles
+table because I feel like we're going to
+have what uh one with the role level
+security policy in place we wouldn't be
+able to insert new data uh anyway so
+yeah let's start from that um yeah add a
+to the app using super
+base okay it's doing its magic it's
+analyzing sub. TSX file great we have a
+sub class minority yep we do now it's
+creating a a. context a context. TSX
+file which I suppose is a component to
+pass down
+the AR context basically whether the
+user is logged in or not or I guess
+profile information and
+stuff yeah okay yeah that looks good
+let's accept
+that and now we have the a TSX file
+which should be I guess the login page
+loginregister
+page I
+think yep I think that's what it is
+looks good let's accept
+it now it's updating the app component
+the root app. TSX file to add I guess
+routing and logging in and stuff uh okay
+it's it's just displaying different
+components depending on the UI state
+which is fine which
+works right okay what's this navigation
+error I'm not going to worry too much
+about
+it let's see if the app runs first yeah
+so it's providing the a using the a
+provider it's providing the AR context
+to the uh tile and any component below
+it great okay so now we have a nice op
+pays so we
+can
+um sign
+up I need a username my username is D
+Sher Jr that's my actual Twitter handle
+give me a follow okay I guess Twitter
+handle goals here my
+username Tyler sh
+yeah so give me a follow if you would
+like to but yeah I have registered have
+I properly registered oh yeah I'm signed
+in I am signed in great so yeah when I
+refresh the page the the page still
+stays there which is great I feel like
+there was little Gap here earlier but
+yeah that's that's all right um so yeah
+test tweet
+post and of course that's just happening
+locally because we
+haven't asked wind surf to um do that
+but uh okay looks great looks
+great now um
+connect connect the
+post Tweet feature to sub
+not just post Tweet but the entire tweet
+uh set of tweets should be loaded from
+the sub dat
+CET but maybe maybe wind can figure that
+out and actually do other other heavy
+lifting for us so I updated
+the tweak
+[Music]
+composer
+to oh wow
+it's setting up real time listeners on
+the tweets
+table and
+whenever
+whenever huh whenever anything happens
+insert update delete it fetches the
+tweets and fetch tweets is right here so
+it's just
+fetching
+H okay so this is not a great
+implementation because whenever a new
+tweet is inserted updated or
+deleted um it just lows the entire
+timeline again from scratch um but yeah
+let's just accept it and maybe we can
+fix it later and it it's got a bunch of
+Errors anyway
+[Music]
+so is it going to work
+hello yeah I didn't think so but but we
+have we do have a tweet okay so the
+Tweet is actually
+inserted which is interesting
+um these are propably content does not
+exist on type parse er error
+accepted horse
+error error threr
+[Music]
+tweets data tweets
+pass error accept accepted
+identifier from likes with tweet
+ID
+H you know what the app is at least kind
+of working so I'm not going to worry too
+much about it but the reason why the
+timeline isn't being
+refixed is because it only gets
+refixed when it receives the Real Time
+Event and the real time is off for this
+this table at the moment so it's not
+automatically being refreshed but if I
+hit
+command R by manually refreshing I
+thought it would show up but I guess
+it's it's not showing up so yep let's
+just ask I to fix it um the tweet
+Twitter timeline isn't showing up make
+sure the tweets are being properly quer
+read yeah look at this query that I
+created ID content created at profiles
+and get the username
+handle
+and oh yeah okay this
+is that's not going to work
+um that is not how you can get the
+number of
+likes so let's see if we can get that
+thing fixed without me jumping into the
+super base documentation there is a
+aggregated function feature in super
+base that allows you to get the count of
+something but maybe it got rid of all
+the okay changed the query quite a bit
+so now it has all the columns from
+tweets and just profiles so it just is
+ignoring lace
+now which is oh and now it's loading
+likes is a
+separate
+thing get likes for these
+tweets H and it also created a new
+migration file it created two new
+migration files okay so updated training
+topics let's just ignore that update
+training topics
+trigger that's fine handle tweet
+deletion these all necessary um update
+update trending
+topics so it has a words word variables
+where
+is so this is triggered
+whenever a new roll
+for oh a whenever a new tweet is posted
+it
+extracts the content splits it to arrays
+separate by
+spaces I think re Rex is a bit Rusty but
+look for hashtag and update the trending
+topics H interesting it's actually a
+neat implementation um I don't know how
+scalable it is
+but interesting approach interesting
+approach I like it I handle Twitter
+delete
+that's suppos
+fine it's what is it doing it's changing
+the Tweet count
+from from what
+table oh well get tweet with likes so
+now here it's getting all the list of
+tweets as well as the like
+count which is yeah clever solution uh
+whenever
+you're unable to
+get the data using super query you can
+always create a Pocus function and get
+the data that you want and what is this
+this is C
+data okay interesting interesting
+interesting uh the C data should be
+moved to a c. SQL
+file but yeah let's just do that later
+it it it works uh so we can clean stuff
+up uh later
+on so it's running superb reset
+and so I wonder if it's using this uh
+get tweet with likes function
+somewhere is it using it
+anywhere so
+far so far no it doesn't look like it's
+being used
+anywhere but I like this should I ask it
+to to use
+it um so
+now like button isn't doing anything
+because okay that's fine um
+yeah get tweets with likes get tweet
+with likes or
+tweets so gets the list of tweets right
+select from tweets join left side where
+good yeah
+okay use
+the function in on RPC call to load the
+uh list of tweets for the
+timeline so I'm asking Wii use this
+function to load the list of tweets
+instead
+of instead of the query that it had
+which is where did it go
+yeah tweet do nope it's not tweet
+composer
+use
+tweets yeah use tweets
+hooks so it
+edited edited this
+fine tweet what
+likes and then it's fetching tweets
+instead of writing this long query it's
+just using get tweet with likes function
+passing it passing the user ID looks
+good let's accept that and run superbb
+reset
+[Music]
+okay Finish super be tv reset uh hello I
+should be able to post
+this except
+now it's not allowing me to post yep
+it's not
+working let's see what is
+wrong accept all
+maybe hit refresh again blah blah blah
+post okay now I'm unable to post create
+a new tweet from the app fix
+it let's see if it can do its thing so
+if we go to Twitter tweet
+composer oh yeah if we go to it's parent
+appts text we have a handle post
+Tweet which posts
+tweet which is the pulse tweet function
+in
+the use tweets
+Hooks and here's the implementation
+so sub base from tweets insert it
+inserts the content content the
+implementation looks good I'm not sure
+about
+the updating UI State and everything but
+at least it should it looks like the
+data should land on the
+database the post button will be
+disabled while creating a new
+post hm
+wonder if we're getting any errors on
+the
+console era posting on object key
+is not presetting table
+profiles insert update on table tweets
+Violet foreign key
+constraints is that because I'm not
+signed
+in which makes sense
+I thought I wasn't signed in right okay
+so yeah um oh yeah I should have noticed
+that yeah obviously We've ran uh subb
+reset multiple times so I should be
+signed out but I'm
+not at least that's what the UI is um
+you know I'm not presented the uh login
+screen so let's make sure that happens
+when the user is not signed
+in they should
+be presented with a login UI but
+currently that isn't
+happening okay it's checking the O
+context
+file making sure everything's good
+analyzing main. TSX file make sure
+everything's
+good and I guess it kind of found a
+issue in the app. TSX file so it's
+fixing
+it let's just accept it and see what
+happens
+okay not
+H early return for loading status early
+return for
+unauthenticated
+state if not user where's this at
+guess there's no way to jump to the
+code
+H oh it's right
+here
+if user is not
+there use
+o user
+H is
+it does it think there's a
+session because we signed in earlier and
+we have an access token
+okay
+um so this is happening
+because the user
+is set user where is set user are being
+called so it's getting the session get
+session okay
+um wonder what the best way to uh do
+this
+is we should just okay uh
+that's use
+effect so the problem here is
+um get session
+just loads the session from local stores
+so we want to use
+get user oh yeah yeah let's just do that
+um yeah I'm just going
+to
+manually oops manually update the
+code like a
+caveman and that should return a
+user okay I think I think that should do
+the
+magic
+no no it's not doing the magic
+[Music]
+because use effect it gets the user sets
+the
+user where else is set user being
+called subscription okay we have oh yeah
+this one so we also have a subscription
+on the uh sub o on o State
+change which fires whenever uh a session
+State changes or it fires once when the
+app is loaded with the initial session
+and because we have that session value
+in local storage uh this is going
+to make it look like we have a
+user a solution here what's a good
+solution here
+should I ask AI to come up with a good
+solution uh or CU we do want to have
+this on off State change subscription
+for
+sure
+but
+we don't want we want to make sure that
+it fetches the latest um
+user because we can't really trust local
+storage um just because in a production
+app this would be fine but um just
+because we're working with the local
+super be database and we'll be resetting
+the super beast database quite often and
+it's kind of knowing that we have to
+kind of uh Delete the um local storage
+whenever we reset the sub
+database um so let's see let's see let's
+see let's
+see you know
+what yeah
+let's just let's just delete this um
+delete this access token manually for
+now
+which until I can come up with the video
+solution Tyler T Jr sign
+up all right
+now this shouldn't work I should be able
+to post something
+and this new data is inserted into the
+tweets table hello okay it's right there
+great uh likes are working is it
+actually being persist persisted on the
+yeah it's being persisted on the
+database as well and I can unlike
+something as well and which should if we
+hit refresh yeah it's gone great uh so
+yeah we have basic tweets Twitter
+timeline and uh likes feature that is
+awesome now this may be a good place to
+leave it off but I personally don't like
+this unable to load image uh right here
+for the profile pictures so why don't we
+go ahead and uh hook up super be storage
+to this app as well so that we can
+update the user's profile image and have
+it displayed in the app so let's open up
+a new uh Cascade
+window and ask it to uh connect superv
+storage to the app um specifically
+around the
+profiles page so let's
+see uh update the app so that the users
+can update their
+profiles from the profiles
+page add superbase
+storage so that they can change their
+profile images
+too so we haven't created a profile page
+yet if I click profile nothing happens
+that's because we don't have that page
+yet let's see if wind can create the
+profile page for us and I'm noticing
+that we haven't added any router to this
+app at all so I'm curious to see if it
+uh you know introduces a router so that
+we can probably open up different pages
+but yeah it's starting out by um yeah
+doing some analyzing bunch of folders
+locally analyzed yeah bunch of bunch of
+folders
+files sub. TS file knows that we have
+initialize super base okay so it's
+implementing profile page components so
+it's adding a profile page component
+it's adding a profile page routing great
+so it added proper routing I think at
+least it is about to do
+that and then it's creating a Prof file
+update form awesome and set up super
+storage for profile images great so yeah
+the profile component I think we already
+accepted that one and then app. TSX file
+let's just accept the
+change and side by. TSX
+file
+it it's updating it so that we can
+actually navigate to the profile
+page okay so created a bunch of
+files did that did this did that it's
+running
+subb
+push yeah no that's not what we
+want we are working with super base
+locally I see that super B CI isn't
+properly set up you'll need to run the
+migration manually through superas
+dashboard no that's not it but maybe I
+can tell it that I'm running super base
+locally uh for this project
+okay oh yeah yeah yeah it's like ah in
+that
+case MPX super status uh
+don't don't use
+MP
+X I have the super
+base superbase CI installed on this
+machine
+[Music]
+okay yep it has checked that we have
+super base on this machine now it's
+running superv
+reset okay what I'm looking for is uh
+for it to create the uh storage
+settings but
+but instead it reseted the
+uh my super database let's see what it
+does after
+this okay so finished resetting the
+super database perfect the storage
+bucket for Avatar have been created
+successfully how was it created
+exactly was it really created like take
+a look so we can go to
+storage avatars wait how was it created
+how was it
+created so we ran super
+status great your local superv is
+running now apply the storage
+migration now let's apply the storage
+migration
+where is the storage M oh it's this one
+create storage okay one two three didn't
+we already have four m
+files Maybe I'm
+Wrong okay looks good for some reason it
+got rid of the trailing zeros and ones
+or twos or threes but yeah that's all
+right I'm just going to manually change
+the
+file name how many
+zeros 1 two 3 four
+five six
+okay great so I created a ATI storage
+bucket which is public which is good and
+authenticated
+users whose Au uid matches the first
+element of the folder name can insert it
+great and
+and I guess anybody can select it okay
+looks looks good looks good did it
+update the profile page
+already okay so the link to the Prof oh
+yeah it might not be working
+because I need
+to delete my signin status
+again
+okay and of course yeah there
+that
+um run the app
+[Music]
+locally all right let's check it out
+so say we want to sign up uh Tyler atup
+superb. secure
+passord Tyler and T
+Jr sign up and we are in profile we can
+come to profile I guess I expect my
+username to be here by default that's
+all right not going to be too picky
+about
+it and
+[Music]
+I'm going to be an elephant save
+profile wonder if it actually
+saved so we
+can reload the Avatar's bucket there's
+nothing
+there did it change anything on the
+database I don't think
+so yep no nothing there
+okay so maybe it's because I haven't
+filled out the username
+Tyler
+super.com save
+profile I don't think it's doing
+anything is
+it refresh
+nope all right
+um the pro file
+isn't being saved
+also the default
+values for
+the uh form
+Fields should be
+displayed displayed
+prefield whatever you like to call it I
+guess uh so yeah it's checking the
+initial schema okay and then it's
+updating the profile component which
+handles updating the
+profiles should have taken a look at
+this but it's loading the username
+website avar
+URL where the user ID is the same as the
+user
+ID okay let's accept the change so it's
+loading the profiles setting the
+profile and update
+profile gets
+everything
+and upserts it to the profiles
+table it doesn't upload the photo does
+it maybe it's just automatically up okay
+so the photo the Avatar URL is all
+automatically updated whenever we
+um upload a new
+photo which
+is a fine imple implementation so let's
+go back
+back hit say refresh there's the default
+values that's great username handle I
+want to change my profile picture
+to an elephant and new roll level
+security violated uh issue so this this
+is happening
+when this is happening when
+yeah okay no much is being displayed
+here
+but we can just ask wind surf I'm
+getting R roll security
+RLS errors when um uploading a Prof file
+image fix it
+I thought it had the
+necessary
+policies
+already
+[Music]
+but folder name maybe that's the key
+where is it trying to upload it
+to so storage from upload file path is
+user ID SL file name which sounds which
+sounds all right yeah let's reset the
+super
+DV let's delete the
+AUM status let's delete the a toen
+manually
+[Music]
+okay finished resetting super
+base it should be good to go let's sign
+up one last time hopefully Tyler at
+superb. secure password
+Tyler and T Jr sign up I'm in I can go
+to my profiles page I
+can choose an elephant and no value in
+column
+username of viol profile
+violates not n constraint okay I see
+what is happening I think the image was
+actually uploaded if I'm correct okay so
+there you go we can see the image being
+right there but what's happening is once
+we update the profile once we upload an
+image um where is it so we upload the
+image to storage which is fine which is
+working fine but uh when we do the
+upsert we
+are are we overwriting
+because we are passing no
+value for
+[Music]
+the what was the error that we
+saw no Val column
+username so because we are performing an
+upset here um which overrides any values
+uh that are not passed to this method
+and
+null uh which is not what we want so we
+can just say we want to update update
+the uh roles with uh these values and we
+probably don't need to pass this ID
+column because we are just um
+specifying that we only update oops
+where did it
+go the r where the user ID is matched so
+we just want to update the uh Avatar URL
+on that that's it and we can use update
+here because we know for sure that the
+profile is created when the user signs
+up
+so yeah I think this should fix it let's
+try it out let's hit refresh go to
+profile
+upload
+scroll and I guess that's it is my
+profile up
+updated
+hello and I
+guess the Avatar URL isn't showing up
+but if we go to the database we can see
+that my profile
+has this image which is a beautiful
+image of a cute
+scroll so okay let's let's fix this
+um in the twe tweet
+timeline the Pro File image
+isn't isn't being
+shown even for those that actually have
+Pro File images
+set this
+should
+fix our app right up
+okay so the get tweet with likes
+function isn't returning the profile
+image URL oh yeah that's the issue
+okay
+great yeah so I added the Avatar URL is
+one of the things that's being returned
+from the function that we call to load
+all the tweets and then we also add
+Avatar URL here and there whenever we
+need it
+and it's updating the Tweet component to
+display the Avatar
+URL otherwise it displays a placeholder
+which is
+nice and here's another Avatar URL
+section that we needed it's running the
+super DB reset
+hopefully this is the last run that we
+have to manually delete this
+aen but let's wait and see
+[Music]
+all right let's uh sign
+up Tyler super. SEC your password orish
+Tyler and D Jr sign me
+up and let's
+upload our profile image go to home and
+hello
+world post and there you go
+we have a nice post with my elephant as
+the profile picture and we have a nice
+tweet that we can
+like so yeah that was wi Sur we were
+able to create a nice looking Twitter
+clone app uh even though the feature is
+incomplete I think it's a good time to
+cut it off because the rest of the
+features is just repeating the same
+thing adding more tables adding more
+columns um adding more storage buckets
+one which we already know that it can do
+so if you like to take this project and
+uh kind of keep it going um yeah please
+feel free to do so but yeah I really
+enjoy using wisi and I think you should
+really try it out if you haven't yet

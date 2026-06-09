@@ -1,0 +1,868 @@
+[Music]
+welcome to educational Alpha I'm Bill
+Kelly CEO of Kai Association and your
+host bringing you on the ground
+conversations with Business Leaders
+Educators and Industry colleagues from
+around the globe educational Alpha is
+sponsored by I Capital the financial
+technology company with the mission to
+power the world's alternative investment
+Marketplace part innovator part Ed
+educator and part Navigator of the
+Alternatives industry I Capital offers
+intuitive scalable digital solutions
+that have transformed how private market
+and hedge fund Investments are bought
+and sold with ey Capital financial
+advisors wealth managers and asset
+managers around the world now have
+access to everything they need to
+deliver the return and diversification
+potential of alternatives to high net
+worth investors to learn more visit I
+capital
+[Music]
+in this episode Bill welcomes Keith
+Black a longtime colleague and crypto
+currency expert to discuss the rapidly
+evolving world of digital assets Keith
+shares insights from his extensive
+career including his early work in
+commodity derivatives hedge funds and
+institutional Consulting as well as his
+role in the chartered alternative
+investment analyst
+Association the conversation dives into
+Keith move toward digital assets and
+cryptocurrencies highlighting key topics
+such as the current state of
+institutional adoption bitcoin's rise
+and the role of stable coins listen
+in Keith Black welcome to educational
+Alpha thanks for having me Bill longtime
+friend and colleague and I joined Kaa
+just about 11 years ago as you know I'm
+stepping down at the end of this year
+but you were there when I walked in
+running curriculum did a lot of things
+for us quasi Business Development
+traveled around the world I think my
+very first trip to China and India might
+have been with you and both cases so a
+lot of great history there and somebody
+I have a lot of respect for and you've
+left Kai a little while ago in pursuit
+of a lot of things but you've gone into
+cryptocurrencies and digital assets and
+have written a book which prompted me to
+reach back out to say hey I find this
+interesting but before we get to that
+maybe a little bit on your background
+and I've always admired the fact that
+you have somebody
+you look at somebody like Keith Black
+and say wow this is a very smart guy all
+these credential degrees PhD he's an
+academic and you've worn a lot of
+different hats but not the least of
+which was you were a practitioner in
+Chicago at the very beginning of your
+career so you don't have to start an
+elementary school but maybe the
+beginnings because I think that defines
+the professional you've become right
+thanks Bill so I was in Chicago for 20
+years before I moved to ammer
+Massachusetts to join the kai
+Association so I spent about half half
+the time in Chicago as a practitioner
+and about half as an academic so I
+started off in commodity derivatives
+upstairs we were trading energy and
+metals products for corporate clients
+bundling them into financing products
+with the money center bank and then I
+moved downstairs to trade Equity
+derivatives so I was an options Trader
+on the floor of sibo with the colorful
+jackets and the hand signal and the
+raspy voice and all of that then I built
+some Quant Equity models which we sold
+to hedge funds and mutual funds and
+spent some time as a institutional
+consultant working for uh large pension
+endowment plans on their hedge fund
+allocation so I did hedge fund manager
+research and along the way I earned a
+PhD at the Illinois Institute of
+Technology where I taught for a number
+of years and I was the representative
+for both the CFA and Kaa academic
+partner programs at IIT so I taught the
+traditional Investments as well as the
+alternative investments in the Masters
+green financial markets program and then
+your trip to K I think some people maybe
+I at the time thought as well that you
+were in that very first class because
+you were part of Kaa but you were not
+there yet so maybe what got you to K and
+then we could pick it up from there so I
+am Kaa Charter holder number 19 so I was
+in that first class in 2003 so while I
+was a PhD student in Chicago while I was
+an Institutional consultant I had the
+CFA and the kayia charter to go along
+with that and so when the consulting
+firm I was a partner in sold out to a
+large insurance company it was natural
+for me to look for the next step and at
+that time most of the colleagues leaving
+that firm left Chicago it's declining as
+a financial center and I ended up with
+Kai Association because I already knew
+Kai and Kai already knew me I had worked
+with Nelson for many years on curriculum
+and exams as a volunteer grader and
+curriculum writer and you certainly set
+us up great success uccess and that
+program continues to push on and to show
+that we take all comers you personally
+inspired me to become a candidate myself
+during the co bubble where I finally was
+able to get off a plane and I felt
+finally like a member of the club when I
+came through successfully level two in
+March of 2022 so thanks for that
+motivation I'd like to congratulate you
+on that if I haven't already and that
+was perhaps the best use of downtime
+during Co you hear some hobbies that
+other people got into and I definitely
+respect that you took the time to sit
+down and interact with the curriculum
+and you were able to pass the exams on
+the first try I think as well I was
+thanks Keithan I guess it was maybe more
+beneficial than a pretzel maker and it
+served me very well then and as I speak
+and write it's been a tremendous asset
+so thanks for that so Keith One Last
+Stop inside of Kaa which you were at the
+coace with myself and hosein and that
+was the formation of the FTP Institute
+and a credential by the same name and we
+were trying to solve for a data
+scientist communicating in python or r
+with an analyst working on Excel
+spreadsheets and maybe macros and how do
+they communicate at a coherent
+investment process and out of that was
+born fdp and if memory serves me
+correctly you might have to remind me
+Charter holder number one for FTP was
+that was me Keith Black so you musle
+dick Fister out well he was early on in
+K he beat me on that side so I had to be
+before him on the FTP side yeah maybe
+that's a good stepping off point in that
+you help run fdp our ability to grow
+that inside of Kaya was a challenge
+coming out of the other side of kov
+we've now signed on Alpha development
+and then that next cycle is opening up
+and I know you and I certainly wish that
+credential well because I think it's
+founding principles even more alive and
+well today but I don't know Keith if fdp
+was the Catalyst and I know you've
+always been just curious by Nature about
+what's next what's around the corner and
+I know you were focused on
+cryptocurrencies long before you left
+Kaya but what was the Catalyst to maybe
+move more toward that space because it's
+one even before you wrote the book I've
+been following you a bit and this is an
+area you spent a lot of time and a lot
+of focus on yes so you know I was at
+Kaya for 12 years and I helped write
+three iterations of the level one and
+the level two book and my charge at Kaa
+was to be a year ahead of the rest of
+the world on alternative Investments
+right and so my job was to write a
+chapter and have a presentation about
+private credit before the world starting
+asking questions about private credit
+and I think that Tipping Point of the
+world being really interested in asset
+class ends up being right around a
+trillion dollars at 300 billion nobody
+knows about it and at three trillion
+everybody knows about it and so there's
+that sweet spot around a trillion
+dollars in assets so after we did that
+work on the private credit side interest
+naturally turned to cryptocurrencies and
+digital assets as the next big thing in
+Alternatives and it's amazing the size
+of crypto today depending on the day it
+could be 1 trillion or three trillion
+but that Rivals the size of the private
+credit market and it's more than half
+the size of the head fund market and so
+the cryptocurrency market is perhaps an
+asset class unto itself that deserves
+the sober study of both the upside and
+the downside of the tokens as an
+investment class and I know we have at
+least in the level two that I studied we
+talked a little bit about digital assets
+and blockchain but as far as I know I'm
+sure it's and I'm not a student of this
+part of the market but the kayak
+curriculum never really covered digital
+assets or cryptocurrencies for many
+reasons not the least of which is did
+not have institutional adoption the
+market did not have enough liquidity
+that a cow Pur could go and make an
+allocation to a cryptocurrency but
+Bitcoin itself I believe is over a
+trillion dollars now in terms of NASA
+class and you just said a moment ago the
+spaces up to three and ka's role is to
+never be for or again against a specific
+asset class we're absolutely for
+Discovery and transparency and then let
+the investor make their own decision but
+what is the size of this asset class
+more specifically if three trillion is
+the right number and where are we with
+institutional adoption so obviously it
+depends on the day you could have 10%
+20% monthly or even daily volatility as
+of the day we're filming this crypto is
+worth 2.24 trillion you can go to coin
+geo.com you'll see there's almost 15,000
+coins but what's interesting is out of
+those 15,000 coins that are worth 2.24
+trillion Bitcoin and ethereum on their
+own comprise about 70% of that value
+with Bitcoin at about 1.2 trillion at
+61,000 and ethereum almost 300 billion
+on its own and so it's a highly
+concentrated market so even though
+there's thousand of tokens at this point
+there're certainly less than 50 that are
+truly investment grade the Bitcoin
+Market Market started as
+anti-institutional right it started
+about decentralization and so the idea
+of decentralization is lessening the
+influence or lessening the power that
+any one institution has over your
+financial life and so we start off by
+talking about a centralized Ledger and
+so if you have a bank account or a
+brokerage account that's basically
+private between you and that bank or you
+and that brokerage firm and they're the
+only ones who have access to those
+records and there's a concern about this
+central point of failure and in the US
+we're very blessed we have a strong
+currency strong banking system we have
+FD and cpic insurance but the rest of
+the world doesn't necessarily have that
+and so the innovation of blockchain
+specifically is to move from that
+centralized Ledger centralized
+counterparty to a decentralized ledger
+and decentralized counterparty so rather
+than having your financial records
+stored at One bank or one brokerage firm
+it's saved on thousands of computerss
+around the world as a fault tolerant
+mechanism that lessens the influence of
+anyone counterparty and in the US we
+don't really need crypto right it fits
+nice in investment portfolios and people
+like to speculate with it but if you
+live in Ukraine you really care about a
+specific point of failure of a physical
+banking or computer infrastructure if
+you live in Venezuela or ZB babwe or
+turkey or Argentina you care about the
+difference between your home Market
+currency and a hard currency like the
+dollar and the Euro so there's some very
+fundamental implications moving from
+that single point of failure whether
+it's a central bank a fiat currency or a
+bank or a brokerage firm and then moving
+into that distributed Ledger where we're
+moving to have the ability of making
+peer-to-peer Financial transactions and
+allowing people to easily access gold or
+dollars or Euros even if it's not
+necessarily fiat currency in their home
+country so a couple things and maybe my
+own education Keith so I get almost all
+of that and certainly there are a lot of
+developing economies where vast majority
+of the citizens are unbanked so there is
+no Central Point to failure but even if
+there was that's a concern too but if
+I'm going to be contracting any
+transaction on a distributed Ledger and
+am I doing it in Bitcoin now I've got a
+lot of quote unquote currency risk
+because I'm dealing with a very volatile
+medium of exchange versus if somebody
+could create a stable coin where I don't
+have to worry about it before the goods
+get to me and the currency settles that
+maybe it's traded up 10 15 20% and gone
+in the other direction so why can't it
+be more of a stable coin why does it
+have to be a cryptocurrency like a
+Bitcoin or eth that's got all this
+volatility attached to it right so we
+see that the volatility of Bitcoin or
+ethereum is on the order of five times
+higher than that of a stock market index
+and so we think of equity volatility
+maybe 15 to 30% range Bitcoin and
+ethereum we have to think of volatility
+in the 60 to 120% range and so those are
+historically volatile it'll go up 600%
+and then it'll go down 60% there's a
+number of 50 60 70% draw Downs in the
+price of Bitcoin and ethereum in recent
+years so there is a historic level of
+volatility in Bitcoin and ethereum but
+we also have stable coins and so tether
+is tied to the US dollar they there's
+about $120 billion do worth of tether
+outstanding and then there's usdc which
+is also a stable coin that's Peg to the
+dollar which is about $35 billion and so
+there's $150 billion of US dollar
+equivalents that are held in these
+tether or usdc stable coins that allows
+Global Citizens to hold tokens that are
+pegged at $1 us and so they might want
+to be in Bitcoin or ethereum for
+potential upside return or they might
+simply say if I could just hold dollars
+or if I could just hold Euros or gold
+that's going to be much more stable than
+my home Market currency and maybe tying
+this back to the book so you could tell
+me about the book but one thing I like
+at the get-go is the title and the very
+first word investing as opposed to
+trading it's maybe a small distinction
+but to me and maybe to you it's a rather
+large distinction in that investors Buy
+and Hold Traders speculate but investing
+in cryptocurrencies and digital assets
+and maybe starting with my premise would
+you can reject but I think a lot of the
+challenge around what Bitcoin really is
+is there's a lot of speculation a lot of
+day trading and and you can trade at 247
+to a large degree and I don't know how
+many investors there are versus Traders
+so you probably use the word investing
+by Design more than trading but is most
+of the value that people trying to
+extract from Bitcoin is really a trading
+mechanism as opposed to an investable
+asset right so the title of the book is
+invest in in cryptocurrencies and
+digital assets a guide to understanding
+Technologies business model due
+diligence and valuation and so the idea
+is I have 30 years of experience in the
+financial markets which the the crypto
+people would call CI right centralized
+Finance so what's interesting about the
+crypto Market is there's a lot of
+influencers a lot of speculators and as
+you said Traders and there's been a
+tremendous amount of risk tolerance for
+good and bad in crypto you see people
+running $100,000 up to 3 million and
+then going all the way back down to zero
+and so what I Tred to do is not write a
+technical book and not write a
+speculative book but as you know in the
+work we did together at Kaa we're like
+this is how hedge funds work this is how
+private Equity works this is how real
+assets works and here's where it's good
+and here's where it's bad and here's how
+you do the due diligence and so that's
+how I wrote this book I wrote it from
+the view of an investor right so
+what does an investor need to know about
+cryptocurrencies and digital assets and
+the number one thing an investor needs
+to know about cryptocurrencies and
+digital assets is this is not a YOLO
+trade right and so one of the tables
+from the book looks at asset allocation
+with Bitcoin and I started in January of
+2018 into 2024 and over that 6 and 1
+half year period the volatility of
+Bitcoin was 73% volatility of the S&P
+was 17.8% and you know we all like to
+pick on the 60/40 portfolio which is 60%
+in stocks and 40% in bonds so if you
+invested in that 6040 portfolio for the
+six and a half year period you would
+have earned 7.3% on your stocks and
+bonds the volatility of 11.8% and draw
+down of
+20.1% but the number one thing you need
+to know about crypto is trade it small
+so I built this model portfolio in
+increments of one to 10% and most
+investors shouldn't put more than 3% of
+their Assets in crypto and that's the
+number one lesson of the book but if you
+put a small amount in crypto even though
+it's volatile the exciting part is is it
+hasn't historically been correlated to
+financial market so that 6040 portfolio
+has a return of 7.3 standard deviation
+of 118 and a draw down of 20.1 if you
+put 3% in Bitcoin the standard deviation
+moves from 118 to 12.3 the draw down
+moves from 20.1 to 21.2 you barely see
+that volatility but over that six and a
+half years you were able to increase
+your return from 7.3% to
+8.6% just because you had that 3%
+allocation and obviously due diligence
+is a critical component about where
+you're going to make that allocation we
+had Zoe Cruz on this platform before and
+she's very much of a trafi person but
+with Mani very active in the space and
+she said something that I remembered
+when I was listening you speak right now
+which is 10% is not the right allocation
+but zero is not either you got to kind
+of get in the game and unlike a lot of
+other asset classes one or 2% is not
+going to make a difference but the
+numbers you just put out in terms of
+volatility and draw down risk versus 150
+basis points of incremental return is a
+pretty compelling argument so a couple
+of the other challenges Keith which I'm
+sure we've solve for them to some degree
+I won't name the name but a friend of
+ours had some Bitcoin that you know him
+well to on an old laptop and lost a
+password and couldn't get it out again
+so custody has always been a bit of a
+challenge and I think institutional
+investors and maybe you and I as well is
+we're used to draw Downs we're not used
+to something going to zero because we
+lost it so where are we in the current
+state of custody and cold storage and
+never being in that dilemma like our
+friend where he simply can't get his
+holding back again you might remember we
+were in a meeting with some
+institutional investors and Campbell
+Harvey from duke was there talking about
+his book on Defi and there's a couple
+dozen professional investors in the room
+and we asked how many of you have a
+personal investment in cryptocurrencies
+and digital asset and I think this was
+pre-co and it was about half the room
+had personal investments in
+cryptocurrencies and digital assets and
+then you say as a pension fund as a
+super fund as an endowment or Foundation
+how many of you have professional
+investments in crypto and I think it was
+Zero people or maybe one or two in the
+room and so so there's a big difference
+between a personal investment and a
+corporate investment and historically
+there's been very little ability or
+tolerance of institutional investors to
+buy Bitcoin or ether tokens directly
+right this custody is too difficult of a
+thing to solve or at least it was preo
+but what was interesting and you know
+all about alternative Investments and
+everybody has their asset allocation and
+you'd have to go to your investment
+committee and ask to invest in Bitcoin
+ethereum and what's the weight and that
+could be a difficult discussion but what
+we saw is the first time that pensions
+and endowments were going into crypto
+they were allocating to hedge funds or
+Venture funds within their existing
+asset allocation and so the hedge funds
+and the Venture funds were already there
+they've already been approved by the
+investment committee but they used a
+portion of their hedge fund and their
+venture allocations to invest in uh
+crypto focused hedge funds and VC s with
+the idea that those hedge funds and VCS
+had that professional custodian who
+would take care of that so it's still
+relatively difficult and risky to
+custody your tokens yourself whether
+it's on a PC whether it's on your phone
+it could be directly connected to the
+internet could be in cold storage or it
+could be on an exchange and all of those
+have their pluses and minuses which is a
+couple chapters in the book but the big
+watershed moment for crypto was in
+January of 202 4 when the SEC finally
+said fine go do what you're going to do
+right the SEC lost a lawsuit to coinbase
+who had a long-standing closed end fund
+of Bitcoin physical Bitcoin and they
+were trying to convert it into an ETF
+and there was many rounds of litigation
+and finally the court cited with
+coinbase that said there's no reason why
+there should be a difference between the
+spot between the Futures Bitcoin ETFs
+you approved in 2022 and the spot
+Bitcoin ETFs were trying to hold now but
+you know in Futures you have that
+contango and backwardation and some
+basis risk relative to the cash and so
+there are some key lawsuits that the SEC
+lost in 2023 so in January 2024 we saw
+the launch of the spot Bitcoin ETFs and
+just in August of this year they
+relented and allowed spot ethereum ETFs
+as well so Black Rock and Fidelity
+quickly each raised over $10 billion in
+their spot Bitcoin ETFs in a matter of
+weeks the fastest ETF launches ever to
+hit1 billion faster than GLD which held
+the record for many years before that
+and so what we're seeing with the black
+rock and the Fidelity Bitcoin ETS and of
+course there's a grayscale bitwise and
+others but what we're seeing is there's
+a rapid institutional adoption of that
+ETF form format and so they trust Black
+Rock they trust Fidelity they trust the
+coinbase or the custodian that's holding
+those Bitcoin and so now that you could
+hold this in an ETF format now you could
+hold it in your IRA as an individual
+investor you could hold it in your
+account with the registered investment
+adviser or as a pension fund you could
+hold this in custody at bny melon or
+Schwab or persing or wherever and now
+it's another financial asset that's as
+easy to buy as any other fund so I just
+want to go back to the approval of the
+spot Bitcoin ETF and as you pointed out
+Keith who was quite contentious and
+Gensler and Company the SEC chair was
+not very happy and even after it was
+approved he grudgingly accepted the
+outcome but still maintained that it was
+this cryptocurrency is used for mostly
+nefarious activities I think you even
+have a chapter in your book on privacy
+tokens which we can get to if you want
+but then there was some
+criticism of Larry thinkink that he
+broke with the never bit coin crowd like
+Warren Buffett and Jamie Diamond and
+that may or may not be true but I did
+follow this a little bit and if I
+remember it correctly I think think was
+pointing to the power of distributed
+Ledger and less about maybe the value
+proposition of spot Bitcoin ETFs
+although it's obviously been very very
+good business for Black Rock but maybe
+if you had any thoughts on that but I do
+want to talk about blockchain and the
+power that that has and what we're
+seeing in the private markets today as
+well and and it's certainly ironic that
+black rock and Fidelity are big players
+here because Bitcoin started off as an
+anti-establishment
+experiment it started off with a
+mistrust of commercial Banks and a
+mistrust of central banks and the idea
+was to be a peer-to-peer digital cash
+that would allow people to exchange
+value worldwide outside of the existing
+government outside of the existing
+banking system so it is somewhat ironic
+that the big Banks and asset managers
+are taking shares here and something
+that was meant to be kind of underground
+and subversive in the beginning but the
+idea of this distributed Ledger and this
+could be used for anything and a lot of
+people focus on the value of Bitcoin or
+the value of ethereum but we just saw
+the California DMV just put 20 million
+car titles on the Avalanche blockchain
+we see the Kenyan government tracking
+the performance of millions of school
+children using the cardano blockchain
+and so this distributed Ledger can be
+used to track any records right we've
+chosen to start off with financial
+records but the killer app of blockchain
+might be what they're called
+tokenization or real world assets right
+it might be a much bigger opportunity to
+tokenize car titles in real estate and
+maybe your brokerage account than
+investing in Bitcoin or ethereum
+directly and something we've covered on
+this platform a couple times Keith but
+I'd like to get your views on it as well
+is it bringing it back to the Here and
+Now for Kaaya and alternative
+Investments Hamilton Lane and KKR have
+the traditional Cayman based fund rapper
+for private offering but there's a
+feeder fund on the blockchain and I
+don't know what the currency is maybe
+it's a stable coin or not but the
+reference asset is something that's
+offchain and is the identical nav of
+what I'm getting in the Cayman Island so
+I see this as a pretty powerful way of
+maybe moving toward a rapper that is
+maybe been forced Superior than the
+interval fund because now you could have
+if you wanted to and I don't recommend
+this because now you're getting back to
+trading versus investing but you could
+have transactions intraday between a
+buyer and a seller but that feeder fund
+itself does not have to raise any
+liquidity when the underlying is
+illiquid so I find that pretty
+interesting early days I don't know if
+you follow the story at all or have any
+views on it securitized seems to be the
+quote unquote category killer in this
+space but your views would be great
+right so it's not as simple as it seems
+right you have to trade these as a
+security they have to be kind of
+approved by the SEC you have to trade
+them in an alternative trading system do
+the kyc for ACC credit investors you
+still have to go through all of those
+Hoops that you'd have to do with other
+alternative investment funds that draw
+down private Equity Funds but what's
+interesting is Black Rock and Franklin
+Templeton have money marketting
+government funds on chain and when I was
+speaking with them they said that the
+current application of it isn't for
+people like you and me to put our money
+into the tokenized money market fund or
+government fund because there's $2
+trillion dollar of crypto money and that
+crypto money likes to stay onchain and
+so a lot of the assets that are coming
+into that Venture fund that private
+Equity Fund that money market fund those
+are assets that are crypto wealth that
+people made money on these coins and
+they want to take a step back like a
+money market park it somewhere now if
+you invest in the tether or the usdc
+stablecoin you don't earn any yield
+tether earns that yield and tether made
+more money last year than Black Rock
+simply by running the stable coin and
+getting a hundred billion dollars of
+notional treasury interest but this is a
+way for the onchain community to earn
+yield in a regulated fund I was going to
+go right there and you served up the
+opening regulated and we talked about g
+a moment ago but as we go forward and
+more and more financial transactions are
+happening on distributed Ledger and this
+is maybe crashing into democratization
+where the average person has access to
+very sophisticated product all things
+being equal I think we need to have more
+not less regulation it needs to be
+sensible it needs to be wrapped in maybe
+more teaching the investor about the
+asset class as opposed to watering it
+down in the first place but where do you
+see regulation going in the space and
+it's got to be enlightened and maybe
+that's an oxymoron when I put that next
+to Washington DC but what are your views
+on where we're going with regulation
+yeah so the crypto Community is not best
+friends with the SEC and the crypto
+Community is like begging for rules just
+tell us what the rules are and we'll
+follow them and the SEC says we told you
+the rules in
+1946 right the rules are according to
+the Supreme Court and the hoe test where
+there's orange grows in Florida that was
+a sale lease back and that would ended
+up being a security according to the SEC
+and the Supreme Court and now 80 years
+later we're using that as the definition
+for digital assets and so the crypto
+Community says please give us rules and
+the SEC says we gave you rules 80 years
+ago and so there's a disconnect there
+but what the crypto Community is worried
+about is regulation by enforcement and
+there's not clear modernized rules that
+they need to follow but then the SEC
+will come in and give you a fine of
+millions of dollars and shut down your
+business because you didn't follow the
+rules that the crypto Community said
+weren't clear and so what I would happen
+from the point of view of the crypto
+commune is to have something like like
+the crowdfunding rules right so under
+the Obama Administration they said
+here's how retail investors can invest
+up to $5 million in a crowdfunded
+venture capital opportunity right you
+don't have to be a credit investor you
+don't have to be a venture capital firm
+anyone can invest in crowdfunded assets
+anyone can invest in Venture Capital
+non-traded companies if you limit the
+amount they can invest relative to their
+income or their net worth and if there's
+disclosure and somebody's keeping track
+of the amount that they invest and so
+it's interesting that they made this
+crowdfunding regulation for a market on
+the order of $50 billion and they
+haven't made any regulations on digital
+assets yeah and I think to be pointing
+back to something that is decades ago in
+an industry that's changed so
+dramatically just in a handful of years
+simply doesn't work maybe last Point
+Keith before I let you go and maybe it's
+tied to regulation a little bit but
+you've got young kids moving into
+adulthood as I do and and I look at them
+in their concept of privacy and maybe
+our view of ethics are very different
+than perhaps this next Generation but
+there is this concept of a fiduciary
+duty in financial services and that gets
+into privacy as well but the more you
+have assets out in a distributed Ledger
+will these blockchains have to be more
+permissioned and maybe more closed which
+maybe runs against the grain of why they
+were created in the first place but but
+once you start to move this away from
+virtual yachts and into trading shares
+in a real life private Equity Fund it is
+a very different Beast so one of the key
+words in the crypto landscape is
+permissionless anyone with an internet
+connection and some funds can
+participate in This Global Network This
+Global exchange of value and the
+founders of it said hopefully with
+without kyc we don't care what country
+you're in or who you are and it's the
+ultimate in
+democratization but we need to think
+about the security of that system and
+the privacy of that system and so if
+you're in any type of product that
+requires you to be an accredit investor
+a qualified purchaser if you're trading
+any kind of Securities now that's going
+to be on a permissioned blockchain so as
+I said with those tokenized offerings
+you can't go onto coinbase and buy
+shares in that KKR fund you have to have
+a relation ship with somebody like KKR
+you have to prove your a credit investor
+go through the kyc and then you trade
+that on a finra registered alternative
+trading system and so that is the idea
+of a permissioned blockchain right which
+takes us closer back to the original
+idea of the centralized counterparty
+right you have to trade on that ATS you
+have to do the deal directly with that
+counterparty or the counterparties that
+have been pre-approved within that
+permission system I think these are very
+good tools and sometimes they have to be
+adapted to the use case and financial
+services remains a pretty highly
+regulated industry and hopefully we can
+find a sensible marriage between the two
+so Keith as a good friend I don't mind a
+little bit of a commercial plug at the
+end and you can drop a link but remind
+us again the title of the book and where
+a listener could find it so the books
+available on Amazon came out as the
+number one new release in financial
+services investing in cryptocurrencies
+and digital assets a guide to
+understanding Technologies business
+models due diligence and value valuation
+well well done Keith I appreciate you
+always being curious and maybe helping
+to explain the unexplainable to people
+like me and it's a space that does
+interest me a lot so I personally pick
+up a copy and give it a shot and come
+back to you with some questions and
+maybe a follow-up interview but great to
+see you again thanks for all you do and
+hope to see you when I'm next to
+Nashville thanks Bill and I'd be glad to
+come back and answer any questions you
+have after you take a look at the book
+all the best thanks ke thanks Bill
+thank you for listening to educational
+Alpha I'm your host Bill Kelly learn
+more about the kai Association And
+subscribe to the show ata.org that's
+c.org see you next time

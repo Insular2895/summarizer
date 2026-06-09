@@ -1,0 +1,92 @@
+what do we mean by container supporter
+development to answer that I want you to
+think about this question why should I
+use containers during development what
+value do they even bring me the goal of
+this learning path is to demonstrate and
+hopefully convince you that there are
+many ways containers can be used to
+increase developer productivity even if
+your main app isn't containerized let's
+start off by looking at a sample
+application most apps are composed of
+many different services this particular
+application a catalog service stores its
+data in a postgress database images and
+blob storage such as AWS S3 and then
+gets inventory data from an external
+inventory service additionally it
+publishes update events into Kafka to
+allow other services to be notified of
+changes and then allow them to send
+customer notifications or whatever else
+they might want to do so now how do we
+set up this development and testing
+environment this leaves basically two
+options option one is to connect to
+Shared staging infrastructure such as in
+a Dev environment in this case my Dev
+instance can work with a real S3 bucket
+a deployed remote inventory service and
+more but unfortunately this Qui LLY
+doesn't scale once I start adding other
+developers to my team this adds a lot of
+cost and complexity especially if I'm in
+an org that may even provision these
+resources per developer additionally now
+these developers have to fight and
+there's conflicts that might occur over
+the shared infrastructure option two is
+to create a development environment in
+which a developer runs each of these
+dependent Services locally on their
+machine forun with containers this is
+pretty easy to do so instead of
+deploying a remote Cloud infrastructure
+and managing am policies and S3 buckets
+I can can just simply run a local S3
+compatible service such as Min or local
+stack instead of relying on the external
+inventory service directly I can use an
+API mock such as wire mock to then work
+against the API I can also then run
+Kafka and postgress locally as well but
+the advantage is once I start using
+containers it's also easy for me to add
+additional services without thinking
+about how do I configure install and set
+them up and this allows me to then
+either publish or consume test messages
+into my Kafka cluster or even visualize
+what's going on in my data base this
+idea of using containers to help my
+development environment is what we call
+container supported development and
+again it doesn't matter if my main app
+is containerized or not in this example
+the main application could be running in
+a container or it could be started just
+by opening up my project in vs code or
+intellig and pressing the play button
+letting everything run natively it
+simply doesn't matter then when a
+developer pushes their code containers
+can then be used again during
+integration test to spin up the required
+resources again no shared infrastructure
+no deployed infrastructure to manage no
+to worry about Etc the test containers
+framework also makes it really easy for
+me to integrate the life cycle of the
+containers with the life cycle of the
+test as well when the tests run the
+containers spin up when the tests are
+completed the containers go away that's
+it so I hope you're starting to see the
+value of container supporter development
+now throughout the next couple of videos
+we'll dive into specific use cases to
+demonstrate how they work and the value
+they provide and we'll also talk about a
+couple little extra nuggets along the
+way thanks for watching

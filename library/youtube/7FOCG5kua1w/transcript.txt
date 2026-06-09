@@ -1,0 +1,813 @@
+so this is a beginner level class this
+is bits and pieces of things that I've
+done in training sessions over the last
+couple of years and what we're gonna do
+right today is basically just deep dive
+into how to get the logs and other
+diagnostic and a lot of kubernetes when
+everything has gone wrong and you don't
+know where to turn so about me been an
+IT for 20 odd years now depending on how
+you count worked for core OS previously
+for Red Hat Electronic Arts although not
+doing anything especially thrilling at
+EA currently I'm a senior consultant for
+a team oh we are hiring this is my team
+lead Sam right in the front of the room
+my blood type is caffeine positive and
+there's my contact info down there
+should you care to contact me if only to
+say god that presentation sucked it was
+a waste of my time first thoughts so
+Brad giesemann who some of you may have
+saved his presentation I know Sam has if
+you read his slides one of the things
+that he goes over is you have to kind of
+get in the right frame of mind for some
+things so I wanted to give you some
+first thoughts when you kind of dive in
+to debug kubernetes first thing is it's
+not rocket science yeah it's a
+distributed system that doesn't mean
+that it's actually hard to get the info
+that you need to get out of it nothing
+that we're doing is really new we're
+just poking at the system and seeing
+what falls out some of the tools are new
+some of the pieces you prober new that's
+about it the general idea is the same as
+it's always been right on back to if
+anybody's seen this image before this is
+the quote-unquote first actual computer
+bug they had a mainframe that was going
+wrong and they basically interrogated
+the system examined its outputs and
+successfully debugged it this is how it
+feels when your application deployment
+fails lights are lighting up red
+people are getting woken up by phone
+calls sirens are going off and it's
+tempting to just you know kind of throw
+your hands up and go take a deep breath
+don't panic do we have any IT Crowd fans
+here
+yep you know about the little book of
+calm then find the little book of calm
+you know take whatever other advice from
+classic works of fiction and film you
+care to take and then let's fix it the
+first thing we have to do is gather info
+and that's what this is about
+then you're gonna form a plan you're
+gonna test and execute your plan so how
+do you gather the info well let's talk
+about that the first thing you want to
+do if you've done stuff with cube
+control we've now been told that that's
+the official name if you've done stuff
+with cube control you've probably done a
+good control get cube control describe
+those are nothing new sometimes that's
+enough you you do a cube control
+describe you see an image pull air you
+go oh I forgot to put the image pull
+secret and of course it's not pulling
+the image you go off and you fix it if
+not let's talk about logs I know my
+humor is terrible the first thing that a
+lot of people don't know about is coups
+ETL get events an event is actually a
+resource type in kubernetes and so when
+you do cube CTL get events it will
+actually list them out just like it
+would list another resource and give you
+kind of a summarized view of what it's
+seen and how often and when was the last
+time it saw it now this looks like
+terrible formatting that's because when
+you see this it usually is terrible
+formatting like that this is only
+compressed a little bit in line length
+so you know if you have the ability to
+widen your terminal way out that's what
+you want to do and in this case I've got
+something that's failing to bind to a
+persistent volume because there are no
+volumes available so if you do a get
+events and you see that maybe that tells
+you oh I forgot to deploy whatever
+configuration I need to make that
+binding work Coop's ETL logs no get on
+logs
+I still do it all the time but there's
+no get there it's just coops ETL logs
+and then a pod name and so you'll see
+things like this now this is fairly
+innocuous this is just a pod starting up
+this is a we've scoped pod you're gonna
+see a lot of we've scoped logs as we go
+through this because that's what I used
+for my
+samples and if I had time to do demos
+that's what my demos will be using - if
+the pod has multiple containers you have
+to specify which container you want this
+one only has one container container
+logs so most of the time your container
+logs are your pod logs especially if
+your pod only has one container in it if
+something has gone really wrong on your
+cluster and you can't get the logs from
+the pod with cube CTL you may have to
+SSH into your container host and get the
+logs that way and how you do that it's
+gonna vary by your container run time
+you're gonna do one way with docker
+another way with Rockit another way if
+you're using something else I honestly
+haven't had the time to look in depth in
+the house ERI does it but I know there's
+like CRI control that you can use to get
+logs and things like that so just keep
+that in mind
+that's you may have to go back to the
+good old fashioned SSH you can also run
+what I think of as a debugging container
+and I think somebody mentioned that in
+one of the keynotes today when they were
+talking about things you can actually
+SSH to a host figure out where the
+process that señor troublesome container
+is and you can attach another process to
+that containers namespace if you're
+running docker you can actually attach a
+whole container to that containers
+network namespace and pit namespace and
+all that and so what that allows you to
+do is you can run let's say you you're
+on a rail host but you feel more
+comfortable debugging things in a debian
+environment you can SSH to the host run
+a debian container attach it to the
+namespace you need to attach it to and
+then use the tools you're familiar with
+or in some cases there may be a specific
+debug container that you have for your
+particular application it has diagnostic
+tools that you can use to interrogate
+what's going on either way and it's also
+a little bit of a Hail Mary right if
+your application doesn't provide good
+logs or it's logging but it doesn't know
+what it's having trouble with at least
+you can fire up a debug container and
+look at the environment and maybe that
+will give you an idea what's going wrong
+also if your host is having issues do
+you really want to be installing
+packages on that host right now
+container is a good way to just get
+something running you can use the debug
+without having to make
+and system configuration changes what
+are we looking for the first thing
+you're looking for is what is your
+normal behavior and I call this normal
+app model because if you looked at this
+and you didn't know that this is
+perfectly fine when you start up we've
+scoped in an environment without weave
+networking then you would look at that
+and you would start trying to debug this
+and you might waste a lot of time trying
+to debug this when this isn't actually
+the problem you're having
+whatever the problem you're having is
+it's not that so know what you're normal
+and you're normal abnormal behavior
+looks like networking issues I don't
+really have an example of this one
+because it's so vast I don't want to
+give you an idea that like oh there's
+eight bullet points and if I go through
+them I don't have a networking issue no
+but the advantage is networking issues
+are the same as they've always been so
+if you're on the host you're debugging
+the network you're still debugging the
+network in the same old what you've
+always done TCP dump or you know
+whatever your packet capture method of
+choice is do you see the interfaces you
+should see did you deploy the cluster
+network if you did are the cluster
+networks you know flannel or weave pods
+starting up these are the things you're
+looking for and you know sometimes you
+go back and you go oh there's a firewall
+but I didn't know about so debugging
+your network flows is something that you
+may occasionally need to do and the
+annoying thing about it is if it's your
+network flows that are the problem
+that's tends to be when your
+applications just don't know what's
+going on because all they know is they
+can't communicate with each other pod
+startup issues are your pods getting
+scheduled do you see them in the list
+when you do get pods if they're getting
+scheduled are they starting up do they
+just stay in pending forever we'll look
+at some examples of what that might be
+later are they starting up and then
+crashing there's a crash loopback off or
+an image pull error or maybe an edited
+container is failing or it may take a
+while you may have a pod that starts up
+fine runs fine for a while but it's
+leaking memory and so eventually that
+memory gets too much and it just gets
+killed by the host because it ran
+memory service discovery issues now if
+anybody's paying attention here you'll
+notice that we aren't in 2018 yet and so
+this is my example of if you typo a
+configuration and you're looking for
+something using a service name that
+doesn't exist in this case it's the
+we've scoped agent is trying to contact
+the we've scoped front-end and failing
+because I put the wrong host name in
+there deliberately
+for demonstration purposes but this is
+what it looks like
+note that this is coming from the
+application again we're going to come
+back to that theme of you do depend a
+lot on your application logs so are you
+having DNS issues beyond that maybe it's
+not something you did wrong maybe it's
+that your cluster DNS isn't starting up
+or running properly did you deploy your
+app in the wrong name space because name
+space matters to service host resolution
+do your services have endpoints if the
+services created correctly and the eight
+and the app is contacting it correctly
+is what's supposed to be behind that
+service actually there maybe there's
+nothing there so you do a coop CTL get
+and tube control get endpoints on the
+service and see if there are any
+endpoints access control this is one
+that's been biting a lot of people
+lately especially in the helm community
+because when helm charts started to do
+our back things they initially were
+advising people to default to are back
+false meaning don't create the are back
+resources but then everything kind of
+flipped and for about the last couple of
+months
+all the cluster installers have been
+defaulting to turning our back on so now
+all these old help charts that worked
+fine when they were first created and
+uploaded to github are now failing
+because they're not creating our back
+resources and that's what they need to
+have this is what an are back failure
+looks like again this comes from the
+application you don't really get to see
+this in the API server logs or anything
+like that I mean I suppose if you sat
+down and actually did a TCP dump on that
+IP for the API API server you would be
+able to see these requests coming in but
+you don't really get a good easy view
+of our back issues and kubernetes so
+again the application has to be smart
+enough to tell you what's going on and
+here we see it's failing to list things
+because it doesn't have permissions to
+list anything it can't even read
+anything out of the API server the other
+thing that people are running into now
+since it's gone stable is network policy
+preventing traffic just like people used
+to bite themselves with iptables rules I
+just saw somebody do it the other day in
+a production environment network policy
+sometimes if your policies aren't
+written exactly the way they should be
+you can cut off traffic that shouldn't
+be cut off the other one I see although
+not so much anymore because most cluster
+installers take care of it for you to a
+large extent is TLS issues either using
+the wrong TLS credentials or not having
+TLS credentials for something that
+requires them or certificates have
+expired or whatever the case may be how
+do you fix it
+well it used to be you had to go into
+the hosts and restart daemons and change
+config files and all that you still
+change a config file but kubernetes does
+a lot of cleanup for you so you change
+your config file you fix your container
+tag or your network policy rule or
+whatever you do a cube CTL apply
+kubernetes will do a large part of the
+cleanup for you so don't make work for
+yourself don't do something like go in
+and delete a bunch of pods in a failing
+deployment and then fix the deployment
+because if you delete those failing pods
+they're just going to be respond as new
+failing pods let kubernetes fix it for
+you preventive measures this is where I
+get to rant for a little bit application
+design how many developers we got in
+here yep lots of it how many of you
+developers are deploying applications on
+kubernetes okay not as many but still
+quite a few do your applications log
+diagnostic info and do they do so
+correctly and I call out here just
+because I'm always amused by the fact
+that it is still in the Linux source
+code lp0 on fire now if you get that
+error and you can get that error it
+doesn't actually mean anymore that your
+printer is on fire it means that
+Euler combination of air conditions has
+happened but that error message is still
+in the Linux source code it still comes
+up for that combination of air
+conditions that it's no longer the
+message itself is no longer relevant
+they should be giving people a much more
+informative error message as to what's
+going wrong
+don't write lp0 on fire error messages
+and the reason I call that one out is
+because that's one that actually did
+approximately mean your printer was on
+fire back when it was written but it's
+been superseded by events so always make
+sure that you go back and review the
+failure circumstances of your
+application and how it behaves
+are you logging enough so maybe you're
+logging correct things but you aren't
+logging enough of them or in enough
+detail
+I love applications that let me specify
+the level of verbosity you do a Kubb
+control - be 99 you get everything you
+probably don't want everything but it'll
+give it to you anyway
+and even if you're sure you're writing
+enough detailed logs go ahead and make
+it more detail
+do you have diagnostic tools and do you
+document them I talked earlier about
+using a debug container what good is a
+debug container if you don't have the
+tools to use in it to debug anything so
+if your application needs specific debug
+stuff I mean if your application can be
+debugged by a regular old TCP dump
+session fine document that because even
+if you have the tools and they're not
+documented
+they don't do anybody any good and then
+the last thing and I know I'm kind of
+preaching to the choir on this and I
+will be again in the next slide is how
+safe is your data and state in case of
+your app failure we're working in cloud
+environments now this is the thing we
+have to worry about you can't just go oh
+well if the process gets killed then
+everything is resident on the disk
+what disk you might not be even be even
+saw on the same node when you come back
+up can you roll back from migrations
+have you tested rolling back from
+migrations if you haven't tested your
+recovery plan you don't have one
+pre-deployment I know there's been lots
+of talk and especially in the keynotes
+about automation tools my favorite one
+is helm I participate in helmand
+community my demos are actually
+generated by helm templating a helmet
+art that I've been working on and have a
+you're in for so you'll see like the
+helm labels they're not necessarily
+relevant to the demo itself but they're
+there it was just an easy quick way to
+get a demo going and one of the things
+that the help community preaches and for
+good reason is factored out redundancy
+because every time you repeat yourself
+you give yourself a chance to repeat
+yourself wrong and your environment
+should not only make both of those
+possible it should be the easiest way to
+operate in your environment you should
+be telling your developers you know or
+your code developers don't do all that
+work to deploy manifest manually we have
+a helmet art in a home chart repo just
+helm install it's easy and if it's easy
+and if it works correctly then that's
+what people will do so helm draft the
+other brigade is a scripting language
+that helps automate a lot of things
+consider the cluster autoscaler it can
+help you avoid outer resources problems
+and the last thing is test environments
+are not optional I don't care how small
+your budget is you need a test
+environment if you don't have the budget
+for a test environment you don't have
+the budget to run and I know somebody
+has a reason why they can't afford a
+test environment you're wrong you need a
+test environment post deployment
+application validation tests this is
+another thing the helm community has
+started doing they want people to write
+a test into their charts so that after
+the charts deployed you can do helm test
+you should do the same thing if you
+Jenkins deploy an application after its
+deployed make sure that it actually is
+running properly ongoing monitoring I
+don't have to tell anybody in here about
+monitoring your applications right but I
+think some people and I don't think
+anybody in this room but some people's
+management of people in this room may
+not have gotten the message that you
+don't need to alert on every little
+thing and especially in a kubernetes
+environment a node going down at 3:00
+a.m. in a properly designed environment
+is not a reason to page anybody and wake
+them up out of bed it is a reason to log
+something and maybe throw an email out
+there but unless you actually lose the
+end-user access to the application don't
+wake people up that's I saw that I saw a
+Prometheus presentation when I worked at
+core OS and that was the guy's main idea
+is
+what matters is what the end-user can or
+can't do and at the end user can do
+everything they should be able to do you
+shouldn't be waking people up adopt the
+chaos monkey every now and then go into
+your data center and just yank a plug
+out whether you do that in a literal
+sense or a virtual sense somebody has a
+chaos monkey agent that you can deploy
+under kubernetes cluster it'll randomly
+kill pods and things like that and the
+reason I say that is you show me a
+server with high uptime and I'll show
+you a server that has unstirred changes
+just waiting to bite somebody as soon as
+it reboots where you can get more help
+kubernetes docks the API Docs I go back
+to all the time I was all over this API
+Docs while I was researching for this
+talk there's also other good info on the
+main tasks page there's a sidebar there
+and it doesn't seem to work to link
+directly to specific things under the
+sidebar but if you go to the main page
+and you go under monitor login debug
+there's actually troubleshooting
+clusters and troubleshooting
+applications and he'll recap a lot of
+this info kubernetes slack channels
+kubernetes Navas kubernetes users
+depending on how confident you feel a
+lot of the time people come into
+kubernetes novice and I actually saw
+this as the channel topic the other day
+it said if you don't get an answer it
+may not be an honest question go ahead
+and ask it in the other channel look
+within yourself if you've been working
+in IT for 20 30 40 years and you're
+going well now I'm in a cloud
+environment all that knowledge I have is
+just it's not relevant anymore no it
+still is none of this is new Hen
+Goldberg said that yesterday right here
+on stage none of what we're doing is new
+we're just putting it in a different
+environment this is my favorite
+networking document RFC 1925 it was
+submitted as a joke but it's one of
+those haha only serious jokes it was an
+April 1st RFC from 1996 if you go read
+it it will give you advice that you will
+be able to apply to your kubernetes
+clouds today I guarantee it
+the other thing that I personally find
+useful is take the time to actually sit
+down and fully describe the problem
+you're trying to solve because in the
+act of this
+driving it you often go oh I know how to
+fix that they call it rubber duck
+debugging or teddybear debugging or
+whatever some people go and describe it
+to a co-worker who doesn't know anything
+about it so it forces them to describe
+it at a high level of detail either way
+just take the time take a breath sit
+down and think about it
+demos let's see we have about 12 minutes
+left I'm gonna skip over demos for now
+because I want to give people a chance
+to ask questions but have a couple of
+final thoughts we just scratched the
+surface like I said I'm just gonna run
+right over this and I don't expect
+anybody to walk out of here and retain
+everything I just said that's why I
+posted the slides online and why there's
+a link to the slides aren't there tools
+for these kind of things am I actually
+gonna have to go in there and do coop
+control logs and cube control get events
+there are tools but what happens if
+deploying the tools goes wrong what
+happens if the tools get deployed and
+they fail what if something happens that
+the tools aren't don't know how to deal
+with so it's still good to have that
+base knowledge of how to do this kind of
+manually under the hood but there are a
+lot of tools out there that are
+wonderful tools that will help you find
+and fix these kind of things and
+definitely you should go try out tons of
+them find out which ones you love that
+work well for you come back to cube con
+next year tell us all about this awesome
+tool that you found and how it helps you
+recover from a you know production
+sub-zero outage and how much you love
+that tool because that's what
+everybody's been talking about community
+the last three days that's kind of what
+the community is all about go out and
+find the things that work and come back
+and tell everybody else about it
+don't fall for impostor syndrome this is
+just more believe in yourself you know
+more than you think you know and once
+you start digging down into it you're
+gonna realize oh I know what we need to
+do here if you feel like you're drinking
+from the fire hose it just means you
+actually know what's going on and Ilya
+I'm gonna butcher his last name check
+check Regan on stage yesterday said
+trust yourself that's what this is all
+about just giving you enough knowledge
+to get in there get on that command line
+and know that you can trust yourself to
+at least
+find out some of the info about what the
+problem is does anybody have any
+questions I have a microphone if anybody
+wants to borrow it or you can just yell
+no questions oh one question
+yes there is a way to do that I don't
+remember what that is off the top of my
+head but I know that you can get the
+logs from a previous execution of if
+you're doing it through coop control
+it's the previous execution of that pod
+but if it's a single container pod it'll
+be the logs for that container what's
+that
+there you go see we're already sharing
+knowledge coop CTL logs - P yeah yeah
+anybody else
+oh I should have put that in there
+and I and and I don't remember it off
+the top of my head but if you go out
+there and you look up chaos monkey
+kubernetes agent in Google I I think you
+will find it I will make a point though
+when I post the updated version of these
+slides I will link that to the one that
+I was thinking of so you will get to
+that just a second yes if it's the
+cluster itself then depending on how
+that cluster was built you may be going
+in you will almost always be going into
+a node like connecting directly to a
+node and then either doing a journal CTL
+or looking at syslog if it's a syslog
+system or looking at the docker logs
+directly of the containers that run the
+control plane components if that's how
+its set up there are different ways and
+so there isn't really one answer to that
+but yeah if you have really deep issues
+with your cluster you probably are gonna
+have to go really deep into the host to
+debug and resolve them generally if it's
+something to do with the cluster you
+will see really severe problems like you
+can't coop control anything right and it
+will be stuff that's not even like bad
+credentials that you go oh I have the
+wrong context file or something it'll
+just be like timed out or connection
+refused or whatever the case may be you
+will see if you do a coup Control get
+nodes you may see nodes not ready that's
+often because their networking isn't
+correct they're not starting up the pod
+and network like they should so they're
+not ready and they can't be used for
+scheduling once you start getting down
+into that the possibilities are vast but
+again
+and a lot of the knowledge that you
+already have from debugging hosts issues
+still applies everybody else okay
+the most common modes that I see there
+and the most common install methods are
+running them directly out of a container
+on the host or actually running them as
+self hosted pods and the system that I
+use for spinning up little demo clusters
+called boo cube and also cube ATM tend
+to run them as actual pods with
+manifests so you will actually a lot of
+the time be able to go into for example
+the cubelet logs and if it can't run the
+manifest to run the API server then the
+couplet will have some kind of log as to
+why that manifest wouldn't run or what
+the error may be anything else think I
+have time for a baby definitely one demo
+maybe two so let me switch to my demo
+window make sure this is still up yes I
+will make that much larger for everyone
+where's the zoom on this guy there we
+are
+zoom in ctrl + okay so whoops oh there
+we go I just have it I'm gonna shift it
+down one there
+these files by the way are also linked
+off of the slides which I will put up
+the thing for the there's a QR code and
+a slide link that I'll put up at the
+very end of this so the demos I can do I
+can do an app communication error a
+crash loopback off here a discovery
+failure failed mount error that's a fun
+one because it just never comes up image
+polar pods stuck in pending or an hour
+back issue show hands for app
+communication error show hands for crash
+loopback off
+oh I think that one might win discovery
+failure failed mount image pull air and
+penning pod oh and our back issue okay I
+will do crash Lea back off and then if I
+have time I will do let me see pending
+again and let me see our back again okay
+I think that's a rough high but I'm
+gonna do our back if I have time so let
+me get my cube context here CD to crash
+loop back off now yes broken so these
+are divided up into broken and fixed and
+so I have a broken deployment here and
+we'll see it going to crash loopback off
+on my deployed cube cuddle and apply
+dash F broken deployment okay now if I
+do a cube CTL get oh yeah see I already
+have an error if I watch ash n whoops I
+need to pass an argument to that well
+see it's already gone into crash lead
+backup now what am I looking at there I
+need to get the logs from this pod
+not get logs I have to remind myself of
+that ah now this is it
+this looks cryptic but what it actually
+is if you look at the manifest this pod
+just runs a busy box container that runs
+a sleep command and so if I look at that
+sleep container broken deployment down
+here I gave it an argument sleep R well
+R is not a number of seconds to sleep so
+it quite reasonably terminates with an
+error kubernetes says well that pod
+terminated with an error I need to
+restart that container because that pod
+needs to stay up it's part of a
+deployment but it's just gonna keep
+doing that over and over so eventually
+it goes into crash sleep back off the
+solution to that is to fix your
+deployment and the way I do that and
+this is whoops I'll just scroll down
+manually I changed it from R to I
+actually put in the actual we've scoped
+container a thing that will run normally
+and I can coop CTL apply - F and now
+it's configured my deployment and if I
+do what I did before we can see the old
+one is terminating already the new one
+is coming up and has already gone into a
+running state so we fixed it kubernetes
+cleaned up after us we didn't have to do
+anything but fix it and reapply that's
+the great thing about declarative
+systems management all right one more
+I'm gonna do the are back one let me
+clean up after this ABC help delete
+I know I need a space there okay
+this one's gonna be fun all right our
+back issue all right same thing we did
+before
+oops no I'm just gonna deploy the whole
+directory it creates a couple of things
+now this is the fun part these things
+will start up so initially it looks like
+nothing's wrong everything's that's the
+old one that's still terminating from
+before but everything looks like it's
+running so everything should be okay
+right but if I actually go into my weave
+scope front end which I don't have time
+to set up the port forward for right now
+I will find out there is no data being
+reported to it which means the agents
+can't talk to it or the agents don't
+have any data to give it so what's the
+problem well we know it's a problem with
+the agent just because we know how we've
+scope works so I do a cube CTO yet log
+no I do a coop CTL logs not get logs
+uh-uh
+see here we go this is all the stuff
+that I showed you before failed to list
+failed to list cannot list services at
+the cluster scope what's the fix the fix
+in this case is I'm not updating any of
+the resources that I created before I'm
+adding resources a cluster role in a
+cluster role binding and then those
+errors will go away and now if I do a
+cube see tale logs on the agent well it
+goes into a back off it's backed off to
+a minute and 20 seconds now so what I
+would probably actually do in reality is
+just go ahead and delete that demon set
+and reapply it in fact I have probably
+just about enough time to do that it's
+elite this is the fun thing about
+working with kubernetes you get to just
+delete things willy-nilly broken
+demon set okay takes a while has to kill
+all the demon set pods this cluster is
+running back home in West Virginia by
+the way okay so now I can apply fixed
+demon set Oh actually it's still broken
+demon set because it didn't change do a
+git PO pick an agent cube CTO logs and
+publish loop starting its collecting
+info and it's already started to publish
+it to the front end which again if I
+pork forward it to the front end we'd
+actually be able to see this nice little
+diagram of the cluster I don't think I
+have time for that just because I'm
+getting a signal time is up so with that
+I will very quickly give my grateful
+appreciation to my ot my management Sam
+and Raja and the other people at O Teemo
+for supporting me getting here justin
+garrison and michelle murali helped me
+with my abstract core OS engineers and
+red hat trainers helped me learn how to
+do all this stuff that i just showed you
+how to do and thank you for listening
+[Applause]

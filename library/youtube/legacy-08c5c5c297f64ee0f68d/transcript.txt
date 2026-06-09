@@ -1,0 +1,548 @@
+Sophie is deaf, like 6% of the
+world's population. Most often,
+this deafness is linked to
+genetic factors. Today,
+more than 120 genes have been identified that are responsible
+for hereditary hearing loss and
+unfortunately, there is no
+biological treatment to combat this
+genetic deafness. Finally, that was
+before a team from MIT succeeded in
+returning Louis to Sophie by
+simultaneously targeting two genes responsible for
+his hearing loss. For this, they
+used a technology discovered in
+2012, Crisper C9. A
+gene-editing technology that is changing the game
+in all areas of biology.
+Oh, and I didn't tell you, but Sophie,
+uh, she's a mouse. We are not
+yet at the stage of genetically editing
+humans. Although in this video, we will
+discover step by step a
+scientific revolution through the story of the one who
+originated it. Today, I'm going to
+tell you how a French woman,
+Emmanuel Charpentier, shook up the
+world of life sciences with
+Chrisper Cassnein.
+The Nobel Prize in Chemistry was awarded
+today to two women. American
+Jennifer Doutna and Frenchwoman Emmanuel
+Charptier.
+Two women who become the 6th and
+7th to win a Nobel Prize from Chile,
+including a Frenchwoman, 109 years after Marie
+Curie. It
+all started in Japan in the
+80s. Well, actually, like all
+recent scientific discoveries, it
+goes back much further. We
+could take as the starting point
+of our story an article published in
+Nature in 1953 in which James Watson
+and Francis Crick demonstrate the
+double-list structure of DNA, or we could
+go back even further and start from
+the very discovery of DNA by the
+Swiss Frederich in 1869. But that
+video would be hours and hours long.
+Especially since Crisper's story is
+a story that moves fast, very, very
+fast. In just a few years, there are a lot of
+stories to tell. In fact,
+humans have been practicing genetic engineering for thousands of years
+. In agriculture,
+for example, when we select the
+most advantageous shoots, whether
+because they are more resistant or
+have more flesh, we have
+genetically hardened certain species to our
+advantage. Finally, by discovering
+DNA, the carrier of
+genetic information, the instruction manual, we understood what we were doing
+and from there, everything
+accelerated. In 1974, the
+first genetically modified animal was created:
+a transgenic mouse. In 1982,
+insulin produced by
+genetically modified bacteria went on sale. In
+1987, a virus-resistant tomato was created
+. In 1996, Doli was born
+, the first mammal cloned from
+an adult cell. Then there were
+cows, horses, and
+today, in 50 cases, you can have
+your dog cloned in the United States. In
+2000, the artist Édouard Cac had a strange
+idea. He inserts the gene that produces
+a green fluorescent protein from a
+jellyfish into Alba, his rabbit. The result,
+presto, a fluorescent rabbit. I'll stop there in
+2000 because otherwise I risk
+spoiling our story for you. And the
+main character in our story is her,
+Emmanuel Charpentier. Well, this photo
+is from the day he received his
+Nobel Prize. Oh dear, spoilers, we're not
+there yet. A few years after
+the strange discovery in the
+Japanese laboratory, Emmanuel has just obtained a
+doctorate in microbiology from
+Pierre and Marie Curie University. From her
+master's internship onwards, she was drawn to the idea of ​​a
+project that she could lead herself.
+So, if she turned to
+biology, it's because she always had
+many questions about us,
+humans. She turned to the
+life sciences to understand the
+world, to understand herself. After completing
+her doctorate in Paris, she went to New
+York to do postgraduate studies. She
+worked on bacterial genetics
+and her work would be the beginning of
+what would lead her to the highest
+scientific distinction. But
+again, I'm going too fast. So,
+let's get back to our Japanese lab. It's
+1987 in Osaka and a group led by
+this guy, Yoshizumi, Ishino, are
+looking at the torn genome each under a magnifying
+glass. In terms of bacteria, it's the star
+of the labs. It is simple, easy to
+grow and it grows
+quickly. And so, by analyzing the DNA of the
+bacteria, they identify sequences
+that repeat. More specifically, they
+discover palindromic sequences.
+The word kayak, for example, is a
+palindrome. Well, here it's the same
+thing but with the nucleotides of
+DNA. Well, they're thinking, "OK, it's kind of
+funny, but we don't really know what
+it's for." We'll call it
+simply clustered regularly
+interspindromic
+repats or crisper because it's
+simpler. It would take until the
+21st century and the perseverance of a
+Spanish researcher to understand the
+function of these palindromic sequences.
+I say perseverance because Morik
+has Galéros to publish his results. He
+received five successive rejections. The topic is
+not fashionable. Yet what
+Francesco found was absolutely
+essential. In fact, he realizes
+that these structures are part
+of a defense system of bacteria
+against viruses. What is
+interesting is not these
+palindromic sequences themselves, but rather
+what lies between these two
+palindromic sequences of
+viral DNA in the bacterial genome.
+Thanks to these small pieces of
+viral information, cells remember
+the viruses they have been
+exposed to in order to better fight them. a
+bit like a genetic vaccine. It's a bit
+like if, after leading a
+victory against a virus, she
+takes a piece of ADANN's sound and
+keeps it as a trophy to remind herself what
+her enemy looked like. And what's
+crazy is that this information was
+passed on to the offspring of the
+cell. So the cells are
+protected against viruses over several
+generations and even with this
+publication, Chrisper remains a
+niche topic within the
+scientific community. But some researchers are taking an
+interest in it here and there, and that is the
+case of our national Emmanuel. She can be
+found in Vienna, Austria, leading
+a small team that studies
+small bacterial ARs. We talked about the N quite a bit in relation to
+Covid vaccination.
+The N is a molecule that also carries
+genetic information like DNA, with
+one difference: a different nucleic base
+. But there's no need to go into
+details. AR RN in the
+cell nucleus. It's a copy of the DNA, a
+transcription. Therefore, the RNA molecule
+carries the same genetic information as
+the transcribed DNA molecule. It's a
+fragile photocopy of our information.
+Fragile because the lifespan of
+this molecule is only a few
+days at most. But then what is the point
+of making a copy of
+genetic information?
+There are several types of RNA for
+several functions, but the one that
+interests us here is messenger RNA. In
+fact, the messenger will have the role of a
+messenger. It will exit the nucleus to
+deliver the message and serve as blueprints
+for protein production.
+Step by step, Emmanuel's team
+demonstrates that the crisper system of the
+bacterium they are studying consists
+of a CASnin protein and a nucleus
+capable of cutting DNA and two RNAs.
+She realizes that when a
+cell is infected by a virus, the
+CRISPR RNA can guide the C9in protein
+to the virus's DNA that is
+infecting it in order to destroy it.
+Although basic science is
+hard work, experiments fail
+on a regular basis and it
+often takes years before
+results are finally visible.
+When she was in New York, it had
+taken her years to successfully
+genetically modify a cell, and now, before
+her very eyes, the cell was doing the job with
+disconcerting ease. She
+worked for years on the system and
+published her research from the UMEA microbiology center
+in Sweden in the
+journal Nature in 2011. And that's
+absolutely brilliant.
+In 2011, Emmanuel was an
+accomplished researcher. She has already published around
+thirty articles, including two in
+major journals, one in Science and one
+in Nature, which we just mentioned.
+Well, even if it's not as a full-fledged author
+, it's incredibly cool to be
+published by these magazines. OK, let's take
+a look at his papers, the last
+author is the one we call
+the senior author. In fact, it is often the one
+who supervised the
+research project. Generally, it's the one who
+comes up with the idea. He's basically the boss.
+Signed as a senior author, that's
+classy, ​​especially since it was published in
+highly renowned international journals
+. So generally, the first one
+is the young guy who put all his
+energy into it, who did sleepless nights
+to do all the results, all the
+graphs and so on. The last one is often
+his teacher, the one who supervised,
+who gave the idea. And then 2nd, 3rd, 4th,
+5th, that's all the colleagues in
+descending order of their contribution. In short,
+Emmanuel P, like many
+scientists, is working in her corner
+trying to understand Chrisper, to
+decipher his mechanisms, but she's
+struggling. She is reaching a phase in
+her project where she needs
+external expertise, someone who is knowledgeable
+in
+structural biology. And for that, she thinks of
+an American scientist she
+met a little earlier at
+a microbiology conference in Puerto
+Rico, a certain Jennifer Douin.
+She said, you know, been wanting to
+talk to you. GL to meet you in person
+because thinking you might collaborate
+with my lab on on a project.
+We were speaking the same language in
+principle and we had the same way of
+approaching science
+very nice moment.
+Jennifer is a prodigy, a
+genius researcher. At 30, she is
+already a professor at Diel University. To
+give you an idea, Jennifer has
+published over 300 papers in
+top journals and often as an
+SEO author. In short, it's the elite of
+American research.
+She's been interested in the
+Crisper system for a while now, but I remind you, at the time, basically nobody cared about
+that thing and Emmanuel
+asks her if she's interested in deciphering
+the structure of the Crisper C9 protein.
+Of course, she agrees and it goes
+well. The collaboration is going well. After
+each having experienced a lot of things on their own
+, a lot of failures, a
+lot of frustration at not finding
+exactly what they were looking for, the
+two researchers now complement each other well and
+everything accelerates. By delving into the
+mechanics of life, the mechanics of
+contraction, they demonstrate that
+this simple, robust and easily
+programmable system could
+specifically cleave a certain part of
+the DNA. Basically, you can program
+the Crisper Swimmer and it allows you to
+make a cut at a very
+specific place in the double brown wire. In fact, what
+they are developing
+is DNA scissors. So, of
+course, very quickly, this led to a
+publication in Science in August 2012.
+A real bombshell. The two
+researchers had just made a
+historic discovery, a
+revolutionary genome editing tool. It is
+sufficient to produce an RNA whose
+sequence is complementary to the one being
+targeted. And in reality, it's not
+complicated, it's not expensive, any
+lab can access it. And with
+that, we can edit the genome very quickly
+and at a lower cost. In fact, what we have just
+done is
+put genetic scissors in the hands of all
+biologists in the world
+. Scissors that can
+cut DNA pretty much anywhere you want. Of
+course, the news had a
+bombshell effect and spread like
+wildfire through the labs.
+Crisper Cast9 made
+genomic editing super accessible and a huge number of others
+have of course followed suit. However
+, be aware that there have already been
+genome editing techniques, and there have
+even been Nobel Prizes awarded
+for them. We've been making
+transgenic mice for half a century. But
+if we already know about
+genome editing, how is this a
+real revolution? In fact, before
+Chrisper, modifying a genome could
+take years. Crisper
+makes fish fluorescent in days. And
+since the publication of the
+Chercheuse duo, new applications
+have been published almost daily.
+New publications and with them each day
+a flow of hope. And when I
+think of the hope inspired by Christ9ine,
+I think very directly of the
+medical field, of genetic scissors against
+genetic diseases. Let's take
+the example of sickle cell disease, one of the
+most widespread genetic diseases
+in the world. It's a hereditary disease
+that causes red blood cells, which
+usually look like this, to take on
+a crescent shape and a whole
+host of not-so-great symptoms
+that can even lead to
+death. So, a clinical trial was
+launched on 17 patients with a
+gene therapy based on Christ9ine. And among
+these 17 patients, 16 have not had any
+episodes of pain for at least a
+year. At the beginning of the year, the
+European Commission approved the first
+gene therapy, Crisper Cneine. It's a
+dream come true, especially since on paper, all
+diseases caused by a
+dysfunctional gene could be treated
+thanks to Crisper. Research is generating a
+lot of hope in the fight against cancer, for
+which clinical trials are also
+underway. The idea here is to use
+Castine to
+genetically modify the cells of our
+immune system so that it starts
+attacking cancer cells.
+In addition to treating
+genetic diseases and targeting cancers,
+Crisper also enables
+basic research to be conducted to understand
+cancers.
+Specific mutations can be recreated in
+healthy cells, or genetic sifting can be performed
+by inactivating each gene in the
+genome one by one to find the
+Achilles' heels of cancer cells. So
+here we are talking about genetically modifying
+humans, but the applications of
+Crisper go far beyond
+treatments for Homo sapiens.
+Work is underway to modify
+animals and produce organs that would
+be more compatible for
+transplants in humans. For example,
+there have been trials with
+pig hearts. Okay, fine. Another example is
+malaria, which causes 600,000 deaths per year. Of the
+3000 known species of mosquitoes,
+only 10 can transmit
+malaria. Malaria is caused by a
+parasite, Plasmodium, which is transmitted
+by mosquitoes. And in fact, by
+genetically modifying the mosquito, by
+increasing the pH of its stomach, we can
+prevent the parasite from living there and in this way
+, we could imagine eradicating
+malaria and saving hundreds of thousands
+of lives each year. And the thing is,
+modifying mosquitoes means
+modifying an entire environment. For
+example, mosquitoes play a role
+as pollinators, so this could
+potentially have an impact
+on plants and wildlife as well. And
+ultimately, every time we use
+Crisper C9, it raises major
+ethical questions. As
+I told you, everything happened
+very quickly, perhaps too quickly. In
+any case, that's what
+many scientists thought when they saw all
+the biologists starting to cut up the
+genome everywhere. The use of
+Crisper raises the famous question: "How far
+can we go? How far should we go
+?" But if we're talking about
+hereditary diseases, modifying an embryo to
+eliminate the gene responsible for an
+incurable disease, well, on paper, it
+seems pretty cool. The thing is that from the
+moment we start making
+hereditary modifications, we are talking about
+modifications that will be
+passed on to all
+future generations of the people who have undergone these
+modifications. In fact, we are reshaping
+the human species. So, when it comes
+to eradicating diseases,
+why not, after all? But what is the limit
+? We could also modify the size,
+power, and strength of the EOS devices to
+minimize the risk of fracture. And what exactly is
+a good gene, anyway? Little by
+little, we could tip
+into a society where the richest
+could afford to have custom-made babies
+with physical and
+intellectual capabilities superior to those of the
+working classes.
+Genetically exacerbating inequalities between
+social classes, we agree, but this
+is straight out of a
+science fiction movie. So perhaps that's ultimately where
+the line lies between being
+rigid and not touching the
+human genome.
+So, let me introduce you to Lulu and Nana,
+Chinese twins whose genome has been
+modified to make them resistant to
+HIV.
+Shocking announcement from the Chinese biologist. Jean
+cuit caused an uproar in the
+scientific community. It would be good
+not to forget that this case, if
+confirmed, primarily concerns
+two little girls, the twins Lulu
+and Nana, who will undoubtedly enter, much against their will,
+into the history of
+science as the first human at the
+GN.
+In addition to sweeping aside all the norms,
+Jean Coui, the Chinese researcher
+behind this
+genomic modification, did a
+completely irresponsible job
+scientifically because of his lack
+of rigor. So yeah, that's causing an uproar
+. Jennifer Doudna says she is
+horrified. 120 scientists express
+their outrage in an
+open letter. A moratorium on
+human DNA engineering has been called for by the
+research community. A few months
+later, a group of
+internationally renowned scientists published a
+letter again in the journal Nature
+calling for a global pause in
+the use of Chrisper
+Castin technology on all
+human germline cells. Germinal
+means that these are the cells that
+will be passed on to
+subsequent generations. Their main
+concern is that
+gene editing at this level could lead to
+hereditary changes with
+potentially
+unpredictable and irreversible consequences for
+future generations. This letter
+highlights a crucial problem.
+Technology is evolving too rapidly
+compared to the implementation of ethical standards and
+regulations. Especially since, at
+the moment, we don't really have the
+perspective on the long-term effects. For
+example, the clinical trial that began in 2023
+on sickle cell disease is scheduled to last
+15 years. So we don't know the
+stability of the modification over the
+long term and over future
+generations. In 2020, Emmanuel
+Charpentier and Jennifer Duna received
+the Nobel Prize in Chemistry for the
+discovery of the Crisper Cast9 system.
+This is the first time a Nobel Prize in
+science has been awarded to an all-
+female team. The
+scientific revolution they developed has
+already won around forty
+scientific prizes. They are the
+inventors of a simple and quick tool
+for modifying human genes. What they
+called a DNA-cutting scissor
+capable of creating or correcting
+a genetic mutation and curing
+rare diseases.
+What I find fascinating about
+the story of Christ is the speed
+with which it had an impact on
+humanity. In fact, this invention, well,
+it changed the world. It took about ten
+years to turn the
+world of biology upside down. In an interview
+given after receiving his Nobel Prize,
+Emmanuel Charpentier sheds light on
+what is not seen, those who
+take hold of this basic science and
+give it a practical interest. Those who
+care, who repair, who
+discover and who respond. One thing
+is for sure, we are only at the beginning of
+Christ9ine's story. What happens next, well,
+nobody can predict. It is up to us to be
+creative, bold, and above all, informed and
+vigilant. But this sequel promises
+to be exciting. And I believe we must realize
+the privilege we have of being
+born after giants
+who changed the world and
+brought science and
+technology that mean we are on the verge
+of curing many diseases
+that have caused so much suffering in the
+past. If you enjoyed the video, I
+invite you to subscribe and watch our
+other episodes in the Giants series.
+And if you really liked it, the best thing to do is
+share it.

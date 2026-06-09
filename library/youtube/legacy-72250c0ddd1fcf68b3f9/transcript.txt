@@ -1,0 +1,681 @@
+Imagine two friends launching their
+start-up in the same year.  They had the
+same brilliant idea, imposed the same
+infernal 80-hour work week on themselves,
+and sacrificed exactly the same
+savings.  Yet, 5 years later,
+one is on the cover of Forbes after
+selling his company for a fortune while
+the other is in bankruptcy proceedings
+riddled with debt.  So, what
+happened?  What fills that
+immense gap between what you're
+truly worth and what you end up getting
+?  If we ask this question to
+science, we are faced with a
+paradox.  Take all the
+physical and mental capacities of humanity.
+QU, reflexes,
+work capacity.  If we map this data,
+we systematically obtain the same
+graph, the famous bell curve,
+the normal distribution.  It tells us one
+simple thing, the vast majority of us
+crowd into the center, but above all, it
+proves that humans are biologically
+limited.  No one can run at 1000
+km/h.  No one can work 400
+hours a week.  However, if we
+superimpose on this the curve of
+absolute success, namely revenue,
+notoriety and historical impact, the
+model collapses.  The bell curve disappears
+in favor of a so-called Pareto law, an
+exponential line where a
+tiny fraction of individuals monopolizes almost
+all of the results.  Hence the paradox:
+since it is physically impossible to
+work a million times harder than
+someone else and biologically
+impossible to have a brain a million
+times more powerful, how can
+strictly limited human capabilities
+generate such
+unlimited success?  The answer can be summed up in one word:
+luck.
+However, rest assured, the purpose of
+this video is not to tell you
+that you are doomed to be at the mercy of
+luck.  Because after poring over
+decades of scientific literature and
+running our own
+computer simulations, we discovered that
+luck is not a blind lottery over
+which we have no control.
+It's an equation, an equation that
+rests on three fundamental pillars.
+So yes, the first pillar defines
+the world in which we evolve and
+we have no control over it, but
+the other two are
+concrete levers, skills proven by
+science that allow you to
+mathematically bend the probabilities to
+your advantage.  So, here is the anatomy
+of luck.
+To attack this first pillar, we must first
+clarify a huge confusion.
+In everyday life, we use the words chance
+and luck as synonyms, but they
+are two radically
+different things.  Chance is
+pure randomness.  It's the fact that the
+roulette wheel lands on red.  It's the
+weather or whether you were born in one country
+rather than another.  This is the
+game board and it is 100% uncontrollable.
+Luck is the human interpretation
+that we attach to chance when it
+suits us.  In short, chance
+deals the cards blindly.
+Luck is just the story we tell ourselves
+once we've looked at our
+hand.  But what is the actual role of
+chance in our success?  To
+measure its weight against talent,
+researchers subjected our society to a
+computer crash test, a
+model of 40 years of human life
+which earned them the IGN Nobel Prize in
+2018. And for this video, we
+recreated their simulation.
+And to do this, we relied on a
+pretty awesome tool, Mammoth AI.
+Mamoutay is a French start-up
+that brings together in one place all the
+best on the market such as GPT, Claude,
+Mistral, Géini or Perplexity in
+their most recent versions.
+The huge advantage is that we can
+use Shakia for what she does
+best.  For example, to help me code
+today's simulation, I gave
+preference to Claude, who is formidable in
+programming.  To help me
+analyze complex studies, I
+switch to G mini Pro.  And to analyze
+the data from the chain, I use GPT
+Synking.  And on a daily basis, you can
+select less energy-intensive models
+for your simple tasks in order to
+reduce your digital footprint.
+Personally, I really like Mistral Light,
+but my favorite feature is
+the reprompting tool.  If the Nia's response
+disappoints you, you can send it with one
+click to other models to compare
+their responses.  All this with
+total confidentiality.  Mamoutay does
+not stop your browsing, does not
+link to your data, and you
+can delete your history at any
+time.  The icing on the cake is
+the price.  Subscriptions start from
+€10 per month.  Not only is it
+much cheaper than having
+multiple accounts, but it's
+often cheaper than subscribing to just one of
+them. If you want to try Mamotay
+for yourself, the link is in the
+description.  A huge thank you to them for
+making this video possible.  But
+now, let's get back to our simulation
+and let me explain the
+rules to you.  The rules are simple.  We
+generate 1000 virtual agents with the
+same starting capital.  Then we
+assign them a talent level distributed
+according to a bell curve rated from 0 to
+1. In this video, talent
+represents the personal ability to
+seize an opportunity through
+intelligence, skill,
+competence, or hard work.
+Finally, we let our agents live
+for 40 years.  Along their journey, they will
+encounter events in a
+purely random manner.  If an agent suffers an
+unlucky event, their capital is
+divided by; if they encounter a
+lucky event, their talent comes into play.
+The computer then draws a random number
+between 0 and 1. If this number is
+lower than the agent's talent score,
+it's a success and he doubles his
+money.  Otherwise, he misses the opportunity and
+gains nothing.  The result?  As predicted
+after 40 virtual years, the
+distribution of wealth no longer follows
+the talent curve, but has
+transformed into the Pareto law, with a
+tiny handful of agents amassing a
+colossal fortune.  But the most fascinating thing is
+not that, it's the profile of its winners.
+Intuitively, one imagines that geniuses
+sit at the top of the curve.  Well,
+not at all.  Look at this graph.
+The x-axis indicates the level of talent
+and the y-axis represents the
+final capital.  We then notice that the
+winners are systematically
+agents with merely above-average talent
+but who have benefited
+from the luckiest trajectory.
+In our top 20, the average talent score is
+capped at 0.70.  As for the big
+winners, they have a score of 0.81.
+The most talented individual finished
+93rd.  Struck by
+successive misfortunes or simply deprived
+of opportunities, his immense talent did
+not have enough raw material to
+convert into success.  The conclusion is
+therefore indisputable.  Chance is
+absolutely necessary for immense
+success, but without talent, it spins its
+wheels.  And that's the whole subtlety.
+To land in the top 10, you
+absolutely must possess
+above-average talent.  However,
+the reverse is not true.  Being
+talented is far from guaranteeing you a
+place among the winners.
+Let's take Warren Buffett, one of the
+richest men in history.  He
+himself admits that he succeeded primarily thanks
+to chance.  If he had been born a few
+centuries earlier or in a country at
+war, his exceptional talent for
+investment would have been of no use to him
+.
+I get paid off enormously credit to me.
+I mean I just I just was lucky at birth.
+His immense fortune was based first and foremost on
+a massive initial stroke of luck which he
+calls the ovarian lottery.  To be born in the
+right place, at the right time, a man
+in a capitalist system that values
+finance.  And to better understand
+the importance of this environment, the
+researchers created a variant of the
+simulation.  In rich or
+favored countries, the ratio of
+lucky and unlucky events is not
+5050. It is 80% opportunities
+thanks to infrastructure,
+financial aid or education for only
+20% obstacles.  Conversely, in a
+precarious country, opportunities fall to 20%
+for 80% of obstacles
+due to crises, health deficiencies
+or instability.  So here, we are using
+countries as an example, but in reality, this
+principle applies at any
+scale.  What matters is whether you are
+working in a
+stimulating environment or not.  And the results of the
+simulation are striking.  In
+a stimulating environment, the system
+becomes more meritocratic.  The abundance
+of opportunities allows
+talented individuals to shine.  The average
+talent score of the top 20 rises to 0.74 and the
+big winner has a score of 0.83.  Overall,
+the entire population becomes richer and the
+most skilled individual in simulation
+achieves a very respectable 83rd place.  His
+talent found the material to
+express itself.
+In an unfavorable environment, however
+, it's a disaster.  Everyone
+ends up much poorer.  The winner
+comes away with a talent barely
+above average and the top 20 is
+capped at 0.65.  As for the most
+talented, deprived of opportunities, he
+collapses to 646th place.  Since
+opportunities are too rare for
+talent to really make a
+difference, the end result looks
+more like our
+initial bell curve.  The economist Branco
+Milanovic has quantified this injustice.
+Faced with such a situation, 20% are tempted
+to give up and
+conclude that work is pointless.   Well, that's
+not the case.  Talent
+remains essential.  The real lesson
+of this variant is that the more
+precarious an environment is, the more
+chance dictates the rules, and the more favorable it is
+, the more talent regains its
+rights.  Whatever happens, chance does
+not negate merit.  Without work,
+this boost would be
+completely useless.  If we take a
+step back from everything we have just seen,
+the great lesson of this first pillar
+becomes self-evident.  We cannot
+control the wind and we are far from
+all starting with the same boat.
+Chance is there, it is sometimes unfair and
+it is by definition uncontrollable.
+But there is one thing we have
+power over, and that is our number 2 pillar,
+the exhibition.
+Exposing oneself is a proactive action.   It's
+time to
+mathematically increase one's contact area
+with probabilities.  Imagine that you
+own a field and the sky rains down
+meteorites that represent
+life events, lucky or
+unlucky.  Well, the
+wider your field of view, the more
+meteorites you catch.  But
+in practical terms, how do we expand this
+field?  To understand it better, we're going to
+do a little test together.  We are going to
+reproduce a famous
+psychological puzzle, the Dunker's candle problem
+.  The experiment is simple.
+Imagine that you are placed in a room
+with a candle, a box full of
+thumbtacks, and matches.  Your mission
+is to fix the candle to the wall so that
+it can burn without the wax
+dripping onto the floor.  But before you
+try to solve that, watch this
+short excerpt.
+OK, let's go.  Pause the video
+and when you think you have found
+the solution or you want to
+give up, restart the video.
+Well, all you had to do was
+empty the box of thumbtacks, fix it to the
+wall with a thumbtack and use it
+as a small shelf to place
+the candle on.  If we showed you that short,
+funny clip just before, it wasn't
+for nothing.  Without knowing it, you
+were part of group A of
+the experiment, the so-called happy mood group
+.  In the actual
+scientific study, this group achieved a
+spectacular success rate of 58%.
+For what ?  Because positive emotion
+literally broadened their scope of
+thought.  Conversely, group B,
+which had been put in a stressed mood,
+collapsed with only 30%
+success.  Under the effect of stress, their
+brains experienced a blockage known as
+functional fixity.  The
+participants tried desperately
+to pin the candle directly into
+the wall or to melt the wax to
+stick it on.  They were unable to
+see the box as anything other than a
+simple bedbug container.  But the
+conclusion of this study is even
+crazier.  Being in a good mood doesn't make you
+think faster.  All
+participants who solved the puzzle,
+whether in group A or B,
+took exactly the same time, about 4
+minutes and 30 seconds.  The difference
+is that without this open-mindedness,
+you simply can't succeed.
+Your brain is missing the
+solution.  This expanded field of reflection
+is precisely what allows us
+to accumulate resources,
+skills and relationships.  You
+suddenly notice
+hidden doors that others don't see.
+But once we see these doors,
+what do we do?  While doing my research,
+I came across a very
+interesting concept in decision theory.
+The dilemma between exploitation and
+exploration.  To exploit is to remain
+safe, it is to capitalize on what
+we already know how to do.  Exploring means
+pushing open doors, it means investing
+energy, time or money
+in a path whose return on
+investment is totally unknown.
+Whether it's learning a discipline out of
+pure curiosity or accepting an
+invitation to a party where you don't
+know anyone at all.  And
+indeed, one of the most
+powerful examples of this exploration is
+cultivating one's network.  But beware,
+forget about your loved ones because even if
+intuitively we think that the
+greatest strokes of luck will come from our
+best friends or family,
+this is totally false.  Science proves
+the opposite.  Our close friends live
+in the same world as us.  So they
+have access to the same information.  According to
+sociologist Marc Grenovetter, the
+most transformative opportunities
+almost always come from our
+weak ties.
+When you hang around with your best
+friends, they tend to know each other
+and you form aak with them and their
+best friends are kind of the same as
+your best friends.  So if you want new
+information then you go to your weeks,
+your seventh and eighth best friends in
+different circles from
+other
+windows obviously, we cannot
+explore all the doors.  It's far
+too risky and energy-intensive.
+So, how do we choose?  The secret of
+people who expose themselves intelligently
+is to seek out asymmetry of
+risks.  The goal is simple.  Exploring
+paths where the fall is capped but
+the potential gain is infinite.  Send
+a bold email to a CEO.  Starting a
+personal project on the weekend or going to
+a conference where you don't know
+anyone.  The maximum cost of these actions
+is ridiculous: a simple name, a little
+wasted time, or an awkward moment.  But the
+potential gain is unlimited.  With this
+chain, we are exactly in that
+phase.  We decided to expand our
+scope as much as possible to capture all
+possible opportunities.  We contact
+creators we admire.
+Expert advice is being sought.  We said yes to
+improbable proposals and I'm not going to
+lie to you, we faced walls
+and rejections, but a single
+yes is enough to erase without a name.  And the rare
+times the door opened, it
+led to encounters and
+projects that we could never have
+anticipated.  So, think about it.  We
+encounter highly competent people every day
+without ever daring to
+ask for their expertise.  And it is
+precisely to recreate this dynamic that we
+launched the channel's Discord server.
+We wanted a place to spark
+encounters, to bring together
+radically different profiles and
+allow you to connect with other
+enthusiasts.  If you want to shake up
+your daily routine a bit and come debate
+with us, the link is right there in the
+description.  So obviously, exploration
+is important, but for
+exploration to be fully effective,
+it must be measured.  If you spend
+all your time exploring, you
+scatter your efforts and you don't build anything
+solid.  To achieve this balance,
+companies like Google recommend the
+70 20 10 rule: 70% exploitation
+of your existing assets, 20%
+moderate exploration, and 10% total and
+risky exploration.  And if these companies insist
+so much on protecting this time, it is
+for a very specific reason.  Each
+time we allow ourselves to explore, we
+reap what we might call a
+point, a rare skill, an
+unusual encounter, or a strange idea.
+So, at the moment, this point
+often seems useless, but the art of
+luck is knowing how to connect the
+dots.  And history is full of
+famous examples.  take a calligraphy class to
+learn how to do this.  I learned about
+serf and sand serf type faces about
+varying the amount of space between
+different letter combinations, about
+what makes great typography great.  None
+of this had even a hope of any practical
+application in my life.
+But 10 years later when we were
+designing the first Macint computer, it
+all came back to me and we designed it
+all into the Mac.  It was the first
+computer with beautiful typology.  If I had
+never dropped in on that single course
+in college, the Mac would have never had
+multiple type faces or proportionally
+spaced fonts.  Of course, it was
+impossible to connect the dots looking
+forward when I was in college, but it
+was very, very clear looking backwards
+10 years later.  Again, you can't connect
+the dots looking forward
+looking backwards.
+And this is not an isolated case.  Gutbert,
+who was not a blacksmith by trade, lived
+in a wine-growing region.  He combined
+his knowledge of metallurgy with the
+mechanics of grape presses to
+invent printing.  These stories of
+genius are fascinating, but we wanted to
+measure the real power of this
+exploration.  So we resumed our
+computer crash test.  This time, we're
+changing the algorithm.  We add to our
+agents an exposure gauge ranging from
+1 to 5 which defines how much they will
+encounter new
+random events and the results become more
+radical.  In a
+favorable environment, exposure is an
+accelerator of absolute success.
+Since opportunities are
+plentiful, the more you expose yourself, the more you become
+wealthy.  Of the top 20 in the
+simulation, almost all
+benefited from very high exposure.
+Conversely, the most talented agent in the game
+collapses in the rankings because
+he had far too
+little exposure.  But beware, in an
+unfavorable environment, this becomes
+a trap.  To expose oneself is like running
+blindfolded through a minefield.  You
+simply increase your chances of
+encountering bad luck, which hastens
+the fall.  The statistics are reversing
+dramatically.  Highly exposed profits
+disappear from the top 20, and the
+winning strategy is then to keep a
+low profile.  True talent,
+therefore, does not consist of shining at all costs, but of
+knowing how to read one's environment in order to
+choose when to expose oneself and when not to
+do so.  But we are still missing a
+piece of the puzzle.  The
+most
+important question remains unanswered.  What do we do at the precise moment
+when this famous opportunity falls into our lap
+?  This is where
+genitiveness comes in.
+Most people who come across an
+opportunity are satisfied with it.  They
+take the small bonus that the city
+offers them, rejoice in it, and
+resume their daily lives.  The big
+winners, on the other hand, squeeze every
+last drop of the lemon.  Researcher
+Jim Collins gave this ability a name
+: Return on Load.  It is the art
+of capitalizing on a
+positive random event to transform it into
+a massive and lasting advantage.  It's about
+seizing the opportunity and
+squeezing it 200%, exploiting it until it
+becomes the turning point of
+your life.
+these things called natemple
+deates.  His immense stroke of luck
+was that in 1968, at only 13 years old, his
+school was one of the first in the world to
+acquire a computer terminal.  If he had
+limited himself to recreational use, he
+would probably have become a simple
+engineer.  But he became
+obsessed with programming.  To
+circumvent the usage limits
+imposed by his school, he hacks into the
+servers of a local company and, once
+discovered, negotiates unlimited access
+in exchange for his internet connection to secure
+their system.  He then developed
+software for his high school to gain
+extra machine resources and even went so far as to
+sneak into the
+computer room at night.  Bill Gates has
+never accepted having a door closed to him
+.  Even before graduating from high school, he had
+already accumulated over 10,000 hours of
+programming experience.  And to be honest,
+this notion of proactivity is
+something that resonates with me a lot.
+For a very long time, I felt like I was
+living my life on
+autopilot.  I broke into the boxes I was put in
+because, deep down, that's what
+we're taught.  Validate
+acquired skills, get good grades, follow the
+prescribed path.  But we are
+rarely, if ever, pushed to do more.  And deep down
+, it frustrated me.  When
+I looked at the women and men
+who inspired me, they all had this
+same thing in common.  They had gone
+much further than what was required
+of them.  So I desperately searched for
+a purpose, a project to break my own
+passivity.  And I've finally found this project
+.  This project is this
+YouTube channel.  Starting this chain made me
+realize that we don't have to
+wait patiently for our lucky turn
+in the queue and that we have the
+right to provoke it.
+But beware, kindness is
+not only about knowing how to exploit
+luck, it is also about knowing how to cope with
+bad luck.  And that is perhaps the
+most counterintuitive point.  Faced with an
+unforeseen disaster such as a
+pandemic or a bronchoscopy crisis, one
+might be tempted to blame
+fate.  The winners, on the other hand, practice
+productive paranoia.  Since they
+know that chance will always
+strike eventually, they are constantly preparing for it
+.  They are building up
+financial reserves.  They have plans
+B and plans C. So, when the crisis
+hits, they are no luckier
+than anyone else.  They are simply
+much harder to sink.
+Gentivity is the absolute refusal to be
+a passive passenger at random.  And to
+better visualize how this last
+pillar interacts with the rest of
+the equation, we injected it into
+our simulation.  Some
+agents have been endowed with this Returnlock and this
+productive paranoia.  And in a
+favorable environment, the verdict is
+fascinating.  The hierarchy has been
+completely overturned.  In our
+final top 20, the average talent score is capped
+at just 07. The grand winner of
+this final simulation is, moreover,
+absolutely no genius.  His
+talent score is only 0.59.  However,
+if we look at their behavior, the
+statistics are conclusive.  Of the top
+20, absolutely all benefit from
+maximum exposure.  Faced with
+agency, pure talent becomes
+much less decisive.  Certainly,
+a necessary foundation remains, but without
+exposure to find
+opportunities, without the return on chance
+to exploit them to the fullest, and without
+productive paranoia to absorb
+crises, even the most
+exceptional talent ends up spinning its wheels.
+So, we have reached the end of our
+research.  If there is
+one thing to take away from this video, it is that
+extraordinary luck is never a simple
+accident.  It is a collision between
+three forces: chance, exposure,
+and agency.  Three pillars which
+obviously collapse if they are
+not supported by an unshakeable foundation:
+work.  But now, let's put
+the data and analysis aside for a moment.
+While preparing this video, I realized something
+.  In real
+life, there is one variable that code
+cannot simulate.  That's our own
+perspective.  We are all familiar with the image of the glass being
+half full or half empty.  Well, in
+my opinion, the mechanics of luck
+are the same.  It's a matter of
+choice.  We have this incredible power to
+choose the ending of the story.  And it's
+a virtuous circle.  By convincing ourselves
+that we were lucky, if only
+because we escaped the worst, we
+maintain our optimistic spirit for
+our future.  This momentum then becomes
+our driving force to continue pushing open
+new doors.  Honestly, writing
+this video has made me feel incredibly good.  It
+awakened in me an urgency, that of never again
+being a passive passenger
+in my own existence.  The desire to no
+longer wait patiently for my turn.  Because
+we spend our lives waiting for a
+stroke of luck, convinced that it is a
+mystical lottery that saves some and
+curses others.  That's wrong.  Luck
+is an architecture.  So, get out of
+the queue.  Speak to this stranger
+who intrigues you.  Launch that little
+project that's been on your mind.
+Dare to ask, dare to bother, dare to
+fail.  Tomorrow, the ocean will continue to be
+restless.  The wind will blow for everyone
+and in all directions.  The
+only question that matters is not
+when the storm will stop, but
+whether, when the right wind
+comes, you will have built the
+boat to catch it.  Thank you for
+sharing this journey with me and take
+care.

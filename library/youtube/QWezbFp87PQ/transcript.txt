@@ -1,0 +1,645 @@
+Hi everyone.
+My name is Taiob Ali.
+I'm a Microsoft MVP on data platform.
+Today I'll be talking about
+Azure Database for PostgreSQL:
+15 Essentials for Compliance and Security.
+If you are using Azure Database for PostgreSQL,
+doesn't matter if you're a veteran or if
+you're new, you should be listening to this talk.
+Okay, so let's dive in into the 15 essentials
+that I'm just talking about.
+And I thank you all for joining.
+I hope you are enjoying the conference.
+And I also want to thank Claire from Microsoft
+who actually encouraged me
+to submit for this conference
+and helped me with a few tips about my abstract.
+And also, I'm thankful to Teresa,
+Isaac, and My
+for looking at my slides
+and checking this for accessibility.
+And if you have any questions,
+you can, if you're watching it live,
+you can always put in the chat,
+but if you're watching it later in the recording,
+I'm going to share my contacts.
+You can always reach out to me
+and I guarantee you that
+I will answer your question
+within a couple of working days.
+If you have any questions, comments,
+you can always put it here.
+I'm not going to talk about my credentials,
+just take a note of my contacts
+and I'll share those again
+at the end of the session.
+So let's dive in.
+So what we will be talking about
+today, we'll be talking about 15 standards
+as you probably read in the abstract.
+And I'll try to make a case for each one that why
+you should be thinking about those standard
+on particular topic out of those 15.
+And I'll also give you an example of
+what standard I implemented,
+but that is heavily influenced by my workplace
+because I work for a financial industry.
+So I have certain requirements.
+If you're working for a different industry,
+you might not follow exactly
+the standards that I'm implementing.
+And that's absolutely fine.
+You should be talking to your application or so
+you should understand your business
+and you should modify the standards
+that I'm going to tell you.
+And I'm also going to tell you
+how I implemented the standards, right?
+And I'll be talking primarily about two ways
+to implement those standards.
+And we'll go into a little
+bit more details on those.
+At the end of this session,
+I'll also give you a checklist that
+you should be able to download from my
+GitHub repo, which I'll share the link at the end
+that will summarize the whole talk
+and kind of give you a checklist
+that you can take with you at your work.
+And you can go through the checklist each item
+by item and cross those off and implement those.
+When it comes to implementation of
+these 15 standards that we'll be talking about.
+So there'll be a few that you should be
+implementing during when you are
+deploying your resources,
+like when you are setting up your PostgreSQL,
+whether you do it through a template,
+whether you do it through a pipeline,
+whatever you do, it doesn't matter.
+You should check those right at that time.
+But after you do those, then
+you can still check most of this stuff.
+So the way I do it is mostly Azure policy
+and other one is Azure function.
+Azure policy is the best thing to do if you can,
+because you can set it up at a higher level,
+like at a tenant level or at a subscription level,
+and it will check all your resources underneath.
+But there will be situations, right?
+That you cannot really do it from a higher level,
+because if you have a lot of flexibility
+with your standard, right?
+If you give the app owners
+flexibility, say like long-term backup retention,
+someone need 10 years, someone need 5 years,
+someone need 3 years.
+It'll be very difficult to implement
+this via Azure policy,
+because now you have to put the policy
+at a very lower, at a granular level.
+That's really not the way policy work.
+So in those cases,
+if you see that I put both options in the slide,
+you should probably look at it
+as your function driven by a table, right?
+So if you have a table driven,
+if you have a table that has all the metadata,
+that, okay, this one, I need 5 years,
+this one, I need 3 years, this one,
+I need 10 years or whatever.
+And the function can go
+and read those and check against those, right?
+And if someone changed it, and so you get alert,
+you get a notification, you go and double check
+and fix it, either you update your table,
+or you reset it where it was
+where your standard should be.
+And before I go further,
+the other thing is for every,
+all the 15 standards,
+you will see primarily 3 slides.
+The first slide will be talking about why should
+you have a standard, what is the requirement,
+or what's driving to set up a standard
+across the board.
+And the second slide will talk about
+what I implemented based on my experience
+and my work I just told you.
+And if there are any exceptions,
+how do we deal with it?
+How do we check the standard, right?
+How do we implement it?
+And you'll see a third slide
+which I'll mostly skip
+because that will have to learn more, right?
+If you want to read more about that
+particular standard,
+if you want to read more about the implementation,
+I put some links, mostly from Learn website
+that's maintained by Microsoft.
+So every third slide for each standard
+I'll probably skip in the interest of time.
+Okay,
+so why should we put
+standards, right, across the board? And
+basically, you know, what I just say,
+you might have compliance requirement.
+And the other thing is, how do you monitor,
+alert, and forecast, right, a large enterprise?
+If you have hundreds of this PostgreSQL,
+how do you know that if something is going wrong?
+How do you know that a backup is not working
+or your long-term backup is not there?
+How do you know that your CPU is spiking?
+How do you know that there is a timeout, right?
+For all of these problems, right,
+if you are not going to sit there 24 by 7
+to monitor all this, once you set up
+these standards, your operation becomes easier.
+Plus, you are also compliant
+from different regulatory requirements
+or your business requirements,
+so it solves both the problem.
+And that is why you should issue standards.
+And, I wrote these 4 bullet points here,
+but I'm not going to go into any further details.
+If you want to know more, just reach out to me.
+So the first one I'm going to talk about
+is the workload type.
+Whenever you deploy a PostgreSQL,
+you can choose the workload type,
+either development and production.
+This does only one thing.
+It sets up a default compute tier,
+which you can change later on.
+So now the question you might ask me is,
+if I can change it later on,
+why are you even setting up a standard?
+The problem is, with the development,
+if you choose,
+the default tier, compute tier,
+it chooses is a burstable.
+And burstable doesn't have certain features
+that is really
+you need for a production deployment.
+Like it doesn't have geo-redundant backup.
+You cannot have read replica in burstable.
+So I do not want in my company or at my workplace
+or for my clients to deploy a production
+PostgreSQL with a burstable tier.
+Now, you can change it later on,
+but some of the stuff that,
+say, like geo-redundant backup,
+you can only set this up during deployment.
+So if I'm deploying with burstable later
+and I want to change it, I cannot do that.
+That's why I want to have a policy
+from the top that any production deployment
+should be choosing production.
+And that default for that is a general,
+but you can also change it to memory optimized.
+That is why I want to implement this one.
+And again, as I said, my standard is development
+for non-production and for production,
+you choose the production one.
+And if you can standardize this,
+I'm not going to say this again and again,
+I already mentioned this, then policy is the best.
+And this one, actually,
+if you can enforce this during creation
+in your pipeline, that will be the ideal.
+But if you cannot,
+for any reason, policy should work.
+And this is my third slide that I talked about.
+I'll just skip this one for each of the
+remaining 14 items.
+Tags.
+So as you can see in the slide, I only have
+two tags that I put mandatory at my workplace.
+But for you, I'm not going to tell you
+how many you need.
+You should decide that for yourself.
+Why tag?
+Why should we put tag?
+Tags can do a lot of stuff.
+You can group your resources by tag,
+by department,
+by business unit,
+production, non-production, UI staging,
+whatever way you need for
+reporting purposes and for billing.
+This is a huge, huge win, right?
+Because as your Azure deployment
+or as your Azure footprint is going to grow,
+very soon you will see that
+you have to take control of your cost.
+And unless you plan this from the beginning,
+right, you push it to different departments
+or different business units,
+this will be very difficult.
+Many shops at the beginning,
+they think, okay, we'll centrally manage the cost.
+But, as the journey begins, within a year or two,
+they realize, no, that's not going to work.
+Then they look at, you know, the different way
+to, you know, different subscriptions
+and a different way to do this.
+But tags can help you big time.
+One thing I'll warn you that the tags does not get
+inherited from the top to bottom.
+So do not think that I have this tag
+at a subscription,
+all my resource groups under that subscription
+or all the resources under a resource
+group is going to inherit those tags
+automatically. No, it does not.
+There is a way in the cost management
+as a line item,
+which is really not a tag,
+and I'm not going to go into details
+that you can push through that if you want,
+but the tag itself doesn't get inherited.
+So just keep that in mind
+because there's a lot of things get inherited.
+You can set that up from tenant to subscriptions
+to resource group to resources,
+but the tag is one item that you cannot.
+Maintenance schedule. So,
+if you are working on premises or in Azure,
+right, things need to get patched.
+Whether it's software, hardware,
+we all know that even our phones get, right,
+how many times you get this iOS updates.
+How do you manage that?
+Normally when we were in our own data center,
+right, life was easy.
+I could control this.
+I could probably do non-prod this month,
+production next month and all that.
+But now you cannot control that, but you know,
+it's in the hand of your cloud provider.
+But for Postgres,
+Microsoft actually did some awesome work
+that you can somehow control it indirectly.
+So there's two maintenance schedule.
+One is called system-managed
+and one is a custom schedule.
+So for system-managed means it's any day
+and any hour between 11 PM and 7 AM.
+But for custom schedule, I can choose a particular
+day of the week and I can choose the hour.
+So I have a lot more control on that, right?
+It's a lot better than
+any day and between 11 PM and 7 AM.
+The other good part is
+any patch that Microsoft deploy,
+if it's a system-managed, it gets deployed today.
+But it will work for 7 days
+to deploy to any servers
+that has been set up with custom schedule.
+So you really get 7 days of a break in between.
+So for me, my standard is if you are
+a non-production, you get system-managed.
+If you're production, you get custom schedule.
+That way I get that 7 day buffer
+to do my test of the patch that was deployed.
+And I can see if there's an issue.
+And this one,
+I think you can easily do as your policy
+if you follow my standard.
+One thing
+I'll tell you a little bit more is
+that you can get notification for these patches.
+So there are 5 different ways.
+I'm not going to go into details.
+I have the URL.
+You can go and see that
+there's a menu of 5 different items
+that you can get notified
+depending on how you want to get notified.
+Like you can even get a voice message.
+You can get your,
+if you're Azure Resource Manager role,
+you can get email
+and you can get text messages and all this.
+The other thing is normally between
+the two patches,
+there is a gap of 30 days,
+but do not count on that.
+If there is a critical or emergency update,
+you will get patched in between.
+You can get, you know, before 30 days.
+So Microsoft is not going to honor it, right?
+If there is a zero-day vulnerability,
+like as sometimes you see,
+like even on our phones, right?
+The Apple release those zero-day vulnerability
+and then Microsoft does it and
+you see it all over the news.
+So that time
+they're not going to wait for 30 days,
+but otherwise if it's a normal patch process,
+you will,
+pretty much, you'll see a 30-day cadence
+between the patches.
+And there's some more resource for you to look at.
+Backup retention.
+This is something
+we all know if you're working anything
+with the data that you need to have your backups.
+Doesn't matter in what kind of data you're
+working on or what system you're working on.
+And for this,
+when you deploy a PostgreSQL, by default,
+you get 7 days point-in-time retention,
+which you can slide up to 35 days.
+So this 35 days,
+7 to 35 or 0 to 35,
+you can even slide it back to 0 from 7,
+you get point-in-time that you can restore.
+But you can also get long-term retention.
+Like at my workplace, we have certain transactions
+in the financial industry that
+we must keep detailed record for up to 7 years.
+So for long-term retention, you can set that up
+and you can keep that for up to 10 years.
+In my place, we do not
+backup non-production.
+But again, as I said at the beginning,
+a few business owners, your business partners,
+your company policy,
+you might even need some retention
+for your non-production, it's up to you.
+Production again, based on your requirement,
+how many days you want point-in-time,
+what's the long-term retention backup.
+If there is a company standard,
+you might still have some exceptions.
+Like, I'll give you an example.
+If there's a warehouse
+that is not generating any,
+it's not saving any new data, it's all getting fetched
+from other systems from the company,
+do you need to take transaction
+log backups every X number of minutes?
+Do you need to keep point-in-time for 35 days
+because you can always reload?
+So that's the option.
+So you might have some exceptions.
+And this one, again, you can use either policy
+or function, what I said before, based on that.
+Backup redundancy.
+This is also important
+because if you have a issue,
+how do you restore, right?
+So is your backup intact?
+Can you get it from where you have it?
+Is it corrupted?
+So there are three different ones.
+There's locally redundant,
+which is default, if you are deploying in a region
+which doesn't have zone redundancy.
+And a zone, I'll just tell you
+in a quick sentence, a zone is something,
+within a region
+you can have different data centers.
+A zone is independent of power, cooling,
+and all those.
+So even within a region,
+if one data center is down,
+if you have zone redundancy,
+it will automatically come up in a different zone.
+So if you're deploying in a zone
+that has zone redundancy, that is the default.
+You can also set up your backup
+with geo-redundancy.
+It means it is going to get replicated,
+your backup, to hundreds of miles away.
+And Azure, if you go to our website,
+you will see there is a partner kind of
+region, right?
+For, just to give an example,
+for East US 2, the partner is Central US.
+So any backup you do in East US 2,
+if you have geo-redundancy,
+all the backups get copied to Central US.
+So what does that give you?
+If the whole region is down,
+you can use that backup
+that was copied in a different region,
+and you can restore from there.
+For my standard, locally redundant
+for all of our production, production we have zone
+or geo-redundant based on the application,
+and you can, again, policy or functions.
+One thing I think I mentioned before,
+I'll repeat it again because it's important to know,
+you can only choose geo-redundancy
+at the time of creation.
+You cannot do that later on.
+So just be aware of that.
+Resource lock.
+This is not specific to PostgreSQL.
+This can be, this applies
+to pretty much most of the resources in Azure.
+So there's two different locks.
+One is a delete lock, and one is a read-only lock.
+And the name says that the read-only
+is gonna prevent you from any modification,
+and delete is gonna prevent you
+from deleting the resource itself.
+So my standard is
+put the delete lock in production,
+and for non-production, we use
+the read-only lock.
+Sorry, for, yeah.
+The reason I do not wanna put a delete lock
+on the non-production, because this can have issue
+with your deployment, right?
+If you're testing something,
+if you're continuously destroying and rebuilding
+through your pipeline,
+I do not want to have a delete lock,
+because then your pipeline is gonna fail,
+and it is just gonna slow your development.
+But again, how do you do this in your place?
+Think about it, right?
+So again, as I said, mandatory for all production,
+Azure Policy will work perfect for this.
+If you need exception for any reason,
+make sure you document this.
+That way you know that if something happens,
+why there was exception,
+who requested it,
+who approved, just document those.
+There's some more info about the locks.
+Compute tier, we touched it a little bit
+when we were talking about the workload type.
+So there are three compute tiers, burstable,
+memory-optimized, and general purpose.
+For my standard at my workplace,
+as I said, for non-production,
+you can go to burstable because it's cheaper.
+It doesn't have all the bells and whistles, which
+you probably do not need for your non-production.
+But for production, we only use
+the other two,
+general purpose and memory-optimized.
+And if you need zone redundancy,
+you want to be careful
+before you deploy
+because there is a list that I put in the resource
+that which zones,
+which region now allow zone redundancy.
+Not every region today have zone redundancy.
+Just be aware of that. And
+again, Azure Policy,
+and then you also
+want to have non-compliant servers.
+If for some reason
+someone want to use burstable for production
+because it's less cost,
+the application is not that, it's probably
+a different tier,
+a lower tier that they can afford.
+So just document that.
+Storage auto-growth.
+So this one is very tricky
+because if you set it up to auto, it's perfect.
+Everybody's happy.
+But then it also costs you money
+because if you get alert
+that your storage is at 90%, you can always
+squeeze the developers or the app owners.
+Maybe they have some logging on,
+they have some historical data they can get rid of.
+But if you have auto scaling turned
+on, you're not going to catch those.
+So you have to decide what you want to do.
+For me,
+again, we talk to the app owners and we do
+it case by case because there can be situations
+that people cannot afford to have disk full,
+cannot have downtime.
+Some people, for them, if we give them alert
+at 90%, they're okay to work with us.
+Either we increase it manually or
+they will find some data that we can purge
+or put a purge routine.
+There's some information about that.
+Enhanced metrics.
+So you get a set of metrics
+that will come automatically when you deploy,
+but there are 6 different kinds of enhanced metrics.
+And that also doesn't include, there's
+2 more called PgBouncer, and there is another one.
+You can set all this up for your production
+if you need.
+There are different server parameters
+that you have to turn on.
+There's one called PgBouncer.
+If you know about the autovacuum,
+you can also monitor those.
+So you need to decide
+whether you need those or not.
+In my company standard,
+we turn some of those on for production.
+It's optional for non-production, but if someone is
+troubleshooting issue in non-production,
+we might turn it on for them.
+Diagnostic settings.
+You can see on the right side,
+at my place,
+we turn it on for all production servers because
+our destination is log analytics workspace.
+You can send it to Storage Account.
+You can send it to Event Hub.
+You can send it to some of the third party
+monitoring tools nowadays.
+But one thing you remember
+about the retention of your data.
+So control that because that is going to dictate
+how much money you are spending.
+So the data is there for, I think it's 90 days.
+And I think up to first 31 days is free.
+But then after that, you have to pay for it.
+And you can adjust the
+retention based on your need.
+Server logs.
+So this is different than the logs that you saw
+on the diagnostics picture.
+There are two logs.
+One is a server log,
+and one is called an upgrade log.
+By default,
+if you turn it on, it retains for 3 days.
+You can change it to between 1 and 7 days,
+and you can download those also.
+And during upgrade is very helpful.
+And for your day to day,
+if there's issue, you can go and take a look.
+So for my standard, it's turned on for production.
+But we don't turn it on for non-production.
+High availability, very important.
+How you can achieve this, you can do it through,
+we talked about zone redundancy.
+We talked about geo-redundant backup.
+I'm not going to talk about those anymore.
+But you can also set up read replicas.
+And read replicas, you can always bring them up
+as a primary if the one region is down.
+So you can do that.
+But again, it is going to cost you double.
+So if your app, depending on your RTO RPO
+if you're happy with your backup
+or zone redundancy, you don't need that.
+But if you need to bring that up quicker,
+but that you can set up,
+but your cost is going to go to double.
+So just keep that in mind.
+Authentication mode, you can do both.
+You can do Entra only.
+You can do PostgreSQL authentication,
+or you can do mixed.
+Entra is the best if you can do it,
+because then you're not dealing with passwords.
+But sometimes it will not be possible.
+So talk to the business owners,
+and you can do it through Azure policy.
+Very easy to implement.
+Private endpoint, super, super important.
+You do not want your data
+to go over public internet.
+So make sure you implement this.
+I mean, I would not go without this.
+We do this for all servers.
+It doesn't matter
+if it's non-production or production,
+because we don't want data to go over
+the public access, and we disable the public access.
+And Azure policy will be perfect across the board
+to implement this one.
+Defender, it will cost you money.
+It costs $15 per server per month,
+but it can give you a lot of protection.
+It continuously checks 24 by 7 brute force attacks,
+other abnormal traffic pattern.
+You can get alerted right away.
+We turn it on for all our servers,
+non-production and production,
+and Azure policy
+will be the best to implement this.
+So implementation
+approach, I mentioned a few times.
+I'm not going to go through it again.
+During deployment, function, and Azure policy,
+you can use all this.
+And here are some of my links.
+You can go to GitHub, my repo, and download.
+And other, you can contact me with any of this.
+And I thank you for attending my session.
+Reach out to me
+with any questions or comments.
+Thank you.

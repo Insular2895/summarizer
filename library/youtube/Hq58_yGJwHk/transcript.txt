@@ -1,0 +1,469 @@
+[Music]
+hello everyone
+welcome back to the blue team training
+series brought to you by hackersploit
+and linode in this video we're going to
+be exploring threat detection with wazoo
+so let's get started by getting an
+overview of what we'll be covering in
+this video all right so we're going to
+start off by
+you know getting an introduction to azu
+you know sort of understanding what it
+is and what it can do
+and how it works we'll then move on to
+deploying wazoo
+and uh more specifically we'll be
+exploring the process of deploying it on
+linux because uh lenode has a cloud
+template that you can use or a cloud
+image rather that you can use to easily
+set up wazoo
+without having to go through the uh the
+complicated installation process because
+as you learn in a couple of seconds
+wazoo is built on top of the elk stack
+and i'll try and explain a little bit as
+to what that is
+we'll then take a look at how to set up
+the wazoo agents or a wazoo agent on our
+on the operating systems that we would
+like to protect
+and of course we'll be ending the video
+by taking a look at how to use wazoo for
+threat detection uh response and of
+course vulnerability detection
+all right so if you've never heard of
+wazoo i don't blame you but it really is
+one of the most powerful tools
+for a security engineer or for the blue
+team and you'll see why in a couple of
+minutes
+all right so the prerequisites are the
+same as the previous video uh where we
+covered you know how to set up and how
+to use snort for intrusion detection
+uh so let's get an introduction as to
+what wazoo is all right so wazoo is a
+free and open source platform that is
+used for threat detection prevention and
+response it is typically used to protect
+networks virtualized environments
+containers and cloud environments so
+literally any computer or device can be
+protected with wazoo
+so in the context of blue team
+operations wazoo is a siem or a security
+information event management system uh
+you should be familiar with that if you
+are in the blue team that is used to
+collect analyze aggregate index and
+analyze security related data
+consequently allowing you to detect
+intrusions attacks vulnerabilities and
+or malicious activity all right so in
+the context of blue team operations a
+seam
+essentially displays you know a ton of
+data or
+it essentially aggregates or gets data
+from various sources
+from log files uh from
+it's primarily log files but it gets
+data from other
+devices and sensors and it aggregates it
+and uh analyzes it and then uh you know
+presents that data to the security
+engineer
+and uh you know the the way the data is
+presented is relative to you know you
+know to a particular security event or a
+vulnerability or or an attack so the
+objective of a cm is to essentially tell
+a security engineer there's something
+going on on this system uh this is what
+happened uh this is where the attack
+originated from this system suffers from
+a vulnerability this looks like
+malicious or suspicious activity etc etc
+so in this video we'll be focusing on
+how to use wazoo to monitor security
+events and identify
+vulnerabilities on
+the actual systems that we're protecting
+in this case i'll just be calling them
+agents now
+as i say this it's very important to
+realize or to understand that wazoo has
+a ton of features which is absolutely
+fantastic which is why i actually wanted
+to cover this particular tool
+all right so this is just a very small
+list of features that bazoo essentially
+provides users with or security
+engineers with so firstly you have
+security analytics intrusion detection
+log data analysis file integrity monitor
+file integrity monitoring
+vulnerability detection incident
+response cloud security container
+security and your you also have
+regulatory uh compliance so uh there's a
+ton of stuff that it offers and i'll
+i'll be touching upon each of these
+features but i'll be uh delving deeper
+into
+the actual setup process and how to get
+everything running sort of giving you an
+overview of the interface showing you
+how to essentially view your alerts
+using a few filters
+so that you essentially become
+functional with wazoo and understand
+what's going on on the dashboard
+so
+how does wazoo work all right so bazoo
+consists of the following components you
+have your agent all right so if you've
+never if you've never utilized uh you
+know a uh client server model when it
+comes down to vulnerability management
+an agent is essentially a cross-platform
+endpoint uh security agent or program
+that is installed on the system or host
+that you'd like to monitor so i'll give
+you an example let's say i want to
+secure my home network right so that
+means every device or every computer on
+my home network i would need to install
+an agent on it in order to uh
+essentially uh you know in order for for
+me to essentially communicate with the
+wazoo server which is the next component
+all right so the wazoo server analyzes
+the data received from the wazoo agents
+it processes this data and it matches it
+against rule sets to identify indicators
+of compromise and generally speaking
+security events so for example once if i
+install the wazoo agent on a windows on
+a windows system and i configure it to
+connect to my wazoo server
+and you know i can just have that agent
+running on the system if i make any
+changes like i create a new user
+or i um
+or i try and uh you know i just do
+anything that requires any uh you know
+administrative privileges that
+information will be logged as a security
+event on our zoo and you'll be able to
+essentially see what's going on and as
+you can obviously tell this is very
+important for larger or you know medium
+to larger large
+organizations primarily because they
+have tons of computers
+that they own or the company owns and
+they would like to know what's going on
+on those computers they would like to
+identify
+uh you know attacks or intrusions and
+you know that is done through indicators
+of compromise so again this will make
+sense as we progress
+we then have the elastic stack all right
+so the elastic stack displays and
+indexes the alerts generated by the
+wazoo server and provides users with
+robust data visualization and analysis
+functionality
+so if you're not familiar with the elk
+stack it's uh it's really very simple to
+understand
+so
+the elastic stack or also known as the
+elk stack
+is essentially the combination
+of three open source projects one being
+elasticsearch uh logstash and kibana all
+right so elasticsearch is a search and
+analytics engine logstash is a
+server-side data processing pipeline uh
+that ingests data from multiple sources
+simultaneously and of course
+it then sends it to a stash like
+elasticsearch uh kibana lets users
+visualize data with charts and graphs in
+elasticsearch so
+uh wazoo is built on top of the elk
+stack to facilitate uh as i said the
+actual analytics uh engine so um
+elasticsearch handles the analytics
+logstash handles the actual data
+processing pipeline and you know
+essentially gets data from multiple
+sources simultaneously and you know
+kibana lets you visualize this data in
+the form of a chart or graph
+all right so that's the elastic stack
+also known as the elk stack
+now one really cool feature of wazoo is
+that it can also be used to monitor
+devices like networking equipment that
+cannot run the wazoo agent
+uh this works by
+so this works by essentially getting
+these devices like routers uh they could
+be specific networking uh you know
+network devices like firewalls so uh the
+way you can get this to work is by
+having them uh log their data and then
+uh essentially transferring those logs
+or automating the process of having
+those logs synchronized uh to the actual
+wazoo server for analysis so you don't
+really need to install the agent but it
+is extremely useful for additional
+functionality
+so how does wazoo work so this diagram
+is from the wazoo website which we will
+actually be referring to throughout this
+video because
+the documentation really is fantastic
+so
+as you can see right over here you have
+your wazoo agent this is what you
+install on the devices that you'd like
+to protect the wazoo agent consists of
+various modules and the actual daemon
+right so the daemon is responsible for
+encryption module management remote
+configuration and server authentication
+and then the modules available are
+active response command execution
+configuration assessment cloud security
+container security log collection
+malware detection system inventory so
+all of these modules are used to get all
+of the relevant information back into
+the wazoo server for analysis and you
+might be asking yourself the question
+why is all of this data important why do
+we need to you know to essentially have
+a configuration assessment well from the
+the perspective of a security engineer
+the configuration assessment module
+allows you to
+essentially run a configuration check to
+identify weaknesses or vulnerabilities
+that could potentially be exploited by
+attackers uh in the case of log
+collection that is pretty much
+self-explanatory logs are very useful in
+telling you what's going on on that
+operating system so if we go back to the
+example if i install the wazoo agent on
+a windows system and you know the log
+collection module is enabled and running
+then that means that pretty much
+everything from the windows event log is
+being logged and sent back to the wazoo
+server for analysis and the windows
+event log pretty much tells me as a
+security engineer what's going on on
+that operating system furthermore
+and this is very important wazoo just
+doesn't display all of these logs for
+you
+it goes through the actual uh processing
+engine right and you know all of these
+uh events or logs if you will
+are uh you know matched against uh rule
+sets and you know if they are
+uh if they are you know found to be
+malicious
+or uh you know uh
+you know if they actually are malicious
+in a way or are um are actually uh you
+know referring to
+or you know in indicating or are
+indicators of compromise then you know
+that is really all the information
+that's uh the only information that's
+being displayed to you so you know we're
+primarily interested in security events
+or events
+you know related to security issues or
+exploits or malware you get the idea
+right so as you can see uh on with the
+wazoo server
+you know this goes the actual
+connection from the bazoo agent comes
+into the agent connection service that
+goes into the analysis engine for
+decoding and rule matching and
+correlation and enrichment
+so you know this can be used for threat
+intelligence vulnerability detection and
+of course regulatory compliance and then
+of course you have the actual agent
+registration service which is only used
+when you're actually setting up a new
+agent
+and you then have of course the raw data
+events security alerts and uh you know
+this this goes into elasticsearch so
+this is the elastic stack whereby you
+have kibana and you have the elastic
+search you have elasticsearch there so
+kibana provides us with the actual web
+user interface uh through the wazoo
+plugin you have the query language and
+you can of course create visualizations
+and
+and dashboards
+elasticsearch provides you the search
+engine data analytics long term storage
+security alerts etc so it's really very
+simple to understand
+now
+in our case uh let me just head over to
+the next slide this is the lab
+environment that i'm going to be using
+so as i mentioned in the beginning of
+this presentation
+uh i will be setting up or deploying
+a wazoo server uh that
+you know that leonard already has a
+cloud a cloud image for
+uh that essentially uh will set up
+everything for you because as i said the
+process of setting up with zoo can be
+quite time consuming and confusing and
+ideally what i want these videos to be
+focused on is actually is the actual
+usage of the tool
+and uh you know actually showing you how
+it works and uh you know how to navigate
+around the interface in the case of
+wazoo
+so this is going to be set up on the
+cloud uh as i said that linux a cloud
+image is essentially an all-in-one
+deployment whereby you have wazoo
+running on the elk stack and everything
+is pretty much good to go all you need
+to do is just open up lynode uh go ahead
+and create a new linux and you you know
+specify the the actual system resources
+and uh you give it a couple of minutes
+to set up once that is done you can
+access the actual uh wazoo interface uh
+directly from your browser
+so in my internal network i'm going to
+have the very basic infrastructure here
+i'm going to have a windows 7 virtual
+machine or just a windows 7 system it
+doesn't really matter uh you know how
+it's deployed and then of course we're
+going to have a linux server that i'll
+also host on the cloud but i've just put
+it in here for the purpose of simplicity
+and i then have the attacker system uh
+where you know i'm going to be uh trying
+different types of attacks and in this
+case it's not really going to be
+necessary but i have already set up a
+wazoo server uh for a very important
+reason that i'll get to in a second now
+uh any ike if you if you see the zoo
+icon next to any of these systems then
+it means that we're going to be
+installing the agents on them or the
+wazoo agent on it
+which means uh that all of these systems
+uh the wazoo agent is going to send all
+the information from these systems back
+to the wazoo server that's so that we
+get uh you know
+the actual uh
+we actually get an idea as to what's
+going on on these operating systems from
+the perspective of a of a security
+engineer
+all right now let's talk a little bit a
+little bit about deploying wazoo
+because as per the official
+documentation wazoo can be deployed in
+two ways so you have the all-in-one
+option or a distributed you know
+infrastructure so as for the all-in-one
+option this is where by the wazoo server
+and elk stack are installed and
+configured on the same system
+or on the same server that's what we're
+going for and if you're a beginner i
+would definitely recommend installing
+everything on one server now one of the
+really cool things that wazoo does is it
+provides users with a pre-built
+all-in-one ova file or a virtual machine
+file that you can set up on your local
+network so if you have virtualbox and
+you want to try out wazoo uh you can
+download the ova file import it and
+you'll have a zoo on your network and
+you can then use it and learn you know
+uh and learn how to use it on your local
+network uh and you know that uh is
+really really very simple you then have
+the distributed uh deployment option
+where each component is set up on a
+separate server this is typically
+suitable for large environments for the
+purpose of scalability so uh in this
+case you have you'd have the wazoo
+server running on its own server you
+then have the elk stack running on
+another server and the reason as to why
+you would want to do this is as i said
+uh you know for scalability purposes uh
+and the fact that you can essentially uh
+you know you can tweak or fine-tune
+performance based on your own
+requirements so in our case because we
+only gonna have you know maybe one or
+two agents we really don't need to use a
+distribute the distributed model we're
+going to be using the all-in-one option
+uh you know that is provided to us by
+linux so
+just going through what agents are uh
+wazoo agents are lightweight
+cross-platform agents that are used for
+endpoint security and connect uh to the
+wazoo server and we know consequently
+send all the logs and all the
+information back to the wazoo server for
+uh analysis and of course uh rule
+matching and you know those are then
+displayed or uh you know presented to
+the security engineer on the actual
+wazoo uh web interface if you want to
+learn more about how to deploy wazoo how
+to install it you can take a look at the
+official wazoo documentation repository
+it really is fantastic i just want to
+take a couple of moments to thank our
+patreons thank you michael hubbard
+dustin umpress jerry speds doozy sid
+saab ryan carr shamir douglas
+rs nino boykov and david bricker you
+guys are really awesome thank you very
+much for supporting us and you guys make
+these types of videos possible so we
+really appreciate it and we look forward
+to producing even more high quality
+content
+[Music]

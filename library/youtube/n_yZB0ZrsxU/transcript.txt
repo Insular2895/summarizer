@@ -1,0 +1,1014 @@
+Lee, so good to see you again.
+It's been a while and I'm really, really excited
+to talk about "Architecting for Scale".
+You've now got the second edition out, right?
+That's correct.
+It's great to see you, Ken.
+I always love talking to you about these topics
+or frankly, any topic.
+We always have great conversations.
+I think the thing that's always interesting
+to me about somebody that takes the time to
+write a book is: what's the first thing that
+inspired you?
+There was a time you were like, "Hey, I've
+got this thing I'm seeing as a problem and
+I wanna share my view with the world."
+Tell me what originally inspired you to start
+writing "Architecting for Scale”.
+I worked at Amazon for many years.
+I learned a lot about building scalable systems
+there.
+And when I left Amazon, I moved to what at
+the time was a relatively small startup called
+New Relic, which had maybe 100 total people
+in the company, a little bit less than 100
+people.
+They were running into a lot of scaling problems,
+of trying to grow from being a small system
+to being a much larger system.
+I saw them struggle with the same sorts of
+things that we had already solved at Amazon.
+And so, I became the the scalability expert,
+if you will, and helped with putting in processes,
+and procedures, things like risk management
+matrices, and service tiers, and all those
+different processes, to help them get to the
+point where they can start managing their
+systems and scale them without having availability
+outages.
+When I did that, I realized New Relic wasn't
+unique.
+There was nothing special about the problems
+they were running into, and that all companies
+of probably similar size, were running into
+similar sorts of problems.
+And that's where I thought, I bet you there's
+a book here, I bet you I could write this
+into a book.
+I got connected with O'Reilly and suggested
+that book, and they were really excited about
+the idea.
+And I went from there.
+The first version came out in 2016 based on
+my experiences with helping get New Relic
+through the initial push.
+As the book started growing in popularity,
+I started getting interactions with lots of
+other companies.
+I'd often get comments like, "Oh, you should
+hear what we ran into."
+and started seeing the breadth of companies
+and the problems they've had with scalability,
+in general.
+I fed a lot of that learning into the second
+edition of the book, which came out about
+a year ago.
+That makes sense.
+I know we had some fun times talking with
+a lot of enterprises across the globe at New
+Relic because when we think about transformation,
+it's always people, process, and technology.
+It's all three of
+those coming together and bringing a book
+that hits on the technical parts but also
+on some of the people process parts, I know
+that's a really crucial component that you
+hit on a lot in the book.
+It's very clear that you can't solve scaling
+and availability by code.
+You can't solve it by just wishing it away.
+It's a combination of developers and management
+doing the right things, and putting processes
+and procedures in place in order to do the
+right things.
+And all those things together, really have
+to work as a cohesive whole, in order for
+you to be able to build a system that's highly
+available and still be able to scale.
+Just as a simple example, we've talked about
+this topic a lot, Ken, risk management.
+The ability to come up with and figure out
+what the risks of your application are, in
+order to reduce availability risk to your
+application and be able to scale, that's as
+much of a process issue, as it is a technical
+issue.
+When you build technical debt into the application,
+dealing with that technical debt and understanding
+which of it you need to remove versus living
+with, that's a process issue, not a technical
+issue.
+And putting all those things into place requires
+a whole cohesive process that's not just technology,
+not just management, not just engineering,
+not just a key.
+It involves everybody working together to
+make that happen across all the different
+disciplines that are important in building
+an application.
+Lee, let's double-click for a moment on risk
+matrix.
+I always think that's interesting because
+a lot of times when people first go to a risk
+matrix, they say, "Okay, let me identify what
+the key risks of the business are.
+What are some shaky things"?
+But it's also a really powerful tool to not
+only understand risk but also understand where
+you should invest.
+Think about the amount of times that you and
+I have talked to large enterprises where maybe
+after a major outage or a major impact, they
+came back and realized that for years, they
+had underinvested in that particular area
+because maybe it was running okay.
+But no one really had a risk matrix, a data
+point to show that this area is risky and
+it makes sense to invest.
+So,even for technology leaders it's a great
+tool to talk about investment with their business
+partners.
+Absolutely.
+I think the under-recognized values of maintaining
+and building risk matrices is the ability
+to communicate with upper management.
+When your management comes to you and is frustrated
+because you're not getting the things done
+you need to get done or they think that you
+need to get done, and you start talking to
+them about all these other things you need
+to do, it's hard to explain and have the conversations
+to understand what's important and what's
+not.
+When management wants new features and engineering
+wants to improve things and operations just
+wants things to work no matter what and all
+of these different competing requirements
+can't be prioritized against each other.
+What the risk matrix does is it puts all of
+those things together into a single format
+and it starts putting measures on these things.
+So, you can tell that not doing this capability
+is gonna cost us this amount later on because
+of this risk that's going along with it.
+And by doing that, you can communicate both
+technical risk up, but also product risk down
+throughout the organization and start being
+able to prioritize and make decisions a lot
+better on what things are really the most
+important things to work on first.
+Is it more important to remove this technical
+debt or add this new feature?
+What's really more important?
+How do you make those decisions?
+A risk matrix can really help you accomplish
+that.
+I love how you emphasize that in the book
+and it really allows people to take the term
+technical debt and, again, translate it into
+risk, or business terms.
+Business leader, when you're like, "Hey, we
+have technical debt," they are usually like,
+"Hey, you're just looking for more investment."
+But when you can talk on these other terms,
+it helps a lot.
+Another of the things I really like in the
+book is that you not only give the framework
+of how to set it up but you actually give
+people actionable examples that they can go
+to your website and download templates, right?
+That's correct.
+There's 1,000 different ways to do a risk
+matrix.
+I have a model that I prefer.
+I know you have a model that you prefer and
+I make those available.
+It’s a simple Excel spreadsheet format available
+from my website, you can download and get
+to.
+And if you go to leeatchison.com, you can
+get access to those there.
+I believe you can also get access to them
+from O'Reilly.
+But there's nothing magic about it.
+It's not like you have to use a particular
+format or it won't work, that you have to
+do this, that, and the other thing.
+But knowing where to start and having an idea
+of where to start can be a great way to synergize
+your organization.
+I've seen companies that have taken that initial
+format and said, "Well, this just isn't gonna
+work at all, but they took it and started
+with it."
+And what they ended up with was something
+that looks completely different and I have
+a hard time recognizing it.
+You can still see it's a risk matrix and it
+has the things that they care about the most
+built into it.
+It's not just likelihood and severity, which
+are the two things that I focus on primarily
+in a risk matrix, but they've also included
+things like revenue impact.
+What is the revenue impact for doing or not
+doing a particular item within the risk matrix?
+And it's a step further.
+It's a step deeper into their processes that
+work for them and that's great.
+So they started with the initial idea of the
+risk matrix, took the initial templates, and
+built on it from there.
+Let's talk a little bit about deconstructing
+the monolith into microservices.
+You mentioned this with New Relic.
+I think companies that are building new, oftentimes
+start with microservices.
+So, I wanna hit on that too.
+But let's talk about companies that maybe
+still have some monoliths first.
+They're moving to microservices, trying to
+go to a services architecture and thinking
+about SLOs and SOIs.
+You have a lot of great information in the
+book about going through that transformation.
+What are some of the key takeaways that companies
+should consider that they can uncover in the
+book?
+Sure.
+A lot of the devil's in the details.
+There's a fear from many people that are moving
+monoliths to microservices.
+The main fear is past experiences that haven't
+gone so well.
+If you look at the things that can go wrong
+in that sort of transformation, there are
+a few things that are common, that appear
+that people can always run into.
+And by dealing with them upfront, you end
+up in a much better shape as time goes on.
+One of the big ones is where do I wanna put
+my service boundaries?
+Do I split this monolith into 5 services or
+500 services?
+What's the right size and the right model
+for that to work?
+And it turns out, there's a lot that's involved
+in deciding where you wanna put a service
+boundary.
+And I have a whole process I go through for
+right-sizing microservices, if you will.
+I call it the Goldilocks process.
+You know, it's not too small or too big.
+It's just right.
+And it's all about the structure of the data,
+the structure of the code, the size of the
+team it takes to support the code, and how
+you build and make that model work as you
+go along.
+It's too much to properly get involved in
+this level of conversation but there's a lot
+of information there, and a lot of articles
+I've written on this topic as well too, that
+talk through the process of how do you decide
+where to put a boundary into your microservice.
+That's number one, I think number two, and
+in many ways, maybe this is number one is
+knowing when to stop and when not to stop.
+I've run into many, many, many companies that
+have started down the process of building
+microservices and stopped it halfway in the
+middle.
+And this isn't just true with microservices.
+I've seen it with other migrations as well,
+cloud migrations and other things.
+They find out that the cost is higher than
+expected, the difficulty is higher than expected.
+The problem is, there's not a linear grasp
+between the amount of effort you put into
+migration and how much benefit you get out
+of it.
+When you put effort into a migration, what
+happens at first is, you get a negative benefit
+out of it because you go into this trough,
+where things are actually worse for your application
+than they were before.
+You've got a monolith that's broken into 10
+parts that are all intertwined in weird ways.
+And I'd say it's a more complex and more difficult
+to manage situation.
+But then you get to a point where you keep
+investing in the migration and you start seeing
+the benefits coming out of that.
+They start outweighing the cost going in.
+There's a translation point where the benefits
+outweigh the total cost that you put in.
+And that's when the migration is a success.
+But too many people run into that cost of
+the migration and in the middle decide it's
+too expensive, they can't complete this, and
+they stop.
+They've gone to the point where they've invested
+money that's wasted and they've made the application
+and the technical debt in the application
+worse now than they were before.
+I've even seen companies stop at that point
+and then try and convince everyone that this
+was a success.
+You know, we proved this was a hard exercise.
+So, we got good learnings out of this.
+And therefore, things are better off because
+of it.
+But everyone looking at the mess of code that's
+available to them says, "There's nothing better
+about this.
+This is a bad situation we're in."
+But they stop investing.
+The second piece of advice is to commit to
+it and commit to completion because there
+are going to be low points.
+There are going to be points in it where you're
+convinced it's not going to work.
+Trust the process and realize that it will
+work and it will complete.
+Maybe it'll be more expensive than you initially
+thought.
+That does happen sometimes.
+But you'll come up with a better world when
+you're finally done.
+I think I know the answer but are there any
+key trends that you see of the people who
+went all the way and the people who stopped
+in the middle?
+Is there any secret sauce that if you don't
+do this, you won't get to the other end?
+Absolutely, planning is key.
+Knowing what you wanna do and how you wanna
+do it is critical.
+When we're talking specifically about a microservice
+architecture, it’s deciding which direction
+you're going to go, are you gonna start at
+the bottom and move up or the top and move
+down is critical.
+I usually prefer the bottom up, you know,
+start with critical components, like user
+identity and things like that, and then build
+on top of that versus starting at the user
+experience and moving down.
+Having a plan for which direction you wanna
+go and what the steps along the way are.
+Dealing with the process changes that are
+going to be required to make this happen as
+you go along is also critical.
+You know, things like CICD processes are nice
+to have for monoliths.
+They're absolutely essential for microservice
+architectures.
+Building those in place before you need them
+is a critical aspect, focusing on those process
+and procedure improvements as you go.
+And I think the biggest thing is to understand
+it's an investment.
+It's taking time away from building new features,
+yes.
+But the end result is you're gonna be in a
+better situation and be able to better respond
+to faster-moving trends, in general.
+And that's going to make you more responsive
+and be able to build a better business.
+But you don't get there overnight.
+I think that makes sense.
+I think you and I have talked about this.
+I think making sure the business comes along
+for the ride and they understand the business
+benefits like business agility.
+You just hit on that, I think so spot on.
+When I was at Amazon, the very first project
+ever worked on was moving from the Obidos
+monolithic amazon.com website into their service-oriented
+architecture.
+I was one of the managers that drove that
+migration project.
+That project worked, it was successful and
+the end result was that the things we were
+able to work on in the future grew astronomically
+as a result of that migration.
+You can just see it on the website.
+You would go from slow-moving, new features
+being added occasionally, but not very often.
+Then we invested in the migration and no new
+features appeared on the website for a long
+time, a year, year-and-a-half.
+And then finally, we finished, and the pent-up
+demand of all these new capabilities and new
+trials and tests just magically started appearing
+and started growing within the organization
+and visible to the outside world in a very,
+very, fast manner.
+And that innovation, that growth was only
+possible because of that investment we put
+in to do the migration.
+The level of management support necessary
+to do that was huge because the cost of not
+innovating for a period of time was extremely
+high for a company like Amazon, but they saw
+the investment and they made it work.
+And this had support all the way up to Jeff
+Bezos.
+I mean, Jeff Bezos was involved and knew about
+the migration going on.
+I have had conversations with him about it,
+as we were going through the migration process.
+And he was one of the first people when we
+finished the project, to come down at our
+launch process and thanked us for all of our
+work.
+This had huge management support from the
+very top of the organization down to make
+these changes.
+These changes were fundamental to allow the
+retail organization to continue to innovate,
+and grow, and to come up with new ideas as
+time went on.
+I love that, the business leader getting involved
+and supporting the team.
+I think that's so critical.
+You're usually not quick to share your Amazon
+experience but thanks for bringing Beanstalk
+to the world.
+I know so many companies use that every single
+day.
+And that must feel great.
+Do you actually mention that in the book?
+I can't remember.
+I'm not sure if I mentioned Beanstalk in the
+book or not but I'll tell you, people don't
+know when we're recording this, but AWS re:Invent
+is going on as we speak right now.
+And just yesterday was Adam Selipsky's first
+keynote presentation.
+He was my manager for Beanstalk and he's now
+running AWS.
+He went for a 15-year history of AWS.
+In the early history, he mentioned S3, EC2,
+RDS, and Beanstalk.
+And to hear Elastic Beanstalk mentioned on
+that stage was a neat feeling because that
+was my baby.
+That was the thing that they brought me in
+to help build that product.
+And what was really innovative about Beanstalk,
+it really isn't a complex service.
+But it was Amazon's or AWS's first platform
+as a service versus infrastructure as a service.
+And it took the existing infrastructure services
+that were there, which were just a handful
+of services at the time, and it put a wrapper
+around them in a way that provides a business
+value to customers.
+So instead of having to compute EC2 units
+and storage units and a database, and just
+all these random components, you had a web
+application.
+And you can take a web application and install
+it.
+And we will do all of the infrastructure for
+you to make all that work.
+It was a really innovative service at the
+time because it was the first one that did
+that.
+Now, a company like AWS has, what, 200, 300
+services.
+Most of them are platform-level or application-level
+capabilities.
+But at the time, that was really innovative.
+That was a different direction for AWS to
+go.
+It was great to see that mentioned during
+the keynote.
+Lee, a lot of people read your book and reach
+out.
+I think you worked with a lot of companies
+now, helping them on these journeys after
+they've read the book.
+What are some of the key things where someone
+read something in the book and is looking
+to you to go that extra detail of how you
+implement the concept?
+What were key themes people learned from the
+book and that they are reaching out and asking
+you about?
+I'll tell you one of the most common things
+I do with clients is a survey of their processes,
+their procedures and less so their code, but
+the architecture of the application.
+And I tell them, "Here are places you're gonna
+run into problems.
+Here are places that are causing you problems
+today, whether you're aware of them or not."
+In some cases, they are aware, in some cases,
+they're not.
+But, sometimes it's just hearing an outsider
+come in and say, "Yeah you know where the
+problem is.
+It's right here."
+And their response is to say, "Yeah, but it's
+great to hear that someone else agrees with
+that or someone who knows what they're talking
+about agrees with that.
+That's what we thought would be the issue."
+That alone is extremely valuable.
+So, I would say I spend most of my consulting
+time doing that sort of analysis.
+It's like, let me spend a few days talking
+to you, to your engineers, and your organization,
+and come up with a list, if you will, or a
+recommendation of where you really should
+focus on in order to improve availability
+and scalability, in particular, but also general
+modernization to increase flexibility and
+growth and all those sorts of things.
+Often the results of that are things that
+you already know are true, but hearing it
+is good confirmation.
+Almost exclusively, when I've been able to
+do that successfully, companies have come
+back and said, "Yeah, that's changed the direction
+that we were moving.
+And we took what you said to light."
+Maybe even changed staffing as a result of
+some of my decisions and helped to put better
+procedures and processes in place in order
+to do the right things, to get rid of the
+technical debt and to make things go in the
+right direction.
+As far as specific tools that are helpful,
+the risk matrix is probably the number one
+most important tool that people take from
+my book and I'll talk about it in my consulting.
+They'll take that and grow with it.
+The second one is moving to microservices
+and plans to make that happen.
+Third is probably data management, data sizing
+and data construction.
+A lot of people are still falling into the
+traps of having the database delivering too
+much work.
+Let's put all of our data into a single database
+and use complex database constructs in order
+to recall all the data we need as we need
+them versus localizing data where it's needed,
+making data part of the service and so you
+deconstruct your data, just like you deconstruct
+your service code and see how data is much
+more manageable that way in a much larger
+organization.
+Those sorts of things are probably the biggest
+things that people take out of what they get
+out of my book anyway.
+That makes a lot of sense.
+You also talk a little bit about operating
+for scale, like service level objectives,
+error budgets.
+What are some of the key takeaways when you
+start building a system that's going to operate
+at scale that you need to make sure to implement?
+I always say that availability and scalability
+are the same thing.
+I firmly believe that because what usually
+happens is, as you scale, your availability
+suffers.
+And as you build an application, it has more
+and more customers, you end up making decisions
+that impact availability more than necessarily
+and that has an impact on scalability.
+So, often, when I'm talking about the operational
+aspect of things, I'm focused more on the
+availability aspects than on the scalability
+access.
+So, things like zero-downtime deployments,
+things like, you know, the security processes
+to keep bad actors out.
+I'm not a security expert but security processes
+and procedures are part of your risk management
+processes.
+You have to inject them into that whole process
+as well.
+Things like, you know, testing at scale.
+Believe it or not, I'm a firm believer that
+unit testing, code-level testing, you know,
+is less critical than production testing.
+And I do most of my business, as I recommend
+to my clients, what I'd recommend to them
+is to spend most of their time testing with
+full production in a production environment.
+Game days.
+What happens if I pull a data center offline
+in production?
+Do things just continue to work or do they
+break?
+What happens if I randomly crash computers
+one an hour across my data center?
+What happens?
+Doing that sort of testing, random testing,
+doing that in production, not in the staging
+environment, not on a desktop but in a production
+environment, the net result of doing those
+sorts of things is you end up with a much
+higher reliability system and a greater trained
+staff to be able to deal with problems as
+they crop up.
+And the cost to, you know, the initial days
+of, you know, what happens when I turn off
+the computer, well, my whole system goes down?
+Those days do happen at the beginning.
+But the cost of that is insignificant compared
+to the savings later when you get to the point
+where random problems occurred, that you're
+not planning on and your system's able to
+have self-heal self-recover from them.
+Self-healing is a big aspect of the things
+I teach from the decoding aspects, and they
+play into the operational aspects.
+So, I'm a huge fan of production level, you
+know, game day sort of testing, and that being
+the most valuable testing you do to your system.
+I hear people focus on test suites but you
+can't release code unless you write an extensive
+test suite that goes with that code.
+Well, most of the time, I could say, I don't
+care whether you write test suites or not,
+because for the most part, most of the time,
+the types of bugs that are hard to find, hard
+to identify, and cost your business money
+aren't the bugs that are caught by a developer-level
+test suite.
+They're the bugs caught by production operational
+environments.
+Now, here are a couple of things.
+I think, you know, when you're going to services,
+making sure you have defined inputs and outputs
+and really have the monitoring on that level
+necessarily versus just the code inside because
+you might not catch things, but a lot of people
+I think might confuse game days with a DR
+exercise because I know, you know, we've talked
+to many large enterprises and a lot of times,
+they quote DR or they might mix up with a
+game day is really a tabletop exercise versus
+a true game day.
+Can you kind of share the differences from
+your perspective on what a true game day and
+when you're running game days in your organization
+versus a DR exercise versus a DR tabletop
+exercise?
+Sure.
+So, literally, when you are running your application
+production, turning off production level resources
+or causing them to behave inappropriately,
+and just seeing what happens without telling
+people that you're going to do this, without,
+you know, giving a heads up to your development
+organization, that is what I mean by game
+day.
+That has nothing to do with the formal process
+of disaster recovery.
+You know, you can have all the paper plans
+in the world for what to do when your system
+fails, and we're gonna roll over to this environment,
+and we have these levels of backups and all
+these things work fine.
+On paper, they can work fine.
+In reality, they don't.
+And nothing beats being prepared for a catastrophe
+than causing a catastrophe to see what happens.
+I love that.
+And you think about...
+It sounds crazy to me to be thinking about
+this.
+But boy, I would much rather see what happens
+when I completely destroy a data center during
+the day when my staff is around and perhaps
+at a low traffic time for my website or lower
+traffic time on my website.
+I'd much rather do that than to have it happen
+in the middle of the night when my on-call
+engineer is just waking up from going to bed
+two hours ago, and is still groggy, and all
+my customers are complaining.
+You know, I'd much rather have the former
+than the latter.
+And so, I want to make sure that everything
+works by testing, that it actually works,
+as opposed to doing the paper exercise to
+see whether it works.
+And so, disaster recovery planning scenarios
+that you typically get from...
+here's my DR report, so uncovered.
+That paper's worth the price of the paper
+it's written on and that's really about it
+because unless you are certain that things
+are going to work in that scenario by testing
+it, it's an irrelevant sheet of paper.
+So many times, I've seen disaster recovery
+scenarios fail because somebody forgot something.
+You know, one of the stories I tell in my
+book and I tell the story a lot in my talks
+is I tell the story about an apartment, you
+know, living in an apartment and having a
+garage in that apartment.
+Now, this apartment that I'm living in, has
+poor quality power.
+And so, I buy a generator that I can use when
+the power goes out.
+And this is part of my disaster planning scenario.
+If the power goes out, I have a generator,
+I can still keep my refrigerator working and
+I don't lose food.
+So, when I don't need it, though, I put the
+generator in the garage.
+The problem is the garage is one of these
+apartment garages with only the main door,
+one door, that's the only door into the garage.
+And it's got a garage door opener on it.
+And nobody thought to put in a mechanical
+release lever for this garage door opener
+that's accessible from the outside.
+So, when the power goes out to the apartment
+complex, you can't open the garage door.
+So, you have this generator to solve the problem
+when the power goes out but you can't get
+access to the generator because the power
+is out.
+You know, but you don't think of that until
+you actually go through this scenario of turning
+off the power, setting up the generator, and
+seeing if it works.
+And then you see that, oops, there's a flaw
+in my plan here that doesn't work because
+I didn't think about how do I open a garage
+door when there's no power.
+That step in that process didn't enter the
+DR playbook but you would notice it instantly
+when you try it out to see what actually happens.
+So, I use that example a lot.
+It's a great example, you know, of multiple
+levels of problems that when...
+You know, most of the time when you have a
+major outage, it's not one thing that went
+wrong.
+It's two or three or four things in a row
+that goes wrong.
+Disaster recovery plans tell you what happens
+when one thing goes wrong.
+So, when the power goes out, do this, that's
+great.
+When such and such happens, do this, that's
+great.
+But they don't talk about what happens when
+cascade things occur.
+So, in this example, there's two problems
+that occurred, power went out, and nobody
+thought about what would happen to the garage
+door when the power went out.
+So, that combination of those two mistakes
+together meant that you had a disaster recovery
+plan that was inaccessible to you.
+Yeah, I always think big outages are always
+if, if, if.
+It's like three things happen, and then you
+have a big issue.
+I love how you also talk about, like, you
+know, there's terms like Chaos Monkey, but
+actually building in your systems chaos, so
+it's constantly running, which really forces
+that constant, you know, focus on resiliency
+by design?
+Right.
+Absolutely.
+Thank you for mentioning Chaos Monkey.
+You know, the whole idea of having a production
+environment that is chaotic and filled with
+unexpected things happening is valuable, not
+a problem.
+So, people say, "I want my production to run
+smooth."
+No, you don't.
+You want it to run as chaotically as possible,
+so that as many things that could go wrong,
+happen, so you build the processes in to be
+able to respond to them so that when they
+happen, and you're not expecting them, that
+you're able to self-heal and self-recover
+from them.
+You know, if you have a solid, continuous
+deployment process with a solid ability to
+back out of a problem, you know, very, very
+quickly and roll back with ability to quickly
+respond and get a new capability out quickly,
+an outage doesn't have to be a disaster.
+It doesn't have to require...
+You know, if you make a mistake in a code
+and it causes a feature to disappear, well,
+you roll it back and fix that problem quickly.
+And you'll know never to do that change again,
+right?
+There are all sorts of things you can do that
+create in that risk...that cause a chaotic
+production environment.
+And you need to be able to build defensively
+code that can live in that environment.
+And very quickly, if you build code that isn't
+defensive enough to live in this chaotic environment,
+you'll learn very quickly the moment you deploy
+it, there's a problem with it.
+Very, very quickly, because you're gonna hit
+those corner kind of cases that are causing
+these problems very, very fast.
+And so, you tend to produce higher-quality
+code, higher-quality releases, more responsive
+releases, more self-healing releases over
+time, by having a chaotic production environment.
+When you don't have a chaotic production environment,
+when you have a smoothly operating production
+environment, you get complacent and you start
+assuming things are always going to be smooth
+and operate normally.
+So that when a problem occurs, it becomes
+a bigger problem, a much more serious problem.
+Lee, in private lives we both run systems
+that, you know, half-hour outage is $40 million.
+High pressure.
+I always think about when you build chaos
+into your system, like, that gives you peace
+of mind because you know, the system is constantly
+under your attack that you created and you
+know it's resilient by design.
+So, I always think, like, that gives the team
+a peace of mind where you're gonna have less
+issues by making that investment, which means
+less late-night calls, means less, you know,
+high-priority RCA reports and all that, less
+D&R plans, all that good stuff.
+Exactly.
+Yeah.
+You know, chaos shouldn't be feared.
+Chaos is value.
+Chaos is examples to learn.
+And the more chaos you have, the more you
+learn, the more capable your system is, the
+more robust your system is, the more stable
+it's going to be as time goes on.
+If your application can run in a chaotic environment,
+it can run anywhere.
+If it can run in a smooth environment only,
+it can only run in a smooth environment.
+Lee, there are so many other things that you
+can learn and unpack in "Architecting for
+Scale".
+I know we don't have that much more time.
+Anything else that you think we should bring
+up that, you know, might be a tidbit that
+a reader can just take and run with and get
+some value right away?
+Oh, jeez.
+We talked about risk management.
+We've talked about the chaos thing.
+We haven't talked too much about CICD but,
+you know, it should be obvious from what we're
+talking about here that a high quality, continuous
+deployment, and continuous integration environment
+is critical to running a chaotic production
+environment that's highly available and highly
+scaled.
+You know, companies like Amazon do hundreds
+and thousands of releases an hour.
+And there are still customers today, clients
+today...
+I had one client, in particular, I was talking
+to not that long ago, that is still tied into
+the weekly release process.
+And the weekly release process, they'll release,
+every Thursday, whether they need to or not
+something.
+And guess what?
+Those releases are costly.
+They're problematic.
+They're undisciplined because they only occur
+every week, you know.
+But when you're releasing continuously, you
+know, hundreds of times a day, you know, then
+the release process is just an extension of
+the development process.
+And you're able to respond and fix things
+a lot faster.
+So, we didn't talk too much about that but
+I would say, that would be one more thing
+I would throw into that mix, and make sure
+that you understand is that that process,
+that CICD process is absolutely essential
+to maintaining a robust, chaotic environment.
+I agree.
+And I think that's also a good point as you
+talked about making the full switch to services
+because if you're deploying a monolith still
+or a hybrid Frankenstein monolith, where you
+half went to services, it's really hard to
+have like canary deploys or things that are
+checking and saying that this thing is functioning
+correctly.
+And so, it really, I think limits company's
+ability to have those continuous deployments,
+you know, the bigger, you know, uglier, bulkier
+the system is.
+So, I think to me, it's just a great point
+of why they need to follow through.
+Yep.
+Yes, exactly.
+Yeah, you know, you're right.
+That's one of the common feedbacks with CICD
+systems is I can't deploy my monolith that
+fast.
+It just takes so much effort to do it.
+I can't automate it because it takes 30 people
+touching these 20 files all at the same time
+to make it work.
+Well, that's the problem, though.
+Hey, and maybe it's so complex that even if
+I did automate all of those things, I don't
+know for sure if a particular thing was broken
+but, like, in your book, if you have services,
+and they're discreet and they're sized the
+right way, you know what they're supposed
+to do.
+So, you know, if they're functioning or not,
+and so you can kind of release without fear.
+Yep, absolutely.
+And I think that's a really, really good point.
+Well, Lee, I'm so excited in your next event...
+Obviously, do you have any more books coming
+out soon or anything you can share?
+Yeah.
+Yeah, I've got a couple in process.
+I've been talking to publishers, but nothing
+I can easily talk about right now.
+But stay tuned.
+There is more coming.
+But definitely look at my website.
+Besides my main book, I have a couple of...
+You know, I've got articles in other O'Reilly
+books and a couple of reports written, they're
+part of the O'Reilly ecosystem.
+And I have a book that I wrote for Redis Labs
+on caching, that they give away to their customers.
+And so, take a look at that.
+So, I've got several books out there.
+Certainly "Architecting for Scale" is my main
+one, but there's gonna be a couple ideas in
+the works here.
+There'll be another big one coming out here,
+if not next year, then very early the year
+after.
+And Lee, if companies are kind of on that
+journey, on that mission of transformation,
+they can go to leeatchinson.com and learn
+more, and not only will you help them, but
+you also, once you do it, like, even come
+with a keynote to explain the benefits, you
+know, to the organization, to the tech group.
+You still do that too, right?
+Absolutely.
+Yeah, I can...
+You know, just from the content that I write
+that can be helpful to you but if you wanna
+engage me more directly, I can come in.
+I can give a presentation to your team.
+I can, you know, do, you know, an educational
+webinar or seminar to your team or I can do
+one of these analyze and comment and make
+recommendation processes.
+It's a little bit deeper integration or I
+can do more than that.
+It all depends on what you're looking for.
+But absolutely.
+I just gave a keynote last week to a company
+that was going through an availability, launching
+a whole new availability project, a little
+more than a project and a program that they're
+working on, and brought me in to talk about
+availability from my book.
+And I do those sorts of things all the time.
+Lee, it was great catching up.
+Look forward to our future videos and I will
+always love to catch up.
+But if you haven't seen it yet, definitely
+pick up "Architecting for Scale".
+I have it in my book...right behind me and
+especially the second edition.
+So, good stuff, Lee.
+Great talking to you.
+Thank you, Ken.
+Great talking to you and I'll talk to you
+soon.
+All right, take care.

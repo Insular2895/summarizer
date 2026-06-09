@@ -1,0 +1,798 @@
+Hey everyone, welcome to the latest
+stream of React 2025. In today's stream,
+we are going to be adding MDX markdown
+for React inside of the application for
+the terms of service or use page as well
+as the privacy policy and then
+eventually documentation as well.
+There's a couple other things I want to
+touch on before we jump into those. Some
+that are a continuation of the last
+stream and then some other fun things
+that I found along the way. The first
+being dark mode. So, in the last stream,
+we added the production database and we
+got this actually launched to get alpha
+users out there testing it. And myself
+being the first alpha user, I got it
+added to my website. And what I noticed
+was that I had completely forgotten
+about dark mode support.
+Um, on my website, I have both a light
+theme and a dark theme and the text was
+the wrong color on the dark theme. So, I
+made a really quick PR to fix that as
+you can see here in this blog post that
+I posted a few days ago.
+It looks great on dark mode here as
+well.
+So, what that entailed was
+on the consumer side, I made it as
+simple as just passing in a query
+parameter for which theme you want to
+use. And I wanted to keep the scope of
+this pretty small because
+it would have been a lot of work to add
+dark mode everywhere inside of the
+entire application.
+So, what this look like is
+Chakra UI provides a use color mode
+theme that can store a value inside of
+local storage. And this works really
+good if you're trying to do like a dark
+mode toggle button across your entire
+application.
+Um that's what I do on my personal site
+and what I might eventually do in this
+product, too. But it got a little tricky
+with this because I was trying to do it
+based on a query parameter.
+So what I ended up doing
+was actually making a custom hook called
+use theme that
+the that hook became the source of truth
+of what the theme should be. So we're
+still using the underlying theming
+system that Chakra UI provides, but
+instead of the source of truth being the
+use color mode hook, instead we're
+looking at this query parameter. So if
+it exists, then use the value of theme,
+otherwise just fall back to light.
+So what this looks like then is inside
+of any of the components that I wanted
+to style, specifically in the embed
+view,
+I'm able to import this custom hook
+and then use it to define both light and
+dark colors
+and pass those into components. So for
+example, on the heading uh the piece of
+feedback, we had the color prop and
+before it was just gray at 900. And now,
+based on that color mode, we're able to
+conditionally toggle that based on
+whichever query param you pass in. So I
+added that in a couple different places
+to support dark mode. And what that
+looks like in practice is then this
+iframe
+passes in a new query parameter and when
+you toggle it, it just re-renders the
+iframe with the new theme and it works
+pretty smooth.
+So
+that got over that hump, which is nice.
+One other interesting thing that
+happened as I got this out here into the
+wild as the first alpha user was that I
+found some bugs, which is good. And this
+is really why you should launch early
+and get people on your platform because
+it's inevitable that things will come
+up. Uh one of these bugs was when people
+besides myself in production started to
+leave feedback, I found that I needed a
+slight tweak to the Firestore
+client-side security rules. So,
+specifically
+for deleting,
+you want to be able to delete all the
+feedback if you're an owner or
+that's a site owner, I also needed the
+same kind of check for an update. So, if
+someone else leaves a piece of feedback
+on your site, you want to be able to
+toggle the visibility of that, aka
+update that document inside of
+Firestore. So, we needed this or check
+to say, "Well, if you're the site owner,
+then you control all of that feedback."
+And since we already had all of this
+defined for site owner previously, we
+just needed to add the or check.
+So, basically it looks at whichever data
+is coming in and it checks the site
+author ID value and makes sure that it
+matches
+the current user.
+So, that was one bug I found. Another
+bug I found is through Logflare. So, if
+you go back a few streams, you remember
+we set up Logflare.
+And if I go to my dashboard, we had this
+stream where basically all the things
+are coming in.
+Well, inside of here,
+you can go to rules
+and you can define some syntax that you
+want a subset of logs to go to a
+different
+a different route, basically, a
+different stream. So, I said if there's
+500 in them, route those to errors. This
+could probably be better if it was like
+looking at the status code, but it works
+for now. And what that did was that if I
+go back to my logs,
+errors were getting correctly sent here.
+There hasn't been any recently, so I'm
+not seeing any. But then, if you click
+on the settings for this stream, you can
+get email alerts. So, I got this set up
+as soon as I turned on the production
+database just as a sanity check. And one
+of the things I found that I will need
+to address is refreshing the jot. So, if
+your jot becomes invalidated because the
+the time window has passed since it's
+expired, then we need to be able to
+refresh that when trying to communicate
+with our API routes. So, I saw some of
+those errors come through, luckily
+thanks to here, and now I know about it.
+I have visibility into that, and I'm
+able to kind of tackle some of those.
+So,
+one quick fix, one quick bug. And then
+another thing that I wanted to briefly
+mention wasn't really even planned for
+this course or for the product was
+markdown support for the feedback that
+you add. And I started to look into this
+because I tried to leave a comment that
+had a list, and it wasn't working. And
+then I got really frustrated cuz I write
+so many things in markdown that I really
+wanted this support. So, I'd started to
+do a little bit of research on what this
+would look like.
+It's definitely not done, but I was able
+to kind of spike out what that might
+look like. And I found
+quite a few different solutions.
+There's this Trix one, ProseMirror,
+Quill, React Simple Markdown Editor, and
+then there's a
+React port of ProseMirror. Basically, a
+bunch of different libraries that allow
+you to parse that markdown on the client
+side so that you can render it on the
+page, right? So, when you type in you
+leave a piece of feedback, if I do
+something like
+this,
+we want to save that in the database as
+raw markdown, right? We don't want to
+convert that to HTML and save it in
+Firestore because that's prone to some
+security vulnerabilities. So, you want
+to save off the markdown.
+So, you'd save this off, you put it in
+the database, but then when we fetch
+that information from the database, we
+need to then convert it from markdown
+back into JSX that React can understand,
+which then eventually gets turned into
+HTML. And luckily, there's lots of
+libraries out there that will help make
+this process better for you. And it
+seems like the most popular one is React
+Markdown, so that was what I added to my
+package.json. I started to mess with
+that, and then inside of a site file,
+I don't know if this is necessary yet or
+not, but I was replacing the literal new
+lines with a new a new line character in
+markdown so that it picked it up
+correctly. Maybe I don't need to do
+that.
+But then inside of the actual feedback
+component,
+where previously we were just rendering
+the text, instead it's getting passed
+into this React Markdown component. It
+takes that markdown text from Firestore,
+which
+was really funny if I go over here.
+You can see just
+how terrible this looks without it.
+If I go back into here, it takes that
+source, and then we pass it some
+different renderers. So, these are going
+to be React components that this React
+Markdown then uses to display this on
+the screen.
+Now, you have things like paragraph,
+quotes, links, lists, tables, all this
+type of stuff. You could really even get
+crazy with syntax highlighting here.
+Um really this was just the main thing
+that I wanted to support, bold, italic,
+lists.
+Um
+so,
+I'm going to probably try to polish this
+off. I don't know that it will make the
+course, but I just wanted to throw that
+out there as something you can do
+because
+there's a lot of
+unhelpful information out there about
+how you want to do that as far as saving
+that information in Firestore and then
+processing it on the client in React.
+So, that's one piece,
+which actually
+transition transitions us into MDX
+pretty well because
+what I just talked about was just
+vanilla
+Markdown
+like this,
+and that might be in a dot md file, but
+MDX is
+essentially like a superset of that
+because it allows you to also use React
+inside of your Markdown. This is really,
+really handy because it allows you to
+get really interactive. Like, you can do
+basically whatever you want. You can put
+it in a component and then just drop it
+in your Markdown file. And this
+especially works well for things like
+documentation, where you might want to
+have interactive examples, or, you know,
+really nice highlighted code snippets,
+and then maybe some special components
+to display things. Having that
+flexibility with MDX provides a platform
+that will persist into the future and
+work really, really well.
+So, I kind of want to start there
+because markdown is markdown. It it can
+go anywhere, but then I can use MDX to
+handle the layout that my components
+will be in.
+And it transitions well because you see
+here I have this MDX components.
+And this is an MDX components file.
+And this is something that I basically
+copy pasted from my personal blog.
+All this is
+is a bunch of Chakra UI components that
+like all visual components that I'm
+exporting as an object. So, the key is
+whatever we want to map that to.
+Headings, tables, links, lists, all that
+kind of stuff.
+And then it takes in a React component.
+And these are basically all just
+slightly tweaked Chakra UI stock
+components
+to support things like color mode or
+putting in um
+I don't even think we'll need to do
+this, but this was pulled directly from
+my site, but putting um
+auto link headings on
+beside the headings where it shows like
+the
+what's that called? Like the hashtag.
+So, you can
+uh click on it to automatically link to
+it.
+And then I think this is an important
+one.
+Which is if the link starts with the
+slash or a pound sign, that's the word I
+was looking for, pound sign.
+Then use the next link so that you have
+a client-side transition. Otherwise,
+just use the Chakra UI link component.
+So, these will be as part of the PR.
+There's just really all the visual stuff
+here, so there's not a ton that we need
+to go over.
+But
+let's actually get into this now. Let's
+try to set up a blog for MDX.
+And I'll talk through a few different
+options we have for adding it into our
+application. So, you can just do vanilla
+MDX, or you can also use a couple of
+libraries called next MDX enhanced and
+next MDX remote. Um next MDX enhanced is
+actually what I use on my personal site.
+And the reason that I went with this is
+because it allows you to have different
+layouts for different types of markdown.
+So, I have a layout for
+um my newsletter, I have a layout for
+blog posts, I have a layout for other
+things, and it just allows you to divide
+that up really nice. The only thing I
+want to mention with this is that
+it a lot of this is built upon modifying
+webpack. And with the newer releases of
+Next.js, um
+they're working with the webpack 5 beta.
+So, by the time you watch this video, it
+might already be out. It might already
+be using the new version of webpack, but
+I believe it's going to introduce some
+breaking changes into some of these
+libraries that may or may not be
+difficult to deal with. So, the
+spiritual successor of this library is
+called next MDX remote, which is
+instead of looking at your file system,
+this is where you want to fetch remote
+content. So, some MDX files stored
+somewhere. So, these still could be in
+your file system, or they could be in a
+CMS, just somewhere.
+So, instead of doing it file system
+based,
+and specifically like every single page
+being a new file in your file system
+with next routing, you can just have one
+file that has a get static props, and
+that allows you to parse it from
+anywhere. So, local file database. So, I
+think this is probably the future of
+where that will go. It's not as widely
+used yet, but I think it's going to pick
+up a lot.
+Um but you don't necessarily need to
+jump to this right away. I just wanted
+to make sure that you know that it's
+available.
+Um
+but if we want to
+add MDX, just vanilla MDX,
+there's a pretty simple example that we
+can follow, and it only involves a few
+different things.
+Adding the necessary libraries
+and then modifying our config to support
+files
+that end in MDX or MD.
+So, if I jump over to my personal site,
+as I mentioned, I'm using next MDX
+enhanced here.
+And if I look at my config, it has a
+little bit different way of doing it
+that allows me to pass in all these
+different remark plugins
+um for auto linked headings or slugs, um
+code titles and code snippets, even this
+title style plugin, which automatically
+capitalize things according to the
+Chicago manual style, which is kind of
+nice. And
+this is kind of a neat one, too. It
+allows you to extend front matter.
+And what that front matter looks like is
+this.
+So, you define some fields about your
+MDX file, which is essentially in this
+case a blog post, like title, publish,
+summary, etc. It allows you to extend
+that and just pass in any sort of
+plugins here. So, for example, this
+reading time plugin, read the number of
+words and figure out how long it takes,
+which is kind of nice.
+Um
+yeah, I figured I'd at least mention
+that first because it's going to be
+somewhat similar to what we want to do.
+Okay. So, let's kill our server,
+and we need to install some
+dependencies.
+Let's go to the package.json.
+So, we need the loader for MDX. We need
+the next library.
+We'll add those.
+Whoa.
+Wrong button.
+I'm going to pull up our app.js.
+I'm pretty sure in this example
+they don't do anything as far as passing
+in custom components to the MDX render,
+which is fine because it's a very simple
+example, but I think we're going to want
+to do a bit more.
+I don't even think I have a I don't.
+There's no
+next config yet,
+which is pretty incredible that I
+haven't had to override and do anything
+webpack yet.
+Okay, so require that library and allow
+the extension MDX.
+Okay.
+And
+at the end of the last stream I
+mentioned that I used this
+service called Termly that allowed me to
+generate my terms of use and my privacy
+policy. Basically, I went in here, I
+filled in all the required information
+about my application and my address and
+the data that I need for the application
+and yada yada yada, and then it just
+spits out this auto-generated form for
+you, and I went through, I cleaned up
+the markdown a little bit. I'll probably
+have to do more and probably at some
+point
+um trim out some of this because there's
+some parts that aren't specifically
+pertinent to my application.
+But it was nice to even be able to add
+in custom stuff. Like I added in Apple
+Pay, Google Pay because Stripe checkout
+supports that.
+So, I think we should be able to take
+these markdown files, call them MDX, and
+again because these are files that are
+inside of our pages directory, they map
+to routes in our application. So,
+{slash} privacy should
+read this. And my guess is that
+hopefully this works, but I would expect
+to see no styling.
+Okay, so we're going to try building
+this privacy route.
+See if this loads.
+Sweet.
+So, this correctly read my markdown file
+and right now it's just using some
+vanilla browser styles. So, there's no
+components
+to pass to get some custom styling, but
+if we actually look at the markup,
+you'll see that it's properly parsing
+the markdown. Like these are paragraphs,
+this is strong because it's bold, this
+is an unordered list,
+proper headings, etc.
+So, all these things look like they're
+correctly being parsed,
+but now we want to use custom
+components.
+So, what that will look like
+I mentioned I copied over this
+MDX components file from my personal
+site. If we go into the app.js,
+there is a MDX provider,
+which, similar to that react markdown
+example that I showed, where you passed
+in what renderers there are, the MDX has
+the exact same concept where you can
+pass in which custom components you
+want.
+So, let's go to here.
+Should be fine to put it
+under here.
+And that comes from MDX jsx/react,
+so we'll also need to add that library.
+Since it's a bit more custom, having you
+control
+which things are rendered.
+So, I'll let this install, and the next
+thing we're going to look at
+is even with these styled correctly,
+which I'm sure it won't look perfect to
+start, but it will be better.
+We want to embed this file inside of a
+larger layout. So, I touched on next MDX
+remote, one of the nice things is that
+it makes it really easy to do layouts.
+That doesn't mean that it's not possible
+with just vanilla MDX and um
+next js, which it is. Um it's more so
+that
+you'd have to do it in a different way.
+And we're going to show that.
+Forgot to import this.
+I might have to do it manually because
+it hates me.
+Oh, man.
+Awesome.
+That looks
+a lot better.
+Um don't want two exclamation points
+there.
+This is looking pretty good.
+Um
+that address at the bottom looks
+kind of strange.
+And I also feel like
+this looks kind of strange. I don't know
+what those are from.
+Okay.
+This looks decent.
+So, now let's make a layout for this
+file.
+Um to do that, we should be able to
+make a new component.
+And whatever we export as the default,
+then I believe it will just forward that
+all down to
+like all of the content inside of here,
+it will forward it down as props
+to whichever component we define.
+I don't know if there's an example in
+here anywhere.
+Nope. Okay.
+I think it's something like this.
+Um
+we could do the dashboard shell to get
+us started
+and see if this is even working.
+And then
+I don't know for certain if absolute
+imports and aliases will work inside of
+MDX, but let's try it.
+Oh, wow.
+Okay, that was way easier than I thought
+it was going to be.
+That's great.
+That's not great.
+Okay, the reality
+is we're probably going to have a
+different header
+for
+pages that aren't part of the dashboard.
+I started to look into this a little bit
+by creating a navbar
+um that is going to have like a login
+button that I would put on the landing
+page. And this is basically just a fork
+essentially of this part of the
+dashboard shell.
+Um so we can probably use that.
+Let's do that and then
+one of the other things I wanted to do
+was create a footer that's going to have
+links to these things.
+So.
+Hm.
+I'm debating if I want to make a
+complete new file for
+a wrapper for this.
+We'll definitely need a footer.
+And let's see.
+I'll just leave it like that for now.
+Now let's make a new file.
+Um let's see.
+Markdown layout.
+Docs layout. What do I call this thing?
+We'll just call it
+layout.
+MDX layout, there we go.
+Um, and inside of here, I really think
+the only thing we'll probably want to do
+is
+we're going to want to forward some
+children
+and render those.
+It actually might be as simple as just
+render a fragment, the top part being
+the navbar.
+Uh,
+we'll just take some box with the
+children and then
+the footer.
+I'm just going to return that directly.
+And
+I think what I'm thinking on here is we
+probably want to have something like the
+max width being
+700 pixels or so, and then we should be
+able to do
+something like margin zero auto.
+Which we can probably simplify that even
+to be the margin
+X being auto. I'm so used to doing that
+short-hand syntax for non-Chakra things.
+So,
+let's go back to our privacy page
+and we'll import
+Children is not defined.
+Okay.
+That looks a bit better. We have our
+new navbar that I've been working on
+that is not done, but at least it's a
+start.
+Um things are
+centered and they have a max width. I
+feel like it could be even smaller than
+that.
+And this
+does not look good at all. So, let's fix
+that.
+Basically, I want to have a collection
+of links
+centered in the middle.
+So, we could do a stack.
+Uh
+I think it's
+is inline is the prop on that.
+And then, let's take
+something like this.
+Ditch
+all this.
+This will be like privacy.
+Forgot something. Footer wait.
+Oh, I spelled it wrong.
+Okay, that looks
+okay.
+We probably want to wrap this
+in a flex container.
+And we'll say that this should be max
+width uh
+Actually, we probably don't even need to
+do that.
+Oh, when will I learn?
+I need to probably set up ESLint inside
+of here so that it warns me when I don't
+import things.
+Uh
+I wonder if that needs to be full width.
+Oh, did I
+You know, for all the times I use align
+and justify, I still get it screwed up.
+I'm pretty sure it's align.
+Does this need to be display flex?
+Mhm.
+Oh, man.
+Feel like I could just do the stack
+here.
+And then on this, let's do a margin
+on the top and bottom of like four or
+something.
+God, that looks bad. How about margin on
+the bottom four, margin on the top of
+double.
+That still doesn't seem like enough.
+Okay, now these links
+I don't know why that's not working.
+Let's do a
+color of gray at
+600. How does that look?
+Feel like it could be even dark or
+lighter.
+And
+we're going to want privacy,
+terms,
+um
+home,
+and
+probably docs
+too.
+I feel like this still needs more margin
+on the bottom.
+I feel like
+these kind of seem like they are too
+large.
+Maybe I'm assuming it defaults to medium
+on the font size.
+So, let's do small.
+That looks better.
+So, we have privacy. We also set up
+terms. We haven't tried this one yet.
+Um it's loading the MDX correct.
+Looks like it also has the problem with
+the address at the bottom.
+God.
+That looks terrible.
+Bugs, viruses, Trojan horses.
+Please, don't sue me.
+Okay.
+Let's go into Well, we can take what we
+did inside of here.
+Go to terms.
+Ah.
+Nice.
+I also don't have a pricing page yet.
+But, I should probably do that at some
+point.
+This looks pretty good, though.
+Man, that footer I do like the footer.
+We're going to need a docs route. I also
+need to check
+Unknown props found on link margin
+right.
+forward ref
+margin right
+Wait, where did that come from?
+Is that copy pasta?
+Cuz I should be using
+I shouldn't even need to do margin right
+because
+the stack has spacing on it.
+spacing of eight is inline prop
+Let's try this again. We'll say spacing
+of eight.
+I'll ditch this.
+Oh.
+It is not happy. I wonder if it's
+because
+it's not like this next link isn't
+forwarding it properly.
+Oh, that's probably why it's failing is
+because
+this stack is forwarding the prop margin
+right
+into the next link component and it's
+like, "I'm sorry. What is this for?"
+Which makes me wonder
+It seems kind of nasty to wrap this in a
+box
+just to get around that, but
+I don't know if this is
+It might be too much to pull that out
+into its own component. I mean, it's
+like a 30-line file.
+I mean, that's not the worst thing in
+the world.
+God, I don't know. I don't I don't
+really like that. I think
+I'm just going to go back to margin
+right, and I'll just change this to
+flex.
+So, rather than using the built-in
+stack, which is going to give you that
+spacing prop.
+Sorry, I just noticed.
+There's like a weird
+I wonder if it's because the line break
+is weird here because of this big thing.
+Anyways, what I was saying was
+What was I saying?
+I don't remember.
+Oh, the stack.
+Um the reason I just got rid of the
+stack is because it's really just a
+helper to set the spacing between all of
+the children in an easy way, but you
+could just do it with a flex directly
+and set the margin yourself.
+I wanted to check how this looked on
+mobile.
+So, the content
+the docs content inside of the MDX
+layout. This probably needs some margin.
+Uh
+probably want this to
+Well,
+see what this looks like.
+Wait.
+No, no, no, no. I don't want margin. I
+need padding on the X.
+Which that appears to be aligned
+with what

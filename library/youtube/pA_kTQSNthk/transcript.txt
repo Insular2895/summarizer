@@ -1,0 +1,375 @@
+[Music]
+hey guys hack exploit here back again
+with another video and welcome
+to web application penetration testing
+series all right so in this video we're
+going to get started with spidering more
+specifically spidering uh with burp
+suite
+and you know the purpose of this video
+or this tutorial
+is to help you understand the spidering
+process and how to go about doing it
+with a web suite alright so there's
+going to be a little bit of theory here
+but i'll be explaining
+a lot of things so again this video is
+really focused on understanding
+spidering
+now before you get started with that i i
+just wanted to let you know that the
+target or our
+web application that we're going to be
+targeting um or we're going to be
+attacking is
+the damn vulnerable web application now
+if you don't know what the damn
+vulnerable web application is that's
+fine you can just google it and i'll
+probably make a video
+on how to get it installed on kali linux
+but what i would recommend
+if you're a you know beginner or even if
+you're a professional in hacking
+probably one of the best things that you
+need to have you know in your kit
+is metasploitable too all right and for
+the simple reason that it contains
+first and foremost a vulnerable
+operating system and secondly it
+contains
+all the vulnerable web applications that
+we will be using at one stage uh
+during this series okay so we're going
+to be starting off
+with the damn vulnerable web application
+as i said it comes pre-installed with
+metasploitable 2
+so all you need to do is get the local
+ip address on your metasploitable 2
+virtual machine
+which in my case is 192.168.1.102
+so what i'm going to do is i'm going to
+open up my browser and i'm just going to
+open up that web
+that ip address 0.1.102
+and just give it a few seconds to load
+up as you can see there we are
+that's metasploitable too and it's going
+to prompt us to select what vulnerable
+web app we want to use
+in this case we're going to select the
+dvwa which is the damn vulnerable web
+application so just click on that and
+now it's going to ask you
+for your admin and password in this case
+for your username and password sorry
+about that
+in this case the username is admin and
+the password is uh
+password all right so just hit login and
+it's going to log you into the uh damn
+vulnerable web application
+now we'll be looking at this uh after
+more uh in at a later video and the
+reason is we have to go through all of
+these options
+but for now if you go to the um if i can
+just remember where it was
+if i can just go to the security so to
+the damn vulnerable web application
+security
+at the moment it was high because i was
+actually performing some tests on it but
+just change it to medium or low but for
+now you won't be using it i was just
+letting you know what
+web application we're going to be using
+all right that being said
+let's move on to burp suite all right
+and we can i can start explaining the
+spidering process
+right so let me just open up burp suite
+so i've updated it to the latest version
+i think i'm running canada next now in
+the previous video
+i was running parrot uh so i think there
+should be an update but i could be wrong
+so let's just give that a few seconds to
+start up yeah there is an update so i'll
+do that later
+and we'll just click on create our
+temporary project and use the bep
+defaults and start bib okay so once
+that's starting let me explain what
+spidering is
+all right now the purpose of spidering
+is to identify our scope
+all right or what what we want to scan
+now this is not exactly scanning and
+we'll be looking at scanning
+but essentially spidering is the process
+of mapping out our
+web application and is very very useful
+for finding uh
+and and web forms which is also very
+important because it will allow us to
+then further more
+attack the web forms manipulate headers
+etc etc
+all right now when you talk about
+automatic spidering with burp suite
+it's essentially when uh when burp is
+spidering it follows
+uh links and i it'll it'll start
+following links and it will start
+identifying four files folders and forms
+from the web application
+and it will uh the great thing about
+this is it will record all the requests
+and responses while it's performing the
+whole spidering process
+okay so uh once you have a burp suite
+opened up here
+you can let me just expand it so we have
+a greater picture of what's
+going on exactly sorry if my virtual
+machine is a little bit slow
+i need to configure it correctly anyway
+what you want to do is we've looked at
+the proxy check
+section let's look at the spider section
+and in here
+this is a very very simple menu and to
+understand it you can see that we have
+two tabs available
+we have the control tab and we have the
+options tab all right
+the control tab uh essentially if i just
+click if i just look if we look at it as
+you can see these settings are used to
+monitor and control the depth spider
+so it allows you to stop uh to start and
+stop the burp spidering
+and you can also clear the cues all
+right when you look at the options
+which is right here sorry about that
+when you look at the options there are a
+lot of options we'll be looking at them
+we'll be looking at them in a second
+sorry about that i
+actually got an email apologies there um
+let's get started now with the control
+section so uh the control section it
+allows
+we are able to control the spider status
+where we can stop it
+and start it and you know furthermore we
+can clear the cues that
+already exist there all right we then
+have the spider scope where we can
+we can define our own scope and
+depending on what we want to spider we
+look at that in a few seconds
+and finally if we look at the uh well if
+we look
+in the options section here we have the
+crawler settings which allow us to
+specify
+uh the way the spider is going to crawl
+for the web content
+on the web application we'll be looking
+at the maximum link depth and what that
+means passive spidering
+that allows us to essentially spider to
+continue spidering when we are looking
+through uh or we're going through the
+web application we're performing
+uh requests and responses when we're
+performing requests
+as for the form submission this is
+probably something that we'll be looking
+at in the next video and we'll be doing
+this uh
+practically where we'll be actually
+performing the uh we'll be performing
+the spidering process
+but for now let me see what else yes the
+request headers
+uh the request headers are used to uh
+you can manipulate
+essentially the headers uh if you've
+learned about http editors
+by the way i really want to cover http
+because it's very important that you
+understand how the headers work
+but we'll be looking at this all in
+advance but now let's start off with
+the spider status
+well not really with the spider status
+but looking at the control tab
+if you look at the spider scope you can
+see that you can it'll use the default
+sweet scope
+which is defined in the target tab if
+you just click on use a custom scope
+you can see that okay first uh
+you if you just click on this little cog
+here you can restore the defaults you
+can load your own and you can save the
+options
+so that's just to do with that now when
+you talk about using the advanced scope
+here is where you can essentially
+this is where you specify what you want
+to map
+so you can specify a host the ports etc
+etc
+okay again we'll be looking at all of
+this as we move along but for now we're
+just going to use the default
+sweet scope um we can just uh
+if once you click on that it's going to
+stop the spydering process but we don't
+need it right now so i'm just gonna
+i'm just gonna pause it and if we move
+on to the options now the options tab
+has a lot of stuff that we need to look
+into
+first and foremost we have the cro the
+crawler settings all right
+so uh when we're talking about the basic
+options so for example
+we can specify what uh the spider will
+crawl for
+uh so it it you can choose to select for
+robot the robots.txt file which is very
+important because it shows you
+uh you know exclusions you then can
+detect you can ignore the links
+to non-text content you can request the
+root of all directories very important
+stuff
+but again you can customize this to your
+liking now one of the things i would
+recommend that you do not touch with if
+you do not know what you're doing yet is
+the maximum
+link depth all right the maximum link
+depth is essentially
+uh the number of links you want the
+spider to
+uh to essentially to crawl or to to map
+now by default five is in my in my
+opinion
+in my situation or in my case what i
+like doing is alternating between
+three to five anything higher than that
+uh will usually overload
+the web application and it will cause it
+to lag or to respond very very slowly
+and you know again that might not mean a
+lot right now but
+trust me when you'll actually be
+performing the penetration test on the
+web application
+you really need a good response uh
+otherwise you you have your time to live
+etc etc
+okay so let's look at what passive
+spidering is all right so passive
+spidering as i said
+is essentially just uh it allows you to
+continue scanning
+uh you know or going through uh or
+actually performing your requests
+how as uh as it um it essentially allows
+you to
+continue the spidering process as you're
+performing any other tasks so as you can
+see
+passive spidering monitors monitors
+traffic through the
+proxy to update the sitemap without
+making any new requests all right so
+passively spied as you browse you can
+also select the link depth associated
+with proxy request now this i would
+recommend keeping it at zero to two
+and that's because again you do not want
+a very very deep
+link depth in the sense that you're also
+going to be performing your own
+requests and you'll be doing many other
+things you could be looking at the
+decoder or you could be looking at you
+could be focusing on the target
+and you don't want it again to to slow
+down the web application
+all right so form submission again this
+is something that i said we'll be
+talking about in the in the next video
+because it is quite
+advanced and we'll get started with the
+damn vulnerable web application there
+uh moving on to the spyder engine we'll
+be looking at application login as well
+but for now
+uh just we will just skip over that when
+we talk about
+the spider engine all right these are
+settings uh control the engine used for
+making http
+uh requests when spidering all right so
+this allows you to change the number of
+threads you want to use
+and as i said using more than um
+you can see right now it's at 10. what i
+would recommend is still keeping it
+within the range of
+two to five or you might you might cause
+the web application to slow down
+and these are more advanced settings
+that you can use dependent on timing
+all right and we've talked about the
+request headers they allow you to modify
+the way the spider will
+uh will look uh towards the web
+applications for example you could
+you could edit uh the the the device
+that is being used and you could change
+it for example
+into a mobile device and you get the
+idea you are you
+essentially allows you to to change the
+request headers um
+and uh from that obviously you'll get a
+response back
+uh dependent on what you changed all
+right so that was the spidering
+or actually the theory uh revolving
+around spidering now
+i will be looking at how spidering
+really works in the next video
+i know some of you may not like this
+that i actually went through
+theory and i haven't talked about doing
+anything but remember it's very very
+important to understand what exactly is
+happening
+behind spidering and in the next video
+we'll actually get started with the
+spidering process
+so thank you so much for watching this
+video if you enjoyed it or you found
+value in it please leave a like down
+below
+if you have any questions you can hit me
+up in the comments section
+you can hit me up on my social networks
+on and on my site if you have any video
+suggestions you can leave them on the
+website as well
+and thank you so much for watching and
+i'll be seeing you in the next video
+peace

@@ -1,0 +1,79 @@
+[Music]
+hi this is Alan from the daily dog
+solutions team in the first part of the
+short video series we looked at how to
+use log patterns to identify parsing
+rules and generate metrics from logs in
+this second part I'll be sharing with
+you a tip I never to use patterns to
+drive log exclusion filters which can be
+very useful from a cost savings
+perspective as it will reduce the amount
+of logs that are retained by data dog
+this feature is most useful when you
+have identified certain types of logs
+which are producing little or no value
+first of all I want to identify the
+highest volume log patterns as follows
+within the UI I go through the log
+Explorer and I click on patterns at this
+point I'm going to concentrate focus on
+darknet logs so I think on dotnet fases
+I can see all the different patterns
+occurring within their net there is a
+particular pattern here an executed
+action data dog and it has occurred six
+point eight thousand times so
+approximately ten percent of samples
+here are occurring this is the one which
+I'm going to exclude so very easy to do
+it click on it and then click on View
+all I don't show me all occurrences of
+this particular log type you can see up
+the top of the search bar it is
+conveniently included to search query if
+I want to change a search query to
+textual format let me just check click
+on the arrows here highlight the search
+and copy to my clipboard okay so now
+that I have the search I can go into the
+data of log configuration page and I can
+figure the exclusion filter there so
+here I am within the indexes of the data
+log configuration page I'm going to
+configure an exclusion filter here my
+index the demo index you can see there
+are already many exclusions it created
+if I want to add a new one
+I simply could enter the bottom and I
+click on add an exclusion filter first
+of all I get to filter a name
+so that's call it
+not net logs then I simply paste in the
+search query which I copied from the
+previous page and then lastly I said an
+exclusion percentage so do I want to
+excuse 10% of these logs maybe 20
+percent or maybe 50 percents I'm gonna
+leave it at excluding 100% then simply
+click on save you can see it's been
+entered in the bottom of the exclusion
+filter list here okay so it's all been
+done so what has happened well in this
+example I've excluded a particular
+dotnet log type based on an executed
+action text file in this scenario the
+log has actually given me some children
+implicit information which is not needed
+removing any high volume logging
+patterns similar to this one from log
+Explorer will help you drill down and
+identify issues quicker wherever these
+logs are only removed from the law log
+Explorer view they will still be
+ingested indexed and available to view
+and live tale they'll also be sent to
+the archives and used to generate
+metrics okay great that's all I have for
+you today thanks for watching this
+series enjoy your day to dog

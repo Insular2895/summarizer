@@ -1,0 +1,126 @@
+TLS inspection with
+the AWS Network firewall
+can help keep your payloads secure
+and give you the inspection
+capability you need.
+But your TLS inspection won't work
+if you miss one of these
+three requirements.
+Hi, I'm Brandon Carroll
+and here's how you can avoid
+hours of troubleshooting.
+Let's go.
+Number one, certificate
+authority requirements.
+The first and most important step
+is ensuring you have
+a valid CA certificate
+and that it's configured properly.
+If you have a look at the documentation,
+the CA certificate you import
+into AWS Certificate Manager, or ACM,
+must have the X509v3
+Basic Constraint extension
+set to CA:TRUE.
+What this indicates is that
+the certificate can be used
+to sign other certificates,
+which is a critical requirement
+for the TLS inspection use case.
+You can verify this using OpenSSL
+with the command openssl x509 -in,
+the cert, -text -noout.
+You wanna look for the X509v3
+Basic Constraints field,
+and it should say CA:TRUE
+like you see here.
+If the certificate doesn't
+have this set correctly,
+ACM will reject the import
+with an error like this.
+So how can you resolve this issue?
+Well, you need to generate
+a new CA certificate
+with the proper basic
+constraints extension configured.
+There are plenty of online guides
+and examples for doing this with OpenSSL.
+Okay, let's talk about number two:
+server certificate requirements.
+In addition to the CA certificate,
+you'll also need to
+provision server certificates
+for the domains that you
+want the firewall to inspect.
+The server search should be signed
+by the CA certificate
+you imported into ACM.
+When you configure
+the TLS inspection
+settings in the firewall,
+you'll associate these server certificates
+with the appropriate domains.
+The firewall will then
+use these certificates
+to decrypt and re-encrypt the TLS traffic
+flowing through the firewall.
+Again, it's super important
+that the server certificates
+are properly signed by a valid CA cert.
+If the server cert isn't signed
+by the CA you've configured,
+the TLS handshake is going to fail
+and the traffic won't be inspected.
+And finally, number three:
+trusted root store configuration.
+The final piece of the puzzle
+is making sure the CA
+certificate is trusted
+on the client devices accessing
+the protected resources.
+Since the firewall is acting
+as a man-in-the-middle,
+it's generating its own
+server certificates on the fly
+that are signed by the CA you've provided.
+For the client to trust these
+dynamically-generated certs,
+the CA cert needs to be installed
+in the client's trusted root store.
+This is another step
+that is often overlooked.
+If the CA cert isn't trusted,
+the client will reject the TLS connection.
+Now, you can deploy the CA
+cert on the client devices
+in a number of ways,
+such as: through enterprise
+certificate management tools,
+OS-level settings, or browser extensions.
+The key is to make sure
+all your client devices
+that'll be accessing protected resources
+have the right trusted
+root certificate installed.
+In summary, the three main pitfalls
+to watch out for with TLS
+inspection certificates are:
+one, ensuring the CA certificate
+has the proper basic constraints
+extension set to CA:TRUE,
+two, provisioning server certificates
+that are signed by the configured CA,
+and three, distributing the CA certificate
+to client devices
+so the dynamically-generated
+server certs are trusted.
+By following these guidelines,
+you'll have a smooth
+rollout of TLS inspection
+and avoid any certificate-related issues.
+If you have questions, let me
+know in the comments below.
+And don't forget to like this video
+and subscribe to our channel
+for more technical tips
+just like this one.

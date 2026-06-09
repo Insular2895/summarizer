@@ -1,0 +1,1723 @@
+podcast is now starting all attendees
+are in listen only mode I was about to I
+was about to Spill the details to you
+but now that we have other people here
+we got to be mum about it yeah so we'll
+let we'll let people uh start to trickle
+in here uh but I guess I can I can go
+through my Preamble a little bit uh so
+welcome everybody to the Texas Mortgage
+Bankers Association 2023 2024 education
+webinar series which is a part of the
+education and endowment committee LED
+this year by Pam Jenkins and Dave tonen
+I'm Robbie Chrisman live from a park
+somewhere near Cleveland Ohio uh and I'm
+moderating today's webinar which is AI
+advancements and mortgage lending
+insights from industry experts very
+excited to talk to these industry
+experts today uh and just a heads up for
+those of you that are here this webinar
+should take about an hour but feel free
+to ask questions throughout the webinar
+I'll try and address them uh over the
+course of this hour rather than all at
+the end so there's good questions we
+we'll mix them in for our panelists uh
+you can access that functionality using
+the chat questions window uh and as
+always if you have additional questions
+email Carol at the email address on the
+slide so today's panel includes myself
+Brett Brumley Ken Perry and Dave Savage
+uh many of you would know me as the son
+of Rob Chrisman I've worked in the
+mortgage industry about 15 years I have
+a daily podcast I write a good chunk of
+my dad's newsletter I have other video
+shows and webinars that I do uh well
+that's enough about me let's get to the
+panelist here uh Brett Rumley is CEO of
+lender toolkit he is a trailblazer in
+the mortgage industry uh I'm very happy
+to have him on the panel because when I
+think of AI on automation he is who I
+think of he's the driving force behind
+lender toolkit's amazing success and
+he's developed mortgage automation as a
+service platform which includes AI
+underwriter a solution that streamlines
+the underwriting process for lenders and
+significantly improves the borrower
+experience plenty of experience in
+Mortgage Banking uh certainly passionate
+about the digital mortgage space so very
+pleased to have BR on today Ken Perry
+which uh many of you if you're
+tmba uh members may know he's the
+president and CEO of the knowledge Co-op
+which is a social learning technology
+platform that's reshaping how companies
+in the mortgage industry communicate and
+collaborate internally uh his journey
+began back in 2003 when he addressed the
+pressing issues of identity theft and
+cyber crime and since then he's become a
+recognized Authority on the latest
+trends and Regulatory challenges
+affecting the mortgage and real estate
+sector uh very excited to have Ken on
+today as he brings unique blend of
+expertise and dynamic speaking style to
+every event he attends and finally least
+last but not least we have Mr Dave
+Savage uh who is passionate about
+turning loan officers and Realtors into
+change agents and innovators in the
+mortgage field as of today millions of
+borrowers receive a mortgage coach
+experience powered by tens of thousands
+of loan officers annually he founded
+mortgage coach to help lenders provide
+the best financial advice to the
+borrower and now as cheap Innovation
+officer of trust engine he's been
+leveraging the industry's first borrower
+intelligence platform to educate and
+Empower datadriven mortgage
+professionals to become lifelong
+champions for their customers Dave your
+bi like your bio here is like War and
+Peace I could go on and on and on I'm
+just let me finish there and say I'm
+very happy to have you all you guys and
+uh that's good that we have a
+representative cross-section of the
+mortgage industry they said who can we
+have and I said you know four white
+dudes between the ages of you know 30
+and 60 we're set it be perfect
+so here we are gentlemen how we doing
+Dave how you doing man I'll start with
+you yeah first of all you crushed the
+opening that was three minutes you put
+out a lot of content you framed us well
+grateful for you I of course I'm sure
+you learned to speak mortgage as a
+little kid growing up with Rob Chrisman
+as your dad so uh you know I'm I'm
+really excited about this call the the
+the two panelists that we have Brett you
+know is been a Pioneer in AI in the
+mortgage industry and someone that I I
+want to learn from so pumped on that and
+then Ken Perry just rolled out uh an AI
+solution to the 45,000 loan officers
+that are part of uh the the knowledge
+Coupe you know almost 200 lenders use
+that platform so great panel Applause to
+the uh Texas mortgage you know NBA for
+putting this on and I'm just excited to
+be
+here Ken I apologize for calling it the
+knowledge Co-op when I was in Texas we
+had Co-op Co-op co-op in Austin so
+that's first error as a moderator today
+but can you can you briefly talk about
+no one noticed by the way no one noticed
+until now yeah perfect Ken can you talk
+about your your AI solution that you've
+rolled out just give people a little
+background and then Brett I want to I
+want to hear about AI underwriter and
+some of the stuff you're doing over
+there yeah sure and it it did definitely
+burn into my head when you said Co-op
+because I get introduced all the time
+the best is when people say I've known
+him for so long I've been a supporter of
+the knowledge Co-op and I'm like what so
+no it's all right you were thinking of
+something else um yeah it's uh our
+platform is used as an internet and a
+training tool across uh the mortgage
+industry and we just added the AI piece
+because we had to um it was something
+that I really wanted to do as soon as I
+started diving into AI I'm like wait we
+could probably solve for this and so we
+started building a tool back in uh
+middle of last year ended up rolling out
+a beta in December and it went live
+yesterday and it can be accessed through
+Coupe plus which is our app for the
+knowledge Coupe where you get training
+and then it can be accessed at from
+Enterprises but basically it's it's a
+conversation you have with our tool it's
+got Fanny Freddy FHA and VA next we add
+USDA and then we're going crazy from
+there adding as much as we can so but it
+basically it's just a a conversation you
+have with something hey I'm doing an FHA
+loan how do you feel about lava zones
+and it says well according to FHA lava
+zones are this and that and then it
+gives you the guideline where I found
+that so you can always get it sourced
+and it's just a super quick way to get
+your questions on guidelines answered
+with the accurate and exact um uh data
+and sourced at the place that you can
+find it so you can turn that into your
+underwriter we rolled out that yesterday
+was a big deal for
+us congratulations BR what are you
+working on over there at Leonard toolit
+you know first off thanks for having me
+on the call uh you know I'd love talking
+uh Tech and I love talking Tech with
+some of you guys you know I've been on
+many of the podcasts with you uh you
+know it seemed like last year was you
+know a fever pitch of advancement
+towards new AI Technologies and it was
+almost hard to keep up day by day so
+coming on a podcast and then you know
+seeing you know Ken your your solution
+that has a lot of correlations to what
+we're doing and you know Dave all the
+stuff that you guys have been advancing
+it's just great to see the industry come
+together and and bring advancement in AI
+so I'm happy to talk about this stuff
+today um you know I think with our
+product a under rer you know we've been
+in the space for you know lender toit's
+been around for nine years but we've had
+our AI stuff for about four or five
+years now um and we're really starting
+to get into some of the newer technology
+behind the scenes on leveraging like
+large language models and stuff to make
+appropriate underwriting decisions um
+you know for the past four or five years
+it's really just been about analyzing
+data uh being able to take all those
+different data points from all those
+different sources and then be able to
+deliver an underwriting decision in 30
+seconds you know to even a consumer
+potentially uh but certainly even the
+loan officers and processors and then
+you know naturally Underwriters um we're
+really excited about the
+product very cool so let's let's start
+here and get into some of these
+questions that we have and Dave I want
+to start with you how is artificial
+intelligence currently being integrated
+into mortgage lending processes and then
+what specific benefits have you observed
+as a
+result well I'm going to start with just
+some of the loing fruit that I don't
+think the industry uses enough and
+everybody watches right now you can
+start using it today I mean I right now
+I'm recording this conversation with
+otter on my my mobile phone and I I do
+that often when I'm doing webinars uh
+because I I you know it's transcribing I
+can reference what's being said like
+when Ken said something and I missed it
+I go back and look and see what Ken said
+I you know I'm using a a notetaking app
+called fathom which is extraordinary you
+know it's helping me when I create
+content not only um create micro content
+from that Pastor so there there's just
+so many ways and you know I want to
+position everyone in the mortgage like
+every loan officer in America needs to
+become a modern mortgage adviser you
+know we need to go from loan officer to
+Modern mortgage adviser and with the Nar
+settlement every realtor in America
+needs to become a modern real estate
+adviser and and I could get into the
+Weeds on you know what that means for a
+real estate agent what that means for a
+mortgage professional but when I think
+of AI it's like what are all the ways
+that a modern executive can use AI to to
+be a more effective um community
+indicator to be a more effective
+executive and and so there's just a lot
+of a lot of tech right now and so far by
+and large I see people playing with it
+you know and I didn't even mention chat
+GPT yet but I mean I'm I'm trying to
+discipline myself to use that daily I'm
+I'm finding myself using it often as a
+search engine uh you know whenever
+there's you know research I'm doing or
+content I'm creating uh but I I do know
+some Executives that are killing it and
+I I can just tell you their ability to
+be effective communicators to their
+Salesforce with their company is just
+using the tech I just listed uh you know
+and then and then when you get into you
+know what I think everybody you know
+when you think this webinar hey what are
+the technologies that can help with the
+loan manufacturing process you know and
+Brett is a leader on that I'll let him
+cover that in more detail I you know
+most of where I will share like my real
+passion for AI is more of a road map I'm
+a you know I'm a financial literacy
+Warrior uh I've got a story around you
+know like I think I broke every
+financial literacy rule breaking you
+know growing up you know I got the Sears
+card you know when I was legally able to
+and racked it up I you know I could go
+on with every Financial mistake I made
+is is a youth but you know one of the
+reasons why I I founded first home IQ is
+is I'm super pumped about how AI can be
+used to accelerate financial literacy in
+America and how it could be used to turn
+loan officers into modern mortgage
+advisers faster um maybe I'll throw some
+ideas out later on but uh those are my
+thoughts to kick it off back to you Rob
+E I can just like people say to you oh
+I'm big big sub sponsor a big supporter
+of the knowledge Co-op people are like
+Robbie Rob Rob I love your podcast when
+I talk I'm not Rob okay uh
+so I I go
+you're good man no worries uh Ken let
+let's go to you man how how are you
+seeing AI being integrated into mortgage
+lending processes it's a good question I
+have to add that I'm sure Dave loves it
+when people introduce him as the best
+coach in the industry and he's
+like uh so I love it work hard to be a
+coach okay good um just so you know and
+I want to just say this right out the
+gate for this call if you're listening
+to this call and you hear something
+write it down so that you can actually
+use it later because most of the AI I
+use on a daily basis was something
+somebody said so like I pulled up fathom
+as soon as Dave said it Brett nodded and
+I Went Done Right he he said do it Brett
+seconded and now I will download it and
+I'll start using it and that's how
+everybody can get better at AI just by
+starting there um we were on a bus to
+abandon uh Dunes like three weeks ago
+and my buddy's like oh check this out so
+on an iPhone 15 plus um there's a button
+that you get as your extra button chat
+gbt put an integration in for that
+button so now anytime I want to ask a
+chat GB GPT question I just hold that
+button down and it pops up and it wants
+to know what I want to know and so I'll
+just start talking to it and then when
+I'm done talking it will then answer me
+and then that's just an easy way to chat
+GPT everything wait a minute that was
+the actual chat GPT app that you just
+showed us yeah yeah by the way
+so yeah thank you I'm doing that later
+totally that's amazing make your ction
+button chat gbt because I don't Google
+search anything and if you've noticed
+Google has got ads more than ever before
+they have ads Facebook and Instagram is
+all ads because people are are kind of
+exiting and doing other things and when
+they go and and you know use chat TBT I
+don't need Google for anything at that
+point um because Google is so slanted
+towards who's paying them and so far the
+other AI I don't see is and one other
+thing I just have to give you this
+because we were in was it uh Philly last
+year for MBA and just Pro tip for you
+when you go to a conference um we get
+the list of all the parties you can go
+to after the conference is over so you
+have like all the different Hospitality
+Suites well they're all over Philly and
+so I just went into chat DBT and said I
+need to go to this address this address
+this address this address Now map map me
+a perfect map to make all of those
+things happen in the best uh order and
+it did it just made me a map and I was
+able to to do that so like you can use
+it for literally almost anything um and
+that's just basic you know chat TBT or
+or using Gemini um in mortgage I think
+we're still seeing it Brett was an early
+adopter of AI because for data it's the
+best freaking thing you could ever use
+like humans can't get through data as as
+fast as computers can and because Brett
+started that early over time now he's
+already ramped up to where he's using
+these you know the machines as well as
+as he can be using them and then he'll
+get better over time so everything's
+going kind of that way of you know AI
+being basically any any data that you
+need to find any data you need to put
+together credit reporting does it um
+where they're already able to pull
+things that are not credit related
+because we all know credit scores are
+actually a horrible way to to to decide
+whether somebody's going to pay a
+mortgage back I mean it's okay but a
+bunch of the stuff on credit reports is
+wrong and the way that you pay if that
+was totally successful then in 2008 none
+of the people with over 700 credit
+scores would have dumped their houses
+right there's other things we should be
+looking at and and to do that you can
+use a lot of other machine learning so
+so there's different different ways to
+use the machines and I think we're just
+at the very beginning of all of it and
+and if you talk to anybody like like
+Brad or i on on the AI side will tell
+you we're just getting started like it's
+so much stinking fun to get in there and
+start developing the trick is
+responsible and ethical development is
+what has to happen and what I'm seeing
+is not all of it is that way and so what
+you have to be careful about is you're
+you're entering into a world where you
+could very easily give away your trade
+secrets to the the World by just using
+the wrong platform or using the wrong
+strategy and we've seen that where
+coders have actually put in their code
+into chat tvt into a general area and
+that could be very damaging if you look
+at Google's Gemini now when you go in
+there it says whatever you type in
+Gemini will be looked at by humans and
+it's on it's a it's a right there right
+next to the search bar and so that will
+help people go oh maybe I don't want to
+put my my borrower social security
+number in there um but we do have to
+worry about people using it correctly
+still and K I I think you'll agree Dave
+said something about integrating it into
+as many processes in your life as
+possible some of the best advice I got
+from a a very teeken Kine friend of mine
+is find ways to use it every day and
+that way you won't feel like this wave
+that we're on which seems like it's
+growing and it's getting faster and
+faster the wave won't pass to you by
+you'll be able to at least feel like all
+right I'm paddling on this wave a little
+bit I can flow with it and and you're
+skills and ways that you integrated it
+into your life uh will just get better
+and better so Brett over over to you
+here how do you see AI being integrated
+into the mortgage lending processes yeah
+you know I I think it's important for us
+to step back a little bit and talk about
+what AI is you know I think everybody's
+using AI is kind of a buzzword but
+there's a lot of misnomers and
+misinformation about you know how
+serious AI is and so you know AI has
+been around us for a really long time
+you know even even Siri you know is as
+bad perhaps as that particular product
+has been you know has been Ai and so you
+know there's several different types and
+categories of AI you know first and
+foremost is automation whether it's an
+RPA or a robot clicking buttons for you
+it's really akin to you know what the
+humans have been doing manual tasks and
+how do you let the computer come in and
+step in and do some of that stuff and so
+automation's been with us for a very
+long time um and there's a lot of
+products out there that support that um
+then there's the more probably common Ai
+and that's machine learning behind the
+scenes and that's you know really
+analyzing data um I was really surprised
+the more and more research we did to
+find that machine learning is really
+math so for those of you are listening
+that say math is never applicable in
+your day-to-day life yeah right it's
+it's like what drives the entire world U
+so machine learning is mathematical
+models and uh you know using computers
+to analyze that data and think for
+themselves and make decisions U that's
+going to be something that's going to be
+really moving the industry forward in
+big ways in the future um but I would
+probably argue is not totally there yet
+um that said um machine learning has
+been part of document OCR and
+recognition of data for a very long time
+and so many of you lenders have had that
+technology available to you and are
+using it in some way shape or form
+today um and then there's the common one
+that everybody's talking about and
+really I think what's spurring the
+conversations today and that's generator
+of AI That's open AI you know that's
+chat GPT and Gemini and Bard and all
+these different systems out there and
+that's the ability for um the machine to
+take all this data in and then get
+creative um in that creativity actually
+is some problems we'll probably talk
+about here in a little bit um but it it
+outputs content and stuff and I think uh
+the message I hear from everybody and I
+definitely would Echo is what every loan
+officer and lender needs to do now is
+use AI in some way shape or form you
+become comfortable with it you
+understand what it can do what it can't
+do uh you see for yourself when we say
+things like it hallucinates um and it
+creates unique problems and challenges
+you understand that because you can get
+it to do some really really interesting
+things uh but in the in the lens of
+content generation is probably one of
+the easiest and quickest ways for you as
+lenders to adopt the technology um you
+know when you add a you help it write a
+new email or you help it write a
+marketing plan for you there's a lot of
+creativity that goes into that and the
+level of accuracy needed there is
+probably lower than perhaps where you
+know Ken and and I definitely play which
+is in the underwriting space you know
+accuracy needs to be 100% every time or
+we've got problems well you know really
+good email you can output a framework
+for an email and then tweak it yourself
+and then send it out to your consumers
+and have a great experience and so um
+yeah fathom is is one thing I'm gonna
+Echo again because I use fathom every
+single day to record every conversation
+I have pretty much um you outside of
+mortgage kind of a fun story I uh I I
+bought some new land and decided to
+raise my hand and say I want to be part
+of the HOA boy that was a that was maybe
+a mistake um they made me the HOA
+secretary didn't realize how much that
+was was going to be um I I thought it
+was just taking some notes and I was
+like well I can use fathom and I'll just
+put fathom in there it'll it'll help me
+out U very true actually so whenever I'm
+in a meeting it summarizes my entire
+content gives me a transcript gives me
+recordings give me an AI generated
+summary um and it makes my job in that
+realm IM immensely easier so AI is a
+tool that you can use to make your job
+easier to provide kind of a head start
+um but overall I think in the mortgage
+industry it's all over the place uh
+whether it's content generation or you
+know underwriting guidelines or analysis
+of financial data or underwriting you
+know space we play in so my message to
+everybody here is start using it start
+planning for it um if you're not you're
+going to be left behind uh another quip
+I I think I want to share with you is I
+saw on a I think it was just an
+advertisement from A lender or maybe it
+was a news article and it said that
+pretty soon you're going to be able to
+have Yoda as your loan officer U and
+what that means you know it's kind of a
+funny thing and it definitely evokes
+some feelings for people uh but what it
+means is that you could you can have an
+avatar a digital representation of a
+person it can be anybody from Yoda to
+Michael Jordan and that person can
+actually talk and interact with you in
+real ways and the question posed was how
+are lenders going to compete when that
+level of technology is at your
+competitors and so if you're not
+thinking of AI and how it's going to
+take you into the future you're already
+behind so stop what you're doing today
+and start looking into it and make plans
+uh moving forward well Brett I I think
+that people are starting to get the
+sense one just how powerful it is two
+all the different ways that it can help
+and and three the benefits of it to
+their everyday life but obviously I mean
+the Jetson saw what the future was like
+60 years ago and and we're not at flying
+cars and pills for dinner just quite yet
+what do you view as the potential
+challenges or barriers that most of
+these mortgage lenders or companies in
+the mortgage space are facing ing when
+implementing AI Technologies uh what are
+the biggest barriers then maybe some
+some common solutions to that that you
+think people might not be seeing yeah
+Ian I I think I'd probably break it down
+by first how do I use it you know
+general knowledge uh you know using it
+in your day-to-day life and getting past
+that fear of what it is that's the first
+barrier that our industry has to
+overcome there's already conversations
+being happened at the regulatory level
+and the government level um about the
+usage of AI and certainly I think we're
+probably going to talk about some of
+those things today and how AI is used in
+the Under The Lending process uh and it
+needs to be really clear um the other
+thing is being realistic about the cost
+for it uh we talk to a lot of lenders
+that are like yeah we're we're going to
+build build our own AI app you know well
+really what you're saying is I no longer
+want to be a mortgage lender I want to
+be a technology provider and a software
+developer and are do you even have
+realistic budgets to do that we've been
+playing in the AI space for five years
+and even in the last year we've invested
+tremendous amount of time and money and
+I wouldn't even say we've got legitimate
+products in The Cutting Edge area that
+are moving the needle yet and so are you
+prepared for the level of investment and
+time to be able to implement it properly
+inside your organization uh in that is
+opportunities and and perhaps it's self-
+serving but I think it's very true is
+you can use vendors and other people
+that have uh put that path forward to
+help you understand what to do and to
+produce a product that's useful for you
+um but I think the biggest challenge and
+barrier when we really start using a
+day-to-day is transparency you know how
+is it being used why is it being used uh
+what is the AI actually doing and do we
+have enough controls in place that we're
+getting the results we
+want uh Dave I would venture that you
+deal with thousands and thousands of
+customer and so you see barriers to
+implementation not just in AI but in a
+variety of ways for people implementing
+technology when it comes to AI what are
+the the common barriers that you're
+hearing uh at least from the clients or
+the people that you're talking to yeah
+yeah before before I answer that there
+you know prior to this part of my prep
+for the conversation was reading a
+report put out by black fin group
+they're a consultancy in the industry
+it's a really well-written comprehensive
+group uh someone had forwarded me the
+PDF and I uh I just want to recommend
+everybody check that out I couldn't find
+a link online but I put a link to the
+PDF at Savage insights.com it's right at
+the top that's a a web page I use in the
+industry when I'm doing doing uh
+interviews where I always just drive
+people to that Savage Insight so check
+it out um you know I think like
+everything I mean I've spent my career
+in the mortgage industry turning loan
+you know helping loan officers be able
+to say my advice makes a difference and
+have that not just to be a tagline or
+like like literally do that and
+and always my biggest challenge is
+adoption it's it's getting loan officers
+to adopt something new and the you know
+the the the framework that I I share
+from stage almost every time I launch
+mortgage coach or trust engine to a to a
+new lender is it starts with leadership
+I mean while technology has changed the
+world uh you know the iPhone uh you know
+we're we're on a digital experience
+right now uh you're on a cycling trip
+and you're jumping on a uh an event like
+this I mean technology has changed the
+world but but the single most important
+force that creates value it's it's
+leadership so and and it always starts
+at the top and and I think you know my
+message to anyone on this is it starts
+with you uh and and you know if you're
+the CEO you still have people that you
+report to and if you're a servant leader
+you support so everybody has to lead up
+and Lead down and it starts with you so
+you know truly the the things that I
+shared early on to kick things off uh
+and and Robbie I like the fact that you
+put an explanation mark on daily we we
+are in a new era in housing and I do
+believe this Nar settlement uh you know
+it's all over the waves it's going to
+clearly impact the mortgage industry but
+it's it's excuse me it's going to
+clearly impact real estate but it's
+going to clearly impact mortgage as well
+and it is a c shift in housing and and
+so we got to be our best it starts at
+the top uh what I would put you know
+tell everybody to do is is have a
+personal why like anytime I want to
+adopt a new technology I take a few
+minutes and I like I write down why you
+know why do I want to use this
+technology and it's personal to me by
+the way that personal why changes but I
+I've done that for myself you know I I
+know why I want to be a leader when it
+comes to AI how I use it to be a modern
+effective executive I know why I want
+loan officers to use it to become modern
+datadriven mortgage advisors so so you
+know I know it sounds simple and I'm not
+giving you know like let's call it Tech
+advice uh but I I think it's leadership
+uh have a why and then the third step or
+the second step in that process it's
+repetitions you know it's like how many
+times can I lead by example daily and
+the number I always lead with is 20 reps
+uh I know there's a lot of numbers on
+what it takes to create a habit but if
+you can just do something 20 times uh
+one you'll get good at doing it two
+you'll get some feedback from the world
+that tells you what you're doing is
+better and and then the third step is
+share the success so I would just push
+everyone who's watching this whether
+you're watching the recording whether
+you're on this live follow those three
+steps like what's your why after this
+event take 15 minutes what did I learn
+what am I going to do why am I going to
+lean into
+AI what are you going to do 20 reps of
+maybe it's 20 reps 20 days straight I'm
+going to use chat gbt uh and then and
+then when you have success and you you
+see results share them in a very
+effective way you know we use slack in
+our company most of the mortgage
+industry uses teams uh emails probably
+not the most effective way to share your
+success uh although you know sending out
+a well-crafted thoughtful email around
+someone in the organization that used AI
+in a very thoughtful way you know the
+way you share that success story
+organizationally you know that's you
+know probably not the answer you were
+looking for Robie or you expect it but
+those are my three steps on taking
+action and putting this stuff into into
+action do you mind if I jump in on the
+sharing your success stories I think you
+can't underestimate how powerful that
+can be at the lender um one of our
+customers actually is using um social
+media you know which is a powerful force
+for lenders and Originators and every
+time they achieve a result what's that
+and human beings like yeah it's hugely
+impactful for our world and uh you know
+when lenders achieve a result of getting
+a clear to close in two days with us
+they take that technology and they blast
+it out to social media and say look we
+just got a clear to close in two days
+that itself is a catalyst for loan
+officers to say we want that experience
+and you can use that for recruiting you
+can have borrowers go well that's a cool
+experience and they talk about that
+stuff so make sure you share your wins
+and success that that is so
+powerful good Insight Ken I I do want to
+bring you in here I think we kind of
+understand the the barriers to
+implementing AI how do companies
+overcome those how do we actually get to
+the point where it's being implemented
+and and maybe this is a wider uh it
+doesn't have to be limited to just AI
+because I think companies out there are
+inundated with hey this is the latest
+and greatest Tech put this in your stack
+and a lot of sales people might not even
+know what tech their company has or
+they're not being trained well on on it
+and so even if it is the best tech it's
+not necessarily getting the use that it
+should or it's not being uh it's not
+living up to its full potential what are
+your
+thoughts yeah you this is it goes to a
+core issue with the mortgage industry
+and that is we don't do a lot of
+training and we don't uh do a lot of
+community building and so Dave you
+forgot to say what people use for their
+internal collaboration is the knowledge
+Coupe uh so we have a lot of clients
+that are dropping in their tips and
+tricks into the knowledge coup and uh
+and creating knowledge coup communities
+where their their groups can actually
+form around this and and discuss it
+inside the coup and give each other
+links um the other problem we have is a
+core problem in the industry is we have
+a lot of uh non-te adapter individuals
+what's the best way to say this uh we
+have I mean the average age of a
+mortgage professional is still I believe
+in the 50s and so we don't have people
+that are like give me that next tech
+let's go and some people are but we
+don't have a great amount of people that
+are ready for the next tech and we hear
+people say well we're kind of an old
+school lender and I think the first
+thing people need to realize is this is
+like when the internet came out saying
+we don't do internet like we really do
+just everything has to be in writing and
+in front of me or I just don't trust it
+like you're gonna die and so you have to
+embrace the these large Tech shifts if
+you want to succeed in the future or
+somebody's going to come kill you and
+one exercise I always tell people to do
+that we do at our company is you get a
+group of people together and you say
+let's make a list of everything that if
+somebody did it they could beat us and
+so what what could somebody do to beat
+us then you make that list and then you
+go cool let's go do that because
+otherwise somebody's going to beat us
+and I think with AI the one who
+leverages AI the best is just more
+efficient they're faster than you if
+you're not doing it they're going to be
+faster Dave you just said a study uh and
+you said the black fin study I just
+picked up my phone real fast and I said
+hey give me a summary of that black fix
+fin study on AI and it just started
+talking to me about the AI blackin study
+the exact one you're talking about told
+me all about it I had to shut it down
+because I'm on a call um but but I'm not
+going to go try and find that like I'm
+just gonna ask you to tell me where it
+is and what it is and it's going to give
+me a big summary like the advancements
+are so good it we went to a conference
+get this I spoke uh at a conference in
+Bend Oregon the guy up there on stage
+was talking about the new credit
+reporting changes and Appraisal changes
+so all I did is took a picture of a
+slide and with an with an iPhone you get
+a picture you can highlight something
+copy it and then paste it anywhere you
+want well he had a link up there so I
+just clicked on my picture and it go
+there and then it went there and I just
+took the link fed it to chat gbt and
+said Give me a summary of this credit
+change and it gave me an entire summary
+and so that speed at which people can do
+things is awesome it's just getting
+people to realize that it's time to
+change and they need to change and
+somebody's going to beat them if they
+don't is the first thing and I love what
+Dave said you know getting small groups
+together and saying share with me what
+you've like been using AI for so at the
+very base like user level that's what we
+can do at the company level what we can
+do is yes don't be afraid to embrace a
+new technology that's going to make you
+faster and better even if it costs a
+little money because companies don't
+have a lot of money right now and
+they're like oh gosh but some do and
+they are embracing this and they are
+investing in it and they are going to go
+faster and then Brett that was such an
+awesome statement that you made about uh
+you don't worry we'll build it we're
+fine this isn't just super quick to
+build uh yes you can code using AI right
+now it's actually it's pretty amazing um
+how fast it can kick out coding language
+but you still need humans to be able to
+manage that right so my favorite
+statement is you won't be replaced by AI
+but you will be replaced by somebody
+leveraging it better than you and so you
+Brett a tip for your HOA one more step
+take all those notes out of the HOA
+meeting and then ask the new keynote
+generator in chat for just go in and say
+Here's the notes can you make a
+presentation it will create a killer
+presentation for you now you have a
+keynote presentation you can put it up
+on the screen and it took you three
+minutes so again it's that speed it's
+understanding the speed and then sharing
+with others what you've been able to
+come up with at the base level at the
+company level it's going okay which of
+these make sense how are they handling
+my data and of course protecting the
+data over everything because I what we
+just had a 50 million user breach at
+AT&T their AT&T like that's a pretty big
+company the size of these breaches is
+huge and so you have to make sure that
+you're third parties because now
+everybody's looking at third parties
+right so is a third party protecting
+data be careful with AI companies that
+come out and go no your stuff's totally
+protected cool how like ask that next
+question because I've seen a few that
+I'm like oh no like that's not
+safe so to those people on this call
+those those attendees of this call that
+feel like this is drinking from a fire
+host I would say go on go on chat GPT or
+go on Bard one of these open source
+places enter a prompt see what AI can do
+for you see how powerful it is and I
+think you'll be amazed and you'll go
+holy smokes I could be saving so much
+time in my day at least with this and
+that's just one example of AI you know
+Mor uh AI underwriter from lender
+toolkit is something totally different
+than chat GPT but finding ways where you
+can see the power of it so you can
+become a Believer I think is is really
+valuable uh and BR I want to go to you
+and ask about examples of successful AI
+applications uh when it comes to
+improving risk assessment and
+underwriting accuracy uh can you give
+some examples for our attendees here
+yeah you know obviously that's a topic
+I'm really passionate about you know
+because our whole company is kind of
+based around that uh you know but before
+I answer you you know this is why I love
+podcasts like this you know I think some
+of the obstacles to implementing
+technology is education and so you know
+always be learning always be using the
+technology and podcasts and people to
+help Advance your career and make you
+more efficient smarter as a loan officer
+and so always be learning and you know
+one of the first prompts I ever put in
+AI chat GTP was how do I get started
+with AI right and it gave me a detailed
+road map of things to do and so even if
+you feel like you're not equipped to
+start you can use the technology to do
+that U I've just learned like four or
+five different strategies that I'm going
+to employ after today just from this one
+call today you know again like the way
+you use AI is just brilliant you know
+the fact that you're using it for
+summaries and other things it's great um
+you know and I think that's really some
+of the successful applications you see
+in not only evaluating risk but
+underwriting uh one of the biggest
+barriers to implementing technolog is
+fear um and how do you overcome fear you
+have to be really open and transparent
+especially at the leadership level um to
+be able to use the technology and get
+that adoption up um you know naturally
+technology any technology whether it's
+the car the internet you know e even the
+usage of email started to erode jobs and
+and I think it's a sensitive subject
+especially nowadays and nobody wants to
+lose their job nobody wants to lose
+their job to technology but it is a
+reality and it's going to happen a
+little bit and so if you as leadership
+don't address that and talk about that
+openly with your team all you're doing
+is letting that fear rule your decisions
+and so the way that we can Implement
+technology immediately with underwriting
+in such a critical aspect is we're open
+with the underwriting team and
+operational teams about what the uh the
+tools doing and you know Ken you said it
+really really well our technology is not
+designed to completely replace
+underwriting at all in fact it's how do
+you make an underwriter use technology
+to do their job faster and more
+accurately that makes the entire
+organization better more efficient more
+competitive and frankly way more
+profitable um when an underwriter makes
+a singular mistake that they just
+inadvertently missed because they didn't
+read the guidelines they didn't use
+knowledge Co-op to be able I did it
+already you guys have set that stage for
+me they didn't use the knowledge Coupe
+to you know immediately get the answer
+they needed from the underwriting
+guideline and they just missed paragraph
+5c from a 700 page document and they
+make a mistake and you get an UNP
+purchasable loan you save one of those
+and I'll tell you right now you can pay
+for all the technology we're talking
+about right now completely with that one
+mistake that's been prevented and so how
+do you successfully implement it you
+start using it now you don't go all in
+you don't just Implement a technology
+like AI underwriter let all of your
+Underwriters go and then trust me who
+you don't know to completely take over
+your lending decisions that's not
+realistic that's not where the industry
+is and it's fraught with problems but
+what you do is you share that with your
+underwriting team in fact one of the
+most successful uh methods we used to be
+able to implement technology was we had
+a really really question a a customer
+prospect that was questioning whether
+the technology did what we said it did
+so we did a man versus machine we
+actually sat down and said okay
+underwriter a limited scope we want you
+to underwrite the appraisal and the
+credit report go through that in detail
+write down all of your conditions and
+let us know when you're done and we'll
+compare our notes well first and
+foremost it took a you know an hour or
+so to go through that information write
+up all their stuff to be able to talk
+about it we were done in five seconds
+you know completely done waiting for it
+we were talking you know and just you
+know building relationships because we
+weren't focused on that uh that
+complicated process um and you know they
+found things that we didn't and so that
+for us as a technology providers great
+feedback like how do we improve the
+technology but we found like 25 things
+they didn't and so right there showcases
+the power of technology and using data
+to analyze things in a consistent
+standard fashion that can improve
+accuracy reduce your risk and ultimately
+you know improve your profitability the
+organization
+level add something I ask that you
+awesome that what we always ask
+ourselves what if it works we ask that
+all the time so if we've got like a big
+on the AI roll out we're like What if it
+works how many people do we have to hire
+how how do we have to manage so early on
+in in a decision you start with what if
+it works so that you build your plan
+with the the anticipation of it being
+hugely successful right Underwriters in
+your scenario Brett Underwriters need to
+go okay well what if this works like
+what does that mean for me like what
+exciting things could I be part of if I
+don't have to do that job that I've been
+doing and I think the split we're going
+to see and I've already seen it is there
+a split between people who go wait a
+second if the hard work isn't there of
+the tedious going through and spending
+hours looking at this if that's not
+there well I guess I have no job and and
+they will opt out and and we've seen
+that where people have opt out like I
+guess you don't need me anymore and then
+the other side of it is somebody going
+okay if that works I my brain can be
+used way better now working in this area
+and so it's not something to fear unless
+the only value you bring is you can do
+super tedious things that can be
+replaced yeah so if that's the case
+you've got a problem and you've got to
+be able to think differently and go
+maybe this doesn't kill me what else
+what else could it do what if it doesn't
+kill me where's my new place the what
+the what else it can do is such a such
+an interesting point for us you know so
+your your question was what are some
+successful examples uh I would say the
+most successful example we've seen
+didn't even come from us you know we we
+came to the market and we're like we've
+got underwriting I I understand
+Underwriters an operations guy I'm a
+secondary marketing guy you know we're
+going to solve underwriting challenges
+well one of our first customers uh you
+know that had been using the platform
+for a little while he's he goes why are
+loan officers not using this technology
+and I was all why would loan officers
+use an underwriting product I pushed
+back and he was like well why can't you
+give the borrower the consumer an
+underwriting decision immediately upon
+taking an application and I was like
+that's crazy you know that's crazy talk
+and I'm I'm now pushing back against my
+customer for wanting to use our
+technology more right and so it
+challenged me to look at the situation
+differently and we actually rolled that
+technology out to their Originators um
+and let them underwrite files completely
+you know get a legitimate conditional
+approval at the loan officer level and
+that's how we can actually achieve clear
+to close in literally one day two days
+three days we had a we had that same
+company come to us and said you know
+what we're having a problem and I'm like
+oh boy uh oh what are we got to do and
+he said we're closing loans too fast the
+bar borrowers are actually not prepared
+mentally to move into their house
+because it only took seven days for us
+to get a full-blown approval and we
+asked for closings so we're having to
+educate the borrowers I mean Dave that's
+right up your category on what are the
+steps to expect as we close loans what's
+the next step after we actually can get
+something done in five or six days that
+conversation alone shifts everything
+about mortgages how we collect data how
+we collect pay stubs how we even take an
+application it starts to shift things so
+think about it in different way
+yeah I wanted to throw something in so
+you know I knew that question was going
+to be answered and I had a kind of a a
+thought out answer if if the question
+came to me how i' answer it but I
+decided like on my mobile phone while
+this conversation was um taking place to
+just put in chat
+gbt uh what what are the five the
+question was chat gbt what are the five
+ways that lenders and loan officers can
+use AI
+today and the answer was spectacular you
+know I mean number one automated
+underwriting risk assessment but and by
+the way it pre-framed it with these AI
+applications not only make the lending
+process more efficient but also improve
+accuracy and enable lenders to offer
+more tailored and responsive services to
+customers anyways I mean it was it was
+really like way better than my research
+notes but number two personalized
+customer service number three fraud
+detection and prevention number four
+portfolio management and um optimization
+number five streamline uh documentation
+and compliance so now I'm not advocating
+that we kind of Outsource critical
+thinking and brainstorming with AI but
+it's a great research assistant and so I
+just want to I hope if people get
+nothing else from this did everybody on
+this call today
+put some type of a daily I'm G to do X
+daily I'm going to read something daily
+I'm gonna use cat gbt daily I'm G to
+start using otter notes daily I'm gonna
+start what whatever you you pick it
+first of all pick your why and and and
+and and here's the the last thing I'll
+say on this point if you're why it's
+like why not like I'm not doing it you
+know like you have a issue with it um
+here's the deal you're you're you're
+running a race to achieve your goals
+whether you know whatever bus you're
+whatever seat on this bus you're sitting
+in you have goals that you want to
+achieve and you're running a race to
+achieve those goals and and your
+competition is running downhill with the
+wind at their back and if you are not
+using AI daily you're choosing to run
+that race uphill through a bulur field
+with the wind at your face like that's
+the reality of the world that we live in
+today I don't know I want to win my the
+race that I set for myself and I'm going
+to choose the downhill route with the
+Wind my back so um that was that was the
+thought couldn't couldn't agree more and
+I should say to you guys my my computer
+doesn't seem to be very happy about
+being out in the sun without being
+charged so I'll switch over to my phone
+if you lose me but Ken first and second
+any specific examples of uh success
+stories that you think are worth sharing
+with our
+audience yeah we first of all Robbie I
+hope you have sunscreen on just want to
+make sure that's happened uh because
+that okay good um so yeah we we had the
+funniest thing we rolled out Coupe Ai
+and beta and the first comment we got
+from the first user was I just won an
+argument with my
+underwriter uh and and the deal is going
+to close and that I just I almost cried
+I was like we're making a difference
+like we do this to try and make a
+difference but the funny thing is it
+just AI eliminates a lot of that we've
+always done it this way and when I was a
+loan officer back in 98 I've run this
+company for 21 years in 98 I was a loan
+officer so it's been a minute but I my
+favorite thing to was go argue with the
+underwriters because I would always just
+bring the guidelines with me and be like
+well this is what I'm reading what are
+you reading and often times they'd be
+like well I I had seen that part or I
+wasn't like I had found something they
+weren't thinking about because we all we
+learn to like hear and then we stop
+learning and then everything that's up
+here we just decide isn't the thing and
+so this eliminates all of that and so
+that's my favorite thing is we can go
+well this is what the data says or this
+is what the guideline like guidelines
+aren't secret right they're available to
+everybody they just have been sucking to
+find um and so now you can go okay well
+this is you know a much more makes sense
+way to do it and in like two seconds so
+that's my favorite just because I mean
+mainly because it's ours um but there's
+just so many winning scenarios it's just
+people have to commit to to open their
+their eyes to it the other thing I want
+to point out is my wife hates Ai and so
+I know there are people out there that
+hate it because she's like this is going
+to stop us from thinking and she's
+catching me on I'm on vacation right now
+she's catching me on vacation use chat
+BT for things and she's like you're
+going to stop using your brain and I'm
+like okay but I don't need it because
+it's there right there is some value to
+still thinking because your brain needs
+that exercise so the more you use it the
+more you lean on it and I I tend to
+agree with her that we still need to to
+know um and one last thing on that is
+like nobody can calculate an APR with
+with a notepad anymore right not many
+people can there's like three people
+left who can still do that so the
+problem is as we Implement these new
+technologies the is not forgetting why
+we did it the way we did it so yes we're
+using something new but if you use new
+technology and this is kind of the risk
+of the future you end up um like if you
+were to for example use AI for figuring
+out who to lend to AI would lean you in
+a way that would violate Fair lending
+standards all day long right and so we
+can't just be like who should we lend to
+and it's like rich people you know
+that's a horrible way to do it and so we
+do have to go okay we did it this way
+because we wanted to protect for fair
+lending reasons we want to protect for
+privacy reasons we wanted to protect for
+advertising reasons like I've seen so
+many bad advertisements chat gbt has
+created recently that people have post
+on Facebook because they think that it
+must be good at telling me what out of
+market so I'm just going to put in what
+it said no it'll break the lot all day
+long and so don't just you know use it
+the way that it it gives you information
+and not think about all these other
+pieces the the data that you input into
+it makes a a vital difference about the
+outputs you get so I think that's
+important for keep people to keep mind
+Dave anything to add on this subject
+before we before we move
+on no let's let's move on I I I well I
+give I'll give a a short answer I have
+not got a lot of
+tangible success stories yet like I and
+I and I haven't seen a lot in the
+industry so I I do propose you know the
+the leaders of the industry that have
+tangible success authorities that we all
+need to be advocating and sharing those
+more but yeah let's let's move on to the
+next one well so the the next thing is
+customer experience and Brett let's
+start with you we'll go around the horn
+what role do you see AI playing in
+enhancing customer experiences through
+the application approval journey and I I
+say that under the with under the added
+context of it seems like that is so at
+the Forefront right now of who's going
+to win business going forward and who is
+customer experience customer experience
+so how can AI help with this yeah you
+know I'm actually glad I get to answer
+this question because as I said I just
+barely you got a loan and I got the
+opportunity to go through it as a
+borrower and you know longtime mortgage
+professional my first thought was I got
+this this is going to be the easiest
+process in the world I'm not stressed I
+understand what they're going to ask me
+before they even ask and I was way
+overconfident uh you know and I used the
+lender and you know I'm not going to I'm
+not going to lie they did the typical
+thing that lenders did is when I applied
+for Al they're like give me two months
+bank statements two pay subs give me
+your tax returns you know really basic
+information and I diligently put time
+aside to uh you know get all that data
+and collect all that data and you know I
+felt like I was pretty busy and I had
+some like personal things going on at
+the moment vacations and work trips and
+so I was like this is the time I'm going
+to get that information I submitted
+everything probably in the most detailed
+borrower you'd ever see well you know I
+waited about two weeks and you know I no
+feedback from the lender in any way
+really other than you know we're working
+through underwriting and they gave me a
+whole new list of things and I was like
+okay got this I expected that went and
+got all my documentation and filled it
+all out and everything and uh you know
+they were like okay I think we got this
+good we're g we got approvals right I
+mean maybe this is resonating with some
+of you Lawn officers it's happened
+before in the past well couple days went
+by and they're like oh we need one more
+thing can you can you go ahead and get
+that I'm like okay now I'm starting to
+get a little frustrated I'm like you
+know you could have done a better job
+you know doing your underr right so I I
+provided that documentation um a couple
+more days later they're like oh we need
+one more thing can you just please get
+this in fact I need you to clarify this
+thing on this document you sent over and
+I'm like okay I can get that so I went
+and did that you know I'm getting a
+little frustrated well long story short
+you know it fast forwards to the day
+before my settlement deadline expires
+and they need documentation from the IRS
+that they just barely discovered last
+minute because the underwriter read a
+sentence on a screenshot from the IRS
+right so I go you know I'm I'm I'm
+little stressed now because I'm I'm
+going to have to extend my uh my real
+estate contract and I go to the IRS
+website to solve it and it's unavailable
+like it's just the the answer to their
+question was not available from the IRS
+I'm G to have to call the IRS can you
+imagine the level of stress I'm going
+through at this point as a consumer well
+you know I did solve the problem I got
+the loan I closed it but how can AI
+improve customer experience transparency
+and accuracy faster give that
+information when the borrower is engaged
+upfront
+when they're talking to you when you've
+got their ear when they're really
+excited about getting that mortgage loan
+and working with you and if you provide
+that different customer experience I I
+tell you every day they will sing your
+praises and tell everybody about that
+experience and I think that will improve
+the overall approval Journey Through the
+mortgage industry for
+sure
+again I'm I'm still thinking do they
+know what you do for a living Brett like
+to put you used our AI underwriter
+product lender on this would have been
+no problem but uh you know it was they
+weren't that interested at the moment so
+I just got my love yeah yeah I I got I I
+was distracted with that story because I
+was like I was thinking of something and
+then I heard that story I'm like okay
+here's the funny thing is it's so easy
+for loan officers to use the technology
+to do loans now and do them way better
+way faster and that fear about being
+replaced I think about going into a
+restaurant where you have to walk up and
+you place your order like think about
+McDonald's right you walk into
+McDonald's you a real person types the
+things you're ordering into a iPad right
+and then it goes in which is literally
+What It Takes no training to know this
+is what I want so restaurants have gone
+to more of a now customer you walk up
+and just do it I don't know if you guys
+have been to one of these but I went to
+a Burger Joint I walk up and like they
+just have an iPad and at the end of the
+iPad Journey where I'm like burger fries
+whatever it said cool what would you
+like to tip and I'm like are you are you
+kidding me like I I did all the work
+here and so it's funny that even the
+ways that we have kind of replaced
+humans with tech the humans fight back
+against that right as a human I want to
+I want you to do that and I want you to
+give me a great experience and so
+Brett's got a loan officer on the other
+line that's like oh now we just need
+this now we just need this computers are
+better than that that should have not
+happened right if the data doesn't
+change the results shouldn't change and
+so that human their job and
+responsibility to be friends with Brett
+make Brett feel like a million bucks and
+they're just literally typing things
+into the computer that brecket type
+things into but they know what they're
+doing and how to do it and they have a
+customer service to provide right they
+need to provide that service to make him
+feel comfortable so I just I kind of
+went on that that thought in my head of
+like no we still need humans to make
+people feel great about the process and
+if humans suck it using the computers
+I'm going to go find another human
+that's way better and that almost Brands
+himself in that way and so the industry
+is really easy to beat right now if you
+just go did this happen to you last time
+because Brett your story is not unique
+sadly this story is the story of doing
+mortgages right for a lot of people and
+so that it's pretty easy to beat that
+just by saying these are the tech pieces
+we've implemented inside of our company
+so that you're not going to have to deal
+with that ever again um if you look at
+what rocket mortgage did push button get
+mortgage was like the most brilliant
+freaking marketing campaign ever because
+everybody's like wait last time it was
+more than pushing a button well it's
+still more than pushing a button that
+was just a branding piece right but
+again going out and saying no we've done
+it so that we can deliver to you
+something way better way faster and then
+you implement those tools you can win at
+the business better than you're winning
+right
+now yeah and frankly I'm the target
+market for a lot of lenders you know I'm
+middle-aged you know 40 years old I'm
+just on the cusp of the millennial so I
+demand technology in my experience in
+fact if you're not using technology I'm
+not even going to talk to you and that's
+not because I run a tech company that's
+just because of my age anybody younger
+than me you ask them to fact something
+and they're going to go what is a fact
+and you're going to lose the business
+they're going to go find a lender that
+they feel is more technologically savvy
+you have to consider that if you're
+going to improve your customer
+experience and Brett 50 is middle age
+it's not okay I'm not quite there yet
+then well I'm gonna flip that around and
+say especially in the mortgage industry
+it's always going to be a relationship
+based industry to an extent so you can't
+have customer experience without humans
+involved on some level so finding the
+the blend of those two is the in my
+opinion the best way to move forward
+Dave you have any thoughts on customer
+experience with
+AI yeah rather than focus on customer
+experience with AI you know my closing
+thoughts are going to be around just
+putting an explanation mark around the
+fact that this Nar is this Nar change is
+is is a c change in housing and I think
+it's an extraordinary opportunity uh I
+believe that Realtors you know need to
+become real estate advisers and and
+deliver value beyond the transaction and
+there's no doubt AI will have a role in
+that but technology will have a massive
+role in delivering a modern experience
+to a buyer who's like you know should I
+buy now should I wait should I work with
+a realtor should I not and and so it's a
+it's a massive opportunity for every uh
+lender listening to this if if you want
+to help with the transition if you want
+to win uh in a big way gain market share
+improve conversion reduce price
+exceptions improve profitability turn
+your loan officer into modern mortgage
+advisors that can help real estate
+agents make this transa transition uh
+and and and so an AI absolutely plays a
+part in that uh technology plays a part
+in that but leadership is is what it's
+all about Are you delivering effective
+leadership um you know meetings within
+your company uh I think the most
+important job in mortgage is the branch
+manager are you are you really leaning
+into to your branch managers to ensure
+that they're getting uh the training and
+the education they need and are you
+holding your branch managers accountable
+it's you know most branch managers it's
+a comp plan not a leadership role are
+you making sure that every loan officer
+in your company has leadership and if
+it's not the branch manager then it's
+the regional but you know those are my
+closing thoughts like this AI it's a
+tool we got a new tool you know new crit
+Wren you know if I was a carpenter I got
+a bitching new tool but it what good is
+it if if the leadership of organization
+s is not teaching you know their loan
+officers how to use it when to use it uh
+to deliver an experience that you know
+makes your comp be proud that's that's
+good for you to put a bow on it because
+we are just SP out of time Ken I want to
+hear your closing thoughts then Brett
+will'll close with
+you it's the same thing you know we we
+rolled out a hundred hours of education
+on how to do mortgages over the last two
+years and when we talk to our clients
+about it we're like hey we've got all
+this training for you we got all this
+education and they're like yeah we're
+just not really spending money on
+anything right now and it's like well so
+we're just not going to learn like it's
+it it isn't it needs to be a priority
+learning has got to be a priority at the
+top level um you know those who have you
+know taken advantage of it are are more
+they're going to be more successful when
+they focus on learning when they focus
+on these tools this AI will not it'll go
+the way of a lot of other Technologies
+and mortgage if we don't put a focus on
+training um and one last thing I hate
+HubSpot and that's just a statement I'll
+make we use HubSpot I hate HubSpot I
+really hate HubSpot actually thinks it's
+amaz I think it's amazing I don't know
+how to use it so when I was asked to get
+in there and use it I'm like what I hate
+this thing so we need to change verbage
+away from I hate HubSpot to I need to
+invest more time and energy into
+learning this tool that my company's
+given me but the the default is you
+don't want to make it about you so
+you're like oh I hate that system and so
+my challenge to everybody on the call is
+stop hating I hate that technology start
+reframing it by saying I need to get
+better at that technology and then what
+Dave said I'm going to do that by
+spending one hour a week on that
+technology like I'm going to force
+myself to sit down and learn it and by
+the way when you do that you're going to
+love the technology I will love helpspot
+because when I focused on it I'll all of
+a sudden not be so scared of it it's
+really not a hate
+thing so I I suppose closing thoughts
+you know I'm actually gonna wrap this up
+with a a non-technology thing you know
+and kind of a plug I went out to a sales
+conference for Synergy one U and their
+whole entire theme team was really about
+rethinking how you do business um and if
+you're you need to be that thought
+leader you need to rethink all those
+existing processes you have how you've
+done business um they had a really good
+book that's U written by an industry
+leader um that that uh we really respect
+um so I'm actually going to close with a
+a non-technology solution it's called
+wethink Everything uh it's a great book
+go look at it's been written by an
+Insider in the space a couple insiders
+and you know I there's sections in here
+about um using Ai and generative AI and
+I think again the message is continue to
+learn each and every one of us on this
+panel love to talk Tech we would love to
+meet with you and just talk about what
+your strategies are even if you don't
+buy anything from us you know that's not
+even the point it's we like to talk
+about technology and how to advance our
+industry and so reach out uh we can
+share white papers with you studies Roi
+metrics you know how to become more
+profitable in the secondary markets all
+sorts of things so just reach out to us
+and talk we'd love to have a
+conversation with you so thanks all for
+hosting this and I really appreciate you
+inviting me on and uh the insights today
+were really
+invaluable yes well we'll put all of you
+thank you to our panelists thank you to
+Texas MBA thank you to the people that
+attended uh for those looking for more
+info check out Texas
+mba.com uh it was a pleasure hosting
+this and being on with you gentlemen uh
+there is an upcoming schedule on the
+Texas NBA website of upcoming webinars
+thanks again everybody have a great day
+thanks guys take care everybody

@@ -1,0 +1,63 @@
+what's up Wizards we've got a cool one
+for you today we're going to be looking
+at vs code extension that makes
+debugging types that little bit easier I
+swear on every video on this channel
+someone will say what is that weird
+little syntax you're using to get the
+types debugging what is that what's that
+little syntax and so this video is the
+answer to those questions you might have
+seen that you can do this in the
+typescript playground where you can
+leave this little comment there and then
+do this little piece of syntax and what
+you get is a readout of the types that
+are present in that thing that you're
+pointing at so if I change this to a
+number then that's going to reflect down
+here in this little readout that's cool
+that that's in the typescript playground
+but how good would it be if we could
+bring that to vs code turns out that we
+can with this tiny little extension that
+has like no installs whatsoever but it's
+built by Auto the Rocks so you know it's
+going to be good it's literally 75 lines
+of code and it lets you use this syntax
+inside your editor in tstsx.js engine SX
+files so now here in vs code I've got
+the extension installed and I'm building
+this type safe object Keys function I've
+got this result and I can hover over the
+result to sort of see what's going on
+there but sometimes especially if I'm
+teaching someone or I'm making a video
+or something like that I want to be able
+to pull it out and actually have it
+visible on screen when we make changes
+for that I like to just wrap it in a
+console log result and then add this
+piece of syntax too so we get this
+inside our IDE that means if I change
+the type signature of this function up
+here then it's going to pull down into
+that readout down there this is so great
+for debugging types because it makes
+sure that you're pulling out your values
+into individual types this can be really
+useful if you're trying to break down a
+really big type signature and you just
+want to look at a small piece of it so
+thank you Auto who also works on the
+typescript playground for bringing this
+to us it's very very nice of you if you
+like this video then please do give it a
+like it helps share it with the world
+and I should have another video here for
+you and maybe you know a little Channel
+you some you can subscribe to here I'm
+on Twitter as well and you can find me
+at total typescript.com which is where
+you'll find my paid typescript course
+see you very soon

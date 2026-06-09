@@ -1,0 +1,92 @@
+Hi, welcome to the Grafana Alloy for Beginners
+series. My name is Mischa Thompson and I'm a
+Senior Software Engineer at Grafana. In the
+previous episode, we talked about ingesting
+and exporting traces to Tempo. In this episode,
+we will cover ingesting and processing logs that
+come over the network. These episodes build
+on one another. Before starting this episode,
+make sure you've watched episodes one through ten
+and completed Alloy configuration sections one
+through five in the repo. To get started, open the
+Grafana Alloy for Beginners repo, and scroll down
+to section six. As a quick reminder, each section
+contains the starter code, tasks that explain
+what you'll need to do, and a solution with the
+finished version. If you haven't already, fire up
+the learning environment and open config.alloy.
+I'll go over the logs pipeline we'll be building
+visually and then walk through the solution. Feel
+free to give it a try on your own first and then
+compare with the solution once you're finished.
+Let's go over the logs pipeline will be building
+today. Our mythical microservices are already
+configured to send their logs to Alloy, and we're
+going to configure Alloy to receive, process,
+and send them to Loki. We have our environment
+set up this way for the demo to show you how to
+use Alloy to process logs. Receiving logs of the
+network is sometimes done when using two layers
+of collectors - one to collect telemetry and the
+other to process it. First, the logs are sent over
+HTTP from the applications to the loki.source.api
+component, sort of like how it might send it
+to Loki. This component acts as the entry point
+for our logs. The loki.source.api component,
+then forwards those logs to the loki.process
+component. This is where we'll process the logs
+through a pipeline of stages, extracting key
+information like timestamps and adding labels.
+Finally, the processed logs are sent to the
+loki.write component. This is the final step in
+our pipeline where the logs are exported to our
+locally running Loki instance for storage and
+querying. Here's a visual of the loki.process
+component, which is where we'll process our logs
+with a series of stages. You can see how the
+logs will flow from top to bottom. First, we'll
+add a static label to every log to identify its
+source. Then we'll use a regex stage to extract
+the timestamp. Finally, we'll use a timestamp
+stage to properly parse that timestamp and set
+it for the logline. This three stage pipeline
+will prepare our logs for writing to Loki.
+To configure the first part of our pipeline,
+we'll use the loki.source.api component. In the
+http block, we set it to listen for incoming log
+traffic on all network interfaces (0.0.0.0)
+on port 3100. This is the port where our
+applications are currently sending their logs.
+Finally, the forward_to argument directs all
+received logs to our loki.process component,
+which is the next stage in our pipeline.
+For the loki.process component, which we've named
+"mythical", we're setting up a processing pipeline
+with three stages. First, the stage.static_labels
+block adds a service label with the value mythical
+to every logline. This helps us identify the
+source of our logs later in Loki. Next, the stage
+.regex block uses a regular expression to extract
+the timestamp from the logline and saves it to a
+temporary field called loggedtime. Finally, the
+stage.timestamp block tells Alloy to use the
+value from our temporary log time field that we
+just extracted as the official timestamp for the
+log line, parsing it using this specified format.
+This ensures that our logs have the correct time
+in Loki. The forward_to argument sends these
+fully processed logs to the loki.write.mythical
+component we defined in section one, which we
+will write them to Loki. Once you're finished,
+don't forget to reload the configuration to make
+sure that it's applied. Once you're finished,
+scroll down to the verification section
+and navigate to the dashboards tab. Open
+up section six verification, and you should be
+able to see both the requester logs, server logs,
+as well as the rate of logs coming in at the
+different levels. In this episode, we began
+ingesting application logs sent over the network,
+processing them and shipping them to Loki. In
+the next episode, we'll build a pipeline for
+generating logs from traces with Grafana Alloy.

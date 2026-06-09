@@ -1,0 +1,1054 @@
+[Music]
+Welcome to Educational Alpha. I'm Bill
+Kelly, your host, bringing you on the
+ground conversations with business
+leaders, educators, and industry
+colleagues from around the globe.
+Educational Alpha is sponsored by I
+Capital, the financial technology
+company with the mission to power the
+world's alternative investment
+marketplace. Part innovator, part
+educator, and part navigator of the
+alternatives industry, IIC Capital
+offers intuitive, scalable digital
+solutions that have transformed how
+private market and hedge fund
+investments are bought and sold. With I
+Capital, financial adviserss, wealth
+managers, and asset managers around the
+world now have access to everything they
+need to deliver the return and
+diversification potential of
+alternatives to high-n networth
+investors. To learn more, visit
+icap.com. In this episode, Bill sits
+down with Anelise Osborne, author of
+From Hoodies to Suits and a veteran in
+both traditional finance and the
+evolving digital asset space. Annalise
+shares her journey from commercial real
+estate and structured finance at Moody's
+to becoming a leading voice in
+blockchain innovation. They explore the
+institutional adoption of crypto, the
+role of blockchain in transforming back
+office operations and the shifting
+attitudes of younger generations toward
+investing. The discussion also covers
+tokenization, stable coins, permission
+blockchains, and the broader
+technological convergence with AI and
+DeFi.
+[Music]
+Annaise Osborne, welcome to Educational
+Alpha. Thank you, Bill, for having me.
+I'm super excited to be here. I've been
+looking forward to this and I think we
+hatched this plan at the barrel elites
+platform, our mutual friend VDC. You and
+I were on a panel together. I don't
+think we had ever crossed paths before
+that. And I will say I've spoken on that
+platform a couple of times and it's the
+most eclectic conference I've ever gone
+to. It's in a bar, people are moving
+around, but the content is great and it
+evolves into a nighttime entertainment,
+too. So, maybe it speaks to a lot of
+what you've done around breaking norms
+down and going from maybe tradi to DeFi,
+but interesting platform and the origin
+of this discussion. It is, it was a
+great conference and they do have really
+great conversations there. I thought I
+felt like they were very deep. They do
+it. VideC I think does a lot of YouTube
+videos that he came out of that and they
+get a lot of pickup too. So there's
+definitely an echo to that content which
+is great because if you're not there you
+can pick the pathway and see what you
+want to learn. So I think it's from that
+standpoint very very good platform. So I
+did learn a lot from you there not the
+least of which is you're amongst many
+things an author as well and you wrote a
+book from hoodies to suits talking about
+the innovating digital assets for
+traditional finance. We're going to talk
+about that through the lens of the book
+to some degree, but it's here and now
+with or without the book, but you've
+done a very good job of being a tour
+guide for so many that have had the
+opportunity to take a look at the book.
+But before we get to that, maybe a
+little bit of your background because as
+I best understand it, you grew up
+yourself in the trad space. I did. I am
+surprised to be here, but I love it.
+It's super interesting and I learn
+something every day for sure. I did
+traditional finance. I worked in
+commercial real estate and then I worked
+at Moody's doing commercial mortgage
+back securities and all sorts within
+structured finance and CNBS was actually
+innovative at the time when I had
+started a long time ago because if you
+think about it it decreased the cost of
+financing because it shifted the risk
+from banks balance sheets to bond
+holders who could buy at their level of
+risk. So that was interesting at the
+time. I did that after business school
+and I stuck around for a long time. When
+I left Moody's, I did a lot of corporate
+board work and then I starting up
+helping different hedge funds, private
+equity, family office, startup business
+lines. So I done my corporate time and I
+was looking for something new and
+growing and I got into the space because
+I was asked to join a regulatory task
+force for ICOs when I did not know what
+an ICO was. And an ICO is an initial
+coin offering. It is slightly similar to
+an IPO in the sense that it's
+fundraising for a new company, but an
+IPO is established. And an ICO is you
+and I have an idea and we want to go out
+and get people to fund it from a very
+early venture stage. So that's how I got
+into the space. I did a lot of research
+and I learned what blockchain was and
+how it worked and I just saw the
+applications for capital markets and I
+assumed other people were working on it
+and at the time people working on it
+were kind of more the hoodies in the
+sense that they were tech or
+entrepreneurs and they didn't understand
+finance. I don't think finance is
+broken. I think it can be upgraded. It's
+continually upgraded. Think about pink
+sheets and faxes before emails even. So
+yes, I think it's the next iteration.
+Now I found a partner back in 2018 and
+we started then and I've stuck with it
+as the market continues to evolve. I was
+definitely early in 18. I think now is a
+much more interesting time especially
+for your audience with the world of like
+trading and institutional investors and
+hedge funds. I think now people are
+paying attention. It's interesting. I
+think a lot about this current trend is
+very very different in that innovation
+used to be the home of the institution
+or the institutional investor and and
+the endowment model which some people
+use had its roots back to the 1800s when
+Harvard began investing their endowment
+and if there was a new investment idea
+around venture capital or hedge funds it
+was done institutionally. It does seem
+like this whole explosion of digital
+assets grew up more at the retail level
+to some degree and I think the
+institutions and you mentioned this in
+your book and a certain large bank CEO
+was very very dismissive of what
+blockchain and more specifically crypto
+and I think oftentimes people wrongfully
+so use those terms interchangeably but
+eventually either holding their nose or
+not the camel has come into the tent and
+I think that's been disruptive in so
+many ways because we're having to learn
+from the next generation as opposed to
+creating these great ideas ourselves.
+And I don't know how much of an
+impediment toward accepting that has
+been because I think and I love the
+title because if you go into a
+conference and a bunch of people wearing
+suits and somebody walks in in the
+hoodie, your instinct is to immediately
+dismiss that person as a non-serious,
+inconsequential member of that new
+community. Well, also if you think about
+Zuckerberg when he did Facebook, it was
+like a page of honor to not dress up and
+wear suits. It's like we don't need to
+follow the status quo. And so it also
+goes along with the lines of does
+innovation come from institutions. And I
+think sometimes institutions are more
+difficult to innovate out of because we
+know what we're supposed to do. We
+understand this is the regulation, this
+is the workflow, this is the process
+that's the most efficient, but it's not
+necessarily the mindset of the hoodie.
+And the hoodie is more like how can we
+move fast and break things or what can
+we do differently. If you think about
+when Bitcoin started, it launched in
+2008 at the same time as Occupy Wall
+Street. And so the Bitcoin white paper
+came out and it was about how
+peer-to-peer we cannot use the banks and
+I can't transfer money to you and it was
+the same time people are doing sitins
+and trying not like they were against
+the big banks. So that was an
+interesting dynamic from my perspective.
+Banks and investment companies can
+actually benefit. they can make money
+and save and reduce expenses off of this
+technology. But the idea behind it to me
+was much more uh libertarian and how do
+we fractionalize and I think there's
+different ways we can take this we can
+take this one we can look at the
+alternative asset class of crypto which
+if you think about so stepping back a
+little from hoodies to suits is the
+technology the technology was started by
+these entrepreneurs and these hoodiew
+wearing tech guys but they created I
+think it's $3.4 $4 trillion is now how
+much is in the crypto ecosystem. That's
+amazing. They created that. And now to
+take it the step further into
+institutions. That's where I think the
+suits are really important because we
+need to understand regulation. We need
+to understand the flow. We need to
+understand how to build and grow
+businesses as well because there aren't
+that many Mark Zuckerbergs out there who
+can actually take a thought to actually
+a public company that does well. And
+also Mark Zuckerberg now wears suits. If
+you look at him when he's at Congress or
+wherever he's presenting, he's not
+wearing that hoodie anymore. So, it's
+like a right of passage when you cross
+that chasm. As you alluded to, I think
+we're going to see more and more of
+emerging these technologies. Maybe
+there's going to be a lot more M&A
+because I think some of these big banks
+and insurance companies, they have a lot
+of balance sheet. And once they
+understand, they get up the learning
+curve, maybe read your book, then they
+can say, "Okay, now I have my aha
+moment. We have to do something about
+it." And I wonder and and your views on
+this would be important maybe to set the
+rest of this conversation in at least
+when it comes to doing something. I
+don't know enough about this, but I look
+at the power of blockchain and the
+distributed ledger as a recordkeeping
+mechanism very different than
+traditional double entry accounting. But
+if the banks and insurance companies can
+get that right, is that the first most
+important building block or is there
+something else that has to come before
+that? I think there's definitely use
+cases for blockchain. So if we're
+talking about back office functions,
+it's safer, cheaper, and more secure.
+Think about a large Google Sheets where
+you know who inputs into every block and
+you can't erase it. And I think we'll
+definitely decrease error with manual
+entry. I think we'll see what's there.
+We all have access to it. There's a lot
+that can be programmed and I think that
+blockchain technology allows for that.
+So I think there's definitely cost
+cutting measures that we can talk about
+for most back office. I mean, if you
+look at JP Morgan, they created JP
+Morgan coin, which is in essence an
+internal stable coin for the bank, and
+they save millions. I'm not sure the
+number because it hasn't been published
+for a while, but they save crazy amounts
+of money every year being able to use
+that internal immediate transfer, which
+is in essence an internal digital
+currency to JP Morgan. They use it for
+repo transactions. They use it for all
+sort of collateral transfers. And is it
+backed like a stable coin? It's backed
+by depository receipts. So that's why it
+stays within the ecosystem. We can talk
+about stable coins. So think about
+institutions coming into this market. If
+we look at a year ago, the ETFs went
+live and the ETFs which are really an
+institutional rapper of crypto an
+opportunity to invest in this
+alternative asset class. There's a
+hundred billion dollars now in one year
+in crypto ETFs. So that's actually
+really impressive because that money it
+might be coming from some retail but
+it's also really coming from
+institutions as well. And if you think
+about the price of Bitcoin, which we
+haven't really talked about, initially
+crypto had a really bad reputation
+because it was so volatile. There is
+crazy volatility within cryptocurrencies
+because they're not backed by the full
+faith and credit of the US government,
+for example. They're not necessarily
+backed like a bond is backed by the
+credit of a company or some sort of
+collateral. It's not backed by
+collateral. But if you think about now
+with hundred billion dollars in these
+ETFs, they're generally Bitcoin ETFs and
+institutions are less likely to day
+trade. So I think that that's going to
+help decrease the volatility of
+something like Bitcoin. Maybe on that
+point, maybe slightly out of sequence,
+but it's worth pausing on it. So, the
+institutions are more investors than
+traders and they're buying this because
+they think they're getting at a fair
+value and they're looking for long-term
+appreciation. And a lot of the
+volatility has been driven by the fact
+it's been individuals just day trading
+the hell out of Bitcoin. And I do wonder
+as we think about a next generation
+where we're responsible for our own
+retirement, I just had a guest on
+earlier today. We talked about the same
+thing. Are we feeding into the trading
+frenzy of this next generation versus
+trying to find ways of making them more
+investment savvy? So, it's great for the
+institution, but how do we ingrain that
+in the minds of the hoodies? So,
+interesting to bring this up. So, I do
+have a chapter in the book on this as
+well that I think generational wealth
+and generational decisionmaking is very
+different. So, there was a study that
+was done in the UK that 85% of Gen Z in
+the UK turned to influencers first.
+There's actually an article that was
+done less than a month ago in the Wall
+Street Journal that talks about
+different generations and where they get
+their financial advice. It shows for the
+next generation, influencers first, then
+friends, then professional organizations
+like banks etc. It's very different
+because if you look at the baby boomers,
+the number one is from the financial
+institutions. It's a tiny for the fin
+influencers. So influencers are you or
+me who go online and we create an
+account and are an influencer in
+finance. And not to say that they're
+bad, but there's no justification for
+who you're listening to if you're a Gen
+Z that doesn't have as much information.
+You're not going necessarily to your
+parents. You're maybe not learning it in
+school. And then you think, what do you
+do with your money? So I think that's
+just a different mentality. And with
+that same mentality, if you think about
+Gen Z and millennials grew up very
+digitally. They grew up with a
+supercomput in their hand as a
+telephone. And they're very digitally
+native. And so they would like to have
+more opportunities to invest on apps.
+They're much more comfortable on apps,
+for example, than say the baby boomers
+are where they had to learn as a second
+language technologies. And so I think
+there's got to be a way for
+institutions, especially raas or
+retirement opportunities for
+investing that work with them, meet them
+somewhere in the middle because it's a
+different mentality. If they're going to
+be on social media, they're going to
+need to have they're also going to have
+half the world's wealth soon. The baby
+boomers money, it's a great wealth
+transfer that's transferring to
+millennial and gen Z. Millennial, the
+oldest millennial is about 40ish. And so
+they're starting to run the departments
+and the companies. So they're not only
+going to have the majority of the
+world's wealth, they're also going to be
+running the companies and making
+financial decisions. So I do feel like
+there's going to be a shift and that the
+idea of retirement planning, we need to
+think about how do we capture that group
+of people? How do we reach out to them?
+Because a lot of this generation don't
+want to work with necessarily their
+parents' investment advisor. And I think
+that whole field of investment advice is
+ripe for disruption, too. I just don't
+know if it can happen fast enough
+because you look at the average age of
+these advisors. They're 50 to 60 years
+old. Most of them are white males, so
+they're already struggling when the male
+of the partnership usually dies first.
+The spouse usually doesn't want to keep
+them. And now you've got this transfer
+of wealth. I think these Gen Z and
+millennials have a very different
+attitude and approach. And even if these
+advisers can keep the business, they're
+not even going to be speaking the same
+language to them. So I don't know what
+the outcome will be and usually
+disruption presents opportunities and
+hopefully the right app or set of people
+settle in there to really make sure this
+next generation has the right access but
+thinking more about being investors
+versus day traders. So I will teach at
+different universities one-off. I'll go
+in for one class and I always ask who
+owns crypto and who owns mutual funds
+and it really is interesting that
+different schools there's a different
+sway but my most recent one more people
+own mutual funds than crypto. So I do
+think there are some people relying on
+their parents and less on crypto but I
+also think that the investment market
+has changed. So if we look at in what
+was it 96 the height of the market for
+public companies where there were over
+7,000 public companies and now there's
+4,000 and so there's more in the private
+markets and so in the private markets
+what are the opportunities and who can
+invest in them? It's just not as easy.
+It does present a whole host of problems
+and opportunities as well. And your
+point about the shrinking public markets
+if you and I have responsibility for our
+own retirement, we should have access to
+real economy. Full stop. And it's hard
+to argue the other side of that. But
+then how do we provide that access? And
+I think the industry itself is
+operating, I would argue, off tradi
+norms. So they're saying, well, if I'm
+going to get Mr. and Mrs. John Q public
+in here, they're really not equipped to
+do it through a draw down fund. So let's
+create an interval fund which acts and
+behaves more like a mutual fund with
+quarterly openings and navs being struck
+etc etc. And I just don't think that
+that's necessarily the killer app. And I
+look at blockchain as perhaps part of
+that solution where you could create
+maybe different sleeves of liquidity a
+permission blockchain around price
+discovery. And so I just don't know if
+the industry has gotten this right. I
+think they're moving very quickly toward
+asset gathering, maybe being less
+thoughtful about sustainable solution to
+the end investor. I do think that
+blockchain is working to fix that
+problem and opportunities to access
+private equity funds. For example, right
+now the minimum buyin for private equity
+is so high, say it's $5 million to
+invest in some of these funds. Well, the
+back office functionality of blockchain
+that we were mentioning before actually
+makes it much more efficient to be able
+to take more investors in to some of
+these funds and then actually decrease
+the minimum investment. And that
+opportunity allows more people to take
+part. So maybe instead of $5 million,
+it's
+$200,000 or it's going to get lower than
+that. I'm sure it will be $50,000 soon.
+So if you look at KKR, Apollo, Hamilton
+Lane, Franklin Templeton, all of them
+have tokenized private equity funds to
+offer more opportunities. And this I
+think also speaks to the changing
+generations where they're all looking
+forward as in where are we going, not
+where are we today. So I think they are
+looking at opportunities to offer
+private assets in a differentiation
+investment so we can have more
+diversified portfolios. It doesn't just
+have to be mutual funds or specific
+stocks. So I think we're kind of getting
+there. It just takes a little while. So
+it takes a while to upgrade the systems.
+If you think about most of the banks or
+institutional investors, a lot of them
+have very old systems that they have
+built out on from a technical
+perspective. And so it's upgrading that.
+And a lot of times each group has their
+own tech stack. And so I feel like we
+are working towards it. Ernston Young
+came out with a study maybe last month
+that interviewed 352 institutional
+investors and their take on digital
+assets. And I was very surprised to find
+more than half think that tokenization
+will be beneficial for portfolio
+diversification. So they'll be able to
+invest in more types of assets. What
+really struck me is 24% actually are
+active in DeFi, which is decentralized
+finance, which again I'm surprised at
+that number. and they said that's going
+to obviously increase. And they're
+looking to DeFi for derivatives,
+staking, and lending. So, if you think
+about the decentralized finance model, I
+don't think it's that different than
+traditional finance. I think a lot of
+words are called different things, but
+the idea is that there's less
+intermediaries. So, I want to finance my
+deck behind me. So, maybe I'll put down
+my crypto as collateral and I'll get a
+loan from someone. There's real life use
+cases you could do that. Obviously
+that's from a retail perspective much
+different from an investment perspective
+but that to me was a real eye openener.
+Well interesting. Maybe there are
+pockets of innovation and we wake up one
+morning and it's less pockets and I look
+out and there's a field of greatness and
+I finally get it. But you mentioned
+Hamilton Lane and I followed the story
+albeit loosely and right before we came
+on I just reminded myself and it was on
+the the Polygon blockchain and they came
+out with a secondary fund late last year
+early this year and you almost had the
+numbers spot on so we must be reading
+some of the same news stories but this
+secondary fund if you were the Abu Dhabi
+investment authority and you were coming
+through the master fund in Cayman 5
+million bucks to get in but if you
+funded to come in through the Polygon
+feeder fund,
+$20,000. Now, that sounds like amount of
+money that is more qualified purchaser
+or accredited investor, but it ain't 5
+million, so it is bringing it to the
+masses. And maybe this is just
+speculation on my part. You might have
+more of an informed view, but there's
+got to be some trading on that feeder
+fund on the blockchain. And I would have
+to imagine that it would have to be a
+permission blockchain that somebody
+would have to be playing referee. And I
+know you talk a little bit about
+permission blockchains in the book.
+Sure. You can actually put permissioning
+on public chains. There's different ways
+to look at privacy as well, which is I
+think the biggest I'm spending a lot of
+time. I wouldn't say challenge because I
+think we're figuring it out opportunity
+is to find ways to privately protect.
+Public chains are actually very
+efficient. If you think about I look at
+it like the internet and the internet.
+The internet is what we first used
+because companies were afraid of having
+access to all the information and who's
+going to hack what. But then you realize
+the internet was like a bulletin board
+for us at companies and internet you
+could actually access all sorts of
+information. Now commerce is done
+straight on internet. I think the
+blockchain of a public blockchain is
+similar because it's not as restricted.
+I think a lot of the private
+permissioned are more like a very large
+database, but the idea of being able to
+transfer tokens or transfer investments
+or dollars or what have you. There's
+opportunities to put permissioning. So,
+Polygon is public. And so, if you look
+at a lot of the tokenized funds, they're
+done on public chains because you can
+transfer back and forth, you can cash
+in, but they have any security is a
+security. there's a KYC whitelist and
+you can only transfer it to somebody
+within that whitelist. So that is fixed
+different privacy things that we're
+looking at and doing it without a
+moneyaundering perspective. How do we
+have the benefit of the blockchain and
+the decentralized nature usually is very
+open to information. But for example,
+what if I have $20 million in my wallet
+and I don't want to admit that I have
+$20 million, but I want you to know that
+I have $2 million of Bitcoin I can
+transfer you, for example, or Fidelity
+fund that I can transfer to you. So, I
+think there's different ways that we're
+approaching that, but I do think there
+are opportunities for privacy and
+permissioning on public chains as well
+as now granted I'm at Cadenna. We're a
+public chain. So, that's how I see it.
+But if we look at even the banks, the
+banks are trying to figure out now how
+to work on public chains. One thing the
+banks are very highly regulated and so
+there's not a lot of clear regulation
+right now for banks. So that's why we
+look at Micah in Europe there's black
+and white that's not gray and banks
+can't play in the gray because of the
+regulations. But they're also
+recognizing we're going to get here.
+Let's start planning now. So there's
+sandboxes. For example, in Singapore,
+there's a number of US banks that are
+doing projects out in the sandbox in
+Singapore on public chains to realize
+once we can do this on public trades,
+how do we do it? Jumping back a moment,
+you mentioned it earlier and just now
+again this concept of collateral staking
+and lending. So, if I use securities
+lending, which has been around longer
+than you and I, and if I'm a fund or an
+asset manager, I lend securities and I
+take cash in or repos or something as
+collateral. And usually it's
+collateralized up to 102% just to pick a
+number. And the underlying collateral is
+relatively stable. And if it moves
+around, I call in more. If it's moved
+up, I return some collateral. How does
+it work if the security is crypto or
+Bitcoin? And it's very volatile. Is it
+just more capital calls? How does that
+work? Well, it's programmable. It can
+automatically cash out. So, your
+collateral will cash out to pay down the
+loan that you have. if there's
+volatility. So, it's just automated and
+automated that it will call in more
+collateral, too. If it's needed, it
+could. Yeah, it depends on however you
+program it using a smart contract. I
+assume you can use a smart contract to
+have more collateral called in. If you
+think about margin calls 247, the world
+and the financial world are so much more
+global. So, banking hours, we still go
+by banking hours, but cash can be
+transferred outside of banking hours at
+this point. But that's one thing that
+for a 247 market having automated margin
+calls where you can rebalance and you
+don't have to call and make a transfer
+by pressing buttons or using the phone.
+I think that's a huge step in
+efficiency. Think about high frequency
+trading. That was another step of
+increasing in technology to make our
+lives easier. So I feel like this is as
+well. And the cash you mentioned
+stablecoin before like we can dive into
+that a little bit too. The stable coin
+market now is $240 billion.
+$240 billion. So it's more than visa
+transactions. So it's actually really
+interesting to think and those are
+generally held by US treasuries. So if
+you think about that they're a huge
+holder of US treasuries, the stable coin
+market. So the crypto market, all of
+these degenerates that people looked at
+before that are not degenerates. But the
+idea of all these hoodies, but stable
+coins are in essence a digital currency
+that we can transfer today immediately.
+I can transfer to you. I can transfer to
+my aunt in Africa with no crossber
+payment fees. There's just the cost of
+gas getting it over there which is very
+minimal. I don't have to use Western
+Union and they get it today. If you
+think about if I got a check in the mail
+so it probably took what 5 days to get
+to me. I cashed the check in my bank
+account actually using my phone and it
+was a fiveday clearing. So that's 10
+days that I don't get the money. But
+think about if I could get the money
+immediately instead of them writing me a
+check. Think about the velocity of
+money. And if I am an institution and
+I'm dealing with billions of dollars or
+trillions of dollars that are going
+through the financial system, if I don't
+have to wait days to get it, I could
+automatically put it up against
+something else. So I do think that
+there's a lot of benefits. Even central
+banks outside the US, there's something
+called central bank digital currency
+where they're looking at the reserves of
+the countries. Stable coins are stable
+because they generally mimic the US
+dollar and they're usually held as a
+reserve of US treasuries or a basket of
+something similar. So it stays at a
+dollar. A central bank digital currency
+is in essence backed by the full faith
+and credit of whatever country is the
+central bank is putting it out. So
+what's interesting is a lot of central
+banks outside the US were actually
+looking into CBDC's because of crossber
+payments which is also interesting
+because that's really trade oriented as
+opposed to I don't know I usually think
+of it internally as in internally within
+their countries but that was an eye
+openener to me as well. So if you look
+at the US is it a question of when or if
+we will have a CBDC? Oh with CBDC
+there's other things that go into
+CBDC's. there's a question of privacy
+where I spend my money that I don't have
+to file my taxes. They can see
+everything coming and going. And even
+though I know that there are programs
+for the digital dollar, I think that's
+probably the biggest concerns about
+having a US CBDC. I do think stable
+coins will come first. Stable coins
+being PayPal has a stable coin. Visa and
+Mastercard are also really looking at
+this. So the companies that we would
+think would be replaced are spending a
+lot of time and money figuring out how
+can they shift their business to
+incorporate this. So that's something to
+think about as well. That means we're
+really here and with the changing
+administration the US this year it's a
+huge boom year. The SEC is much more
+open to previously the SEC chair there
+was a lot of enforcement actions where
+companies would ask questions but then
+they were almost ruling by enforcement.
+Now the SEC is trying to be much more
+clear to say we're really interested how
+do we become the hub of innovation in
+the United States and not move outside
+the US. So I think that is super helpful
+and I think that's going to really
+translate into growing in the United
+States this year for innovation. But you
+had asked about CBDC. I think PayPal for
+example has a stable coin. So I don't
+even need to know I'm using blockchain.
+I can just open my PayPal account and
+transfer money. There's not a 3% fee
+charged if Visa or Mastercard. It's
+transferred immediately. Even in Visa,
+Mastercard, the retailers don't get the
+money immediately. We're working with a
+country about doing a stable coin as
+opposed to a CBDC, but actually a stable
+coin supported by the sovereign. So,
+that's really interesting because it is
+then technically money, not a security.
+Security is if I can get yield on my
+stable coin, which we're looking at
+doing that too. So, for example, if you
+have a tokenized treasury fund, instead
+of me holding dollars in my wallet or in
+my bank account, I can hold it in a
+tokenized treasury fund so I generate
+yields while I'm sitting on my cash.
+Interesting. So, with these stable
+coins, and this is going to maybe show
+my old schoolness, but how different is
+it from using zel or Venmo? You don't
+even need to know. That's when I think
+we've arrived is when we don't say
+blockchain or even stable coin. The idea
+is I can just sign in with my regular
+web two, right? I sign into my PayPal
+account and I send it over, but it's
+more immediate because the transaction
+is immediate. If you send it with Zel,
+you're not actually able to take the
+money out right away unless there's
+already money there that covers it. So,
+so Zel is not using blockchain
+technology. No. Okay. Fed now they came
+out with to try to transfer money
+faster. But even they're looking at
+blockchain. DTCC is looking at
+blockchain. Swift is looking at
+blockchain. All of these companies and
+intermediaries are figuring out how can
+we do it faster, cheaper, more secure.
+So, it's interesting that intermediary
+transfer agents. If you have a
+blockchain, do you need a transfer
+agent? Because in essence, all of that's
+recorded on the blockchain. But there
+are digital asset transfer agents and
+they're trying to figure out how can we
+make this better. You mentioned DTCC.
+So, I think most listeners will know
+security processor for three quadrillion
+of security transactions. And in advance
+of this conversation, at least I know
+they had been doing some work with
+digital assets and blockchain. And so I
+looked just quickly to see where they
+are. You probably know more than I, but
+they just announced in April that they
+come out with smart contracts for
+digital collateral markets where they're
+going to settle collateral using smart
+contracts. And it's interesting maybe
+tying two things together. When we came
+out with
+T+1 for security settlement middle of
+last year, I think most people would say
+we're still talking about one day as
+opposed to 1 second or one nanoc. So I
+think anybody that thinks that TRDFI is
+just sitting in their hands just waiting
+and watching. Not the case at all. And I
+don't think anybody 30 40 years ago
+would view DTCC as an innovative
+organization, but they clearly are. I
+think they do. But they also have to pay
+attention. It's like if you think about
+the Codox or the Blockbusters or look at
+Yahoo and AOL or Skype, Microsoft shut
+Skype down last week or two weeks ago.
+You might be the front runner or you
+might have a great business model, but
+if you don't keep up, you might
+disappear. But I do think the DTCC is
+definitely looking at what's next. They
+acquired Surrency last year. I think it
+was last year, which was a big
+blockchain company. So they brought it
+in-house. So you had mentioned M&A. M&A
+is also happening within the crypto
+industry. So there was a I don't even
+remember how many billions this week
+that Coinbase just acquired a digital
+derivatives trader as well. So I feel
+like people are putting pieces together
+to build and grow. I do think a lot of
+the web 3 companies will be acquired or
+institutions will look to see how they
+can acquire. So I think it'll be an
+interesting year. But also you said T
+plus one. Not everybody wants T plus Z
+because not everybody has the collateral
+necessarily. So I feel like it's
+something to think about and weigh. It's
+like not everybody wants to have their
+securities marked to market every day.
+But I do think there are ways around all
+of this. I think the flip side of a T+5
+then more opportunity for the trade to
+break the collateral doesn't show up. So
+it seems to be if I've made a commitment
+the less time between trade and
+settlement it seems like the better the
+world will be. But I definitely
+understand there's an arbitrage at work
+there too. So in the remaining time that
+we have, I'm curious your views about
+generative AI that seems to be sucking
+up all the oxygen in the room now and I
+hear more and more about that and less
+on blockchain and if I'm CEO of an asset
+management industry which would maybe
+describe the domain of a lot of our
+listeners, what is the right approach?
+Is it first it was tradfi then moving
+toward alt and then blockchain and now
+generative AI alt data quantum computing
+what should the focus be and maybe
+eventually we see a great convergence of
+all of this new technology but how do
+you see the future and maybe some of
+these uh trends merging together? Well,
+first, if I was running a company, I
+would look to identify my problems and
+then solutions as opposed to I know some
+people were just trying to use
+blockchain for the name blockchain
+before, but it's kind of like how can I
+make my company more efficient? So, from
+an AI perspective, if we're talking
+about forecasting or we're talking about
+synthesizing large amounts of data to
+for predictive analysis, I think that's
+a great tool. If it can help us make
+better financial decisions as a
+fiduciary, I think it absolutely makes
+sense. This is I think probably 18
+months ago now, but Google's deep mind
+had solved a mathematical equation that
+we were never able to solve before. That
+to me defines what generative AI is. It
+is able to synthesize all of these data
+and come up with something new just for
+people to put it in perspective. So I do
+think that that makes sense. Obviously I
+know people are looking into quantum. I
+think quantum is interesting. Some
+people say it's 5 years away. I think
+it's longer than that. Cooling is a big
+problem with quantum. If we look at the
+idea of technological innovation, it's
+just exponential. And especially if you
+think about AI from a coding
+perspective, we can code faster now
+because we can plug it into AI instead
+of typing it all ourselves and then fix
+the code. So I just think it's going to
+be so much faster with technological
+innovation than it has been in the last
+20 years, which were faster than the 20
+years before that. Yeah, it's going to
+be interesting. And maybe to finish off,
+I think the most important page in your
+book is the one where you dedicated the
+book to your three sons and the quote
+which I love is may you stay curious. I
+think that's awesome. What are their
+20s, 30s, and 40s going to look like in
+terms of career path and interaction
+with technology and they're already
+probably more techsavvy than me, low
+bar, but certainly maybe even more
+techsavvy than you. I think jobs will be
+streamlined, but we'll also have jobs in
+other places. Yes, there are robots
+coming out, home health aids, but I do
+think that there's still obviously a lot
+of trades. My oldest is really into
+computer science programming. He always
+has been and now he's getting into
+finance. Not my push, but I think that
+actually having that basis for computer
+science and programming is going to be
+so helpful for any job because the jobs
+aren't going to be tech jobs. I think
+every company is going to have such a
+huge component of tech that it's going
+to be everywhere. My middle is about
+astronomy, which is my James Webb photos
+behind me. But there's so much
+innovation in space and planets and look
+at SpaceX and how much cheaper he was
+able to do it than NASA and kind of the
+innovations that spurn from that that we
+can work in everyday life that we don't
+necessarily think about. My youngest is
+very much a people person. And so this
+is another aspect is that I do believe
+as fiduciaries we're still going to need
+people cuz you want to look the person
+in the eye and understand them and know
+that you can trust them. So I think the
+trust aspect is also still going to be
+important because there's so much you
+can do in public markets. But I really
+feel like any mergers, any really large
+transactions, we're still going to sit
+down at a table, shake hands or go have
+a meal. So, I feel like yes, technology
+will make our lives much more efficient
+and faster, but I do think us as people,
+it's still important to know each other
+and trust each other. Is there a working
+title for the next book?
+We'll see. The book's a labor of love. I
+need to make a lot more money now before
+my next one, but there are lots of ideas
+of what could come next. So, yes, thank
+you so much. Well, I look forward to
+that and I'll have you on when it does
+come out. But I appreciate having met
+you and learning from you initially on
+the Barl Elites platform and I think our
+listeners will get a lot out of this
+discussion today. And I'll put a link to
+the book there too. I have a copy right
+in front of me as I know you do as well.
+It is a wellthoughtout digestible read
+and I think some of these books they're
+not approachable because they're so
+academic and I know you said it to me as
+much offline and you quickly see it as
+you open the book up. it is very
+approachable and I think that helps take
+the reader on a tour that they can come
+away with learning something that
+perhaps they would not have been able to
+get out of a more academic uh tomb. So,
+thanks for all of that. Thank you, Bill.
+It's been great conversing with you.
+It's so fun to meet you. I look forward
+to many more conversations.
+[Music]
+Thank you for listening to Educational
+Alpha. I'm your host, Bill Kelly. Learn
+more about the KA Association and
+subscribe to the show at kaya.org.
+That's c
+aia.org. See you next time.

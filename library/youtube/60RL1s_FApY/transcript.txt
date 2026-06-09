@@ -1,0 +1,201 @@
+We're all familiar with using AI chat
+bots, [music] but the next step, the one
+we all really want, is to have
+applications do things on our behalf.
+That's the jump from an AI chatbot to an
+AI agent. And the core technology that
+makes this possible is called Genai tool
+calling. It's a simple idea. [music] The
+LLM in the middle of a conversation can
+decide to pause, call an external
+[music] API or function to get data or
+perform an action and then [music]
+continue.
+But now for users to feel trust, these
+AI application need to know who the user
+is. They need to be able to perform
+tasks on a user's behalf. They need
+[music] to be able to perform long
+running tasks with async instructions
+[music] and they must consider a user's
+permission to get data for that user.
+What we need is a proper [music]
+identity layer just like we do for our
+regular web applications. And this is
+something Alzero has built a solution
+for. In this demo, I'll be talking about
+assistance zero. It's an application
+that we created using the longchain and
+versel AI SDK frameworks using an X.js
+application. It's an assistant to help
+you consolidate your life and stay
+organized. Let's see it in action. I
+already have defined an Alzero
+application in my tenant.
+I already have all my dependencies
+installed. [music]
+Now I need to create an Lzero client
+[music] and use that inner middleware to
+handle the incoming request.
+I've [music] also added login and assign
+button to my application
+as well with a nice profile component.
+Let's give it a try.
+And here we go.
+I have authenticated
+to the AI assistant. Now I [music] can
+ask the AI assistant, who am I?
+Finally, this is the tool that is
+getting the user's identity.
+Another feature that Alzero has built,
+[music] it's token vault. Token Vault
+allows your application to call
+thirdparty API securely on a user's
+behalf. When a user authenticates with
+their preferred identity provider and
+uses OOTH scopes to authorize access,
+Alzero stores the refresh token for that
+connection in the token vault and can
+broker new access tokens. This allows
+your application to exchange an LZ
+refresh token or a federated access
+token [music]
+which is refreshed by Alzero with what
+is available in the token vault. Here I
+already have set up my Google connection
+[music] and I have enabled to use token
+vault.
+I've also downloaded the Alzero AI SDK
+to our codebase. So now [music] let's
+configure
+that to get access tokens for Google
+using token vault
+and let's try this out. Now I should be
+able to ask my agent, read my [music]
+last email.
+And here [music] we go. Now my agent was
+able to retrieve my last email. What if
+I wanted to do [music] something that
+requires additional approval? Like for
+instance, have the agent make a purchase
+on my behalf? When AI agents get
+requests like that, they might be
+waiting for something to happen before
+they can move forward. You want to make
+sure [music] you can approve the
+purchase transaction before the agent
+does it for you. This is what we call a
+synchronous human in the loop scenario
+where the agent can wait for minutes or
+hours before the users approve a
+transaction. From a security [music]
+perspective, you don't want your AI
+agents to keep credentials around,
+[music] right? What you want is ondemand
+asynchronous authorization. Behind the
+scenes, it's powered by client initiated
+back channel authentication or SIBA
+[music] for short. SIBA is a standard
+that was created for applications to be
+able to use a decoupled authorization
+[music]
+flow. You can build flows where users
+can authorize from a separate device. I
+already have set up my Alzero tenant to
+enable SA and push notifications.
+[music]
+We need to configure the Alzero AI SDK
+[music] to wrap our tools so we can use
+async authorizations.
+This function will be executed [music]
+open up open user approval and can even
+fetch access tokens from the SA flow if
+needed.
+Now I can ask my assistant to make a
+purchase on my behalf.
+Can you buy me
+a [music] bunch
+of flowers?
+And here we go. I got a notification on
+my garden app to approve the request
+[music]
+and just like that the agent was able to
+pause until I approved the request. So
+[music] as mentioned before AI agents
+need to consider my permissions [music]
+to be able to perform tasks or get data
+on my behalf. Almost all AI agents feed
+information to large language models to
+be able to generate better responses.
+[music]
+This is what it's called retrieval
+augmented generation or rag for short.
+An example of this is asking an AI agent
+[music] to get information from a file
+that I have access to. We want to make
+sure that we don't give the agent access
+to all the files [music] and they're
+only able to provide data from files
+that I have access to. I want to make
+sure that unauthorized information is
+strictly excluded. We don't want the AI
+agent [music] acting beyond its intended
+scope. I want authorization to happen at
+the document level. That's why al04
+genai uses FGA to provide fine grain
+access control for developers to uh
+create [music] authorization flows
+outside their codebase. Assistance zero
+lets users upload documents to use as
+context. [music]
+The documents are indexed on a vector
+store, but we don't want just anyone to
+have access [music] to the docs, let
+alone the AI agent. Assistant Zero also
+lets users share documents, but for this
+demo, I'm going to show you how can my
+agent provide information from the
+document that I have uploaded.
+Can you summarize
+this doc for me?
+[music]
+And here we go. [music] Now, my agent
+was able to access a document that I
+have access to.
+[music] You can add multiple documents.
+And a good way to test this is adding
+documents and sharing with other users
+besides yours and see what the the agent
+does. [music] Remember that you can
+download this um codebase from our
+GitHub. In conclusion, security must be
+built into the foundation [music] for
+all Genai applications for users to feel
+like they trust them. That's why we have
+built assistant zero to show how you can
+secure these applications using out
+zero. Like I mentioned before, we need
+applications to know who the user is.
+Without zero universal login, you
+[music] can achieve this. Two, these
+applications need to be able to do
+things on my behalf. We configure a
+Gmail search tool that allow my agent to
+[music] access my Gmail account based on
+the scopes that I had authorized.
+[music] Three, they need to be able to
+perform longunning tasks with async
+instructions. I show you this how we can
+use siba and make sure that the agent
+can pause before they can continue and I
+as the user was able to authorize the
+purchase. Then lastly, we want to make
+sure these applications consider my
+permissions. The only reason why my
+agent was able to read the document that
+I have uploaded is [music] because I
+have permissions to it. That's why we
+have built a zero fga for [music] rack.
+Thank you so much. Remember you can
+download this repo from our GitHub.
+Thank you.

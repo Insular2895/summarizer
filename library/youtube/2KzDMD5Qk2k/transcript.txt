@@ -1,0 +1,147 @@
+docker containers are supposed to be a
+lightweight solution for deploying
+applications
+but if you aren't careful you can end up
+with container images that are 10
+or even 40 times larger than necessary
+in this video
+i'm going to show you how to build
+smaller containers and i'll share two
+techniques that can dramatically reduce
+the size of your production containers
+hey team sid here with devops directive
+my goal is to help engineers level up
+their devops and cloud infrastructure
+skills
+on this channel i create a mixture of
+informational videos as well as
+tutorials just like this one
+so if you're new here consider
+subscribing in order to have actual
+concrete examples for this demo
+i created two simple hello world
+applications
+one written in node.js using the http
+create server method to make a basic web
+server
+and another written in golang which uses
+the net
+http module to do the same i then
+created a basic docker file for each of
+these to containerize these applications
+for node we start from the public
+node.js base image
+copy in the package.json to install any
+dependencies
+we then copy in our application code and
+finally
+specify a command to run the server when
+the container is started
+for go the docker file is similar we
+copy in our application source code
+and build it before running the server
+in the final step
+we build and run these containers we see
+them working as expected
+returning a hello world message to the
+browser but how large are the images
+the go image is 825 megabytes while the
+node.js image weighs in at a whopping
+918 megabytes
+considering how little each of these
+applications is actually doing
+this is absolutely crazy let's see if we
+can try to reduce their size
+the first and most obvious approach is
+to use a smaller base image
+the base image that i use for my naive
+docker files
+contain a full debian linux distribution
+if we look on docker hub for each of
+these we can see that they both contain
+many different versions and tags
+available
+including a slim version for the node.js
+image which has fewer utilities
+installed
+there's also an alpine based version
+which uses a lightweight linux
+distribution named alpine to have a much
+smaller base image
+to use these images we just need to
+specify the tag in the first line of our
+docker file
+now let's rebuild our images using those
+smaller base images
+as we saw the initial nodejs dockerfile
+resulted in over 900 megabyte size image
+by using the slim image we reduced the
+image size to just 142 megabytes
+and by transitioning to the alpine based
+image this drops to just 89 megabytes
+for golang we see a similar story the
+initial docker file was over 800
+megabytes
+there's no slim based image available
+but by using the alpine based image we
+can get it down to 385
+megabytes while this is certainly much
+better than before
+the alpine golang image is still fairly
+large
+and brings us to the second technique
+which is to use multi-stage builds
+to avoid including unnecessary build
+dependencies in the final image
+to do this we need to restructure our
+docker file slightly
+first we add a name to the first stage
+which i'll call build
+the stage looks nearly identical to our
+previous docker file
+but now there's no command at the end
+specified
+then add a second stage to the docker
+file where we can start from a much
+smaller base image
+which doesn't have any of the build
+dependencies such as a vanilla alpine
+image
+and then we copy our built executable
+from the build
+image stage to this stage when we build
+this image
+the resulting image size is just 20
+megabytes
+multi-stage builds allows us to take
+advantage of having all the necessary
+build utilities available during the
+first stage
+without having them increase the size of
+our final image that we're going to
+deploy
+with these two tips i was able to reduce
+my node image size
+by a factor of 10 and my golang image
+size by a factor of 40.
+next time you're working with containers
+and feel that they are getting a bit
+heavy
+try thinking about whether either of
+these techniques can help reduce the
+image size
+also if you have any other tips of your
+own for reducing image sizes of
+containers
+leave them in the comments section down
+below so that we can all learn from your
+experience
+if you want to continue down the docker
+rabbit hole my last video
+i talked about how to debug docker
+containers so i would definitely
+recommend checking that one out in the
+card over there or
+go to my channel page to see the other
+content that i've released recently
+see in the next one

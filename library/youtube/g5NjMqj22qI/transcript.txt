@@ -1,0 +1,473 @@
+anthropic came up with Cloud 3.5 Sonet
+in June and it quickly became very
+popular amongst developers because of
+how well it writes code and also because
+of this feature called artifact where
+it's able to take the code that it
+generates and put it in a separate
+window and it also is capable of running
+some applications on that window it's
+really awesome so I'll be using cloud
+and I'll also be using a few other AI
+Technologies to create a demo e-commerce
+application that has a recommendation
+engine powered by superb vector to make
+this sample e-commerce application we're
+going to have Cloud generate some dummy
+Json data for us the way we're going to
+go about creating the sample application
+is we're going to have Cloud generate
+the dummy Json data first and then we're
+going to create a not script that takes
+the Json file Loops to each item and
+then we're going to generate a image
+using Dolly 2 model I know Dolly 3 is
+the latest model but Dolly 2 is cheaper
+and it gets the job done once the images
+are generated we're going to store those
+images into superb storage then we're
+also generate Ed for each item finally
+we will take the image URL generate it
+in biddings and all the metadata for
+each item and save them in our superbase
+database and then lastly we'll create a
+front end that creates the superbase
+database and displays all the fashion
+items all right our sample Json data is
+created now let's have it generate a no
+script that will take the Json file Loop
+through each item and generate the Image
+store it in super restorage and also
+generate the bittings using open AI API
+I and finally store everything in
+superbase database let me skip ahead to
+when it finishes generating and I
+actually prefer typescript so I'm going
+to ask Cloud to convert everything into
+typescript and Cloud provided me a set
+of instructions to follow to set up this
+project so let's set it up on our local
+machine grab the npm inic
+command and go to a local directory that
+I've already created I'll be adding both
+the front end application and the not
+script that'll process djon data in this
+directory so let me create a script
+directory which will hold the node
+script and within the script directory I
+run the npm init command now I can run
+the second command which installs a
+bunch of
+dependencies so far so good let's move
+on step number three is to initialize
+typescript
+configuration going to step number four
+we just need to update the TS config
+file so far nothing complicated Cloud
+was able to provide me nice and clear
+instructions on what to
+do then we can move on to setting up
+environment
+variables create a end file and paste
+the code samples from cloud we'll get
+the values later let's copy the Json
+file that it generated open up the Json
+file artifact and copy the data into
+fashion data. Json
+file going back to the instructions now
+we need to create a directory called
+images so let's do that go to our script
+and create a folder called
+images now finally it's time to create
+the superbase project let's head to
+database. new and create a new superbase
+project I'm going to call my project
+Cloud
+Commerce we can generate a secure
+password and for the region you should
+just select the region that's close from
+you
+and now the super based project should
+be created in a minute or two while it's
+cooking let's go back to the
+instructions instruction number 10 let's
+add the start script into our
+package.json
+file just paste it right in there and
+we're good to
+go and that seems like the end of the
+setup instruction so let's actually set
+up open AI API key
+hit the create new secret key I'm going
+to name it Cloud Commerce and for anyone
+who's watching this video this far
+congrats you get a free open AI API key
+right here also the super base project
+should be ready by now so let's go ahead
+and get the super base
+URL and the super base key for this
+we're not going to use the Anon key but
+instead I'll be using the superbase
+service roll key because I know the
+script is going to be only run in a
+secure environment and I want the script
+to just bypass all the r level
+security paste it right in there and
+that's all the environment variables we
+need to run the
+script I actually noticed that I haven't
+copy and pasted the main script so let
+me just do that let's copy this file
+name and create the file inside script
+SL Source let's go get the script
+code copy it and paste it right
+in let's do some minor fixing of the
+code the way the open AI library is
+imported is incorrect and we can import
+it as open AI from open
+Ai and then coming down to the
+configuration we can actually just take
+this API key delete the entire
+configuration and just pass your API key
+directly into the open AI library now
+open AI doesn't have a create image
+method but instead it has images.
+generate we can also pass a
+model and specify Dolly
+to Let's also update the size to
+1024 and the return URL is inside data
+URL and I'm just going to be lazy and
+say that there's always going to be a
+URL return so add a exclamation mark now
+similar to the image issue there's no
+create embeddings but instead there is
+embeddings and then create method and
+just like the image there's an extra
+data so delete that and we're good here
+now just skimming through the code it
+looks fine it looks fine and let me just
+actually take the embedding generating
+code and break it before generating the
+images because generating images and
+hand in and all that is pretty
+complicated I just want to verify that
+emitting generation works first now that
+the script looks like it'll work let's
+actually go back to super base and set
+up our superbase project we need to
+First create the table but let's see if
+Cloud can generate the SQL statement to
+create the table necessary for this
+project and voila it's able to create
+not just a table but necessary or
+possibly necessary indexes for the
+table let's go to the SQL editor and
+paste it in let's actually modify it to
+have the vector extension be created in
+the extension schema and instead of
+storing the image path we can just store
+the image URL
+directly everything else seems all right
+so let's hit run and our table has been
+created we can go to the table editor
+and double check and it looks pretty
+good now let's let also set up our
+storage bucket let me go back to the
+instructions to double check what name I
+had to give to the
+bucket and it is fashion images so let
+me just copy this and create a public
+bucket name fashion images great the
+bucket has been created now because I
+rename image path through image URL
+there's a few places that I have to
+fixed update the image path to image URL
+for when we insert the data into super
+base update the image path to image URL
+for the type
+definition and add some code to actually
+obtain the image URL instead of just the
+image
+path pass the bucket name and call get
+public
+URL also some additional Minor
+Adjustments let me make this upload a
+upsert so that we can actually run the
+script multiple times and it wouldn't
+error out and same with the super base
+insert as well let's update it to upsert
+so that it will allows us to run the
+script multiple times it looks like we
+have an error here and it's saying that
+we need to actually access the do public
+URL things are looking good we should be
+ready to actually run the script so
+let's run it for one Loop instead of 50
+loops and see what we
+get and we can just call mpm Run start
+and the image generation takes some time
+so it's going to hang in there quite a
+while but we get er saying the system
+tried to access images SL one. ping but
+there was no such file it looks like I
+needed to create the images directory
+inside the S directory run the script
+again and we actually get a different
+error it looks like there is related to
+the download image function but let's
+have claw debug it for us I give claw
+the error message and just tell it to
+fix it in Cloud generates a new set of
+script it's not related to the error
+itself but let me bring over this
+content type over to our
+script and after inspecting the code I
+noticed that this file buffer might have
+been the key to our error so I copy it
+over and replace the fs create
+readstream with the file buffer let's
+run the script again and see what we
+get and after waiting for some time our
+script is complete let's double check
+everything on superbase dashboard on the
+storage bucket if we refresh the page we
+can see that one that ping is present
+right there and in the table editor we
+can see that we have a row in our table
+great now let's go back and run the
+script for the entire 50
+items now I'm back here and it looks
+like after 402 item something happened
+and it aired out it looks look like
+opena I thought we were feeding in some
+inappropriate prompt let's check the
+data so it should be ID number 43 that
+open a I thought it was inappropriate
+and maybe the feminine word I don't know
+anyway we have 42 sample data in our
+application so I'm going to say that's
+good enough now it's time to create the
+front in our application the fun part
+I'm asking Cloud to create a beautiful
+e-commerce website for our fashion brand
+with a top page and a item Details page
+I didn't specify what language or
+framework to use but it seems like it's
+spitting out a nextjs application I
+believe cloud is not able to run nextjs
+applications yet so I'll be taking this
+code and setting it up locally in my
+machine now cloud is working on
+providing the instructions on how to set
+up the project the code it gave me is
+using Pages router so let's ask it to
+convert it to app router
+great now let's follow the instructions
+and set up the project run the crex app
+in the rout of our directory I'm going
+to call my app app so that we have a app
+directory and script directory in this
+project for all the options I guess
+Cloud didn't provide any instructions
+but I'm just going to go with the
+defaults CD into the new app directory
+and let's install superbase JS
+dependencies then let's set up the
+environment variables create the m. loal
+file
+and let's go find our super base
+credentials go to Project settings and
+API and paste the sample
+code and copy and paste the superbase
+URL and superbase Ann key right in
+there there's a few files that we need
+to edit and five or six files that we
+need to create we can start from the
+layout. TSX there's no actual
+functionality that we need to add to
+this file but I'm just going to edit the
+metadata so that we have a better title
+in description then we can edit the top
+level page.
+TSX copy all the page. TSX
+content and paste it right in there we
+will worry about the later on so let's
+move
+on let's now create this first component
+create the file inside the app directory
+and copy the content it's really nice
+that cloud is able to include the proper
+Imports for as well and let's see it
+looks like I may have copied over two
+files into this single file yes I did
+let me just delete that and we're good
+and from here on it's just creating the
+file and copying over the content so let
+me just skip
+over and that is the last file that we
+needed to create let's move on to the
+next step which is to run the app so
+let's do
+that open local Hol 3000 in and we see a
+error of course because I said I was
+going to fix but never went back to
+it this is a code that's fetching all
+the different categories within this app
+and there is happening because superbase
+doesn't have a distinct method the way
+we're going to solve this is we can
+create a view that holds the different
+unique categories within our database
+and to create the view I could ask claw
+to write the SQL to create the view but
+I could also ask superbase AI assistant
+to do the same so here I am uh doing
+that let's run the qu and we have a view
+of list of categories and we can just
+create a newly created
+view let's make sure the view contains
+all the information that we
+want and it looks like it does so I
+don't think there are any more errors in
+the app so let's go back and check it
+out and okay uh it's showing something
+so it seems like the images aren't being
+properly displayed let's check out if we
+are inserting the correct image you are
+and turns out that I made a mistake of
+uploading the images to Fashion Hyphen
+Images but I'm generating the public URL
+for fashion underscore images let's see
+if there's a quick and easy fix jumping
+back into the seqo editor and we can ask
+the assistant to update the image URL
+values of the fashion items table to the
+proper URL and it provides a simple SQL
+statement that we can run to update all
+the underscores into hyphens awesome but
+it seems like that the images are still
+not showing up let's go check if the
+image URLs are actually corrected and we
+can verify that the URL actually does
+point to the proper image let's go back
+and inspect the web page we can see that
+there's something wrong with the image
+URL if you remember I changed the image
+path column to image URL column earlier
+and this is all because of that so we
+need to basically change all the image
+path to image URLs in this application I
+guess one lesson learned from here is
+don't try to make fixes by yourself like
+Cloud handle it and that way it's able
+to make adjustments to all the
+subsequent Generations so here I delete
+the image path and update it to image
+URL and also get rid of all the exess uh
+super base URL junk and it looks like
+all the items are properly being
+displayed we can click any of the items
+and it looks like there's some
+additional fixes that we need to
+do it's the same fix here but it looks
+like Cloud isn't using the types that we
+uh created maybe that's something I
+should have asked earlier and I just
+need to fix the related
+items it's the same thing getting rid of
+all these environment variable stuff and
+just uh displaying the raw image URL
+right
+here and it looks great we have a
+functioning e-commerce website for our
+fashion brand now currently we are
+displaying these related items by
+fetching the items that are in the same
+category as the main item that's being
+shown and the code that's doing that is
+right uh here get related items so we're
+just selecting four items that are in
+the same category that works fine but I
+want to show you a better way of
+fetching related items using superbase
+Vector database let's first get rid of
+these category parameters because we
+won't be using them we can remove them
+from the actual function definition as
+well and we'll take care of this error
+later on we can actually utilize the
+embeddings column that we created in our
+table to query semantically similar
+items to achieve this we need to create
+a Pocus function and to create a Pocus
+function I'm going to use super base AI
+assistant the function seems fine but
+the return type should be set of fashion
+items so let's update that okay I guess
+my PR wasn't too great so let's manually
+update the code we can just return all
+the columns and then we can update the
+return type from manually constructing a
+table to Fashion items we can also write
+this in plain SQL so get rid of begin
+and
+end and change the language to SQL run
+the SQL statement and we have the
+function created go back to that code
+and let's update this query statement
+instead of constructing a query we can
+just call the RPC method to call this
+function we need to pass two parameters
+to this function one the input
+ID which is the current ID of the item
+and to the input embedding which is the
+embedding of the currently viewed item
+which we don't have so we need to add a
+parameter right here and the type of
+embedding is actually just string
+because any advanced postas type is
+going to be string in super base and we
+can pass the embeddings as a parameter
+as well now let's make sure we pass the
+embeddings to this function and we also
+need to add embeddings as a parameter of
+this component
+this is kind of a unrelated error but
+I'm just going to say uh item is any
+type and just ignore this error now go
+to the parent page and make sure the
+embedding is being passed as a parameter
+here and since item is any type let's
+verify that the embedding is being
+passed through since we are getting the
+item by qu superbase database and
+getting all the columns it looks like
+embeddings is coming through but let's
+update the type just
+because now save everything and it seems
+like we are getting an error after
+digging into the error it turns out that
+the error is being caused by the Pocus
+function returning a single object
+instead of an array and I've noticed my
+mistake we need to change the return
+type to set of fashion items so that it
+can return multiple fashion items in a
+single function call we can drop the
+function recreate the function and we
+should be good to go now we can go back
+to the web app and click on an item each
+item displays a set of related items
+which is being semantically searched on
+the super database using embeddings even
+in this quick demo with 42 items you're
+able to see some patterns where woman's
+wear brings up other woman's wear and
+shorts brings up other shorts That's The
+Power of vector
+database the way we use superbase Vector
+was very basic in this video but if you
+want to learn something more advanced
+you should check out this video right
+here I'll see you around in another
+super base video bye

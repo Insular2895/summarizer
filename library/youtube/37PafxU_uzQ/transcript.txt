@@ -1,0 +1,227 @@
+what's up Wizards I'm going to show you
+everything you need to know to use react
+with typescript let's go to ease the
+setup a bit I've created a new next.js
+app I've removed a lot of the default
+templates and we're just left with the
+pages index.tsx inside our package.json
+there's some next specific stuff which
+we can ignore in our dependencies we
+have react and react Dom and types react
+and types react on adding the types lets
+us use react with typescript without
+these we're basically screwed RTS config
+is pretty busy but one of the important
+properties is jsx preserve we have
+several options here but preserve is the
+most up-to-date one but if you're
+working in react native you may want to
+use the react native one in react we
+split our code into components which are
+really just functions which return jsx
+because components are just functions we
+can use typescript to strongly type them
+to create a component that takes no
+props just specify no parameters on the
+components this means that when you pass
+it a prop it's going to yell at you to
+add some props to your component add
+props here and then annotate it as a
+certain type now if we pass it the wrong
+type then it's going to yell at us you
+can do this as a type or as an interface
+for component property doesn't really
+matter you can also declare them in line
+like this a common pattern is see in the
+wild is destructuring on one half and
+then annotating the type on the other
+one wrinkle is if you're building a
+component Library you should always use
+interfaces so that they can be extended
+but if you're just doing application
+code doesn't matter you can use string
+unions here to give yourself really
+powerful autocomplete when it comes to
+typing certain props you can express
+arrays of objects which is great for
+data shapes then when you pass in the
+array of objects you'll get really nice
+autocomplete you can use this optional
+property syntax to express it as
+optional so this means you don't have to
+pass it if you don't want to you can
+express functions like this to ensure an
+argument is passed when the function is
+called in the component below you can
+specify parameter here now you'll get
+autocomplete here too if you have
+functions that you need to pass the Dom
+elements directly for instance handlers
+then you need to type them carefully you
+notice this pattern works but we aren't
+taking into account the event we can try
+something that looks right by specifying
+e and calling it Mouse events but it
+actually isn't assignable the best thing
+to do is replace this with mouse event
+handler which we get directly from react
+we can pass it the exact type of the
+thing that it's going to be put into but
+we actually don't need to now when we
+use that on click we actually get
+autocomplete inside there there are
+several of these different types you can
+use Focus event handler form event
+handler and if you're not quite sure you
+can hover over the thing that you're
+trying to type and it will tell you if
+you need to accept children you can pass
+in a type of react node this will let
+you pass in any child you want to
+including multiple children if you want
+to make children required you can remove
+the optional parameter here when you're
+using use State you're pretty much
+always going to want to pass a type
+argument to it passing a type argument
+using these angle brackets means you can
+specify exactly what's supposed to be
+inside this state if you don't pass it a
+default argument then it's going to
+default to user or undefined whereas if
+you pass something in then you have to
+pass the entire thing in this means that
+when we set the user now it's only going
+to accept the type you specified if you
+want to cheat a little bit then you can
+use an as to set it as your default type
+although remember this is a lie in
+typescript use ref behave similarly to
+use state if you don't specify a type
+then it will default to undefined this
+means that you can't assign it to
+anything if we pass it a type then it
+will start working but ref.current will
+always be number or undefined we can
+change this by providing a default value
+now ref.current is always a number use
+ref has some strange behavior when you
+pass it null suddenly we can't assign to
+current because it's a read-only
+property when you pass NL to use ref
+what you're saying to react is I want
+you to take care of this ref this is
+really useful when you want to pass refs
+to HTML elements but unfortunately ref
+is currently typed as null meaning we
+don't get any autocomplete so we need to
+pass in the type of the thing that we're
+referencing and now we're going to get
+all of the autocomplete we could ever
+need if we get this wrong and specify
+span instead of div then it's going to
+yell at us and if we specify undefined
+instead of null then it's going to yell
+at us too this is a really confusing
+property of use ref and it's only on the
+type level just weird something you've
+got to memorize you can create your own
+custom hooks with reacts we're creating
+a use State here and we're returning an
+array containing State and set States
+but this is breaking well it's because
+use home thinks that it returns an array
+containing possibly number or a dispatch
+function it's not returning an array
+it's returning a tuple and we need to
+tell typescript that we can do this
+complicated type signature or we can
+remove that and just Mark the return
+statement as const now State and set
+state are both typed correctly this is a
+trick you can use not just in a custom
+hook but in any program let's imagine we
+have a component here that has
+props.count we don't need to pass an
+account but we want to default it to
+zero if nothing is passed we can make a
+default prop by destructuring props here
+and saying count equals zero now we can
+reference it by count and we always know
+it's going to be defined there is a
+concept of default props in reacts but
+they're basically deprecated so this is
+your best bet whenever you're creating a
+context in react you're going to want to
+pass it a type argument this means that
+whenever you use that context this is
+going to be strongly typed if you have a
+parent component that provides this
+theme context then you're probably not
+going to need this default value one
+thing I like to do is say theme context
+type or null then I create a custom
+wrapper called use theme context this
+will throw an error if context is not
+now instead of having to check inside my
+components I can say use theme context
+and now theme is just a theme context
+type sometimes you're going to have a
+props type that is different based on
+different circumstances for instance
+this modal component has a type of
+either alert or confirm and we have a
+prop called confirm button message but
+this prop only belongs really in the
+confirmed variant this means that I
+shouldn't be able to pass it when we're
+in the type of alert if I change the
+modal props to be a discriminated Union
+I then don't get autocomplete when I
+specify a type of alert and I get an
+error when I don't pass it in the type
+of confirm this pattern is extremely
+powerful for creating Dynamic types in
+your components finally let's look at
+generic we have a table component here
+that takes in an array of data and an
+on-row click function which takes in
+that row currently these are typed as
+any this means that no matter what shape
+we pass into this data table the row is
+always going to be typed as any we can
+change this by adding a type argument to
+table props and changing both of the
+enemies to this T next we can pass the T
+into table props but this is currently
+undefined we can actually add it to the
+start of table it looks like we can't
+and it looks like this has thrown all of
+our syntax out of whack but actually we
+can either specify it with a comma
+afterwards or say that it extends any
+now whatever you pass into the data here
+will actually be represented in the row
+so if I add a name we'll then be able to
+console log row.name this lets you be
+really smart with the types inside your
+props definitions so if you have one
+prop that relies on the type of another
+consider using a generic or user
+discriminated Union like we saw before
+thank you so much folks that was a
+really really fun one to do I've been
+using react for a long time so this was
+great to get off my chest I've got most
+of these tips from the react typescript
+cheat sheet so you should check that out
+if you're looking for more in-depth info
+I'll have a video here for you to enjoy
+and a channel here for you to subscribe
+to and if you're interested in more
+in-depth typescript stuff like this then
+you should check out my paid course
+total typescript.com it goes into
+absolutely crazy depth about all of
+these topics and more thank you so much
+for joining along I'll see you very soon

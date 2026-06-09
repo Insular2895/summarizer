@@ -1,0 +1,308 @@
+If you are building applications with
+generative AI, you are probably also
+thinking about agentic frameworks and
+how to leverage them in your apps. But
+being the diligent developer I know you
+can be, you are also on to make sure
+that your agents don't accidentally
+access or expose sensitive data.
+So in our next few minutes together, you
+you'll learn how to build a sample rag
+agent using LangChain and how to secure
+it to avoid your data from falling into
+the wrong hands. Let's go.
+[Music]
+I don't know about you,
+but I like to learn concepts by looking
+at the code implementation. So let's
+start by grabbing our simple
+application. I already cloned it from
+this repository over here. We have a
+bunch of other rag applications you can
+take a look later and see how they
+implemented, but the one we're going to
+focus right now is this one, the
+LangGraph Agentic JS.
+This application is written in
+TypeScript for Node.js, and here are two
+of the main components that I need you
+to pay attention to right now. First,
+the asset docs that are sample markdown
+that are going to use for the LLM to
+provide context. We have a public doc
+and a private doc that we're going to
+use for this demonstration, and the
+index.ts.
+That's the main entry point for our
+application.
+And in it, we define the rag pipeline.
+Yes, I know there are other folders in
+here, but we'll come back to them later.
+Before diving into code, let's talk
+about retrieval augmented generation or
+rag.
+In the simplest terms possible, a rag is
+a system that will interact with a
+database to obtain more information and
+incorporate that information into the
+answers you give to a user.
+For that to happen, we have basically
+four steps for after getting the
+question from the user. Read the
+documents. Put the documents into a
+database, usually a vector store in the
+format of embeddings. Check the user's
+permissions to filter the documents the
+user can access. And finally, the large
+language model to formulate an answer
+based on the user's documentation
+retrieved and the question from the
+user. And that's it.
+Now that you understand the steps in the
+pipeline, let's go back to the code and
+see the implementation of these steps.
+Here we have a user that will perform
+the query. Then the document reading so
+that we can store the documents into the
+vector store in the format of
+embeddings. And for that, we are using
+the OpenAI embeddings API and this model
+to create set embeddings. Then we have
+the FGA retriever class that will filter
+out the documents based on the user's
+permission and the FGA model.
+Now, this class is part of our Auth0 AI
+JavaScript SDK that is currently in
+alpha release and is going to be part of
+the product called Auth0 GenAI that is
+upcoming right now.
+You can download the SDK alpha release
+from GitHub like we did for this sample
+application, and you can already start
+using it and testing it out. And if you
+have any questions or feedback, make
+sure to drop them below. Now that the
+spiel about the upcoming product is
+over, you can think of the retriever as
+a security guard. It looks at all of the
+documents in your vector store and make
+sure that your user only sees the
+documents it has permission to access.
+The way that FGA retriever makes a
+decision is by using the build query
+function over here that queries out the
+FGA store. The user is identified by the
+user ID, the object is the document and
+is the document ID that we use, and the
+permission is the permission of the user
+for said documents. So for example in
+here, we'll have a user that is able to
+view the information of a given
+document.
+We are going to see all of this as the
+management tuple part of our dashboard
+in just a second.
+After all of this, you may be wondering,
+where is the LangChain? Am I right?
+And here it is. Let me show you.
+The retrieval agent is a class that
+configures the LangGraph retrieval agent
+and uses FGA retriever and the OpenAI
+model to answer the user's question.
+LangGraph allows us to build agents that
+can handle complex tasks including rag
+applications.
+It has advanced features like workflows,
+persistent contexts, and streaming
+support. So basically, this sets up our
+LLM for success both with the filter
+based on the user's permissions from the
+FGA side and then with LangGraph that
+will take care of the LLM side.
+Finally, we have the query over here
+that is going to pose that we are going
+to pose as the user.
+I've been saying FGA this, FGA that for
+quite some time now. So let's take a
+look at that.
+Fine-grained authorization or FGA
+provides granular access control. And in
+our case, that's exactly what we need to
+avoid users accessing data they
+shouldn't have access to.
+We are going to use the Auth0 FGA to
+store all of the access control policies
+for our users and our documents.
+Once you create your account, you land
+here in the main area of the dashboard.
+So let me show you the easiest way to
+set up everything for this simple app.
+First, we need to create a client.
+To do that, let's go to settings
+and then scroll all of the way down and
+create client.
+If you are with your screen zoomed in
+like I am, you might need to scroll up
+to give your client a name.
+And for this one, let's call it
+LangGraph
+graph
+and then say that this is a rag to make
+it easy to identify later.
+And so, I also want to do is
+give it all of the client permissions.
+So I'm going to click this
+three.
+So the first one will allow our client
+to create a new model in our store. The
+second one will allow it to write and
+delete tuples. And finally, reading
+query will let them query out the
+information of access for my users and
+documents. Don't forget to click create.
+Once you do, you are going to get
+information that you need to drop in
+your .env file
+on your application. So let's do that.
+Also, let me hide my secrets because I
+don't want you to see them.
+Now, I'm going to copy all of this and
+put it on my .env file.
+And then I can click continue.
+And you can see all of the examples so
+that you can use the credentials to call
+the APIs and make interact with it. Uh
+you can even look at the Node.js or the
+Python SDK version if you want to, but
+for now, let's just click done and move
+on. So now that our client is
+successfully created and we gave it all
+of the permissions, this will allow us
+to interact with the dashboard through
+the API.
+Okay, now this is where the magic
+happens. Let's run our FGA init script.
+npm run FGA init. That's our script.
+And now that it's run, everything is
+magically set up for you. Oh, don't
+believe me? Here, let me show you.
+This is script that lives inside here
+connects to the dashboard through the
+APIs and in this case our SDK so I don't
+have to make API calls.
+And then it kind of does everything for
+me. First, it creates the model that we
+are going to use that defines our user
+and our objects, which are our
+documents, both public and private. And
+also creates creates our first relation
+tuple
+that is in here. So basically, this
+relation tuple defines that all users,
+so user star,
+can view the document of public.doc,
+which is the ID of the document. So it
+can view all of the information in the
+public document.
+Let's check that in the dashboard.
+So going back to the dashboard, I can go
+to model explorer.
+And in here, once I refresh it, this is
+the old version.
+It should show me the updated version.
+And so this outlines my model where I
+have a user and I have docs, and users
+can be either owners or viewer of said
+docs.
+Finally, let's go into tuple management
+and see our first tuple.
+And I have the same information here.
+User star, which is all the users,
+and then the object that is the public
+doc, and that all users can see the
+public doc.
+Let me also say this, that even though I
+used this script here to create my model
+and tuple, you can also create both of
+them through the interface of the
+dashboard.
+I like using the script just because it
+can get pretty tedious to do this
+configuration by hand every time. Now
+that we have set up, we can run our
+application for the first time. Shall
+we?
+Let's go back to my code editor, VS
+Code.
+And let me clean out the result real
+quick.
+And now we can run our app. And to run
+this, you can read through the read me
+if you want to, but basically we just
+need to do npm run start.
+And that should run through our rag
+pipeline and give me an answer back
+based on the query that we have already
+set up in the index.ts file.
+So, in here we get an answer. I couldn't
+find any specific information regarding
+the forecast for Zico.
+Pretty neat because as an user, I don't
+have access to any of the forecast
+information or the financial
+information.
+To make that happen, let's go back to
+the dashboard so I can show you how to
+create a new tuple. So, you can add a
+tuple
+and then you can give this user
+information that you need. So, here I
+want user
+and here I already have an example, but
+for example but I can give myself
+the permission to see the private
+documents. So, I'm going to use user
+Jazz, which is the same user that I have
+set up in my index.ts file.
+And then the object, I can select user
+or doc. For this case, we need doc. And
+I'm going to enter the key, the ID for
+the document, which is private doc.
+And then relation viewer. Even though I
+have owner, viewer should be enough for
+me to get the forecast through the rag
+pipeline. So, if I scroll down a little
+bit and I have zoomed in so that doesn't
+help me, but there is a button here that
+you are not seeing that basically that
+says save. Let me zoom out a little bit.
+And add tuple.
+And now we can see here all the other
+tuples as well. So, I'm going to close
+this out so you can see it. So, now Jazz
+has also access to the private doc, not
+only the public doc. So, let's run our
+application again.
+And if I go back to my VS Code
+and just showing you that this is the
+user that I'm using, Jazz here, and I
+want to post my query again that is
+defined here, show me the car forecast
+for Zico. And if I run this again,
+after a little while,
+it shows me the forecast for the revenue
+of Zico. So, the forecast for Zico for
+the fiscal year 2025 is bearish. Oh my
+god, not so good.
+Securing micro-applications can be tough
+without the right tools. That's why we
+are launching Auth0 GenAI and making
+videos like this one. Thanks for
+watching. If you want to learn more, you
+can join us at the Auth0 Labs Discord
+server and make sure to subscribe to the
+channel. I'm looking forward to seeing
+you in the comments below with questions
+or concerns. And I'll catch you on the
+next one.
+[Music]

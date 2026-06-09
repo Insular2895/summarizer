@@ -1,0 +1,142 @@
+[Music]
+the largest software companies in the
+world use monorepos but historically
+adopting a monorepo for anything other
+than facebook or google scale was
+difficult and time consuming turbo repo
+a high performance build system takes
+the lessons from the giants of the web
+and brings it to open source for every
+developer and it's being used by some
+incredible companies it abstracts the
+complex configuration needed for mono
+repos and provides fast incremental
+builds with zero configuration remote
+caching let's take a look
+we'll start by running create turbo to
+set up a new turbo repo with two next js
+apps a shared component library and
+shared configuration for eslint and
+typescript
+let's change into our turbo repo
+directory and we can set up remote
+caching for our turbo repo
+we'll log into vercell using the turbo
+repo cli
+and this will allow us to link our
+versailles remote cache
+to our project with zero configuration
+so we'll accept and say yes we would
+like to enable remote caching and i'll
+pick a team that i would like to use my
+remote cache for in this case i'll use
+versailles examples
+okay so let's run a build and see turbo
+repo in action
+you'll see that there's a cache miss for
+the docs build as well as the web build
+and at the end of the build process
+you'll see that both tasks were
+completed and
+two of them were not cached however on
+the rerun of our build
+both of the results were cached and it
+was instant now normally this cache
+lives on the same machine executing the
+command
+however with remote caching you can
+share the turbo repo cache across your
+entire team
+and ci resulting in even faster builds
+and days of time saved for example let's
+delete our local cache inside known
+modules and then re-run our build
+you'll notice that it's much faster on
+the first run since it was able to
+download the previously cached results
+from our remote cache even if they
+weren't available locally our turbo repo
+has two main apps web and docs
+let's change into the pages directory
+for our docs application and edit our
+index route
+we'll update the h1 that says docs and
+add some exclamation points
+and save our file
+then we can change back into our root
+directory and re-run the build command
+since we didn't make any edits to our
+web application you'll see it says cache
+hit replaying output however we did edit
+docs so we only cached one out of two
+packages if we rerun our build you'll
+see that both are cached both locally
+and in the cloud now let's deploy our
+docs application to versel i've pushed
+up my local git repository to github and
+purcell automatically recognizes this
+new repo
+i'll change the framework to next.js
+and i'll update the root directory to
+reflect my local application structure
+so i want the docs folder in this
+instance
+then i'll override the build command
+to
+tell vercell to only look at the scope
+of the docs folder and run turbo during
+the build process that's it now we can
+hit deploy and deploy our docs
+application to versailles
+and we're done it looks like in about 15
+seconds we were able to deploy our docs
+application to purcell if we expand the
+building section we can see that
+initially the build cache for
+dependencies was not found so it has to
+download these from npm however we do
+see there was a cache hit from the
+remote cache for the output that we had
+already previously generated locally
+which means that we were able to build
+this application in about 900
+milliseconds
+going back to my local environment we
+can make another change to our docs
+project by editing the index page and
+adding some more exclamation marks to
+our file we can save that
+add those changes to git add a new
+commit
+and push that commit up to our origin
+purcell will recognize that we push this
+commit and automatically kick off a
+build inspecting this subsequent build
+we see that the build cache for
+dependencies was downloaded
+and there was a cache miss since we
+modified the code inside docs our output
+shows the result was not cached so this
+will be uploaded and stored to the
+vercelle remote cache back in our local
+environment we can remove our local
+cache and rerun the build and you'll
+notice this was really fast and that's
+because the build that just ran in our
+ci that rebuilt our docs can be
+downloaded from the remote cache on our
+local machine you'll also notice that
+the web build cache was also downloaded
+and reused because it did not change
+that's the magic and power of remote
+caching one final note is in the
+versailles dashboard on the usage tab
+you can see information about your
+remote caching usage on vercell
+including the amount of time that you've
+saved thanks to remotely cached
+artifacts
+the number of remotely cached artifacts
+and finally the total size
+of those remote cached artifacts
+you

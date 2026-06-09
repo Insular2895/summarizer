@@ -1,0 +1,707 @@
+in this video i'll show you how to set
+up prometheus in kubernetes cluster
+in the theoretic part of prometheus i
+explained how it works
+and what are the parts or components of
+prometheus
+so there is a prometheus server at its
+core
+that stores and processes the metrics
+data
+and there is an alert manager that you
+can use to
+send alerts based on the data prometheus
+collected and processed
+and of course you want to see the data
+you have gathered
+and scraped in prometheus visualized in
+the ui
+prometheus has its own ui but you can
+also use a ui for
+data visualization like gerfana which
+lets you build
+pretty powerful visualization dashboards
+from prometheus metrics data
+so there are several moving parts and
+components
+in prometheus monitoring stack so how do
+you go about
+deploying it in kubernetes cluster and
+there's actually
+several different ways of doing that
+first one
+is putting together all the
+configuration files
+you need for all the parts so for
+each component of the prometheus
+monitoring stack
+basically creating those yemo files for
+prometheus stateful set
+alert manager grafana deployments all
+the config maps and secrets that you
+need
+etc and then going ahead and executing
+them
+in the right order because of the
+dependencies
+honestly i can't really think of many
+use cases
+in which you would go with this option
+because it's pretty inefficient it's a
+lot of effort and you pretty much need
+to know
+what you're doing or you have to find a
+good step-by-step guide and hope that
+each step works as described
+which usually it doesn't the second way
+and a more efficient way is using what's
+called
+operator i will explain the concept of
+operators
+in more detail in a later video and i'll
+link it up there
+but generally speaking think of an
+operator as a manager
+of all prometheus individual components
+that you create
+so stateful set and deployment for
+example will manage their pod replicas
+like restart them when they die make
+sure they're accessible
+and so on in the same way operator will
+keep an eye and manage the combination
+of stateful set deployments and all the
+other components
+that make up prometheus stack
+as one unit so that you don't have to
+manually manage those separate
+pieces so in this option you would go
+and find an operator
+for prometheus and deployed in a cluster
+using the configuration files of the
+operator the third option which
+i think is the most efficient one is
+using
+helm chart to deploy the operator
+prometheus operator has
+a helm chart that is maintained by the
+helm community itself
+and this is the option that we will use
+in this video to set up prometheus
+monitoring
+so helm will do the initial setup
+and operator will then manage
+the running prometheus setup so let's
+jump right into the demo
+clean mini cube state so i don't have
+any components
+here yet and i have
+a link to prometheus operator helm chart
+and here in the documentation i can see
+the helm command to install that helm
+chart
+so i'm gonna take that
+and we can give it a name so i'm gonna
+call it prometheus
+this is the repository name the helm
+repository
+the official one and the name of the
+chart and i'm gonna execute this
+and we will see all the different pieces
+that will be created
+from that helm chart so the execution is
+done but this will take a couple of
+minutes to actually start
+up all the different components
+so you see all the components are
+running these are just the parts that
+were created
+and you saw how fast the actual
+installation was with
+helm it was just one command and all the
+components got created
+so now let's actually take a look at
+everything or different parts that were
+created
+so i'm gonna do cube ctl get all
+and here all the different kubernetes
+components
+of prometheus clusters so i had a clean
+mini cube cluster these are
+everything that was just created so
+let's go through different parts these
+are all the pods
+and these are the services of different
+prometheus stack
+components and let's actually start from
+here because these are the managing the
+high level
+components so we have two stateful sets
+so the first one is prometheus itself
+so here you see this weird chained name
+there are
+three prometheus names here and this is
+the actual
+core prometheus server based on the main
+image
+and here you see that the prometheus pod
+stateful set was actually created and is
+going to be managed
+by the operator that's why you see the
+upper prefix
+here the other stateful set is the alert
+manager which is another part of the
+stack
+here you see three deployments so we
+have
+prometheus operator itself this is
+the main one that actually created
+prometheus
+and alert manager stateful sets that's
+why they have the same
+prefix here and we have graffana which
+is its own deployment
+and we have cube state metrics cubesat
+metrics is basically its own helm chart
+so it's a dependency of this help chart
+that we just installed so
+cube state metrics application basically
+what it does
+is it scrapes kubernetes component
+metrics themselves so it monitors the
+health of
+deployments and stateful sets and parts
+inside the cluster
+and makes it available for prometheus to
+scrape
+which is pretty cool because you get
+the kubernetes infrastructure monitoring
+out of the box with this
+setup so you don't have to configure
+anything for that
+and the replica sets are created by
+deployment so
+this is just underlying component of
+this one
+so it's the same for grafana keepstate
+metrics and prometheus operator
+and an interesting one you have a daemon
+set
+in this stack of node exporter so first
+of all
+daemon set is a component
+which will run on every single
+worker node of kubernetes that's what a
+demon set
+characteristic is and node exporter
+component of prometheus basically what
+it does is
+it connects to the server itself
+or it lays over the server and
+it translates the server metrics
+worker node metric so to say like cpu
+usage the load on that server and all
+the stuff
+it transforms them into prometheus
+metrics
+so they can be scraped so that's also
+pretty neat because you have
+that information also configured inside
+this stack
+out of the box and obviously those pods
+are just coming from the deployments and
+stateful sets
+and you have also a bunch of services
+which each component
+has its own you have an alert manager
+grafana and so on
+so just to put it in a perspective or in
+a in a big picture perspective
+we have set up the monitoring stack
+itself that is going to monitor
+different parts
+and in addition to that by default you
+already get
+a out of the box monitoring
+configuration
+for your kubernetes cluster so your
+worker notes
+and the statistics on the worker nodes
+are being monitored
+and the kubernetes components like pods
+and deployments and replicas
+stateful sets and so on are also being
+monitored
+and this configuration is there out of
+the box so
+where does this configuration actually
+come from let's actually check
+we also have config maps that were
+created
+and you see there are a bunch of them
+and obviously we're not gonna
+go and look in each one of them but just
+briefly
+you have configurations for all the
+different parts
+they're also managed by the operator as
+you see with the prefix here
+and this includes all the information to
+how
+prometheus monitoring stack will connect
+to
+the default metrics scrape that
+information and
+and do all this stuff so you have the
+configuration uh files
+and you also have the default rule file
+for prometheus
+and you also have secrets
+also for grafana for prometheus the
+operator itself again for different
+components
+this will include the certificates this
+will include the username passwords for
+different ui
+parts and so on so you have a bunch of
+different stuff
+so maybe now it makes even more sense
+what i said at the beginning that the
+first option of putting all these
+different yaml files together yourself
+would be a lot of effort because then
+you have to go through and
+really set up this whole thing yourself
+whereas it
+has already been done for you and it's
+maintained and managed so you can just
+reuse it and another interesting thing
+that
+was also created from this stack are the
+crds
+crds are custom resource definitions
+this is another concept in kubernetes
+which i will make a separate video about
+it and explain it
+in detail what are the concepts why is
+it used
+but just so you know that prometheus
+monitoring
+stack setup includes these custom
+resource definitions so there's
+more stuff to it we can also check
+what's inside the prometheus operator
+and other parts actually what containers
+are running inside which images are they
+based on and so on
+so i'm gonna print out the stateful sets
+and this is the prometheus one so
+we can do describe
+stateful set
+and we can save it in the file so that
+we can see the
+syntax highlighting and stuff better so
+i'm just going to call it
+prometheus and we can also see what's
+inside alert manager
+and what's also interesting is the
+operator itself so this one right here
+it's a deployment describe
+deployment
+and this is the operator
+so basically describe just gives you um
+some information
+about the container and the images and
+stuff like this
+you can also get the whole uh
+configuration file
+using kubectl get um deployment
+and then you output it as a yemel but i
+just want to look into the
+containers in the images so let's
+actually open those files
+in the editor so these are the files
+let's actually go to the
+section where the containers are
+and that's it right so these are the
+containers
+this is the main pod where the whole
+thing is
+running where the actual prometheus is
+running
+and we have prometheus container we have
+the config reloader
+and we have rules config reloader and
+i'm going to explain in
+just a minute what they are so let's
+first look at the prometheus
+sometimes it's interesting to see what
+images they're based on
+and which versions you have so you can
+check it here actually
+um you also see which port they're
+running at and so on
+and all the arguments in case you need
+to check
+something here what's also interesting
+are the mounts
+so this is where prometheus gets
+actually all the configuration
+data so for example there's prometheus
+configuration file
+there is a rules file and some
+certificates
+and everything all these is mounted into
+prometheus pod
+so that it has access to it so what you
+need to know
+about this is that configuration file is
+where prometheus basically defines
+what endpoints it should scrape so it
+has all the
+addresses of applications they'd
+expose the slash metrics endpoint so it
+knows where to
+get them from and it also has rules file
+rules file basically defines different
+rules
+for example it could be alerting rules
+that
+states that when for example something
+happens on the server or
+cpu usage spikes to a certain percentage
+then send out this email to some people
+so these are separate configuration
+files
+and both of them are mounted into a
+prometheus pod
+and here these two side containers
+so to say the helper containers of the
+main prometheus
+they help reloading so for example when
+the configuration
+changes these containers are responsible
+for reloading
+and letting prometheus know that there
+are changes in the configuration
+so this is the config reloader and
+obviously
+the config reloader has access to
+prometheus configuration file
+and this is the endpoint of prometheus
+itself
+because it's running on a port 9090
+and this is a mount path inside the pod
+so each container can access that
+path and then we also have the rules
+config file that does the same but for
+the rules file basically and this one
+obviously has access to
+where the rules file lives now you may
+be asking where does the configuration
+come from where does the rules file come
+from right because we haven't defined
+that
+that is also part of the stack out of
+the box you get this default
+prometheus configuration file with
+default configuration
+and you get the default rules file and
+these are created as config
+maps so if we print out the config maps
+we see there is a whole list of them so
+it might be
+actually difficult to search it in at
+least so the way that you can actually
+easily find that is here
+for example for the config file right
+here you have
+the mount path right so it's prometheus
+config and you have this yaml file
+and if you go to the mouse you see
+the path and you see where this mount is
+coming from
+right so first how the mount works is
+you mount a volume
+inside the pod and then the individual
+containers
+can actually mount those volumes inside
+the container path
+so they can access those mounts of the
+pots so
+this is the volume that was mounted
+inside inside the pot
+so we can go and check that so these are
+the pod volumes
+and we have the config one so this is
+the one right here
+and you see it's a secret type so it's
+not a config map
+it's a secret and this is the name of
+the secret so we can go back
+and check the secrets
+and we can also look inside
+so i'm gonna do uh get
+secret and the name of the secret
+this is the one and
+we can do yemo output
+and i'm also going to save it into a
+secret
+demo
+let's clear that and let's see our
+secret
+so you see the prometheus yemo file
+and this is the name that is mounted
+here and this is obviously basic 64
+encoded because the secret
+but you can decode it and see all the
+information there
+and we can also see where a rules file
+is coming from
+so in the rules file config reloader we
+have
+mount and this comes from
+the pod volume which is called
+this long thing and if we go down
+in the volumes part this is a config map
+with the name of this so again i'm gonna
+do
+get config map with the name
+and put it as yemo and i'm gonna save it
+dot demo
+like this and this is the rules file
+so we have the name of the file here and
+this is the file contents basically
+where
+the different rules are defined so we
+have the alert
+rules and some other stuff so this is
+how you can check where this default
+stuff is coming from and then you can
+also check the configuration
+and obviously when you have to adjust
+something for example add a new endpoint
+to
+scrape you will go to the secret file
+the prometheus yaml file and you're
+gonna do adjustments there
+in a later demo video i'll also show you
+how to add an exporter
+as a site container for for example a
+database pod that you have running
+and then configure prometheus to scrape
+that
+endpoint as well so in that video you
+will see how to adjust the configuration
+file so you can add a new scraping
+endpoint
+so let's also quickly check what's in
+the alert manager
+so here we have again the main container
+which is alert manager
+and we have all the configuration stuff
+here as well
+and this one also has a default
+configuration file
+alertmanager.yemo and the same helper
+container
+config reload and then we also have the
+operator
+which basically has this prometheus
+operator you can also check what the
+the image documentation what it does and
+how it works
+and this is basically the orchestrator
+of the whole
+prometheus monitoring stack so this
+manages all the different moving parts
+of that stack
+it loads all this configuration stuff
+and it kind of orchestrates
+how everything works so all these things
+are kind of
+interconnected with each other but
+obviously you don't need to understand
+how
+all these things work important thing to
+understand is how to
+add or adjust the alert rules
+or alert configuration and the second
+one is how to adjust the prometheus
+configuration so you can add
+new endpoints for example for scraping
+so these are two things that you have to
+understand
+the rest is just for overview to have a
+bit of understanding
+how these components are made up
+so now let's go back to the console
+let's actually clear that
+and i'm gonna print out the services
+that we have
+so here you see grafana this is the ui
+or data visualization for um prometheus
+data
+so how do we access the ui for grafana
+as you see all the services are cluster
+ip type which is
+the internal service so they're not open
+to external
+requests they're all closed so usually
+in production what you would do
+is you would configure ingress and then
+point ingress rules
+to prometheus grafana so in this setup
+we're gonna access grafana
+um using port forward so for that we
+need a deployment actually and not
+service so i'm gonna
+check that so we need graphana
+deployment
+the command is cube ctl port forward
+actually let's get the pod cube cdl pod
+and let's check the port where grafana
+is running
+keep ctl locks
+so we have multiple containers inside
+and we need to choose one graffana
+so we see servers listening at port 3000
+this is the port we're going to forward
+and we also have user the default user
+which is
+called admin let's actually clear that
+cube ctl port forward
+deployment deployment
+prometheus grafana that's what
+that's what it was called and port 3000
+and this will open port 3000 localhost
+3000 and we have the login page
+so we saw that default username is
+admin the password actually looked up
+here in the chart
+the prometheus operator chart here you
+have the default password
+you can change it of course and now we
+have the
+grafana ui so in grafana you have a
+pretty good overview of the whole stack
+for example you can see different alert
+rules you can also
+use promql query language to
+create the data from the prometheus
+database and you can get different kinds
+of data
+and you can also see the data that
+prometheus is already collecting and
+scraping
+so in manage dashboards you have a list
+of the things that
+prometheus stack is monitoring already
+so as i said
+node exporter already scrapes the
+information about the
+node itself we just have one node which
+is mini cube
+so this is the ip address of the mini
+cube node
+you can check that here so this is the
+same one
+and here you can see uh different
+metrics
+of minicube node like cpu usage memory
+usage etc
+so i'm gonna get parts doesn't matter
+so this is a node exporter that scrapes
+that
+and the with the cube state metrics we
+also have
+information of different parts or
+different components
+of kubernetes like api server the parts
+name
+spaces and so on so we can actually
+check that for example in
+the pod you can get different metrics
+like again cpu usage
+memory bandwidth and so on and
+here you can choose the namespace and
+you can choose different parts that you
+want to
+check the status of you also have
+monitoring of the master processes like
+the scheduler
+and api server where you can also see
+some stuff
+and prometheus also monitors itself by
+default so you have a prometheus
+endpoint
+that is being scraped and here you can
+see different stuff
+later when we add configuration to
+prometheus
+to scrape different endpoints we will
+see some additional components here as
+well
+and you can also create your own
+dashboards depending on what
+information you want to see in addition
+to grafana you also have
+other ui so for example prometheus
+itself has its own ui so we can access
+them also using the port forward
+port forward
+and as we saw prometheus is running on
+port 1990
+so let's do that
+t90 and here you have the prometheus ui
+where you can also display the alerts
+you can also display the configuration
+which metric endpoints are being
+executed and you can also
+use the prom qr language to query
+different stuff
+so here you have the alerts some default
+alerts
+which are configured from the default
+alert rules file
+and here you can see the configuration
+of prometheus
+which is pretty long if you're just
+starting off it might take time to
+learn that because i think it's pretty
+complex and here you can also display
+the targets
+so each target that are scraping where
+here you see the pods that are
+being monitored and their health status
+and here you see for example some things
+down
+and here again you can see your rules
+configuration
+so prometheus ui can also be helpful or
+interesting in some cases and you can
+get a lot of information there as well
+so to summarize basically we deployed
+the whole prometheus monitoring stack
+using helm
+the deployment process was pretty easy
+and straightforward it was just one
+command
+which basically in the background
+creates the whole array of
+components that make up the stack
+and you saw like a very brief overview
+of what these different components are
+what they do
+and in the later videos i will make a
+prometheus demo where we configure
+an additional metrics endpoint for um
+for example a database application that
+you have running in a cluster so
+basically how you can monitor
+different services that you have running
+in the cluster
+and also your own application by
+exposing metrics and point
+so thank you for watching and see you in
+the next video

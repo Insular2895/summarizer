@@ -1,0 +1,374 @@
+[Music]
+it's very nice to see you here my name
+is Barry sashanka
+I am technical expert of CommVault I'm
+not designer and then the the programmer
+I do not optimize kelts I represent
+another site the infrastructural site
+and today I will tell you more about the
+data protection how to protect the data
+you acquired your developments your
+databases and some applications which
+you write and I will tell you how not to
+lose this information and the previous
+speaker please do not save on backup
+modern technologies allow to get rid of
+data duplications without using special
+codes for databases just by removing
+doubling blocks
+I work in CommVault company and for the
+very beginning I'd like to say a few
+words about our company and then I will
+tell you in particular about the
+technologies we are offering to protect
+your data it won't take a lot of time
+I'm not going to keep you waiting for
+lunch long CommVault is not russian
+company this company was founded in 1996
+as a part of AT&T and then afterwards it
+has become a public company we are
+publicly listed company you can find of
+the mission online about us we're for
+only 2000 simply's 11 people Russia I
+work in Russia
+our we do not integrate any startups
+everything is our in-house designers our
+programmers have been starting the
+products since 1996
+we're not newcomers in the backup
+systems the backup market if you want to
+learn details you can see that we are
+leaders based on the analytical sources
+in the data backup area this was in
+brief about our company now a few words
+about what we are offering CommVault
+data platform is a very big product and
+very powerful platform it allows to make
+many things not only backup also
+archiving of data analytics replication
+jeet application and many many other
+functionalities today I'm going to focus
+on the functionality of data protection
+in PostgreSQL we have some developments
+which would be interesting for you as
+programmers as DBAs for you to be able
+to efficiently protect your data bases
+what is what basically are we doing our
+agent is ready for efficient protection
+of data
+Don post a grayscale server it allows to
+do backup ink archiving restoring of
+data in different variants so many
+specialists who work with post Korea
+knows know about embedded means which
+can be used it works very well until
+your data start aggressively grow we
+have a lot of instances you have a lotta
+misses of databases and big volumes it
+is becoming more complicated to protect
+with your in-house amines and people
+start to seek for other solutions in the
+market in order to protect the data in a
+proper way
+study their opportunities and
+functionalities and so one of our
+solutions one of our proposals is this
+solution for PostgreSQL and what does it
+give you what does it give to
+administrators and developers first it's
+a wide range of different backup
+operations of database management system
+we support all classical ways which is
+there in Postgres it's dump backup file
+back up point in time back up going
+further we will discuss every of this
+type with more every of this type have
+pluses and minuses those who work with
+post-grad know it very well dump backup
+for instance allows you to restore data
+between platforms file backup has other
+advantages pointed up recovery is well
+very demanded backup if you want to roll
+back to a specific transaction if you
+want to share or to to correct an error
+a mistake of user and your mail entry
+there are also other ways of back upping
+which for the current moment are not
+very classical for post-grad and our
+company offers one of these options
+apart from those which are already
+available and I'm going to tell about it
+in detail so what agent can do first
+backup and restore of the whole database
+server not only the database itself but
+also the operating system where the
+database is installed also applications
+inside and the user data if you lost
+everything you can restore everything
+completely the whole machine from the
+scratch from the point of the copy was
+done together with system logs and the
+entire information which was thought
+there it's one of the options one of the
+solutions you can implement using
+CommVault it's also possible to make
+backup and restore of separate databases
+not the whole server but specific
+database or an instance and you can
+determine a separate database or a group
+of databases and distribute load to
+restore or to make backup no not the
+whole bunch of databases but partially
+first one part and the second part and
+distribute your load and distributed
+load on the restoration also back upping
+of logs you can do this backup
+automatically as soon as your form logs
+they will go for backup and using logs
+you can then restore your data at a
+special point of
+time by rewinding this time back it
+looks like a controller for a specific
+point in time up to seconds or by a
+specific transaction before the point of
+failure and he can restore data which
+were corrupted by wrong query by wrong
+insert it would allow you very quickly
+to roll back in time to a specific state
+of your DBMS apart from that it's
+possible to install restore not the
+whole database but also restore some
+tables it's possible to be realized on
+one platform and between different
+platforms which would allow you to
+migrate from one version to another we
+should also take a look at compatibility
+lists in detail or not all versions are
+supported in PostScript but if you have
+this task you can double check and you
+can migrate through the backup system
+make your upgrade of your hardware or
+software apart as already mentioned
+point on time restore using full file
+copies and specifically accumulation of
+logs makes it possible to restore the
+certain state of your database in time
+in this way you can be protected all
+these methods are classical methods for
+post gray and in principle throw a lot
+of utilities allowing to do it without
+using special software we have one more
+method of backup its backup block based
+backup which is normally used for big
+volumes of data
+what is good about this backup we do not
+go down to the file level we do
+so-called snapshot snapshot copy of the
+file system in a special point of time
+and then we follow up changed blocks in
+if there are changes in the database and
+during the second backup we just compare
+the state of the blocks and copy only
+those blocks which were changed not
+files not tables but only blocks it
+allows to speed up the whole Beca
+process significantly and the
+restoration process also you make one
+big full copy you memorize the state of
+your blocks of data you the system makes
+a table of blocks for you memorizes the
+state and then just follow-ups changes
+if as soon as block are changed these
+blocks go to the incremental backup and
+in this way you can significantly save
+at the time for backup of your data
+significantly accelerated and it would
+allow you to make a very fast restore
+you do not restore a bunch of different
+files you make a restore on the block
+level block by block system is Right
+writing the data and restoring the data
+it all works for file systems through
+so-called native snapshots when you make
+a snapshot of the file system
+specifically on the operation system
+level not operating systems support
+snapshot systems not all file systems
+can support this technology but as a
+rule developers and huge servers Linux
+based servers and this technology does
+work for Linux it's possible also to use
+hardware based disk-based storage
+systems is your database is running on a
+big shd and NetApp MC hewlett-packard
+whatever you
+are able to use resources of the disk
+array and not of the server of the
+database the snapshot will be done on
+the hardware level we support
+practically all producers of disk arrays
+and even some Chinese producers which
+are not very much presented in the
+Russian market nevertheless the
+compatibility list is very big so if
+your database is stored on a dedicated
+shd it's possible to do the block based
+backup using hardware resources of the
+disk array is possible and which would
+significantly speed up the whole backup
+process as soon as the task is executed
+log files are started to be copied
+automatically unfortunately the block
+level backup doesn't work for logs
+because they are in constantly changing
+state these are unique data so they
+could be backup in a classical way and
+as soon as your restore from the full
+backup block-by-block your database you
+logs are being rolled over automatically
+upon the database at the point of time
+you need for a specific state or for a
+specific date
+it depends this system is really fast
+and safe and allows to work very quickly
+and efficiently with the database and
+the protected very efficient efficiently
+apart from that we have the duplication
+of all this data as I heard from the
+colleagues colleagues even change the
+data type to save on backup not to
+overload tapes well if you have standard
+architecture server as soon as you
+install convoke there it will it returns
+to a very powerful tea dump server you
+can store your backups on disks you will
+have enough for standard server with
+SATA drives you do not need high
+and discs there the whole data
+protection is software based so in terms
+of high availability you don't have to
+worry it's a at the same level as tapes
+so you can as soon as data gets into the
+CommVault they are deduct located and if
+data blocks are identical some blocks
+are identical they will be written only
+once which allows you to compress and to
+store information very efficiently on
+the backup copies
+unfortunately the compression is not so
+efficient for logs due to the type of
+data but nevertheless deduplication and
+compression can be used up to 35% of
+saving can be provided on on backup you
+can use resources you have inside the
+company to organize very powerful and
+perform and efficient storage system
+using backups on the block level before
+I move to the architecture I have to
+tell you once again about our
+technological advantage in the backup
+area and restore restore area for August
+great please use block based to backup
+it's the most efficient way of backup
+for the big data may have such
+possibility this is not only startup and
+concers that's a real enterprise
+solution which is invested by the number
+of the clients so if needed we can make
+some references and
+apart from that most of the time the
+data are huge and if these are some
+distributed systems we have the
+architecture or the CommVault that
+allows to scale the system offers the
+copying and the cluster that is
+horizontally scaling by the figures of
+three nodes and it has to do with scale
+out architecture the rate is built up
+not only not from the disks but energy
+coding is used and you built up out of
+the nodes the minimum nodes for a five
+is three so it is cloud squatter is
+extended then it's extended by three
+nodes and Linux is an inside and the pl
+is based on that and the cluster file
+system is also expanded based on the
+adding on four additional notes inside
+the system we have a duplication in
+index since the nodes can replicate
+between each other and they can give you
+the data alive so we do not need to back
+up for you can start the database from
+the backup using the NFS
+and use it as a file in operations so
+you do not need the backup in this case
+the restore in that case so this key the
+scale out architecture is provided by
+that so this is a big system so in order
+to use this cluster we need at least
+half an hour our specialist maybe since
+you'll be doing this first time it will
+take more time but starting up the
+server and running at an operation takes
+about 30-40 minutes so it's quite fast
+you can deploy your copy
+here we do not have the limits for the
+scaling and there's a principle we're
+ready for any volume of data that you
+need to store as a redundant copy all
+the archives thus here is a small
+example of that has been tested
+that's all this data can be side till
+they stir then the bust storages can be
+holding the information as a duplicate
+or the usual things of using the stapes
+and compressed and incompressible so
+this is shortly speaking and the
+posterior is not the only agent that we
+have we also support
+many other different platforms we can
+work with cloud providers Amazon AWS or
+some local service providers and we can
+the virtual machines that you have an
+Amazon for instance in a local platform
+or vice versa from the local to your
+virtual machines to Amazon or if there's
+such need in cespedes believe we support
+currently all the enterprise database
+including
+database like Sandra MongoDB and so many
+others in Postgres all of them have
+different functionality was Barry
+the rest of them we can secure the
+database so if you have a branched
+infrastructure the solution will be very
+useful for you to protect your data and
+in the end we have the solution of
+appliances of complex you cannot when
+you do not produce hard your hardware
+you can order the hardware and which we
+used you just need to press the button
+and start making the redundant copy of
+the SPD or your applications that's it
+very much if you have any questions
+please just want to ask a questions the
+validations been done by you yes
+we have the validation in order not to
+restore the backup when actually I
+wanted to ask about the validation as
+well yes we do have validation otherwise
+we would leave the market immediately
+how do you get the licenses for your
+product will make the license based on
+the volume there are two schemes of
+licensing first of all it's volume the
+second one is post posted number of
+hosts in the license everything's
+included
+switch volume of data you start the
+constant good in this system you must
+not less than more terabyte or 10
+virtual machines this is the maximum the
+minimum that you can purchase anymore
+[Applause]
+thank you very much

@@ -1,0 +1,1401 @@
+[Music]
+Welcome to Educational Alpha. I'm Bill
+Kelly, your host, bringing you on the
+ground conversations with business
+leaders, educators, and industry
+colleagues from around the globe.
+Educational Alpha is sponsored by I
+Capital, the financial technology
+company with the mission to power the
+world's alternative investment
+marketplace. Part innovator, part
+educator, and part navigator of the
+alternatives industry, IIC Capital
+offers intuitive, scalable digital
+solutions that have transformed how
+private market and hedge fund
+investments are bought and sold. With I
+Capital, financial adviserss, wealth
+managers, and asset managers around the
+world now have access to everything they
+need to deliver the return and
+diversification potential of
+alternatives to high- netw worth
+investors. To learn more, visit
+icap.com.
+In this episode, Bill welcomes Steve
+Novakovich, managing director of
+educational programs for Kaya
+Association to discuss the evolving
+nature of endowment investing, the
+growing role of total portfolio
+approaches, and the shifting
+responsibilities of asset allocators.
+Steve shares his journey from working at
+the Cornell University Investment Office
+to shaping the KA curriculum,
+emphasizing how events like the global
+financial crisis and modern portfolio
+theory shaped his views. They also
+explore the role of diversification in
+portfolio construction, the importance
+of due diligence in manager selection,
+the rising impact of retail
+democratization, and the ethical
+foundation needed to support long-term
+credibility in the profession. Steve
+further outlines how KAI is adapting its
+curriculum, introducing proprietary
+ethical principles and leading with new
+educational tools like the Unifi
+platform.
+[Music]
+Steve Nobakovich, welcome to Educational
+Alpha. Oh, thanks for having me, Bill.
+Excited to be here. It's going to be an
+excellent discussion and being out of
+Kaya for fourish months. It's a gift
+that keeps on giving to me. I have a
+global network of friends both within
+Kaya and you fall into that category.
+and outside of KA where you once fell
+into that category. success has many
+parents but I'm going to take credit
+first you finding me and me then
+bringing you into Kaio I feel so good
+about the role that you play and person
+sitting in that seat and I think by the
+end of this discussion I think the
+listeners are not going to require much
+convincing that you sit in a very very
+important seat true to format of this
+program I'll ask you to give a little
+bit on your background and maybe to
+complete my circle of life with you. I
+did not know you at all and I think you
+blindly reached out to me I think on
+LinkedIn and asked me to come in and do
+a guest lecture when you were an adjunct
+at Ithaca and I really enjoyed your
+style and approach as a teacher and
+enjoyed the classroom and as they say
+the rest is history but maybe I'll let
+you fill in some of the blanks. Yeah,
+really fortunate timing to make an
+introduction and have you come in and
+the rest is history as they say. It was
+a great experience to get to see you in
+action in the classroom and everyone
+talks about how fantastic of a presenter
+you are and your skill as an orator and
+I got to see that up front and it was
+awesome. It was great to then be able to
+connect and move on to become a big part
+of Kaya now after having been a member
+of KA for almost a decade prior to
+joining as an employee. So, it's
+awesome. You've have an interesting
+story and it's going to be germaine to
+this
+conversation. Both your time at the
+Cornell endowment and your very
+interesting reason to leave where your
+wife Joanne is an equestrian coach and
+unless she's going to take care of the
+stables in Central Park, not exactly a
+transferable skill set to New York City.
+So maybe you could talk a little bit
+about the formative experience there and
+that's going to play into the rest of
+this conversation. Yeah, absolutely. So,
+I started my career in 2005 at the
+Corner University Investment Office. I
+couldn't have asked for a better
+starting gig in a couple of ways. Number
+one, to be with one of the most
+sophisticated institutional investors in
+the world, you get exposed to
+everything. When you're in undergrad in
+college, doesn't matter what program
+you're going to for the most part,
+you're just learning about stocks and
+bonds. You have no idea what else is out
+there. I sort of got lucky to stumble
+into the job that I had out of college.
+But then to be able to have my eyes
+opened to a broader world of finance
+that I didn't know exist was just so
+fortunate but also amazing to learn
+about hedge funds and private equity and
+real estate and all that. And this was
+at a time when alternatives were still
+not fully mainstream per se from a media
+standpoint, from an investing
+standpoint. Talk about private debt. For
+a lot of folks, private debt is
+something that's kind of newish in the
+last couple years. Well, Cornell had
+been private debt for a decade already
+at that point, and that was an important
+part of our investment portfolio, but I
+got to watch it as it was still probably
+described as being a nent part of the
+industry and growing and participate in
+that. And then the other element that
+was just so rewarding about my timing is
+a I got to go to a great place to just
+be exposed to the industry, but then b I
+mentioned I started in 2005, three years
+later, great financial crisis. If
+everybody could start their job at a
+time of volatility and craziness, that's
+when you learn the most. You know, it's
+like you don't really wish it upon
+people, but you learn so much in those
+environments. I was fortunate to working
+in a job that I knew had some job
+security. I know a lot of people in the
+industry had a lot of concerns and may
+lost their job during that stretch, but
+you learn so much in a crisis and you
+learn about things that you would have
+never been exposed to. operational due
+diligence, risk management, those types
+of things that people don't think about
+when life is good. And so it really
+forms you and trains you in a way that
+you can't get trained in any other way.
+That was really kind of the roots of my
+career, getting to spend a lot of time
+across the world of alternate
+investments until segueing into academia
+and then now with Kaya kind of a foot in
+each door of being the educational
+programs leader here and getting to
+teach folks about what's going on in the
+world of alternative investments and
+allocating. Thanks for that, Stephen.
+Before we leave, the past and this line
+of questioning so to speak, is very much
+relevant to the now and the future. And
+just by happen stance, not coordinated,
+we're recording this on the very last
+days of April. And this episode's going
+to come out in the first week in May,
+about I think a week from today. And the
+episode being dropped today is with your
+former Cornell colleague, Roger Vincent,
+who I got to know. I forget if it was
+through you or I forget the exact
+lineage that got me there, but certainly
+a lot of mutual respect I know. But that
+discussion was recorded several weeks
+ago and I think we might have been into
+this liberation day, but we didn't
+really get into the endowment model as
+much as I recall. The episode may tell
+me something different, but it is an
+evolving story. And it's interesting
+when you just mentioned you were at the
+endowment during the great financial
+crisis when a lot of these endowments
+had to put some merchandise back on the
+market because they have capital calls
+that need to be met and the pesky
+corporation asks for 5% a year and you
+do have to have some dry powder to pay
+for maybe other expenses that come up
+when crisis like this hit. So now we're
+staring in the face of terrorists and
+liberation days and lawsuits between
+universities and the federal government
+and it's causing these universities not
+only to take on a fair amount of debt on
+the other side of their balance sheet
+but to rethink the asset allocation.
+There's a lot going on there and you're
+not in this mix anymore. So you can be a
+semi or fully informed bystander,
+however you want to approach this, but
+maybe your views on what this means
+visav the endowment model that you knew
+circa 2005 through the GFC and what it
+means visav TPA and the machinations and
+pivoting that are required by any
+investor of scale. Yeah, I mean there's
+a lot to unpack there. At the end of the
+day, it's going to be a bit of a unique
+answer for for every institution. Let's
+go back to 2008 for a moment and think
+about how all the different institutions
+responded during that crisis. You
+mentioned the endowment has a payout.
+That's one of the most important
+aspects, the whole reason the endowment
+exists, if you will. What we don't think
+about is how impactful that payout is or
+how meaningful that payout is for each
+organization behind that endowment. And
+what I mean by that is what percentage
+of the budget that the organization
+spends is supported by that endowment.
+All endowments have a quotequote 5% plus
+or minus payout, but that might
+represent half of the annual budget. It
+might represent 20% of the annual
+budget. It might represent 10% of the
+annual budget, right? It just depends on
+the size of the budget, the size of the
+endowment and all those things. When you
+have a time of crisis where like assets
+fall and even though the 5% payout is
+still the same, the asset base is
+smaller and so the number coming is a
+little bit lower that can have a huge
+impact depending on how proportionally
+it is to the overall budget. the
+organizations, the universities that had
+that greater of a reliance on the
+endowment were that much more I don't
+know if trouble is the right word that
+much more challenged than those where
+maybe the endowment represented 10% of
+the budget or 10% of the revenue
+whatever you would want to call it in a
+given year. The other thing too to keep
+in mind is that what are other sources
+of funds? Tuition of course, but then
+gifts. Not surprisingly, gifts are also
+correlated with how markets are moving
+too. So you've got this sort of double
+whammy of markets declining and then
+your payout may be impacted and then
+you're also gifts are getting impacted
+and so that puts a lot of stress and
+pressure on organizations that sort of
+have a disproportionate amount of their
+funds coming from those areas and then
+you have your trustees or other
+fiduciaries who then say well what can
+we do to stem this tide? You asked
+questions about can you raise more funds
+from the endowment? Do you have special
+payouts, things of that nature? And that
+leads into your question sort of around
+liquidity and whether or not the
+endowment model can support that type of
+chaos and uncertainty that exists in the
+marketplace. And there's a lot more to
+unpack there, but I'll pause for a
+second to see if anything else you
+wanted to unravel before further going
+down that path. Maybe a couple things
+not directly responsive to that but
+maybe partially but also maybe in bigger
+totality of the conversation as I think
+about the evolution and you can choose
+another word of the endowment model to
+TPA something that I think remains
+sacrosanked which is manager selection
+that certainly the endowments and I
+think Harvard as an example goes back to
+the 1800s so they were a pool of capital
+before the private markets even existed
+so to have that kind a manager selection
+early with exclusivity and relationships
+is a big big plus. I don't know the
+merchandise that's on sale now to reach
+the liquidity goal they're looking at.
+But I suspect that if it's of a certain
+vintage, it probably could be trading
+above par and maybe at an attractive
+value. I simply don't know. But also I
+look at well what does this mean visav
+TPA and cash is an asset class and if
+TPA means antibbucketing and every
+portfolio idea is competing with the
+next one out there when there's a need
+to get more liquid cash is the ultimate
+TPA play. So again, packed a lot in
+there for you to unpack, but I guess
+maybe commenting on both manager
+selection and how the endowment model
+reconciles with TPA. So I think that
+your comment on manager selection is one
+that I got to see evolve firsthand while
+I was at the university, which is to say
+that going back way back back, there's
+no question that there was a perspective
+that you could harvest alpha across
+pretty much any asset class or any
+strategy. As we've advanced and evolved,
+the markets have become more efficient.
+thanks to technology and so forth.
+Increasingly, we're questioning whether
+or not their alpha is easy to come by or
+even exist in certain markets. And
+looking at endowments, that's one thing
+you can see front and center is that
+going back to the ' 50s, '60s, '7s, '8s,
+whatever, you'd have active management
+in every strategy. You know, we had
+active managers in the equity
+portfolios, active managers in fixed
+income portfolios. Hedge funds obviously
+were harvesting a lot of alpha, so on
+and so forth. Today, if you look at what
+a lot of the average endowments do,
+there's more and more passive in those
+portfolios, certainly in public markets
+in particular, whether it be in large
+cap equities in the US or even in fixed
+income markets potentially. That's been
+a big shift. And so, manager selection
+is something that's of essential
+importance when you feel like there's
+alpha to be had and inefficiencies that
+can be taken advantage of by skilled
+expertise. in areas where you don't feel
+like you're earning that premium, you're
+seeing more and more investors sort of
+shift over to just accessing the beta.
+And so that's one trend that I think is
+taking place irrespective of whether or
+not you're in the endowment model, TPA
+model or what that will be. And to a
+certain degree, when you're in beta,
+that does help with liquidity. You don't
+have to worry about manager lockups
+necessarily or any kind of notice
+periods and so forth. If you just have
+exposure to the S&P 500 via an index or
+an ETF, that liquidity is quite great.
+And the endowment model always viewed
+liquidity as being sourced from your
+equity portfolio predominantly. Fixed
+income is a very small portion of most
+endowments. And so you'd use your equity
+portfolios to be your liquidity source,
+which is great when markets are sideways
+or up, but obviously a problem when
+markets are going down. And that sort of
+adds to the crisis and chaos. To your
+point, that's sort of another thing that
+endowments have to kind of think about
+more so in today's environment is does
+it still make sense to have equities be
+a primary means of liquidity or sources
+of liquidity for them or do you start to
+put greater emphasis on cash or
+tolerance for holding cash? There's good
+reasons why not and I'll go into those
+in a moment. There are people that put
+the knock on the endowment model and the
+knock on private markets. And I think
+maybe somewhat misunderstood in terms of
+where Kaya fits into this ecosystem is
+that KA is not for or against
+alternatives. They're for
+diversification. Sylvia Quan, who's a
+Kaya member, a friend of KA, a friend of
+mine, now the CEO and CIO of Elst. I was
+on a panel with her a couple of years
+ago with some very learned investments
+and Mark Anson of the common fund and
+former KAIA board members in the
+audience and a lot of views, but she
+summed it up so very very well when we
+talked about accessing alts and she said
+she tries to get uncorrelated risk
+premia for her clients and if she can't
+find that in the public markets she
+looks privately and it's interesting I
+don't know if this data exists Stephen
+and you more than me would know if it
+does. But a favorite chart of mine and I
+might have used this one day in a
+certain classroom in Ithaca virtually
+was back in 1982 there were 24 private
+equity general partners in the entire
+world. I'm not sure if we made a
+distinction between venture buyout and
+growth. It was just private equity. Of
+those 24, I would think, and I've made
+the statement on this platform before,
+Alpha was there for the taking. But what
+I don't know is I don't think Prequin
+existed back then. I don't think
+Pitchbook existed back then. And I never
+recalled seeing charts around
+performance dispersion circa 1982. But
+it is alive and well today. And if that
+24 number of GPS has now been segmented
+to different types of market cap and
+there's over 10,000 of them, a natural
+byproduct is very wide performance
+dispersion. Nobody wants to be the
+median, but the median's the median. And
+those returns are pedestrian at best.
+And if you rinse them through a public
+market equivalent, they kind of look
+like the time weighted return I could
+get in the S&P 500. But the distance of
+travel between that median to the top
+cortile is thousands of basis points.
+And therein lies the opportunity set. So
+again, I happen to be very verbose with
+my statements with no question at the
+end, but I'm just throwing that in as
+maybe a last point before we turn the
+page and maybe move on to what Ka is
+doing about this. I think the last
+couple things I would just say about the
+endowment model for people to keep in
+mind is we always got the question is
+like when is too big too big right like
+oh my gosh Harvard deal whatever they
+have 30 40 $50 billion do they need that
+much money I think that's a very sort of
+fair question to ask I'm not suggesting
+that that's a bad question the notion
+then that it's just so simple to sell
+half of that and distribute it out or so
+forth that's more complicated and what I
+mean is is that the endowment exists
+Because people often give donations,
+right? Well, those donations aren't
+always completely just unrestricted
+donations. A lot of times they are
+restricted and for specific causes. The
+whole point of the endowment sometimes
+is people can say, "Hey, I want to fund
+a certain thing. I want to fund a
+certain program." And barring extreme
+circumstances, the fiduciaries
+responsible for that endowment are not
+allowed to use those funds for anything
+other than specific restrictions that
+were placed on it by the donor. So when
+people go, "Oh my gosh, like why is it
+that so and so has to do a secondary
+sale or why can't they just liquidate
+part of the endowment and give it out?"
+It's like, well, you know, it might be
+the case that only 20% is unrestricted.
+And so I think that's something that
+people need to be keeping in mind is
+that the pool itself, you can do
+whatever you want to with that pool in
+terms of how you allocate it, but in
+terms of then distributing it, a lot of
+times you have your hands tied with the
+way the money came in and what the donor
+required you to do with the proceeds
+from a use standpoint. So that's one
+thing I think people need to keep in
+mind. The other thing too is that
+endowments, their goal is to be in
+existence in perpetuity, meaning
+forever. At the end of the day, your
+goal is to maintain the real purchasing
+power of those funds. I donate money so
+that you could fund a research program.
+I want it to be the case that every
+single year that 5% payout continues to
+be able to impact the exact same way
+every single year. So meet inflation
+expectations. So that means that off the
+top I'm giving out 5% roughly every
+single year. So I need to earn that back
+so that my pool doesn't shrink. Number
+one, there are costs associated with
+running this, the human capital that's
+there and so forth. And then there's
+inflation to make sure that you maintain
+the real growth of that capital. And so
+when you put a couple percentage of
+points of inflation together plus the
+payout plus whatever costs there are to
+run this, you're talking about needing a
+return of 7 8 plus% per year just to
+maintain your purchasing power, right?
+And so when people go and say, "Boy,
+endowments are really aggressive in
+their positioning. They have a lot of
+alts." Well, that's a big part as to why
+that's the case. I know that everyone
+goes, "Oh, you could have just done all
+stocks the last decade and a half
+because the US market did so great." But
+that's a very naive comment in the sense
+that how many times have we had a
+15-year stretch with equities performing
+at double digits annualized over that
+time period? That's just not something
+you can bank on happening over and over
+and over again. And then to your point
+on diversification, you would be a
+terrible fiduciary if you basically put
+all of your money into the stock market.
+That's just not a good well- diversified
+portfolio. And so alts typically are
+viewed as a a source of diversification,
+but b can get some greater return,
+greater risk into your portfolio, which
+will be needed to get that 8% plus
+return that you need to maintain your
+purchasing power. And that's something
+that all endowments have to deal with.
+And a big part as to why that sort of
+endowment model makes sense there. This
+has all been very good table setting,
+Steve, and we're about maybe at the
+halfway point of our time together
+today. And in the second half, I want to
+take part of this conversation and talk
+about what it means visav the kaya
+curriculum, democratization, which is a
+favorite topic on this platform and one
+of mine because it is two sides of the
+same coin in terms of opportunity and
+risks and some things that scare me a
+lot. and then finish up with the future
+of credentiing. So maybe starting with
+the curriculum. You have a very
+difficult job but fortunately you have a
+lot of subcontractors out there which
+are some of the smartest investors in
+the world. So you can know what they
+know, see what they worry about, see
+where they see opportunities and that I
+know from history informs the curriculum
+in a very very big way. So you can run
+with that. But maybe just to prompt it a
+little bit, geopolitical risk is
+something that's relatively new to the
+curriculum and we are long geopolitical
+risk across the spectrum, but we began
+these conversations probably going back
+to almost the day you arrived. I would
+like to think that Kaya had very good
+forethought in introducing something
+that now is driving probably most of the
+volatility in the market and volatility
+as scary as it can be if you can maybe
+understand it which is part of the
+problem volatility does beget alpha. So
+maybe talk about the advancement of the
+curriculum, maybe what's been added, and
+if there's a short list of things you're
+thinking about going forward without
+getting the test prep providers all up
+in arms, that would be good to know. You
+and all of your listeners already know
+this, but one of the things that I
+discovered when I entered into the
+industry and graduated from college was
+that your learning doesn't stop after
+you get handed your diploma, right? The
+other thing that was a part of that too
+was in your first couple days you feel
+like you have to prove that you earned
+your paycheck and you hand something to
+your boss at the end of every day saying
+look what I did and then finally one day
+you kind of had a day where you didn't
+hand them something because you spent
+time reading reports or doing other
+knowledge gaining and you went wait a
+second I just got paid to read and it's
+like no that's important your employer
+wants you to grow and learn and become
+smarter so you can do even that much
+more for them and it was kind of a
+little bit of a mind-blowing thing for
+One of the greatest things now about the
+current position I'm in is that it's
+like I get to do learning on steroids
+for myself, which is just awesome. But
+then it to your point, it's funneling
+all that and figuring out what we want
+to pass on to our next candidates and
+learners and our community at large. The
+thing that, you know, we try to find
+that balance of is you don't want to be
+on the bleeding edge, but you certainly
+want to be on the leading edge. So
+geopolitics is a really good example of
+us sort of being on the leading edge
+there. And that was some really exciting
+stuff to bring into the curriculum and
+create some material that could help
+allocators think about how to manage
+geopolitics and incorporate the analysis
+into their asset allocation process
+whether you're talking about TPA SA or
+whatever the case may be. You know going
+forward kind of looking at the next year
+or two the biggest announcement that we
+had is Kaya taking its first step into
+having its own ethical principles for 20
+plus years. We were really delighted to
+partner with our friends at CF Institute
+and take advantage of their code of
+conduct. But we realized increasingly it
+was time for us to have our own voice
+there. The world of alts is different
+from the world of traditional
+investments. In a lot of ways, the CFA
+code is a little bit more fine-tuned for
+traditional investors and may not cover
+all the complexities of allocators and
+alternative investments. And so I was
+really proud of the fact that we develop
+our own set that we can hang out and
+showcase to the world what we're all
+about. The integrity that we really
+promote a client first mindset that's so
+important to us. So I know that that's
+kind of something that most people are
+not excited about necessarily. Talking
+about ethics is probably going to cause
+a lot of people to turn off the podcast
+and go somewhere else. But as a Kaya
+member, I hope people are as proud as I
+am about that advancement. If there's a
+topic more important than ethics, I'm
+not sure what it is. So, that's just
+something that makes me beam inside to
+know that we've put this together and we
+have our voice there for the first time
+as a sort of a standalone. So, that's
+one I'm going to kind of be really proud
+of in particular, as you should be,
+Steve. And maybe just a quick pause in
+that because it's a favorite topic of
+mine as well. I've had this conversation
+with a lot of people including John
+Bowman and some folks at his former
+employer, the CFA Institute. I don't
+know. And I'm of the mindset I don't
+think we ever can be a profession
+because it's too complicated of an
+industry and it started hundreds and
+hundreds of years ago and a credential
+or ethics was not a founding principle.
+I go back to the Buttonwood agreement
+and I think a founding principle was
+more collusion on pricing than anything
+else when these two dozen brokers got
+together on Broad Street. But that
+doesn't mean we shouldn't try and try
+very very hard to bring a greater degree
+of
+professionalism to this industry and
+having organizations that not just by
+slogan make this part of their offering
+in terms of their culture. So so very
+important. We do have a fiduciary
+responsibility, but we're still debating
+about suitability versus best interest
+standards in 2025, which to me is kind
+of absurd. So then going back to your
+question and kind of finishing that off,
+we revise our curriculum every single
+year, right? And so this the question
+every year, oh, what do you add? What's
+new? And going back to my days at
+Cornell, it's like one answer people are
+thinking you're going to give is like,
+well, what's that new investment that's
+out there? What's that new strategy that
+exists? So, I was there for a dozen
+years. Arguably, there was maybe one
+asset class that kind of poof appeared
+in that 12-ear period, and that would
+have been infrastructure. And it's not
+like new asset classes just come about
+every single year. That new investment
+strategies, universes just come up all
+the time. It's a very increasingly rare
+occurrence that something like that
+happens. So, in any given year, it's not
+like we're suddenly adding 200 new pages
+on a new strategy or new investment. The
+most recent one that I'd say kind of
+appeared, if you will, would be digital
+assets, crypto. That took time to find
+its way into the institutional investor
+world, but it's there now. And so, we've
+got material on that and are continuing
+to add material that's designed to
+support institutional investors work in
+that marketplace. But we're always
+looking at what's sort of increasing in
+portfolios, what is evolving. So,
+examples of that would be growth equity.
+That's an area that's been around for a
+while but is evolving, becoming more
+prominent as a standalone strategy,
+subasset class, whatever category you
+want to use. Infrastructure I mentioned
+was one of those ones that in my view
+grew out into prominence during my time
+at Cornell. That's an area that we
+continue to add as that works its way
+across the industry. The other thing
+that's really Kai has been talking about
+quite a bit, this sort of goes to your
+sort of TPA endowment model type
+question, is the evolving limited
+partner and the tools that they need to
+further manage their portfolio. Again,
+going back to my Cornell time, which is
+not to say all endowments go this way,
+but my experience at Cornell is we were
+basically just fund investors period in
+the story. Had a little bit of
+co-investments, but not really. Didn't
+do any direct investments in
+secondaries. At the time, there was no
+such thing as a GPLE secondary. there's
+an LPLED secondary and you only did a
+secondary when you were in a bit of a
+crisis mode. You needed liquidity or you
+just had drags in your portfolio or
+trying to get out get 70 cents on the
+dollar whatever type of a thing. But now
+all these tools are must haves for LPS.
+If you don't have a co-investment
+program, if you're not thinking about
+secondaries more tactically, if you
+don't know how to underwrite a GPLE
+secondary, etc., etc., you're not using
+some of the quivers in your bow, if
+that's the right phrase. And so we're
+adding more material there to help
+support that next generation investor to
+take advantage of all of their tools.
+And the last thing I want to say about
+this is going back to the TPA point. I
+was involved in the research and the
+production of our TPA material and it
+was a really great experience for me to
+understand what it was all about. You're
+talking about that flexibility, getting
+rid of the buckets and categories,
+competition for capital. I was in
+Toronto a couple times in April talking
+with more of our TPA friends and I heard
+another comment that really further
+unlocked TPA and competition for capital
+for me in a way that I hadn't heard it
+before. And so previously I'd really
+thought about TPA, this competition for
+capital and this lack of buckets is this
+notion of you're not trying to force a
+hedge fun allocation and you're thinking
+about competition for capital across
+buckets and strategies. But then they
+added that layer of but we're also
+thinking about it across access too. If
+I'm a TPA person particularly in the
+Maple model as an example where direct
+investing is a commonality you're not
+only thinking about do I want to do real
+estate versus private equity but then
+you're saying okay within real estate do
+I want to do it directly? Do I want to
+do it through co-investments? Do I want
+to do it through secondaries? Do I want
+to do it through fund managers? And now
+you have this sort of like matrix where
+you're not only going across
+horizontally strategies, but then you're
+going vertically within the strategy of
+how do I want to access this? And this
+is where LPs are now with this
+flexibility of you're not just looking
+on one dimension, right? You're now
+looking at multiple layers and multiple
+dimensions of what risk premium am I
+targeting and how am I going to access
+it? And that's kind of that next level
+that I think is really interesting, but
+is essential, I think, for allocators to
+truly add value. And the last thing I'll
+say about it, going back to my time in
+Toronto, is one of the allocators was
+talking about the decision process they
+were making. And they ultimately landed
+on leaning more into co-investments of
+late. And their analysis was is that
+they were adding 500 basis points to
+value by going the co-investment route
+relative to what they were doing
+previously because they were able to be
+more harsh in negotiating with fees and
+get that fee down. And then they felt
+that they could use their value adding
+skill to assess and select
+co-investments that they really had high
+conviction in. And so that combination
+of beating up on fees and using a bit of
+a direct skill but in a different way
+through co-investments, it was a huge
+source of value ad for them. And so I
+just think that further amplifies a the
+power of TPA, but b the kind of the
+tools now that allocators need to take
+advantage of if they're really going to
+distinguish themselves and earn as much
+as possible in the marketplace. So a
+helpful summary and before we leave
+curriculum, maybe a rhetorical
+observation on secondaries and then
+maybe finish with one final question.
+Yan Robarts from Dawson was on with me
+about six months or so ago and he had an
+interesting observation which stuck with
+me and I thought a lot about it which is
+by 2030 the secondary space in the
+private capital and maybe here the
+equity more than the debt will be a
+trillion dollars. A lot of people think
+that he's crazy and it's a big number.
+If he's crazy, he's probably got the
+number too low in my opinion. And
+listening to you just now, Steve, as a
+secondary market circa 2005 to8 when you
+were at Cornell, probably a place where
+you went kind of holding your nose and
+maybe Cornell had better ass spreads,
+but even today it's gotten a little bit
+more efficient, but it has become a very
+interesting exit and entry point for
+assen owners. you can get very good
+vintage year diversification. Asset
+owners are selling not out of stress but
+maybe they want to get into that next
+vintage year fund but even today the
+secondary space is about 1% of the total
+capital. So I think in order to have a
+more efficient market and this may be a
+good segue toward democratization in a
+moment. You need to have more liquidity
+in secondary space and we can't possibly
+be promising 5% quarterly liquidity in
+an interval fund when the market's only
+delivering 1%. Somebody is taking that
+into inventory at a NAV that is not
+subject to thorough price discovery. And
+I think that could be a risk or a reward
+depending on which side you're on. One
+other thing, you can comment on that or
+not because I do want to move on to uh
+democratization. But I had lunch
+yesterday with the crowd at FDP and
+Alpha Development that's taken over the
+FDP credential and I'm on the advisory
+board there and very smart group in a
+freeranging discussion on a lot of
+different things. But one of the
+observations they brought up was and
+maybe this is what occurred to me in the
+course of the conversation. I made the
+analogy that being of a certain vintage
+year myself, I have a very good sense of
+direction. I know north,s,outheast,
+west, and my wife Liz is amazed when I'm
+taking shortcuts and I end up in a spot
+which never occurred to her. So I think
+she's just born with less directional
+input than I was. But I look at my kids,
+they don't memorize phone numbers
+anymore. They rely on an app to get them
+from point A to point B. And they can
+get the most efficient route through
+ways. They know where the traffic jams
+are. They know where the cops are taking
+radar, but they don't have a sense of
+direction. And I think some of these
+basics including understanding the times
+tables make sense. And one of the
+criticisms I sometimes see of the kayak
+curriculum list upon list upon list and
+I say that's should be by design. When I
+think about certain acronyms like FTX
+and SPF, there's a list of things you
+should have assumed. And if you're going
+to rely on somebody else's due
+diligence, at least understand what they
+looked at and what they didn't because
+collectively there are blind spots. And
+I think the more we leave this to
+chance, I think the more risks we have.
+So I think we should utilize some of
+these tools that are available to us.
+But you have to have a wholesome
+curriculum where you're actually coming
+away understanding a little bit of the
+basic timetables of what it means to be
+an investor. This is such a great
+question, right? because it's something
+I think about all the time of like how
+important is it for us to if you will
+force our candidates to memorize certain
+things. Another analogy would be sort of
+the calculator like, oh, why do I have
+to know this formula if I can do it on
+my calculator or why do I even have a
+calculator if I can do it on a
+spreadsheet? Whatever the case may be,
+right? It's all a fair question. There's
+a couple answers that immediately come
+to my mind. The analogy I'd like to use
+is just reflect on something like let's
+say you are in your boss's office and
+there's a conversation going on. Maybe
+you're talking to a manager or whatever
+and the manager goes and says, you know,
+hey, last year our sort ratio was ABC
+and your boss mutes the call or whatever
+goes, hey, hey, Steve, can you remind me
+what the sort ratio is? If you turn to
+your boss, give me a second. Let me pull
+up chat GPT to tell you what sortino
+ratio is. How do you think that
+conversation would go? Do you think your
+boss would say, oh, no worries. Yeah,
+absolutely. Take a couple minutes to
+pull it up on chat GPT. My guess is 99
+out of 100 times your boss would be
+like, why did I hire you? if this is
+what you're going to do for me, there is
+a base level of expectation that you
+just are going to know things. And even
+though it might sound kind of wrote or
+annoying to memorize it, that's just
+sort of what's expected of you within
+certain positions within the industry.
+It's just this building of knowledge. Do
+you have to memorize how to calculate
+sort of ratio every single time or is it
+okay to just go on to Excel or go into
+Bloomber and have it do it for you?
+maybe it's a different question, but
+just the base knowledge of certain
+things is table stakes to use a term
+that you like to use. Now, if your boss
+turns to you and asks you something
+that's more complicated and you don't
+know the answer, and their response is,
+well, I'm not offended that you don't
+know it, then that's a different story
+because there are some things that are
+so esoteric or complex or niche or
+whatever that maybe it's not imperative
+that you have that a down path. But then
+the follow on to that is it's one thing
+to say, okay, great. I know it's sortino
+ratio is I have that memorized and can
+rattle it off. But then what you're
+really getting at is then the other
+skill that's so in demand and essential
+to all of us from a career progression
+standpoint is then critical thinking and
+judgment. It's one thing to be able to
+say, okay, I know how to calculate the
+sortino ratio. I know what it is. But
+there's another thing to say, okay, can
+I apply it and use my judgment to
+evaluate what that means and give it
+context and so forth. That's something
+that I don't think can be as easily
+taught at this point, at least through
+AI tools that are out there. And so
+that's a skill that Kaya still has a
+very strong place for developing and
+supporting with its current and future
+candidates and members and something
+that I expect us to continue to lean
+into as a important part of our
+curriculum and our value ad. a good
+summary of the approach, Steve, and I
+may or may not have stuck pins in my
+Novakovich voodoo doll as a recent
+candidate, but having come out the other
+side now as a very happy and proud
+member, those underpinnings have stuck
+with me. And if you embarrass me and ask
+me to recite any one of these ratios, I
+might come up a little bit short, but
+the totality of what I took away from
+that was just outstanding. So, I would
+say uh keep on keeping on there. So,
+we're probably going to go into OT here,
+Steve, but this is a bit of an important
+home game, which I'm totally fine with.
+So, I do want to talk about the
+curriculum clearly and the future of
+credentiing in a moment, and we can
+maybe wrap these last two pieces
+together. But along the investment road
+comes a bit of a fork and on the one
+side I have the individual investor, on
+the other side, I have the institutional
+investor. in terms of optionality and
+options and risk premia, they should be
+able to access one and the same. But I
+do fear that the helpers between the
+individual owner and the actual GP or
+asset manager is enormous and it would
+be very rare unless I was a very big
+single family office or ultra high net
+worth that I'm even going to meet the
+person running my money. So that
+anonymous approach I don't think is
+helpful. As I've said on this platform
+before, I think liquidity in the public
+markets in terms of what it means to the
+end investor is a feature, but it is a
+bug to accumulating wealth. And we're
+taking that same bug and making it part
+of a feature of democratized access
+where these leaky windows have a direct
+effect on my irr. And we haven't even
+begun to reconcile IRRa to time weighted
+returns. I feel Kaya under you and Aaron
+Philback have stepped up and created
+this Unifi platform. And it'll be
+interesting to see how this plays out.
+And I said at the same lunch yesterday
+when we talked about democratization,
+it's quite possible that Unifi could be
+as significant to the marketplace as the
+Kaio credential is because you've got
+more and more people coming in there.
+And the goal was and hopefully always
+will be is to try to solve for pockets
+of ignorance and not try to get the
+totality of a wholesome exam which still
+is going to make a lot of sense for a
+lot of professionals. But what we're
+hoping or I shouldn't say we anymore
+because now I'm on the outside looking
+in. What Kaio is hoping to accomplish is
+to create a series of these learning
+modules. Not to make anybody an expert
+on anything but to give them the courage
+and vocabulary and how to approach one
+of these perhaps new asset classes. So
+I'll let you talk about what that means
+on the curriculum and then also for
+unify and democratization. Look, I think
+the most important thing is that you
+just have to know what you're buying,
+right? And that's the biggest challenge
+for a lot of investors particularly in
+the retail space or wealth management
+space is if you don't know how to
+evaluate it, you're uncertain of what
+you're getting into, then you might be
+buying something different from what
+you're expecting. You made the comment
+about interval funds and liquidity.
+Okay, great. They might be advertising
+that you can get 5% liquidity every
+whatever quarter or every other half a
+year or what, but it's your
+responsibility to actually look through
+and say, "Okay, is that actually
+available? Is that achievable? What's in
+there?" We're starting to see some of
+these hybrid funds that suggest that
+they're private debt funds with high
+liquidity. Then you look at it and
+private debts actually capped at 20%,
+30%, 40%. The rest of it's just high
+yield bonds. And that's, you know,
+similar cousins maybe, but it's not the
+same exposure, right? You kind of talked
+about alpha earlier and different risk
+premiums. What is it that you're trying
+to get? What is it you're trying to put
+in your portfolio? Some of these tools
+that are available now from a
+democratization standpoint, they're
+great if you're looking to get kind of a
+beta exposure. And don't get me wrong,
+right? Like it's a way to get access to
+return streams that are different from
+what are out there. You can't delude
+yourself into thinking that you
+mentioned the spread between second
+quartile and first quartile or third
+quartile and first quartile. If you
+think that you're going to go and get
+this first quartile fund investment and
+returns by going into one of these newer
+products that are more kind of liquid
+type products, I'm not bullish on that
+being the outcome. But if you're saying,
+hey, I believe that the beta profile of
+private debt is very attractive and
+worthwhile to be in my client's
+portfolio. I know there's some liquidity
+here, but not liquidity I'm going to be
+counting on. Then that's great. put it
+in, you know, and it could be a great
+diversifier and access to a different
+stream of risk, awesome. But if you're
+going and saying, "Okay, I'm gonna put
+this in. I'm going to get first quartile
+returns, and if I need to liquidate the
+whole darn thing in a quarter, that's
+going to happen." Like, no. Don't trick
+yourself into believing that's what's
+going to be the case. A lot of I think
+what we're doing here is trying to give
+the tools and information to investors
+so that they can look through the
+marketing, look through the vehicle and
+truly understand what it is they're
+buying and then thinking about whether
+or not those exposures are relevant and
+useful for their clients. to just leave
+us enough time to talk about the future
+credentiing. Maybe an exclamation point
+on this is that you often times when we
+have these interval funds were maybe
+appealing to the needs of one cohort of
+investors but maybe not all of them. And
+if I'm in for the long term and have
+bought with the intention of never
+selling, but if the market gets very
+volatile, investors normally hit the
+exit button and their exit nav is my nav
+as an investor that believed in this
+long term. And I still maintain and
+we'll see how this develops and I think
+Hamilton Lane and KKR have done some
+movement in this direction. But as a
+recent Kaya candidate, as I said on
+level two, there was one of the required
+readings on permission blockchains. And
+I think that could prove to be maybe
+very interesting in terms of if somebody
+wants liquidity, they're on the
+blockchain with me, but they got to get
+it from somebody else. And my investment
+remains fully flush and in line Perry
+Pasu with the Cayman base fund. And I
+think that maybe solves for a few
+problems, but I'll leave that future up
+to you. And finishing with the future
+future of credentiing here you have a
+hard job Steve is the invasion of
+genative AI and how that can or can't
+impact
+credentiing what the credential does and
+here not just KA here I'm talking about
+the CPA the CFA the CFP what used to
+have a pretty long shelf life maybe is
+not as long so much anymore because what
+that average candidate needs is changing
+quite quickly and they're sitting now
+next to a data scientist and they're
+maybe working with Python and R and
+they've got to understand how to work
+with data sets and what it means to
+overfitit. So how do you think about
+this and maybe you delegate it to your
+asset owners around the world but
+ultimately you're in charge and it's not
+an easy job. I don't want to come off as
+sounding naive here because this is
+something we're thinking about a lot but
+I would sort of categorize it there's a
+short-term answer and then there's a
+long-term answer. In the short term, I
+still if anyone were to say, "Oh, yeah,
+I can do everything I need to do with
+chat GBT or any other AI program
+equivalent." I think that's them being a
+bit naive. We've all fooled around with
+it. We've all used it. Everyone knows
+the term hallucination at this point,
+right? Currently, I don't think that
+we're at a place where we could say that
+we can fully trust what we're getting
+when we put in a question. And maybe
+there's some questions you have higher
+level of trust over others. But a lot of
+your trust comes from the question of
+how readily available is this
+information? How many different
+information sources are there? Well, the
+world of alts is a very opaque world for
+the most part and partly by regulation,
+right? If I were to go into chatpt and
+ask a question about small cap buyout
+funds in Europe, am I confident that it
+has a lot of data sources that I can
+pull from to then give intelligent and
+correct information on that type of a
+strategy? Maybe. But I don't know that
+I'd have that 100% confidence. And so in
+the short term, Kaya continues to be a
+source of credibility, reliability, and
+confidence that what we're sharing is
+accurate, complete, and appropriate. And
+I think that that will remain relevant
+for several years. I don't know when,
+but it will take some time before we all
+can say with a high degree of confidence
+that the questions we're asking the bot
+are going to come back with a high level
+of confidence that we can just accept
+that that's true. So that's one thing
+that I think is really important for us
+to keep in mind and will continue to be
+the reason why organizations like Kaya
+exist and need to exist is that kind of
+source of truth and credibility. But in
+the long term I think it's a very very
+fair question and so that you have to
+kind of ask yourself what is it that
+we're offering? There's still several
+important answers to that. Some of them
+include that there's rigor that we can
+bring and a process that just can't be
+replicated with chat GPT. You know, to
+say, "Oh, I had chat GPT test me on
+this." It's like, but then the other
+thing too is like what can't be
+replicated is the human element of it.
+At the end of the day, KA is more than
+just a test. It's more than just a
+curriculum. It's the people who are
+around it. It's the community members
+that participate in our ecosystem. KA's
+got so many touch points beyond just our
+curriculum, our chapters, our events,
+our podcasts, our webinars, all that
+stuff. And you can't replicate that with
+AI. At the end of the day to have human
+connections, human interactions, human
+engagement, that's the value of the
+community and that's the value of an
+organization like Kai is facilitating
+that, bringing that together, creating
+these touch points and creating
+opportunities to to learn and engage
+with others that's never going to be
+able to be replicated by AI tool. Great
+capstone observation, Steve. So, I'm
+going to let that sit because it's a
+great way to end this conversation. But
+one final question for you and I think
+we originally had this scheduled after
+the seasonal break and I'm glad we got
+it in because I believe there's enough
+lead time for this current exam here and
+I'm not asking you to shill an exam. I'm
+asking you to jump up and down for why
+professionalism matters. So how far into
+the exam window and when is the next
+exam offering? Our next exam window
+takes place in September. Registration
+is open now and will be open for the
+next few months. We offer our exams
+every March and every September. If this
+September is not the right time for you,
+then there's always next year. But we
+welcome folks to join our community and
+take that first step towards showing
+their interest in being a continuous
+learner and growing their knowledge and
+expertise about the world of alternative
+investments and allocating. Steve,
+thanks for a great discussion. And I
+once was a pretend academic in your
+classroom, then a colleague, and then a
+friend, and now still a friend and a
+fellow member. I continue to learn a lot
+from you, and I will put a bold
+underscore on what Kaya is, and it is
+much more than a curriculum and exam,
+and I continue to learn a lot from the
+various platforms and touch points, and
+it's just been a fantastic experience
+for me, and thank you for all that you
+do. Well, Bill, I appreciate your
+mentorship over the years and guidance
+and to use your story about your compass
+and that your ability to get from one
+direction to another. I got to see that
+firsthand. But the other compass that I
+saw firsthand that just again, it's
+maybe the highest compliment I feel like
+I could pay anybody was your moral
+compass. I always knew that we were
+moving in the right direction in that
+regard with you as our steward. The
+advocacy that you had for our industry,
+for our clients, for our members, as a
+member myself, it just made me so proud
+to have that association. And so I
+really thank you for that. It was
+something that I cherish. Well,
+hopefully that candle does not go out
+until I'm six feet
+under. But I appreciate that, Steve.
+It's how I've been wired. And I had a
+very important mentor, Desi Heathwood,
+who's also been on this platform, and
+he's in his 80s, and he did it as a
+favor to me. I don't think it was his
+favorite thing to do, but he ingrained
+on me early on when I was in the asset
+management business, as we've heard
+about this dual responsibility that
+Bogle talks about where you have
+responsibility to partners and
+shareholders and also clients on the
+other side. You've got to be transparent
+when that coin is being pushed one way
+or the other. But he would always say,
+what would the client think? what would
+their reaction be if this was on page
+one of the Wall Street Journal when
+people used to buy and read newspapers
+and that stuck with me and it's an
+important way to end this because so
+many professionals early on in their
+career hopefully you'll be listening to
+this hopefully sign up for Kaya but as
+you said earlier and it's a great way to
+conclude this conversation you can be
+the smartest investor you can understand
+every aspect of the Kaya curriculum
+nobody's done it yet I don't believe but
+you could
+100% on the exam. But unless you have
+some form of an ethical compass, you're
+dead to the investor. You're dead
+certainly to me. And your value in this
+industry is of very little worth in my
+opinion. So, a great way to end it,
+Steve. And you allow me to quickly jump
+back up on a soap box that's very
+important to me. Absolutely. Couldn't
+say it better myself. So, thank you for
+that.
+[Music]
+Thank you for listening to Educational
+Alpha. I'm your host, Bill Kelly. Learn
+more about the KA Association and
+subscribe to the show at kaya.org.
+That's
+caia.org. See you next time.

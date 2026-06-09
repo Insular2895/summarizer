@@ -1,0 +1,750 @@
+[Music]
+hello and welcome to the enterprising
+investor the flagship investment podcast
+for CFA Institute I'm Mike Walberg and
+today we're heading into the gray zone
+between passive management and active
+for many years it was fairly easy to
+identify strategy as one or the other
+either you were buying the market
+through a passive fund that tracked a
+major Market or you threw your lot in
+with an active manager who promised to
+buy the good stocks and sidestep or even
+short the bad ones as index strategies
+have matured however the gray Zone has
+widened we're going to talk to two
+research Affiliates of CFA institute's
+research and policy center today Jed
+Heyman and Jordan Doyle who recently
+published the white paper smart beta
+direct indexing and index-based
+strategies Jordan holds a master of
+science and finance from George Mason
+University and jenie is a PhD candidate
+in Georgetown with Masters from both
+George Mason and University College
+Dublin I'm hopeful they can help clarify
+how we should be thinking about these
+strategies what they are and how we as
+an industry should look to incorporate
+and manage their use in client
+portfolios welcome to the show thanks
+for having us Mike yeah thank you it's
+great to be here so I want to trace
+index investing through the history that
+you wrote about in the paper because I
+actually find it quite fascinating but
+first I wonder wonder if you could give
+us a sense of the numbers that we're
+dealing with here in terms of Market
+size and growth of index ETFs and mutual
+funds yeah so we've seen substantial
+growth over the past few decades overall
+Global TNA for index mutual funds and
+ETFs Grew From just over that's that's
+total net assets just grew from just
+over $2 trillion a decade ago to almost
+12 trillion at the end of 2023 so that's
+pretty substantial growth in a short
+time span and this growth we find is is
+largely driven by us Equity Funds
+which landed at around 8 trillion at the
+end of 2023 compared to non-us domiciled
+equity index funds which was just over 4
+trillion at the end of 2023 so really
+driven by the US Equity market and it's
+worth noting if I may that our results
+are consistent with another recently
+released CFA Institute report by Mark
+renam and Kenneth bla they have a paper
+called Beyond active and passive
+investing and that paper offers a really
+insightful in-depth comparison of
+markets and fun groupings so if you're
+interested in going into the
+nitty-gritty details I suggest that
+paper is really fantastic in that area
+so it's it's worth noting that and I
+don't know if I I can go into detail
+about this at the moment but I think
+going into the rise in index funds is
+really fueled by the introduction of
+ETFs into the market right so the the
+first dabble with ETF products was in
+1990 with the Toronto index
+participation shares or tips I don't
+know if Mike being Canadian you are
+familiar with that yeah it was it was
+pretty shortlived though right back in
+the day yeah yeah that's it yeah so
+actually most people what they what they
+really identify is the kind of kind of
+Flagship ETF was spider the fighter S&P
+500 ETF in 1993 and so ETFs have really
+kind of fueled this rise in index
+investing over you know the past decades
+around 70% of global Equity ETFs remain
+past as opposed to active and that
+stayed pretty constant throughout the
+past decade according to our research
+yeah I thought that was interesting that
+yeah that you showed that one chart that
+yeah it tracks the percentage of total
+represented by passive and it's Fallen
+slightly over the last few years so you
+talk about ETFs there and you know the
+the granddaddy of that is obviously John
+Bogle over at Vanguard he wasn't the
+first into the market but I wonder if
+you could talk about really quickly just
+about the history of kind of how passive
+got going because it didn't start we
+know him from the 70s but it actually
+went back even further before that
+and there's a cool anecdote on the early
+sort of opposition to passive investing
+that I'd love for you to tell really we
+can think about two things the
+theoretical foundations which are really
+started in around the 1950s with of
+course Harry martz's dissertation that
+became modern portfolio Theory and where
+you know we get this idea for
+diversification we get the idea that
+efficient portfolios minimize risk given
+a level of return or maximize returns
+for a given level of RIS risk right so
+there's this risk return trade-off and
+then into you know the capital asset
+pricing model where you know Asset Risk
+premiums are driven by its beta or the
+sensitivity of that asset returns to the
+market return and so these are kind of
+the theoretical foundations of what
+becomes this smart beta and those kinds
+of products but just to quick just to
+clarify there on for Jen in terms of the
+importance to passive investing yeah
+that switch in perspective among Finance
+professionals from just focusing on
+return to thinking about risk
+highlighted the importance of
+diversification and that's effectively
+as I understood why you started to see
+the rise in popularity of these passive
+strategies is that is that accurate
+exactly yeah so it really became a
+strategy that shifted away from looking
+at you know individual Securities
+individual firms to Market level
+analyses and so that's important
+obviously for index investing in general
+in terms of the historical background of
+index investing we can kind of turn to
+to two uh fun examples of this kind of
+the beginnings of an active passive
+debate and so in 1960 in the financial
+analyst Journal there was this paper by
+renan feldstein where they made the case
+for an unmanaged investment company and
+in it they really proposed the idea that
+active funds may not reliably outperform
+the average and they questioned whether
+they would actually be worth the cost
+and of course this was not taken up too
+well by the investment industry overall
+it was largely dismissed you know and
+active mutual funds at the time
+continued to to Really Thrive and to the
+extent that you know not too long later
+there was another paper by a guy John B
+Armstrong at Wellington Management
+company and he really argued and in
+defense of active mutual funds saying
+that in general they've met the test of
+time trying to rebuttal this original
+paper in from 1960 and he won awards for
+that paper and it was it was well
+received within the field we all know
+Vanguard led by John C Bogle he created
+the first Index Fund available to retail
+investors and the plot twist is that
+John C bold turned out to be John B
+Armstrong who wrote that paper in
+defense of active mutual funds he was
+using a pen name John B Armstrong the
+John C Bogle that we have known today as
+kind of the pioneering force of index
+investing really you know played played
+a a role as well in the shift but also
+maybe not in the way that we might think
+at the start yeah it's amazing that he
+was one of the the most vocal and
+wellard critics at the beginning under
+his pen name I thought that was a really
+interesting twist in the story one that
+I hadn't heard before so let's talk a
+bit about the the development of
+standard indices we're getting towards
+alternative indexes is most of us know
+the the the pros of you know say a
+market cap weighted index you know you
+get the diversification you get the low
+cost you get
+transparency but what are a couple of
+the the risks or problems that come with
+a traditional like a S&P 500 market cap
+weighted index maybe Jordan you can
+handle that one yes so one of the
+biggest risks that comes with those
+market capitalization weighted indexes
+such as the S&P 500 is the potential for
+high concentration in some of those
+underlying constituents Maybe the top 10
+or 20 Holdings in the index have the
+potential as they continue to increase
+in value to make up a large percent of
+the index and it's kind of been one of
+the drivers or one of I guess the things
+that pushed investors to kind of look
+towards alternatively waved indexes so
+let's talk about alternative indexes a
+little bit so switch gears here and
+you've seen this Evolution over time out
+of these traditional indexes for you
+know some of these reasons you've got
+the concentration risk and others these
+are essentially structured to gain
+specific exposures to various different
+I'm going to call them factors maybe
+that's a little early to use that word
+for this but you talk about know
+fundamentally weighted indices equally
+weighted which obviously gives you a
+better exposure to small cap than you
+get from a a market cap weighted one
+sort of minimum volatility weighted ones
+efficiently weighted so looking at their
+sharp ratio and you know giving higher
+weights to those and then what you call
+Factor weighted which is according to
+one or more factors across the Spectrum
+and and we'll talk again about factors
+in a minute here I want to take a little
+sort of side note here to to just talk
+about one stat in here that I found
+astounding which is that there are 3.3
+million indexes globally which is 70
+times the number of traded stocks and I
+actually wrote in column of my my
+version of this paper and you got to
+this conclusion later which is basically
+that these stocks are being cut and
+recut dozens and dozens of times so it
+seems that the problem has been reversed
+this idea that instead of choosing the
+best stock within an index you're now
+trying to choose the best index that
+might hold that stock it's kind of TR
+the problem on its head can you talk a
+bit about that just that Dynamic that
+you know potential sort of movement from
+the analyst role from identifying good
+stocks to identifying good indexes maybe
+Jenny may you can take that one
+absolutely so this is a really important
+point I think that comes out of the
+paper is this idea that what is active
+management right and at the end of the
+day if you're thinking about it just
+generally in terms of making active
+decisions that impact the return of
+investor portfolios then this is
+undeniably a form of active management
+right as you say selecting which indexes
+which combinations of indexes should
+index investment funds rather should be
+included within a portfolio and so it
+you're right it does replace the kind of
+active management side of selecting
+underlying securi to invest in to you
+know diversify a portfolio to selecting
+indices to track within a given
+portfolio and so I think we can think
+about both the proliferation of factors
+but also just in general the
+proliferation of indices another paper
+analyzed 897 us indices and found that
+there was a lot of heterogeneity in
+methodologies that were claiming to
+capture the same strategies right so
+there there's a concern there that you
+know we're mixing we're not only mixing
+and matching you know different factors
+and waiting strategies but we're also
+doing so in a way that that doesn't
+necessarily put you know pursue returns
+or the kind of end result that we would
+necessarily like right that there's
+there's an incentive to create a new
+index and say you know it offers all of
+these these new and unique benefits but
+at the same time you know I I think
+there's a question of okay well where do
+we draw the line and say okay well we're
+really testing whether or not these are
+are contributing to the portfolio and
+the way that we say that they are so I
+guess you that's the question that I
+have is how do we assess these things
+Apples to Apples to one another because
+they're I mean if they're if they're
+trying to capture different elements and
+if they're not Standalone strategies
+maybe you're adding and we'll get into
+smart beta you're wanting to get a
+certain Factor exposure that will maybe
+augment your performance profile of your
+portfolio how do you go through those 3
+million indexes and decide what's good I
+mean is it an absolute efficiency ratio
+or like how do you think about that if
+you don't have a single Benchmark for
+them to then be compared against I'm not
+sure I have a good answer for you in
+terms of you know what methodology you
+should use to uh you know assess a
+particular index Benchmark index
+compared to another one but I do think
+it's relevant and in our a report we
+talk about a benchmark regulation and
+that's something that has is pretty well
+established in in Europe I'd say in the
+EU but is relatively new in other
+markets and I think having Benchmark
+regulations that can help guide the
+construction of these indices can help
+to alleviate some of the concerns at
+least that for instance there's a lack
+of transparency or that there are
+certain conflicts of interests that
+might challenge the ultimately the
+performance of funds that that are
+trying to to use that index and so I'm
+not sure you know I don't want to say
+that oh there's something inherently
+wrong in having a lot of indices but
+there's definitely something wrong in
+having a lot of indices that have
+certain issues or these sort of um
+conflicts within them and so I think
+having regulations around that is needed
+okay let's let's move on to Smart beta
+obviously it's it is gaining an exposure
+to one of the six you know well the six
+main factors and it can be any Factor
+really I mean the main one ones we
+generally tend to talk about value size
+momentum volatility dividend yield and
+quality are the ones that tend to get
+most airtime but I wonder if you could
+just give us a an overview what smart
+beta is and and what the difference is
+from Factor investing yeah so the
+definition of smart beta has actually
+kind of evolved over the years so
+originally this term was kind of
+understood to mean defined specifically
+fundamental waiting strategies and since
+then has evolved to Define any waiting
+methodology that deviates from market
+cap waiting so that could include all
+the other alternative waiting strategies
+such as equal waiting volatility waiting
+Factor waiting efficiency weighted so
+the term has evolved over the years to
+include basically all those alternative
+waiting
+strategies and I guess if we think about
+what smart beta actually is in terms of
+the characteristics of the investment
+these smart beta ETFs or other smart
+beta products tend to be rules based and
+transparent so they have kind of
+characteristics of traditional passive
+management if you think of like the high
+transparency and they kind of follow the
+rules-based approach to tracking an
+index but they also do have some
+characteristics of active management as
+well such as the active decisions
+involved in selecting factors to gain
+exposure to or identifying a waiting
+methodology or security selection so it
+kind of combines these characteristics
+of both traditional passive management
+but also active management so it's just
+it's kind of one of those interesting
+Blends between the two and these
+products typically are long only
+products and again we've talked about
+they provide Factor exposure but they
+tend to be kind of more of a static
+Factor exposure so rather than kind of
+overweighting certain factors or
+underweighting others smart beta
+products tend to provide more of a
+static or constant exposure to these
+different factors but I think an
+interesting to note about interesting
+thing to note about smart beta ETFs is
+that even though they kind of provide
+that static Factor exposure to these
+alternative weighted indexes because
+these products are ultimately built to
+track alternatively weighted indexes
+rather than market cap indexes so they
+provide the static Factor exposure to
+those types of indexes but relative to a
+traditional market market cap index it
+would kind of be a built-in Factor tilts
+because if it's tracking an equal
+weighted index that naturally provides
+greater exposure to small cap stocks and
+in the size Factor relative to market
+cap index it would be an overweight to
+the size Factor so it's you know it's
+kind of relative to the index that the
+smart beta product is tracking or
+providing exposure to but I guess
+generally if you think about how these
+products naturally will track an
+alternatively weighted index then they
+yeah they'll provide static Factor
+exposure right and and the in the smart
+beta products are derived from an
+existing index whereas the factor
+investing is not constrained by that as
+I understand it is that right yes that's
+correct and Factor investing also has a
+little bit more flexibility I guess to
+take in addition to Long positions they
+can also take short positions whereas
+smart beta products typically are long
+only products so Factor investing is
+kind of the broader term and can
+enccompass smart beta ETFs and other
+smart beta products so one of the things
+I I thought was quite interesting you
+Incorporated looks like con from 2018 um
+a framework that where he breaks down
+you know listeners this podcast will be
+well acquainted with the idea of
+breaking down Total return into you know
+beta or your your index exposure and and
+then Alpha what you added above that
+Benchmark but you break down the alpha
+piece effectively into you got your your
+benchmark return and then your your
+active return is comprised of sort of
+pure Alpha in the way that we you know
+we all know it picking stocks you know
+you depending if you have a fundamental
+layer but then also this this return
+from exposure to a Smart beta Factor so
+we're going to come to this in a little
+while because you use that as a as a
+basis for the framework for
+understanding where on a
+Continuum of like pure passive to Pure
+active a certain strategy might be smart
+beta as I understand it through your
+work here it comprises a piece of you
+know how active a strategy is so again
+it's Benchmark Performance Plus your
+pure Alpha fundamental activities plus
+this return from from Smart beta
+so let's let's move on here in the
+interest of time we've got uh an another
+sort of key area that you guys focused
+on was direct indexing maybe you can
+take us through kind of like what the
+the sources of demand for direct
+indexing maybe in brief but then just
+explain kind of what that is and then
+maybe some of the key pros and cons of
+of that strategy yeah yeah no problem so
+direct indexing is one of these newer
+strategies that's become more popular
+especially in recent years and one of
+the interesting things about the
+strategy is that originally it was
+primarily available to institutional and
+high net worth clients
+because of the high cost associated with
+the strategy but recently due to these
+techn technological advancements and
+especially the increase capabilities of
+being able to trade fractional shares
+it's become a lot more accessible to
+retail investors and the cost of it has
+decreased by a significant amount and so
+the strategy consists of originally
+buying all the individual constituents
+and index and holding those Securities
+and a separately managed account which a
+separately managed account just allows
+basically for the individual purchase
+and sale of individual Securities so
+kind of as the Baseline for this
+strategy an investment adviser will
+purchase the underlying Securities in an
+index for specific an investor and then
+based on that Investor's preferences
+they can underweight or overweight
+certain Securities or even overweight or
+underweight certain asset classes and
+basically tailor it to that individual
+investor and so this is one of those
+strategies where it could be different
+for every investor depending on that
+investor specific circumstances or
+preferences and so this strategy also
+kind of like what we saw with the smart
+beta ETFs or smart beta product s in
+general combine some characteristics of
+both traditional passive management and
+also active management so and it really
+again just depends on the specific
+investor because for some investors the
+strategy might be holding all the
+constituents of the S&P 500 at those
+specific weights in the index whereas
+for another investor they might
+overweight certain Securities or
+underweight others depending on their
+preferences
+but it the investment advisor is
+constrained to investing only in the
+Securities and index I guess if we think
+about some of the benefits with this
+flexibility and being able to
+personalize it for investors would
+probably be one of the main benefits for
+the strategy whereas I guess one of the
+disadvantages is because it consists of
+you know so many purchases and sales of
+Securities relative to just buying one
+mutual fund or one ETF it requires a lot
+more monitoring and rebalancing of the
+portfolio to kind of make sure the
+portfolios continues to align with the
+investors interest yeah and an example
+of sort of the this personalization
+that we talk about taxes you know
+obviously for individual taxable
+investors you can sort of manage around
+that and the one other example you used
+there was on ESG um so you'd be able to
+you know do a tilt or an exclusion on
+certain industries if you wanted to to
+reflect that one question that I had on
+this and is an interesting idea this
+direct investing I guess the one thing
+that hops out to me and maybe maybe also
+in the mind of others listening is if
+the active decisions are being made by
+at the advisor level and maybe an
+advisor who has 50 or 100 or 200 clients
+all with different needs and and risk
+profiles and maybe doesn't do active
+management as a full-time job so it's
+not as front of mine as it might be for
+someone who is say you know a Quant
+analyst or a fundamental analyst I
+wonder how the return streams will look
+for these strategies and when they're
+when it's being spread thin by by folks
+who who don't do this usually on a
+full-time basis it's it's a curious idea
+I don't know I don't know how that'll
+how it'll look maybe one thing that's
+worth mentioning and and it's not going
+to be an answer to to that or a response
+to that Mike but it's worth mentioning I
+think that much of these products have
+been driven by the rise in demand for
+personalized strategies from investors
+right so of course that doesn't
+guarantee a better return a better
+outcome but definitely that's something
+that we've seen within across various
+markets um after you know surveying uh
+performing you know CFA investor surveys
+we see demand for personalized products
+and so this space of smart beta products
+of direct indexing these are much in
+response to that consumer Demand right
+or personalized strategies and I think
+that's why you see interest in them
+besides just you know the potential to
+to generate excess returns and so it's
+worth highlighting yeah so maybe maybe
+the answer is the tradeoff that clients
+may be willing to make against
+maximizing risk sugested returns if they
+are able to reflect their own personal
+view in their portfolio so fair enough
+so let's turn now to just talking about
+the framework that you guys developed uh
+that to help us understand and navigate
+that Gray Zone could you just talk us
+through the kind of the four levels how
+you're categorizing them and where where
+each of these different items would uh
+would live and maybe that can help us
+kind of understand how to think about
+whether something is passive or active
+yeah so I guess if you look at the
+framework you can classify these
+products along three different
+dimensions one based on strategy another
+based on returns and then also based on
+the level of
+discretion and so if you look at the
+strategy it can range from Pure index
+funds on the far left all the way to on
+the far right fully active funds that
+are completely unconstrained and so you
+can also think of this as funds ranging
+from an active share of Z % to an active
+share of 100% where active share is
+defined as the difference in the fund
+Holdings relative to the Holdings in The
+Benchmark so if a fund has a zero active
+share that fund will have the exact same
+Holdings as The Benchmark held at the
+same weights as The Benchmark relative
+to 100% active share it's a completely
+active fun withholdings that completely
+differ from The Benchmark and none of
+the same weights either and then in the
+middle you kind of have these enhanced
+indexing strategies the long only H
+index funds are constrained to only
+taking long positions and because of
+that that will provide the static Factor
+exposure whereas the long short enhan
+index funds are very similar to The Long
+only funds but have the added ability to
+use leverage to take short positions and
+because of that can basically provide
+non-static exposure to some of those
+factors I guess going down to the
+returns based row which classifies These
+funds based on the sources of return on
+the far left would be funds that only
+provide the market cap weighted
+Benchmark return and these be funds that
+only provide basically systematic risk
+exposure or beta and no return in
+addition to that all the way to the far
+right would be funds that provide the
+market cap weight a benchmark return
+plus the full active return to and then
+in the middle kind of associated with
+those long only enhanced index funds
+those funds again because they're
+constraints only taking long positions
+would only provide the return from
+static Factor exposure in addition to
+the market cap Benchmark return whereas
+the long short enhanced index funds
+would provide that static Factor
+exposure return but also the add ability
+to provide returns from Smart beta
+timing or non-static factor exposure and
+for those keeping score at home there's
+these are called level one two three and
+four I actually encourage you if you do
+check out the the article it's exhibit
+10 there smart beta in your
+categorization fits in level two and
+then direct investing depending on how
+much deviation from The Benchmark you
+you take can be sort of a one two or
+three so those kind of spit in the you
+know medium to high levels of active and
+smart beta is kind of one step up from
+from the most pure play uh passive and
+just an interested time here I wonder if
+you can talk just quickly about the
+takeaways for in terms of public policy
+that that you make recommendations you
+make to policy makers into firms I'll
+jump in here so yeah we can kind of
+summarize what our policy
+recommendations are in the sense of
+they're around cultivating transparency
+and informing investors right so some of
+that's through as I mentioned
+benchmarking regulation and
+incorporating that into the Benchmark
+creation process um and Licensing
+process but also in terms of all the way
+down through the asset management firms
+who develop products on top of these
+Benchmark indicies and then as they
+Market those products to the end
+investor right making sure that
+investors know you know what they're
+getting with these products and in
+particular I think one of the things
+that we've really tried to emphasize is
+that I think that because there's this
+traditional passive active divide right
+where they're seen as two separate
+categories there might be some
+misunderstanding or de-emphasis on all
+of the kind of active decisions that go
+into creating index-based products and
+so we can think about that even from the
+creation of an index there are index
+providers have to determine you know how
+to develop rules to determine whether or
+not certain Securities are included in
+an index or not as well as you know
+waiting strategies and methodologies and
+then those can be updated based on
+committees within the index provider you
+know as you add smart beta on top of
+that as you add direct indexing on top
+of that you know you increase the number
+of decisions that get made you know
+which factors to select which you know
+specific investor decisions you're going
+to incorporate into the portfolio with
+direct indexing it's important to
+recognize that just because it's not
+active management in the traditional
+sense there are still it doesn't mean
+that there aren't you know active
+decisions being made throughout the
+process and so yeah we found it
+particularly hard sometimes to find some
+of these methodologies and strategies
+that were used so that's why we we kind
+of advocate for that increased
+transparency and distribution of of
+information in that regard I've been
+speaking today with Genevie Heyman and
+Jordan Doyle research Affiliates of CFA
+institute's research and policy Center
+and authors of smart beta direct
+indexing and index based strategy jenev
+Jordan thanks so much for coming on the
+show today thank you Mike thank you I'm
+Mike wber and this is me the
+enterprising investor
+[Music]

@@ -1,0 +1,86 @@
+Hi, welcome to the Grafana Alloy for Beginners
+series. My name is Mischa Thompson and I'm a
+Senior Software Engineer at Grafana. In the
+previous episode, we talked about collecting
+metrics from our application servers. In this
+episode, we'll cover ingesting traces emitted
+by those applications. These episodes build
+on one another. Before starting this one,
+make sure you've watched episodes one through
+nine and completed Alloy configuration sections
+one through four in the repo. To get started,
+open the Grafana Alloy for Beginners repo and
+scroll down to section five. As a quick reminder,
+each section contains the starter code, tasks to
+explain what you'll need, and a solution with the
+finished version. If you haven't already, fire up
+the learning environment and open config.alloy.
+I'll go over the OTel pipeline we'll be building
+visually and then walk through the solution. Feel
+free to give it a try on your own first and then
+compare with the solution once you're finished.
+Alright, let's take a look at the pipeline will be
+building for traces. Our mythical microservices,
+the server, requester, and recorder are already
+configured to emit spans and send them to our
+Alloy instance. To start ingesting those spans,
+we'll use the otelcol.receiver.otlp component.
+As the name suggests, this component receives
+spans in the OTLP format and forwards them
+down the pipeline. Next, the spans go to the
+otelcol.processor.batch component. This component
+collects spans into batches before sending them
+on, which is a key practice for reducing network
+overhead and improving performance. Finally,
+the batches of spans are sent to the
+otelcol.exporter.otlp component. This
+component is responsible for exporting the spans,
+and in our case, it's configured to send them in
+OTLP format to our locally running Tempo instance
+for storage. Let's look at the configuration
+for our otelcol.receiver.otlp component.
+We've given it the label otlp_receiver,
+and we've configured it to receive traces via both
+HTTP and gRPC on ports 4318 and 4317. We've also
+configured the output block to send spans to our
+batch processor, which we'll be looking at next.
+The otelcol.processor.batch component takes
+incoming spans and batches them together. In its
+output block, we're telling it to forward batches
+of spans to the input of our next component,
+the otelcol.exporter.otlp. We also set some
+parameters to control its behavior. It will
+try to send batches of a thousand spans,
+but it will not exceed a maximum of 2000,
+so a burst of spans will be queued and sent in
+batches of 2000 at most. If it doesn't reach the
+minimum size of a thousand spans, it will send
+a batch anyways after a two second timeout.
+Finally, we have the otelcol.exporter.otlp
+component, which we've named "tempo". This
+component sends our traces to the client at the
+specified endpoint, which in our case is the
+locally running Tempo instance on port 4317. We
+have also included a tls block. Since this is a
+local insecure connection, for this demo, we've
+set insecure and insecure_skip_verify to true,
+so we can skip tls verification. Once
+you've finished, don't forget to reload your
+configuration and you should get a confirmation
+saying the config has been reloaded. Once you've
+finished, scroll down to the verification
+section and navigate to the dashboards.
+Go down to section five verification, and
+you should now see some data populating. You
+should see both a service graph, a table of the
+different traces that we're seeing, and a count of
+the received spans from Tempo. The service graph
+does take maybe a couple of minutes to populate,
+so if you see all of the other data, but not this
+one, just give it a second and you should be able
+to see data. In this episode, we configured
+Alloy to ingest spans being emitted by our
+mythical microservices, batch them, and send them
+to our local Tempo instance. In the next episode,
+we'll build a pipeline for ingesting
+application logs with Grafana Alloy.

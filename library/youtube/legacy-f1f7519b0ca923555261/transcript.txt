@@ -1,0 +1,635 @@
+[Music]
+Hey everyone, uh Aaron Philbeck here at
+Kai Association, global head of content
+strategy and I'm joined today by Tim
+Kohler who is a partner at Mckenzian
+company and a leader of their strategy
+and corporate finance practice. Tim, uh
+thanks so much for having a conversation
+today.
+>> Uh thanks Aaron, I'm looking forward to
+it.
+Great. Well, we've got a lot of talk
+about it and you've authored this uh
+this valuation bible uh if you will over
+several years and each time you do one
+of these updates uh you're covering some
+new material, some new content that
+comes in, usually based on some uh
+economic backdrop or what's going on in
+the world. And I thought we could focus
+in a little bit more on the special
+situations segment of this book just
+given our audience which is much more
+focused on private markets. uh we have
+people sitting on the LP side, on the GP
+side, um and so on. And one of the
+themes that we've really been focusing
+on here at KA is this whole convergence
+of public and private. We were talking
+about this in preparation, but we no
+longer kind of have a binary market in
+terms of public markets, private
+markets, and that's at the actual
+capital formation level, and
+increasingly it's at the product
+structure uh level as well. We've got a
+lot of strategies that are incorporating
+both. um into uh their different
+offerings. So how do you see this
+convergence affecting the valuation
+discipline and in particular GPS uh from
+one perspective that are investing
+across both public and private and then
+LPs who are maybe historically have
+focused on funds and now they're
+bringing it in-house and doing it
+themselves on directs co-investments and
+so on. So, lot in that question, but I'd
+love your thoughts on just kind of this
+broader convergence uh theme.
+>> Yeah, I think when it comes to
+GPS, um I think the better GPS were
+already used doing a lot of the things
+that we would advocate in our book,
+right? So, um you know, a focus on
+discounted cash flows which drive which
+is driven by growth and return on
+capital. that's been the foundation of
+um valuation for uh many many many
+decades right um and nothing really has
+changed there and I think that u like I
+said the better GPS have always looked
+at okay so what are what's a baseline
+set of cash flows for a company and what
+can we do to make it worth more right so
+what is the incremental value that we
+had
+um and uh so I think that that's there's
+really no change there, right? I I think
+LPs probably need to get a little more
+sophistic if they're going to be
+involved more directly uh either taking
+direct stakes through the GPS that they
+work with or investing, you know, more
+directly even than that. They're going
+to need the talent to be able to dig
+deeper um into analyzing
+these companies, right? and and what you
+know what what what can they do to make
+them worth more because it's always a
+matter of you know how do you you know
+if you buy a business how do you make it
+worth more than what you paid for it uh
+and it's unlikely if you're an LP in
+particular that you're going to get a
+bargain right bargains are rare so you
+have to create value you have to improve
+the return on capital you have to
+improve uh the growth of the business
+and so I I don't think that there's any
+fundamental differences, right? Um, and
+I think it's most important to use the
+valuation techniques to understand the
+changes in valuation as much as trying
+to come up with a single number. Right?
+Now, if you're going to buy something,
+you have to have a single number. When
+you exit exit, you're going to negot
+negotiate a price. But the key I think
+is often you know how can I make this
+business worth 30 or 40 or 50% more than
+it was under its prior ownership.
+So Tim, you mentioned exits, which I
+think is an important consideration,
+especially now, you know, maybe, you
+know, 10, 15 years ago, 20 years ago. It
+was maybe more of a a linear
+conversation where you're you're buying
+a business in the private markets and
+then there's an exit at some point and
+typically that was through an IPO or or
+through the public markets. Now
+obviously you have strategic buyers that
+are coming in and buying some of these
+businesses after a number of years but
+it seems like the optionality is much
+wider and and obviously market dependent
+what's going on in the market backdrop
+and uh we've seen the IPO market um
+accelerate and then decelerate uh the
+number of strategic buyers accelerate
+decelerate. So, how do you whether
+you're a GP or you're an LP, how do you
+kind of factor that into the modeling
+process of valuation in terms of that
+optionality when you're trying to take a
+long-term view? But some of that is
+dependent on what's going on um at that
+current part of the cycle,
+>> right? And that's why once again, I
+think the only thing you can really do
+is focus on the fundamentals, right? You
+cannot predict,
+you know, whe what the IPO market's
+going to be like in five years. You
+cannot predict what strategic buyers
+might be interested or not in five
+years, right? Um so you know the way you
+create optionality is by giving yourself
+some time frame uh flexibility. Uh but
+once again if you focus on the
+fundamentals of improving the business
+uh that in itself creates optionality.
+you will have a a more attractive
+business uh if you want to do an IPO or
+it'll be more attractive to a strategic
+buyer even in sort of slow times you
+know there are IPO transactions and
+there are sellside uh in there are
+strategic buyers um so you know the key
+is making yourself attractive in those
+circumstances once again it goes back to
+just focusing on the fundamentals you
+can't you know no one can predict uh
+what's going to be going on with those
+markets it's you know even next year.
+>> So so speaking of fundamentals and uh
+you know this gets into the actual maybe
+some of the themes that you were uh
+talking about in this new addition we've
+we've had this growth of AI and
+technology and disruption uh maybe the
+the big fundamental underlying driver.
+And so as you you've talked through kind
+of the valuation frameworks and
+methodologies across different stages of
+a company's life cycle. So venture to
+growth buyout other special situations
+and when you think about uh some of the
+changes that we've seen on on the
+technology front or even the
+geopolitical front which I know is much
+more macro but it does have a more micro
+um impact. How have these frameworks
+evolved? And maybe back to your earlier
+comments, how have they stayed the same
+um in an environment like this?
+>> Yeah. Well, let's take the case first of
+a company that might be using AI as
+opposed to a company that's selling an
+AI product, right? Um you know, for the
+most part, it's just like any other
+technology improvement, right? Um, you
+know, AI allows you to
+um, uh, maybe reduce your manufacturing
+costs. It allows you to provide better
+customer service. Uh, it might help you
+to do a better job of figuring out what
+products to design to, you know, that
+are going to be most appealing to your
+customers, etc. So ultimately for you
+know companies that make things and sell
+services like that uh it's no different
+than any other innovation right the
+question is once again you know how does
+it improve your your cash flows the the
+thing to be careful about though is that
+um oftent times your competitors are
+doing the same thing you're doing right
+uh so in in a sense in many industries
+the value of all these improvements is
+going to be passed on to the consumer uh
+in terms of better products, better
+services,
+uh maybe lower prices. And you got to
+think about how much of it can I
+capture. I can only capture the benefits
+typically if I'm doing something
+different than my peers and I I'm way
+ahead of them. Uh or if I have some
+other competitive advantage that I can
+exploit by using these things. So I
+think it is important to be very
+cautious about uh it's not that you
+don't have to do these things. Uh you
+have to do them otherwise you'll be left
+behind but you can't assume that it's
+necessarily going to increase your
+profits or cash flows because you end up
+giving away a lot of it. uh example I
+like to use is the technologies that's
+been changing in the banking world right
+you know you go back companies uh banks
+you know introduced ATMs in when the 80s
+uh early 2000s there was online banking
+now everyone has a mobile banking app um
+has the banking industry become more
+profitable as a result of that no it's
+become the price of doing business right
+and and it'll be the same thing when
+banks adopt uh AI it's going to be the
+of doing business. There's competition
+still and competition sort of takes that
+away. You have to do it, you have to do
+it well. It's not necessarily going to
+increase your value. Um, when it comes
+to companies that are selling AI
+products, I think there's still a lot of
+uncertainty. We we need to figure out um
+what the actual business model is going
+to be for some of these. Some of these
+is straightforward. they're going to be
+selling software to companies uh or
+individuals that uh uh you know you you
+know just like any other software
+company right um you know the question
+is you know there's a lot of uncertainty
+about the size market share how
+competitive the markets will be uh so
+you got to look forward you can't you
+can't look at historical financials
+because there aren't any right so what
+we try to do is we try to look forward
+and say what what what's a range of
+reasonable
+uh outcomes, you know, 10 years from now
+in terms of the size of the market,
+market share, margins, etc., and then
+work backwards. But we try not to come
+up with a single number. We try to focus
+on, you know, what's a what's a range
+and what should companies do to maximize
+that value.
+>> So Tim, I love that uh that comment on
+uh what occurs to the actual company
+versus maybe society is kind of the the
+way to think about that. And I think
+about that a lot on AI because there's a
+lot of hype around this and clearly you
+go through some of these boom bust
+cycles where especially in the public
+markets if you slap AI on on your name
+or or whatever you you get this pop in
+terms of of value but to your point some
+of this doesn't actually benefit the
+company itself. It's more of a broader
+kind of societal benefit. So maybe a bit
+of a tangent uh to that leads to my
+question, but are there any historical
+analoges besides banking uh that you
+could speak to in terms of how we make
+those assumptions of a of a percentage
+of the benefit to an industry or a
+sector versus just this is better for
+the consumer um at the end of the day.
+>> Well, a good another example and it
+doesn't have much to do with technology
+is the automobile industry. And if you
+look at it over the last, you know, 50
+years or so, the cars we drive today are
+even sort of economy, you know,
+so-called economy cars, right? Um, they
+are safer, they handle better, they are
+more luxurious, they have more features.
+Um, and yet they don't cost that much
+more. Uh, and the auto companies don't
+make more money off of them because it's
+such a competitive market, right? Every
+country wants to protect their auto
+industry. Right? In the US, you know, we
+first had the Japanese coming in, then
+we had the Koreans coming in. U markets
+become more fragmented. Uh we have new
+startups in the electric world,
+competing against established companies
+in the electric world. So all the
+innovation tends to be given to the
+consumer in in that industry and you see
+it in a lot of industries. Uh even in
+businessto business like you know
+chemical industry uh every you know
+productivity improvements get passed on
+right away too to uh to to their to to
+the customers right to you know whoever
+you're selling these petrochemicals to
+or whatever uh because of competition.
+So most industries behave
+uh that way to to a large extent, right?
+There are some exceptions. Um the
+company the best way to sort of create a
+a value a distinctive advantage is if
+people are willing to pay for your brand
+u where you know cost is not really
+relevant. So luxury goods and things
+like that uh or cons some consumer
+packaged goods uh uh where you know if
+you can do things you might be able to
+maintain your price uh and keep the
+benefit um but in a lot of cases um uh
+probably the vast majority of cases the
+consumer is the ultimate benefit
+ultimate beneficiary. So Tim, the the
+brand comment I think is is interesting
+as well. Um because you know, especially
+when you go earlier stage, so you're
+you're talking more venture and maybe
+less defined industries, less defined
+companies, you're relying a lot more on
+narrative and qualitative assessment
+versus quantitative. You if you're in
+the buyout space, you're you're buying,
+you know, a company with a long-term
+operating history, financial statements
+that you can look at. That's not always
+the case when you go earlier stage uh
+and looking at at some of those
+opportunities. So, how do you kind of
+balance those two as you start to move
+down that uh curve, if you will? And do
+some of the more traditional DCF type of
+approaches still apply or is there a
+different way that you would recommend
+investors look at this uh moving
+forward? Yeah, I I I think that you know
+one of the things that we do is to sort
+of
+look at it the other way where we say
+what would you have to believe
+to achieve a certain valuation. So if
+you have a company and it's worth you
+know hundred billion 500 billion a
+trillion dollars
+ultimately
+that company's value five or 10 years
+down the road is going to you know as it
+matures is going to be a function of its
+you know revenues its profits its cash
+flows right so what you can do is you
+can ask the question what would I have
+to believe uh five or 10 years down the
+road and then see whether that is within
+the realm of reasonleness, right? U you
+know, if you have if you're going to
+believe if if in order to justify the
+valuation, you have to believe the
+company in a narrow market is going to
+be generating 500 billion of revenues at
+a 50% margin and it's going to be
+competitive. You know, you got to
+question that. Or if you look at
+semiconductors even right now with all
+the you know um there's so much
+competition and the history of the
+semiconductor world right is one of you
+know fierce competition cyclicality
+uh eventually people catch up. So
+companies that have the lead right now
+uh may not have the lead in five years,
+right? So you have to be careful about
+assuming that a company that is uh the
+leader in an industry right now is still
+going to be the leader in five or 10
+years and that the and that competition
+is going to allow the same kind of
+margins even if it's not the leader. So
+that's one of the things that we do uh
+is just sort of reverse engineer things
+uh to sort of say what would you have to
+believe and that's you know so you're
+still using DCF in a way uh you're still
+looking at the fundamentals uh but
+you're you're looking at it from the
+perspective of um uh you know what you
+have to believe is is a good tool that
+we use oftentimes. Uh the other thing
+that I've learned is this is sort of a
+little bit off topic but it does help.
+Uh particularly when it comes to public
+markets um you know you know 40 years
+ago or so um I was uh I didn't think the
+markets could make big mistakes right uh
+and now I do. Okay. Um not all the time
+and not for most companies at any time.
+Uh but we've had you know the dot bubble
+and stuff like that. we have a situation
+now where seven companies dominate the
+S&P 500, right? Um and what I've
+discovered and so the question is so so
+and and usually like in you know 1999
+2000 these bubbles burst right they
+always do um so the question is why does
+this happen right um and you know
+looking at it one of the things we
+discovered is that there's sort of a
+cycle that creates these bubbles right
+that is not counteracted one of the and
+one of the elements is first of all
+retail investors flooding in to buy a
+stock. Okay. Um if you look at the top
+seven companies right now, sometimes
+people call them the mega 7 or whatever,
+the percentage of retail investors is
+double the rest of the S&P 500. Okay, so
+you have a situation where retail and
+how much analysis do retail investors
+do? They don't do any number crunching,
+right? They just say, "Oh, this is a
+good company. People are excited about
+it. the stock price is going to keep
+going up. So, they just buy, right?
+>> They're even have auditions of your
+book.
+>> Exactly. Exactly. They're not even doing
+the basics. Okay. Uh secondly, you then
+have trading oriented investors who are
+sort of betting on the retailer retail
+investor psychology, right? Uh you know,
+e even if I think the stock is
+overvalued, I'm still going to buy it
+because it's going to keep going up and
+then I can get out before it crashes too
+far and still make money, right? And
+then I found that you've also got uh
+more traditional pension funds and
+mutual funds who feel that at the end of
+the quarter they have to have those
+stocks in their portfolio otherwise
+it'll look like even if they don't
+believe it but they'll have to have
+those stocks in their portfolio. So you
+have all these forces pushing up the
+stock price and nothing to counteract
+them because shortselling is the only
+way to counteract that. Short selling is
+very risky. Um, and uh, it's expensive
+and there's just not enough potential
+short selling to keep to to keep the
+share price uh, maybe something more
+reasonable and as a result you do get
+these bubbles that last for a while. Uh,
+and um, you you know and and eventually
+they will they will burst, right? And
+and you see the same thing in the
+private markets from time to time,
+right? people get, you know, which you
+expect to be less of an issue. Um, but,
+you know, you do see people get really
+excited about a particular new industry
+or particular company or there's one or
+two private investors, venture capital
+funds who are willing to pay, you know,
+enormous amounts sometimes, the more
+naive ones. Uh, and um, so you can see
+it with prices that get too high
+sometimes in the private markets as
+well.
+>> Yeah. and and and I want to go back to
+an earlier one of the first comments you
+made which is this uh it's not about
+getting the number right as much as it
+is the direction uh to some degree and
+maybe tie that with your your comments
+there like you know what is the market
+telling me and do I agree with it or
+what do I have to believe in order to to
+get there um which I I think is a good
+way to look at things it's hard to kind
+of get to a science of like well this is
+worth X because it's always changing
+based on your uh your different
+assumptions so that I think that leads
+into my next question which is you know
+especially for investors who are new in
+the private market so maybe LPs that are
+doing the the direct co-investing for
+the first time there's not a lot of
+information that's out there so it's
+hard to to develop a belief based on
+what is already in existence because in
+some cases there's not market
+comparables there's limited transparency
+into the companies so how do you kind of
+navigate that in terms of those
+complexities when you don't have much to
+go on at the end of the day.
+>> Yeah. I I guess I would argue though
+that
+if I was investing directly,
+uh I was an institutional investor, um
+if I didn't have the same transparency
+that I get with the listed company, I I
+would just I wouldn't buy it. Um you
+know, because then you're essentially
+relying on someone else to make those
+decisions for you. Um unless you really
+trust them, right? Um, and from what
+I've seen, uh, some of the better, uh,
+institutional investors have now built
+up very sophisticated teams of people
+who analyze these kinds of investments.
+And I'm I'm pretty positive that they're
+not going to analyze or they're not
+going to go with something that uh is
+where they don't feel that they know
+enough about the business that they're
+investing in. So once again you have
+this dichotomy between the most
+sophisticated
+uh uh investor institutional investors
+who are doing this right and then
+institutional investors who want to do
+this but they're not willing to make the
+investment and so they're going to be
+getting the ones that are sold to them
+right uh without you know that kind of
+interaction. Maybe they don't want to
+build up the teams necessary to do the
+work. If you're not willing to do the
+teams necessary to do the work, uh you
+probably shouldn't be doing that.
+>> So beyond that, this and this this is my
+final question for you, but maybe ending
+where we started, which is this
+convergence, uh you know, the funds and
+direct the public and private. Um, so
+you mentioned team sophistication and
+and making sure that you've actually got
+people who understand this stuff. For
+for people who are in this kind of
+journey of of doing it themselves or
+looking at these new structures that are
+available, any common pitfalls or things
+that newcomers should look out for uh
+before they start to move into to doing
+it themselves?
+I think I think the common pitfall is
+one not investing enough in the team,
+not paying the team enough to be able to
+get the top talent. I think that's a big
+issue. And I think the other other piece
+of advice is
+um you know be careful about things that
+are being shopped around, right?
+Um, so you know, you're going to if
+you're going to co-invest, you know, you
+want to co-invest with a private equity
+firm that you've had a long-term
+relationship with and there's trust
+built up, right? And they and they have
+an incentive to make sure that, you
+know, it doesn't go bad for you because
+they've got the same thing. Uh, uh,
+those kind of things. So I think it's
+you know it's just you know one you know
+make making a big enough investment to
+be able to do it yourself and secondly
+you know choosing your partners very
+carefully.
+>> Got it. Well Tim uh maybe talk a little
+bit about the book. Uh this is the
+eighth edition. What's new? Uh why did
+you decide an eth edition was necessary
+on this evergreen topic of uh
+evaluation?
+>> Yeah well we've been this is the eth
+edition so it's 35 years. Um and well
+first of all what we find is that people
+like to have new examples uh and have
+all the analyses updated to something
+more current right so that's part of it
+um and then part of it is just figuring
+out you know what's going on in the
+world that we should be talking about
+right so we have a full chapter now on
+digital uh or technology that would
+include AI etc we have a whole chapter
+on sustainability how that how to think
+about that uh as a company in terms of
+valuation. Um we put in chapters on
+private equity and um uh and uh venture
+capital uh high growth companies we've
+always had there but we've amplified
+that chapter etc. So um you know we want
+to keep it current in light of what's
+going on in the world. the fundamentals
+don't change at all. Uh but investor but
+readers do like to have the the latest
+edition and it's always uh impresses me
+that people do buy multiple editions,
+right? Um so uh we do try to keep it up
+to date and u we're really excited at
+the reception of you know all the
+additions and and and and the latest
+edition as well.
+>> Well, great. Well, Tim, I I appreciate
+your uh sharing some insights and uh
+sharing more a little bit about uh the
+book as well. Um always a pleasure and
+uh for those who have not read or
+checked out the book, I would encourage
+you to, but uh looking forward to doing
+this again sometime soon.
+>> Thank you, Arin. Look forward to it as
+well. Have a good day.
+[Music]

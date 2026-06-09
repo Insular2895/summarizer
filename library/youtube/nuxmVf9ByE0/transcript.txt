@@ -1,0 +1,140 @@
+Hello, everyone.
+Today I will show you some tips for creating annotations formatted
+as JSON to configure integrations with Datadog Autodiscovery.
+Let's take a look at this example of annotations
+configuring OpenMetrics checks.
+Can you spot what's wrong with them?
+It's not super clear at first glance, but the JSON is broken
+because of the missing curly brackets inside the square brackets.
+An annotation like this can lead to
+misconfigured integrations that aren't picked
+up by the Datadog Agent for monitoring.
+Here is the correct way to configure this annotation.
+Since it can be so easy to break JSON,
+I'll share a few ways to double-check that annotations are correct
+so that there aren't any misconfigurations.
+This video focuses on Autodiscovery version two syntax,
+since it's cleaner and used more widely than version one.
+Let's start by writing an annotation to configure the redisdb
+integration for my Redis deployment, so I can monitor it.
+I already have a Redis pod running in my
+cluster from this deployment.
+If we run a kubectl get pods, we can see that here.
+Here is the deployment YAML called
+redisdeployment.yaml that I will be working with.
+Since JSON can be cumbersome,
+I'd like to start by writing my configuration separately in a YAML
+format with the integration name on the first line.
+All lowercase.
+Then we put the init config.
+Then we put the instances with our configurations.
+This is especially helpful for larger
+and more complex configuration in an integration.
+Then I convert this to JSON
+using an online tool, a YAML to JSON converter.
+I'll paste the YAML here,
+click on YAML to JSON, and we get an output
+that should look like this.
+This will be the JSON that
+I'll copy and paste as the annotation value.
+But first I’d like to follow the Datadog public docs,
+which will include a template that I will
+transform into a full-fledged working annotation.
+We will copy this part here.
+I start by constructing the annotation
+by matching the container name I want to monitor.
+Looking at the redisdeployment.yaml
+I can see that my container name is called Redis.
+This is the container name that I will be putting in the annotation.
+Now that I have both the JSON output
+and the skeleton of the annotation,
+I can copy and paste this JSON into the outer curly braces like so.
+Since I'm not using any init config options,
+I can remove that section entirely.
+This is what the annotation will look like
+in a full deployment manifest.
+Make sure that this is set in pod level under spec,
+template, metadata, annotations.
+Otherwise the Agent won't auto-discover the annotation.
+Now, as an extra layer of safety,
+I'll use a JSON validator to check that the JSON isn't broken.
+Any validator you can find on the web should work.
+We can see the JSON is good to go.
+Next, I'll double-check the JSON configs against the conf.yaml.example
+for the RedisDB integration to confirm
+that the parameters are correct.
+In the annotation, I have configured host and port.
+In lines 19 and 24 of the conf.yaml.example
+I can see that the host and port
+parameters are required respectively.
+This confirms that I have the required
+parameters set to get this to work.
+Once I validated that everything is correct,
+I'll run kubectl apply -f redisdeployment.yaml
+to apply the changes.
+If we run kubectl get pods again
+we can see that the pod has been redeployed and run again.
+The next step is running commands to validate
+that the Datadog Agent has properly auto-discovered
+the redisdb annotations, and is now running the redisdb check.
+First, let's run kubectl get pods in the Datadog
+namespace to double-check the Datadog agent pod name.
+Copy that and then run kubectl exec -it pod name agent status.
+Don't forget the namespace as well.
+Now we can see a huge status output.
+Scrolling up, I can double-check if the redisdb
+integration was picked up.
+And we can see that it was picked up successfully.
+Another command is the agent config check command,
+which validates if our configurations are set as expected.
+We can run the same kubectl exec -it pod name -n Datadog.
+But instead of agent status, we'll change it to agentconfig check.
+This output shows all of the integration
+configurations and log configurations that are
+picked up by the Agent.
+Scrolling up again, we can find the redisdb check
+and see the configurations there are set
+from the annotation, like host and port.
+Lastly, there is an agent check redisdb command
+which tells the Agent to run the check manually.
+This is mainly for troubleshooting purposes
+in the event that the integration was running into some error.
+Here I am looking for specific troubleshooting logs
+and information that would let me know if anything goes wrong.
+There's also a huge list of metrics that the integration will report.
+Now let's go to the Datadog
+platform to see if the integration is properly configured
+and working or not.
+On the Kubernetes Explorer pods view
+We can see the exact Autodiscovery annotations I've configured
+in the YAML tab of my Redis pod.
+In the Fleet Automation view,
+we can also see the redisdb integration running.
+If I click Redis in that view
+it opens up the exact configurations
+and tags in YAML format that are picked up by the Agent.
+We can see the same host and port values as well.
+This view is convenient because it allows me to see
+existing integration configurations without using a CLI.
+It is also helpful for making changes to those
+integrations if need be.
+For the sake of this video
+if an integration was broken, it would look something like this.
+At the end of the day, what I'm really after is telemetry data.
+So over at the Metrics Summary
+we can double-check if the Redis metrics have came in or not.
+We can see that it is populating in this view.
+If we navigate over to the Metrics Explorer
+and use a metric like redis.cpu.user,
+we can see that my Redis deployment
+is reporting this metric in my cluster.
+So that's how I double-check that my annotations are correct.
+I used a formatter to convert my configurations
+from YAML to JSON
+a JSON validator to check that
+the JSON isn't broken, and Agent commands
+to confirm that the Datadog Agent
+is picking up the configurations.
+I hope you found these tips useful.
+Thanks for watching and check out this video's
+description for resources to learn more.

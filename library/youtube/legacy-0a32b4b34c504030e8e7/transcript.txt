@@ -1,0 +1,171 @@
+[Music]
+collateral management transformation
+includes operational efficiencies data
+standardization
+and innovative technological
+implementation
+at isda our collateral initiatives focus
+on helping our members and their
+counterparties and clients best adapt
+and implement
+changes to meet regulatory demands
+decrease
+operational counterparty and liquidity
+risks with process improvement projects
+and improve data standardization with
+the common domain model
+i'm amy caruso head of collateral
+initiatives at isda
+and i'm joined today by erica becker
+manager of ey
+in 2017 isda published the collateral
+blueprint
+this document details the 17 steps to
+optimal collateral management
+in 2019 is this collateral initiatives
+team conducted
+member outreach and a member survey the
+member outreach picked up where the
+collateral blueprint left off
+and we identified four topics where we
+could focus efforts to help the industry
+improve their collateral management
+operational efficiencies
+the four priorities that were identified
+were custodial onboarding for segregated
+accounts
+portfolio reconciliation and dispute
+resolution
+digitizing documentation and
+streamlining to operating systems
+and automating collateral settlement
+issa has developed a user guide document
+on each of the topics
+including an overview of the topic with
+data from our is a member survey
+a summary of key challenges and
+opportunities for improvement
+use cases a sample implementation plan
+and an interactive cost benefit analysis
+tool
+portfolio reconciliation and dispute
+resolution is a growing concern for isda
+members
+as there are regulatory requirements for
+initial margin dispute management in
+some jurisdictions
+for some entities but it is also a time
+and resource consuming process for
+current variation margin and independent
+amount
+too in the ism member survey we asked
+what are the top collateral
+management challenges regarding
+portfolio reconciliation and dispute
+resolution
+and ranked from most prevalent to least
+prevalent the responses were
+multiple reconciliations and lack of
+data transparency
+through derivatives trading and the
+post-trade life cycle
+straight through processing breakage
+creating manual processes
+portfolio agreement is determined
+post-trade which results in trades being
+attributed to the wrong portfolio
+and resulting in margin disputes and a
+lack of central record of trade
+attributes
+insta members were asked what is the
+average length of time
+spent by team resources to resolve a
+collateral related dispute
+25 percent said 10 minutes to 1 hour
+34 1 hour to 2 hours
+13 responded 2 to 4 hours
+8 4 to 8 hours 15
+more than one day and 5 responded other
+in february of 2020 we conducted further
+portfolio reconciliation
+and dispute resolution research and we
+asked what are the root causes of
+margin dispute challenges some of the
+root causes are sometimes an issue for
+both variation margin
+and initial margin such as market value
+discrepancy
+snap timing discrepancy with fx rates
+booking methodology differences
+collateral or haircut discrepancies such
+as treatment of in transit or failed
+failed collateral
+and sensitivity population and
+sensitivity bucketing for regulatory im
+only
+from this data along with the input from
+vendor buy side and sell side subject
+matter
+experts we developed a document that can
+assist isd members improve
+their portfolio reconciliation and
+dispute resolution process
+the goal this document is to help
+members assess their current portfolio
+reconciliation and dispute resolution
+processes
+build a business case for improvement
+and guide firms through their
+implementation
+we have a list of opportunities for
+improvements and also benefits from
+improving the portfolio reconciliation
+and dispute resolution process
+opportunities range from establishing a
+robust governance framework to
+digitizing your agreements with
+eligibility and margin terms
+there's a there are a wide range of
+benefits as well which you can see from
+this slide
+regardless of where your firm's maturity
+is in regards to portfolio
+reconciliation and dispute management
+there are opportunities to improve and
+streamline the process
+and in an effort to inspire the ista
+membership to implement process
+improvements
+we shared two use cases including a buy
+side firm that leverage an industry
+utility and another use case
+where sell side firm deploy dispute
+resolution prioritization logic
+we've also included a sample project
+plan and task list to help
+firms plan their project implementation
+and last but not least based on the
+survey data we recognize that firms need
+to better assess their current
+deployment of resources and costs
+in support of a business case for future
+improvements while each firm
+will be a little bit different we
+developed an interactive cost benefit
+analysis form that allows the users to
+enter their projected
+projected costs and portfolio
+reconciliation volumes
+overall our goal is to help is the
+members improve their collateral
+management processing
+by decreasing operational counterparty
+and liquidity risks
+and this one document is focused on the
+portfolio reconciliation and dispute
+resolution topic
+to download the document go to the
+hyperlink on this page
+and for more information feel free to
+contact me amy caruso head of collateral
+initiatives at isda

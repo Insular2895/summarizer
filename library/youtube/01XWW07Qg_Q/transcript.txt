@@ -1,0 +1,3311 @@
+The entry fee was 100 million
+to start making a small simulation. In
+2 weeks, I have 500,000 euros
+in investment and 50 million
+euros in letters of intent to purchase
+between deep tech, hardware and medical. So
+we, we really suffer from all kinds of
+diseases. But the medical side, I think,
+is the most complicated part. So, we
+started 6 years ago and we still have a long way to go in the
+market before we are
+truly commercial. I
+remember, it was the Bayfit works council that
+said that too. He said, "If I had
+known that payroll was such a hassle,
+I never would have gotten into it." He
+raised a new fund there of 6 billion.
+The guy said, "I'm going to write 12
+checks." So with 6 billion, he will
+only invest in 12 chess games worth
+500 million each. And then, on the other side of the road, we suddenly
+started to hear a loud bang,
+like something had exploded. And then we
+looked, there was a hatch
+underneath the truck that had opened.
+The free van that needs to be brought
+to Paris, that's what's used to transport
+shady stuff. Either we buy it back now at
+300m, or we're going to either get
+crushed, or buy it back for a billion
+over 3 years. A
+short break with Kylian, we're working
+hard to bring you the
+highest quality podcast possible and the
+best guests. However,
+we realize that most
+people who watch these episodes are not
+yet subscribers. If you want us to
+continue sharing the
+best possible content, please consider
+subscribing, liking, and sharing if you
+wish. Enjoy the show
+and let's go. Hello everyone
+and welcome to a new episode
+of Open Source. Today we are welcoming
+Evan and we are happy for one
+simple reason: it is the first time we are
+going to talk about deeptech on Open
+Source. An episode was definitely needed to
+get into and open up this vast and
+extremely interesting topic. And we were just talking about it,
+actually, but for
+us, who are part of this new
+generation of entrepreneurs who
+generally sell products before we've even
+created them, we were super
+curious to be able to meet
+someone who is literally at the
+opposite end of the spectrum, on the other side of the
+spectrum where it's usually tens of
+millions or even hundreds of millions
+of euros raised and then
+years of development and research
+before being able to release something
+that is coherent but which, on the other hand,
+when it works
+[laughs],
+generally causes a huge shock, so
+we're very happy to have you.
+Can you start
+by telling us, well, finally pitching your
+product and your company,
+and then we'll dive into that?
+So cool. Well, listen, thank you very much
+Alexis for the intro, super happy
+to be here and to talk about it. So, it's
+funny because I think that in a
+way, I'm
+also selling the product before it exists
+since I'm raising money before I
+have the proof that I promise
+I'll be able to deliver with
+the money. So, there is still a
+similar mindset. But it's
+certain that we can't sell the product, we're no
+longer selling the vision, we're selling the
+next million. So, I am Evan
+Carvella, I am the founder and
+CEO of Piron. Uh, we are manufacturing
+a new generation of MRI machines,
+so medical imaging machines,
+uh, which have two particularities. The
+first is that it is the best
+diagnostic tool that exists.
+Really, when you have an MRI, it's what
+gives a radiologist the most information
+to make a
+quality diagnosis. But on the other hand, it is
+also the machine that is the most
+difficult to access. Where there are
+fewer machines, the most
+expensive ones, which come at the very
+end of the patient journey. It's really
+at the moment when we need it, there's
+really a question of life or death, or
+we're far along in the pathology, we
+need new information
+to make a
+really precise diagnosis. So the RMs are
+arriving late, but it would be good if they
+arrived earlier obviously since they are
+the best, but it's not possible
+because there are too few machines,
+they are too expensive, too
+complicated to install. You should know that
+it takes on average more than a year
+to install an MRI machine. Between us there is
+the budget which is voted on at the hospital,
+we have it. We want to equip ourselves with an MRI machine, we
+have the room we need. The time when
+the first patient is scanned
+inside will be about a
+year away because there are
+manufacturing issues with the machine. There are no
+stocks, it's not something that's on
+the manufacturer's shelf. So we'll have to
+build the machine. It's going to
+take a long time. It's a
+very heavy, very large machine. We will
+then have to wait for the
+authorizations first in order to actually deploy all
+the mess that will be needed to
+install the machine on the hospital side.
+Cranes will be needed,
+traffic will have to be blocked, and the
+walls of the hospital will have to be demolished. First, we will need to
+do some ground reinforcement work
+because an MRI machine is
+very heavy. Therefore, the ground cannot
+naturally support the weight of an
+MRI machine. We will need to
+magnetically shield the room with copper
+all around, well, actually around the
+room in which the machine will be,
+to protect it from the external magnetic field
+because it works
+with the use of a
+very intense magnetic field. So there's
+all this mess and then the
+machine arrives, it will need to be calibrated,
+it will need to be tested and then
+finally it is available to
+perform its first scan. That's the
+reality of current MRI. And so we
+want to change that by making a new
+generation which, because it will not
+use such intense magnetic fields,
+will be able to operate
+with much less hardware than
+current machines. Naturally, it
+will be drastically reduced
+in cost and installation complexity. So
+the idea is that we can
+deploy lots of them so that they are as easy
+to use as an ultrasound scanner today
+. And so, as you said, it's been
+6 years since we started.
+6 years old. There
+are a little over thirty of us
+. It's been 6 years. Yeah. And we
+are still a good 3 years from the market, 2 to 3
+years from the market before truly
+being commercial and not a pre-series,
+but truly a product, it's 3
+years and uh with many challenges
+still facing us. It's not going to
+be automatic. We're really going to have to
+overcome quite a few
+obstacles between now and then. Thank you very much
+for that. Before getting into the
+product itself and even the
+box structure because it includes
+a lot of topics that we've
+never actually needed, the luck or
+misfortune of dealing with it depends on how you
+want to see it, how we take it, finally,
+from what perspective we try to
+read it. My first question is actually
+from a state
+of mind perspective. How do you make
+that choice? You see, how do
+you and we have this vision of
+the entrepreneur who still tries to
+launch himself because he has this
+desire, something deep inside him, to
+change things. But if there is
+one thing that characterizes
+most of us, it is this
+hunger to have something
+that is quickly available, that we use quickly,
+quickly to have a reward or at least the
+shortest possible feedback
+on the market. What impresses me,
+and what's even worse, is that you don't seem at all like
+a completely
+out-of-touch guy who lives in a basement, you
+know. The worst thing is being a
+normal guy. That's what's crazy.
+So why did you make that choice
+? You see why this option
+when you have a whole bunch of options,
+how you live, how you earn a
+living, how you manage during all these
+years of creation. I'm very
+curious to hear your perspective on how it
+actually works.
+That's a very good question. So, it
+turns out that I have an
+engineering background, so I'm not scared
+of tech and quite naturally, I have
+an affinity for it. However,
+not all of Deeptech's founders
+necessarily have tech backgrounds. You have some
+very good CEOs of tech companies who will
+have more of a commercial profile, or even a
+completely different profile, even
+profiles of radiologists
+in our case. You see, you have many
+medical companies that were
+started directly by clinicians. So
+, I have this natural affinity for tech
+and actually for entrepreneurship, I could
+very well have made a company just
+as quickly. It could have
+interested me just as much in reality for
+different reasons than those
+you describe, namely quick reward, you have a, you
+really want to do something
+and get real-life feedback
+to see if it works or not
+quickly because what we do is
+entrepreneurship but it's also a
+lot of R&D in many ways
+. What we do is very similar
+to what happens
+in a research lab. It's just that we're
+going much faster, we're
+much more aggressive, we're going to seek
+external capital. This is
+public research on steroids. In
+fact, what we are
+doing is with an ambition that goes beyond
+simply increasing TRL,
+namely technological derision. That's what
+a research lab will do.
+He will never have the ambition to
+create a product that will go on the
+market where we have the
+end goal directly in mind. So those are the
+differences. But actually you're coming to
+my lab. Besides, you see, I say a
+lab when it's a company, but you
+come to my lab or you go to a
+CNRS lab, if you don't know anything about the tech
+you think it's the same. It's a lab.
+It's a lab. I saw the office.
+It's a lab. This isn't an office,
+it's a lab. There are machines.
+How, how, why, does this
+excite me, and why did I
+decide to do this? Because in fact,
+everything depends on what we are
+looking for in entrepreneurship. We can
+really just look for a way
+to seek our freedom, which is
+already a great exercise in the sacred fire that we
+have within us. We're going to do something, we
+want to be free, we're going to have
+money, I completely understand. And
+entrepreneurship is a highway
+for that. But in fact,
+entrepreneurship is also about
+taking control of your destiny and saying
+"I want to make a difference in the
+world and I want to", you see, I
+feel a lot of responsibility because
+I can. I'm not saying that all
+entrepreneurs have to be like that,
+but since I have this affinity
+and this sensitivity to
+moral responsibility, to what is the purpose of
+a passage on earth, well,
+I see the
+entrepreneur very much as the only one
+who will make things change because
+you have who can make things change?
+The states and you have the entrepreneurs.
+Well, we know that we shouldn't
+expect too much from the States to change
+things. In general, they tend to
+catch up with those behind and
+try to regulate things, throw a
+wrench in the works. This will be a
+very long topic. But basically, only
+entrepreneurs remain to
+decide whether
+or not we will colonize Mars tomorrow? Will
+we find new,
+carbon-free means of transport tomorrow? So
+tomorrow, in fact, you see the fact that we are
+talking here with
+you see on a computer with an
+application that streamlines the fact that we
+are podcasting remotely with an internet
+that works super well, it is because there are
+entrepreneurs who
+wanted to go a little bit further
+than the simple idea of ​​making
+quick money, which is already
+a great thing, but who said
+damn, I want to do something that will
+really move
+humanity in a direction, and so
+I feel a lot of this
+responsibility, and that's how I
+left this case, but frankly, if I had had
+very good opportunities
+to make quick money quickly in
+a conventional entrepreneurial way,
+it could have interested me just as much.
+But it's true that through this hat
+of a tech entrepreneur by nature, through
+my engineering training and this
+desire to do something that will
+really change things and improve
+people's lives, well, that's how
+I found myself in Avir.
+Extremely interesting. And there's something
+else I don't know what you think
+about the founders of dech, but you didn't know it would take
+9 years to
+get a product on the market. No,
+not when you start. Yeah, that's
+clear.
+Yeah,
+honestly, yeah, for sure. And that's
+a real one, but actually in
+all companies, you see, not even
+necessarily Diptech, but I remember it
+was the CEO of Payfit who said that
+too. I had known that P was such a
+hassle, I would never have gone into that
+. In fact, there's often this
+thing when you do things that are
+really big and it's going to take
+time before you have revenue to scale.
+Sure, we all underestimate
+exponential growth. Like, we overestimate what we
+can do in the short term, we
+underestimate what we can do in the long
+term and in the same way uh well in
+the company actually, you overestimate what
+you can do in a few years and in
+fact well no, in general the really
+big things, they will come in the long term
+and yeah when we started, I
+thought we were going to be on the
+market in 4 5 years and in fact not at
+all. So it's a minimum of 2 times in
+terms of duration.
+So yes, that's true, that's a real
+point. You have to be naive, that's for sure. That's
+so good. That's a very
+good point. OK. And so, just a
+silly question from me, but how do you
+live during that time? Is it
+okay to
+raise funds? So you see, so far
+we have raised about 25
+million and so well you your salary as a
+manager, it is part of the
+expenses like any other salary.
+But so it is directly
+from the salary and a little
+later in the life of the company,
+you can also live off cash out. So
+basically, selling part of
+your shares to investors,
+generally on rather high funding rounds,
+is justified by the fact that, well, you as the
+founder are also an
+entrepreneur, so you also signed up to
+make money to a certain
+extent. And so it's completely
+normal, especially since at the beginning you generally
+ate pasta for a few
+years, you were unemployed and then
+you lived on your
+savings until you were able to raise
+enough to pay yourself. And so it
+seems like an unfair turn of
+events that at one point you sell, you
+see a few fractions of a percent of
+your company and so you hide
+money which comes to, well, secure you
+personally in fact. And so here
+we are, we're at that stage where
+we can finally pay ourselves well. We are starting
+to have opportunities to make
+cashouts that we haven't done yet,
+but which will happen in
+the coming years. Then at some
+point you hope to resell your business. OK,
+crystal clear. And just so you know, to
+understand, we've received quite a few
+people who have raised funds, we've even
+received screws and everything, and
+you know, there's still a vision that, well, at least in
+the markets we're involved with,
+the markets we know, there's
+a vision that is
+extremely, you see, network-driven,
+pure and simple investment. I
+would like to understand about deeptech
+specifically because for me it is a
+completely different investment market
+. It's even more of a
+Parisian thing than the basic start-up market.
+Let's say the more you see, the more money-driven you are, and
+directly who is launching a campaign or who
+already has an MVP or something. Curious to know
+how the fundraising part
+works? Are these
+investors similar or completely
+different?
+At what point are they OK with
+part of the money they invest being cashed
+out for salary? You see, uh,
+if you're really broke and haven't
+done anything, I imagine very few
+people are OK with throwing
+money away, so to speak
+. But what are the
+first millions that need to be reached
+for these people to be OK, for a
+part of them to invest and also
+allow you and the team to live
+because well you see, there are guys
+who work full time on this,
+they need to be paid.
+Yeah, of course. So on the part
+specifically about salary, and then I have
+the impression that you have opened up an
+even broader question which is what
+interests investors in
+getting into such
+complicated and long projects compared to
+projects that are much more explosive and much
+faster. So there are two
+points in the question and so I will
+answer the first of the two which
+is therefore on the question of salary.
+I would say that in all cases, as
+always in fact, deep down
+we try to rationalize it in
+many ways.
+Ultimately, it's about selling. At some point,
+you have shares to sell, you have
+investors who want to buy them, and
+from the moment you have at least two
+buyers, or at least you make
+one of the two buyers believe that
+you have other
+opportunities, that you have
+options, well, the person
+bids and is actually ready to
+accept conditions to buy your
+shares. So in fact, it's all a
+question. If you're broke and you can't raise money from
+anyone and
+you're really scraping the bottom of the barrel
+and the guys are giving you
+crazy terms and you have no
+choice, you're forced to go psychiatric. When
+you have more hype, you have a bigger brine
+, it all remains very animalistic. It's still very much
+about selling. Will
+your start-up ever want 10
+billion? Nobody knows,
+but you make people believe it, and some people make people believe it
+better than others, and
+for some, they are right. And so
+it is really this tension that you
+manage to create with your
+potential buyers, who are the investors
+over a long period in
+DIPTtech. Those to whom you sell something
+are investors, it's
+a vision, and it's your actions. And so that's
+really it. But to
+answer you generally, in general, the
+very first lease of funds, they will
+not accept that you have a salary or at
+least not a large salary at all. It's really more like
+a
+basic minimum wage.
+And it's when you're able to
+lift your second round that on a
+second round, you see, as soon as you
+start, it's rather on mantises.
+As soon as you manage to raise a few
+million, we agree that you pay yourself a
+salary, and when you start raising a
+few tens of millions, we agree
+that you pay a pretty good salary.
+Knowing that as a funder, what
+you manage to sell as
+tension, then there is the fact that
+obviously your option is to
+have another investor who
+may accept conditions
+but in general the salary is
+relatively little a conversation. I
+want to say that we do this here, it's
+normal, it's an
+interesting question, but I've never had any
+weird conversations. In general, we had
+requests that were aligned with the
+market because you have
+statistics on that. You have Gal, you have
+things like that which say that the salary
+of the remuneration of the executives at
+what stage of maturity of the company. You're more or less
+basing it on that. So.
+So at the beginning, you have a pretty
+normal salary, whatever. But then, it's
+really this thing about your optionality as a queer person
+, it's either you say well I have
+another investor who is ready to
+put in a better valuation,
+better salaries, stuff,
+things or else everyone
+knows it and your alternative is to stop
+this company and make another one because
+you are an entrepreneur by mindset.
+And if by chance you go into
+the industry as an
+employee, but if you are an
+entrepreneur who is able to raise
+several million, several tens
+of millions, there is no doubt that you will be able to
+have a six-figure salary. But
+without a doubt. So there comes a point where
+these things
+aren't really an issue anymore. But I
+think everyone is pretty
+reasonable except in the US in SF where there are
+completely
+crazy demands. Well, people in
+France and Europe, at least, are relatively
+reasonable. You see, you're not going to
+ask for a salary of 1 million when
+you've just raised 6 million. You
+see, that makes no sense. So, on to the
+other part of the question, which is what
+might interest
+investors, but in general, why do they
+give money to a
+project that is long and complicated?
+DIPtech has several advantages. The
+first advantage is that you look, you
+look at the list of the 10 most
+valuable companies of all time.
+Most of them are from DIPTtech. I don't have the
+exact figure right now, but just you see, off the
+top of my mind, you're going to have SpaceX
+obviously, Open AI, Tesla, Nvidia, you have a
+lot of them, it's hardware.
+So everyone knows that because of the
+defensibility you create, the fact that from the
+moment you created your
+product, that you put 10 years of R&D into it, that
+you have patents, that you have developed some kind of
+know-how, nobody can
+come and copy you. But in any case, it's
+much more difficult than if it were
+just software where you have to
+replicate a network effect, something
+like that, where you just have to rebuild
+the thing, break the prices and you already have
+a potential for value, well, you have
+things like that. There, you really have
+that defensibility which can lead you to
+valuation levels on the order of the milking
+parlor. That's the first
+attractive thing. The second is that Mtec does
+not follow the same cycles as
+companies that are much more volatile and much
+closer to the market. For example, you
+see the P of cryptos, you could make
+SAS that exploded in valuation.
+As soon as we cough up money on crypto, it's
+over. Well, in medicine, it's
+impossible for me to create a company
+that's already worth 50 million in the first round
+. On the other hand, cryptos
+can crash, AI can
+crash, there could be a
+gas crisis in Ukraine, well, a
+lot of things can happen. That does
+n't change the fact that my company
+is creating
+tangible value. OK? When
+people are sick, they need to be
+treated, and societies are
+always ready to pay for that. So,
+you have a very counter-cyclical
+portfolio. And finally, you should know
+that the VCIs, the money that is deployed, is
+money from LP, from MIT on the ground.
+So they will raise
+money themselves from larger
+investors to deploy
+cash to start-ups. And very
+frequently, LPs are important
+to them. An LP, you see, you have to
+imagine, it's either a bank, or
+uh a wealth individual, a guy who has
+300 million networks. Well, it's
+important for these institutions and for
+these individuals that part of
+their allocation goes into
+projects that make sense, whether
+for objectives or simply because, well, at some point
+when you've killed the
+game, you still want your
+money not necessarily to have developed the,
+you know, the next SAS. So we won't
+remember this in two years. Even if
+you made money on it, that's
+great. But hey, there comes a point when
+treasury bonds are already raking in
+millions a year, you know. With
+money, you'll never be short again.
+However, telling you I helped create a
+new generation of
+medical diagnostic devices, that really makes
+sense. So it's for all these
+reasons that even if the returns are
+much longer, it's more
+complicated, and more deals fall through
+, I think, on
+average, well, it still makes a lot of
+sense to have a
+diptech allocation for
+Yeah. And there are also, well, there are
+visc funds that
+specialize in DIPtech, you know. That's all they do
+. There are a lot of them, you see.
+Yes, there are some who
+only do diptech. There are some who do nothing but
+medicine. There are
+many who are generalists who
+deal with everything. But in fact even in
+diptech, even in medicine, you
+could say that there are projects
+that are harder than others. At
+Piron, it's not particularly difficult
+because there are a lot of reds, we
+really started from a very, very disruptive technological building block
+.
+Next, it's about hardware. You see
+, you're already adding a dimension, if only
+because you're interacting
+with supply
+chain issues and manufacturer issues
+that can have their own deadlines,
+their own timelines that actually
+put months on your plate. We've
+experienced it so many times, you see.
+So that adds even more time,
+amplifies the complexity of the project and, on
+top of that, involves medical aspects, so there's a huge amount of
+regulation on top of that. So everything related to
+regulations and clinical quality.
+So this is a project that is really
+extremely difficult in DIPTtech.
+But on the other hand, you can have
+deptech projects which are software that
+will not necessarily have
+regulations but will have their
+own challenges. So even within
+those funds, you see, they all have their own
+way of thinking. Chez Durant is going to
+be a project that makes a lot of sense,
+particularly in general.
+But diptech is tough no matter what
+. No.
+Ah, it's in the name. It's in the
+name.
+It's deptech, hardware, well everything is
+in it. It's very hard. It's very,
+very hard.
+OK.
+OK. Well, thank you very much for that.
+And so, to get back to
+the product itself,
+I'm not sure we're going to
+really delve into the
+technical details of how
+magnetic resonance works here. Finally, I don't know
+how much people will be interested in this,
+but in any case, on the
+business side, one of the first points that
+I really wanted to address
+was to understand, you see, uh, uh,
+in fact, technically what the
+playbook of a diptech company is, you
+see. Specifically, I don't know if we
+launch a SAS or we launch a
+product, basically it's going to be an
+ideation, a promise, a push on the
+market, taking people on the phone,
+trying to sell the product, seeing if it
+converts, raising money,
+reinvesting it in marketing. It's that
+loop, you see. I would like to know
+when, and
+where it comes from, because it's all well and good
+to say "OK, we're going to try to
+do something that changes the world and
+I have a lot of respect for that" and that's what we're
+trying to do
+on our scale too. But between
+having this thing and saying, "OK, we'll do it
+this way," and getting out of
+MRIs, the faster you
+go, the more the problem becomes, what you
+have behind it... I'm very curious to
+know the initial thought process, the
+first line of reasoning behind it,
+and once the decision is made,
+the first steps, actually, because OK, we're
+doing R&D, but how do we
+get the first
+technical building blocks? I think there's something else I'd really like to
+explore, and
+I think you've started to elaborate on it, but it's
+the
+legal side. And on subjects like this,
+it has to be us, even just with
+GDPR it's complicated, and we're throwing money away
+on lawyers
+every month, I can't even imagine the
+horrors it is on your side. So, I'm really
+curious to understand a little bit, you know, the
+first tentative steps, and to
+know what it looks like.
+Yeah, it's a very good question, and
+I think that It's not that different from the
+more traditional companies you're
+talking about. It's just that there are phases
+that move very quickly on your side that are
+much longer on mine. In fact,
+it starts with ideation. It's the
+same. Basically, I met my
+co-founder Dimitri, and we started asking ourselves
+the question. We wanted to work
+together. We both had, well,
+him with a physics background, me with an
+engineering background. We were at the same point
+in our lives, like, "OK, we want to start
+a company, something super ambitious, uh, whatever
+." We started digging.
+So, we asked ourselves, what's our
+edge? We really started from that. What's
+our right to win? What's
+our uniqueness, the skills
+we have that no one else has that make it possible
+, you see, for example, if
+you put me in the legal field, I know, I'm a
+lawyer, and you want to make software in the legal field
+, I have
+No idea. I don't have any connections
+with lawyers, so you
+see, I don't have a "right to win" in
+this industry. So we
+asked ourselves, what is our "right to win"?
+Well, Dibrice is a physicist with a doctorate
+in condensed matter physics,
+so he's a real expert in
+superconducting materials. So we started by
+saying, "OK, you're an expert in superconductors,
+what are the applications of
+superconducting materials in
+industry today? What are they used for
+?" There are two applications, there are
+many, but basically, in our
+thinking, there are two that
+interested us. Nuclear fusion because
+you need large
+superconducting magnets to generate super-
+plasmas. So it's a whole mess,
+but that's too expensive. That's it, it's way
+too expensive.
+Exactly. We
+very quickly came to the conclusion
+that the entry ticket was 100
+million to start doing a small... A
+little simulation. We don't have any
+particular expertise in fusion. So it was a
+dead end, it was
+impossible. And the other one is MRI because
+MRI is the industry that consumes
+the most superconducting elements.
+So, for those of you
+listening who have already had an MRI, you
+go into a kind of tunnel, they
+put you on a bed, the bed
+goes into a tunnel. This tunnel is
+a magnet. You go into a magnet, there's
+a casing around it, but actually,
+inside you look, it's just a
+magnet. And so, this magnet is
+in a superconducting state. So, well
+, it turns out that many
+physicists who work on
+superconductivity at one point or
+another, they work with MRI. So we
+start to think, "OK,
+MRI is interesting, that makes sense to me." I want to
+do something either in climate
+or in health. OK, great health.
+I want to make healthcare more
+accessible, to do something that provides
+better care. Let's talk to MRI physicists
+to try to understand what
+the research avenues of the industry are, what
+is interesting, are there
+people working on
+making it more accessible. And
+then, when talking about physicists, they
+tell us, "Yeah, super interesting." But
+there are some teams trying to
+work on low magnetic field MRI
+with a weaker magnetic field
+because it holds
+exceptional promise, which is that it reduces
+complexity. The machine costs a few
+hundred thousand instead of a
+few million. It can be installed in one
+day instead of one year. uh
+all patients can fit in
+versus 20% of patients who are
+disqualified because they have a
+metal implant, something like that. So that's
+great. However, the challenge is the
+image quality; it's awful, and so
+radiologists don't want to
+use it because it's not
+precise enough from a diagnostic point of view.
+We think to ourselves, "Ah, that's interesting." So
+we're digging in that direction and
+actually Dimitri, my partner, he
+started from the moment he began to
+touch that thing with his finger. He
+consulted with physicists, with
+papers, all to try to
+understand what people are
+trying to do, what the
+challenges are, what prevents them
+from having a high quality of images
+compared to his experience. He said to himself,
+"OK, I have a techno track, we
+started talking to a couple of guys from the
+film industry, we talked to a
+Nobel Prize winner who had worked on it and who would
+later become a Nobel Prize winner, who was awarded the Nobel Prize
+in 2026." So it was really
+amazing news for us because he had been
+an advisor from the beginning.
+And so a guy who had worked on the
+ultra-abant MRI, he had done something
+super exotic that spoke quite a bit to
+Dimitri and so we talked to him and the
+guy told us frankly your idea
+is really good you have to
+test it. It could, it could
+really, it could work. So that's how we
+started on the tech side. We formed
+a conviction like that and
+Dimitri started to write a first
+patent on his idea. We said OK, this is what
+starts, this is what
+establishes, because a patent not only
+gives defensibility but
+also really allows you to
+clarify your ideas because you can't
+write a patent if you're vague,
+obviously. So it's an exercise
+that allows you, that forces you, to really
+give birth to your idea. So on the technology side, that's what we
+did and then we had to
+test the market traction because it's all well and good
+to start from the technology
+but well that makes a
+research lab. In fact, the difference with
+a company is that there is a
+market vision, a product, a demand, a
+traction. So I started talking
+to radiologists. I didn't know any
+radiologists in particular. Both my
+parents are nurses, so there was still
+that little connection with
+health which meant that I was able to get to know
+radiologists quite quickly. And
+actually, I did the hustler. I made a
+big mistake because, well, you actually
+need to talk to, well, you
+know that very well, Alexis, you have to talk to
+dozens, hundreds of
+potential users to try and grasp
+something, you'll see if everyone doesn't care
+or if you start hearing
+information that makes you say "Ah damn,
+this bill, we should because that would
+really make a difference." And
+actually I'm starting, I didn't have enough
+radiologist flow, you know, between the
+people who make intros to me, the time it takes for
+people to answer, sometimes they do
+n't show up at the neck. Too tedious, too
+boring. So obviously after each
+radiologist's visit, I would ask them if
+they knew one or two other
+radiologists I could talk to, and
+so I did my interviews like that
+. And what I did that was a good
+growth hack in that phase was
+actually I realized that in
+radiology you have learned societies.
+So for example the French Society of
+Radiology, which in fact makes the most button
+and makes the guidelines. So, in other words, they're the ones who
+say, "OK, stroke management
+starts with an MRI, it starts with
+CT, we do it this way." They're the ones who
+set the guidelines for
+a given clinical situation, how we
+behave, which modality to use, etc., to
+try and harmonize
+practices. And the thing is, these
+boards—there are boards that
+meet, you have terms every
+few years, and you have online on the
+SFR website, the French Society of
+Radiology, you have the list of all the
+radiologists who have served, and you can find
+archives. By going to the
+Internet Archive and figuring things out, I
+find PDFs from around
+2006-2008, and there I find
+entire lists with the
+professional email addresses of radiologists—
+hundreds of radiologists, in fact
+. I contact them all with
+personalized messages, and that's how I
+start to have an abundance of
+potential contacts, and basically... The message that
+comes in is, "Damn, this is incredible! Sign
+me up! I want one of these things!" So
+I tell them, "OK, could you
+sign a paper saying you'd
+buy this machine for 400,000
+bucks the day it exists?" Yeah,
+no problem. And by the way,
+can I invest in your company?
+What you're doing is incredible, we're like,
+OK, amazing." I'm starting
+to test the attraction like that. In two
+weeks, I have 500,000 bucks in
+investment commitments. Like,
+guys, I have €500,000 who want to invest
+in Chipiron, which doesn't even exist yet.
+And I have 50 million euros in letters
+of intent to buy that aren't
+binding, that don't mean anything. I ca
+n't force them to buy just because they did
+that. But anyone who's tried
+to collect a signature, even if it doesn't
+mean anything, runs up against the fact
+that, well, people have to be at
+least somewhat convinced. to agree to
+put their signature.
+Who buys this?
+Who is the client, actually? Is it
+the radiologists?
+The radiologists might not have
+the money to buy them, so it's
+the clinics. But how does it work
+behind the scenes? Just to understand. Or is it
+either hospitals or
+clinics?
+Okay,
+and because radiologists
+work in one or the other,
+the radiologists then
+pay the clinic for
+using the MRI. How? Yeah, that's
+a good
+question. So, no, generally I'm going to
+keep things simple. I'm going to assume that
+either the
+radiologist is an employee of the hospital or a
+partner in a clinic,
+because most radiologists actually work in clinics.
+They're
+all shareholders.
+Okay. I think there were a
+lot of independent practitioners, like
+surgeons, who rent their operating
+rooms. An MRI for
+a session, you know.
+You can have that. You can also
+have that. So, I'm going to
+cover this third case as well.
+Basically, in the case of the hospital
+, you have committees, you have a budget
+for imaging every year, like 100
+million.
+And you have a committee where you
+have biomedical engineers, the
+hospital's financial director,
+radiologists who meet and
+say, "OK, how did we allocate
+this budget this year?" And so, you
+have everyone arguing,
+and if you disagree with a radiologist,
+well, he might say, "I
+absolutely want a Chipiron machine, I
+need at least one of those." That's how it is on the
+clinical side, and so
+the hospital will buy it, but it was a
+long sales process, you can imagine, doing
+business with a hospital
+is still very complicated.
+Clinically, it's much faster.
+There you have radiologists. What
+they want is the bottom line.
+They want every
+investment to generate
+cash for them. An MRI scan pays for itself very quickly
+. The payback period
+is generally between 1 and 2 years. So, these guys
+invest and after 2 years, it only yields
+positive results.
+You can get an MRI done, but there's a 6-month
+wait, you know. Finally, I do
+n't live in France, but from what I hear
+, yeah, that's
+it. That's France.
+Yeah, exactly. Unless you have
+something super urgent or you're willing
+to pay a lot because you might have to
+change your schedule.
+So, you have to
+convince the radiologists, and it's the
+radiologists who will meet more
+frequently than a hospital, those who
+own the clinic, and they will say
+"OK, let's go, we'll invest, the business
+plan makes sense, we'll buy one, it
+works well, we'll buy two, three, four,
+five, it can go fast." OK?
+And then otherwise an independent if we
+imagine an independent so in fact
+here is someone who well what he will
+do is that he will receive in general
+so it is on the packages as soon as they
+perform a medical act radiologists they
+have a they have a kind of
+reimbursement finally a payment by the
+CQ and by the mutuals. So
+generally you'll have two code parts, you
+'ll have one code part. So for
+example let's imagine that an
+MRI reimbursement in France is around €400, you
+get about half of it, it's
+actually calculated on the basis of
+the depreciation of the MRI machine.
+OK. In fact, it was expensive to buy
+a machine. They bought a machine. We have to
+pay a little for this because it was
+n't the state or the health sector
+that had to make the investment. And you
+have 200 bucks, that's to tell the
+radiologist, here, this is for your
+intellectual act of first interpreting
+the image. So we can imagine that a
+freelancer will have to
+pay back a fraction of the first €200
+to the structure, keep the rest and
+keep the intellectual fee for himself.
+Clear.
+OK. ultra clear. And so,
+uh, excuse me, the recording cut out, but it was
+to really understand this thing. So,
+in the first batch of
+conversations you had, who did you talk to
+? You spoke with radiologists, with
+clinic directors, with
+both. Who were the people you spoke to
+on the phone
+? That's a very good question.
+That's a very good question and that's where
+I see that you're no
+[ __ ] business because that's the
+really good question. In fact, I was
+talking about the case of radiologists and in fact,
+in all
+cases, I didn't have
+100% of the decision maker making me
+a sales promise, which made it even
+less credible from the point of
+view of what it meant
+financially.
+But I really took it like
+the radiologists who are convinced that
+it would change their practice and on
+paper, they want it. And from the
+beginning, I know very well that
+the financial equation is therefore
+incomplete. For what ? Because the
+financial directors, in fact, it's them in this
+case, it's very complicated. There aren't that many
+. There you go,
+you have fewer
+hospital finance directors than radiologists and they,
+for once, are not the type of person in your
+IRL story. I don't even understand what
+it's for, actually. I don't
+even understand what it's for. Do you see what
+I mean? I am the chief
+financial officer. I am not a 100% radiologist.
+So that's just part of
+the equation, but uh, but it was still an
+important part.
+And that's what made us say,
+"OK, let's go." Especially since we had the
+commitment aspect for the investment at
+Piron. So we said to ourselves,
+"OK, as long as we can make the
+money, we'll continue, we'll go for it."
+So, in fact, with the ideation phase
+done and the market validation phase for
+the first round done, we are trying to
+supplement these 500,000 with another
+500,000 from a more
+conventional investor. We get there, we close, we
+start and then you sell a roadmap and
+you say, well, in 2 years, I will have done this
+. Generally, when you
+raise money in a so-called [fund], it's
+for 2 years for a 2-year cycle. And
+so you know that since it takes about a
+maximum of 1 year, in any case it's
+a safe measure, a drop practice,
+it's to keep a year of burn and
+run rate before starting to lift again.
+So if you have it for 2 years, after one year you
+already have to go back to have it removed.
+So you need to have
+a first milestone checkpoint within a year because that's what it means to
+answer your
+question about what unlocks
+value and how you get
+to the product as it happens
+. It's really the mysones that you're
+going to unlock. In general, what you do on the
+diptech side is you say, "Here is the
+potential end market, so here is
+how much I could be worth
+in 10 years." And until then, what
+prevents me from already being worth that is such a
+marketing milestone which will be
+possible if we have such a
+regulatory milestone which is possible if we have
+such a product invoice which will be possible if
+we have such performance, if we manage to
+do such a thing and then there you go. So
+now that I've set it up like that,
+I'll note down this amount on this date,
+roughly this valuation if we've reached
+that. That's the very theoretical part and that's how
+it works and you go,
+you go through the batch like that.
+Yeah, it's fascinating. Your
+seller is the
+next investor. So,
+I'll point out two things. So the
+first point is that, in
+reality, the only strategy you had
+was to put pressure on the people
+who understand your product, namely the
+radiologists, so that they themselves would create
+pressure on the final decision-makers,
+of which they are a part. But you ca
+n't know if the guy has a
+majority on the board of directors.
+So it was about creating a need in
+them so that it would be in "No, but
+guys, I need one" mode. So you'll have to figure it out,
+but you'll need a budget so I can get
+a machine.
+Exactly. Yeah. And the second
+point that I find ultra tricky is that
+you subdivide
+your roadmap into mainstones,
+but then you work
+under pressure, because
+if you announce a guy, in a way, in a
+year we'll have to
+start the discussions again if in a
+year you've had technical problems,
+legal problems, some stupid law that came out
+, anything can happen, and
+you call
+the guys, exactly, that's exactly it
+. Exactly, that's the whole challenge, the whole
+risk of deeptech is
+not being able to stick to your
+roadmap because in fact, in general, even if it's
+important, very important,
+the business side, there comes a point when
+you make a crazy product, you'll
+find that nobody
+will want it, we might think it will
+be disappointing on the market side, but
+nobody thinks it will be useless,
+it's quite easy to get people on board with
+the promise. However,
+indeed, the entire risk lies
+in adhering to the technical roadmap.
+And that's why you need to quickly
+perceive micro-signals to see if you're going to
+succeed or not in the unfolding of your
+box. You need to fire people very quickly, you need to
+recruit very quickly,
+you need to be a city manager who really knows what
+he's talking about. Like, you can't have
+a beginner. Uh yeah
+, exactly, exactly. I, my
+co-founder,
+CO, big. Yeah, I have a CSO, a
+chief scientific officer. Damn, that's
+good. That's very sturdy. [laughs]
+So, the CO
+really needs to know what he's talking about. He needs to
+know exactly where things stand,
+and that's how you get there. And
+then you can shift. So you
+can say, "OK, well, we thought we were going to
+reach that for such and such reason, we're
+not going to reach it, we know that." So we
+prefer to raise a little more now
+to give more time to a valuation that
+is roughly the same rather than
+saying at the time of raising,
+we have to do a downround because
+nobody wants to get in. So in fact you
+are constantly adjusting your [something]
+in relation to what you can achieve, even though
+sometimes things are in
+constant motion. It's not that you have
+bad news, but what
+you have ahead of you is
+quicksand. You see, I'm going to give a
+very concrete example here, from the
+reality of Chepiron. We are currently
+preparing the first clinical trials
+on humans that we will conduct
+next year.
+We thought we could compare ourselves to
+field MRI. So basically, we move to
+a clinical trial where you have a patient
+because we are doing MRI scans, which are
+dedicated to breast cancer screening
+. Screening, diagnosis,
+treatment, my mother is having an MRI. That's
+the first product, that's all
+.
+The first product is that for
+reasons where it would be too complicated
+to make a completely
+versatile product from the start. And the
+gigantic market in any case, it's a
+multi-billion dollar market just for
+imaging for blood cancer screening
+. So that's enough to make a
+decoration. So. But we will be able to
+explore other vertical avenues later on
+. In any case, we
+naturally thought the patient was involved in
+the first clinical trial of Chipiron MRI,
+traditional MRI. We compare and the idea is to
+show the radiologist that, well, you see,
+you manage to get the same
+diagnostic statistical power
+associated with our imaging modality.
+You make the same, uh, you take
+the same decisions based on the
+same two images. Ah actually it's not
+possible because you learn something about
+the injection of the
+contrast agent, it can't be nin. So
+in fact it doesn't work in the workflow.
+So you have to compare yourself to another
+modality and you're like, "Damn,
+but I'm going to sell my product
+alongside a classic MRI, not
+another modality, so does
+my click really have any
+value?" Actually, I thought that
+next year I could have a gli
+against the IM Auchamp, but actually
+no, it will be against
+the Mamo, but it will completely change
+my valuation and the degree of certainty
+in the Myest that and so you say well
+OK, but in fact, I will have to
+do a round before and I will not
+do my round at 150 million valuation
+as I thought but in fact I
+will do a round rather at a valuation
+divided by 2 to allow me to go
+there. So what
+can I show Indestors to
+give them? And in fact, you are currently
+adjusting to the information
+you have and changing your entire
+fundraising and milestone roadmap based on the
+information you learn. Because in
+fact in tech, what
+you do is so cutting-edge, so
+leading, so
+new that you
+quickly arrive in an area where there is no
+one who can say you can find
+clues and information by
+talking to lots of people and therefore get
+an idea of ​​the world but there is no
+one to say bro I'm telling you
+straight away, I see it in advance, this is what's
+going to happen to you so you're going to do this.
+So I'm telling you, do it this way.
+No.
+You are on a path, no
+one has walked it. No
+one walked. So you do
+n't know, he didn't actually
+conclude anything. There's nothing there. It's
+you who discovers, not to inspire you
+, you see. But but actually but but but what is most
+scary about all this is really
+us, you see, we see it on the
+commercial side,
+we make millions of calls a year and and
+for example, well all the
+GDPR rules uh the rules traumatized the GDPR,
+this is the third time you have mentioned it to me.
+That's a [laughs] traum.
+Yeah. No, no disturbing rules either,
+like the fact that you can no longer prospect
+on B2C and so on. Well, you
+see, that's it. And the problem is that I actually think to myself,
+and and and that's also why I think, damn,
+investors, it's good that they're
+excited and driven
+by vision because in reality, when you
+imagine the number of reasons for it to go
+wrong, well, even you see, you
+really have to have a big pair of and and and
+and drink coffee in the morning to
+say go for it, like I have vision,
+I'm excited, I'm going to change the world
+because I have the impression that there is
+very little chance that it will go
+well against a lot of chance that
+you have a law that comes out, a guy
+who doesn't want it, a decision-maker who does
+n't agree, some really stupid thing. But
+actually even
+before validating something
+medical, I imagine that the tests, the
+double-blinds, the stuff and so on,
+you have to pull out a battery of tests as long
+as your arm. Finally, man,
+man, I have a
+deep respect for what you do,
+no kidding. Seriously,
+because this is an
+unbelievable thing. No, but
+you're definitely getting yourself into a
+mess by making a case like that.
+Of course, and of course it's
+extremely risky. Then, I think there is
+an element of risk. In fact,
+the risk is that things could go wrong. On the other hand
+, you see, one of the
+advantages of DIPtech is, you see,
+you do prospecting. I
+understand that it's in line with the way things are going
+, that you can
+prospect people more than
+data protection, you see. As a citizen,
+for example, it pisses me off
+when people call me a hotel.
+However, I will be the first to call
+people to sell my product. So,
+you understand? There is a certain sense of
+history to it. Whereas in the medical field,
+you say there is no world in which it
+becomes harder in the future to sell
+a machine at Piron than in the
+past. Do you see what I mean? The
+course of history, the legal direction, will
+inevitably go in our direction. So that
+'s already a risk where the
+legal risk is a bit sudden, it's
+very unlikely. It's more like this
+, we'll have to adapt, what's-his-name?
+However, yes, you're right, there's a
+number of risks that is
+completely crazy. That's why it
+comes
+particularly from the medical field; I would say it's somewhere
+between deep tech, hardware and
+medical. So we really
+suffer from all kinds of illnesses, but uh,
+the medical side, I think, is the most
+complicated part. On the other hand, in the medical field, what's
+interesting is that
+[throat clearing] you have people who, from
+a certain point on, you see what no
+one has done, it's the side of
+nothing until a product is on the market.
+Once you're basically stamped,
+FD, ready, then that's it, you can
+sell. There are plenty of professionals here now
+. There are
+workflow experts, you have sales experts,
+you have key account experts, you
+have strategies that in fact own
+the bulk of the market. You have in fact there are
+professionals and at that
+moment in fact either you can be
+bought by an IP fund from Brave
+or you can be bought by
+a strategic one and in fact you don't
+need to, unlike companies like SAS
+for example which will be bought for
+a multiple of what is needed, we can very well be
+bought for 300 million
+pre-market
+because if we have dissected everything on the
+technical side and the traction we are
+objectively measuring much more than what
+I did at the very beginning in 2020 but
+really like we have pre-orders paid
+at 20% with a waiting list where we
+are like damn guys we don't even know
+how to manufacture all the stuff
+we have sold, we are in deep [ __ ]. These
+are the kinds of problems where there are people
+who might say, "Don't even worry,
+like, I'll buy it and I'll figure it out myself
+." So there is a bit of an aspect where
+risks are positioned in
+anticipation and I think that's why there is
+no fund. You
+see, you have highly concentrated funds.
+For example, there I saw one of the
+biggest bottoms of the ball, he just picked it up
+. Oh no, it's Funders who does it
+. So it's also one of the largest
+valley floors. He raised a
+new fund there of 6 billion.
+[clears throat] The guy said I'm
+going to write 12 checks.
+So with 6 billion, he will
+only invest in 12 chess games worth 500
+million each. That won't happen in
+the early stage diptech. You don't have anyone who would
+make animals with such concentration. You
+create creatures as focused as you would be on
+boxes. Are you sure you'll get
+a response? Dieptex is complicated.
+So generally you have funds that
+put in more money, the more complicated it is, the less they
+put in, and that's it. And in fact,
+they're kind of in "me, the funds
+that I invest with me, it's in very
+exciting mode." Generally, what they
+say to each other is, damn, those two fenders,
+they have the fire in them, they'll
+find a way. Anyway, I believe in it
+enough to put in some money
+and then there's the
+[clears throat] thing, in any case,
+I'm not taking too much of a risk, well I'm going to
+do other things elsewhere, that's it
+. And that way, my LPs are
+happy.
+It's kind of a leisure activity, you know.
+Deep tech, [clears throat]
+it's kind of like the good
+conscience side.
+That's the feel-good side of things. It's
+leisure, it's a little thrill, you know.
+It's a little thrill. There's
+also a slightly fascinating side to it, in a way. There's
+a sexy side to it. There's a marketing side
+to tech. You see, you say we
+use quantum sensors to
+do mega sensitive IR, at bâhant.
+There are lots of words, I don't know
+how to say it, they sound almost sexual
+, you know. Like, you're there, you
+say damn, yeah, I want to be
+associated with that.
+Me, me, I am, you see, it's certain that
+when it works, it's the
+sexiest thing in the world, you see. Like, you
+look at SpaceX, it's a huge
+masterclass, you know. Like,
+nobody thought he was capable
+of making a rocket that came back and
+landed, even
+ex,
+and you know what's crazy is that he did it
+.
+Elon is the best entrepreneur of
+all time and like, he's really the
+lifeblood of humanity. But
+it's but but
+when it works the diploma it's
+really well you see really it's
+really it's very sexy and very stylish
+you see.
+It's clear.
+We must not forget that it is these
+investors who want to talk about it to
+their friends at meals and to
+everyone and show that it was
+them who read the ear, you know,
+the ear. But man, there's
+their only Linking experience, it's an
+investor in SpaceX, like it's
+their social entity.
+Exactly.
+And actually,
+they were right to believe that stuff, you
+see. No, that's
+clear.
+But the biggest risk is
+that you never arrive.
+No,
+actually, it turns out of
+course
+that you're doing... well, take the example of the... ...
+Yeah. Nuclear fusion.
+The merger, you see, it's a thing in
+France, that's what we were discussing
+last time, they are trying to
+finance the merger, they are at 67
+billion in financing. They
+still haven't arrived, unless something goes wrong.
+Yeah, that's exactly it. The
+ITER project in Cadarche,
+well yes, it's actually a
+long-term investment. You always
+need more, actually. Ultimately, I
+need a larger particle accelerator
+. You see, you always have
+big tech challenges like that where,
+yeah, you don't succeed, or, well,
+I still think that, uh,
+individually as a company, you
+may indeed not succeed, but
+uh,
+if you look at it, you see, I have the big
+picture because I was talking about it from the
+beginning, it's still part of the
+intrinsic motivations behind
+diptech, it's to make
+things happen. So if you look at it,
+when it comes to making
+things happen, there's making a return to those
+investors, that's one thing. Making
+things happen in the big picture, that has
+another dimension. And me, I have no doubt
+that we have already moved the big
+picture and even nuclear fusion,
+even if it takes 67, I am very
+happy that my taxes are being
+used to finance fusion, even
+if it costs 100 times more than we originally
+imagined, I am less
+happy about some other types of
+spending, you see. So, in the end, there's
+a risk that it will never work.
+However, you never make any progress
+. Unless you're a complete idiot
+and have been totally deceived. Uh,
+you always make things happen, you
+put in place patents, you uh, you create lots and lots and lots and lots
+of awareness
+around a problem, around a
+solution. You're targeting
+competitors, you're competitors who manage
+to raise money because they've
+looked, you see, we
+raised 25, you have a guy tomorrow, he raises some,
+he wants to make a tarp machine,
+he says "Well, I'm raising 25 so we're going to raise 25
+and so well from now on we're already worth
+50." I don't know, you see, I
+tell you I'll come but it's you who makes
+things happen despite everything.
+Research is never useless. But
+anyway, if there's no research, there's
+nothing at all. Like everything we're doing
+here, if there hasn't been a saying we're stopping, we're
+stopping here
+the day we stop research,
+we'll say well, the technologies we have
+around us, they're going to
+move in design but in terms of
+functionality, we're there.
+We're good here. Yeah. No, that's for sure.
+Otherwise, there would be, like, the number of
+Diptech chips that are already in a
+phone, like, I think that's ridiculous
+, you know. Well, there's
+this crazy thought experiment
+, which is, you know, if
+humanity and all technology
+disappear. It's a fairly
+classic test, a thought experiment.
+All the technology invented
+by man is disappearing
+today. But like, seriously,
+everything, we're really back in the
+Stone Age.
+Yeah.
+But all of humanity still exists and
+we have all retained our intelligence
+and all our memories, all our recollections,
+we have everything.
+How long would it take
+before we were able to recreate the iPhone
+?
+much faster than the
+previous ones anyway. That's it. Well,
+I think it would take at
+least hundreds of years. At
+least 100 years.
+Oh yes. Ah, it would definitely take
+hundreds of years.
+Of course, but of course faster.
+But uh yeah but it's still so
+but joking aside the the
+and I think that research will never stop if only
+because there is
+always something that will make
+us do research and so and that's
+medicine, it's about curing
+diseases and trying not to die.
+I think that's the thing; if there has to be only one
+life force in
+humanity, it's that one. There is an
+illness, I want to cure the illness. My
+mother is sick, I want to cure my mother,
+and therefore I want to do research in
+diagnosis and therapy.
+And in fact, these two things will
+trigger research in chemistry, will
+trigger research in physics.
+Both will trigger research in
+mathematics and in fact these things, we will
+find other applications in
+space, in detection, in everything
+you want and there will be other
+applications and so on and
+entrepreneurs who will take the
+technologies and who will say "Damn, make
+a radar out of it and I'm going to sell it to
+Tales, you see?" And so there will always be this
+thing, and we'll
+never actually stop the search,
+I think.
+Oh well, never anyway, it has to, it has to,
+it has to, if there are no more valves
+in the world it's over. If there aren't people
+saying things like that, like I'm going to
+spend 6 years of my life trying to
+do something where I'm really, like,
+I'm too down to do that,
+but like, if there aren't any more guys
+like you
+in the world, like, it's over, like,
+nothing's happening anymore, you know, like, it's like, we're going to get
+stuck, like, there's no
+one researching anymore, there's no
+one funding
+research anymore, it's necessary, by the way, I
+think there are people who
+want to launch start-ups and
+deeptech companies, and
+so I think,
+I don't know, we'd have to look at the
+numbers, uh, I think there's a lot of
+attention being paid
+to AI with the promise that AI will
+figure it out, like, it's going to do
+research, not humans and all that, I
+think it's going to happen. Do
+you think that's going to happen?
+Ah, I'm extremely bullish. Mega bullish.
+Yeah, I
+really think that artificial
+superhuman intelligence (ASI) is going to happen, I
+think it's going to happen before 2030, and the
+day it happens, we actually have
+research at scale that's going as fast as you can
+see how we bridge code with
+other code. Well, that's what it will be like, with
+scientific innovations. That's for sure.
+OK, it's
+an H,
+then the complexity will be more about how
+you put it, how
+you put it into
+practice, and how you bring
+that down to the human part.
+Yeah. And in fact, you realize that there are more and more of us
+.
+Yeah, absolutely. But I find it f. These are
+complicated questions.
+These are indeed complicated questions
+from a societal point of view,
+and uh, yeah, indeed, the
+next bottle is the physical world. Uh, the
+bottle next is the physical world and
+the bottle next is also, uh,
+people's agency because research for
+research's sake accumulates. We make
+lots of acquaintances, but in fact nothing happens
+in
+the real world. So you need the agency to
+transform that into a product. Even if
+it's practically ready-made
+, you still have to do it in
+the real world, well, that's another story. And
+secondly, it's the physical world
+because you see, for example, you know,
+there's Alpha Fold which is a good example
+of that. You see when I say ASI for
+medicine, for research. So Alpha
+Fold is an algorithm that was developed
+by Deepm that allows for
+protein recombinations. This is a very, very,
+very
+complicated problem in mathematics. So in fact, it's
+interesting to do
+protein folding to find new
+drugs because basically,
+the proteins need to adapt to the
+shape of the antibodies. And so there are a whole
+bunch of possibilities because in fact
+a molecule, a protein, in fact there are
+many, many degrees of
+freedom. So it's very complicated to
+find drug candidates. And
+before that, it was the L button in
+the pharmaceutical industry. We needed to
+find good candidates for
+drugs to bring this down to
+small sample tests. Then there's
+testing on small animals, and then there are what we
+call phases 1, 2, and
+3, which we sometimes hear about
+in the media, until, well, there's the human
+large-scale study, double avana, and then, okay,
+we have a drug that doesn't work, not too many
+side effects, no. At one point, the
+goal was to find
+drug candidates. Alpha Fold, Alpha
+Fold, comes along, the thing is, in a second, it
+gives you 12,000 candidates that meet
+all the conditions. And so now
+the goal is, how did I manage to
+try all the candidates that
+Lia gives me, she gives me so many, actually, and we don't have
+the time. And
+my question is, to what extent
+will people believe this? Because,
+you know, there are... well,
+maybe it's going to stay really highbrow,
+and it's going to be because of
+your lobbyist issue, and who
+wins in that, you see? And there's this thing about
+not, for example...
+You have something that is capable of
+generating your entire testing process, even up
+to double-blind. And basically,
+literally, you can validate a
+medical concept or treatment
+based solely on AI.
+But when there's a label
+like that on the bottom of the
+Dolipran box,
+maybe my mom won't
+buy it. Do you see what I mean? Well, that's
+a very good point. Well,
+I'll tell you, you see, I'll turn your world upside down
+by saying that airplanes
+are piloted automatically by
+algorithms, and yet you'll see that, uh, in
+fact, what
+other example can I take? But
+actually, with the things generated by algorithms
+today that you use when you
+make a banking transaction, you believe
+that your money exists when in
+fact it's all just the computer
+. How are we going to be
+able to do it?
+How are we going to be able to make
+people believe, or at least smooth over
+the edges, so that they don't say, "Yeah, damn, there was no
+human
+behind this at all." You see this fear
+that the mass market, there was no
+human behind it, you see what?
+Yes, yes, that's for sure, that's going to be a
+fear, that's for sure, but in fact it's going to
+take time. I don't
+think it's going to take that long. These are
+obviously going to be obvious objections.
+They will be addressed one
+after the other. First, we will say yes to
+human supervision in the process.
+Humans remain involved, but in
+fact, increasingly not. And in fact
+more and more you won't even know and in
+fact at some point it won't even make a difference
+because you will quickly realize
+that you have an old fool who doesn't want to
+adopt the thing like those who said
+I'm never going to have a smartphone.
+Well, they all have a smartphone these days,
+you see. There comes a point where
+you can't fight forever. You
+know how our parents used to say, "
+What's Facebook? What's face de book
+?" You see, back then they were in "
+it's something for idiots" mode. Oh no, it's just a
+social network for old people.
+They're the only ones who go on
+Facebook, and they all go there. So there comes
+a point where the innovation
+eventually becomes societally adopted.
+So I completely understand what you're
+saying. That's going to be a real objection, but
+I think it's not actually going to be that much of
+a problem.
+It's nice to have guys who are so
+philanthropic and positive about this.
+Me, I'm super bulish. Humanity
+can descend into chaos, that's for
+sure. But in fact, overall
+most people are still
+quite intelligent. Most people are actually
+well-intentioned. And that's
+an evolutionary thing that's
+quite easy to understand: when you
+look into
+game theory, those who don't cooperate don't
+survive.
+The winning and
+contagious strategy is cooperation.
+And when people cooperate, it makes
+great things happen,
+and of course it's OK. In
+fact, there are lots of people with lots of
+good intentions and in the end, it all works out in the end
+.
+Uh, and uh, and yeah, and actually,
+when you're in the tech industry and
+you go to San Francisco, and you
+talk to people in Paris, in Boston, and
+you see what people are
+working on, it's incredible. And
+actually what's crazy is really
+thinking all this, I see it
+more and more while doing diptech, it's
+this world in fact physics
+is the code of reality like it's
+literally coding reality. Ah,
+math and physics.
+And in fact, almost anything is
+possible. Almost anything is
+possible except for a few
+principles that are unbreakable. Like, you can't
+go faster than the speed
+of light; information can't
+travel at that speed. You can't, you can't,
+you can't generate
+matter from a vacuum. You see, there are only
+transfers of energy. Uh, so from the
+moment you don't violate the
+second law of thermodynamics,
+uh, that you don't try to go
+faster than the speed of light, that
+you don't try to create information
+uh, out of nowhere, well, from there uh,
+everything else is and I think
+you can't go back in
+time. I think that will
+always remain something that is impossible. Apart from
+that, it's just very, very, very
+complicated, but everything is possible, and so
+it's super exciting. For
+example, I think that immortality is definitely something that can be achieved,
+but really only within the reach
+of humanity and in the not-too-distant future.
+Nuclear fusion is much
+harder. I totally
+believe in immortality
+because when you look at it, it's
+just your cells that age.
+So in fact, if you do
+cell replacement,
+you can end up changing organs.
+Why can't we change
+cells? You see?
+So that's a good point. I would
+even go further, in fact, if
+cells age it is solely
+because there is a gene that tells them to do so
+. It follows that the genes are removed.
+You don't even have to replace the cells,
+or you just have to insert a new gene
+that instead of saying "aged" says "rejuvenated".
+A new one, a new one,
+fundamentally
+there is there is no, there is nothing, there is
+none, there are none of the laws of
+physics that I mentioned that are
+broken by this, and there are animals
+in nature, in living things, that
+already do it. You have jellyfish whose age is the
+reverse. Exactly.
+So wait for the jellyfish, not
+all of them but there is a kind of jellyfish
+that
+so you have the timeline and so let's say
+you put on the x-axis the years
+and on the y-axis the age of the jellyfish. Finally,
+in any case, that's the degree of
+aging of his cells. In fact,
+it does that; the degree of aging
+is sinusoidal.
+It goes up, it goes down, it goes up, it
+goes down again, and in fact, it never can,
+because these cells
+literally rejuvenate. This guy, this is insane, this is crazy
+. So
+, it's just a
+question of possibly replacing
+certain organs, that there are
+therapies if you have a
+pathology, that there is
+surgery if you
+break something, and as long as
+you don't want to die and you don't have an
+accident because we will always remain
+mortal, that's for sure
+,
+but as long as you don't do something stupid, there is no
+law
+that prevents you from imagining that a human
+can be alive forever. I think it's
+desirable, just that it's
+possible. Yeah yeah,
+technically it's
+feasible,
+and you look at life expectancies,
+life expectancies are getting
+longer and longer in general, right?
+Yeah, that's medicine. They're doing the
+job, right? Yeah, they're doing the job.
+It's clear. [laughs] That's clear. No matter what we
+say or what we want,
+and complaining about appointments that take too
+long. But
+overall, it's still a step
+in the right direction.
+That's clear. Um, I just wanted to know if
+you still have a little time for us, for
+sure. Uh, I would have liked it if we could have had
+a little chat and then I think
+maybe Kan could have asked a lot of questions
+about the technical side and
+all that, but I would have liked it if we
+could have tried to break down
+these mindstones together and finally what
+you have structured to
+subdivide this road map
+you are on to
+really understand what the different
+stages are, to also understand technically
+your added value and what makes you, well,
+I imagine you
+took this market segment of
+imaging to reduce
+costs because I imagine it is
+much cheaper than going out with
+real huge MRI machines. In any case, it's
+much less complex. Uh, uh, and
+I would like to, and I, there are two
+subjects that really interest me greatly from
+a business point of view. The
+first point is therefore how you
+structured these mindstones and how
+you progressed in what you can
+share and what we are able to
+understand with our
+level of understanding. And point
+number 2 is what are the big
+challenges you have faced
+during this... You see,
+for example, you shared something
+interesting with me, but the shielding of the
+copper rooms to obviously prevent the
+magnetic field from being
+disturbed by the magnetism
+around. I think it's a really
+interesting thing. I am very curious
+to know what challenges
+you encountered during this
+roadmap and which forced you to
+rethink things or adjust
+the roadmap in order to continue to be able to
+deliver.
+Yeah, yeah, yeah. Those are
+very good questions. So it's
+very, very dense here. So the first
+question is about which milestone we
+have achieved. The second question is
+why did we choose
+this particular sub-segment of my mother's imagery?
+And the third is what challenge
+really hit us, or made us change our
+mindset, or made us change our strategy.
+So, regarding the Mystones we've
+done so far, I'm going to
+stop there. Here, we have
+MRI prototypes, we
+do invivo imaging, that is to say of
+living patients, no
+sample, no stuff like that,
+but really real patients. Healthy
+for the moment, we are not doing it yet, we are
+not yet in the clinical setting here
+, so on healthy volunteers
+and our image quality is not
+yet good enough. We are currently
+iterating on the image quality. The
+main Myzone goal for 2026 is
+to achieve clinical image quality,
+which is really what we expect from
+MIRM. So guys can take
+pictures, read the imagery, and
+make a valid decision.
+Exactly because today
+they are in "Damn, this is great
+because it's building up inside me,
+we're in a very
+exciting moment." mode. That's where we detect the anatomy,
+we detect the different parts of the
+breast. But well, that's still a bit too much,
+you know, like it's like
+when you take a
+low-resolution icon and
+enlarge it, you know, it's all pixelated. That's how it is
+today, you see. OK.
+OK. And then just to send a
+little photo to the group.
+I'm in front of it.
+Yeah, I could send that. Yeah,
+of course. That's interesting indeed,
+and what exactly is your business? I'm
+curious, but how do you find people
+willing to do tests?
+How is it
+paid, how does it work? Well, I don't have
+the right
+to say it because it doesn't happen
+because we're not allowed.
+OK.
+But all I can say is that
+I imagine if I asked my mother,
+she would say yes, for example.
+OK. Very clear.
+But that doesn't happen. Yeah, what to think,
+uh, and so, because it's only in
+the context of a clinical trial
+that you're allowed to
+do this kind of thing, but
+everyone is obliged to test
+their thing in some way because
+nobody agrees to do
+clinical trials if you don't have the slightest proof, it's a bit of a
+legal loophole you were talking about just
+before, there are obviously things like
+that which we have to navigate to get there, we had to
+do
+several iterations and in fact I'm going to do it
+in the opposite direction. I
+started because before having an
+MRI machine that produces good images, you have to
+start by building an MRI machine
+and producing an image before it becomes a
+good image.
+And I will deliberately simplify.
+If there are some who know MRI very well
+, we've done more than that,
+but I'm really going to keep it quite
+simple in the milestones,
+especially around the sequences we
+code and so on. I'm not going to go into
+that detail, but basically, we want to
+create a good image. To make a
+good image, you need to build a
+machine and make an image. An image
+is 3D. It's a three-dimensional
+MRI image. Well, before making a
+3D image, you start by making a
+2D image. Before creating a
+2D image, you create a 1D image. Before
+making an image, you make a 0D image.
+And before making a 0D image, so it's
+0D, it's a single point, a single
+pixel. And before making a
+0D image, you try to show that
+your detector works and that your
+transmitter also works. It
+turns out that our tech promise
+involved having a
+particularly sensitive detector. I was talking about it
+at the beginning, quantum. So basically, we
+use quantum sensors
+called Squids. It's an acronym
+that stands for superconductive quantum
+interference device. Historically,
+it's not used in MRI but it's
+extremely sensitive. However, it's very
+complicated to handle. And we, we
+made an MRI detector with
+frequencies that are well tuned, well shielded to
+respect the reality of what an
+MRI experiment is like in terms of
+electromagnetic noise and so on. And we
+demonstrated that our thing
+worked, that it worked better than
+squid alone. So basically, we
+took a squid, made it
+even better than a squid, and on top of that, made it
+BRM compatible. Then,
+it was shown that it worked. It has been shown
+that this works better than squid
+alone. It has been shown that when you excite
+with a magnetic field, it actually
+measures it and stuff. And so we did
+that. So you see, it's a really beautiful
+image, making a machine, making a
+first image, before making an
+image, making a 2D image, before 2D,
+1D, before 0D, before, making a sensor.
+And so, we unfolded it like this. So
+, I'm taking you to 2021. So, in 2020, we
+met Dimitri. We have the idea, we
+file a first patent, we raise a
+million, we find premises, we get our
+first employee, we have a
+roadmap, we arrive in June 2021 in Paris at
+the PCI in the 5th arrondissement, we
+start our experiments and we start
+like that. So first we order the
+spoin, we order the criosta, we
+start to show
+how you buy these things.
+Damn, that's [throat clearing]
+so you need to find a
+manufacturer for a criasta.
+You gotta find it
+because man, but imagine the
+brain knots of the story, bro.
+You need to find things that already
+exist in bars to start with.
+You need to find the guy who's willing to steal it from you
+. Just because nobody's
+stealing it, you shouldn't have realized something's happening
+and the DHL delivery guy's
+sending it against the wall. Finally,
+bro, but it's... it's a horror. Well,
+you've got it all figured out. You've got it all
+figured out. And you see, there is even
+, there is a
+story where at the very beginning before being at
+the PC in Paris, we thought we were going to be
+in Lille, at the Central School of Lille
+because it was very complicated because
+from the beginning in fact damn, we should have we should have been we should have
+put the most only
+ear, it was going to be a [ __ ] this
+story. But basically, to be able to
+put a cryosta somewhere,
+a cryosta is like a fridge. It's
+a box in which we're going to make it
+very cold, like
+the temperature of space, that is to say
+0 kelvin, more precisely 4
+kelvin in your case, so 4° Celsius
+above absolute zero in order to be able to
+cool. In fact, cooling
+is just the removal of
+heat. Heat means something; it's
+the agitation of molecules.
+Actually, cold doesn't mean anything;
+cold is the absence of heat. So in
+fact, you need to evacuate it
+even if it's a small volume, you
+see that it's something that's
+about, I don't know, maybe 2 m³,
+I'd say a little less than 2 m³, let's
+say 1.50 1.5 m³. And without even realizing it
+, going from 300vin which is our
+temperature there, you see 23° Celus, that's
+300 Kelvin. From 300 kelvin to 4 kelvin,
+you need to get rid of 276 kelvins,
+even on a small volume, that requires
+power. It's like an air conditioner on
+steroids. So for that, just like when
+you install air conditioning, you need to
+put something outside that will
+vent the heat.
+That's already some work in progress. And the
+coolant you want to
+use, there is always a
+coolant that is used to
+absorb heat. In the case
+of the fridge, I don't remember what it is
+now, but historically it used to be
+Freon. These are liquids like that
+which have good
+calorific properties. So that means they
+absorb the heat well.
+In our case, it's liquid helium. So
+liquid helium is extremely difficult to obtain
+, complicated to handle, requires
+permits, all that. So before you even
+find a place where you can
+do work to install uh a
+chiller, so something to remove the
+heat, a compressor thing and which has
+helium.
+You call, I see you, you call the guy
+to say, "Listen bro,
+no, but
+trust me, it'll be fine.
+Honestly, I swear,
+but looking back, it was Dimitri who
+handled most of it, but he ran into some issues
+and he held firm
+. And so, yeah, it's
+not like finding, it's not like
+finding WeWork offices, you know,
+finding something like that, it's
+Central, whatever, well, it turned out it was
+complicated, so it was
+Central, so we
+were in Paris, and we thought, well, too bad,
+the start
+of the company will happen in Lille, you know?
+So, for our first employee, we were
+looking at SLCF, how much it would cost to have him commuting
+every day. It
+turns out that the Île de Paris isn't very
+far. An hour and a half, uh, door to door, Central,
+to where we were at Gere du Nord.
+But still, you know, you think, damn, that's
+when we were
+in "damn, a budget of 6,000 bucks
+a year is really painful" mode. But anyway,
+you know, you do things like that.
+It turns out that it was more
+complicated than expected, and we found
+this plan at SPCI. Basically, it was going to
+be much simpler because they were
+already doing cryogenics, so
+they actually had most of the
+equipment, we were going to be able to plug in
+too, it was much better. And then in
+Paris, so, perfect. And so, there was
+nobody, there was
+no transport because we had
+started setting up our equipment there, there was
+no transporter who
+wanted to handle cryogenics.
+So we had to rent a van,
+no money at the time either. So we
+rented something, you know, where it's
+free. You just have to bring a
+truck from point A to point B. I do
+n't know if you're familiar with the service,
+but you get stuff like that.
+We find a van, but it's a mystery. So
+we go, uh, we pick it up on the island, on the
+outskirts of the island. Well, we had to figure it out ourselves
+. It was a side quest
+to just go get the van, which
+was hidden. And that's important
+later in the story. We go
+get the van, we go to
+Central, we load it up, and we drive.
+Well, it was a beat-up van
+and all, but at least we
+were there, and we were really thinking, "We're in it," we
+realized, him and me, that this was going to
+be a story for
+later. You know, like, are
+you living in that moment because we'll
+remember it? And then on the highway, we
+suddenly hear a loud bang,
+like something exploded. We pull over onto the hard
+shoulder, and we
+look, there was a hatch
+underneath the The truck had opened up,
+a metal thing had fallen off,
+and we were like, no, okay, the
+van we need to
+bring to Paris for free, with something
+falling from underneath—the thing was hidden in B,
+it transported shady stuff,
+the thing had come unhooked, there was definitely stuff
+hidden there, if you
+follow me. What we did, we were
+complicit in, I don't know what, without
+knowing it, but we didn't know, so it's
+OK, but you see, all this to bring the
+mess to the SPCI and everything, so yeah, actually, getting things delivered
+and
+transported isn't
+an obvious subject, so we start
+there, we have the Triosta, we have the Squid, OK,
+everything works, we do the thing, and then at
+first it doesn't work, and then well,
+you try to make it work, you try to
+understand why it doesn't work, you
+call some guys, they know how
+a Squid works, they explain it to you,
+you try some things Ah damn,
+finally it works and then this
+and that, huh? Then
+you say "OK, well now that we have this,
+we're going to connect it to this, we're going to buy
+an MRI magnet, we're going to do some
+excitation reception tests, OK, it works.
+No, it doesn't work anymore, that
+spectrometer thingamajig, you and then you try
+little by little, you drink your thing until you
+have a machine, OK, there I manage to
+send a retrieved signal, now I have to
+code this type of
+interaction thingamajig so as to make
+an image and then thingamajig and then thingamajig and
+then you gradually recruit the people you
+need to do it. Of course
+you see, we could never have
+done that together. So you recruit
+an MRI, you recruit a guy who knows how to do
+MRI, you recruit a guy who does this
+and then after that, well, people
+organize themselves and then you manage,
+you try to instill the
+pressure of the roadmap and the
+investors and stuff and then I
+continue to raise money, I
+continue to try to meet
+radiologists, understand the use cases,
+blah blah. Here's the answer to
+the first part of your question.
+Was that clear?
+Yeah, yeah. Well, let's say I could
+ask another 54 questions on each of the
+topics that seem fascinating,
+but at least it gives some good insight, it
+gives visibility into the level
+of crap you have to deal with on a
+daily basis. That's it, that's really it.
+Yeah. Yeah. That's definitely a hardware issue
+. Hardware really includes
+Quantum where you have cryogenics and
+hypersensitivity. That was, that was, that was a
+very complicated thing and then well, there you go, yeah, it's the
+veteran level, like you
+took the level,
+oh yeah, no, there it's, oh yeah, there we went straight into
+hardcore mode, direct. So that
+was for the milestones.
+After the technological choice
+we made, well, actually, you know
+what? I'm going to start by addressing the
+challenge we faced because that
+partly explains the choice we
+made.
+There have been loads of crap. I told you
+an anecdote to
+make you laugh, but it's nothing compared to
+the list of things we encountered.
+But I would say that the biggest challenges
+we have encountered are
+intrinsic to what we do. The
+first one is that it doesn't work and you don't know
+why. Even worse, it works then
+it stops working and you have no idea
+why.
+So this happens quite frequently with,
+uh, as soon as you have
+very sensitive quantum detectors. It's things like,
+you touch them, there's a
+tiny bit of electric current that
+passes through them at the wrong time.
+Boom, the thing just slams. So you have these
+things. The second major challenge, and I would
+say the one that struck me the
+most, is the complexity
+of interacting with
+manufacturing partners. In fact, you need
+a criosta for example, it's urgent.
+You see, in your road map, you have
+things that are very specific. You do a
+coast with a guy, you have to
+give him 200,000 bucks, that's the kind of
+mant we're talking about but normally he
+gives you a criosta that's perfect in 9
+months. It's already a long time, but you say okay, and then
+their thing doesn't work. Internally,
+the project manager starts the thing, the
+whatchamacallit, and in fact, it ends up taking 2 years,
+and what's worse is that
+you don't even know about it, you just
+take it as it comes. You
+follow up on projects with them, everything is
+fine until the moment it goes wrong,
+but in fact, the moment it goes wrong, you
+have no control over it. In fact, you
+can put pressure on them, tell them
+you are the backs of [ __ ], I
+will never work with you again, it
+changes nothing, it's
+not even the right
+cross-pilot strategy.
+So, but actually there are other guys
+like us who need a cryosta,
+they don't give a damn about
+our pilot. They're just going to say,
+"He's the only one who can do my
+big one, so I'm going, you know? I have no
+choice."
+Yeah. So. So, well
+, you have these delays
+that we've had on all phases of the thing,
+uh, and also with the hardware, the
+problem is that it can fail at some
+point. So it's happened to us too,
+things where it works and then
+suddenly your compressor breaks down and then
+you have to order another one and then the guys
+tell you it's in 6 months. So it's
+really this complexity of dealing with
+the need to have
+cutting-edge hardware where you actually depend on the
+realities of the timelines that it implies on the
+partner side and uh and there you go
+, those are really the
+hardest changes I would say. Then,
+obviously, as in any
+company, you have recruitment, retaining
+people, uh, their skills development,
+how do you
+continue to incentivize, how do you get
+them to arrive before 9:30 and then
+leave after 6:30 because that's kind of the
+default thing that's going to
+happen. How do you make
+people want to
+join you? How do
+you cope when you get bad
+news regarding funding? Because we are
+100% dependent on funding. If we ca
+n't raise money because we're not
+generating any, we're finished. It's not an
+opportunity for
+hypergrowth, you see. It's
+really just to finance our
+operating costs. So you have all
+these things. But I would really say yeah, it's
+the thing of it
+not working and or it used to work and then it doesn't
+work anymore. And the problem of
+very long lead times with
+manufacturers, that's really the
+worst part. And now today I'm
+discovering the time frame, so
+to do a clinical trial you have a
+lot of unavoidable time, but in
+fact, we learn in your remap that you
+take 6 months off because we
+say, oh but actually no, your thing in two
+parts you won't be able to do it, you'll have to
+make two submissions and between the two
+submissions there will be a re-evaluation
+for an ethics committee and that will take 3 to
+6 months if they have
+questions and don't validate
+immediately, you have things like that,
+you say, but how can a
+decision on how the
+clinical protocol is done
+impact my roadmap to the point of
+almost banning it
+by default, you see. So you have
+things like that which are quite
+complicated.
+Yeah. You are dependent on a
+whole bunch of factors and
+intermediaries, and you don't have
+a choice in fact, you're just screwed
+because you
+need the stamp so you have to
+go anyway,
+but then you see that creates
+weird dynamics, like for example,
+so today you have about
+thirty of you, there is
+a piece of [ __ ] news that arrives Monday
+morning like that by email and then you
+realize that the run-up is
+delayed by 2 months or 6 months.
+Yeah. How do you manage the teams?
+How do you manage, how do you... what are we
+working on? The guys, they
+post on the thing that's
+working.
+What are you doing while waiting for
+your delivery? You see?
+Yeah. Well, luckily, we anticipate it. We
+anticipate as much as possible. We have other things to work on
+. Anyway, there are
+too many things to do compared to the
+number of people there are. So you
+always end up
+saying to us, "Okay, we have a
+team that's temporarily laid off
+, that's never happened before. But
+how do you manage
+with that?" I think
+the team is relatively used to
+this, in quotes, not necessarily exposed
+to bad news, and we
+focus on what we control. You see
+hardware today. We still have quite a few
+. We have two prototypes that work
+internally,
+in stock and everything. We have a little stock in
+stock. So basically when the thing is said to
+arrive in May but it's
+actually going to arrive in September,
+you say OK, it sucks because
+I need it but I can move forward
+on other things thanks to what I have.
+So you see, you focus on what
+you control, but you also need to
+give the perspective to the
+teams in peril. So you need to
+communicate frequently to
+explain to them roughly what the
+Yeah is, what the what
+the plan is. You see, we never get a piece of
+news that calls everything into question.
+However, we have news that may
+require adaptation and it is
+important that they are updated on
+how we will adapt and
+what the plan is.
+So, I would say that's it, that's how
+you handle it, you know
+. So
+you have a lot of turnover in
+your teams?
+Not too much, not too much. It happened, but in
+fact, most of the people who left
+did so on our own initiative.
+That's very, very rare. You can't even count
+on the fingers of one hand the people
+who left spontaneously because
+you have people who have been there for, uh,
+no, because the oldest ones have been there for, it's been
+4 and a half years
+because we had only one employee for a
+long time and then we had others and
+he left in the meantime.
+Um, what does this
+team look like? Well,
+you have, uh, about fifteen engineers.
+Half of them are traps, they're
+doctors. Whoa, damn. Yeah. Rou
+les salires, frérot.
+Oh yes, of course. Yeah. Then, even now, you have around
+twenty engineers, and then
+you have a clinical team and you have an
+HS team. Basically,
+all of this is on a permanent contract.
+All of this, everyone on permanent contracts. Damn,
+it must be smoking. Oh dear.
+Yeah, it's smoking. But on the other hand, the
+discussions at the CFT must be high
+level. Ah yes, [laughs] that's for sure
+man, you got it, it must be about an
+interesting subject. That's for
+sure.
+OK.
+That's for sure, you can't really fool
+people with approximations,
+things like that. They're talking serious stuff.
+Why? Yeah. You
+really want to have high-level players and quick, agile guys, you know?
+Yeah. So you see, not that it
+necessarily means you're
+extraordinary, that's a trap,
+but sometimes you have needs where
+it's actually so uh new specific new specific
+. In fact, if you take an
+engineer who has 5 years of experience, who
+has always done the same
+thing in a company on current MRIs for
+example, well, for us it's
+not an MRI in the field, it's an MRI in
+Bachant, it's
+specific challenges. So in general, someone
+who has more of a profile will have the
+mental flexibility to explore
+new ways to solve things, whereas
+a guy who has really been in
+the industry for 5 years will be more inclined to
+reproduce what he knows how to do, and sometimes
+you can miss out on good
+ideas. So that's the direction in which you
+need to trap. But you have people
+who are extremely brilliant, who haven't
+done a PhD, you know. Obviously, that doesn't mean
+anything at all. It's more a
+question of mindset and the further we go,
+and this is normal, the fewer PGs we recruit
+and the more we recruit people who
+have more
+classic engineering profiles with experience
+in a company. And as for the
+choice of the shot to conclude on the
+end of your question on the choice of the case
+on breast cancer on the MRI on the
+MRI without going into too much detail
+because it would be very long. Basically,
+as you said, it reduces the
+complexity of doing something for a
+specific application because you know
+what position the patient will
+be in, you know why she is
+coming, so you can adapt everything, the
+software, everything specifically to
+that. And actually, it's so hard to have an
+MRI scan. It's not for nothing that
+an IRAB today is so
+complicated to install, so expensive, and that
+we make do with what we have; it's because, well, in
+fact, making very good
+quality images with a degraded field is
+extremely difficult. So dedicating something to
+an application, at least if you know
+exactly what the context will be,
+in fact you can reduce the
+complexity of your product and increase
+its performance.
+And in fact, MR is uh one of the
+biggest markets uh for MRI today
+for market reasons and for
+reasons of ROAP strategy and
+also because it is fully reimbursed and
+so on. That's
+exactly right.
+Yeah, yeah, you
+definitely shouldn't try to make
+new applications right from the start.
+Yeah, yeah, 100%. I have a
+question that might be a little tricky, but it
+interests me. So the idea is to, on the one hand, on the other
+hand, to manage
+to enrich an image or to enrich
+signals in order to obtain a
+valid image. So my question is,
+compared to systems in the
+field and not in the field, the store,
+the little ones far away in the field, high field, what, because
+I, because I know he thought it was in the
+field that
+came out of the
+irmett [laughs],
+the proud, frankly, you know, I see it,
+I hear it more than that, so as a
+game, but it's true, it's
+true.
+Yeah. Uh, my question is, you neighbor, so well, it's
+really tricky, but it's
+a stupid personal thing I'd like to know:
+how do
+you, or
+rather, where do you place the
+limit between the level of
+image enrichment and the degree of veracity
+of what you retrieve? Because there's this thing about
+not degrading the
+real result, like, does
+the person have symptoms, or does the
+person have, well, I don't
+know,
+cancer or something, to put it simply?
+And so, how do you
+decide to set the limit? Okay, I
+see these things, I consider that I have
+enough information to enrich
+the image at this level and still maintain
+a level of veracity that is sufficient
+to make a valid decision, a damn
+important decision. You see, we're not talking about
+implants for a retirement plan or anything. We're talking about
+cancer, you know.
+Exactly. No, that's a very good
+point you make, and I would say that the
+thinking goes more in
+the other direction. In fact, you start with the
+technical constraints, you do the best
+you can, and during the design, we'll
+see if a radiologist can, in a
+double-blind manner,
+make the right decision or not. There
+may be a close call, it's entirely
+possible that in 2028 we will demonstrate that
+or in 2027 we will demonstrate that well no, in
+fact as it stands it doesn't work and
+we can't manage to raise a
+subsequent round and in fact we will say well there you go
+, the adventure ends. There's a
+chance, or rather a zero chance, that this will
+happen. I am confident because
+otherwise I would not be at the head of this
+company obviously that in fact it will
+work but in fact you start from your
+technical contracts by working with
+a weak magnetic field. Uh, you
+put yourself in a certain hardware regime
+that consumes a certain amount
+of energy and so on. And in the
+system we put ourselves in, we put ourselves at a
+higher level of
+technological constraint without needing to
+install several three-phases because we will have to
+install a
+three-phase socket to plug in our machine
+without needing to
+I know what three-phases are in
+Yeah it's good now don't
+worry tripped [laughs]
+and yeah he was doing
+mining. He was doing mining. Don't worry
+. I know very well what it is,
+bro.
+I may not know about three-phase, but I do
+know about it. [laughs]
+So we only want to have one
+take. So that puts a
+constraint on your energy consumption,
+and you do things behind the scenes, and in the
+end you say, "OK, in terms of weight,
+I don't want any construction
+work required, I want it to be
+dismantlable. I don't want a
+phase cage, so no
+magnetic shielding in the room. I only
+want one three-phase outlet. I don't want
+cooling, I want
+easy high-temperature cooling. I want maybe,
+and so you have these constraints,
+if you make the best possible machine
+and, in the end, the performance, well, we're off to a
+good start. As simple as that.
+But we have a whole bunch of facts,
+theoretical indices, simulations, and so on, that
+make us think it'll be good.
+Well, listen, great, fantastic. And then,
+just maybe to broaden to the
+wider business side, but
+I'd like to understand, so I understand. So right now, what's
+rather funny is that for a
+company, right now, you don't have, a priori,
+a single guy in Sales, marketing, or
+development strategy—so yeah, you're the one who
+manages that whole part. Do
+you work on that
+day-to-day? Not at all. Is all of
+your time, the
+whole team's, focused solely
+on the product definition, which is literally
+99.9% of what matters
+today? But how much
+space does that have for you in your day-to-day work? How
+important do you think it is?
+Because, actually, the first question
+I wanted to ask you was
+how, in environments that are so... well, they're
+full of lobbying, you know...
+So, I was wondering, how do
+you get started and
+how do you manage to carve out your own
+space? There's
+another
+possible answer: you don't even start
+and you get bought out. And that's
+perfectly fine too, you know. But... So that's why I'm asking you,
+what's your interest in
+starting to look into these
+topics when you might
+never actually need to
+because you'll be acquired before then?
+I was curious to know your perspective on
+the marketing, sales, and
+pure communication side of things, you know.
+My choice has been to do it all myself so far
+. Some people get
+help, you know, even in a tech company like
+Diptech, they do it quite quickly; they
+have people who handle all that. Personally
+, I find that in the age of
+AI, I'm still extremely comfortable
+with all digital tools, everything
+you can think of. I mean, I've always
+tinkered with all that stuff. So for me, it's
+easy. So it was quite simple for
+me to have my capacity amplified, let's
+say, because it's
+not hard work, it's work that involves a
+lot of volume. But
+actually, I have a strong
+work ethic and I'm in control. All these
+digital tools are great. So far,
+I've done it all on my own. For me,
+communication is incredibly important.
+I'm very active on LinkedIn and I'm constantly posting
+about our
+specific field. My goal isn't to be
+known by the mainstream media, but
+really to be a major presence in the industry so that within
+my community
+, I'm seen as a true
+opinion leader, someone who knows
+what he's talking about and has been talking about it for a
+long time. So, trust has
+been built. That's
+incredibly important to me. Marketing is still
+great. In fact, generally speaking,
+I'm very sensitive to
+brand building. It comes down to
+visual identity, the
+quality of the pitch decks you send to
+investors, and
+the messages you get from your
+industry, from the people you know. That's how it
+works for us. KOLs,
+key opinion leaders, are the people who
+really make the biggest impact.
+They need to know you, you need to win
+them over, they need to think,
+"Damn, impressive guy." So,
+basically, there's all this
+relationship-building work you do over
+time. And on the Sage side, for
+us, it's very specific because
+the business model isn't
+really B2C or
+B2B, it's basically about whether there's
+reimbursement, whether there's a
+business plan for the facilities, so, do
+you get reimbursed by
+insurance companies? In
+France, it's SQ, in the US,
+health insurance,
+medical plans, all that.
+Do you get covered
+? And then, how much does your machine
+cost? So when you go to a
+clinic, you tell them what their
+payback period is, basically how much they
+need to pay out, and when it becomes
+profitable. If you tell them how much they'll
+pay... €1000 today, tomorrow
+you'll make €2000 because I get
+reimbursed. That way, you have a no-brainer,
+your business is automatic. It's
+automatic. So it's really
+something, it's very, it's a lot of
+engineering, you see. It's a very
+intellectual business, and that's
+specific to healthcare. But
+I work a lot on
+the regulatory side of this. What
+clinical evidence will we have to provide to get
+reimbursed in this way for our COGs?
+So, the total cost of the machine
+once it's manufactured,
+how much will it be, and therefore, how much can we
+sell it for? So, testing the appetite of
+radiologists and decision-makers in
+healthcare facilities to
+pay this price. Is it yes?
+Is it no? What invoice is
+important? In fact, I do all this work
+, and then I can get
+support from either Dexter on
+specific projects, or from an
+Advisor. When you're building a big company like
+Ztech, it's extremely common to have
+advisors. These are people you
+could never recruit, but
+basically, you know, typically, my
+advisors who help me the most, it's a
+guy who's exited two companies worth over $200
+million in my industry,
+specifically Medical Gold Devices.
+So, there you go, he's
+already done this playbook, he's already sold to
+strategic investors, and so he's showing me
+the path of what needs to be put
+in place. And what you're saying about
+not needing to do anything because maybe
+you'll get acquired before you even
+need to be on the market, well, that's
+not entirely true because
+you have to make the strategic investors believe that if they do
+n't acquire you, that's what you're going to
+do anyway. So you can't
+be inconsistent, you know? Like,
+yeah and yeah.
+Okay, the guy has to know
+exactly how he's going to do it, he
+knows all the roadblocks, he knows
+how to address them, he's already taken
+steps in this... The direction is, it's mega
+sharp. Either we buy it now at 300
+million, or we're going to either get
+crushed, or buy it back for a billion
+in 3 years, you know? Have to look like an
+expert at least.
+Exactly. So the best way, the
+best way to look like an expert
+is in becomeom one. And so that's what, that's what,
+and that's what the
+times of deep tech allow you to do because, as a result, a
+lot of
+time passes, you have time to build the
+network, you have time to build
+expertise.
+Well, I'm at peace anyway.
+[laughs]
+Kiki, where you are, you want to, you want to
+dig up some topics
+because the stuff I'm talking to you about,
+bro. Were there any topics that
+you saw that were important?
+No, for me, we talked about everything, you know.
+We talked about everything. Uh, it was
+like, really, you're really crazy, man.
+It's really my coke You. You, I totally blew you away
+with that.
+Totally.
+That was my conclusion to this episode.
+But no, but you see, maybe, maybe, like, to give
+you an
+opening, a message in a bottle. Well
+, you were, well, you still are, a
+G by training. You're surrounded
+by scientists, PhDs, guys
+who must talk a lot about
+the future, about what's going to happen, about
+AI, about immortality, Toti Quenti.
+We talked about that briefly, but what's
+your vision? How do you see
+things? Do you have any insights to share with
+us? We like
+asking these questions. We think it's
+always interesting to see
+people's opinions on what's going to happen. You
+see, [grunt]
+I think a big challenge for
+humanity, which really depressed me for a
+very long time, a real,
+real depression, is
+climate change. I don't think it's going to be
+as violent and immediate as
+we've been led to believe. That's something I realized that brought me a lot of
+peace. And [grunts] so
+I hope that with technology, because there's
+an acceleration, there's an
+acceleration of everything. There's an acceleration of
+pollution, there's an
+acceleration of... Yeah, there's
+simply an acceleration of climate change,
+it has the potential to be a phenomenon
+of extinction for humanity, to
+put it very simply. It's already wiped out
+a whole bunch of species, you know. I think
+we've managed to kill 90% of biodiversity
+already, since the
+beginning of the industrial era. Humanity
+is a species like any other. So that's
+a reality. I'm
+betting that with AI, with
+technological innovation, with
+this acceleration, we'll manage to
+catch up and find solutions.
+Solutions that will allow us to
+decarbonize, that will allow us to
+absorb the excess CO2 we've
+emitted, capable of rebuilding
+the ecosystem we live in. That's
+the bet I'm making. I was
+n't this optimistic several
+years ago. Now, for about
+a year or two, I've been really
+very optimistic. Why? Because things are
+moving faster than I imagined. In
+fact, our level of
+technological advancement is... it's
+faster than I thought. And I
+'m very happy to see, in particular, the
+developments in AI, which have
+infinite potential. And, well, I
+'m an AI engineer by training, and I went there
+precisely because this promise
+excited me enormously. The idea of... we'll have
+an AI, so a
+general artificial intelligence that
+will solve all our problems. It sounds
+a bit idealistic when you put it like that. It's
+deeper than that, what I thought,
+but that was when... Even a little bit of that
+thing. I went into it and I was
+super disappointed. So, I'm talking about this. It was around
+2016. I
+dug into it really, really, really, really deep. Around
+2016. Yeah. And I was
+extremely disappointed by what I saw because basically,
+it doesn't work that well. In any
+case, the gains compared to
+human or
+algorithmic optimization weren't huge. And in fact,
+the models we were using that
+performed best were
+often very naive, almost
+even deterministic, rather than the
+neural networks that were being sold as the
+next revolution, but which, in fact,
+could be very nice on MVPs, on small, uh,
+small demonstrations,
+but were actually very inefficient at
+scale in production. And so I was like,
+OK, AI is just
+statistics made prettier and sexier,
+but it's actually useless. And in fact,
+the emergence of LLM completely
+restored my hope that this
+was a technology that could really
+go very, very fast, very, very far. And then
+the explosion of
+capital investments, the explosion of
+VC investment, which was unprecedented,
+to have, for example, four
+hypermarkets that are spending 600
+billion in capex, so, investment
+in data centers, energy power,
+and chips, so GPUs, uh, in
+2026, so actually per year,
+so we were at 500 million
+last year, 600 million, now we can
+imagine 800 million to 1 trillion,
+800 billion to 1 trillion in 2027,
+these are
+such massive investments. We're really in a
+bubble in the sense that, not from a
+market point of view, I don't believe it at
+all. But on the other hand, we're really
+in a bubble in the sense that the
+investments are starting to become
+irrational and are financing
+something... The order of
+humanity, for example, many
+investors financed the
+railways,
+which were a terrible return on
+investment for them, but which
+allowed all of humanity to
+benefit from fast, easy transport, which made it possible
+to
+move goods at very low
+cost, and it changed everyone's lives
+little by little. In the same way
+, they are doing this now because they
+all think they will make
+crazy returns, and I hope that will be
+the case. But in any case, they
+are laying out
+the infrastructure, which will benefit
+humanity. And I prefer that, as a result, there are
+greenhouse gas emissions being used to build
+data centers rather than to do some kind of
+nonsense with plastic or
+whatever.
+And so I am extremely
+enthusiastic, indeed extremely
+enthusiastic, and I'm really talking
+about climate change in particular
+because we talk about it less and less,
+and well, it's a real stupidity,
+but also because It's the enabler of
+everything else because, for example, the
+idea of ​​humanity's immortality, I've
+always believed in that, the idea that we'll be
+able to colonize other planets, I've
+always believed in that. There are all sorts of things
+like that where I haven't changed my opinion
+on the capabilities of science. However,
+I think that thanks to garlic, we'll
+really be able to make up for what we've done
+before it becomes too
+catastrophic. In any case, that's the
+bet I'm making. And so, it will
+make everything else possible because
+if the planet is uninhabitable, we don't care about
+being immortal. I think
+we'd all rather live 100 years with the
+life we ​​have today than 1000
+years locked in a climate-controlled mall with
+purified air and no ability to go
+outside. Anyway, I think
+one vision is more appealing
+than the other. In any case, that's what
+I think. Um, so this
+acceleration of technologies to
+make AGI possible because it
+also stimulates energy,
+nuclear fusion, everything is stimulated to create
+more energy so that AI can
+generate inference and all that. In fact,
+it's bringing a
+lot of technologies together and I
+think it will allow us to solve
+problems like
+climate change as a byproduct, I hope, and therefore
+make everything else possible. Things that,
+without it, would have become impossible
+.
+It's really interesting. There is, because there is, it's
+really
+funny because even among
+scientists, even among
+very specific researchers, there's a dynamic
+where there are people who think that
+the best way to stop
+this decline is to de-consume,
+to consume less and get back into
+a dynamic. Anyway, I've seen quite a bit of
+Aurélien Barot, whom I like, who is
+certainly
+intelligent, I find, and who talks a
+lot about climate. And it's It's
+interesting to have these two
+perspectives from two very intelligent guys,
+you know, but who are kind of clashing
+. One person
+says, "My theory is that we
+need to consume less if we want to survive,"
+and the other is, "I'm a tech
+bullish, tech-driven, and
+I suppose tech is going to be the..." So yeah, that's a
+very good
+point you're making. That's a very good
+point and just to add a nuance,
+I think he's right. We need to
+degrowth. This is the only
+safe solution and it's what should be done. But on the other hand
+, I have absolutely no
+hope, not even the slightest, that
+humanity will begin to decline. So it won't happen
+. So yes, we all
+agree, that's the solution, that's what should be
+done. That won't happen.
+So, now that that's out of the way, either
+we wait and wait for the apocalypse,
+or our only salvation is that
+technology accelerates faster than the
+problems we're creating and
+that it's not irreversible. And as
+I was saying, physics and math
+remain the code of life. And so, as long as
+we don't go faster
+than the speed of light and we do
+n't try to break the second
+law of thermodynamics, anything is
+possible. And so if we have the right
+technology, the right
+mathematical and physical understanding of the world, we will be able
+to solve each of the problems
+facing us. But for that to happen, things need to move forward
+quite quickly. And AI is a
+catalyst for all
+adjacent technologies linked to its infrastructure.
+And also, I think that ASI will
+allow us to do
+research in a few seconds, to do
+the equivalent of decades of
+human research, and therefore give us
+the keys to understanding the
+physics of the real world.
+Wonderful. Do you have anything to say, a
+final word, a quote, a poem,
+something? We're good.
+Honestly, I did
+talk quite a bit. I said a lot at the end, that's
+very good. No no, it was so
+cool being with you. Honestly
+guys, that's a really good question. Well, for
+guys who aren't technically inclined, you are
+interesting and interesting in the
+questions you ask. So it was
+extremely pleasant. Nothing but good
+points, good remarks, and that's it
+, it was a blast. Follow me on
+my social media, if you want to. Ravelkel,
+Instagram, YouTube, TikTok and that's about it
+. It was so, so cool. Thank you so
+much for your time. We will
+obviously put all the links just
+below. It was so cool having you there, and the
+topic was super exciting and really
+cool stuff that touched on so many
+things. I hope this will please
+your audience. I think it was
+quite different from what you've been
+talking about so far. Yeah,
+maybe I spoke more than the
+other guests because it was probably
+topics on which
+you have more questions than take brought up
+since it's new and quite
+undescribed, quite difficult to
+decipher when you don't have
+scientific experience. But anyway,
+I hope it will still be
+a treat for your
+listeners.
+Listen, as we say every time,
+the most important thing is a bit selfish,
+but we, or rather
+I, we earn our living. I don't
+need that to earn a living.
+So it's more about enjoying
+the discussion we have with people and
+the people we're lucky enough to meet,
+and I really enjoyed it. I think Kiki does too,
+so that's great. Thank you so much
+for your time. Absolutely
+awesome. Honestly, it was
+a real pleasure.
+Thank you so much for being here and we'll see you
+very soon on open source. Bye
+bye. If you think about liking,
+subscribing, commenting, all that of course. Until
+next time. Ciao ciao ciao ciao
+.

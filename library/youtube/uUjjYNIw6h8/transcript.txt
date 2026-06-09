@@ -1,0 +1,1313 @@
+(logo popping)
+(gentle tech music)
+- Hello everyone, this
+is Harvinder Nagpal here.
+I am a GTM Identity Specialist with AWS,
+working on workforce identity services
+and I am here to talk about
+how you can accelerate
+your cloud migration and
+modernization journey
+using AWS Identity Services
+to provide frictionless access
+and improve time-to-market
+fraud directory aware uploads.
+I have 15 plus years of experience
+in this identity access management domain
+prior to joining to AWS,
+so I've seen the way from
+on-prem to cloud adoption
+and accelerating cloud transformation.
+For today's presentation,
+I am joined with our partners
+from DXC Technologies,
+so I'm gonna hand it over to
+Jaswinder to introduce himself.
+Jaswinder, over to you.
+- Thanks, Harvi.
+So my name is Jaswinder.
+I am from DXC Technologies.
+I work here as a Workplace Architect
+and I have around 15 years of experience
+and as part of my engagement
+with DXC customers,
+we are doing a lot of work.
+We are migrating customers,
+workplace and identity and
+access management workloads
+from on-prem solutions to
+a cloud-based solution.
+So looking forward to this webinar.
+Thanks, Harvi.
+- And I'm also joined with Rodney,
+who is a Solution Architect
+and a Microsoft Specialist.
+So Rodney, you want to introduce yourself?
+- Sure, thanks, Harvi.
+My name is Rodney Underkoffler
+and I'm a Specialist Solutions
+Architect here at AWS,
+focused on Microsoft Workloads.
+So I have over 20 years
+experience in the industry
+and have conversations all the time
+as I'm helping customers
+to migrate and modernize
+their identities here at AWS,
+so looking forward to the
+session today, thanks.
+- Thanks, Rodney, for the introductions.
+So let's dive right into it.
+So today we are going to cover
+where we are seeing customers,
+how they're accelerating
+their cloud adoptions,
+what's been their business drivers,
+and what are the different approaches
+that they're following,
+and then how identity is one of the core
+foundational elements that they are using
+and whether the identity is
+in different identity stores
+or they're using modern
+or legacy identity stores,
+and then how they are
+transforming this cloud adoption
+and accelerating this cloud
+adoption in cloud transformation
+using AWS Managed Active Directory,
+Active Directory as one
+of the core components
+for legacy component as in the enterprise
+for as an identity store,
+so where are they seeing
+AWS Managed Active Directory
+as one of the core foundational element
+of their identity store.
+Then we're gonna talk about
+a few customer use cases
+on different strategies they're using
+on their journey, on this
+cloud transformation journey
+and using the identity store.
+And that's where Jaswinder
+from DXC is going to present
+some of those use cases.
+Then we're going to
+share a demo from Rodney
+on how to enable AWS
+Managed Active Directory
+and integrate with a few
+different AWS Services.
+After that, I'm gonna
+leave you with resources
+to learn more about AWS
+Managed Active Directory
+for you to actually not only
+read through this service,
+but also try it out.
+How can you try it in your AWS accounts
+and use it to integrate with
+various other AWS Services
+to accelerate your cloud journey.
+So where are we seeing customers, right?
+So customers over a period of years,
+their business is growing, right?
+So they are always looking
+for innovation and trying
+to experiment through AWS
+cloud services to come up with,
+you know, more business-centric solution.
+So AWS enables our customers
+to experiment, innovate,
+and scale more quickly while
+providing the most flexible
+and scalable secure cloud environment.
+So as part of this journey,
+they not only want to
+improve their security,
+increase agility and
+accelerate innovation,
+but they want to make it
+as frictionless as possible
+for their end users, right?
+They want to cause as least
+disruption as possible
+to enable these AWS
+Services to their end users.
+They want to make it user friendly,
+they want to make it developer
+friendly for automation,
+but overall improving security posture.
+One of the analysts they
+suggest they are expecting
+that 40% of global 2000 customers
+are going to use cloud
+adoption like AWS Services
+and the selection process to
+focus on business outcomes
+rather than pure play IT requirements.
+So how are customers using,
+why are they using cloud services?
+So the cloud transformation,
+what we are seeing is accelerating, right?
+Based on these analyst studies
+from IDC Nucleus, McKenzie,
+our own analysis, we are
+seeing 59% of our customers
+want to use cloud for
+their cloud cost savings
+and then they want to
+achieve faster time to market
+and not have to spend time on
+undifferentiated heavy lifting
+of setting up servers,
+setting up core infrastructure networking,
+but they want to leverage
+cloud services for increased
+adoption and what does it gain them?
+It gains them business benefits
+like 31% of their cost saving
+on the infrastructure side.
+There are more features being delivered
+because of the agility,
+which is, you know,
+they can just go subscribe to service,
+subscribe to AWS Cloud and start adopting
+and migrating their workloads
+or modernizing or creating
+modern applications
+using cloud native technologies.
+So there are different business drivers,
+how customers are using AWS,
+whether it is for cost reduction,
+it is for agility, right,
+and quickly getting to
+their business functions
+and not have to spend time on basic coding
+or infrastructure setup.
+So what of use cases?
+A lot of customers are also using it
+to reduce their
+operational expense, right?
+Move from CapEx model
+to OpEx model and reduce
+their overall operational expenses,
+provide scalability through
+multiple AWS regions
+where they can scale these services
+across worldwide available
+regions in there,
+so a lot of business drivers.
+Where we are seeing
+customers are benefiting
+from this cloud adoption is they're doing
+not only lift and shift to migrate
+their on-premise applications
+over to AWS Services,
+but also leveraging
+cloud native technologies
+to create modern application
+using modern technology network,
+modern technologies in there.
+So whether it is core infrastructure,
+which is using computes,
+EC2 computes for VPCs,
+setting up networks, secure networks,
+and also enabling security
+identity and compliance, right?
+I mean, at the end of the day,
+these services have to be
+accessible for the users
+of all the identities.
+So how do they enable
+these identities to be,
+to make these services accessible to them?
+And then as they embark on this journey
+to increase the business value
+by using more and more
+cloud native technologies.
+That's where the journey of modernization
+and innovation starts to happen.
+So as they're modernizing to built
+these cloud native securities,
+whether it is to Amazon
+RDS's for databases
+or EC2 compute instances
+on Windows or Linux
+or just Windows Workloads
+as they're migrating their
+Windows Workloads over to AWS.
+So not only using this lift and
+shift for these technologies
+or in these applications,
+but also starting to adopt
+more of cloud native services,
+whether it is QuickSight or Workspaces
+to provide virtualized
+desktop environments,
+and not only that, but on
+the core cloud adoption side,
+but also on the third party
+SaaS software as an application
+services, right, like a lot of customers
+are using their applications
+on Salesforce, ServiceNow,
+Snowflake, so a lot of
+these SaaS applications,
+but at the end of the day users,
+their business users need
+access to all such services
+and applications so how can AWS help
+provide that frictionless access
+and accelerate their journey
+to adopting these cloud services?
+So all these identities
+or these end user access,
+their credentials are
+stored in the identity store
+and over a period of time,
+Active Directory has enterprises
+who had adopted Active
+Directory from way back when
+are still using it or they have it
+in as one of the identities
+store, but not only that,
+they have also started to migrate over
+to modern identity access
+management technologies,
+whether it is for the Windows Workloads
+or non-Windows Workloads to
+enable work from anywhere
+or defining identity-centric
+security parameter.
+So point being, no matter
+whether they're doing
+lift and shift of migration,
+or just modernizing directly
+into the cloud, they are,
+identity becomes one of the core
+security construct for
+them to enable access
+for their end users over to
+these applications and services.
+Like I mentioned, Active
+Directory from way back when
+year 2000s been one of
+the identity stores,
+especially for workforce
+identity and users credentials,
+their user ID password,
+their group membership
+is being stored in Active Directory
+and customers still tend to have it
+as one of the identity store,
+if not the only identity
+store in their enterprise
+because of a variety of reasons, right?
+Since it's been around
+for such a long time,
+there are all these legacy applications
+that still need or that work
+with Kerberos authentication
+or any authentication
+for domain joint users,
+domain joint devices,
+so Active Directory provides
+that domain services.
+Although certificate services is provided
+by Windows Servers, but
+customers associated
+with Active Directory
+and they're still using
+the Active Directory through
+the certificate services
+to use it as one of the features.
+Customers are still using
+Active Directory Federation Services
+to integrate with some of
+their legacy applications,
+although now there are modern
+identity access management
+and single sign-on protocols
+that are available,
+but customers are still using ADFS
+for some of those legacy applications.
+Few customers are also using it for DRM,
+Digital Rights Management,
+but at the end of the day,
+a lot of customers still
+use Active Directory
+as a generalized service
+for users authentication
+and authorization, right,
+whether it is a group-based authorization
+or user's credentials,
+user ID password to
+authenticate into their desktop,
+into these applications for
+workforce identity services.
+So where does AWS,
+how is AWS helping them in
+accelerating these migrations
+or adopting some of these
+cloud native services
+where users credentials
+are still, you know,
+stored in Active Directory?
+So what we are seeing is customers do not,
+they want to provide that
+frictionless experience
+to their users whose
+credentials are already stored
+in Active Directory,
+but they are not ready
+to just totally give up their
+on-prem Active Directory.
+So that's where AWS Directory
+Services come into play
+that provides a scalable
+and secure mechanism
+for customers to integrate
+into their current
+on-prem Active Directory.
+And when I say on-prem Active Directory,
+it could be literally
+on their data center,
+Active Directory serving
+on the data center,
+or it could be Active Directory
+in a self-managed mode
+on EC2 compute instances.
+So AWS provides two services,
+AD Connector and AWS
+Managed Active Directory.
+AD Connector is, think of
+it as a lightweight gateway
+or a proxy to their
+self-managed AD or on-prem AD
+where the authentication request
+get passed over to Active Directory,
+their enterprise directory
+so that there is no
+Active Directory credential
+caching in the cloud
+or so they can quickly set
+it up in a lightweight mode,
+although it's highly available across
+multiple availability zones by default,
+but it only supports
+integration with one AWS account
+to their Active Directory,
+on-prem Active Directory.
+Versus on the other hand,
+AWS also provides a service
+called AWS Managed Active Directory
+where it's actually Microsoft
+2019 Active Directory,
+which is delivered as a service,
+as a managed service
+from AWS where customers,
+they get to perform
+their business functions
+like managing users,
+managing their access,
+but not have to worry
+about the core operational
+and infrastructure parts
+or tasks for managing
+that Active Directory and it's available
+in high available mode across
+multiple regions in AWS
+and it also supports connecting
+multiple AWS accounts
+to the same instance of AWS Managed AD
+so customers do not
+have to create instances
+of AWS Managed AD for
+individual AWS accounts,
+but they can reuse the same
+AWS Managed AD instance
+across their multiple AWS accounts.
+This becomes really
+handy because customers
+are accelerating multi-account adoption
+and embarking on multi
+account strategy for AWS,
+so having to rely on a single
+instance of AWS Managed AD
+and share it across multiple AWS accounts
+makes it even easier for them
+to adopt these AWS Services.
+Real quick, how is AWS Managed
+Active Directory helping them
+is by really improving their
+operational efficiency.
+So all the undifferentiated
+heavy lifting tasks
+of deployment, patching,
+monitoring, you know,
+sharing the workloads across
+multiple domain controllers,
+all of that AWS takes
+care of in the shared
+responsibility model whereas
+customers' responsibility
+remains to be administering
+the users, their access,
+group memberships, GPOs
+and cross relationship
+between AWS Managed AD
+and their self-managed AD.
+AWS Managed AD is available
+as a single tenant,
+single for single domain mode,
+but highly available across
+multiple availability zones
+and multiple regions.
+By default, when customers
+subscribe to AWS Managed AD,
+there are two domain
+controllers that spin up,
+but it can scale out to any
+region that customers want
+to replicate these domain
+controllers or these data
+across different regions,
+so we provide that capability to customers
+where they had the control
+to replicate the data
+or not replicate the data in a region
+for their worldwide operations
+based on their compliance requirements.
+It's secure.
+AWS Managed AD is compliant
+to various use industry standards,
+like SOC 2 to FedRAMP or
+(indistinct) PCI and HIPAA.
+And there is a whole detailed list
+of different compliance resources,
+different services that are
+compliant to different standards
+and how do you configure, you know,
+a compliance for AWS Managed AD.
+Here is a resource
+that's available for you
+to look up in there.
+So what we are seeing is
+customers are leveraging
+AWS Managed AD to migrate
+and modernize their journey
+for cloud transformation.
+And they are using
+primarily it in two modes.
+One is in a standalone mode
+where AWS Managed Active Directory
+is in a standalone mode and
+users and groups get created
+over there, gets managed
+in AWS Managed AD only.
+And this is,
+we are seeing customers who are in,
+who do a lot of divestitures, acquisitions
+and there is just a lot of
+churn in terms of identities
+in there so they want to
+streamline their infrastructure
+and identity lifecycle and identity store
+by using AWS Managed AD.
+So customers who want to,
+who acquire new companies,
+they will just rather than
+consolidating the domain
+to their existing Active Directory,
+they are moving their users and group
+over to AWS Managed AD
+and then slowly reducing
+their dependency on their
+on-prem or self-managed AD,
+so that's a very typical use
+case we are seeing customers
+using it for divestitures
+and acquisitions.
+The other one is, a lot of
+times we are seeing customers,
+they want the business users,
+the business developers,
+business application developers,
+they want to develop the test,
+they want to test and
+develop their application
+and they want to integrate
+it with Active Directory,
+but they do not want,
+they only want it as an FM infrastructure,
+they only want it for
+a certain time period.
+They want to build their
+business application,
+integrate it with Active Directory,
+test out their functional,
+non-functional use cases,
+scaling, scale out, low testing,
+all of those use cases and then, you know,
+test it for a month, couple
+of months, what have you,
+and then get it off their infrastructure
+so that's another use case
+we are finding a lot of customers using it
+for their non-production environments
+and using AWS Managed AD as standalone.
+This is in contrast to the
+other architecture we are seeing
+where customers are using AWS Managed AD
+in a trust relationship
+to their self-managed AD
+so that they can quickly
+integrate their existing users
+and their credentials
+to other AWS Services
+because those AWS Services
+will then in turn integrate
+with AWS Managed AD,
+which is now in a trust
+relationship resource trust 4S mode
+integrated into their
+on-premise Active Directory.
+So this allows customers
+to quickly accelerate the adoption
+of their AWS Cloud Native Services
+while still leveraging their credentials,
+user credentials, the
+existing user's credentials
+and making it easier for
+their users to authenticate
+to these cloud native services
+through AWS Managed Active Direct.
+So the key features that are available
+from a AWS Managed AD, it's secure,
+flexible, and configurable.
+Most importantly, it's scalable
+across AWS regions in there.
+So very quickly, customers
+are able to scale worldwide
+as they need across these regions.
+Not only that, it's actually
+Microsoft AD 2019 version,
+which is available to the customer
+so it's actual Active
+Directory that is available,
+model Active Directory.
+Of course like I mentioned,
+they can deploy it in a
+resource trust 4S mode
+or they can actually deploy
+it in or they can create users
+in AWS Managed AD standalone mode.
+There are configurable
+settings that are available
+on AWS Managed Active Directory
+so even though we do not
+provide domain access
+to the customers, but we
+understand that customers
+have to modify these directory settings
+based on their InfoSec policies,
+whether it's password
+policies or what have you
+and extend the schema so we
+allow those configurations
+to be made available to customers
+from AWS Managed Active Directory
+so that customers can
+just manage their users,
+groups and policies.
+It's available for seamless
+domain joins for EC2 instances.
+A lot of use cases where
+customers want to leverage
+their existing credentials,
+users credentials,
+to quickly access EC2 compute instances,
+so AWS Managed AD integrates with EC2
+for seamless domain joins.
+Like I mentioned, it's available
+across multiple regions,
+including greater China
+region as a support
+and it's an AWS Managed infrastructure.
+A few use cases where customers
+are using AWS Managed AD
+is like Samsung heavy industry.
+So they use AWS Managed AD to
+integrate with RDS instances
+and EC2 instances to quickly roll out
+access for their domain users
+and they used it for at scale
+to quickly start adopting
+Amazon EC2 and RDS instances
+for their databases.
+Capital One, worldwide name,
+they use AWS Managed AD at a global scale
+to manage cross-account
+and multi-account access
+for their enterprise services.
+Similarly, Davivienda uses AWS Managed AD
+to quickly roll out their
+desktop virtualization services
+using Amazon Workspaces and
+reduce the time to market
+from months and weeks to days in there.
+And this is where I'm going
+to hand it over to Jaswinder
+from DXC Technologies to
+talk about more use cases
+where they have seen customers
+adopting AWS Managed AD
+to accelerate their cloud journey.
+- Thanks, Harvi, for this opportunity to,
+that you give us to
+present these use cases.
+So I want to start with
+some details on how we,
+AWS plays a very vital role
+in our partner ecosystem.
+We have a very strong
+longstanding partnership with AWS
+and with that partnership,
+we have initiated a lot of
+customers on their cloud journey.
+This partnership has allowed us
+to modernize a lot of workload
+that our customer had previously
+on their on-prem environment.
+We have built an AWS
+capability within DXC,
+which helps customer
+to move their workloads
+on application, on database,
+maybe on data intelligence like ML and AI.
+And we help them in moving
+the all these workloads
+from their on-prim
+environment to the cloud,
+to the AWS environment.
+We have customers starting from,
+all the ranges.
+We have customers, we
+have enterprise customers,
+we have small and medium range customers,
+but the kind of solutions
+that AWS is providing,
+it is matching the scale and complexity
+of all kind of customers
+that we have here.
+I would like to discuss
+two use cases today
+for this webinar.
+First one is about customer,
+a DXC customer from finance
+domain in EMEA region.
+This company, this customer
+is actually an association
+of a lot of smaller organizations.
+Each of them came with
+their own IT environment.
+Some of them were acquired.
+Some of them were acquired and
+then there were some mergers.
+And due to this, all this
+internal, all these acquisitions,
+mergers and associations,
+the customer IT environment
+grow to be very complex.
+Each of these companies had
+their own internal IT policies,
+which they didn't want to give up.
+So this eventually
+presented a hurdle
+to us in moving the customers IT workload
+to a lean environment,
+to an agile environment.
+The diverse environment
+that the customer has
+and then the internal policies,
+and on top of that finance domain,
+the compliance laws mandated
+the use of a complex
+and distributed identity and
+access management environment.
+So in order to,
+in order to move that,
+in order to present a solution
+which will be reproducible,
+which will be,
+which we can use multiple
+times over and over again
+for multiple sections, multiple
+parts of this organization,
+we needed a solution which can scale,
+which can scale from a small enrollment
+to a large environment.
+So I want to discuss two use
+cases for today's webinar.
+The first one is about one
+of our longstanding customer
+from finance domain in EMEA region.
+It is actually an association of a lot
+of smaller organizations
+which came together
+and then there were some
+mergers and divestitures
+and this led to a very
+complex IT infrastructure
+which needed consolidation.
+At this point of time,
+the customer was looking not
+only for this consolidation,
+they were also looking to be agile
+so they realized in order
+to be competitive still
+and relevant in today's IT
+scenario, they need to slim down,
+they need to trim down
+their infrastructure,
+consolidate and reorganize.
+The problem with this,
+the problem which was
+hindering for this journey
+was that their internal policies
+and the compliance mandates,
+since this is a customer
+in finance domain,
+they have to follow the
+compliance mandates,
+compliance laws, in order to
+satisfy these requirements,
+the IAM environment was
+going to be very complicated.
+So DXC
+introduced or implemented a solution
+using AWS Managed AD DS.
+This provided the managed AD DS from AWS.
+It provided a solution that fits the scale
+and complexity of this environment.
+It is a design which is reproducible.
+And we saw this design
+as kind of a blueprint architecture,
+which we can implement over and over again
+for the various organization
+within this big organization
+and this will allow customer to,
+this will give customer
+a confidence to start
+to adopt a cloud-only
+and cloud-first approach.
+So we first implemented
+it on a smaller section
+for one of first few of the
+business critical application
+that the customer had
+and we showed the results,
+we showed the outcome of this architecture
+and it was very well accepted by the users
+and the business itself.
+And this first instance
+of this architecture,
+it gave the customer confidence
+to move their other workloads,
+the other business critical
+applications also to other,
+to the AWS cloud environment.
+So this not only helped in
+creating a security boundary
+for each of the business
+critical applications where
+the compliance mandated that
+not everyone gets access,
+but it also provided the impetus
+to customers cloud journey
+and they were very confident
+after this first architecture to move
+to a cloud-only approach.
+The second use case I have is
+about a multinational company
+which is headquartered in US,
+but they have presents all over the globe.
+So this customer was,
+it had a very wide variety
+of customer of workloads
+starting from Windows, Linux
+and all other kind of, all other servers
+and they were looking to start
+to initiate a journey towards cloud
+and the move from a
+CapEx model to OpEx model
+was a driving factor,
+was the business driver
+for this journey.
+The problem they were having
+for this journey was
+that there were a number
+of legacy applications in this
+entire, in this environment,
+which were difficult to be
+adopted to only-cloud platform.
+These applications were heavily reliant
+on the customer's existing AD environment
+and transition plan,
+the transformation plan
+must involve a coexistence
+where some of these legacy
+applications can still work
+with the traditional on-prem AD Directory,
+but some of the other applications
+which were cloud-ready,
+which adopted more on authentication
+methods could be moved to
+a cloud-based approach.
+So in this scenario,
+we implemented AWS Managed
+AD Directory instance
+and we created a two-way trust
+with customers on-prem AD Directory.
+This enabled the customer to leverage,
+to leverage AWS firsthand
+apps and services,
+while also allowing the legacy application
+to still continue to use
+the on-prem AD Directory.
+And we also set up a single sign-on
+based on the AWS Managed AD instance,
+which allowed the users to the customer,
+the users in the customer environment
+to access the other SaaS
+services which were there,
+which were earlier accessed
+using the customers on-prem AD Directory.
+So this allowed customer to move
+some of the more applications
+with modern authentication method to AWS
+and this allowed a breathing
+space for the customer to plan
+for the transition of
+the legacy applications
+in a planned manner so
+that it doesn't cause
+any business disruption.
+This allowed the customer
+to eventually reduce
+their operational expenses
+and also the carbon footprint
+since they reduced a lot of servers
+which were there on-prem
+and their on-prem,
+the data center footprints
+also got reduced.
+So these are the two use cases for today.
+I'll give it back to Harvi.
+- Thanks, Jeswinder, for those use cases.
+So like I mentioned, once customers have
+their on-premise Active Directory,
+which contains users and groups
+and they are on their cloud
+adoption journey to AWS
+and deployed AWS Managed AD
+and integrated AWS Managed AD
+in a resource 4S trust mode.
+In this case, whether it's a one-way trust
+or a two-way trust, then all those users
+can quickly start to access
+these other AWS Services using
+their existing credentials.
+Now these other AWS Services
+could be their Windows Workloads,
+Windows Applications or
+just compute instances,
+whether these are Windows
+or Linux compute instances
+and a variety of Amazon RDS Services
+in their RDS or Oracle RDS for SQL Server
+and also Amazon FSX the
+file share services.
+So not only Windows Workloads,
+but a variety or 10 plus AWS
+Managed Applications Workspaces
+like I spoke about the use case,
+how they are using AWS Managed
+AD to allow their end users
+to access Amazon Workspaces, work talks.
+And through identity center,
+which is a rebranded AWS SSO Service,
+customers are using it for
+single sign-on to other services.
+So once they've deployed AWS Managed AD,
+they can integrate with Azure
+AD through Azure ID Connect,
+which enables them to
+access Office 365 Services.
+Customers can use AWS
+Managed AD for a DFS Services
+and integrate and carry over
+their legacy applications
+who are still dependent on a
+DFS to leverage AWS Managed AD
+and then slowly duplicate the
+dependency on Active Directory
+and a DFS based on their timelines.
+Apart from it, since
+it's an Active Directory,
+which is also labeled
+as a general LDAP store
+for authentication and
+authorization purposes
+so customers can onboard any workload
+which is an LDAP compliant or
+a directory available workload
+like Oracle databases
+through EUS or SAP workloads
+and dot-net applications
+that rely on Active Directory technology,
+they can integrate with AWS Managed AD
+and start and accelerate
+their journey on deprecating
+their dependency on their self-managed AD.
+And once AWS Managed AD is integrated
+with AWS IAM Identity Center,
+through that they can
+integrate all these SAML-based
+application for single sign-on
+purposes for these SaaS apps.
+Now I'm going to hand it over to Rodney,
+who is going to demonstrate how to set up,
+quickly set up AWS
+Managed AD and also show
+a few integration use cases
+on how to integrate AWS Managed
+AD to these AWS Services.
+Over to you, Rodney.
+- [Rodney] Thank you, Harvi.
+With AWS Managed AD
+Microsoft Active Directory,
+you can quickly integrate your identities
+with your workloads and services on AWS.
+Whether you're migrating
+and setting up trust
+with your self-managed AD,
+or you decide to deploy AWS Managed AD
+as your primary source of authentication,
+AWS Managed AD can help you
+on your modernization journey.
+Today I am going to
+demonstrate a deployment
+of AWS Managed Microsoft AD
+and some of the integration steps,
+along with a few of the supported
+AWS services and features,
+so let's dive right into
+the console and get started.
+First, we'll head over
+to the directory service.
+You can deploy Managed AD
+using the console, the CLI,
+or with Infrastructure as Code.
+We're going to do today's
+demo within the console.
+AWS Managed Microsoft
+AD is already defaulted
+in the dropdown menu
+so we'll go ahead and
+select setup directory.
+Click on next.
+Now we have a few options and fields
+that need to be completed.
+For this demo, we'll
+select Enterprise Edition.
+The Enterprise Edition is
+optimized for approximately
+half a million objects
+and we have the ability
+to deploy it in a
+multi-region configuration.
+Next, we'll need to provide
+the DNS name for the directory.
+I'll be using the DNS name demo.corp.local
+with a NetBIOS name of demo.
+With AWS Managed Microsoft AD,
+you're given a delegated admin
+account that has full access
+to a delegated OU where
+you can create your users,
+your groups, computer
+objects, group policies,
+and define fine-grained password policies,
+so let's go ahead and set a password
+for this default account.
+Click on next.
+Now we need to specify the
+VPC and the two subnets
+that will be used by the service.
+We'll select US-West-1B and
+US-West-1C in this case.
+Click next and we simply
+have to review the options
+that we selected and
+click create directory.
+This will deploy the do
+domain controllers and inject
+the ENIs into the subnets
+that you selected.
+This normally takes a
+little while to complete,
+so we'll switch over to another region
+where I've already deployed
+AWS Managed Microsoft AD.
+As I mentioned, Enterprise
+Edition is capable
+of being multi-region, so
+let's extend this directory
+to another region where we may wanna run
+some additional workloads.
+We'll go ahead and click on add region.
+Select the region that we want to deploy
+the additional domain controller site to.
+In this case, US-East-2.
+Then we'll select the VPC,
+choosing a CIDR range that doesn't overlap
+and two subnets that it
+will be deployed into,
+so we'll use again 2A and 2B.
+We'll click the add button
+and this will deploy all of
+the underlying infrastructure
+and deploy the domain controllers
+into a new Active Directory site.
+Now let's take a look at the
+seamless domain join feature.
+So with the seamless domain join feature,
+there's no need to script
+or automate your Windows
+and Linux systems to join
+the AWS Managed Microsoft AD
+when they're launched.
+We'll walk through this
+example using an EC2 instance.
+So we'll browse over to the service.
+Click on launch instance.
+We'll give it a name
+of example-Windows-EC2.
+And we'll be using a Windows
+Server 2022 license included
+AMI for this and we can
+leave it with the T2.micro,
+that will be fine for our purposes.
+We can select a key pair.
+Make sure that we have
+the network settings
+for this EC2 instance
+and the security groups.
+Scroll the whole way to the bottom
+into the advanced details.
+This is where we're gonna be doing
+the seamless domain join settings.
+We'll select our directory
+from the dropdown menu,
+demo.corp.local
+and IAM role that includes
+the Amazon SSM Managed Instance Core
+and Amazon SSM Directory
+Service Access Permissions
+attached to it.
+I have one created here for that purpose.
+We'll launch the instance
+and that's all we need to do.
+At this point, we can launch it.
+It will automatically
+join the domain for us.
+No scripting, no maintenance needed.
+So at this point we have
+our Active Directory
+domain controllers deployed in
+a multi-region configuration.
+We're able to seamlessly join
+our instances to the directory
+as well as manage that directory
+from our domain-joined instances.
+So what about developer
+workstation access?
+Well, we can easily integrate
+our AWS Managed Microsoft AD
+with Amazon Workspaces.
+We'll browse over to
+the Workspaces Service.
+Amazon Workspaces gives
+you the ability to deploy
+virtual cloud-based
+Windows and Linux desktops
+for your users.
+Let's take a look at what
+it takes to integrate
+Amazon Workspaces with our directory.
+Let's click on Create
+Workspaces to start the process.
+As you can see, our
+directory is listed here.
+It's the first time that
+we're using this directory,
+so we'll need to register it.
+Let's go ahead and select
+it, click register.
+We'll select the two subnets.
+We'll use again 2A and 2B.
+We can choose to enable
+self-service permissions.
+Self-service enables your
+users to change things
+like disc volume size,
+compute type, and so on,
+but we'll leave that unchecked for now.
+We can also enable the same
+Managed Active Directory
+for use with our work doc service
+right here in the console,
+but we'll leave that
+unchecked in this demo.
+Let's click on register.
+Now we can select our
+newly registered directory
+and click on next.
+We have the option to assign
+users from our directory
+and assign them directly to
+this particular Workspace.
+Or we have the ability to create new users
+from this console location.
+So we'll go ahead and create
+a user in our directory.
+We'll call him John Smith.
+We'll include an email address as well.
+Click on next.
+We can see here that we
+can select from users
+that are already in our directory,
+or the user that we just created,
+our John Smith user.
+Let's click on next.
+Select the bundle that we wanna use.
+In this case, we'll go ahead and use
+the free tier eligible one.
+Clicking next again.
+We can leave the defaults here
+for the rest of the options,
+including customizations.
+Reviewing the options that
+we've already configured,
+click Create Workspaces,
+and that's it.
+With just a few clicks,
+we've integrated our Active
+Directory with Workspaces,
+created our first virtual
+desktop for one of our new users.
+So once this workspace deploys,
+the user will receive an email,
+do their first password reset
+and be able to start
+using the environment.
+Another common use case that we see
+is Windows Integrated Authentication
+for Microsoft SQL Databases.
+AWS Managed Microsoft AD
+makes it easy to enable
+this feature with Amazon
+Relational Database Service or RDS.
+Let's browse to the service.
+And in here you have the
+ability to create or modify
+existing RDS SQL instances
+so that you can use
+Active Directory credentials to access
+those database resources.
+Let's walk through the integration steps.
+We'll go ahead and create a new database,
+selecting Microsoft SQL
+as the engine option.
+We're gonna leave most
+of the defaults here,
+but we'll go ahead and
+specify an admin password.
+Continue to scroll down.
+Take notice of the Microsoft SQL Server
+Windows Authentication option.
+Let's go ahead and
+enable that with a click.
+We can browse for our directory.
+Here's our demo.corp.local.
+We're choosing that.
+Continue to scroll down, create
+the database, and that's it.
+Once this spins up,
+we'll have a Microsoft
+SQL database instance
+that's integrated with our
+AWS Managed Microsoft AD.
+We can connect to it
+using standard SQL tools
+and begin configuring
+permissions for the users
+and groups in that directory.
+We just looked at a
+couple of the supported
+native AWS features and
+services that directly integrate
+with AWS Managed Microsoft AD.
+With just a few clicks,
+we were able to deploy
+all of our Active Directory infrastructure
+in a multi-region configuration,
+seamlessly join new server
+instances to the domain,
+deploy virtual desktops for our users,
+and deploy an Active Directory integrated
+Microsoft SQL instance.
+These are just a few of the ways
+that AWS Managed Microsoft Ad
+integrates directly with AWS
+Services and your workloads.
+As we've seen, it's easy to
+deploy this in your account
+for testing and production purposes.
+Thank you for joining me as we
+learned about AWS Managed
+Microsoft Active Directory.
+Over to you, Harvi.
+- Thanks, Rodney, for the use cases.
+I think this was really
+helpful and showed how quickly
+it is, how easy it is to not only enable
+AWS Managed Active Directory,
+but also integrate it with
+different AWS Services.
+For our viewers over here,
+I'm gonna leave them with few
+resources that they can use
+to not only read about this
+service, but also go ahead and,
+you know, execute some workshops
+in their own AWS accounts
+and actually integrate it
+with their Windows Workloads.
+And please feel free to reach
+out to your AWS account teams
+if you want to get any clarification
+or learn more about this service.
+So thank you, everyone.
+Thank you so much for
+attending this session.
+Hopefully this was helpful
+to you and it can help you
+accelerate your journey for modernizing
+and migrating to AWS Cloud Services.
+See you.
+(gentle upbeat music)
+(gentle upbeat music continues)

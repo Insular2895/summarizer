@@ -1,0 +1,288 @@
+[Music]
+Hey there,
+>> welcome Yang Skywalker.
+>> Are you using Google Gemini CLI or code
+assistant tool and you want to add MCP
+servers to it? Well, I'm going to show
+you how right now. Let's get into it.
+[Music]
+All right, we're going to get started by
+using Google Gemini in the CLI command
+line interface. I'm in my project here.
+you get in your project. I'm going to
+assume you're already signed into your
+Google account that has access to Gemini
+and you can run Gemini MCP and that
+gives you an idea of what you need to do
+in order to get started with adding an
+MCP server. So, the one that I'm going
+to be adding is the sneak MCP server for
+doing security scans. And the way I can
+add that for this is a number of
+different ways, but the one way I'm
+going to go with it is Gemini MCP add.
+I'm going to give it a name of sneak and
+then I'm going to pass in the command
+and argument. So the main command here
+is I'm going to leverage npx that I have
+already set up which is the same way
+that I installed Gemini and then I'm
+going to pass in the proper arguments
+for my MCP server. So in this case it's
+hyphen y it's sneak at latest. So we use
+the latest version of the sneak cli.
+We're going to use the mcp command in
+that. Then we're going to pass in some
+arguments. This is again specific to
+this mcp server tool. I'm going to tell
+it the transport protocol is stdiodio
+standard input output. And we're going
+to hit enter. And we're going to give
+that a second and we can see that it was
+indeed added. So now if I run gemini mcp
+list, we should see sneak listed on
+there and that it is connected. Now if
+there were any issues, maybe you got
+your arguments incorrect or wrong. Let
+me show you an example of what that
+looks like if things are not working
+correctly. So you understand. So if I
+added this in this way
+and I'll use the other protocol like SS
+SS that I'm not using right now and I
+hit enter on that we can see it got
+added. But if we go and run Gemini MCP
+list, we'll see that the sneak 2 one,
+the one that I intentionally got wrong
+says disconnected. So keep an eye out
+for that. MCP list, Gemini MCP list is
+the command you want to use after you
+add it to verify that it was added
+successfully. All right. So what if you
+did add that unsuccessfully? It's not
+working. How do you remove that broken
+one and then figure out how to fix to
+the next one? Well, you're going to do
+Gemini MCP remove and then you just pass
+in the name that you had used when you
+created it or added it. Okay, so that
+should be removed now. So, if I run
+Gemini MCP list, we can see it's just
+the one that is working that's there
+now. So, there you go. That's how you
+add and remove MCP servers and make sure
+that they are working as expected and
+connected. Now, one thing to note with
+this is that I set up this MCP server
+using Gemini in the current project
+folder that I'm working off of. So, in
+this case, it's this dev Discord
+Wordlebot. And what that results in, if
+I show you the folder here, is there's a
+new.jemini folder. And in there results
+in a settings.json file which has the
+contents that look like this. So if you
+wanted to instead of using the CLI, you
+can manually create a Gemini folder in
+the root directory of your project, add
+a settings JSON file and then add in the
+proper information into this JSON file
+using the MCP servers object there, JSON
+object following this standard here like
+this. Now the reason I call this out is
+that this is isolated to this project.
+So this MCP server that I've set up for
+Gemini to use and leverage is only going
+to be available in this project. So if I
+go to another project, it won't be
+available. So if you want to actually
+have this available across projects, you
+need to set it at the root directory of
+your user account for the operating
+system you're working on. Well, what
+does that mean? Let me show you. So for
+me, I'm working on Windows using Git
+Bash. So your experience may be slightly
+different from me if you're on a
+different operating system or using a
+different shell on Windows. The way you
+can double check whether you have a
+configuration settings file for Gemini
+at your root user account more globally
+is by running ls tilda.jemini.
+You're going to search for Gemini and
+you're going to search for the settings
+JSON file, right? And that is indeed
+there. I know I could see the full path
+now that that is there. And I can open
+that settings JSON file and add in that
+MCP server configuration. In fact, I
+could copy and paste this one that's
+specific to and local to this project. I
+can copy and paste this one into that
+settings JSON file for the root global
+user so that it gets applied and
+available to other projects that I'm
+working on on this machine. All right,
+with that out of the way, now it's time
+for us to use Gemini with our MCP server
+that we just set up. If you are using
+Gemini CLI within Visual Studio Code, it
+will give you this prompt to ask if you
+want to connect VS Code Editor to Gemini
+CLI. In this case, just for now, I'm
+going to say no. And now we can start
+using Gemini right here. So I'm going to
+ask it to please tell me about any
+vulnerabilities
+in my open source oo source dependencies
+for this this project. Now what I expect
+to happen is it's going to analyze the
+contents of the project directory in
+this Discord whlebot and then trigger it
+to use that MCP server from sneak that
+we have here. And that's what it's doing
+now. It's asking for permission to use
+the sneak mcp tool in particular the
+sneak sky scan command. So I'm going to
+say yes. It's telling me it's not
+trusted yet. So it's going to run. Now
+this is part of this specific to my MCP
+server that I'm using here. So it's
+going to run the sneak trust command
+which in this case requires me to open
+up my browser while I'm signed into my
+account for sneak. So I'm going to do
+that really quick and come back here in
+just a second. Here's an example of
+Here's an example of what you would see
+in your browser that would pop up here.
+You click on trust path and then you can
+go back to the command line and continue
+from there. All right, I trusted that
+folder now to be used with Sneak and
+then it's going to run the next tool,
+the SCA scan now. All right, so Gemini
+finished using that MCP server from
+Sneak uh running the SCA tool to scan my
+open source dependencies, found some
+vulnerabilities that are in there, and
+then Gemini analyzed that and told me
+that it found two vulnerabilities. One
+is high severity and the other is low
+severity. The recommended fix for both
+is to upgrade my dependency of
+discord.js to version 14.20.0.
+And then it's asking if I want to have
+Gemini attempt to do the fix for me by
+upgrading it. So, I can go ahead and do
+that and move forward. But I actually
+don't want to do that just yet because
+the next step from here is I want to
+show you how you can leverage MCP
+servers in Google's code assist
+extension in Visual Studio Code. All
+right. So, to get started using the
+Google Code Assist extension in Visual
+Studio Code, you need to install that in
+there. You can open up the extensions
+marketplace view in VS Code and then
+search for Gemini and you'll find this
+one, Gemini Code Assist. And you'll have
+an install option here like I do. It's
+telling me to restart to get an update
+and extension. So, I'm going to do that
+really quick. Looks like that's all set
+to go. So, now once that's installed,
+you'll see a little icon like this,
+which is the Gemini code assist right
+there. You can click on that. And in
+here, I'm already signed in, but it'll
+prompt you to sign in with your account
+like that as well. Now, one caveat to
+use MCP servers with Gemini code
+assistant in this instance is you need
+to be using the insiders build of the
+extension. That way you can leverage
+this agent mode that you can see here.
+You by default will likely not have that
+available to you and therefore it won't
+leverage any MCP servers that you might
+set up for it. So to get that I'm going
+to show you right now. You need to go to
+settings. You can do that by going into
+VS Code settings by pressing control or
+command comma on Mac OS. And you're
+going to search for Gemini update
+channel in there. And what you want to
+do is look for this one right here. And
+you want to click this dropown. It'll be
+on default by default. You're going to
+switch to the insiders option. And then
+what that's going to do is it's going to
+let you know that in the background,
+it's going to install the updated
+version for that insiders build of the
+extension and then probably prompt you
+to restart your extensions in Visual
+Studio Code. Then once that's all done,
+if you open up the Gemini code assist
+extension here, you should see this
+agent toggle button available to you.
+You're going to click that on and then
+you're ready to go. Now, what's nice
+about this is it will automatically
+leverage this Gemini settings JSON
+configuration that we have here because
+we're working within this project
+folder. So, Gemini in agent mode will
+leverage our MCP configuration via that
+settings configuration that we've set up
+from the CLI earlier. If you didn't do
+that in the CLI, you would have to
+manually come in and add that like we
+said before in this way for your MCP
+server that you're trying to add. All
+right, I gave Gemini Code Assist
+extension the same prompt that we did in
+the CLI. And we can see it's going
+through very similar steps here, just in
+a nice more visually pleasing way via
+the extension here. So, we can see that
+it can first check to see if we are
+authenticated with Sneak. I'm going to
+let it go ahead and do that. All right.
+So, it came to the same conclusion that
+the CLI version did in that we need to
+upgrade Discord.js to version 14.20.0
+zero and it's requesting to make edit
+changes to my package JSON file so that
+we use that version for this project. So
+I'm going to click accept. Then I'm
+going to run install and then in this
+case it upgraded to the newer version of
+14.21.0.
+All right. So what I'm going to do now
+is let's verify that we no longer have
+those vulnerabilities. So I'm going to
+ask it to double check the
+vulnerabilities again to be sure of
+that. And there we have it. Great news.
+The scan confirms that all open source
+dependency vulnerabilities have now been
+resolved. So there you have it. That's
+how you get set up with MCP servers in
+Gemini. whether you're using the CLI or
+the code assistant extension for your
+IDE. If you're curious about Sneak and
+the MCP server capabilities of it, check
+out the link in the description below.
+That does it for this video. If you got
+value out of it, be sure to like it down
+below and share with somebody who could
+put it to use. And if you made it this
+far, subscribe to the channel so you
+don't miss out on upcoming videos.
+Thanks for watching and happy safe
+coding, everyone.
+[Music]

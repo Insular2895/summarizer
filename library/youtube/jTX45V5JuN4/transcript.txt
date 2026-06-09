@@ -1,0 +1,1152 @@
+[Applause]
+so I want to talk to you about how we
+make our architectures
+just as able to respond to change as our
+systems
+and we've actually gotten pretty good at
+this thing called requirements change
+we've got this whole agile Manifesto in
+this whole software development life
+cycle which is focused on thinking about
+how do we make it easy to change the
+requirements of our system
+but what about the ecosystem
+Dave had a wonderful thing on his slide
+this morning JavaScript Frameworks are
+changing all the time you know when I
+started in this business
+architecture actually meant
+how you designed the chip nobody talked
+about architecture in any other sense
+because it was Bloody simple
+now there's all kinds of things in the
+stack and all of those things are
+fundamentally changing on a regular
+basis and even if you don't want to
+adopt a particular change like say
+Docker at a given point in time you
+still need to think about your
+architecture in a different way just
+because this new technology is now part
+of our ecosystem
+now
+many times people have accused me of
+being anti-architecture and
+anti-architect and I'm not I will admit
+that there are some Enterprise
+Architects out there that I don't think
+do a very good job but that doesn't mean
+their role isn't important
+and a big part of their role is to
+protect the asset value of the I.T
+estate over the long term
+and they used to do this with long-term
+planning and you would have these
+wonderful diagrams that are you know
+multiple meters long
+on a wall that represented their 10-year
+road map for technology we can't do that
+anymore
+when Neil when Neil and I give this talk
+together he will very often make a joke
+I will bet you 100 of whatever your
+currency is
+that you can't tell me what JavaScript
+framework you're going to be using the
+year because it hasn't been invented yet
+so how do I do long-term planning how do
+I do a good job as an architect when I
+have no idea how the landscape is going
+to change
+and it used to be you had a pretty good
+idea many months in advance about these
+major changes but we don't have that
+anymore
+and so what we need to do is we need to
+start thinking about an evolutionary
+architecture
+now when I first started talking about
+evolutionary architecture people would
+come up to me
+stand at the bottom of the stage at the
+end and Whisper
+don't you think you're being
+professionally irresponsible you can't
+evolve an architecture it's the rock
+it's the foundation people were mortally
+offended
+at the concept of an evolutionary
+architecture
+now when they come up and whisper
+something it's I know I need to do but I
+have no idea how and we're going to get
+into many of the hows today
+but there are a couple of things that I
+want to talk about it with respect to
+the name
+and the first
+has to do with adaptable
+many people have said why don't you call
+this an adaptable architecture
+well most times when you think about
+adaptable you think about an adapter
+and if you're going to build an adapter
+you have a pretty good idea or you think
+you do of what kind of things you have
+to adapt to and that's the fundamental
+flaw
+is we have no idea where these changes
+are going to come from we can't predict
+them
+but let's say you try
+you build this adapter framework for
+this particular kind of change that
+you're expecting
+and you have more lines of code which
+means you have more bugs and it's harder
+to understand and then the real change
+comes along and of course it's not what
+you were expecting
+and so now it's probably harder to
+respond to the change that actually
+happened because you've done all of this
+work building all of this stuff that you
+don't need
+now when Neil
+first started talking about this I
+listened to his talk and he called it an
+emergent architecture
+and he and I that had a very robust
+discussion on why that was a really bad
+name
+I am perfectly comfortable
+with the concept of emergent design
+because bad code is bad code whether
+it's a retail application whether it's
+Financial whether it's Health whether
+it's a sandwich ordering system doesn't
+matter
+bad code is bad code good code is good
+code
+and yes it varies from language Paradigm
+to language Paradigm but you and I will
+broadly agree what good code looks like
+there is no such thing as a good
+architecture
+not one true good architecture
+because problems are different
+one of the systems I worked on early for
+thoughtworks was a trading system and
+you guys hear trading systems and you
+think low latency high throughput
+performance is critical
+this organization in their Wildest
+Dreams never thought they would do more
+than 100 transactions a day
+not a second not an hour a day
+they didn't care about low latency
+throughput they cared about never ever
+losing a message
+so you can't say all systems need to
+have this level
+Dave referenced a fitness function
+earlier and you're going to see that
+appear a lot
+because what we want to do is we want to
+decide
+one of our very early architectural
+decisions what are the architectural
+characteristics that really matter
+and we can use ideas from evolutionary
+computation to help them guide our
+architectural decision making
+so that's how we landed on the name
+evolutionary architecture
+now what about the definition
+an evolutionary architecture supports
+guided incremental change across
+multiple dimensions
+and just like Dave's definition there
+are lots of important words in here too
+the first one
+is guided this is probably the single
+most important word here
+because what we are going to do is we
+are going to guide
+the changes that we make and the
+decisions that we make in our
+architecture on the basis of those
+architectural characteristics that we
+care about
+and we are going to fold those things in
+into something called a fitness function
+now in evolutionary computation you have
+a definition of good
+and you use various methods to come up
+with new new answers until you get
+something that looks good
+so it characterizes how close your
+solution is
+to what you're looking for
+so we've co-opted this idea
+for architectural Fitness functions
+which capture how well
+your architecture the various aspects of
+your architecture reflect your desired
+architectural characteristics
+now the single most important thing
+about a fitness function
+as you and I will never disagree
+on whether or not a system passes
+so one of my personal favorite
+requirements from many Central
+architecture groups the code must be
+maintainable
+what does that mean
+we could argue about that we can
+disagree on how maintainable a
+particular piece of code is
+but we won't disagree on what the
+cyclomatic complexity is we won't
+disagree
+around whether or not it respects the
+naming standards or the modular
+decomposition
+all of those things are concrete
+we would like them also all to be
+automated but that's not a requirement
+the only requirement is you and I have
+to be able to agree on whether or not a
+system passes
+because that way we know where we stand
+so
+we've co-opted this idea but this is
+actually not that new
+we're just using this one term to unify
+lots of different things that have been
+the scope of architectural governance in
+the past
+if you've ever
+put a linter in if you've ever put a
+cyclomatic complexity check in you've
+used a fitness function
+if you've ever put an alert on a running
+system to say if the CPU utilization
+goes above a certain threshold put out
+an alert that's a fitness function a
+different kind of Fitness function
+this is some examples of a fitness
+function
+my personal favorite is the Simeon Army
+this is a dynamic holistic Fitness
+function that monitors various aspects
+of the Netflix estate
+and an important part of this and we're
+going to return to this a bit later the
+important part of this is as soon as you
+put something into the Simeon Army
+no one ever has to worry about it from a
+governance perspective
+because it's simply not going to be able
+to survive in the Netflix environment if
+one of the monkeys doesn't like it
+some of these are static
+they'll be in a build some of them are
+Dynamic they're monitored running some
+of them are very isolated on one
+particular characteristic some actually
+look at the balance between
+characteristics which is important
+because these characteristics
+we often have to decide how we're going
+to trade these off
+course the architect's favorite word is
+trade-off
+because we can't
+optimize we cannot maximize everything
+incremental change is the next important
+word or phrase
+and there are two aspects to incremental
+change one is how do you actually change
+the functionality
+this might be something like
+feature toggles or
+systems to set up to allow you to do a b
+testing but there's going to be
+something that you do to actually change
+the application incrementally
+and then there's the operation side how
+do you actually get this thing into
+production
+an important characteristic
+of an evolutionary architecture is
+thinking about this what is the path to
+production how do I operationalize this
+evolutionary change
+and going back to that don't you think
+you're being professionally
+irresponsible comment
+there are many things that we want to
+try to do in an evolutionary
+architecture but a strong enabler for it
+is continuous delivery
+and Dave talked about this a little bit
+you want to be able to understand that
+the experiment that you're running you
+have control of everything outside that
+context
+the rigor and the discipline of
+continuous delivery
+provides that for you
+and we're going to be using things like
+deployment pipelines as our operational
+mechanism for getting these things into
+production
+and now multiple dimensions
+this is a uh
+a poll from Wikipedia from a few years
+ago about just some of the illidies that
+we might care about
+and if you look through this list
+you'll understand there is no way that
+you could ever maximize everything on
+this list
+because many of them are mutually
+exclusive
+you cannot both maximize performance
+and maximize encryption
+because encryption Burns Cycles
+so you have to decide
+how much encryption is sufficient for my
+security needs and how might I achieve
+that
+with to get the performance that I want
+now we're adding one illity to this list
+and this is one one place that I will
+respectfully disagree
+with Dave from this morning
+because I don't think evolvability is an
+essential characteristic 100 of the time
+now those that know me I'm very
+skeptical about the words always and
+never anyway
+but I was at a talk once I I had the
+thrill of going after somebody who ended
+their talk with a dancing robot
+that that was a hard act to follow but
+he was talking about a particular
+analysis that had been run on a data set
+that was sent back
+from outer space Somewhere Out There
+data set was only going to come once
+the talk was actually about how they
+took advantage of the cloud as opposed
+to having to build a massive data center
+for this one's data set
+and the total bill was about 25 dollars
+but what I took away from that is in his
+particular case he probably had other
+things to worry about than evolvability
+another example we were working with
+someone who was doing fundamental
+research
+and we were in true thoughtworks fashion
+trying to get him to do tdd and test
+harnesses and all of this stuff and he
+said no
+I'm not going to do that yet
+because I'm sure I'm going to throw this
+away at least two more times
+why would I bother let me fiddle
+let's have enough structure that at
+least we know the code works
+but
+let me throw it away
+and then he said okay now I think I've
+got it now we're going to bring in this
+rigor
+evolvability is just like all of these
+other elities maybe you need it maybe
+you don't if you are in an Enterprise
+if you are in a dynamic business
+environment
+it's most likely something you're going
+to want to prioritize but it's worth
+having the discussion just like it's
+worth having the discussion of
+everything else on this list
+okay so what are some of the principles
+that underlie what we're trying to do in
+evolutionary architecture
+and the first thing is how we how and
+when we make decisions
+one of the agile principles which we
+like to apply to architecture is
+take decisions at the last responsible
+moment
+because you have the most information
+but how do you decide when that moment
+is
+and a big determination of that
+are what are the architectural
+characteristics that you've determined
+are critical for the success of your
+system and how does this decision play
+into those architectural characteristics
+now it's still not a cut and dry I can't
+give you a nice algorithm to tell you
+Tuesday January 14th of 2023 is going to
+be the last responsible moment it's not
+like that
+but you want to delay your decisions
+as long as possible so you have the most
+information now maybe because you've got
+a procurement system that means you
+can't buy any software in anything less
+than six months you might have to make a
+decision earlier than you would want
+and then you might want to think about
+maybe building some kind of protection
+around it
+but you start with your determination of
+what constitutes good for your system
+we spend a whole lot of time on that
+trading system looking at the
+communication infrastructure
+and how we kept track of messages
+those were our critical
+decision points
+the next is if you've decided
+evolvability is important you have to
+think about it both from the perspective
+of architecture and development and I'll
+start with the development side first
+you cannot change a system you do not
+understand
+and so all of those principles that Dave
+talked about earlier
+are part of how do you make a system
+easier to understand
+because if you can't read it if you
+can't understand it you can't change it
+and so this is where software quality in
+particular comes into play
+if you've got a big ball of mud if
+you've got a steaming pile of really
+ugly code you're not going to be able to
+change it because you're not going to be
+able to understand it
+but when we talk about architecting for
+evolvability
+conceptually this is in part thinking
+where do I draw the boxes where do I
+draw the lines between the various parts
+of my system
+and one of the things that we've learned
+from domain-driven design is the closer
+that our system understanding and our
+system Lego blocks that we want to move
+around correspond to how the
+organization thinks about how they do
+business
+the more likely it's going to be easier
+to move those pieces around
+to implement a new piece of technology
+personally I believe one of the reasons
+SOA went so horribly wrong is their
+boundaries were systems
+okay I'm going to draw a service
+boundary around PeopleSoft
+not
+customers or products
+or accounts or Supply chains or any of
+those things that actually matter
+in how we deliver
+services and products to our customers
+whether they be internal or external
+you also want to think about this from
+the perspective once again of how these
+components interact with each other
+if you've got component component
+business Logic on the path from
+component one component two
+and now you want to insert something in
+the middle or you want to move the
+connection
+you've got to change
+the pipe
+architecting for evolvability also
+focuses on Smart endpoints dumb pipes
+because it's a whole lot easier to move
+a pipe that doesn't do anything except
+let stop flow than it is to move a pipe
+that has all kinds of assumptions about
+who's on either end of that pipe
+pastel's law
+simply stated
+be very generous in what you receive
+asterisk still protect yourself against
+hacking
+all you care about
+is the postcode in an address
+don't validate the address format
+because you don't want your code to
+break just because they decided they
+needed to separate address into two
+fields
+if all you care about is the postcode
+that's all you care about
+the reverse of this is be very careful
+what you send
+because you're making an implicit
+contract
+and you have no idea
+who signed up on the other end of that
+contract
+so we want to be very clear on what
+those boundaries are
+now there are all kinds of ways to get
+around it they've talked about one
+earlier but think carefully
+what are you putting out on that wire
+I'm from thoughtworks we have to talk
+about testing
+but one of the things that we have found
+is if you think about how easy or
+difficult it is to test something you
+end up with cleaner code
+if you have a test
+do this and then this and then this of
+course not that and then then
+you probably haven't drawn your box
+properly because you can't clearly
+Express what that box is trying to do
+so rethink that boundary
+we've also found that things like
+business Logic on the pipes are very
+hard to test
+and so if you think about testability is
+going to steer you away
+from doing things that might make it
+difficult
+so think about the testability
+of your system at every level
+unit testing
+user Journeys overall systems tests
+even performance tests
+think about testability
+and of course the dreaded people problem
+we can't talk about architecture without
+talking about Conway's law
+one of the ways I appear very smart when
+I go in on some of our Consulting
+engagements
+is I watch the tech leads
+as they walk past each other in the hall
+and if they walk past like this
+you got a problem you got an integration
+problem between those two systems I
+don't even have to look at the code
+if those people don't talk to each other
+the systems are not going to talk to
+each other
+and so we need to pay attention to how
+our teams are behaving how our teams are
+organized
+what are the communication patterns
+what are the communication dysfunctions
+because if you've got a dysfunctional
+communication flow in your organization
+your systems are not going to work the
+way you want them to work
+so we can't get away from the people
+problem
+okay let's get a little more concrete
+what are some things
+what are some techniques that actually
+allow us to make an architecture more
+evolvable
+and the first one I want to talk about
+is database refactoring
+and I've been involved in agile software
+development for a long time and first it
+was the qas who said well I can't test
+the system until it's all built because
+you know
+I'd have to redo things and the business
+analyst oh well I can't you know I need
+to map out the entire thing before you
+can start coding and all of these
+excuses
+the people that I think had the best
+excuse
+were the dbas
+because as soon as you got something
+into production
+and you wanted to change the database
+you had to do a data migration
+so hard about data migration you copy it
+from one place to another what could
+possibly go wrong but it always does
+this is a technique
+described in a book called refactoring
+databases with the subtitle evolutionary
+database design
+that shows you for relational databases
+and conceptually for any category of
+data store
+how you can
+break down those large changes into
+small atomic changes that help you
+identify
+what part
+of the migration is where this is going
+wrong
+just like in continuous integration and
+refactoring we're trying to isolate
+small changes this is doing this for
+database changes
+and this allows us
+to get things into production to get
+feedback from our customers
+before we're completely sure we
+understand the whole problem
+if you take nothing else away from this
+talk
+database refactoring
+choreography now this one is a little
+more controversial
+because I'm not saying orchestration
+should never be used
+but if you think about it strictly from
+the perspective of how evolvable a
+system is
+one that is choreographed is much more
+evolvable
+think about it
+the conductor is standing in front of
+the orchestra
+and the orchestra will not do anything
+unless that conductor is telling it what
+to do
+and so there are all kinds of failures
+that just can't happen in an
+orchestrated system
+think about
+a ballet
+you don't have
+the choreographer out there on the stage
+running around telling everybody what to
+do
+they know what they're supposed to
+achieve
+and if I am going to leap gracefully
+and hopefully Dave will catch me
+and if Dave falls down well I better not
+leap
+but I know what I'm supposed to do after
+Dave would have caught me
+and so I go and do that instead because
+I know how to recover
+from these failures
+but it's more difficult
+so you want to think carefully is the
+level of evolvability that I can achieve
+using choreography worth the additional
+cost
+for many systems it's absolutely worth
+it
+for many organizations it might be worth
+it but they might not be confident of
+their ability to actually pull it off
+so again we have to think about the
+people
+aspect of this as well but strictly from
+the perspective of evolvability
+choreography is superior
+contract testing
+this is a good way
+of allowing the maximum amount of
+independent work
+I come up with a suite of tests that I
+give today and Dave gives me his test
+and we're documenting the assumptions
+we're making about each other and I do
+the same thing with James and James says
+the same thing with Dave
+and then we cheerfully ignore each other
+I can make whatever change I want as
+long as I don't break those tests
+and then I gotta give James a call
+because I broke one of his tests and so
+okay James you and I have to have a
+conversation I've got to make this kind
+of change how can we work this out we're
+still ignoring Dave
+Dave doesn't have to get involved in
+this unless something that we want to
+change breaks our tests with Dave
+and as soon as James and I come to an
+agreement
+we go back to ignoring each other that's
+how you get the maximum amount of work
+done by making sure that you understand
+what are the commitments that you are
+making to the other groups
+and then there's continuous delivery and
+I will say this again
+I believe
+that you need to have at least some of
+the rigors of continuous delivery in
+place
+before you try
+some of these more radical evolutionary
+architecture ideas because you need to
+know the base deployments are working
+you need to be able to isolate the
+changes that you're actually trying to
+make confident in your ability
+to keep everything else
+the same
+and this is the basis
+for experimentation
+one of the reasons many organizations
+are risk averse is because they can't
+safely deploy their systems and so they
+need to be really confident
+that this idea is going to work
+now the problem is
+we don't know where the next great idea
+is going to come from
+and what we'd like to be able to do is
+try lots of different things safely
+and follow the ideas that seem to be
+productive
+but you need to have
+a platform for experimentation
+you need to have a system that you can
+safely deploy but also safely change
+you can't experiment readily in a big
+bottle of mud
+you can't safely experiment
+if you're sitting there hoping okay
+please please please make the deployment
+be successful this time
+you want to be able to celebrate the
+success
+of the experiment even if it didn't work
+you learned as as was pointed out
+earlier
+which brings me to the culture of
+experimentation
+many organizations don't want to have to
+distinguish between a really good idea
+that Justin pan out
+and a really bad idea
+not every idea is a good idea
+but organizationally it's much easier to
+say experiment success
+yay experiment
+failed bad
+even though you learn a whole lot more
+from an experiment that goes wrong
+because it tells you that you were
+assuming something that is not true and
+you need to go find out what that is
+I want to briefly touch on the
+evolvability of different kinds of
+architectures and as I've said before
+and Dave said it too you cannot evolve a
+big ball of mud
+on the other end of the spectrum is
+microservices and some people have come
+up to me and said you can't have an
+evolvable architecture unless it's
+microservices
+now there's an argument that a
+microservices architecture is the most
+evolvable of the various choices
+but it isn't the only one that that
+displays evolvability and you may again
+decide that you're not at the stage that
+you want to introduce the complexity of
+the microservices architecture until you
+understand more about your problem
+domain
+enter the structured the well-structured
+monolith
+you can do a lot of the same kind of
+evolvability you don't have the
+independence of deployment and all of
+that but in terms of the code changes
+you want to make if you have a
+well-structured monolith
+you can do a lot
+if it's well structured it's easy to
+understand it's got the right kind of
+considerations around coupling and
+cohesion and if you've got good
+discipline people won't
+succumb to that temptation to just reach
+over into that other part of the system
+because they can
+a layered monolith gives you a
+particular kind of evolvability
+if you want to swap out your persistence
+layer for something else and you've got
+a layered monolith that's going to be
+relatively easy to do
+it depends on what kinds of changes you
+are most worried about notice I did not
+say which kinds of changes you think are
+coming
+because you can't predict that
+but you're going to know what worries
+you more
+and if it worries you more is the change
+in business functionality that argues
+against the layered monolith because
+every piece of business functionality
+almost by definition
+touches every layer
+and now you have to coordinate all of
+those different changes together
+some people think of a micro kernel
+architecture as quite evolvable I would
+argue that it's actually more adaptable
+because you've explicitly decided these
+are the places you can plug things in
+and maybe that's appropriate for your
+particular problem
+but from our perspective of evolvability
+when you don't really know how things
+are going to change it's not as
+evolvable as it appears
+now the dreaded G word governance
+one of the things
+when we first started talking about
+evolutionary architecture we're really
+more focused on The Upfront the design
+the decisions the architectural decision
+making
+but what we realized is now that you
+have these Fitness functions you have an
+objective definition of what you want
+your system to do
+and so if you want to see whether or not
+it matches all of your requirements you
+run the fitness functions and it'll tell
+you and so governance
+becomes Fitness function driven
+we no longer have to have a code review
+for cyclomatic complexity because the
+build won't allow
+any code that has a cycle not a
+complexity too great to get out
+there's a whole category of questions we
+never have to think about anymore
+if we do our governance based on Fitness
+functions and we can allow
+The Architects to spend their time on
+those more difficult trade-off decisions
+well gee the caching strategy that I was
+going to use to get the performance that
+I want it conflicts with our staleness
+of data Fitness function because of how
+I had to configure it can you help me
+that's what you want your experience
+Architects dealing with not
+you have a cyclomatic complexity of 31
+that's not acceptable
+the top for transition though is to have
+those Fitness functions be based on
+outcomes as opposed to implementations
+so often
+the dictates that come from the
+architecture group are used rabbitmq in
+this particular way
+I have spoken
+not what is the outcome you're trying to
+get out of using rabbitmq in this
+particular way and if you specify it on
+the basis of an outcome
+then when some new queuing technology
+comes out
+that might be very appropriate for what
+you're trying to do you can experiment
+and determine do I get the outcomes that
+the Architects have specified
+but this is a very difficult shift
+for people to make
+and in fact we're guilty of it too
+when we're trying to say this is the
+implementation I want
+from maybe an internal platforms team as
+opposed to this is the behavior I would
+like to achieve
+so we want these Fitness functions and
+the attendant governance to spend more
+time on saying am I achieving the
+outcomes the behaviors the
+characteristics
+of performance of security of
+operability all of those different
+things as opposed to
+did I configure rabbitmq correctly
+now
+this is all fine and good
+if we're in a green field we get
+together for our first project meeting
+and we prioritize our architectural
+characteristics and you know we put
+targets out there and then we start
+doing all of this and life is good
+but
+many of us are not so lucky
+we're left with Big Balls of mud
+and we're left with lots of systems that
+perhaps we don't even know what it does
+the only documentation is the actual
+code
+so what do we do
+first pick an architectural
+characteristic that you're most worried
+about
+not that you think is most susceptible
+to change we can't predict that remember
+but what worries you the most
+check your defects logged to see where
+most of the bugs come from when you try
+to add new functionality
+my personal favorite
+go talk to the operations team if
+they're a different team from yours and
+say when do you guys get nervous when
+you hear we're changing something
+try to find the spots that are causing
+the most problems figure out what your
+target should be you don't want to break
+the build on it yet
+but start tracking it and start
+improving just on that dimension
+now part of the importance of this and
+this is why Trends matter and continual
+monitoring matters that's why you want
+to put these things in your builds as
+much as possible
+because let's say
+you've just convinced
+your VP of engineering or whatever the
+title is to give your team three months
+to clean this thing up
+I can guarantee you you won't have
+gotten out of that conversation without
+being asked the question and how do I
+know you're not going to be back next
+year
+asking me for three months again
+and you'll be able to tell them
+because you've got these Fitness
+functions in place and you're monitoring
+these things and it's never going to get
+that bad again on that particular
+dimension
+because you will know it
+and yes maybe you'll still make the
+decision okay because of a particular
+deadline or whatever
+I'll introduce some technical debt but
+you will be doing it intentionally as
+opposed to accidentally
+and so you think about it for a little
+while
+you pick out your dimension you make
+some improvements and then you pick
+another one and you pick another one
+and you expand
+your ability to demonstrate to the world
+yes my system has the architectural
+characteristics that we want
+this is how we've defined success here's
+my proof that the system in fact
+exhibits those behaviors because all of
+the tests are green
+and you continue this process
+you go through
+and continually add a dimension now
+part of the value in this
+is by focusing on not the things that
+are the worst
+but the things that worry you the most
+there might be that stinking pile over
+there
+and nobody's touched it in five years
+and it's
+there's probably a reason nobody's
+touched it in five years maybe it
+doesn't need to change
+the purest in me and I did used to be an
+academic would like to say there should
+never be any bad code anywhere on the
+planet
+the pragmatist in me says that's
+unrealistic but
+let's try as much as possible
+to make the things that matter the most
+be of the highest quality and so leave
+that stinking pile over there
+because maybe by the time you have to do
+something about it
+you can actually get rid of it
+so don't focus on what's most broken
+focused on the things that are broken
+that are costing you the most
+that are keeping you up at night or
+making you go more slowly
+if you hear your business strategy is
+going to focus on Integrations or or on
+mergers and acquisitions
+I'd think about my integration
+architecture
+but the important thing here is to think
+about
+how my desired characteristics might be
+changing as this ecosystem is changing
+if you just come up with your Fitness
+functions at the beginning of the
+project and never look at them again
+they're no better
+except they're executable and so are
+probably at least being followed then
+that binder that was imposed upon you
+from on high that nobody ever reads
+so you want to re-evaluate your Fitness
+functions
+because what you are actually doing here
+is we're changing the definition of your
+target architecture
+it used to be the target architecture
+talked about technology stacks and
+talked about component diagrams and all
+of those kinds of things your target
+architecture now is as much the
+composition of all those individual
+Fitness functions not literal
+composition but conceptual composition
+of all of those Fitness functions
+because that tells you this is what the
+architecture is trying to achieve
+these are the outcomes that I think are
+important
+and oh by the way
+here you go all all of them are green
+therefore I'm achieving the
+architectural characteristics
+and when something changes whether it's
+a business requirement or a new
+technology answers
+I can look at that and say okay what did
+that do
+to my target architecture
+can I just embrace it
+do I need to rethink some of my
+characteristics because something that
+was not possible before is now within
+the realm of the possible for my
+organization
+so continue to evolve your Fitness
+functions
+because the architecture is only as
+evolutionary
+as your Fitness function
+thank you very much
+[Applause]
+all right any questions
+I'm glad you're the one looking for
+hands anyone the
+I might just squeeze past you if I might
+thank you
+hi
+so sometimes what happens with the
+architectural distance is we have been
+pressurized with the business timelines
+where
+the business says okay something needs
+to be done quicker
+and how do we bring that balance between
+the business timelines and the
+architectural decisions which is are
+correct artificial advice
+as as technologists I believe it's our
+responsibility to help
+the the business
+understand the consequences of their
+decisions
+I had a situation it was with a retailer
+uh in the UK and
+one of their Architects came to me and
+said I cannot convince them to let me
+run the database recovery test
+I said what was your argument
+and he went through this complex
+discussion of indices and what the
+database recovery test was going to do
+I said go back
+and ask him if he wants to know how long
+the database will be down if it goes
+down on boxing day
+and the guy came back and said that's
+all I had to say
+we have to learn to describe in terms
+that that connect with the value with
+business value
+the consequences of those decisions
+sometimes
+those business considerations should win
+sometimes the architectural
+considerations should win
+no we might think well of course you
+always should believe me that this is
+the most important thing to do
+but neither side should always win but
+what we have to do is we have to put it
+in terms that make sense to them
+the number of times I've heard people
+say you know we need to bring in this
+this you go integration ubiquitous
+language or you know all kinds of things
+nice shiny technology
+and none of them can articulate why the
+business should care
+so that's the first part
+but sometimes they are going to say
+sorry business requirements Trump
+and we we have to accept that now if
+they never prioritize
+anything that you're trying to
+accomplish to
+position
+the system then you need to start
+explaining to them okay next time I need
+to do something like this it is going to
+take me twice as long
+because you didn't let me do this again
+you're putting it in terms that that
+they will understand as opposed to our
+language and that's to me the single
+most important now I will tell you
+there are no silver bullets in here
+if you've got a lousy boss
+who constantly makes bad decisions there
+is nothing in here that's going to fix
+that
+um but
+at least this does provide you more
+objective
+measures that you can go and try to
+convince them this is why this is
+important to you not just to me
+all right that's about all we have time
+for unfortunately uh please join me in
+thanking Dr Rebecca Parsons
+[Applause]

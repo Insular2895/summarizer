@@ -1,0 +1,1325 @@
+okay hi um good morning everyone
+good morning good morning
+okay so
+um i'm happy you guys are here and
+my talk is about external authentication
+and we can do that now with all our
+products pragana server for mysql
+mongodb postgres and pmm
+about
+so introduction about me so my name is
+jaime zika i'm a senior support engineer
+at purgana
+and
+given i'm a support engineer dealing
+with customers i don't maintain my own
+external authentication mechanism so i
+help customers integrate them with
+their db servers or pmm
+and
+in support we have three teams
+americas
+emea and i'm sorry i'm going to kill
+that first
+ah just a moment
+i think i am logged into slack
+okay so
+yeah
+sorry for the disruption so
+we have three teams uh we have the
+america's team the emea team and the
+apac team so we all work on our time
+zone so that's uh well balanced and uh
+well balanced uh lifestyle
+and since i'm from the apac team i'm
+based in manila philippines
+so
+yep
+okay
+so about external authentication
+my topic so basically this is a third
+party system so it's really not part of
+all the products that i've mentioned
+uh it's a we'll use a third-party system
+that we can use to check if a user
+can log login or not and normally it's
+the
+user and the password and um
+so if we put this in in one centralized
+uh
+system
+you can provide the centralized
+information and management of users and
+groups so basically
+if the you need to add the user for all
+the db servers you can just add
+in the authentication system
+and uh
+they would have access to the to the db
+service and the
+and pmm
+so but but it really depends it depends
+on the configuration so you may need to
+do some additional settings and
+in those db servers and
+bmm and
+again
+well simply what we can also do is we
+can identify what the user can do based
+on its membership
+so for example
+if the user is part of the developers
+group we want the user to have developer
+privileges in the dba server or
+if we want the user to just have
+a viewer
+viewer role in pmm
+we can do that by setting its
+membership so um some security
+considerations
+um definitely for those that where you
+need to pass the information to the db
+server or pmm and then that information
+will be passed to
+the external authentication system is
+that the credentials have to be
+submitted in plain text because what
+does the external authentication know
+about the mysql
+hash passwords so they don't so you have
+to pass this information
+plane to the external authentication
+system
+so you have to ensure that dls ssl
+transport is used
+when communicating this information
+so it means that you can and
+uh
+you can
+you can set it encrypted or not
+encrypted so you have to configure that
+yourself so just make sure that the
+communication between the your client
+and your db servers or pmm are
+secure and from the db server
+to the db server bmm and external
+authentication systems as well
+and take note that if we use an external
+authentication system that if it's done
+then no one will be able to log in so
+you need to make it highly available but
+that's not the
+coverage of this uh talk
+so
+the interesting thing about um
+external authentication now is that you
+have choices so mainly
+um ldap is the
+one that is available on all of our
+products so we will focus more on the
+ldap and
+we can also use spam so
+if you want to bundle your security with
+uh
+with different type of
+settings like you want we want the user
+to log in at a certain time so
+you can use spam you can use spam for
+that and you can use it for
+mysql mongodb and postgres
+for mongodb and postgres there's
+kerberos and i believe it's available
+also in mariadb
+and for others
+so there are other
+settings that you can do to authenticate
+with postgres like radius
+so if you were there during the times
+when
+we uh
+in with internet service providers using
+radius for authenticating
+users and
+so that was popular then
+and for pmm we'll talk about other
+authentication um systems like um oauth
+oauth uh
+or services that is
+like octa and uh
+zero
+okay so i realized i was hitting the mic
+um so
+uh so we have um
+so it's definitely hard to to to do this
+uh i don't know what this is what
+systems that our customers are using so
+i have to have my own sandboxes because
+definitely i won't have access to their
+system so
+what i do set up is i use a virtual box
+for my virtual machines
+i use vagrant for provisioning
+vms os disk network
+king and i'm automate generating ssl
+certificates using bash i know we there
+are other
+tools
+but i guess
+this one is easier for me
+and then for
+for configuring
+the
+for example the external authentication
+system and setting it up i use ansible
+for that so that i can repeat it and
+destroy it
+anytime that i want also for the db
+servers as well
+and pmm
+and um for now um
+i'm using the latest although you know
+it sent us it so the updates are
+um well it's not as supported as
+before
+status it would be the operating system
+right now
+and the external authentication system
+that is available on the sandbox is uh
+samba compiled from source code
+open ldap with debug logging
+and
+bear installation setup of db servers
+and pmm and
+also
+multi-factor authentication in the
+installation setup of db servers
+so that being said let's take a look at
+ldap
+so ldap everyone knows this one it's a
+lightweight directory access protocol
+it's a standard protocol for managing
+directory services for users groups
+devices and anything that you can think
+of
+and
+typically enterprise applications have
+this configuration setting where you can
+enable ldap for say contact addresses
+or authentication
+so
+it's definitely popular and
+so
+this protocol can be used to access data
+for
+samba open ldap active directory
+uh red hat directory server
+so uh
+typically what does an entry of an ldap
+look like so we have the
+dn so the unique name for the or the
+unique id for the entry
+we have an object class which tells us
+the makeup of the entry
+and it also tells us what is the
+required and optional properties of the
+entry and the attributes to provide
+information
+about the entry
+so here's an example of what uh
+what that object class looks like for
+example we have a object class called
+posix account and it says here that it's
+required that it has a cn
+common name uid uid number gid number
+home directory but it may also contain a
+user password login shell
+geckos and description so a sample ldap
+entry would look like this
+um
+okay so this is the dn so the unique
+uh
+the unique
+uh
+id of this entry
+and then it has the object class posix
+account and it has everything that is
+required
+but it also has this additional uh
+attribute called user password so it
+only had us user password and it doesn't
+contain
+oh yeah user password and login shell
+but it doesn't have
+geckos and description
+so with ldap authentication and
+authorization
+authentication can be done in two ways
+one is bind so with bind
+you need to specify the unique id or the
+unique id of the entry that you want to
+log into
+the account that you want to log into
+and provide the password
+so sometimes it's it's kind of tedious
+because you have to put uh for example
+cn is equal to jaime comma cn is equal
+to users comma cn is equal to perkana
+and cn is equal to local
+so you have to provide that whole
+um entry and then provide the password
+to be able to
+bind directly or to log into the to that
+to that account
+and the other one is search plus bind
+which is
+uh a two-step process first if you
+provide the username it will try to find
+the dn using a query in the directory
+and once it's found
+so it so basically for example you're
+going to search for a username in the
+directory entry
+enter in the directory and when you find
+the username you get the dn or the
+unique
+id of the entry and then you bind with
+that entry and the password provided
+so
+uh so that's basically what
+is done for authentication whereas for
+authorization
+once you're able to know that the
+user is able to log in
+is able to to use the password correctly
+you will just have to search the
+directory if the authenticated user is a
+member of a particular group so
+so so basically after authenticating
+check if the user is an administrator or
+part of the administrator group or part
+of the developer group
+okay
+and
+um
+you should know a bit about ldap filters
+to be able to configure
+uh ldap on on these services so for
+example you want to match if uh
+if the cn entry or cn property exists in
+a record so cn is equal to asterisk
+we have
+cnn cn is equal to dba user match fcn
+value sdba user
+check if the object class is a group
+check if the object class is a group or
+so it uses a pipe over here it's it's a
+group or it's a posix group so basically
+if
+if you take a look at this
+postx group normally used in open ldap
+and group used in samba so basically
+this is like a filter that could work
+both
+for samba and for
+and for open ldap
+so one size fit also you may want just
+one of them or
+or both it's up to you so
+the second the second the last one is
+object classes equal to group sequin is
+equal to db admins if you want to check
+if the
+object class is a group and cn is db
+admins
+and uh finally
+this one so it has a not operator so you
+want to look for objects or entries that
+are a group
+but the cn is not db admin so you're
+looking for all groups where cn is not
+db admin
+so
+tips and troubleshooting ldap so
+basically it's best to troubleshoot it
+first in ldap before configuring it in
+the db server so you should know
+what parameters do you need to
+authenticate does it support tls or ssl
+if it doesn't contact your administrator
+say it's not secure please use
+ssl certificates
+what ports are used to connect to ldap
+386 636 what account can i use to
+authenticate to ldap
+so like a search user
+find out how to search users and its
+properties using the filters
+and find out how to enumerate groups and
+its properties again with the filters
+and uh if you're not getting the result
+that you want you can run ldap search
+with debugging
+so
+here's some
+command line tools
+used for manipulating ldap
+so
+for example ldap search parameters you
+can see this a lot with google there's
+this
+variable lws rexert so do you want to
+verify that the server
+that you are
+connecting to is a is the server that
+you are really connecting to if it has
+the
+uh the correct
+ssl certificate so sometimes when you're
+just testing you put never but it's not
+good
+it's best to use demand or not to use
+this entry at all and then you have dash
+d for the debug level
+you'd have have dash h2 specify the
+protocol
+if you want to connect to
+ldap without encryption
+or ldaps with ssl encryption
+or
+you can use tls with
+z so you can connect to a
+ldap protocol and then upgrade the
+connection to tls
+and then
+you can bind with simple authentication
+meaning uh a user and a password instead
+of
+other authentications like
+certificates
+and sasel
+and
+then you specify the b where you will
+start searching for the records and then
+dash d would be the
+the information about the user the the
+dn entry of the user
+and dash w so
+there's a dash capital w if you want to
+enter the password all the time
+but i guess for testing and
+troubleshooting that that's that
+two-step process of
+entering the
+entering ldap search followed by dash w
+uh
+and specifying the password
+takes long because you have to type the
+password so sometimes i
+would just use w to test inline anyway
+this is just for testing and then for
+your filters you enclose it in
+parenthesis and if you're just going to
+extract some items from the
+from the entry you just put it in
+quotes
+okay
+so this is an example of
+using ldap
+without the
+uh without specifying a search filter or
+attribute so when you do that for
+example you you for example you do this
+so when you do that
+you'll be able to have access to every
+entry in within this uh within this base
+so sometimes you would like to get all
+this information
+for
+troubleshooting
+okay so additional more information
+about it so
+there are groups
+and there's a there's a user
+okay and
+so this is an example if you want to
+troubleshoot
+if you're if your ldap search is working
+correctly so
+i have configured openldap to do debug
+logging so
+from the open ldap you can see from var
+log slab d
+if you're how you are connected to the
+system
+so here it's logged in as manager
+prikana.local
+and then from here
+the filter says object class is equal to
+postx group and then search attribute cn
+so
+all the information in the log is
+corresponds to
+to the end the parameters that you have
+specified from ldap search
+so that can be useful for debugging
+so this is an example of
+it didn't work so for example here
+there's um ldaps buying simple
+can't contact and
+that that information is not useful
+in uh on its own so
+if i take a look at the open ldap log i
+can see that there is a tls negotiation
+failure
+so it means that uh it looks like the
+certificate has not the server
+certificate could not be verified so
+um so here
+i try to run ldap search again with the
+debug option and then i can see here
+certificate verification error
+and it says that it's a soft side
+certificate but
+uh it's the the ca
+certificate authority is unknown
+so for issues like this and you want to
+verify the
+that the server
+server certificate is a good certificate
+then you have to edit etc open ldap.conf
+and add the
+uh ca certificate there so once you add
+this information and you try this again
+you'll be able to
+log in
+okay so um this one
+it's not really necessary for um
+troubleshooting ldap but i just added it
+in the slides so
+you could um add an entry using ldap add
+so you will create an ldif file
+and then use ldap add to add the entry
+so once i added the entry here i could
+search it here
+using ldap search
+and then ldap modify so
+for example i have this everyone
+group
+and i wanted to add dba user for to
+everyone group so i had to create this
+ldif entry
+and use ldap modify to modify
+the
+entry
+so
+and then if you need to delete you can
+delete via
+and use the filter i will use
+the the end of the entry to delete it so
+search for
+cnw03 users
+prikana.local to delete
+this entry
+so that being said it's it's a bit
+tedious to use ldap ad
+ldap modify ldap delete so you can use
+gui tools maybe like ldap account
+manager
+and for some cases for troubleshooting
+fast and being able to add users i use
+samba
+because with samba
+if i want to add a user i just say samba
+tool user create guest user guess user
+password so i'm adding a user called
+guest user with this password
+for samba if i want to list the users i
+just say samba tool user list
+if i want to know entries about that
+user i say samba tool show guest user so
+i get all the ldap entries also
+if i want to create the group i can say
+samba tool group add guest group
+you need to enumerate the groups so
+group samba tool group list
+or you need to add
+members to the group
+so
+i'm adding guest user to the guest group
+and uh this one uh i want to show i want
+to know details about the guest group
+so this is the this is
+very easy to use samba to to manage your
+your
+your ldap entries your ad up directory
+however you still need to at least learn
+about filtering
+running queries to filter how to get a
+user and how to enumerate its groups so
+this just this one just makes it quick
+to to to
+to create and manage users and
+groups
+so once you're able to
+troubleshoot and take a look i use ldap
+search
+even for samba
+let's just say that
+you realize that these are the server
+details that that you have gotten from
+them that
+you could
+you could go
+you could use that this is the host and
+this is the port and this is the
+protocol
+or
+you can use port 389
+but the protocol has to be tls so you
+have to upgrade the connection to tls
+uh and then this would be the
+credentials so for example
+for open ldap manager precon and local
+and uh password is brick on a live admin
+and um
+and this would what a user details would
+look like and if you want to
+uh
+filter
+maybe you'd like to use uid or cn so
+again uh you so you really need to
+explore the ldap entries to find out
+what what you need to
+um what you need to use as a filter
+okay and for group details
+member uid
+as you can see here
+the member uid for for groups in open
+ldap here is it doesn't provide the full
+the end of the of the user
+so this is something that you have to
+take note of when you're going to do
+group mapping
+so on the other hand using samba or
+somewhat like an ad
+ad implementation or ad clone
+so
+if you notice the information is almost
+the same except that
+for the credentials you can see that the
+administrator has cn users and even
+groups are part of the cn users
+in samba
+and if you take a look at the member
+details it has the full dn
+compared to
+open ldap so these are things that these
+are the intricate things that you need
+to consider if you're going to use
+ldap for
+or direct ldap configuration with
+with uh with perk on uh
+programs or db servers and pmm
+so if you're going to integrate ldap
+with berkona server for mysql
+so basically
+there's an ldap authentication plugin
+that's available since 8019 it's a
+contribute it's a community contribution
+by francisco miguel bieter
+and in upstream it's an enterprise
+feature you know ldap
+uh but here you can get it from perkins
+server for free
+so
+when troubleshooting you can take a look
+at the ldap source so i did take a look
+at that to
+understand how group mapping works with
+with this plugin
+and uh of course our documentation for a
+simple ldap
+and our blog article about
+introducing ldap authentication
+and um
+also my sequel on how
+uh
+how group mapping is used in
+uh
+in mysql sql so
+it's actually very similar that's why it
+helped me troubleshoot
+ldap authentication plug-in for
+uh perk on a server
+okay so as you can see it's so quick
+that um that i can talk about the one
+for uh mangadibi but the thing is um
+it's
+if i talk about if i talk about the
+configuration it's going to take the
+full um
+even even for just one uh
+uh
+database server it's going to take the
+full session so i i've placed all of
+this in a in a sandbox
+so for example
+uh let me just share what what it looks
+like
+so
+so this would be what the
+sandbox
+data would look like so
+there's a vagrant file for provisioning
+the vms i'll just show you quickly what
+it looks like
+so
+something like setting up your
+um
+your ansible controller samba ldap
+mysql123
+mongodb mongodb2 mongodb3 postgres1 2
+and 3 bmm1 and
+one for multi-factor
+and um
+so with the controller
+with the ansible controller it has
+the
+um
+instructions on how to and how to set
+this up and
+it's this will be well this is available
+in github so you can you can use this
+for testing i will just show you how how
+it works here
+so for example i'm provisioning my
+sequel
+i can
+uh
+i can just cut this one just to see just
+so that you have an idea on
+how i was provisioning my sequel here
+so uh disabling sc linux
+installing the perkana packages
+copying certificates
+starting it
+and setting up the dns
+and for integration i have this
+integration folder so for example for
+mysql
+so i have this in the in the folder so
+let me just
+so i have here all my notes for that so
+for example you want one is to one
+mapping one user account for one ldap
+account
+so
+the steps are here and the variables
+that you need to do to edit is here
+to use the ldap server server that is
+provisioned
+and creating the users
+performing the tests
+for role access mapping so that
+if the member is part of a particular
+group
+if the if the person is part of a group
+it has these privileges so
+i've provided instructions on creating
+the proxy account using the no login
+plugin
+for the roles or the privileges
+that
+that the users will not log into
+directly but will be mapped to them
+uh proxy accounts
+um
+grant proxy and then how to to login and
+test
+so we can we can take a look at that
+later if there's time
+but
+basically
+i've
+i've documented it here on
+uh
+for mongodb my sql pm and postgresql if
+you want to or postgres if you want to
+try
+uh doing doing this from your test
+systems as well
+okay so integrating ldap with percona
+server for mongodb
+so there's so many options for
+work on the server for mangadp so one is
+you can use ldap authentication with
+sassal and sasel is another
+authentication backend and so with sasel
+you can say you want to configure it to
+connect to ldap or
+configure it to connect to pam
+so or use shadow password so
+anything that is sassl
+authentication that works with sas
+authentication you can use that with
+mongodb
+and it also has a direct
+library for connecting to
+ldap
+so you can use again
+a username and password to connect to to
+ldap
+okay and then finally if you don't like
+using usernames and passwords you can
+also use
+uh certificates and
+and use and ldap authorization to check
+if uh
+to provide the role of the of the user
+that will log in
+okay
+so
+next
+so these are the references that you can
+take a look at about
+setting this up but again um
+all the tests for this to work is in the
+in the
+sandbox
+okay and then
+integrating ldap authentication with uh
+postgres
+so with with postgres we have
+uh you can use simple bind mode
+so you should provide the username
+and uh again because it's bind you have
+to say cn is equal to
+uh
+dba user cn is equal to user dc is equal
+to pergana this is equal to local that's
+too long so
+with a simple byte mode in postgres you
+just there's a con there's a setting
+there where you can specify the string
+at the beginning of the
+of the username and the string at the
+end of the
+of the username
+so you don't have to
+provide the whole
+dn itself
+and it also has search plus bind mode
+so
+with search for spine mode again
+it made it simple and it's a two-step
+process where you provide the username
+and the password and the system will
+search for that user in the directory
+find the dn
+and
+login using that dn and the password
+provided
+and then
+lastly you can still do group
+authorization in
+in
+in postgres unfortunately it's not ldap
+based so you need to create these groups
+and add members of the groups in
+postgres itself so again all of this
+all of this is
+documented in the
+in the
+sandbox
+so if you want to know more about it you
+can take a look at
+ldap in the postgres docs and
+authbghb conf html and
+again also in postgres to know how to
+configure this ones
+okay
+uh
+okay so
+okay so this one um
+i i've added some settings here uh that
+we can see from from the slides
+um so with with bmm we can integrate it
+with ldap odd0 and octa
+so for example if we're going to
+integrate it with with ldap we need to
+edit the grafana.ini
+and add these settings that we're going
+to enable um ldap
+and the configuration file is in etc
+grafana ldap dot
+domal
+so
+and in the in the grafana that
+ldap.tamil it has this configuration so
+as you can see this configuration is
+familiar you have your host you have
+your port
+will you use ssl will you use tls
+are you going to verify the service
+certificate
+do you have the root ca certificate to
+verify
+um
+okay
+you have the bind the end bind password
+for searching for the user
+and your search filter how do you search
+for users in ldap so in here the example
+is
+based on the common name
+and then where is the search base
+and then
+finally here which is important for
+role access mapping is
+to search so in for this particular case
+this is for open ldap search filter so
+you're going to search for
+object class
+postx group
+and
+the member uid is uh
+it's what was used to to log in
+and then you will search this in the
+group
+search base and you will search this and
+with the cn
+with cn
+and then you can provide more
+information about or extract information
+about
+uh
+about the entry using server.attributes
+and so this is the important part with
+with role access mapping so you will
+specify here if the user is part of this
+group
+the org rule is admin
+if the user is part of this group the
+developers group the or grow this editor
+and if the user is part of the everyone
+group the org rule will be viewer
+and once you uh make these um
+make these changes you will just have to
+restart pmm server
+so when you do that although it's kind
+of small here if i log in as dba user
+you can see here at the bottom that the
+role is admin
+whereas if i log in as a dev user 3 the
+role is editor
+so it might be useful for you instead of
+uh
+having all users be admin or or
+or have several users be admin actually
+and
+and some not so
+the group filters will be helpful for
+that
+so
+also um
+grafana um also supports oauth
+authentication services such as google
+azure github um
+okay so and auth0 and octa are zero
+identity providers so
+um it has something that's very distinct
+that when you try to log into
+a service it redirects you to a
+different login page
+and uh so that's that's basically
+uh
+oauth uh authentication and then uh
+there's some token token
+tokens going on for you to be able to
+authenticate with the right
+privileges
+so for setting it up you can take a look
+at grafana.com
+okay
+for for how to configure these
+so for example you're logged into aut00
+you have an account there
+and uh you want
+to use role access mapping with uh with
+auth0 so what you would need to do
+because by default it's not it's not set
+is
+you would need to enable authorization
+extension
+so
+from here you'll be able to create
+groups
+you'll be able to create groups here
+so
+so for example here i created an admin
+group pmm admin pm editor and pbm viewer
+and i added just a few members or just
+one member for each group
+and then the important part because you
+just
+added this extension is to be able to
+expose that group
+to pmm
+so to expose that group the other rules
+and uh for this particular case um
+it would be this one
+so basically what you want to do is to
+expose
+in your token
+group
+group information about the user
+so
+and also um
+basically in auto you'll also create an
+application and then it you'd have a
+client id and a secret
+and you also need to specify where it's
+being called from pmm so you have to
+specify this
+setting so the pmm url followed by graph
+login generic oauth so for this case we
+are allowing both http and https
+so
+so it depends on your in your settings
+and then um in grafana itself you have
+to specify let's say the root url
+uh and specify directly where where it
+is actually located so
+this will not work if you're not if you
+do not add this setting
+so
+okay
+and then finally you'll have to add the
+odd serial configuration so you provide
+the id secret
+in the application that you'll be
+creating in ot0 and you also need to
+provide the
+role attribute path so that you can
+uh
+classify what privilege will that user
+have
+so when you do that
+also
+you can also add logging
+so if you want to debug if if logging is
+not working but if it does when you when
+you go to the pmm website there will be
+this option called sign in with dot zero
+and when you click that you will be
+redirected to
+uh zero authentication
+so
+if you're part of the right group
+uh
+or if your account is valid then you'll
+be able to log in
+if you're if you're part of the admin
+group you will be
+having the
+admin
+admin role
+so
+um so octa it's the same
+groups are not
+set
+in their
+in their api server so you have to
+you have to expose it as well
+and
+uh for example here um groups id token
+uh you can specify how to
+to to claim that group or how to search
+for groups in the api
+authorization server so
+uh from this scope groups
+he would like uh
+to to search for groups
+and it should match anything that
+asterisk
+so once that is done um you also in octa
+you also have to configure the login
+redirect also
+and then
+and then in in pmm you just need to edit
+grafana you need again you need to
+specify root url
+and uh
+the client id the secret and auth url
+token api url so this information will
+be provided from the octa website and
+finally the important part which is to
+to do the role attribute path so
+basically again
+to designate the role of the user
+depending on
+who logged in or
+on your membership
+so
+when you do um configure it and you and
+and you restart pmm server uh when you
+log into pmm there's again another
+additional um authentication mechanism
+that when you log into octa you'll be
+going to the octa octa prop
+okay so
+um so finally um
+in my doctor so
+i haven't really talked about pam so all
+of it is ldap and oauth
+you can also do multi-factor
+authentication with them
+so with bam um
+it's up to you
+which whatever bam
+bam aware
+authentication
+mechanisms are available you can use
+that
+so you can use shadow password so etc
+shadow you can use ldap you can use wind
+bind
+you can use sssd you can use google
+authenticator and many many more
+so
+so with perkana server
+it's pam is available via the pam
+authentication plugin
+and postgres it's also available
+they have the pam authentication method
+for that you just have to edit
+pg underscore hba.com for this one and
+for mongodb it doesn't have pam directly
+but it has sassal and with sassel you
+can configure it to use
+pam
+so
+we could have a demo i'm just taking a
+look at the time so 30 plus
+10 so far so eight minutes
+so like for example multi-factor
+authentication demo ssd
+so we can use relmd to join
+samba
+configure ssd to resolve
+user names create users on all db
+servers
+so
+yeah so we could we could try this one
+but
+do i have really don't have time for
+this
+um
+okay
+so um
+i'm not sure i don't think we have
+a lot of time for that but it's it's all
+of this is configured from
+uh from from here so let me just show
+you what what what this uh
+what what this looks like
+so
+let me see
+so v grant
+so
+so for example um
+so for example i'm going to up
+my sql 3 it's not yet available
+so hopefully it will take it will be a
+bit faster
+okay
+sorry it's taking time
+okay
+okay so
+now that's done i'll just um do some
+provisioning so and i use ansible for
+this one just gonna fix
+ssh access first
+okay any question
+any question
+anybody
+so some of these are airing out because
+i haven't upped the
+the services so i will
+provision it
+so i will just provision
+my sql
+okay so it's just installing the
+gpg key
+it's installing the proconnect
+repository so any question and
+there's none i don't think we'll have
+time to do the multi-factor so i just
+want to show you how you can use the
+uh information from the github
+or from the from my sandbox to be able
+to set up
+to be able to set up uh
+ldap authentication so let's just try
+with mysql
+so that being said um i have this um
+prohibition so
+uh i have an ldap server here
+so tail
+field f
+bar
+so
+we have our login here
+and we're just waiting for
+the brick on the packages to be
+installed
+okay
+okay i'm just scrapping dessert so
+okay
+looks okay
+okay so it looks okay
+uh let's just wait for this
+so starting my sequel
+i mean it's probably worth mentioning
+that in pmm if you want to configure
+the external authentication
+you're doing it inside
+a docker container most of the time and
+the etsy directory is not preserved on
+container upgrades so
+there's a ui upgrade for pmm as you go
+from version to version version you'll
+preserve if you go that route but if you
+actually replace the container
+all that configuration for octa for ldap
+gets white there are some workarounds so
+usually i do it through environment
+variables so that every time i spin up a
+new container it's just passed in and
+grafana will inherit all the grafana
+config values but just
+fyi but
+first time i did it and lost it i got to
+start all over
+directory so it's not lost that's what i
+do i put my ldap toggle file in a
+stateful directory and then all the
+configs in grafana ini as a environment
+variable
+thanks
+so much okay so so for example here um
+uh so let's do
+the
+the long one um authentication uh
+uh
+roll with red roll access
+mapping so i'll just follow the steps
+here so i'm going just going to add this
+in the configuration
+so
+let's see um nice enough
+so
+these are the
+in
+so
+okay so i'm just adding these and
+these
+and then um
+i need to restart it so that the plugin
+will be reloaded
+okay
+um
+and then i'm going to create the
+proxy account
+so
+so with this proxy account um you can
+see here
+the
+how it's being configured
+so
+it will find it in users perk on a local
+and the ldap user db admins will be
+mapped to the mysql db admins user the
+developers will be mapped to the mysql a
+developer's ldap group will be mapped to
+the mysql developers group okay
+so um
+okay
+so we want to make sure that the
+the
+those users
+with those privileges
+will not be able to log in so we will
+disable that one
+and then
+so i'm going to create the users
+so one
+mysqldp admin
+okay
+so
+so i'm creating the these users and
+then okay
+so
+then one more
+okay
+so
+just create these users and then
+i'm gonna grant proxy access
+to these users
+okay
+so one and then another another one
+okay
+so i will try to log in let's see if
+we're able to log in
+uh let's just try to log in so
+let's see if it works
+so if i try to log in
+yep
+it works so you can see that uh if i log
+in as dev user three and i didn't create
+a dev user three here
+that
+its current user is
+mysql developers so
+if i just
+do this
+and run show grants
+okay so i can see that i have privileges
+to applications and if you look at ldap
+it did the searching so this is helpful
+for
+for debugging finding out
+uh
+if it's working or not
+okay so
+bound us manager
+uh or
+or like for example here uh let's start
+here it
+logged in as the manager and then it
+searched for dev user three it found it
+so
+we're going to bind as the dev user
+three
+and then if it's successful then
+it will log in again as manager and then
+it will search the
+ldap for
+the that posix group and that member uid
+and then once it has found the
+it found the group it will relay that to
+my sequel and then my sequel in turn
+will specify if uh what kind of
+privileges that that user will have
+so
+okay so
+just um second to the last slide so that
+information that that sandbox if you'd
+like to use it as well you can find it
+from
+github.com external authentication 101
+and
+that's it so let me just
+go back
+so i guess there's no question so thank
+you very much for coming

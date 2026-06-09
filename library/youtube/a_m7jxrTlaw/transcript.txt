@@ -1,0 +1,57 @@
+sometimes you run into an issue where
+you want some autocomplete but not total
+autocomplete for instance here we have a
+component of react component which takes
+in a prop which is a size and this size
+here can be either sm or xs but imagine
+that we designed an api where you can
+either pass in sm xs or you can pass in
+any arbitrary value
+and here what you might think is the
+right thing to do is to go or string
+here and this is a union type so it has
+sm or xs or string this seems to make
+sense except that you lose all the
+autocomplete on the size prop which
+isn't really what you want
+the reason this happens is that
+typescript is quite clever with union
+types
+and it tries to kind of like
+um pull in all of the types that it can
+and like for instance if you specify the
+same type twice like xs then it won't
+show up twice in the autocomplete so you
+just have sm and xs and so the reason
+this is happening with with the string
+is it's kind of saying okay sm is a
+string and xs is also a string so what
+we need to do is kind of just remove
+these two and then only off a string
+which is why you don't get any
+autocomplete so the way we can get
+around this is we can actually use the
+omit
+utility type and we can omit xs or sm
+from the union
+and now typescript won't kind of
+collapse these three things and you'll
+have the autocomplete here so you'll
+have sm xs and you'll be able to pass
+any other arbitrary value and we can
+even turn this into a type helper if we
+want to so we can say type loose
+autocomplete
+with a t
+and we're going to say extend string
+just because we're dealing with strings
+here and we're going to say t
+or
+we can have omit
+string
+t and this is a way of just taking this
+information up here and turning it into
+a type helper and now we can just wrap
+this with loose autocomplete
+and it's going to work for us so again
+xs sm and any arbitrary value

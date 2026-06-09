@@ -1,0 +1,970 @@
+(ambient jingle)
+- Hi, I'm Julian Lovelock.
+I'm the product manager for
+Amazon Verified Permissions,
+a new service from AWS.
+I'm based in Northern California.
+Moved here about 16 years ago from London
+and looking forward to talk
+to you about the product.
+- Hi, I am Abishek Panday.
+I'm a product manager with AWS
+on the Verified Permissions team.
+I've been living in Seattle
+for about a couple of years
+and moved here from Austin.
+- So today we're gonna
+talk about the service,
+what it is and why we built it.
+I'm gonna share some
+feedback from a gated preview
+or private beta that we've
+run over the last six months,
+and then we're gonna
+get into the meat of it
+with a demonstration
+of a sample application
+that you yourselves
+can download and access
+in order to better understand
+how the service can be used.
+So let's get started.
+Amazon Verified Permissions
+is, as the name suggests,
+all about permissions.
+So what are permissions?
+Well, permissions are the set of rules
+that describe what a
+user of an application
+is permitted to do.
+If you're an application
+developer building an application,
+you need to think about
+how you manage and control
+what users of the application
+are allowed to do,
+what functions they're allowed access to,
+what data they can get to.
+Verified permissions provides
+a way for you to formalize
+that definition of those
+rules in the form of policies,
+and we'll get into that
+in a bit more detail.
+But why are permissions so hard?
+Historically, permissions have been coded
+into the application, which
+doesn't sound too difficult.
+If we imagine ourselves
+building an application
+to manage data about books,
+then we might have a get book request
+as part of the APIs of the application,
+and we'd start to think
+about who is allowed
+to call the get book request.
+Well, we might start
+with a rule that says,
+if you're the owner of the book,
+you can call that function.
+Fine, simple enough.
+But then we want, okay, the administrator
+should be able to get to
+any book in the system.
+So we'd need to add
+another rule into our logic
+to call out that an administrator
+can access the book.
+We might then decide that
+multifactor authentication
+is a critical gateway,
+and so we would add another
+rule into our permissions logic
+that requires users to have authenticated
+with multifactor authentication
+to call this API.
+And then we've got books that are public
+that we don't worry too much
+about protecting the information on.
+So we have another rule that says,
+well, if the book's public, of
+course, anyone can get to it.
+And you can see by this point
+that the logic around the
+permissions management
+is beginning to squash the logic
+around the actual function
+off the bottom of the page.
+There has to be a better way to do this,
+and indeed there is.
+By externalizing these
+rules into policies,
+we can replace all of this logic
+within the get book
+function with a single call
+out to an external authorization service.
+So now we can make a call out,
+is the client authorized
+to call this function?
+And the authorization service
+can evaluate that request
+based on a set of policies
+that describe who is
+allowed to make that call.
+This policy, for example,
+says that you can make the call
+if you are the owner of the book.
+This one says that an admin
+can get to those book details.
+This one requires
+multifactor authentication.
+So you can see we've
+externalized the policies
+into a permissions management system,
+(coughing) excuse me,
+where you can centralize the rules
+about who is allowed to do
+what within your application.
+So that is the basis for
+Amazon Verified Permissions.
+It's a service that enables
+you to manage a set of policies
+that describe who is allowed to do what
+within the applications
+that you are building
+and provides an authorization service
+that lets your application
+call the service
+to evaluate those policies
+each time a user within your application
+attempts to take an action.
+We launched the service
+under gated preview
+back in November, 2022.
+The gated preview was
+hugely instructive to us.
+We had over 500 customers
+requesting access.
+We onboarded over 90
+customers to the service,
+all of whom we talked to
+individually as product managers.
+And I wanna summarize
+here some of the things
+that we learned from those conversations.
+What did you as customers tell us?
+Well, the first point
+is one size fits all.
+Well, what do I mean by that?
+That's a pretty bold
+and in some ways slightly loose statement.
+Well, as you might imagine,
+across our gated preview,
+we saw a wide range of
+different types of applications,
+different use cases,
+different architectures.
+In a second, I'm gonna get into some
+of those different types of applications
+and explain some of the
+idiosyncrasies of them.
+But what we learned, very gratifyingly,
+was that regardless of
+the type of application,
+the Cedar policy language,
+which is the underlying
+language in which permissions
+within verified permissions are expressed,
+provided the flexibility
+for multiple different types
+of authorization models.
+And this gave us the
+confidence at the start of May,
+May the 10th, to announce that
+we were open sourcing Cedar,
+both the language
+specification and also an SDK
+that enables you as developers
+to use and build applications yourself
+that evaluate policies locally
+within your application,
+if that's the design paradigm you want.
+And you can see here on the right
+an example of a Cedar policy.
+Actually, you can see two
+examples of a Cedar policy.
+I said I'd talk a little bit
+about the different types of applications
+and how they varied in
+terms of their requirements
+for permissions management.
+We saw three types of applications
+that our customers were building
+using verified permissions
+to manage the permissions and
+authorization within those.
+The first was what we describe
+as internal service access.
+These are applications built by employees
+that enable other employees
+to access the organization's data.
+Characteristics of permissions management
+within these applications
+is that the users
+accessing the underlying data
+tend to be organized
+into nice hierarchies,
+representative of the
+organizational hierarchy
+within the enterprise.
+And associated with those
+hierarchies are different roles
+that describe what different
+users are permitted to do.
+We often saw multiple different
+application development teams
+within a single enterprise
+building applications that
+access the same underlying data.
+Zero trust from a security perspective
+was a big driver for these
+application development teams,
+both the principle of least privil, pri,
+easy for me to say, both the
+principle of least privilege,
+which mandates that users should
+only get access to the data
+that they need and not to anything else.
+And also the need for
+continual reauthorization,
+i.e. each time a user
+attempts to take an action
+within the application,
+the permissions of those users
+or that user are reevaluated
+to reaffirm that they are indeed allowed
+to take that action.
+Some of the challenges that we saw
+within this class of applications
+was something we might
+label role explosion,
+whereby the number of roles
+within the organization
+grew substantially to a
+point in some cases, even,
+where the number of roles
+exceeded the number of users.
+This inevitably becomes a
+challenge to manage permissions,
+and we'll talk a little
+bit more in this session
+about how verified permissions
+can help you meet that challenge.
+The second class of applications
+were customer facing applications.
+These are applications
+built by organizations
+to sell, deliver, and support
+that organization's products and services.
+The organization in question
+might be a retail organization,
+might be a financial
+services organization.
+The characteristics of
+permissions management
+in this class of applications
+are that the access is based
+on the relationship that the
+user has with the organization.
+Customers aren't organized
+into neat hierarchies
+in the way that employees often are,
+and rather it's the nature
+of that customer relationship
+that drives the permissions
+that that user has
+within the organization.
+UX, as you imagine,
+is everything in a customer
+facing application.
+The application is your
+front window or shop window
+out to the world.
+And so the user experience
+that you deliver is critical
+and any frustration that
+customers might experience
+can negatively impact how
+they use your services
+and the extent to which they
+do indeed use your services.
+Some of the challenges we see here
+from a permissions management system
+is that users want to manage
+their permissions themselves,
+as opposed to centralized administrators
+managing permissions for them.
+A user of an internet
+online banking application
+might want to be enabled
+to delegate access
+to a trusted signatory, for
+example, on the account.
+And the third class of
+applications that we saw
+were software vendor SaaS.
+This is where the software
+is itself the product.
+In other words, our customer
+is building a piece of software
+that they then sell to their customers.
+These are typically
+workforce-oriented applications
+like CRM systems, HR systems,
+ERP systems and the like.
+One of the characteristics
+that play a significant part
+when we think about permissions management
+is that these applications
+tend to be multi-tenant
+and each tenant may have
+its own identity provider
+and therefore a slightly different way
+of representing the identities
+and the attributes of
+the users at that tenant.
+And that, as you might imagine,
+does become a factor when then we think
+about attribute-based
+access control models.
+While the challenges
+from a permissions management perspective
+is the need to support custom roles
+because each tenant will
+have a different view
+on exactly what a role
+in that organization
+is permitted to do.
+So those were the three
+different classes of application
+that we saw.
+We also saw IoT and some other
+types of application as well.
+I wanna talk now about the personas.
+Who's actually using this product?
+Who are the stakeholders for it?
+There were three key
+stakeholders that emerged.
+The application developer who
+is building the application,
+the access administrator,
+who's then responsible
+for managing permissions
+within the application once it's built.
+And the compliance manager
+who cares deeply about how
+the permissions are set up
+because that can impact the extent
+to which their organization
+is in compliance
+with either their own internal
+mandates and guidelines
+or externally-driven
+guidelines and mandates.
+I wanna deep dive onto
+the application developer
+and what does this product mean to them?
+You, as an application developer,
+care about three things.
+I mean, you care about
+multiple things clearly,
+but these are the three
+that bubble to the top
+in the conversations that
+we've had with customers
+in the context of verified permissions.
+Firstly, you care about
+being able to build faster.
+You're working to tight delivery timelines
+and any product that provides
+out-of-the-box capabilities
+that you would otherwise
+have to build yourself
+is of significant interest to you.
+Secondly, you care about the features
+within your application.
+You're proud of what you built
+and you want it to be a strong product
+with interesting and exciting features.
+And thirdly, you care about building
+a secure application and
+passing that AppSec review.
+Now, in the context of the first,
+we identified, or rather,
+one of our customers
+identified opportunities
+to accelerate application
+development by up to 20%
+by being able to
+externalize authorization.
+In other words,
+close to 1/5 of the functionality
+that they built within their application
+pertained to managing who
+was allowed to do what
+within that application.
+So how does an application developer
+engage with the product?
+There are three steps or three levels.
+The first is to define
+your authorization model.
+This can be represented simply
+as a narrative that describes
+who is allowed to do what
+within the application.
+And would be written in conjunction
+with the business owner of the application
+or the product manager.
+So in this session we're gonna focus in
+on an imaginary pet store application.
+And therefore as we start
+to write the narrative
+that describes the authorization
+model of that pet store,
+we're gonna think along the lines of,
+well, anyone can register
+on this pet store,
+thereby becoming a customer.
+Customers are allowed to add
+pets for sale, search pets.
+So you can see there what
+we're beginning to do
+is to describe both the
+different types of entities
+for which we'll be defining permissions,
+in this example, a customer.
+The actions that those
+principles are permitted to do,
+searching for pets, posting pets for sale,
+and the resources themselves
+on which those actions are being taken.
+In this instance, pets.
+The next step in the process then
+is to formalize that narrative
+in the form of a schema.
+The schema describes
+in a declarative syntax
+the entities that you are
+creating permissions for,
+the actions that can be
+taken on those entities
+and the resources that those
+actions are being taken upon.
+In this example, the
+namespace is PetStore.
+The action called out here is SearchPets,
+and it applies to the
+resource type of Pets.
+So you've defined in a narrative
+form the permissions model,
+you've created a schema
+that describes that
+in a formal syntax.
+The next step in the
+application developer's journey
+is to define what we call the
+application level policies.
+These are the policies
+that apply broadly across the application.
+For example, the policy we're showing here
+permits a principle in
+the user group, Customers,
+to take the action SearchPets
+on any type of pets.
+So there you see, we've
+now defined our policy
+and that policy will broadly apply
+across the whole application.
+And when we get into the demo later,
+you'll see how an example of actually us
+going into the application
+and creating the policy.
+You can also create, as an
+application developer, templates.
+These are shells of policies
+that then get filled out
+when the end user uses the application,
+enabling policies to be created on the fly
+or at runtime during the
+use of the application,
+and not just necessarily all
+policies being defined upfront.
+What was the third thing
+that we learned through our gated preview?
+It was the importance of fitting in.
+The identity ecosystem
+is rich and established,
+comprising identity providers,
+identity governance and administration,
+orchestration providers,
+privileged access management
+software, API gateways.
+As an authorization service,
+we need to fit within
+that identity ecosystem
+and be able to explain to our customers
+how verified permissions works
+with the other extremely
+compelling products in that space.
+And so we're very excited to
+announce our launch partners,
+CyberArk, Ping Identity,
+Strata, and Transmit Security.
+These are partners with
+whom we've documented
+how to co-deploy verified
+permissions with these solutions
+in order to enable joint
+customers to benefit
+from the synergies between our product
+and our partners' products.
+Which brings me to the
+fourth thing that we learned,
+which will come as no surprise to anyone.
+No one wants to read the manual.
+What application developers
+want is a working example
+that they can get hands-on experience with
+and start to explore how the product works
+and what it can do with them.
+So no instructions on making pot noodles.
+Let's give you the pot noodle
+out of the box as it were.
+And so to provide you and show you
+how to use the sample application
+that we are providing
+with Verified Permissions,
+I'd like to transition
+to my colleague, Abhi,
+who will start the demonstration for you.
+- [Abishek] Thanks, Julian.
+So I'll quickly go over a demo
+which uses Amplify Amazon
+Verified Permissions
+and Cognito, a smaller sample application
+that uses these three services.
+The demo is for a pet store
+that allows customers to
+search for pets and order them.
+And then it also has a
+persona for store owners
+who actually can list all
+orders for their pet store.
+So this will cover the
+basics of authorization,
+how you can create Cedar policies
+and how your application
+interacts with it.
+So to begin with, while
+Julian was talking,
+I deployed a fresh
+instance of the application
+and so it doesn't have any users yet.
+So to begin,
+I'm going to start by creating
+a couple of customers.
+So the first customer I
+created is Abhi, my name.
+And then I'm gonna create
+another user called Mark.
+Awesome.
+And to recognize in my app
+that both of these users are customers,
+I'm going to add them to
+a group called Customer.
+Okay, created the group
+and then added Mark
+and Abhi to this group.
+Awesome, so now I have
+authentication for my app setup.
+Essentially, Abhi and
+Mark can log into the app,
+but this didn't cover
+the permission management
+and authorization piece.
+For that, I'm gonna use
+Amazon Verified Permissions.
+So I navigate to the console
+and I get started by creating
+my first policy store.
+A policy store is a logical container
+where your Cedar policies reside in.
+When a user takes an
+action in your application,
+your application calls
+Verified Permissions
+with a specific policy store
+and check whether access
+is granted or not.
+Let's try to create
+our first policy store.
+So I hit Get Started and I
+hit create a new policy store
+and we provide three methods
+for creating your policy store.
+You can either use a guided setup,
+which is a wizard-based setup.
+We have three sample policy
+stores for you to get started
+and learn more about the service.
+For the purpose of this demo,
+I'm gonna create an empty policy store.
+Great. So that was step one.
+The second step is linking my application
+to Amazon Verified Permissions
+and this policy store.
+So I'm gonna copy the policy store
+and then I'm gonna go into my application,
+which is a Lambda function,
+and then set it up as
+an environment variable.
+Save.
+Great.
+So remember, we created
+an empty policy store,
+which means it doesn't have any policies.
+By default, we do the safest thing,
+which is we deny any action,
+or deny every action
+when we have no policies.
+But that's not very useful
+for my applications.
+So let me go ahead and
+create a first policy
+that allows customers to search
+for pets and place orders.
+I have this policy pre-created,
+so I'm gonna skip the wizard
+and I'm going to paste in my first policy.
+Great. So what does this policy say?
+Let's dissect this a bit.
+So the first thing it says is
+this is a permit statement.
+So permit any principle, the user,
+who is in this group call customer
+to search for pets and place orders.
+Great.
+And let me just quickly save
+this and first give it a name.
+So customers can order pets
+and search for pets.
+Create a policy.
+Now that I've created this policy,
+let me go to my app and see if it works.
+So I log in as Abhi.
+Okay, and I'm gonna say search for pets.
+Okay, so it returned a
+decision called Allow.
+And the reason it returned this decision
+is because of this policy ID ending in wKH
+which is the policy I just
+created a couple of minutes back.
+Okay? So that kind of works out.
+So that's one authorization,
+which is a very broad authorization.
+It applies to everyone in customers.
+Now at times you need to scope down
+what permissions customers have.
+In this case and in my
+pet store application,
+I want customers to be able
+to view their own orders.
+And remember, customers can
+only view their own orders.
+I cannot view someone else's order.
+For example, Abhi should not
+be able to view Mark's order
+and Mark should not be
+able to view Abhi's order.
+So let's write an authorization
+policy that helps with that.
+So I go back to Verified Permissions
+and I'm gonna create another policy.
+And just as before, I have
+a policy created beforehand,
+which I'm gonna just copy paste in here.
+Okay, so let's just run
+through this policy.
+So this policy basically
+says permit any user
+who's a customer to take
+an action called Get Order.
+But now I've introduced this when clause.
+So this when clause allows you
+to specify attribute-based conditions.
+In this case, I've said the principles
+should be same as the resource owner,
+only then access is permitted.
+So let's just give this a name.
+Let's say policy.
+Okay, now I go back to my
+app and I hit view order.
+And so yes, this action is allowed.
+And the reason for that is
+the way I've coded the app
+is it always tries to get order one.
+And I've also hard coded
+such that order one
+is owned by Abhi.
+And so because I'm logged in as Abhi,
+I can see order one.
+Now we also wanna make sure
+Mark cannot see order one
+because Mark did not place order one.
+So I sign out, I sign in as Mark.
+Great, and I say view order.
+And so Mark is denied to get order one.
+And the reason for that is
+Mark does not own order one.
+Okay, so this makes sense.
+There are a set of customers
+who can do certain actions in the app.
+The other thing I want
+to quickly demonstrate
+is this concept of roles.
+Roles are a very intuitive
+way to think about permissions
+that we see very often used
+in a workplace environment.
+In a very simplistic world,
+roles map to your job function.
+So I wanted to build a quick demo
+where I have a role
+called store owner role,
+which is allowed to view
+all orders in a store.
+Okay, so to do that,
+the first step is creating a store owner
+and adding them to the role.
+And so I create a new user called Kate.
+Okay, and then I create a new group
+called Store Owner Role
+and then I add Kate to this group.
+Okay, so this solves the
+authentication side of it.
+Now let's solve the
+permission management side,
+and for that, I'm gonna create a policy.
+As before I have a policy pre-created,
+so I'm gonna skip this step.
+Okay, and so let's run
+through this policy.
+So this policy says permit any principal
+who's in the store owner group.
+This is the group I
+just created in Cognito,
+and they can get store
+inventory and list orders.
+Okay, I create this policy,
+go back to my React app, login as Kate
+and let's see if she can view all orders.
+Okay, and so I hit list all orders
+and it does in fact result
+in an allowed decision
+because of this policy ending QF3,
+which is the policy I just
+created for store owners.
+Okay, this seems to work well.
+Verified Permissions and we together
+solved role-based access controls.
+Well, actually not really.
+While this is a good way to go about it,
+we still see a lot of customers
+falling into this problem
+called role explosion.
+So what is role explosion?
+Role explosion is when you have hundreds
+and thousands of roles and
+managing and auditing roles
+becomes really challenging
+for your organization.
+Okay, so I tried to understand
+why that was happening
+and one of the biggest reasons
+was we started defining roles
+to give access to a
+small set of resources.
+We started with this concept
+called lease privilege,
+where we should give a
+small number of people
+access to a small set of resources.
+And then we defined a
+small set of resources
+and created a role for it.
+Let me try to demonstrate
+it in my sample application.
+So Kate did really well.
+She had a pet store in Austin
+which was very successful,
+and she realized that she was
+very good at writing software.
+And so now, she also sells this software
+to other pet store owners.
+And so Julian runs a pet store in London
+and he bought this software.
+And then other other
+individuals similar to Julian
+bought this software all over the world.
+And now she needed to add a rule
+which says you can only list
+orders for the store you own.
+You can't list an order
+for an arbitrary store.
+And the most intuitive way
+she tried to solve this
+was to create a role for every store
+that she sold the software to.
+So she had a role called Pet
+Store Austin for her own store,
+Pet Store London, which is Julian's store.
+And then for each store she had a role.
+But very quickly realized
+this doesn't scale well.
+So how do we solve this
+problem of role explosion?
+Well, one way to solve it
+is by combining role-based and
+attribute-based permissions.
+Let's try to do that.
+So we go into Verified Permissions
+and we go ahead and update
+this policy for store owners.
+And we do that by adding a when clause.
+Okay? So what does this, when clause say?
+So this when clause basically says,
+as long as the principal
+employment store code,
+basically where the principal
+works or the store they own
+is the same as the resources
+store ID, then provide access.
+So we save this policy and quickly realize
+we need some place that captures
+which store does the principal work in?
+And to do that, I go back to Cognito
+and configure it as an
+attribute for store owners.
+So in this case, I'm gonna go into Kate.
+I'm gonna add an attribute
+called EmploymentStoreCode.
+Oh, I am geeky.
+I was a developer before
+being a product manager,
+and so I come up with all sort of names.
+And so Kate, she owns the Austin store.
+I'll save this and then I'm
+gonna go back to my React app.
+Now remember, attributes in Cognito
+are passed on to Verified Permissions
+through the Identity Token,
+through the jwt token.
+And so I need to just refresh my jwt token
+so that it captures the attribute.
+So I log out and log back in as Kate.
+Okay, and this is where
+I say which pet store
+she's asking the order for.
+And so if I go to Austin,
+that action is allowed because
+she owns Pet Store Austin.
+Now we also want to ensure
+that she cannot see orders
+for Julian's store, which is in London.
+So let's change this to Pet Store London.
+So this should result in a deny.
+And it did, because she doesn't
+own a pet store in London.
+So this kind of was a quick demonstration
+of how you can solve the
+challenge of role explosion
+using Amazon Verified Permissions
+and combining role-based and
+attribute based-policies.
+So we created one policy that
+worked across all the stores.
+Okay, great.
+So this seems to solve a lot of stuff,
+but how do I get from my current code
+where permissions are hard-coded
+in my applications code,
+to a place where
+permissions are externalized
+to Amazon Verified Permissions?
+Well, we have one strategy for you,
+which is a three-step plan.
+And let me quickly switch over
+to my deck to show that plan.
+So how do you get started
+and how do you externalize permissions?
+We have a three-step plan.
+The first step is to add a piece of code
+that calls Amazon Verified Permission
+and this is authorized block.
+You do nothing, you discard the results,
+but what this provides
+you is a cloudtrail log
+of who is accessing what.
+So you have a complete picture
+of who is trying to access what.
+Well, in the next step,
+you set up your policies in
+Amazon Verified Permissions
+and you start shadow testing.
+What do I mean by that?
+So you get a result from
+Amazon Verified Permissions,
+it's the shadow result.
+You get a result from your code
+or from inside your application
+and then you compare the results
+and see how many times it fails
+and how many times it succeeds.
+Okay, great.
+Third, you keep adding policies
+and making adjustments
+so that the two match.
+And when you see that
+they match all the time,
+you're ready to take step three,
+which is to enforce these permissions
+using Amazon Verified Permissions.
+And so you write this code
+where if it's not authorized,
+just return access denied.
+And this enables you to remove
+all your authorization logic
+from your code and move it to
+Amazon Verified Permissions.
+A simple three-step process.
+First call Verified
+Permissions, discard the result,
+then start shadow testing
+and comparing the results.
+And lastly, remove code
+from your own application
+and then enforce the results you get
+from Verified Permissions.
+Okay, so if I had to leave
+you with one message today,
+it would be don't build
+your own permissions
+management system, it's hard.
+Instead take advantage of
+Amazon Verified Permissions,
+which is a hosted AWS service.
+Again, I want to thank everyone
+for taking the time today
+and learning more about
+Amazon Verified Permissions.
+Thank you.

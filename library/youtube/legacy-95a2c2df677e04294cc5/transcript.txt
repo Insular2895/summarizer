@@ -1,0 +1,249 @@
+Did you know that your 10th message to
+Claude cost 11 times more than your
+first? Not because Anthropic is charging
+you more, it's because Claude re-reads
+your entire chat history before replying
+to the message that you just sent. I
+used to hit Claude's usage limits every
+single day. However, after implementing
+a few practical rules for how I use
+Claude, I haven't hit my limits in over
+a week. So, without further ado, here
+are the 11 things I changed that stopped
+me from hitting Claude's usage limits.
+Oh, and if we haven't met yet, I'm Duby.
+I build apps every day using Claude and
+I've generated 47 thousand dollars in
+less than 50 days using these AI tools.
+So, first thing I need you to do in
+order to save your precious Claude usage
+is you need to stop looking at it as how
+many messages you sent and instead look
+at how many tokens you use. Because
+Claude doesn't count messages, it counts
+tokens. A token is roughly 3/4 of a
+word, so a 100-word message is about 130
+tokens. Every time you send a message,
+Claude re-reads the entire conversation
+from the top.
+So, your first message costs maybe 500
+tokens, your second message costs 1,000,
+your 10th message costs 5,000, and your
+30th? That's 232,000 tokens for one
+message. A developer named Aniket
+Parihar actually tracked this. 98.5% of
+his tokens went to re-reading old
+conversation history, only 1.5% went to
+generating the actual response. That
+means for every 100 tokens you're
+burning, only one and a half are doing
+useful work. That's not Claude being
+stingy, that's you feeding it a novel
+every time you ask a question. Once you
+understand this, everything will change
+because every single rule I'm about to
+give you comes back to this one idea:
+use fewer tokens per interaction. And
+just like the tokens you put in count
+against you, the inverse is also true.
+Every word Claude sends back counts as
+well. So, check out this repo called
+Caveman. It makes Claude drop the fluff
+and talk, well, like a caveman. People
+have reported token reductions of up to
+65% from using this alone. I'll leave a
+link in the description. Rule one, don't
+follow up. This is the one that saved me
+the most tokens immediately. When Claude
+gets something wrong, your instinct is
+to send a correction. No, I meant this.
+Uh, that's not what I wanted. Try this
+instead. Don't do that. Every subsequent
+message gets added to the conversation
+history and remember, Claude re-reads
+all of it every single turn. So, you're
+burning tokens on context that didn't
+even help. At five messages deep, you're
+already at 7,500 tokens. So, instead of
+correcting Claude with a follow-up,
+click edit on your original message, fix
+the wording, hit regenerate, the old
+exchange gets replaced instead of
+multiplied. Exact same result, but for a
+fraction of the cost. Rule number two, a
+fresh chat every 15 to 20 messages.
+Imagine a chat with 100-plus messages.
+That's over 2.5 million tokens burned.
+Most of it just re-reading old history.
+So, ideally, start a new chat every 15
+to 20 messages. When a conversation gets
+long, ask Claude to summarize
+everything. Copy that summary, start a
+new chat, and paste it as your first
+message. You keep the context, you ditch
+the bloat. I started doing this and my
+limit warnings basically disappeared
+overnight. Rule number three, batch your
+questions into one message. Many people
+believe that splitting questions into
+separate messages leads to a better
+result. Almost always, the opposite is
+true. Three separate prompts equals
+three context loads. One prompt with
+three tasks equals one context load. You
+save tokens twice. Fewer context reloads
+and you stay further from hitting your
+limit. Instead of summarize this
+article, now list the main point, now
+suggest a headline sent separately,
+instead just write summarize this
+article, list the main points, and
+suggest a headline. And guess what? The
+answers often turn out better because
+Claude immediately sees the full
+picture. Three questions, one prompt,
+always. Four, track your token usage.
+[music]
+Claude doesn't show you how many tokens
+you're actually using. Just a progress
+bar that says 63% used. That's it. So, a
+developer called Paweł Huryn built a
+local dashboard that reads files Claude
+Code already writes to your machine.
+Turns out, every session, every turn,
+every single token is logged to your
+machine in JSONL files. Input tokens,
+output tokens, cache reads, cache
+creation, model names, timestamps, it's
+all there. You just can't see it. The
+dashboard scans those local files,
+builds a database, and serves charts on
+localhost. You can filter by model,
+filter by time range, cost estimates
+based on current API pricing, works
+retroactively on your entire Claude Code
+history. It's free, open source, zero
+dependencies, you just need Python. You
+can't fix what you can't measure.
+Install it, look at your actual numbers,
+and I guarantee you'll be shocked at
+where your tokens are actually going.
+Rule number five, upload recurring files
+to projects. If you upload the same PDF
+to multiple chats, Claude re-tokenizes
+that document every single time. Use the
+projects feature instead. Upload your
+file once, it gets cached. Every new
+conversation inside that project
+references without burning tokens again.
+Cached project content doesn't eat into
+your usage when you access it
+repeatedly. If you work with contracts,
+briefs, style guides, or any long
+documents, this alone could cut your
+token spend dramatically. Rule number
+six, set up memory and user preferences.
+Every new chat without saved context
+wastes three to five messages on setup.
+I'm a marketer, I write in a casual
+style. I prefer short paragraphs. You've
+probably seen people start every prompt
+with act as a professional whatever.
+That's token burned on repeat. Claude
+can actually remember this permanently.
+Go to settings, then memory and user
+settings, save your role, communication
+style, and settings once. Claude will
+automatically apply them to every new
+chat. Rule number seven, turn off
+features you're not actually using.
+Things like web search, connectors, and
+explore mode, all of these add tokens to
+every response, even if you don't use
+them. For example, if you're writing
+your own content, turn off the search
+and tools feature. The advanced thinking
+feature also consumes tokens. Keep it
+turned off by default. Only turn it on
+if your first attempt was
+unsatisfactory. The rule of thumb is if
+you didn't turn this feature on
+intentionally, just turn it off. Eight,
+use Haiku for simple tasks. Grammar
+checking, brainstorming, formatting,
+quick translations, short answers, Haiku
+handles all of this at a much lower cost
+than Sonnet or Opus. Choosing the right
+model is the most important decision you
+make every single day. Haiku for drafts
+and simple tasks frees up 50 to 70% of
+your budget for tasks that truly require
+powerful models. The way that I look at
+it is Haiku is for quick tasks, it's low
+cost. Sonnet is for real work, medium
+cost. Opus is for deep thinking and high
+cost. You don't need powerful models for
+simple tasks. Rule nine, and this one
+might sound obvious, but spread your
+work across the day. The Claude system
+uses a rolling 5-hour window. It does
+not reset at midnight. Your limit
+gradually decreases. Messages sent at
+9:00 a.m. will no longer count by 2:00
+p.m. If you use up your entire limit
+during a single morning session, most of
+your daily limit will remain unused.
+Divide your day into two to three
+sessions, morning, afternoon, and
+evening. By the time you return, your
+previous usage is no longer counted and
+you have a new limit. Quick cheat code,
+set a cron job to literally just ping
+Claude with one tiny message at 6:00
+a.m. while you're still in bed. Your
+5-hour window starts then, not when you
+sit down to work. So, if you hit your
+limit at 10:00 a.m., your reset lands at
+11:00. 10, work during off-peak hours.
+Starting March 26, 2026, Anthropic will
+now use up your 5-hour session limit
+more quickly during peak hours. 5:00
+a.m. to 11:00 a.m. Pacific time, 8:00
+a.m. to 2:00 p.m. Eastern time on
+weekdays. Same query, same chat, but
+during peak hours, it impacts your limit
+more. Your weekly limit remains the
+same, but how it's distributed has
+changed. Running resource-intensive
+tasks in the evening or on weekends will
+significantly stretch your plan. If
+you're outside the US and Europe, Latin
+America, or Asia, peak hours may
+actually fall during your afternoon, so
+check the calculation based on time
+zones. If you're like me and you live in
+Australia, your off-peak hours are
+actually in the morning and in the
+midday. That is usually when you can use
+Claude without any worries. Rule 11,
+enable extra usage as a safety net.
+Subscribers to the Pro or Max plan can
+enable the overage feature in the
+settings usage section. When your
+session limit is reached, Claude won't
+block your access. It will switch to
+pay-as-you-go billing at API rates. You
+set a monthly spending limit to avoid
+unexpected bills. This isn't about
+saving tokens, it's about not losing
+your work at the worst possible moment.
+At first, it will be very difficult to
+follow all the rules, but once you can
+apply them automatically, you'll almost
+never hit your limits. You might even
+switch from the Max plan to a regular
+one. You'll have plenty of tokens to
+use. Now, whenever you see your usage
+limits go up, just remember, Claude
+doesn't count your messages, it counts
+your tokens.

@@ -1,0 +1,93 @@
+You've probably been seeing this
+everywhere lately. Modern websites with
+glowing backgrounds, smooth gradients,
+and subtle motion that somehow makes
+everything feel more premium. Websites
+like Raycast, Stripe, Linear, and a lot
+of other AI startups all have this same
+cinematic look now. The backgrounds
+move, the lighting shifts, everything
+feels alive. And once you notice it, you
+start seeing it everywhere. A lot of
+these effects are powered by one thing,
+shaders. And honestly, shaders are
+quietly changing how modern websites
+look and feel. And today, I'm going to
+show you what shaders actually are, how
+to import them into your projects, and
+how to customize them inside Framer. All
+right, so first, what even are shaders?
+The easiest way to think about them is
+this. Shaders are basically animated
+visual effects. Instead of using a
+completely static background, you're
+using something that moves and reacts in
+real time. And that tiny bit of motion
+makes a huge difference. A lot of people
+use video backgrounds for this kind of
+effect, but videos are usually heavier,
+harder to customize, and less
+interactive. Shaders are different. You
+can tweak everything live while
+designing, all in real time. And that's
+what makes them so fun to work with.
+Now, the next question is, how do you
+actually import these shaders into a
+website? And honestly, it's way easier
+than most people think. If you're using
+Framer, it already has built-in shader
+components and community libraries that
+you can drop directly into your project.
+And if you're building custom coded
+websites, there are shader libraries for
+React and other frameworks, too. Framer
+also provides a live web editor, so you
+can play around with shaders, customize
+everything visually, and quickly export
+them directly into your project. Now,
+let's talk about how shaders actually
+work inside Framer, because honestly,
+this is where things start getting
+really fun. So, for example, let's pick
+a random shader. Once you select it,
+you'll see a bunch of settings on the
+right-hand side that completely control
+how the shader behaves. Things like
+speed, scale, noise, distortion.
+And these settings are different
+depending on the shader you're using.
+One really important setting is seed.
+The seed basically changes the entire
+motion pattern and overall look of the
+shader. Some settings make the effect
+feel smooth and liquid. Others make it
+feel chaotic, glitchy, or electric. And
+the crazy part is even tiny adjustments
+completely change the vibe of the
+website. There are also different types
+of shaders inside Framer. Things like
+pixel shaders, truche shaders, and
+blockify shaders, where you can even
+upload your own images and turn them
+into animated visuals directly on the
+website. Then Framer takes this even
+further with logo shaders. Instead of
+only animating the background, you can
+apply shader effects directly to your
+logo itself. So now your logo can have
+animated gradients, glass effects, glow,
+all using the same controls. And the
+best part is you can just upload your
+own logo directly into the shader
+component and instantly see it come to
+life. Then you can tweak the colors,
+speed, patterns, and transparency until
+everything matches the vibe of the
+website perfectly. And honestly, that's
+what makes modern websites feel so
+alive.
+So, yeah. If you're into web design,
+definitely try experimenting with
+shaders.
+And if you enjoyed this video, subscribe
+for more.

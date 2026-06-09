@@ -1,0 +1,10 @@
+{
+  "kind": "youtube",
+  "video_id": "7FOCG5kua1w",
+  "title": "CrashLoopBackoff, Pending, FailedMount and Friends: Debugging Common Kubernetes Cluster",
+  "url": "https://www.youtube.com/watch?v=7FOCG5kua1w",
+  "source_paths": [
+    "cache/transcripts/crashloopbackoff-pending-failedmount-and-friends-debugging-common-kubernetes-clu"
+  ],
+  "updated_at": "2026-06-09T18:15:55.462120+00:00"
+}

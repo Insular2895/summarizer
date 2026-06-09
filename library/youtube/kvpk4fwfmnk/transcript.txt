@@ -1,0 +1,552 @@
+$1000 for a Bitcoin, the idea of ​​a
+currency that escapes
+central banks.
+Bitcoin is trading above
+$60,000 this morning.
+We reached $100,000 on
+Bitcoin last week.
+[scream]
+Somewhere in the world, a guy
+nobody knows is doing something
+nobody has ever done. He mined the
+first block of Bitcoin and his name is
+Satoshi Nakaboto. Finally, his name is
+obviously a pseudonym, we don't know who he is
+and we probably never will.
+The thing is, when it came time to validate this
+first block, he did something that
+technically had no purpose. He is
+writing a message. [music]
+The front page of today's Times, the famous
+British newspaper. The chancellor is
+about to bail out banks
+for the second time. This message is
+now known as the
+Genesis block message. Even before it had been
+used once to buy anything
+, Bitcoin had already served
+another purpose: to send a message, a
+message that no one could ever
+censor. 17 years later,
+Bitcoin is being talked about everywhere, its price, its
+adoption, whether it is a
+currency or a store of value, but
+since then, it has been diverted and
+tinkered with for ever more
+inventive uses. We often hear that Bitcoin is
+useless, that it pollutes, that it's
+not a good currency, all that. Well,
+in this video, we're going to go
+against the grain. Bitcoin is a
+fascinating invention if you know where to
+look, and it has already changed the lives of
+millions of people
+around the world, but in many
+ways you probably don't even suspect
+.
+Let's start with Texas, not with
+oil wells or ranches, but with something
+much more surprising: the
+electrical grid. In February 2021, a storm
+hit the state. In just a few days,
+nearly 250 people died. The
+damage is estimated at $200 billion
+. This is one of the worst
+climate disasters in the country's recent history
+. At the heart of the problem is
+Aircot, the operator of the Texan electric grid
+. And at that moment, they
+understand something. Their network is
+sorely lacking in flexibility. When
+demand explodes, they can't keep
+up, and when there's too much
+production, they don't know what to
+do. The classic solution is to
+build gas-fired power plants that only
+operate for a few days a year
+during peak periods. But it's expensive,
+like several tens of billions of
+dollars in investment. And there, he
+tries something completely counterintuitive in Paris
+. What if Bitcoin midpoints
+could serve as a buffer? When you
+think about it, it's not so silly. A
+Bitcoin miner is just a big box that
+consumes electricity. And
+unlike a factory, it can be
+shut down in minutes without
+breaking anything, without
+interrupting a production line.
+The mechanism is rather elegant. It's important to
+know that in Texas, nearly 30%
+of the electricity mix is ​​solely
+solar and wind power.
+Low-carbon electricity is great. The problem is that it's
+not stable. Sometimes we
+have production peaks and sometimes
+troughs. And that, on the scale of an
+entire network, is a problem. When there
+are production peaks,
+Bitcoin miners are able to
+absorb this excess. Lots of sunshine
+in one day but not enough demand
+because people are at work, oh well,
+no problem. A Bitcoin miner
+can plug in and not only
+stabilize the network, but also
+buy electricity that Simon
+could not have otherwise monetized.
+Conversely, when the grid is strained,
+electricity becomes expensive, and mining
+loses its profitability. The miners
+naturally disconnect without being
+asked, and the electricity flows
+to where it is most vital.
+When you think about it, the mining industry
+is really very unique. It is the
+first industry to absorb
+electricity 24/7
+from anywhere in the world.
+While being able to adapt in real time
+to needs. You don't realize it just like
+that, but we know nothing like it.
+For your information, aluminum plants have
+roughly the same characteristics in
+terms of electricity consumption. On the
+other hand, an aluminium plant, well, that's
+a huge complex of several square
+kilometres that you can't just move around
+as you please. And I'm not even talking about
+the red tips which are unavoidable,
+fléo and now directly from this
+industry. Or, to be honest,
+recently we also have AI
+which has many points in common with
+Bitcoin in terms of
+last resort electricity consumption. But
+nevertheless, Bitcoin miners are
+starting to be integrated into
+energy production strategies and the
+stabilization of electrical grids.
+And that's a fascinating use case.
+Now you're probably familiar with the
+Bitcoin pollutes narrative. It's warming the
+planet. It will boil our oceans,
+or even empty them. Except that it's not.
+Today, companies are using
+mining to reduce
+greenhouse gas emissions. [music] The
+first example, and this one is
+frankly counterintuitive, is
+methane. In oil fields,
+when oil is pumped,
+gas is also extracted. The problem is,
+we don't know what to do with this gas. It is
+not profitable to transport it, nor to
+store it, and we cannot reasonably
+let it escape freely into
+the atmosphere. So, we burn it on the
+spot. This is called
+flaring, and that's why you
+all have this image of
+oil wells with burning chimneys in your
+mind. Except that wiping on
+paper is all well and good, but in practice
+it's dirty. Companies have to
+burn this gas, but they are
+not incentivized to maintain the installation
+because it is obviously not profitable.
+This means that a
+significant portion of the methane that should be
+burned is not actually being burned. Okay, so what
+'s the problem with methane? You
+might say, well, it's about 80 times
+more powerful than CO2 when we talk about the
+greenhouse effect. Needless to say, this is
+a major problem in terms of
+global warming. And that's where Crusoé
+Energie comes in. Their idea is simple.
+Instead of burning this gas with a torch, it is
+used to power
+generators. These generators
+produce electricity that
+powers the BTC miners
+directly next to the oil well.
+The result is spectacular.
+Controlled combustion in a generator
+eliminates almost 100% of the methane
+[music] compared to about 90% for
+conventional flaring. According to a study by
+433 Research, 1 MW [music] of
+flared gas mining avoids approximately 9482 tonnes
+of CO2 per year. To compare, 1 MW
+of wind power avoids 1917. That's
+almost five times better. Well, recently
+Crusouwe sold his business to
+focus on artificial intelligence,
+but the proof of concept is there.
+Bitcoin mining is an excellent
+ally when it comes to reducing the
+negative externalities of this
+activity. But wait, because it's
+not over yet. Unic, that is to say a Mor of
+Bitcoin, so that's what we
+call the machines, well it transforms
+about 99% of its electricity into
+heat. For years, this was seen
+as a flaw. Now, some people are
+turning it into a product. In Brooklyn, there is a
+spa that heats its baths to 40°C using
+BTC miners. While the customers
+relax, the machines
+mine peacefully. This allowed them to
+make enormous savings.
+[music] Others use biogas
+produced from cow dung to
+generate electricity, power
+miners and heat water. And here, we
+begin to glimpse a new,
+unexpected use of Bitcoin:
+heat production. We heat
+water for showers, we heat
+greenhouses to grow plants.
+Wherever warmth is needed, a
+Bitcoin miner could theoretically
+fit in well. Well, it's still
+difficult to use it as a heater for
+your room because these devices
+still make quite a lot of noise.
+But solutions are already starting to be
+found and in many
+cases we need heat without having to
+worry about noise. When a
+device mines Bitcoin and therefore
+earns you money while producing
+heat, well, heating a
+resistor the way we used to do it
+traditionally seems pretty old-fashioned
+, doesn't it? Okay, one last
+little example before we close the
+energy section. Africa has
+phenomenal hydroelectric power,
+except that the infrastructure there
+is really very underdeveloped.
+Basically, even if we manage to build a power
+plant to capture this
+colossal energy, we don't have the network to
+distribute this electricity to the
+population. And the power plant is running
+idle. And you can see where I'm going with this.
+Companies are installing BTC miners
+next to these power plants. Mining and
+buying back electricity helps
+finance electrification and
+network construction. As soon as the
+electricity can reach the
+population, the miner just has to
+go elsewhere. And Bitcoin is not
+only used for infrastructure, it also serves
+human dignity [music]. It's
+a kind of lifeline. Roya
+Mabou is an Afghan entrepreneur.
+[music] In 2013, she began paying
+the women who work for her in
+Bitcoin through her NGO. Because in
+Afghanistan, at that time, a woman had a
+very difficult time opening a
+bank account. She often needs
+a man's permission. Bitcoin, on the other hand,
+doesn't need
+anyone's permission. Some also use
+Satoshi Nakamoto's invention to
+flee with their savings. And that's
+exactly what happened to one of
+Roya's employees who managed to flee
+Afghanistan with the fruits of her
+labor, paid in Bitcoin. A phrase
+memorized in your head and you can
+cross a border without any
+customs officer being able to freeze anything. No
+papers to show, no gold to confiscate,
+just 12 words. And beyond the conflicts,
+there is also hyperinfection. The Venéa
+is a textbook case in this regard. The
+currency collapsed so much that at
+a certain point, it became cheaper
+to use banknotes as
+toilet paper than real toilet paper.
+Venezuela, Lebanon, Turkey,
+Argentina. For these people, Bitcoin is
+not volatile; it is their
+national currency. So, we [music]
+use other currencies like the
+dollar for example, but as a result the country
+and its citizens become dependent on
+a currency that they no longer control at
+all. And when you're in that
+situation, Bitcoin is no longer an
+investment, it becomes a
+necessity. And speaking
+of financial independence, if everything we've just
+discussed makes you want to
+take your first step into
+the crypto ecosystem, you might as well do it
+seriously. That's convenient, because the
+partner for this video is
+Coinbase. It's one of the
+world's largest crypto exchange platforms and
+if you're just starting out, it's probably the
+easiest way to
+buy Bitcoin and other cryptos
+without any hassle. For
+new subscribers who use our
+link in the description, Coinbase offers €15
+in Bitcoin to get you started after
+your first purchase. It's a nice little boost
+to get started. And for
+those who want to go further,
+Coinbase offers a subscription called
+Coinbase One. From €4.99 per
+month, you benefit from zero
+trading fees on most cryptos,
+an account protection guarantee,
+boosted staking counterparty and
+exclusive benefits on the blockchain
+base. I've put the link in the
+description, so don't hesitate any longer. When
+inflation destroys the value of your
+work, Bitcoin can save you. But what happens
+when it's a
+state that attacks you head-on?
+Money is a political weapon.
+To cut off someone's bank accounts
+. The Bayonne region is returning
+economically, and Bitcoin has already been
+used to circumvent this. The story
+begins in December 2010. Bank of
+America, Mastercard, Visa, Western Union
+and PayPal simultaneously cut off
+Wikileak's funding. Not on the orders of a
+judge, just under political pressure.
+For the first time in
+modern history, we are seeing private companies
+shut down a media organization
+without any court ruling
+. On June 14, 2011, Wikileak
+published a Bitcoin address to receive
+donations. Satoshiamoto himself will
+comment on this event. Wikileak has
+kicked the nitroelon
+and now the essin is heading
+our way. For him, the network is still
+too fragile for this advertising, but
+it's too late. Bitcoin has saved
+Wikileak, which will receive more than 4000
+Bitcoin as a donation, while still being able
+to give a voice to
+whistleblowers from all over the world. And FYI
+, Satoshi will disappear some time later,
+leaving the keys to his invention to
+humanity. This is the first use of
+Bitcoin on a media scale as a
+tool of political resistance and
+incidentally the first
+public demonstration that this technology can
+survive and circumvent a
+global banking blockade. Ten years later in
+Russia, history repeats itself.
+Alexe Nav's anti-corruption foundation
+received 658 BTC between 2016 and 2021 via
+a public address. To give you some context,
+Alexier is a fervent defender and
+opponent of Putin and the
+Soviet regime. Obviously, this account and
+those of his company were being scrutinized by
+the public authorities. As with
+Wikileak, Bitcoin has been a real
+safety net for them. And this net,
+it is also used far from Moscow. In
+October 2020 in Nigeria, a
+protest movement against
+police brutality was growing steadily. The
+central bank freezes the accounts of the
+Feminist Coalition, the NGO that finances
+the protests. Within a few
+weeks, the organization switched to
+Bitcoin and raised almost 10 BTC,
+or nearly $400,000 at that
+time. Bitcoin will represent 40% of the
+donations received during the movement. Jack
+Darcy himself will relay the information and
+invite people to donate via
+Bitcoin. Here we have three countries, three
+different regimes, but three
+identical mechanisms. You cut off the money, and they
+turn the tap back on somewhere else without asking
+permission. When a state cuts off your
+funding for what you believe,
+Bitcoin offers a way out. But
+when it's just your family
+trying to send you $200
+from the other side of the world, that works
+too. Remittance is a
+colossal and largely invisible market. More than
+$900 billion is sent
+annually by migrant workers to
+their families. One in ten people in the
+world depends on these flows to live and
+for decades this market has been
+controlled by Western Union and Mongram who
+have profited greatly from it. The average cost of sending
+$200 worldwide is
+currently around 6.5%. For
+example, for a Filipino worker
+who sends $200 a month to his
+mother, that represents between $150 and
+$200 in expenses per year. out of 1 billion
+people combined, we're talking about
+tens of billions of dollars
+siphoned off each year. This is where
+Bitcoin comes in, and especially
+stablecoins, those cryptos backed by the dollar, like
+USDT or USDC for example. In the
+Philippines, transfers that used
+to cost 6% via traditional gifts
+now cost around 1% in
+minutes instead of
+days. In Latin America, where
+crypto volumes jumped 63% between 2024 and
+2025, more than half of the purchases on
+exchanges in Argentine peso, Colombian peso or
+Brazilian real are stablecoins.
+And then there's Lightmor, a layer 2
+of Bitcoin. [music]
+In November 2025, the network will reach one
+billion
+dollars in monthly volume for the first time. The
+average transaction has doubled in one year,
+rising from $118 to $223. In other words
+, Lightning is not for buying a
+$2 coffee. It is used to send
+$200 to your family in
+seconds for a fraction of a cent.
+[music]
+The pivot happened in January 2025
+when Tesor announced the native launch
+of USDT on Lightning, the
+world's most used stablecoin on the
+Bitcoin network rails. [music] The
+best store of digital value
+combined with the fastest way to
+transfer it. Through Stable Coins
+and Bitcoin, tens of
+billions in fees are
+slowly, irrevocably slipping out of the
+hands of the transfer giants and
+returning to the pockets of families.
+We talked about energy, human rights
+and money transfers. But Bitcoin is
+not just a currency. It is also a
+public, global and immutable register. a
+wall on which anyone can write
+and which no one can erase. And
+some have already used it for
+things that have nothing to do with
+money. For example, if we look at this
+Bitcoin block, at first glance there seems to be nothing
+abnormal. But on
+closer inspection, well, actually, there's a
+love letter. It is there, forever etched
+in the marble of the blockchain,
+and it will not move. If you want to
+write a message that will outlive
+any state, any
+business, and any regime, then
+put it in Bitcoin. And obviously,
+it doesn't stop at the message of love.
+Peter Tod, one of the developers of
+Bitcoin Core, created Open Time Stamp. The
+concept is super elegant. You take
+a document, any document, a
+patent, a thesis, a contract,
+proof of paternity, proof of idea, it doesn't
+matter. You calculate its H and
+record it in the blockchain.
+As a result, you can prove that on a
+specific date, the document already existed
+in that exact form. All this without
+revealing its contents. [music]
+Dotteres, patent offices,
+universities can already
+use this mechanism. And then there's an
+even more specialized but
+fascinating use case. Bitcoin as a
+true random number generator. Look at this. The
+problem is so serious that Cloud
+Flir, which secures about 10% of
+global Internet traffic, has made it a major
+attraction. In the lobby of
+their headquarters in San Francisco, they
+installed a wall of 100 lava lamps that were
+filmed continuously. The chaotic movement
+of the wax inside is used to generate
+encryption keys, but this
+method has a flaw. Chance
+is private. No one can verify that
+Cloud Flir is not cheating with the
+images. We must trust them.
+Having a true source of public randomness
+is one of the most
+difficult problems in cryptography. For
+example, the
+1969 US military draft lottery that decided who
+would go to Vietnam has been proven to be
+biased. Not out of malice,
+just bad design. The capsules
+containing the birth dates
+had been mixed up incorrectly.
+Researchers have demonstrated that
+Bitcoin block headers provide at
+least 68 bits of entropy every 10
+minutes. In concrete terms, this means
+that there are approximately 300 billion
+billion possibilities, which is more than
+the number of stars in the Milky Way
+multiplied by 1 million. To manipulate
+a draw that relies on Bitcoin, one
+would have to attack the network itself,
+which would literally cost
+billions. Today, Bitcoin is
+probably the most unmanipulationable source of public chance
+ever devised by
+humankind. And the icing on the cake is that it
+continues to produce a
+verifiable random number every 10 minutes without being
+asked. We've just covered
+a pretty good range of the somewhat
+exotic uses of Bitcoin, and as you might
+suspect, there are plenty more.
+None of these uses are making headlines.
+None of them carry much weight compared to the $2 trillion market
+capitalization of
+BlackRock ETFs or the debate on the
+next US strategic reserve
+. But they all tell a story
+that the price doesn't. On
+January 3, 2009, Satoshi wrote a
+phrase that technically had no
+purpose in the Zero block. He did it
+because he understood one thing
+[music] from the start. Bitcoin
+was not just going to be used to
+transfer value, it was going to be
+used to transfer what value
+represents: time, work,
+memory, ideas, and sometimes
+freedom. If Bitcoin has already been repurposed
+to do all this in 17 years, while we are only just
+beginning to explore these
+use cases, we have the right to
+ask ourselves one thing: what will it
+look like in another 17 years?
+[music]

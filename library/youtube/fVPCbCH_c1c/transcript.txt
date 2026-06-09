@@ -1,0 +1,279 @@
+In today's video, I'm going to show you
+guys how to turn Claude code into a
+master designer and a strategist. To do
+this, we're going to be connecting
+Mobbin using an MCP. And honestly, this
+workflow is so incredibly powerful, you
+guys are going to want to see this.
+>> [music]
+>> Okay, so if you guys aren't familiar
+with Mobbin, Mobbin is one of, if not
+the biggest collection of UIs from
+across the internet, across all the
+biggest companies out there. So, you can
+see here all the different apps. We have
+like booking.com, Duolingo, Disney Plus,
+Tesla. And if we click into one of
+these, you can see that it's not got
+just one, but it's got all sorts of
+different screens. It's got everything
+from UI elements all the way down to
+certain flows within the app. It's very,
+very comprehensive, and I think it's one
+of the best ways to see what other
+companies are doing out there, see what
+works. So, if we go up here, they've got
+everything from like iOS apps. They've
+also got web apps, and then they've also
+just got websites as well, like landing
+pages. But, all the stuff on here is
+kind of the top of the top, and these
+are generally just high-performing
+websites, so a great source of
+inspiration. So, let's just say a client
+comes to you and they need a new app
+design. You write down everything they
+need for their MVP, and you get an idea
+of how you're going to bring this all
+together. Generally, for me, I'll jump
+into similar sort of apps, things that
+are doing similar sort of things. How do
+they do it? What works? What doesn't?
+And that's where Mobbin is incredibly
+powerful cuz you can search by like
+categories. Well, let's just say it's a
+fitness app. Well, you could look at
+something like Tonal, and you can get a
+lot of inspiration. But, further than
+that, like what I said, the flows are
+where they can be really powerful. Cuz
+your app itself might differ in design,
+but the flows from one fitness app to
+the other probably be kind of similar.
+So, here we can see the entire
+onboarding flow for this app. You can go
+into each of these and just copy it, and
+then within Figma, we can just start
+pasting these in to build out a mood
+board. Now, there's a much better way of
+doing this using Mobbin's MCP, and I'll
+show you guys how to connect it. So, if
+we head to mobbin.com/mcp,
+now installing it is quite easy. So, you
+can see here the setup. So, first you
+need a paid plan to Mobbin, and then you
+can pick your tool. So, we're going to
+use Claude Code in this video, but you
+can also connect it to Cursor, Codex, V
+0, or other. So, to install this, we
+will open Claude here, and we'll go down
+here to customize, and then we'll go to
+connectors. If we click on this plus
+icon, we'll do add custom connector, and
+then here we want to type Mobbin, and
+then for the server URL, we want to use
+this one here, api.mobbin.com/
+MCP, and then we'll add this. You can
+see here it's not connected yet, so
+we'll click connect, and then we will
+just authenticate this just like this.
+So, now we've got it all connected. We
+could say, "Connect the Mobbin MCP and
+tell me all the things I can use it
+for." Here is what the Mobbin MCP lets
+you do. So, it can help you find UI
+patterns. So, you could tell it, for
+example, "Find me some fitness
+onboarding flows." You can compare
+designs across different apps, gather
+references for a feature we're
+designing. This is like what we already
+did here, but we can get this to do this
+automatically for us, and even bring it
+into a Figma file. Target specific
+platform to insert, get inline previews.
+We've essentially given Claude Code
+superpowers cuz it now has access to
+Mobbin's selection of over 600,000 of
+the world's best UIs. So, we're going to
+give it this prompt here. "I'm working
+on a fitness app. Generate me a Figma
+file with 10 different examples of
+different apps from Mobbin and their
+initial sign-up screen. Make me a mood
+board." Just so you know as well, I also
+have Figma connected via the MCP, so
+this allows it to make a Figma file and
+connect it with Figma, too. If you
+didn't have Figma connected, well, you
+could see that it would just pull it
+into the chat anyway, but we're going to
+get this to bring it over for us
+directly into Figma. And this is what
+it's given us. So, these are all the
+different screens that we've gotten from
+Mobbin. We allowed Claude Code to be
+able to search Mobbin's entire library
+to create this file for us
+automatically. So, as a source of
+inspiration, automating this whole
+entire process is incredibly useful. So,
+So, meant that we could save a lot of
+time instead of having to go into each
+of these and then copying and pasting
+these over at Figma ourselves. So, let's
+say this to Claude code, can you tell me
+what seems to work best between all of
+these and why? We're going to get Claude
+code to think like a designer here. Are
+there any other non-fitness apps on
+Mobbin that could be additional source
+of inspiration for this screen? Maybe we
+need some inspiration from one or two
+non-fitness apps that have a similar
+sign-up screen. And let's grab some of
+the welcome screen for non-fitness apps,
+too. We're going to say, add this into
+Figma with your feedback of what works
+and what doesn't. Add your analysis and
+organize accordingly. And then we now
+have this generated as if by magic over
+in Figma. It's given us detailed
+feedback and its analysis of all these
+different screens from Mobbin. So, you
+can see down here Strava and Gymshark
+and Peloton seem to have the best sort
+of flow. And the feedback for Strava,
+for example, is like best community
+signal, real people, not models,
+instantly tells you the app's social
+DNA, orange CTA stays high contrast.
+Now, I agree with all of that. Gymshark,
+strong brand voice, confident caps in
+the headline, cut out athletes, single
+back call to action, no soft path for
+hesitant users. You've got one button,
+it's very clear what you should do.
+Peloton is saying it's the best overall.
+We've got a dark cinematic photo,
+tight stack of three social sign-ins,
+logo overlay, brand, product in one
+frame, near zero friction. I wouldn't
+necessarily say it's the best overall. I
+think it's actually a little bit busy,
+but it is good. Then further down here,
+we have more of an analysis. The winning
+pattern, show people, not mascots,
+reduce friction without going cold. And
+then here we have other non-fitness
+references that are worth borrowing
+things from. Restraint is the lesson.
+This is showing you a very minimal
+approach. Depending on what we're
+building, this could be the best choice.
+And then we have this one here, which is
+showing just a kind of sense of urgency.
+Now, we're going to say, generate me our
+own concept for our own one now using
+these examples and other common
+practices from Mobbin. Also, use our
+analysis of what works best use iPhone
+16 frame. And this here is what it's
+built us automatically based on all the
+feedback of what we've gathered here
+from Mobbin. Now, obviously, we haven't
+given it any specific info about our
+fitness app, what makes it different,
+what it's supposed to do, who the
+demographic is, but just as a source of
+inspiration and getting a rough sort of
+mock-up, it's already done all of these
+things for us and this is a great
+starting point because we know that the
+flow of this is all tried and tested
+with the biggest apps in the world. But
+you can see that if we added like a
+full-screen image to the back of this,
+this would already start looking like
+somewhat of a polished welcome screen.
+So, that's one great way of connecting
+Claude Code and Mobbin to be your design
+partner, your strategist, to do a lot of
+the research for you, collate that
+information, bring it into the one
+place, and then you as the designer is
+to review it all and decide if you agree
+with some of it or disagree with some of
+it, but at the very least you've got a
+lot of stuff in front of you and it's a
+really useful starting point. Another
+way you could use Mobbin's MCP with
+Claude is to critique your designs. Now,
+we're going to do this with a landing
+page of my upcoming course, Future
+Designer. We're going to send this to
+Claude Code and we're going to get it to
+review it. It's going to compare it with
+other landing pages on Mobbin and give
+us its feedback. So, it's going to roast
+me essentially, but let's see what it
+comes back with. So, this is the design
+of the landing page here in Figma. We
+are just going to export this and then
+I'll pull this over into Claude Code.
+Give me a detailed feedback on my course
+landing page. Use comparisons from
+Mobbin's library of landing pages. Find
+me better examples for sections and
+overall critique my design in line with
+the premium designs that are on Mobbin.
+All right, so here's when Claude Code
+tells me that my design sucks. So, it's
+pulled together some reference images
+from Mobbin and here's its detailed
+critique. The color system is cohesive
+and on trend. The hero is undersized for
+what it's trying to do. Currently, we're
+sitting one tier below premium because
+the layout proportions and pacing. Not
+taste, the taste is good. Well, that's
+that's fine. Then we've got detailed
+feedback about each section. Hero, it's
+talking mainly about the sizing and the
+voicing, and you can see it's given us
+some references here here on Mobbin. You
+can see that their headline super bold,
+and then this is super focused. We've
+also got this one where it's talking
+about maybe adding some color to our
+headline. And then this one which is
+mainly talking about just the actual
+size of the headline, which this is huge
+here. If anything, I think this is maybe
+a little too big. Trailer video seems a
+little disconnected. It's giving us this
+reference here. Obviously, you can see
+the trailer is a big part of this hero
+here. It's not really what I wanted to
+do for mine. Other example here for
+this, well, it's probably like a very
+high converting landing page, but
+I think it's a little bit boring. But
+honestly, all the feedback totally makes
+sense. And honestly, being able to just
+quickly click into these references and
+see what it's talking about. So useful.
+And it even asks me, "Want me to mock up
+a revised hero in Figma as a
+side-by-side comparison?" Which I'm not
+going to do right now, but it's insane
+that that is even an option. If you guys
+are interested in trying out this
+workflow for yourself, I highly
+recommend it. There's a link in the
+description so you could sign up to
+Mobbin. If you want to become a better
+AI assisted designer, then sign up to my
+upcoming course, and I will catch you
+guys soon with another video.
+Bye.

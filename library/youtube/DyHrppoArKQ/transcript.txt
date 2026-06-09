@@ -1,0 +1,717 @@
+all right thank you everyone and and
+good morning to all and thank you for
+taking the time thank you for taking the
+time to talk about rolls with me this
+morning my name is Bridget Johnson I am
+a product manager on the AWS identity
+team so anything and everything to do
+with Identity and Access Management so
+like the title says we are talking about
+I am roles not dinner rolls not tootsie
+rolls
+I am rolls so let's get started the
+first question you may be asking
+yourself are what are IM roles at the
+end of the day it's an IM entity used to
+delegate access to users applications
+and AWS services is if you've worked
+worth I am permissions and I am before
+you know that at the end of the day
+it'll either be an IM user or an i am
+role that has access to AWS with roles
+and you can grant access to users
+whether they're federated in or your IM
+users applications and we'll dig into
+this because this is one of my most
+exciting features and and then also you
+use roles to delegate access to AWS
+services something important to call out
+about I am roles that is sometimes
+skipped over when you take a first pass
+at I am roles is they aren't intended to
+be assumed by trusted entities and that
+is how you gain access to them you
+assume an iamb role and then once
+assumed you have the permissions
+attached to that I am wall this means
+that I am roles do not have credentials
+and when we say credentials we mean
+long-term credentials like a password or
+access key right you would use an access
+key for programmatic access or on the
+command line and a username and password
+to get in the console with I enrolls you
+do not have these long-term credentials
+credentials that are associated with it
+are created dynamically and they are for
+short-term use okay moving on so why
+should you use I am roles roles are
+secure way to delegate access to users
+applications and AW services because
+they use temporary creds and protip here
+possible use temporary credentials I
+cannot stress it enough we'll go into
+who what where when and how to use
+temporary credentials but this is a
+security best practice and when possible
+choose temporary credentials the other
+thing that you want to consider as to
+why to use I am roles is that roles
+allow you to have a mini to one
+relationship so you can enable multiple
+users possibly the same users who need
+similar permissions to assume the same
+role and that way you're not creating a
+role or a separate user for every
+employee in your company so one thing I
+want you to take away from this is the
+best practice that I noted on the end
+use temporary credentials see the little
+icon there with a with a with a clock
+that means that it they're short-lived
+credentials not long-term don't write
+passwords on a on a sticky note and pass
+them around and stick with temporary
+credentials you won't have to do that
+alright so in I am we use roles for a
+variety of use cases to support your
+needs with granting access and if you
+break it down and we'll go into each one
+of these orange boxes a little bit in
+more depth and if you break it down
+there's three main buckets that I want
+to talk through so you would use an IM
+role to first grant access to AWS
+services there are several services that
+perform actions on your behalf and this
+is to make it easy for you to manage
+your AWS resources and in order to
+manage those resources on your behalf
+they need permission to do so right they
+don't just get to make calls without
+permission and the way that you grant
+AWS services permission to do so is that
+you give them a role and eight of your
+service assumes this role and then they
+make actually they make calls on your
+behalf
+and they are locked in cloud trouble the
+second is to federate identities into
+AWS and so if you have an existing
+identity provider then you can use you
+can use Federation with AWS and at the
+end of the
+those those users are assuming a role in
+AWS to perform actions and then finally
+you can use roles to enable cross
+account access we realize that many
+customers have more than one account
+sometimes five accounts sometimes
+hundreds of accounts and we want to make
+it easy for people to go across account
+and get cross account access either with
+users or their applications and so you
+can use roles to do that where you would
+assume a role in another account if you
+have permissions to do so
+all right let's dig deeper into each of
+these three areas grant access to AWS
+services so there are three ways to
+grant access to AWS services and I'm
+going to go through each one and this is
+my favorite feature that I was talking
+about first up is roles for ec2 so if
+you have an ec2 instance and that
+instance requires access to make an API
+call within AWS put a role on it and
+when you launch an instance there's
+actually a field where you can supply
+that role to the instance and by giving
+your ec2 instance an I am wall you
+enable applications running on ec2 to
+make API calls the cool part about this
+is that we manage your security
+credentials for you where you rotate
+them for you you don't have to worry
+about it you do not have to put access
+keys on your instance and it just uses
+the role and and it rotates them for you
+automatically and periodically
+throughout the day and over the last
+year we made it possible to attach and
+detach and I enroll so if you had an
+existing instance that was long-standing
+with AWS thank you very much for being a
+longtime customer you can now go and add
+a role to that existing instance or if
+you've previously put on a role and
+maybe you want to change it maybe you're
+grouping things together a little bit
+differently you can now go and replace
+that on an instance and one thing to
+call out here is that if you let's say
+you have an application running on ec2
+and
+using s 3 then that roll will have s 3
+permissions now let's say your
+application you decided that you want to
+put some some items into glacier and so
+now you need to add place your
+permissions if you have role if you have
+a role attached your ec2 instance you do
+not have to log on to that instance to
+update permissions you can actually go
+to I am and update the permissions and
+all of a sudden you all you will be able
+to your application will be able to work
+with play share so if there's one thing
+you take away from today if there's one
+thing you take away from this slide go
+look at your ec2 instances and if they
+require access to make AWS API calls
+they should have a role attached to them
+so that is the best practice here on
+this slide and that is the one I want to
+take walk away with today okay moving on
+service roles so when you talk about I
+am roles we have a specific type of role
+and it's a service role and the the
+reason that it's a service role is that
+it trusts the AWS service so for example
+it may trust ec2 it may trust config AWS
+config and you can use a role to grant
+AWS services access to perform actions
+on your behalf with service rules you
+control the permissions that services
+can run
+so with ec2 this makes sense you would
+actually control the the permissions
+that your application needs
+same thing with lambda and but most of
+them come with recommendations like
+config comes with recommendations
+opsworks directory services of what they
+require to manage resources on your
+behalf but you do control the
+permissions and like with any role you
+will be able to track the actions that
+AWS services perform on your behalf so
+you will see that possibly it'll be s
+config may be called an IM action on
+your behalf and you will see that show
+up in cloud trail with that role as as
+the identity alright and something new
+that I want to cover today is something
+we launched earlier this year
+and it's called service length rolls so
+with service rolls you control the
+permissions and you create them and you
+also can delete them and sometimes this
+causes problems and so we've put a
+couple checks and balances in place as
+we launch service linked rolls so it's
+the same same point that you're going to
+use the service length roll to grant AWS
+services accident access to perform
+actions on your behalf
+however they are predefined permissions
+with the linked service and that means
+that you cannot change the permission
+unless unless the service kind of gives
+you the heads-up to do so and you cannot
+delete this role unless there are no
+linked resources to that role and so
+this prevents you from inadvertently
+deleting the role and then and then
+possibly impacting the service that
+requires that role to have access to
+perform actions on your behalf and with
+service length roles once again they are
+tracked through AWS or through cloud
+trail and you will see that today we
+have Amazon Lex and with service link
+roles and over time you will see more
+services adopting service linked roles
+you can use the I am console you'll
+actually see service linked roles you
+can create service linked roles through
+that I'm console as well alright so
+that's the breakdown of how to grant
+access to AWS services um there's a lot
+of documentation on it so if you want to
+learn more we can you can go and visit
+the IM documentation on a to go service
+roles moving on
+federated entities into AWS if your
+organization has its own identity system
+you would create an identity provider
+establish trust between your AWS account
+and the IDP and then you would use roles
+to actually grant permissions to your
+user so two ways that we support this is
+with a sam'l IDP and with sam'l you can
+use any sam'l IDP and enable your
+users to log into the AWS management
+console you can allow them to call AWS
+api's without having to create users for
+everyone in your organization and single
+sign-on to AWS accounts we found that
+many customers use Sam we actually
+encourage sam'l or or Federation in
+general to access AWS services and AWS
+accounts as your organization grows and
+you would need your own identity system
+so keep that in mind as you look at
+where you're going to store your
+identities and how you're going to grant
+them access to AWS we also have open ID
+connect and this enables your
+application users to sign in using an
+identity provider such as and we support
+login with Amazon Facebook Google or
+anything else that's compatible with
+Open ID Connect and once again this is a
+way to delegate access to your AWS
+accounts Federation has a lots of ins
+and outs and we work to provide you
+materials for learning that so there are
+several blog post reinvent talks and
+documentation and tutorials but if
+you're interested in learning more about
+Federation I strongly suggest that you
+dive into that and take a stab at it so
+yeah okay let's move on an able cross
+account access so at the end of the day
+you'll have one account or you might
+have multiple accounts and you may have
+IM users and this is actually the demo
+that we're going to go through today umm
+first is best practice once again assume
+role so you can configure the command
+line or configure your application or
+script to assume wall and if we go back
+to the beginning assume role creates the
+credentials dynamically and on-the-fly
+and they're temporary so it's actually a
+best practice even if you have I am
+users you would have an IM user and
+their only permission would be to have
+to assume a role right and so they would
+be exchanging the long-term credit
+Scholz of an IM user with short-term
+credentials using the assumed and will
+show this on the command line today so
+that's the best practice we do not want
+your creds in your scripts we don't want
+people having cuts that have a lot of
+access on their computers so as you
+think about your IM configuration think
+about okay I do have I am users or maybe
+your federating but at the end of the
+day you still want to use roles so you
+so you focus on those temporary
+credentials and then also for your
+programmatic access in your applications
+or scripts just call us soon wrong and
+and it will work with temporary
+credentials additionally you can use
+roles we have this feature in the
+console you it's a switch role feature
+and it allows you to specify five roles
+that you want to switch between accounts
+and this we found is really helpful for
+admins who are administrating multiple
+accounts and they may have a product out
+or a stadia count and a dev account I
+used to do environment management and so
+I always go back to those types of
+accounts but that's where a switch role
+from the console comes into play I
+touched on this in the beginning but I
+want to re-emphasize a lot of people ask
+me how do I access and I am role right
+there's no username there's no password
+so how do you access an ion role there
+is this fantastic service called secure
+token service STS for short and it
+enables you to request temporary limited
+privileged credentials for I am users or
+authenticated federated users and so
+when you think I am roles and like I
+you've configured the role you set it up
+how do you get access you call STS and
+you get some temporary creds
+we'll talk about the limited privilege
+part and if we have time at the end
+below are the api's some example api's
+there's more in the documentation assume
+role would be maybe for an IM user just
+calling a sim role and then you have a
+sumo sam'l with web identity and then
+get session token' actually allows I am
+users to get temporary creds with with a
+session token this can be used to
+get a session that you've enabled MFA on
+so if you have conditions that require
+MFA in that session can make that call
+if that condition is enabled alright
+time to share some best practices so um
+when thinking about this with I am roles
+like okay what do I want customers take
+away from and three simple things first
+and foremost and I already talked about
+roles free CGC too so keep those keep
+that top of mind that's p0 and then um
+I'll add three more first is trust so
+every role has a trust policy and this
+is who are you trusting that can assume
+the role so as a best practice we
+recommend that you validate your trust
+policies and to ensure that only
+appropriate entities can actually assume
+their role I seen a lot of trust
+policies out there with a little bit too
+broad of scope and at the end of the day
+you should make sure you know who's
+allowed to assume that role and we'll go
+into looking at some trust policies
+second would be permissions set granular
+permissions on your iron roles and so
+that's how actually how you would break
+up your permissions your roles is by how
+granular permissions you want for each
+role and then also I don't think we're
+out of time to get to this today but a
+really interesting feature is using
+scope down policies to further control
+access and so a role may have a specific
+set of access but when you assume it you
+can actually pass in a scope down policy
+and it will further scope the the
+permissions to what maybe you need to do
+and finally tracking and monitoring when
+it comes to cross account access and who
+actually performed in action using roles
+you will always see the role identity
+but you may be asking the question who
+to do that and I'm going to go through a
+demonstration on how to how to actually
+find out that answer okay let's dig into
+trust there we go
+trust
+okay so I'm going to go through three
+trust policies one for each types of
+access that you you may get first would
+be a trust policy for AWS service and so
+when you are validating your trust
+policies the most important part to look
+at because the rest of it is usually the
+same is the principle and in this case
+you can see that the principal is ec2
+the ec2 service ec2 Amazon AWS comm and
+so this means that you don't have to
+know ec2 is account number you don't
+have to know anything about ec2 you are
+just trusting that ec2 can assume this
+role and perform actions on your behalf
+and for roles with ec2 is the actions
+that your application is running moving
+on trust policy for an identity provider
+you can see here if we go straight jump
+straight to the principal you have the
+federated arm so this would be the Arn
+the resource you created which would be
+a sam'l provider and in this example
+it's a DFS the action has changed from
+just assume role to assume roll with
+sam'l and we're still making temporary
+creds but you're gonna call assume the
+action assume roll with sam'l instead
+and then there's a condition here that
+the sam'l odd is equal to the sign in
+URL next up we have a trust policy for
+another account and this is actually
+where I see a common pitfall a lot of
+people will trust that everyone from a
+certain account can assume the role and
+a best practice would be to make sure
+you're listing the specific users who
+can actually assume the role and so if
+you see root here instead of the user
+slash Brigitte that means that everyone
+can assume the role in the account and
+the best practice would be to actually
+spell out the entities that you would
+are allowed to assume the role so keep
+that in mind if you have some roles I
+would go poke around in the trust
+policies and see who've you trusted to
+assume that role and make sure that it
+is accurate and scoped to the person or
+entity that you trust it's all about
+trust
+all right so before we go into our demo
+I want to explain to you some setup that
+I've done so we're gonna demo using a
+sim roll using the CLI and in a count
+eight we have Bridget that's me I'm a
+trusted entity and I have a password for
+the console honestly I wouldn't be able
+to do much because the only permission
+that I have would be to assume a role I
+could set up switch rolled up and then I
+have an access key and secret key the
+permissions that I have are to assume
+the role fraud support read-only in
+account B so Bridget exist in account a
+and she will assume a role in account B
+and then if you pop over to account B
+which is the production account the role
+is pod support read-only and can't be
+those names match the trust is with
+Bridget from account a that's me very
+trustworthy and then permissions I
+attach the AWS manage a read-only policy
+here okay so I want to show you the
+assumed world policy for bridgid so if I
+were to go into account a I would see
+that Bridget only has this permission
+right now so Bridget is allowed to call
+STS assume role and then the role is
+prod support read-only account B and I'm
+going to try to grab a grab a file but
+I've set up the the CLI and and I've set
+up my credential file as well as my
+config file I have my access key and
+secret key so those are my long-term
+creds but by calling this assume role
+prod support read-only profile I will be
+changing those out for temporary
+credentials ok so I'm moving over to the
+demo slide
+I'm gonna share my screen here okay all
+right so I've set up the command line
+and I'm all ready to go
+and I'm going to show you the command
+that I'm going to run so I'm hoping that
+it's not too small but we have AWS I'm
+gonna call AWS s3 API get object and
+then I'm gonna get this object from this
+bucket and I should be able to read it
+because the prod I'm using the profile
+prod support read-only and that has full
+read-only access to AWS and I'm gonna
+grab this picture from a summer trip
+that I had last summer and see what
+happens here we go I'm gonna paste this
+in I know the cool part about the CLI is
+it is going to assume the role for you
+it's gonna create the session name for
+you for a role which will show up in
+cloud trail and you don't have to do
+anything
+all you have to do is pass in the
+profile with the Arn and make sure that
+all the permission permissions match and
+you can see that I was able to get the
+file and and get the image and download
+it so that worked so I was Bridget in
+account a and I actually got a file from
+account V all right let's go on to
+permissions right so we've we've
+established the trust that Bridger was a
+trusted entity in account B so then I
+want to go back to the slide deck and
+look at the permissions kind of speeding
+up here a little bit since we have
+limited time all right
+so going on to permissions it is
+important that you scope your
+permissions and I want to call out the
+mini to one relationship so I am roles
+are intended that multiple users assume
+the role so the best practice would be
+to logically separate your roles based
+on types of access that's required and
+some examples might be read-only which I
+just went through or production support
+maybe they have some elevated privileges
+or an auditor or maybe you break it down
+bucket by bucket billing developer
+project there's a lot of different ways
+you can logically
+create your roles so keep that in mind
+so for this demo I'm going to actually
+upload objects to an s3 bucket I'm still
+using Bridgette she's still trusted but
+this time she's going to use the prod s3
+bucket account b-roll and this role has
+permission to list bucket so if it was
+ever used in the console she could
+navigate around but um also allows her
+to put get and delete from the i''m
+roles webinar bucket and let's look at
+that policy if you look at the policy
+the first statement is list all my
+buckets that's mainly for console then
+we have list buckets if she wanted to
+read that bucket and then also put
+object get object and delete object from
+a specific bucket I could have scoped
+this down to to another folder if I
+wanted to go down that path as well I'm
+going to show you two cases today one
+I'm going to show you where I exist
+successfully add a file to destory
+bucket and then one where I'm going to
+try to add the same file to a different
+bucket but it is going to fail because I
+don't have permissions step ok so going
+back over to the demo ok I see it here
+alright and if you look at this command
+I'm going to put object which is right
+here and then I'm gonna use this test
+file and I'm going to do it to this
+product the webinar bucket I'm gonna try
+to use the read-only because that's what
+I used last time and see if it works and
+I hope you're all thinking to yourself
+hmm read-only that won't work and you
+see that the access was denied which is
+actually what we were expecting and
+that's because I used the wrong role and
+I assumed the wrong role that did not
+have put object permissions so now I'm
+actually going to try the correct role
+which is prod support s3 bucket and this
+is the one that has the permissions we
+just walk through on the slides
+so I will paste this here and you can
+see s3 put object and I'm using the prod
+s3 bucket roll and this I de updated my
+credentials file to create this profile
+for this one and you can see that I was
+able to successfully put the object now
+let's say I want to try to put the
+object in a separate bucket I hope
+you're thinking to yourself the same
+thing well I'm using the same role so I
+have put object but if you look I'm
+actually calling it for bucket I am
+roles webinar cannot add objects I made
+it very clear so I hope you're thinking
+to yourself that this will not work and
+I always denied access once again so you
+can see how one I separated the roles
+that I was allowed to assume based on
+read-only versus having s3 bucket access
+and then I also scoped that access down
+to the buckets that I needed and I was
+denied access when I accidentally it's
+just a call it a typo two different
+bucket and going back to the slide deck
+I want to cover one last best practice
+and this is tracking and monitoring so
+when it comes to roles I've called this
+out many times it's a minute one
+relationships so let's assume you have
+product support team a production
+support team and you Bob Alice Kacie
+dory and let's just say I'm in there as
+well and and they all assume a role so
+they're assuming the prod support s3
+bucket account B role and they put
+objects a B and C into that bucket
+you're probably gonna ask yourself who
+did this right because at the end of the
+day when you see the put object call you
+will only see that it's the prod support
+role so three steps to do this first you
+locate the put object call using the
+object name so I updated I added the
+test file into a bucket you might say
+who is that crazy person who put a test
+file in the production account I want to
+find out who it is
+and you would you would find that called
+that entry in cloud trail then you would
+find the assumed role call in the
+account be the production account using
+the access key that was located in step
+one so when you assume a role you
+actually get an access key and that
+access key is used for other calls that
+that person made during that session
+when you find that assume roll call
+there will be an entity a shared event
+ID and that's where you want to go to
+your originating account or Bridget
+lives and figure out okay I'm going to
+use this shared event ID and you
+actually see the user so I've pulled my
+cloud trail logs from the from from the
+demos that I just did and when I
+practice before I had to external bit so
+it's not word for word but you can see
+that there is the event name put object
+and you can see somebody put a test file
+in there and they probably shouldn't
+have done that and then you can see a
+before that it was used the access key
+whenever I try to identify access keys
+hours and remember the last three
+letters so
+ukq is access key so we would copy this
+and we would search for the assumed role
+call which would be step two and
+remember this is the assumed role all in
+account B so any account that the role
+lives in you can see that the assume
+role call was made you can see that it
+was the role that was assumed was the
+prod support s3 bucket account B and the
+access key that was given ended in UK q
+then you want to grab the shared ID
+which is at e bottom and so you would
+copy that and you would go to your other
+accounts and try to find that shared ID
+shared event ID and if I go to account a
+I would actually find the shared event
+ID which is on the bottom and I'd be
+like up Bridgette did that so that is
+that is how you would track your users
+and tend from one account to another
+alright I'm a little over time because I
+want to make
+sure we have time to answer your
+questions at the end I know the
+moderators have been typing away so
+Lassa get some online and I do want to
+call out some additional resources and
+this is my favorite resource and the AWS
+security blog anything regarding roles
+or how do you use roles on an
+announcements feature announcements
+different use cases they will be on the
+AWS security blog we have a great team
+of product managers ARCA solution
+architects customer support who are
+constantly writing blogs and so please
+check that out there's a lot of great
+information there and some top hits from
+the blog our AWS cloud trail now tracks
+your cost account activities so that's
+the last demo I just walk through and
+enabling cross account console access
+that's a switch full feature that I
+mentioned brief it briefly earlier and
+then always the crowd pleaser is
+demystifying a c2 resource level
+permissions so if you're kind of diving
+into permissions and want to understand
+ec2 resource level and that is that's a
+very popular blog post so those are the
+resources that we have there's also tons
+on Federation go through the docs look
+at will reinvent talks and there's a lot
+of good stuff out there

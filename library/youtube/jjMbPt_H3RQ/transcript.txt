@@ -1,0 +1,260 @@
+what's up Wizards we have a really
+interesting topic to talk about today
+which is typescript enums time script
+enums should you use them or should you
+do something different it's pretty
+fashionable to actually kind of bash on
+typescript enums themselves not the
+concept of enums but the particular
+keyword that you use in typescript to
+express them this is the piece of syntax
+I'm talking about enum log level and
+then you can have debug error warning
+you can put anything you want in here
+you can specify these with numbers
+manually if you want to or you can use
+strings like this there's also a version
+of an enum called a const enum which
+we'll look at in a bit as well so why do
+enums get so much Flack well the first
+thing is you might notice that the const
+enum thing or just enum by itself is not
+something that's native to JavaScript
+this was actually something that they
+introduced pretty early on in typescript
+and because they wanted to give a sort
+of like a c-sharp object-oriented
+feeling to typescript but I saw an
+interview with Anders recently and he
+said that if they had a green field they
+probably wouldn't make that mistake
+again like if typescript started you
+know today or last Monday or whatever
+they probably wouldn't put enums in the
+language enums behave a little bit
+unpredictably at run time so let's say
+we have this enum log level by default
+the value of debug is going to be zero
+warning is going to be one error is
+going to be two so naturally you kind of
+think that this log level is kind of
+going to end up like an object like this
+with debug 0 warning one error two but
+it actually doesn't if we look at the
+transpiled JavaScript here then this log
+level actually ends up as a slightly
+different object we can see this kind of
+funky syntax where it goes okay first we
+assign log level debug to zero then the
+result of that which is going to be zero
+we'll say log level zero equals debug
+and then it does that for each of them
+so what you end up with is actually an
+object that looks like this log
+underscore level where we have debug 0
+but also zero debug this means that if
+you you do object.values on a log level
+you're going to end up with zero debug
+one warning to error which if you're
+treating this like an object is totally
+not what you expect so this is the first
+annoying thing about enums is that they
+don't quite behave exactly as you expect
+them to this is slightly different if
+you were to use a string enum if you
+were to manually assign debug to debug
+warning to warning error to error then
+it just creates an object out of this
+but if you're doing this it sort of
+defeats the point of using an enum in
+the first place which is these things
+don't get automatically assigned sure
+they're fine but it's just a little bit
+iffy yeah I said iffy and this is an
+immediately invoked function expression
+which is an iffy so it's a joke
+not very good joke the way that you use
+an enum is kind of like this where you
+say Okay imagine you have a log function
+where it takes in a message and a level
+here you can specify this as kind of
+like any member of this enum this means
+that enum's sort of like switch over to
+the type world as well as live in the
+runtime World which is useful then you
+can call it with log level.debug you
+can't call it with like a member of the
+enum that isn't expressed as the enum so
+you can't just pass like debug here it
+has to be log level dot debug this is
+really weird because we know that
+typescript is like a structural type
+system meaning that it doesn't really
+care about the names of things only
+about their runtime values so surely it
+shouldn't care whether we pass debug or
+log level dot debug because the values
+are the same well enums break a little
+bit of a rule in typescript which is it
+does care about the names of things for
+enums typescript becomes a nominal type
+system it cares about either whether
+it's a log level enum or a log level 2 2
+enum here if I create log level and log
+level 2 even though the values are
+exactly the same I can't assign log
+level 2.debug to this level here now
+this does give you some benefits it
+means that you can do really nice
+refactors where you just sort of change
+all of the members around and it fits
+really well with vs code so people who
+love enums name this as their number one
+reason why they use them refactors are
+just so easy let's look briefly at const
+enums too so if we change this from log
+level to const enum log level then look
+at that look at the right hand side when
+I add this const then actually the enum
+itself disappears at runtime this means
+that the enum then only exists in
+typescript in the type level but this is
+kind of weird it's stripped out at
+runtime but then it's actually added in
+line wherever you use it this kind of
+seems like quite a good compromise
+really because it's you can't really
+access the runtime structure so it's not
+going to confuse you but it gives you
+all of the benefit benefits of type
+safety with your enums and if you like
+the refactors then the refactors are
+just as easy with as with normal enums
+however the typescript docks pretty much
+kind of say you probably shouldn't use
+this it has an entire section on all the
+pitfalls of constinence you should also
+never ever ever use them if you're
+inside Library code too because cons
+enums are really dangerous if you don't
+control the compiler that's emitting
+them basically all of these edge cases
+are enough to just scare me off
+recommending consonums because there's
+so many simpler Solutions the thing that
+I do instead of using enums and I've
+seen this all over the place in open
+source application code is using a pojo
+a plain old JavaScript object that's
+just got this as const annotation on it
+as const means that this object can't be
+manipulated or changed there's a little
+bit of type magic here to extract the
+type out so we can use it we're just
+extracting the object values and then
+this log level ends up as debug or
+warning or error so now we put level as
+log level and we can either pass log
+level.debug or just pass in debug itself
+for me this feels like a really natural
+way to do it because you don't need to
+actually import the log level every time
+you need to use it you can just pass in
+the value that you want to this really
+makes sense to me because I think of
+typescript as a structural typing system
+and this weird kind of nominal enum
+thing doesn't really fit with me so here
+because the only thing that log cares
+about is the value of debug we could
+exchange different enums and like it's
+just working at the type level how you
+expect it to work at the runtime level
+the other really cool thing about as
+const is it lets you be super flexible
+with the object that you create these
+keys in so here I've got a mapping
+between the levels and a human readable
+version of that level instead of the log
+level being extracted from the values
+it's now being extracted from the keys
+and in this log function we receive that
+log level and we index into the log
+level in order to get the debug warning
+or error thing here and that means we
+can pre-pend our message with the level
+that it's at when you think about this
+your brain just starts like exploding
+with all the possibilities here because
+I mean I've done this just dozens of
+times in application code where you have
+a mapping between like a semantic key
+you know an enum and the thing that you
+want that semantic key to represent this
+could be as diverse as you know variance
+in a component or you know screen sizes
+or languages all of these different
+things and being able to represent those
+in as const really makes it a killer
+feature over enums themselves to
+represent this same code with an enum
+you would need to declare the enum then
+have your titles map which has all of
+the inner mapping done there then
+extract the enum in there then use the
+enum inside the log function it's just
+like a lot more code and I think an as
+const does this a lot better A lot
+cleaner I think you should ignore enums
+I think you should forget they exist and
+I think you should flag in PRS that this
+should probably be an as const I don't
+think you should reject PRS that have
+enums in but I do think you should try
+to monitor when they go into your code
+base and see if they're really necessary
+I don't even teach enums in total
+typescript That's how little I think of
+them and total typescript by the way is
+my paid typescript course if you want to
+learn more about this stuff and become a
+typescript wizard you can have a look on
+total typescript.com one final thing
+here which is if enums ever make their
+way into JavaScript language as a whole
+I think that would be a different
+conversation there is an ecmascript
+proposal right now to bring enums into
+JavaScript natively I don't know if the
+implementation is slightly different to
+the way that typescript does enums but I
+know that if enums were in JavaScript
+then you'd be able to use them a lot
+more predictably because it would be so
+much better documented I mean obviously
+typescript has done a great job
+documenting these enums but they're
+special to typescript whereas if they
+were native to JavaScript everyone would
+understand them out of the box if you've
+enjoyed this video then do hit the like
+button I realized the other day why p
+people ask people to like hit the like
+button it's because it's an actionable
+thing that I can ask you to do to prove
+to YouTube that you think this channel
+deserves more viewers it costs nothing
+for you to do maybe other than to like
+remove full screen and like press it
+there it's like four clicks or something
+so if you want to do the minimum
+possible thing that you could possibly
+do to support me in this channel then
+just hit that like button and if you
+enjoy typescript debates you will love
+this video on types versus interfaces as
+well and which one should you use should
+we be forgetting all about interfaces no
+but should we be using types mostly
+probably yes thanks so much for joining
+Wizards I will see you soon

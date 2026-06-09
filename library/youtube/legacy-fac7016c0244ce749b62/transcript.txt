@@ -1,0 +1,1323 @@
+[Music]
+thanks so much liz and thanks everyone
+for tuning in today
+my name is aaron filbeck managing
+director here at kai association
+just real quick before we get into the
+meat of today's presentation just a
+little bit of a background on
+who kaya is and uh
+what we're covering today and how that
+fits in some of our continuing education
+sakai association is a professional uh
+body
+of individual um professional investors
+uh who have gone through our kaya
+charter program
+which is a rigorous uh two level
+two-level
+high-stakes examination process covers
+institutional quality alternative
+investments so everything ranging from
+private capital to hedge funds and
+structured products
+we also put on a number of
+continuing education and thought
+leadership
+events whether that's in person although
+that that has been uh much lower these
+days during coven
+or virtual through the webinar format
+such as today
+so what we've done over the past year
+and a half to two years
+or so is we've tried to
+uh highlight some some relevant and
+timely articles
+in one of our publications the journal
+of alternative investments which is the
+official publication of kai association
+it's an academic journal where we try to
+bring in
+relevant topics that are both
+academically rigorous but also
+practically
+applicable to your industry practice
+and we've done a number of webinars with
+some of the authors of these uh articles
+um just to bring to light some of the
+content that's being covered um in each
+of them so that's what we're doing today
+uh this is a presentation and we'll have
+some q a associated with one of the
+articles from the fall edition of the
+journal of alternative investments
+and i'm very pleased to have dr greg
+brown who's going to be giving this
+presentation
+um throughout this i'll also be dropping
+a couple of links uh throughout
+dr brown's remarks
+and
+you know you can feel free to check
+those out as well as i'll be dropping a
+link to the actual
+jai publication
+but without further ado i'm very pleased
+to introduce dr greg brown who's the
+executive director at the canaan
+institute of private enterprise uh he's
+going to be giving about 20 25 minutes
+of prepared remarks and then we'll have
+time for questions so if you have them
+please use the q a function because
+we'll we'll try to get to all of them as
+best we can so greg over to you
+great um thanks a lot aaron thanks for
+the for the invitation to um talk about
+um the paper today and i hope that
+people find it useful and interesting
+and um just want to say off the bat yeah
+we'll have time for q a at the end here
+but if people have um other questions
+about uh this research stream or other
+things that we're doing at institute for
+private capital i'm always happy to to
+take inbounds from folks and and either
+answer questions myself or get you
+directed to the to the right person so
+um i'm gonna go ahead and start sharing
+my screen here because i've got a few
+slides that i'm gonna walk through to
+kind of talk about the research paper so
+let me make sure i can get all that
+going here
+um so hopefully you can see that and
+i'll go into presentation mode
+the good aaron looks good awesome
+um
+so the the specific thing i'm going to
+talk about first here is this based on
+this paper um called private portfolio
+attribution analysis
+that came out in the journal of
+alternative investments last fall
+and there's a link to it here i believe
+this one's publicly available to folks
+um and a little bit about uh who was
+involved with this so um frank
+etheridge's co-author he's a colleague
+of mine here at unc and uh
+a researcher at the super private
+capital um tyler johnson and tom keck
+are um with stepstone
+uh and really one of the things that we
+do institute for private capital is work
+with industry people um a lot of times
+they're these nice synergies where
+industry people have you know sort of
+ear to the ground they have kind of very
+uh timely pressing issues come up with
+um with you know really good solutions
+in this case the model um that i'm going
+to talk about was primarily developed by
+tyler and tom and other folks at
+stepstone
+and then the academic community you know
+we often have time uh often it uh have
+access to
+um empirical methodologies or um uh data
+you know kind of broader data access and
+kind of do
+um additional analysis that sheds um
+insight into kind of current topic
+issues so i think this paper is a great
+example of that partnership between the
+institute for private capital which is
+really you know a lot of academic
+researchers and then you know one of our
+our industry partners um in this case um
+step stone so um
+obviously understanding performance is a
+really important part of the asset
+management business
+uh and it's it's a bit of a challenge to
+to do in the private market space just
+because we don't have
+uh sort of high frequency time series
+data that let us you know do the
+traditional kind of regression type of
+analysis that we're
+you know
+all used to doing in you know
+a traditional public portfolio or a
+hedge fund
+where you can observe it you know at
+least monthly returns
+so we're sort of you know uh in some
+ways i'm relegated to doing things that
+happen at a lower frequency a little bit
+more course
+but there's still room for improvement
+over sort of just a very simple analysis
+of comparing uh performance to a
+benchmark so you know here we might
+think about oh you know we have some um
+benchmark maybe it's a public benchmark
+or maybe it's a private benchmark
+um and then we see the kind of total
+portfolio return
+um it's some different number and we can
+we can you know potentially infer that
+difference as being something like an
+alpha right it's it's some differential
+performance
+um that uh you know kind of captures
+that that gap and we could do it with an
+irr
+um we could do it with uh with a
+multiple
+measure a tbpi
+and so for example you know here we
+might say oh the benchmark return is 11
+the total portfolio return is 18.2
+and so then we have this um this
+difference of 7.2 percent which is which
+is the alpha or in a tvpi context it's
+you know the benchmarks of 1.78 uh
+multiple the portfolio is a 2.4 multiple
+and so we have this difference it's 0.62
+but you know there's there's actually a
+lot of things that could go into that
+difference in return and the goal of
+this paper is to unpack that um a bit
+more um
+yeah there's there's um different types
+of benchmarks that have been used um so
+obviously we use a lot of the burgess
+data for our analysis and and some of
+the analysis i'm going to show you
+relies on that purchase kind of broad
+universe of um private funds
+but there's others i mean cambridge um
+has their indices there's others that
+are that are being
+uh kind of coming online
+more recently
+um
+but again those those uh benchmarks you
+know there's a lot of things inside of
+those indices um there's also been a
+movement and we can talk about this more
+later maybe we get into q a
+um about you know how do you compare
+private market returns to you know
+public market returns and if you think
+in some sense that your you know your
+kind of uh next best investment or the
+kind of opportunity cost in some sense
+of investing in private markets is to
+invest in a similar public uh market
+index then you get into this world of
+public market equivalence where
+effectively you discount uh private cash
+flows using a public benchmark and that
+tells you kind of what relative
+performance is we're not going to do
+that in this analysis here
+um though potentially we'll have time to
+to discuss kind of um some some recent
+trends and methodological improvements
+um there
+what we're really going to do here is
+just sort of think about okay how can we
+take you know this sort of single alpha
+number um that i showed you in the last
+slide and then decompose it into other
+things that we think
+could be important drivers
+of portfolio returns here we are going
+to limit
+the analysis to portfolios so we won't
+be talking about individual funds um
+instead we'll be talking about um
+the portfolio of funds
+and uh we're gonna we're gonna
+essentially decompose things into five
+different
+attributes the first one is sort of a
+timing effect so
+how does the
+vintage year commitment timing effect
+returns the second is strategy and by
+strategy here we're going to talk about
+um buyout funds and venture funds though
+you know in in theory it could be any of
+a range of of different strategies um
+geographic selection and here i'm going
+to talk about
+north america versus rest of the world
+but again you could get more granular
+in that
+geographic component if you wanted to
+uh commitment sizing so how big the
+commitments are for
+for individual funds and then something
+that's sort of a residual and and here
+we can we can one way we can interpret
+the residual is is in incorporating
+whatever the fun selection
+um component is so you know what what is
+um not captured by the other four
+some of which uh is likely to be the
+ability to select um good performing
+fonts um or not
+so just to talk a little bit more about
+how we do this attribution analysis just
+and i'm not going to get into the math
+but just sort of give you a qualitative
+notion of how we do this um so probably
+many of you are familiar with sort of
+value bridge type approaches where you
+you know you sort of start with a with a
+benchmark or market return or some um
+you know uh in the case of an individual
+portfolio company kind of you know the
+the entry multiple and then you know you
+sort of look at different uh
+um components of return to get to the
+final number so this is very much in the
+spirit of doing that and and so here we
+just have these five different
+attributes that um will sum up uh to the
+difference between the benchmark return
+and the portfolio return
+and so just to give you a little bit
+more color in terms of how we think
+about these and how they're calculated
+so um the the way that you can think
+about this is there's there's a
+benchmark which is a whole bunch of
+private funds and so in the analysis
+that we do in the paper um that
+benchmark is all of the funds that are
+in the burgess master universe which we
+think is the vast majority of
+institutional quality um private funds
+and so what we what we do to calculate
+the timing component is we say okay
+given if you were to apply
+the
+vintage your weights for the portfolio
+to that benchmark return what would the
+performance be and then the difference
+between that and the benchmark return is
+would be the attribute that
+is related to timing the vintage year
+commitment difference in timing between
+the portfolio and the benchmark um you
+can do something very similar with
+strategy selection so the the benchmark
+is going to in our case be a mixture of
+buyout funds and venture funds the
+portfolio will likely have a different
+allocation to buyout adventure and so to
+the extent that um those weights um are
+going to to be you can apply the weights
+from the portfolio to the benchmark
+returns for buyouts adventure and then
+compare
+again the returns between
+that sort of replicated portfolio by by
+strategy weights
+in the portfolio to the benchmark that's
+going to tell you something about you
+know how much value did you add uh with
+your strategy selection
+and do the very same thing with uh with
+geography so just apply the portfolio
+weights to the um to
+buy geography to the benchmark returns
+and then
+by
+commitment sizing here we're thinking
+okay
+in practice you're going to make larger
+smaller commitments to different funds
+how does that difference and commitment
+sizing across different funds
+uh going to drive performance relative
+to making the same
+um
+size commitment to every fund and so
+again you just sort of measure you know
+that hypothetical
+performance for
+uh the
+the portfolio
+uh for the benchmark portfolio as if you
+had used the um commitment sizing
+um for the
+portfolio of interest so um you do all
+this and and you sort of build a value
+bridge and i'll walk you through one
+here there'll be a
+a part that's left over that's
+unexplained and so this is the the
+residual factor which we think of as is
+having you know at least a component
+that is going to be heavily impacted by
+fund selection so to walk through a
+specific example here um
+looking at the top part of this graph
+with the with the net irrs
+um the benchmark again 11
+uh in this case you know a purely
+hypothetical example timing uh destroys
+value so and that you would have been
+better off uh making commitments uh the
+same way that the benchmark portfolio
+did rather than than a
+deviation from that and so
+one percent lower return
+um strategy selection also a small
+negative contribution so you would have
+been better off with the mix of buyouts
+and venture in the benchmark versus the
+ones that were actually chosen in the
+portfolio
+uh and then likewise with um geography
+selection another negative contributor
+but then there is a big positive uh
+contribution that comes from commitment
+sizing so in this sense the funds that
+the portfolio committed to
+uh in a larger size ended up being
+better performing funds on average and
+then here there's a large residual um
+component so you know the largest
+component is that residual
+again which we think of as being sort of
+everything else
+uh that that could determine differences
+in performance including the the actual
+fun selection part
+so so here you know you i think this
+kind of gives you more information about
+you know what went well in this
+portfolio versus what didn't go well in
+this portfolio so you know if if you
+think that
+these factors are driven by skill or a
+lack of skill and you've got the same
+group of people making decisions you
+might tell them hey
+don't worry so much about you know
+timing or strategy or
+geographic um selection instead really
+really focus on the ones that you think
+are the best funds because you seem to
+be good at um making larger commitments
+to the best of performing funds
+regardless
+of you know when they occur or you know
+whether their buyout or venture or where
+they are geographically and it also
+seems that uh you know just that pure
+selection ability is quite strong as too
+so that so that's adding you know
+basically the entire difference um
+uh in return between the portfolio and
+the benchmark um after
+uh controlling for the other
+characteristics
+when you do the same sort of calculation
+with the tbpi you're going to get
+directionally the same thing right so
+timing if it's a negative uh
+contribution
+um to irr is also going to be a negative
+contribution for timing and you know
+likewise a positive contribution to irr
+from commitment sizing will be a a
+positive contribution and multiples um
+for commitment sizing
+uh and the the relative size of these
+things will be similar as as well so
+it's really you know you're not going to
+get different conclusions from looking
+at irs and tvpi's it's just a preference
+in terms of how you want to think about
+what the what the contributions are in
+percentage terms or in sort of
+normalized dollar terms or currency
+terms
+so um so let's let's dig in a little bit
+more about how you can use this type of
+model we'll simplify things a little bit
+here so that we're only going to look at
+strategy selection and the residual fund
+selection so here we've got a benchmark
+that again purely hypothetical example
+earns 14
+but the portfolio return is 9 so you
+might think oh
+that's that's a really bad outcome right
+and so we should be really careful
+uh to think about how we're going to be
+allocating uh you know how we're making
+decisions on allocations um based on
+this historical performance but but you
+gain some insight when you decompose it
+into strategy selection and then the
+residual fund selection so in this again
+purely hypothetical example the strategy
+selection was terrible right so
+essentially you picked uh buyouts when
+you should have picked
+uh or vice versa
+uh but the actual fund selection
+component was positive so here i think
+you know the lesson is is not um you
+know fire the people selecting funds uh
+or fire the manager that you've
+delegated fund selection to but be much
+more thoughtful in terms of how you're
+doing your strategy selection so um for
+whatever reason bad decisions were made
+there so focus in
+uh on you know the strategy selection
+decision to refine the process and say
+okay was was this because of it was
+hardwired into our ips or is this
+because of decisions that were made by
+you know someone else besides the people
+that were picking the funds and so here
+you're able to i think make better
+decisions um about
+new commitments going forward with a
+deep understanding of what's happened
+historically what that what those
+attributions are inside of the portfolio
+returns
+so um
+if we think of of the problem in some
+sense uh being
+we want to really get a better handle on
+you know kind of where skill comes into
+play
+we know that there's always going to be
+a luck component as well
+and and you know we we know that uh you
+know luck is a is a decent
+percentage of of overall return
+variation
+in public markets if you look at mutual
+funds or hedge funds um it doesn't look
+like a lot of the variation can be
+explained by
+systematic factors
+and so you really need to have some
+notion of you know what's reliable um
+how big do these numbers have to be for
+you to say with some reliability
+that that difference in performance is
+something that you can attribute to
+skill versus just walk
+so what we did here was a big simulation
+exercise so we took the the burgess
+master universe
+and we created a thousand portfolios
+just completely at random and we said
+each year
+there's going to be
+a commitment to 10 randomly selected
+funds
+and then we're going to do this
+attribution analysis for those thousand
+random portfolios
+so what those thousand random portfolios
+do is they they give us uh a sense of
+how big is the spread in these
+attributes based completely on you know
+random noise just you know complete luck
+and then we can sort of look at those
+thousands and say okay you know if we
+look at just the timing
+um spread for irrs you know what's the
+90 confidence interval there right so so
+we look at the kind of middle 900
+portfolios and we say what's the timing
+contribution for those and in this case
+it turns out um for for the portfolios
+that include all funds that it's about
+2.6
+so in other words you know i'm just a uh
+a 90 of the time a randomly selected um
+portfolio is going to have a timing
+contribution that's between
+you know minus 2.6 and plus 2.6
+so it's really only when you have a
+timing um component that's some larger
+or smaller than 2.6 percent
+that you're going to be able to say okay
+this is pretty reliably due to
+timing skill versus just luck of the
+draw right and we can do that same sort
+of analysis for each one of of the
+characteristics and you can see it's
+different right and that's because
+there's just more variation
+in some of these and than others so
+while timing has a has kind of a
+confidence interval or plus or minus 2.6
+percent strategy selection is much
+bigger 5.9 percent
+um
+geography selection is more in line with
+the timing so about 2.3 percent and then
+commitment sizing is
+um is larger 4.5
+of all of these the one that has the
+most variation around it is this kind of
+fun selection or residual component so
+this could tell us
+a couple things one is that it's hard to
+pick funds reliably and the other is
+that there could be a variety of factors
+that we're not accounting for in the
+attribution that are driving
+uh variation in that residual component
+so um so i think that's you that's
+interesting you know in some sense you
+have to have really good or really bad
+performance uh in order to say reliably
+that um that fun selection
+um is is uh driven by skill
+versus versus luck
+now
+um
+there's a big caveat to this it depends
+fundamentally on whether you're looking
+at buyouts or venture so again we here
+we only look at buyouts and venture
+there's other other strategies certainly
+could include real estate real estate
+and infrastructure and private credit
+and other things
+but i think the lesson here is that the
+buyout world is very very different than
+the venture world so here those
+confidence intervals really tighten up
+substantially like they fall by about
+half
+when you're looking at just buyout funds
+and and that's um
+as we all know because buyout fund
+returns are just much less variable than
+venture funds when you when you look at
+only venture funds then all of these
+intervals you know widen out you know in
+the case of timing it's like it's almost
+four times uh the size
+uh and you know geography it's it's more
+than twice the the size and for fun
+selection it's huge 27
+right so
+so i think in some ways what this tells
+us is that
+uh you know if you wanted to apply this
+methodology
+to um to venture capital funds you're
+just gonna not be able to say
+with as much confidence you know how
+important each of these different
+attributions are um to to overall
+returns or how much is due to
+skill versus luck but when you're
+looking at buyout funds you can do it
+with a decent amount of precision right
+that's that those are like pretty tight
+confidence intervals from my perspective
+and so um applying this to buyout funds
+or to to
+funds with uh a mixture of buyouts and
+venture um let's you say with more
+precision you know who's got skill and
+who doesn't
+so
+um with that i'm just going to wrap up
+the kind of formal part of the
+the presentation and we can kind of turn
+it over to q a um aaron
+great thanks greg those that was really
+informative and uh very helpful
+um we've had a couple of questions come
+in but uh i've got a couple of my own so
+maybe i'll start and then
+uh give you all some some chance to
+answer some of your questions
+um greg maybe we could just start really
+broad i mean this this uh
+analysis focused primarily on buyouts
+and and vc to some degree
+how do you approach this from a
+from a multi-asset
+perspective and maybe some other asset
+classes like real estate um or hedge
+funds uh kind of trying to put it all
+together into a giant portfolio
+yeah i mean i think i think that's the
+big challenge right now that people are
+trying to to get their their brains
+around which is yeah almost every
+institutional portfolio now is quite
+complicated right i mean it's
+it's uh it's going to have a combination
+of liquid assets semi-liquid assets and
+very illiquid assets whether those are
+in a you know a private equity fund or
+in many cases direct holdings of real
+estate
+so there
+you know i think this framework can be
+expanded uh and we've thought about how
+to do that we haven't actually done it
+ourselves yet maybe we'll write another
+paper on this you know you could expand
+this framework to to so that benchmark
+portfolio included
+liquid assets
+and and you know semi-liquid assets
+included hedge funds and even direct
+investments you need data on those
+things to be able to define that that
+benchmark but then you can apply similar
+technology and and there you would just
+think about you know if we say you're
+doing this on a quarterly frequency or
+something there you would just think
+about you know a
+public equities fund as just being a
+fund that had a maturity of one quarter
+right so it didn't you know it didn't
+have this sort of like long
+uh lock up you know effective lock up
+illiquidity problem that other other
+assets have but in theory you could you
+could kind of expand the universe some
+to do that but but really it's i mean
+there's i think there's a a lot of
+interest in trying to understand you
+know what are the benefits that come
+from investing in different um different
+types of assets
+uh and
+some of that will just be
+return
+uh differences but a lot of it's
+probably going to be diversification as
+well there's there's growing evidence in
+the academic literature that you get
+some real diversification benefits from
+investing in buyout funds and venture
+capital funds and
+infrastructure and private credit so
+it's it's not just the return
+and in fact i mean you can imagine that
+you know if we go all the way back to
+kind of markowitz you know traditional
+uh portfolio theory you know do you want
+to hold an asset that has zero alpha
+yeah you do right um as long as it's not
+perfectly correlated with other assets
+you know you still get a portfolio
+benefit from holding assets that have
+zero alpha so everybody wants positive
+alpha that's a great thing in another
+sense you know you want to have a
+portfolio that's as diversified as
+possible is as long as it's on the
+efficient frontier
+that's great uh and we actually have a
+question that came in which
+dovetails well with my my next question
+for you which is kind of
+picking the right benchmark i mean you
+know you look at public markets and
+you can easily take a look at the s p
+and it's representative of what's out
+there with with private markets there's
+a lot of different ways to slice and
+dice this so
+i guess for practitioners who are trying
+to utilize this framework and maybe just
+more generally uh how do you pick the
+right benchmark and how should you think
+through that yeah yeah no it's it's a
+really good question because um in some
+ways it sort of depends on what you're
+trying to do i think
+um
+if you're trying to evaluate a manager
+or performance of a portfolio i think
+you want a benchmark that is as close uh
+closely matched
+to the
+kind of portfolio
+you know
+in investable universe as possible right
+so so if if you're talking about buyouts
+you're probably talking about
+you know at least traditionally you know
+sort of small cap value type um
+companies right if you're talking about
+you know venture you're probably talking
+small cap growth type funds or maybe
+even something that's that's more
+precisely defined than that
+we've been um and this is something
+that's been discussed in the academic
+literature already we've been doing a
+little bit of work around this
+where we've said okay let's take you
+know the burgess universe
+let's let's do pme
+type calculations
+using a whole bunch of different
+benchmarks so we'll use you know the
+msci aqui index we'll use the s p 500
+we'll use the russell 3000 we'll use the
+russell 2000 value and just see what
+that with that different range of of uh
+performance numbers are it's it's large
+i mean it matters a lot
+you know whether you use you know a
+global uh equity benchmark or just a us
+benchmark because those returns have
+differed so much especially over the
+last you know decade or so
+so then we thought to ourselves okay
+well what do we really want to do we
+really want to evaluate on an apples to
+apples basis
+um what we should probably do is create
+custom benchmarks and so then we we
+started creating benchmarks that would
+match on geography they would match on
+size and they would match on industry
+and it turns out that that industry is
+an important
+component right just because if you look
+in venture the industries are quite
+concentrated if you look at buyout funds
+they're quite concentrated
+and um and you know we we think of those
+as doing a better job because the the
+kind of dispersion of pmes is smaller so
+in some sense you're kind of your r
+squared is better when you match up
+based on geography and industry
+and size
+so yeah that's you know that's uh
+certainly a feasible thing to do you
+know you need access to the kind of
+underlying indices we've been using the
+msci
+indices um for that because you can get
+that granularity with them pretty easily
+but yeah you might you know depending on
+on what it is you're trying to do may
+need to create your own custom benchmark
+of of public um assets
+you know in terms of what the right
+benchmark is in private space you know
+here we we sort of limit ourselves to
+just the universe of private funds
+you know that might be hard for people
+that don't have access to you know a big
+portfolio of private funds to kind of
+kind of do this type of analysis but but
+you couldn't you can do it with a public
+benchmark right so you know to to the
+extent that you can create sort of
+pseudo public portfolios you can still
+do this same type of of attribution
+analysis but it would just be against a
+public uh benchmark versus a private
+benchmark
+you know the the
+the kind of
+perhaps most vexing question around all
+of this is is risk right like like you
+know we didn't talk about it here we
+sort of assumed that the benchmark has
+similar risk
+um and and for our purposes it probably
+does because again we're sort of
+comparing buyout
+a select group of buyout funds to the
+full universe of buyout funds but when
+you move to a public benchmark then it's
+less obvious right it's a typical buyout
+fund have the beta of one relative to
+the
+the benchmark of public securities
+there's a reason to think it doesn't
+that there's actually a higher beta
+and i refer folks to the arthur
+quarterway who has recently published
+um
+a paper that sort of summarizes all of
+the academic literature
+and you know i think
+there's papers that go way back you know
+people started doing these calculations
+a decade or more ago
+um i think the more recent papers that
+use larger samples longer time series
+you know that the average beta for a
+buyout fund relative to a public
+benchmark is maybe 1.3 in the range of
+1.3 though it does seem to vary by
+vintage year and there's cross-sectional
+dispersion too so some
+some might have a
+beta of 1 and some might have a beta of
+you know 1.7 or something like that
+and uh and then for venture the numbers
+are higher so so they're going to be
+typically quite a bit riskier than um
+than public um benchmarks with you know
+people you know estimates or of betas
+and that kind of one and a half to two
+range
+for just the average um venture fund but
+again quite it seems as though there's
+quite a bit of variation across vintage
+years
+um and uh and across funds
+and this probably begs the question um
+of you know this kind of public
+versus private um
+you know i think we've seen some
+research and a lot of discussion around
+kind of retrofitting private markets
+back into the public markets and just
+given
+given the different characteristics
+different types of maybe underlying
+portfolio companies i'd be curious what
+your thought is on
+that line of thinking i mean even even
+mentioning betas relative to a public
+market index
+is that the most appropriate way to go
+about this or maybe it's just one input
+yeah i mean it's it's these are tricky
+questions again because if we think
+about you know what is what is sort of
+the beta of an asset conceptually it's
+it's sort of the correlation with the
+full market portfolio and and you know
+it's it's the way people do it
+traditionally probably doesn't really
+make sense right they think of it as as
+the market as being just equities but in
+a broader sense the market is is all
+investable assets so it should probably
+include bonds and real estate and
+private equity and venture and all those
+things um it's it's hard to do that
+because you can't observe these high
+frequency returns
+for um illiquid assets but in some sense
+what you really care about is is that
+you know variation with a with a a fully
+diversified portfolio or to be more
+precise the co-variation with that fully
+diversified um portfolio
+so you know i think there's work to be
+to be done there to figure out what that
+that true market looks like and then you
+know what this is goes back to the
+diversification issue you know like if
+you have a if you have a beta of one and
+a half
+against a public um index
+um
+that's not the whole story that's just
+the that's just the component of the
+return that's correlated with the public
+index you also care about what's not
+explained that idiosyncratic component
+if it's um if it's going to give you you
+know good if it's large it's going to
+give you some good diversification
+possibilities
+got it we have a couple questions and
+i'm going to try to squish all these
+together into one but just um you know
+when you look at hedge funds we'll use
+hedge funds as an example there's been a
+lot of factor decomposition on hedge
+fund returns we have a couple questions
+that have come in on something similar
+in the private space and yeah you know
+is the
+is the private market performance really
+due to something else or is it some
+other factor or common equity factor
+that you would find in public markets
+yeah
+so
+again i don't think there is a
+definitive set of research on on this i
+can kind of tell you what i think the
+the um
+the current thinking is and uh in that
+paper by arthur quarterwig he does um
+have
+uh tabled in there sort of what other
+researchers have found in terms of
+exposure to traditional public market
+factors
+in some recent work that i've been um
+doing with uh with ola gretel and for
+tulane and eric geisels who's a
+colleague here at unc
+we've been using a now casting model to
+um
+to try to figure out what are higher
+what would higher frequency returns look
+like so we use
+information on uh you know sort of
+matched benchmark uh public portfolios
+but also the the cash flows
+um
+for individual funds and then asset
+values um sort of knowing that net asset
+values are wrong in sort of predictable
+ways um and then using statistical
+inference to back out like what would
+weekly returns look like for
+um
+for uh buyout funds and for venture
+capital funds and for real estate funds
+and so you know the results are kind of
+intuitive so we we find betas that are a
+little bit bigger than one um for buyout
+funds we find um a positive loading on
+the value factor the the foma french um
+hml uh factor
+uh for venture funds we find a beta
+that's um greater than one and bigger
+than for buyout funds and we find a
+negative loading on hml so again what
+you would expect so venture tends to be
+more growth oriented
+um that said we still find positive
+alphas
+uh
+well we find you know
+we were able to do this analysis at the
+fun level so we find the full cross
+section of alphas but we find that the
+median and mean alpha is still positive
+but of course there's lots of funds that
+have negative
+alphas as well after after doing that
+but you know in terms in terms of you
+know being able to to put private equity
+funds into a 10
+you know factor model or something like
+we like we just it's just too hard to do
+that you know
+um statistically in a way that would
+let you feel reliable about the
+inference so it's it's certainly
+possible that you could have you know
+betting against beta or
+you know um
+i should mention that one one that um
+that has
+um shown to be um statistically
+significant is
+illiquidity factor as you would expect i
+mean these are these are highly liquid
+assets so you would expect there to be
+some sort of liquidity
+premium there um it's hard to measure
+that just because measuring liquidity is
+difficult
+but you know so but again i think that's
+that's okay if you're if you're an
+investor who's in for marginal on
+liquidity then you want to capture that
+premium right so um if you if you can
+capture it in a public market um great
+if you can capture more of it in a
+private market maybe you want to do that
+too right
+yeah in terms of hedge funds it's the
+same thing so i think there's recent
+research we've been doing to sort of
+suggest that that if you have the right
+data um so you have really good more
+comprehensive data than what's in most
+of the benchmarks uh for hedge funds
+that uh that you observe um positive
+alphas
+uh and um those are fairly persistent
+um there's a really good paper
+that was done by some folks uh using the
+form pf data that looks specific so they
+have a comprehensive view of what the
+hedge fund universe looks like
+essentially because they have you know
+all of this uh regulatory data the rest
+of us don't have access to and they're
+able to show that the
+universe of hedge funds is probably on
+the order of one to two trillion dollars
+larger than um what you would you would
+guess from looking at just the public uh
+databases and public indices and the
+performance has been quite a bit better
+too maybe two to four percent um better
+um on average um than what you would get
+from the commercial data sets and and
+the implication here is this that large
+well-performing funds are not
+reporting to the commercial data sets
+right that's not that's not a surprise
+to anyone yeah
+sure we have a and this probably doesn't
+surprise you we have a question that's
+come through on esg and has that been a
+a factor that you've considered maybe
+especially in the vc um space
+yeah you know there's there's been a lot
+of talk about you know how to think
+about you know esg factors
+uh
+you know i was just at a conference um
+uh over the weekend actually where
+um there's a paper
+um
+by uh pasteur uh stambaugh and taylor
+where they essentially calculate an esg
+factor and show that it's important for
+explaining um certain types of public
+market returns
+that that kind of
+factor analysis has not made its way
+into private markets uh yet
+and i think this is a i think it's gonna
+happen it's gonna come
+but right now it's really a data
+constraint that in a lot of ways
+the only way you can really make
+kind of good esg
+assessments of private companies is to
+find comparable public companies or go
+by industry and so to say something
+specific about individual portfolio
+companies is just it's the data's not
+there yet it's i think it's going to get
+there
+every everything i hear people talking
+about suggests that there's going to be
+a
+big push to reporting standards for
+private companies and so you know within
+a few years we're probably going to have
+something that feels like it's a usable
+set of metrics for private companies
+sure sure
+we have a another question here on
+venture and i'm just going to read it um
+for you unless you've already seen it so
+uh studies have shown that venture
+capital is one of the only asset classes
+that demonstrates persistence and
+performance
+but this simulation ignores this
+phenomenon with blown out fun selection
+variability it would seem like the
+variability is actually way lower
+because of that persistence
+what are your thoughts on that comment
+yeah i think that's a fair comment i
+mean there is there is still very strong
+persistence in venture
+uh at the at the sort of the gp level
+right um and that that persistence uh at
+the gp level
+has um faded for for buyout funds um in
+the data so you know so i think that's i
+think that's true um and i haven't
+thought about you know
+how
+you know we could potentially correct
+for that bias
+um
+because i need to think about whether
+that sorts out
+is a level effect or a variation effect
+um primarily
+um
+but i think yeah i think it could
+contaminate that persistence could
+potentially contaminate that
+that residual component
+and yeah so so i guess you know again i
+was trying to be careful
+in saying that that residual component
+really is a residual component it's
+going to capture a lot of things that
+that we don't measure
+um so more granular variation inside of
+the buckets so you know we just look at
+kind of two geography buckets but
+obviously there's
+you can get finer than that
+um
+and then there's going to be interaction
+terms as well that we don't we don't
+capture
+and hadn't thought about the fact that
+persistence and venture um would uh
+would potentially contaminate it as well
+could likely get a handle on that with
+uh with a simulation analysis but
+we haven't done that
+one other comment on the persistent
+stuff you know it is it is like i said
+true that persistence
+at the gp level for buyout funds has
+largely evaporated um but there's some
+interesting research uh that was done a
+couple years ago
+um tim jenkins senate oxford uh reiner
+braun and uh one of their co-author
+camera right now but they were able to
+actually follow the deal partners in uh
+in biology they showed that if you
+follow the deal partner there's still
+persistence and that persistence is
+quite strong and so you know you can you
+can tell interesting stories about why
+that might happen people who are
+successful deal partners go and start
+their own firms or they get bit away the
+economics and a
+established firm doesn't you know
+properly retain them you know so they're
+better off going somewhere else and so
+if you can follow those people it's a
+little bit harder due diligence process
+but you can kind of figure out who the
+who the deal partners are then you can
+potentially still uh you know
+find persistent returns and buyouts
+got it have you um have you done
+anything in terms of or seen any
+research on uh direct or co-investments
+and how might that factor into this
+beyond just funds
+yeah yeah so in terms of this framework
+you know is as long as you can measure
+you know cash flows and sort of treat
+direct investments or co-investments
+just like their own fund right they'd
+just be another part of the portfolio
+and and so you can sort of track them in
+that sense you can use the same
+technology to include
+uh
+directs and and um cohen bess
+you know it's it's harder to find a
+benchmark that's gonna include those um
+so
+uh in that sense there's a maybe a
+little bit of a of uh increased risk of
+mismatch between the benchmark and the
+portfolio uh investment opportunity set
+but in theory the the methodology still
+works you know in terms of what the the
+empirical results are around um directs
+and coinvest there was a paper that was
+done and i was probably close to 10
+years ago now
+that took portfolios from a few large
+institutional investors
+and found what looked like it it was an
+adverse selection problem in
+uh in co-investments in particular and
+so you know gps were offering up uh
+opportunities that were not the the best
+opportunities or on par with other
+opportunities
+but a more recent study that uses a
+larger data set in a longer time period
+uh actually found the opposite found
+that
+that co-investments
+tended to perform as well maybe
+marginally better
+than
+funds portfolios and then when you
+figure that for most gps
+there's
+there's uh
+a
+little you know lower fee base
+associated with co-investment so you
+figure in those lower fees and then you
+know there is a real benefit at least on
+average right
+um so so i think that's a little bit
+more encouraging i think people in the
+industry had a hard time
+um swallowing the adverse selection
+story because it's a repeated game
+uh and so gps couldn't sort of you know
+continually put their
+you know less favorable deals out there
+for coinvest and and
+maintain the relationships with uh with
+their lp base
+so
+um so i think it's a little bit you know
+this other paper was a little bit you
+know kind of more in tune with what we
+think a
+you know a rational equilibrium should
+look like
+great
+uh well we're out of questions i don't
+know greg if you have anything else you
+wanted to add that you weren't able to
+say before but uh i think that about
+does it on my end as well
+yeah i mean i certainly appreciate again
+you guys um taking the the paper is one
+to highlight and invite for a webinar
+if people have questions about um things
+that i've mentioned um today or like
+further clarification they're welcome to
+send me an email uh and i'll kind of
+follow up on an individual basis uh and
+um just want to thank um kaya for all
+their support for you know just uh
+continuing to increase awareness of
+folks around the private investment
+space and alternative space more broadly
+well thanks so much greg and uh thanks
+everyone else for for tuning in and
+great questions by the way so thanks for
+all your questions and
+stay tuned for the next one
+[Music]
+you

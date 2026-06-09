@@ -58,6 +58,7 @@ Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur 
 | Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
 | Résumer une vidéo | `./runyoutube "https://youtube.com/watch?v=..."` |
 | Résumer une playlist | `./runyoutube "https://youtube.com/playlist?list=..."` |
+| Générer des briefs Motion | `./runyoutube "https://youtube.com/playlist?list=..." --mode motion-director` |
 | Lancer un fichier d'URLs | `./runyoutube --file input/youtube/urls.txt` |
 | Tester sans écrire | `./runpdf "input/pdf/mon-livre.pdf" --dry-run` |
 
@@ -85,9 +86,10 @@ YouTube / PDF
 | `input/youtube/` | URLs YouTube et playlists à traiter |
 | `input/pdf/` | PDF ou livres à analyser |
 | `cache/` | fichiers temporaires supprimables |
+| `library/youtube/` | transcripts canoniques réutilisables, un dossier par vidéo |
 | `output/videos/` | résumés vidéo |
 | `output/books/` | résumés PDF/livres |
-| `output/graphipy_ready/` | Markdown prêt pour Graphipy |
+| `output/graphipy_ready/` | exports temporaires créés uniquement sur demande |
 | `prompts/` | prompts Gemini modifiables |
 
 La V1 reste volontairement locale : pas de dashboard, pas de base de données, pas de SaaS.
@@ -223,6 +225,46 @@ Le traitement playlist est sécurisé :
 - aucune suppression globale de `output/videos/`.
 
 Les anciens scripts Bash dans `run/` sont conservés comme legacy.
+
+### Bibliothèque YouTube
+
+Chaque nouvelle transcription est automatiquement rangée une seule fois dans
+`library/youtube/<video_id>/`. Les futurs prompts et modes réutilisent ensuite ce transcript sans
+retéléchargement.
+
+```bash
+python3.11 -m src.cli youtube-library-status
+python3.11 -m src.cli migrate-youtube-library
+python3.11 -m src.cli migrate-youtube-library --apply
+python3.11 -m src.cli repair-youtube-library
+python3.11 -m src.cli repair-youtube-library --apply
+```
+
+Les dossiers `output/videos/`, `output/books/` et `output/motion/` restent des dérivés régénérables.
+`output/graphipy_ready/` est réservé aux exports explicites et n'est plus généré automatiquement.
+La source de référence est la bibliothèque. Pour la placer sur un SSD :
+
+```env
+YOUTUBE_LIBRARY_DIR=/Volumes/MonSSD/youtube-library
+```
+
+Les anciens résumés vidéo sans playlist identifiée sont regroupés dans
+`output/videos/playlist-before/`.
+
+### Mode Motion Director
+
+Le mode opt-in `motion-director` transforme les transcripts en briefs JSON et prompts anglais prêts
+pour un outil vidéo via MCP. Il ne remplace pas le résumé classique et écrit dans `output/motion/`.
+
+```bash
+./runyoutube "https://youtube.com/playlist?list=..." \
+  --mode motion-director \
+  --product-type "iPhone case" \
+  --target-format "9:16" \
+  --target-duration "15s" \
+  --tutorials-last 8 \
+  --mixed-indices "9"
+```
 
 ---
 

@@ -1,0 +1,260 @@
+[Music]
+hey guys hacked exploit here back again
+with
+another video and welcome back to the
+web application penetration testing
+series
+now for those of you who have been
+spamming me about the ss7 video
+please just have a little bit of
+patience i know i've been saying that
+it's gonna come out and
+i'm just working on getting it released
+on vimeo and you know i
+just have a bit of patience as soon as
+it will be out i'll post
+the link and you can go and check it out
+for yourself you know there's a lot of
+legal uh stuff that i need to deal with
+uh and i i have actually
+i've had to reconsider a few things but
+that being said uh don't worry it will
+be out on vimeo
+uh there is no chance of it getting
+published on youtube
+and uh i'll be also uploading the
+loading the
+uh you guys are requested for the crack
+video which i've finished
+recording right now and that will also
+be up this week so i'm working on
+getting all of these huge projects out
+of the way
+uh but i thought in between uh i have i
+would actually
+make a video for you guys in web
+application penetration testing where
+you you had actually requested
+all the the highest requested video was
+was the cms
+scanning tool uh you know more
+specifically wordpress
+scanning and again a vulnerability
+scanner for wordpress
+so you guys had actually told me that
+instead of demonstrating wordpress
+scan i should actually show you another
+tool or one of the other tools that i
+use
+and i thought i'd show you this one so
+welcome to this video in this video i'm
+going to be showing you
+how to find vulnerabilities with
+wordpress with a wordpress scanner
+called
+zoom all right so i'll just
+be posting the uh the github repository
+in the description section so you can
+check it out for yourself
+and as you can see it is an automatic
+and lightning fast wordpress
+vulnerability scanner
+i've started using this over the last
+few days and
+a lot of you guys have requested that i
+review this and
+and to actually test it and see how good
+it is well as you can see
+uh the the the big feature here is that
+it uh
+it enumerates subdomains and usernames
+now again
+that's something you guys pointed out
+with the mr robot ctf
+by the way the hack the box ctfs also uh
+in
+in the making i'll be making videos on
+those soon uh so you are talking about
+the username enumeration and the fact
+that this can enumerate usernames
+uh but it does not support plugin and
+theme enumeration so it cannot it will
+not display the currently installed
+themes and plugins which is kind of
+important
+but that's something you can get with
+wordpress scan that being said i really
+like the feature of
+enumerating usernames which is why i'm
+showing it to you now
+uh we'll then be moving on to sql
+injection because i think that's
+uh that's what everyone wants to to know
+now uh
+that but that being said they use the
+the usage is quite simple and they
+already have it cloned to my desktop so
+i'll be skipping that part as most of
+you have said
+that it's kind of a useless part to show
+so there we are i'm in the zoom folder
+and as you can see it's a python
+executable
+so i'll just launch the the python file
+right now and you have to specify the
+url so
+that is done by using the u command and
+uh i already have
+i will be scanning my website but i have
+the wordpress server here installed and
+the ip address is 192.168.1
+so let's see if it is able to enumerate
+anything here in terms of usernames
+2.168.1.103. you know username
+enumeration is something very important
+that many people just go over because if
+you have a username that is being used
+and can be enumerated then cracking the
+password is
+you know half the job is done right
+there so i'm just going to hit enter
+and let's see what we're able to get so
+zoom as you can see and
+immediately we were able to get the
+results now this is the thing i like
+wordpress scan is really really slow and
+when you compare it to a tool like zoom
+as the name suggests it just zooms
+through the scanning and
+it's immediately it's immediate
+immediately enumerated the username
+which
+you can see at the bottom here if i just
+scroll down
+the username is admin and it'll tell you
+it looks like
+zoom has found all the users and then
+something else it will
+also show you the current
+vulnerabilities now this is the thing i
+like
+is that you can go through the
+vulnerabilities that you can obviously
+exploit and uh you can then pick one uh
+that you
+you feel is suitable for you for example
+there's the application of denial of
+service
+where it'll give you links in regards to
+the type of exploit
+which is awesome so you can see you can
+go through the github uh the dosset or
+python file
+that's also a tool i'll be reviewing and
+then you have the
+uh what's the cross site scripting one
+here there's the open redirect so this
+is a
+treasure chest for any of the bug bounty
+hunters out there
+uh this tool is really really helpful
+and you you know you might come
+into some on to some sites that have
+firewall protection
+like my website as i'll show you right
+now i
+have actually protected myself against
+scans like this
+so if i just use the uh the scan here
+and instead of specifying that mine is a
+secure site
+so h exploit.com uh i can guarantee it
+will not enumerate any usernames at all
+so i'll let it start and there we are no
+vulnerabilities found extracting
+usernames
+and let's see what usernames it can
+enumerate
+if any at all i really doubt it because
+as for mitigation which is
+also something you guys have been
+begging me to to to include in the
+videos
+when you're talking about mitigation
+what i would recommend is to use a
+firewall protection service
+uh either by installing plugins or you
+can also uh you can actually pay for a
+cloudflare service which gives your site
+ddos protection and a firewall and
+actually speeds up your website from
+cloudflare which i highly recommend and
+that's what i'm using
+so as you can see it's trying to extract
+uh any usernames it can find and it's
+taking quite a while
+what i'm guessing is it's it's hitting
+the firewall and it's key
+it's uh it's retrying it so again the
+script needs a bit of work in terms of
+uh
+you know actually detecting firewalls
+and uh
+and security features but as you can see
+it looks like this there's some security
+measure in place
+uh as you can see it's being blocked so
+any types of scans are blocked on my
+website and
+again as i was trying to tell you many
+of you people are trying to hack my
+website
+the truth is i've secured it and that's
+what i do for a living
+i secure websites so trying to break
+into my site
+is going to require some sort of really
+special attack
+i'm not encouraging you i'm trying to
+tell you please be please
+do not try and attack any site that you
+you know that is you're not
+sure of practice on your site first and
+if you become a penetration tester or
+you are a penetration tester then you
+know you know what to do
+and you already know the steps i've put
+in place to prevent these type of
+attacks
+that being said uh i want to just pass
+out a quick announcement
+thank you for those of you who are
+supporting me on patreon i really
+appreciate it it helps me
+a whole lot and it helps me make more
+more videos if you want to support me
+i don't accept donations uh you can
+support me by using the the link in the
+description for not
+vpn or you can support me on patreon
+that being said the second win of the
+vmware pro
+uh license will be announced this
+weekend the first winner was announced
+and he has got the key and you can check
+out his social media
+links uh and you can check out the proof
+of that
+um that being said thank you so much for
+watching this video guys if you found
+value in this video please leave a like
+down below the other videos are coming i
+promise
+and yeah if you have any questions leave
+them in the comments section or
+in on my social networks and i'll be
+seeing you guys in the next video
+[Applause]
+peace
+[Music]
+you

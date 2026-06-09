@@ -1,0 +1,963 @@
+[Music]
+all right so let's get started with a
+few capture filters right so i'm just
+going to
+i'm just going to get rid of this
+capture file there continue without
+saving and we can specify a capture
+filter you know within the actual
+capture filter toolbar here so what i
+can do is uh you know we i can give you
+a few examples now capture filters and
+display filters are very different we're
+not going to be focusing uh too much
+time on capture filters because as i
+said that's not something that you
+should be doing
+but you know this is fairly simple you
+have the ability to filter by protocol
+so you know i can say tcp
+that means that only tcp traffic or
+packets will be captured i can also say
+you know udp and essentially specify all
+the protocols that i would like to
+filter you know so i can also say icmp
+so you know if i
+if i type in icmp and i say uh i click
+on my actual interface there
+uh you can see that that is only going
+to capture icmp traffic so
+if i say for example if i head over into
+my browser and i perform an http request
+so i'm just going to resend that there
+and i take a look at wireshark you can
+see nothing is captured if i however
+perform a ping so i'm just going to say
+ping
+google.com
+that's going to send that's going to
+essentially send an icmp packet right
+because that's how pinging works and you
+can see in this case only icmp packets
+are being captured
+however the problem with this is not all
+traffic is being captured which is what
+we want so let's go back into
+the actual
+uh the actual capture filter section so
+as i said you can filter
+through protocols you can also specify
+you know whether you want uh to
+limit the actual packet capture to
+specific ips so for example i can say
+source
+uh source and i can then specify the ip
+that i would like to filter you know
+that i would like to filter right so if
+i only wanted to capture traffic that
+was being sent by a particular ip maybe
+an ip like 10 10 10 um let's see 31
+that's our ip address or my ip address i
+can say that so source is 10 10 10 31 i
+can then hit enter and again i'll just
+make another http request here and we go
+back into wireshark you can see that
+it's only going to log traffic you know
+that has been sent from this ip address
+that's fairly simple to understand
+and of course
+we can again modify that and say
+you know we can also change that to
+destination address so i can say if the
+destination address is 10 10 10 1 which
+is the default gateway on this nat
+network i can hit enter and now this is
+only going to display packets with the
+destination uh header or you know field
+set to the ip address that we specified
+so again
+that is fairly simple to understand so
+you know i can perform a quick arp scan
+using the net discover tool so i can say
+uh you know i can say sudo netdiscover
+and that would essentially uh you know
+connect to that particular ip or i can
+just ping it so i can say ping 10 10 10
+and you can see we get a response and if
+we take a look at wire shock you can see
+it's only displaying
+uh you know it's only displaying packets
+uh you know where the destination is the
+ip that we specified irregardless of the
+protocol now one of the really cool
+features of both uh the capture and
+display filters is the ability to chain
+or to use uh logical operators
+uh to essentially uh you know make your
+filters much more robust in regards to
+the information you're looking for so if
+i just uh you know get rid of that there
+i can combine filters with each other
+based on what i'm looking for so if
+you're familiar with logical operators
+if you perform programming i can use the
+and operator right i can say and i can
+say or
+i can also say not if i wanted to and
+you know based on the type whether using
+a capture filter or display filter this
+will change so what i can say is i can
+say the source is going to be
+you know let's say this is going to be
+our ip address or my ip address and then
+i can say and
+i only wanted this to display icmp
+packets so what's going to happen here
+is wireshark is going to capture i it's
+going to capture packets where the
+source ip address is set to our our
+ubuntu ip and the type of the packet or
+the protocol is going to be icmp
+so again we'll just start the capture
+there if i perform a request here uh you
+know an http request and i go back into
+wireshark you can see nothing captured
+there however if i perform a um a ping
+on you know something like google.com
+and i'll just give that a couple of
+seconds there we are and i can go back
+here you can now see it's only capturing
+those packets irregardless of the
+destination so you can see that
+that only captures packets where the
+source ip is the one we specified and
+the destination
+or rather the actual protocol is icmp
+now let's explore a few other options so
+i'm just going to get rid of this here
+and that's the ability to specify the
+port right now the port can be specified
+in the form of
+if we just click on this here i can say
+for example port we can just say 80
+right so that's only going to limit it
+to port 80 however in order to specify
+this
+uh you would essentially need to say so
+you know we can essentially say source
+uh is going to be uh you know we can
+just specify the ubuntu ip there and you
+can we can say 80 but of course that's
+not specified so
+uh we can essentially say as an example
+uh so we can say tcp and 80 or we can
+say and
+and we can just filter through that so
+you know we can uh limit the type of
+packet that we're capturing in regards
+to the protocol so you know i can say
+for example
+http and i would need to add a logical
+operator so uh and http or you know we
+can customize the filters uh you know
+based on a variety of parameters
+so as an example i can say you know
+instead of saying http i can say the
+source ip is the following and i only
+want you to display packets where the
+source ip is
+what we've uh outlined there and the
+destination or the actual port is port
+80 right so that means any packet where
+the port is set to 80
+and the source ip set to our ubuntu ip
+address we can say that as well and this
+is not just limited to our ip
+we can also specify any other ip within
+the actual subnet and that will work out
+just fine so i can start that now
+so i'm just going to click on the
+interface there if i make a request that
+should be captured within wireshark
+based on the capture filter there we are
+so
+that is essentially how to use your
+capture filter as i said i don't want to
+spend too much time on capture filters
+so let's get rid of this here and let's
+talk about
+let's talk about display filters
+so i'll just get rid of the capture
+filter there make sure that that is
+always uh that is always empty because
+if there is any capture filter then it
+could potentially mess up you know in
+terms of the in terms of limiting uh
+what types of packets you can capture so
+i'll click on my interface there and i'm
+just going to give this a couple of
+seconds to capture a wide variety of
+packets so http packets
+we can also throw in a couple of icmp
+packets so i'll just ping uh just
+perform a ping on google.com
+and yeah so we should be capturing quite
+a lot of traffic so you can see this is
+capturing uh you know packets uh you
+know from multiple ip addresses from the
+kali linux ip from other systems as well
+uh you know for example the actual ip
+address of the web server or the
+vulnerable virtual machine that we're
+going to be using for a couple of
+demonstrations so on and so forth
+and we can just stop that capture there
+so your display filter is right at the
+top now as i said uh the display filter
+uh logical operators are going to be
+different uh based on um
+based on the fact that you're now
+dealing with the display filter so let's
+take a look at a couple of examples here
+right so
+if i wanted to filter http requests i
+could say http
+request there we are and if i hit enter
+that's going to filter and provide me
+with uh all with only the packets uh
+that are essentially http requests as it
+does right over here so you can see we
+requested the following website uh that
+is motility index.php and the web server
+is
+the following ip here on port 80 the
+protocol is http right i could also just
+limit it to only http packets so if i
+hit enter that's going to display the
+entire range of http packets
+i can also filter by either tcp or you
+know udp
+and you know based on what you specify
+it will you'll be able to filter through
+what you're looking for so i could also
+say dns i can also say ftp and you can
+see we didn't capture any ftp packets
+ssh so on and so forth really any
+protocol that you want to use
+or that you want to filter with you can
+all right so what if i wanted to specify
+a source and destination ip address and
+sort of use the logical operators to
+fine-tune my uh my actual display filter
+so for example i'll just hit enter to
+take me back to all the packets here
+i could say for example the ip dot
+source so that's the source ip is going
+to be equal to so we use the logical
+operator double equals sign that means
+equal to and then we can say the source
+is 10 10 10 31 and then
+instead of saying and we use the
+the double ampersand
+symbols right over there and we can then
+say the ip.dst
+is going to be equal to the ip address
+of the actual web server so in this case
+it's 10 10 10 33
+and we can also say and this is the one
+of the great things we can say and
+tcp dot uh you know we could say tcp dot
+port
+is equal to port 80 right so you can now
+start to see the power of wire shock so
+if i hit enter that's going to limit the
+actual packets to
+uh to to essentially meet the the actual
+filter that we specified so it's only
+displaying
+uh packets where the source ip is our
+ubuntu vm
+the destination is the web server and
+the port is port 80. now if we get rid
+or we say another port maybe like 21 you
+can see it didn't capture any traffic
+there
+all right so that's just one example
+let's take a look at a couple of other
+important
+uh capture filters
+now another important piece of
+information that you typically be
+looking for you know within a local
+network is dhcp data so i can do that by
+saying dhcp hit enter there aren't any
+dhcp packets so you know if i was to
+perform an op scan or a network
+discovery scan for example with nmap or
+netdiscover if i type in netdiscover you
+can see that doesn't exist so i'm just
+going to install that utility here so
+sudo apt-get install net discover
+and i'm just going to install that there
+so i'll give that a couple of seconds
+netdiscover is a utility that allows you
+to discover uh other ip addresses or
+hosts on a local network by sending arp
+requests and based on the responses uh
+you know you're able to tell whether
+that device is uh is online or offline
+or is on the network or not so i can say
+sudo net discover because this is also
+uh you know essentially sending packets
+or arp requests arp stands for the
+address resolution protocol
+uh arp is essentially used to resolve ip
+addresses to mac addresses so you know i
+could say sudo net discover i
+and then i would need to get my
+interface here so uh what i'm going to
+do is let me just split another terminal
+so i'll say ifconfig and the name of my
+interface is enp0s3 so enp0s3
+and the network range or the subnet is
+10 10 10 1 24 hit enter
+and that will start capturing erp
+traffic now before we do that i'm going
+to start another capture here so we'll
+get rid of that filter and we'll start
+another capture
+remember we don't have any
+any capture filter we're going to be
+using display filters so i'll just run
+the command again
+and you should start seeing arp requests
+here
+there we are we can actually see it
+there so we have you know an arp request
+and if we take a look at the actual um
+the actual packet details pane here if
+we click on the arp protocol uh that
+tells us the actual type of request so
+we have a request here do we have a
+response
+uh let's see that's a reply so there we
+are we have the response so arp is
+essentially saying or what arp is used
+to say is it's essentially saying okay
+who has this ip address can you please
+tell this ip and then
+we get a response so you can see we get
+a reply and yeah so it's fairly simple
+to understand
+so yeah that's just one example as i
+said there are a couple of other
+important
+search filters or rather display filters
+we can use
+in order to discover important
+information that is typically important
+so
+another important piece of info is
+information like netbios
+so for example if we're working on a an
+environment that has windows systems you
+can essentially identify
+windows systems on that network or
+packets that were sent or received by
+windows system by saying nbns
+so i can say nbns we don't have any nbns
+packets here that's also quite useful
+we have a couple of other examples that
+we can use so you know we can
+essentially use the http filter which is
+going to be quite important so we can
+say http
+request or response we can also limit it
+uh you know we can also identify or use
+the http dot cookie display filter if we
+hit enter nothing there so we could say
+http dot cookie and there's multiple
+ways of using the actual display filters
+so let's take a look at a couple of
+other filters so i've already mentioned
+the ip
+source and destination you can also
+limit uh you know what is displayed
+based on the ip address so this will
+display all packets that have an ip
+address uh regardless of whether it's
+the source or destination ip and you can
+specify the value there so i can say 10
+10 33 hit enter that's going to display
+you know all the packets that have that
+ip so you can see in this case the first
+packet
+has that in the source
+and the second one has it in the
+destination so you can also filter based
+on a particular ip
+you can also
+filter by ip ranges that can be done by
+saying ip.address and this is where the
+logical operators come into play so i
+can say
+greater than or equal to
+10 10 10
+1 so that's the first ip within the
+subnet and then i can use the logical
+operator so i can say and or the double
+ampersand
+and i can say
+ip.address and this is where we specify
+the end of the range is less than
+uh or equal to
+uh we can say 10 10 10 33 so we're
+essentially saying only display packets
+within this ip range so the ipa range is
+10 10 10 1 and the actual end of the
+range is 10 10 33 i can hit enter and as
+you can see that's only going to display
+ips you know within that range and of
+course you can you can also customize
+this to be the source and destination
+based on your own
+uh requirements and of course you can
+also chain this with a multiple uh with
+multiple other filters so you know i can
+essentially say tcp dot uh port and you
+can also customize the destination port
+so i can say destination port
+uh is let's say we can set that to uh 80
+and that's only going to display the
+packets that uh you know that
+essentially meet those parameters so
+again it's fairly simple to understand
+and you know you'll be in situations
+where you'll need to uh you'll need to
+be able to chain multiple filters based
+on what you're looking for
+so an example of this would be
+i'm just going to stop that there and
+i'm going to just run another capture
+here
+and i'm just going to uh you know just
+i'm just going to reload this webpage
+that's an http request
+so an example of this would be when
+you're working or you're trying to
+analyze what happened on a network and
+you're trying to identify infections via
+a malicious document for example uh that
+came through a particular website or an
+attachment uh you know i could say the
+ip address i could say
+ip address uh sorry ip address is equal
+to 10 10 10 um let's see 31 and i i can
+then say and http dot request
+there we are
+and uh i can just hit enter right so i
+can then limit what i'm looking for
+based on the source ip or rather you
+know the ip address itself
+and i can then view you know for example
+uh the the various http requests and
+there's multiple ways i can filter so
+for example i can say http request and
+then i can also say that is equal to
+let's see if i can do this here so no
+now i need to say http request.method
+is equal to for example if this was a
+post request where i was sending data
+i could hit enter and that limits it to
+a post request
+there's also a couple of other ones that
+are quite important like the http host
+filter so i can say host
+and that will essentially limit it to
+http hosts the various http hosts
+and i can then specify a host name so if
+there is a
+relevant host name i can specify that as
+well in this case i know that there
+isn't
+um
+you also have the ability to filter
+based on
+ethernet right so if you're working
+within the data link layer
+i can also say ethernet dot address and
+then i can specify the mac address that
+i'm looking for
+so uh you know i could say for example
+ethernet dot destination or dot address
+and obtain my mac address so uh if i
+just open up a new tab here i can get
+the mac address for my interface uh
+let's see where i can find that there
+that should be displayed there we are
+ethernet so i'll copy that there i can
+say ip ethernet address
+um equal to the following so i can paste
+that in there and uh as i said this you
+can filter
+you can essentially use filters to
+display packets based on various layers
+of the osi model not just limited to the
+network layer the transport layer or the
+application or presentation layer
+so there's multiple uh you know
+filters that you can utilize as i said
+uh we'll be taking a look at them uh and
+a few other interesting ones as we
+explore the exercises
+all right so what i want to explore now
+is protocol filtering right so i'm just
+going to stop that capture and we're
+going to take a look at a few examples
+right so um i'll just begin the captcha
+in a couple of seconds but what we're
+going to be doing is we're going to be
+making a few requests or interacting
+with the target system through various
+protocols so we'll take a look at dns
+ftp telnet http
+uh https as well that's perfectly fine
+and ssh so the objective is to try and
+view traffic
+uh based on a particular protocol and
+we'll also be
+taking a look at streams right and how
+streams can be used so as i've already
+explained i'm just going to start the
+capture there
+we've already explored dns right so i
+can just clear that out there and i can
+say ping or uh yeah we can say ping
+google.com
+to view the actual dns request and
+response so when we're saying ping
+uh what our system will do initially is
+it will essentially reach out to our
+your primary dns server and it will say
+okay can you please tell me the ip
+address of google.com so that i can make
+a request irregardless of whether it's
+an http request or an icmp request so if
+we take a look at wireshark
+you can see we have dns at the top here
+and of course we can filter
+bob by protocol so we can say dns so you
+can see this is the standard query where
+we're essentially saying
+uh okay so who has if we take a look at
+the queries here we're essentially
+saying uh could you pre please provide
+us with the uh
+the type a dns record for google.com
+which means could you please provide us
+with the ipv4 address for google.com
+we then get the actual
+the actual query response uh this is
+also the request for the ipv6 address as
+you can see type is specified there
+we then get the response for ipv4
+whereby it tells us okay
+the ip for google.com
+and then it provides us with the ip
+address right for google.com so that we
+can actually um so that we can actually
+connect to that
+to that server so you can see the answer
+here is google.com the type a dns record
+is the following so that's uh that's
+essentially telling uh my computer what
+ip address to connect to because
+computers don't know what google.com is
+they only know ip addresses and it does
+the same for the ipv6 iip address so
+again if you ever want to filter via dns
+you can do that as well you can also
+filter via dns records so i can say dns
+a and if i hit enter you can see it's
+only going to display the response where
+the a address or the a dns record which
+means the ipv4 address is displayed and
+you can see we have another example here
+whereby the browser has made a request
+to the following address that is
+condel.services.
+and it provides us with the ip address
+for that particular domain so you know
+dns is fairly simple to understand
+all right the next protocol that we're
+going to be exploring is ftp now as i
+said there is a
+vulnerable linux server that's running
+on within this particular subnet or
+within the nat network that has the ip
+address 1010 1033 and it has various
+services running on it so it has it has
+an ftp server uh it also has telnet a
+web server as we've already been able to
+tell and it also has ssh running so what
+we can do is let's um let's perform or
+let's try not to authenticate with the
+target via ftp so i'm going to say ftp
+and then specify the actual uh target
+ip address and then the port in in this
+case is port 21.
+so i can say i can just provide the
+credentials msf admin and msf admin
+and hopefully i typed in the password
+correctly so i'm just going to exit and
+try that again so mmsf admin
+and msf admin again
+and there we are so authentication was
+successful so i can say dir to list out
+the contents of this directory
+and if i head back into wireshark i can
+then limit it i can then filter the
+packets based on the protocol ftp
+and you can see that uh we can actually
+uh
+because we're capturing all the traffic
+we can actually intercept the packets
+being sent and you can see that there
+was a response here
+and we have uh the actual username
+specification or the authentication
+where the username was specified as msf
+admin and because ftp in this context is
+not encrypted the passwords can be
+identified so that was the incorrect
+password that i specified as you can see
+there login incorrect
+and it then tells us to re-authenticate
+and we specify the correct password and
+there we are so why is this important
+well
+this is very important because you could
+potentially identify brute force attacks
+or incorrect attempts whereby an
+attacker was trained trying to gain
+access so on and so forth right so
+that's ftp
+again if you take a look at
+the other the other packets that were
+captured when we typed in dir so there
+we are here comes directory listing we
+actually typed in dir to get a a
+directory listing of the current working
+directory and you can see that we
+actually get a response there as well
+now one of the great things is if we
+right click on a particular packet we
+can follow the tcp stream
+to essentially
+to essentially put everything together
+because uh streams are very helpful to
+essentially see how a protocol
+communicates in the way that the
+application layer sees it so
+you know the application layer um
+essentially uses streams whereby you
+know you have multiple packets with
+multiple pieces of data
+in the form of streams and you know from
+our perspective it can be really hard to
+tell what's going on and you'll actually
+see this when we'll be working with
+telnet but if i say follow the ftp
+stream it essentially tells me what
+happened in a way that makes sense to me
+so you can see the actual service banner
+for the version of the ftp server
+running on the target i then
+authenticated using the username msf
+admin and in this case i provided the
+wrong password and it told us login
+incorrect i then logged in again so on
+and so forth but this is only pertinent
+to this request or this authentication
+attempt right now if i uh try to if i
+clicked on the other ftp so for example
+i click on this one here and i say
+follow tcp stream it now provides me
+that's still the incorrect one let's see
+if i can identify the other login here
+so
+where did i specify the correct uh
+password
+that was the username there and then i
+believe that i was able to authenticate
+it's still showing the display filter
+there so if i click on
+uh you know if i head over here and we
+click on the actual uh packet pertinent
+to the
+to the actual there we are so that's the
+one there so we can click on follow tcp
+stream you can see now it provides me uh
+with the stream pertinent to the
+successful authentication with ftp
+right so uh streams are very important
+so let's take a look at telnet now as
+you know telnet is unencrypted which
+means if we authenticate we should be
+able to see the the actual password in
+clear text
+all right so
+i'll get rid of that display filter
+there and i'll just exit from ftp here
+and i'll say telnet
+and you know we can essentially specify
+the target ip there so 10 10 10 33 hit
+enter and i'll say msf admin
+and msf admin for the password and we're
+logged in
+ls there we are so
+let's filter i'm just going to stop the
+capture there and let's filter
+for ftp right uh rather for telnet
+so i can either say telnet or i can say
+dot tcp.port based on the protocol is
+equal to 23 which is the default telnet
+port and i can hit and then we have the
+same thing going on here
+so uh you know we can click on the first
+packet sent so i can say follow the tcp
+stream
+all right so you can see that this
+displays the entire authentication um
+you know essentially whatever we did or
+this essentially joins every packet
+together uh every uh
+every telnet packet and it displays it
+in a way that makes sense to us right
+but in the back end you know it sends it
+in individual packets or in individual
+streams so i'll give you an example of
+this let me see if i can identify where
+the authentication was actually where
+the authentication actually begun
+right so if i click on telnet data here
+and we have the data there uh let's see
+what is displayed there so there where
+we can see the individual fields so if
+you went by it by a packet by packet
+basis you can see in this packet the m
+was sent
+in the next one the s was sent so m s f
+a
+d
+uh sorry a d m
+i n so that's why the actual stream for
+a particular packet is very important so
+you know based on the protocol so it
+could be a tcp stream udp tls ftp etc in
+this case it's tcp you can now see it
+essentially gives me the entire stream
+or essentially you know
+it essentially allows us to see uh what
+was going on right so
+in this case we can see this was the
+telnet banner it asks it asks us for the
+username and you can see in this case
+it's not being displayed clearly and we
+have the ability to filter or to change
+how the data is displayed to us we can
+either display it in utf-8 format
+as raw so this is raw data we can also
+display it in ascii format which is
+readable
+uh in c arrays if you want to as well so
+hex as well so that's fantastic there
+and you can
+you can see the actual offsets therefore
+for m s f admin etc so
+uh you know why shark is really really
+awesome so
+you know you can view the entire uh the
+entire conversation or limit it to a
+particular uh set of communication based
+on the ips there i can also search for
+for example username i can say username
+does is anything displayed there can i
+filter by password there we are so a
+really really really cool
+um so that's telnet that's a fantastic
+um now let's talk a little bit about
+exporting this capture
+uh this packet capture into a pcapp file
+so if i wanted to do that i can click on
+this icon here i can say save this
+packet capture
+computer
+i can save this under home alexis on my
+desktop and i can give it a name so i
+can say telnet
+telnet pcapp
+and i'll select the format as pcapp and
+save
+and i can now minimize that and on it
+into my desktop here and you can see we
+have the pcap file so i can now share
+this with anyone in the world and if
+they have wireshark installed they can
+open it up with wireshark
+so there we are it opens up with
+wireshark and i can now navigate through
+the actual packet capture uh within that
+pcapp file so
+really really cool stuff there
+all right so that is how to export a
+packet captcha into a pcapp file
+now that we've taken a look at that we
+can also explore ssh traffic if you're
+interested in that because that is quite
+important
+so what we'll do is we will get rid of
+that there and
+we can then uh you know start a new
+capture there
+and i'll just exit from the actual ftp
+connection there
+and i can authenticate by saying ssh
+msf admin at the actual ip so 10 10 10
+hit enter i'm going to accept
+and i'm going to just provide the
+password and remember uh one of the
+reasons why ssh was the successor to
+telnet was the fact that it encrypted
+communication so in this case we
+shouldn't be able to see the actual
+password so i'll just switch over here
+and it looks like uh yeah the packets
+are being captured and we can just stop
+the capture there and i can say ssh
+there we are
+and now you can see where we have the
+encrypted packets uh that's where the
+actual password uh and communication was
+being sent and in this case unless we
+have the actual um
+unless we have the uh you know the
+actual uh
+ssh key pair we cannot decrypt this if
+we did then we would be able to do it to
+actually decrypt these particular
+packets
+so uh that is sh traffic again you can
+filter or use any display filter you
+want to use
+now let's talk about http traffic and
+then we'll move on to our exercise which
+will be to decrypt https traffic
+and take a look at a an infection so
+what i'll do here
+is i'm going to get rid of this
+capture there
+and
+i'm going to
+begin a capture and i'll head over into
+the actual web application that is
+hosted on
+uh the web server or the vulnerable
+server you can see that's the ip there
+the this is a vulnerable web application
+called motility and because this is this
+uh doesn't this website or web app
+doesn't have an ssl certificate it means
+that communication between the client
+which is my browser and the server is
+unencrypted so if a user was to log in
+with credentials like maybe admin admin
+and i hit log in regardless of whether
+those credentials are correct that
+should actually be captured by wireshark
+so if i hit enter
+you can see that we have quite a lot of
+data that was captured
+right and let's take a look at how to
+use the actual um the actual packet
+coloring here too
+uh you know how that can be useful from
+a security analyst perspective so
+um i'm just going to stop that there
+and what we'll do is let's open up view
+and the coloring rules
+and let's say i only want to display
+http post requests right so and i want
+to have uh i want to give that its own
+unique color so that whenever i capture
+traffic again or whenever i import a
+pcap file and you know based on my own
+personal requirements i can identify
+those packets based on their color so
+i'll create a new coloring rule and i'll
+call this uh we'll call this http post
+right and the filter in this case is
+going to be
+uh we will say http dot request
+and uh the we're going to say request
+method is going to be equal to
+a post right so only we're only looking
+for post requests and post requests
+typically mean that you know we're
+interacting with a login form etc and
+now for the color we want to change the
+background color to something let's use
+something that's easily identifiable
+maybe this very bright pink there
+and i can then enable it by checking the
+actual checkbox then if i hit ok now you
+can now see that the actual coloring
+allows me to easily identify a
+particular type of packet that might be
+interesting to me right so if i right
+click on this packet and i say follow
+tcp stream
+uh you can see that in this case it
+essentially shows me the entire post
+request and because the connection is
+unencrypted we have the username and
+password there for the web application
+which again gives us the http status
+code 200 okay which means authentication
+was successful this information can also
+be obtained from the actual packet
+details pane
+so uh if we take a look uh let me make
+sure i'm clicked on it there we have the
+html form there and you can see the
+username field for that form is
+specified or rather the information that
+was sent is specified now as i said this
+will work irregardless of whether or not
+it's our ip address it can be any ip on
+the network and if they're
+authenticating to an unsecured website
+then you know this is going to be a
+problem
+uh but yeah all i wanted to showcase is
+how you can utilize filters and you know
+essentially filter through protocols and
+find what you're looking on uh looking
+for based on your requirements so i'll
+just go into the coloring rules there
+and i'll get rid of that coloring rule
+because again i don't need it
+so there we are okay fantastic i just
+want to take a couple of moments to
+thank our patreons thank you michael
+hubbard dustin empress jerry speds doozy
+sid saab ryan carr shamir douglas jojo
+bibi palangos kush kev rs nino boykov
+and david bricker you guys are really
+awesome thank you very much for
+supporting us and you guys make these
+types of videos possible so we really
+appreciate it and we look forward to
+producing even more high quality content
+[Music]
+you

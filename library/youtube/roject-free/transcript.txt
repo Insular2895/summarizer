@@ -1,0 +1,605 @@
+Rachel, a motion designer who managed to
+gain over 48,000 followers on social
+media by creating clean, smooth, and
+highly polished motion graphics. In this
+video, I'm randomly choosing one of his
+projects and recreate it from scratch so
+you can understand exactly how this kind
+of professional motion is built.
+So, let me give you some brief
+explanation about the project and
+project file. So, if you see this, this
+is the reference that I previously made
+it. And we're going to exactly remade
+this video. And the composition setting
+would be 1080 1080 and uh 594 or maybe
+60. It doesn't matter. Or even you can
+make it less or higher. It doesn't
+matter. Whatever it works for you would
+be good. We have a asset folder that I
+put everything that we needed in
+project. And also the reference video is
+this Tik Tok video that I previously
+made it. Also, shout out to Creator Lee
+because the video will be from him and
+I'm just recreating the video of him.
+All right, so let's just start the
+video. I'm going to make it solid with
+this color. Or maybe I'm going to grab
+this one as a reference. So, this one
+will be much more accurate and putting
+it a little bit down. Yeah, to be able
+to see the text properly. And I just
+want to w down the text. So, the font
+will be SF Pro Display. And also, I'm
+using the bold version. And you can find
+the link in description for downloading
+for completely free. So don't worry
+about that. All right. So before I do
+anything else, I just want to make the
+color. So I'm going to give it a four
+color gradient. And also this plugin
+that I'm using it is FX console. So also
+you can find the link on description for
+this plugin and you can download it for
+free because it's completely free. So
+I'm going to grab a reference from this
+for these two color and the other two
+will be black. And I just need to pay
+with the uh points that I have over here
+and put the color in a right spot. So as
+you can see this is kind of similar to
+what I have over here pre- competit and
+why I'm doing it because right now if I
+move this text you see the gradient will
+be changed cuz the point over here are
+kind of steady and they're not going to
+move with your text. So it's going to
+ruin your text in your text animation.
+So for make it a steady and stable I
+just want to make this a composition.
+But before I make the composition I'm
+going to use some kind of script which
+is text explorer that you can find the
+link on description also for this one.
+I'm going to set it like this and then
+hit the apply. So I'm going to put the
+words in different layer. I can access
+them differently. So then I'm going to
+pre-mp these layers one by one. So after
+I pre-mp them one by one, I just need to
+put the pre-MP anchor point at the
+middle of the word. I'm going to give it
+a position and opacity for all of them
+and come a little bit forward and put
+other key frame for those. And I can
+move them down a little bit and make the
+opacity zero. So for making the graph
+instead of using the graph editor I just
+prefer to use from the flow. You can
+find a link in description. I'm going to
+give it some graph like this. And then
+I'm going to apply five frame offset.
+All right. So I'm going to have
+something like this. And then I can use
+the airplane vector that I put it on my
+asset file. And maybe I change the
+rotation to minus 45. Scale it down a
+little bit. Put it at the bottom of the
+scene like this. Maybe over here after
+the text are completed. Uh I'm going to
+just put a position key frame a little
+bit forward. And then move their plane
+to over here. Also, I just want to get
+it down a little bit and pull it over
+here. Yep, I think this is good. And I'm
+going to reverse the value of the flow
+and apply to the key frame. So, let me
+hide this layer. And if you see at the
+first is slow and and at the end it will
+be a little bit faster. Not a little
+bit, a lot faster. Okay. So, over here
+it will be stopped. But I don't want
+something like this. So, I'm going to
+make a null object and then connect it
+to this null object. Then put a T frame
+for the position. move it a little bit
+forward and maybe over here I'm going to
+use this plugin which is a motion 4
+instead of the graph editor and I'm
+50/50 also you can find a link in
+description for this one it's kind of
+similar to the graph editor everything
+will be similar you can do everything
+over here in graph editor it just make
+it a little bit easier so what I'm going
+to do is make some null object for each
+of these layer one by one and then
+connect the text to that null object so
+right now we'll have something like this
+before I do anything else I just want to
+move the anchor file like this one to
+the center of each for like for example
+this one is don't. So I'm going to move
+the anchor point to the don't. So right
+now I'm coming over here and I'm going
+to select all of these like maybe the
+rotation and position together put some
+key frame for all of these um little bit
+forward and put some key frame over here
+but for all of them right so over here
+I'm going to use these null object for
+making some secondary action and
+secondary movement. So I'm going to move
+them like this. And I also can bring
+back the reference to be able to have
+accurate things and just put the word in
+a right order. So in a final key frame
+we have something like this. But I just
+need to make a proper graph for these
+key frames. I just want to select all
+them and come into the flow. Reverse the
+graph apply to the key frame. So we have
+some heat like this. All right. In this
+step what I'm going to do just making a
+null object. change the color to make it
+a little bit obvious comparison to the
+other one. And just connect all these
+null object that I previously made them
+and make some movement like a secondary
+movement making another null object and
+change the color to make it much more
+obvious the comparison to the other one
+and connect these null object that we
+previously work with them. So in this
+step what I'm going to do is just making
+a null object change the color to make
+it much more obvious the comparison to
+the other one. Select all the layers
+like the null object that we previously
+working with them and just par it to
+this null object that I've just made it.
+coming over here, finding the right spot
+like maybe over here. Do a rotation for
+the airplane. But before I do that, what
+I'm going to do is like turn on the
+title action safe and make sure that I'm
+going to make this center. Put a
+rotation key frame for over here. And
+also put a position key frame for this
+one. And maybe I'm going to go backward
+for 20 frame and also go forward for 20
+frame. So for the airplane, what I'm
+going to do is just do some movement
+like this at the middle and push it
+through here. And for the words that we
+have, I'm going to push them to the left
+a little bit and push them to the right.
+All right. So if I gave them this kind
+of graph like 8080, which is kind of
+faster at the middle and in the edges,
+which is going to be over here and over
+here or over here and over here, the
+movement will be a little bit slower. I
+can select all the key frame hold alt
+and change the like distance between
+these.
+I give this airplane a CC toner. And if
+I push the midtone to something like
+white, you see that we can keep the
+shadows and make the airplane white like
+this. But I'm not going to have it like
+this from the first of the sand. I don't
+need before here for the airplane layer.
+So I'm going to put a key frame for here
+and push it to over here. Maybe over
+here it should be zero and it should be
+completely white. But over here I can
+change the color to the real color. So
+over here you see it kind of have real
+color and whenever we come over here it
+gets white whiter whiter and much more
+whiter. And also I'm going to give it
+fastbox blur. Make it three over here.
+Put a key frame for this. And over here
+I'm going to make a zero. So let me see
+what happen over here.
+Selecting all the words that I have, put
+a key frame for the opacity. So the key
+frame should be over here. And when
+they're going to go to the right, they
+also need to fade out. Like the opacity
+would be zero.
+I think something like this would be
+good. So then I'm going to grab the
+rectangle shape and make the fill black.
+No stroke. And put this at the middle. I
+bring this behind the airplane. Make
+this center like this. And I'm going to
+use property for give it some roundness.
+If you don't have it, you can use window
+over here. It's going to be over here.
+You just need to turn it on. So right
+now I'm going to give it something like
+60. I think that would be good. Or maybe
+a little bit less than 60. I'm going to
+have this and I'm going to give it some
+scale key frame and go forward for five
+frame. And over here it should be zero.
+And if I see it will be something like
+this. And it's not that much good for
+us. I need some bounce for this. So what
+I'm going to do is just hold the alt and
+hit the toggle animation for the scale.
+And over here I can just paste the
+script that I have. And you can also
+find this in my discord channel. I put a
+link on description. So if you see right
+now it would be something like this. The
+bounce would be too much for me right
+now. And what I'm going to do just make
+the distance double and make it 10 key
+frame. It will be much more smoother
+right now and I will like it a lot. I
+need one more things over here and it's
+about the rotation. I can make this key
+frame linear cuz the scripts only work
+on a linear key frame. So I'm going to
+make this linear and from here because I
+only want the bounce over here. So I'm
+going to give the bounce to this layer.
+I just want to cut it out from here and
+just bring the rotation and give the
+script to this one. So if you see right
+now I have some bounce for the rotation
+also. But because the graph will be
+changed, I have to change the distance
+between the rotation key frame over here
+to make it much more smoother. All
+right, this one should come over here.
+Also, we have to change the opacity key
+frame. Maybe make them much more closer.
+Maybe bring it back a little bit. I
+think that would be much more better.
+Also, I'm going to duplicate this one.
+Make the color about white. Okay, the
+scale would be a little bit down, but
+I'm going to give it fast. Maybe I need
+more scale down over here. Something
+like this. I can give it opacity. I
+don't need it over here. Over here
+should be zero. It's just going to be
+some popin animation cuz it's going to
+be disappear. I also going to give it
+light sweep effect. Make some visual for
+over here. Make the intensity a little
+bit more more of it. Bring the intensity
+a little bit down a bit. And I think
+this one will be good. I can bring the
+center to over here and give it some
+kind of movement. I can put some key
+frame for this one. Hit U to bring up
+all the key frame for this layer. And
+then
+I can give it some 60 60. All right. So
+this is awesome. Make a circle for this
+one. Make it center. I'm going to come
+over here. Turn this on. So I'm going to
+pick a reference from this color. Make
+it little bit intense. I can turn this
+off. Put it back of everything. Center
+here. I can scale it up and give it fast
+box blur again to fade it out like this.
+Yeah. And if I need I can scale it up
+even more and play with the fast box
+bar. What I'm going to do is just set
+this out from here and give it some
+opacity like this. Maybe at the first
+going to be zero and after 20 frame and
+again after 20 frame we're going to put
+some key frame. All right. So over here
+it should be 100 and over here it should
+be zero. Over here also it should be
+zero. And we have something like this.
+Right? If I select all of them hold the
+alt I can make the key frame much more
+closer to each other. And I'm going to
+have something like this. Right? uh need
+to bring back the reference. What I'm
+going to do is just make this clocks.
+So, I'm going to bring up the vector
+layer that I downloaded out and put it
+on an asset folder. I have something
+like this a triple clock over here. But,
+we don't need to be worried about the
+other one. We just need to pre-MP these
+one. So, then I just need to duplicate
+this one and just change the position
+and rotation of this one.
+Then I can open up the pre-MP over here
+for one of them. Uh, I just want to grab
+a reference from this one and put it
+over here to make sure where I have to
+put the animation and stuff. Maybe turn
+on this. And what I'm going to do is
+just put a position key frame for this
+one for all of them. Come over here. Put
+some other key frame like this. This
+should be behind this layer like this.
+And over here should be out. And I'm
+going to use flow for this. Give it some
+graph like this. The output will be
+something like this. Over here I'm going
+to put some opacity key frame for these
+two. and turn off the the opacity and
+give it some key frame like this. All
+right. And over here I'm going to
+exactly paste it for this one. But this
+one should be a little bit after that.
+If I right now get back to my
+composition like the main composition,
+you see that I have I just need to
+remove this one. So also I have to turn
+off this one. I have something like
+this. But I have to move them a little
+bit forward here. The opacity and stuff
+should be comes faster. So I'm going to
+put them a little bit back. So over here
+I'm going to make a null object and
+connect this one to this null object and
+then this shape to this null object. But
+because this one previously connected to
+null one first of all I have to connect
+this one to this null object and then
+connect this null object to the main
+null object that we're going to use in
+it. Then connect this one to this null
+object. I just want to change the color
+for these two to make it much more
+obvious that they're going to be same.
+But then I'm going to move these two to
+the top a little bit. All right. Put a
+key frame about 65 65 exactly over here.
+I have to make other object and connect
+this one to the second object and make
+something like this like a position key
+frame and then go forward for five
+frame. 1 2 3 4 5 and push it to the down
+a little bit. But bring it over here.
+Give it some script like the bounce
+script. Have something like this up and
+down. Over here I'm going to do some
+morphing and stuff. coming to the
+property of this shape and just turn off
+this size uniform scale and right now I
+can put some key frame for the size over
+here and other key for the size over
+here. So at the final stage I'm going to
+make it something like this. Right? So
+the thing is I have to give it same key
+frame. I'm going to register some field
+make the first black and put a key frame
+for this one. Make it white but not
+completely white. A little bit gray. It
+should be something like this. But this
+is kind of flat right now, right? So
+what I'm going to do is just duplicate
+this layer with Ctrl + D. Remove the
+light. See? So I also can remove the
+fill and change the fill color to
+something like this. A little bit
+darker. I can use this tool and put it
+on a mask and do a mask like this.
+If I invert the mask, hit the F from the
+keyboard, give it some better, I can
+have something like this. And for the
+top, I'm going to use light sip.
+I can going to move the airplane out of
+the frame exactly from here. I'm going
+to do a cut and then mat this layer to
+the bottom one like to the main one over
+here. So the airplane out of here
+wouldn't be up here. I have to do the
+cut exactly over here. So I can remat it
+to the right layer. I have to turn back
+and also have to put opacity for this
+one. I'm going to put opacity over here.
+So in here we don't have anything like
+this. I have to give it same like graph.
+So the shape will be something like
+this. For this one I'm going to put some
+rotation and position one and do a
+position and rotation like this. So I
+can give a rotation.
+Maybe I can push it a little bit over
+here. And right now I can give it some
+exactly same motion. I think here we
+don't need the airplane and the object
+of that. I have to add the element.
+So I make something like this over here.
+And if I'm going to clarify it for you,
+it's a shape like this. But I have to
+give you some hint about the roundness
+over here for the stroke that I made it.
+If you search for the line cap, you see
+that we have some option for the stroke,
+which is a line cap and line join. That
+if you put it on a round cap and on a
+round join, you can see that we have
+some round at the edge of this stroke.
+And for the shapes, I just put some
+flags over here and matt it to the layer
+over here. I put all the layers after
+the shading and a stuff cuz if I put
+them below them, you see that we have
+some side effect from the shading. So I
+don't want to do that. All right. So
+right now I need to parent all these
+things that I made it just right now to
+the main shape. And the main shape would
+be this one, right? So I have to parrot
+it out to here. So they're going to move
+with this one. And also from here I
+don't need them. Right. Give it some
+position and go five frame forward and
+pull them up a little bit. And again I'm
+going to give it some bounce expression
+but give it some offset about two or
+three key frame. So you see that we have
+something like this over here. I just
+need to grab the airplane vector again.
+I just want to scale it down a little
+bit like this and do a position and
+rotation for this one. Put it over here
+at the top of the send. and then come a
+little bit forward and push it over
+here. And I can grab the pen tool and
+give it some curve like this. If I need
+I can move it a little bit downward to
+be able to move it from here. So right
+now we have a right movement for the
+position. But if you see it's not
+following along the path. We can click
+right on our layer. Come into the
+transform going into the auto orient and
+click on this option and hit okay. So
+right now if I just fix the rotation,
+you see it's going to be exactly in the
+path. I just need to give it some low
+grass.
+What we need is this shape. Right. So
+I'm going to make this one and get back
+again.
+All right. So this is what I needed for
+this part of the project. And what I'm
+going to do is just selecting all the
+layers and connect it to the background
+to be able to move everything together.
+Awesome. And also I'm going to map them
+to the background again to be able to
+control it better than I'll I'll let you
+know what I'm doing this. So first of
+all I'm going to make this exactly same
+as the top shape. Okay. And also I have
+to move the airplane shape to the top of
+everything. So before this I don't need
+any of these layers. I can remove all of
+them. So from here I can start the
+movement. For the first things I'm going
+to turn off the uniform scale of the
+size and do a key frame for it. Maybe
+come a little bit forward like this.
+Over here it should be zero and then it
+should be pops up. I can do a key frame
+about 2000
+or maybe 0. At the first it should be
+really really fast. Maybe should be
+closer. Okay. And for the shape what I'm
+going to do is just finding the right
+layer uh which is going to be this one.
+Yeah. I can move everything with this.
+So put a similar key frame for the
+position like coming over here put other
+position key frame and again go five
+frame forward like 1 2 3 4 five and put
+other key frame. I'm going to move this
+to the top make a similar movement and
+give it a script like a bounce script be
+able to make something like this but
+because we have lots of bounce that we
+don't need it over here we can make the
+distance less make it like this.
+For the final step, I'm going to come
+into the right place like over here.
+Give it a gosh blur with amount of 12.
+And I also need to turn off this
+checkbox and put a key frame for this
+one. And go forward for 15 frame and put
+other key frame for the blness. And
+coming into the first key frame, make
+this zero. So right now we have some
+blurriness. But the things that I'm
+going to do right now is just copy this
+gshian blur coming into the right spot
+and paste it to all the layers on the
+ball. So you can see that this one will
+be blur
+over here. I'm going to put a key frame
+like this and move them to the bottom
+and put them out of the frame. Also I'm
+going to do this over here like same key
+frame for the position and pull it down.
+I'm going to select this and give it
+some graph. So to be honest, I forgot to
+change the background over here and I
+just noticed it. So, what I'm going to
+do over here is finding this layer,
+which is the background, and give it a
+fill. It's kind of pretty easy. Make
+this white, but not this way. To be
+honest, it should be this way. Give it a
+white background. And exactly over here.
+Then, it's going to come over here.
+Going to give it a key frame and make it
+like this. Let me bring the reference
+back. Be able to get a reference from
+it. If I hit the Y, I can see the key
+frame. I can delete this one and bring
+this back to if I give it a key frame
+like this and move it to the right spot
+and over here again it's supposed to get
+back. So I just copy paste the key frame
+and come over here and time revert it.
+Maybe push it back a little bit. I also
+need to make a transition and it's also
+pretty easy. So I'm going to put an
+adjustment layer. Give it a deep go. You
+can find a link in description again.
+Maybe this one should be 300 and this
+one should be about 0.7 or maybe one
+would be good. And a key frame like this
+and over here it should be zero. And the
+key frame would be something like this
+like the graph of it. Or maybe what I'm
+going to do is just remove this one.
+Make this white because it's already
+white. I just need to move the fill.
+And I also need to cut the text over
+here.
+I'm going to give it a deep glow effect
+and maybe this one will be 300. This one
+will be 0.3. That would be awesome. I
+can copy paste this one for all of them.
+And for the final touch, what I'm going
+to do is just coming into the asset,
+grab this white dot, go into the right
+place. Scale it up a little bit. Put
+this on screen. Remove the black
+background. Cut it from here. First of
+all, I need to turn down the opacity a
+little bit. You see the speed of these
+will be so fast. I can bring up the
+opacity a little bit. Like the dots are
+so fast. So what I'm going to do is just
+cut it out like this. Pick compent. Do a
+Ctrl Alt T. And then if I move the key
+frame over here, I can change the speed.
+I make the speed slower. So I'm going to
+have something like this with a slower
+speed. And again, I'm going to put it on
+screen and solo it.
+And over here I can cut it out. Like
+this is going to be awesome. So thank
+you so much for watching this video till
+the end. I hope you enjoy it and it can
+be useful to you. Don't forget to like
+and subscribe because it's kind of huge
+support from me. And also if you want me
+to recreate some other project, you just
+need to join the Discord channel and put
+your videos into the showcase channel.
+And just don't forget to label it down
+with a recreate tag to make me able to
+understand that you want me to recreate
+this project for you. And I'm gonna go
+through all of them 100%.

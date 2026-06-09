@@ -1,0 +1,1007 @@
+Hi, I am James Higginbotham. I'm the
+author of "The Principles of Web API Design"
+and founder of LaunchAny, an API consulting firm.
+I'm here with Vaughn Vernon today. Vaughn
+is a software developer and architect
+with over 35 years of experience across a
+broad range of business domains. He's also
+a leading expert in domain-driven design,
+and a champion of simplicity, which I love.
+In addition, he's the founder of an open-source
+product or platform called VLINGO XOOM, which
+is a set of DDD-friendly distributed computing
+tools. The tools simplify concurrent, reactive,
+event-driven, and microservice architectures,
+and it's all built on the Java virtual machine.
+Now, if that's not enough, he's also the
+author of the book "Strategic Monoliths
+and Microservices," as well as an editor of a new
+Signature Series from Pearson and Addison-Wesley.
+Vaughn's here today to share some insights from
+his new book. Great to speak with you, Vaughn.
+Let's start by having you tell us a bit about
+your Signature Series with Pearson Addison-Wesley.
+Sure. Thank you to GOTO for inviting
+me to be interviewed, and my suggestion to
+have you, James Higginbotham, interview me.
+It's good to be with all of you. Well, I would
+say that my Signature Series has the first goal
+of trying to help developers, software developers
+of all kinds, to mature. And by maturity, I don't
+mean simply knowing more about some programming
+language. Of course, that's always important. But
+my thinking on maturity is more around having a
+business-centric focus on software development,
+where software developers are less drawn to
+tinkering with new toys and hacking code,
+but more about learning what the benefits are
+of drawing close to the business, having a good
+partnership with business stakeholders, and
+developing software that has strategic value.
+In doing that, the series also emphasizes
+organic refinement, meaning that
+things emerge as we learn more, and
+we look at software projects more as
+learning experiences and through
+experimentation and discovery.
+As we learn more, the software gets
+better. As we go through that, we're
+specifically looking into topics such as reactive
+object and functional-based architectures and
+programming, as well as domain modeling and,
+of course, including domain-driven design,
+creating services that might fit what would
+be called microservices by some, but again,
+demonstrating purposeful architecture around
+that. Also patterns and like your book,
+James Higginbotham, APIs on the patterns
+that you talk about in your book.
+We're trying to promote the best uses of such
+tools and any underlying technologies that match
+up with those. So really, an architecture and
+design focus where technology and programming
+underpin that, but those things
+are not the primary focus.
+Yes, that's fascinating. A lot of the things
+that you mention, you even call that out,
+it's not just about programming languages. I
+mean, there's an aspect to that, but there's
+more to it. You're helping the development
+community move beyond just the technology.
+And it sounds like you're helping them
+engage in the business side of things,
+in the product thinking side of things,
+other elements of that. Is that right?
+Yes. And, you know, James, as we've spoken
+about before in my interview with you on another
+podcast, we're quite interested in learning
+what the business needs are, whether we're
+consulting first and then training, or
+training-consulting, whatever it happens to be,
+we're looking for ways to improve the business
+value. And not just showing developers new techy
+type things that, of course, it is technology.
+But yes, trying to improve the practices first.
+That's great. I was excited about this Signature
+Series when you mentioned that you had this
+opportunity. I think those that are probably
+familiar with the Signature Series from Pearson in
+the past with Martin Fowler's series and others,
+I think there's a lot of people that have taken
+advantage of those and matured their career and
+their thinking and changed the way maybe they've
+approached software design, systems design,
+solution architecture as a result of those.
+So this is going to be a great series. I've seen
+some of the titles already and I'm looking forward
+to some that are still being written as well.
+Yes. And it gives a great opportunity to introduce
+new authors sort of under maybe
+the wing of the series, where
+maybe they aren't as well known to the community,
+but they should be. Being in the series helps too,
+I guess, both validate, but more
+promote the ideas of other people and
+show that there's a lot of wisdom out there to be
+shared. And thank you again for being an author
+in the series.
+Yeah, thanks for the opportunity. It's an honor
+to be part of that series. Let's dive in to the
+book now. Your book is "Strategic Monoliths and
+Microservices." Who did you write that for? And
+why did you write it? You know, what drove you?
+I mean, writing a book is a passion project that
+takes a lot of energy, a lot of time. So tell
+us a little bit about why you wrote that book.
+I've noticed and probably, mostly since my "Red
+Book," the "Implementing Domain-Driven Design"
+book that there continues to be a big chasm
+maybe or gap between business people, you know,
+those who are primarily interested in the
+innovation around their business and developers.
+Developers latch on to domain-driven design.
+They want to learn it. But what I found is
+there's always just sort of this still very
+technical bent to those who want to learn DDD.
+And even when given a clear opportunity to
+interact with business people, they tend to either
+shy away from it or decline the opportunity.
+They'll say things like, "No, we've got this." So,
+it's still this kind of, like, closed circle of
+developers who are trying to think about the ways
+that the software should work without
+really engaging with the business.
+While making those observations and writing books
+that are primarily for architects and developers,
+I started to think, "Well, wouldn't it be nice
+if executives had the opportunity to know,
+at a slightly less technical level than, say,
+architects or programmers of various levels,
+where they could understand the kinds of decisions
+that could be made, and the possibilities without
+actually stepping on the toes of developers at
+the same time?" And I just want to make clear that
+the book is for C-suite, senior VPs, VPs,
+directors, managers of software projects.
+But it can range through chief architect,
+senior architect, enterprise architect,
+senior developer, mid-level developer, even junior
+developers, because these are the kinds of things
+the mindset that needs to occur to be, developed
+in software teams if they truly want to innovate.
+The book is meant for a range of roles,
+but it's written in such a way that
+certainly is compatible with C-level
+executives. And I just have to say, too,
+that C-level executives these days, especially in
+technology, are way different than they were 30 or
+40 years ago, you know, sort of when I was getting
+my start in software. And I talk about the sort of
+Wall Street or, you know, midtown Manhattan look
+with pinstripe suits, and vests, and all this
+stuff. There's not anything wrong with that, but,
+you know, when you really look at the founders
+today of startups, and even executives and, you
+know, large enterprise or fortune companies and
+global companies, they have a completely different
+mindset than that. And they're more casually
+dressed, but also, they're very technically
+savvy. Tomasz, my co-author, and I didn't in
+any way dumb down the book. But we made sure
+that we didn't dive too deeply into bits and
+bytes and things like that because that isn't
+mostly about an innovation most of the time.
+Wow, that's a great point. And I've seen that
+as well in the organizations I work with. The
+C-suite, they're deeply technical, we're having
+deep technical conversations with them. They're
+sitting down and, at least in my experience,
+drawing diagrams and things and trying to work
+through the problems at a much deeper level.
+So having a resource like this that helps to
+unify the thinking and to speak
+to that broad audience allows
+the C-suite down to the junior developer to
+all be kind of speaking the same language,
+thinking about the same things in the same way.
+And that seems to be a really powerful way to
+approach a book like this.
+So, "Strategic Monoliths and Microservices," I
+think that's a really interesting title. It feels
+like a blend between the business or technical
+strategy worlds and some of the architectural
+decisions we have to make. Why did you choose
+that title? Did it come to you instantly? Was it
+something that took a little while to emerge? Tell
+me a little bit about the origins of the title of
+the book and kind of the general, you know, vision
+or mission of this book and what you're trying to
+set out to do and how all that ties together?
+Yeah, great question. First of all,
+titles of books, that's a really
+interesting subject in itself. Actually,
+"Implementing Domain-Driven Design", my first
+book, the "Red Book," I had that title from
+the beginning, and it stuck. I think that
+this book's title changed about five times
+before it was ready and we chose one to
+use. It took a lot of ruminating over time
+to consider all the angles and so forth.
+We knew that we wanted to write about
+monoliths and microservices, and sort of the
+overarching ideas of strategy and innovation.
+I think that what we finally landed on was
+both the main title, "Strategic Monoliths
+and Microservices," and a subtitle that kind
+of harmonize. And the way that they do that is
+"strategic" and the subtitle
+"driving innovation" go together.
+And then "monoliths" and "microservices" in the
+main title and using "purposeful architecture."
+So those two titles are I guess a
+bit parallel and woven together.
+So that was the idea is put more
+emphasis on strategic innovation.
+And, of course, software architecture is
+extremely important, but you can't have
+an architecture unless you know what software
+you're developing. And when someone rushes into
+architecture because this is what they
+love and they're just sort of, like,
+trying to fit things together that they assume
+will be necessary, I think that often there's
+a lack of real thought as to purpose. So trying
+to emphasize that first comes to the strategy,
+the understanding of how we will be innovative,
+and then what do we need to make that
+happen in terms of software architecture?
+In the first chapter, you seem to focus on kind
+of three areas at least that stood out to me as
+business transformation, software architecture,
+and the inevitable element of change.
+And you seem to have kind of set up
+the whole book from at least those
+three elements. That's what stood out to me.
+We talked about kind of how the title was inspired
+and what you're looking at. But let's talk a
+little bit more about what people are experiencing
+in their day-to-day. Every organization's going
+through a digital transformation of some sort
+and we're all having to deal with changes and
+evolution of software architecture and the change
+throughout. So how are these elements connected?
+How are you tying those together in the book?
+Yes. So definitely every company that I
+engage with is going through a transformation,
+digital transformation. And what I find,
+though, is that sometimes digital transformation
+is simply like a lift and shift
+to the cloud. And, to me, that's
+actually really not digital transformation. And
+I think where innovation is really a sought-after
+goal, most people wouldn't really consider that
+innovation or digital transformation. Like I say
+Amazon is sort of making their
+enterprise computing stack available
+to the outside world, that's innovation,
+right? I mean, they had it, it was working,
+it scales tremendously. And they say, "Okay, then
+let's sell timeshares for this, basically, right,
+usage, metering for the use of this." Okay,
+that's transformation, definitely innovation.
+But, subscribing to that, spending money for it,
+and just moving your same software over there is
+not digital transformation. It's just sort
+of, like new hardware in a different form or
+something like that. So, I like to emphasize that
+digital transformation is all about innovation,
+that you're trying to transform in areas where
+either the digital aspects of your business were
+simple, like too simplistic, not
+carrying enough business weight,
+or there are still manual processes within
+the business, and we're trying to take every
+situation there and turn it into a digital
+experience that will drive big revenues for
+the companies that engage in that process
+and take the risk in investing in it.
+Given that background about digital transformation
+and the view you're seeing of how software is
+having to change and organizations are changing
+now, can you walk us through the four main topics
+or parts of your book and talk about how they give
+everybody a chance to understand? What does your
+book cover? What are you approaching in this book?
+Sure. And actually, I realized I didn't fully
+answer your question. So how do architecture
+and change fit into that? Well, if you're going
+through a digital transformation, transformation
+doesn't happen overnight. And certainly doesn't
+happen even extremely quickly when you're moving
+from sort of this big ball of mud, you know,
+tangled legacy system. So you need to have an
+architecture that will facilitate change. And even
+if you're starting kind of, you know, from scratch
+in a lot of digital transformation areas, like
+really innovating, you still need an architecture
+that facilitates change. Right? So hopefully,
+that sort of answers the first part of that.
+The four sections then are:
+how do we look at the transformation in general?
+That's kind of the first part of the book,
+and how do we develop the right mindset for
+innovation for actually engaging meaningfully with
+business stakeholders, and software
+developers, and, you know, users or customers
+of the software that will be eventually available
+for use so that we can make the best software and
+create breakthroughs, realize
+breakthroughs in what we offer?
+Then some tools that can be used to do
+this in a very lightweight, very flexible,
+and tools that support agile as in agility. And we
+kind of, you know, in the book kind of steer away
+from the heavyweight, what is considered agile,
+but where it tends to have a lot of ceremonies,
+you know, associated with it. So we kind
+of formulate that in the first part.
+The second part is about domain-driven success. So
+domain being identified as a sphere of knowledge,
+but also the business domain this
+sphere of knowledge about the business,
+but then in smaller parts of the business where
+we're focused on innovation, what do those spheres
+of knowledge look like? What's driving us to try
+to innovate within those? But then also balancing
+that kind of investment with a recognition that
+all software is not strategic. It's necessary,
+but it might be supporting
+or generic. And so, how do we
+balance the kind of investment that we need to
+make without putting too much money and time
+into areas? Or at least not the human capital time
+that you know, the business needs to use for these
+innovations, but maybe spend some money
+on off-the-shelf or download open source,
+you know, components and so forth to support
+that. So there's a good balance there to be found.
+This is where we do talk about domain-driven
+design, but we delay the introduction of the
+term "domain-driven design" because we didn't want
+higher-level executive management and so forth to
+hear yet another one of these, what might
+appear to them to be buzzword. While you, and I,
+and others understand that it's not a buzzword,
+it's a way of thinking and an approach to software
+development. But we kind of sneak up on them a
+little bit in that sense and describe what we're
+doing and why we do it, and then say, "Oh, and
+by the way you know, Eric Evans wrote about this,
+whatever, nearly, I guess, 18 years ago or
+19 years ago, now I don't remember for sure.
+And this is what it's called,
+and here are the parts of it."
+And then we just don't, like, keep saying stuff
+like that. We just show them how to use it.
+Then the third part of the book is event-driven
+architectural or event-first architectures where
+we're talking about how events are extremely
+important to the development of any software.
+And I'll get back to that in a moment.
+Then what are the software patterns,
+both whether it's web-based, or messaging-based,
+or whatever it happens to be, what are the
+technical tools that we have, and
+the patterns that can be used to
+highlight and accommodate events as the
+first-class idea in software development,
+and how that helps with innovation?
+The fourth part of the book, pardon me, is about
+monoliths themselves and microservices, but
+taking kind of two approaches to this. One is
+"Monoliths Like You Mean It," right,
+is the name of one of the chapters.
+What that means is if you're
+going to develop monoliths
+and you find this to be a purposeful architecture,
+this is how you want to go about doing it
+so that it doesn't turn into a tangled, you know,
+big ball of mud mess. And what if you already
+have a tangled big ball of mud mess but you
+need to transform that into a well-modularized
+monolith before you do anything else, how
+do you deal with that kind of situation?
+And then the next chapter, it's in fact, chapter
+11 is introducing microservices like a boss,
+right? So this is where you have a good
+reason to use microservices. Perhaps this
+includes using both monoliths and
+microservices in the same system solution.
+And then how do you go from, you know, the
+tangled big ball of mud and reach microservices?
+Well, you might first want to go back and
+re-modularize or modularize that big ball of mud
+using the advice in the previous chapter.
+But if you're brave enough to sort of just
+bulldoze forward with, we're just going
+to go right from the big ball of mud to
+microservices while we discuss that as well, and
+how you can be successful with that. And we've,
+Tomasz and I have both had experience with
+this. So we feel that we provide very good
+advice and techniques for doing this.
+Finally, we kind of wrap up with this,
+what I think is a very sort of poignant
+last chapter, chapter 12, which
+requires balance, demand innovation, right,
+or demand strategy. So it's saying again,
+let's just sort of review this in a few words.
+Remember that architecture is providing a
+purposeful means to develop software innovation
+on a kind of foundation, but the innovation itself
+needs to happen for there to be any reason for
+software architecture to even be a concern at all.
+So those are the four parts.
+Now, I said I would come back to that whole
+idea of events. And a really important thing
+to remember is that we introduce,
+you know, Mel Conway's,
+you know, the amazing brainchild of Conway's
+Law, what's become known as Conway's Law,
+from the year 1967 didn't get any daylight until
+1968 and then Fred Brooks recognized it as, "Wow,
+this is really important work, you know," and
+included in the "Mythical Man-Month" book.
+And since then we've really learned, pardon me,
+that Conway's Law is undeniable, it's there, it's
+like the law of gravity. You don't get better at
+the law of gravity, you simply have to work within
+the bounds of the law of gravity, realizing
+that if you fall even a few meters, or yards,
+or whatever measurement system you're using, you
+can get very hurt or even die from such an impact.
+So, given that, what do we do with the law
+of gravity? Well, we know that we can only
+jump and stay in the air so long. So we
+learn to coordinate certain things. Like
+if we're playing basketball, or football, or,
+whatever it happens to be, we learn how to use
+our knowledge of the law of gravity and the
+feeling that we have in our bodies for, you know,
+how long we can sustain some move, or, you know,
+airtime, or whatever it happens to be. And in
+the same way when we're aware that communication
+within an organization will have a direct impact
+on the software or the system, actually any kind
+of system, but a software system, in this case,
+and the outcome of that, then we better make
+some very good decisions about the kind of
+organizational communication
+structures that we put together.
+And what's amazing to me is that Mel Conway
+not only had the knowledge to observe that
+organizations will create systems according to
+their organizational communication structure,
+but that he said, "Okay then, this means
+that you should basically incentivize
+leaders in your organization who are flexible
+and create flexibility within the organization
+communication in order to do this." So, okay,
+what does this have to do with events? Well,
+events are all about human
+communication. They are.
+What happens when I finish talking to you, James
+Higginbotham? When I finally run out of breath
+and you can talk again, what happens? Well, it's
+sort of like an event, right? You recognize that
+there's this Vaughn Vernon -stop-talking event,
+and now you're gonna react to that. Well, it's the
+same way with software. When various things happen
+in software, we want to record as a communicative
+record that this occurred. And because it's an
+important occurrence, then even, the monolith
+or microservice that we're building, or others
+throughout the system that we're working with
+can consume that as a means of telling them that
+this happened, it's a form of communication, and
+our communication itself is being relayed around
+the entire system and the system can react to it.
+So this is why we focus on events through the
+book, and the tools that we provide in the book
+are very much event-centric. So this is, I guess
+maybe more than you wanted me to say about the
+parts of the book and Conway's Law and events. But
+there you go, that's the whole kind of, you know,
+thing there, the whole idea.
+Yes. No, I have witnessed
+quite a few organizations that
+think in a synchronous fashion, they think in
+request-response, they think in calls. And then
+it tends to get them in trouble, particularly when
+they're going down a microservices path. Because,
+as you said, they maybe have a big ball of mud,
+or maybe they're just trying to transform the
+way that they do things or trying to scale up.
+They're trying to reorganize the way that they
+work. And so they break things, decompose
+big problems into smaller problems.
+But they create this level of fragility,
+as a result of making a call to a service,
+which makes another synchronous call to a
+service and they create these call chains.
+The result of that, then, is instead of a single
+process with code that's chaining calls together,
+we're chaining calls over the network. And
+anywhere along the way, in that call chain,
+we could have a network problem. We could
+have something that's not available.
+So can you talk a little
+bit about how events really help to transform
+the organization into being more resilient,
+less fragile by shifting toward an event model,
+thinking more in terms of events rather than
+synchronous call chains and service calls,s
+and encountering these kinds of problems?
+Sure. And actually, what you said is
+a really good way to highlight that
+communication is, again, a very fundamental part
+of this. Because life life is not a podcast,
+right? I mean, right now, you're waiting for
+me to stop talking. So it's sort of like that
+service call service, right? Where you're waiting
+for me to stop talking so that you can do the next
+thing, or I'm waiting for you to stop talking,
+ask me a question, and then I do the next thing.
+But human life doesn't work that way. Rarely do
+I say to you talk to someone about some topic,
+and then I literally wait for minutes,
+hours, days, weeks, months for you too, like,
+fulfill that request that I made, because
+it might take a lot of time for that whole,
+you know, your part of the conversation
+to conclude how productive would that be?
+So when you just think about just normal human
+interaction, events make perfect sense because
+events help us to, in essence, embrace latency.
+Latency happens on the network. Even you might
+think that you know, well, we're deploying
+to Google and Google has the fastest network
+on Earth. Nobody can\, do better than Google.
+But talk to Google about how much latency they
+have. I mean, I'm sure they're super-fast, but I
+will guarantee you that their engineers, they're
+trying to squeeze more out of it, trying to find
+ways to make it even faster and more reliable.
+So given that, when you capture
+an event and you persist it,
+and that is successful, then you have this
+long-term, even forever kind of record that can be
+distributed once to other parts of the system,
+or it can be distributed time and time again
+to newer systems that didn't exist before. When
+that distribution occurs, as in a broadcast or
+publishing such an event, you simply have to
+know that the event was published. If you know
+that when the event was published, you kind of
+can now relax and forget about it. Right? So if
+you ever think of software relaxing, it's probably
+more about our brains are relaxing. Okay, I know
+that it's persisted and I know that the messaging
+mechanism has this and it's going to guarantee me
+that at some point it's going to be delivered,
+and now, given that at some future time,
+some other component will react to
+that event and do something about it,
+and I might be interested in the fact
+that some conclusion was reached.
+I would want to know about the event
+that happened in the other system,
+but I'm not worried about setting timeouts for
+REST requests. I'm not saying, "Well, if this REST
+request doesn't succeed within five seconds, we're
+done here, right? Failure." And how many cascading
+impacts will that have, potentially across
+a large part of the enterprise? Instead,
+we're just saying, "Well, we know that this
+worked, and we know that we're expecting something
+back, but we'll just react to it when we see it."
+Then if it happens in 6 seconds, or 16 seconds,
+or 60 seconds, as long as that's within an
+acceptable business timeframe, we're good, right?
+We're not worried about, you know, user requests
+stacking up on our web tier waiting to be handled,
+because this thread is tied up on waiting
+for something else and we can't let it
+wait for more than five seconds, otherwise,
+we start experiencing other problems upstream.
+So it just really changes your whole mindset.
+And the resiliency part comes in simply because
+if there is a failure in delivery then, for
+example, that event will be eventually delivered.
+Given that the cloud, many companies are
+very much dependent on the cloud now,
+if there is a failure in some machine or
+part of the network, we can bring up nodes,
+whatever it is, or make a function available or a
+lambda available in another area to handle that.
+Well, you're going to get some very
+kind of welcoming and naturally-feeling
+resiliency. Of course, this is a bigger topic than
+that. I don't want to just oversimplify it. But
+that is the basic idea of the benefits.
+I loved how you said, "software relaxing." I had
+this picture, this microservice on a recliner
+kickback, and just kind of waiting for an event
+to come its way. But no, I fully agree with you.
+I've worked with event-driven architectures in
+the past. I first got introduced to them with
+message-oriented middleware and accusing topics
+on message brokers and things in connecting
+different enterprise systems. But having worked
+with a lot of organizations that have these,
+either long-running processes, as you said,
+where it could take a while before we can fulfill
+the task at hand, the work that needs to be done,
+or maybe just, as you said, the increased latency
+of dealing with cohabiting software with other
+people on shared hardware in the cloud, or dealing
+with crossing boundaries across regions, or just
+simply some system gets overwhelmed or overloaded,
+and therefore would have a negative impact
+on something that's working synchronously,
+to shift ourselves to thinking
+asynchronously and to start to
+embrace that as an architecture to make that shift
+will take time but has a lot of benefits to it.
+Do you have any examples or something you can
+share, even if the parties remain nameless,
+of how you've helped people to transform that
+mindset from asynchronous call request-response,
+maybe a more REST-oriented way
+of building software internally,
+to a more event-driven reactive approach to
+doing things and how that, you know, kind of
+evolved and kind of the results
+and the fruits of that labor?
+Yes. Well, I'm working with multiple teams right
+now in areas like that. Yes, it's a very different
+way of thinking. Again, the whole service call
+makes service call, it seems natural to developers
+because they're used to making function calls or
+method invocations and then those methods that are
+called make other calls. And it's like, well,
+that always works. Very rarely will it fail.
+And so it just seems natural, and it is a big mind
+shift for people to go through to accept that.
+And
+what I try to do is just make the whole idea
+sound much simpler than they tend to consider
+it upfront. And when they hear about this
+asynchrony, "Wow, that's difficult stuff. Never
+done that before." Well, of course, they have.
+If you've ever written a web UI or an old Windows
+API app, even if you're using Visual Basic
+you have worked with asynchronous messaging,
+right? You do not know when a user clicks the
+mouse, or when they've selected some button,
+or click some button, whatever it happens to
+be until you receive a notification that that
+occurred. And you're not constantly saying, you
+know, "Hey, UI, did they click that button yet?
+Did they click, you know, an item in the
+list box? Did they scroll the list box?"
+You just receive notifications of those things.
+That is just what we're talking about. So anybody
+who is in fear of this they don't need
+to be. It is far simpler than most people
+have the idea, but you do kind of, like, need
+to shift your mindset. As I said, if you send,
+you know, an event to another party and
+you're expecting something back within some
+timeframe, well, you simply remain inactive
+or doing other things until that occurs.
+And so, you have to have in mind that you
+won't know immediately the result of that.
+So you have some state somewhere that has been
+saved in.. persisted in some way, whether it's
+in memory or whether it's on disk, and so you
+can then recall that when you're notified about
+the result that you were interested in seeing.
+I would love to talk about some of the concrete
+experiences, but it's been everywhere
+from just trying to get people to
+drop the idea of everything as a REST call,
+helping teams see that if they don't make those
+eventually consistent
+service-to-service-to-service calls that will fail
+and fail daily, not necessarily in large massive
+dose, but then you won't need to hire a team
+or your team will be much smaller and dealing with
+the inconsistent data that exists when you wake up
+in the morning or throughout the day because one
+of those services failed. It is really difficult
+to get people to understand that and buy into
+it. But again, I think it's mostly just the
+kind of fear factor of doing something that seems
+unfamiliar until maybe you can help them to see
+that it is not completely foreign to them.
+So let me hit on purposeful architecture,
+the stepwise refinement, then we'll go ahead
+and wrap things up by talking about the next
+book that you're working on. Does that work?
+Sure.
+Ok. All right. So
+you had previously mentioned the idea of
+purposeful architecture. What is purposeful
+architecture? Tell us a little bit about that.
+Well, it means that the architecture has a design
+that facilitates the software that the solution to
+the business problem that you're trying to solve.
+This means that it's reflecting
+what the business needs. So,
+if a developer goes in, or an architect goes in
+and starts making architecture decisions early
+before they've even engaged with the business,
+it's like don't confuse me with the facts, I've
+got my mind made up, right? You're just concluding
+that we are going to use these facilities because
+that's what I want to use, or that's what
+we as a technical team want to use on this.
+And so it's got to be Kafka, and it's got to be
+Kubernetes, and it's got to be all this stuff.
+For example, go to the Kubernetes leaders and
+they'll be the first to tell you, you may not
+want to be using Kubernetes just because it's
+out there. There is a price to pay for going
+there. And it does a lot of great things. I don't
+want to be misunderstood that I'm knocking on
+Kafka or Kubernetes. But hey, make those decisions
+when you need to. That's purpose-driven. It's a
+responsibility, right? It's showing that you're
+responsible for your decisions and that you're
+making decisions based on what you are working on.
+So to kind of tie that back, we talked about
+events and event-driven architecture and thinking
+about things in that way to introduce resiliency,
+overcome latency issues, and handle long-running
+transactions or workflows, those kinds of things,
+as well as many other scenarios. It sounds
+like then what you're saying is purposeful
+architecture is really about what does the
+business need or what would it benefit from?
+And so, therefore, would it benefit the business
+for me to perhaps select a different approach
+than maybe something that I would normally use
+because there's a lot more benefit to the business
+as a result? So maybe event-driven would be
+beneficial in some cases, in many cases, perhaps,
+as a result of that. Is that what you're
+saying here with purposeful architecture?
+Yes, absolutely. But also, maybe event-driven is
+the very wrong thing to use in some cases, right?
+If it's a simple web app that is just collecting
+data and somehow you can access that data in batch
+form or, you know, simple queries, maybe that's
+all that you really need to do. So, yeah, it's
+just really being responsible, making decisions
+based on the real needs not because your mind is
+already made up on how this is going to work.
+Yes, those automatic decisions that we go to
+just make because we've done it before, let's
+do it again. We achieved success before, so
+that must automatically mean we're gonna
+achieve success again. When what you're
+saying is slow down and be very thoughtful about
+an intentional, rather than just defaulting to
+either something new that's emerging or
+something that we've done in the past that has
+been successful. Let's reason through this
+and determine the right path to the benefit.
+In Chapter 8 of the book, we start
+just kind of, like, taking some previous
+definitions of software architecture, what is
+a software architecture, right? It seems like
+every book on architecture has to try to define
+what software architecture is. But we show
+what others have said about software
+architecture, they're generally quite brief.
+We wrote two small paragraphs about software
+architecture. The thought that we're trying to
+convey is you cannot decide what your architecture
+should be until you've had communication.
+The communication is going to tell
+you the kinds of software, you know,
+modeling that you're going to do, the kinds of
+components that will need to be created. And
+that might lead to, you know, one
+architecture decision or another.
+There are sort of some go-to architecture patterns
+or styles that I think are generally always
+useful, but these don't impose a certain sort of
+way of using distributed computing. I would say
+the hexagonal or ports and adapters architecture
+is just sort of like a smart way to go. And that's
+far from setting things in stone. It's actually
+making the software much more flexible and capable
+of introducing new mechanisms, new kinds
+of databases, messaging, REST, rich GUI,
+or whatever it happens to be, right, you can make
+those decisions as you realize you need them.
+If you look at architecture decision
+records, that is what they actually are.
+You're making an architecture decision
+at the last responsible moment, right?
+You're delaying those things purposely because
+you don't know yet if you need them. Or even
+you might know that you need some kind of
+thing, but should it be GraphQL? Or should it be
+an API gateway with different queries happening,
+you know, for a single endpoint? Or do you allow
+GraphQL to handle that for you? I don't know,
+I can't tell you right now because we haven't
+spoken enough about it. That's the real answer.
+And that's fantastic. I know, when I first
+started, when I was a senior developer and
+I was being challenged by someone who was,
+you know, encouraging me to grow in my career.
+One of the things they recommended is they gave
+me a list of books they gave me a stack of
+books. He said, "Here's a stack of books,
+I want you to read these." And some of these
+are books you'd recognize and some less so.
+But he said, "You know, I think you need to
+start getting into software architecture,
+more really start thinking at a higher level
+about how all the components communicate,
+how the systems communicate between one another.
+This is going to stretch you and help you to
+grow as a developer and go in the direction
+that you feel like your career's taking you."
+And so I sat down, and he must have given
+me six or seven books, and not one of the
+defined architecture or gave me kind of a
+working model of how do I think about this?
+I sort of had to derive my own perspective
+from it until I had time to figure it out.
+So it's exciting to me that you've
+devoted some time in Chapter 8 to that.
+That other coming along, whether they just need
+a refresher, or they want to see a different way
+than it's defined or described, or that
+junior developer that's starting to try
+to figure out "What is this architecture
+thing? I've been coding for a while now."
+Maybe they've progressed up in there and they're
+starting to grow in their career and they're
+trying to understand it. So that's exciting to
+me to have that as part of the book as well.
+Yes. And just to make a point. I mean, I think
+that software architecture has been defined by
+some very smart and experienced people as, like,
+the parts of the software that are hard to change.
+And you know what, that shouldn't be true. If
+you're using the ports and adapters architecture,
+you might just find that it might not be really
+easy to change, but it's going to be simpler to
+introduce or reintroduce different
+mechanisms that you found were
+insufficient for whatever reason, you know.
+Say that you were using REST as a way to query
+logs of events, right, that other outside
+subsystems could do that, and you decide,
+"Well, we're now going to use Kafka. Instead,
+we're going to use, you know, Azure message bus
+or whatever it happens to be, SNS, SQS from AWS.
+And so we're now going to make that available."
+Well, the API hopefully doesn't have to
+change, or it doesn't have to change much.
+And you can completely change that out,
+that mechanism, the approach to doing that
+without, you know, a lot of overhead. I
+wouldn't want to automatically conclude
+that software architecture is about
+the things that are hard to change.
+Although I respect that at one
+time, that may have been the case.
+So, as we wind down, I have two
+things to discuss to wrap this discussion up. The
+first thing is for those that are faced today with
+some monoliths that are less than ideal, whether
+they're a big ball of mud or they're just, you
+know, really difficult to work with, and they're
+thinking about microservices, or maybe they're
+using microservices and they've encountered
+some challenges or something else. What are
+some recommendations that your book provides for
+how to step through refining your monoliths and
+microservices to make them a bit more resilient
+and adaptable, how to make it easier to work with,
+how to perhaps either transition to microservices
+or to make it a bit less of a distributed monolith
+and more, you know, of an independent series
+of services that can communicate together?
+How do you or how does your book approach guiding
+teams that are likely in that kind of situation?
+Yes. Probably the quickest way to
+explain it is to say, if you're using
+domain-driven design, think of either a
+monolithic module as being a bounded context,
+or think of a microservice as being a bounded
+context, right? As in this is the way that we
+deploy things. So in a monolith, if we have seven
+bounded contexts, we have seven major modules
+within it. And we create the same kind of
+boundaries where we don't want another module
+within the monolith reaching inside either
+into our database directly forbid, right?
+But also just using our domain model directly,
+we create the same kinds of interfaces that we
+would if we were on a network, but it's just that
+we don't have to pay the price of the network and
+the potential failures that the network is
+going to sometimes require you to deal with.
+So that's sort of the first guidance, and then
+being purposeful. And let me just say one more
+thing about that. The reason is that you can
+develop much more rapidly if you are using
+monoliths initially, because you're not dealing
+with the failures of the network, and you're not
+dealing with all the complexities of distributed
+computing. So use a monolith very early, you might
+learn that the monolith is just what you need
+long-term. But if you need to, for whatever
+reason, rate of change, or some scalability
+issue, or something, if you need to break
+a module out of that monolith and make it a
+microservice, well, again, that's a pretty
+simple, I would hope, step to achieve. But as
+soon as you start tangling things up and making
+one module deeply connected to another one,
+forget about that. You've already lost that
+opportunity unless you do a lot of rework.
+So that's what we're saying is start with a
+monolith, introduce microservices as you realize
+that you need them. But even if you know right
+away that you are going to use microservices
+you're better off running everything in a
+sort of single VM with, you know, multiple threads
+across bounded contexts or microservices. Because,
+again, you're just not going to deal with the
+kinds of complexity that you can spend days or
+weeks just trying to figure out a silly networking
+kind of thing. And that just derails your business
+value production, right? So start with the sort
+of uncool way of doing things but recognize
+that in the sandbox that you've created for
+yourself, you're going to have a lot of traction,
+you're going to move quickly. And then when
+the distributed computing part of it becomes
+a responsible thing to do with a purpose behind
+it, then you make that decision to break them out.
+That's great advice. So let's wind this down. I
+hear that you're working on a second book in the
+series. Can you tell us a little bit about
+it, give us a little bit of a preview or
+hints about it?
+Yes. And I have to say, I thought that we
+would be able to write the second book within a
+very short time after the first book was done.
+Because I got the series right after the lockdown
+from COVID and everything just stopped. So here's
+this great opportunity to write a couple of books.
+Well, things started getting busy again sooner
+than I expected. So we're about we're quite
+a bit behind in the second book. So I'll just
+preface that. We hope to have it out earlier.
+But the second book is read the first book
+and everything that you're wondering about,
+how would I actually do that in code? How
+would I do that with an object-oriented
+language? How would I do that with a functional
+programming language? How would I do that with,
+you know, various architectural
+mechanisms, architecture patterns,
+and so forth? How would I go about doing
+that? Well, that's what we are diving into
+with the second book, implementing
+strategic monoliths and microservices.
+And so, if you know "Implementing Domain-Driven
+Design," my "Red Book," well, you're going to see
+a similar reflection, different code, of course,
+different examples, but you're going to see that
+kind of balance between content prose and, you
+know, source code to a moderate extent, with
+full examples available on GitHub afterward in
+polyglot, right, multiple programming languages.
+Oh, that's great. I can see why that's
+gonna take a bit of time. I mean,
+that's a lot of work ahead of you, but it's
+gonna be really valuable and a great complement
+to your book. Well, thanks, Vaughn, for
+coming on and speaking about your book. Again,
+the book title is "Strategic Monoliths and
+Microservices: Driving Innovation Using Purposeful
+Architecture." Vaughn, it's been great chatting
+with you, and I appreciate you taking the time.
+Sure, absolutely. Thank you,
+James Higginbotham. Thank you GOTO.

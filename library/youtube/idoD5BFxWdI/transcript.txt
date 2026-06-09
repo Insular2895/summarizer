@@ -1,0 +1,631 @@
+Hello everyone, and welcome to this new summer
+episode of the GOTO Book Club. I'm Xin calling
+in from Copenhagen, Denmark and I'll be your
+host today. It's a great joy to be joined by
+my two friends, these two wonderful guests from
+the beautiful and delicious Italy. Alessandro
+Colla and Alberto Acerbis, they are the authors
+of this new book called Domain Driven Refactoring,
+a hands-on guide to Transforming Models to
+Model Systems and Microservices. I've had the
+pleasure of writing the foreword to their book.
+Alessandro, Alberto, so great to have you here.
+Thank you.
+Both of your names
+start with the letter A. For me, you two are
+kind of like these top-grade Double-A batteries
+full of energy and power. So the plan today is
+to bring your personal energy and, of course,
+some of the most powerful insights from your new
+book into this conversation. Are you charged?
+Yes.
+So let's dive in. Good to have you here. Why
+don't we start with your personal stories?
+Maybe I could ask each of you to briefly
+introduce yourselves, and in particular,
+your journey into domain driven design.
+I will start. Hi, I'm Alessandro. I started
+with domain driven design a bit late. It was 2010,
+2012 when I discovered domain driven design. A
+couple of years later, I made all the possible
+mistakes, using domain driven design in the wrong
+way. So I learned a lot. Right now, until
+now, I'm still searching for the truth,
+still looking for the truth. Because everything
+changes. You discover something new every time. I
+am lucky enough to work on different domains, so
+I gained a lot of experience. My company I work
+for, Evolution, is a company that develops mainly
+e-commerce solutions from scratch of complex
+systems, and domain driven design helped me
+a lot in finding solutions and being able to
+deliver value to the customer.
+Thank you, Alessandro.
+My journey with domain driven design began more
+or less five years ago this year when I first
+met Alessandro during a local community meetup.
+At the time, the only books that were available
+were the iconic Blue Book of Eric Evans, the Red
+Book of Vaughn Vernon, an amazing book. For the
+first time, it finally showed me how to move the
+fantastic, amazing theories in the real world,
+especially in .NET and C#. At the time, I started
+to use that framework. Finally someone showed me
+how to apply domain driven design. Fortunately,
+I started to use domain driven design in many
+projects and environments. My company works
+for the financial industry and insurance, many
+different markets, many different environments,
+and the way to apply domain driven design
+offered me all these opportunities to try to apply
+domain driven design from scratch in Greenfield
+situations or Brownfield when you have to deal
+with legacy systems - that's the goal of our book.
+Excellent, I see you're leading to domain
+driven design from different angles and
+obviously the two of you have collaborated
+a lot. It's always a great treat for me to
+join your workshops. The way you teach feels
+like watching a kitchen conversation between
+a married couple with a shared brain,
+but still a lot of small disagreements.
+I'm curious - what made you start collaborating
+together? What's good about it? And how did you
+end up writing a book together? Was there a key
+moment that sparked the idea where you said,
+"Yeah, this is it, we're going for it"?
+We started thinking about a book five years ago.
+The first idea came over a beer because our most
+interesting and challenging conversations happen
+with beer. We started thinking about it five
+years ago, then three years ago - two years ago
+if I'm not mistaken - we tried writing on our
+own. But because of work and life in general,
+we weren't able to achieve something concrete.
+Then we had this coincidence where Packt contacted
+us and asked if we were willing to write a book on
+refactoring, and all the dots connected because we
+were already maturing some ideas on refactoring.
+We had already done lots of workshops on
+refactoring and legacy code, and it came up as a
+natural evolution of our expertise in refactoring.
+It was a coincidence that we didn't look for - it
+was something we had talked about over the years
+doing workshops, and then the opportunity
+came and we took it as fast as possible.
+The idea emerged and then the stars aligned
+for you, and it just happened. I've heard
+from a lot of book authors that writing
+a book is hard work and not a walk in the
+park. And as you already mentioned, there
+are already many books out there. Why did
+you feel another book was needed? What was
+the gap you were filling? And who is it for?
+There are plenty of excellent domain driven
+design books available, but at least for us,
+all these books don't start from the
+standpoint of refactoring. They show domain
+driven design - how to apply domain driven
+design from the beginning for your project,
+how to apply domain driven design when you start
+a new project. They explain all the patterns and
+all the situations you can find when
+starting a project using these approaches.
+But the idea for us was - we work a lot on
+refactoring. The customer comes to us asking,
+"We have this application that we rely
+on heavily, but it's legacy. No one who
+started the application is working with us
+anymore." This is a common situation, and
+the starting point is different. You can't just
+apply domain driven design because this is not a
+new project. This is something that exists with
+its history, and you have to explore the history
+before you apply and integrate. That was our idea.
+Yes.
+Right. So a really tough use case is dealing with
+brownfield applications, but you're showing that
+you can do it. Obviously your book is named "A
+Hands-On Guide," so you show people hands-on,
+step by step how to do this.
+Because we do this every day.
+Let's unpack what domain driven means. If a
+domain is a business area supported by software,
+then domain driven could mean business
+driven or business requirements driven.
+Many companies have requirements disciplines,
+product owners writing stories and so forth.
+What's the difference between requirements
+driven and domain driven, and why does this
+distinction matter in the context of refactoring?
+The main distinction is that requirements driven
+tends to be more static and linear. You gather
+the list of needs, then translate these needs into
+features. It focuses on what the system should
+do and not why those features need to exist.
+With domain driven design, you have a different
+approach because from a refactor standpoint,
+you are continuously refining your understanding
+of the business flow and business process with
+the developer and domain expert, using
+the language bounded context pattern.
+You are modeling the deep structure
+of the business, the logic behind it.
+You have completely different knowledge
+and change your monolith in a different
+way because you're not just adding features
+without thinking. You have to have a deep
+understanding of the domain and act accordingly.
+So starting even in brownfield refactoring,
+start with the why not just the what and the how.
+That harmonizes well with the path many teams are
+taking from pure requirements or feature teams
+to product teams owning the business outcome.
+The solution is different. You come to me asking
+me to solve the problem and offer me a solution.
+If you ask me and explore the problem with me,
+and we together find a solution rather than you
+proposing to me a solution with your
+requirements, it's quite different.
+This position could be a little bit surprising for
+some people when they hear the word refactoring.
+Because when some developers hear refactoring
+they think about clean code, clean up the code.
+And you used a big portion of your book to talk
+about problem space. Even complexity can have.
+So speak to the developers. What are
+some of the concrete payoffs to start
+with the problem space compared to jumping
+straight into code analysis and code cleanup?
+Refactoring is not just building your solution
+or modernizing your solution using a new
+technology, a new framework, or a new language.
+It's something incremental. We love incremental
+refactoring. Starting with analyzing your domain,
+your problem, then from a technical point of view,
+what are the first steps that you have to
+do before analyzing and modifying your code?
+To do this, we have to understand your problem.
+I'm a developer. I'm an expert in my field,
+not in yours. I'm not a broker in financial
+markets. I'm not an expert in the external market.
+So first, you have to meet your problem,
+your requirements, and start analyzing your
+legacy code, finding the right boundaries.
+Because without splitting your solution,
+I cannot modify anything in your code. At least
+I can live without the fear of introducing a new
+bug or something that goes wrong. So refactoring
+is not just "I destroy the old code and rewrite
+the code." I have to understand.
+With baby steps, move forward in
+changing something and introduce parts
+of the way, doing design and content
+mapping, being ubiquitous language, and all these
+patterns. These are fundamental for the first
+part of deciphering the factory code. Then you
+can apply all the other parts like aggregates,
+and if you want, even secure aspects.
+But the fundamental part is understanding
+the problem, analyzing the problem. We use the
+Michelangelo work, something that I love because
+we are Italian. Michelangelo said that when
+you know the most beautiful statue, you know,
+you just see it. When you see these sculptures,
+people ask him "How do you extract from the marble
+all these beautiful sculptures?"
+Michelangelo said the sculpture
+was in the marble, and I just set it free.
+The same is for legacy code. The solution is
+in the legacy code. Because if you ask me to
+refactor your code, you used that legacy code
+because it's valuable for you. You just need to
+extract the fundamental part and move forward.
+I will add another thing that we see often,
+both me and Alberto. The legacy is not just
+because the system is old. Often there is lost
+knowledge. That's why you have to understand,
+really understand, what it does,
+why it does the things that it does,
+what were the choices that were made during the
+life of this system? Because it is not just old,
+it has lots of caveats that
+you have to understand before
+changing things. Like you said, Alberto.
+That is a very important perspective,
+isn't it? Legacy is just not old.
+It's not just old. There are many
+other aspects that bring you to choose
+to change and go down this rabbit hole.
+I totally resonate with this image - the legacy
+code is like a big chunk of marble. What does it
+do? How do you see the David that is hiding within
+it? That's the essence of the code. That's what we
+want to do with the first step of refactoring.
+But the challenge is that in legacy systems,
+there's often this language drift. We all know
+this - concepts become muddy, overlapping,
+or conflicting. The challenge is that because
+you've worked with this for so long, it becomes
+everybody's everyday. In your view, how can people
+begin to notice these gaps? How can people begin
+to notice that their marble is starting to morph
+from this beautiful figure towards something else?
+If we don't take care, we may one day not even
+recognize what the figure is supposed to be.
+How do we create this kind of awareness that
+invites people to question continuously? Do
+we have these leaky legacy abstractions that
+we've taken for granted? How do we do this?
+I think there are tools that help you understand
+the business flows. Event storming helps you
+map - you have this legacy system, you don't know
+anything or don't know a lot about it. You have
+to start mapping the business processes, and I
+think that event storming is the perfect tool
+because you don't delve into the technical
+stuff. You just understand how things work.
+The information goes around your system and how
+the system is supposed to react to this kind of
+information and the interaction of your users.
+From there, you can have a bird's eye view of
+everything, and then you can start to define
+bounded contexts, try to understand the ubiquitous
+language of every part of the system. At least for
+me, I can already see some patterns emerging, and
+I can already see some boundaries. From there I
+explore and see if these are okay with the system
+and the overlapping parts. Then you have the
+discussion of every single theme that emerges from
+that. But usually I start with the event storming.
+When I was a student, my software engineering
+professor told us that writing the code is the
+last action that you have to do when you create
+a new application. I disagreed with him because
+at the time I wanted to write code because I
+discovered this fantastic way to express myself.
+Probably he was right, maybe 50% or 80%, because
+writing the code is the last action. But when you
+work with legacy code, we have to understand the
+problem, as Alessandro said. So you have to
+use event storming or these tools, but also
+offer to your customer a solution in a short time.
+So using these techniques of baby steps, you can
+refactor your code to show the result. Then,
+maybe in a sprint or six months or a year, and
+at the same time, you continue this conversation
+with your customer to understand the problem.
+What the two of you have pointed out is really
+encouraging for software engineers and developers.
+To see that - what is our real power? Is it
+to implement a story? Is it to implement the
+newest patterns? Is it to do programming with
+AI, or is it to solve problems worth solving?
+How do we even get to the problem? Well, it's
+hard work. It requires, as Alessandro said,
+a discovery process using event storming.
+We need to get the language right.
+Yes, and continuous iteration.
+Yes. But when that happens,
+the complexity of the business problem
+merges with our problem-solving skills.
+Something beautiful and powerful emerges out of
+that process. That's what we are in the world
+to do. That's our contribution to the world rather
+than writing implementation of someone else's
+specification, which was written maybe three
+months ago and has already deviated from reality.
+What you're telling the community is that
+there are tools and techniques that can
+help us do this in a step-by-step way. It's
+not an unconquerable piece of marble. We
+are not Michelangelo. We don't have to be
+Michelangelo to do this work. That's what
+I hear you saying.
+Perfect. Yes.
+Let's directly jump to the different levels
+of refactoring you mentioned in your book.
+Let's jump to the biggest granularity level
+- architecture refactoring. I think a lot of
+people are curious to know that for years,
+microservices have been seen as the end
+game of architecture nirvana or architecture
+modernization. Unfortunately, many teams have
+tried this but ended up with a distributed
+big pile of mud. From your perspective,
+how can a team realistically assess whether
+they're actually ready for microservices? Or
+maybe even take a step back - how do we know if we
+even need microservices? What's your take on this?
+Probably the first request from a new customer
+is "I need to transform my legacy code into a
+microservices solution because microservices
+are the solution for all our problems."
+But it's very hard to create a microservice
+architecture starting from something like a
+big ball of mud. It's like Michelangelo creating
+something starting from a big block of marble.
+Microservices are very cool, so we
+think we need to have the latest
+solution that the market proposes
+because we want to have the top of
+the world in our sector - we need to have
+the top architecture solution. But first,
+you have to understand what problem your
+solution wants to solve, then split the
+solution into the right boundaries and recreate
+a monolith solution, but a well-organized,
+well-structured monolith solution - a modular
+monolith, for example, as we explain in our book.
+It's not because we don't like microservices or we
+prefer monoliths. We love both. It's the way that
+you write your code that makes the difference,
+not the architecture that you choose. Just
+because you choose microservices doesn't mean your
+solution is the best solution you can propose.
+You really need microservices when your web
+portal or your basket for e-commerce grows a lot,
+you have a lot of requests because of Black Friday
+or similar events, and you really need to scale
+part of your solution independently. But if your
+solution is used by your colleagues, the employees
+of the company, and you have 100, 200, or 1000
+users of your application using virtual machines
+or servers in your basement, you don't really
+need a microservices solution. A well-organized
+monolith that we can modify, explore, and evolve
+as you want is the best solution, at least for us.
+I think that teams that need to choose whether
+to move to a microservices solution should ask
+themselves two questions: Are we technically
+ready for that? And are we organizationally
+ready for that? Because if I have to split
+my monolith into microservices and the team
+doesn't have full control end-to-end
+on a service, it could be a problem.
+What do you mean by organizationally ready?
+The team must be autonomous over the service
+that you have to manage. And organizationally,
+the team must be business-aligned - it's not
+just about technical stuff. The technical stuff
+is already hard because you have network latency,
+consistency, communication, and
+distributed changes. It's much easier
+to have communication inside modules within
+the monolith instead of having distributed
+services around the globe or even in the
+same server farm where they are decoupled.
+But we tend to oversee the organization itself. I
+have to be autonomous, I have to be in control of
+my service, and the business must be aligned
+between the bounded contexts because every
+service represents a bunch of concepts,
+and the teams working on them have to be
+perfectly aligned. It's not always easy to do.
+That's right. And that's why in your book you
+mentioned modular monoliths as a stepping
+stone or architectural waypoint to get
+to microservices if you really need it in
+the end. From a domain-driven perspective,
+a modular monolith - the modularity part
+- is really giving us the boundaries and
+the understandability of the code, making it
+easier to transition to the next step, right?
+And it allows you to explain how things work.
+If you are not able to explain how things work,
+how things are connected, you cannot move
+to microservices and increase complexity.
+So it's better to have a really well-made
+monolith - then it will be much easier
+to move to microservices because you already
+have independent modules inside your monolith.
+So it's much easier to take a module and
+transform it into an independent service.
+You can do this one step at a time. We repeat the
+same theme: baby steps, baby steps, baby steps.
+If you remain in your monolith solution and you
+receive a request for a new feature in a specific
+module, it's much easier to implement this feature
+because you have to work on these independent
+modules inside your monolith. You don't have
+coupling with the other modules, so introducing a
+new feature in your solution is easier - it's not
+so hard, it's not difficult, it's not impossible.
+Plus if you took another delightful walk and got
+cold feet about your boundaries, it's way easier
+to change a modular monolith. And you've already
+split into 10,000 microservices and new. Yeah,
+it's difficult to rework that piece. Right. So
+it's kind of postponing the important decisions
+to the last responsible moment in a way.
+Let us say that the only thing a big bang
+rewrite guarantees is a big bang.
+And I think that's what they said.
+Another big topic is that I've seen financial
+institutions and a lot of big organizations
+having an API movement. A lot of the legacy
+functionalities and capabilities have been
+API enabled. And the next step for a lot of
+these organizations is to move toward a more
+event driven architecture. Could you unpack
+this piece? How would domain driven thinking
+help companies better position themselves
+on this path from API enablement to a more
+large scale, event driven architecture?
+First of all, you can apply domain driven
+design without forcing your code to use event
+architecture, because many developers think,
+"Oh, if I implement domain driven design, I have
+to know event driven architecture." No, you can
+apply domain driven design and then we found the
+way to do that in more infrastructure because
+we deploy on cloud most of the time, and using
+different services that communicate between them.
+To say that we need to use a different
+pattern to communicate between these services,
+these microservices, and event driven is a good
+way because it guarantees loose coupling of the
+services, but introduces a new problem you have to
+deal with: eventual consistency. You have to deal
+with separate databases for each microservice.
+Each microservice has to have its own database.
+It's impossible to have more than one
+microservice that uses the same database
+because it's not microservices.
+It's a distributed monolith.
+It's possible to create a solution.
+You need databases and more services,
+but there's no microservices - it's another kind
+of solution. And all of these combinations of pros
+and cons that you have to evaluate before moving
+to microservices, to event driven architecture.
+Even though this is one of my favorites for sure,
+it introduces new knowledge in your company. Do
+you know how to manage these kinds of problems?
+Do you know how to manage eventual consistency?
+How do you know the different messages that
+live in your microservices and the messages
+that live outside your microservices are totally
+different messages with totally different scope,
+with totally different meaning?
+They contain different information.
+That's very important. A domain event is
+not the same as integration events. From
+the technical point of view, they're classes
+with immutable properties, but the content of
+one is different from the content of the second
+one. So please move to microservices when you
+really know all these small but important
+differences. They seem small, but are not
+so small - they're small from a technical point
+of view, but not from a business point of view.
+I would say use it where it really matters.
+Because if you have real bottlenecks in some
+places of your application, it makes sense to
+move to events, for example, for reporting or
+background tasks. You can use events, but if
+your system works perfectly fine with an API,
+with a synchronous API and it works fine,
+why change it if there is no value in it?
+As our method was saying, it's just a need for the
+developer - a new technology like most frameworks
+and usually they end up in the same way.
+Right. So we really need to distinguish between
+the essential business complexity, compared
+with our fascination with tooling complexity,
+with patterns and so forth. That brings me
+to one of the more subtle points you made in
+the book. There's a graph in your book about
+code complexity. How inexperienced developers
+write easy code, while experienced
+developers do not write complex code,
+but they aim for simple code, which isn't
+always easy to write. What do you mean by that?
+This is for Alberto. Because
+I think this is yours.
+When you finish your college university and you
+start to introduce yourself in the work world. You
+join a big company and you know a lot of patterns.
+You want to apply all these patterns. "Oh, I know
+this pattern. I have to apply this pattern in my
+code. I know patterns that Alessandro taught me.
+I have to apply this pattern." And if you paint
+this in a graph, you can see the code complexity
+growing very high. When the time that you
+spend working on code increases, you discover
+that you have to apply the right pattern at
+the right moment, not all patterns together.
+But then when you really need to use that pattern,
+your code complexity starts to decrease. At the
+beginning, you are in the easy way. That's not
+simple. The easy way is the best way to create
+a big ball of mud, because you need patterns or
+what you learned at the first time that you work.
+At the end of your path, you are in the simple way
+when you apply the right patterns and introducing
+a new feature or modifying the structure or
+modifying whatever you want is simple. But
+creating something that is simple is not easy.
+That's right. I guess what you're saying is we've
+all been there. We've all gone from writing
+naive code and being totally in love with
+all these patterns and architecture, and we have
+to use them. And then at a point in our career,
+we realize that simple is better. Simple is not
+naive. Simple is actually that option that gives
+us adaptability to change. So it's okay, we've
+all been there. Get ready on your own path.
+So we've covered a lot of ground
+already. Before we wrap up this episode,
+let's turn the spotlight back to the two
+of you. Where can people follow your work
+and connect with you, Alessandro and Alberto?
+On LinkedIn. We usually share everything on
+LinkedIn. There's not too many social people with
+LinkedIn is something we share. And we have our
+profiles on LinkedIn or on top of some mountains.
+And the code repo, the link is in the book.
+We have also another repo that we have all the
+example codes that we use in our workshops and
+experiments. Everything is inside there.
+So you can take a look. I will share it.
+We will definitely include that in the
+show notes. So what's the next chapter
+for the two of you? Any new experiments,
+workshops or collaborations on the horizon?
+We are working. We started working, of course,
+on AI. We are trying to create something with
+AI to help developers in understanding domain
+driven design, understanding bounded context,
+and trying to move from event storming to
+something that makes sense from a code point of
+view. Because AI can write code, yes, of course.
+But how about understanding a bounded context?
+How about understanding the correct domain
+events to use? So we are experimenting with
+it. We will be able to create something that
+can help us move faster, or at least that can
+give us some insights to understand the domain.
+Because AI, at least in my opinion, right now,
+isn't able to do that because every domain is
+different, every problem has a different solution
+because the variables in place are different. So
+you can't rely on AI because it seems like the
+same problem that I had the last time. So, okay, I
+will use the same code, the same things. So yeah,
+we are experimenting on that and it's fascinating.
+Let me know when you're running the first
+workshop. I will be there for sure. I
+guess this will be the last question.
+Is there anything we didn't cover today that
+you might want to add? Or any final thoughts
+you want to leave our listeners or viewers with?
+Don't be lazy with domain events and integration
+events, because they're not the same.
+They're not the same thing. Yeah.
+Don't be lazy.
+Yeah, there's a good cliffhanger if you don't
+know the distinction between integration events
+and domain events as Alberto already mentioned.
+Go and check out the book and don't be lazy. What
+about you, Alberto? Do you have something to add?
+Don't be lazy is my summary. The master has a path
+to improve your skills. So don't be lazy. It's for
+sure the best way to close these sessions.
+Yes.
+That's a great closing punchline. Don't be lazy.
+And that will be a wrap for today's book club.
+Alessandro, Alberto, thank you so much for sharing
+your stories and insights. I have definitely felt
+your energy today all the way through. And to
+our viewers and listeners, if you are listening
+to this in your car, on the train, during a walk
+or on a run, if this episode sparked any new ideas
+about refactoring or about TDD, we hope you will
+carry this curiosity forward and consider maybe
+adding domain driven refactoring to your summer
+reading list. You will find links to the books,
+code examples, repos, and where to follow these
+two amazing people in the show notes below. And I
+guess that's all, folks. See you next time.
+Thank you. Bye.

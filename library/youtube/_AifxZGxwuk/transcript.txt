@@ -1,0 +1,136 @@
+Hey everyone, we now have playwright
+agents, the next step in MCP evolution.
+Agents can generate a test plan, then
+generate tests based on that plan, and
+if those tests don't pass, a healer
+agent can debug and fix them. Let's dive
+in and take a look.
+To get started, run npx playright init-
+aents-loop
+equals and choose the loop you want. I'm
+using VS Code, but you could also use
+clawed or open code.
+This will generate the agents for you
+along with a seed file. The seed file is
+used to seed your test and will be
+copied into your tests by the agent. You
+can leave it blank, but if you have
+fixtures or setup tests that need to run
+before the test, this is where you add
+them. In my movies app, I have a fixture
+that creates a page with a list of
+movies. I want this to be the starting
+point for my tests. I've already created
+it, so I'll paste it in here. You can
+see I'm importing the list test for my
+helpers and setting the page to the list
+page fixture.
+Let's run this to check if it works.
+I'll run my setup test first to log the
+site and click show browser to see the
+test in action and make sure the agent
+can access the movie list page.
+It logged in, created a list, and added
+three movies with images. Perfect. My
+seed test passes. Let's uncheck show
+browser and setup as we are using
+storage state. So next time we run our
+tests, it will already run from a logged
+in state. Now we can commit those
+changes and start working with our
+agent.
+The first agent we'll use is the
+playright planner agent.
+We want to create a test plan for our
+movies list. Let's ask it to generate a
+plan for managing the movies list and
+save it as movies list plan in the specs
+folder.
+You can see I have the seed file open.
+So, it's been added to the context,
+meaning the agent can access it. I've
+sped this part of the video up, but you
+can see the Playright planner agent
+navigates to the site, logs in, creates
+the list page with three movies, and
+then continues to explore the website,
+analyze the managing list feature, and
+generates a test plan.
+Here it is. The test plan looks amazing
+and with a lot of scenarios that could
+be tested.
+I could generate everything in it, but
+let's just pick one section. Adding
+movies to a list and generate tests for
+that.
+First, let's commit the plan. Then open
+chat mode and select the playright
+generator agent.
+We'll start a new chat for a clean
+context. And you can see the movies list
+plan has been added to the chat context.
+Now, let's ask our playright generator
+agent to generate tests from the test
+plan for the section we selected
+earlier.
+I've sped this part up again, but you
+can see how it's navigating to the site
+and running through each of the
+scenarios from the plan, checking
+through the logs before it generates any
+test files.
+And here we go. Three test files.
+Amazing.
+Looking at them, you can see on the
+first line of the test that the page
+equals the list page. That means my
+fixture from the seed file was correctly
+used when generating each of the tests.
+They look great.
+Let's commit them and then run them.
+It looks like a couple of tests passed,
+but one is timing out.
+The error says the locator click target
+page context or browser has been closed.
+We could debug manually or debug with
+AI, but instead let's use the playright
+healer agent. We can start a new chat,
+choose the Playright healer agent, and
+ask it to fix the failing test.
+I've sped this part up, too. The
+playright healer agent ran the test in
+debug mode, checked the console logs and
+network responses, and noticed the test
+was looking for a movie called
+Inception, which didn't exist in the
+API. It confirmed the API was working
+and returning movies. But since
+Inception wasn't one of them, it
+selected a different movie that did
+exist. Impressive.
+The debugging has finished and the test
+is now working. Looking at the git diff,
+you can see inception was replaced with
+a search for inside and it verified the
+movie inside out 2 was visible. Looks
+great.
+Let's run the test ourselves to verify.
+And it works. The playright healer agent
+has done its job and fixed the test. Now
+we can run all our tests just to be
+sure. And they all pass.
+This is pretty amazing. We can commit
+these changes and continue generating
+more tests from the plan. And that's it.
+That's playright agents, playright
+planner, playright generator, and
+playright healer. I hope you've enjoyed
+this video. Remember to start using
+Playright agents. Update Playright to
+the latest version by running mpm
+install-d
+playride/test at latest and then run the
+agents command with your chosen loop mpx
+playright init- aents-l
+equals vs code claw or open code. Happy
+testing with AI and playride agents.

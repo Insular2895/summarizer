@@ -1,0 +1,978 @@
+Nikolay: Hello, hello, this is
+PostgresFM, episode number 54,
+right?
+And today it is my turn to announce
+the title, although, like, we
+mixed everything after vacation.
+Michael had a vacation and we mixed
+everything so Michael chose
+this topic. I wouldn't do it but
+I need to announce it: connection
+poolers, pooling right, yeah yes.
+Michael: well I think this is a
+really important topic for PostgreSQL.
+So I'm keen to talk about
+it, but I also am aware that
+I need to get back into my reputation
+of picking topics that
+you find boring.
+So that was my main goal here.
+Nikolay: It's not as boring as
+others.
+Michael: Oh, damn.
+I can do better.
+Nikolay: And I think it's not only
+important to Postgres, it's also important
+to any database system and it's
+also important to how applications
+work with a database system.
+Michael: Yeah, so should we talk
+a little bit about why first
+before getting into some of the
+details?
+Nikolay: Well, I think today we
+don't need it because we have
+application poolers on the application
+side.
+Michael: Yeah, so what the question
+is, why do we then?
+Why do we need something on the
+protocol side in addition?
+And actually, I know we often...
+Let's start
+Nikolay: from the application side.
+Why do we need it on there?
+Because to create a connection is
+very expensive.
+Michael: Yeah, there are a few different
+types of overhead, aren't
+there?
+You know, in terms of latency,
+in terms of server, like, resources.
+And yeah, in combination, I guess
+at the beginning you could
+argue you don't.
+If you only have a few users, maybe
+5 users of your little application,
+a tiny little database server...
+If you have just
+Nikolay: a hundred users for example,
+working simultaneously.
+Michael: Yeah, then you don't need
+anything.
+No application pool, no database
+pool.
+Continue happily with your simple
+setup and probably don't do
+anything.
+Nikolay: If you have 100 users
+and 90 of them have very slow
+connection, for example, some internet
+in California and they
+work remote, like from running
+the application on their home internet
+connecting to your database somewhere
+and you have only
+8 cores probably you already need
+pgBouncer or something.
+Michael: Good point actually, slow
+queries as well, even if it's
+not necessarily slow connection,
+but really long running queries
+is an interesting point as well.
+But yeah, let's, in fact, actually,
+worth mentioning a lot of
+application frameworks come with
+connection poolers by default right so
+even if you don't do anything there's
+a chance that you're using
+one.
+Nikolay: Because we know Postgres
+is slow right?
+Michael: Yeah, that's the focus.
+Connection is
+Nikolay: slow, not Postgres is
+slow.
+Let me apologize.
+Postgres is very fast.
+But connection creation is slow.
+Michael: Yeah, and until recently,
+the overhead of each connection
+was relatively high in terms of...
+Nikolay: Until the Postgres 14,
+right.
+Michael: Yeah, so is there a little
+bit of a...
+What's the advice, what's the standard
+before that version and
+a different standard afterwards?
+Does it just change the threshold?
+Nikolay: Yeah, like some kind of
+rule.
+Take your number of cores and multiply
+by 2, 3, 4, 5, and this
+should be your max connections.
+Don't go above it.
+For example, if you have an Intel
+server with 96 cores or 128
+cores, probably you shouldn't go
+above 500.
+But it was before Postgres 14,
+which now has improved work with
+snapshots and connection scalability.
+And probably you can go, well,
+I saw before people went to 1000,
+2000, I saw 3000 with servers like
+96 cores.
+I told them it doesn't feel good,
+they said, but we are fine.
+I said, okay, let's check just,
+let's just run PgBench in its
+silly default behavior load testing,
+I mean stress testing when
+it tries to max out and consume
+all resources.
+And if you have additional thousand
+idle connections, you will
+see how overhead affects you and
+it's easy it's a test you see
+the PgBench TPS latencies
+in this case, TPS usually the
+main metric and then additional
+thousand connections and you
+see like a 20, 30 percent penalty
+I don't remember details but it
+was like something like that. So
+this is your price you're paying
+constantly.
+You make your server do additional
+work it could avoid.
+And interesting that in that particular
+case, they had...
+They resisted installing pgBouncer
+because it also said we
+have a Java application, we have
+a connection pool.
+It was something interesting.
+I don't remember.
+It was an interesting name.
+There is a pool on Java side, on
+Java application side, so we
+don't need it.
+But you know the problem, right?
+Not only if your application works
+very far and connection is
+slow.
+This is one of the cases, but usually
+in good projects, this is
+not a problem.
+Usually application code is quite...
+At least in the same region as
+your database.
+But the problem is different.
+When they scale stateless nodes,
+they add more and more nodes
+and forget to...
+Okay, they say, we can scale.
+Let's multiply number of application
+nodes by 2.
+But they don't decrease pool sizes
+by 2.
+So more idle connections are created
+because active connections
+don't change when they just add
+nodes, right?
+Michael: Not immediately, no.
+Nikolay: Yeah.
+Well, they can grow over time or
+if there is some marketing campaign,
+they can spike of course. Load can
+spike but if they just add
+more application nodes with the
+same usage in terms of users
+doing some work asking for the
+database to do some work, these
+scalability efforts for those who
+are responsible for application
+nodes lead to significant increase
+in number of idle connections.
+And this is how you can end up
+having 2,000 connections on Postgres.
+And then you try to convince them
+to decrease pools.
+They also resist.
+Like, it doesn't feel safe for
+us.
+And like, OK, this is time when
+we probably need a connection
+pooler on database side.
+Michael: Yeah awesome so you've
+already mentioned pgBouncer
+that from my experience that feels
+like very much the de facto
+standard and it has been for a
+long time.
+I actually looked it up, do you
+know which year it was first
+released in?
+Nikolay: Well I can suspect it
+was around 2000 probably, 6-7
+or so.
+Michael: Yeah, great guess,
+Nikolay: 2007.
+Michael: Yeah that's when I've,
+that's the date I saw.
+Nikolay: I remember Oya and Mark
+O'Krean from, maybe I pronounced
+it wrong, I invited them to conference
+in 2007 or 8, the developers
+of Skytools and so on, because
+Skype was hot in terms of Postgres
+usage at that time because it was
+a big company with goals like
+we need scalability to a billion
+users.
+It was impressive.
+Not only pgBouncer, but of course
+pgBouncer is probably the most
+successful product they created.
+Michael: Yeah, and still to this
+day, pretty much the standard.
+It does seem though, in recent
+years we've had a proliferation,
+hard word to say, of other tools
+and of course there was
+Nikolay: a new generation of poolers.
+It's related to many reasons and
+one of the reasons is that pgBouncer
+became a true Postgres product.
+It can pass 5 years if you have
+major functionality proposed.
+Michael: Well, I guess to defend
+it a tiny bit, I feel like pgBouncer
+has a similar stability
+level to Postgres.
+I feel like issues are as rare
+and if you need something that
+is safe that has been battle tested
+for years, pgBouncer for me
+is still the number 1 choice. Now,
+if there are obviously newer
+ones that people are testing in
+very high but not necessarily
+testing but have developed for
+themselves in extremely high throughput
+environments that are clearly working
+for their case.
+But if I needed one tomorrow and
+didn't have the resources to go
+and test all the others quickly,
+or even properly, I would still
+pick pgBouncer myself.
+Nikolay: And which mode would you
+put it on?
+Michael: So this is...
+Okay, so let's get into the...
+Because it's not free, right?
+There are downsides to having a
+pooler.
+Nikolay: No, maybe let's mention,
+like we discussed this, there
+is a new generation.
+Let's mention some names.
+Michael: Yeah, okay great
+Nikolay: Because first I think
+in this generation was Odyssey
+from the Yandex team.
+It was several years ago and I
+know exactly why they decided
+to create it.
+It's also written in C, and the
+idea was our pull requests are
+not accepted fast enough in pgBouncer
+and also some things we
+would do differently.
+I think they use threads because
+pgBouncer is very similar to
+Postgres process.
+And I personally bumped into the
+issue of single CPU usage, not
+once, and it's very painful.
+So you just, you don't expect it
+if you don't monitor the single
+process situation risks.
+And yeah, usually it's like after
+you pass like 10,000 TPS
+on a single node, maybe 15,000.
+A single pgBouncer process is not
+enough.
+Yeah, and at that time, SO_REUSEPORT
+feature wasn't supported
+by pgBouncer.
+So you need to run pgBouncer on
+different ports and then you
+need to teach your applications
+to load balance basically.
+Or you need to put, some people
+put HA proxy for example as an additional
+layer.
+Everything sounds not good.
+SO_REUSEPORT, it's a very good
+feature.
+You know it, right?
+Michael: What was it, sorry?
+Nikolay: S-O-Reuse port.
+Michael: No, but it makes sense.
+Nikolay: So SO_REUSEPORT, it's
+a Linux feature which allows
+multiple processes to listen to
+the same port.
+So, a few years ago, finally, PgBouncer
+started to support it,
+and now you can just run multiple
+PgBouncers, configured to listen
+to the same port, and Linux will
+decide how to balance it.
+So you can go beyond 10,000, 20,000
+TPS and more and more and
+utilize all cores you want to utilize.
+If you run PgBouncer on the same
+machine, You of course take
+some resources from Postgres.
+This is also interesting topic.
+We should probably touch
+it where to run it because when
+we say closer to Postgres, it
+might be on the same machine or
+on a different machine and
+Michael: a lot of what I hear is
+that putting on different machines
+smart as long as it's close to
+the database.
+Like same...
+Some people
+Nikolay: say we lack structure
+in our podcast.
+I now see why, right?
+Because we jump, jump, jump.
+Well, Let's return to this topic
+as well.
+But mentioning new players, Odyssey,
+right?
+It's quite interesting.
+It has interesting features.
+Really interesting features.
+So like, I remember they presented
+it at PGCon a few years ago
+and so on.
+And it also quite battle tested
+in I think thousands of databases
+already, but I saw also complaints
+about some bugs.
+You are right, pooler should be
+very reliable.
+It's like a network.
+If some issue happens, it affects
+everything and it's global,
+global incident, causing global
+incident.
+But I think in many cases, as I
+already said, battle proven,
+polished, and so on.
+This I cannot say about new players,
+I think it should, you need
+several years of active usage and
+of course we have chicken vs
+egg problem because if people don't
+trust they don't use but
+they need to use to start trusting.
+But, okay, so new players are PGCat,
+right?
+PGCat.
+Michael: Yeah, so a really good
+blog post from the team at Instacart
+about adopting PGCat.
+So that's a huge deployment using
+it.
+So I'll link that 1 up as well.
+Nikolay: And it's written in Rust,
+if I'm not mistaken.
+And is
+Michael: that from the team at
+Postgres.ai?
+That's the...
+Yeah, great.
+Nikolay: And I especially like...
+I never used it yet, but it's in
+my quite short to-do to try
+when I finally have free time.
+Or probably I will try to use it
+in some projects I have.
+Why is it on that list?
+Because in February I created an
+issue in their GitHub repository
+with the idea.
+I've noticed these guys implement
+features very fast, developing
+very quickly.
+Impossible for, for example, pgBouncer,
+absolutely impossible,
+it will take a few years.
+So I asked them, like we, Postgres
+community, we like good features,
+mirroring.
+So we want, from connection pool
+or from this middleware, we
+want to receive requests to send
+it to the main server and pass
+back the result, but additionally
+send it to another server and
+ignore responses.
+It's a very good thing for testing.
+Besides reliability, the key metric
+for me for any connection
+pooling software is latency overhead.
+And it should be tested in a proper
+way, in my favorite way.
+Instead of running PGBench in normal
+default mode when it tries
+to maximize everything, you try
+to limit TPS to have same numbers
+of CPU usage and all resource usage,
+for example 25% up to 50%
+CPU usage, normal case for some
+loaded production for example.
+And then you just compare latencies
+you have with one middleware,
+one pooler, and another pooler.
+And this is how you...
+Ideally, a pooler should add a
+very small latency, like below
+1 millisecond.
+1 millisecond is already quite
+a big latency.
+Michael: Especially on OLTP, yeah,
+which is what we're mostly
+talking about.
+Yeah.
+Nikolay: Right.
+So I wonder with mirroring what
+will happen.
+It's very interesting and I just
+don't have capacity right now,
+but I'm very curious and I think
+this is a super interesting feature.
+So they implemented it like in
+a month.
+And already merged, already there,
+but I haven't tested it.
+If anyone needs similar functionality,
+because it can give you
+similar to like in blue deployments
+or realistic testing next
+to production, you create database
+like a clone, like primary,
+and you can just promote it at
+some point and at the same time
+you start mirroring.
+Some queries will fail, but it
+doesn't matter.
+If you have a lot of queries with
+big numbers, this testing will
+be much better than attempts to
+replay logs or something, yeah,
+so it's...
+Michael: when you said yeah when
+you said it was super interesting
+I thought you were trying to segue
+to the other the other one that
+Popped up recently being SuperBouncer.
+Nikolay: It should be SuperBouncer,
+but it's somehow called
+Supervisor.
+Supervisor means probably it, it,
+I don't know, like this, this
+name I would use like for for things
+like Patroni for example.
+Michael: Yeah I guess that is that
+I think that's actually part
+of their roadmap that
+Nikolay: maybe yeah well yeah it's
+ambitious and it's written
+in Elixir right?
+Michael: Yeah I didn't look that
+up.
+Fair enough.
+Nikolay: Yeah and also have Crunchy
+proxy and PGAgrol.
+Michael: Yeah I was gonna ask you
+about that.
+It looked like CrunchyProxy hadn't
+been worked.
+Last I saw it was like a beta from
+2017 or something.
+Nikolay: Abandoned?
+I didn't think...
+Maybe.
+I never
+Michael: touched, never tried,
+Nikolay: I don't know.
+I tried Odyssey, I'm going to try
+PGK definitely.
+And I use a lot of pgBouncer.
+Also there is RDS proxy, but we
+are not going to discuss proprietary
+software on this podcast, right?
+Unless it's a special event, like
+let's discuss proprietary software.
+So out of list.
+But RDS proxy, they have interesting
+feature.
+Like We need to look at proprietary
+things sometimes, because
+it can give you insights if you
+develop your own tool.
+It has a super interesting feature.
+When they started to develop AWS
+RDS, They started to develop
+for Aurora a global database, a
+multi-region setup.
+Secondary region is read-only,
+right?
+And you put RDS proxy there, and
+local connections are constantly
+just reading.
+But what if they want writes?
+Our primary is in a different region,
+what to do?
+So RDS proxy can accept write,
+I mean, receive write, then go
+to primary instead, perform this
+write, wait until this write
+is propagated to local standby
+server, and then read from it.
+Maybe not from it.
+I may be mixing some details, but
+it's a very interesting concept
+of inverted load balancing.
+Instead of saying, oh, this is
+a right, let's go to that node.
+No, no, no, we go to our node always,
+but there we have some
+magic to create right and wait
+until it propagates, interesting
+concept.
+So, yeah.
+Yeah, indeed.
+Subtitles:
+Michael: So I was going to ask you a question around this.
+Do you know, like, why are there so many of these projects?
+Why do they seem to all have similar goals, right?
+Like, we want something that pgBouncer doesn't support.
+We've got a couple of extra requirements, why not work together?
+Are they all very different?
+Nikolay: Because Cathedral versus Bazaar, as usual, open source.
+It's normal for open source to have many, many, many competing
+attempts because People have different views.
+If it was a single corporation, of course, it would immediately,
+like, unless sometimes the competition is provoked inside corporations
+as well, like 2 teams competing, but not 10 teams competing,
+right?
+But usually in case of corporation or cathedral model, we have
+a roadmap, name already defined, approved by management and so on.
+On.
+Here we have many teams with different views, different needs
+and trying to fulfill these needs.
+I think it's similar to what we had with autofailover and backups,
+backup tools.
+A few leaders will survive and probably remain, I think.
+Michael: Yeah, I've not been around long enough to know that
+there were loads of different backup options.
+Nikolay: What about autofailover?
+What about replication systems before replication went to Postgres
+9.0?
+It was an opinion of Postgres developers that replication should
+be outside, always.
+Replication, can you imagine?
+So we had Slony, then the same Skype guys created Londiste.
+I used both, and it's kind of painful.
+Also, Bukardo and many others.
+Michael: Yeah, of course.
+I just remembered.
+Nikolay: And then it went to the core.
+Right.
+Backup system is slightly different, but we now have obvious leaders,
+WAL-G and pgBackRest.
+Michael: And still Barman.
+Nikolay: Barman, yes, many others, yes, but leaders are these
+2.
+Barman is much less in terms of popularity in my opinion at least
+around me.
+I of course am biased.
+Michael: Well, I see most I see most using BackRest still but
+I think WAL-G for huge clients.
+Nikolay: I can see why that's...
+Michael: Maybe BackRest is
+Nikolay: more popular, maybe, but I have a lot of WAL-G cases as well.
+well.
+And WAL-G already, I think, out
+of consideration and some others
+also.
+And about auto-failover, also auto-failover
+should be outside of
+Postgres.
+Okay, it's still outside.
+And we have obvious leader, Patroni,
+and many attempts to change
+it, but in this case I think the
+leader is like one big leader,
+and that's it.
+So here I also expect, we have
+a long-term leader, pgBouncer,
+but many attempts to compete.
+And these attempts are from the latest
+years, and I'm not sure what
+will be the result, because of
+course...
+And they also have pressure on
+pgBouncer as well.
+I observe it very closely.
+Michael: Well, yeah, you sent me
+a pull request that seems to
+be making progress.
+There seem to be some signs that
+pgBouncer may speed up a little
+bit or may get some of these improvements
+and maybe as it does
+get some of them...
+Nikolay: Prepared statements for
+transaction mode, right?
+Yeah, exactly.
+For transaction mode.
+Michael: Which is...
+So transaction mode, In fact, yeah,
+this is where we focused up,
+right?
+Transaction mode's the default,
+right?
+And it's what most people use as
+far as I've seen.
+Nikolay: Honestly, I don't remember
+default.
+I know, like, let's start with
+session mode because it's easier.
+So the simplest mode, like, you
+have your session, you always
+connect it to the same backend,
+Postgres, backend means Postgres
+process, through this pooler, and
+it never changes.
+Context never changes and so on.
+Good, then you say, I'm going to
+disconnect, okay.
+It's also beneficial by the way,
+you know why, right?
+To fight with idle connections,
+for example.
+Michael: Pardon me?
+Nikolay: To fight with idle connections,
+for example.
+So we still, like, we don't need
+to keep a lot of idle connections
+to the database.
+We disconnect faster if not needed,
+for example.
+Michael: Yeah, but the benefit
+of the session mode, I mean, obviously
+it has more overhead, but the downside,
+I always thought the upside
+was, sorry, the benefit was
+you get the session-level features
+like prepared statements, that
+kind of thing.
+Nikolay: Right, but prepared statements
+can be implemented for
+transaction mode as well.
+Michael: But historically haven't
+been in poolers.
+Nikolay: There are already three pull
+requests in pgBouncer repository,
+so hopefully it will be soon there.
+I don't remember, but I think ODCI
+supports it.
+I might be mistaken, I remember
+discussions, but I don't know.
+Michael: I think
+Nikolay: at least
+Michael: one of them was started
+partly to support, that was one
+of the main features they wanted,
+but I can't remember which
+one.
+Nikolay: So transaction mode is
+the best, why?
+Because we can reuse backend to
+do something, to serve some other
+requests, some other transactions
+between transactions in the
+same session.
+So you connect it, one transaction
+happens on one backend, Postgres
+backend, then we have some inactivity,
+for example.
+It's not an idle transaction, it's
+an idle session.
+I mean, it's regular idle.
+We like went somewhere to do something
+like an application code
+or something else.
+And during this process backend
+can be used by other sessions,
+by other transactions.
+So it's, we can, how it's called,
+multiplexing or something.
+So like it's, the backends remain
+not busy less time.
+They are most of the time busy in this
+case.
+Like it's more efficient.
+Michael: Higher utilization of
+our cores, of our resources.
+Nikolay: Right, right.
+And the statement mode is kind
+of strange, because you can switch
+to different backend within a
+single transaction, and it doesn't
+sound well.
+Well, in some cases it probably
+will suit, but in general it's
+not safe.
+Michael: Yeah, I don't know any,
+I don't, I've not seen a project
+that's used it.
+I suspect there is a use case,
+Nikolay: but.
+Just for completeness, I guess.
+Yeah.
+It exists.
+So transaction mode is what we
+usually want for best efficiency,
+but in some cases, session mode
+also makes some sense.
+For example, also, pgBouncer
+is responsible for working with
+slow clients because Postgres already
+generated result.
+We shouldn't keep Postgres backend
+busy just while we transfer
+data.
+It's better to transfer it from
+pgBouncer and backend can
+do something else.
+Or just not do it at all.
+Or be
+Michael: ready at least, be available.
+Nikolay: Right.
+So yeah, transaction mode.
+And prepared statements.
+It's like the sweet spot many people
+want.
+Because prepared statements of
+course help with performance as
+well.
+Michael: I saw a really good write-up
+recently from JP camera
+of the...
+They felt that they've often read,
+oh, if you get to a certain
+number of connections you should
+just use pgBouncer and this
+and the advice was quite limited
+or only very like it said it
+as if there were no downsides and
+they've gone through a very
+thorough blog post of all of the
+downsides that they've come
+across.
+And I'll share that in the show
+notes.
+Nikolay: What do you remember among
+the downsides?
+What's interesting?
+Michael: Well, I think these ones
+were the biggest.
+Let's have a quick look.
+Nikolay: Well yeah.
+Michael: Lock timeouts, statement
+timeouts.
+Nikolay: Application name usually
+challenging because I remember
+from old days I remember pgBouncer
+hides application name
+and IP address or something like
+that.
+Like you need to do special tricks
+to keep it.
+But in general, pros outweigh cons
+if you have a lot of TPS.
+Michael: But like 1 of the good
+points they made is something
+I think you've often talked about
+is having timeouts for things
+so in general, you timeout things
+very quickly but then you can
+override it from time to time for
+maintenance tasks.
+But if you've already set that,
+you can't override anymore if
+you're in transaction mode, unless
+you connect around the pool.
+So if you want to go through pgBouncer,
+you can no longer use,
+set a longer timeout for this maintenance
+operation.
+So I think that was a really good
+point that I hadn't seen mentioned
+elsewhere.
+Nikolay: Yeah, but also features.
+For example, A good feature is
+that pgBouncer can give you an
+understanding of how many QPS you
+have and the average latencies,
+because Postgres doesn't have it
+in internal statistics.
+This is strange, but only TPS and
+that's it.
+Even latencies are not recorded.
+Unless you deal with pg_stat_statements,
+which is limited, because
+it has a max number of queries,
+right?
+But pgBouncer constantly writing
+it to logs, TPS, QPS, latencies,
+and also it has internal statistics.
+It's implemented in an interesting
+way.
+You can connect with PSQL to it
+and say show stats, show help,
+show everything.
+Show servers, clients, and so on.
+And when you want to join it, I
+want, for example, to take 1
+information to join with something
+else.
+In this case, pause will succeed and
+it will return control to you.
+And in this situation, you can
+restart pgBouncer in the background,
+and then say resume, and users
+notice only some spike in latency,
+and that's it.
+It's like kind of almost 0 downtime,
+minor upgrade or restart.
+Of course, it also helps, we shouldn't
+forget that it helps with
+restart, because restart can take
+a lot, Postgres restart can
+take a lot, because of checkpoint,
+it's called shutdown checkpoint.
+If you tuned your checkpoint, for
+example, increased max_wal
+size significantly, shutdown checkpoint
+might take a lot of
+time.
+And in this case, you should issue
+explicit checkpoint before
+you perform attempt to restart
+Postgres or shut it down.
+And in this case, it will be much faster.
+Because shutdown checkpoint will
+have almost nothing to do because
+your explicit checkpoint already
+did something.
+So you need to engineer this anyway,
+right?
+Because it's not easy to use in
+general case under load.
+But then after you start, you say
+resume, that's great.
+But also you can substitute Postgres
+node if your pgBouncer
+is running on different node or
+you can reroute it or something.
+It can be different node.
+It can be different Postgres major
+version.
+Michael: Yeah, that's a good point.
+So I mean, I think I saw this as
+1 of the main goals of the supervisor
+project, is to be able to, I think
+for them, it's not so much
+about major version upgrades or
+even minor version upgrades.
+It was about changing the resources.
+So if you wanted to go like if
+you wanted to increase CPU, like
+if you, I think a lot of these a
+lot of these providers have done
+some clever stuff behind the scenes
+just to be able to resize
+disk or resize memory, like
+you know, different things. But yeah,
+it's a thing between, it's
+like middleware, isn't it?
+It's like a, it could almost be
+a little queue for a while, even
+if it's only for a second or two.
+So yeah, very clever.
+Nikolay: Right, so, summary.
+pgBouncer is the king, but
+who knows what will happen next,
+because we see some candidates
+around.
+Michael: Yeah, beginning of game
+of thrones.
+Nikolay: With interesting ideas
+and implementations.
+Let's see, it should be an interesting
+competition.
+Michael: Last question, because
+I know it's a quick one.
+Should this be in core?
+Nikolay: Of course.
+Konstantin Kuznik is a guy who
+I know tried to implement it.
+I remember I was reading very long
+threads, but it's obviously
+very hard to convince people on
+details.
+And also, well, I think Postgres
+will have it right after threads.
+Michael: Okay.
+Subtitles:
+Nikolay: So that's an internal
+pooler, that's it.
+But remember, if you implement
+it inside, you lose these benefits
+of running it outside.
+Because this rerouting, for example,
+is a good reason to...
+Like, there are pros and cons to
+run it on the same node, very
+close to Postgres or on a different
+node.
+Michael: Yeah, it makes sense.
+Awesome.
+Nikolay: Good, Thank you.
+Michael: Thank you so much, Nikolay.
+Nikolay: I hope it was requested
+by users and I hope it is interesting
+to someone.
+Michael: This was requested and
+I'll follow
+up those.
+Nikolay: Next time my choice, I will work
+hard on choosing a new topic.
+Michael: Nice.
+Thank you.
+Take care everyone.

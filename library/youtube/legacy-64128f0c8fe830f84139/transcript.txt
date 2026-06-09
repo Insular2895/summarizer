@@ -1,0 +1,599 @@
+[Music]
+hello and welcome to guiding assets the
+flagship investment podcast for CFA
+Institute I'm Mike Walberg and I'm
+looking to do some myth busting on the
+show today with Dr Edward mcor professor
+amortis of the leevy School of Business
+at Santa clar University a charter
+holders you may have seen Dr mccc's
+article in this quarter's financial
+analyst Journal which takes aim at a few
+of the assumptions we tend to hold dear
+in financial markets including that
+stocks can be dependent upon to
+outperform bonds over the long term and
+that a negative correlation between
+bonds and stocks will help
+diversification work its magic on
+portfolios Edward will be discussing his
+research on an upcoming panel with CFA
+Institute alongside research Titans
+Roger ibbitson Jeremy seagull Rob Arnett
+and others but we are happy to get our
+questions in early welcome to the show
+professor oh thank you Mike it's a
+pleasure to be here today now there's
+lots we're going to cover today but I
+want to start with the what and and how
+that enabled you to poke holes in 60
+years of established portfolio Theory so
+I'm tempted to ask what have you done
+all right but but before we get to those
+conclusions I'll take the mo emotion out
+and ask it as what did you do to improve
+the
+data all right so what I did uh Mike was
+I took the US stock and bond record back
+to
+1792 and I generally get two reactions
+when I say that and the first is there
+were stocks and bonds trading in
+1792 and the answer to that is yes and
+then the second question is hey didn't
+Jeremy seagull already do this and the
+answer to that is yes but I had a huge
+advantage over Professor
+seagull I came very late to the party
+okay I came came 30 years
+later and the availability of older
+historical data on stock and bond
+returns has drastically expanded since
+the early 90s when Jeremy first put
+together his thesis of stocks for the
+long run and to be very clear to your
+listeners I didn't collect anything
+after
+1925 okay this is all pre 1925 dat
+that's where the picture changes okay
+and in terms of just to anticipate a
+question that is now in the viewers
+Minds well what's different okay what
+changed in the new data well what I
+found was that sometimes stocks beat
+bonds sometimes bonds beat stocks and
+much of the time stocks and bonds
+perform about the same
+and here's the if you will revolutionary
+finding those three statements hold
+regardless of holding period they hold
+for 10 years they hold for 20 they hold
+for 30-year holding periods on and on
+Wow and I do want to dive into each of
+those different conclusions that you had
+there in terms of what you actually
+uncovered on that earlier data you I
+know you did a bit of digging around
+dividends you address survivorship bias
+can you talk a little bit about that so
+I would guess that um millions of people
+have read the additions of Jeremy
+seagull's book stocks for the long run I
+would guess over 10 million people have
+seen his iconic chart showing stocks
+going up up up
+up very few people went to the Journal
+of monetary economics uh paper from
+1992 and went to its appendix and said
+hey just what data did Professor seagull
+get here maybe only one person said oh
+he got it from Sydney Homer's history of
+interest rates uh the bond returns maybe
+only one person said oh I got a copy of
+Homer's book here where did Homer get
+those yields ah he got them from
+Frederick McCullen ah where' he get
+those spawn yields oh he got it from
+Joseph G Martin in Boston Massachusetts
+published in 1898 and I'm thinking I
+grew up in Massachusetts what bonds did
+McCulla
+use oh hah hill we play them in track
+yeah tiny
+Berg well why are we resting 19th
+century Bond Returns on the 150,000 face
+amount of Tiny Town X in New Hampshire
+from 187 when there were railroads
+with you know Bond issues a 100 times as
+large then I kept digging and I found
+out that uh well those New England
+Municipal yields that seagull uses after
+1857 they're not observed mcau said you
+know I need to find the absolute lowest
+yield that could possibly have existed
+in
+1871 so I'm going to get a range of good
+Bond yields and then I'm going to draw a
+line down at the bottom as what I think
+the lowest yield would be so what I did
+did instead of seagull is I went back to
+the new digitized record and I said well
+let's collect the bond prices let's
+calculate the return from the prices and
+coupons not by interpolating from how
+shall I say mathematically constructed
+yields and that rate raed the bond
+return for the 19th century considerably
+from uh what Jeremy
+reported then to your point about
+survivorship bias as I said you know in
+1992 Jeremy used the best sources
+available okay but I got started in
+2018 and I had the great benefit of
+Richard Sila at New York University
+starting in the late '90s he'd gone back
+to um basically sent A team out to
+ransack every single library in the
+Northeast United States looking for
+newspapers before
+1860 and what he found was newspapers
+have been reporting stock prices since
+the 1790s it's always been news it's
+right there in the digit well for him it
+was right there in the paper record in
+the dusty archives so by the time I came
+along Siller has put together literally
+dozens and dozens a hundred or more
+stock series he's put them into a
+spreadsheet he's wrapped them up in a
+bow and there they are waiting for me
+missing two crucial bits of information
+that Sila did not collect number one no
+dividends number two no share counts
+hence no capitalization weighted total
+returns and that was if you will my
+unique contrib ution was I found the
+dividends and I found the share counts
+now I think we'll slow down the podcast
+too much if we dive any deepy here
+microphone back to you
+Mike thanks for that background uh
+Professor so you have better data now
+about dividend distributions you reduced
+the survivorship bias and you extended
+the time frame back significantly back
+to
+1792 now your article is littered with
+the term
+non-stationarity can you tell us what is
+that and how does that explain what you
+found in relation to stock performance
+correlations standard deviations and the
+role of dividend so like
+nonstationarity is a phrase that you use
+to shut down any dinner party
+conversation that you're at okay it's a
+academes for the relationships are not
+stationary they Bob around okay and
+let's take that uh stock Bond
+correlation that you mentioned which is
+so important to asset allocation in
+folio design you go far back enough in
+time not only do you not see a negative
+correlation or a zero correlation I can
+show you decades in portions of a
+century where stocks and bonds were
+correlated 90%
+.90 okay and then you know by just
+before the pandemic the trailing 20-year
+correlation was down to about minus. 7
+it jumps around standard deviation now
+a little confession for you here um
+Roger ibson stocks bonds bills and
+inflation yearbook I'm one of those
+people it's on the Shelf here where I
+can reach for it and I'm opening it you
+know on the my
+desk more hours than I care to tell you
+over the past five years and if you're a
+regular reader of the sbbi you know that
+the standard deviation of stocks is
+about 20% been that way for years in
+their record you go far back enough in
+time you can see the standard deviation
+of stocks down at about 12 or 10% or
+less no different than
+bonds so really the the point of
+nonstationarity is that anything you
+would use for portfolio design whether
+it's the relative return of stocks and
+bonds so-called Equity premium the
+correlation the standard deviation the
+contribution of dividends not stable not
+the same in the 19th century as the 20th
+century see and that was the Great Hope
+from seagull's initial
+research straight line all the way back
+200 years unvarying nothing ever changed
+new data lots of stuff changes yeah and
+and one of the effects of that lower
+survivorship bias was that it reduced
+the equity re premium to your point
+there it's still positive though um in
+in the US but it oh oh no no no no no
+Mike Mike sometimes is positive
+sometimes it's not right and that's and
+that's within and across different well
+not across different regimes but within
+certain regimes right so what what what
+causes do do do is it sort of the next
+project that you would look at to just
+to understand what causes certain
+regimes to behave in certain ways and
+and others and others yes indeed that's
+as we say in Academia a project for
+future research okay and uh what that
+means um um I wrote a conclusion section
+at the very end of the article and I
+kind of divied the conclusions into two
+conclusions for investors and
+conclusions for financial analysts and
+the conclusion for financial analyst is
+really the form of an
+invitation can regimes be predicted can
+we predict uh a stretch of time where
+equities are likely to underperform or
+where bonds are likely to outperform and
+and don't know yet and as a practicing
+academic I have to say you know
+efficient markets so maybe not yeah and
+I mean you talk to any number of quants
+and they'll they'll they'll often point
+you to the interest rate regime and
+whatever is happening in interest rates
+and
+obviously folks can point to the last 40
+years and a sort of a structurally
+declining interest rate environment and
+say okay that's given us exceptionally
+large returns from bonds relative to
+maybe their history and and certainly
+relative to stocks so did you did your
+research uncover anything about sort of
+that relationship between interest rates
+and and the returns not specifically but
+let me kind of uh Riff on your point
+there a little
+bit so I'm glad you pointed out the late
+bond market rally of 1981 to 2020 we may
+have begun Mike the Great Bond bear
+Market of the 202 20s not clear yet what
+is clear to me is that I'm sure in your
+business you know the phrase never
+confuse a bull market with brains okay
+and you know pretty much every investor
+alive today and in particular every
+portfolio manager alive today is coming
+off 40 Years of you know bond market
+bull market happen to coincide this time
+with a stock market bull market
+except for 1999 to 2009 let's not talk
+that or 2022 oh yeah yeah no well well
+they both went down that and uh so what
+you see when you broaden the lens to 200
+years of US history and I'm a consumer
+of research by Elroy Dimson and Brian
+Taylor and others on the international
+front but when you br in the samples you
+just you know it's mix and match with
+one exception there's only one
+multi-decade stretch in all of recorded
+history where stocks wipe the floor with
+bonds and that was the preceding Great
+Bond bear Market of 1946 to
+1981 which in the early years of the
+sbbi dominated the record making it so
+clear to Jeremy seagull and many others
+that stocks are destined to to beat
+bonds well yeah for those 35 years go
+back a little further things look quite
+different yeah cuz you've said that
+basically there there is that post World
+War II recency bias that's that's driven
+a lot of these conclusions right yes to
+the point where you've described it as
+these this relationship has been built
+on Sand indeed or not sand just you know
+left censored data from recent times and
+also us Centric data when I put the
+final article together for fa J or I
+believe they prefer financial analyst
+Journal when I put the final article
+together I you know I spent a lot of
+time on investment forums and I knew
+what the ordinary listener to your show
+was going to say when I introduced new
+and different Data before
+1860 you know you don't have to be
+Generation Z to say man that is too old
+that is too long ago I don't care and so
+that's why the international data pieces
+in there okay the international data
+piece the number of times that stocks
+have perform poorly
+overseas uh the number of times you find
+an equity deficit
+overseas that's easy to dismiss too for
+forgive me Mr Canadian but that's easy
+to dismiss too for the American investor
+because American exceptionalism who
+cares what those foreign investors got
+irrelevant to me so the beauty of the uh
+financial analyst Journal article is hey
+go back further in time in the US looks
+different go outside the US looks
+different
+maybe better data has really change the
+picture and that's what the paper's
+about maybe it's outside the scope of of
+this study but but say that was true
+that American exceptionalism you know it
+worked it worked in the past is it
+uh does it hold up on a go forward basis
+oh on a global basis particularly you
+know Elroy impson generally B bounds
+things at
+1900 and I use Brian Taylor's data from
+Global Financial data uh he takes things
+many countries well back into the 19th
+century but sticking with Dimson Marsh
+and Stanton their book Triumph of The
+Optimist in the credit SS updates
+they've been
+publishing you know us 1900 to 2020 X
+6.6
+6.7% real
+compounded World xus USA
+4.4% compounded now I hate those
+geometric means okay because they're so
+misleading your listener sitting there
+you know stopped at a stoplight thinking
+6.6 4.4 what's that
+difference 10 to1 wealth difference
+after 120 years 10 to one assuming you
+could stay invested that's that's
+constantly the the challenge in our
+industry as well right is to is to stay
+at the course so that you actually
+realize the 6.1 and not something half
+that oh and of course you could uh
+reinvest dividends in fractional shares
+with no commission cost right so so what
+what do you see then for the I mean we
+we've kind of talked in generalities
+about you know that it's not as clearcut
+it's not a sort of a r squar of 0.9 it's
+it's like there's in terms of the
+relationship between um the
+outperformance of of equities versus
+bonds what what's what's the scale of
+what we're talking about here like how
+how how upset are people going to get
+with your
+research I have found from the
+beginning that a lot of investors don't
+like it if you challenge the stocks for
+the long run thesis it raises their
+hacks what do you mean I'm not going to
+be able to double my wealth every 11
+years in the stock Market Jeremy seagull
+said I could you're saying I can't I
+think I'm going to believe Jeremy
+seagull okay because I like this idea
+doubling my wealth every 11 years 6.6%
+compounded okay and you know the for
+investors the the research has um has
+two two action implications if I may
+number one no matter what you're holding
+period you cannot be certain that stocks
+will beat bonds okay and I'll come back
+to this if we have time that stocks will
+beat long treasury inflation protected
+securities the new improved bond for the
+21st
+century you just you just can't be
+certain and if you think about it my
+research and that's going out 20 30
+years you still can't can't sort of Bank
+on that exactly the really revolutionary
+part of what I found is that holding
+period doesn't matter but if you're
+skeptical let me give you the
+theoretical case for why my data is
+probably correct okay and the case goes
+as follows investors demand a premium
+for bearing risk okay that's why stocks
+are expected to beat bonds you know
+because you're taking a risk you can
+lose money in stocks all right in the
+iisd and Seagal
+research US Stocks never recorded a loss
+over any 20-year period that they
+examine well I guess that means that
+stocks are not risky at 20-year
+Horizons but if stocks are not risky at
+20-year Horizons why should you harvest
+an excess
+return okay so number one the new
+findings of sometimes there's an equity
+premium
+sometimes there's an equity
+deficit sometimes you make a ton of
+money in stocks sometimes you don't okay
+they kind of solve a conundrum that had
+emerged from uh the diffusion of the
+ibison seagull research which was you
+know hey if stocks always win why should
+stocks always win there's no risk so
+what I found was stocks do not always
+win that means they're risky and that
+means on a probabilistic basis you're
+probably going to do well in stock
+particularly over the long term I have
+an adult child she's got a good job okay
+she's maxing out her 401k contribution I
+told her to put it 100% in stock and
+that takes me to um another question
+here I had for you Professor which is
+you know we are an industry that you
+know we do need to boil things down to a
+certain point like these these theories
+need to give us actionable tools and you
+know for portfolio construction you know
+a big one for that is the efficient
+Frontier we sort of construct something
+that tells us what we understand about
+the relationship between risk and return
+between different asset classes so what
+should the implications be for portfolio
+Construction in your view on this do we
+need to redraw that efficient Frontier
+Go I mean to your point there not all
+bonds I guess but you know what where do
+we go from here so what are the
+practical implications for the ordinary
+investor not the financial analyst
+writing a journal article trying to
+predict regimes but the invest trying to
+decide what do I do okay the first
+implication is that you know if you're
+not 25 years old with a 50-year Time
+Horizon you might want to go back to the
+Peter Bernstein portfolio listeners may
+remember that in 2002 he said you know
+all things
+considered 6040 is probably the way to
+go okay now in the ibison seagull World
+6040 means you must underperform form
+100% stocks in uh the new data World
+6040 means you're going to harvest the
+imperfect correlation between the two
+and you may not underperform by that
+much over particular intervals so that's
+the first practical implication uh the
+second one is simply to understand that
+yes on the odds
+probabilistically a stock investment
+held for the long term it's probably
+going to make you big bucks but it is a
+gamble it's a wager because at other
+times it won't and you have to be
+prepared for that and again and this is
+where I think financial advisers come in
+I think a lot of clients don't really
+understand their risk tolerance and the
+purpose of the paper is to say are you
+sure you're ready for 100% stocks have
+you got the stomach for it yeah and and
+I another thing I'd wanted to mention as
+well is I I know that as part of your
+research you you also looked at sort of
+the concentration of risk and where the
+sources of risk are within stock
+universes I think specifically you were
+looking at the US and comparing us
+performance versus t- Bills over over
+time and that there was actually a very
+strong concentration of where all that
+return was coming from that's actually
+the research from Henrik bessen Bender
+at Arizona State it's also appeared in
+the financial analy journal and he'll be
+on that panel that we're doing in a
+little bit and uh what Bess and Bender
+found was that in the United States Post
+4% of all stocks there were about 26,000
+in his database 4% of all
+stocks accounted for all the
+outperformance relative to t- bills the
+other
+96% you know just match the risk-free
+rate over their lifespan
+and so you take that back to the new
+historical research first of all the
+sample size is much smaller when you go
+before
+1871 when you go overseas before uh
+World War I Etc in a lot of the new US
+data even with my expanded record you're
+looking at samples of 25 to 50 stocks
+okay if there's one chance in 25 that
+you've got a stock are
+stock well randomly select some 20-year
+historical period and what are the odds
+that there weren't any Star stocks
+during that holding period in which case
+you would not expect stocks to to even
+beat uh bonds much less bills that's an
+astounding number that Besson vender
+uncovered like that really makes the
+case in my mind for for active
+management John Bogle as you know
+disagrees uh and seagull puts Bess and
+bid during the six edition of his book
+you can read it on page 85 but uh uh he
+says this shows that nothing but a
+broadly Diversified portfolio is safe
+there's no way to know who the 4% are in
+advance and be careful here Miker I'll
+have to quote upt anding clear to you
+well on that on that cue it's difficult
+it's it's difficult to make a man
+understand something if his salary
+depends on his not understanding
+it true enough true enough and let's
+talk about uh about our salaries no
+let's not talk about our salaries
+but that that was an awkward segue to my
+final question for the interview today
+and I'm going to adapt it a bit for you
+because you uh you know have a long
+history in in working in Academia and
+now research specifically in in
+financial services for the last 15 20
+years but if you think back to your
+first job wherever that was and if you
+could go back and take yourself for
+coffee on your first day what key piece
+of advice would you offer yourself in
+your 20s your 30s and your early
+40s you might as well go 100% stops okay
+because there's no Prospect assuming
+you're a prosperous individual there's
+no prospect that you have to touch the
+money then you can ride out the
+volatility as soon as your horizon
+starts shortening below 30 years or
+so you got to want to have to think
+about an asset allocation that includes
+fixed income okay doesn't have to be a
+lot we can debate what the fixed income
+Source should be you know in about 15
+years they're going to introduce this
+thing called tips and I would encourage
+you to take a serious look at it and I
+guess at this point uh my past self was
+called to his class session and uh that
+was the end of the coffee I've been
+speaking today with Dr Edward mccor
+professor emitis of the levy School of
+Business at Santa clir University an
+author of stocks for the long run
+sometimes yes sometimes no published
+this month in financial analyst Journal
+thanks for talking us through it today
+professor and good luck on your upcoming
+panel indeed I'll need it I'm Mike
+Walberg and this has Bean guiding
+[Music]
+assets

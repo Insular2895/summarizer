@@ -1,0 +1,53 @@
+you can run into a problem with
+typescript when you start trying to deal
+with uh optional arguments that you want
+to be optional in some cases an option
+not optional in others here we've got a
+send event function which takes in the
+event type which is this event type up
+here and an optional payload and this
+payload is not really optional because
+we need to pass it when we pass log in
+but not pass it when we pass sign out as
+you can see here
+and these ones should error because we
+shouldn't even be able to pass like an
+empty load here we should not be able to
+pass an incorrect payload so how do we
+handle this how do we make the
+function arguments different case by
+case well i'm going to do a little bit
+of here's one i created earlier this
+send event now takes in a generic which
+is the event type
+and here we do some crazy stuff based on
+that type
+we extract out the event and we extract
+out the event
+and the ones matching this so
+essentially this
+we check if there's a payload there and
+we infer the payload and if there is a
+payload on the event type that we've
+specified we say these are the two
+arguments type and t payload otherwise
+it's just type and this means that when
+we go to send an event
+whoops send events
+then we've got login or sign out
+and based on the one we choose let's say
+login
+then we need to specify the payload and
+it's all autocompleted for us but
+there's an issue here which is like on
+the autocomplete you actually have arg0
+and hugs1 which you don't want so you
+can actually use a named tuple here you
+can say type
+type payload payload and this is type
+type
+and now what you'll see is it's properly
+registered as the name of the argument
+there so it's kind of quite verbose this
+syntax but it's very very useful in some
+specific cases

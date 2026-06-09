@@ -1,0 +1,115 @@
+For most developers, GitHub is just a
+free place where they can store their
+code. But in 2018, Microsoft looked at
+that free tool and paid 7 and 1/2
+billion dollars for it. And today,
+analysts are calling it one of the best
+acquisitions in tech history. So, here's
+the question that should make you a
+little uncomfortable. What exactly are
+you giving them in return? And how is
+Microsoft earning from a free tool?
+GitHub was not originally developed by
+Microsoft. It was in 2018 when they
+bought GitHub for 7.5 billion dollars.
+And even before it was acquired, GitHub
+was already widely adopted. All the big
+projects were stored in GitHub. Around
+31 million developers used it every day,
+and there were already over 96 million
+repositories. Everything was good, but
+the big issue was that GitHub was not
+making money. And no matter how good a
+product is, you eventually need money to
+survive. And this is where Microsoft
+came in and offered to buy the whole
+company. But why would they buy a
+company that was not making money? And
+it's just brilliant how they planned the
+whole thing. Well, on paper, they bought
+a code hosting platform, but that's not
+how Microsoft saw it. The real business
+of Microsoft is their cloud platform.
+And cloud is a brutal market. Amazon had
+AWS, Google had its cloud, and Microsoft
+had Azure. All three were fighting for
+the same customers and gaining the most
+market capitalization. But here's the
+thing about cloud. The people who decide
+which cloud a company runs on, it's not
+the CFO, it's not the CEO. It's the
+developers. They pick the tools, they
+set up the infrastructure, and everyone
+else just pays the bill. Now, think
+about your own workflow. You write code
+in VS Code. You push it to GitHub. You
+run your CI/CD through GitHub Actions.
+You review pull requests on GitHub. Your
+entire daily workflow is already living
+inside Microsoft's ecosystem. So, when
+it comes time to deploy, what's the
+easiest option? It's the cloud platform
+of Microsoft itself, the one that's
+already connected and needs less setup.
+GitHub isn't just a code hosting
+platform for Microsoft. It's the top of
+their sales funnel, and most developer
+using it for free is a future Azure
+customer they didn't have to advertise
+to. That's what $7.5 billion actually
+bought, not just millions of
+repositories and developers. They also
+got a sales funnel for their cloud
+platform. But there is one more
+interesting thing. The funnel I just
+talked about was just part of the plan.
+Think about what GitHub actually is at
+its core. It's 180 million developers
+pushing code every single day. Public
+repositories, open source projects, real
+production code written by real
+engineers, all sitting there for free
+for anyone to read. And Microsoft did
+what any company sitting on the world's
+largest data set would do. They trained
+an AI on it, which is now called GitHub
+Copilot. And now they charge you $10 a
+month to use it. Let that sink in. You
+wrote the code, you pushed it to GitHub
+for free, and Microsoft trained an AI on
+your code. And now that AI sits inside
+your editor writing code for $10 a
+month, $19 if you want a business plan,
+$39 if you want an enterprise. Copilot
+now has 4.7 million paid subscribers.
+It's used by 90% of Fortune 100
+companies. It holds 42% of the entire AI
+coding tools market. The CEO of
+Microsoft itself confirmed that Copilot
+alone is now a bigger business than all
+of GitHub was when Microsoft bought it
+in 2018. They spent $7.5 billion on
+GitHub, and the AI they built on top of
+your code has already outgrown that
+investment. So it's fascinating to see
+how Microsoft used GitHub to grow their
+other businesses. And in case you don't
+know, GitHub works on freemium model.
+Most of the services are free, but if
+you need some extra, you need to pay.
+So, they earn both directly and
+indirectly from the platform. Microsoft
+didn't bought a product. They bought the
+place where every developer lives, and
+then turn that address into a funnel for
+their cloud, AI, and enterprise
+contracts. The GitHub you use for free
+is the most expensive thing Microsoft
+has ever gotten for free. So, GitHub is
+always free and probably always will be.
+That's because Microsoft can afford it.
+So, that was all about how brilliantly
+Microsoft is using GitHub to earn money.
+If you found this video interesting,
+make sure to like, share, subscribe, and
+I'll see you in the next one.

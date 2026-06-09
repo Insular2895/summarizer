@@ -1,0 +1,71 @@
+[Music]
+hi Lea it's Daniel Frontera dog here did
+you know you can manage Dalek agent with
+configuration management tool such as
+ansible while data provides a super
+simple one line installation screen as
+your business grows bigger it becomes
+increasingly difficult to manage a large
+and dynamic environment manually but
+don't worry dad also supports an
+instable module so you can automate not
+only dad of installation and
+configuration as well in this video I'm
+going to show you how to do a lot with a
+few simple steps first open up your
+favorite editor and create an inventory
+file co-host diamo
+for the host name of all the VMS or
+instances you like to manage under
+attack in this case our career service
+remember in order for instable to work
+make sure you have the ability to open
+SSH connection for each instance
+beforehand next let's create another
+file for our playbook our call my dad at
+Yammer if you're not sure how to start
+you can go to dados web portal go to
+integrations under agent then export and
+you can copy the simple playbook from
+here let's take a deeper look only
+sensible playbook host is the tag of the
+instances like you like this playbook to
+run against remember I call my service
+in the inventory file earlier Rose is
+the data and spawn module log we will
+install Fung and super galaxy and we use
+become to make sure this playbook is a
+secured a pseudo user next we want to
+configure a unique data dog API key
+variable if you don't want to leave your
+data API key in plain text we can take
+advantage of ansible vote to increase
+our sequence use these in the book as
+provoke a man to create a secret Yammer
+file enter the password you can remember
+and you can define the variable data API
+key in here then save the file as you
+can see now our secrets have been
+encrypted to configure any integrations
+you can simply pull in under dialogue
+checks like this
+following the Yama syntax and when you
+are done save the file and we are ready
+to apply this playbook before we start
+we need to install data module from
+ansible galaxy with this comment
+once it's done we can apply a new
+playbook with these coming here where
+tell doctor llamo is the playbook you
+like to apply with - I you specify the
+inventory file you created earlier with
+- you and private key options here you
+specify user name and private key to
+open up an SSH connection and with a
+small pass to allow you enter the vault
+password to equip your secret file and
+that's it for more information you can
+go to dad ox key heart page and look for
+edible playbook I hope you find this
+video helpful thank you for watching see
+you next time

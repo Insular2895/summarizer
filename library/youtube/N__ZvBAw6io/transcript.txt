@@ -1,0 +1,173 @@
+MCP model context protocol is a standard
+that lets AI agents securely connect to
+real tools like databases, documentation
+systems, and APIs. And it's great. But
+what many have noticed is when working
+with a lot of MCP servers, that can mean
+dealing with multiple configuration
+files and syntax for different clients
+like cursor and claude and others. And
+sometimes secrets are exposed as
+environment fireables in config files
+which is not secure. Enter the Docker
+MCP toolkit which solves this. In this
+video, I'm going to be showing you why
+configuration no longer needs to be an
+issue with this MCP toolkit and show you
+how easy it is to add servers like
+GitHub and notion and connect them to a
+client like Claude and watch them all
+seamlessly work together. The Docker MCP
+catalog and toolkit inside a Docker
+desktop is a management interface that
+lets you set up, manage, and run
+containerized MCP servers and connect
+them to your AI agents. It also provides
+a CLI for server management. This
+toolkit includes a curated catalog of
+over 300 plus MCP servers, including
+remote servers, so it's easy to find
+popular options. Setup is simple, no
+config files to edit, and everything
+runs in containers. It also has built-in
+OOTH and secure credential storage, so
+you can authenticate safely without hard
+coding secrets. In the toolkit, all MCP
+servers have three views, an overview,
+tools, and configuration. Some require
+more credentials than others, but the
+beauty is that the approach is
+consistent.
+fetch requires no configuration.
+MongoDB on the other hand which has 22
+tools
+requires a connection string and Altzian
+used for Jira which has 42 tools
+requires several URLs and secrets. But
+let's set up a couple as an example. I
+have a notion database here of customer
+feedback. And what I like to do is
+create GitHub issues for them by using
+Claw Desktop as a client. Let's see how
+easy it is to add each and get it done.
+So the first server that we want to add
+is GitHub, specifically GitHub official,
+which I'll go ahead and click on add
+server here. I do need to give it some
+form of authentication and I can do it
+by uh personal access token or using
+OOTH. And the main difference between
+OOTH and a personal access token is that
+OOTH gives temporary revocable access
+through a secure sign-in flow. While a
+personal access token is a longlived
+direct key you could generate manually
+to give the server ongoing access
+without logging in. If you wanted to
+create a personal access token, you can
+just go to GitHub on your profiles,
+navigate to settings and on the left
+pane towards the bottom there's
+developer settings where you can then
+click on the drop-down for personal
+access tokens and right over here on
+fine grain tokens you can generate a new
+one. Once you have your token, just
+select the radio button for personal
+access token and paste it in and select
+the check box and you are ready to go.
+However, in our case, we will be using
+OOTH. Once I click this link here, I can
+go ahead and press authorize and it'll
+bring up this site here. Now I'll click
+authorize Docker.
+Select open Docker. And at the bottom
+right hand corner you can see login code
+received for GitHub. And now if we go to
+my servers I see GitHub official. And
+under tools these are the ones that will
+be available for us to use. And under
+configuration it says that it is
+authenticated. Next server up to add is
+notion which two of them show up but I
+want the one on the right with the cloud
+icon. That is the notion remote server.
+So when I now select it we have overview
+and tools. For tools nothing shows up.
+That's because it's remote server. And
+for configuration it does give me the
+option to authorize with the notion
+oarth provider. And when I select it I
+can then click authorize. And then this
+page will come up where I need to
+confirm that I trust the URL. And at
+this point it will connect to my notion
+account once I hit continue.
+Then I can circle back to the desktop
+and it will indicate that it is
+authorized. Now last but not least is
+claw desktop which simply by clicking
+connect does the job. Boom. You can go
+and select this link for verification
+instructions if you want to review that
+and choose claude desktop and try to
+verify it. But I like to go straight to
+claude desktop and then give it a
+question such as what's the name of my
+GitHub account. This way it's it's
+verifying claw desktop and also the
+connection to GitHub which it finds
+provides me a link and I can actually
+open it up. There it is, the Reynold.
+Next, I'll ask it to check to see if it
+can see my Notion customer feedback
+database
+using the Notion MCP server. It finds it
+and then begins to collect the structure
+details of my database, which has the
+title, feedback, source, priority, etc.
+And when I compare it to my database,
+that's exactly what it has.
+After this, I'll go ahead and ask it to
+review my customer feedback database and
+summarize the main themes and identify
+which items should become GitHub issues.
+So it goes through, does that work and
+returns me just as I asked the main
+themes in addition to its recommended
+GitHub issues, which right now looks
+good to me. Next, I'll ask it to create
+a repo. Now, I could have asked all
+these things just at once, but sometimes
+for the first time around, it's good to
+just do it one step at a time before
+doing it in bulk.
+So that was successful and now I will
+say go ahead and please create these
+issues in my
+repo. I'm able to take a peek to look at
+the tools that it's using. But when it's
+done,
+hop over to my repo. And when I check
+out the notion customer feedback,
+I see the issues that it created.
+and it looks beautiful. Much quicker
+than having to do all this manually. And
+on top of that, it's important to note
+that you only need to configure once,
+including when using OOTH. So, it
+carries across MCP client. So, for
+example, I can connect both Notion and
+GitHub servers to clients like Gemini
+CLI or VS Code by simply enabling them
+through a click. So, you don't need to
+keep reconfiguring it. set and forget.
+So that's a quick look at how Docker MCP
+toolkit makes it easier to discover and
+most importantly configure with ease and
+securely run MCP servers. Let me know in
+the comments which MCP server you use
+the most. And if you got some value out
+of this video, definitely check out this
+one here, too. I'll see you in the next
+one.

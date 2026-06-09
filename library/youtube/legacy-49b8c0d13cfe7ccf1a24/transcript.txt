@@ -1,0 +1,361 @@
+I'm Sean Klimczak.
+Blackstone's global head of
+infrastructure.
+And I'm Nadeem Meghji, global co-head
+of real estate at Blackstone.
+Nadeem and I are incredibly
+excited to speak with you today
+about data centers and power,
+the picks and shovels of the AI
+revolution.
+As the biggest owner of data centers
+and utilities, we're really
+happy to be able to share our
+perspectives here today.
+So here we go.
+We kind of all acknowledge that
+there are trillions of dollars of
+capital that are being invested in
+data centers, in GPUs,
+in power, and just
+open the Wall Street Journal right
+now and there's gonna be at least
+two headlines about
+this subject.
+And our hope today is to
+try to clarify what's really
+happening, try to separate a bit of
+the myth from the reality, share
+our perspectives, but to start
+by sharing some of our favorite
+factoids about what's happening.
+In AI, and I'll go first.
+The cost of inference today is
+99% lower than it was only
+two years ago, and yet we're seeing
+37 times more data center
+absorption today than
+five years ago.
+What that tells you is that
+even as these models and chips
+are getting more efficient, demand
+is growing even faster
+than those efficiency gains.
+As the power and infrastructure guy,
+I love the next stat, that
+a one-minute
+AI video can require as
+much as 10,000
+times more power than a
+Google search. That's the equivalent
+of charging your iPhone 119
+times.
+And then just zooming out a little
+bit more broadly, AI,
+the electrification of vehicles and
+heating and reindustrialization are
+driving an expected 40%
+increase in US power demand
+over the next decade.
+That's relative to the last 25
+years where power demand was flat.
+So the next one I love is a real
+estate investor.
+60% of all AI funding today,
+venture funding, is happening in one
+city, San Francisco.
+That makes us very bullish on
+San Francisco's real estate market.
+We just bought the Four Seasons
+in San Francisco, and we recommend
+that all of you stay there when you
+next visit.
+Good Blackstone ad.
+And then next for me, AI, as
+we all know, is not just a US
+phenomena. This is a global
+phenomena, but the data center build
+out globally has been greatly
+lagging that of the US.
+To put that in some context,
+Chicago, the fifth largest
+data center market in the US,
+has as many data centers today as
+all of India.
+We're all fairly sure that a few
+years from now that will not be the
+case.
+So what does it mean for
+data centers, all those stats that
+we just shared?
+I wanna start by talking about
+demand.
+A couple years ago, the AI labs
+were generating less than a billion
+dollars in total revenues.
+Today, the number is 30
+billion, expected to double
+next year.
+And yet, as you heard from others,
+we're just at the beginning.
+Enterprise adoption is still in its
+incipient sort of
+stages. 5% of
+work hours today are aided by
+AI from a consumer perspective.
+We all use ChatGPT
+for research, to ask questions,
+to draft emails.
+We're going to go to a world soon
+where AI agents will help us with
+everything, help us with
+booking travel, with online
+shopping, even driving our
+cars.
+And one factoid that I
+love is that this year,
+Waymo surpassed Lyft in market
+share in San Francisco, and we think
+that's going to happen in other
+markets here over time.
+And then, of course, we had a great
+panel on robotics.
+And one thing I can tell you, I
+don't know which of those founders
+wins, but robots
+will use a lot of compute more than
+any of the existing applications.
+And that need for compute will
+lead to needs for data centers and
+power. Now, in terms of data
+centers, we are the largest owner,
+as Sean said, in the world.
+We've done this with the
+leadership and partnership of our
+portfolio companies here in the
+room, QTS, AirTrunk,
+Lumina.
+And what you see on the screen is
+that the hyperscalers continue to
+accelerate their spend, projected to
+invest $2 trillion of CapEx
+over the next five
+years in their digital
+infrastructure. And on the right,
+what you is the forecast for data
+center demand. And each curve
+represents a revision to
+the forecast.
+Today's forecast is 60% higher
+than the forecast from only
+a year ago.
+And when we talk to our customers,
+we're seeing it.
+QTS has seen a doubling of our
+leasing pipeline just
+in the last quarter.
+Air Trunk's seeing similar trends.
+Our customers are telling us that
+they're constrained by compute.
+That is the thing that is slowing
+them down.
+Now, anytime something like this
+happens, the question is,
+is there a bubble forming?
+And of course, there's always
+the risk of that in
+moments like this of
+excess in certain places, of
+misallocation of capital, as Jon
+said yesterday.
+But by and large, what we're
+seeing today is CapEx that is
+rational in the context of the scale
+of this opportunity.
+To put some perspective and provide
+some context around that, we thought
+it'd be helpful to frame what's
+happening in AI with what happened
+with the railroads in the late 1800s
+with the dot-com boom in
+the later 1990s.
+On the left, what you see is that we
+were investing 4.4%
+of GDP on average in
+railroads for decades.
+And it peaked at 9%
+of GDP in
+the highest CapEx year, just in
+railroads. Today, in
+technology CapEx, we're spending
+around 2% of GDP.
+On the right side of the screen,
+what you see is that in
+both the railroad boom and the
+dot-com boom, companies were
+overextended. They were investing
+two to four times revenues in
+the form of CapEx.
+Today, the hyperscalers are
+investing 25% of revenues
+in CapEx.
+Again, there will be exceptions.
+Some people might make mistakes,
+but by and large, as we think
+about where this is heading, we
+think CapEx is heading higher,
+that the technology is real and is
+gonna have massive applications that
+we haven't even scratched the
+surface of.
+And that makes us constructive both
+in the US, but also
+around the world.
+And I'll pass it to Sean to talk
+about the rest of the world, it's
+great.
+Thanks, Nadeem.
+Well, maybe what we can do is zoom
+out for a moment and just take a
+little bit more of a global context.
+Let's take a look at data centers in
+the US relative to the
+rest of the world.
+As you'll see from this page, there
+are roughly three times as many
+data centers in the US
+as are in either
+Europe or Asia today.
+And importantly, we in the us
+are building more data centers
+this year than exist
+in either Europe.
+Or in Asia.
+So double clicking on Europe, you'll
+see 65% fewer
+data centers, 80%
+lower data center build out
+per capita than the US.
+APAC is even further behind
+the US, roughly
+70% fewer data
+centers, and 95%
+fewer data centers per capita.
+So a lot for
+the rest of the world to catch up.
+As you think about just usage,
+data centers in the US are about
+60% of the data centers
+are being used today for AI.
+In APAC and in Europe,
+it's only 10%.
+In APAC,
+we've yet to even build our
+first training data
+center, so very, very early
+stage. And then one last
+final fact of the US relative to
+the world, the largest data
+center in the US is roughly
+10 times the size
+of the largest data center anywhere
+else in the world.
+So as we take a look at the
+world, as I said before, we don't
+expect AI to just be a
+US phenomena.
+We do expect Europe to catch
+up and pretty soon power demand
+more broadly.
+We expect, just over the next
+six years, roughly a 28%
+increase in US power demand.
+That will not be spread like peanut
+butter across the country.
+You'll have a place like Arizona
+with 60% power demand
+growth. You'll have a place like
+Northern Virginia with 85%
+power demand growth, and a place
+like northern Indiana, they
+just signed a contract that more
+than doubled the amount of power in
+that region with a single contract.
+So put very simply, what we think is
+is that access to power
+and the time to power will certainly
+be shaping where you place your
+factories, where we place our data
+centers. And just to use a fact,
+Northern Virginia, the time the
+power for a data center is now
+up to seven years versus just
+one year, a handful of years ago.
+So power will certainly be shaping
+the future.
+Let's double click on data centers.
+Only 4% of US power
+today is being used by data
+centers contrary to much of what you
+see in the press.
+That is expected to grow by 4x
+over the next six
+years to about 14%,
+but a majority of power demand
+in the US is in fact
+actually expected to include
+reindustrialization and
+electrification.
+So in terms of reindustriallization,
+$9 trillion of new factories
+announced in the United States
+just in the past handful of
+months. Put some of that into
+context, a new semiconductor
+facility represents roughly
+100,000 homes worth of power.
+On electric vehicles Goldman
+Sachs estimates that by 2040
+roughly half of all new
+vehicles sold in the United States
+will be EVs.
+Every new EV that gets added to
+your house adds about 37%
+incremental power.
+Then we've got roughly 40% of our
+states in the US that are actively
+trying to encourage the shift
+from natural gas to electric
+heating. Every house that flips from
+natural to electric increases
+power demand by about 50%.
+So a number of different factors,
+AI, the electrification of
+vehicles and heating and
+re-industrialization, driving
+that roughly 28%
+increase over the next five or so
+years and 40 plus percent demand
+growth over the next decade.
+We believe that will require about
+$2.4 trillion of
+capital in
+the broader utility and
+power sector.
+So another spot that we're all going
+to be focused upon.
+So if I just zoom out again and
+just say, as we take a look at
+how AI and reindustrialization
+will be affecting our society,
+we do think that will meaningfully
+impact where many of you
+are thinking about placing your
+factories and your people as we
+go forward. So, with that,
+on behalf of Nadeem and myself,
+thank you for the opportunity, and
+we look forward to continuing the
+discussion about two topics that
+we're quite passionate about.
+Thank you. Thank you

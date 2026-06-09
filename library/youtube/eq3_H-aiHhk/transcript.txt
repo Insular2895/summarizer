@@ -1,0 +1,384 @@
+[Music]
+perfect all right so
+welcome to another episode of raising
+your security posture with aws it's a
+hands-on series of three virtual
+workshops you
+if you joined us last week we talked
+about certificate manager and had a
+workshop around that today we're going
+to be jumping in guard duty and then
+next week
+same time on tuesday we have a security
+hub workshop planned as well so welcome
+back for those of you who are joining us
+from the certificate manager workshop um
+in today's uh series we are going to be
+getting hands-on with card duty which is
+the threat detection and insurance
+response service
+uh just to quickly introduce myself i am
+priyank gediya i'm a security specialist
+legion's architect based out of denver
+colorado and i focus on trade detection
+and insulin response solutions within
+lds and guard duty is one of the
+solutions i focus on heavily
+i also have two chat moderators with me
+today you have praveen harun haley who
+is a aware solutions architect and then
+i also have navi asane and she is a
+technical account manager so if you have
+any questions throughout this workshop
+questions about guard duty or any
+questions about you know the the lab
+guide or if you're stuck somewhere
+please type it out in the chat and one
+of the chat moderators or myself
+will try to help you out as soon as
+possible
+uh the flow of the workshop today is
+very simple so for the first 10 minutes
+i'll be talking about guard duty uh
+seven to ten minutes and then once we
+level set on that you will be given
+temporary awareness accounts which will
+be good for the duration of the workshop
+today uh with the necessary permissions
+for you to get through the through the
+workshop itself
+um and then like i said if you run into
+any issues just let us know
+um i'll get into the workshop logistics
+in a in a second here and uh first let's
+start talking about what guard duty is
+okay so
+amazon guard duty is a threat detection
+service within aws and it uses uh
+machine learning anomaly detection and
+threat intelligence to identify uh
+potential threats in your aws accounts
+and resources such as s3 buckets ec2
+instances eks
+etc so how does it do it
+it monitors various different log
+sources uh such as bpc flow logs dns
+logs cloud shell events s3 data plane
+events and eks control plane logs uh
+and then once it's ingest all these lock
+sources it starts analyzing them just to
+quickly touch up on each of the
+different lock sources so vpc flow logs
+is all your layer 3 traffic uh your
+fight tuple so source destination ip
+addresses
+port numbers protocol whether that
+traffic was accepted or rejected all of
+that is logged in vpc full logs your dns
+logs are the dns queries that are made
+to the amazon dns servers that are part
+of your adobe's accounts
+you have the cloud shell events and
+cloudtrail is basically all the api
+calls that are made to aws either
+through the aws console sdks or the cli
+and all that is logged in in cloudtrail
+uh we also have the s3 data plane events
+which is another version of cloudtrail
+but specifically focusing on s3 object
+level events so think about your get
+objects put objects delete objects uh
+versus the bucket level events would be
+your get create bucket delete bucket etc
+etc so that's the differentiation and
+then finally we have the eks control
+plane logs which is all the auto logs
+within the eks service where the user
+interacts with the eks service and the
+logs associated with that
+are also monitored one of the things to
+keep in mind is when you do enable guard
+duty you don't have to enable these lock
+sources separately they are all enabled
+by default uh pi guard duty and their
+access
+their provided access to guard duty from
+the back plane so you don't have to
+create a separate sd bucket and you know
+log
+dump vpc flow locks there or you don't
+have to dump the cloud shell events in
+in a separate sd bucket you don't have
+to manage or maintain any of that when
+you do enable guard duty card duty does
+that automatically for for you uh and
+access
+those locks from back plane one of the
+questions i frequently uh get i get
+asked frequently as well is can i add my
+own log sources not today
+you cannot add your own log sources to
+guard tv these are the five that we
+monitor and if you have a use case
+for adding more log sources please reach
+out to your account team and and create
+a case for you
+so once guard duty gets access to these
+logs what does it do so it does uh
+threat detection in two different ways
+one is the spread intelligence component
+which is for all the known
+uh bad stuff out there so think about ip
+addresses domain names uh amazon
+maintains a huge list a database of
+these
+in conjunction with our partners proof
+point and crowdstrike we maintain these
+lists and anytime there's any activity
+that is happening for example there's a
+command and control channel to know
+command control servers or if there is
+command and control channels to bitcoin
+uh servers then we can catch all of that
+and that's part of the threat
+intelligence data as far as threat
+intelligence we also have policy
+findings so think about and you will see
+some of that in the workshop today uh we
+have findings if uh for you know just
+known malicious activity right for
+example if someone is disabling logging
+um then it could be a legit use case but
+more often than not when you someone
+disables logging it it's more so for
+stealthy activities to make sure their
+tracks are uh hidden right so those kind
+of activities are flagged as
+policy-based bindings and you will see
+some of that in the workshops like i
+mentioned now that's all for the known
+uh bad things out there for anything
+that is unknown we also use machine
+learning uh where we baseline the
+account level activity uh
+between 15 to 45 days and then
+anytime there is deviations from the
+baseline guard unique starts kind of
+analyzing them and if it's determined
+that deviation is suspicious then your
+regard to deflect those findings as well
+for example unusual user behavior where
+a role is always used to
+uh you know not do anything with ec2 but
+all of a sudden it starts launching
+instances uh then that's kind of the
+deviation from a baseline right and car
+duty kind of will flag it then a
+security analyst would review it and
+make sure it's legit activity or not a
+legit activity right uh so that's
+anomaly detection so
+card duty analyzes findings two ways
+right intelligence anomaly detection
+once the findings are generated they are
+assigned a severity a low medium and
+high depending upon the level of
+activity that is happening and uh the
+findings then show up in the guard duty
+console which we will see in the
+workshop today now the next steps from
+there on could be you could either just
+investigate the finding within within
+car duty and be done with it if it's a
+small enough activity that can be
+investigated that way but if you need to
+dive deep in in triage and
+investigations we have another service
+called amazon detective uh that can help
+you with threat hunting as well as uh
+further investigations of guardian
+findings uh in this workshop we won't be
+covering detective but if you do need
+more information about it please reach
+out to your account team and they can uh
+you know get you in touch with a
+specialist there
+the other option there is you could also
+send these findings to security hub and
+you will see a little bit of security
+hub in today's workshop and like i said
+there's another workshop next week
+specifically spokes focusing just on on
+security hub as well but security have
+in a nutshell is an aggregation service
+for findings within aws so guard duty
+may see
+uh inspector all these other security
+services with aws kind of send those
+findings to security hub and then you
+can use security help for the
+aggregation and prioritization piece
+uh the other option is amazon advantage
+events which is again something you'll
+see in the workshop today so if you
+wanted to
+say export the guard duty findings to a
+scene like splunk or sumo logic or
+whatever it is then you would use amazon
+eventbridge to send these guardian
+findings to the scene itself right you
+can either do that from guard duty you
+can do that from security hub
+the other options are remediation and
+alerting so if you just wanted to send
+notifications from gartery to a
+slack channel or just as an email uh you
+can use amazon event bridge uh to to
+accomplish that and you'll see that in
+one of the modules in the workshop today
+as well okay um
+you can send it to partner solutions etc
+so that's how guard duty works so just
+to quickly show uh you know walk you
+through the flow of findings within
+uh aws so some customers may choose to
+just use guard duty and export the
+findings directly from guard duty and
+you know use detective and guard duty in
+conjunction to
+as a method for threat detection and
+instant response however a lot of
+customers choose to do the finding
+aggregation using security hub so if
+you're using multiple different aws
+services for security then it may be
+cumbersome for you to log into each of
+those consoles and uh kind of understand
+uh what findings are associated with you
+know which console or with service so
+security hub kind of does that
+aggregation for you right so out of the
+box all the abs security services do
+report to uh security hub all their
+findings but you can also add third
+party uh vendors such as crowdstrike
+palo altos just as an example but
+there's a huge list of vendors that we
+integrate with where you can send those
+findings to security hub right um keep
+in mind security hub is not a seam but
+it does have a seamless functionality
+for aggregation uh and search functions
+but it is not really a seam because it
+doesn't do the
+analysis itself right it doesn't do the
+correlation functions um so once the
+findings reaches security hub then you
+have some options there right you can
+either have your own notifications
+channel set up in security hub like i
+said or you could have remediation
+actions which again you'll see in the
+workshop today where you can kick up
+lambda functions to fix the problem
+itself right so for example if you have
+an ec2 instance that compromise you may
+want to isolate that ec2 instance and
+how do you do that you can either have
+an automated playbook that says anytime
+an ec2 instance is compromised go
+isolated that's a more intrusive
+playbook however you can use custom
+actions with security hub to kind of uh
+enable manual workflows uh that will go
+kick off an automation that would go uh
+you know remediate that or instance
+itself right or or isolate that instance
+after the analyst minds yes isolation is
+the way to go then you click the custom
+action and then the workflow starts
+right and you'll see that in the
+workshop today as well all right
+remediation doesn't just have to be
+lambdas it can be system manager
+automation documents which are
+predefined automations within aws by abs
+and maintained by aws you can use some
+of those out of the box as well
+uh you can send the findings to jira
+servicenow so any ticketing systems that
+you have you can send it to a slack
+channel
+or any other notification mechanisms
+that you see fit right so that's guard
+duty and security hub in a nutshell uh
+the next step would be we'll go into the
+workshop and then from the workshop you
+will have a lab guide
+that walks you through
+what the workshop is and how you perform
+various different steps
+uh the user guide is the first link out
+there and eric is going to
+post them in the chat there
+and uh
+so user guide looks like this i'm just
+going to
+hopefully you guys can see the screen
+here so it starts off with the
+introduction so go through the
+introduction section
+and in the setup section is where you
+will get access to your aws accounts
+okay and in the second step here you'll
+be asked for an event hash and your even
+hash is this blue box here uh starting
+with 1368 ending with 7b
+make sure if you're copy pasting the
+event hash there's no spaces trailing or
+ending uh spaces otherwise the accounts
+won't be rendered so just make sure you
+are um
+there's no no spaces there right so with
+that being said i'm going to take a
+pause there i'm going to look at any
+questions that are out there uh but like
+i said you will have the next hour and
+45 minutes approximate no no i don't 45
+an hour and 15 minutes approximately to
+go through the workshop
+okay uh quickly the workshop is broken
+into different various different modules
+it's not necessary for you to complete
+all the modules today depending upon
+your familiarity with aws you may be
+able to get through these quickly or you
+may take some time which is totally fine
+um modules zero through six are kind of
+just set up and you know interacting
+with guard duty seven through ten are
+kind of the tdir scenarios from what we
+really see out there with our customers
+and how if ec2 instances get compromised
+what you do like if iron credentials
+that compromise what do you do and you
+learn about various manual and automated
+playbooks uh for setting up uh from
+module 7 through 10 there right
+okay so like i said don't worry about
+finishing all the modules uh just focus
+on getting through each of them and
+understanding uh what is really
+happening and if you have questions i'll
+be available on chat here okay so i'll
+do a time check here in about an hour
+just to make sure everybody is doing
+okay
+um
+and if you know there's anything else
+that comes up uh let me know all right
+so i'm gonna go back to this event hash
+screen um so that everybody can have the
+even hash
+[Music]
+you

@@ -1,0 +1,488 @@
+For decades, your computer
+was a tool. He did what you
+told him to do, but that era
+is over. This statement was not made by
+Apple, nor by
+Microsoft, nor by Intel, and certainly not by
+me. No, it's Nvidia. Yes, the
+company that used to sell you
+graphics cards to run your games
+now wants to design the
+entire brain of your next computer.
+The processor, graphics card,
+memory, and all of that in a single chip.
+And mind you, I'm not talking about a
+product isolated in a single kyote. Nvidia
+announced three families of machines.
+They signed a deep partnership
+with Microsoft and they uttered a
+phrase we hadn't heard in a long time.
+The biggest PC overhaul
+in 40 years. So today, we're going to
+answer three questions. What
+exactly are we talking about? Should AMD and
+Intel be worried? And most
+importantly, can it really
+work? Because I have a
+big reservation about that, but I'll save that
+for last. Here is RTX Spark,
+Nvidia's new chip designed in
+partnership with Mediathek. And this
+chip, in their words, is a concentration of 33 years of
+Nvidia know-how.
+In concrete terms, in a single component
+etched at 3 nanom at TSMC, you will
+find three things. A GPU, the
+graphics chip of course in
+the Blackwell architecture,
+Nvidia's latest, a winning processor and
+above all up to 128 GBCT of memory,
+that's huge. But in all of this, the
+detail that changes absolutely everything is
+the processor. It is based on
+ARM architecture, the same family as the chip in
+your smartphone or the
+M chips that Apple designs for its Macs. In short,
+it's not X86, right?
+The historical architecture from Intel and AMD
+that has powered 95% of Windows PCs for the last 40
+years. So, it is important to understand that
+Nvidia is not attacking Intel and AMD
+in the graphics card market, a
+market which it already masters very well.
+No, here they are attacking the processor
+itself, the brain of the PC. So to
+understand why this RTX Park chip
+is so interesting and so
+promising for the PC world, we need to
+talk about memory for 2 minutes. A
+typical PC usually works
+with two separate memory modules. The
+processor has its own RAM and the
+graphics card has its own
+dedicated video memory, the ultra-fast VAM. Except
+that when data has to pass from
+one to the other, we have small
+bandwidth problems and that creates a small bottleneck
+. With RTX Park,
+it's different. We have a single
+shared memory between the processor and the
+graphics card, up to 128 GB of
+unified memory that the processor and
+graphics card can access as
+needed. And this isn't
+an idea that came out of nowhere,
+it's exactly the architecture that
+Apple has been using with its M chips since
+2020 and you have to admit that it's been pretty
+successful for them. This is what
+allows the MacBook to be both
+thin, quiet machines with
+superb battery life and capable of handling
+video editing without flinching. And so
+Nvidia is taking this formula and putting
+its own graphics power behind it.
+The advantage for LIA is enormous. Yes,
+LIA, we're talking about it more and more. And there,
+with 128 GB of unified memory, you
+can locally load
+gigantic artificial intelligence models.
+Things with 120 billion parameters
+directly on your machine, without
+going through the cloud, without paying
+a subscription. Everything stays here in your home.
+But be warned, it's not all sunshine and roses.
+This unified memory, although
+generous, is not as fast as
+dedicated video memory found
+on a typical graphics card.
+So, in terms of power, what does
+all this translate to? So unfortunately we don't have
+much to go on from
+Nvidia. So we'll have to be
+content with what they told us,
+with their promises, and we'll check
+later when we can get our hands on
+the products if Nvidia's promises
+are really concrete. In any
+case, according to Nvidia, in terms of
+power, it would be around the
+performance of a portable RTX 5070. The
+nuance is still important. To give you some
+context, it's a graphics chip, let's
+say in the upper mid-range,
+eh. It's quite intense, though.
+Plenty of room to play comfortably. So,
+specifically for its RTX Spark,
+Nvidia promises 100 FPS in 1440p on
+major recent games like Cyberpunk,
+Doom, Fortnite or 007 First Light. And
+frankly, if that's the case on
+slim and quiet machines, then it's far from
+ridiculous.
+Presumably, we won't be dealing with
+ultra-thick, large gaming machines.
+But what's even better is that
+Nvidia promises the same performance whether
+you're plugged in or on
+battery. And that would be a first
+because today, we know,
+if you unplug your PC while
+you're playing, your
+performance will plummet.
+The game will run much less smoothly. And
+so with RTX Park, according to Nvidia, all that
+is over. So obviously,
+we'll check all of this as soon as we can,
+but if it's true, you have to admit it's still
+a small revolution
+for those who like to play on the
+sofa or on the train, for example. And
+besides, frankly, we don't have too much
+trouble believing them, huh, on that
+point since, well, as I
+told you, this architecture is very similar
+to what Apple did with the
+M series and it's a behavior, a
+quality that we have already widely observed
+on those products, on the MacBook
+Pro, the MacBook Air which
+effectively maintain the same performance
+whether they are plugged in or unplugged. The
+chip has a power consumption ranging from
+just a few watts to a maximum of 80W, which is why
+PCs with
+relatively thin chassis and
+lightweight cooling systems are possible.
+And all this with good battery life as a
+bonus. So be careful, don't get too carried away
+either. In terms of battery life, where
+it will be really very good will be for
+office-based use. If you
+start playing games at full speed,
+obviously, there's no black magic involved.
+Nvidia has admitted that after an hour,
+you will have no more battery. Physics
+remains physics. And by the way, on the
+gaming side, don't forget that we're
+on Windows on Arm and therefore
+games that are not natively developed
+to work on this architecture will
+go through an emulation layer. And
+we'll come back to that right after because it's
+a real issue. And last
+but not least, RTX Park includes the
+entire Nvidia software suite. DLSS
+to boost your FPS, reflexes to
+minimize latency, or RTX
+Remix for modding. In short, even if the
+raw power of the chip is not
+revolutionary, as it is at the level
+of a portable 5070, the software arsenal is
+rock solid and that brings us
+precisely to Nvidia's secret weapon. If
+you only had to remember one thing to
+understand why Nvidia might attempt
+this gamble, well, it comes down to one
+four-letter word, even Quda. This is
+probably the most underrated thing
+about this whole story. Quda is the
+software layer that Nvidia has been developing for
+over 20 years to run
+various and diverse calculations on their
+graphics card. Well yes, originally,
+a graphics card was made to
+calculate pixels, to display an
+image. But QUDA has allowed it to be
+repurposed for something else entirely,
+from scientific computing and
+simulation to, most importantly today,
+artificial intelligence.
+Nvidia CEO Jensenang calls it
+Nvidia's war chest and he's not even exaggerating
+. Why is it so powerful? Well,
+because for 20 years the entire
+industry has been learning to code for CUDA.
+Researchers, developers,
+creative software, and
+scientific tools. All these people are working
+on Quda. An ecosystem so huge
+that it's precisely what makes Nvidia
+virtually impossible to dislodge from LIA. It's
+not just hardware, it's 20
+years of accumulated software. MS AMD offers
+some very interesting graphics cards
+for pure gaming on
+Lia, but because of CUDA's dominance,
+they are completely out of the running. Okay,
+so how exactly does
+all this materialize? First of all,
+Nvidia doesn't do everything. No, he works with
+partners. First, we're going to
+have laptops. And here, it's
+simple, pretty much all the manufacturers in the
+sector are involved. Asus Dell
+HP, Lenovo MSI and, beware a major symbol,
+a Surface laptop from Microsoft
+itself, chassis as thin as 14
+mm, LED screens, battery life
+advertised to last all day.
+In short, we could have up to 30 laptop models
+planned. Secondly, we would
+also have mini PCs, you know,
+small silent boxes, a bit
+like a Mac Mini that sits in a
+corner of the office and that you
+quickly forget about, designed to stay on
+permanently. Because Nvidia's idea is that
+on these small machines, you
+have one or more agents
+working for you day and
+night. In short, a small domestic brain,
+always awake. And thirdly,
+the heavy artillery, the DGX Station for
+Windows. Simply a great
+desktop computer with 748 GB of
+unified memory. It's colossal. Capable
+of running DI models with 1
+trillion parameters locally. This is really, really
+heavy stuff. Jensen
+shared his vision of the future in which
+tomorrow everyone would have a
+supercomputer at home. A bit
+like a home cinema system, for example,
+something that feels less like a
+PC and more like a personal R2D2.
+But in reality, this
+station primarily targets businesses
+and will probably listen to a large
+fortune. So, you may have
+already figured it out, but why does Nvidia
+put so much memory and power
+inside a consumer-grade machine
+? Well, for a simple reason, and that was
+really the word of the
+conference, the agent. And yes, agentia.
+We are no longer talking about a chatbot that opens
+in a window of your browser,
+to which we will ask questions and which
+will answer us with text. We are talking about
+an AI that acts directly on
+your machine for you.
+In practical terms, what does that mean?
+Well, an agent is an A who perceives
+what is on the screen, reasons,
+develops a plan and uses
+tools to execute it. On stage,
+Nvidia showed an agent who opens
+a browser on his own and books
+a badminton lesson by himself. Another one
+designs a house from A to Z in
+3D software based on a simple
+description, controlling the tools for
+you. The PC no longer responds to a
+command; it performs a series of actions to
+achieve a goal. And that's exactly why
+this chip
+exists. Because running these
+agents locally on your PC
+requires a lot of memory and
+historically quite a bit of energy as well.
+Hence the need to design a chip that is both as
+efficient as possible and
+equipped with 128 GB of unified and
+efficient memory, since, well, with the idea that
+we're going to leave our agent running
+24/7, we prefer to avoid an excessively
+high bill from DF. In short, the entire
+range is designed around this idea.
+Your computer goes from being a tool to a
+teammate. And Nvidia's trump card
+is confidentiality.
+Since everything runs locally on your
+machine and not in the cloud,
+your data doesn't go to a
+third-party provider. Therefore, you can use the
+powerful Unia app to work on your
+sensitive files without sending them
+elsewhere. So obviously, be careful, an
+agent that clicks on its own in your
+system, that touches your files and
+your settings on paper, that's
+great. But it still represents a
+new entry point for
+security problems. So,
+regarding
+data confidentiality, it will be necessary to verify it and not just take
+Nvidia at their word.
+So, as I was saying, Nvidia doesn't do all this
+alone. And yes, it's co-
+signed by Microsoft, which is completely rewriting
+the foundations of Windows to
+run its AI agents
+securely. Except that
+a little history lesson is needed here
+because running Windows on
+ARM chips is not new and it has
+never been a smooth ride. The
+very first attempt was in
+2012 and it was the Surface RT which
+already ran on an Nvidia chip, the
+Nvidia Tegra. A resounding failure, with
+talk of no less than $900 million
+in losses for Microsoft in
+just one year. It hurts. And since then it's never really taken off
+. In 2024,
+we had the famous Copilote Plus PCs
+, equipped with Qualcomm Snapdragon chips
+. Likewise, lots of promises,
+but the same disappointment, especially regarding
+games and software compatibility.
+So when a journalist asked
+Nvidia why this time it would be
+different, the spokesperson's response
+was, and I quote, "I leave it to your
+judgment." Not very convincing. So,
+that being said, Nvidia still has a
+card up its sleeve that nobody had
+before. It's a true GPU and, above all,
+a huge leap forward in
+artificial intelligence. Whereas Qualcom
+mainly sold battery life, which is
+already pretty good, Nvidia comes in with
+video games and
+local artificial intelligence, uses, you know.
+And that might be what changes everything
+. But be careful, there's a small
+problem. And here, I'm going to be totally
+frank with you because this is really
+the heart of what I think. All this
+architecture is very
+interesting. The chip, the idea of ​​the
+agents, the range which goes from the laptop PC to
+the ultra-professional workstation. On
+paper, it makes sense. Except that there is one
+point on which everything rests and it is
+my number 1 concern, Windows.
+Yes, we're talking about a system that has been accumulating
+problems for years.
+Performance issues,
+endless interface inconsistencies,
+stability bugs, not to mention the two
+settings panels that have coexisted
+for a decade. An
+operating system that wants to do everything right
+but is burdened with such a
+heavy legacy that it increasingly resembles
+a package that can no longer be maneuvered.
+Okay, I'm being a bit harsh. OK, there are
+still efforts being made on
+Windows 11 to clean things up a bit
+, but it's still far from
+perfect. And the risk is that we
+graft the potentially
+most advanced AI layer in the world onto
+shaky foundations because the
+best chip in the world is useless
+if the OS that controls it is slow or crashes. And
+frankly, I would have loved to see Nvidia
+play a completely different card.
+Imagine them pushing Linux to the limit with their
+own custom-tailored distribution
+for their chip. A bit like what
+Valve did with Steamos on the Steam
+Deck. Typically, Valve has proven that a
+system mastered from end to end, from the
+kernel to the interface, can offer a
+smooth and consistent experience where
+Windows struggles and has not been able to adapt
+as quickly to the portable console format,
+for example, and Nvidia, in addition to having a
+lot of money, already has all the
+know-how. He has mastered Linux for
+years on the server side and CUDA, their
+in-house technology, runs on it
+natively. Imagine an Nvidia PC running
+a custom distribution meticulously optimized
+for AI and video games
+without the weight of 40 years of
+Windows legacy. This could have been the thing that truly
+changed the game in
+the PC world. But unfortunately
+not. Instead, they're installing the engine
+of the future on a 1995 chassis. So
+yes, I understand it from a commercial point of view, it's
+surely the smartest choice. Everyone
+is already on Windows, all the
+software is there. In short, the ecosystem
+is immense. Starting with a custom Linux system would be
+a bit like
+starting all over again from scratch. But
+let's be honest, Nvidia made the
+safest choice here, not necessarily the most
+exciting. So, specifically, who
+is RTX Park aimed at? Well, first of all,
+to the creator and the
+local enthusiast. And for
+creators, there is a
+very appealing argument: Adobe has
+rewritten Photoshop and Premiere, its
+photo and video editing software,
+to work optimally on
+Nvidia's new chips. Photoshop,
+for example, would go from 5% to 100% of
+processing accelerated by the
+graphics chip. In short, for creators who
+handle large files or for
+generative linking, these machines
+could be a real asset for the
+hardcore gamer. However, in this case, I
+urge you to be patient. As we've
+seen, unified memory isn't necessarily
+the most ideal thing for
+brute-force games. So wait for real
+keyboard and mouse tests before you give in
+. Okay, but we're
+still missing quite a bit of information.
+No price announced, no
+official benchmarks to compare with Intel, AMD or
+Apple. And as for the date, it's still a
+bit unclear. We will be content with the end
+of the year this autumn. In short, we are being sold
+a revolution without being shown
+much of it. So, let's remain cautious.
+So, it remains one of the
+most exciting PC announcements of
+recent years. After Intel
+started making graphics cards,
+Nvidia joined the clash between the
+blue team and the red team on the
+CPU field. All this with a
+more modern architecture is
+potentially capable of
+competing with Apple's M chips, the
+Elia game. Besides, it has to be said that on
+paper, it looks promising. But as
+I was saying, the real question
+for me is not the chip. Because
+the fundamental difference
+between Nvidia and Apple is that Apple
+controls everything from software to hardware.
+This is not the case for NVIDIA, which
+therefore has to work with other
+companies to produce the product that will end up
+in the hands of the consumer.
+And I'm thinking particularly of
+Microsoft. Will Windows live up to expectations,
+or will it be the grain of
+sand that derails the whole
+system? Time will tell.
+So, what do you think?
+Revolution or damp squib? Tell me
+what you think about all this in the
+comments, I'm interested. Feel free
+to leave a like if
+you enjoyed the video. Subscribe to Frroï so you don't
+miss the next videos. And
+as for me, I'll see you next time.
+Ciao!

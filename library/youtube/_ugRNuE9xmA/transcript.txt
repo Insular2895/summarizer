@@ -1,0 +1,1198 @@
+[Music]
+as Eric said I'm going to be talking
+about thinking asynchronously but also
+hopefully you've learned a little bit
+more about Eda today already built on
+your knowledge before coming here so I'm
+going to give you a load of patterns
+bear with me there's a lot of diagrams
+as Gregor said earlier this this morning
+we love a diagram as Architects so I'm
+going to be showing you loads but I'm
+going to try and make it Jazzy I have
+jokes I do have dance moves the world is
+now going to see them as this is being
+recorded so please laugh it's really
+important that you laugh otherwise it's
+been a waste of my time putting this
+choreography together first joke of the
+day but who who am I so I'm Rebecca
+Coolidge and I'm a Solutions architect
+in our UK and Ireland public sector team
+so I look after our kind of government
+customers in that space and government
+are in a there are loads of government
+customers using serverless so dispelling
+that myth straight away happy to talk to
+anyone kind of working in regulated
+space because I know that could be kind
+of interesting
+um for some of the stuff we've talked
+about today as Eric said I'm a
+serverless an event-driven
+architecture's Enthusiast I've done
+quite a few talks in this space just
+because I find it really really fun
+um I got into into Tech uh relatively
+late in in my career I started off in
+policy Consulting and did a bit of other
+things on the side and it's serverless
+that really got me interested in it like
+I didn't want to be laying cables that
+wasn't my bag I wanted to kind of dive
+into the code straight away and and
+figure out ways to to build applications
+that made sense to me so that's a little
+bit about why I'm here and what I'm
+going to chat to you about
+um but again kind of diving a bit deeper
+on some of the stuff you heard earlier
+I'm going to go over the common kind of
+serverless pattern and problem uh why is
+it that we're telling you to use or try
+out some of our integration Services uh
+why did Emily if you enter her talk
+earlier say about how you should how and
+when you should decide to remove code
+and replace it with something else and
+then take you through quite a lot of
+patterns and hopefully you can kind of
+bear with me
+so starting with the common problem
+most applications look something like
+this you have an API that might have
+some security and routing not routing
+you have storage which has storage and
+then compute kind of holds everything
+else
+so these kind of three three main
+components are in all of our apps but if
+something's going to go wrong who you
+can have a guess where it's going to be
+if I put your hands up one two three
+where's it going to go oh Eric's the
+only one and he got it wrong hahaha
+um it's so if it's going to go wrong
+it's going to go wrong here why well
+because it's my code
+how many of you have made a problem in
+your code once and then realized it's
+definitely your fault why it's not
+working yeah a few of us how many of you
+have cried because you've missed a comma
+or a colon yeah me 30 minutes call my
+manager he read it two seconds found the
+problem horrific we've all been there
+but it's not about human error it's it
+as Emily touched on earlier if you went
+to her talk with cinch writing less code
+means there's less to maintain which
+means it's easier for your teams to run
+so it's more reliable and what we mean
+by that it doesn't mean you're going to
+be writing no code it doesn't mean that
+there's going to be no Engineers or
+developers we still need you we're
+you're really really important it just
+means that you're not going to be
+wasting time you know writing three
+lines of code for an API call or
+something like that
+so before I dive in dive into
+um some of the architecture patterns how
+do you think we could improve this well
+throw it all in Lambda that's seems to
+be what most modern applications look
+like for those who aren't aware Lambda
+are stateless event driven functions in
+the cloud
+um but there aren't that many types of
+apps with just one function or one entry
+point one module they tend to have
+databases I've put an example of
+dynamodb here they have some sort of cue
+and then you know they may interact with
+a third-party application or on-premises
+server or something else
+and so this ends up being what most
+modern applications look like and you'll
+also notice that the arrows which are
+important as Gregor mentioned earlier
+are also all different colors because
+they're also interacting with each other
+in different ways so not only are the
+functions quite different and the
+compute power that you're trying to
+provide is different but also those
+interactions can be quite different too
+and if you have something like that then
+you might start asking yourself the
+following well what if I want to
+sequence tasks or run different tasks in
+parallel and then in this part of the
+application I want might might want to
+retry it or what do I do with my failed
+tasks
+so guess where we're going next he was
+listening in the keynote he's in the
+room so make sure that you were
+decouple your application yeah
+that's when you laugh
+um
+so as as you would have heard earlier
+and I'm just going to repeat his quote
+um if you're all listening you should
+have been at the appropriate level of
+coupling depends on the level of control
+you have over your endpoints
+um I I'm not saying this just because
+he's in the room genuinely one of the
+best books that I've read in this space
+it got me really excited about Eda and I
+think often compute books can be a
+little bit boring his one is a page
+Turner all hundreds of them
+um but in case it just kind of reiterate
+that in your in your brain when you're
+going through like think it's not a
+one-size-fits-all approach
+um and so when you're thinking about it
+again it's not a single choice for your
+full architecture so as your application
+grows many of you work for huge
+Enterprises you're not going to have a
+one-size-fits-all to to different parts
+and so you have things to think about
+you know that might be technology
+dependency you know are you using kind
+of java versus c-sharp it could be
+location dependency it could be semantic
+dependency it's another theme that comes
+up with customers quite often or
+something that I'm going to talk to a
+little bit more around temporal or
+location dependency and that's
+synchronous versus async
+so
+why am I talking about asynchronously
+and what does thinking asynchronously
+really mean well when speaking to
+customers many reference kind of rest
+apis or that sort of thing on their
+radar for communication
+but when we think about asynchronous
+messaging
+most of our customers don't really know
+where we're going or how they can change
+one part or they think oh but I do need
+a response back from kind of every part
+of the of the application
+now asynchronous I'm going to caveat is
+not the solution to every problem and
+it's about you understanding when to use
+the right tool for the job and being
+able to think in that architectural way
+that Gregor was talking about earlier
+um but just to recap for those who maybe
+don't know to make sure we're all on the
+same page and the difference between
+synchronous commands and asynchronous
+events
+um is kind of how it's uh displayed here
+so for synchronous commands you have a
+client that's interacting with service a
+service a then sends a message to
+service B and needs that response back
+before it can continue
+now if you have a problem Downstream say
+in service b or as you can imagine
+service c d e all the way down to Z not
+Z
+um then you end up blocking your whole
+application and it's going to take a
+long time for that message to return or
+maybe it just breaks you know how many
+times have you been on a website wanting
+to buy a ticket to something or purchase
+you know your favorite shoes before they
+run out and it doesn't work and you go
+okay whatever I'm just going to leave
+that's money lost to your business
+that's your application is dropped all
+because there was a problem potentially
+in that messaging chain
+asynchronous events however
+client a sends something to service a
+service a then sends its service B but
+does not expect a response why is that
+well maybe they don't need it if that's
+an analytics function like your business
+intelligence unit or just trying to get
+some data do you need to send something
+back to your service B to like tell
+service a or yeah we've got that data
+like probably not
+taking it out of tech for a second other
+thing that's sometimes helpful to to
+contextualize it have you ever been
+asked like how are you and you just say
+fine good that's kind of like a
+synchronous response
+if I ask you how are you doing and
+you're going hmm I'm not really sure
+come back to me after I've had my coffee
+asynchronous you're not raise your
+response you don't need to respond
+you've moved on you don't come back to
+them do you you go and have your coffee
+and you never respond
+um so
+um and uh there's kind of different kind
+of advantages and disadvantages to both
+so I'm not saying never use synchronous
+it can be really really useful it's low
+latency it's simple most developers and
+Architects know know how it works why
+why we need them and you can fail fast
+which actually in development can be
+really really useful
+but for asynchronous as I said it it
+helps with that uh decreasing that
+coupling but also it's resilient to
+receive a failure if service B goes down
+that doesn't mean that Service A and C
+and others uh stop working
+um and it can also use various different
+kind of cues and buffering mechanisms
+that I'll go through in a moment
+so if you switch off for the rest of the
+talk
+and you don't listen to any of the
+slides that I have coming
+if you don't need a response and really
+ask yourself do I need that response
+execute asynchronously if that's the
+only thing you take from my talk today
+I've done an okay job so just memorize
+this slide get your phones out take a
+picture this one is the most important
+slide if you don't need a response xq
+asynchronously
+now a former colleague of ours has a
+quote that like I can't not show I've to
+in all of my talks not just this one
+um if your application is cloud native
+large scale or distributed so notice the
+or not and and doesn't include a
+messaging component it's probably a bug
+now this is a bit tongue-in-cheek but
+really when you start building it you
+know and a lot of you in this room
+you're interested in the Eda space
+you're probably thinking about messaging
+if not using it a lot already
+um but you'll be surprised how many of
+our customers come to us with these huge
+monoliths and just go help
+um and we've all probably been there
+before joining a new engineering team
+going in thinking oh yeah this is
+amazing this really cool product like
+love this love this product open it up
+in the back end and go whoa I can't
+believe it's built this way you know
+we've all been there before and so
+hopefully some of the patterns that I'm
+going to show you will help get your
+juices flowing and thinking about how
+you can kind of re-architect build new
+and take those ideas back to your teams
+so I'm talking about them in the context
+of microservices but they're not just
+kind of uh microservices or serverless
+they can be useful for lots of different
+types of applications and I'm happy to
+kind of take that offline and chat to
+you afterwards about your different use
+cases
+so the first one I'm going to talk to is
+a message Exchange
+so how we kind of send messages from one
+to another this one's quite simple you
+have a sender and receiver Sending
+message a it immediately kind of shows
+you that messes are decoupled somewhere
+and there's an expectation that there's
+no response
+so how would I know which messages are
+being sent through
+you distinguish that with message intent
+so that could be it could be a command
+message it could be a document message
+or transfer or it could be an event
+message or notification
+in contrast we have the request response
+so the requester sends a message and the
+responder works on that message and then
+sends message B
+back to the requester
+two questions you might ask here is how
+can the responder request a response but
+also how can the respond to assign an
+incoming response to the previous
+request
+so you have message a coming through but
+how do they know message B is related to
+message a well again you have a return
+address which is metadata injected into
+the message or you might have a
+correlate correlation ID which again is
+kind of a unique ID for that message
+pinging back so you know which methods
+are corresponding to each other but you
+don't have to kind of wait for that same
+message to be pinged back
+the first one is what we also call an
+integration pattern which you may see
+used quite a lot and on the right hand
+side is a conversation pattern or
+sometimes referred to in literature as a
+composite pattern
+now it's
+probable that you use most of you are
+using some sort of kind of message
+Exchange in your applications
+and the next architecture pattern that I
+want to go through is the message
+Channel which again are quite commonly
+used but in very different ways and so
+I'm going to go to our two most common
+ones and the first one is our point to
+point queue
+so you could have multiple senders and
+multiple receivers but I'm just using
+kind of one senderence example for ease
+of the diagram
+imagine you have many many messages for
+your consumer to consume
+you add these to a queue a kind of
+buffer uh while you're waiting for these
+requests in this example it kind of acts
+like a load balancer for those messages
+to use terms we're all familiar with
+a fundamental model which again we
+talked about quite a lot is that Pub sub
+or topic and fan out model
+so Publishers send topics to subscribers
+and they receive all of the messages
+that they're subscribed to
+so first answer the day imagine when you
+are waking up in the morning you're
+making your coffee you're listening to
+your favorite radio station you're like
+yeah this is the best DJ ever I'm ready
+for the day like yeah yeah get into my
+car still playing it still playing it in
+in the tube like hoping that it stays on
+and then you get to work you've got to
+turn it off hopefully your manager's
+having a good day hopefully your code
+doesn't break down and you're still in a
+happy mood you get back into your car on
+the way home get back home put that
+radio station on and again I'm listening
+to it
+in the time that you put the radio on
+you were listening to those messages you
+were listening to that favorite music
+but when you had turned it off you had
+nothing and that's kind of how this this
+works so whilst you're subscribed to it
+whilst it's turned on that message
+Channel you're going to receive all of
+those messages but as soon as you turn
+it off you won't receive anything and so
+it won't be kind of uh queued up in the
+back unless
+we combine these two which I don't have
+time to go through but if you want to
+hear more my colleague Dirk freiner does
+an amazing talk where he dives into this
+and guess what it's called the topic Q
+Change Model
+they just combined both names and made
+it really long
+um so yeah there are like different
+variations of this but I just thought
+it's kind of cool to kind of touch on
+some of these that you might have seen
+before
+now I do work for AWS so I'm going to
+mention two of our services that help
+with this
+um so AWS offers a number of different
+messaging services but the two kind of
+most commonly used that you probably use
+in yourself so have tried out
+and the first is Amazon simple Q service
+or sqs that's our simple fully managed
+and flexible messaging service to
+reliably cue and continuously exchange
+any volume of messages now when I first
+did this talk we had a record set of
+47.7 million messages sent per second at
+Peak on 2021 Black Friday we recently
+hit that again it's over 70 million
+messages per second we're processed at
+Peak a couple of months a couple of
+months ago this summer with another
+Amazon sale so our own organization
+amazon.com uses these services and I bet
+you that you're probably not hitting 70
+million messages per second but if you
+are we'll write a blog about it so
+please try
+um
+um so it really really can handle any
+load whenever customers talk to me about
+it like you know I just get them to read
+that and please try and push it because
+our service team would love that
+um and then the second one is Amazon
+simple and notification service so
+that's for that public subscribe
+messaging it has high throughput and
+again highly reliable
+and messages are published to that topic
+to that favorite radio station that
+you're turning on and with multiple
+subscribers it fans out so that's why
+you sometimes hear the term fan out it's
+because it's got multiple subscribers
+there are other services worth
+mentioning which some of my colleagues
+have talked about a bit today Amazon mq
+if you have a specific software needs
+and then iot core messaging broker for
+those of you who enter the server
+espresso Workshop you will have seen how
+that was used for messaging and again
+we're happy to kind of take that offline
+or in the ask the experts Booth later on
+now another kind of pattern I'd like to
+introduce you to is when I first started
+building this talk the most common
+question I got asked about was the dead
+letter Q how many of you in the room are
+using a deadlift key for your
+applications right now
+maybe it's because it's an Eda crowd
+we've got more hands this time
+um so it basically allows customers to
+store message messages that the
+application couldn't consume without
+breaking down the rest of the
+application
+so an example of that you imagine a
+producer is trying to send a message to
+a consumer
+and then message C out of the three
+keeps hitting an exception repeatedly
+again and again and again
+so we don't want to continue with this
+otherwise it's going to cause Downstream
+impacts
+so we take that message offline it could
+be a sign of a transient failure or
+maybe it's a poison pill doesn't mean
+that it's necessarily malicious but
+there is some element that you need to
+inspect there and this sort of message
+is basically always going to run into a
+problem
+so the dead letter Q deals with this
+it's a separate cue to your main q
+channel and you can instruct it that
+after X numbers of times of trying you
+put a message into that dead letter key
+for inspection what's really important
+here is that you can analyze the context
+of these messages outside of your
+production application so there's no
+need for open heart surgery or worrying
+that you're going to break everything
+down or that it you know it could just
+be that your settings were kind of not
+not quite right for your messages it
+doesn't necessarily mean that someone's
+trying to kind of spam your service
+um but it's really really a useful
+pattern and we have this both in SNS and
+sqs and the sqs console has a redrive
+mechanism which was launched earlier
+this year and which helps you also
+redrive messages once they've been
+inspected in that dead letter queue back
+into the queue automatically for
+processing should you want again don't
+have time to talk into loads of future
+from this but happy to chat more after
+today
+[Applause]
+the next part pattern I'd like to talk
+to is the asynchronous point-to-point
+model or router
+so event routers need to decide where
+messages need to go so in this example
+we've got blue messages going to the
+blue Channel and green messages go into
+the green Channel
+seems like a simple logic just match the
+messages to the channels that they need
+to go
+but quite quickly it can become increase
+in complexity in logic and then suddenly
+you have tighter coupling again when
+you're trying to make it looser
+how can we manage this
+with the bus
+so imagine
+I'm here bus stop a I've got my blue
+ticket and I'm looking for my my blue
+bus to come around oh I don't know where
+it is I I maybe I can't see it in the
+dark very very difficult to figure out
+our bus our event bus helps us root in
+the right direction so we still have
+Ascender and receiver we still have
+green and blue channels but instead of
+us kind of trying to figure out where
+everything's going manually kind of
+moving it around our our event bus
+handles that for you so you imagine
+you're here with your message waiting in
+the bus stop oh that's not my one that's
+my one oh that is my bus okay cool I'm
+gonna get on
+I'm on the bus oh yeah great I haven't
+played a proper dance routine but here's
+some choreography then I end up over
+here at my message B at my service B
+with my message received so at AWS uh
+our event bus service called event
+Bridge so imagine you've got an event
+bus not name created by us but very
+handy for my dance routine event bridge
+that was the bridge that I went on to
+get there see
+you guys all gonna do it I ask people to
+do this nobody has sent me a video on
+social media not even Eric
+but if you do like maybe I can get him
+to send some credits no
+he doesn't have authority to do that
+I want to see your bus dances
+um but yeah and Amazon eventbridge is
+our
+um simple uh fully fully managed
+flexible event bus uh pay as you go
+service and so it basically helps with
+that message routing it means that you
+don't have to worry about
+you know where the different messages
+are going and routing it across your
+application but it also helps reduce uh
+the the location coupling it help it
+means that you can focus on uh the the
+bits of your application that
+differentiate yourself rather than where
+your messages are going and which
+Services they're hitting
+and it makes life much more efficient
+for senders and receivers now let's take
+a look at how eventbridge specifically
+works
+so you start um with a number of event
+sources
+um and so uh eventbridge can have a
+number of different sources as you can
+imagine our AWS Services
+um but also your own custom applications
+as well as some SAS application
+providers some people like Salesforce
+and others I know many companies use
+eventbridge allows you to ingest data
+from those sources
+um and you then have a kind of a schema
+in in the center and that helps you
+react to those events
+this could include information such as
+the title The Format validation rules
+for each piece of event data and the
+schema registry in novemberage has a
+load of easy to find schema so they
+could be your your own if you've never
+used it before I would recommend using
+some of the schema already in there and
+so AWS provides some schema that you can
+kind of tweak and change based on you
+know our experience with different
+customers as well as our SAS Partners
+providing schema for their platforms
+you can also download this code as as uh
+bindings for any kind of schema in the
+registry for your own IDE which enables
+you to kind of represent that as as
+strongly typed object in your code
+uh but regardless of the events also or
+where the event lands
+um subscribers write rules against these
+events so that's the kind of routing
+element that it takes that takes care of
+for you so when I was like jumping on my
+bus I wasn't worrying about where the
+bus was taking me I just knew that that
+was the bust I needed to be on and it
+was finding the roots for me why because
+it had rules it knew which streets it
+was going to go down which stops it was
+going to stop at you know sometimes
+you're waiting on one bus and you see it
+just go past your sock because it wasn't
+meant to stop there that's kind of how
+it works with eventbridge rules you set
+a number of rules uh that match against
+the incoming events so it knows to pick
+up the data that it needs and where it
+needs to go in your application
+so um and those targets then the next
+part could be any number of AWS services
+so that we've put like Lambda and SNS
+here but it could be ec2 instances it
+could be you know uh container services
+it could be an API destination into your
+SAS applications and and many other uh
+kind of targets that you can play around
+with
+um here's uh a little bit more of how it
+kind of looks like so again you have
+your event sources from these three
+different places your SAS applications
+will have uh their SAS event bus a lot
+of our partners have put together
+um ones for you you can customize your
+own as you build out and but I would
+really really recommend you start
+starting with the D5 members just to get
+your head around it and then you can
+start um kind of playing around and then
+there's over 20 AWS services and API
+destinations that it works with at the
+moment
+and so here's a flavor of the services
+that it works with and then we're adding
+more and more all the time so if there
+are services that at the moment you'd
+love to use with eventbridge and you
+can't we've got loads of PMS downstairs
+and they're going to be on the stage
+later so just tell them because they can
+get it on there quicker than I can
+um but um please do like let us know how
+you're finding it try it out it's a
+really really cool service
+now
+stop on the sales play
+I've talked a lot about events you've
+heard a lot about event driven
+architecture so a little bit of a recap
+I'm presuming by now you know what an
+event is
+I've got one person with their thumbs up
+where have you been all morning
+Eric has no thumbs
+um so
+I can't believe you said that
+um uh so an event is a signal that a
+system state has changed so an example
+again taking out of tech is Imagine You
+Turn All the Lights Off in a room
+you can't unturn that light switch off
+if you need the light back on but you
+can produce another event to turn the
+light on again so this is essentially
+the concept that events are immutable
+you can't reverse them and like take
+them back you can't roll them back but
+what you can do is create new ones as
+you're going through
+the reason why this is important as a
+concept is it's also how we talk about
+them in in contrast to directed commands
+which many of us are used to writing in
+code
+so in this example
+um we have a manager saying Joe please
+can you create an invoice and Joe says
+yes we can
+level events however
+you'll notice aren't forward-looking
+they're saying customer X has ordered a
+widget you know customer has done
+something
+the first person says I don't care it's
+not relevant to them they ignore it
+moves on the second person working in
+finance says oh I'll send an invoice out
+to the customer
+and then the last person says sure I'll
+add that to the sales report for
+analysis so again here you can see the
+difference between the two is that one
+is telling someone to do something the
+other is allowing the other people or in
+application case the other services
+decide what they want to be subscribed
+to and what they want to do with that
+information
+but it all starts with business events
+and this is again some of the talks that
+we've seen today from Gregor and Emily
+and others talked about how we pick
+apart uh business events
+um so how do we do this well
+if anyone can guess what business this
+is retail fulfillment and support you've
+probably all ordered it from it at some
+point I know I do quite a lot
+um but imagine we've got a business that
+has a retail domain a fulfillment domain
+and a support domain each of these
+business areas are going to need
+information from that one customer
+interaction that one customer logging
+onto a website and buying something
+impacts all of these business domains
+but in very very different ways
+and the reason why this is important to
+our application development is that
+you're developing an application that
+can respond in these business contexts
+to make sure that the messages the
+information from that customer event
+hits the business Mains in the right way
+but also the communication back to the
+customer is sufficient and so that's
+where I said it's the right tool for the
+job sometimes you're going to need
+synchronous messaging sometimes
+asynchronous sometimes you won't hit one
+service sometimes you will depending on
+what the customer has done
+so
+we communicate between these events with
+choreography with my little dance on the
+bus stop and this helps create loose
+coupling between our different
+communication
+platforms oh sorry and it's an important
+concept to again kind of get stick in
+your head that I've been covering off
+today and that many of my colleagues
+have covered if you went to Marcia's
+session she was talking about this in
+event design
+that Publishers of events cannot have an
+expectation of how and if the
+subscribers will respond
+so they when you're thinking
+asynchronously the big big difference
+um and how you develop your microservice
+is you're pushing that data out and just
+letting the application do what it's
+doing you're not waiting and expecting
+that response
+when there are expectations which you
+may need in some instances
+um you're adding title coupling to the
+model you're adding uh extra complexity
+and some potentially some Downstream
+impact should something go wrong
+so and here we have the publish
+subscribe model my fulfillment center
+says notify me when the customer creates
+an order
+again the publisher the retail domain
+where we've bought our item has no
+awareness of how the Fulfillment domain
+is going to process
+but the retail domain doesn't change
+amazon.com still works regardless of
+whether that fulfillment center is
+replying to them it just it it just
+keeps keeps processing our messages you
+could have a queue that that keeps them
+if something goes wrong but that's not
+of concern to the retail business that
+their main aim is making sure that
+website looks great that they've got the
+information on there for us that the
+products are up to date but they don't
+have control of how the Fulfillment
+center runs its business
+now I know what you're thinking well I
+don't want to go on a website order
+something and it's not really there so
+how does it work and how does it not
+communicate with the other parts of the
+business well there's going to be some
+areas where you will need tighter
+coupling and that's outside of
+choreography in something we call
+orchestration
+So within a business domain you will
+have a number of steps to check before
+you push that event out into the next
+part of your application so zooming
+inside the retail domain here the
+customer goes in order up looking for
+its item
+you then have an inventory manager again
+could be within your application that
+checks whether or not something's in
+stock if it is it sends it to the
+invoice manager who creates the order
+for the customer who then pings back
+order created and the first step that
+the customer comes back with which is a
+synchronous response is here's your
+order confirmation
+it exists the item exists at some point
+we'll fulfill it that order created
+signal then gets sent to the Fulfillment
+domain as we saw in the last slide
+but the retail domain doesn't tell it to
+do anything with it it just says it's
+happened but what the retail domain was
+able to do was to check if that item was
+in stock and send something to the
+customer
+and we're all following
+just about almost
+um and how we do this in AWS is with AWS
+step function so again I'm sure you've
+seen a lot of it today if you haven't
+it's my absolute favorite service and
+you should be using it please please use
+it
+um it's our workflow tool
+it helps you build uh workflows
+um and within that you have a number of
+State machines and each step of that
+state machine is called a state now
+there's a lot of jargon in in this space
+and I'm not going to bore you with all
+of it
+um the recordings will be made available
+afterwards and I'm happy to chat with
+you one-on-one but essentially what it
+helps is enable complex orchestration
+use cases across distributed workers
+within your application
+it allows for resilient workflow
+automation so those repetitive tasks
+that your application is running time
+and time again but also for some complex
+elements for example human interactions
+where maybe identity checks need to be
+sent off for a human to review and that
+sort of thing
+it has powerful AWS service Integrations
+which I'll go through in a moment and
+you can also integrate with your own
+services
+it has an audible history and visual
+monitoring and it's all defined in Json
+in our Amazon States language
+so as I said it's defining Json Amazon
+State language but also you can write in
+the languages of your choice through our
+Cloud development kits and software
+development kits for data science
+when you're creating uh workflows
+um in in Step functions we also have a
+visualization so you see exactly kind of
+how it looks and why this is really
+really important
+um our customers are telling us that not
+only is it useful for the development
+teams to test things to try things out
+to share with one another how they're
+working but actually communicating to
+business stakeholders why they have
+built the applications in the way they
+have or as many of our colleagues
+mentioned earlier why they've
+restructured the teams in the way that
+they have and so you can imagine in my
+initial example with the retail business
+with the Fulfillment business that it
+won't just be developers who are
+interested in why the retail domain has
+set up the application in the way that
+it has you might have a finance manager
+saying hey but when are you checking the
+the amount of stock and the price
+comparisons well you could show them
+we're checking out this point in the
+customer Journey so it's really really
+useful tool and visualization to tool to
+communicate with business stakeholders
+across your organization who may be a
+bit further removed from the tech
+and then finally execute and monitor so
+quite handily it goes green if it works
+it goes red if it doesn't it goes Amber
+if it's kind of stuck in the middle but
+also you have logging data which is sent
+to a database if you're using standard
+workflows or to cloudwatch if you're
+using Express
+look so there's two kind of integration
+types I mentioned it's type directly
+integrated with a number of our services
+we have 17 AWS Services where it has
+optimized Integrations and so there are
+a few patterns that I'm going to take us
+through uh to to explain a little bit
+more about the difference between the
+SDK Integrations and the optimize
+Integrations but
+the SDK Integrations are really really
+powerful you can now call 220 plus AWS
+Services I actually don't know how many
+AWS Services we have but I think it's
+pretty close to 220 and so I'm not going
+to say it touches all it doesn't but
+pretty much most of them and over 10 000
+API actions so again uh you know we're
+probably covering most of what you need
+but if we're not let us know we have
+some step functions PM's going to be on
+stage in a moment so tell him if you if
+you're if you don't have something that
+you need
+um and then there are uh three uh
+integration patterns so the first one uh
+request response is where step functions
+Waits For That HTTP response and you can
+do that in both
+um the SDK integration so across that to
+220 services but also
+um with our optimized Integrations
+uh run a job is where you call a service
+and you have step functions wait for a
+job to complete
+um so I'll go through some examples of
+those in a moment and then the final one
+wait for a call back is where you have a
+a service you call a service with a task
+token sorry
+and you have step functions wait until
+that task token is returned with the
+payload it could be successful failure
+and that sort of thing
+for tasks uh like these and and run a
+job step functions can pause
+indefinitely to wait for you know an
+external process or workflow to complete
+so again I mentioned it can be really
+useful where you may have some human
+interactions and if you're using our
+standard workflows you can have these uh
+running for up to a year so it can be
+really really powerful in in cases where
+you need
+um
+you need a bit of a longer time for
+process to to go through but you still
+want that automation you don't all want
+it to be human managed
+so the first one requests response
+um so you have you know a request to an
+S S3 bucket uh to to get um some
+information some objects
+you then want to transform something so
+you send a synchronous request to Lambda
+to transform something with that object
+maybe make the thumbnail smaller or
+something like that
+and then when it's complete an
+asynchronous request pushes it into the
+rest of the application so if you looked
+if you remember back to that model again
+we have one business domain doing that
+orchestration piece and then once the
+events done it's pushed into the rest of
+the application and this workflow is
+independent of the rest of it
+eventbridge then takes it and just sends
+it out to the rest of the application
+um
+again this is supported across all of
+the SDK Integrations or 220 Services
+um so whether it's kind of async or
+synchronous requests and depends on
+which service you're kind of linking up
+with
+um and which particular API call
+[Applause]
+uh another another method is our wait
+for callback so here we have a queuing
+mechanism so you send a message to the
+sqsq you introduce a task token to that
+queue and and some contexts that might
+be needed for processing that message
+a fleet of receivers in this example
+I've just put one for ease of the
+diagram then tries to process that
+message
+um and in case there's a problem kind of
+processing
+uh a failure then it sends a task token
+failure back and uh completes with the
+fail State and step functions then
+catches their error and helps you decide
+how it should be protest
+if not if it's successful then they'll
+receive a censor success pattern back
+into the workflow and then your workflow
+completes
+uh this is supported in our optimized
+and SDK integration so again with over
+220 AWS services
+and now the final pattern I'm going to
+go through today and I swear this is the
+last one thank you for sticking with me
+we're almost at the end I'm not going to
+keep you away from drinks any longer
+um it's run a job
+um so a really common example that our
+customers are using and where they find
+this really useful is for big data jobs
+where you're querying large data sets
+for analysis and this can take quite a
+lot of time you don't want to be sitting
+there refreshing stuff yourself or it
+might be a repetitive task you know
+often data teams run the same sorts of
+tasks over and over and over again as
+new data comes through
+so here
+um Step functions is running a set of
+event driven mechanisms to run
+asynchronous jobs
+um with Amazon Athena our query service
+so it kicks off a request to Amazon
+Athena and says can you query the data
+set for me and get the data that I need
+this takes some time because you've got
+a huge data set you need to wait for it
+and then step functions kind of monitors
+and waits for that response then you
+send you've got the query response back
+so then you can get the results that are
+needed for processing you've got your
+results there and then you publish that
+into eventbridge take those results to
+the next part of your application again
+eventbridge
+asynchronously concludes
+um the step functions workflow as before
+and sends it on to the next part of your
+application
+at the moment this isn't supported SDK
+Integrations but it is supported across
+our optimized Integrations and a number
+of services here as you can imagine it
+can be really really useful for it
+automation across our code Suite of
+services like code build for data jobs
+like EMR glue and Athena for machine
+learning where things take a lot of time
+or batch jobs or containers
+so I really really would advise you
+trying it out we also published a blog
+post on how to use step functions with
+Amazon eks recently which is really
+really good so I talked about a lot of
+serverless stuff in this talk that's my
+area of interest and expertise but step
+functions works really really well with
+containers and so I would implore any of
+those in the room who are thinking about
+event driven but they still look
+containers in their application like you
+can do both it's not just a serverless
+world
+um and unlike some of my colleagues
+would like to think so please do try it
+out set functions works really really
+well across both containers and
+serverless and also with traditional ECT
+so I've mentioned load of services today
+lots of jargon words and hopefully
+you're still with me and but I just
+wanted to do a bit of a recap before I
+send you off for a glass of wine so the
+first one that I mentioned is Amazon sqs
+or simple queue service that's our
+messaging service it's durable and
+highly scalable it's fully managed and
+has comprehensive security it's also one
+of our oldest services and as I said
+earlier if you think you can beat 70
+million messages per second please try
+we'd love to write that blog post the
+second one is Amazon eventbridge that's
+for that choreography if you remember
+nothing remember I made a Fallout of
+myself and dance and only like four of
+you laughed that's our event filtering
+service again fully managed and scalable
+and has Integrations with many of us as
+partners
+Amazon SNS or simple notification
+service helps with performance at scale
+again fully managed and Enterprise ready
+and helps with that published subscribed
+ill fan art approach and then finally my
+favorite service AWS step functions and
+for workflow automation orchestration
+parallel execution State Management and
+much much more and I'm happy to hear
+your questions after this session
+so again recapping you use orchestration
+with step functions within that business
+domain choreography across your
+application across those microservices
+with eventbridge and if you went to
+Mars's session you would have seen the
+slide already but it's really really
+good so we're showing it to you twice
+but they are better together and after
+this session you're going to see me
+again interviewing some of our panelists
+from both eventbridge and step functions
+and our partners at mongodb and
+hopefully they will say the same thing
+here I think they're better working
+together so please try them out
+hopefully you've had a bit of a flavor
+and inspiration today but now you've
+heard me talk I want to see your
+patterns choose them build upload them
+to serverless land ping me on Twitter
+and I'm happy to answer any of your
+questions thank you all right thank you
+[Applause]

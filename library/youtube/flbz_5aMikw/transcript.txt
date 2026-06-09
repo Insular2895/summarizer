@@ -1,0 +1,164 @@
+I have uh screwed up I'm not afraid to
+admit it I've screwed up quite badly
+this number should say three on it
+instead it says minus one to understand
+the source of my misery you can kind of
+see this this is our websites here our
+docs website uh we're importing ad from
+MacBook UK maths and we're getting add
+one two that should say three but it
+says minus one on it this repo here is
+pretty simple really it's just an xjs
+app um we've just got some dependencies
+the one dependency we've got is really
+MacBook UK maths and that is actually
+coming from another repo maths is in
+this repo we've got an index.ts file
+that we're actually bundling with TS up
+and formatting it into some kind of
+index.js files which we're then
+publishing up to npm and if we look
+inside here
+add is subtracting and subtract is
+adding okie dokie okay so to get this
+working we're going to have to release a
+new version of this package up to npm
+we're then going to have to go into our
+other repository change the dependency
+we have on MacBook UK maths reinstall
+that that will change the package log
+Json and then we can redeploy or you
+know and hear me out here we could move
+both of these repositories together into
+the same repository so that we didn't
+have to do this like publish version
+thing the best way to do this is with
+npx create turbo let's run this and
+we're okay to proceed now we're going to
+create our new turbary poster my mono
+repo let's say we want pmpn because
+that's nice and fancy and this is going
+to give us like way more stuff than we
+need okay now we can see what we've got
+we've got an apps docs and an apps web
+and I think we can just delete both of
+these because we're not going to need
+them we've also got a UI package inside
+here which we can delete let's start by
+adding our maths package into our
+packages I've also just removed the
+packages maths git folder making sure
+that it uses the main mono repos git
+instead of its own little sub module we
+should also remove the lock file from in
+here because it's not going to use this
+lock file it's actually going to use the
+one at the root and now let's run pnpm
+install just to make sure all of our
+dependencies and all of the workspaces
+are up to date I've now copied over the
+docs folder as well so I can get rid of
+this lock file and also make sure that
+the git is no longer there as well I'm
+now going to look inside the
+package.json of my docs folder here and
+I can see that Matt pocock UK maths is
+in here this one now is going to use the
+actual local version of MacBook UK maths
+that means it's not going to have to go
+up into the npm registry because I'm
+using pnpm we can actually do workspace
+this to make sure that it resolves to
+the version that's in the workspace and
+usually I like to just do it with a star
+here so it's not resolving to any
+specific version it it's just resolving
+to the one that's in the workspace let's
+run pnpm install again because we've
+added another workspace we've got more
+dependencies we've got to make sure
+they're all installed and make sure
+everything's set up correctly we now
+want to run everything locally to make
+sure that if we make a change inside our
+maths package it's going to go into our
+app now here we've got a Dev script
+inside turbo.json that means that when
+we run Dev everything that has a Dev
+script that's going to be run in
+parallel so luckily we already have one
+inside apps docs and we should have one
+inside packages maths too which runs the
+build on a watch every time it changes
+that means from root I can run pnpm
+turbo run Dev and that is going to run
+the docs Dev and the maths Dev like at
+the same time in parallel that means I
+can work on them both at the same time
+okay so now on localhost 3001 I can see
+the source of my shame this freaking
+minus one
+and now in theory I should be able to
+switch these over and minus this one and
+we fixed it three we have fixed it we
+should probably send this up to npm to
+make sure that you know everybody else
+can take advantage of this new logic
+that I've put in my app and I'm going to
+run pnpm
+um turbo run build and that's going to
+actually build the application ready for
+me to publish it next I'm going to CD
+into MacBook UK maths and publisher
+itself so CD into packages maths and run
+npm publish and in theory that should
+send it live there we go pal look at
+that
+0.0.4 only a few seconds ago does not
+have a readme but my God it has a lot of
+value we now need to make sure that we
+can deploy our new Doc site onto the web
+so what I've done is I've published my
+mono repo into a public repository we've
+got apps docs here ready to go we just
+need to stick it on the cell and then
+we're good I've gone to vasel.com
+forward slash new and I'm going to
+import my monitor repo from here we can
+see that we immediately go onto this
+screen I'll say yeah my monorepo is
+pretty good the framework preset won't
+be set by default but we can go into the
+root directory if we want to by going to
+apps docs and that then means we can go
+and stick this on next JS which is our
+framework directory on the build and
+output settings I'm going to override
+this and I'm going to actually CD into
+the root directory and then run pmpm
+install on the next one I'm going to say
+the output directory is the next GSD
+fault which it is in fact sorry I've put
+that in the wrong one inside here I can
+say pmpm turbo run build and that's
+pretty exciting so I should be able to
+hit the deploy button and just go ah yay
+we've got our new project and if we go
+and click on it Zoom this boy in we have
+our magical three that we've been
+searching for finally my shame is lifted
+I think think I can rest now so there we
+go friends in almost no time at all we
+put together apps docs and then packages
+maths and we've got everything working
+as it should we've got a deployed
+package inside here we've got a deployed
+application and they're talking to each
+other and any changes that go into maths
+will immediately get reflected into Apps
+docs as well if you enjoyed this video
+then do consider liking and subscribing
+and doing all that fun YouTube stuff I'm
+gonna be posting a lot more on the
+vessel Channel and I can't wait to talk
+to you more

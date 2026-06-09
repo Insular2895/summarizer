@@ -1,0 +1,516 @@
+Have you ever seen these shape morphing
+animations and wondered how was this
+even made? Well, in this video I'll show
+you how to create smooth Apple style
+shape morphing in After Effects. And
+don't worry, I'll break it down in the
+simplest way possible so you can
+actually understand. No plug is
+required, just clean motion. Let's do
+it. In this video I'm going to be
+creating this Apple Music UI morphing
+animation. So let's get started. Yo, so
+first things first, I got to show you
+how to actually morph the shapes. Which
+to morph shapes we have to use a shape
+layer. Some people use solid layers and
+try to morph stuff like that just not
+possible like that. Or maybe it is, but
+you're just overcomplicating things. So
+first we go to layer, new, and then we
+go to shape layer. Or if you have my
+plug-in Prime Tools then you can just
+make a shape layer by clicking this
+button. Okay, once you have your shape
+layer you go up here, and as you can see
+we have some options here. You have the
+rectangle tool, rounded rectangle tool,
+ellipse tool, polygon tool, and the star
+tool. Now for shape morphing you only
+want to use the rectangle tool. I
+personally use the rounded rectangle
+tool just because it's rounded and it
+kind of fits the Apple aesthetic as
+Apple always has rounded corners. And
+then from here you can go to the
+contents, rectangle one, and then you
+have access [music] to your size,
+position, and the roundness of your
+shape or whatever. Now what some people
+do whenever they try to do shape
+morphing is that they just go to scale
+and they turn this off. And if we create
+a keyframe and make it like this, that's
+what they do. Now I don't know if you
+can tell, but it's kind of like ruining
+the shape. At least the the corners are
+not like rounded like they should be. So
+instead of doing that, you should go
+into your contents, rectangle, [music]
+rectangle path one, and right here where
+we were just at, you move this size.
+Don't move the other size of the layer
+whatever. Use the actual rectangle path
+to do your morphing. If you scale this
+up, obviously it scales everything at
+once. So it has this little locking
+mechanism thing, which if you disable
+this by clicking on it, you can actually
+change how it looks. And as you can see,
+the corners are not being messed up by
+this. This is actually how you do the
+proper shape morphing. Like this is
+actually it. It's so simple, yet some
+people over complicate these things. And
+so from here, you just have to keyframe
+whatever you want. So let's say we go
+back to the square. This is going to be
+our first keyframe. And then we go over
+here, and let's say we want to make it,
+I guess, skinny like this for some
+reason. And you [music] just have it
+wherever you want. And now if you play
+it, it'll basically morph into that
+shape. And obviously with the right
+graph, it would look really smooth. I
+know it's crazy, but it is literally
+that simple. Now, what if you want to
+make a circle? Cuz there's many UIs
+where you would want a circle. Then it's
+as simple as just bringing the roundness
+all the way up, which you will get a
+circle. And if you play it, [music] as
+you can see, it still morphs into that.
+But let's say you wanted to morph from a
+circle to a square, you would also
+keyframe the roundness. So we go over
+here, let's delete this keyframe, and
+then let's bring down the roundness to
+zero. And then let's go ahead and add a
+graph to this. And as you can see, it
+now morphs from a circle to a square.
+Which typically, if you're making a
+square like this, you don't want it to
+be fully squarish. You still want it to
+be a little bit rounded like this. So it
+would look like this. And for shape
+morphing, what makes it look really cool
+is that sometimes it shifts colors as
+well. So it looks like the icons are
+just shifting, but in reality, it's just
+this shape layer moving. So let's say we
+go from this square, we keyframe size
+[music] and roundness, and then we want
+to make like a like a task bar, or I
+don't even know what the name of this
+is. So we would have something like
+this.
+That shape morphs into this, right? Or
+maybe we do it even faster, so looks
+[music] a little bit more like seamless.
+Obviously, we would have like PNG icons
+and text and all that. That's what
+sells, I guess, the UI. And like I said,
+another thing that also sells it is
+changing the color, [music] which you
+can do it exactly in here. So you go to
+rectangle, you go to fill, and right
+here you have a color, which you can
+also keyframe. So let's put this
+keyframe at the beginning,
+>> [music]
+>> and then let's say over here, maybe
+we're doing a UI for like, I don't know.
+Let's just change the color to like
+gray, or let's change it to red so it
+can contrast the background. Press okay,
+and then let's use the same graph. Now
+when we play it, it shifts color as
+well. So, it's almost like it's changing
+icon if that makes sense. And obviously
+what sells it even more is having, you
+know, pictures, icons, text, and not
+only that but having like a little
+bounce animation around this right here
+once it's like starting to shape into
+the next shape UI. And if we kind of
+dissect one of my edits where I do this
+shape morphing, we have basically this
+like rectangle or whatever, but it
+starts to shape lower, you know what I
+mean? And then it it changes colors at
+the same time. And then while that's
+happening, the icons and the text are
+just a key frame with opacity. And right
+here we have another example. This is
+happening, and then as you can see the
+color is shifting and the shape is also
+changing. And now it changed to this
+button or whatever, which [music] then,
+you know, they click on it and then it
+changes to this other like Discord UI
+type which all [music] this thing is
+just one shape layer. This is one shape
+layer. This is the same shape layer. And
+this is the same [music] shape layer.
+It's just shifting colors and there's
+different icons on it if that makes
+sense.
+So, obviously I wanted to work on a UI
+for this video, but I was thinking of
+what I should do. So, I was just
+clicking around my phone. And so, we're
+going to be making this UI right here.
+And I don't know if you can see, this is
+a screen recording from my phone by the
+way. Once you click on it, it becomes
+bigger, you know what I mean? So, we're
+just going to be doing this animation
+right here. So, we're basically going to
+be building this scene just a little bit
+different. So, let's get started.
+I'm going to put this on a different
+composition just so I can kind of go
+back and forth and look at it. Okay, so
+the first thing we got to do is
+obviously do the UI. We're going to make
+a shape layer. We're going to get the
+rounded rectangle tool and let's make a
+square. If you want to make a perfect
+square, you want to press shift while
+you're dragging. And also if you wanted
+it to be centered, you want to press
+control at the same time. And as you can
+see, now it's centered and it's a
+perfect square. But let's make it around
+this size. Let's center the anchor point
+and center the square. And now we look
+back at this because reference is one of
+the most important things. So, you'll
+see that the roundness is way more
+pronounced, I guess you would say. And
+let's go ahead and increase the
+roundness. I'll say to around right
+here. Probably a little bit less. If you
+want to be perfect, technically you can
+import this and layer it on top of here
+so you can actually get it right. It's
+not really that important. Quick pause.
+I know you're enjoying this fire
+tutorial, but let me tell you about Luma
+AI cuz they're the sponsors of today's
+video and they looking kind of tough.
+This is Luma AI's Dream Machine and they
+just dropped something called Ray Three
+Modify, which honestly fixes the biggest
+issue with AI video. With Ray Three
+Modify, I can re-envision any scene
+however I want. And [music] the crazy
+part is that the performance stays the
+same and you can completely change the
+look of any shot, which is kind of
+crazy. With Modify, I'm not guessing
+anymore. I'm actually directing. This is
+huge for things like music videos, short
+films, or VFX passes, especially if you
+want big production value without a
+massive budget. You guys already know
+that AI's getting bigger and it's not
+going anywhere anytime soon. So, it's
+either you learn how to use it as a tool
+or you get left behind. If you want to
+try our Dream Machine for yourself, link
+is in the description or you can scan
+this QR code. But anyways, back to the
+video. And instead of making it, I guess
+this a glass type of thing, I'm going to
+go back to the simple white background
+just cuz I feel like that's a little bit
+more cleaner, in my opinion. I like this
+glass effect, but I think it's uh a
+little bit too much and it wouldn't make
+sense if like this is the screen, you
+know what I mean? Or maybe it would, but
+it's all up to you. So, we're going to
+make a solid layer, we're going to put
+it at the bottom, and let's make this
+white, maybe a little bit grayish. And
+now we basically want to get the profile
+picture and all these icons. The text,
+obviously we do it in After Effects.
+This little play button, these little
+icons. Let me put y'all on game. If you
+want to get free PNG icons that are
+super high quality, I recommend going to
+Flaticon. And in here, you can basically
+search for whatever icon you want. If
+we're looking for this little play
+button thing, we literally just type
+play button. Search. And as you can see,
+we get a whole bunch of super high
+resolution play buttons, which the first
+one looks like it's perfect. Then right
+here, you have the resolutions of it.
+Obviously, you would choose the biggest
+resolution and then just download it.
+I'm not sponsored by them. I think this
+is just a great website, so I'm putting
+you guys on. And just for that, I think
+you guys should go down below and give
+this video a thumbs up. I'm pretty sure
+if you're still watching, you're
+enjoying this video. So, give this video
+a thumbs up. I mean, it's literally
+free. And while you're at it, if you're
+new to this channel, make sure to
+subscribe. I post a lot of cool After
+Effects tutorials. Anyways, back to the
+video. Obviously here, now I have to get
+the profile picture, the tags, the
+icons, and put them all right here. Make
+sure to get the highest resolution icons
+as possible just because if you zoom in,
+you don't want any pixelation. And for
+stuff like this where it has an icon,
+but it also has like a little button or
+whatever, we can actually just make a
+shape layer. And in this case, we can
+actually, I guess, use the ellipse tool
+and make a circle, enter the anchor
+point, and let's have this around right
+here. Maybe a little bit bigger. You
+know what? Let's go ahead and just
+duplicate this, freeze frame it, copy,
+paste, bring the opacity down, and then
+let's basically align it kind of like
+this. And yeah, this circle was supposed
+to be a little bit bigger. There it
+goes. And so now, I'm just going to get
+the album cover, put in this text, add
+this icon, and these as well. So, I'll
+be right back.
+>> [singing]
+[music]
+>> And there it goes. This is the look that
+I want to go with. Now that I think
+about it, it kind of looks like an Apple
+Watch like thing, especially with the
+dark mode, which this isn't even like an
+Apple thing, but it low-key should. This
+looks really good, actually. So,
+basically here goes the first UI out of
+two. And now that I think about it, this
+technically was supposed to be smaller.
+Let's make a null, attach everything but
+the background to it, and then let's
+just make it smaller, maybe a little bit
+bigger. Okay, now from here we basically
+want to shape morph it. So we get this
+main shape right here and we press U
+twice so we get this. Turn this off,
+make key frame for size and roundness.
+Press U so we get the key frames right
+here and now we go to somewhere where we
+wanted to shape it so around right here.
+Maybe let's actually bring this over
+here and then this should get bigger and
+wider.
+A little bit thinner. If we need to
+adjust it later, we can. Let's make the
+corners a little less rounded, maybe a
+little bit like this. And now we just
+basically add a graph to it and there
+you go. And now from here we basically
+adjust the rest. And now that I'm
+looking at it, let's make it a bigger
+actually like this and like this, like
+this. And then we get this. Okay, and
+then now we basically have a new canvas
+and so now we want to basically shape
+everything around. Looking at the
+reference we see that the album cover
+gets bigger but stays in place. And
+we're going to do that. Also the text
+but it kind of changes a little bit. It
+gets smaller because there's a feature
+on it and then the play button and stuff
+it stays in place. And now that I think
+about it, it should technically be
+playing so it should not be a play
+button. It should be it should be like
+the pause button. You know what I mean?
+Maybe we'll change that later. Actually
+no, let's change that right now. So if
+we put pause on here,
+let's go with this one. Download. All
+right, now we make it smaller. Let's go
+ahead and make it white and let's place
+it right here. Let's remove this little
+There it goes. That looks kind of weird.
+Make it smaller. Why does that look
+weird? I think these need to be a little
+bit closer to each other. There it goes,
+that looks better. All right, so now
+since it's morphing like this, now we
+want to change stuff around. We want
+these basically to just get bigger and
+at this point let's just scale them all
+at the same time which to do that we
+want to use a null. But as you can see
+there these are all attached to that
+null that we made to scale everything
+down so we're going to have to do a
+little bit of math here. Okay, let me
+change these. All right, and basically
+all of these pink ones, and I guess now
+this thing, but this should go down
+here. Let's make this pink. Lavender?
+No, not lavender. Beige? There you go.
+And now we make a null, and then let's
+name this null clay thing. I don't know.
+Now let's get all of these and basically
+attach them to that. And then we attach
+this to the main null. So now Yeah, it
+should be there. Okay, and now with
+this, we can scale this up as you can
+see. We're going to make a scale and
+position keyframe. And then I'm going to
+look at the previous keyframes that we
+did, just so we can stay at the same
+speed. Make this bigger, and it should
+go lower around right here.
+Uh a little bit above, actually. Not
+that big, because we need this volume
+thing and this AirPlay. So maybe we'll
+move this around, but this is basically
+where it should be at. We highlight them
+at the same graph, and now we get
+something like this. You see? And now we
+basically do that with everything else.
+So now with this, I think this is
+supposed to be getting bigger now. So
+scale, position, and how big should it
+be? Well, basically it takes the whole
+[music] top half, so we scale this up,
+and something like this. And then let's
+add this graph, and there it goes. And
+now we need to bring the names lower,
+basically. Also, the little AirPlay
+thing kind of just like fades away, but
+it does kind of move down a little bit.
+So since all of these are individually
+made, we want to basically attach
+everything to either each other or into
+a null, which I'm going to basically use
+a null. Null, I'm going to call this
+What is it called? AirPlay button.
+And now let's get everything that goes
+under, including this. Let's attach it
+to this, and then we attach this to the
+main null here. Let's actually rename
+this to main null.
+>> [music]
+>> And now it also has this gray button,
+which is down here, not sure why. Let's
+put it up here, and let's also make it
+orange. And let's attach this to the
+AirPlay button. And now using this null,
+as you can see, it moves the whole
+thing. So let's look at these keyframes
+that we did before. So, starting here,
+position, and then it should kind of
+like position Well, that looks
+Technically, right here it should
+position up because it this whole thing
+is just scaling. This is it's on the top
+right. That's why it's going down. So,
+technically, it should go like up. So,
+let's bring it up over here and let's
+also increase the scale a bit just like
+this. And let's add the graph. There it
+goes. And it's basically just going to
+fade away. So, we're going to grab all
+these, press T for opacity. Go to the
+end, bring it to zero, grab all these
+keyframes, and add the graph. There it
+goes. And technically, we want the album
+cover to be on top cuz as you can see,
+it's kind of like behind it. Well, let
+me actually just search for that. Let me
+click on it. Let's rename this album
+cover, and then just put it all the way
+at the top right here. So, it gets on
+top of it. And now we have something
+like this. This album cover is a little
+bit too rounded. I had previously added
+a shape layer, and then I used and then
+I went to blending mode and did stencil
+alpha. So, I can use the shape layer to
+just move the roundness. So, basically,
+we want to make it less rounded now. So,
+let's look at where the first keyframe
+is at over here. Let's put our timeline
+there, and then let's go to that comp,
+and now we are at that exact same moment
+[music] or timestamp. We go to
+roundness, keyframe it. Now, we go back,
+go to the end of it, go back, and now
+let's make this like this, and then
+let's do this in graph. And let's turn
+on motion blur. So, if we play it, there
+it goes. It gets bigger, and then this
+is where we can see that this is a
+little bit too wide. So, technically, we
+go over here and just make it a little
+bit skinnier where it matches something
+like that. Let's highlight this, add a
+graph again cuz every time you adjust
+the keyframes, it does move the graph
+slightly. And let me actually make this
+less rounded. All right, let's see how
+it's looking. There it goes. Now, we
+basically just need to add the text
+going up, which you kind of get the
+point of it. It's pretty simple. It's
+just I guess like very time-consuming.
+Okay, so now we're just going to
+basically bring up the text, and then
+also add like this timeline or play
+thing whatever these numbers this star
+this volume thing these icons and this
+which I basically kind of showed you how
+to make it. This will basically be a
+shape layer.
+Even this thing right here would be a
+shape layer. This would be a shape
+layer. This technically could be the
+shape layer but I'm just going to find
+an icon and these are just icons that
+you can go on that website that I told
+you about. These are text layers text
+layers and yeah pretty simple. I wish I
+can buy a time machine.
+>> I wish that I could see.
+That's cool but I'm at least like two in
+been waiting since you flew in been
+thinking and pursuing. I see life
+through a new lens is shaking that [ __ ]
+moving [singing] been thinking you
+should move in let's make it and have a
+few kids. Why the [ __ ] not? And there
+you have it. I actually ended up adding
+the lyric part just so I can post it on
+Instagram and this edit ended up going
+pretty crazy at 1 million views and
+100,000 likes. If you want to learn how
+to make more clean Apple style UI's give
+this video a thumbs up. Let's get this
+to 7,000 likes and I'll drop another for
+y'all. Make sure to subscribe and turn
+on the notification bell so you don't
+miss any new uploads. Also if you want
+to be one of my students and learn more
+about editing DM me on Instagram. Shout
+out Luma AI for sponsoring this video
+and I'll see you guys on the next one.
+Deuces.

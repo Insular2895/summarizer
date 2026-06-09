@@ -1,0 +1,247 @@
+[Laughter]
+hey guys hackersploit here back again
+with another video uh and in this video
+i'm gonna be showing you how to get the
+os
+juice shop set up uh installed and
+running so
+a lot of you guys had queries uh you
+know uh
+in correlation to the previous video
+where we talked about csrf
+and you wanted me to show you how to
+install the os juice shop
+now the truth is is that there's plenty
+of ways to go about doing it but
+for me i like the keeping things really
+really simple
+and like in the previous video what i
+did was i
+simply uh download installed it uh node
+or i have it
+pre-installed and the version that i
+have installed is
+one one point version so that's the
+latest stable edition this is what they
+recommend that you use
+and as you can see the latest version of
+juice shop that i have on my desktop
+is supposed to work with uh node eight
+all right so let me just
+throw that out we're not installing the
+latest version of node which is version
+10 i believe
+so node needs a node 8 to work all right
+now let's get started with installation
+i will have
+all these links in the description
+section so you don't have to worry about
+anything
+now when it comes down to installing
+node.js i like doing it
+from the package manager more
+specifically the aptitude package
+manager so
+you can see uh on this web page here
+once you click on it they have
+installation instructions for
+any linux distribution and mac os right
+over here and also windows
+if you're into that type of thing in
+addition once you have node.js installed
+that's pretty much
+the hardest bit uh down there and even
+that's not really hard
+so if you're running arch linux the
+instructions are right over here it's
+pretty much
+extremely easy to install it on arch
+when it comes down to debian which is
+what
+kali linux is based off you have to use
+curl to get the file
+first the setup and then you run the
+setup and then finally you can
+you can use the uh the aptitude the
+aptitude package manager to install
+uh node.js once uh in that directory
+all right so you can run this command if
+you want to install
+node.js 10 you can do it from here but
+as i mentioned you don't need
+a node.js 10 because uh it will not work
+for this but if you ever wanted to
+install node.js that's how to do it
+now of course you can run the uh the
+linux installer which
+is a is a shell script but i don't
+recommend that because you'll probably
+face some sort of issues and this
+installation does
+include the node package manager which
+is extremely important especially
+because
+we are going to be hosting our uh our
+web application which in this case
+is the os do shop locally uh and node.js
+is fantastic for this i mean i really
+really like how node.js handles this
+whether you're working on a local
+environment and you're testing you the
+website or web application that you're
+building
+it's really easy to set up the hosting
+all right
+now when it comes to the os juice shop
+project this is the home page right here
+the it's they don't really narrow it
+down when it comes down to installation
+as to how to do it
+you can see you can you can see there
+are various installation methods and
+uh you have your node.js uh docker and
+vagrant no so
+uh node.js is pretty much going to work
+on all three platforms whether you're
+running
+lindex windows mac os you then have
+docker which i'm pretty sure you're
+familiar with in terms of
+containers uh which is also great but i
+don't recommend it especially for
+something as small as this
+uh docker is is good for something a bit
+more
+larger and more professional something
+that you you really need to have in a
+container
+and vagrant can run on a windows mac and
+linux i don't recommend vagrant if
+you're a beginner because
+uh as i mentioned previously when
+building metasploitable three
+you will encounter tons of errors that's
+probably a next video that i'm gonna
+do as we move on to using metasploitable
+three so
+uh that being said uh what i recommend
+that you do
+is you can use uh you can you can use
+the
+node.js installation but you can click
+on this hyperlink here
+called easy to install and this will
+take you to this link
+right down here to this github
+repository now i already have this
+github repository opened here
+so this is essentially the home home
+page for the os
+juice shop project and you'll find
+everything that you need
+right in here so starting off it'll give
+you a description about what it
+is the setup and you can then start the
+installation from
+from sources which means you have to
+install it from source which i don't
+recommend if you're a beginner
+you then have your packaged distribution
+which is what i recommend so you want to
+click on this link right here
+that tells you to download the latest
+release so i'm going to open that in a
+new tab
+and as you can see you need to install
+the 64-bit node.js on windows or linux
+and uh once you have it downloaded you
+you need to unzip it or
+under are it and and then change your
+directory into the unroad folder
+and then you start the node package
+manager and once that's done uh you just
+need to go
+uh and just need to go on to your local
+host with the port 3000 which is
+standard for node.js all right so as for
+the releases
+i'm running the latest one you can see
+they're sorted in terms of
+platforms here so you have linux and
+windows i
+recommend going with the latest version
+which is running on node
+8 which is more stable so click on that
+it's about 50 megabytes here
+and once you have it downloaded as i did
+you can just unzip it i
+i unzipped it um and i have the
+the directory on my desktop here so what
+i'm going to do is i'm going to change
+my desktop
+uh to change my directory to the desktop
+and
+i'm going to change my directory into
+the juice shop folder
+and if i list the files in here we're
+going to change directory into the
+further
+into the other directory and we're going
+to list the files now so in here you
+need to just start the node package
+manager and
+node will be hosted from this folder and
+since all the files required
+are in here you don't need to worry
+about anything else that's primarily why
+i really really love
+node.js alright so if you look at the
+command
+on how to start it like here you the
+command is pretty simple just
+npm start and it should tell you that
+your site is being hosted locally so npm
+start and i'm going to enter and let's
+see what it tells us
+uh juice start node app all right so
+it's told us that it's starting this
+um let's see if it actually tells us
+it's being hosted or
+is there some sort of error here yeah
+there we are so the server is listening
+on port 3000
+and now if we go to localhost um
+local host and port 3000
+like so uh it should be hosted on uh on
+the on your local host
+and there we are welcome to osho now
+remember if you have been playing around
+with it you can see
+this is the same uh installation that i
+did have
+and your your hacking progress will be
+restored
+that's because again the reason why i
+love it so much is
+it's going to save where you left off in
+the sense that if you have exploited any
+of the features
+you don't have to do them again uh so go
+ahead
+enjoy uh it's really a very very fun
+challenge i was view shop i really
+really enjoyed it and
+it really encapsulates everything and of
+course i'm going to be focusing on
+exploiting the entire web application
+and all the challenges that you need to
+solve but that's for the future videos
+so i hope uh you found value in this
+video if you did please leave a like
+down below if you have any questions or
+suggestions
+let me know in the comments section on
+my social networks
+uh or on my website and i'll be seeing
+you in
+the next video peace

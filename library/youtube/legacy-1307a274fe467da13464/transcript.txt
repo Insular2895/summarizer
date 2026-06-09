@@ -1,0 +1,216 @@
+OK, well, I shouldn't tell you this, but
+what Trend Track has just released
+is revolutionizing the world
+of e-commerce.  Indeed, they released
+their latest API key in their latest
+update, and this will allow you to
+extract
+application data directly from your
+Cloud chat.  Also, you can perform various
+automations because it is also capable
+of being connected to NN and you will even be
+able to make your scripts for your ads,
+so find hooks and so on
+compared to those of your competitor
+directly from the Cloud.  Claude will be
+able to search
+the Train Track application for different
+hooks to offer you and
+not rely on his algorithm with a
+slightly robotic tone.  So this is
+definitely a cheat code.  In this
+video, I'm going to show you how you
+can connect your cloud to your train
+track.  So we're going to make connections
+together.  I'm going to explain everything from A to
+Z and we'll also look at the
+different possibilities, even doing
+a hook test in this video.  So
+let's go, I'll let you follow me.  First, we're going to
+analyze the
+documentation that Trend Track has just
+released.  From the outset, we can
+see that he is talking about Claude and N.
+N, for those who don't know me,
+is an orchestration site that
+is capable of creating AI agents. I have
+already created AI agents for several of
+my clients to automate their customer service,
+automate their sales, boost
+their sales, and now we can even
+automate product research of
+competitors and so on.  Anyway, there's a
+lot of automation to be done.
+In fact, I've included a link
+for those who want to know how to
+automate processes in their
+e-commerce business.  Well, that's not the topic of
+this video.  The goal is to see
+how we can use Train Track
+to really save time and
+money.  So, Trend Track,
+for those who don't know it, allows you to
+find winning ads,
+scaling stores, hooks and
+so on, different marketing angles.  And
+there, we can integrate it with the cloud, with GPT, and
+also use HTTP requests to
+perform different tasks.  So for
+example, uh, in an AI agent, it is
+asked to retrieve
+information from trend track, bam, with
+an API.  One HTTP connection still needs to be paid for.  Anyway
+, it's really great.  And if we go
+down, then there you have it.  So here, for
+example, we can even build an
+agent that is capable of
+giving ads based on skills related
+to your tracked brands, simply to the
+brands you follow every morning.
+Well, you can get a summary here thanks to
+Train Track.  You have a lot to
+do, it's really impressive.  OK,
+you can also connect it to your
+cloud.  That's what we're going to see
+today.  Thanks to this, you will be able to
+ask him to show you
+products that are scalable
+in relation to a niche, and then he will be able to help you
+out.  Finding
+Shopify stores that sell
+sleep aids, finding stores
+that look like your store, for example,
+creating hooks, landing pages and
+so on for skincare, in short, you have a
+lot of options.  You can
+monitor, you can ask him to
+make briefings, you can uh
+ask him what
+credits you have left and so on.  Anyway, there are
+a lot of things you can do, so let's
+go directly to how we can
+connect Train Track to Cloud.  OK,
+now we're in Cloud for
+the tutorial on how to connect
+Train Track to Cloud.  I simply let you
+go to your account, go
+to settings, you need to go to
+connector, in add a
+custom connector, you can directly
+rename it trend track.  OK, you're
+going to copy this URL.  OK,
+I'll put this URL in the description, it'll
+be much easier to
+find it that way.  You click "add" and then
+you will see that you will have
+Train Track displayed in grey on the
+small greyed-out area.  So you're going to come here to get
+connected.  When you
+want to log in, it will
+ask you to log in with your
+account.  So you click, you log
+in, and we'll see where we end up
+directly afterwards.  OK.  You
+will then arrive directly on this
+page.  You just have to accept the
+various conditions.  Click on
+allow access and your
+account will then be connected to Trend Track.
+OK.  So here we are, picking up
+directly from my conversation.
+close.  You just have to click on the
+small plus sign on the connector and use
+trend track.  So, that's how you do
+your search with trend track.  So, if
+we look at the responses we've
+received, give me some
+hook ideas for creative people, knowing that I
+sell high-purchase fountains.
+Anyway, I want hooks that perform well.
+And here we have a hook
+that is actually based directly on a real
+hook train track.  OK, it's not
+your cat's food that's damaging its
+kidneys and so on.  And in addition, we
+explain, there is an explanation
+below that it is constructive,
+that there is guilt of unconsciousness
+and so on.  Anyway, there are lots of
+things.  And so in fact, this is where
+Trend Track's performance will go
+beyond simply giving me
+hooks; it will be able to base itself on
+hooks that work from a competitor
+in a real niche.  And that's what's so
+incredibly powerful.  OK?  That's what we love
+about Trend Track, we love
+this new feature because it's
+going to save us a lot of
+time.  We'll get
+working Hooks right away.  not like the ones I mentioned
+earlier that are based on
+algorithms.  And what's really cool
+is that when you go down a little bit,
+you can see that Train Track
+can be based on behaviors, on
+indirect products, even on the fake
+word.  In fact, that's what's really
+cool, it can then
+suggest hooks based on
+different topics and that's the
+power where you'll be able to
+get hooks.  If you want more of something like
+fake moto, if you want more of
+something, well, then uh, on
+human behavior, on different
+things, well, then Claude will actually be
+able to directly offer you
+different hooks on different
+situations and so on.  So that's
+really powerful.  Now, we've seen
+Trend Track commenting to Claude, how to chat
+with him so that he'll give you H's and
+so on.  Now we're going to see how to get
+Cloud and then Stream Track to
+work for you literally while
+you sleep.  You just have to click on cloud
+code.  OK, so Cloud Code, you'll
+arrive, you'll go into the routines,
+you just have to create a new
+routine and there, you can name your routine,
+for example, "brief of my
+tracked brands," for example.  And so there, you
+can receive, for example, every
+morning a news item about the brands that you have
+tracked, simply the ones that you
+track manually.  Well, there,
+for example, you give him a
+prom, so bring me the hooks of this
+brand and the hooks of this brand or some
+new ones.  Anyway, that's up to you,
+the expert, to decide, so you
+can give it your instructions and
+so on, connect it to your trend track
+with the API and even the native connector.
+And so you will be able to create this
+routine for every morning,
+potentially receiving the five
+new hoos from your
+most successful competitor.  If you want to know how to
+implement this in your business, you
+just have to click on the call link,
+it's totally free.  We can
+discuss this; I'm an expert in
+automation.  And so I can help you
+implement that in your business.  So,
+agents who are able to analyze
+data on Trend Track, who are
+able to automate up to 80% of
+your sales volume, who are able to help you
+boost your sales and so on.  So all
+this type of infrastructure is what
+we develop at Nvision EA.  If you
+want to know more, you have the link
+in the video.  Otherwise, I wish you
+a very, very nice day.  It was
+Ishmael.  Who?

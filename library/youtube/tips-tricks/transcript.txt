@@ -1,0 +1,188 @@
+[Music]
+Today I'm going to show you how to use
+reference tables to add business data to
+logs from retail endpoints which might
+not have all the fields you're looking
+for. And later I'll show you how to use
+those enriched logs to create a metric
+so you can more easily do data analysis
+like aggregating purchase amounts from a
+register. To demonstrate this, I've set
+up a cloud function with a Python script
+that's simulating log data from point of
+sale systems. We can see these logs by
+limiting to the register service. POS
+systems tend to run old operating
+systems or proprietary services or in
+some cases we have to collect data from
+somewhere else and don't have the
+context we want. You might have sparse
+log data with just a register name and a
+purchase price. If you have this kind of
+data, it can be useful and that it tells
+you that there are sales going through
+on this register, but it doesn't tell us
+which store it is, where the store is,
+or how many registers are in that store.
+That's the additional information that's
+useful to know if you're trying to run a
+business. We can use a reference table
+to add context to our log data. Our
+reference table starts with a CSV file
+that has the data we need. In this
+example, I have a Google sheet that we
+need to download as a CSV. So, we go to
+file, then download, then CSV.
+In data dog, we go to integrations,
+reference tables, and new reference
+table. In this example, I'm going to use
+an existing reference table. I called
+this one registers 2 because I had a
+previous iteration and the table names
+have to be unique. I've already uploaded
+the CSV that we grabbed earlier. And if
+I want to add context or indicate
+ownership, I can add that data here.
+Before we leave this page, I want to
+confirm that register is our primary
+key. The primary key is indicated by
+this key icon. This is going to be what
+we use to join this data to our logs.
+Then the next step is using the
+reference table to create a pipeline to
+parse my logs. My logs are coming in as
+JSON. So attributes are parsed
+automatically and we can use the
+existing log fields without additional
+processing. To add our reference table
+data, I can create a new pipeline. I'll
+update the filter to show only our
+register data. I'll name it registers.
+Then I'll save this pipeline.
+Now I'll create a processor under this
+pipeline. Using a reference table to add
+attributes is a lookup operation. So
+we're going to use a lookup processor.
+I'll name the pipeline register
+enrichment. I'll select reference table
+for my lookup mapping. And I should get
+a drop down here that gives us the
+option to select one of our existing
+reference tables. It's going to
+automatically connect to the primary
+key. So I just need to tell the
+processor which source attribute matches
+the primary key. In this case it's going
+to be registers.
+The target attribute path is where our
+new attributes are going to be stored.
+I'm going to say that I want to set the
+target path to register detail. Then I'm
+going to enable it.
+The next step is going to be confirming
+the data is coming in and showing our
+new attributes which we can do here. We
+go to the log explorer and run a logs
+query with our service name as a filter.
+In the beginning we saw that we had
+purchase amount, register, service and
+log level. And now we have this whole
+register details drop down. Now in
+addition to basic sales data we have the
+enrichment data accessible as
+attributes. Our log data has been
+enriched with store details and we can
+do the kind of data analysis that's
+important to a business. I can group my
+data into fields. I can do things like
+take an average and I can use these
+standard mathematical operators on my
+purchase amount.
+I'm going to say that I want the sum of
+my purchase amount by my register, which
+is going to be the first thing we group
+by.
+The aggregation on this page just helps
+us to get an idea of what our data look
+like.
+The second attribute I'm going to group
+by is one of the values from register
+detail. I'm going to add the store
+attribute so I can see that this
+register is in this store.
+We can take our analysis further by
+converting these logs to metrics, which
+has two additional benefits. Converting
+to metrics gives us 15 months of
+retention by default, rather than having
+to store some or all of our logs for
+longer than is necessary. The second
+benefit is consistency. Metrics queries
+return a set of points without having to
+worry about how to extract the data. In
+this example, it's easy to identify
+which logs have the data we want and how
+to work with those values. But in a more
+complex environment, it's harder to know
+which data you need and how to process
+it. There are a couple ways to convert
+logs to metrics, but the way that I
+prefer and would argue is the easiest is
+clicking the more button here and
+selecting generate new metric. Then
+you're going to be brought to this log
+configuration page. Here we can see that
+we're going to measure purchase amount.
+We're going to group by register and
+we're going to group by register detail
+store. If I want to add other details
+from the lookup table, everything else
+would be prefaced by register detail and
+identified by the column name in the
+CSV.
+I'm going to call this register sales.
+And each time a metric is created, I
+will be able to group by register and
+store. At this point, we have data
+coming in. So, if I go to the metric
+summary page, I can see information
+about our metric. I can set this
+description to something that's useful
+for us. In this case, it's useful to
+know that this is store purchase data.
+This description is straightforward, but
+for some metrics, the mechanism or
+schema behind them is complicated, and
+it's helpful to put something here to
+remember how it all works. If we scroll
+down here, we can see which tags we have
+coming in. In our case, we're grouping
+by register and store. And if I click
+down here, I can see examples, and I can
+search for specific tags.
+If I want to see what the actual metric
+values are, I can click open in metrics
+explorer and then I can average by
+individual register or I can aggregate
+by store.
+What we're really going to want to do is
+to save this to a dashboard. I can click
+this save to dashboard button. I can
+create a new dashboard and when I click
+save and open, we'll be brought to our
+new dashboard. What might be useful is a
+table where we group by store detail and
+then group by register so we can see
+what the average sales are per register
+with the store information.
+So that's how you can add business data
+to your logs. Namely, we added store
+details to logs from POS systems and use
+the additional data to create metrics so
+we can do data analysis. Hopefully you
+found this tip useful and if you want to
+learn more or go deeper into this topic,
+I'll add docs and further useful
+resources to this video's description.
+Thanks for checking out this video.
+[Music]

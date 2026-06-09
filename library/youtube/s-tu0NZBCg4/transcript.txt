@@ -1,0 +1,157 @@
+[Music]
+today I'm going to walk you through how
+to use one of the 400-plus integrations
+that data dog provides out of the box
+called a vent bridge and how you can use
+that event bridge to perform Auto
+remediation within your environment for
+anyone who may have used this in the
+past event bridge was formerly called
+Amazon CloudWatch events so in order to
+set this up within data dog first off
+you will want to go ahead and add your
+AWS account to the AWS integration tile
+make sure you have the correct
+I am profile setup secondly you can go
+ahead and click on event bridge what
+you're going to notice here is it does
+call out there is one additional I am
+rule called events create event bus this
+is what allows data dog to from within
+the Dave dog UI you can set up a an
+event bus and message bus and then it'll
+actually push it over to AWS on your
+behalf so that you can just click in
+find that event bus add the partner
+integration and then select what actions
+you want to perform so now that you've
+got your AWS account set up you've got
+the the IM profile with the events
+create event bus go ahead and select
+your AWS account and then you can go
+ahead and add a new event bus here for
+this example we're going to use one of
+our existing the bus is called PCF
+deploy so once you go ahead and add that
+in here what's going to happen is it's
+going to push it over to Amazon Web
+Services you will now see that on the
+abrin event branch tab and what I want
+to show you here is all of the various
+different actions that you can kick off
+once these partner events from data dock
+enter your event bus on the AWS side so
+this is where a lot of the power comes
+now you can have a diva dog monitor kick
+off an alert and perform lots of various
+different actions whether it's spin up
+auto scale groups tear down on Auto
+scale groups kick off lambda functions
+launch or destroy ec2 instances and lots
+of other tasks within AWS
+and you can even launch remote shell
+scripts outside of AWS so a lot of
+flexibility here to perform a lot of
+self remediation
+now within Amazon itself you will have
+your event bus so we're gonna use the
+PCF deploy underneath the BRIT the bus
+you can associate different rules a rule
+you can add up to two different targets
+think of targets as the outbound to
+action so here within this rule I've got
+the name PCF deployed you can see it's
+automatically set up to be an event
+pattern in a predefined pattern by
+service because data dog is a service
+provider here so then you can define
+your specific targets you want to hit in
+this example I want to hit a specific
+SNS topic that's gonna send out an SMS
+message I can get a text message letting
+me know this deployment has gone out
+then secondarily I also want to run this
+this shell script that it lamps on an
+ec2 instance so here it's hard coded you
+can see the instance ID but obviously
+you can use tag values etc pull various
+different things out of the outbound
+event to actually use as your target as
+an example you're gonna see it's gonna
+run out and use on AWS Systems Manager
+and run this deploy script as a specific
+user now what I'm going to show you is
+this is AWS Systems Manager not running
+currently any actions but if I come back
+over to the data dog UI now that I've
+set up that event bus I can utilize that
+event bus in multiple ways I can kick
+off actions based on visualizations and
+dashboards that I see so now if I wanted
+to kick off that deployment I could do
+it directly from the UI using the @
+notation which will essentially bring up
+any of our outbound chat ticketing
+collaboration tools so a lot of
+flexibility there to kick off these
+remediation events on the visualizations
+themselves but more likely the the real
+value is actually coming from alerts so
+now from a single alert I can come in
+and set up any of the criteria
+I want to alert four and then I can go
+ahead and write up my message here and
+I'm just going to go ahead and use that
+exact same notation to select that that
+event bus that I have set up on the AWS
+VIN bridge integration which in this
+case is PCF deploy so here I'm going to
+see the integration name event bridge
+this is going to be your event bus name
+keep in mind you can set up lots and
+lots of different buses to perform
+various different actions now in this
+example I'm just going to win this
+trigger when this alert fires I'm gonna
+reach out to this endpoint and then
+based on my settings on the rule itself
+I don't care what comes in the body of
+that message anytime there's a message
+it comes into that PCF deploy event bus
+I'm gonna kick off this remote script
+that lives on this host which
+essentially deploys an entire pivotal
+Cloud Foundry environment and all 32
+associated VMs and software so now I can
+hop back to the day's dog you I know
+that I've got my message written up I
+can make sure kind of it looks how I
+want to look once again for this example
+but just more I want to show you the
+functionality now I could scroll down
+let's just go ahead I can save it or I
+can just say test notifications so now I
+can actually send out a test event
+Bridge notification
+I can just say alert sure go ahead and
+save that so what that's going to do is
+reach out to AWS create a message in
+that event bus which will now trigger my
+action so now I'm just going to refresh
+this page now you can see I'm actually
+running this command if I click in on
+AWS systems manager it shows you the
+instance ID that it's running on it
+shows you the command descriptions also
+all the command parameters so now I have
+performed all of these um entire
+deployment process through the data dog
+UI without even having to leave data dog
+now keep in mind this could be used for
+restarting processes scaling up servers
+killing off servers lots of different
+remediation processes so hopefully this
+was helpful please feel free to take a
+look at our event bridge documentation
+on the website
+and have a great day

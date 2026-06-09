@@ -1,14 +1,23 @@
 from __future__ import annotations
 
+import os
 import re
 import unicodedata
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def project_path(*parts: str) -> Path:
     return PROJECT_ROOT.joinpath(*parts)
+
+
+def youtube_library_path() -> Path:
+    load_dotenv(PROJECT_ROOT / ".env")
+    configured = os.getenv("YOUTUBE_LIBRARY_DIR")
+    return Path(configured).expanduser() if configured else project_path("library", "youtube")
 
 
 def ensure_dir(path: Path) -> Path:

@@ -1,0 +1,187 @@
+Google is used by billions of people
+every day and is designed to show you
+the most relevant results as quickly as
+possible. For example, if I search for
+something like open webcams, Google will
+mostly show me articles, videos, maybe
+some general information, but that
+doesn't mean those are the only results
+available. It just means [music] that's
+what Google is choosing to show you.
+There's actually a way to search on
+Google where you can uncover
+unintentionally exposed information.
+This is what's called Google dorking.
+All right, let's start. Let's say we are
+searching for a laptop.
+Google will show results from thousands
+of different websites, which [music] is
+fine for a normal user. However, as an
+advanced user, I want to isolate results
+from one specific website. To do this,
+we can use something called Google
+search operators.
+These are special characters and
+commands [music] provided by Google to
+help users filter and optimize their
+search results. The most common one is
+the site operator. For example, we can
+use operator like site colon target site
+name. By using this, I am telling Google
+to ignore every other domain on the
+internet and only show me index pages
+from Dell. This effectively removes away
+the noise of third-party blogs, ads, and
+competitors, leaving me with data only
+for my specific target. Now, searching
+for a laptop is just basic filtering. It
+isn't hacking. It isn't hacking. But for
+a security researcher, this is where
+information gathering starts. A classic
+starting point is the robots.txt.
+Normally, you'd find this by manually
+adding {slash} robots.txt to the end of
+a URL. But why do it manually when we
+can see what Google has already indexed?
+By combining the site operator with the
+inurl command, we can target specific
+data across the entire domain. By using
+this, I'm telling Google to ignore
+[music] everything else and show me only
+the text files on this site. But why do
+we care about a simple text file?
+Because in OSINT, this is your road map.
+The robots.txt file literally lists the
+directories the owner doesn't want you
+to find. To a hacker, those paths are
+the most interesting parts of the
+server. But robots.txt is [music] just
+the surface. We have to realize that
+Google indexes anything that's publicly
+accessible. That includes a surprising
+number of exposed [music] systems like
+IoT devices, web interfaces, and network
+connected cameras. This happens because
+someone sets up a smart camera, assigns
+it a public IP address so they can check
+it from home, but forget to add
+authentications there. [music]
+By using the intitle and inurl operator,
+we can target the specific software
+headers used by these devices. For
+example, if [music] I search for
+something like this, Google will show
+results containing cameras that are
+streaming their feed directly to a
+browser ready page. And in the results,
+you may find the information that were
+never meant to be public online.
+Now, let's move to a little step deeper.
+As hackers, we aren't interested in the
+content meant for customers. We want to
+find where the staff and the developers
+log in. We're looking for admin portals.
+We do this by searching for specific
+footprints [music] in the URL or the
+page title. A common dork is something
+like this. This tells Google to ignore
+the home page, the blogs, and the ads,
+and only show us pages that have admin
+in the web address.
+But we can go deeper. If we want to find
+database management tools by using this
+dork, you will find the exact doorway
+used to control a site's database.
+If an administrator left this interface
+public and hasn't changed the default
+credentials, you've just found a way to
+bypass the entire website security. Now,
+let's talk about high value targets.
+Government and corporate sites often
+accidentally leak internal use only
+documents.
+>> [music]
+>> By targeting specific domains like .gov
+or .edu, we can hunt for sensitive
+[music] data. If I search for
+confidential data with file type
+operator, Google will show me the
+results of government hosted PDFs that
+contain the words used in the Google
+dork.
+>> [music]
+[music]
+[music]
+[music]
+>> Google dorking isn't just for
+infrastructure. It's one of the most
+[music] powerful tools for OSINT open
+source intelligence on individuals.
+Let's say we want to find information on
+a public [music] figure or a specific
+target. By putting their name in exact
+quotes, like this, and adding the file
+type operator. [music]
+Using this, we can find every indexed
+document where that name appears. This
+could uncover anything from old
+university papers to leaked internal
+[music] memos or even legal filings that
+aren't visible on their official social
+media profiles.
+We can also use the negative operator to
+remove the noise.
+>> [music]
+>> By adding a minus sign before a keyword,
+I am telling Google to show me
+everywhere that person appears except
+[music] for their main social media
+profiles. This helps us find the
+information without noise.
+For those of you interested in bug
+bounties, you can use dorks to find
+specific stacks or software versions
+[music] that you know are vulnerable.
+For example, if a specific WordPress
+plugin has a known security flaw, you
+can search for it by typing inurl colon
+and the plugin path. Google will then
+return a list of websites [music]
+currently running that plugin. Instead
+of searching the whole internet, you've
+just generated a targeted list of
+potentially vulnerable sites that you
+can then test [music] for exploits.
+Now, typing these dorks one by one is
+fine for a quick search. But if you want
+to be efficient, [music] you need to
+automate. I actually found a brilliant
+project on GitHub while researching this
+video. It's a repository that contains a
+[music] massive HTML file packed with
+multiple dorks. It's essentially a cheat
+sheet for hackers.
+If you want to take this further, you
+don't have to come up with these strings
+yourself. There is a community-driven
+resource called the Google Hacking
+Database. It's basically a massive
+library hosted by Exploit DB where
+researchers from all over the world
+submit new dorks as they find them.
+>> [music]
+>> It's updated constantly with the latest
+ways to find exposed data. The dorks are
+neatly categorized. So, if you're
+specifically looking for files
+containing passwords, vulnerable
+servers, or sensitive directories, you
+can just browse through and find the
+exact [music] string you need.
+Anyway, that's the basics of Google
+dorking. It's a simple but incredibly
+effective skill for any security
+researcher or OSINT analyst.
+>> [music]
+>> Thanks for watching and I'll see you in
+the next one.

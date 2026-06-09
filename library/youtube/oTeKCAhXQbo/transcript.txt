@@ -1,0 +1,1068 @@
+Hello, and good morning, good afternoon, good
+evening, wherever you are, wherever you are.
+Welcome to another GOTO Unscripted conversation.
+My name is Kevlin Henney and I'm here with
+Audun Strand.
+If you'd like to say something, introduce
+yourself.
+Sure.
+As Kevlin said, my name is Audun Strand.
+My title is fundamental of principle engineer,
+but I work at NAV, which is basically a big
+government agency in Norway.
+It's I think in almost every other country.
+NAV (Norwegian Labour and Welfare Administration)
+does what 15 or 16 different organization
+does.
+So we're big and we say that we support Norwegians
+from before they're born till after they're
+dead.
+So that's kind of the scope.
+So that is a full life cycle.
+That is full life cycle support.
+Your parents get money and if you can't afford
+your own funeral, we support that as well.
+So it's basically everything you can imagine
+doing.
+I've been a developer for 15, 16 years, mostly,
+I realized, I think when I was working for
+six or seven years that the funniest thing
+is to solve problems for the developers instead
+of...
+So basically, I've been taking all my bitterness
+as a frustrated back-end developer to make
+application platforms and trying to make it
+easier for people or developers who make products
+to help them instead of trying to figure out
+what normal people like because I've never...
+I know what developers like.
+I don't understand what normal people like.
+So in other words, developers as clients.
+Yes.
+I like that idea that you kind of take the
+bitterness that you have got.
+I think many people have that and it's just
+like, "Yes, but it should be done like this.
+This would be a much better way," and actually
+turn it into something constructive.
+I think that's kind of almost the basis of
+a lot of open-source development is just "I've
+always wanted this," or "This should be better.
+Well, I can do it."
+And they do it.
+As I understand it, you've been working on
+a platform that's open-source itself.
+Yes, I started to work on platforms when I
+worked at FINN, the former company, which
+is Norway's...at least for some ways of measuring,
+it's Norway's biggest website, and I made
+an application platform there.
+Then NAV used to be...we used to think of
+it as the worst place, at least in Norway,
+to make software.
+It was all consultants and they made a strategic
+decision not to hire developers.
+They only use Accenture and Capgemini and
+everything, and architects, of course.
+Then they've got this new CTO, and he said,
+"We need to in-source and we need to hire
+developers."
+So my friend Truls was the first one and I
+was like the sixth or seventh.
+Now we have 400 developers.
+So we kind of built everything from inside
+a really large...coming through a recession,
+we built a new software department.
+That's really cool.
+The first thing I did was build an application
+platform and try to use that as a tool to
+make people understand that it can actually
+be...first of all, it can have normal, even
+good software in the government and the public
+sector.
+It's kind of cool to work at now.
+We open-source it because it's the one thing
+that no one can argue about open-sourcing
+is basically just its go code talking to Kubernetes
+and Docker, so it's not in any state secrets.
+We use that to build our brand basically.
+The platform is called the NAIS.
+We found a funny word first and then we retrofitted
+it.
+So it means NAV Infrastructure Service or
+System.
+NAV Application Infrastructure, and you can
+choose between service and system because
+it doesn't really matter.
+Because it doesn't matter.
+Because you made up NAIS first.
+It's like, "Right, what can we do to fit that?"
+That's really interesting.
+It's kind of a transformation story because
+I think what you described is a common experience
+for many people in many different countries,
+is the idea that government software is not
+the place that you want to work, whereas logically
+we should be thinking that that's the place
+where we want the highest quality.
+If you think about it from a social responsibility
+perspective, it's sure they should have the
+best software.
+There are many other things.
+Like, there's really no competition, and the
+scope is to have some mainframe stuff, the
+old COBOL stuff, and have the strangest Oracle
+thing you probably never heard of this.
+It's what Oracle had before Oracle and IBM
+invented application servers.
+The instances of the Java objects live inside
+the Oracle database, so it's not like stored
+procedures.
+I remember that.
+To develop this, you have to have your own
+instance of Oracle database running on your
+own machine, and nobody wants that.
+So we have 40-year-old systems that have been
+important for Norway for that time.
+And to realize I'm never ever going to write
+any software that's going to be important
+for 40 years.
+I understand that's what we're going to replace.
+It's both scary, but it's also nice.
+So that's really interesting.
+I think one of the other things people associate
+with government software is, obviously, there's
+the whole legacy.
+There are systems that date back decades that
+we know little about, and yet a lot of people
+rely on them.
+But also, you're dealing with ridiculous amounts,
+and particularly in modern society, and the
+kind of the amount of data that is associated
+with any individual in any society, you're
+dealing with ridiculous amounts of data.
+There are all these little domains and you've
+got all these different systems, which I'm
+presuming don't necessarily talk to each other
+comfortably.
+I presume we want one view of the data or
+to have a coherent data flow.
+Yes, very much, not very good connectivity
+for that.
+The first step was basically just to make
+it sustainable to be able to make a system
+that is changeable for more than the project.
+That, of course, takes a bit of time, because
+that means you need to build teams and you
+need to build an organization before you start
+to build systems.
+And then, after that, we tried to build the
+system around the domains, as I said, so we
+have something for the sickness benefit and
+something for the parent key benefits and
+age pensions and everything, and then trying
+to figure out good ways of making it possible
+for these applications and these teams to
+change in their own pace but still being able
+to communicate in between.
+So trying to have the loose coupling, as everybody
+talks about, and share just enough but not
+too much data.
+I think that's one thing that when people
+are working within companies that have a single
+focus, they might not appreciate.
+And likewise, anybody who's worked in a startup
+culture where you get to choose your focus.
+But here, you're actually dealing with lots
+of things that are pulling you in different
+directions, and have done for decades before
+you were there and long after you were there.
+Exactly as you said, this is an interesting
+kind of compromise.
+You need looseness to allow change.
+But you also need to have something that is
+together enough.
+So giving the migration, the journey that
+you've kind of taken on.
+You mentioned Kubernetes, you mentioned Docker,
+and you mentioned creating the NAIS platform.
+You also mentioned actually that NAV covers
+traditionally what in other governments will
+be 15 or 16 departments.
+That's a lot of...I don't know, is there a
+term for it, domain share.
+It's just one unified view.
+There isn't one unified.
+There isn't a single coherent model for everything.
+No, no, there used to be, because that was
+the old way of doing it.
+People realized that doesn't really work because
+it kind of blocks everything.
+There's this old saying that...I don't remember
+the English one, "When two people live together,
+then they're not married."
+In Norwegian, I don't know what that means
+in English.
+Anyway, people say there are, 14 different
+definitions of that word in our systems.
+The funny thing is that they think, "Well,
+then we need one definition."
+Then we come in and say, "Well, we don't because
+it means 14 different things."
+So instead we need to understand that it means
+14 different things.
+And whenever two systems talk together and
+have a different understanding of that term,
+then they need to figure out what it means.
+But to try to make this big model of one specific
+meaning of every word is almost impossible,
+and they're as big as we are.
+I think that's a kind of...there's an interesting
+collision between what we desire, particularly
+from a developer perspective"Wouldn't it be
+nice if everything could be...you know, we
+can have one definition of this?"
+And what the real world does.
+I think even in the real world, we're not
+very good at acknowledging this, that there
+are actually...that words have context and
+specific meaning, and they also drift and
+change in their own way.
+Yes..
+Because it feels like common sense to have
+one specific definition.
+But if you take that over time and say, "I'm
+going to keep that model over 10 years, and
+everything is going to change at different
+paces."
+It's almost impossible to keep that.
+I think I first experienced that trying to
+talk to somebody about kind of a domain model,
+actually, it was an entity model, specifically
+what they refer to it in a medical environment
+in the 1990s.
+What does patient mean?
+And it turns out, that different parts of
+the medical space have different meanings
+and different information requirements for
+the word patient.
+That's just what most people think of as one
+domain, and actually, it has multiple subdomains.
+The minute you move outside that, then suddenly
+you get all of these difficulties.
+So I think that kind of takes us into the
+era of domain-driven design, which I know
+that's something you're interested in.
+And it seems to really apply here.
+Yeah, definitely, I think I've spoken about
+it.
+I think it's chapter 14 in the big blue book
+about strategic design and how we can have
+different models connecting and customer supply
+and everything.
+I'm trying to explain that too, for instance,
+the legal experts.
+Because another funny thing...because everything
+we do is kind of grounded in the law, so the
+benefits are different chapters in the law.
+There's the same thing there.
+It's reuse.
+So the parental benefit and the sickness benefit
+points to the same chapter saying we're going
+to calculate the amount from this.
+Then everybody says, "Well, then this has
+to be some common service, of course, because
+it's the same chapter."
+And then when you try to implement it, we
+see that "Well, it doesn't."
+But it feels like the law has if statements.
+So we easily figure it's not exactly the same.
+The contexts are extremely different, because
+parental benefits, that's something you enjoy.
+That's a good thing that happens to you, and
+the sickness benefit, it's something bad that
+happens to you.
+So trying to make that into one system doesn't
+really make sense, even though it shares the
+same chapter of the law book.
+So trying to...and that's kind of the domain-driven
+design kind of gone further because it's not
+enough to think about the technical side but
+you have to think about the legal side and
+the communication side and everything.
+I think that's an interesting one because
+you mentioned of "The Bluebook", you know,
+it's the strategic design chapter, which it's...Eric,
+said, "That's the bit that people always ignored."
+A lot of people never got that far into the
+book.
+And yet, I think in recent years, it's an
+area...people normally grab onto the early
+part of the book, and the patterns in the
+book seem very intuitive from a developer
+perspective.
+But this other stuff seemed is not immediately
+obvious.
+But things like bounded context have become
+very popular in recent years, and this idea
+of saying, "Well, actually, we don't have
+to have a uniform..."
+Although we use the term ubiquitous language,
+it's not actually uniform and universal, it's
+the idea of little local subdomains.
+And as you say, in law, it is... the law has
+a lot of subtleties to it, speaking as a developer,
+and I've read a couple of things in law and
+no shortage of legal documents.
+I'm always surprised at how loose they seem
+compared to code.
+It's quite interesting.
+You get used to code.
+And people say, "Oh, legal documents are so
+boring."
+It's just, like, have you tried reading code?
+Legal documentation is actually surprisingly
+imprecise, or they rely on a lot of contexts
+that are unspoken.
+I think it's also because the code is not...at
+least, normally, it's much faster to change.
+It's probably a good thing that laws take
+a bit of time to kind of evolve.
+It's easy to change the code.
+But that's why they think they can't define
+everything, because when the world changed,
+when there's a pandemic, or whatever, they
+have to change everything, and that's too
+slow of a process.
+That kind of sets us up with the kind of really
+interesting thing that you've got a number
+of different teams.
+You've got a number of different teams, a
+number of different software requirements,
+and dividing them.
+That kind of leads to very different data
+flows, and different applications, but at
+the same time, you're still trying to get
+something coherent.
+How does the data look at the back-end?
+How are you organizing that?
+Because you're talking about there's COBOL,
+there's Oracle, there's...
+Almost all the new stuff we write is Kotlin
+and JVM.
+For communication parts, I would say we kind
+of divide at NAV to what we call product areas,
+which is we have about 10 I think.
+We might have 15 when we're done, or not done,
+but then we kind of reached our limit.
+Then we try to say that between those, we
+should have asynchronous communication streams,
+so we use Kafka, but that doesn't really matter.
+So you should communicate events and then
+you should listen to events and that kind
+of makes it easier to achieve the loose coupling
+and easier to evolve differently.
+That makes the teams, at least some of the
+teams, that make our most complicated systems
+become more event-driven as well.
+And that's really good.
+My experience is that when you go from a monolithic
+approach to microservices, and until you kind
+of realize that you need to be asynchronous,
+you won't get all the benefits of dividing
+up and making microservices.
+So I think that's kind of an interesting one
+because I think people often overlook the
+fact that synchronous is coupling in time,
+whereas, people often look at coupling as
+a very immediate, "This box depends on this
+box.
+This service depends on this, or this class
+depends on this."
+And they think of it as a very immediate thing,
+whereas actually, there's a temporal, there's
+a coupling in time, and asynchrony allows
+you to just let the parts move at a slightly
+different rate and execute at a different
+rate.
+When you kind of go from events to streams.
+So we have the Kafka streams where we have
+the events stored for some time.
+We can play them back as well.
+And then, you realize you kind of have a superpower
+because then you can...when you have immutable
+data, so you can always understand that what
+I read is never going to change.
+When you play everything back, you can kind
+of...you can change some rules and you can
+play back and you can get a new reality afterward,
+and then that makes it even better to be asynchronous.
+So that's kind of interesting, because, in
+other words, you get to manipulate time, which
+I think is everybody's kind of fantasy.
+"If only I could be a time lord."
+But there's another interesting thing.
+From the traditional perspective, there's
+a kind of an inversion of dependencies, and
+I mean that in the deepest sense as opposed
+to the way that people often mean it, but
+often when people have organized large systems,
+they have looked at it in terms of we are
+organizing it around the services, and the
+services are the first-class concept, or they've
+organized it around the entities, which goes
+back to our problem with, you know, how do
+we have a unified entity model.
+But here we're saying actually, no, events
+are the first-class citizen, and then we hang
+everything off that.
+So as long as we have a truth about events,
+then actually we can actually loosen how we
+build the applications.
+We had a guy called Fred George.
+He calls himself the grandfather of microservices.
+I will say I first learned about microservices
+by attending a Fred George talk.
+Yes, me too.
+He has this actually, this is a GOTO conference.
+And it started because me and my colleague,
+we wanted to go to Noma, which was the best
+restaurant in the world in Copenhagen.
+Of course, we were working at software companies.
+We tried to find a conference that made it
+possible for us to go to Copenhagen.
+Another version of dependencies.
+Yeah, we want this restaurant.
+What conference will allow us to go to that
+restaurant?
+Then we went to GOTO in Copenhagen, and we
+had Fred George's microservice workshop.
+Actually, and I didn't realize this till,
+after this, Eric Evans was a participant in
+that workshop.
+But in that workshop, which I think is the
+best workshop I've ever done, because you
+get to code, six hours out of an eight-hour
+workshop on actual problems, not just fill
+in these tests, but you get to solve problems.
+He has this pattern, which he calls Rapids
+and Rivers, which is basically a way of organizing
+microservices that makes it easy for developers
+to think asynchronously.
+So what you do is you have...every single
+service publishes an event on the same topic.
+Then that's the rapid.
+Rapid is the big thing where everything flows.
+And then the services create rivers, which
+are basically filtered views of the rapid.
+So you get a tiny bit of the event flow into
+our service and then do something and then
+we put it back on the rapid.
+That's basically the core pattern of almost
+all the new systems we build now.
+It kind of cheats, it makes a shared database
+that works inside the domain, and also, it
+takes away the doubt developers feel, "Should
+I be asynchronous or should I be synchronous?"
+Because it's natural to do it asynchronously.
+So everything kind of turns into events.
+Then you get the benefits of it without people
+thinking, "Well, this is probably synchronous,"
+and then you stop and then you start doing
+it differently.
+Well, I think there's a really interesting
+metaphor, again, with the whole thing to do
+with.
+It's rivers, that's basically the right rapid.
+Everything that happens goes there.Then the
+rivers are the read layer for everyone.
+Then ultimately, the storage is in the ponds.
+People were talking about data lakes.
+So this is a kind of interesting idea the
+persistence is in ponds, which are smaller
+and local.
+You maybe have a pond per microservice, so
+to speak, rather than this lake of a single,
+coherent, and centrally-managed data model.
+And it's so easy to keep separation of concerns.
+If you want to add observability, you just
+add another service that listens to all events
+on the rapid and does it separately.
+You can really add logic where it belongs,
+although the problem might be that you get
+too many services and it'd be difficult to
+see, then you just add another service to
+add observability, and then you can see again,
+that it's…
+So it's very composable by having these separations
+and actually saying that if we're allowed
+to loosen time a little bit, that it allows
+all of these possibilities and I think that's
+quite an interesting kind of observation.
+And I hadn't come across this one too recently
+and didn't realize that it actually goes back
+to when I first saw Fred George just after
+when I first saw him.
+He was talking about programmer anarchy, about
+the way he organized teams.
+That's where I first encountered microservices,
+and that's like 2012.
+And he had a very strict definition of how
+he thought about microservices.
+And he did do it on size.
+We seemed to have given up the...I think people
+have given up the idea of...
+You know, it's just like, you know, we ask
+people.
+It's like, "Well, why are they micro?"
+Well, let me show you this micro.
+That's not micro in my book.
+The only reason we can't call them services,
+is because then you go back to, this whole
+thing.
+Except that, I think modern services are now
+bigger than the stuff that we had under...
+So we should probably just call them services.
+Time is cyclic.
+I think that that's sort of an interesting
+observation there.
+And I hadn't realized that there was this
+broader view.
+How does that relate to things?
+I don't know, because this idea of having
+different read and write sources, introducing
+a little bit of asynchronicity to allow the
+kind of like...the parts to move more freely.
+This is sort of on a parallel brush, CQRS.
+They seemed to have a kind of a shared goal
+if you like.
+They have very different histories, but they
+appear to have this kind of shared goal.
+How would you compare them?
+I kind of agree.
+We've never really had CQRS as a big thing
+because it kind of comes almost...
+Well, a few of our teams managed to think
+more like that because they have the big...some
+of them have really big microservices where
+they kind of modeled the lower part where
+they had the model kind of, and a whole person's
+sickness history to be able to, and that becomes
+quite a big object-oriented model.
+There, they try to have the CQRS.
+So they have kind of the events and the commands
+coming in.
+It feels, at least from my perspective, it
+feels less like something that's on the developer's
+minds than it used to be
+It was interesting because that's...I think
+that one is more...I found originally that
+was more intuitive because it was closer to
+something that I had done, but it was not
+exactly the same, and seeing this rapids,
+rivers, ponds kind of approach, I thought,
+"Ah, that's a really interesting, different
+way of looking at it."
+So the teams don't really do that much.
+For multiple reasons.
+They live within it, as it were.
+In other words, the architecture is around
+them.
+So in that sense, it seems more like that
+when we normally talk about architecture,
+people like to use building metaphors.
+But this feels much more like urban architecture.
+The developers stay in their own houses and
+they do what they want in their own houses.
+But how the streets and the services are organized,
+that's really what you're talking about at
+that level.
+Audun Strand:I think it's important too when
+you have this Kafka topic that you just keep
+the idea of what data on the inside versus
+with data on the outside.
+So the rapid is only for one domain.
+It's for one team, for one thing, and then
+if you want to share data with others, you
+need to make a different topic.
+And at least before I had the really bad problems
+where people thought that every event was
+available to everybody.
+So we kind of forgot everything about public
+and private, and just because it was an event
+and the service, it doesn't mean you can't...you
+still have to keep your boundaries.
+Again, there's this really interesting tension,
+isn't there?
+There's this kind of idea, but yeah we still
+have to have some separations, but at the
+same time, we want to get rid of separations.
+And these two are pulling in opposite directions.
+So I think software architecture...
+When there are different teams you have to
+change slower than when you're just exchanging
+data with the guy sitting next to you.
+It seems like gear matching in manual-driven
+cars, cutting it just right.
+So I think that's an interesting kind of way
+of looking at it.
+We kind of take the big picture.
+Now, you mentioned a couple of technologies.
+You also mentioned a couple of programming
+languages.
+So you mentioned that the NAIS platform is
+being developed in Go, but you also mentioned
+from...I think the application developers
+are using primarily Kotlin.
+So you've got to kind of Go lower level, and
+then the JVM up a level but with a bias towards
+Kotlin.
+Just out of interest, what informs those decisions?
+That's a good question.
+I think from a platform perspective, Go has
+the best libraries I think, at least had four
+years ago when they started doing this and
+then it kind of grew from there.
+Kubernetes is made in Go.
+Docker is made in Go, so it was easy to start
+building that in Go and it also feels.
+I don't know if you've written those before,
+but I find Go to be a frustrating language
+to write and a good language to read.
+I don't have deep experience.
+I consider myself a Go tourist.
+There is a certain frustration because the
+language has certain limitations in certain
+cases.
+And familiar as I am with lots of language
+models, it's kind of, like, "Oh, I wouldn't
+have put that limitation there."
+But that readability thing does make a difference.
+So it feels like...
+Well, at least in the start, we thought that
+maybe the application platform would be slower
+moving, but it turns out that because the
+team is very good, they can also manage to
+move very quickly.
+Then, from the application side, we normally
+say that we have...the language we have the
+most code in is Java, but we write most Kotlin.
+And I never, at least from my...I've never
+learned a language as quickly as I did when
+I went from Java.
+The bitterness comes from Java.
+Okay, that we completed the story.
+Where did the bitterness come from?
+Now, I understand.
+And then to go on to Kotlin was quite as an
+easy transformation I've ever had I think
+going from one programming language to another.
+So it's kind of interesting because I know
+a number of people who...their reason for
+looking at Kotlin is Androids, but that's
+not the reason here.
+No, no, we have no native apps at all.
+I can't totally figure out who started.
+But it became a movement, I think, and we
+really...one of our philosophies when it comes
+to technology choices in NAV is that everything
+is allowed, as long as you broadcast it to
+the company.
+So we have our own internal technology radar
+to kind of persist all those tracers and make
+it available for all the teams to see.
+So it started out in some corners and people
+saw that this actually works.
+And then some libraries, the library we built
+around rapid observers is Kotlin, so it kind
+of...it grew from there.
+But we still allow a few people to write Spring
+and Java as well.
+Just to keep them on board.
+Yes.
+So there's an interesting thing here.
+Let me just pick up on the kind of the theme
+of...it just occurred to me.
+So, in that case, this idea of building a
+developer culture.
+And also that NAIS is open-source.
+There's a lot of this idea of like, "Well,
+you know, as long as you broadcast, as long
+as you make this information available," and
+that seems to be a very...again, it's another
+inversion of how sometimes people try and
+get things done.
+In other words, .it's not a sort of a command
+and control.
+It's very much a ground-up kind of approach.
+And I guess leading by example, "Here's the
+thing I've built."
+That team is using this, and you can see the
+examples there, which kind of makes.
+I wish more organizations would be aware of
+that, but it's very interesting to hear it
+from within a government organization.
+I think we managed to build a really good
+culture around that because it kind of...it
+makes it seem responsible as well.
+We respect the fact that they know best what
+tools they can use, or what they say they
+can use.
+But also, we need to be able to see what we're
+doing.
+Before we had a big problem with shadow IT
+where people used stuff but nobody said anything,
+specifically for government organizations.
+We can't use stuff without paying for it.
+When it's in the shadows, no one will say,
+"I'm using it," so no one will pay for it.
+So to be able to get everything out in the
+light, it helps us also to follow the regulations.
+As I keep saying to people, software developers
+should be the first ones to voluntarily pay
+for software they use because it's basically
+it's our business.
+Right now, we don't work for a tools company,
+but you might sometime later, and then it's
+good to be able to know I paid for the stuff
+I used before.
+That's an interesting one.
+But also the point you make about shadow IT
+I think it's very common in a lot of government-related
+work.
+And I know somebody who worked, I don't know
+which bit of the Norwegian government, but
+it was many years ago.
+So definitely, you know, it was in the 2000s.
+It was interesting hearing what they described
+as what they're supposed to be doing what
+they're actually doing to work around what
+they're supposed to be doing.
+In other words, a lot of games rather than
+something that was spoken.
+I think, before we had the tech radar, we
+had this list of allowed technologists, and
+I think you had some version on there, at
+least four years after everybody started using
+it.
+And that kind of shows it's almost impossible
+to have such a list centrally managed and
+up to date.
+So they're saying, "That's not possible.
+It's better for you to do your own choices
+and broadcast it and it actually scales."
+Again, interesting enough, it goes back to
+this idea of the cost of centralized locking.
+It's the same in development as it is in the
+runtime, that there is a huge cost to try
+and keep everything synchronous.
+So the scale that you're talking about, is
+asynchronicity both in execution but also
+actually in terms of how teams evolve and
+are organized.
+Now, one other area, which I think is interesting,
+and I mentioned in the past is data mesh stuff,
+because that's a kind of a more recent trend.
+Again, it seems to fit with everything that
+you're saying, the idea that perhaps we don't
+try and have a single source of truth that
+is a physical single source of truth, that
+actually what we should...I guess data mesh
+is for data as microservices are to model
+lists.
+The first time I read the article on martinfowler.com
+I thought, "Well, this is basically someone
+that managed to articulate their domain-driven-design
+thinking but with analytical data in mind."
+Then I spent almost a year being frustrated,
+for reasons which I now understand more.
+All the data, people can see that.
+For me, it was very clear.
+Well, this basically summarized what I've
+been doing in the application space for 5
+to 10 years.
+Someone has actually explained to you how
+it works in data.
+It's a bigger change for them because they're
+very tool-driven, this very monolithic, the
+central data warehouse is like...you can't
+be more monolithic than that, I think.
+So to be able to find ways to explain and
+maneuver our organization into thinking more
+about splitting their ownership and taking
+the analytical creativity, and the analytical
+minds into the teams so that they're closer
+to where the data originates so they stop
+being frustrated because the thing that gets
+data up to date but doesn't work because the
+database is changing.
+Before we had like a few really, really big
+databases that changed four times a year,
+and being the central database team, it was
+difficult already then.
+But now, we have 2000 databases under change
+daily.
+It's almost impossible to follow through.
+So trying to make everybody think and understand,
+how should we think about getting the analytical
+data and the data products now when architectural
+applications are changing?
+I think that's a really interesting way of
+looking, but you also highlight something
+else.
+There's a difference in sometimes cultures.
+In other words, you talked about the sort
+of the data people, and we had the application
+people, and they pull in slightly different
+directions, and there are these different
+movements within each.
+It's like the data world is kind of catching
+up.
+We rely so heavily on data.
+The modern government relies on data.
+All the things we can get out of these analytical
+minds and what they think about when they
+decide on data models and understand other
+uses of data than just defecting something
+from an API and comparing it and throwing
+it away, but to understand that the data is
+actually even more valuable than the codes
+most of the time.
+Yes, indeed, I think that's one of those things
+that we always recognize, but, ultimately,
+it's the data that will outlive all the applications.
+I think in the past, that has meant that people
+have become complacent and they've assumed
+that because of that, they won't touch the
+data, or we can't change the schema, we can't
+do anything new.
+The data's on a different geological period.
+The applications move at this speed and then
+everything else moves much more slowly.
+This is really kind of like bringing data
+in at the same speed.
+Because there's so much value as well, and
+trying to figure out...
+Sometimes we have been able to build the teams
+where the developer or the application developers
+and the data engineers and analytical people
+have worked in the same team and to see the
+value they get from when the team wonders
+about should I do this, or should I do that.
+They can just do some SQL magic and then two
+seconds later, he knows well, 45% of it is
+this and 35% is this, so you should do this.
+And to have that ability really causes real
+development.
+So again, there's a kind of interesting thing
+here about time and turnaround time, and responsiveness,
+but also, at the same time, loosen the coupling,
+allow so I presume that looking to the future,
+that you're anticipating that NAV was gonna
+continue growing, but also, it's kind of the
+software perspective.
+That they're also all of the products that
+you're dealing with are also gonna be growing.
+Well, we still have over four biggest legacy
+systems.
+We only really managed to modernize most of
+one of them.
+We started in the second one and then we have
+slight plans for the third one and really
+no plans at all for the fourth one yet.
+We have loads of modernization.
+Well, I'm looking forward to what happens
+when we're kind of done with the modernization
+when we get to proper software products that
+can evolve with its contents.
+For instance, just having analysis and feedback
+going back to the people making the law.
+We have a really cool thing now where we managed
+to, in the code, that evaluates a case, it
+connects it to the different paragraphs and
+the different sentences in the law, and actually
+puts it into the...actually, it puts each
+evaluation of a sentence on a Kafka topic
+and presents it to another database.
+So we can do an analysis by saying, "Well,
+these two sentences in the law always go the
+same way at the same time.
+So maybe we don't need both.
+Maybe we may take one away, or..."
+This is never evaluated at all.
+So being able to really get data-driven on
+how to make laws.
+That's really interesting.
+Observability for the legal system.
+I had not thought about that.
+Then we can do simulations that politicians
+are gonna say, "Well, what happens if we do
+this," well, at least someone in the future
+will say, "Well, if we did this five years
+ago, this would have been the consequences,"
+at least for the one part of the system.
+It gets back to this idea of replaying time.
+Just what are the consequences of doing that?
+That's incredibly powerful.
+That’s a feedback loop that many people
+probably wouldn't even imagine having.
+I think that the point there is that the fact
+that is now a possibility is itself exciting.
+So that's what kind of drives us on.
+We just need to finish all this, get away
+from all these mainframes and Oracle systems
+and try to get evolvable software that can
+change.
+But I think that was that idea that information
+should be as...you should be able to have
+the information that you need, rather than...
+I think a phrase that I found myself using
+a lot is that we spend a lot of time programming
+in the past.
+In other words, you know, we might be sitting
+there going like, "Here's the code I see in
+my ID," but actually, when I look at the code,
+it's actually 5 years old, 10 years old, 20
+years old.
+I'm talking to a database that is maybe 30
+or 40 years old, or that, you know...
+Although we think of ourselves as programming
+in the present, actually a lot of the things
+are the decisions that are in the past and
+not necessarily the ones we want today.
+And we feel powerless to change them.
+But, at the same time, we always try to think
+of the code we have now as the code that survived,
+and for a reason.
+So legacy, in our terms, normally is kind
+of a bad word.
+But in normal English, at least legacy is
+a good thing.
+So we always try to focus on the fact that
+this system has been important for 40 years.
+That's a good thing.
+We need to change it now, but that doesn't
+mean it's been bad for 40 years.
+It's been really good and it's built the world's
+best welfare state.
+So to be able to treat it with respect at
+the same time they're saying, "Well, now we
+need to change them because now we have other
+options."
+I think that's a very interesting way of looking
+because we do.
+Legacy is a funny word, where it's gotten
+used.
+I discovered a Twitter comment and then I
+sort of started digging around, I quite like
+language.
+So I actually dug into the Oxford English
+Dictionary.
+And the earliest citation for using legacy
+in reference to software was 1989, which actually
+feels more recent, but in language terms,
+it feels very recent.
+What I found actually fascinating is that
+it got taken up very, very quickly, because
+it clearly fulfilled a need.
+Then we've also got this other use of the
+word.
+In other words, that legacy we'd like to think
+of as positive, but it isn't always.
+But I think one of the more interesting things
+is: Legacy code has a history, which means
+you can tell something about, which you can't
+tell about new code.
+This is a new code.
+We don't yet know how good it is or, you know,
+how relevant it is.
+Does it solve the right problem?
+Right.
+Does it solve the right problem, or if we
+solved the problem in our head, or the one
+in the world, which, you know, I think a lot
+of developers might be guilty of, and I know
+I have been.
+But that idea of the...this idea, it has a
+history that we can actually go and look at
+and go, "Actually this is useful, or actually
+it hasn't been useful for a while.
+We just haven't noticed, whereas new code
+is experimental and should be experimental."
+We should be allowed to throw it away.
+Yes, because that's our superpower.
+We can change software on a whim.
+I remember reading an interview with one of
+the guys who worked at NAV from the very beginning.
+He was retiring for years, actually, basically
+working 40 years on the same system.
+And he kind of divided everything into decades.
+The first decade was quite good.
+And then the second decade came and then some
+politicians say it's bad, but the second was
+better again.
+And just to have that time span of understanding
+how the system you work on affects the real
+world and the other way around.
+I think it's sometimes when people properly
+appreciate software architecture and development
+organizations, they start talking, "Oh, yeah,
+it's a socio-technical system," and you start
+to see it with these kinds of long views.
+But I think that idea, as you say, is the
+idea that in software development, we have
+a superpower.
+Sometimes we don't use it.
+You know, that software should be soft.
+We should be able to change it and we should
+be able to do so as quickly as possible.
+We should also be able to understand it in
+a bigger historical context.
+And that would be...you know, it's a superpower
+in that sense if we get it right.
+Outro
+So I'm gonna bring this discussion to a close.
+We've kind of covered a remarkable amount
+of space.
+What kind of things that you think are interesting
+from a personal perspective, but also, in
+the context of NAV and NAIS.
+Over the next few years, where you kind of...you've
+already mentioned a couple of things you're
+kind of looking forward to.
+One thing we're working on right now is continuing
+our migration to the cloud and trying to do
+that in a way that actually makes everything
+better and cheaper and everything.
+And another really interesting thing about
+me and a colleague has been working on lately
+is to try to balance the creative autonomy
+of teams with kind of the large-scale efficiency
+alignment to try to figure out a way to control
+the teams without actually making them feel
+like they're being controlled.
+Control without control.
+Yes, and we've been working quite a lot.
+Technology radar is one example of one technique
+you can use to do that.
+And then we have some other techniques where
+we try to balance the normative and the descriptive
+parts somewhat.
+We spend some time saying, "This is a good
+way of doing stuff."
+And at the same time saying, "But you can
+choose yourself.
+Everything is allowed if broadcast it."
+And trying to find that balance so that a
+system of teams that are more than 100 can
+both be similar, but also tried to figure
+out what's the best way of moving forward,
+because we don't want to create a new system
+that's impossible to change because it's 40
+years old.
+It has to keep being changeable.
+Yeah, you don't want to create somebody else's
+bad story.
+That's brilliant.
+Thank you very much, Audun.
+Thank you.

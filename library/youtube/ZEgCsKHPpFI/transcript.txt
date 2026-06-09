@@ -1,0 +1,1094 @@
+[Music]
+hello everyone thanks for joining us
+today and welcome to the online tech
+talk
+so today we will be covering the top
+seven ways to operationalize aw security
+hub
+so we will provide some guidance and
+templates to operationalize security hub
+so you can maximize the value that you
+get from it
+my name is prashup krishnan
+i'm a senior technical account manager
+with aws enterprise support
+i'm based in denver colorado and i have
+been with aws close to two and a half
+years
+so today i'm joined by my colleague
+jason who is an enterprise solutions
+architect
+jason do you want to say hello to
+everyone
+hey folks uh my name is jason champ as
+per shop mentioned i'm a solutions
+architect
+based here in cleveland ohio and excited
+to share some of this with you today
+excellent
+so let's move to the agenda for today
+so uh yeah so here's the brief agenda
+for today
+so we will start by providing an
+overview of security hub
+we will then take a look at how to
+enrich your security hub findings with
+account related metadata
+creating a bidirectional integration
+with the ticketing system like jira
+how to build order suppression rules and
+correlate findings
+we will also show you how to set up
+automated and on-demand remediation
+actions
+integrating security hub with vi tools
+for advanced visualizations
+and finally we will take a look at how
+to schedule weekly summary emails and
+then wrap up with a q a section
+so first of all
+let's take a look at why did we build
+away security hub
+there are mainly four drivers behind it
+first is from the compliance
+perspective
+so many customers have different
+internal and external compliance
+requirements
+and some of these are regulatory such as
+hipaa nist pci etc
+some are internal requirements
+and some requirements are having
+industry best practices in place
+irrespective of what the requirements
+are
+aws customers need a way to track their
+compliance status
+and also need a way to ensure that they
+are adhering to them
+next aws customers oftentimes deals with
+different types of security tools
+sometimes dozens of security tools
+and each of these tools emits alerts in
+a different format
+as a result
+customers have to parse and normalize
+this data to a common format
+so that they can research and analyze
+the alerts and ultimately determine
+which alerts are most important
+which brings us to the third problem
+statement
+so these security tools generate
+hundreds or sometimes thousands of
+alerts every day
+customers need help in identifying which
+of those alerts are most important
+and which of them needs human
+intervention
+lastly in terms of visibility
+customers want a single pane of glass
+they want a single place where they can
+go to understand their security and
+compliance state
+they don't want to pivot around to
+different screens or tools to understand
+their security postures
+so customers need a single place to go
+every day to understand what they need
+to do to improve their security and
+compliance status
+moving on
+so for that reason
+we build security hub
+the way that it works is
+once you turn on security hub it
+automatically starts to aggregate
+findings and alerts from core aws
+security services
+such as amazon guard duty amazon
+inspector
+macy firewall manager and iam access
+analyzer
+if you have enabled the services in the
+account where security have this on we
+will automatically bring findings from
+those services into security hub
+in addition to that security hub also
+integrates with multiple partner
+solutions
+what is interesting is that both the
+core aw services and the patent products
+send finding into security have been a
+standardized format called aws security
+findings format
+because of this
+security teams don't need to parse or
+normalize this data
+and can start the analysis from day one
+without any additional setup
+another capability of security hub is
+the automated security checks
+security hub can proactively do
+automated continuous checks in the
+account
+once you enable standards such as aws
+foundational security best practices aws
+cas foundational benchmark or pcids
+standards
+finally security hub is not just a
+visualization dashboard
+you can also take actions on findings by
+making use of amazon event bridge
+events from aws services are delivered
+to even bridge in near real time
+and you can write simple rules to
+indicate which events you're interested
+in and what actions to take when an
+event matches a rule
+so it can be like sending to a seam
+sending to your ticketing tool
+or to a full remediation platform
+helping you close the loop on that
+finding and throughout this presentation
+you will see this approach being
+utilized to build different solutions
+which we will talk about in detail in
+the next slides
+okay so
+our first tip of the day
+is how to enrich security hub findings
+with additional account related metadata
+such as the account name
+organizational unit associated with the
+account
+or security point of contact information
+any additional contextual information
+that you want to add like whether it's a
+production
+or development account can be added as
+account tax
+the security or the devops teams
+responsible for investigating responding
+to and remediating security hub findings
+may need this additional account
+metadata
+to determine what to do about the
+finding or where to route it
+for example
+identifying whether the finding
+originated from a development or
+production account
+can be key to understanding the priority
+of the finding
+and the type of the remediation action
+needed
+so how does the solution work
+so every time a finding is created or
+updated in security hub
+it submits an event in amazon
+eventbridge
+which contains all the information about
+the finding
+so we'll create a rule in event bridge
+which will send this event to a lambda
+function for further processing
+anytime a specific condition is met
+so the lambda function uses the account
+id in the event to retrieve the account
+metadata
+and the alternate account contact
+information by querying aws organization
+and account management apis
+and caches that information in a
+dynamodb table for performance
+using batch update findings api in
+security hub
+nodes and the user defined fields
+attributes of the security hub finding
+is updated
+with the additional account metadata
+so this will now be visible in security
+hub and allows customers to build custom
+insights to track which organizational
+units or applications have the most
+awkward security issues
+all the information required to deploy
+the solution is available in our blog
+post
+which is on the top right section of the
+slide as you might have noticed
+so now let's take a closer look at the
+solution by going into the aws console
+we have a small demo report for you
+thank you for joining me in the console
+as you can see i have deployed the
+solution to my security hub delegated
+administration account using a
+cloudformation template
+the cloudformation has created the
+following resources in the account a
+dynamodb table
+for storing the account metadata
+information a lambda function which is
+responsible for populating the
+dynamodb table with account metadata by
+querying the organizations and account
+management apis
+it also deployed a event bridge rule
+which will trigger the lambda function
+whenever a specific condition is met
+and rest of the resources are the iam
+permission policies for the lambda
+function and the event bridge rule
+so
+let's take a look into the even bridge
+rule here
+so whenever a finding gets created or
+updated in security hub the rule checks
+the
+checks for the existence of a specific
+user defined field which is the finding
+enriched field
+and anytime a finding
+is matching this even pattern
+the rule will trigger the lambda
+function
+as defined
+in the target of this even bridge rule
+the lambda function
+will then query different apis
+to gather the metadata information such
+as the alternate security contact
+organizational units
+and account tax
+it will then store this information in
+the dynamodb table
+and finally the function will also
+update the
+user defined field
+and also the north field of the finding
+with the account
+metadata information which
+just looked up
+so here is a dynamodb table item
+containing the sample enrichment text
+the lambda function will actually check
+the dynamodb table first before querying
+any apis to get the metadata information
+this is because the metadata information
+does not change very often and we can
+also reduce the api heads
+the lambda function will refresh this
+information every 24 hours to
+make sure that there is no steel data
+and in security hub console
+the enriched information
+appears in the not section like this
+so there is account name or you name
+security contact information
+and any other information baked into the
+account in the forms of tag will also
+appear here
+we can build custom insights in security
+hub using this enriched information by
+filtering on the user defined field as
+shown here
+so here i am filtering on the account
+name um you can customize this reports
+to your need
+for example you may want to view the
+findings for your development accounts
+or your production accounts
+or your organizational unit as a whole
+then you can use this information for
+reports or send them for any additional
+remediation
+okay so
+hope
+that tip one was helpful to you
+so our
+second tip is to create a bi-directional
+integration with an external tool
+if you use both aw security hub and an
+itsm tool like jira service management
+you can use an application called aws
+service management connector
+to create an automated bi-directional
+integration
+between these two products
+that keeps your security here findings
+and user issues in sync
+as a jira administrator
+you will then be able to create your
+issues from the security help findings
+automatically
+and when you update those issues in jira
+the changes are automatically replicated
+back into the original security hub
+finding
+for example if we resolve an issue in
+jira the workflow status of the finding
+in security hub will also be resolved
+so this way security have always has
+up-to-date status about your security
+posture
+to get you started quickly there are
+sample cloud formation templates
+available in aws documentation which
+will set up everything in aws console in
+order to integrate to jira
+you will need to install and configure
+aws service management connector in jira
+and establish a connection
+the credentials record for the
+connection will be available from cloud
+formation templates output
+we will switch to the aws console now to
+see this in action
+let's take a look at how the
+bi-directional integration of security
+happens
+service management works so you will
+need a jira instance with java service
+management installed
+then you will also need to install the
+aws service management connector for
+jira service management
+the instructions for doing the same can
+be found in this aws page
+so there is a sample cloud formation
+template which will deploy all the
+baseline permissions configurations and
+resources required for the aws connector
+using either the aws console or cli
+there's also a cloud formation template
+available for the cloud region
+so
+once you
+follow the instructions you will need to
+copy and paste some information
+from the output of the cloudformation
+template to set up a connection and then
+test the connectivity
+so as you can see
+i have connected my account with jira
+and it's currently syncing all the
+findings from us west to region
+we can add more regions here or create a
+brand new connection with a different
+aws account
+you can then fine-tune the
+configurations by going into the
+connector settings screen
+uh here you can choose the aws products
+to integrate with jira such as security
+hub
+service catalog system manager database
+config
+you can also configure the specific
+jira project
+which will receive all the security hub
+findings
+once it gets created
+you can choose to link multiple accounts
+to say in java project or create a
+one-to-one mapping as well
+and
+this is the
+queue which will
+which makes the bi-directional
+integration possible
+and the name of the queue is available
+after the cloud formation template is
+deployed
+the sync interval and also the number of
+messages to prove from sqs at the time
+it's also configurable and there's
+another configuration which lets you
+choose if you want to synchronize only
+specific stability levels such as
+critical or high
+from security hub
+okay so let's see this is an action now
+um so here are the security here
+findings which got created in the
+project that i specified earlier
+as you can see
+uh the workflow status of this finding
+is
+set task new
+i'm going to update the workflow status
+to notified here
+so here the status is updated and
+notified
+so let's check in security hub
+so in security hub the status is now
+updated to notified
+and in here we will
+now go ahead and update the status to
+resolved
+so secure the have status quote updated
+to the sort now
+and the same status is now updated in
+jira as well so the status of the
+finding is
+updated as resolved
+okay
+so for tip 3
+let's see how we can create auto
+suppression rules for specific types of
+findings in security hub such as the
+ones that are unacceptable square design
+or have a compensating control in place
+by automatically suppressing these
+findings that don't require follow-up
+action from your security team
+you can concentrate on investigating and
+remediating findings that are not yet to
+solve
+for example
+suppose that your development
+environment does not need to have amazon
+vpc flow logs enabled
+because it does not contain any
+sensitive data so this is an example of
+an accepted risk
+however your production account must
+have epc flow logs enabled
+then you can use this solution to
+automatically suppress findings from the
+development account
+and then just focus on findings from the
+production environment where vpc flow
+logs are not enabled
+in security hub the status of a finding
+is tracked using the workflow status
+attribute
+there are different workflow statuses
+such as new notified or resolved
+if the filing is not a concern for your
+environment
+and does not require any action
+then you can set the workflow status to
+suppress
+as we already
+saw before
+this solution also uses an eventbridge
+rule to evaluate security hub findings
+based on predefined conditions
+using an even bridge pattern the even
+bridge rule will fit will filter
+findings from the development account
+that don't have epc flow logs enabled
+and then send it to a lambda function
+at a high level the solution works in
+this way
+security help generates findings in the
+member accounts and decentralized
+administrator accounts has permissions
+to view those findings
+in the administrator account security
+hub evaluates every finding against an
+event bridge rule
+and if a finding satisfies any of the
+event bridge rule condition even which
+will trigger the lambda function and
+finally the lambda function sets the
+security hub book was added to
+suppressed using the batch update
+findings api
+so let's see this is in action and
+let's switch to the aws console
+thanks just following me to the console
+so i have deployed the cloud formation
+template to my security hub
+administrator account
+so this cloud formation template takes
+two parameters
+first is the account number so i have
+passed my development account number
+where i want to suppress the findings
+and the other parameter is the generator
+id which uniquely identifies the
+security we have finding of not enabling
+bbc flow logs in your account
+so for this to work one prerequisite is
+that you need to enable the aws
+foundational security best practices
+controlling the account
+and it's because this specific finding
+for flow logs will only get generated
+after you enable the foundational best
+practices standard
+so there are a bunch of useful controls
+available in this aws documentation to
+easily get you started
+if you're not familiar with the aws
+foundational security best practices
+control
+so now let's take a look into the event
+bridge rule which was created by the
+cloud formation
+so this rule will get involved anytime a
+security help finding is created that
+satisfies all the following conditions
+so the rule checks if the finding has
+the generator id for the vpc flow logs
+and it belongs to the development
+account that we specified earlier
+and also if the workflow status is set
+to new
+you can customize the cement procedure
+specific to your environment for example
+you can add multiple account ids or use
+a combination of different finding
+generator ids that you want to
+automatically suppress
+the target of this even bridge rule is
+the lambda function which will set the
+workflow status to suppress it
+so here is the lambda function
+so it receives the event from the event
+bridge and it uses the
+security hub batch update finding api to
+set the workflow status to suppressed
+and it also set the 782 informational
+for auditing and troubleshooting
+purposes i tries the cloud watch logs as
+well
+and finally in security hub as you can
+see the automation has suppressed the
+finding
+for the account id that is that we
+specified
+the automation framework is deployed in
+my security hub delegated administrator
+account where i can view the findings
+for all the accounts associated my
+associated to my aws organization
+so any update in the administration
+account will automatically be replicated
+in the member accounts as well
+so the same finding and status is
+visible in the development account and
+also in your centralized administrator
+account
+so
+those are the first three ways to
+operationalize security hub
+and json will come and talk about the
+other steps jason over to you
+awesome thank you prashab i appreciate
+it
+and let's pick it up here taking a look
+at tip number four
+so here in tip number four we'll use
+security hub to correlate findings from
+multiple aws services that are related
+to a single resource so usually what
+happens when when you find re uh when
+you see findings that are related to a
+the same resource it it indicates an
+increased possibility that a security
+event has occurred
+so let's start by walking through how
+the solution works
+so number one uh you know and we've
+discussed that security hub ingests
+findings from multiple aws services
+including guard duty inspector macy
+firewall manager im access analyzer and
+systems manager patch manager
+and so
+uh
+then you can have an eventbridge rule
+that gets invoked based off of some of
+these findings that eventbridge rule
+will kick off a lambda function as
+denoted in number three that will read
+the contents of that finding and put the
+data in a dynamodb table uh per number
+four and so in in that dynamo table
+we're going to add a ttl value to those
+uh rows to expire those findings that
+are older than 30 days
+and then we have another lambda function
+denoted in number five that looks at the
+findings in that dynamo table to see if
+there are findings that relate to the
+same resource
+so let me give an example
+if guard duty detects a backdoor finding
+and perhaps inspector detects a critical
+common vulnerability or exposure
+otherwise known as cve on the same ec2
+instance it's pretty likely that that
+ec2 instance was compromised and perhaps
+a backdoor was installed because of the
+cve vulnerability and in this case
+it's recommended that you isolate the
+instance and then you know follow your
+typical standard procedure for forensics
+to verify that yes actually the instance
+has been compromised and then of course
+your standard incident response plan
+should kick in
+another example
+aws security hub
+could detect an ec2 instance with a
+public ip address and an unrestricted
+vpc security group and then guard duty
+could find unusual network activity and
+perhaps a brute force attack on port 22
+or ssh or port 3389 for rdp if you're on
+running on windows and this would be
+recognized by the number five lambda
+function and a new finding would be
+generated in security hub
+for the correlation
+so follow me to the aws console and i'll
+give you a quick demo of how this
+solution works
+okay thank you for joining me in the
+console here for tip four on correlating
+security hub findings so i've navigated
+into the console and i'm gonna show you
+what this solution looks like so we'll
+start with cloudformation this is all
+kicked off by a cloudformation template
+you can see that there are many
+resources that are defined and we have
+you know custom uh findings and lambda
+functions you know we've got kms key for
+encryption we've got eventbridge rules
+and so this uh is what gets deployed
+when you initially deploy the
+correlation stack uh as denoted in the
+blog post
+so i've already pre-installed security
+hub here
+but what the solution will deploy are
+some of these eventbridge rules so i'll
+show you some of these event bridge
+rules here they are you know i've got
+four of them that come out of the box
+and you can always extend this uh using
+the framework that you find uh as part
+of
+the the template and so i've got one
+here for creating an entry in security
+hub
+from security hub for dynamo and then
+i've also got others that create entries
+in dynamo
+from security hub guard duty findings or
+inspector findings or from ac findings
+so these are the rules that would
+normally get triggered
+and uh that will kick off lambda
+functions that will take uh the data
+that's uh fed to the lambda from these
+rules and stored in a dynamodb table and
+i have a dynamodb table here that i've
+i've been running for a number of uh
+days now that have uh several findings
+in them and you can see that i've got
+some pretty good ones in here you know
+this instance has been involved in ssh
+brute force attacks for example and we
+know that that came from guard duty and
+it shows guard duty as the generator id
+here
+and it also shows me you know where it
+was the region that it was in uh the aws
+account that it was part of uh and what
+kind of severity it is now this one's a
+low severity but i have several several
+high severity findings in here as well
+as the details about the finding itself
+so this is the detail that you would
+normally find in security hub
+and so now that i've got all of these
+findings in here
+you know we want to create a
+custom finding for
+a custom finding and security hub for
+events that match the same resource id
+in this dynamo table and here is my
+lambda function to go and do that you
+can take this code and modify it any way
+that you want to extend it for other
+types of responses but when this
+function will actually
+run it's going to write to the logs and
+i want to show you some of these logs
+i want to walk you through one that i
+saw a couple days ago and so here you
+know we're searching the dynamodb for
+this specific instance you know we're
+going to have these three checks so the
+first check is you know security hub
+exposed ip or unrestricted security
+group and a guard duty finding for an
+unusual network port and brute force
+attack on this instance we found it we
+found that there was actually a finding
+uh in
+uh security hub with the public ip we
+found that it was uh in fact a brute
+force attack um but we did not find uh
+any
+any other uh matches here and then we'll
+go on to our second check for x3 data x
+filtration um we found no matches we
+check our third check for guard duty
+looking for a back door uh that may be
+installed with some critical cves and
+again found no matches and so in this
+example we didn't find a match uh but if
+there would be a match across
+multiple resources that would be fed
+back into security hub as a custom
+finding and something that your internet
+response teams should definitely take a
+look at
+moving on to tip number five
+here in tip number five we'll deploy
+cloudformation templates that are
+referenced in the qr code link in the
+upper right to create the remediation
+playbooks using cloudwatch events lambda
+functions and aws security hub custom
+actions
+to respond to findings in the aws
+environment
+so this will allow your security
+analysts to respond to those findings by
+triggering an action and just to be
+clear this doesn't actually
+automatically respond
+a human is still going to have to click
+the remediate button but that human
+won't have to figure out what to do to
+actually remediate it will be included
+as part of the playbook and so this
+diagram will walk us through the various
+steps needed for on-demand uh
+remediation
+starting with detect and so you know
+we've talked about it a little bit
+before security hub will gather all of
+these findings across your aws
+organization
+and then you can trigger cloud watch log
+rules to be invoked uh to invoke lambda
+functions or step functions for findings
+that are of interest
+and so when you click the remediate with
+sharp button in security hub after
+deploying the process
+you'll be in
+ingesting defining detail into a lambda
+function or playbook using this
+cloudwatch event rule and then the
+playbook or the lambda can assume a role
+into a managed account and automatically
+repeat remediate the finding and of
+course we want to log this so anytime
+that we run an automated action this
+data and that event will be logged in
+cloudwatch logs
+there are remediation playbooks for the
+cis best practices aws foundational best
+practices and pci dss
+there won't be automations for
+everything but there will be for a good
+majority of the findings and a good
+example might be if security hub detects
+the ec 2.7 finding in the aws
+foundational best practices playbook
+which is that ebs default encryption is
+not enabled so if you don't have a
+default encryption enabled in your
+account this could be a finding the
+remediation that can be executed will
+enable
+ebs encryption as the account by default
+now let's break to a demo and walk
+through some of the playbooks and
+actually remediate a finding live
+okay folks for tip five you can join me
+in the aws console and the documentation
+so we're gonna start i'm gonna show you
+the different playbooks so these
+playbooks as part of the aws security
+hub automated response and remediation
+solution
+includes a number of different playbooks
+and it will cover the cis best practices
+it will also cover the aws foundational
+security best practices playbook and it
+will also cover the pci dss playbook
+but i want to give you a couple examples
+here if we look at some of the
+foundational best practices
+you can see the automated action that
+shar will take
+so a good one here would be you know ebs
+snapshot should not be public
+and determined by the ability to restore
+from anything so if you were to discover
+this in your own aws account in security
+hub shar could remediate this
+by making all ebs snapshots private uh
+the one i'm gonna demonstrate for you
+here is ec 2.2 where the vpc default
+security group should not allow inbound
+and outbound traffic and so i'm going to
+go ahead and execute this and show you
+uh that it does remove the rules uh in
+the default security group uh that is
+the subject of the finding
+so let's go to the aws console here i'm
+on my aws console and first i'm gonna
+show you what is deployed by the uh
+remediations uh solution so if i go to
+cloudformation you can see a number of
+stacks here this aws shard deploy admin
+you know i've got an orchestration stack
+uh nested stacks and i've got another
+another stack that actually deploys all
+the playbooks for the areas that i want
+to go and remediate so let's go to
+security up i'm going to show you a
+finding
+and here in my findings i'm going to go
+ahead and take a look at this one it's
+ec2 2.2
+ec 2.2 the vpc default security group
+should not allow inbound and outbound
+traffic
+and so if i click into this you know i
+can get all the details about this
+finding you know where it is what aws
+account it is
+the resource id and i'm going to go
+ahead i'm going to show you that
+security group and is unremediated so
+let's take a look at it here it is 70f
+you can see i have all traffic inbound i
+have all traffic outbound and according
+to the security hub aws foundational
+best practice standard uh you know this
+is not a good practice so let's go ahead
+and remediate this
+so go to actions
+and remediate with shar
+and we should see a green banner at the
+top
+okay
+successfully sent the uh findings to
+amazon cloud watch events and so the
+automation has been kicked off
+let's go take a look at
+the security group now have these rules
+been removed
+okay and after a few minutes
+uh we found that for this security group
+we have no security group rules defined
+both on the inbound and the outbound
+so works
+tip number six
+uh security hub and visualizations of
+those findings in a bi tool and a
+business intelligence tool so this blog
+is going to feature two different ways
+to visualize your security hub posture
+and findings option one shown here
+uh will use uh the centralized security
+account that will run security hub for
+the entire organization and so what will
+happen is this account will publish
+those events to eventbridge very similar
+to patterns we've already talked about
+eventbridge will have rules that will
+deliver
+the finding types to kinesis data
+firehose kinesis data firehose in this
+example acts as the data streaming
+service that will automatically scale
+with demand and move data from one point
+to the next
+in this case
+fire hose here is configured to deliver
+the data to an estery bucket if you
+happen to have multiple aws regions you
+can create multiple fire hoses to
+consolidate those findings into a single
+regional s3 bucket
+your s3 bucket will want to be
+partitioned you want to partition for
+example based off of aws account number
+region
+perhaps the date and time
+and then on the other side of the bucket
+you'll create an aws glue crawler and so
+this glue crawler will pull the metadata
+and the schema from the data in the s3
+bucket
+and then you could plug in amazon athena
+to query the data in the bucket using
+the schema pulled by the glue
+crawler
+then you can build your own quick site
+dashboards
+using a view created using the views
+created in athena some good examples you
+might want to create views based off of
+account or findings by region or
+findings by severity findings by
+resource type
+or by the workflow in the account
+uh
+alternatively there is another option
+inside the blog where you can deploy
+this using elasticsearch in cabana so if
+you're more comfortable and familiar
+with elasticsearch and kibana
+check the blog and you can see how to
+deploy it in that type of environment
+so let's take a look at some of the
+examples uh example visualizations that
+you can create and so here looking at
+some of these visualizations we can see
+the findings by resource type or for
+example the findings by date created
+or for example the findings by severity
+and
+you can choose to create any type of
+visualizations that you'd like
+moving on to the final tip tip number
+seven configuring weekly summary emails
+so in this example uh there
+is a template as part of the blog post
+in the operate that you can execute that
+will set this up for you
+and so what this will do is security hub
+will notify account owners aws account
+owners with a summary of existing
+security findings to help them
+prioritize corrective action
+and so why is this important this is
+important because often cloud security
+processes are different from traditional
+on-premises security and that in the
+cloud security is often decentralized
+uh traditional on-premises security
+operations are usually centralized in a
+security operations center
+uh with cloud security operations is
+often the application teams
+or the developers that are best best
+suited to triage investigate and
+remediate these security alerts so
+sometimes we call this devsecops or
+shift left
+centralized security teams uh in this
+case they'll look for additional ways to
+proactively uh engage application team
+owners but you know empowering
+application teams to take action on
+their own security events
+is a great way to accelerate
+so this solution is going to use
+security hub custom insights aws lambda
+and the security of api and works uh
+using these five steps very similar to
+some of the steps we've we've talked
+about before so seven new security hub
+custom insights will be created for you
+from the solution so you get those out
+of the box
+and then a cloudwatch
+quad watch time based event will execute
+a lambda function that will read the
+contents from those custom
+custom insights and then formulate that
+in formulate that text into an email and
+then use the sns service the simple
+notification service to send an email to
+the recipient of the aws account and
+you'll be able to configure that when
+you deploy
+now let's break for a demo and you can
+see an example summary email in action
+and thank you for joining me in the aws
+console
+i'm here logged into one of my
+downstream aws accounts not my security
+account with security hub running in it
+but the one an aws account that actually
+has workloads running in it
+so here i'm i've logged in here and i'm
+going to start with uh showing you the
+cloud formation stack that is deployed
+uh from the blog post to actually enable
+these weekly summary emails so i'll go
+to cloudformation
+and you can see the stack name it's
+called security hub summary email stack
+and a number of things have been
+deployed including custom insights for
+security hub
+we have a lambda function we've got an
+sns topic to send those emails so
+let's take a look at some of these
+custom insights go to the security hub
+console and i've already pre-filtered it
+based off of that it's called summary
+you can see some of the summary emails
+here along with a 90-day finding trend
+for each and so these are the custom
+ones that are going to come with this
+solution
+and uh you know at the end of every week
+as an account owner
+you know me keeping track of uh you know
+the security of findings that are in my
+account
+i want to get a summary email and so
+here's an example of a summary email
+with the foundational security best
+practices checks the total checks that
+passed the total checks that failed with
+some convenient links embedded in the
+security hub
+summary report that take me directly to
+some of these findings and i can scroll
+down and i can see you know the top 10
+resource types by findings and then i
+also get these convenient links so if i
+go on and click on one of these links
+it'll open up
+a new tab in my browser
+and here you can see
+that link took me directly to security
+hub where i can get my compliance status
+i see that i have 591 that have passed
+and 280 that have failed as well as
+additional detail about the severity
+label the aws account id and that's my
+account id uh the resource type the
+resource id and so on so it's a great
+solution that you can deploy
+so that your account owners can take
+ownership of the security findings in
+their account
+and so and help them prioritize and take
+action
+and thanks team i hope this has been
+informative and let's open it up to some
+questions
+[Music]
+you

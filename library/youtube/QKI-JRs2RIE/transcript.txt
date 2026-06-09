@@ -1,0 +1,952 @@
+welcome everyone this is a pretty big
+audience thanks for coming
+we're gonna tell you about ten ways to
+shoot yourself in the foot with
+kubernetes and hopefully number nine
+surprises you start with a brief
+introduction so I'm Rob I am in charge
+of the compute team at data dogs we run
+all the kubernetes infrastructure there
+and i'm rowhome beyond I am staff
+engineering the infrastructure
+organization at data Doug and I work on
+communities too so first a little bit
+about why you care what we have to say
+so probably most of you know that data
+dog is a monitoring service so customers
+send us metrics traces logs they build
+dashboards and alerting through our
+product and so it's sort of a you know
+positioned as a cloud native service
+provider where we sell a product to all
+of you as you're running your kubernetes
+for us we're running the infrastructure
+that runs data dog and so our
+perspective is a little bit more that of
+a cloud native end-user we're
+experiencing it all kind of similar to
+you and so that's the perspective you're
+gonna see throughout this talk we've
+been working on the communities project
+for about a year and a half and we've
+had production workloads for about a
+year now
+and we're starting to run pretty big
+clusters so in production we now have
+several thousand nodes managed by
+kubernetes and to keep you an idea our
+biggest cluster today is about two
+thousand nodes and the typical size
+cluster would be about 1,000 to 1,500
+nodes and well as you can imagine
+managing clusters this size is naturally
+a walk in the park and we've had like
+many outages and today we're gonna focus
+on the ones where we actually broke
+things ourselves and try and share
+lessons learned so you can avoid making
+the same mistakes we did
+so
+the first time a team complained about
+DNS like about a year ago we figured
+there was a problem with the application
+and we kind of dismissed it turns out
+while there's a lot of way to break DNS
+and kubernetes and we've faced quite a
+few ones and I'm sure that if you run
+commands at scale you buddy should with
+DNS so let's start with the first one
+so either quick reminder the way cuban
+artists managed dns usually is the cubit
+is going to inject a result dot-com file
+and you can see all this search domain
+there so the first one is gonna be
+namespace dot service dot plus two dots
+local then service that cluster dot
+local then clustered Oracle and then the
+search domain inherited from the host
+you're running on in our case it's easy
+to that internal there and there's also
+this option that's very important it's n
+dot equal five and if you're not
+familiar with it this is how it's gonna
+are gonna work so imagine you're in a
+pod and you want to look for ww that
+google.com since this name is less than
+five dots and this is what the Ender's
+option is for it's going to try and add
+auto search domain to it so the first
+queries to the DNS server is actually
+going to be W W that google.com that
+namespace the service also got local and
+of course the DNS server is going to say
+I have no clue why berries and the
+resolver is going to go through all
+these lists and finally send the raw
+query which is going to actually resolve
+to an IP address this is pretty
+inefficient because of course you do
+five queries for n and so that's pretty
+simple and it is very bad on the
+client-side because it's much slower and
+it's also bad on the core DNS server
+because we use called DNS because you
+have a lot of queries that are actually
+useless
+there's this pretty interesting feature
+in core DNS which is called Auto pass
+and the way it works if you see the
+query the first query to the one that
+was there was showing earlier this when
+coordinates is getting the square with
+Auto pass enabled is going to strip the
+namespace your service address without
+local and try to be clever and find out
+what was actually mount and trying to
+find the proper answer in this case it's
+going to answer with the cname 4ww that
+we got con and then at the IP address as
+in a records so it's much better and
+it's a single DNS query instead of five
+it's much faster it's better so we had
+high hopes what happened one day is some
+teams are complaining that DNS was
+broken and that DNS query is coming out
+and we looked at the cadenas metrics and
+we saw that suddenly the matter of self
+error to upstream was very high means
+usually zero and it was very high and we
+investigated I turned out who were
+really limited by the upstream and what
+had happened is that the number of
+queries had increased and since we had
+other person able auto pass is trying to
+be clever and always do an option
+resolution to match an upstream query
+and it doesn't do any cash so at one
+point we just reached this limit where
+nothing was working anymore because we
+couldn't reach the option server anymore
+and so any resolution outside of the
+cursor was failing which was very bad as
+you can imagine
+well this one is also about DNS and
+we've had quite a few we're only gonna
+share two today in our cluster we use IP
+vs for load balance services so we
+access the core DNS service with IP vs
+the way it works is the part is going to
+send DNS query to the virtual server
+that is backed by the backend but which
+are the co DNS pods
+what's important in you're gonna see
+next while if that there is also an IP
+vs contract that's tracking all the
+connections managed by APs
+when you do a rolling update what's
+happening is actually when you depart is
+going to be deleted it's going to be
+removed from the back-end servers and a
+new part isn't be created in this case
+you can see that put a is gun and put
+has been added but if you have a high
+lot of queries as you can see in the
+contract down there the contract from
+products to put a use actor is still in
+there and if you have a high or low
+that's high enough what X is going to be
+reused at one point and this query is
+going to be ready to put a since IPS
+doesn't have a back-end for a anymore
+it's going to be dropped by the kernel
+which is thirty bad because the genus
+pack is just going to be gone there's
+actually a tunable you can use in the
+kennel to make it a lot better but this
+tunable is not set by it wasn't set by
+through proxy at the point at the time
+so it was actually kind of a problem so
+we introduced this option in the in the
+proxy implemented but we introduced it
+up after a graceful termination so the
+behavior I described before was how IPS
+was working before a graceful
+termination was introduced in 1.12 and
+back pod in what set in 111 graceful
+termination is trying to be a lot more
+clever instead of removing a background
+and black holding traffic when you
+delete a pod is going to say the weight
+to zero which means no new connections
+are gonna be sent to purge with weight
+zero but establish connection has to
+gonna work this is much better for TCP
+however it's kind of pretty bad for UDP
+because it's exactly it's going to be
+almost the same behavior as before if
+you reuse the pot that's already mapped
+you still gonna get routed to a pod
+that's not there anymore so it's going
+to be slightly different the packet is
+not can be dropped by the kernel it's
+gonna be routed to an IP but this IP is
+not there anymore Eugenia Square is
+gonna film
+the good thing is q proxy maintainer
+czar well aware of this and we've been
+working on it for quite a while and now
+we have a good idea of how to fix it and
+hopefully we have a PR that's gonna make
+it a lot better in the next few days I
+think well I think Laurent will talk
+about DNS all day if we let them but
+let's talk about something else let's
+have some diversity so this is a kind of
+an interesting one you know we really
+don't like when our users come to us
+with error reports we usually like them
+we catch them with our monitoring first
+but in this case users came to us and
+they said that their jobs weren't
+starting and we saw some evidence that
+it might be related to image polls so we
+went to go look at some state of all the
+pods on this cluster and we see that
+there is something going on there's
+quite a lot of error state pods related
+to image polls it's not real it's not
+affecting running applications so this
+is good but there's certainly something
+going on first place we look is that
+some metrics related to image polls so
+you can see that there's an interesting
+pattern here sort of drastic increase in
+the number of image polls that's
+sustained for a while and then another
+drastic increase so there's certainly
+something weird you see this sudden
+change and so first place we go is to
+look at what the actual responses from
+the image registry are well they're not
+good we're seeing quite a lot of 4:29 so
+indicating we're being rate limited by
+our by our image registry so at this
+point we realized that no nodes in this
+entire region are able to pull from our
+image registry so what happens well we
+created some change on the permissions
+on a bucket that one of our applications
+required read access to and it could no
+longer start up and so this demon set
+that's running on roughly a thousand
+nodes on this cluster starts going into
+crash loop but it had a really dangerous
+feature enabled image pool policy always
+and so every time it's restarting it's
+doing another pull of the image that's
+already existing on the host and so this
+sort of compounded by the fact that we
+actually have all of our traffic to our
+image registry is going through three
+and add instances one persona in this
+region and so the image registry is
+looking at this all this source traffic
+coming from the only those three IPS is
+seeing it's way way way unacceptable and
+rate limit at us well what could we do
+to fix it we replace the impacted mat
+instances
+and everything should be fine now we're
+new source IPS and so the traffic is
+okay but we forgot that we actually
+access some critical services over the
+Internet at that time we were running a
+cloud sequel database and it wasn't
+available over private VPC at at that
+point and so all the apps can I think
+the cloud sequel at this critical
+database had their connections severed
+and stopped working so after a couple of
+hours of digging around where we managed
+these static IPs and reconfiguring the
+firewall rules everything came back and
+everything was back to normal but we had
+quite a bit of follow-up to do after
+this one and the first one was creating
+an image what an admission webhook that
+disallowed some of these floating tags
+that we use on images latest is the one
+that's sort of most commonly used so we
+started there and we attached this
+admission web hook to a number of
+different resources deployments staple
+sets PaymentSense jobs and pods pretty
+standard right the problem is that the
+control loop that's creating pods is
+generally something that's running in
+the cluster right so we're not surfacing
+this feedback to users
+there's no users involved when we're
+creating new pods so existing
+deployments or other workloads are
+creating new pods as a result of nodes
+dying and it being rescheduled or scale
+ups or anything like that and these pods
+are actually being rejected by the web
+book so we're unable to schedule
+anything new in the cluster so we
+adjusted our web book to not apply to
+pod objects just apply to workload
+objects and several days later a week
+later were finally back to normal after
+our image registry issues when users
+because one morning with an issue which
+was I can't access API server and I
+can't use cube CTL were like well this
+is probably a very simple issue probably
+just a miss configuration but then
+someone else just pinged us again so I
+tried and I couldn't connect either so
+things were trying to we're starting to
+look pretty bad so the first thing we
+did is look at the API server and as you
+can see on this graph the load of the
+IPS ever is huge
+I mean it's amounting to about about 60
+and to give you an idea this node have 8
+calls so it's it's pretty bad
+and looking deeper into what was
+happening on the note we saw that the
+memory was going down and that API
+servers were actually getting uma killed
+which as you can imagine is not a really
+good situation to be in
+another interesting metric was that
+suddenly Advent traffic was much higher
+than before on the API server at the add
+point we had no idea why so we tried to
+understand what we had changed and it
+turned out we had just made a small
+change to achieve - I am so I don't know
+if you know you - I am but it's
+basically a demon set to run that allows
+everybody to have the difference do it
+to have different permissions on AWS so
+we run them on every node on AWS and we
+had made a small change and keep trying
+to improve security and start the
+deployment and the deployment was lining
+exactly with with the issue so we looked
+at two at cube - I am and as you can see
+on this graph QAM pods were restarting
+very easily which wasn't expected at all
+so the reason this place where we
+studied was because they were getting em
+killed so we started increasing the
+memory limit on the on the pods and
+typical usage would be a few megabytes
+but after this change but was now
+consuming 300 megabytes which was pretty
+surprising to us the reason for the
+issue was we had made a patch to improve
+security in cube Diane and we had made a
+small typo on the selector used by cube
+- I am so cube - I am needs to
+synchronize all the pods running on the
+node where to - LEM is running to get
+the annotation of all the pod it's
+co-located with to know which role to
+assume so you have an annotation you had
+and so it needed to know for auto pod
+running on the node which annotation
+they have and by mistake we had removed
+this selector so instead of sinking
+maybe 5 10 20 pots locally on each cube
+- I am we were now sinking the global
+cluster which was a very huge one and of
+course I mean crypto gem was by
+consequence consuming a lot more memory
+and was being killed and of course I
+mean requesting information about all
+the pots in the pressure on each bird in
+a diamond set is pretty bad on the API
+7zy everything broke we should have seen
+that before but we tested on much
+smaller cluster and
+prosit was it an issue at all so only
+when we deploy to staging with the last
+confessor that everything started to
+break all this is another user reported
+one and so we're getting a report that
+no nodes are no new nodes our scheduling
+application pods so this is weird right
+so we're kind of not strangers to
+scheduling issues and so we take a look
+we see a really sharp increase in the
+number of events coming from kubernetes
+at this time and there's a few types of
+events that we're sort of concerned with
+right the first one is failed scheduling
+not a surprise we know it's a scheduling
+issue already and and the second one is
+not trigger scale-up so this is from
+another component in the cluster the
+cluster autoscaler and it's sort of
+indicating that none of the node types
+that we have running in our cluster
+could satisfy what our applications are
+requesting we know that nodes are
+already running applications and so
+there should be notes available that we
+don't have any new deployments that are
+changing resource requests so it's a
+little bit confusing so quick aside and
+sort of how we handle scheduling here we
+have a custom resource type that we call
+a node group and we make a lot of
+assumptions on our applications that
+they're single tenants on a node and so
+we use paints and Toleration as well as
+resource requests to sort of take an
+application and tie it to a particular
+node type based on what we expect the
+resources to be available that includes
+what we're using for system components
+and daemon sets as well well we messed
+up a little bit and we added a new demon
+set and we added resource requests to it
+so all of these nodes that should have
+been able to schedule our applications
+on them based on their existing resource
+request could no longer fit the
+applications on there because of this
+additional daemon said even worse the
+daemons that actually had a pod priority
+of critical and so we got really lucky
+that we did this in a 1.10 cluster had
+this been on a newer cluster this
+daemons that would have actually evicted
+all of our workloads off of our hosts
+and we would have taken all the data dog
+down
+this one was pretty interesting what
+might happen is one day blokes Tim
+reached out and told us the number of
+the volume of flow you're actually
+sending now is much bigger than it used
+to be and it's actually the indexing of
+few logs is getting slower and we wonder
+if it's legitimate
+so we hadn't change anything so we're
+pretty sure we it wasn't a big deal but
+still we looked at the volumes of log we
+were actually standing so this is the
+volume of log per person in our case and
+as you can see like typical normal
+behavior would be to send about 1
+million log per minute on this and this
+particular infra and suddenly it had
+over a few hours going from 1 million to
+about 15 million minutes this is like
+quite a lot so what shall happen
+actually is for security reason we had
+an able audit on the machine so we had
+deployed a demon set that was using go
+audit and they bring unobligated and
+what happens when you're on criminal
+test is the nodes where you run the
+cubelet and the containers are actually
+very heavy users of audit logs because
+they do a lot of sis calls a lot of
+execs and a lot of IP table commands and
+all of these are logged and this is
+actually the reason for this increase of
+logs so how we fixed that well we told
+the logs in that we didn't need that
+traffic so they dropped all the traffic
+at intake and on our side we remove the
+demon sets and things seem to go back to
+normal
+where did all my pods go so we have an
+application that enabled auto-scaling
+for their for their for their
+application and all of their pods
+disappeared so typically when we have a
+deployment we're explicitly setting the
+number of replicas in this case we have
+60 for this application and we want to
+enable auto scaling using a horizontal
+pod autoscaler this is basically a
+description of an auto scaling policy in
+this case it's a really simple one
+looking at the CPU usage for the pod
+scaling it up and down based on what our
+target is specified as in this case what
+happens is a controller that's in charge
+of horizontal pod auto scalars is
+managing the replicas count of the
+deployment as it reads through the the
+metric values and so we don't want to be
+setting that value explicitly anymore we
+want to remove it from our spec and we
+want to allow this to be something a
+dynamic runtime decision well there's a
+little trick to this what happens when
+you have this value specified in a
+manifest that's applied by a cube
+control is that cube control adds an
+annotation on it of what the manifest
+looked like when it was applied and so
+we can see all the fields there when we
+submit the new manifest to the API it
+compares what it was last and what it is
+now and it sees when it's removed it
+actually defaults it to one so we scaled
+down 59 replicas of the application
+there's not a great work around for this
+one unfortunately you need to sort of
+modify this annotation at the same time
+as you're submitting your manifest but
+we're not we're not managing this
+annotation as part of our manifest and
+so we need to go in and use Q control
+edit to change the replica count to
+remove it and remove the last applied
+annotation so that we can not scale down
+all of our applications a little bit
+tricky you know 80s sometimes computers
+seems to do things on their own and it
+feels like there's it goes doing things
+and this is how this morning started so
+the data store team reached out and told
+us while we deployed 120 newscasters
+rehearsal yesterday and everything went
+up fine and everything was working
+perfectly but when we got back this
+morning this cluster was completely
+broken and nobody had done anything so
+yeah we were splitting a ghost
+bye we looked into details and it turns
+out 25% of the birds were actually
+pending now and they had volume affinity
+issues which was very weird we went
+deeper and it turned out like 25% of the
+node had been deleted and since we used
+local volumes for Cassandra clusters
+this third were bound to local volumes
+that were associated to notes that were
+gone and so they were pending because
+they were not scheduled because they
+couldn't find their decision volumes so
+I know I mean we're supposed to be
+clawed native and be resilient to node
+failure but 25% of the node is kind of a
+big deal so we were pretty sure the
+cloud provider Adam deleted twenty five
+nodes 20 percent of the node that night
+what had happened is we were we had
+deployed the Cassandra cluster on an
+auto scaling group a single one over
+three aces but when we did the
+deployment there was they were capacity
+issues on one of the Aces and only 20
+nodes were available
+so what Elias had done is create mo
+nodes in you know another area where
+there was no capacity issues which was
+fine and this is the last part of the
+graph but during the night capacity
+became available on the second zone so
+the auto scaling group is actually
+pretty clever and what it does it tried
+to rebalance so you have an even number
+of nodes in in obviously and so 4040 per
+nodes and so it started deleting our
+instance very actively and of course
+everything exploded so was like
+pretty surprising Ron and so the way we
+fix it is now we have a different auto
+scaling group in each zone which is a
+lot safer worse situation is well if we
+lack a passenger zone at least we know
+that all the nodes are not going to come
+up and so we won't be able to create the
+cluster that we can just wait for it
+getting this kind of surprise is a bad
+one
+we have a report of a slow deploy
+heartbeat and probably nobody knows what
+that is so let me explain we run a sort
+of end-to-end test for our deployments
+so this is everything from source
+control through some templating steps
+through our deploy tooling and to
+applaud running in kubernetes and this
+helps us get a sort of end to end tests
+of latency of how all these systems are
+behaving and so this is sort of what it
+looked like over the course of a month
+in one of our larger clusters and we can
+see it's getting progressively worse
+but we're growing the cluster at this
+time we're aggressively deploying
+workloads on surveys so we're really not
+sure if this is just scheduling latency
+if something's we're reaching some
+bottlenecks in one of the control plane
+components or what's going on well it
+dig a little bit deeper and we find
+another metric that correlates really
+well with this and this is the number of
+pods that the sed that the API server is
+a has seen and it's stored in sed and so
+what are we looking at here well we had
+4,000 pending pods in our cluster that
+were unschedulable all turns out that we
+had a cron job set to create a pod to
+create a job every 10 minutes and it had
+the wrong Toleration applied and so
+there were no nodes in the cluster that
+could satisfy the Toleration on this pod
+so we've got 4,000 of these pending and
+every single loop of the scheduler is
+considering all 4,000 of these pods and
+trying to place it onto nodes in the
+cluster so this is impacting the
+performance of the scheduler the cluster
+autoscaler and several other components
+in the control plan
+I mean will we use containers and well
+we expect them to be contained and well
+we're gonna say that it's not always the
+case so the first topic in this one is
+broken runtime we use continuity as a
+runtime and we've broken it in in many
+ways and we're going to give you a few
+examples so the first one was a team
+reached out because they couldn't delete
+a pod in a node and when they deleted it
+it was it was it kept and being in a
+terminating state and was never going
+anyway so I connected to the instance
+and try and was trying to do things so I
+was unable to do anything continuity was
+complaining quite a lot so I looked at
+the process tree and as you can see
+there on the processor II we see a lot
+of zombies and this screenshot there is
+only a very small part of the list
+because you can see there on the PS
+command that we had 16,000 zombies on
+the machine as you can imagine the key
+owner was not very happy about that
+so how did that happen this application
+was a redis slave and master and that a
+readiness probe that was doing the
+common here so it's a small shell script
+but basically the gist of it is this
+creep was doing a Redis ping and master
+and slave nodes it turned out ready
+Springs are lot faster on master nodes
+than slave nodes so master node was very
+fine were completely fine however
+sometimes it took a few seconds for ping
+to work on slave on slash buds and since
+the timeout was set to 1 seconds the
+exact command was killed and since there
+was nothing to rip the children until
+the different process in the in the
+image in the process tree all these were
+remaining as zombies so as you can
+imagine if you run this readiness probe
+every minute you can get quite a few
+zombie very fast so the main takeaway
+under this one is be very careful with
+exact based probe and please use
+something like 10 years and in it as pit
+1 in your containers
+I think this was this is probably my
+favorite issue it also starting very
+similarly to the one before sometime
+rich doubts then telling me like I can't
+delete a bird on a note so I connect it
+to a node who looked at the process and
+I were like okay and we're just going to
+kill this process so I tried to kill it
+didn't work I tried to SiC kill it
+didn't work so I was starting wondering
+how I mean how could I be in a situation
+when I couldn't kill a process so I look
+at what the process was doing and as you
+can see this process was taking a
+function called refrigerator so I knew
+my morning was gonna be interesting what
+had happened this time is these
+instances were running Kefka workloads
+and we had an issue with the nvme driver
+and one of the IO from Kafka was hanging
+because the nvme driver had an issue
+since the IO was blocking there was no
+way to help the process so this is
+penguin I couldn't see kill it however
+what happened when you do when you
+delete a container the first thing that
+the runtime is going to do is going to
+try and freeze the C group so all the
+process in the C group of the container
+to make sure that these processes are
+not going to do anything when they
+deleted so the Kerner was trying to
+freeze the she group but it couldn't
+because one of the processes in the C
+group was stuck on an IO and that's this
+refrigerator function is actually the
+function calls by freezing the she group
+so yeah this is interesting because the
+underlying issue is a very low level
+disk issue
+the first two examples I gave you were
+example of things going bad that are
+actually hopefully kind of rare but one
+of the issue we see the most in terms of
+our things contain our performance
+issues and I'm sure a lot of you have
+had some of those so a very simple
+symptom our our deployment is slow is
+getting very slow and we have no clue
+why so when we start when we investigate
+this with that look at the nerd where
+the pod has been scheduled and we
+noticed that after accepting the port
+locally the cubelet took like almost a
+minute to start a container which is
+much higher than what you would expect
+so we looked at how the node pools of
+the group of nodes where this pod was
+supposed to be scheduled we look at the
+load as all the nodes and well as you
+can see on this graph the load was
+pretty high so these are very small
+machines and the load is about a concern
+about about 250 or something so of
+course with this kind of load the crew
+blatant continuity and everything was
+having a hard time so the next step was
+to investigate was the load was high it
+turned out is because the instance was
+writing a lot of i/o so as you can see
+on the graph at the bottom so the left
+part is before we fix it on the right
+path after we had a lot of sustained IO
+on all this node especially one and as
+you can see in the graph is the middle
+or the reason why everything was getting
+so slow and the load so high is because
+we use EBS for root disk and it's a
+small disk about static gigabytes most
+of the time and on this particular the
+light blue one as you can see on the
+left there was no birth balance so this
+means we were really limited by BBS at
+the lowest level and we were not able to
+actually go above the limit and usually
+this indicate that you're consuming more
+iOS in the assistant fashion that the
+EBS can provide and as you can see when
+we fixed it things went a lot better
+so why did we have so many so many iOS
+and this machine so we were looking at
+everything and while the biggest
+workload running on this network called
+DNS so we look at what was happening on
+the in the Cardenas metrics and we saw
+that the number of queries had more than
+double over the last few hours and the
+thing is it's very difficult to diagnose
+DNS and to see what is happening so the
+way we do it is we actually log all the
+queries and we do sampling at the log
+when we when you get the logs however we
+do something very relating to chain
+which means all the logs are actually
+written to this before and of course
+it's generating i/o so we were lucky
+because since we add logs we were able
+to actually identify the team I mean the
+application that had started to do that
+so we went to the team and well told him
+well you have a new application that you
+just deploy and it's doing 50,000 DNS
+queries per second that seems like quite
+a lot for one pod and well we're lucky
+because we with we had had so many issue
+with the unit at that point that we have
+an offer us infra which is you can have
+a core DNA local cache locally on your
+notes and just a matter of adding an
+anotation and your pod and we have an
+admission control that's going to
+rewrite the dns configuration and
+connect you to the local cache so we did
+that as you can see on the graph things
+immediately went a lot better so you can
+see on this graph there that well you
+see the blue line it's getting a lot
+better very fast
+however the load the amount of iOS is
+still pretty high on this group of note
+that is not doing much and since I was
+investigating it I was I kept looking at
+it you remember out it before so we had
+I mean we had like kind of a bad problem
+with audit and we had we thought we had
+to fix it but what we had done is we had
+removed the demand set we had dropped
+traffic at intake and log intake so we
+didn't get all this traffic so it seemed
+fine however odd it had been enabled in
+the kernel so all the audio there was no
+audit daemon running but audit was shown
+a bamboo cannon which
+the colonel was loading all the audit
+messages and generally was logging all
+the audit messages - so they were still
+written to disk which was pretty bad so
+we disabled audit on all the machines
+and as you can see on the graph it went
+a lot better almost almost almost
+immediately at that point I had spent a
+few hours on these machines and I was
+still not very happy because if you can
+see this graph there's probably 10 to 15
+nodes in the group and they're all
+behaving - same with like a low number
+of a UPS and one of them was very
+different which was still confusing I
+wanted to understand why I zoomed on the
+graph before and it's not actually
+sustained when you look at it like when
+you zoom you can see that it's not like
+I owe all the time it's spike of I owe
+every minute I started to wonder if
+there's something we do every minute on
+this and this group of nodes and it
+turned out we had a cron job running
+every minute and so you would expect
+when you have 10 nodes with the right
+Taine's that a cron job is going to run
+on all the nodes in the group it turned
+out the scheduler is actually very
+predictable you can run the same
+algorithm every time it needs to
+schedule the pot from the cron job and
+it's very likely that's gonna make the
+same decision because either there are
+more requests available on a node or
+even the image is already present so
+it's gonna be faster and this now is
+going to be preferred and as you can see
+on the back and the graph at the bottom
+it turns out that these jobs were always
+scheduled on the same node or almost
+always and as you can see the number of
+containers created on each node over
+time
+so yeah the issue was this cron job I
+mean we we had seen that disabling it's
+fixed it's changing the script fixed it
+to just sleep instead of doing what he
+was doing and this job was actually a
+very simple one it was just supposed to
+synchronize the IP address of our
+console servers not in communities
+fester as endpoint for a community
+service so any application in the
+cluster could reach the console server
+outside of given Ida's it's believed
+these two commands so describe areas
+instances and get the IP of the console
+servers and update the crips ETL
+endpoint I mean as you can see there
+it's pretty difficult to imagine that
+this is generating a lot of iOS I was
+getting pretty mad I mean we're
+replacing this by Sleep we generate 0io
+so it turns out when you run qts here a
+brand new path to PGI is doing a lot of
+things
+it's caching all the API description
+locally and it's creating 165 and doing
+45 HTTP queries to get all the all this
+information and of course it's explain
+the spike in iOS because every minute
+chip CTR would run synchronize all the
+api's create all this file and yeah this
+is how we got all these iOS well our
+final way to shoot yourself in the foot
+graceful termination so we've got this
+kind of slick setup with one of our
+applications it's it's a cue consumer
+and so we're auto-scaling it based on
+cue depths we've got a custom metric
+reporting in and we're able to sort of
+dynamically scale up this application
+based on the number of payloads that are
+in the queue and it's a really great
+experience for our users there's one
+caveat to this and that when we scaled
+down we need to make sure that these
+jobs are completing the work that
+they're doing and for this application
+that can actually take hours up to 48
+hours for this one so let's look at what
+happens when we scale down an
+application at first the pod enters
+terminating state and since it's got the
+grace period set to 48 hours it's not
+going to be terminated right away but it
+enters terminating state first thing
+that happens is that cubed I am refuses
+to refresh the credentials because it's
+terminating state well we're able to
+solve that one next thing that happens
+is that inevitably the cubelet restarts
+the reason for that is because we
+restart the cubelet every 24 hours to
+rotate certificates and so inevitably if
+we're waiting 48 hours for this
+it's the applications gonna get sig
+killed when the cubelets communication
+with container D is severed well we're
+also able to get that one fixed in
+container D and so problem solved as a
+few takeaways on this presentation be
+very careful with diamond set when you
+start to run large clusters because I
+think we've broken all the things that
+diamond set depend upon we've broken gns
+vault repository be very careful when
+we're managing things by the thousand
+it's very easy to to break things DNS is
+hard it is not new one I know the
+community is working very hard on making
+it easier but it's still kind of sort of
+many problems another important one is
+we tend to forget that below below the
+qubit there's actually underlying infra
+and so having issue with iOS our auto
+scaling group is something that cannot
+happen and the last one is one of the
+trickiest to to manage and this is the
+reason why we're actually using pools
+per application team so there's no nosy
+neighbor problem because containers are
+naturally content yet we're able to
+easily isolate memory and CPU but iOS
+Network a number of processes and all
+kind of thing are not really contained
+and so you can very easily break another
+application by running something that's
+not not great and that's all thanks a
+lot for coming
+[Applause]

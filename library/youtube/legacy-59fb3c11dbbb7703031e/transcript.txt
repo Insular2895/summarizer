@@ -1,0 +1,300 @@
+Another day, another account to audit.
+And in this short video, I'm going to go
+together with you over a potential
+client account, a real account with a
+real data, covering all the issues that
+I have identified through the account
+audit. And then, I think you can learn a
+lot from it and apply
+uh these things to your account as well.
+Try to compare. Maybe you'll find
+something that prevents your account
+from getting great results. And this is
+the main purpose of this video. So,
+enough with the chat. Let's jump right
+into it. So, first things first, if you
+have ever watched any of my videos, you
+know that the first thing we'd like to
+start is conversion tracking. We need to
+make sure that the conversions, the
+sales, or the goal that we want to track
+from the advertising is properly
+configured. We need to go left to the
+goal section.
+In the conversion section, click on
+summary.
+Now, I'm going to scroll down and click
+here on [snorts] view all conversion
+actions.
+And now we can see all the conversions
+that are configured in this account.
+Just a quick note that we have
+implemented already a few of the fixes
+within the accounts. First of all, we
+changed the conversion action purchase
+to be the only conversion considered as
+primary.
+The primary conversion means that Google
+Ads will optimize only towards this
+goal. And you should have only one
+conversion that is the most important
+for you configured as primary.
+Otherwise, if it's like going to be
+contact us set up as primary together
+with purchase, Google will look at these
+conversions having like the same level
+of importance, which is not. So, we want
+only one
+conversion action to be configured as
+primary, and the rest you can put as a
+secondary conversions, and then you can
+use them as kind of like additional
+layer when analyzing the data and
+optimizing the account, but
+this is very important that you will
+have only one primary conversion. That's
+one thing. Second thing in terms of
+click-through conversion window, you
+should put it as long as possible,
+especially if you are in the industry
+when it takes for a customer a
+relatively long time to make the
+purchase. So, in this example, the
+jewelry industry, sometimes it can take
+weeks, uh months for a for a customer to
+make the purchase. And that is why you
+want the conversion window to be as long
+as possible. When the time comes and he
+makes the purchase, the platform can
+actually attribute the conversion. It
+can identify the first time it click on
+the ad and then connect the dots and
+attribute the purchase to that specific
+campaign, which is very crucial in terms
+of uh optimization. Now, let's go to
+diagnostics tab. And here you can see a
+common issues with your conversions.
+Maybe there's something that is not
+configured properly. In the enhanced
+conversion section, you can see that
+there are three items that need
+attention. So, let's click on see
+details.
+And here in the details, we can see that
+we have issues with enhanced conversion
+data. For example, enhanced conversions
+addresses are missing. What are enhanced
+conversions?
+These are conversions that are passing
+additional data to Google Ads, not just
+the event itself. For example, when the
+user proceeded to the checkout and or
+made purchase. But on top of that, it
+adds additional
+parameters that we can get from the user
+while he makes the purchase. For
+example, his
+name, a phone number, email address. And
+this is very useful for Google Ads
+because it allows Google Ads to identify
+that user in more easy way, and then it
+can try to bring similar audience. So,
+it trains the algorithm better. Ideally,
+you always want to have enhanced
+conversion active and also configured
+properly, which is in this case, you can
+see there are issues that needs
+basically fixing. So, you should
+definitely
+uh make sure that you don't have any
+issues in your diagnostics tab. Very
+important. Now, from the conversions,
+let's go to product feed. Let's go to
+campaign.
+And here we scroll down to products and
+click on products again.
+And what I have identified that like
+when you have e-commerce store,
+most likely you will have some kind of
+issues with your product feed. And
+unfortunately, a lot of advertisers
+neglect this thing. They simply ignore
+the issues that are in the product feed.
+They even ignore the Google Merchant
+Center account, which is the primary
+source that can
+help you out improve your product feed
+and identify some issues. So, in this
+case, if you're looking at the issue
+tab, you can see that there's like a
+product with missing product image.
+Let's sort it out.
+Uh invalid price, out of stock. I also
+find previously like attribution issues.
+It doesn't pass the proper attribution.
+Let's look at the price. There's another
+issue that I found here regarding the
+currency. There's like some items in one
+currency, there are some items in
+another currency. You see here, for
+example.
+Like we have this currency, which
+I have no idea what kind of currency
+that one is. So, you can write it in the
+comments if you know which one this is,
+but
+let's sort it out by low price. You can
+see it it changes. Like we have
+different types. Like this is I know uh
+Swedish krona.
+Uh then we have euros. Like what what's
+going on with the with the pricing? Like
+the pricing should be
+uh the same
+for for I mean, in terms of the
+currency. So, there's some kind of an uh
+issue there, definitely, that needs
+fixing. The these things, they they
+prevent your ads from achieving optimal
+performance. If you have e-commerce
+store, like product feed is probably the
+second priority after the conversion
+tracking.
+So, that's one thing. Let's go to
+product diagnostics here, and you can
+see the summary. We have out of, let's
+say, 13,000 products, we have 3,000
+products that have issues, and out of
+which 2,000 are not eligible. This means
+that they won't appear in your ads
+because of these issues. And if you we
+scroll down here, you can see exactly
+what kind of issues. They're missing
+image, missing Korean business
+registration number, even though this
+this inventory, the store is located in
+Australia. So, there's some kind of an
+issue in the settings. Uh missing
+inventory data, invalid sale price. So,
+you can see all the issues. And if you
+click on the products, you can see
+exactly what products are having this
+issue. And these are the attributes I
+was mentioning previously, like missing
+color,
+uh age group, gender, things like that.
+So, basically, not all inventory is
+being served. That's a big issue. And
+also, on top of that, if you have more
+than 1, 2% of your total inventory
+disapproved, which in this case, you can
+see that there's more than that, like
+almost 15% of the inventory is not being
+served, then you're actually risking
+your Merchant Center account getting
+suspended, which is a big issue. It can
+stop completely your advertising from uh
+working. So, you should definitely
+definitely address that and not
+advertise. Now, let's go to locations.
+So, in the campaign section targeting,
+we can go to location targeting.
+And here I can click on Australia.
+Click on, let's say, provinces just to
+show you the
+the idea, not provinces. Um let's go
+with
+regions. Yeah. In the
+location report, if you filter it down
+by region,
+you can see that some of the regions
+have 0.3 to 0.4 conversion rate, while
+others have like one
+Let's sort it out by conversion volume.
+So, you can see there's a 3% conversion
+rate, and there is
+0. Let's say, 0.5 conversion rate. And
+the 0.5 gets more clicks. So, you're
+spending more money
+on the inventory that brings you much
+less results. And this probably because
+the conversion tracking is not working
+properly, and it the smart bidding is
+not configured well.
+Uh but even with the manual check, you
+can simply double down on what's working
+the best, which is this um this area,
+and
+this one, maybe. Like we can actually
+download this data, export it as CSV,
+put it in some AI tool like Claude or
+ChatGPT to analyze it
+on more accurate level. And then, based
+on that, make a decision what kind of
+area do we want to target? Because the
+cost,
+the advertising spending here is not
+that high. This means you cannot spread
+it the budget broad and target the whole
+Australia. You need to be very precise.
+Otherwise, you're just losing money,
+like just in this case,
+uh these 2,000 Australian dollars could
+have gone to this campaign or yeah, this
+campaign, and sorry, this location, and
+it could have brought five times more
+sales. That's another thing that I found
+out. And last but not least is the
+policy manager. Let's go to tools,
+troubleshooting, and click on policy
+manager. And you can see here that there
+are some ads that are disapproved. That
+means that they don't serve. They don't
+show in the search results. They're not
+getting impressions. And furthermore,
+policy violations can damage your
+account reputation, affect your
+performance. You should try to avoid it,
+and don't have any policy violations in
+your account. And if you have them, you
+should either try to resolve them, try
+to edit the ad, maybe try to appeal even
+though it most of the cases doesn't work
+well, or simply remove the ad and create
+something new instead of it. Because now
+with all these disapproved things,
+it
+it simply messes up the the account
+performance. If we click on view ads and
+we're going to more details, we can
+actually see what's causing it, but
+overall, you can see here there's more
+than one policy violation,
+and that's that's a big no-no. Like you
+try to you need to avoid it at all
+costs. And if you have policy violation,
+you should resolve it immediately.
+This sums up the audit, the most
+important things that I found. I mean, I
+can dig here uh more, spend more hours,
+and find a bunch of other things to
+improve, but these things that I
+mentioned in this video, they're so
+common. They're more common than you
+think. Every second account that I get,
+it's always policy violations. It's
+always the same issues with conversion
+tracking and product feed. That is why I
+keep saying, I don't know if people
+listen to me, but I keep saying in the
+videos that these are the three things
+you should
+fix immediately, and it will improve
+your account performance. You you will
+see the results right away.
+So, that sums up this video. I hope this
+was valuable and useful for you. Thank
+you for watching. Make sure to like and
+subscribe for more useful content about
+Google Ads. And as always, I'll see you
+in the next one.

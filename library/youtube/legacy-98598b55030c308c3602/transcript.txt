@@ -1,0 +1,400 @@
+B is revolutionizing our
+profession and among all the tools and
+models that exist, if there is
+one that all hackers agree on,
+it is Claude.  Claude is not
+just an assistant who will answer your
+questions, but he will act as a
+co-pilot who will allow you
+to perform multiple tasks such as
+code review to look for
+vulnerabilities, writing scripts to
+automate tasks and much more.  The
+purpose of this video is to show you
+why there's so much hype around
+Claude and to show you how it's
+used to legally hack
+systems.  I would like to clarify that this
+video is for educational purposes and that I am a
+Paint tester.  So everything I'm going to
+show you, I use in my
+everyday tasks within a
+legal framework and with the written permission
+of the system owners.  I am
+obviously not encouraging you in any way to
+engage in malicious activities.  I'm going to
+start by showing you why
+I now use Cloud more than Chat
+GPT by doing a simple test.  I'm going to
+ask him, as a Pain tester,
+give me
+payloads to exploit an XS.
+And you'll see, without any fuss, in a
+few seconds, it gives me a
+set of payloads that will even
+allow me to bypass the filters.  If
+I try to perform the same task at
+chat GPT, you will see that
+normally, [music]
+it will obviously tell me that it cannot
+provide me with the payloads.  This is one of the
+main reasons, it is already the
+first reason why today
+I no longer bother with GPT chat
+and open solutions although I
+use them for other reasons.  You
+can see that we have a complete
+[music] list and I can even ask him
+to extract them in whatever format I
+want, PDF, Word and so on.  But that's
+really the classic one.  As I told you
+, it's not just an assistant who's going to
+answer your questions.  It will
+interact with your terminal using
+cloud code, which I will show you.  He
+will perform tasks for you.
+I would just have to ask him to attack this
+site and he would make room for me.  Entropique
+deliberately wanted to distinguish itself by
+opening its doors to
+cybersecurity researchers and allowing them
+to use its model.
+Today, we understand a little bit
+why because, as I
+speak to you, they have proposed solutions
+for businesses.  So today,
+Open AI uses all this research
+that has been done to be able to offer
+automated PESTs by doing
+code review for companies.  That's
+not the topic of today's video; we'll
+talk about it in another video.  If you
+are still stuck, you have the
+option of submitting a request to
+Tropic to help you get
+unblocked using this form.  I've
+done it multiple times already
+and it's quite fast, they respond
+fairly quickly.  So far, I haven't
+received any rejections.  As long as
+you can explain to them that you
+are a cybersecurity researcher and
+that you provide evidence, it should be fine
+.  We will now move on to
+Cloud Code.  Cloud code that will be
+integrated into your device.  You can
+also integrate it, as they say here, into your
+IDs, your applications, your
+browsers.  It's extremely easy to
+use.  I'll show you first
+on the terminal.  Next, we'll move on to
+the version that interests me the most
+and that I use the most, which is the one
+on Visual Studio Code.  To
+install it, if you are on Linux or
+on Mac, I am on Mac, I just have to
+copy the command and in my
+terminal, I paste the command.  He
+should settle in.  I've already
+installed it, so there's no need to
+continue.  I'm just going to launch the cloud
+command so I can execute it.  I
+find myself with my little assistant.  We
+can see that by default, the model
+is Opus 4.7.  It is possible to
+change it, but that's not the most
+important thing for this video.  The most
+important thing is to show you what he
+is capable of doing.  To show you
+what it is capable of doing, I will
+use the Jein and Juice project from
+Oasp, which is a
+deliberately vulnerable web application.  What I'm going to do is
+simply
+take the application and
+ask Cloud, you are a pain tester
+in charge
+of testing the application's security.
+web
+and I'll give you the link.  That's all, without
+giving any further context.  You will see
+that it will perform the entire
+vulnerability scanning and even exploitation process in a
+completely automated way.
+Obviously, I used a directory
+that is on my cloud machine.  I would
+advise you to use Docker instead.
+Obviously, an environment is
+secure because you still give
+access to the tool, [music]
+to your terminal and therefore to your
+machine.  And there, you see it
+automatically and quickly.  I didn't
+touch my screen, it does everything for me
+and it's a game changer.  He is
+already identifying that he has an
+API.  It is currently identifying the
+endpoints.  He's already doing
+vulnerability scanning for me.
+It's simply exceptional.  You can
+already see the great evolution in this
+field and why many think it will
+replace us, and there is much
+to say and debate about that.
+I will make another video dedicated to it.  But what
+is important to understand here is
+that we are not just talking about a tool that will
+allow us to develop code,
+that will allow us to automate
+tasks.  He's going to go into more
+depth.  He will reflect and
+analyze in order to identify
+vulnerabilities.  It's simply
+incredible.  I'm going to give him a little bit
+of time.  I'm going to get a coffee and
+I'll be back.  Perfect.  He finished.  He
+'s already writing me the
+report.  He found an SSRF.  He
+found 403 bypass, SQLI, XSS,
+IDOR, it's impressive.  I can
+ask him to give me the curl command
+to exploit
+the
+admin bypass.  I specify Curl but in
+reality even without that, I can
+ask him how to exploit this
+vulnerability and you will see that he will
+simply show me [music]
+in a few seconds yet another
+list of commands.  That's because I
+want to exploit it myself and I can
+tell him to exploit
+the vulnerability and give me the result.
+He's asking for my permission because
+obviously I didn't authorize him to
+launch the commands without asking me.
+You can see that on the first request,
+he got a 403 and then he got a
+200 request. This
+confirms that the bypass is working.
+I can even ask him at the end to
+give me a
+pain test report with the flaws as well as
+[music] the poc poc.  For
+those who don't know what I'm talking about,
+it's a proof of concept.  This is to
+show that vulnerability is indeed present
+and we were able to
+exploit it.  Something else I
+wanted to show you is, uh, the
+remote control.  While it's starting up,
+if I want, I can just launch remote
+control and then I'll have a link that I
+can send to my phone or
+to whatever devices or
+peripherals I have.  Even without being in
+front of the computer, I could
+control my session remotely.  And we
+move on to the integration of Cloud Code
+on Visual Studio, which is
+personally my favorite.  Sorry, I just realized
+I had
+n't turned on the camera for a
+while.  You'll excuse me.  Before
+moving on to Visual Studio Code, I would
+ask you to subscribe to the channel
+if you like this video.  Do
+n't forget, very important, to like the video,
+to boost it now.  It allows you to
+highlight it, to leave a
+comment as usual, but it's becoming
+too long.  There's a lot I want to
+tell you, but you understand.  Try
+to support me as much as possible.  to give
+the channel more visibility.
+You know I've been talking about pain testing for
+hacking for a very long time.  My channel
+is more or less shadowbanned.  I'm having a
+lot of trouble exploding in sight.
+Visual Studio Code, as I
+told you, for me, it's uh my
+favorite integration, it's the one I use every
+day.  Visual Studio Code is
+free and for the extension, you can
+install it by typing Cloud Code.  Simply put
+, you need to see it
+appear here.  I've already installed it.
+And once installed, you'll find it at the very
+top right.  You click on it and
+there you go, Cloud Code is integrated.  What
+I love about the integration on Visode.
+I love editing my texts on it.
+I love having a
+directory and file tree view.  If I
+want to develop a script, for example,
+today I saw that there is a
+critical vulnerability that has appeared on these
+panels.  For example, I can ask him
+I want
+[music] a Python script.  which will
+take as input
+a file containing
+URLs and list for me the points
+that use these panels.  I have nothing left
+to do except have
+a little more coffee while he
+develops the tool.  My tool is ready,
+it's asking for permission to
+uh [music] create it and I have my
+file here.  I just have to click on it
+, and I can see the content with the
+correct colors.  That's what I love about
+Visual Studio Code.  I can ask him
+to optimize my code.  I already have the
+[music] command here to use it and
+the explanations given by
+Cloud.  I can launch Python 3 followed by
+these panels to run it.  Obviously,
+he will ask me for an input file which
+I don't have but which I could
+provide.  There's a lot of talk about LIA
+potentially replacing our jobs,
+but very little talk about the
+superpowers we have today thanks to
+LIA.  I mean, I'm not an expert
+in code review and scripting.  I
+am not an expert, for example, in
+escape or escape techniques.  But
+today, I can develop in a few
+seconds, in a few minutes
+, for example recently, I
+developed a script that allowed me to
+bypass the security that is
+put in place by Microsoft in order to
+inject Power Shell code on
+a client's machine.  And that was
+unthinkable a few years ago.  It
+took, uh, months to learn a
+technology.  It used to take weeks
+to develop this kind of
+script, or days for the
+best ones.  Today,
+you can have it in seconds.  Another
+really cool thing I like about Cloud Code
+is the code review or
+file review.  I have a directory here
+[music] which contains several
+JavaScript files.  And what I can
+do is I can ask Cloud to
+simply analyze all the JS files
+present in the
+JS directory.  Identifies vulnerabilities as a
+bug hunter, lists the months.  Once again
+, I can pour myself [music] a
+coffee.  As you can see, it's
+impressive how quickly it will
+read all the files and uh
+identify uh keys uh keys to
+pay exposed, identify uh
+endpoints
+and I can even here I have given
+promises,
+but I can tell it after
+identifying the endpoints if I
+give it the URLs to try to exploit
+the vulnerabilities and it will do it for me.
+Doing this kind of exercise took
+hours.  I will admit that with
+automation, I was able to do it in
+Python, I was able to list
+the files, obviously, and extract
+patterns.  Actually, I used to use regex
+to identify things like
+API keys, endpoints, and
+so on.  But he's going to go a little further
+than that.  Aside from searching
+for keywords.  He will also analyze the
+structure of these JavaScript files and
+understand how they work, and from there
+deduce vulnerabilities.  Be aware that there will
+also be false positives.
+So there might be flaws that don't
+actually exist.  But that's
+also part of my job, it's also about
+understanding what is true, therefore the
+positive holes and being able to identify the
+vulnerabilities invented by Cloud.
+Regarding invented vulnerabilities,
+I have a little anecdote to
+tell you.  Recently, Claude
+found a flaw in me during a pain test
+that didn't actually exist.  If you
+would like to hear this anecdote,
+let me know in the comments.  I'll
+make a short video dedicated to you.  While it's
+running, I'm going to
+introduce you to the third tool that
+was put in place by Entropie, which is
+artifacts.  If I go here to
+artifact, you can see that I've created a
+few.  We're going to create a new one.  We
+will create an application that will receive
+an email address as input and try
+to find the pages that contain
+that email address.  Just for fun.
+It will be a Zint tool.  [music] Let's
+say network leak of donir
+search engine on one of my sites and here we go
+.  [music] What style of interface are
+we going to use? Dark Hacker style?
+We can see the application developing right before our eyes
+.  We can already see
+that he's going to search on GitHub, on
+Google, on LinkedIn, Facebook.  So,
+I agree with you, the code is
+not clean.  You have CSS in
+HTML, but the goal is to have a
+tool that will be unique to us.
+Obviously, don't use Vibec to code
+applications that you intend to put
+into production.  The number of
+coded vibe applications we've had to test, where we
+constantly find vulnerabilities,
+also means more work for us.  We are
+very happy.  But whatever you do, don't do
+that.  Vibe coding is good for
+scripting, it's good for
+debugging, it's good for having a
+fast, functional application that
+may be isolated from the
+production environment or isolated from the internet.  But don't
+code an application that you
+want to make accessible on the internet
+or that you want to put into
+production.  Obviously, the
+security aspect won't be great.  I already have my
+application, you saw, in just a few
+seconds it's already available.  I'm
+going to use
+Cresco's [music] email address, they'll excuse me.
+So infond frasco.be [music] and there
+our application works.  I just have to
+click and open it and it does the
+search.  I can obviously optimize it,
+but this was just to show you how it
+works.  And here you have the DORC which
+[music] are specified for me for pass and
+so on and so on and so forth.  So there you have it,
+folks, that was a short video to
+show you how we use the cloud
+in the field of hacking today.   There's much
+more to say than that.  This is
+just the surface I showed you
+.  We are obviously hoping
+that YouTube will not take a strike on the video.  If
+you liked it, encourage me,
+let me know in the comments,
+like the video, it's very important,
+boost it, share it.  I'll see you in
+the next video.  Take care of
+yourself.  Co?

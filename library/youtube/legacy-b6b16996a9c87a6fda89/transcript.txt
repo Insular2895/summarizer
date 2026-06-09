@@ -1,0 +1,621 @@
+[Applause]
+Hello everyone. Welcome to the
+sustainability story. I'm Deborah Kidd,
+your host for today's episode. Today
+we'll be talking about the intersection
+of climate change and infrastructure and
+why it's critical to understand the
+impact of climate change on
+infrastructure and why that climate risk
+is often mispriced or overlooked by
+investors.
+My guest is Bill Green, managing partner
+of Climate Adaptive Infrastructure.
+Bill founded Climate Adaptive
+Infrastructure in 2019 after nearly 10
+years with McCory as CEO of the group's
+renewable energy holdings. Bill, thank
+you for joining us today. Before we dive
+into our topic, we always like to hear
+the sustainability story of our guests.
+So I ask you what led you to your career
+in sustainability and specifically what
+prompted you to found climate adaptive
+infrastructure?
+>> Thanks for the opportunity to work with
+you and and speak a bit to your
+audience. I've been doing this work for
+my entire life. So I guess uh longer
+than even I remember at this point I've
+been involved in some form of
+sustainability, decarbonization.
+Um and it goes of course by many names.
+I founded four companies in this space
+including Echolink which was the first
+company ever to produce alternatives to
+chlorofluorocarbons
+in the late 80s early 90s. You may
+remember those as the ozone depleting
+solvents and chemicals. I then co-ounded
+what became one of the largest private
+equity practices in what at that time we
+called clean tech here in Silicon
+Valley. Then, as you said, I spent 10
+years as a senior managing director at
+McQuary Bank involved in their renewable
+energy effort and ultimately founding
+MIC renewable energy holdings.
+And that's where the ideas that we'll
+talk about today really took shape and
+where I learned about the opportunities
+and the risks facing infrastructure.
+In terms of sort of what what spurred us
+to create CI and do the work that we do
+today,
+we learned over the years a lot about
+infrastructure investments, why
+infrastructure investing is attractive
+and is the subsector that it is today
+for investors. But we also learned about
+some very unique risks and opportunities
+facing this asset class. And while the
+risks of the climate crisis impact every
+asset class, whether it's public
+securities or venture capital or
+infrastructure or debt or anything else,
+infrastructure was particularly
+vulnerable and impacted and that's what
+led us to sort of take the journey that
+we've been on now for the last almost
+six years.
+Well, first let's uh define what you
+mean by infrastructure just so our
+audience is clear and then I want to go
+back to something you just said. But are
+we talking roads, bridges, buildings,
+power, plants, and cities?
+>> That's a great question. Infrastructure
+is an all-encompassing category that
+effectively has four components or four
+legs to this table. One is energy in all
+its forms.
+Another is water and wastewater, water
+processing. A third is urban and
+suburban infrastructure which includes
+transport data centers would fall into
+that category. And the fourth is food,
+agriculture and timber. and uh and here
+at CI we address the first three but
+those four components make up what we
+broadly define as infrastructure.
+>> All right. Well, thanks for clarifying
+that for us. So, I want to start with a
+quote from you where you said uh at one
+time we continue to build infrastructure
+for a planet that no longer exists.
+So I thought that was a very powerful
+quote and maybe you can tell our
+audience what you mean by that.
+>> Yeah, thank you. Well, it arose as part
+of our origin story and and after the
+things that I'd learned after working in
+traditional infrastructure, banking and
+investment over the 10 years uh that I
+mentioned earlier and we were intending
+to be a bit peorative with that
+statement and get people to understand
+as I mentioned a moment ago these unique
+attributes of infrastructure. So why
+don't I explain that a little bit more
+to you? Now, infrastructure is
+permanent. One of the many things we
+like about infrastructure investments,
+these are assets. They tend to be
+permanent, contracted, longdated.
+They're therefore not inflation
+correlated. So, when an allocator of
+capital thinks about asset classes,
+infrastructure is quite often high on
+the list because of its attributes. But
+here's the catch.
+Because these are permanent long-dated
+assets,
+they are at extreme risk of the triple
+threat changes taking place around us as
+a result of the climate crisis. And we
+can talk more about the triple threat
+later. So, let me elucidate this for
+you. If you have a company like Uber and
+you decide to sell food, well, you just
+change the web page and voila, you are
+Uber Eats. But if you build a toll road,
+metaphorically speaking, below sea level
+along the coast and you now have 100
+days of sunny day flooding, you can't
+move that road. That toll road doesn't
+become an airport or a solar farm. It is
+what it is. So what we began to do is
+ask questions about the long-term
+insights and impacts that we could
+foresee around these permanent assets.
+In fact, it started a bit naively. We
+said, well, does it make sense to build
+that metaphorical toll road in that
+place? Or is there a chance that over
+the next 10, 20, 30 years, the climate
+crisis could change
+the impact and reality of the business
+of that asset. And this is true now in
+so many ways as the climate crisis
+reshapes our built environment and the
+impacts around it. Hence the statement
+we are building infrastructure for a
+planet that no longer exists.
+So when you are looking at an
+investment,
+how are you differentiating between an
+infrastructure investment that is a
+traditional build type investment or
+or versus an infrastructure investment
+that can withstand the effects of
+climate change in that particular region
+as you can best estimate.
+So, here's the cool thing about what we
+do. This is not an eitheror
+conversation. We're looking at
+traditional infrastructure assets. All
+we're doing to boil it down is asking an
+additional set of questions,
+applying these CI climate screens to
+those assets. So the same way we would
+look at an investment of any kind and
+say what is the credit risk of the
+counterparty, how much leverage is on
+that investment and how much leverage is
+safe, what is the debt service coverage
+ratio and on and on. All of the
+traditional metrics as I say them, your
+financial audience is nodding. Yes, we
+ask that. Yes, we ask that. We also then
+ask what will be the impact of physical
+change? What will be the impact of
+political change relative to the climate
+crisis? Will these assets be resilient?
+Here's an example. We've been building
+solar farms all over the world for many,
+many years. So when you build a solar
+farm now in places that are prone to
+what we call technically convective
+storms, which is simply a fancy way to
+say hail, what's happening as a result
+of the changing climate, is that hail
+has gone from being P-shaped, which is
+annoying but not terribly dangerous, to
+golf ball size. Well, when golf ballsiz
+hail falls out of the sky, it damages
+solar modules. So, here to four, one
+would build a solar farm and say, "We're
+creating renewable energy. This is all
+good." But without asking the right
+climate adaptive questions,
+the solar farm is built without the
+ability to forecast the weather, see the
+storms coming, and then stow those
+modules in a full vertical position
+until the storm passes to ensure minimum
+damage from these new very destructive
+convective storms. Just a simple example
+to say it's the same solar farm. We've
+just asked a set of questions that goes
+beyond what may here to for have been
+the norm for due diligence and
+screening. So the assets that we invest
+in and that others invest in that are
+called climate adaptive infrastructure
+are the very same assets. They're just
+more resilient as a result of our
+approach.
+>> So you mentioned a couple specific
+risks. You mentioned physical risk and
+you mentioned is it political risk. Can
+you talk about those specific risks?
+>> Yes, absolutely. So, we're keen on
+inventing terms for things that don't
+otherwise have a name and we call it the
+triple threat risk. When we started the
+firm and we we named these three risks
+uh physical risk, regulatory risk and
+political risk. And here's what it
+means. When we began speaking to people
+about climate impacts and
+infrastructure, everyone wanted to talk
+about physical risk. Oh, they would say,
+I understand, I remember Hurricane
+Katrina and the flooding or supertorm
+Sandy or I remember the fires in Napa or
+California, what have you. All physical
+risks, all very real, but only onethird
+of the risk spectrum that must be
+considered or for which we at CI have
+developed these screens. The other two,
+regulatory and political, are different
+in the following sense. Regulatory risk
+defines risks that are on the books
+today. Things that we can look at from a
+regulatory standpoint such as wetlands,
+uh, prevention, um, wildlife mitigation,
+habitat, things like that. There are
+laws on the books today, local, state,
+federal, that define those, and we call
+those regulatory risks. And then
+finally, there is political risk.
+Different only from regulatory risk in
+that political risk is when we try to
+look around the corner to see what's
+coming and may not be on the books
+today. But funny story, when we started
+this, as I said, all anyone wanted to
+talk about was physical risk. Guess
+what? Today all they want to talk about
+is political risk which is sort of
+emblematic of how these three risks are
+like a sine wave. The three risks are
+always present and must always be
+considered but in the moment one seems
+more pressing than the other. And today
+for reasons we all know political risk
+seems to be what's on everybody's mind.
+But all three of these risk categories
+matter equally.
+So there are many many ways that we can
+also
+address the risks of the climate crisis
+but make investments that are not only
+sustainable but that are quite
+profitable at the same time and
+hopefully we can leave some time to get
+into that um later.
+Yeah, let's actually talk about that
+because I know you have said that
+although you work in a sustainable field
+that your primary focus is on the
+economics of your investments and I know
+you've also said that the that
+mispricing is quite widespread in the
+infrastructure field. So I'd love to
+hear more about the economic benefits
+that you find both in the current
+environment and maybe looking ahead a
+few years or that are compelling.
+>> Yeah, for sure. So it what's really
+interesting is that we began talking
+about climate adaptive infrastructure
+and these additional climate screens
+simply in the context of reducing risk
+and increasing opportunity and making
+investors better returns. And I think
+all of the CFA audience will really get
+that the better we manage risk the more
+money we can make. Nothing that we do at
+CI is concessionary. We never ask or
+consider a trade-off between doing well
+and doing good. Everything here is
+primarily around how do we maximize
+returns for our investors. So how does
+it work? Look, basically there are a
+multitude of ways that we can invest
+capital today and earn returns in the
+infrastructure arena. The energy
+transition, while it may not be so
+politically correct to call it that any
+longer and certainly terms as we used to
+use like responsible investing in ESG
+may even be more politically in
+question. The fact is we are dealing
+here as investors
+with a set of inevitabilities
+and I would assume that most of the CFA
+audience are quite numeric. If I write
+down a set of numbers on a page, those
+numbers are not open to interpretation.
+Math is math. And the inevitabilities of
+the climate crisis are inevitabilities.
+As parents or grandparents, we may not
+like the inevitabilities. We may not be
+able as humans to fully wrap our minds
+around the time frames, but they are
+nevertheless inevitabilities.
+What are they? It is getting hotter.
+It is getting drier.
+These two inevitabilities drive a myriad
+of physical outcomes on this planet that
+all investors must be aware of. If it's
+drier, there will be more fires. If it's
+drier, it's harder to grow food. If it's
+drier, the seven states that depend on
+the Colorado River won't be able to
+access that water the same way. Now,
+let's put our business person's hat on.
+Data centers used to be considered a
+real estate investment. Poor walls, cap
+rate, tenants. Now everyone knows that
+they are climate adaptive infrastructure
+because 80% of what they sell is
+electricity and the other 20% is water.
+You can't build a data center without
+power and water today. So this changes
+how we think about those investments.
+And the inevitabilities that I mentioned
+are the circumstances or facts that are
+really unteded by political rhetoric. It
+doesn't matter that the current US
+administration says this or says that.
+It does not change the inevitabilities.
+It may distract people. It may depress
+people. But the inevitabilities are what
+we as allocators, investors and other
+members of CFA have to focus on because
+that's like the math on the page. Those
+are the unchanging numbers.
+>> Is there a particular focus or trend
+that you see emerging that's going to be
+the dominant need over the next 5 to 10
+years for this climate adaptive
+infrastructure? Is it water? Is it low
+carbon? Is there not a dominant one and
+they all have to be considered with
+equal importance?
+>> Well, you threw me a curveball at the
+end of your question. There are dominant
+ones, but they all have to be considered
+with equal importance. I think kidding
+aside, I think the I think the question
+could be reframed as what is the
+priority here, right? What is our order
+of operation? where do the greatest
+opportunities to invest and earn good
+returns and and and address these issues
+at the same time. So there's a long list
+but they're not all mature at the same
+time. I would say the most pressing
+handful today include the following.
+First of all, we see tremendous
+opportunity and have been investing in
+what we would call water infrastructure
+as a service. And what this simply means
+is that there are three or four kinds of
+businesses that depend on water but are
+not central to water. So their main
+business is not water. And examples are
+the semiconductor industry. They etch
+ever smaller lines on little bits of
+silicon but they they demand a certain
+amount of very clean water and then
+treat all of these heavy metal laden
+water streams after production. So they
+rely on water but it's not core to what
+they do. Another example are data
+centers. They host computer servers but
+they rely on water quite often for
+cooling. So water important but not
+core. So here's what's happening. These
+businesses are sensitive to things like
+PAS and other contaminants. They need
+water provided to them at a quality and
+speed and cost but they don't want to
+manage it. Managing water today is
+complicated. Getting it into a plant,
+getting it out of a plant, treating it,
+zero liquid discharge, meaning you reuse
+the same water again and again. So what
+we do is we partner with some of the
+largest water companies in the world,
+Violia, others like that. They build for
+us the water treatment systems.
+We own them and we lease the water to
+the tenants, the data center, the
+semiconductor company. So what we
+effectively do is we turn a capex. They
+would have had to build that water
+treatment plant and run it and risk the
+liabilities of doing so. So you will see
+more and more of that in the
+infrastructure industry. People who are
+not core but rely on a certain type of
+infrastructure.
+related to that another huge demand
+which I think is probably more familiar
+to most people is this whole story
+around data centers now we all know
+there's an explosion of use of data if
+it's actually not limited to AI although
+that is a factor but how many times have
+you seen someone say I think I'll give
+up my cell phone uh and iPad so we're
+we're in this explosion of data
+capturing photos videos and all the rest
+these data centers s rely on energy. And
+the way this used to be done is the big
+data consumers, Google, Apple, Amazon,
+so forth, would say, I would like a data
+center to be in city X because that's
+where I am and that's where my people
+are. Please build it for me there. But
+it's now become apparent that this load,
+this demand for energy cannot be cited
+where you might like it to be. But
+instead the trend has now emerged that
+says the load, the demand for the
+electricity has to move to where the
+energy is. So one of our portfolio
+companies called Intersect Power has
+pioneered this quite effectively
+building gigawatt scale. gigawatt scale.
+These are gigantic renewable energy
+facilities in places with a lot of
+renewable energy, sun and wind
+primarily, Texas for example. And then
+the data centers move there
+bringing the load to generation and
+eliminating the need for transmission
+which in this country is very very
+limited and quite constrained. So the
+whole idea of moving load be it data
+load be it manufacturing load to
+generation is going to be another theme
+that we think is going to be quite
+critical
+that has already become quite critical
+in fact
+>> I want to change direction just for a
+minute here and I want to bring up a a
+comment you had made in another
+interview on standards and disclosures.
+So obviously we at CFA Institute have a
+strong belief that standardized
+disclosures and consistent sets of
+information are very helpful to
+investors when making decisions about
+where to place their money. So you've
+commented in the past about how it's
+it's difficult for investors to compare
+investments in this infrastructure and
+environment um because there is no set
+of consistent disclosures or
+standardized disclosures from asset
+owners or an RFPs. So investors end up
+with kind of I would imagine kind of a
+hodgepodge of information trying to
+compare all of that
+I just wanted to to get a little more of
+your experience with that and your
+thoughts on what might be helpful in the
+future for investors who are considering
+making infrastructure investments.
+>> Sure. It's actually a little more
+complicated than you've laid it out and
+the reason is there are standards. There
+are various standards and bodies in
+Europe. For example, the European Union
+has something called EU taxonomy or SFDR
+and and funds or investors can claim a
+level of sustainability, level eight,
+level 9. CI happens to report to the
+highest standard under the EU taxonomy,
+level 9. But there there are standards
+that exist. So here's where it becomes
+complicated. We are routinely asked as
+are many other managers to respond to
+various standards that are not
+correlated with one another. The second
+layer of the problem is that even these
+standards like PRI which is one you and
+your listeners may have heard of
+continues to evolve and now there are
+questions like well should natural gas
+actually be considered a bridge fuel to
+a lowcarbon future? Should nuclear be
+something that we embrace? because on
+the one hand there is toxic waste and on
+the other hand it is a zerocarbon source
+of energy. So these standards are
+constantly being questioned. When they
+become popular because of their
+popularity many users with different
+agendas will then question and attempt
+to move them. So these standards become
+really complex and then each of your
+investors may come to you with a
+different set of standards and say
+please report to these. What advice
+could I offer? Look, this is not a
+simple issue and we're not going to
+solve this in the podcast. Let me give
+you one quick example. We are often
+asked about our solar investments. Well,
+how much CO2
+emissions does that solar farm remove?
+Seems a pretty interesting and honest
+question, right?
+But the problem is it's unanswerable
+because that solar plant sits on a place
+in the grid. Let's say in the state of
+California,
+if this solar plant weren't there, the
+electricity would come from various
+places in the state and out of the
+state. At one part of the day, it might
+come from other solar plants. So, the
+answer is the solar plant we built for
+that part of the day really doesn't
+remove any CO2. It just adds more CO2
+free electricity, but at a different
+time of day, the state may be importing
+power from another state that burns coal
+or they may be using power from a
+natural gas plant. So throughout the
+day, the benefit of having our new solar
+farm in place changes based on a time of
+use pattern. Now I've just introduced a
+level of detail and complexity that is
+actually immeasurable. So, what seems
+like an honest but perhaps simplified
+question, hey, good deal. You built a
+gigawatt solar plant, that's really big.
+How much CO2 does it take off the grid
+in California? Is really an almost
+unanswerable question. So, what we need
+to do is ask one another questions that
+can be logically answered and addressed
+and then be measured against one another
+as we look at different opportunities.
+So it's it's it's a challenge and it's a
+problem that many are working to solve
+and I think simplification of standards
+is a big part of the answer.
+>> We have a few minutes left. I usually
+ask but I did not ask. Is there any
+question that I didn't ask you that I
+should have asked or you would like me
+to have asked? Yeah, quite often I'm
+asked if I'm optimistic
+and uh and and I will tell you that I
+am. The knowledge of these
+inevitabilities
+is, as I mentioned earlier, not always
+pleasant. The fact that we are living on
+a planet that is getting hotter, that is
+becoming drier. But when you think about
+taking action and making investments in
+the face of these known inevitabilities,
+it's a lot more rewarding than you might
+think. And and I will also say that the
+current moment is requiring us to live
+in a split screen reality where on the
+one hand we're hearing things, we're
+seeing things in our feeds and they make
+us wonder or doubt the judgment that we
+have around certain work that we do.
+certainly those of us in the climate and
+sustainability space. But I would tell
+you that if you if you anchor into the
+inevitabilities of the work that we're
+doing, providing clean water for decades
+to come for large populations, providing
+clean electricity to power the AI
+revolution, this is addressing
+inevitabilities, earning investors the
+kinds of returns that they would like
+from investments like this, and at the
+same time really sort of helping us get
+out of bed day after day to continue to
+do this work. So, we really appreciate
+your support for letting us get that
+message of optimism out to folks.
+>> Well, thank you for that. That was very
+interesting and informative. And Bill,
+thank you for joining us today on the
+sustainability story. This has been a
+great conversation.
+[Music]
+[Applause]

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from pathlib import Path
 
 from rich.console import Console
@@ -13,9 +14,12 @@ from src.extractors.pdf_mineru import extract_pdf_with_mineru
 from src.extractors.pdf_ocrmypdf import extract_pdf_with_ocrmypdf
 from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
-from src.paths import project_path, safe_slug
+from src.motion.schema import MotionOptions, reference_type_for_playlist_video
+from src.paths import project_path, safe_slug, youtube_library_path
 from src.storage.manifest import JobManifest, VideoStatus, manifest_path_for_playlist
 from src.storage.retention import safe_delete
+from src.storage.youtube_library import YouTubeLibrary
+from src.summarizers.motion_director import MotionDirector
 from src.summarizers.pdf_summarizer import PdfSummarizer
 from src.summarizers.video_summarizer import VideoSummarizer
 
@@ -30,6 +34,8 @@ def run_video(
     delete_cache: bool = False,
     overwrite: bool = False,
     dry_run: bool = False,
+    mode: str = "summary",
+    motion_options: MotionOptions | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
@@ -42,6 +48,8 @@ def run_video(
         delete_cache=delete_cache,
         overwrite=overwrite,
         dry_run=dry_run,
+        mode=mode,
+        motion_options=motion_options,
     )
 
 
@@ -69,23 +77,67 @@ def run_playlist(
     url: str,
     resume: bool = False,
     limit: int | None = None,
+    mode: str = "summary",
+    motion_options: MotionOptions | None = None,
+    tutorials_last: int = 0,
+    mixed_indices: set[int] | None = None,
     **kwargs: object,
 ) -> JobManifest:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     title, videos = extractor.list_playlist(url)
     if limit is not None:
         videos = videos[:limit]
-    manifest_path = manifest_path_for_playlist(f"playlist-{title}")
+    playlist_slug = safe_slug(f"playlist-{title}", "playlist")
+    output_root = "motion" if mode == "motion-director" else "videos"
+    output_dir = project_path("output", output_root, playlist_slug)
+    graphipy_output_dir = project_path("output", "graphipy_ready", playlist_slug)
+    manifest_prefix = "motion" if mode == "motion-director" else "playlist"
+    manifest_path = manifest_path_for_playlist(f"{manifest_prefix}-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
-    for video in videos:
-        existing = manifest.get(video.url)
+    duplicate_urls = {
+        video_url
+        for video_url, count in Counter(video.url for video in videos).items()
+        if count > 1
+    }
+    for index, video in enumerate(videos, start=1):
+        manifest_url = (
+            f"{video.url}#playlist-index={index}" if video.url in duplicate_urls else video.url
+        )
+        existing = manifest.get(manifest_url)
         if resume and existing and existing.status == "done":
             console.print(f"[cyan]Skip already done:[/] {video.title}")
             continue
+        output_slug = f"{index:03d}-{video.slug}"
+        per_video_motion_options = motion_options
+        if mode == "motion-director":
+            reference_type = reference_type_for_playlist_video(
+                index,
+                len(videos),
+                tutorials_last=tutorials_last,
+                mixed_indices=mixed_indices,
+            )
+            per_video_motion_options = (motion_options or MotionOptions()).with_reference_type(
+                reference_type
+            )
         try:
-            status = _process_video(video, extractor, **kwargs)
+            status = _process_video(
+                video,
+                extractor,
+                output_slug=output_slug,
+                output_dir=output_dir,
+                graphipy_output_dir=graphipy_output_dir,
+                mode=mode,
+                motion_options=per_video_motion_options,
+                **kwargs,
+            )
+            status.url = manifest_url
         except Exception as exc:
-            status = VideoStatus(url=video.url, title=video.title, status="failed", error=str(exc))
+            status = VideoStatus(
+                url=manifest_url,
+                title=video.title,
+                status="failed",
+                error=str(exc),
+            )
             console.print(f"[red]Failed:[/] {video.title} - {exc}")
         manifest.upsert_video(status)
         manifest.save(manifest_path)
@@ -178,12 +230,16 @@ def run_youtube_source(
     source: str,
     ask_each: bool = False,
     keep_all: bool = True,
-    export_graphipy: bool = True,
+    export_graphipy: bool = False,
     delete_cache: bool = False,
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
     limit: int | None = None,
+    mode: str = "summary",
+    motion_options: MotionOptions | None = None,
+    tutorials_last: int = 0,
+    mixed_indices: set[int] | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
@@ -208,6 +264,10 @@ def run_youtube_source(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            mode=mode,
+            motion_options=motion_options,
+            tutorials_last=tutorials_last,
+            mixed_indices=mixed_indices,
         )
     return run_video(
         source,
@@ -217,6 +277,8 @@ def run_youtube_source(
         delete_cache=delete_cache,
         overwrite=overwrite,
         dry_run=dry_run,
+        mode=mode,
+        motion_options=motion_options,
     )
 
 
@@ -295,33 +357,48 @@ def _process_video(
     delete_cache: bool = False,
     overwrite: bool = False,
     dry_run: bool = False,
+    output_slug: str | None = None,
+    output_dir: Path | None = None,
+    graphipy_output_dir: Path | None = None,
+    mode: str = "summary",
+    motion_options: MotionOptions | None = None,
 ) -> VideoStatus:
-    output_path = project_path("output", "videos", f"{video.slug}.md")
-    text_path = project_path("cache", "transcripts", video.slug, f"{video.slug}.txt")
+    if mode not in {"summary", "motion-director"}:
+        raise ValueError("mode must be summary or motion-director")
+    slug = output_slug or video.slug
+    output_root = "motion" if mode == "motion-director" else "videos"
+    output_dir = output_dir or project_path("output", output_root)
+    suffix = ".json" if mode == "motion-director" else ".md"
+    output_path = output_dir / f"{slug}{suffix}"
     if dry_run:
         console.print(f"[dry-run] Video: {video.title}")
         console.print(f"[dry-run] Output: {output_path}")
         return VideoStatus(video.url, video.title, "dry-run", str(output_path), kept=False)
     if output_path.exists() and not overwrite:
         return VideoStatus(video.url, video.title, "done", str(output_path), kept=True)
-    console.print(f"[1/5] Extraction transcript: {video.title}")
-    subtitle_path = extractor.download_subtitles(video.url, video.slug)
-    console.print("[2/5] Conversion TXT")
-    convert_srt_to_text(subtitle_path, text_path)
-    transcript = text_path.read_text(encoding="utf-8")
+    transcript = _load_or_extract_video_transcript(video, extractor)
     console.print("[3/5] Appel Gemini")
-    output_path, model_used = VideoSummarizer().summarize(
-        video.title,
-        video.url,
-        transcript,
-        output_path,
-    )
+    if mode == "motion-director":
+        output_path, model_used = MotionDirector().generate_motion_prompt_from_transcript(
+            video.title,
+            video.url,
+            transcript,
+            output_path,
+            motion_options or MotionOptions(),
+        )
+    else:
+        output_path, model_used = VideoSummarizer().summarize(
+            video.title,
+            video.url,
+            transcript,
+            output_path,
+        )
     console.print(f"[4/5] Écriture Markdown: {output_path}")
     kept = keep_all or _confirm_keep(output_path, ask_each)
     if not kept:
         safe_delete(output_path)
-    if export_graphipy and kept:
-        export_graphipy_ready(output_path, video.slug)
+    if export_graphipy and kept and mode == "summary":
+        export_graphipy_ready(output_path, slug, output_dir=graphipy_output_dir)
         console.print("[5/5] Export Graphipy")
     if delete_cache:
         safe_delete(project_path("cache", "transcripts", video.slug))
@@ -333,6 +410,29 @@ def _process_video(
         kept=kept,
         model_used=model_used,
     )
+
+
+def _load_or_extract_video_transcript(video: YouTubeVideo, extractor: YouTubeExtractor) -> str:
+    library = YouTubeLibrary(youtube_library_path())
+    if library.has_transcript(video.video_id):
+        console.print(f"[1/5] Transcript bibliothèque: {video.title}")
+        return library.transcript_path(video.video_id).read_text(encoding="utf-8")
+    console.print(f"[1/5] Extraction transcript: {video.title}")
+    subtitle_path = extractor.download_subtitles(video.url, video.slug)
+    console.print("[2/5] Archivage bibliothèque")
+    text_path = project_path("cache", "transcripts", video.slug, f"{video.slug}.txt")
+    convert_srt_to_text(subtitle_path, text_path)
+    transcript = text_path.read_text(encoding="utf-8")
+    library.store(
+        video_id=video.video_id,
+        title=video.title,
+        url=video.url,
+        transcript=transcript,
+        source_path=subtitle_path,
+        source_reference=f"automatic:{video.url}",
+    )
+    safe_delete(project_path("cache", "transcripts", video.slug))
+    return transcript
 
 
 def _confirm_keep(output_path: Path, ask_each: bool) -> bool:
