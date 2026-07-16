@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from rich.console import Console
 
+from src.config import load_settings
 from src.converters.markdown_cleaner import clean_markdown
 from src.converters.srt_to_text import convert_srt_to_text
 from src.exporters.graphipy import export_graphipy_ready
@@ -13,7 +15,9 @@ from src.extractors.pdf_mineru import extract_pdf_with_mineru
 from src.extractors.pdf_ocrmypdf import extract_pdf_with_ocrmypdf
 from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
+from src.llm.gemini_client import GeminiError
 from src.paths import project_path, safe_slug
+from src.pdf_evidence import TechnicalPdfEvidencePipeline
 from src.storage.manifest import JobManifest, VideoStatus, manifest_path_for_playlist
 from src.storage.retention import safe_delete
 from src.summarizers.pdf_summarizer import PdfSummarizer
@@ -230,9 +234,12 @@ def run_pdf(
     dry_run: bool = False,
     max_pages: int | None = None,
     ocr_language: str = "eng",
+    technical_evidence: bool = True,
+    visual_review: bool = True,
 ) -> Path:
     slug = safe_slug(file_path.stem, "book")
     output_path = project_path("output", "books", f"{slug}.md")
+    summary_error_path = output_path.with_suffix(".summary-error.json")
     cache_dir = project_path("cache", "pdf_md")
     if dry_run:
         console.print(f"[dry-run] PDF: {file_path}")
@@ -240,6 +247,8 @@ def run_pdf(
         if max_pages is not None:
             console.print(f"[dry-run] Max pages: {max_pages}")
         console.print(f"[dry-run] OCR language: {ocr_language}")
+        console.print(f"[dry-run] Technical evidence: {technical_evidence}")
+        console.print(f"[dry-run] Gemini visual review: {visual_review}")
         if engine in {"auto", "smart"}:
             plan = build_pdf_engine_plan(file_path)
             console.print(f"[dry-run] Complexity: {plan.complexity.complexity}")
@@ -250,7 +259,14 @@ def run_pdf(
         return output_path
     if output_path.exists() and not overwrite:
         raise FileExistsError(f"Output already exists: {output_path}. Use --overwrite.")
-    console.print("[1/5] Extraction PDF")
+    if overwrite:
+        safe_delete(output_path)
+        safe_delete(summary_error_path)
+        safe_delete(output_path.with_name(f"{slug}.transcription.md"))
+        safe_delete(output_path.with_name(f"{slug}.sidecar.json"))
+        safe_delete(output_path.with_name(f"{slug}.quality.json"))
+        safe_delete(output_path.with_name(f"{slug}.evidence"))
+    console.print("[1/8] Extraction PDF")
     markdown_path = _extract_pdf(
         file_path,
         cache_dir,
@@ -261,19 +277,113 @@ def run_pdf(
     markdown = markdown_path.read_text(encoding="utf-8", errors="ignore")
     if not _is_usable_markdown(markdown):
         raise RuntimeError("PDF extraction produced weak or empty Markdown.")
-    console.print("[2/5] Nettoyage Markdown")
+    console.print("[2/8] Nettoyage Markdown")
     cleaned = clean_markdown(markdown)
-    console.print("[3/5] Appel Gemini")
-    output_path, _model = PdfSummarizer().summarize(
-        file_path.stem, file_path.name, cleaned, output_path
+    transcription_path = output_path.with_name(f"{slug}.transcription.md")
+    transcription_path.parent.mkdir(parents=True, exist_ok=True)
+    transcription_path.write_text(
+        "---\n"
+        f'title: "{file_path.stem.replace(chr(34), chr(39))}"\n'
+        f'source_file: "{file_path.name.replace(chr(34), chr(39))}"\n'
+        "artifact_type: technical_pdf_transcription\n"
+        "status: extracted_to_review\n"
+        "---\n\n" + cleaned.strip() + "\n",
+        encoding="utf-8",
     )
-    console.print(f"[4/5] Écriture Markdown: {output_path}")
-    if export_graphipy:
+    console.print(f"[3/8] Transcription Markdown: {transcription_path}")
+
+    if technical_evidence:
+        settings = load_settings().get("pdf", {}).get("evidence", {})
+        evidence_enabled = bool(settings.get("enabled", True))
+        if evidence_enabled:
+            console.print("[4/8] Evidence packets et sidecar canonique")
+            review = TechnicalPdfEvidencePipeline(
+                dpi=int(settings.get("dpi", 350)),
+                visual_review_enabled=visual_review
+                and bool(settings.get("visual_review_enabled", True)),
+                max_visual_calls=int(settings.get("max_visual_calls_per_document", 40)),
+                include_context=bool(settings.get("include_context", False)),
+                ocr_language=ocr_language,
+                ocr_min_native_characters=int(settings.get("ocr_min_native_characters", 120)),
+            ).run(file_path, output_path.with_suffix(""), max_pages=max_pages)
+            console.print(
+                f"[cyan]Evidence:[/] {review.elements_detected} elements, "
+                f"{review.gemini_calls} visual checks, {review.sidecar_path}"
+            )
+    console.print("[5/8] Synthèse Gemini")
+    summary_available = True
+    try:
+        output_path, _model = PdfSummarizer().summarize(
+            file_path.stem, file_path.name, cleaned, output_path
+        )
+        safe_delete(summary_error_path)
+        console.print(f"[6/8] Synthèse Markdown: {output_path}")
+    except GeminiError as exc:
+        summary_available = False
+        _write_pdf_summary_unavailable(
+            output_path,
+            summary_error_path,
+            file_path=file_path,
+            transcription_path=transcription_path,
+            error=exc,
+        )
+        console.print(
+            "[yellow][6/8] Synthèse Gemini indisponible; transcription et preuves "
+            f"conservées: {output_path}[/]"
+        )
+    if export_graphipy and summary_available:
         export_graphipy_ready(output_path, slug)
-        console.print("[5/5] Export Graphipy")
+        console.print("[7/8] Export Graphipy")
+    elif export_graphipy:
+        console.print("[yellow][7/8] Export Graphipy ignoré: synthèse indisponible.[/]")
     if delete_cache:
         safe_delete(cache_dir / slug)
+    console.print("[8/8] Terminé")
     return output_path
+
+
+def _write_pdf_summary_unavailable(
+    output_path: Path,
+    error_path: Path,
+    *,
+    file_path: Path,
+    transcription_path: Path,
+    error: Exception,
+) -> None:
+    """Keep a successful local transcription usable when optional Gemini fails."""
+    safe_error = str(error).replace("\x00", "")[:2000]
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        "---\n"
+        f'title: "{file_path.stem.replace(chr(34), chr(39))}"\n'
+        f'source_file: "{file_path.name.replace(chr(34), chr(39))}"\n'
+        "artifact_type: technical_pdf_summary\n"
+        "status: summary_unavailable\n"
+        "---\n\n"
+        "# Synthèse distante indisponible\n\n"
+        "La transcription locale, le sidecar canonique, les preuves visuelles et le "
+        "rapport qualité restent valides. La synthèse Gemini est un artefact optionnel "
+        "et n'a pas été fabriquée localement.\n\n"
+        f"- Transcription : `{transcription_path.name}`\n"
+        f"- Rapport d'erreur : `{error_path.name}`\n",
+        encoding="utf-8",
+    )
+    error_path.write_text(
+        json.dumps(
+            {
+                "schema_version": "1.0",
+                "status": "summary_unavailable",
+                "error_type": type(error).__name__,
+                "error": safe_error,
+                "transcription_path": str(transcription_path),
+                "summary_path": str(output_path),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
 
 def run_pdf_batch(directory: Path, **kwargs: object) -> list[Path]:

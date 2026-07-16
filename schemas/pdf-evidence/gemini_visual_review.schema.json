@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.transcripts/schemas/pdf-evidence/gemini_visual_review.schema.json",
+  "title": "Gemini technical PDF visual review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "element_id",
+    "media_readable",
+    "observed_type",
+    "observed_rotation",
+    "structure",
+    "disagreements",
+    "ambiguous_regions",
+    "missing_context",
+    "confidence",
+    "recommended_status"
+  ],
+  "properties": {
+    "element_id": {"type": "string", "minLength": 1},
+    "media_readable": {"type": "boolean"},
+    "observed_type": {
+      "enum": ["table", "formula", "figure", "chart", "payoff_diagram"]
+    },
+    "observed_rotation": {"enum": [0, 90, 180, 270]},
+    "structure": {"type": "object"},
+    "disagreements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "location",
+          "ocr_value",
+          "visual_candidates",
+          "preferred_candidate",
+          "confidence",
+          "reason"
+        ],
+        "properties": {
+          "location": {"type": ["object", "string"]},
+          "ocr_value": {"type": ["string", "null"]},
+          "visual_candidates": {"type": "array", "items": {"type": "string"}},
+          "preferred_candidate": {"type": ["string", "null"]},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "ambiguous_regions": {"type": "array"},
+    "missing_context": {"type": "array"},
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visual_readability", "table_structure", "numeric", "formula"],
+      "properties": {
+        "visual_readability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "table_structure": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "numeric": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "formula": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "recommended_status": {
+      "enum": [
+        "machine_verified_with_visual_check",
+        "needs_visual_review",
+        "human_review_required",
+        "blocked",
+        "image_only"
+      ]
+    }
+  }
+}

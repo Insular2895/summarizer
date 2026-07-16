@@ -24,6 +24,13 @@ pdf:
     scanned_book_engine: "ocrmypdf"
     complex_engine: "mineru"
     fallback_engine: "marker"
+  evidence:
+    enabled: true
+    dpi: 350
+    include_context: false
+    visual_review_enabled: true
+    max_visual_calls_per_document: 40
+    ocr_min_native_characters: 120
 
 graphipy:
   enabled_by_default: true

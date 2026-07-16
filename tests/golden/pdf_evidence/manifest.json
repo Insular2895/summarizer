@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.1",
+  "copyrighted_sources_committed": false,
+  "metric": "dangerous_quantitative_errors_accepted_without_alert",
+  "metric_status": "complete_synthetic_regression_real_golden_partial",
+  "annotation_files": [
+    "annotations/passarelli-trading-option-greeks.json"
+  ],
+  "cases": [
+    {
+      "id": "G01",
+      "difficulty": "native_text_clean",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g01_native_text_clean_table_is_structured"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G02",
+      "difficulty": "scan_clean",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g02_scan_clean_tsv_preserves_words_and_confidence"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G03",
+      "difficulty": "scan_skewed",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g03_scan_skewed_is_detected_and_cannot_be_auto_verified"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G04",
+      "difficulty": "low_contrast",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g04_low_contrast_numeric_review_stays_unverified"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G05",
+      "difficulty": "rotated_table",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g05_rotated_table_keeps_source_rotation_and_requires_review"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G06",
+      "difficulty": "multi_level_headers",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g06_multi_level_headers_keep_consistent_columns"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G07",
+      "difficulty": "signed_decimals",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g07_signed_decimals_are_not_normalized_without_sign"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G08",
+      "difficulty": "fractions",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g08_fractions_preserve_raw_form_and_numeric_value"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G09",
+      "difficulty": "formulas",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g09_formula_without_structure_requires_visual_review"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G10",
+      "difficulty": "payoff_diagram",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g10_payoff_diagram_is_image_only_not_silently_digitized"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G11",
+      "difficulty": "multi_series_chart",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g11_multi_series_chart_is_image_only_not_silently_digitized"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G12",
+      "difficulty": "external_annotations",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g12_external_red_annotation_is_detected_in_rendered_evidence"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G13",
+      "difficulty": "page_number_mismatch",
+      "status": "covered",
+      "coverage": "synthetic_and_real_golden",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g13_pdf_and_printed_page_numbers_remain_distinct"
+      ],
+      "real_annotations": [
+        "annotations/passarelli-trading-option-greeks.json"
+      ]
+    },
+    {
+      "id": "G14",
+      "difficulty": "table_continued",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g14_continued_table_is_flagged_and_gets_previous_page_context"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G15",
+      "difficulty": "figure_caption_on_previous_page",
+      "status": "covered",
+      "coverage": "synthetic_regression",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g15_figure_caption_on_previous_page_is_linked_without_copying_data"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G16",
+      "difficulty": "gemini_api_failure",
+      "status": "covered",
+      "coverage": "simulated_failure",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g16_gemini_api_failure_creates_fallback_without_mutating_source"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G17",
+      "difficulty": "gemini_invalid_json",
+      "status": "covered",
+      "coverage": "simulated_failure",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g17_gemini_invalid_json_is_rejected"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G18",
+      "difficulty": "gemini_ocr_disagreement",
+      "status": "covered",
+      "coverage": "simulated_disagreement",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g18_gemini_ocr_sign_disagreement_blocks_promotion"
+      ],
+      "real_annotations": []
+    },
+    {
+      "id": "G19",
+      "difficulty": "codex_media_unavailable",
+      "status": "covered",
+      "coverage": "simulated_failure",
+      "tests": [
+        "tests/test_pdf_regression_matrix.py::test_g19_codex_media_unavailable_requires_human_review"
+      ],
+      "real_annotations": []
+    }
+  ],
+  "important_note": "La couverture synthétique G01-G19 vérifie les garde-fous reproductibles. Les annotations réelles sur pages de livres restent une métrique distincte et doivent continuer à augmenter."
+}

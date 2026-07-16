@@ -9,3 +9,4 @@ tiktoken
 beautifulsoup4
 markdownify
 pypdf
+PyMuPDF>=1.24,<2
