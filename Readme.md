@@ -1,4 +1,18 @@
-# Summarizer
+<p align="center">
+  <img src="docs/assets/readme-hero.svg" alt="Summarizer : YouTube et PDF vers une connaissance structurée" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/assets/badge-ytdlp-animated.svg" alt="Powered by yt-dlp">
+  <img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash">
+  <img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS">
+</p>
+
+<h1 align="center">Summarizer</h1>
+
+<p align="center">
+  <strong>Des sources difficiles à lire. Une connaissance claire, vérifiable et prête à utiliser.</strong>
+</p>
 
 ## D'une source difficile à lire à une connaissance vraiment utilisable
 
