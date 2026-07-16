@@ -228,6 +228,7 @@ def run_pdf(
     file_path: Path,
     engine: str = "auto",
     mode: str = "deep",
+    user_instruction: str | None = None,
     export_graphipy: bool = False,
     delete_cache: bool = False,
     overwrite: bool = False,
@@ -314,7 +315,11 @@ def run_pdf(
     summary_available = True
     try:
         output_path, _model = PdfSummarizer().summarize(
-            file_path.stem, file_path.name, cleaned, output_path
+            file_path.stem,
+            file_path.name,
+            cleaned,
+            output_path,
+            instruction=user_instruction,
         )
         safe_delete(summary_error_path)
         console.print(f"[6/8] Synthèse Markdown: {output_path}")

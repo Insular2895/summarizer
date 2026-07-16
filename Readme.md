@@ -1,439 +1,160 @@
-<div align="center">
+# Summarizer
 
-<img src="docs/assets/readme-hero.svg" alt="Summarizer - pipeline local YouTube et PDF vers Markdown" width="100%" />
+## Transforme une vidéo ou un livre en connaissance utilisable
 
-<h1>Summarizer</h1>
+Summarizer est un outil local qui transforme des vidéos YouTube, des playlists et des PDF complexes
+en documents Markdown clairs, structurés et réellement exploitables.
 
-<p>
-  <a href="https://github.com/yt-dlp/yt-dlp"><img src="docs/assets/badge-ytdlp-animated.svg" alt="powered by yt-dlp" height="28" /></a>
-  <a href="https://www.gnu.org/software/bash/"><img src="docs/assets/badge-shell-bash-animated.svg" alt="Shell Bash" height="28" /></a>
-  <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="28" /></a>
-</p>
+L'objectif n'est pas de produire un résumé générique. L'outil préserve les concepts, les méthodes,
+les exemples, les limites et les points incertains pour rendre une expertise compréhensible,
+vérifiable et réutilisable.
 
-**Pipeline local pour transformer YouTube, playlists et PDF en Markdown, avec preuves
-structurées pour les documents techniques et synthèse Gemini.**
+```text
+Une source difficile à lire
+        -> extraction robuste
+        -> transcription / OCR / analyse visuelle
+        -> synthèse claire
+        -> connaissance prête à utiliser
+```
 
-`input/` pour déposer les sources. `output/` pour récupérer les résultats. `prompts/` pour piloter le style.
+## Pourquoi c'est puissant
 
-</div>
+- Un PDF peut être natif, scanné, rempli de tableaux, de formules ou de graphiques.
+- Une playlist est traitée vidéo par vidéo, avec reprise possible si le traitement est interrompu.
+- Sans question précise, le PDF devient une lecture neutre, chapitre par chapitre.
+- Avec une consigne, le même document devient une analyse ciblée sur ton problème.
+- Les preuves et contrôles techniques restent disponibles pour vérifier les résultats, sans encombrer
+  la lecture principale.
+- Tout fonctionne localement : tes documents, transcriptions et sorties restent sur ta machine.
 
----
-
-## Démarrage Rapide
+## Installation et lancement
 
 ```bash
 git clone https://github.com/Insular2895/summarizer.git
 cd summarizer
-./runhelp
+cp .env.example .env
+./summarizer
 ```
 
-Au premier lancement, `./runpdf` et `./runyoutube` créent automatiquement `.venv` et installent les dépendances de base.
-
-Il reste une seule étape manuelle : ajouter ta clé Gemini dans `.env`.
-
-Si `.env` n'existe pas encore, la première commande le crée depuis `.env.example`, puis te demande d'ajouter :
+Ajoute ensuite ta clé dans `.env` :
 
 ```env
 GEMINI_API_KEY=ta_cle_api_gemini
 ```
 
-`.env` est privé et ignoré par Git.
+Le menu devient le point d'entrée unique. Il reste ouvert après chaque job : choisis une nouvelle
+action ou `8` pour quitter.
 
-Optionnel, pour préparer les moteurs PDF avancés en local :
+> GitHub ne peut pas exécuter automatiquement un programme après un téléchargement. L'utilisateur
+> ne retient donc qu'une seule commande : `./summarizer`.
 
-```bash
-./runpdf --setup-engines
-./runpdf --engines-status
-```
+## Utilisation
 
-Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur disponible.
+### PDF
 
----
+Choisis `1` dans le menu. Si aucun PDF n'est présent, Summarizer ouvre le dossier `input/pdf/`.
+Dépose ton fichier, appuie sur Entrée, puis choisis le mode de lecture.
 
-## Commandes Essentielles
-
-| Besoin | Commande |
-|---|---|
-| Menu interactif | `./summarizer` |
-| Voir l'aide simple | `./runhelp` |
-| Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
-| Inspecter une preuve PDF | `./pdf-evidence inspect "livre.pdf" --pdf-page 132` |
-| Résumer une vidéo | `./runyoutube "https://youtube.com/watch?v=..."` |
-| Résumer une playlist | `./runyoutube "https://youtube.com/playlist?list=..."` |
-| Lancer un fichier d'URLs | `./runyoutube --file input/youtube/urls.txt` |
-| Tester sans écrire | `./runpdf "input/pdf/mon-livre.pdf" --dry-run` |
-
-Toutes les variantes utiles sont dans [COMMANDS.md](COMMANDS.md).
-
-Le menu interactif `./summarizer` propose PDF, vidéo, playlist, batch, moteurs PDF, nettoyage cache et usage Gemini sans retenir les commandes.
-
-Pour une correction future par une IA ou un assistant de code, le point d'entrée est [AGENTS.md](AGENTS.md) et le guide complet est dans [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
-
----
-
-## Ce Que Fait Le Pipeline
-
-```txt
-YouTube / PDF
-  -> extraction, transcription ou OCR
-  -> nettoyage texte / Markdown
-  -> résumé Gemini
-  -> Markdown final
-  -> export Graphipy-ready
-```
-
-| Dossier | Rôle |
-|---|---|
-| `input/youtube/` | URLs YouTube et playlists à traiter |
-| `input/pdf/` | PDF ou livres à analyser |
-| `cache/` | fichiers temporaires supprimables |
-| `output/videos/` | résumés vidéo |
-| `output/books/` | résumés PDF/livres |
-| `output/graphipy_ready/` | Markdown prêt pour Graphipy |
-| `prompts/` | prompts Gemini modifiables |
-
-La V1 reste volontairement locale : pas de dashboard, pas de base de données, pas de SaaS.
-
----
-
-## PDF
-
-Dépose ton fichier dans :
-
-```txt
-input/pdf/
-```
-
-Puis lance :
+Par défaut, tu obtiens une lecture neutre et précise, chapitre par chapitre. Tu peux aussi donner
+une consigne, par exemple :
 
 ```bash
-./runpdf "input/pdf/mon-livre.pdf" --engine smart
+./runpdf "input/pdf/mon-livre.pdf" \
+  --instruction "Explique les méthodes utiles pour construire un outil de gestion du risque."
 ```
 
-Le mode `smart` choisit automatiquement le meilleur plan :
+Le résultat principal se trouve dans `output/books/`. Les fichiers techniques de preuve, de qualité
+et de transcription restent disponibles pour l'audit, mais ne gênent pas la lecture.
 
-| Type de PDF | Stratégie |
-|---|---|
-| PDF texte simple | `text -> mineru -> ocrmypdf -> marker` |
-| PDF long ou dense | `mineru -> text -> ocrmypdf -> marker` |
-| Livre scanné | `ocrmypdf -> mineru -> marker -> text` |
-| PDF visuel, tableaux, formules | `mineru -> ocrmypdf -> marker -> text` |
+### YouTube
 
-Commandes pratiques :
-
-```bash
-./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
-./runpdf "input/pdf/mon-livre.pdf" --engine ocrmypdf --ocr-language fra
-./runpdf "input/pdf/mon-livre.pdf" --engine mineru
-./runpdf "input/pdf/mon-livre.pdf" --engine marker
-```
-
-Résultats :
-
-```txt
-output/books/<livre>.transcription.md  # extraction nettoyée, à revoir
-output/books/<livre>.sidecar.json      # éléments techniques canoniques
-output/books/<livre>.quality.json      # qualité, alertes et statuts
-output/books/<livre>.evidence/         # pages, crops et revues visuelles
-output/books/<livre>.md                # synthèse Gemini
-```
-
-### Preuves techniques V2
-
-Par défaut, les PDF passent aussi dans un pipeline conservateur qui détecte les tableaux,
-formules, figures, graphiques et payoff diagrams. Le traitement local reste primaire ; Gemini
-reçoit uniquement des paquets de preuve ciblés (page + crop + extraction candidate). Un signe,
-une décimale, une colonne ou un calcul ambigu ne peut jamais être corrigé silencieusement.
-
-Les statuts `blocked`, `needs_visual_review` et `human_review_required` empêchent de considérer
-la donnée quantitative comme validée. Les graphiques restent `image_only` tant que leurs axes
-ne permettent pas une numérisation déterministe.
-
-Documentation et schémas : [docs/PDF_EVIDENCE.md](docs/PDF_EVIDENCE.md).
-
-#### État de validation au 16 juillet 2026
-
-- suite locale complète : **93 tests réussis** ;
-- matrice de garde-fous G01–G19 : **19/19 cas couverts** par des tests déterministes ;
-- difficultés appuyées par des annotations de pages réelles : **8 familles sur 19** ;
-- corpus Passarelli ciblé : **0 erreur quantitative dangereuse acceptée sans alerte** ;
-- couverture humaine fiable actuelle : **4 assertions sur 18**.
-
-Ce résultat signifie que les valeurs douteuses sont bloquées, pas que tous les tableaux,
-formules et scans possibles sont transcrits parfaitement. Une donnée `blocked` ou
-`needs_visual_review` est sûre contre une utilisation silencieuse, mais reste inutilisable
-quantitativement jusqu'à sa revue. Les PDF et captures de livres ne sont jamais commités.
-
-Vérifier la matrice et mesurer un sidecar local :
-
-```bash
-./pdf-evidence regression --output cache/pdf_evidence_golden/regression-report.json
-./pdf-evidence score "output/books/livre.sidecar.json" \
-  --output cache/pdf_evidence_golden/livre-score.json
-```
-
-La procédure de correction auditée (`review-template` puis `resolve`), les formats de sortie,
-les seuils et toutes les limites sont documentés dans
-[docs/PDF_EVIDENCE.md](docs/PDF_EVIDENCE.md).
-
----
-
-## Moteurs PDF
-
-Le fallback texte `pypdf` est inclus dans l'installation de base.
-
-Pour installer les moteurs avancés dans des environnements locaux séparés :
-
-```bash
-./runpdf --setup-engines
-```
-
-Cette commande prépare OCRmyPDF, MinerU et Marker sans les mélanger dans la même `.venv`, car certains moteurs peuvent avoir des dépendances incompatibles entre eux.
-
-Vérifier les moteurs disponibles :
-
-```bash
-./runpdf --engines-status
-```
-
-Important pour macOS : OCRmyPDF peut avoir besoin d'outils système comme `tesseract`, `ghostscript` et `qpdf`. Le plus simple est de passer par Homebrew :
-
-```bash
-brew install ocrmypdf
-```
-
-Cette commande installe OCRmyPDF avec les dépendances système nécessaires. Si elles sont déjà disponibles, tu peux aussi installer seulement le package Python :
-
-```bash
-pip install -r requirements-pdf-ocrmypdf.txt
-```
-
-Pour les PDF complexes avec mise en page riche :
-
-```bash
-pip install -r requirements-pdf-mineru.txt
-mineru-models-download --source modelscope --model_type pipeline
-```
-
-Pour Marker, utilise de préférence un environnement séparé :
-
-```bash
-python3.11 -m venv .venv-marker
-source .venv-marker/bin/activate
-pip install -r requirements.txt
-pip install -r requirements-pdf-marker.txt
-```
-
-Si OCRmyPDF est installé dans un environnement séparé :
-
-```bash
-export OCRMYPDF_COMMAND="/chemin/vers/python -m ocrmypdf"
-```
-
----
-
-## YouTube
-
-Vidéo unique :
+Choisis `2`, puis colle une URL. Une vidéo seule ou une playlist est détectée automatiquement :
 
 ```bash
 ./runyoutube "https://youtube.com/watch?v=..."
-```
-
-Playlist complète :
-
-```bash
 ./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
-Reprendre une playlist :
+Les transcriptions sont réutilisées localement afin d'éviter les téléchargements inutiles. Les
+résumés finaux sont écrits dans `output/videos/`.
+
+## Étude de cas : Trading Option Greeks
+
+Pour montrer la différence entre un simple résumé et une vraie base de connaissance, nous avons
+traité *Trading Option Greeks* de Dan Passarelli, un ouvrage technique de **357 pages** consacré aux
+options, à la volatilité et à la gestion des risques.
+
+Le document combinait texte, pages scannées, formules, graphiques et payoffs. Le pipeline a réalisé :
+
+- **354 pages OCR** lorsque l'extraction native était insuffisante ;
+- **197 éléments complexes détectés**, notamment des figures, formules et graphiques ;
+- **14 contrôles visuels Gemini** sur des preuves ciblées ;
+- une transcription auditable, un rapport de qualité et une synthèse finale lisible.
+
+La sortie ne se contente pas d'énumérer des chapitres. Elle rend compréhensibles les Greeks,
+la volatilité implicite et réalisée, le delta-neutral, le gamma scalping, les spreads, les straddles,
+les strangles et les risques d'exécution.
+
+Cette connaissance peut ensuite servir à concevoir des outils spécialisés :
+
+```text
+Expertise métier
+  -> concepts et mécanismes
+  -> scénarios et exemples
+  -> hypothèses et limites
+  -> spécification d'un outil
+  -> tests et validation humaine
+```
+
+Par exemple, elle peut alimenter un calculateur de Greeks, un moteur de scénarios de risque, un
+analyseur de volatilité ou un système de garde-fous. Le livre ne devient jamais automatiquement
+une décision financière : les points ambigus restent signalés et doivent être validés.
+
+C'est la vocation de Summarizer : transformer une connaissance experte difficile à transmettre en
+matière première claire pour apprendre, documenter et construire des outils plus précis.
+
+## Léger par défaut, puissant à la demande
+
+L'installation standard reste légère. Les moteurs avancés pour les PDF scannés ou très complexes
+ne sont pas imposés à tout le monde. Si un document en a besoin, le terminal propose clairement
+d'installer le pack recommandé **OCRmyPDF + MinerU + Marker**, ou d'annuler.
+
+Une image Docker reproductible est également disponible :
 
 ```bash
-./runyoutube "https://youtube.com/playlist?list=..." --resume
+cp .env.example .env
+docker compose build
+docker compose run --rm summarizer run-pdf input/pdf/mon-livre.pdf
+docker compose run --rm summarizer run-youtube "https://youtube.com/..."
 ```
 
-Tester seulement les premières vidéos :
+## Organisation simple
 
-```bash
-./runyoutube "https://youtube.com/playlist?list=..." --limit 2
+```text
+input/       tes PDF et URLs
+output/      les résultats lisibles
+cache/       les fichiers temporaires
+prompts/     les consignes modifiables
+.env         ta configuration privée
 ```
 
-Le traitement playlist est sécurisé :
+Les données personnelles, PDF, caches, outputs et bibliothèques locales ne sont pas destinés à être
+publiés dans GitHub.
 
-- une vidéo = un fichier Markdown ;
-- une vidéo = un statut dans le manifest ;
-- si une vidéo échoue, la suivante continue ;
-- aucune suppression globale de `output/videos/`.
+## Commandes utiles
 
-Les anciens scripts Bash dans `run/` sont conservés comme legacy.
+| Besoin | Commande |
+|---|---|
+| Ouvrir le menu | `./summarizer` |
+| Voir l'aide | `./runhelp` |
+| Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
+| Résumer une vidéo ou playlist | `./runyoutube "https://youtube.com/..."` |
+| Vérifier les moteurs PDF | `./runpdf --engines-status` |
+| Nettoyer le cache | `./.venv/bin/python -m src.cli cleanup --cache` |
 
----
+Pour les options avancées, consulte [COMMANDS.md](COMMANDS.md).
 
-## Sorties Markdown
+## Licence et sécurité
 
-Les fichiers finaux sont lisibles directement et compatibles Graphipy.
-
-```txt
-output/videos/          résumés de vidéos
-output/books/           résumés de PDF/livres
-output/graphipy_ready/  exports Markdown prêts pour Graphipy
-cache/jobs/             manifests de suivi
-```
-
-Les fichiers Graphipy-ready n'incluent pas `model_used` dans le frontmatter.
-
----
-
-## Usage Gemini
-
-Chaque appel Gemini ajoute une ligne dans :
-
-```txt
-cache/jobs/gemini_usage.jsonl
-```
-
-Voir le résumé :
-
-```bash
-python3.11 -m src.cli usage
-```
-
-Le coût estimé reste désactivé par défaut. Pour l'activer, renseigne les prix par modèle dans `config/settings.yaml`, section `usage.model_prices_per_1m`.
-
----
-
-## Nettoyage
-
-```bash
-python3.11 -m src.cli cleanup --cache
-python3.11 -m src.cli cleanup --all-temp
-python3.11 -m src.cli cleanup --outputs --older-than 7
-```
-
-Le pipeline ne supprime jamais `input/` sans confirmation explicite.
-
----
-
-## Évolutions Envisagées
-
-La V1 reste locale-first. Les évolutions suivantes sont prévues comme options, sans remplacer les commandes simples actuelles.
-
-### Docker robuste
-
-Objectif : fournir un environnement reproductible quand une machine locale a des problèmes de dépendances PDF/OCR.
-
-Mode visé :
-
-```bash
-./summarizer-docker
-./runpdf-docker "input/pdf/mon-livre.pdf"
-./runyoutube-docker "https://youtube.com/playlist?list=..."
-```
-
-Le container monterait les dossiers locaux :
-
-```txt
-input/
-output/
-cache/
-prompts/
-.env
-```
-
-Avantage : Python, OCRmyPDF, Tesseract, Ghostscript, qpdf et les dépendances système seraient installés dans l'image Docker plutôt que sur la machine utilisateur.
-
-Compromis : l'image peut être lourde, plus longue à télécharger/build, et Docker Desktop reste nécessaire sur Mac.
-
-### Images Docker standard et heavy
-
-Pour éviter une image unique trop lourde :
-
-```txt
-Image standard
-- Python
-- dépendances du pipeline
-- yt-dlp
-- pypdf
-- OCRmyPDF
-- tesseract
-- ghostscript
-- qpdf
-
-Image heavy optionnelle
-- image standard
-- MinerU
-- Marker
-- modèles lourds éventuels
-```
-
-Le mode standard couvrirait la majorité des usages. Le mode heavy serait réservé aux PDF très complexes.
-
-### Mise à jour contrôlée
-
-Pas d'auto-update silencieux au lancement.
-
-Commande envisagée :
-
-```bash
-./update
-```
-
-Elle pourrait :
-
-- faire `git pull` ;
-- reconstruire l'image Docker avec `docker compose build --pull` ;
-- vérifier `.env` ;
-- vérifier les moteurs PDF ;
-- ne jamais toucher à `input/` ni `output/`.
-
-### Cloud plus tard
-
-Vercel seul n'est pas adapté au coeur du pipeline, car les traitements PDF/OCR/playlists sont longs et lourds.
-
-Options plus adaptées :
-
-- VPS + Docker pour un serveur privé simple ;
-- Cloud Run / Fly.io / Railway pour exécuter un container ;
-- Vercel uniquement plus tard pour une interface web légère ;
-- worker séparé pour les jobs longs si une vraie app cloud est créée.
-
-Architecture cloud possible plus tard :
-
-```txt
-Frontend
-  -> upload PDF / URL playlist
-  -> job queue
-  -> worker Docker
-  -> Gemini
-  -> stockage output
-```
-
-Pour l'instant, la priorité reste : local simple, Docker en plan robuste, cloud en V2.
-
----
-
-## Qualité Et Sécurité
-
-```bash
-python3.11 -m black src tests
-python3.11 -m ruff check src tests
-python3.11 -m pytest -q
-detect-secrets scan $(git ls-files -co --exclude-standard)
-```
-
-Ne jamais committer :
-
-- `.env`
-- `cookies.txt`
-- PDF utilisateur
-- transcripts
-- cache
-- outputs générés
-
-Le `.gitignore` protège ces fichiers et la CI GitHub Actions vérifie format, lint, tests et scan de secrets.
-
-<div align="center">
-
-**Local. Simple. Relançable. Sans exposer les sources utilisateur.**
-
-</div>
+Le projet est conçu pour fonctionner localement et garder les sources privées. Ne commit jamais
+`.env`, des clés API, des PDF, des cookies ou des sorties personnelles.

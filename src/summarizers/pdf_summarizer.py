@@ -47,6 +47,26 @@ Si les parties se contredisent, signale la contradiction.
 Si une information est absente des parties, écris “Non précisé dans le contenu”.
 """
 
+NEUTRAL_READING_INSTRUCTIONS = """\
+Aucun objectif particulier n'a été fourni.
+Produis une lecture neutre, précise et complète du document.
+Commence par une vue d'ensemble courte, puis résume le document chapitre par chapitre.
+Pour chaque chapitre ou grande section, indique le sujet, l'idée centrale, les mécanismes,
+les exemples, les chiffres et les limites. Respecte l'ordre du document et n'invente jamais
+un chapitre ou une structure absente. Si les titres sont absents ou mal extraits, utilise les
+grandes sections visibles et signale l'incertitude. Termine par les concepts à retenir, les
+limites du document et une synthèse finale.
+"""
+
+TARGETED_READING_INSTRUCTIONS = """\
+Une consigne spécifique a été fournie par l'utilisateur.
+Réponds d'abord directement à cette consigne, puis sélectionne dans le document les éléments
+qui permettent d'y répondre. Distingue clairement les faits du document, les inférences et les
+limites. Ne transforme pas une hypothèse de l'utilisateur en fait. Si la consigne demande une
+comparaison, une méthode ou une application, donne une réponse structurée et concrète, tout en
+signalant ce que le document ne permet pas d'établir.
+"""
+
 
 class PdfSummarizer:
     def __init__(
@@ -60,10 +80,24 @@ class PdfSummarizer:
         self.prompt_path = prompt_path or project_path("prompts", "pdf_knowledge.md")
 
     def summarize(
-        self, title: str, source_file: str, markdown: str, output_path: Path
+        self,
+        title: str,
+        source_file: str,
+        markdown: str,
+        output_path: Path,
+        instruction: str | None = None,
     ) -> tuple[Path, str]:
         client = self.client or GeminiClient()
         prompt = self.prompt_path.read_text(encoding="utf-8")
+        if instruction and instruction.strip():
+            prompt += (
+                "\n\n---\n\n"
+                + TARGETED_READING_INSTRUCTIONS
+                + "\n\nCONSIGNE UTILISATEUR :\n"
+                + instruction.strip()
+            )
+        else:
+            prompt += "\n\n---\n\n" + NEUTRAL_READING_INSTRUCTIONS
         token_count = count_tokens(markdown)
         model = self.router.for_pdf(token_count)
         if token_count <= model.max_input_tokens:

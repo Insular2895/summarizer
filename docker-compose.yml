@@ -1,0 +1,16 @@
+services:
+  summarizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: summarizer:local
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./cache:/app/cache
+      - ./library/youtube:/app/library/youtube
+      - ./prompts:/app/prompts:ro

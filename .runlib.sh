@@ -135,6 +135,8 @@ install_pdf_engines() {
   echo "[setup] Installing optional PDF engines in isolated local environments."
   echo "[setup] This can take a while. Engines are kept outside the base .venv."
 
+  install_pdf_system_ocr_deps
+
   install_python_engine "OCRmyPDF" ".venv-ocrmypdf" "requirements-pdf-ocrmypdf.txt" \
     "ocrmypdf" "python-module:ocrmypdf" || true
 
@@ -155,6 +157,84 @@ install_pdf_engines() {
   echo
   echo "Important macOS: OCRmyPDF may need tesseract, ghostscript and qpdf."
   echo "Install them with: brew install ocrmypdf"
+}
+
+install_pdf_system_ocr_deps() {
+  if command -v brew >/dev/null 2>&1; then
+    local missing_system_tools="false"
+    for command_name in tesseract qpdf; do
+      if ! command -v "$command_name" >/dev/null 2>&1; then
+        missing_system_tools="true"
+      fi
+    done
+    if ! ghostscript_status | grep -q "available"; then
+      missing_system_tools="true"
+    fi
+    if [[ "$missing_system_tools" == "true" ]]; then
+      echo "[setup] Installation système : ocrmypdf, Tesseract, Ghostscript et qpdf."
+      brew install ocrmypdf
+    fi
+  else
+    echo "[setup] Homebrew absent : outils OCR système non installés."
+    echo "[setup] Sur macOS, installe Homebrew puis relance : brew install ocrmypdf"
+  fi
+}
+
+offer_pdf_engine_install() {
+  local pdf_path="$1"
+  [[ -t 0 && -t 1 ]] || return 0
+  [[ -f "$pdf_path" ]] || return 0
+
+  local plan preferred complexity scanned ocr mineru marker
+  plan="$("$PYTHON_BIN" - "$pdf_path" <<'PY'
+from pathlib import Path
+import sys
+from src.extractors.pdf_analyzer import build_pdf_engine_plan
+
+path = Path(sys.argv[1])
+result = build_pdf_engine_plan(path)
+available = result.available_engines
+print("|".join([
+    result.preferred_engine,
+    result.complexity.complexity,
+    str(result.complexity.scanned_likely).lower(),
+    str(available.get("ocrmypdf", False)).lower(),
+    str(available.get("mineru", False)).lower(),
+    str(available.get("marker", False)).lower(),
+]))
+PY
+)" || return 0
+  IFS='|' read -r preferred complexity scanned ocr mineru marker <<< "$plan"
+
+  local needs_pack="false"
+  if [[ "$scanned" == "true" && "$ocr" != "true" ]]; then
+    needs_pack="true"
+  elif [[ "$complexity" == "high" && "$preferred" == "text" ]]; then
+    needs_pack="true"
+  fi
+
+  [[ "$needs_pack" == "true" ]] || return 0
+
+  echo
+  echo "Le PDF semble ${complexity} et le moteur recommandé n'est pas disponible."
+  echo "Pour poursuivre l'expérience complète, le pack recommandé doit être installé."
+  echo
+  echo "Que veux-tu faire ?"
+  echo "  1) Installer OCRmyPDF + MinerU + Marker (téléchargement local)"
+  echo "  2) Annuler"
+  echo
+  printf "Choix [1/2] : "
+  local choice
+  read -r choice
+  case "$choice" in
+    1)
+      install_pdf_engines false
+      ;;
+    *)
+      echo "Traitement annulé."
+      exit 0
+      ;;
+  esac
 }
 
 install_python_engine() {
