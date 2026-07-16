@@ -15,7 +15,7 @@ from src.extractors.pdf_mineru import extract_pdf_with_mineru
 from src.extractors.pdf_ocrmypdf import extract_pdf_with_ocrmypdf
 from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
-from src.llm.gemini_client import GeminiError
+from src.llm.base import LLMError
 from src.paths import project_path, safe_slug
 from src.pdf_evidence import TechnicalPdfEvidencePipeline
 from src.storage.manifest import JobManifest, VideoStatus, manifest_path_for_playlist
@@ -323,7 +323,7 @@ def run_pdf(
         )
         safe_delete(summary_error_path)
         console.print(f"[6/8] Synthèse Markdown: {output_path}")
-    except GeminiError as exc:
+    except LLMError as exc:
         summary_available = False
         _write_pdf_summary_unavailable(
             output_path,

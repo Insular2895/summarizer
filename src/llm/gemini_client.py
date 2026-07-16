@@ -13,20 +13,21 @@ from google.genai import types
 
 from src.config import ModelConfig
 from src.converters.token_counter import count_tokens
+from src.llm.base import LLMError, LLMInvalidJsonError, LLMQuotaError, effective_model_config
 from src.llm.rate_limiter import RateLimiter
 from src.llm.usage import record_gemini_usage
 from src.paths import project_path
 
 
-class GeminiError(RuntimeError):
+class GeminiError(LLMError):
     pass
 
 
-class GeminiInvalidJsonError(GeminiError):
+class GeminiInvalidJsonError(LLMInvalidJsonError, GeminiError):
     """Gemini returned media successfully, but its structured output is unusable."""
 
 
-class GeminiQuotaError(GeminiError):
+class GeminiQuotaError(LLMQuotaError, GeminiError):
     """Gemini cannot continue because the current project quota is exhausted."""
 
 
@@ -46,6 +47,7 @@ class GeminiClient:
         self.rate_limiter = self.rate_limiter or RateLimiter()
 
     def generate(self, prompt: str, content: str, model_config: ModelConfig) -> str:
+        model_config = effective_model_config(model_config)
         request = f"{prompt.strip()}\n\n---\n\nCONTENU A ANALYSER :\n\n{content.strip()}"
         input_tokens = count_tokens(request)
         last_error: Exception | None = None
@@ -97,6 +99,7 @@ class GeminiClient:
         image_paths: list[Path],
         model_config: ModelConfig,
     ) -> dict[str, Any]:
+        model_config = effective_model_config(model_config)
         if not image_paths:
             raise GeminiError("At least one evidence image is required.")
         parts: list[types.Part] = [

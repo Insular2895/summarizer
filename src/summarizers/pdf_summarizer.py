@@ -4,7 +4,8 @@ from pathlib import Path
 
 from src.converters.token_counter import count_tokens, split_markdown_by_tokens
 from src.exporters.graphipy import frontmatter_pdf
-from src.llm.gemini_client import GeminiClient
+from src.llm.base import LLMClient
+from src.llm.factory import create_llm_client
 from src.llm.model_router import ModelRouter
 from src.paths import ensure_dir, project_path
 
@@ -71,7 +72,7 @@ signalant ce que le document ne permet pas d'établir.
 class PdfSummarizer:
     def __init__(
         self,
-        client: GeminiClient | None = None,
+        client: LLMClient | None = None,
         router: ModelRouter | None = None,
         prompt_path: Path | None = None,
     ) -> None:
@@ -87,7 +88,7 @@ class PdfSummarizer:
         output_path: Path,
         instruction: str | None = None,
     ) -> tuple[Path, str]:
-        client = self.client or GeminiClient()
+        client = self.client or create_llm_client()
         prompt = self.prompt_path.read_text(encoding="utf-8")
         if instruction and instruction.strip():
             prompt += (

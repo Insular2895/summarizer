@@ -18,6 +18,10 @@ La seule étape manuelle est d'ajouter la clé Gemini dans `.env` :
 GEMINI_API_KEY=ta_vraie_cle_api
 ```
 
+Le fournisseur par défaut est Gemini. Pour utiliser une autre IA, configure `LLM_PROVIDER`,
+`LLM_API_KEY`, `LLM_BASE_URL` si nécessaire et les variables `LLM_MODEL_...`. Voir le README pour
+les exemples OpenAI-compatible et Anthropic.
+
 ## Menu interactif
 
 ```bash
