@@ -1,33 +1,46 @@
 # Summarizer
 
-## Transforme une vidéo ou un livre en connaissance utilisable
+## D'une source difficile à lire à une connaissance vraiment utilisable
 
-Summarizer est un outil local qui transforme des vidéos YouTube, des playlists et des PDF complexes
-en documents Markdown clairs, structurés et réellement exploitables.
+Summarizer transforme des livres, des PDF techniques, des vidéos et des playlists YouTube en
+documents clairs, structurés et faciles à réutiliser.
 
-L'objectif n'est pas de produire un résumé générique. L'outil préserve les concepts, les méthodes,
-les exemples, les limites et les points incertains pour rendre une expertise compréhensible,
-vérifiable et réutilisable.
+Ce n'est pas seulement un outil qui raccourcit un texte. Il aide à comprendre une expertise,
+à retrouver les idées importantes et à s'en servir pour apprendre, documenter un sujet ou construire
+un nouvel outil.
 
-```text
-Une source difficile à lire
-        -> extraction robuste
-        -> transcription / OCR / analyse visuelle
-        -> synthèse claire
-        -> connaissance prête à utiliser
-```
+### En une phrase
 
-## Pourquoi c'est puissant
+> Tu donnes un livre ou un lien. Tu récupères une synthèse lisible, précise et orientée vers ce que
+> tu veux réellement comprendre.
 
-- Un PDF peut être natif, scanné, rempli de tableaux, de formules ou de graphiques.
-- Une playlist est traitée vidéo par vidéo, avec reprise possible si le traitement est interrompu.
-- Sans question précise, le PDF devient une lecture neutre, chapitre par chapitre.
-- Avec une consigne, le même document devient une analyse ciblée sur ton problème.
-- Les preuves et contrôles techniques restent disponibles pour vérifier les résultats, sans encombrer
-  la lecture principale.
-- Tout fonctionne localement : tes documents, transcriptions et sorties restent sur ta machine.
+## Ce que tu peux faire
 
-## Installation et lancement
+### Lire un livre ou un PDF
+
+Dépose un PDF dans le dossier indiqué par le menu. Summarizer peut travailler sur un document texte,
+un scan, un livre rempli de tableaux, de formules ou de graphiques.
+
+Tu peux demander deux types de résultat :
+
+- sans question : une lecture neutre, chapitre par chapitre, avec les concepts, les exemples et les
+  limites expliqués clairement ;
+- avec une question : une synthèse ciblée sur ton projet, ton métier ou le problème que tu veux résoudre.
+
+### Comprendre une vidéo ou une playlist
+
+Colle simplement le lien YouTube. Le logiciel comprend automatiquement s'il s'agit d'une vidéo seule
+ou d'une playlist. Chaque vidéo est traitée séparément et peut être reprise si le traitement est
+interrompu.
+
+### Transformer une expertise en outil
+
+Une connaissance métier bien extraite peut devenir la base d'un outil spécialisé : un calculateur,
+un moteur de scénarios, un système de recherche, une checklist ou des garde-fous métier.
+
+Summarizer sert de pont entre la source originale et l'outil que tu veux construire.
+
+## Voir le résultat en quelques minutes
 
 ```bash
 git clone https://github.com/Insular2895/summarizer.git
@@ -36,88 +49,86 @@ cp .env.example .env
 ./summarizer
 ```
 
-Ajoute ensuite ta clé dans `.env` :
+Ajoute ta clé Gemini dans `.env` :
 
 ```env
 GEMINI_API_KEY=ta_cle_api_gemini
 ```
 
-Le menu devient le point d'entrée unique. Il reste ouvert après chaque job : choisis une nouvelle
-action ou `8` pour quitter.
+Ensuite, le menu te guide. Il reste ouvert après chaque traitement : tu peux enchaîner plusieurs
+documents ou liens sans retenir les commandes.
 
-> GitHub ne peut pas exécuter automatiquement un programme après un téléchargement. L'utilisateur
-> ne retient donc qu'une seule commande : `./summarizer`.
+> Un téléchargement GitHub ne peut pas lancer automatiquement un programme sur l'ordinateur de
+> quelqu'un. La seule commande à retenir est donc `./summarizer`.
 
-## Utilisation
+## Le parcours PDF est simple
 
-### PDF
+1. Lance `./summarizer`.
+2. Choisis `1. Résumer un PDF`.
+3. Si aucun fichier n'est trouvé, le dossier `input/pdf/` s'ouvre automatiquement.
+4. Dépose ton PDF dans ce dossier et appuie sur Entrée.
+5. Laisse la lecture neutre par défaut ou écris une consigne précise.
 
-Choisis `1` dans le menu. Si aucun PDF n'est présent, Summarizer ouvre le dossier `input/pdf/`.
-Dépose ton fichier, appuie sur Entrée, puis choisis le mode de lecture.
-
-Par défaut, tu obtiens une lecture neutre et précise, chapitre par chapitre. Tu peux aussi donner
-une consigne, par exemple :
+Exemple de consigne :
 
 ```bash
 ./runpdf "input/pdf/mon-livre.pdf" \
   --instruction "Explique les méthodes utiles pour construire un outil de gestion du risque."
 ```
 
-Le résultat principal se trouve dans `output/books/`. Les fichiers techniques de preuve, de qualité
-et de transcription restent disponibles pour l'audit, mais ne gênent pas la lecture.
+Le fichier principal à lire est ensuite créé dans `output/books/`. Les fichiers de contrôle et de
+preuve restent disponibles à côté pour ceux qui veulent vérifier le travail, mais ils ne polluent
+pas la lecture du résumé.
 
-### YouTube
+## Le parcours YouTube est unifié
 
-Choisis `2`, puis colle une URL. Une vidéo seule ou une playlist est détectée automatiquement :
+Depuis le menu, choisis l'option YouTube et colle l'un ou l'autre lien :
 
 ```bash
 ./runyoutube "https://youtube.com/watch?v=..."
 ./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
-Les transcriptions sont réutilisées localement afin d'éviter les téléchargements inutiles. Les
-résumés finaux sont écrits dans `output/videos/`.
+Les transcriptions sont conservées localement et réutilisées quand c'est possible. Cela évite de
+télécharger deux fois la même vidéo et permet de reprendre une playlist interrompue.
 
-## Étude de cas : Trading Option Greeks
+## Étude de cas : *Trading Option Greeks*
 
-Pour montrer la différence entre un simple résumé et une vraie base de connaissance, nous avons
-traité *Trading Option Greeks* de Dan Passarelli, un ouvrage technique de **357 pages** consacré aux
-options, à la volatilité et à la gestion des risques.
+Pour tester la méthode sur une vraie source métier, nous avons traité *Trading Option Greeks* de
+Dan Passarelli, un ouvrage de **357 pages** sur les options, la volatilité et la gestion des risques.
 
-Le document combinait texte, pages scannées, formules, graphiques et payoffs. Le pipeline a réalisé :
+Le livre contenait du texte, des pages scannées, des formules, des graphiques et des payoff diagrams.
+Le pipeline a dû combiner plusieurs méthodes pour ne pas se contenter d'une extraction superficielle :
 
-- **354 pages OCR** lorsque l'extraction native était insuffisante ;
-- **197 éléments complexes détectés**, notamment des figures, formules et graphiques ;
+- **354 pages OCR** lorsque le texte original n'était pas exploitable ;
+- **197 éléments complexes détectés** : figures, formules, graphiques et tableaux ;
 - **14 contrôles visuels Gemini** sur des preuves ciblées ;
-- une transcription auditable, un rapport de qualité et une synthèse finale lisible.
+- une transcription vérifiable, un rapport de qualité et une synthèse lisible.
 
-La sortie ne se contente pas d'énumérer des chapitres. Elle rend compréhensibles les Greeks,
-la volatilité implicite et réalisée, le delta-neutral, le gamma scalping, les spreads, les straddles,
-les strangles et les risques d'exécution.
+Le résultat explique les Greeks, la volatilité implicite et réalisée, le delta-neutral, le gamma
+scalping, les spreads, les straddles, les strangles et les principaux risques d'exécution.
 
-Cette connaissance peut ensuite servir à concevoir des outils spécialisés :
+La valeur ne vient donc pas seulement du nombre de pages résumées. Elle vient du fait que la source
+devient exploitable pour réfléchir à de futurs outils :
 
 ```text
-Expertise métier
-  -> concepts et mécanismes
-  -> scénarios et exemples
-  -> hypothèses et limites
-  -> spécification d'un outil
-  -> tests et validation humaine
+Connaissance métier
+        -> concepts et mécanismes
+        -> exemples et scénarios
+        -> hypothèses et limites
+        -> idée d'outil
+        -> tests et validation humaine
 ```
 
-Par exemple, elle peut alimenter un calculateur de Greeks, un moteur de scénarios de risque, un
-analyseur de volatilité ou un système de garde-fous. Le livre ne devient jamais automatiquement
-une décision financière : les points ambigus restent signalés et doivent être validés.
+On peut ensuite imaginer un calculateur de Greeks, un moteur de scénarios de risque, un analyseur de
+volatilité ou un système de garde-fous. Le livre ne devient jamais automatiquement une décision
+financière : les points ambigus restent signalés et doivent être validés.
 
-C'est la vocation de Summarizer : transformer une connaissance experte difficile à transmettre en
-matière première claire pour apprendre, documenter et construire des outils plus précis.
+## Une installation légère, des capacités avancées à la demande
 
-## Léger par défaut, puissant à la demande
-
-L'installation standard reste légère. Les moteurs avancés pour les PDF scannés ou très complexes
-ne sont pas imposés à tout le monde. Si un document en a besoin, le terminal propose clairement
-d'installer le pack recommandé **OCRmyPDF + MinerU + Marker**, ou d'annuler.
+L'installation de base reste légère. Les moteurs lourds ne sont pas imposés à tous les utilisateurs.
+Si un PDF scanné ou complexe en a besoin, le terminal explique ce qui va être installé et propose
+le pack recommandé **OCRmyPDF + MinerU + Marker**, ou l'annulation.
 
 Une image Docker reproductible est également disponible :
 
@@ -128,18 +139,25 @@ docker compose run --rm summarizer run-pdf input/pdf/mon-livre.pdf
 docker compose run --rm summarizer run-youtube "https://youtube.com/..."
 ```
 
-## Organisation simple
+## Ce que tu obtiens
 
 ```text
-input/       tes PDF et URLs
-output/      les résultats lisibles
-cache/       les fichiers temporaires
-prompts/     les consignes modifiables
-.env         ta configuration privée
+output/books/   synthèses de livres et PDF
+output/videos/  synthèses de vidéos et playlists
 ```
 
-Les données personnelles, PDF, caches, outputs et bibliothèques locales ne sont pas destinés à être
-publiés dans GitHub.
+Les documents finaux sont en Markdown : ils peuvent être lus directement, recherchés, versionnés
+ou importés dans une base de connaissance comme Graphipy.
+
+Les fichiers temporaires, les preuves et les détails techniques sont séparés des résultats destinés
+à la lecture.
+
+## Respect de la vie privée
+
+Le projet est conçu pour fonctionner localement. Tes PDF, transcriptions, caches et résultats restent
+sur ta machine et ne sont pas destinés à être publiés dans GitHub.
+
+Ne commit jamais `.env`, une clé API, des cookies, des PDF ou des sorties personnelles.
 
 ## Commandes utiles
 
@@ -152,9 +170,6 @@ publiés dans GitHub.
 | Vérifier les moteurs PDF | `./runpdf --engines-status` |
 | Nettoyer le cache | `./.venv/bin/python -m src.cli cleanup --cache` |
 
-Pour les options avancées, consulte [COMMANDS.md](COMMANDS.md).
-
-## Licence et sécurité
-
-Le projet est conçu pour fonctionner localement et garder les sources privées. Ne commit jamais
-`.env`, des clés API, des PDF, des cookies ou des sorties personnelles.
+Les commandes avancées et les détails de fonctionnement sont regroupés dans
+[COMMANDS.md](COMMANDS.md). Les règles de maintenance du projet sont dans
+[AI_MAINTENANCE.md](AI_MAINTENANCE.md).
