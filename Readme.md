@@ -69,6 +69,23 @@ Ajoute ta clé Gemini dans `.env` :
 GEMINI_API_KEY=ta_cle_api_gemini
 ```
 
+## Quelle IA utiliser ?
+
+Le projet est aujourd'hui configuré et testé avec **Gemini**. Il suffit donc de renseigner
+`GEMINI_API_KEY` pour les résumés, l'analyse des PDF et les contrôles visuels.
+
+Gemini est recommandé pour commencer parce que Google propose généralement une offre gratuite avec
+des quotas adaptés à un usage personnel ou à des tests. Ce n'est pas une gratuité illimitée : les
+quotas, les modèles disponibles et les conditions peuvent varier selon le compte et l'utilisation.
+
+Le code est pensé pour pouvoir accueillir d'autres IA, mais elles ne sont pas encore branchées
+directement. Aujourd'hui, remplacer la clé Gemini par une clé OpenAI, Anthropic, Mistral ou autre ne
+suffit pas : le client API, le routage des modèles, les erreurs, le suivi d'usage et l'analyse visuelle
+doivent encore être adaptés à chaque fournisseur.
+
+En résumé : **Gemini fonctionne maintenant ; les autres fournisseurs sont une extension possible,
+pas une fonctionnalité déjà garantie.**
+
 Ensuite, le menu te guide. Il reste ouvert après chaque traitement : tu peux enchaîner plusieurs
 documents ou liens sans retenir les commandes.
 
