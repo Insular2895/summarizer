@@ -9,7 +9,8 @@ from typing import Any
 from dotenv import load_dotenv
 
 from src.config import load_models
-from src.llm.gemini_client import GeminiClient, GeminiError, GeminiQuotaError
+from src.llm.base import LLMError, LLMQuotaError
+from src.llm.factory import create_llm_client
 from src.paths import ensure_dir, project_path
 from src.pdf_evidence.core import (
     DetectedElement,
@@ -155,7 +156,7 @@ class TechnicalPdfEvidencePipeline:
                         except Exception as exc:  # keep local evidence even if remote review fails
                             gemini_calls += 1
                             gemini_failures += 1
-                            if isinstance(exc, GeminiQuotaError) or _is_quota_exhaustion(exc):
+                            if isinstance(exc, LLMQuotaError) or _is_quota_exhaustion(exc):
                                 gemini_circuit_open = True
                                 gemini_circuit_reason = "quota_exhausted"
                             element.status = ReviewStatus.HUMAN_REVIEW_REQUIRED
@@ -253,8 +254,8 @@ class TechnicalPdfEvidencePipeline:
             return None
         load_dotenv(project_path(".env"))
         try:
-            client = GeminiClient()
-        except GeminiError:
+            client = create_llm_client()
+        except LLMError:
             return None
         models = load_models()
         model = models.get("pdf_visual_verifier")

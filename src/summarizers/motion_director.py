@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Any
 
 from src.converters.token_counter import count_tokens
-from src.llm.gemini_client import GeminiClient
+from src.llm.base import LLMClient
+from src.llm.factory import create_llm_client
 from src.llm.model_router import ModelRouter
 from src.motion.schema import MotionOptions, validate_motion_result
 from src.paths import ensure_dir, project_path
@@ -15,7 +16,7 @@ from src.paths import ensure_dir, project_path
 class MotionDirector:
     def __init__(
         self,
-        client: GeminiClient | None = None,
+        client: LLMClient | None = None,
         router: ModelRouter | None = None,
         prompt_path: Path | None = None,
     ) -> None:
@@ -32,7 +33,7 @@ class MotionDirector:
         options: MotionOptions,
     ) -> tuple[Path, str]:
         model = self.router.for_video(count_tokens(transcript))
-        client = self.client or GeminiClient()
+        client = self.client or create_llm_client()
         prompt = self.prompt_path.read_text(encoding="utf-8")
         options_json = json.dumps(options.__dict__, ensure_ascii=False)
         prompt = f"{prompt}\n\nOPTIONS DE PRODUCTION:\n{options_json}"

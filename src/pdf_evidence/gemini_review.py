@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from src.config import ModelConfig
-from src.llm.gemini_client import GeminiClient, GeminiInvalidJsonError
+from src.llm.base import LLMClient, LLMInvalidJsonError
 from src.pdf_evidence.core import DetectedElement, read_json, write_json
 from src.pdf_evidence.validation import validate_visual_review_response
 
@@ -13,7 +13,7 @@ from src.pdf_evidence.validation import validate_visual_review_response
 class GeminiVisualReviewer:
     def __init__(
         self,
-        client: GeminiClient,
+        client: LLMClient,
         model_config: ModelConfig,
         prompt_path: Path,
     ) -> None:
@@ -44,7 +44,7 @@ class GeminiVisualReviewer:
                 self.model_config,
             )
             validate_visual_review_response(value, element.element_id)
-        except (GeminiInvalidJsonError, ValueError, json.JSONDecodeError) as first_error:
+        except (LLMInvalidJsonError, ValueError, json.JSONDecodeError) as first_error:
             repair_attempted = True
             if "value" in locals() and isinstance(value, dict):
                 first_invalid_response = value
