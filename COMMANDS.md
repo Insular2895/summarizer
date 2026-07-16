@@ -59,6 +59,66 @@ Test rapide sur les 10 premières pages :
 ./runpdf "input/pdf/mon-livre.pdf" --max-pages 10 --overwrite
 ```
 
+Le pipeline de preuves techniques et la vérification visuelle Gemini sont actifs par défaut.
+Pour isoler un diagnostic local sans appel visuel :
+
+```bash
+./.venv/bin/python -m src.cli run-pdf "input/pdf/mon-livre.pdf" \
+  --no-visual-review --overwrite
+```
+
+Pour désactiver entièrement les preuves techniques (résumé classique uniquement) :
+
+```bash
+./.venv/bin/python -m src.cli run-pdf "input/pdf/mon-livre.pdf" \
+  --no-technical-evidence --overwrite
+```
+
+Inspecter une page précise sans modifier le PDF ni la transcription :
+
+```bash
+./pdf-evidence inspect "/chemin/vers/livre.pdf" \
+  --pdf-page 132 \
+  --element-id p000132-table-7-2 \
+  --dpi 450 \
+  --include-context \
+  --open-images
+```
+
+`--pdf-page` désigne toujours la page PDF, à partir de 1. Le paquet écrit sous
+`cache/pdf_evidence_inspection/` conserve séparément la page PDF et la page imprimée détectée.
+
+Vérifier que les 19 garde-fous de régression sont tous reliés à un test nommé :
+
+```bash
+./pdf-evidence regression \
+  --output cache/pdf_evidence_golden/regression-report.json
+```
+
+Comparer un sidecar local aux annotations humaines disponibles, sans modifier la
+transcription :
+
+```bash
+./pdf-evidence score "output/books/mon-livre.sidecar.json" \
+  --output cache/pdf_evidence_golden/mon-livre-score.json
+```
+
+Une correction quantitative ne peut être promue qu'avec une revue humaine explicite :
+
+```bash
+./pdf-evidence review-template "output/books/mon-livre.sidecar.json" \
+  --element-id p000132-table-7-2 \
+  --visual-review "output/books/mon-livre.evidence/p000132-table-7-2/gemini_review.json" \
+  --output "cache/pdf_evidence_reviews/p000132-table-7-2.human-review.json"
+
+# Après contrôle et approbation explicite du JSON de revue :
+./pdf-evidence resolve "output/books/mon-livre.sidecar.json" \
+  --review "cache/pdf_evidence_reviews/p000132-table-7-2.human-review.json"
+```
+
+`resolve` crée de nouveaux fichiers `.resolved.sidecar.json` et `.verified.md`. Il ne
+modifie ni le PDF, ni l'OCR brut, ni la transcription initiale.
+
 PDF hors du repo :
 
 ```bash

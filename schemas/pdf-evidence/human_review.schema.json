@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.transcripts/schemas/pdf-evidence/human_review.schema.json",
+  "title": "Explicit human review for a technical PDF element",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "review_id",
+    "document_sha256",
+    "element_id",
+    "reviewer",
+    "decision",
+    "evidence_files",
+    "reviewed_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "review_id": {"type": "string", "minLength": 1},
+    "document_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "element_id": {"type": "string", "minLength": 1},
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "name"],
+      "properties": {
+        "type": {"const": "human"},
+        "name": {"type": "string", "minLength": 1}
+      }
+    },
+    "decision": {
+      "enum": ["approve_corrected_structure", "keep_blocked"]
+    },
+    "corrected_structure": {"type": "object"},
+    "corrected_page": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "pdf_page_index": {"type": ["integer", "null"]},
+        "pdf_page_number": {"type": ["integer", "null"]},
+        "printed_page_raw": {"type": ["string", "null"]},
+        "printed_page_normalized": {"type": ["integer", "null"]},
+        "printed_page_confidence": {"type": ["number", "null"]}
+      }
+    },
+    "evidence_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notes": {"type": "string"},
+    "reviewed_at": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"decision": {"const": "approve_corrected_structure"}}
+      },
+      "then": {"required": ["corrected_structure"]}
+    }
+  ]
+}

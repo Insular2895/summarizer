@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.transcripts/schemas/pdf-evidence/technical_pdf_sidecar.schema.json",
+  "title": "Technical PDF canonical sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest", "pages_analyzed", "elements"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "manifest": {
+      "type": "object",
+      "required": ["document_id", "source_file", "sha256", "page_count", "pipeline_version"]
+    },
+    "pages_analyzed": {"type": "integer", "minimum": 0},
+    "resolution": {
+      "type": "object",
+      "required": ["source_sidecar", "review_files", "canonical_policy"],
+      "properties": {
+        "source_sidecar": {"type": "string"},
+        "review_files": {"type": "array", "items": {"type": "string"}},
+        "canonical_policy": {"const": "explicit_human_review_only"}
+      }
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "element_id",
+          "element_type",
+          "page",
+          "bbox",
+          "extraction_candidate",
+          "confidence",
+          "alerts",
+          "status",
+          "text_source",
+          "data_digitized"
+        ],
+        "properties": {
+          "element_type": {
+            "enum": ["table", "formula", "figure", "chart", "payoff_diagram"]
+          },
+          "status": {
+            "enum": [
+              "machine_verified",
+              "machine_verified_with_visual_check",
+              "machine_reviewed",
+              "needs_visual_review",
+              "human_verified",
+              "human_review_required",
+              "blocked",
+              "unextractable",
+              "image_only"
+            ]
+          },
+          "bbox": {
+            "type": "array",
+            "items": {"type": "number"},
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "data_digitized": {"type": ["boolean", "null"]},
+          "canonical_extraction": {
+            "type": "object",
+            "required": ["status", "source", "review_id", "reviewed_at", "structure"],
+            "properties": {
+              "status": {"const": "human_verified"},
+              "source": {"const": "explicit_human_review"},
+              "review_id": {"type": "string", "minLength": 1},
+              "reviewed_at": {"type": "string", "format": "date-time"},
+              "structure": {"type": "object"},
+              "page": {"type": "object"}
+            }
+          },
+          "review_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "review_id",
+                "reviewer",
+                "decision",
+                "reviewed_at",
+                "evidence_files",
+                "review_file",
+                "review_file_sha256"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "annotation_status": "human_reference_from_user_supplied_page_images",
+  "source_title": "Trading Option Greeks",
+  "source_sha256": "e3f8ac415cb32762c1409280082d2b0c8221c37f358839dad69c5ec8edb34071",
+  "copyrighted_source_committed": false,
+  "cases": [
+    {
+      "id": "PASS-GREEKS-LONG-GAMMA",
+      "difficulty": ["scan_clean", "multi_level_headers", "signed_decimals", "greeks"],
+      "critical": true,
+      "pdf_page_number": 273,
+      "printed_page": 249,
+      "element_match": {
+        "element_id": "p000273-figure-13-1",
+        "element_type": "figure",
+        "figure_number": "13.1",
+        "raw_text_contains": "Greeks for 20-Lot Delta-Neutral Long Call"
+      },
+      "assertions": [
+        {"id": "delta", "kind": "quantitative_token", "expected": "0", "quantitative": true},
+        {"id": "gamma", "kind": "quantitative_token", "expected": "+2.80", "quantitative": true},
+        {"id": "theta", "kind": "quantitative_token", "expected": "-0.50", "aliases": ["-.50"], "quantitative": true},
+        {"id": "vega", "kind": "quantitative_token", "expected": "+1.15", "quantitative": true}
+      ]
+    },
+    {
+      "id": "PASS-GAMMA-SCALP-DAY-ONE",
+      "difficulty": ["scan_clean", "formulas", "currency", "signed_decimals"],
+      "critical": true,
+      "pdf_page_number": 274,
+      "printed_page": 250,
+      "element_match": {
+        "element_id": "p000274-formula-01",
+        "element_type": "formula"
+      },
+      "assertions": [
+        {"id": "shares", "kind": "quantitative_token", "expected": "560", "quantitative": true},
+        {"id": "sale_price", "kind": "quantitative_token", "expected": "$42", "quantitative": true},
+        {"id": "purchase_price", "kind": "quantitative_token", "expected": "$40", "quantitative": true},
+        {"id": "gross_scalp", "kind": "quantitative_token", "expected": "$1,120", "aliases": ["$1120"], "quantitative": true},
+        {"id": "theta_cost", "kind": "quantitative_token", "expected": "-$50", "aliases": ["-50"], "quantitative": true},
+        {"id": "net_profit", "kind": "quantitative_token", "expected": "$1,070", "aliases": ["$1070"], "quantitative": true}
+      ]
+    },
+    {
+      "id": "PASS-GREEKS-SHORT-GAMMA",
+      "difficulty": ["scan_clean", "multi_level_headers", "signed_decimals", "greeks"],
+      "critical": true,
+      "pdf_page_number": 279,
+      "printed_page": 255,
+      "element_match": {
+        "element_id": "p000279-figure-13-2",
+        "element_type": "figure",
+        "figure_number": "13.2",
+        "raw_text_contains": "Greeks for 20-Lot Delta-Neutral Short Call"
+      },
+      "assertions": [
+        {"id": "delta", "kind": "quantitative_token", "expected": "0", "quantitative": true},
+        {"id": "gamma", "kind": "quantitative_token", "expected": "-2.80", "quantitative": true},
+        {"id": "theta", "kind": "quantitative_token", "expected": "+0.50", "aliases": ["+.50"], "quantitative": true},
+        {"id": "vega", "kind": "quantitative_token", "expected": "-1.15", "quantitative": true}
+      ]
+    },
+    {
+      "id": "PASS-POSITIVE-GAMMA-PAYOFF",
+      "difficulty": ["payoff_diagram", "low_contrast", "figure_caption_at_page_bottom"],
+      "critical": true,
+      "pdf_page_number": 284,
+      "printed_page": 260,
+      "element_match": {
+        "element_type": "payoff_diagram",
+        "figure_number": "13.3",
+        "raw_text_contains": "Positive-Gamma Delta-Neutral Position"
+      },
+      "assertions": [
+        {"id": "present", "kind": "element_present", "expected": true, "quantitative": false},
+        {"id": "not_silently_digitized", "kind": "data_digitized", "expected": false, "quantitative": false}
+      ]
+    },
+    {
+      "id": "PASS-IV-RV-MULTI-SERIES",
+      "difficulty": ["multi_series_chart", "implied_volatility", "realized_volatility"],
+      "critical": true,
+      "pdf_page_number": 289,
+      "printed_page": 265,
+      "element_match": {
+        "element_type": "figure",
+        "figure_number": "14.1",
+        "raw_text_contains": "Volatility Rises"
+      },
+      "assertions": [
+        {"id": "present", "kind": "element_present", "expected": true, "quantitative": false},
+        {"id": "not_silently_digitized", "kind": "data_digitized", "expected": false, "quantitative": false}
+      ]
+    }
+  ]
+}

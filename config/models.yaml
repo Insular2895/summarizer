@@ -28,3 +28,9 @@ models:
     max_input_tokens: 160000
     max_output_tokens: 32000
     temperature: 0.15
+
+  pdf_visual_verifier:
+    model: "gemini-2.5-flash"
+    max_input_tokens: 32000
+    max_output_tokens: 8000
+    temperature: 0.0

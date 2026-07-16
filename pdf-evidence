@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT_DIR"
+
+source "$ROOT_DIR/.runlib.sh"
+ensure_runtime
+
+case "${1:-}" in
+  inspect)
+    shift
+    exec "$PYTHON_BIN" -m src.cli pdf-evidence-inspect "$@"
+    ;;
+  score)
+    shift
+    exec "$PYTHON_BIN" -m src.cli pdf-evidence-score "$@"
+    ;;
+  regression)
+    shift
+    exec "$PYTHON_BIN" -m src.cli pdf-evidence-regression "$@"
+    ;;
+  review-template)
+    shift
+    exec "$PYTHON_BIN" -m src.cli pdf-evidence-review-template "$@"
+    ;;
+  resolve)
+    shift
+    exec "$PYTHON_BIN" -m src.cli pdf-evidence-resolve "$@"
+    ;;
+  *)
+    echo 'Usage:'
+    echo '  ./pdf-evidence inspect "book.pdf" --pdf-page 132 [--element-id ID] [--open-images]'
+    echo '  ./pdf-evidence score "book.sidecar.json" [--output golden-score.json]'
+    echo '  ./pdf-evidence regression [--output regression-report.json]'
+    echo '  ./pdf-evidence review-template "book.sidecar.json" --element-id ID --visual-review gemini_review.json --output human_review.json'
+    echo '  ./pdf-evidence resolve "book.sidecar.json" --review human_review.json'
+    exit 1
+    ;;
+esac

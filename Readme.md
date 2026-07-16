@@ -10,7 +10,8 @@
   <a href="https://www.apple.com/macos/"><img src="docs/assets/badge-platform-macos-animated.svg" alt="Platform macOS" height="28" /></a>
 </p>
 
-**Pipeline local pour transformer YouTube, playlists et PDF en résumés Markdown propres avec Gemini.**
+**Pipeline local pour transformer YouTube, playlists et PDF en Markdown, avec preuves
+structurées pour les documents techniques et synthèse Gemini.**
 
 `input/` pour déposer les sources. `output/` pour récupérer les résultats. `prompts/` pour piloter le style.
 
@@ -56,6 +57,7 @@ Ensuite `./runpdf ... --engine smart` active automatiquement le meilleur moteur 
 | Menu interactif | `./summarizer` |
 | Voir l'aide simple | `./runhelp` |
 | Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
+| Inspecter une preuve PDF | `./pdf-evidence inspect "livre.pdf" --pdf-page 132` |
 | Résumer une vidéo | `./runyoutube "https://youtube.com/watch?v=..."` |
 | Résumer une playlist | `./runyoutube "https://youtube.com/playlist?list=..."` |
 | Générer des briefs Motion | `./runyoutube "https://youtube.com/playlist?list=..." --mode motion-director` |
@@ -131,9 +133,50 @@ Commandes pratiques :
 Résultats :
 
 ```txt
-output/books/
-output/graphipy_ready/
+output/books/<livre>.transcription.md  # extraction nettoyée, à revoir
+output/books/<livre>.sidecar.json      # éléments techniques canoniques
+output/books/<livre>.quality.json      # qualité, alertes et statuts
+output/books/<livre>.evidence/         # pages, crops et revues visuelles
+output/books/<livre>.md                # synthèse Gemini
 ```
+
+### Preuves techniques V2
+
+Par défaut, les PDF passent aussi dans un pipeline conservateur qui détecte les tableaux,
+formules, figures, graphiques et payoff diagrams. Le traitement local reste primaire ; Gemini
+reçoit uniquement des paquets de preuve ciblés (page + crop + extraction candidate). Un signe,
+une décimale, une colonne ou un calcul ambigu ne peut jamais être corrigé silencieusement.
+
+Les statuts `blocked`, `needs_visual_review` et `human_review_required` empêchent de considérer
+la donnée quantitative comme validée. Les graphiques restent `image_only` tant que leurs axes
+ne permettent pas une numérisation déterministe.
+
+Documentation et schémas : [docs/PDF_EVIDENCE.md](docs/PDF_EVIDENCE.md).
+
+#### État de validation au 16 juillet 2026
+
+- suite locale complète : **93 tests réussis** ;
+- matrice de garde-fous G01–G19 : **19/19 cas couverts** par des tests déterministes ;
+- difficultés appuyées par des annotations de pages réelles : **8 familles sur 19** ;
+- corpus Passarelli ciblé : **0 erreur quantitative dangereuse acceptée sans alerte** ;
+- couverture humaine fiable actuelle : **4 assertions sur 18**.
+
+Ce résultat signifie que les valeurs douteuses sont bloquées, pas que tous les tableaux,
+formules et scans possibles sont transcrits parfaitement. Une donnée `blocked` ou
+`needs_visual_review` est sûre contre une utilisation silencieuse, mais reste inutilisable
+quantitativement jusqu'à sa revue. Les PDF et captures de livres ne sont jamais commités.
+
+Vérifier la matrice et mesurer un sidecar local :
+
+```bash
+./pdf-evidence regression --output cache/pdf_evidence_golden/regression-report.json
+./pdf-evidence score "output/books/livre.sidecar.json" \
+  --output cache/pdf_evidence_golden/livre-score.json
+```
+
+La procédure de correction auditée (`review-template` puis `resolve`), les formats de sortie,
+les seuils et toutes les limites sont documentés dans
+[docs/PDF_EVIDENCE.md](docs/PDF_EVIDENCE.md).
 
 ---
 

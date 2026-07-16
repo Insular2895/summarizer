@@ -17,3 +17,7 @@
 #   pip install -r requirements-pdf-marker.txt
 #
 # The base pipeline still works without these engines via the pypdf text fallback.
+
+# Common deterministic rendering/layout dependency used by the evidence pipeline.
+# It is intentionally separate from the OCR engines above.
+PyMuPDF>=1.24,<2
