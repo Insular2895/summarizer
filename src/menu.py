@@ -21,33 +21,30 @@ def run_interactive_menu(root_dir: Path | None = None) -> None:
         _print_header()
         choice = Prompt.ask(
             "Choix",
-            choices=["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+            choices=["1", "2", "3", "4", "5", "6", "7", "8"],
             default="1",
         )
         if choice == "1":
             run_pdf_flow(root)
         elif choice == "2":
-            run_youtube_flow(root, playlist=False)
+            run_youtube_flow(root)
         elif choice == "3":
-            run_youtube_flow(root, playlist=True)
-        elif choice == "4":
             run_youtube_batch(root)
-        elif choice == "5":
+        elif choice == "4":
             run_command([str(root / "runpdf"), "--engines-status"], root)
-        elif choice == "6":
+        elif choice == "5":
             args = [str(root / "runpdf"), "--setup-engines"]
             if Confirm.ask("Télécharger aussi les modèles MinerU ?", default=False):
                 args.append("--download-mineru-models")
             run_command(args, root)
-        elif choice == "7":
+        elif choice == "6":
             run_command([sys.executable, "-m", "src.cli", "cleanup", "--cache"], root)
-        elif choice == "8":
+        elif choice == "7":
             print_usage_summary()
         else:
             console.print("À bientôt.")
             return
-        if not Confirm.ask("Revenir au menu ?", default=True):
-            return
+        console.print("\n[dim]Job terminé. Retour au menu…[/]\n")
 
 
 def discover_pdf_files(root_dir: Path) -> list[Path]:
@@ -55,7 +52,13 @@ def discover_pdf_files(root_dir: Path) -> list[Path]:
     return sorted(path for path in input_dir.glob("*.pdf") if path.is_file())
 
 
-def build_pdf_command(root_dir: Path, pdf_path: Path, mode: str, overwrite: bool) -> list[str]:
+def build_pdf_command(
+    root_dir: Path,
+    pdf_path: Path,
+    mode: str,
+    overwrite: bool,
+    instruction: str | None = None,
+) -> list[str]:
     command = [str(root_dir / "runpdf"), str(pdf_path)]
     if mode == "smart":
         command.extend(["--engine", "smart"])
@@ -71,6 +74,8 @@ def build_pdf_command(root_dir: Path, pdf_path: Path, mode: str, overwrite: bool
         raise ValueError(f"Unknown PDF mode: {mode}")
     if overwrite:
         command.append("--overwrite")
+    if instruction:
+        command.extend(["--instruction", instruction])
     return command
 
 
@@ -80,15 +85,36 @@ def run_pdf_flow(root: Path) -> None:
         return
     mode = choose_pdf_mode()
     overwrite = Confirm.ask("Écraser l'output s'il existe déjà ?", default=False)
-    run_command(build_pdf_command(root, pdf_path, mode, overwrite), root)
+    instruction = Prompt.ask(
+        "Consigne optionnelle (Entrée = lecture neutre chapitre par chapitre)",
+        default="",
+    ).strip()
+    run_command(build_pdf_command(root, pdf_path, mode, overwrite, instruction), root)
 
 
 def choose_pdf(root: Path) -> Path | None:
     pdfs = discover_pdf_files(root)
     if not pdfs:
-        console.print("[yellow]Aucun PDF trouvé dans input/pdf/.[/]")
-        manual = Prompt.ask("Chemin du PDF, ou Entrée pour annuler", default="")
-        return Path(manual).expanduser() if manual else None
+        input_dir = root / "input" / "pdf"
+        input_dir.mkdir(parents=True, exist_ok=True)
+        console.print(
+            "[yellow]Aucun PDF trouvé.[/] Dépose ton fichier dans [cyan]input/pdf/[/], "
+            "puis appuie sur Entrée."
+        )
+        open_folder(input_dir)
+        manual = (
+            Prompt.ask("Chemin direct du PDF (ou Entrée après l'avoir déposé)", default="")
+            .strip()
+            .strip('"')
+            .strip("'")
+        )
+        if manual:
+            candidate = Path(manual).expanduser()
+            return candidate if is_pdf(candidate) else invalid_pdf(candidate)
+        pdfs = discover_pdf_files(root)
+        if not pdfs:
+            console.print("[yellow]Toujours aucun PDF. Le job est annulé.[/]")
+            return None
     if len(pdfs) == 1:
         console.print(f"PDF détecté : [cyan]{pdfs[0]}[/]")
         return pdfs[0]
@@ -100,6 +126,27 @@ def choose_pdf(root: Path) -> Path | None:
     console.print(table)
     choice = Prompt.ask("Choisir un PDF", choices=[str(i) for i in range(1, len(pdfs) + 1)])
     return pdfs[int(choice) - 1]
+
+
+def is_pdf(path: Path) -> bool:
+    return path.is_file() and path.suffix.lower() == ".pdf"
+
+
+def invalid_pdf(path: Path) -> None:
+    console.print(f"[red]PDF introuvable ou extension invalide : {path}[/]")
+    return None
+
+
+def open_folder(path: Path) -> None:
+    try:
+        if sys.platform == "darwin":
+            subprocess.run(["open", str(path)], check=False)
+        elif sys.platform.startswith("linux"):
+            subprocess.run(["xdg-open", str(path)], check=False)
+        elif sys.platform == "win32":
+            subprocess.run(["explorer", str(path)], check=False)
+    except OSError:
+        console.print("[dim]Ouvre manuellement le dossier input/pdf/.[/]")
 
 
 def choose_pdf_mode() -> str:
@@ -121,18 +168,15 @@ def choose_pdf_mode() -> str:
     return modes[int(choice) - 1][1]
 
 
-def run_youtube_flow(root: Path, playlist: bool) -> None:
-    label = "playlist" if playlist else "vidéo"
-    url = Prompt.ask(f"URL de la {label} YouTube").strip()
+def run_youtube_flow(root: Path) -> None:
+    url = Prompt.ask("URL YouTube (vidéo ou playlist)").strip()
     if not url:
         console.print("[yellow]Annulé.[/]")
         return
     command = [str(root / "runyoutube"), url]
-    if playlist and Confirm.ask("Reprendre si un manifest existe déjà ?", default=True):
+    is_playlist = "list=" in url or "/playlist" in url
+    if is_playlist and Confirm.ask("Reprendre si la playlist a déjà commencé ?", default=True):
         command.append("--resume")
-    limit = Prompt.ask("Limiter le nombre de vidéos ? Entrée = non", default="").strip()
-    if limit:
-        command.extend(["--limit", limit])
     run_command(command, root)
 
 
@@ -197,14 +241,13 @@ def _print_header() -> None:
                 [
                     "[bold]Summarizer[/]",
                     "1. Résumer un PDF",
-                    "2. Résumer une vidéo YouTube",
-                    "3. Résumer une playlist YouTube",
-                    "4. Lancer input/youtube/urls.txt",
-                    "5. Vérifier les moteurs PDF",
-                    "6. Installer les moteurs PDF",
-                    "7. Nettoyer le cache",
-                    "8. Voir l'usage Gemini",
-                    "9. Quitter",
+                    "2. Résumer une vidéo ou une playlist YouTube",
+                    "3. Lancer plusieurs URLs depuis input/youtube/urls.txt",
+                    "4. Vérifier les moteurs PDF",
+                    "5. Installer le pack PDF recommandé",
+                    "6. Nettoyer le cache",
+                    "7. Voir l'usage Gemini",
+                    "8. Quitter",
                 ]
             ),
             border_style="cyan",

@@ -24,7 +24,8 @@ GEMINI_API_KEY=ta_vraie_cle_api
 ./summarizer
 ```
 
-Le menu propose PDF, vidéo, playlist, batch d'URLs, moteurs PDF, nettoyage cache et usage Gemini.
+Le menu propose PDF, YouTube (vidéo ou playlist), batch d'URLs, moteurs PDF, nettoyage cache et usage Gemini.
+Après chaque job, il revient automatiquement au menu. La commande unique à retenir est `./summarizer`.
 
 Installer les moteurs PDF avancés en local :
 
@@ -35,16 +36,29 @@ Installer les moteurs PDF avancés en local :
 
 ## PDF
 
-Déposer les PDF dans :
+Depuis le menu, choisir `1. Résumer un PDF`. Si aucun PDF n'est trouvé, le dossier suivant s'ouvre
+automatiquement quand le système le permet :
 
 ```txt
 input/pdf/
 ```
 
+Dépose le fichier dans ce dossier puis appuie sur Entrée. Tu peux aussi coller directement son chemin
+dans le terminal. Une consigne vide produit une lecture neutre chapitre par chapitre ; une consigne
+personnalisée produit un résumé orienté par ta question.
+
 Commande simple :
 
 ```bash
 ./runpdf "input/pdf/mon-livre.pdf"
+```
+
+Sans consigne, le résultat est une lecture neutre chapitre par chapitre. Pour demander une
+analyse ciblée :
+
+```bash
+./runpdf "input/pdf/mon-livre.pdf" \
+  --instruction "Explique les concepts utiles pour construire une stratégie de couverture du risque."
 ```
 
 Dry-run :

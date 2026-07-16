@@ -27,3 +27,20 @@ def test_build_pdf_command_for_sample_mode(tmp_path: Path) -> None:
         "10",
         "--overwrite",
     ]
+
+
+def test_build_pdf_command_adds_optional_instruction(tmp_path: Path) -> None:
+    pdf_path = tmp_path / "input" / "pdf" / "book.pdf"
+
+    command = build_pdf_command(
+        tmp_path,
+        pdf_path,
+        mode="smart",
+        overwrite=False,
+        instruction="Explique les méthodes utiles à mon projet",
+    )
+
+    assert command[-2:] == [
+        "--instruction",
+        "Explique les méthodes utiles à mon projet",
+    ]

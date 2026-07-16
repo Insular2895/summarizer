@@ -19,10 +19,16 @@
     "AGENTS.md": true,
     "AI_MAINTENANCE.md": true,
     "CHANGELOG.md": true,
+    "COMMANDS.md": true,
     "cache": true,
     "config": true,
     "cookies.txt": true,
     "docs": true,
+    "output/**/*.evidence": true,
+    "output/**/.gitkeep": true,
+    "output/**/*.json": true,
+    "output/**/*transcription*.md": true,
+    "output/**/*.transcription.md": true,
     "playlists": true,
     "pyproject.toml": true,
     "requirements*.txt": true,
@@ -30,7 +36,9 @@
     "runhelp": true,
     "runpdf": true,
     "runyoutube": true,
-    "summarizer": false,
+    "pdf-evidence": true,
+    "Readme.md": true,
+    "summarizer": true,
     "src": true,
     "tests": true,
     "yt-dlp.log": true
@@ -59,5 +67,6 @@
     "runpdf": true,
     "runyoutube": true,
     "yt-dlp.log": true
-  }
+  },
+  "snyk.advanced.autoSelectOrganization": true
 }

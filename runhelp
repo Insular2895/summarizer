@@ -12,6 +12,8 @@ Summarizer quick commands
 Interactive menu:
   ./summarizer
 
+  The menu stays open after every job. Choose Quit to exit.
+
 First run:
   ./runpdf and ./runyoutube create .venv and install base dependencies
   automatically if needed.
@@ -30,8 +32,8 @@ macOS OCR tools:
   Installs OCRmyPDF system dependencies like tesseract, ghostscript and qpdf.
 
 YouTube:
-  ./runyoutube "https://youtube.com/watch?v=..."
-  ./runyoutube "https://youtube.com/playlist?list=..." --resume
+  ./runyoutube "https://youtube.com/..."
+  A video or playlist URL is detected automatically.
   ./runyoutube "https://youtube.com/playlist?list=..." --limit 2 --dry-run
   ./runyoutube --file input/youtube/urls.txt
 

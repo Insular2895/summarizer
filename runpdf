@@ -72,6 +72,9 @@ if [[ $# -eq 0 || "${1:-}" == "--dry-run" ]]; then
 fi
 
 ensure_runtime
+if [[ "${1:-}" != "--dry-run" ]]; then
+  offer_pdf_engine_install "${1:-}"
+fi
 ensure_env_file
 activate_pdf_engine_bins
 
