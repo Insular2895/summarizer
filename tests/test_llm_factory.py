@@ -27,3 +27,14 @@ def test_factory_selects_anthropic_provider(monkeypatch) -> None:
     monkeypatch.setattr("src.llm.factory.AnthropicClient", lambda: sentinel)
 
     assert create_llm_client() is sentinel
+
+
+def test_auto_ignores_empty_keys_and_selects_configured_provider(monkeypatch) -> None:
+    sentinel = object()
+    monkeypatch.setenv("LLM_PROVIDER", "auto")
+    monkeypatch.setenv("GEMINI_API_KEY", "")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "")
+    monkeypatch.setenv("MISTRAL_API_KEY", "mistral-test-key")
+    monkeypatch.setattr("src.llm.factory.OpenAICompatibleClient", lambda: sentinel)
+
+    assert create_llm_client() is sentinel
