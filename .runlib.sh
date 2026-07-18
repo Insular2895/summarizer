@@ -54,16 +54,22 @@ ensure_env_file() {
     cp "$ROOT_DIR/.env.example" "$ROOT_DIR/.env"
     echo "[setup] Created .env from .env.example"
     echo
-    echo "Add your Gemini API key in .env, then run this command again:"
-    echo "  GEMINI_API_KEY=your_real_api_key"
+    echo "Fill one AI provider key in .env, then run this command again."
+    echo "  GEMINI_API_KEY=..."
+    echo "  OPENAI_API_KEY=..."
+    echo "  ANTHROPIC_API_KEY=..."
     exit 1
   fi
 
-  if ! grep -Eq '^GEMINI_API_KEY=' "$ROOT_DIR/.env" \
-    || grep -Eq '^GEMINI_API_KEY=(your_api_key_here|ta_cle_api_gemini|ta_vraie_cle_api)?[[:space:]]*$' "$ROOT_DIR/.env"; then
-    echo "Gemini API key is missing in .env."
-    echo "Edit .env and set:"
-    echo "  GEMINI_API_KEY=your_real_api_key"
+  local provider
+  provider="$(sed -n 's/^LLM_PROVIDER=[[:space:]]*//p' "$ROOT_DIR/.env" | head -n 1 | tr '[:upper:]' '[:lower:]')"
+  if [[ "$provider" == "ollama" || "$provider" == "lm_studio" || "$provider" == "vllm" ]]; then
+    return 0
+  fi
+
+  if ! grep -Eq '^(GEMINI_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|MISTRAL_API_KEY|OPENROUTER_API_KEY|LLM_API_KEY)=[^[:space:]]+' "$ROOT_DIR/.env"; then
+    echo "No AI provider key is configured in .env."
+    echo "Fill one key, or choose a local provider such as Ollama with LLM_PROVIDER=ollama."
     exit 1
   fi
 }
@@ -80,14 +86,16 @@ print_runtime_status() {
   fi
 
   if [[ -f "$ROOT_DIR/.env" ]]; then
-    if ! grep -Eq '^GEMINI_API_KEY=' "$ROOT_DIR/.env" \
-      || grep -Eq '^GEMINI_API_KEY=(your_api_key_here|ta_cle_api_gemini|ta_vraie_cle_api)?[[:space:]]*$' "$ROOT_DIR/.env"; then
-      echo "  Gemini key: .env exists but needs a real GEMINI_API_KEY"
+    local configured_provider
+    configured_provider="$(sed -n 's/^LLM_PROVIDER=[[:space:]]*//p' "$ROOT_DIR/.env" | head -n 1 | tr '[:upper:]' '[:lower:]')"
+    if [[ "$configured_provider" == "ollama" || "$configured_provider" == "lm_studio" || "$configured_provider" == "vllm" ]] \
+      || grep -Eq '^(GEMINI_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|MISTRAL_API_KEY|OPENROUTER_API_KEY|LLM_API_KEY)=[^[:space:]]+' "$ROOT_DIR/.env"; then
+      echo "  AI provider: .env has a configured provider"
     else
-      echo "  Gemini key: .env is configured"
+      echo "  AI provider: .env needs one provider key"
     fi
   else
-    echo "  Gemini key: .env will be created automatically on first run"
+    echo "  AI provider: .env will be created automatically on first run"
   fi
 }
 
