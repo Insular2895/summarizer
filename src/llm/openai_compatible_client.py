@@ -21,8 +21,29 @@ class OpenAICompatibleClient:
 
     def __init__(self) -> None:
         load_dotenv(project_path(".env"))
-        self.api_key = os.getenv("LLM_API_KEY") or os.getenv("OPENAI_API_KEY", "")
-        self.base_url = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+        provider = os.getenv("LLM_PROVIDER", "openai_compatible").strip().lower()
+        provider_keys = {
+            "mistral": "MISTRAL_API_KEY",
+            "openrouter": "OPENROUTER_API_KEY",
+        }
+        self.api_key = (
+            os.getenv("LLM_API_KEY")
+            or os.getenv(provider_keys.get(provider, ""), "")
+            or os.getenv("OPENAI_API_KEY", "")
+        )
+        default_urls = {
+            "openai": "https://api.openai.com/v1",
+            "openai_compatible": "https://api.openai.com/v1",
+            "mistral": "https://api.mistral.ai/v1",
+            "openrouter": "https://openrouter.ai/api/v1",
+            "ollama": "http://localhost:11434/v1",
+            "lm_studio": "http://localhost:1234/v1",
+            "vllm": "http://localhost:8000/v1",
+        }
+        self.base_url = os.getenv("LLM_BASE_URL", "").strip() or default_urls.get(
+            provider, "https://api.openai.com/v1"
+        )
+        self.base_url = self.base_url.rstrip("/")
         self.timeout = int(os.getenv("LLM_TIMEOUT_SECONDS", "120"))
         if "api.openai.com" in self.base_url and not self.api_key:
             raise LLMError("LLM_API_KEY or OPENAI_API_KEY is required for OpenAI.")

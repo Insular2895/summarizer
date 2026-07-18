@@ -63,7 +63,8 @@ cp .env.example .env
 ./summarizer
 ```
 
-Ajoute ta clé Gemini dans `.env` :
+Dans `.env`, remplis uniquement la clé du fournisseur que tu veux utiliser. Laisse les autres vides :
+elles ne seront pas activées.
 
 ```env
 GEMINI_API_KEY=ta_cle_api_gemini
@@ -71,15 +72,14 @@ GEMINI_API_KEY=ta_cle_api_gemini
 
 ## Quelle IA utiliser ?
 
-Le projet est aujourd'hui configuré et testé avec **Gemini**. Il suffit donc de renseigner
-`GEMINI_API_KEY` pour les résumés, l'analyse des PDF et les contrôles visuels.
+Le projet est aujourd'hui configuré et testé avec **Gemini**. Il suffit de renseigner
+`GEMINI_API_KEY` et de laisser les autres clés vides.
 
 Gemini est recommandé pour commencer parce que Google propose généralement une offre gratuite avec
 des quotas adaptés à un usage personnel ou à des tests. Ce n'est pas une gratuité illimitée : les
 quotas, les modèles disponibles et les conditions peuvent varier selon le compte et l'utilisation.
 
-Le code est pensé pour pouvoir accueillir d'autres IA, mais elles ne sont pas encore branchées
-directement. Le projet propose maintenant trois modes :
+Le projet propose maintenant trois modes :
 
 - `gemini` : le mode recommandé par défaut ;
 - `openai_compatible` : OpenAI, Mistral, OpenRouter, Ollama, LM Studio, vLLM et les endpoints qui
@@ -106,6 +106,9 @@ LLM_MODEL_PDF_DEEP=claude-sonnet-4-20250514
 
 Les noms `LLM_MODEL_...` permettent de choisir le modèle pour chaque étape sans modifier le code.
 Les modèles configurés dans `config/models.yaml` restent les valeurs par défaut de Gemini.
+
+Avec `LLM_PROVIDER=auto`, le logiciel choisit automatiquement la première clé non vide. Pour éviter
+toute ambiguïté si plusieurs clés sont présentes, force le fournisseur voulu avec `LLM_PROVIDER`.
 
 En résumé : **Gemini fonctionne immédiatement ; les autres fournisseurs peuvent maintenant être
 branchés par configuration, à condition que le modèle choisi supporte le texte ou la vision demandée.**
