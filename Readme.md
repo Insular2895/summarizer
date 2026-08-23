@@ -147,6 +147,16 @@ Depuis le menu, choisis l'option YouTube et colle l'un ou l'autre lien :
 ./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
+Pour orienter l'extraction vers un besoin précis :
+
+```bash
+./runyoutube "https://youtube.com/watch?v=..." \
+  --focus "Explique surtout les faits, le mécanisme et les exemples concrets."
+```
+
+Le focus reste facultatif. Sans focus, le résumé adapte automatiquement son angle à la nature de
+la vidéo et ne force pas de lecture business sur un contenu informatif.
+
 Les transcriptions sont conservées localement et réutilisées quand c'est possible. Cela évite de
 télécharger deux fois la même vidéo et permet de reprendre une playlist interrompue.
 

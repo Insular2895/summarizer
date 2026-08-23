@@ -34,6 +34,7 @@ def run_video(
     delete_cache: bool = False,
     overwrite: bool = False,
     dry_run: bool = False,
+    summary_focus: str | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
@@ -46,6 +47,7 @@ def run_video(
         delete_cache=delete_cache,
         overwrite=overwrite,
         dry_run=dry_run,
+        summary_focus=summary_focus,
     )
 
 
@@ -105,6 +107,7 @@ def run_local_playlist_dir(
     overwrite: bool = False,
     dry_run: bool = False,
     limit: int | None = None,
+    summary_focus: str | None = None,
 ) -> JobManifest:
     playlist_slug = safe_slug(directory.name, "playlist")
     manifest_path = manifest_path_for_playlist(f"playlist-{playlist_slug}")
@@ -148,6 +151,7 @@ def run_local_playlist_dir(
                     str(transcript_path),
                     transcript,
                     output_path,
+                    summary_focus=summary_focus,
                 )
                 kept = keep_all or _confirm_keep(output_path, ask_each)
                 if not kept:
@@ -188,6 +192,7 @@ def run_youtube_source(
     resume: bool = False,
     dry_run: bool = False,
     limit: int | None = None,
+    summary_focus: str | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
@@ -200,6 +205,7 @@ def run_youtube_source(
             overwrite=overwrite,
             dry_run=dry_run,
             limit=limit,
+            summary_focus=summary_focus,
         )
     if "playlist" in source or "list=" in source:
         return run_playlist(
@@ -212,6 +218,7 @@ def run_youtube_source(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            summary_focus=summary_focus,
         )
     return run_video(
         source,
@@ -221,6 +228,7 @@ def run_youtube_source(
         delete_cache=delete_cache,
         overwrite=overwrite,
         dry_run=dry_run,
+        summary_focus=summary_focus,
     )
 
 
@@ -410,6 +418,7 @@ def _process_video(
     delete_cache: bool = False,
     overwrite: bool = False,
     dry_run: bool = False,
+    summary_focus: str | None = None,
 ) -> VideoStatus:
     output_path = project_path("output", "videos", f"{video.slug}.md")
     text_path = project_path("cache", "transcripts", video.slug, f"{video.slug}.txt")
@@ -430,6 +439,7 @@ def _process_video(
         video.url,
         transcript,
         output_path,
+        summary_focus=summary_focus,
     )
     console.print(f"[4/5] Écriture Markdown: {output_path}")
     kept = keep_all or _confirm_keep(output_path, ask_each)

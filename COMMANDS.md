@@ -206,6 +206,17 @@ Vidéo :
 ./runyoutube "https://youtube.com/watch?v=..."
 ```
 
+Orienter la synthèse vers les informations recherchées :
+
+```bash
+./runyoutube "https://youtube.com/watch?v=..." \
+  --focus "Va droit aux faits, explique le mécanisme et conserve les chiffres précis."
+```
+
+`--focus` est facultatif. Il permet de prioriser un angle sans transformer une vidéo informative
+en analyse business. Sans cette option, le pipeline distingue automatiquement information,
+tutoriel, étude de cas, interview, opinion, promotion et contenu mixte.
+
 Playlist :
 
 ```bash
