@@ -5,7 +5,7 @@ import time
 from collections.abc import Callable
 from contextlib import suppress
 
-from src.web_adapter import PipelineObserver, ProgressEvent, VideoFailure, VideoResult
+from src.web_adapter import PipelineObserver, ProgressEvent, SourcePlan, VideoFailure, VideoResult
 from src.worker.client import ControlPlaneClient, ControlPlaneError
 from src.worker.spool import OutboxRecord, WorkerSpool
 
@@ -59,6 +59,14 @@ class OutboxPublisher:
         raise OutboxPublishError(f"Worker outbox publication failed ({code}).") from None
 
     def _publish(self, record: OutboxRecord) -> None:
+        if record.kind == "plan":
+            self.client.publish_plan(
+                self.job_id,
+                self.worker_id,
+                self.lease_token,
+                record.payload,
+            )
+            return
         if record.kind == "event":
             self.client.publish_event(
                 self.job_id,
@@ -95,20 +103,40 @@ class SpoolingObserver(PipelineObserver):
         self.spool = spool
         self.publisher = publisher
 
+    def on_source_discovered(self, plan: SourcePlan) -> None:
+        payload = plan.as_payload()
+        videos = payload.get("videos")
+        if not isinstance(videos, list):
+            raise ValueError("Invalid source plan payload.")
+        payload["videos"] = [
+            {
+                **video,
+                "video_id": stable_video_id(
+                    self.job_id,
+                    str(video["youtube_id"]),
+                    int(video["playlist_index"]),
+                ),
+            }
+            for video in videos
+        ]
+        self.spool.enqueue("plan", self.job_id, payload)
+        self._best_effort_flush()
+
     def on_event(self, event: ProgressEvent) -> None:
         payload = event.as_payload()
         youtube_id = str(payload.pop("youtube_id"))
-        payload["video_id"] = stable_video_id(self.job_id, youtube_id)
+        playlist_index = int(payload.pop("playlist_index"))
+        payload["video_id"] = stable_video_id(self.job_id, youtube_id, playlist_index)
         self.spool.enqueue("event", self.job_id, payload)
         self._best_effort_flush()
 
     def on_video_ready(self, result: VideoResult) -> None:
-        video_id = stable_video_id(self.job_id, result.youtube_id)
+        video_id = stable_video_id(self.job_id, result.youtube_id, result.playlist_index)
         self.spool.enqueue("result", self.job_id, result.as_payload(), video_id=video_id)
         self._best_effort_flush()
 
     def on_video_failed(self, failure: VideoFailure) -> None:
-        video_id = stable_video_id(self.job_id, failure.youtube_id)
+        video_id = stable_video_id(self.job_id, failure.youtube_id, failure.playlist_index)
         self.spool.enqueue("error", self.job_id, failure.as_payload(), video_id=video_id)
         self._best_effort_flush()
 
@@ -117,6 +145,6 @@ class SpoolingObserver(PipelineObserver):
             self.publisher.flush()
 
 
-def stable_video_id(job_id: str, youtube_id: str) -> str:
-    digest = hashlib.sha256(f"{job_id}\0{youtube_id}".encode()).hexdigest()[:24]
+def stable_video_id(job_id: str, youtube_id: str, playlist_index: int) -> str:
+    digest = hashlib.sha256(f"{job_id}\0{youtube_id}\0{playlist_index}".encode()).hexdigest()[:24]
     return f"video_{digest}"

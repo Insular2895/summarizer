@@ -25,8 +25,10 @@ from src.summarizers.pdf_summarizer import PdfSummarizer
 from src.summarizers.video_summarizer import VideoSummarizer
 from src.web_adapter.builders import progress_event, video_failure, video_result
 from src.web_adapter.contracts import (
+    DiscoveredVideo,
     PipelineObserver,
     ProgressEvent,
+    SourcePlan,
     VideoFailure,
     VideoResult,
 )
@@ -44,12 +46,19 @@ def run_video(
     dry_run: bool = False,
     summary_focus: str | None = None,
     observer: PipelineObserver | None = None,
-    skip_youtube_ids: set[str] | None = None,
+    skip_video_occurrences: set[tuple[str, int]] | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
-    if skip_youtube_ids and info.video_id in skip_youtube_ids:
-        return VideoStatus(info.url, info.title, "done", kept=True)
+    _notify_plan(
+        observer,
+        SourcePlan(
+            title=info.title,
+            videos=(DiscoveredVideo(info.video_id, 1, info.title, info.url),),
+        ),
+    )
+    if skip_video_occurrences and (info.video_id, 1) in skip_video_occurrences:
+        return VideoStatus(info.url, info.title, "done", kept=True, playlist_index=1)
     return _process_video(
         info,
         extractor,
@@ -89,7 +98,12 @@ def run_video_batch(
                 **kwargs,
             )
         except Exception as exc:
-            status = VideoStatus(url=url, status="failed", error=str(exc))
+            status = VideoStatus(
+                url=url,
+                status="failed",
+                error=str(exc),
+                playlist_index=playlist_index,
+            )
         manifest.upsert_video(status)
         manifest.save(manifest_path)
     return manifest
@@ -100,20 +114,33 @@ def run_playlist(
     resume: bool = False,
     limit: int | None = None,
     observer: PipelineObserver | None = None,
-    skip_youtube_ids: set[str] | None = None,
+    skip_video_occurrences: set[tuple[str, int]] | None = None,
     **kwargs: object,
 ) -> JobManifest:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     title, videos = extractor.list_playlist(url)
     if limit is not None:
         videos = videos[:limit]
+    _notify_plan(
+        observer,
+        SourcePlan(
+            title=title,
+            videos=tuple(
+                DiscoveredVideo(video.video_id, index, video.title, video.url)
+                for index, video in enumerate(videos, start=1)
+            ),
+        ),
+    )
     manifest_path = manifest_path_for_playlist(f"playlist-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
     for playlist_index, video in enumerate(videos, start=1):
-        if skip_youtube_ids and video.video_id in skip_youtube_ids:
+        if skip_video_occurrences and (video.video_id, playlist_index) in skip_video_occurrences:
             continue
-        existing = manifest.get(video.url)
+        existing = manifest.get(video.url, playlist_index)
         if resume and existing and existing.status == "done":
+            if existing.playlist_index is None:
+                existing.playlist_index = playlist_index
+                manifest.save(manifest_path)
             console.print(f"[cyan]Skip already done:[/] {video.title}")
             continue
         try:
@@ -125,7 +152,13 @@ def run_playlist(
                 **kwargs,
             )
         except Exception as exc:
-            status = VideoStatus(url=video.url, title=video.title, status="failed", error=str(exc))
+            status = VideoStatus(
+                url=video.url,
+                title=video.title,
+                status="failed",
+                error=str(exc),
+                playlist_index=playlist_index,
+            )
             console.print(f"[red]Failed:[/] {video.title} - {exc}")
         manifest.upsert_video(status)
         manifest.save(manifest_path)
@@ -228,7 +261,7 @@ def run_youtube_source(
     limit: int | None = None,
     summary_focus: str | None = None,
     observer: PipelineObserver | None = None,
-    skip_youtube_ids: set[str] | None = None,
+    skip_video_occurrences: set[tuple[str, int]] | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
@@ -258,7 +291,7 @@ def run_youtube_source(
             dry_run=dry_run,
             summary_focus=summary_focus,
             observer=observer,
-            skip_youtube_ids=skip_youtube_ids,
+            skip_video_occurrences=skip_video_occurrences,
         )
     return run_video(
         source,
@@ -270,7 +303,7 @@ def run_youtube_source(
         dry_run=dry_run,
         summary_focus=summary_focus,
         observer=observer,
-        skip_youtube_ids=skip_youtube_ids,
+        skip_video_occurrences=skip_video_occurrences,
     )
 
 
@@ -469,7 +502,14 @@ def _process_video(
     if dry_run:
         console.print(f"[dry-run] Video: {video.title}")
         console.print(f"[dry-run] Output: {output_path}")
-        return VideoStatus(video.url, video.title, "dry-run", str(output_path), kept=False)
+        return VideoStatus(
+            video.url,
+            video.title,
+            "dry-run",
+            str(output_path),
+            kept=False,
+            playlist_index=playlist_index,
+        )
     try:
         if output_path.exists() and not overwrite:
             subtitle_path = _latest_subtitle(video.slug)
@@ -489,17 +529,26 @@ def _process_video(
                 observer,
                 progress_event(
                     video,
+                    playlist_index=playlist_index,
                     status="READY",
                     stage="REUSED_EXISTING_OUTPUT",
                     progress=1,
                 ),
             )
-            return VideoStatus(video.url, video.title, "done", str(output_path), kept=True)
+            return VideoStatus(
+                video.url,
+                video.title,
+                "done",
+                str(output_path),
+                kept=True,
+                playlist_index=playlist_index,
+            )
 
         _notify_event(
             observer,
             progress_event(
                 video,
+                playlist_index=playlist_index,
                 status="PROCESSING",
                 stage="TRANSCRIPT_DOWNLOAD",
                 progress=0.1,
@@ -511,6 +560,7 @@ def _process_video(
             observer,
             progress_event(
                 video,
+                playlist_index=playlist_index,
                 status="PROCESSING",
                 stage="TRANSCRIPT_PARSE",
                 progress=0.3,
@@ -524,6 +574,7 @@ def _process_video(
             observer,
             progress_event(
                 video,
+                playlist_index=playlist_index,
                 status="PROCESSING",
                 stage="SUMMARIZATION",
                 progress=0.5,
@@ -557,7 +608,13 @@ def _process_video(
         _notify_ready(observer, result)
         _notify_event(
             observer,
-            progress_event(video, status="READY", stage="READY", progress=1),
+            progress_event(
+                video,
+                playlist_index=playlist_index,
+                status="READY",
+                stage="READY",
+                progress=1,
+            ),
         )
         return VideoStatus(
             url=video.url,
@@ -566,6 +623,7 @@ def _process_video(
             output_path=str(output_path),
             kept=kept,
             model_used=model_used,
+            playlist_index=playlist_index,
         )
     except Exception as exc:
         failure = video_failure(video, playlist_index=playlist_index, error=exc)
@@ -574,6 +632,7 @@ def _process_video(
             observer,
             progress_event(
                 video,
+                playlist_index=playlist_index,
                 status="FAILED",
                 stage="FAILED",
                 progress=1,
@@ -587,6 +646,15 @@ def _latest_subtitle(slug: str) -> Path | None:
     transcript_dir = project_path("cache", "transcripts", slug)
     candidates = [*transcript_dir.glob("*.srt"), *transcript_dir.glob("*.vtt")]
     return max(candidates, key=lambda path: path.stat().st_mtime) if candidates else None
+
+
+def _notify_plan(observer: PipelineObserver | None, plan: SourcePlan) -> None:
+    if observer is None:
+        return
+    try:
+        observer.on_source_discovered(plan)
+    except Exception as exc:
+        console.print(f"[yellow]Web observer plan warning:[/] {type(exc).__name__}")
 
 
 def _notify_event(observer: PipelineObserver | None, event: ProgressEvent) -> None:

@@ -4,18 +4,33 @@ import time
 from pathlib import Path
 from typing import Any
 
-from src.web_adapter import ProgressEvent, TranscriptBlock, VideoResult
-from src.worker.client import HttpControlPlaneClient, LeaseClaim
+from src.web_adapter import (
+    DiscoveredVideo,
+    ProgressEvent,
+    SourcePlan,
+    TranscriptBlock,
+    VideoResult,
+)
+from src.worker.client import ControlPlaneError, HttpControlPlaneClient, LeaseClaim
 from src.worker.heartbeat import LeaseHeartbeat
+from src.worker.outbox import stable_video_id
 from src.worker.runner import WorkerRunner
 from src.worker.spool import WorkerSpool
 
 
 class FakeControlPlane:
-    def __init__(self, claims: list[LeaseClaim], *, fail_results: bool = False) -> None:
+    def __init__(
+        self,
+        claims: list[LeaseClaim],
+        *,
+        fail_results: bool = False,
+        fail_complete: bool = False,
+    ) -> None:
         self.claims = claims
         self.fail_results = fail_results
+        self.fail_complete = fail_complete
         self.heartbeats = 0
+        self.plans: list[dict[str, Any]] = []
         self.events: list[dict[str, Any]] = []
         self.results: list[tuple[str, dict[str, Any]]] = []
         self.errors: list[tuple[str, dict[str, Any]]] = []
@@ -42,6 +57,15 @@ class FakeControlPlane:
     ) -> None:
         self.events.append(payload)
 
+    def publish_plan(
+        self,
+        _job_id: str,
+        _worker_id: str,
+        _lease_token: str,
+        payload: dict[str, Any],
+    ) -> None:
+        self.plans.append(payload)
+
     def publish_result(
         self,
         _job_id: str,
@@ -65,6 +89,8 @@ class FakeControlPlane:
         self.errors.append((video_id, payload))
 
     def complete(self, job_id: str, _worker_id: str, _lease_token: str) -> None:
+        if self.fail_complete:
+            raise ControlPlaneError(409, "JOB_INCOMPLETE", retryable=False)
         self.completed.append(job_id)
 
 
@@ -74,16 +100,30 @@ def claim(token: str = "lease-secret-value") -> LeaseClaim:
         source_url="https://www.youtube.com/watch?v=abcdefghijk",
         source_kind="youtube_video",
         lease_token=token,
-        ready_youtube_ids=frozenset(),
+        ready_video_occurrences=frozenset(),
     )
 
 
 def emitting_pipeline(_source: str, **kwargs: Any) -> None:
     observer = kwargs["observer"]
+    observer.on_source_discovered(
+        SourcePlan(
+            title="Fixture",
+            videos=(
+                DiscoveredVideo(
+                    youtube_id="abcdefghijk",
+                    playlist_index=1,
+                    title="Fixture",
+                    url="https://www.youtube.com/watch?v=abcdefghijk",
+                ),
+            ),
+        )
+    )
     observer.on_event(
         ProgressEvent(
             event_id="evt_fixture",
             youtube_id="abcdefghijk",
+            playlist_index=1,
             status="PROCESSING",
             stage="SUMMARIZATION",
             progress=0.5,
@@ -123,6 +163,7 @@ def test_runner_claims_publishes_and_completes_without_inbound_server(tmp_path: 
 
     assert outcome.completed is True
     assert client.completed == ["job_fixture"]
+    assert len(client.plans) == 1
     assert len(client.events) == 1
     assert client.events[0]["event_id"] == "evt_fixture"
     assert len(client.results) == 1
@@ -197,7 +238,7 @@ def test_runner_passes_server_ready_ids_as_the_resume_source_of_truth(tmp_path: 
         source_url=lease.source_url,
         source_kind=lease.source_kind,
         lease_token=lease.lease_token,
-        ready_youtube_ids=frozenset({"already-ready"}),
+        ready_video_occurrences=frozenset({("already-ready", 2)}),
     )
     client = FakeControlPlane([lease])
     captured: dict[str, Any] = {}
@@ -215,7 +256,87 @@ def test_runner_passes_server_ready_ids_as_the_resume_source_of_truth(tmp_path: 
 
     assert outcome.completed is True
     assert captured["resume"] is False
-    assert captured["skip_youtube_ids"] == {"already-ready"}
+    assert captured["skip_video_occurrences"] == {("already-ready", 2)}
+
+
+def test_duplicate_youtube_ids_have_distinct_occurrence_ids() -> None:
+    first = stable_video_id("job_fixture", "same-video", 1)
+    repeated = stable_video_id("job_fixture", "same-video", 3)
+
+    assert first != repeated
+    assert first == stable_video_id("job_fixture", "same-video", 1)
+
+
+def test_interrupted_playlist_is_rerun_and_skips_only_persisted_ready_occurrences(
+    tmp_path: Path,
+) -> None:
+    spool = WorkerSpool(tmp_path / "spool")
+    interrupted_client = FakeControlPlane([claim()], fail_complete=True)
+
+    def interrupted_pipeline(_source: str, **kwargs: Any) -> None:
+        observer = kwargs["observer"]
+        observer.on_source_discovered(
+            SourcePlan(
+                title="Interrupted fixture",
+                videos=(
+                    DiscoveredVideo("same-video", 1, "First", "https://youtu.be/aaaaaaaaaaa"),
+                    DiscoveredVideo("same-video", 3, "Repeated", "https://youtu.be/aaaaaaaaaaa"),
+                ),
+            )
+        )
+        observer.on_video_ready(
+            VideoResult(
+                youtube_id="same-video",
+                playlist_index=1,
+                title="First",
+                url="https://youtu.be/aaaaaaaaaaa",
+                summary_markdown="# First",
+                model_used="fixture-model",
+                transcript=(),
+                provenance={
+                    "source_type": "youtube",
+                    "source_url": "https://youtu.be/aaaaaaaaaaa",
+                    "subtitle_format": "srt",
+                },
+            )
+        )
+        raise RuntimeError("simulated interruption")
+
+    first = WorkerRunner(
+        client=interrupted_client,
+        spool=spool,
+        worker_id="worker-one",
+        pipeline=interrupted_pipeline,
+        sleep=lambda _seconds: None,
+    ).run_once()
+
+    assert first.reason == "COMPLETE_FAILED"
+    assert spool.pipeline_complete("job_fixture") is False
+
+    resumed_claim = claim("fresh-token")
+    resumed_claim = LeaseClaim(
+        job_id=resumed_claim.job_id,
+        source_url=resumed_claim.source_url,
+        source_kind=resumed_claim.source_kind,
+        lease_token=resumed_claim.lease_token,
+        ready_video_occurrences=frozenset({("same-video", 1)}),
+    )
+    resumed_client = FakeControlPlane([resumed_claim])
+    captured: dict[str, Any] = {}
+
+    def resumed_pipeline(_source: str, **kwargs: Any) -> None:
+        captured.update(kwargs)
+
+    second = WorkerRunner(
+        client=resumed_client,
+        spool=spool,
+        worker_id="worker-two",
+        pipeline=resumed_pipeline,
+        sleep=lambda _seconds: None,
+    ).run_once()
+
+    assert second.completed is True
+    assert captured["skip_video_occurrences"] == {("same-video", 1)}
 
 
 def test_http_client_rejects_plain_http_outside_localhost() -> None:

@@ -13,7 +13,7 @@ class LeaseClaim:
     source_url: str
     source_kind: str
     lease_token: str
-    ready_youtube_ids: frozenset[str]
+    ready_video_occurrences: frozenset[tuple[str, int]]
 
 
 class ControlPlaneClient(Protocol):
@@ -25,6 +25,14 @@ class ControlPlaneClient(Protocol):
         worker_id: str,
         lease_token: str,
         lease_seconds: int,
+    ) -> None: ...
+
+    def publish_plan(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+        payload: dict[str, Any],
     ) -> None: ...
 
     def publish_event(
@@ -83,15 +91,24 @@ class HttpControlPlaneClient:
         lease = _object(response, "lease")
         job = _object(lease, "job")
         source = _object(lease, "source")
-        ready_ids = lease.get("ready_youtube_ids", [])
-        if not isinstance(ready_ids, list) or not all(isinstance(item, str) for item in ready_ids):
+        ready_items = lease.get("ready_video_occurrences", [])
+        if not isinstance(ready_items, list):
             raise ControlPlaneError(502, "INVALID_CLAIM_RESPONSE", retryable=False)
+        ready_occurrences: set[tuple[str, int]] = set()
+        for item in ready_items:
+            if not isinstance(item, dict):
+                raise ControlPlaneError(502, "INVALID_CLAIM_RESPONSE", retryable=False)
+            youtube_id = item.get("youtube_id")
+            playlist_index = item.get("playlist_index")
+            if not isinstance(youtube_id, str) or not isinstance(playlist_index, int):
+                raise ControlPlaneError(502, "INVALID_CLAIM_RESPONSE", retryable=False)
+            ready_occurrences.add((youtube_id, playlist_index))
         return LeaseClaim(
             job_id=_string(job, "id"),
             source_url=_string(source, "normalized_url"),
             source_kind=_string(source, "source_kind"),
             lease_token=_string(lease, "lease_token"),
-            ready_youtube_ids=frozenset(ready_ids),
+            ready_video_occurrences=frozenset(ready_occurrences),
         )
 
     def heartbeat(
@@ -109,6 +126,19 @@ class HttpControlPlaneClient:
                 "lease_token": lease_token,
                 "lease_seconds": lease_seconds,
             },
+        )
+
+    def publish_plan(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+        payload: dict[str, Any],
+    ) -> None:
+        self._request(
+            "PUT",
+            f"/api/worker/jobs/{job_id}/plan",
+            {**payload, "worker_id": worker_id, "lease_token": lease_token},
         )
 
     def publish_event(

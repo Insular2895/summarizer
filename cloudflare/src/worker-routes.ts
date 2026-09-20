@@ -36,6 +36,56 @@ export async function handleWorkerRoute(request: Request, env: Env, path: string
     return json({ job });
   }
 
+  if (request.method === "PUT" && suffix === "/plan") {
+    const body = await readJson<
+      LeaseBody & {
+        title?: unknown;
+        videos?: unknown;
+      }
+    >(request, 2_000_000);
+    const lease = parseLease(body);
+    if (!Array.isArray(body.videos) || body.videos.length === 0 || body.videos.length > 10_000) {
+      throw new ApiError(400, "INVALID_SOURCE_PLAN", "Le plan de la source est invalide.");
+    }
+    const seenIndexes = new Set<number>();
+    const seenIds = new Set<string>();
+    const videos = body.videos.map((item, index) => {
+      if (!item || typeof item !== "object") {
+        throw new ApiError(400, "INVALID_SOURCE_PLAN", `La vidéo ${index + 1} est invalide.`);
+      }
+      const video = item as Record<string, unknown>;
+      const videoId = requireString(video.video_id, `videos[${index}].video_id`, { max: 120 });
+      if (!/^[A-Za-z0-9_-]+$/.test(videoId)) {
+        throw new ApiError(400, "INVALID_SOURCE_PLAN", `L’identifiant de la vidéo ${index + 1} est invalide.`);
+      }
+      const youtubeId = requireString(video.youtube_id, `videos[${index}].youtube_id`, { max: 128 });
+      const playlistIndex = requireInteger(video.playlist_index, `videos[${index}].playlist_index`, {
+        min: 1,
+        max: 100_000,
+      });
+      if (playlistIndex !== index + 1) {
+        throw new ApiError(400, "INVALID_SOURCE_PLAN", "L’ordre du plan de la source doit être continu.");
+      }
+      if (seenIds.has(videoId) || seenIndexes.has(playlistIndex)) {
+        throw new ApiError(400, "INVALID_SOURCE_PLAN", "Le plan contient un identifiant ou un ordre dupliqué.");
+      }
+      seenIds.add(videoId);
+      seenIndexes.add(playlistIndex);
+      return {
+        videoId,
+        youtubeId,
+        playlistIndex,
+        title: requireString(video.title, `videos[${index}].title`, { max: 1_000 }),
+        url: normalizeVideoResultUrl(video.url, youtubeId).normalizedUrl,
+      };
+    });
+    const accepted = await repository.publishPlan(jobId, lease, {
+      title: requireString(body.title, "title", { max: 1_000 }),
+      videos,
+    });
+    return json(accepted);
+  }
+
   if (request.method === "POST" && suffix === "/events") {
     const body = await readJson<
       LeaseBody & {

@@ -17,6 +17,7 @@ class VideoStatus:
     kept: bool = False
     error: str | None = None
     model_used: str | None = None
+    playlist_index: int | None = None
 
 
 @dataclass
@@ -44,13 +45,28 @@ class JobManifest:
 
     def upsert_video(self, status: VideoStatus) -> None:
         for index, current in enumerate(self.videos):
-            if current.url == status.url:
+            same_occurrence = (
+                status.playlist_index is not None
+                and current.playlist_index == status.playlist_index
+            )
+            legacy_match = current.playlist_index is None and current.url == status.url
+            if same_occurrence or legacy_match:
                 self.videos[index] = status
                 return
         self.videos.append(status)
 
-    def get(self, url: str) -> VideoStatus | None:
-        return next((video for video in self.videos if video.url == url), None)
+    def get(self, url: str, playlist_index: int | None = None) -> VideoStatus | None:
+        if playlist_index is not None:
+            indexed = next(
+                (video for video in self.videos if video.playlist_index == playlist_index),
+                None,
+            )
+            if indexed is not None:
+                return indexed
+        return next(
+            (video for video in self.videos if video.url == url and video.playlist_index is None),
+            None,
+        )
 
 
 def manifest_path_for_playlist(title_or_url: str) -> Path:

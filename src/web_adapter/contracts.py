@@ -21,6 +21,7 @@ class TranscriptBlock:
 class ProgressEvent:
     event_id: str
     youtube_id: str
+    playlist_index: int
     status: PipelineStatus
     stage: str
     progress: float | None
@@ -63,7 +64,32 @@ class VideoFailure:
         return asdict(self)
 
 
+@dataclass(frozen=True, slots=True)
+class DiscoveredVideo:
+    youtube_id: str
+    playlist_index: int
+    title: str
+    url: str
+
+    def as_payload(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True, slots=True)
+class SourcePlan:
+    title: str
+    videos: tuple[DiscoveredVideo, ...]
+
+    def as_payload(self) -> dict[str, Any]:
+        return {
+            "title": self.title,
+            "videos": [video.as_payload() for video in self.videos],
+        }
+
+
 class PipelineObserver(Protocol):
+    def on_source_discovered(self, plan: SourcePlan) -> None: ...
+
     def on_event(self, event: ProgressEvent) -> None: ...
 
     def on_video_ready(self, result: VideoResult) -> None: ...
@@ -75,6 +101,7 @@ class PipelineObserver(Protocol):
 class CollectingObserver:
     """In-memory observer used by tests and by the future worker spool."""
 
+    plans: list[SourcePlan] = field(default_factory=list)
     events: list[ProgressEvent] = field(default_factory=list)
     ready: list[VideoResult] = field(default_factory=list)
     failed: list[VideoFailure] = field(default_factory=list)
@@ -87,3 +114,6 @@ class CollectingObserver:
 
     def on_video_failed(self, failure: VideoFailure) -> None:
         self.failed.append(failure)
+
+    def on_source_discovered(self, plan: SourcePlan) -> None:
+        self.plans.append(plan)

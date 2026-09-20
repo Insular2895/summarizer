@@ -79,6 +79,31 @@ describe("Summarizer application shell", () => {
     );
   });
 
+  it("shows every playlist occurrence in source order while results arrive", async () => {
+    stubApi((path) => {
+      if (path === "/api/jobs/job-playlist") return playlistDetail;
+      return {};
+    });
+
+    renderApp("/processing/job-playlist");
+
+    expect(await screen.findByText("2 sur 4 traitées · 1 prête · 1 échec")).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent)).toEqual([
+      "Première",
+      "Deuxième",
+      "Première (copie)",
+      "Quatrième",
+    ]);
+    expect(screen.getByText("En attente")).toBeInTheDocument();
+    expect(screen.getByText("En cours")).toBeInTheDocument();
+    expect(screen.getByText("Prête")).toBeInTheDocument();
+    expect(screen.getByText("Échec")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Ouvrir « Première (copie) »" })).toHaveAttribute(
+      "href",
+      "/review/video-copy",
+    );
+  });
+
   it("shows clear feedback when Home is submitted without a URL", async () => {
     const user = userEvent.setup();
     renderApp();
@@ -142,4 +167,37 @@ const videoDetail = {
   note: { video_id: "video-123", body: "", excerpts_json: "[]", version: 1, updated_at: "2026-09-20" },
   decision: { video_id: "video-123", decision: "PENDING", previous_decision: null, version: 1 },
   transcript: [{ block_index: 0, start_ms: 1_000, end_ms: 2_000, text: "Premier bloc" }],
+};
+
+const playlistDetail = {
+  source: {
+    ...source,
+    id: "source-playlist",
+    source_kind: "youtube_playlist",
+    title: "Playlist fixture",
+  },
+  job: {
+    ...job,
+    id: "job-playlist",
+    source_id: "source-playlist",
+    state: "READY",
+    stage: "SUMMARIZATION",
+    progress: 0.5,
+    total_videos: 4,
+    ready_videos: 1,
+    failed_videos: 1,
+  },
+  videos: [
+    { ...videoDetail.video, id: "video-queued", title: "Première", playlist_index: 1, state: "QUEUED" },
+    { ...videoDetail.video, id: "video-processing", title: "Deuxième", playlist_index: 2, state: "PROCESSING" },
+    { ...videoDetail.video, id: "video-copy", title: "Première (copie)", playlist_index: 3, state: "READY" },
+    {
+      ...videoDetail.video,
+      id: "video-failed",
+      title: "Quatrième",
+      playlist_index: 4,
+      state: "FAILED",
+      public_error: "Sous-titres indisponibles.",
+    },
+  ],
 };

@@ -78,7 +78,7 @@ Prochaine phase :
 | 4 | Adaptateur Python | Non | Terminée et testée |
 | 5 | Worker | Non | Terminée et testée localement |
 | 6 | Vidéo unique | Non | Terminée et testée localement |
-| 7 | Playlist progressive | Non | À faire |
+| 7 | Playlist progressive | Non | Terminée et testée localement |
 | 8 | Note et autosave | Non | À faire |
 | 9 | Transcript vers Note | Validation UX si conflit iOS | À faire |
 | 10 | Review | Non | À faire |

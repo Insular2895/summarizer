@@ -17,7 +17,7 @@ class FakePlaylistExtractor:
             [
                 YouTubeVideo("https://youtu.be/aaaaaaaaaaa", "A", "aaaaaaaaaaa", "a"),
                 YouTubeVideo("https://youtu.be/bbbbbbbbbbb", "B", "bbbbbbbbbbb", "b"),
-                YouTubeVideo("https://youtu.be/ccccccccccc", "C", "ccccccccccc", "c"),
+                YouTubeVideo("https://youtu.be/aaaaaaaaaaa", "A bis", "aaaaaaaaaaa", "a-bis"),
             ],
         )
 
@@ -68,13 +68,20 @@ def test_playlist_emits_ready_per_video_and_continues_after_failure(monkeypatch,
     )
 
     assert [video.status for video in manifest.videos] == ["done", "failed", "done"]
-    assert [result.title for result in observer.ready] == ["A", "C"]
+    assert len(observer.plans) == 1
+    assert [video.playlist_index for video in observer.plans[0].videos] == [1, 2, 3]
+    assert [video.youtube_id for video in observer.plans[0].videos] == [
+        "aaaaaaaaaaa",
+        "bbbbbbbbbbb",
+        "aaaaaaaaaaa",
+    ]
+    assert [result.title for result in observer.ready] == ["A", "A bis"]
     assert [failure.title for failure in observer.failed] == ["B"]
     assert observer.failed[0].diagnostic_code == "SUBTITLES_UNAVAILABLE"
     assert "private provider detail" not in observer.failed[0].public_error
     assert [event.youtube_id for event in observer.events if event.status == "READY"] == [
         "aaaaaaaaaaa",
-        "ccccccccccc",
+        "aaaaaaaaaaa",
     ]
     assert [event.youtube_id for event in observer.events if event.status == "FAILED"] == [
         "bbbbbbbbbbb"
@@ -84,6 +91,32 @@ def test_playlist_emits_ready_per_video_and_continues_after_failure(monkeypatch,
     assert observer.ready[0].summary_markdown.startswith("# A")
     assert observer.ready[0].transcript[0].start_ms == 1_000
     assert observer.ready[0].provenance["subtitle_format"] == "srt"
+
+
+def test_playlist_resume_skips_only_the_ready_occurrence(monkeypatch, tmp_path) -> None:
+    observer = CollectingObserver()
+    monkeypatch.setattr("src.pipeline.YouTubeExtractor", FakePlaylistExtractor)
+    monkeypatch.setattr("src.pipeline.VideoSummarizer", FakeVideoSummarizer)
+    monkeypatch.setattr("src.pipeline.project_path", lambda *parts: tmp_path.joinpath(*parts))
+    monkeypatch.setattr(
+        "src.pipeline.manifest_path_for_playlist",
+        lambda _name: tmp_path / "manifest.json",
+    )
+
+    manifest = run_playlist(
+        "https://www.youtube.com/playlist?list=PLfixture123",
+        observer=observer,
+        overwrite=True,
+        skip_video_occurrences={("aaaaaaaaaaa", 1)},
+    )
+
+    assert [(video.playlist_index, video.status) for video in manifest.videos] == [
+        (2, "failed"),
+        (3, "done"),
+    ]
+    assert [(result.youtube_id, result.playlist_index) for result in observer.ready] == [
+        ("aaaaaaaaaaa", 3)
+    ]
 
 
 def test_unknown_error_mapping_does_not_expose_exception_text() -> None:

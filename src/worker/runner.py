@@ -101,7 +101,7 @@ class WorkerRunner:
                         overwrite=False,
                         resume=False,
                         observer=observer,
-                        skip_youtube_ids=set(claim.ready_youtube_ids),
+                        skip_video_occurrences=set(claim.ready_video_occurrences),
                     )
                 self.spool.mark_pipeline_complete(claim.job_id)
 
@@ -117,6 +117,10 @@ class WorkerRunner:
             try:
                 self._retry_complete(claim)
             except Exception:
+                # A plan may have been interrupted with occurrences still active.
+                # Let the next lease rerun the pipeline; READY occurrences are
+                # skipped from the control-plane claim, not inferred locally.
+                self.spool.mark_pipeline_incomplete(claim.job_id)
                 return RunOutcome(True, claim.job_id, reason="COMPLETE_FAILED")
             self.spool.clear_completed_job(claim.job_id)
             return RunOutcome(True, claim.job_id, completed=True)

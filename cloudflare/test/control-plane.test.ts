@@ -38,6 +38,30 @@ describe("Summarizer Web V1 control plane", () => {
       lease_token: claim.lease.lease_token,
     };
     const videoId = "video_flow_1";
+    const planResponse = await api(`/api/worker/jobs/${created.job.id}/plan`, {
+      method: "PUT",
+      headers: WORKER_HEADERS,
+      body: {
+        ...leaseBody,
+        title: "Fixture vidéo",
+        videos: [
+          {
+            video_id: videoId,
+            youtube_id: "dQw4w9WgXcQ",
+            playlist_index: 1,
+            title: "Fixture vidéo",
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          },
+        ],
+      },
+    });
+    expect(await bodyOf(planResponse)).toEqual({ accepted: true, total_videos: 1 });
+    const planned = await bodyOf<{ job: { progress: number }; videos: Array<{ id: string; state: string }> }>(
+      await api(`/api/jobs/${created.job.id}`, { user: USER }),
+    );
+    expect(planned.job.progress).toBe(0);
+    expect(planned.videos).toEqual([expect.objectContaining({ id: videoId, state: "QUEUED" })]);
+
     const event = {
       ...leaseBody,
       event_id: "evt-flow-transcript",
@@ -60,6 +84,14 @@ describe("Summarizer Web V1 control plane", () => {
       body: event,
     });
     expect((await bodyOf<{ duplicate: boolean }>(repeatedEvent)).duplicate).toBe(true);
+    const processing = await bodyOf<{
+      job: { progress: number };
+      videos: Array<{ id: string; state: string; progress: number }>;
+    }>(await api(`/api/jobs/${created.job.id}`, { user: USER }));
+    expect(processing.job.progress).toBe(0);
+    expect(processing.videos).toEqual([
+      expect.objectContaining({ id: videoId, state: "PROCESSING", progress: 0.5 }),
+    ]);
 
     const resultResponse = await api(`/api/worker/jobs/${created.job.id}/videos/${videoId}/result`, {
       method: "PUT",
@@ -222,6 +254,123 @@ describe("Summarizer Web V1 control plane", () => {
     expect((await bodyOf<ClaimResponse>(reclaimed)).lease.job.id).toBe(created.job.id);
   });
 
+  it("preserves duplicate playlist occurrences and resumes only exact ready entries", async () => {
+    const owner = "playlist-owner@example.test";
+    const created = await bodyOf<CreatedResponse>(
+      await api("/api/sources", {
+        method: "POST",
+        user: owner,
+        idempotencyKey: "playlist-source-0001",
+        body: { url: "https://www.youtube.com/playlist?list=PL1234567890" },
+      }),
+    );
+    const firstClaim = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "playlist-worker-one", lease_seconds: 300 },
+      }),
+    );
+    const firstLease = {
+      worker_id: "playlist-worker-one",
+      lease_token: firstClaim.lease.lease_token,
+    };
+    const plannedVideos = [
+      {
+        video_id: "video_playlist_a_1",
+        youtube_id: "aaaaaaaaaaa",
+        playlist_index: 1,
+        title: "A",
+        url: "https://www.youtube.com/watch?v=aaaaaaaaaaa",
+      },
+      {
+        video_id: "video_playlist_b_2",
+        youtube_id: "bbbbbbbbbbb",
+        playlist_index: 2,
+        title: "B",
+        url: "https://www.youtube.com/watch?v=bbbbbbbbbbb",
+      },
+      {
+        video_id: "video_playlist_a_3",
+        youtube_id: "aaaaaaaaaaa",
+        playlist_index: 3,
+        title: "A (copie)",
+        url: "https://www.youtube.com/watch?v=aaaaaaaaaaa",
+      },
+    ];
+    await api(`/api/worker/jobs/${created.job.id}/plan`, {
+      method: "PUT",
+      headers: WORKER_HEADERS,
+      body: { ...firstLease, title: "Playlist fixture", videos: plannedVideos },
+    });
+
+    const planned = await bodyOf<{ videos: Array<{ id: string; youtube_id: string; playlist_index: number }> }>(
+      await api(`/api/jobs/${created.job.id}`, { user: owner }),
+    );
+    expect(planned.videos.map(({ id, youtube_id, playlist_index }) => ({ id, youtube_id, playlist_index }))).toEqual(
+      plannedVideos.map(({ video_id: id, youtube_id, playlist_index }) => ({ id, youtube_id, playlist_index })),
+    );
+
+    await api(`/api/worker/jobs/${created.job.id}/videos/video_playlist_a_3/result`, {
+      method: "PUT",
+      headers: WORKER_HEADERS,
+      body: resultBody(firstLease, "aaaaaaaaaaa", 3, "A (copie)"),
+    });
+    const prematureComplete = await api(`/api/worker/jobs/${created.job.id}/complete`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: firstLease,
+    });
+    expect(prematureComplete.status).toBe(409);
+    expect((await bodyOf<ErrorResponse>(prematureComplete)).error.diagnostic_code).toBe("JOB_INCOMPLETE");
+
+    await env.DB.prepare("UPDATE jobs SET lease_expires_at = ? WHERE id = ?")
+      .bind("2000-01-01T00:00:00.000Z", created.job.id)
+      .run();
+    const resumed = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "playlist-worker-two", lease_seconds: 300 },
+      }),
+    );
+    expect(resumed.lease.ready_video_occurrences).toEqual([
+      { youtube_id: "aaaaaaaaaaa", playlist_index: 3 },
+    ]);
+    const resumedLease = {
+      worker_id: "playlist-worker-two",
+      lease_token: resumed.lease.lease_token,
+    };
+    for (const video of plannedVideos.slice(0, 2)) {
+      await api(`/api/worker/jobs/${created.job.id}/videos/${video.video_id}/error`, {
+        method: "PUT",
+        headers: WORKER_HEADERS,
+        body: {
+          ...resumedLease,
+          youtube_id: video.youtube_id,
+          playlist_index: video.playlist_index,
+          title: video.title,
+          url: video.url,
+          public_error: "Sous-titres indisponibles.",
+          diagnostic_code: "SUBTITLES_UNAVAILABLE",
+        },
+      });
+    }
+    const finished = await bodyOf<{
+      job: { progress: number; ready_videos: number; failed_videos: number };
+      videos: Array<{ state: string }>;
+    }>(await api(`/api/jobs/${created.job.id}`, { user: owner }));
+    expect(finished.job).toMatchObject({ progress: 1, ready_videos: 1, failed_videos: 2 });
+    expect(finished.videos.map((video) => video.state)).toEqual(["FAILED", "FAILED", "READY"]);
+
+    const completed = await api(`/api/worker/jobs/${created.job.id}/complete`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: resumedLease,
+    });
+    expect(completed.status).toBe(200);
+  });
+
   it("keeps source creation idempotent and rejects key reuse for another URL", async () => {
     const options: ApiOptions = {
       method: "POST",
@@ -321,7 +470,11 @@ interface CreatedResponse {
 }
 
 interface ClaimResponse {
-  lease: { job: { id: string }; lease_token: string };
+  lease: {
+    job: { id: string };
+    lease_token: string;
+    ready_video_occurrences: Array<{ youtube_id: string; playlist_index: number }>;
+  };
 }
 
 interface DecisionResponse {
@@ -330,4 +483,26 @@ interface DecisionResponse {
 
 interface ErrorResponse {
   error: { message: string; diagnostic_code: string };
+}
+
+function resultBody(
+  lease: { worker_id: string; lease_token: string },
+  youtubeId: string,
+  playlistIndex: number,
+  title: string,
+) {
+  return {
+    ...lease,
+    youtube_id: youtubeId,
+    playlist_index: playlistIndex,
+    title,
+    url: `https://www.youtube.com/watch?v=${youtubeId}`,
+    summary_markdown: `# ${title}`,
+    provenance: {
+      source_type: "youtube",
+      source_url: `https://www.youtube.com/watch?v=${youtubeId}`,
+      subtitle_format: "srt",
+    },
+    transcript: [{ block_index: 0, start_ms: 0, end_ms: 1_000, text: "Fixture" }],
+  };
 }

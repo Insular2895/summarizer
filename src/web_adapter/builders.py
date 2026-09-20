@@ -19,6 +19,7 @@ from src.web_adapter.errors import map_pipeline_error
 def progress_event(
     video: YouTubeVideo,
     *,
+    playlist_index: int,
     status: PipelineStatus,
     stage: str,
     progress: float | None,
@@ -29,6 +30,7 @@ def progress_event(
     return ProgressEvent(
         event_id=f"evt_{uuid4().hex}",
         youtube_id=video.video_id,
+        playlist_index=playlist_index,
         status=status,
         stage=stage,
         progress=progress,

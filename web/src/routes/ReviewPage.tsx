@@ -3,21 +3,35 @@ import { Link } from "react-router-dom";
 
 import { api, VideoRecord } from "../api/client";
 
+const POLL_DELAY_MS = 1_500;
+
 export function ReviewPage() {
   const [videos, setVideos] = useState<VideoRecord[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
-    api
-      .listReview(controller.signal)
-      .then(setVideos)
-      .catch((caught: unknown) => {
+    let timer: number | undefined;
+
+    async function refresh() {
+      try {
+        const next = await api.listReview(controller.signal);
+        setVideos(next);
+        setError(null);
+      } catch (caught) {
         if (!controller.signal.aborted) {
           setError(caught instanceof Error ? caught.message : "Review est momentanément indisponible.");
         }
-      });
-    return () => controller.abort();
+      } finally {
+        if (!controller.signal.aborted) timer = window.setTimeout(refresh, POLL_DELAY_MS);
+      }
+    }
+
+    void refresh();
+    return () => {
+      controller.abort();
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
   }, []);
 
   if (error) {

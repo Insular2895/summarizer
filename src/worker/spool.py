@@ -11,7 +11,7 @@ from uuid import uuid4
 
 from src.paths import assert_inside, ensure_dir
 
-RecordKind = Literal["event", "result", "error"]
+RecordKind = Literal["plan", "event", "result", "error"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -70,7 +70,7 @@ class WorkerSpool:
                 raise SpoolCorruptionError(f"Invalid worker spool record: {path.name}") from error
             if (
                 record.job_id != job_id
-                or record.kind not in {"event", "result", "error"}
+                or record.kind not in {"plan", "event", "result", "error"}
                 or not isinstance(record.payload, dict)
                 or (record.video_id is not None and not isinstance(record.video_id, str))
             ):
@@ -90,6 +90,10 @@ class WorkerSpool:
     def pipeline_complete(self, job_id: str) -> bool:
         marker = self._job_dir(job_id, create=False) / "pipeline-complete.json"
         return marker.is_file()
+
+    def mark_pipeline_incomplete(self, job_id: str) -> None:
+        marker = self._job_dir(job_id, create=False) / "pipeline-complete.json"
+        assert_inside(marker, self.root).unlink(missing_ok=True)
 
     def clear_completed_job(self, job_id: str) -> None:
         directory = self._job_dir(job_id, create=False)

@@ -23,6 +23,18 @@ interface CountRow {
   active: number;
 }
 
+interface PersistedPlanVideo {
+  id: string;
+  youtube_id: string;
+  playlist_index: number;
+}
+
+interface PlannedVideo {
+  videoId: string;
+  youtubeId: string;
+  playlistIndex: number;
+}
+
 export class Repository {
   constructor(private readonly db: D1Database) {}
 
@@ -308,15 +320,82 @@ export class Repository {
       .bind(job.state, now, source.id)
       .run();
     const ready = await this.db
-      .prepare("SELECT youtube_id FROM videos WHERE job_id = ? AND state = 'READY' ORDER BY playlist_index")
+      .prepare(
+        "SELECT youtube_id, playlist_index FROM videos WHERE job_id = ? AND state = 'READY' ORDER BY playlist_index",
+      )
       .bind(job.id)
-      .all<{ youtube_id: string }>();
+      .all<{ youtube_id: string; playlist_index: number }>();
     return {
       job,
       source,
       lease_token: leaseToken,
-      ready_youtube_ids: ready.results.map((item) => item.youtube_id),
+      ready_video_occurrences: ready.results,
     };
+  }
+
+  async publishPlan(
+    jobId: string,
+    lease: { workerId: string; leaseToken: string },
+    plan: {
+      title: string;
+      videos: Array<{
+        videoId: string;
+        youtubeId: string;
+        playlistIndex: number;
+        title: string;
+        url: string;
+      }>;
+    },
+  ) {
+    await this.requireLease(jobId, lease.workerId, lease.leaseToken);
+    const persistedBefore = await this.db
+      .prepare("SELECT id, youtube_id, playlist_index FROM videos WHERE job_id = ? ORDER BY playlist_index")
+      .bind(jobId)
+      .all<{ id: string; youtube_id: string; playlist_index: number }>();
+    if (persistedBefore.results.length > 0) {
+      assertStablePlan(persistedBefore.results, plan.videos);
+    }
+    const now = nowIso();
+    await this.db.batch([
+      ...plan.videos.map((video) =>
+        this.db
+          .prepare(
+            `INSERT OR IGNORE INTO videos
+               (id, job_id, youtube_id, playlist_index, title, url, state, stage,
+                progress, created_at, updated_at)
+             VALUES (?, ?, ?, ?, ?, ?, 'QUEUED', 'QUEUED', 0, ?, ?)`,
+          )
+          .bind(
+            video.videoId,
+            jobId,
+            video.youtubeId,
+            video.playlistIndex,
+            video.title,
+            video.url,
+            now,
+            now,
+          ),
+      ),
+      this.db
+        .prepare(
+          `UPDATE jobs SET
+             state = CASE WHEN ready_videos > 0 THEN 'READY' ELSE 'PROCESSING' END,
+             stage = 'SOURCE_DISCOVERED', total_videos = ?,
+             progress = CASE WHEN ? > 0 THEN CAST(ready_videos + failed_videos AS REAL) / ? ELSE 0 END,
+             updated_at = ? WHERE id = ?`,
+        )
+        .bind(plan.videos.length, plan.videos.length, plan.videos.length, now, jobId),
+      this.db
+        .prepare("UPDATE sources SET title = ?, updated_at = ? WHERE id = (SELECT source_id FROM jobs WHERE id = ?)")
+        .bind(plan.title, now, jobId),
+    ]);
+
+    const persisted = await this.db
+      .prepare("SELECT id, youtube_id, playlist_index FROM videos WHERE job_id = ? ORDER BY playlist_index")
+      .bind(jobId)
+      .all<{ id: string; youtube_id: string; playlist_index: number }>();
+    assertStablePlan(persisted.results, plan.videos);
+    return { accepted: true, total_videos: plan.videos.length };
   }
 
   async heartbeat(jobId: string, workerId: string, leaseToken: string, leaseSeconds: number): Promise<JobRow> {
@@ -367,10 +446,27 @@ export class Repository {
       )
       .run();
     if ((inserted.meta.changes ?? 0) > 0) {
-      await this.db
-        .prepare("UPDATE jobs SET stage = ?, progress = COALESCE(?, progress), updated_at = ? WHERE id = ?")
-        .bind(event.stage, event.progress, nowIso(), jobId)
-        .run();
+      const now = nowIso();
+      const statements = [
+        this.db
+          .prepare("UPDATE jobs SET stage = ?, updated_at = ? WHERE id = ?")
+          .bind(event.stage, now, jobId),
+      ];
+      if (event.videoId) {
+        statements.push(
+          this.db
+            .prepare(
+              `UPDATE videos SET
+                 state = CASE WHEN state = 'QUEUED' AND ? = 'PROCESSING' THEN 'PROCESSING' ELSE state END,
+                 stage = CASE WHEN state IN ('READY', 'FAILED') THEN stage ELSE ? END,
+                 progress = CASE WHEN state IN ('READY', 'FAILED') THEN progress ELSE COALESCE(?, progress) END,
+                 updated_at = ?
+               WHERE id = ? AND job_id = ?`,
+            )
+            .bind(event.status, event.stage, event.progress, now, event.videoId, jobId),
+        );
+      }
+      await this.db.batch(statements);
     }
     return { accepted: true, duplicate: (inserted.meta.changes ?? 0) === 0 };
   }
@@ -459,9 +555,12 @@ export class Repository {
           `UPDATE jobs SET state = 'READY', stage = 'REVIEW_AVAILABLE',
              ready_videos = (SELECT COUNT(*) FROM videos WHERE job_id = ? AND state = 'READY'),
              failed_videos = (SELECT COUNT(*) FROM videos WHERE job_id = ? AND state = 'FAILED'),
+             progress = CASE WHEN total_videos > 0 THEN
+               CAST((SELECT COUNT(*) FROM videos WHERE job_id = ? AND state IN ('READY', 'FAILED')) AS REAL) / total_videos
+               ELSE progress END,
              updated_at = ? WHERE id = ?`,
         )
-        .bind(jobId, jobId, now, jobId),
+        .bind(jobId, jobId, jobId, now, jobId),
       this.db
         .prepare(
           `UPDATE sources SET status = 'READY', title = COALESCE(title, ?), updated_at = ?
@@ -522,9 +621,12 @@ export class Repository {
         .prepare(
           `UPDATE jobs SET
              failed_videos = (SELECT COUNT(*) FROM videos WHERE job_id = ? AND state = 'FAILED'),
+             progress = CASE WHEN total_videos > 0 THEN
+               CAST((SELECT COUNT(*) FROM videos WHERE job_id = ? AND state IN ('READY', 'FAILED')) AS REAL) / total_videos
+               ELSE progress END,
              updated_at = ? WHERE id = ?`,
         )
-        .bind(jobId, now, jobId),
+        .bind(jobId, jobId, now, jobId),
     ]);
     const video = await this.db.prepare("SELECT * FROM videos WHERE id = ?").bind(videoId).first<VideoRow>();
     if (!video) throw new ApiError(500, "VIDEO_ERROR_FAILED", "L’erreur vidéo n’a pas pu être enregistrée.");
@@ -534,6 +636,14 @@ export class Repository {
   async completeJob(jobId: string, workerId: string, leaseToken: string): Promise<JobRow> {
     await this.requireLease(jobId, workerId, leaseToken);
     const counts = await this.countJob(jobId);
+    if (counts.active > 0) {
+      throw new ApiError(
+        409,
+        "JOB_INCOMPLETE",
+        "Toutes les occurrences de la source doivent être traitées avant de terminer.",
+        { active: counts.active },
+      );
+    }
     const state = counts.ready > 0 ? "READY" : "FAILED";
     const diagnosticCode = counts.total === 0 ? "NO_VIDEO_RESULT" : null;
     const publicError = counts.total === 0 ? "Aucune vidéo exploitable n’a été produite." : null;
@@ -724,6 +834,19 @@ function decisionConflict(currentVersion: number): ApiError {
   return new ApiError(409, "DECISION_VERSION_CONFLICT", "La décision a été modifiée entre-temps.", {
     current_version: currentVersion,
   });
+}
+
+function assertStablePlan(persisted: PersistedPlanVideo[], plannedVideos: PlannedVideo[]): void {
+  const expected = new Map(plannedVideos.map((video) => [video.playlistIndex, video]));
+  if (
+    persisted.length !== plannedVideos.length ||
+    persisted.some((video) => {
+      const planned = expected.get(video.playlist_index);
+      return !planned || planned.videoId !== video.id || planned.youtubeId !== video.youtube_id;
+    })
+  ) {
+    throw new ApiError(409, "SOURCE_PLAN_CONFLICT", "Le plan de cette source a changé entre deux tentatives.");
+  }
 }
 
 function invalidLease(): ApiError {
