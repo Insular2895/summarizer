@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { App } from "./App";
 
@@ -12,6 +12,8 @@ function renderApp(initialPath = "/") {
     </MemoryRouter>,
   );
 }
+
+afterEach(() => vi.unstubAllGlobals());
 
 describe("Summarizer application shell", () => {
   it("renders the Home source entry without mode choices", () => {
@@ -28,25 +30,53 @@ describe("Summarizer application shell", () => {
   });
 
   it("navigates between the three primary destinations", async () => {
+    stubApi((path) => (path === "/api/review" ? { videos: [] } : {}));
     const user = userEvent.setup();
     renderApp();
 
     await user.click(screen.getByRole("link", { name: "Review" }));
-    expect(screen.getByRole("heading", { name: "Aucune vidéo prête" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Aucune vidéo prête" })).toBeInTheDocument();
 
     await user.click(screen.getByRole("link", { name: "History" }));
     expect(screen.getByRole("heading", { name: "Aucune session terminée" })).toBeInTheDocument();
   });
 
-  it("renders a video reading route without review decisions", () => {
+  it("renders a ready video with summary and timestamped transcript", async () => {
+    stubApi((path) => {
+      if (path === "/api/videos/video-123") return videoDetail;
+      return {};
+    });
     renderApp("/review/video-123");
 
-    expect(screen.getByRole("heading", { name: "Vidéo video-123" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Fixture vidéo" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Résumé" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Résumé déterministe", level: 3 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Note" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Transcript" })).toBeInTheDocument();
+    expect(screen.getByText("Premier bloc")).toBeInTheDocument();
+    expect(screen.getByText("0:01")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Garder" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Écarter" })).not.toBeInTheDocument();
+  });
+
+  it("submits one URL and navigates to readable processing feedback", async () => {
+    stubApi((path) => {
+      if (path === "/api/sources") return sourceReceipt;
+      if (path === "/api/jobs/job-123") {
+        return { ...sourceReceipt, videos: [videoDetail.video] };
+      }
+      return {};
+    });
+    const user = userEvent.setup();
+    renderApp();
+
+    await user.type(screen.getByLabelText("Source YouTube"), "https://youtu.be/abcdefghijk");
+    await user.click(screen.getByRole("button", { name: "Commencer" }));
+
+    expect(await screen.findByRole("heading", { name: "Source prise en charge" })).toBeInTheDocument();
+    expect(await screen.findByRole("link", { name: "Ouvrir « Fixture vidéo »" })).toHaveAttribute(
+      "href",
+      "/review/video-123",
+    );
   });
 
   it("shows clear feedback when Home is submitted without a URL", async () => {
@@ -55,8 +85,61 @@ describe("Summarizer application shell", () => {
 
     await user.click(screen.getByRole("button", { name: "Commencer" }));
 
-    expect(screen.getByRole("status")).toHaveTextContent(
-      "Collez une URL YouTube pour commencer.",
-    );
+    expect(screen.getByRole("status")).toHaveTextContent("Collez une URL YouTube pour commencer.");
   });
 });
+
+function stubApi(resolve: (path: string) => unknown) {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (input: RequestInfo | URL) => {
+      const url = new URL(String(input), "https://summarizer.test");
+      return new Response(JSON.stringify(resolve(url.pathname)), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }),
+  );
+}
+
+const source = {
+  id: "source-123",
+  normalized_url: "https://www.youtube.com/watch?v=abcdefghijk",
+  source_kind: "youtube_video",
+  title: "Fixture vidéo",
+  status: "READY",
+};
+
+const job = {
+  id: "job-123",
+  source_id: "source-123",
+  state: "READY",
+  stage: "PROCESSING_COMPLETE",
+  progress: 1,
+  total_videos: 1,
+  ready_videos: 1,
+  failed_videos: 0,
+  public_error: null,
+};
+
+const sourceReceipt = { source, job };
+
+const videoDetail = {
+  video: {
+    id: "video-123",
+    job_id: "job-123",
+    youtube_id: "abcdefghijk",
+    playlist_index: 1,
+    title: "Fixture vidéo",
+    url: "https://www.youtube.com/watch?v=abcdefghijk",
+    channel: "Fixture channel",
+    duration_seconds: 61,
+    state: "READY",
+    summary_markdown: "# Résumé déterministe",
+    public_error: null,
+    provenance: { source_type: "youtube" },
+  },
+  note: { video_id: "video-123", body: "", excerpts_json: "[]", version: 1, updated_at: "2026-09-20" },
+  decision: { video_id: "video-123", decision: "PENDING", previous_decision: null, version: 1 },
+  transcript: [{ block_index: 0, start_ms: 1_000, end_ms: 2_000, text: "Premier bloc" }],
+};

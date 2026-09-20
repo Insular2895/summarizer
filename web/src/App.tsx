@@ -3,6 +3,7 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { HistoryPage } from "./routes/HistoryPage";
 import { HomePage } from "./routes/HomePage";
 import { NotFoundPage } from "./routes/NotFoundPage";
+import { ProcessingPage } from "./routes/ProcessingPage";
 import { ReviewPage } from "./routes/ReviewPage";
 import { VideoPage } from "./routes/VideoPage";
 
@@ -39,6 +40,7 @@ export function App() {
       <main id="main-content" className="page-shell">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/processing/:jobId" element={<ProcessingPage />} />
           <Route path="/review" element={<ReviewPage />} />
           <Route path="/review/:videoId" element={<VideoPage />} />
           <Route path="/history" element={<HistoryPage />} />

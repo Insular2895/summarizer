@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from src.extractors.youtube import YouTubeVideo
+from src.llm.base import LLMError, LLMQuotaError
 from src.pipeline import run_playlist
 from src.web_adapter import CollectingObserver
 from src.web_adapter.errors import map_pipeline_error
@@ -90,3 +91,8 @@ def test_unknown_error_mapping_does_not_expose_exception_text() -> None:
 
     assert mapped.diagnostic_code == "VIDEO_PROCESSING_FAILED"
     assert "private" not in mapped.message
+
+
+def test_llm_errors_have_distinct_stable_diagnostic_codes() -> None:
+    assert map_pipeline_error(LLMQuotaError("provider quota detail")).diagnostic_code == "LLM_QUOTA"
+    assert map_pipeline_error(LLMError("provider failure detail")).diagnostic_code == "LLM_FAILED"

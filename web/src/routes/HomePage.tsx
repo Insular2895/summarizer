@@ -1,11 +1,13 @@
 import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { unavailableApi } from "../api/client";
+import { api } from "../api/client";
 
 export function HomePage() {
   const [url, setUrl] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,7 +22,8 @@ export function HomePage() {
     setMessage("Prise en charge de la source…");
 
     try {
-      await unavailableApi.createSource(normalizedUrl);
+      const receipt = await api.createSource(normalizedUrl);
+      navigate(`/processing/${receipt.job.id}`);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Impossible de traiter cette source.");
     } finally {
