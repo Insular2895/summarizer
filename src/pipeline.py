@@ -8,6 +8,7 @@ from rich.console import Console
 from src.config import load_settings
 from src.converters.markdown_cleaner import clean_markdown
 from src.converters.srt_to_text import convert_srt_to_text
+from src.converters.subtitle_timestamps import subtitle_file_to_blocks
 from src.exporters.graphipy import export_graphipy_ready
 from src.extractors.pdf_analyzer import build_pdf_engine_plan
 from src.extractors.pdf_marker import extract_pdf_with_marker
@@ -22,6 +23,13 @@ from src.storage.manifest import JobManifest, VideoStatus, manifest_path_for_pla
 from src.storage.retention import safe_delete
 from src.summarizers.pdf_summarizer import PdfSummarizer
 from src.summarizers.video_summarizer import VideoSummarizer
+from src.web_adapter.builders import progress_event, video_failure, video_result
+from src.web_adapter.contracts import (
+    PipelineObserver,
+    ProgressEvent,
+    VideoFailure,
+    VideoResult,
+)
 
 console = Console()
 
@@ -35,6 +43,7 @@ def run_video(
     overwrite: bool = False,
     dry_run: bool = False,
     summary_focus: str | None = None,
+    observer: PipelineObserver | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
@@ -48,10 +57,16 @@ def run_video(
         overwrite=overwrite,
         dry_run=dry_run,
         summary_focus=summary_focus,
+        observer=observer,
+        playlist_index=1,
     )
 
 
-def run_video_batch(file_path: Path, **kwargs: object) -> JobManifest:
+def run_video_batch(
+    file_path: Path,
+    observer: PipelineObserver | None = None,
+    **kwargs: object,
+) -> JobManifest:
     urls = [
         line.strip()
         for line in file_path.read_text(encoding="utf-8").splitlines()
@@ -60,10 +75,16 @@ def run_video_batch(file_path: Path, **kwargs: object) -> JobManifest:
     manifest = JobManifest(playlist_title=file_path.stem)
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     manifest_path = manifest_path_for_playlist(file_path.stem)
-    for url in urls:
+    for playlist_index, url in enumerate(urls, start=1):
         try:
             info = extractor.get_video_info(url)
-            status = _process_video(info, extractor, **kwargs)
+            status = _process_video(
+                info,
+                extractor,
+                observer=observer,
+                playlist_index=playlist_index,
+                **kwargs,
+            )
         except Exception as exc:
             status = VideoStatus(url=url, status="failed", error=str(exc))
         manifest.upsert_video(status)
@@ -75,6 +96,7 @@ def run_playlist(
     url: str,
     resume: bool = False,
     limit: int | None = None,
+    observer: PipelineObserver | None = None,
     **kwargs: object,
 ) -> JobManifest:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
@@ -83,13 +105,19 @@ def run_playlist(
         videos = videos[:limit]
     manifest_path = manifest_path_for_playlist(f"playlist-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
-    for video in videos:
+    for playlist_index, video in enumerate(videos, start=1):
         existing = manifest.get(video.url)
         if resume and existing and existing.status == "done":
             console.print(f"[cyan]Skip already done:[/] {video.title}")
             continue
         try:
-            status = _process_video(video, extractor, **kwargs)
+            status = _process_video(
+                video,
+                extractor,
+                observer=observer,
+                playlist_index=playlist_index,
+                **kwargs,
+            )
         except Exception as exc:
             status = VideoStatus(url=video.url, title=video.title, status="failed", error=str(exc))
             console.print(f"[red]Failed:[/] {video.title} - {exc}")
@@ -193,9 +221,12 @@ def run_youtube_source(
     dry_run: bool = False,
     limit: int | None = None,
     summary_focus: str | None = None,
+    observer: PipelineObserver | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
+        if observer is not None:
+            raise ValueError("The Web observer only supports YouTube URL sources.")
         return run_local_playlist_dir(
             path,
             ask_each=ask_each,
@@ -219,6 +250,7 @@ def run_youtube_source(
             overwrite=overwrite,
             dry_run=dry_run,
             summary_focus=summary_focus,
+            observer=observer,
         )
     return run_video(
         source,
@@ -229,6 +261,7 @@ def run_youtube_source(
         overwrite=overwrite,
         dry_run=dry_run,
         summary_focus=summary_focus,
+        observer=observer,
     )
 
 
@@ -419,6 +452,8 @@ def _process_video(
     overwrite: bool = False,
     dry_run: bool = False,
     summary_focus: str | None = None,
+    observer: PipelineObserver | None = None,
+    playlist_index: int = 1,
 ) -> VideoStatus:
     output_path = project_path("output", "videos", f"{video.slug}.md")
     text_path = project_path("cache", "transcripts", video.slug, f"{video.slug}.txt")
@@ -426,38 +461,150 @@ def _process_video(
         console.print(f"[dry-run] Video: {video.title}")
         console.print(f"[dry-run] Output: {output_path}")
         return VideoStatus(video.url, video.title, "dry-run", str(output_path), kept=False)
-    if output_path.exists() and not overwrite:
-        return VideoStatus(video.url, video.title, "done", str(output_path), kept=True)
-    console.print(f"[1/5] Extraction transcript: {video.title}")
-    subtitle_path = extractor.download_subtitles(video.url, video.slug)
-    console.print("[2/5] Conversion TXT")
-    convert_srt_to_text(subtitle_path, text_path)
-    transcript = text_path.read_text(encoding="utf-8")
-    console.print("[3/5] Appel Gemini")
-    output_path, model_used = VideoSummarizer().summarize(
-        video.title,
-        video.url,
-        transcript,
-        output_path,
-        summary_focus=summary_focus,
-    )
-    console.print(f"[4/5] Écriture Markdown: {output_path}")
-    kept = keep_all or _confirm_keep(output_path, ask_each)
-    if not kept:
-        safe_delete(output_path)
-    if export_graphipy and kept:
-        export_graphipy_ready(output_path, video.slug)
-        console.print("[5/5] Export Graphipy")
-    if delete_cache:
-        safe_delete(project_path("cache", "transcripts", video.slug))
-    return VideoStatus(
-        url=video.url,
-        title=video.title,
-        status="done",
-        output_path=str(output_path),
-        kept=kept,
-        model_used=model_used,
-    )
+    try:
+        if output_path.exists() and not overwrite:
+            subtitle_path = _latest_subtitle(video.slug)
+            blocks = subtitle_file_to_blocks(subtitle_path) if subtitle_path else []
+            _notify_ready(
+                observer,
+                video_result(
+                    video,
+                    playlist_index=playlist_index,
+                    output_path=output_path,
+                    model_used=None,
+                    subtitle_path=subtitle_path,
+                    timestamped_blocks=blocks,
+                ),
+            )
+            _notify_event(
+                observer,
+                progress_event(
+                    video,
+                    status="READY",
+                    stage="REUSED_EXISTING_OUTPUT",
+                    progress=1,
+                ),
+            )
+            return VideoStatus(video.url, video.title, "done", str(output_path), kept=True)
+
+        _notify_event(
+            observer,
+            progress_event(
+                video,
+                status="PROCESSING",
+                stage="TRANSCRIPT_DOWNLOAD",
+                progress=0.1,
+            ),
+        )
+        console.print(f"[1/5] Extraction transcript: {video.title}")
+        subtitle_path = extractor.download_subtitles(video.url, video.slug)
+        _notify_event(
+            observer,
+            progress_event(
+                video,
+                status="PROCESSING",
+                stage="TRANSCRIPT_PARSE",
+                progress=0.3,
+            ),
+        )
+        console.print("[2/5] Conversion TXT")
+        convert_srt_to_text(subtitle_path, text_path)
+        timestamped_blocks = subtitle_file_to_blocks(subtitle_path)
+        transcript = text_path.read_text(encoding="utf-8")
+        _notify_event(
+            observer,
+            progress_event(
+                video,
+                status="PROCESSING",
+                stage="SUMMARIZATION",
+                progress=0.5,
+            ),
+        )
+        console.print("[3/5] Appel Gemini")
+        output_path, model_used = VideoSummarizer().summarize(
+            video.title,
+            video.url,
+            transcript,
+            output_path,
+            summary_focus=summary_focus,
+        )
+        result = video_result(
+            video,
+            playlist_index=playlist_index,
+            output_path=output_path,
+            model_used=model_used,
+            subtitle_path=subtitle_path,
+            timestamped_blocks=timestamped_blocks,
+        )
+        console.print(f"[4/5] Écriture Markdown: {output_path}")
+        kept = keep_all or _confirm_keep(output_path, ask_each)
+        if not kept:
+            safe_delete(output_path)
+        if export_graphipy and kept:
+            export_graphipy_ready(output_path, video.slug)
+            console.print("[5/5] Export Graphipy")
+        if delete_cache:
+            safe_delete(project_path("cache", "transcripts", video.slug))
+        _notify_ready(observer, result)
+        _notify_event(
+            observer,
+            progress_event(video, status="READY", stage="READY", progress=1),
+        )
+        return VideoStatus(
+            url=video.url,
+            title=video.title,
+            status="done",
+            output_path=str(output_path),
+            kept=kept,
+            model_used=model_used,
+        )
+    except Exception as exc:
+        failure = video_failure(video, playlist_index=playlist_index, error=exc)
+        _notify_failed(observer, failure)
+        _notify_event(
+            observer,
+            progress_event(
+                video,
+                status="FAILED",
+                stage="FAILED",
+                progress=1,
+                diagnostic_code=failure.diagnostic_code,
+            ),
+        )
+        raise
+
+
+def _latest_subtitle(slug: str) -> Path | None:
+    transcript_dir = project_path("cache", "transcripts", slug)
+    candidates = [*transcript_dir.glob("*.srt"), *transcript_dir.glob("*.vtt")]
+    return max(candidates, key=lambda path: path.stat().st_mtime) if candidates else None
+
+
+def _notify_event(observer: PipelineObserver | None, event: ProgressEvent) -> None:
+    if observer is None:
+        return
+    try:
+        observer.on_event(event)
+    except Exception as exc:
+        console.print(f"[yellow]Web observer event warning:[/] {type(exc).__name__}")
+
+
+def _notify_ready(observer: PipelineObserver | None, result: VideoResult) -> None:
+    if observer is None:
+        return
+    try:
+        observer.on_video_ready(result)
+    except Exception as exc:
+        console.print(f"[yellow]Web observer result warning:[/] {type(exc).__name__}")
+
+
+def _notify_failed(observer: PipelineObserver | None, failure: VideoFailure) -> None:
+    if observer is None:
+        return
+    try:
+        observer.on_video_failed(failure)
+    except Exception as exc:
+        console.print(f"[yellow]Web observer failure warning:[/] {type(exc).__name__}")
 
 
 def _confirm_keep(output_path: Path, ask_each: bool) -> bool:

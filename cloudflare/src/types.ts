@@ -63,6 +63,7 @@ export interface VideoRow {
   progress: number;
   summary_markdown: string | null;
   model_used: string | null;
+  provenance_json: string;
   public_error: string | null;
   diagnostic_code: string | null;
   created_at: string;

@@ -75,7 +75,7 @@ Prochaine phase :
 | 1 | Docs et contrats | Si décision Frozen manquante | Terminée par les trois docs V1 |
 | 2 | Squelette Web | Non | Terminée et testée |
 | 3 | Control plane | Non, dans l’architecture figée | Terminée et testée localement |
-| 4 | Adaptateur Python | Non | À faire |
+| 4 | Adaptateur Python | Non | Terminée et testée |
 | 5 | Worker | Non | À faire |
 | 6 | Vidéo unique | Non | À faire |
 | 7 | Playlist progressive | Non | À faire |

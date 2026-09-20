@@ -79,6 +79,7 @@ export async function handleWorkerRoute(request: Request, env: Env, path: string
         duration_seconds?: unknown;
         summary_markdown?: unknown;
         model_used?: unknown;
+        provenance?: unknown;
         transcript?: unknown;
       }
     >(request, 2_000_000);
@@ -97,6 +98,7 @@ export async function handleWorkerRoute(request: Request, env: Env, path: string
           : requireInteger(body.duration_seconds, "duration_seconds", { min: 0, max: 604_800 }),
       summaryMarkdown: requireString(body.summary_markdown, "summary_markdown", { max: 200_000 }),
       modelUsed: optionalString(body.model_used, "model_used", 200),
+      provenanceJson: JSON.stringify(parseProvenance(body.provenance)),
       transcript: parseTranscript(body.transcript),
     });
     return json({ video });
@@ -219,4 +221,20 @@ function normalizeVideoResultUrl(value: unknown, youtubeId: string) {
     throw new ApiError(400, "INVALID_VIDEO_URL", "L’URL du résultat ne correspond pas à la vidéo YouTube.");
   }
   return source;
+}
+
+function parseProvenance(value: unknown): Record<string, string> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new ApiError(400, "INVALID_PROVENANCE", "La provenance du résultat est invalide.");
+  }
+  const entries = Object.entries(value as Record<string, unknown>);
+  if (entries.length > 20) {
+    throw new ApiError(400, "INVALID_PROVENANCE", "La provenance contient trop de champs.");
+  }
+  return Object.fromEntries(
+    entries.map(([key, entryValue]) => [
+      requireString(key, "provenance key", { max: 80 }),
+      requireString(entryValue, `provenance.${key}`, { max: 2_048 }),
+    ]),
+  );
 }

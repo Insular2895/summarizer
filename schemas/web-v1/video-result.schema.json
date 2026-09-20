@@ -10,6 +10,7 @@
     "title",
     "url",
     "summary_markdown",
+    "provenance",
     "transcript"
   ],
   "properties": {
@@ -21,6 +22,12 @@
     "duration_seconds": { "type": ["integer", "null"], "minimum": 0 },
     "summary_markdown": { "type": "string", "minLength": 1, "maxLength": 200000 },
     "model_used": { "type": ["string", "null"], "maxLength": 200 },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "maxLength": 2048 },
+      "maxProperties": 20,
+      "required": ["source_type", "source_url", "subtitle_format"]
+    },
     "transcript": {
       "type": "array",
       "maxItems": 20000,

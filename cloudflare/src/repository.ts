@@ -97,7 +97,7 @@ export class Repository {
       .prepare("SELECT * FROM videos WHERE job_id = ? ORDER BY playlist_index")
       .bind(job.id)
       .all<VideoRow>();
-    return { source, job, videos: videos.results };
+    return { source, job, videos: videos.results.map(videoView) };
   }
 
   async listReview(ownerId: string) {
@@ -115,7 +115,7 @@ export class Repository {
       )
       .bind(ownerId)
       .all<VideoRow & { note_body: string; note_version: number; decision: ReviewDecision; decision_version: number }>();
-    return rows.results;
+    return rows.results.map(videoView);
   }
 
   async getVideo(ownerId: string, videoId: string) {
@@ -130,7 +130,7 @@ export class Repository {
         .bind(videoId)
         .all<TranscriptBlockInput>(),
     ]);
-    return { video, note, decision, transcript: transcript.results };
+    return { video: videoView(video), note, decision, transcript: transcript.results };
   }
 
   async saveNote(
@@ -383,6 +383,7 @@ export class Repository {
       durationSeconds: number | null;
       summaryMarkdown: string;
       modelUsed: string | null;
+      provenanceJson: string;
       transcript: TranscriptBlockInput[];
     },
   ): Promise<VideoRow> {
@@ -399,14 +400,16 @@ export class Repository {
         .prepare(
           `INSERT INTO videos
              (id, job_id, youtube_id, playlist_index, title, url, channel, duration_seconds,
-              state, stage, progress, summary_markdown, model_used, created_at, updated_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'READY', 'READY', 1, ?, ?, ?, ?)
+              state, stage, progress, summary_markdown, model_used, provenance_json,
+              created_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'READY', 'READY', 1, ?, ?, ?, ?, ?)
            ON CONFLICT(id) DO UPDATE SET
              youtube_id = excluded.youtube_id, playlist_index = excluded.playlist_index,
              title = excluded.title, url = excluded.url, channel = excluded.channel,
              duration_seconds = excluded.duration_seconds, state = 'READY', stage = 'READY',
              progress = 1, summary_markdown = excluded.summary_markdown,
-             model_used = excluded.model_used, public_error = NULL, diagnostic_code = NULL,
+             model_used = excluded.model_used, provenance_json = excluded.provenance_json,
+             public_error = NULL, diagnostic_code = NULL,
              updated_at = excluded.updated_at`,
         )
         .bind(
@@ -420,6 +423,7 @@ export class Repository {
           result.durationSeconds,
           result.summaryMarkdown,
           result.modelUsed,
+          result.provenanceJson,
           now,
           now,
         ),
@@ -728,4 +732,15 @@ function nowIso(): string {
 async function stableDigest(value: string): Promise<string> {
   const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
   return Array.from(new Uint8Array(bytes), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function videoView<T extends VideoRow>(video: T): Omit<T, "provenance_json"> & { provenance: Record<string, string> } {
+  const { provenance_json: provenanceJson, ...rest } = video;
+  let provenance: Record<string, string> = {};
+  try {
+    provenance = JSON.parse(provenanceJson) as Record<string, string>;
+  } catch {
+    // A malformed historical row must not make the whole Review queue unavailable.
+  }
+  return { ...rest, provenance };
 }

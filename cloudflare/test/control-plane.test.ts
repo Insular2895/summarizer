@@ -73,6 +73,11 @@ describe("Summarizer Web V1 control plane", () => {
         duration_seconds: 213,
         summary_markdown: "# Résumé\n\nUn contenu de test.",
         model_used: "fixture-model",
+        provenance: {
+          source_type: "youtube",
+          source_url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          subtitle_format: "srt",
+        },
         transcript: [
           { block_index: 0, start_ms: 0, end_ms: 1_500, text: "Premier bloc" },
           { block_index: 1, start_ms: 1_500, end_ms: 3_000, text: "Deuxième bloc" },
@@ -93,8 +98,11 @@ describe("Summarizer Web V1 control plane", () => {
 
     const review = await bodyOf<{ videos: Array<{ id: string }> }>(await api("/api/review", { user: USER }));
     expect(review.videos.map((video) => video.id)).toContain(videoId);
-    const detail = await bodyOf<{ transcript: unknown[] }>(await api(`/api/videos/${videoId}`, { user: USER }));
+    const detail = await bodyOf<{ video: { provenance: Record<string, string> }; transcript: unknown[] }>(
+      await api(`/api/videos/${videoId}`, { user: USER }),
+    );
     expect(detail.transcript).toHaveLength(2);
+    expect(detail.video.provenance.subtitle_format).toBe("srt");
 
     const noteResponse = await api(`/api/videos/${videoId}/note`, {
       method: "PUT",
