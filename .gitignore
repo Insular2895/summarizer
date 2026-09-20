@@ -19,6 +19,13 @@ web/node_modules/
 web/dist/
 web/coverage/
 web/*.tsbuildinfo
+cloudflare/node_modules/
+cloudflare/dist/
+cloudflare/.wrangler/
+cloudflare/coverage/
+cloudflare/*.tsbuildinfo
+cloudflare/.dev.vars*
+!cloudflare/.dev.vars.example
 
 # Transcripts téléchargés (output du script, pas du code)
 playlists/

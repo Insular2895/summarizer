@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://summarizer.local/schemas/web-v1/job-event.schema.json",
+  "title": "Summarizer Web V1 job event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "job_id", "status", "stage", "occurred_at"],
+  "properties": {
+    "event_id": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "job_id": { "type": "string", "pattern": "^job_[A-Za-z0-9_-]+$" },
+    "video_id": { "type": ["string", "null"], "maxLength": 120 },
+    "status": {
+      "type": "string",
+      "enum": ["QUEUED", "PROCESSING", "READY", "FAILED"]
+    },
+    "stage": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "progress": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "diagnostic_code": { "type": ["string", "null"], "maxLength": 120 },
+    "occurred_at": { "type": "string", "format": "date-time" }
+  }
+}

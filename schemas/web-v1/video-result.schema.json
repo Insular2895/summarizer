@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://summarizer.local/schemas/web-v1/video-result.schema.json",
+  "title": "Summarizer Web V1 video result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "youtube_id",
+    "playlist_index",
+    "title",
+    "url",
+    "summary_markdown",
+    "transcript"
+  ],
+  "properties": {
+    "youtube_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "playlist_index": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+    "channel": { "type": ["string", "null"], "maxLength": 500 },
+    "duration_seconds": { "type": ["integer", "null"], "minimum": 0 },
+    "summary_markdown": { "type": "string", "minLength": 1, "maxLength": 200000 },
+    "model_used": { "type": ["string", "null"], "maxLength": 200 },
+    "transcript": {
+      "type": "array",
+      "maxItems": 20000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["block_index", "start_ms", "text"],
+        "properties": {
+          "block_index": { "type": "integer", "minimum": 0 },
+          "start_ms": { "type": "integer", "minimum": 0 },
+          "end_ms": { "type": ["integer", "null"], "minimum": 0 },
+          "text": { "type": "string", "minLength": 1, "maxLength": 20000 }
+        }
+      }
+    }
+  }
+}

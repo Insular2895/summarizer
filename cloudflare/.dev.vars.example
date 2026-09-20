@@ -1,0 +1,3 @@
+# Local development only. Copy to .dev.vars and replace the token value.
+APP_ENV=local
+WORKER_API_TOKEN=replace-with-a-long-random-local-token

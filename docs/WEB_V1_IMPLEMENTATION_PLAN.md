@@ -69,12 +69,12 @@ Prochaine phase :
 
 ## 3. Matrice des phases
 
-| Phase | Objet | Validation humaine | Statut initial |
+| Phase | Objet | Validation humaine | Statut |
 | --- | --- | --- | --- |
 | 0 | Baseline | Non, sauf risque destructif | Terminée et documentée |
 | 1 | Docs et contrats | Si décision Frozen manquante | Terminée par les trois docs V1 |
-| 2 | Squelette Web | Non | À faire |
-| 3 | Control plane | Non, dans l’architecture figée | À faire |
+| 2 | Squelette Web | Non | Terminée et testée |
+| 3 | Control plane | Non, dans l’architecture figée | Terminée et testée localement |
 | 4 | Adaptateur Python | Non | À faire |
 | 5 | Worker | Non | À faire |
 | 6 | Vidéo unique | Non | À faire |
