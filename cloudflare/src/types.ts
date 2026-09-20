@@ -97,5 +97,5 @@ export interface WorkerLease {
   job: JobRow;
   source: SourceRow;
   lease_token: string;
-  ready_video_ids: string[];
+  ready_youtube_ids: string[];
 }

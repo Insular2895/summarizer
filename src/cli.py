@@ -24,9 +24,38 @@ from src.pipeline import (
 )
 from src.storage.manifest import manifest_summary
 from src.storage.retention import cleanup_all_temp, cleanup_cache, cleanup_outputs_older_than
+from src.worker.client import HttpControlPlaneClient
+from src.worker.config import load_worker_config
+from src.worker.runner import WorkerRunner
+from src.worker.spool import WorkerSpool
 
 app = typer.Typer(no_args_is_help=True)
 console = Console()
+
+
+@app.command("web-worker")
+def web_worker(
+    once: Annotated[bool, typer.Option(help="Claim at most one job, then exit.")] = False,
+    poll_seconds: Annotated[float, typer.Option(min=0.1, max=300)] = 5,
+    lease_seconds: Annotated[int, typer.Option(min=15, max=300)] = 120,
+) -> None:
+    """Run the outbound-only Web V1 worker (internal operations command)."""
+    try:
+        config = load_worker_config()
+        runner = WorkerRunner(
+            client=HttpControlPlaneClient(config.control_plane_url, config.worker_token),
+            spool=WorkerSpool(project_path("cache", "web_worker_spool")),
+            worker_id=config.worker_id,
+            lease_seconds=lease_seconds,
+        )
+        if once:
+            console.print(runner.run_once())
+        else:
+            runner.run_forever(poll_seconds=poll_seconds)
+    except KeyboardInterrupt:
+        console.print("Worker arrêté proprement.")
+    except Exception as exc:
+        _fail(exc)
 
 
 @app.command()

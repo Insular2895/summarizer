@@ -308,10 +308,15 @@ export class Repository {
       .bind(job.state, now, source.id)
       .run();
     const ready = await this.db
-      .prepare("SELECT id FROM videos WHERE job_id = ? AND state = 'READY' ORDER BY playlist_index")
+      .prepare("SELECT youtube_id FROM videos WHERE job_id = ? AND state = 'READY' ORDER BY playlist_index")
       .bind(job.id)
-      .all<{ id: string }>();
-    return { job, source, lease_token: leaseToken, ready_video_ids: ready.results.map((item) => item.id) };
+      .all<{ youtube_id: string }>();
+    return {
+      job,
+      source,
+      lease_token: leaseToken,
+      ready_youtube_ids: ready.results.map((item) => item.youtube_id),
+    };
   }
 
   async heartbeat(jobId: string, workerId: string, leaseToken: string, leaseSeconds: number): Promise<JobRow> {

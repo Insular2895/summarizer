@@ -44,9 +44,12 @@ def run_video(
     dry_run: bool = False,
     summary_focus: str | None = None,
     observer: PipelineObserver | None = None,
+    skip_youtube_ids: set[str] | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
+    if skip_youtube_ids and info.video_id in skip_youtube_ids:
+        return VideoStatus(info.url, info.title, "done", kept=True)
     return _process_video(
         info,
         extractor,
@@ -97,6 +100,7 @@ def run_playlist(
     resume: bool = False,
     limit: int | None = None,
     observer: PipelineObserver | None = None,
+    skip_youtube_ids: set[str] | None = None,
     **kwargs: object,
 ) -> JobManifest:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
@@ -106,6 +110,8 @@ def run_playlist(
     manifest_path = manifest_path_for_playlist(f"playlist-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
     for playlist_index, video in enumerate(videos, start=1):
+        if skip_youtube_ids and video.video_id in skip_youtube_ids:
+            continue
         existing = manifest.get(video.url)
         if resume and existing and existing.status == "done":
             console.print(f"[cyan]Skip already done:[/] {video.title}")
@@ -222,6 +228,7 @@ def run_youtube_source(
     limit: int | None = None,
     summary_focus: str | None = None,
     observer: PipelineObserver | None = None,
+    skip_youtube_ids: set[str] | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
@@ -251,6 +258,7 @@ def run_youtube_source(
             dry_run=dry_run,
             summary_focus=summary_focus,
             observer=observer,
+            skip_youtube_ids=skip_youtube_ids,
         )
     return run_video(
         source,
@@ -262,6 +270,7 @@ def run_youtube_source(
         dry_run=dry_run,
         summary_focus=summary_focus,
         observer=observer,
+        skip_youtube_ids=skip_youtube_ids,
     )
 
 

@@ -1,4 +1,5 @@
 import { SELF } from "cloudflare:test";
+import { env } from "cloudflare:workers";
 import { describe, expect, it } from "vitest";
 import { ApiError, readJson } from "../src/http";
 import { normalizeYouTubeUrl } from "../src/youtube";
@@ -183,6 +184,42 @@ describe("Summarizer Web V1 control plane", () => {
       await api("/api/history", { user: USER }),
     );
     expect(history.entries).toContainEqual(expect.objectContaining({ source_id: created.source.id, discarded_videos: 1 }));
+  });
+
+  it("allows only one active lease and reclaims it after expiration", async () => {
+    const created = await bodyOf<CreatedResponse>(
+      await api("/api/sources", {
+        method: "POST",
+        user: "lease-owner@example.test",
+        idempotencyKey: "lease-source-0001",
+        body: { url: "https://www.youtube.com/watch?v=leaseid1234" },
+      }),
+    );
+    const first = await api("/api/worker/jobs/claim", {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: { worker_id: "worker-one", lease_seconds: 15 },
+    });
+    expect(first.status).toBe(200);
+    expect((await bodyOf<ClaimResponse>(first)).lease.job.id).toBe(created.job.id);
+
+    const concurrent = await api("/api/worker/jobs/claim", {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: { worker_id: "worker-two", lease_seconds: 15 },
+    });
+    expect(concurrent.status).toBe(204);
+
+    await env.DB.prepare("UPDATE jobs SET lease_expires_at = ? WHERE id = ?")
+      .bind("2000-01-01T00:00:00.000Z", created.job.id)
+      .run();
+    const reclaimed = await api("/api/worker/jobs/claim", {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: { worker_id: "worker-two", lease_seconds: 15 },
+    });
+    expect(reclaimed.status).toBe(200);
+    expect((await bodyOf<ClaimResponse>(reclaimed)).lease.job.id).toBe(created.job.id);
   });
 
   it("keeps source creation idempotent and rejects key reuse for another URL", async () => {

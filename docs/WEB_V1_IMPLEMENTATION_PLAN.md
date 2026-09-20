@@ -76,7 +76,7 @@ Prochaine phase :
 | 2 | Squelette Web | Non | Terminée et testée |
 | 3 | Control plane | Non, dans l’architecture figée | Terminée et testée localement |
 | 4 | Adaptateur Python | Non | Terminée et testée |
-| 5 | Worker | Non | À faire |
+| 5 | Worker | Non | Terminée et testée localement |
 | 6 | Vidéo unique | Non | À faire |
 | 7 | Playlist progressive | Non | À faire |
 | 8 | Note et autosave | Non | À faire |
