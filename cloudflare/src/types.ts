@@ -96,6 +96,7 @@ export interface TranscriptBlockInput {
 export interface WorkerLease {
   job: JobRow;
   source: SourceRow;
+  work_kind: "PROCESS" | "FINALIZE";
   lease_token: string;
   ready_video_occurrences: Array<{ youtube_id: string; playlist_index: number }>;
 }

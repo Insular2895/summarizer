@@ -457,8 +457,52 @@ p {
 }
 
 .review-caught-up p {
-  margin-bottom: 0;
   color: #626262;
+}
+
+.review-summary-counts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin: 1.75rem 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  background: #e5e5e5;
+}
+
+.review-summary-counts div {
+  padding: 1rem 0.5rem;
+  background: #ffffff;
+}
+
+.review-summary-counts dt {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.review-summary-counts dd {
+  margin: 0.3rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.finalize-button {
+  min-width: 10rem;
+  min-height: 3.25rem;
+  padding: 0 1.25rem;
+  border: 0;
+  border-radius: 0.625rem;
+  background: #171717;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.finalize-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
 }
 
 .undo-bar {
@@ -717,6 +761,10 @@ p {
   .review-actions kbd {
     display: none;
   }
+
+  .review-summary-counts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -760,7 +808,8 @@ p {
   .review-card,
   .review-actions,
   .review-actions button + button,
-  .review-caught-up {
+  .review-caught-up,
+  .review-summary-counts {
     border-color: #2d2d2d;
   }
 
@@ -809,6 +858,19 @@ p {
 
   .review-caught-up p {
     color: #a3a3a3;
+  }
+
+  .review-summary-counts {
+    background: #2d2d2d;
+  }
+
+  .review-summary-counts div {
+    background: #191919;
+  }
+
+  .finalize-button {
+    background: #f5f5f5;
+    color: #171717;
   }
 
   .lede,

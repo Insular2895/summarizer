@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
-from typing import Any, Protocol
+from typing import Any, Literal, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -14,6 +14,9 @@ class LeaseClaim:
     source_kind: str
     lease_token: str
     ready_video_occurrences: frozenset[tuple[str, int]]
+    work_kind: Literal["PROCESS", "FINALIZE"] = "PROCESS"
+    finalize_state: str = "NOT_STARTED"
+    export_reference: str | None = None
 
 
 class ControlPlaneClient(Protocol):
@@ -63,6 +66,18 @@ class ControlPlaneClient(Protocol):
 
     def complete(self, job_id: str, worker_id: str, lease_token: str) -> None: ...
 
+    def report_export(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+        *,
+        success: bool,
+        export_reference: str | None,
+        cleanup_complete: bool,
+        diagnostic_code: str | None = None,
+    ) -> None: ...
+
 
 class ControlPlaneError(RuntimeError):
     def __init__(self, status: int | None, diagnostic_code: str, *, retryable: bool) -> None:
@@ -91,6 +106,9 @@ class HttpControlPlaneClient:
         lease = _object(response, "lease")
         job = _object(lease, "job")
         source = _object(lease, "source")
+        work_kind = lease.get("work_kind")
+        if work_kind not in {"PROCESS", "FINALIZE"}:
+            raise ControlPlaneError(502, "INVALID_CLAIM_RESPONSE", retryable=False)
         ready_items = lease.get("ready_video_occurrences", [])
         if not isinstance(ready_items, list):
             raise ControlPlaneError(502, "INVALID_CLAIM_RESPONSE", retryable=False)
@@ -109,6 +127,13 @@ class HttpControlPlaneClient:
             source_kind=_string(source, "source_kind"),
             lease_token=_string(lease, "lease_token"),
             ready_video_occurrences=frozenset(ready_occurrences),
+            work_kind=work_kind,
+            finalize_state=_string(job, "finalize_state"),
+            export_reference=(
+                job.get("export_reference")
+                if isinstance(job.get("export_reference"), str)
+                else None
+            ),
         )
 
     def heartbeat(
@@ -187,6 +212,30 @@ class HttpControlPlaneClient:
             "POST",
             f"/api/worker/jobs/{job_id}/complete",
             {"worker_id": worker_id, "lease_token": lease_token},
+        )
+
+    def report_export(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+        *,
+        success: bool,
+        export_reference: str | None,
+        cleanup_complete: bool,
+        diagnostic_code: str | None = None,
+    ) -> None:
+        self._request(
+            "POST",
+            f"/api/worker/jobs/{job_id}/export-result",
+            {
+                "worker_id": worker_id,
+                "lease_token": lease_token,
+                "success": success,
+                "export_reference": export_reference,
+                "cleanup_complete": cleanup_complete,
+                "diagnostic_code": diagnostic_code,
+            },
         )
 
     def _request(

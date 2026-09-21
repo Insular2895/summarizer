@@ -21,6 +21,11 @@ const video = {
   note_version: 1,
   decision: "PENDING" as const,
   decision_version: 1,
+  job_state: "READY" as const,
+  job_stage: "PROCESSING_COMPLETE",
+  job_finalize_state: "NOT_STARTED" as const,
+  job_total_videos: 1,
+  job_failed_videos: 0,
 };
 
 function renderCard(onDecision = vi.fn()) {

@@ -210,20 +210,172 @@ describe("Summarizer Web V1 control plane", () => {
     expect(finalizeResponse.status).toBe(202);
     expect((await bodyOf<{ job: { finalize_state: string } }>(finalizeResponse)).job.finalize_state).toBe("REQUESTED");
 
-    const exportResponse = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+    const repeatedFinalize = await api(`/api/jobs/${created.job.id}/finalize`, {
+      method: "POST",
+      user: USER,
+      idempotencyKey: "finalize-flow-0002",
+      body: {},
+    });
+    expect((await bodyOf<{ job: { finalize_state: string } }>(repeatedFinalize)).job.finalize_state).toBe("REQUESTED");
+
+    const frozenDecision = await api(`/api/videos/${videoId}/decision`, {
+      method: "PUT",
+      user: USER,
+      body: { decision: "KEPT", base_version: 4 },
+    });
+    expect(frozenDecision.status).toBe(409);
+    expect((await bodyOf<ErrorResponse>(frozenDecision)).error.diagnostic_code).toBe("REVIEW_FROZEN");
+
+    const firstFinalizeClaim = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "finalizer-crashed", lease_seconds: 15 },
+      }),
+    );
+    expect(firstFinalizeClaim.lease.work_kind).toBe("FINALIZE");
+    expect(firstFinalizeClaim.lease.job.finalize_state).toBe("EXPORTING");
+
+    // Simulate a crash after an idempotent outbox write but before its confirmation.
+    await env.DB.prepare("UPDATE jobs SET lease_expires_at = ? WHERE id = ?")
+      .bind("2000-01-01T00:00:00.000Z", created.job.id)
+      .run();
+    const resumedFinalizeClaim = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "finalizer-resumed", lease_seconds: 15 },
+      }),
+    );
+    expect(resumedFinalizeClaim.lease.job.finalize_state).toBe("EXPORTING");
+    const resumedLease = {
+      worker_id: "finalizer-resumed",
+      lease_token: resumedFinalizeClaim.lease.lease_token,
+    };
+
+    const failedExport = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
       method: "POST",
       headers: WORKER_HEADERS,
       body: {
-        ...leaseBody,
+        ...resumedLease,
+        success: false,
+        cleanup_complete: false,
+        diagnostic_code: "OUTBOX_WRITE_FAILED",
+      },
+    });
+    expect((await bodyOf<{ job: { state: string; finalize_state: string } }>(failedExport)).job).toMatchObject({
+      state: "READY",
+      finalize_state: "FAILED",
+    });
+    expect((await bodyOf<{ videos: unknown[] }>(await api("/api/review", { user: USER }))).videos).toHaveLength(1);
+    expect((await bodyOf<{ entries: unknown[] }>(await api("/api/history", { user: USER }))).entries).toHaveLength(0);
+
+    const retryFinalize = await api(`/api/jobs/${created.job.id}/finalize`, {
+      method: "POST",
+      user: USER,
+      idempotencyKey: "finalize-flow-retry-0001",
+      body: {},
+    });
+    expect((await bodyOf<{ job: { finalize_state: string } }>(retryFinalize)).job.finalize_state).toBe("REQUESTED");
+    const exportClaim = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "finalizer-export", lease_seconds: 15 },
+      }),
+    );
+    const exportLease = { worker_id: "finalizer-export", lease_token: exportClaim.lease.lease_token };
+
+    const prematureCleanup = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...exportLease,
         success: true,
         export_reference: "output/graphipy_ready/session-flow",
         cleanup_complete: true,
       },
     });
+    expect(prematureCleanup.status).toBe(409);
+    expect((await bodyOf<ErrorResponse>(prematureCleanup)).error.diagnostic_code).toBe("EXPORT_NOT_CONFIRMED");
+
+    const exportResponse = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...exportLease,
+        success: true,
+        export_reference: "output/graphipy_ready/session-flow",
+        cleanup_complete: false,
+      },
+    });
     expect((await bodyOf<{ job: { state: string; finalize_state: string } }>(exportResponse)).job).toMatchObject({
+      state: "READY",
+      finalize_state: "EXPORTED",
+    });
+    const repeatedExport = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...exportLease,
+        success: true,
+        export_reference: "output/graphipy_ready/session-flow",
+        cleanup_complete: false,
+      },
+    });
+    expect((await bodyOf<{ job: { finalize_state: string } }>(repeatedExport)).job.finalize_state).toBe("EXPORTED");
+
+    const failedCleanup = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...exportLease,
+        success: false,
+        export_reference: "output/graphipy_ready/session-flow",
+        cleanup_complete: false,
+        diagnostic_code: "CLEANUP_FAILED",
+      },
+    });
+    expect((await bodyOf<{ job: { finalize_state: string; stage: string } }>(failedCleanup)).job).toMatchObject({
+      finalize_state: "EXPORTED",
+      stage: "CLEANUP_FAILED",
+    });
+    expect((await bodyOf<{ entries: unknown[] }>(await api("/api/history", { user: USER }))).entries).toHaveLength(0);
+
+    const cleanupClaim = await bodyOf<ClaimResponse>(
+      await api("/api/worker/jobs/claim", {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: { worker_id: "finalizer-cleanup", lease_seconds: 15 },
+      }),
+    );
+    expect(cleanupClaim.lease.job.finalize_state).toBe("EXPORTED");
+    const cleanupLease = { worker_id: "finalizer-cleanup", lease_token: cleanupClaim.lease.lease_token };
+    const cleanupResponse = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...cleanupLease,
+        success: true,
+        export_reference: "output/graphipy_ready/session-flow",
+        cleanup_complete: true,
+      },
+    });
+    expect((await bodyOf<{ job: { state: string; finalize_state: string } }>(cleanupResponse)).job).toMatchObject({
       state: "DONE",
       finalize_state: "CLEANED",
     });
+    const repeatedCleanup = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: {
+        ...cleanupLease,
+        success: true,
+        export_reference: "output/graphipy_ready/session-flow",
+        cleanup_complete: true,
+      },
+    });
+    expect((await bodyOf<{ job: { state: string } }>(repeatedCleanup)).job.state).toBe("DONE");
 
     const history = await bodyOf<{ entries: Array<{ source_id: string; discarded_videos: number }> }>(
       await api("/api/history", { user: USER }),
@@ -484,7 +636,8 @@ interface CreatedResponse {
 
 interface ClaimResponse {
   lease: {
-    job: { id: string };
+    job: { id: string; finalize_state: string };
+    work_kind: "PROCESS" | "FINALIZE";
     lease_token: string;
     ready_video_occurrences: Array<{ youtube_id: string; playlist_index: number }>;
   };

@@ -116,7 +116,11 @@ export class Repository {
     const rows = await this.db
       .prepare(
         `SELECT videos.*, notes.body AS note_body, notes.version AS note_version,
-                review_decisions.decision, review_decisions.version AS decision_version
+                review_decisions.decision, review_decisions.version AS decision_version,
+                jobs.state AS job_state, jobs.stage AS job_stage,
+                jobs.finalize_state AS job_finalize_state,
+                jobs.total_videos AS job_total_videos,
+                jobs.failed_videos AS job_failed_videos
          FROM videos
          JOIN jobs ON jobs.id = videos.job_id
          JOIN sources ON sources.id = jobs.source_id
@@ -126,7 +130,19 @@ export class Repository {
          ORDER BY sources.created_at, videos.playlist_index`,
       )
       .bind(ownerId)
-      .all<VideoRow & { note_body: string; note_version: number; decision: ReviewDecision; decision_version: number }>();
+      .all<
+        VideoRow & {
+          note_body: string;
+          note_version: number;
+          decision: ReviewDecision;
+          decision_version: number;
+          job_state: JobRow["state"];
+          job_stage: string;
+          job_finalize_state: JobRow["finalize_state"];
+          job_total_videos: number | null;
+          job_failed_videos: number;
+        }
+      >();
     return rows.results.map(videoView);
   }
 
@@ -179,7 +195,8 @@ export class Repository {
     decision: Exclude<ReviewDecision, "PENDING">,
     baseVersion: number,
   ): Promise<DecisionRow> {
-    await this.getOwnedVideo(ownerId, videoId);
+    const video = await this.getOwnedVideo(ownerId, videoId);
+    await this.requireMutableReview(video.job_id);
     const current = await this.getDecision(videoId);
     if (current.decision === decision) return current;
     if (current.version !== baseVersion) {
@@ -191,11 +208,18 @@ export class Repository {
         `UPDATE review_decisions
          SET previous_decision = decision, decision = ?, version = version + 1, decided_at = ?
          WHERE video_id = ? AND version = ?
+           AND EXISTS (
+             SELECT 1 FROM videos JOIN jobs ON jobs.id = videos.job_id
+             WHERE videos.id = review_decisions.video_id AND jobs.finalize_state = 'NOT_STARTED'
+           )
          RETURNING *`,
       )
       .bind(decision, nowIso(), videoId, baseVersion)
       .first<DecisionRow>();
-    if (!updated) throw decisionConflict((await this.getDecision(videoId)).version);
+    if (!updated) {
+      await this.requireMutableReview(video.job_id);
+      throw decisionConflict((await this.getDecision(videoId)).version);
+    }
     return updated;
   }
 
@@ -205,7 +229,8 @@ export class Repository {
     baseVersion: number,
     idempotencyKey: string,
   ): Promise<DecisionRow> {
-    await this.getOwnedVideo(ownerId, videoId);
+    const video = await this.getOwnedVideo(ownerId, videoId);
+    await this.requireMutableReview(video.job_id);
     const scope = `decision:undo:${videoId}`;
     const repeated = await this.hasIdempotencyKey(ownerId, scope, idempotencyKey);
     if (repeated) return this.getDecision(videoId);
@@ -222,40 +247,50 @@ export class Repository {
          SET decision = previous_decision, previous_decision = decision,
              version = version + 1, decided_at = ?
          WHERE video_id = ? AND version = ?
+           AND EXISTS (
+             SELECT 1 FROM videos JOIN jobs ON jobs.id = videos.job_id
+             WHERE videos.id = review_decisions.video_id AND jobs.finalize_state = 'NOT_STARTED'
+           )
          RETURNING *`,
       )
       .bind(nowIso(), videoId, baseVersion)
       .first<DecisionRow>();
-    if (!updated) throw decisionConflict((await this.getDecision(videoId)).version);
+    if (!updated) {
+      await this.requireMutableReview(video.job_id);
+      throw decisionConflict((await this.getDecision(videoId)).version);
+    }
     await this.rememberIdempotencyKey(ownerId, scope, idempotencyKey, videoId);
     return updated;
   }
 
   async requestFinalize(ownerId: string, jobId: string, idempotencyKey: string): Promise<JobRow> {
     const scope = `job:finalize:${jobId}`;
-    if (await this.hasIdempotencyKey(ownerId, scope, idempotencyKey)) {
-      return (await this.getJob(ownerId, jobId)).job;
-    }
-
     const { job } = await this.getJob(ownerId, jobId);
-    if (job.finalize_state !== "NOT_STARTED") return job;
-    if (job.stage !== "PROCESSING_COMPLETE") {
-      throw new ApiError(409, "JOB_NOT_REVIEWABLE", "Le traitement n’est pas terminé.");
-    }
-    const counts = await this.countJob(jobId);
-    if (counts.total === 0 || counts.active > 0) {
-      throw new ApiError(409, "JOB_NOT_REVIEWABLE", "Le traitement n’est pas terminé.");
-    }
-    if (counts.pending > 0) {
-      throw new ApiError(409, "REVIEW_INCOMPLETE", "Décide pour chaque vidéo prête avant de terminer.", {
-        pending: counts.pending,
-      });
+    if (["REQUESTED", "EXPORTING", "EXPORTED", "CLEANED"].includes(job.finalize_state)) return job;
+    if (job.finalize_state === "NOT_STARTED") {
+      if (job.stage !== "PROCESSING_COMPLETE") {
+        throw new ApiError(409, "JOB_NOT_REVIEWABLE", "Le traitement n’est pas terminé.");
+      }
+      const counts = await this.countJob(jobId);
+      if (counts.total === 0 || counts.active > 0) {
+        throw new ApiError(409, "JOB_NOT_REVIEWABLE", "Le traitement n’est pas terminé.");
+      }
+      if (counts.pending > 0) {
+        throw new ApiError(409, "REVIEW_INCOMPLETE", "Décide pour chaque vidéo prête avant de terminer.", {
+          pending: counts.pending,
+        });
+      }
     }
 
     const now = nowIso();
     await this.db.batch([
       this.db
-        .prepare("UPDATE jobs SET finalize_state = 'REQUESTED', stage = 'EXPORT_REQUESTED', updated_at = ? WHERE id = ?")
+        .prepare(
+          `UPDATE jobs SET finalize_state = 'REQUESTED', stage = 'EXPORT_REQUESTED',
+             worker_id = NULL, lease_token = NULL, lease_expires_at = NULL,
+             diagnostic_code = NULL, updated_at = ?
+           WHERE id = ? AND finalize_state IN ('NOT_STARTED', 'FAILED')`,
+        )
         .bind(now, jobId),
       this.db
         .prepare(
@@ -289,27 +324,44 @@ export class Repository {
     const job = await this.db
       .prepare(
         `UPDATE jobs
-         SET state = CASE WHEN ready_videos > 0 THEN 'READY' ELSE 'PROCESSING' END,
-             stage = CASE WHEN stage = 'QUEUED' THEN 'CLAIMED' ELSE stage END,
+         SET state = CASE
+               WHEN finalize_state = 'NOT_STARTED' THEN CASE WHEN ready_videos > 0 THEN 'READY' ELSE 'PROCESSING' END
+               ELSE state
+             END,
+             stage = CASE
+               WHEN finalize_state IN ('REQUESTED', 'FAILED') THEN 'EXPORTING'
+               WHEN finalize_state = 'EXPORTED' THEN 'CLEANUP'
+               WHEN stage = 'QUEUED' THEN 'CLAIMED'
+               ELSE stage
+             END,
+             finalize_state = CASE
+               WHEN finalize_state IN ('REQUESTED', 'FAILED') THEN 'EXPORTING'
+               ELSE finalize_state
+             END,
              worker_id = ?, lease_token = ?, lease_expires_at = ?,
              attempt = attempt + 1, updated_at = ?
          WHERE id = (
            SELECT id FROM jobs
-           WHERE finalize_state = 'NOT_STARTED'
-             AND (
-               state = 'QUEUED'
-               OR (
-                 state IN ('PROCESSING', 'READY')
-                 AND stage != 'PROCESSING_COMPLETE'
-                 AND (lease_expires_at IS NULL OR lease_expires_at <= ?)
+           WHERE (
+               finalize_state IN ('REQUESTED', 'FAILED', 'EXPORTING', 'EXPORTED')
+               AND (lease_expires_at IS NULL OR lease_expires_at <= ?)
+             ) OR (
+               finalize_state = 'NOT_STARTED'
+               AND (
+                 state = 'QUEUED'
+                 OR (
+                   state IN ('PROCESSING', 'READY')
+                   AND stage != 'PROCESSING_COMPLETE'
+                   AND (lease_expires_at IS NULL OR lease_expires_at <= ?)
+                 )
                )
              )
-           ORDER BY created_at
+           ORDER BY CASE WHEN finalize_state = 'NOT_STARTED' THEN 1 ELSE 0 END, created_at
            LIMIT 1
          )
          RETURNING *`,
       )
-      .bind(workerId, leaseToken, expiresAt, now, now)
+      .bind(workerId, leaseToken, expiresAt, now, now, now)
       .first<JobRow>();
     if (!job) return null;
 
@@ -328,6 +380,7 @@ export class Repository {
     return {
       job,
       source,
+      work_kind: job.finalize_state === "NOT_STARTED" ? "PROCESS" : "FINALIZE",
       lease_token: leaseToken,
       ready_video_occurrences: ready.results,
     };
@@ -668,27 +721,65 @@ export class Repository {
     leaseToken: string,
     outcome: { success: boolean; exportReference: string | null; cleanupComplete: boolean; diagnosticCode: string | null },
   ): Promise<JobRow> {
-    const leasedJob = await this.requireLease(jobId, workerId, leaseToken);
-    if (leasedJob.finalize_state === "CLEANED" && leasedJob.state === "DONE") return leasedJob;
-    if (leasedJob.finalize_state !== "REQUESTED" && leasedJob.finalize_state !== "EXPORTING") {
-      throw new ApiError(409, "EXPORT_NOT_REQUESTED", "L’export n’a pas été demandé.");
+    const current = await this.db.prepare("SELECT * FROM jobs WHERE id = ?").bind(jobId).first<JobRow>();
+    if (!current) throw new ApiError(404, "JOB_NOT_FOUND", "Traitement introuvable.");
+    if (current.finalize_state === "CLEANED" && current.state === "DONE") {
+      if (current.worker_id === workerId && current.lease_token === leaseToken) return current;
+      throw invalidLease();
     }
-    if (outcome.success && (!outcome.exportReference || !outcome.cleanupComplete)) {
-      throw new ApiError(400, "EXPORT_PROOF_INCOMPLETE", "La référence d’export et la confirmation du cleanup sont requises.");
+    const leasedJob = await this.requireLease(jobId, workerId, leaseToken);
+    if (!["EXPORTING", "EXPORTED"].includes(leasedJob.finalize_state)) {
+      throw new ApiError(409, "EXPORT_NOT_REQUESTED", "L’export n’a pas été demandé.");
     }
 
     const now = nowIso();
+    if (leasedJob.finalize_state === "EXPORTING") {
+      if (!outcome.success) {
+        const failed = await this.db
+          .prepare(
+            `UPDATE jobs SET finalize_state = 'FAILED', stage = 'EXPORT_FAILED',
+               diagnostic_code = ?, worker_id = NULL, lease_token = NULL,
+               lease_expires_at = NULL, updated_at = ? WHERE id = ? RETURNING *`,
+          )
+          .bind(outcome.diagnosticCode ?? "EXPORT_FAILED", now, jobId)
+          .first<JobRow>();
+        if (!failed) throw new ApiError(404, "JOB_NOT_FOUND", "Traitement introuvable.");
+        return failed;
+      }
+      if (outcome.cleanupComplete) {
+        throw new ApiError(409, "EXPORT_NOT_CONFIRMED", "Confirme l’export avant de lancer le cleanup.");
+      }
+      if (!outcome.exportReference) {
+        throw new ApiError(400, "EXPORT_PROOF_INCOMPLETE", "La référence d’export confirmée est requise.");
+      }
+      const exported = await this.db
+        .prepare(
+          `UPDATE jobs SET finalize_state = 'EXPORTED', stage = 'EXPORT_CONFIRMED',
+             export_reference = ?, diagnostic_code = NULL, updated_at = ?
+           WHERE id = ? RETURNING *`,
+        )
+        .bind(outcome.exportReference, now, jobId)
+        .first<JobRow>();
+      if (!exported) throw new ApiError(404, "JOB_NOT_FOUND", "Traitement introuvable.");
+      return exported;
+    }
+
+    if (outcome.exportReference && outcome.exportReference !== leasedJob.export_reference) {
+      throw new ApiError(409, "EXPORT_REFERENCE_CONFLICT", "La référence d’export confirmée ne correspond pas.");
+    }
     if (!outcome.success) {
       const failed = await this.db
         .prepare(
-          `UPDATE jobs SET finalize_state = 'FAILED', stage = 'EXPORT_FAILED',
-             diagnostic_code = ?, updated_at = ? WHERE id = ? RETURNING *`,
+          `UPDATE jobs SET stage = 'CLEANUP_FAILED', diagnostic_code = ?,
+             worker_id = NULL, lease_token = NULL, lease_expires_at = NULL,
+             updated_at = ? WHERE id = ? RETURNING *`,
         )
-        .bind(outcome.diagnosticCode ?? "EXPORT_FAILED", now, jobId)
+        .bind(outcome.diagnosticCode ?? "CLEANUP_FAILED", now, jobId)
         .first<JobRow>();
       if (!failed) throw new ApiError(404, "JOB_NOT_FOUND", "Traitement introuvable.");
       return failed;
     }
+    if (!outcome.cleanupComplete) return leasedJob;
 
     const source = await this.db.prepare("SELECT * FROM sources WHERE id = ?").bind(leasedJob.source_id).first<SourceRow>();
     if (!source) throw new ApiError(500, "SOURCE_MISSING", "La source du traitement est introuvable.");
@@ -731,10 +822,10 @@ export class Repository {
       this.db
         .prepare(
           `UPDATE jobs SET state = 'DONE', stage = 'DONE', finalize_state = 'CLEANED',
-             export_reference = ?, lease_token = NULL, lease_expires_at = NULL, updated_at = ?
+             diagnostic_code = NULL, updated_at = ?
            WHERE id = ?`,
         )
-        .bind(outcome.exportReference, now, jobId),
+        .bind(now, jobId),
       this.db.prepare("UPDATE sources SET status = 'DONE', updated_at = ? WHERE id = ?").bind(now, source.id),
     ]);
     return (await this.db.prepare("SELECT * FROM jobs WHERE id = ?").bind(jobId).first<JobRow>())!;
@@ -772,6 +863,15 @@ export class Repository {
       .first<DecisionRow>();
     if (!decision) throw new ApiError(409, "DECISION_NOT_READY", "La décision n’est pas encore disponible.");
     return decision;
+  }
+
+  private async requireMutableReview(jobId: string): Promise<void> {
+    const job = await this.db.prepare("SELECT finalize_state FROM jobs WHERE id = ?").bind(jobId).first<{
+      finalize_state: JobRow["finalize_state"];
+    }>();
+    if (!job || job.finalize_state !== "NOT_STARTED") {
+      throw new ApiError(409, "REVIEW_FROZEN", "La sélection est figée pendant la finalisation.");
+    }
   }
 
   private async countJob(jobId: string): Promise<CountRow> {

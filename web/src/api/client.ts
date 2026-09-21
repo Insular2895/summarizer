@@ -1,5 +1,6 @@
 export type SourceKind = "youtube_video" | "youtube_playlist";
 export type JobState = "QUEUED" | "PROCESSING" | "READY" | "DONE" | "FAILED";
+export type FinalizeState = "NOT_STARTED" | "REQUESTED" | "EXPORTING" | "EXPORTED" | "CLEANED" | "FAILED";
 
 export interface SourceRecord {
   id: string;
@@ -19,6 +20,9 @@ export interface JobRecord {
   ready_videos: number;
   failed_videos: number;
   public_error: string | null;
+  diagnostic_code?: string | null;
+  finalize_state: FinalizeState;
+  export_reference: string | null;
 }
 
 export interface VideoRecord {
@@ -41,6 +45,11 @@ export interface ReviewVideoRecord extends VideoRecord {
   note_version: number | null;
   decision: DecisionRecord["decision"];
   decision_version: number;
+  job_state: JobState;
+  job_stage: string;
+  job_finalize_state: FinalizeState;
+  job_total_videos: number | null;
+  job_failed_videos: number;
 }
 
 export interface NoteRecord {
@@ -104,6 +113,7 @@ export interface SummarizerApi {
     baseVersion: number,
   ): Promise<DecisionRecord>;
   undoDecision(videoId: string, baseVersion: number): Promise<DecisionRecord>;
+  finalizeJob(jobId: string): Promise<JobRecord>;
 }
 
 export class ApiError extends Error {
@@ -169,6 +179,17 @@ export const api: SummarizerApi = {
       },
     );
     return response.decision;
+  },
+  finalizeJob: async (jobId) => {
+    const response = await request<{ job: JobRecord }>(
+      `/api/jobs/${encodeURIComponent(jobId)}/finalize`,
+      {
+        method: "POST",
+        headers: { "Idempotency-Key": crypto.randomUUID() },
+        body: JSON.stringify({}),
+      },
+    );
+    return response.job;
   },
 };
 

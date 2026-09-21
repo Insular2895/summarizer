@@ -82,6 +82,24 @@ describe("ReviewPage decisions", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("Décision modifiée dans un autre onglet.");
     expect(screen.getByRole("heading", { name: "Première vidéo" })).toBeInTheDocument();
   });
+
+  it("shows the session totals and starts finalization only once", async () => {
+    const decidedVideos = [
+      { ...videos[0], decision: "KEPT", decision_version: 2 },
+      { ...videos[1], decision: "DISCARDED", decision_version: 2 },
+    ];
+    const requests = stubReviewApi({ records: decidedVideos });
+    const user = userEvent.setup();
+    renderReview();
+
+    expect(await screen.findByRole("heading", { name: "Playlist terminée" })).toBeInTheDocument();
+    expect(screen.getByText("Conservées").nextElementSibling).toHaveTextContent("1");
+    expect(screen.getByText("Écartées").nextElementSibling).toHaveTextContent("1");
+    await user.dblClick(screen.getByRole("button", { name: "Terminer" }));
+
+    expect(await screen.findByText("Finalisation demandée…")).toBeInTheDocument();
+    expect(requests.filter((request) => request.path === "/api/jobs/job-1/finalize")).toHaveLength(1);
+  });
 });
 
 function renderReview(extra?: React.ReactNode) {
@@ -93,7 +111,7 @@ function renderReview(extra?: React.ReactNode) {
   );
 }
 
-function stubReviewApi(options: { conflict?: boolean } = {}) {
+function stubReviewApi(options: { conflict?: boolean; records?: typeof videos } = {}) {
   const requests: Array<{ method: string; path: string; body: unknown }> = [];
   vi.stubGlobal(
     "fetch",
@@ -103,7 +121,25 @@ function stubReviewApi(options: { conflict?: boolean } = {}) {
       const body = init.body ? JSON.parse(String(init.body)) : null;
       if (method !== "GET") requests.push({ method, path: url.pathname, body });
 
-      if (url.pathname === "/api/review") return json({ videos });
+      if (url.pathname === "/api/review") return json({ videos: options.records ?? videos });
+      if (url.pathname === "/api/jobs/job-1/finalize") {
+        return json({
+          job: {
+            id: "job-1",
+            source_id: "source-1",
+            state: "READY",
+            stage: "EXPORT_REQUESTED",
+            progress: 1,
+            total_videos: 2,
+            ready_videos: 2,
+            failed_videos: 0,
+            public_error: null,
+            diagnostic_code: null,
+            finalize_state: "REQUESTED",
+            export_reference: null,
+          },
+        });
+      }
       if (url.pathname === "/api/videos/video-1/decision" && options.conflict) {
         return json(
           { error: { message: "Décision modifiée dans un autre onglet.", diagnostic_code: "DECISION_VERSION_CONFLICT" } },
@@ -158,6 +194,11 @@ const videoBase = {
   note_version: 1,
   decision: "PENDING",
   decision_version: 1,
+  job_state: "READY",
+  job_stage: "PROCESSING_COMPLETE",
+  job_finalize_state: "NOT_STARTED",
+  job_total_videos: 2,
+  job_failed_videos: 0,
 };
 
 const videos = [

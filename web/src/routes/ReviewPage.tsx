@@ -25,6 +25,7 @@ export function ReviewPage() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [finalizeBusy, setFinalizeBusy] = useState(false);
   const [undo, setUndo] = useState<UndoState | null>(null);
   const optimisticRef = useRef(new Map<string, DecisionOverride>());
   const busyRef = useRef<string | null>(null);
@@ -71,7 +72,10 @@ export function ReviewPage() {
     };
   }, []);
 
-  const pendingVideos = videos?.filter((video) => video.decision === "PENDING") ?? [];
+  const sessionVideos = videos?.length
+    ? videos.filter((video) => video.job_id === videos[0].job_id)
+    : [];
+  const pendingVideos = sessionVideos.filter((video) => video.decision === "PENDING");
   const current = pendingVideos[0] ?? null;
   currentRef.current = current;
 
@@ -148,6 +152,34 @@ export function ReviewPage() {
     }
   }
 
+  async function finalizeSession() {
+    const session = sessionVideos[0];
+    if (!session || pendingVideos.length > 0 || busyRef.current || finalizeBusy) return;
+    setFinalizeBusy(true);
+    setActionError(null);
+    try {
+      const job = await api.finalizeJob(session.job_id);
+      setVideos((currentVideos) =>
+        currentVideos?.map((video) =>
+          video.job_id === job.id
+            ? {
+                ...video,
+                job_state: job.state,
+                job_stage: job.stage,
+                job_finalize_state: job.finalize_state,
+                job_total_videos: job.total_videos,
+                job_failed_videos: job.failed_videos,
+              }
+            : video,
+        ) ?? null,
+      );
+    } catch (caught) {
+      setActionError(caught instanceof Error ? caught.message : "La finalisation n’a pas pu démarrer.");
+    } finally {
+      setFinalizeBusy(false);
+    }
+  }
+
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (
@@ -192,10 +224,9 @@ export function ReviewPage() {
     );
   }
 
-  const sessionVideos = current ? videos.filter((video) => video.job_id === current.job_id) : videos;
   const reviewedCount = sessionVideos.filter((video) => video.decision !== "PENDING").length;
-  const keptCount = videos.filter((video) => video.decision === "KEPT").length;
-  const discardedCount = videos.filter((video) => video.decision === "DISCARDED").length;
+  const keptCount = sessionVideos.filter((video) => video.decision === "KEPT").length;
+  const discardedCount = sessionVideos.filter((video) => video.decision === "DISCARDED").length;
 
   return (
     <section className="review-screen" aria-labelledby="review-title">
@@ -218,10 +249,13 @@ export function ReviewPage() {
       {current ? (
         <ReviewCard video={current} busy={busyId !== null} onDecision={decide} />
       ) : (
-        <div className="review-caught-up">
-          <h2>Tout ce qui est prêt a été revu</h2>
-          <p>Les prochaines vidéos apparaîtront ici dès qu’elles seront disponibles.</p>
-        </div>
+        <FinalizeSummary
+          videos={sessionVideos}
+          keptCount={keptCount}
+          discardedCount={discardedCount}
+          busy={finalizeBusy || busyId !== null}
+          onFinalize={finalizeSession}
+        />
       )}
 
       {undo ? (
@@ -235,6 +269,68 @@ export function ReviewPage() {
         </div>
       ) : null}
     </section>
+  );
+}
+
+function FinalizeSummary({
+  videos,
+  keptCount,
+  discardedCount,
+  busy,
+  onFinalize,
+}: {
+  videos: ReviewVideoRecord[];
+  keptCount: number;
+  discardedCount: number;
+  busy: boolean;
+  onFinalize(): void;
+}) {
+  const session = videos[0];
+  if (!session) return null;
+  const state = session.job_finalize_state;
+  const inProgress = state === "REQUESTED" || state === "EXPORTING" || state === "EXPORTED";
+  const status =
+    state === "EXPORTED"
+      ? "Export confirmé. Nettoyage ciblé en cours…"
+      : state === "EXPORTING"
+        ? "Export sécurisé en cours…"
+        : state === "REQUESTED"
+          ? "Finalisation demandée…"
+          : state === "FAILED"
+            ? "L’export a échoué. Les contenus gardés sont conservés et la finalisation peut être relancée."
+            : null;
+
+  return (
+    <div className="review-caught-up">
+      <p className="eyebrow">Bilan</p>
+      <h2>Playlist terminée</h2>
+      <dl className="review-summary-counts">
+        <div>
+          <dt>Analysées</dt>
+          <dd>{session.job_total_videos ?? videos.length}</dd>
+        </div>
+        <div>
+          <dt>Conservées</dt>
+          <dd>{keptCount}</dd>
+        </div>
+        <div>
+          <dt>Écartées</dt>
+          <dd>{discardedCount}</dd>
+        </div>
+        {session.job_failed_videos > 0 ? (
+          <div>
+            <dt>En erreur</dt>
+            <dd>{session.job_failed_videos}</dd>
+          </div>
+        ) : null}
+      </dl>
+      {status ? <p role="status">{status}</p> : null}
+      {!inProgress ? (
+        <button className="finalize-button" type="button" disabled={busy} onClick={onFinalize}>
+          {busy ? "Démarrage…" : state === "FAILED" ? "Réessayer" : "Terminer"}
+        </button>
+      ) : null}
+    </div>
   );
 }
 

@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from src.pipeline import run_youtube_source
 from src.web_adapter import PipelineObserver
 from src.worker.client import ControlPlaneClient, ControlPlaneError, LeaseClaim
+from src.worker.finalize import JobFinalizer
 from src.worker.heartbeat import LeaseHeartbeat
 from src.worker.outbox import OutboxPublisher, OutboxPublishError, SpoolingObserver
 from src.worker.spool import WorkerSpool
@@ -34,6 +35,7 @@ class WorkerRunner:
         lease_seconds: int = 120,
         heartbeat_interval_seconds: float | None = None,
         pipeline: PipelineRunner = run_youtube_source,
+        finalizer: JobFinalizer | None = None,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
         if lease_seconds < 15 or lease_seconds > 300:
@@ -44,6 +46,7 @@ class WorkerRunner:
         self.lease_seconds = lease_seconds
         self.heartbeat_interval_seconds = heartbeat_interval_seconds or min(30, lease_seconds / 3)
         self.pipeline = pipeline
+        self.finalizer = finalizer
         self.sleep = sleep
         self._stop = threading.Event()
 
@@ -82,6 +85,9 @@ class WorkerRunner:
         )
         heartbeat.start()
         try:
+            if claim.work_kind == "FINALIZE":
+                return self._run_finalization(claim, heartbeat)
+
             try:
                 publisher.flush()
             except OutboxPublishError:
@@ -127,6 +133,82 @@ class WorkerRunner:
         finally:
             heartbeat.stop()
 
+    def _run_finalization(
+        self,
+        claim: LeaseClaim,
+        heartbeat: LeaseHeartbeat,
+    ) -> RunOutcome:
+        export_reference = claim.export_reference
+        if claim.finalize_state != "EXPORTED":
+            if self.finalizer is None:
+                self._best_effort_export_report(
+                    claim,
+                    success=False,
+                    export_reference=None,
+                    cleanup_complete=False,
+                    diagnostic_code="FINALIZER_NOT_CONFIGURED",
+                )
+                return RunOutcome(True, claim.job_id, reason="EXPORT_FAILED")
+            try:
+                export_reference = self.finalizer.export(claim)
+            except Exception:
+                self._best_effort_export_report(
+                    claim,
+                    success=False,
+                    export_reference=None,
+                    cleanup_complete=False,
+                    diagnostic_code="EXPORT_FAILED",
+                )
+                return RunOutcome(True, claim.job_id, reason="EXPORT_FAILED")
+            if heartbeat.lost:
+                return RunOutcome(True, claim.job_id, reason="LEASE_LOST")
+            try:
+                self._retry_export_report(
+                    claim,
+                    success=True,
+                    export_reference=export_reference,
+                    cleanup_complete=False,
+                )
+            except Exception:
+                return RunOutcome(True, claim.job_id, reason="EXPORT_CONFIRM_FAILED")
+
+        if not export_reference:
+            return RunOutcome(True, claim.job_id, reason="EXPORT_REFERENCE_MISSING")
+        if self.finalizer is None:
+            self._best_effort_export_report(
+                claim,
+                success=False,
+                export_reference=export_reference,
+                cleanup_complete=False,
+                diagnostic_code="FINALIZER_NOT_CONFIGURED",
+            )
+            return RunOutcome(True, claim.job_id, reason="CLEANUP_FAILED")
+        if heartbeat.lost:
+            return RunOutcome(True, claim.job_id, reason="LEASE_LOST")
+        try:
+            self.finalizer.cleanup(claim, export_reference)
+        except Exception:
+            self._best_effort_export_report(
+                claim,
+                success=False,
+                export_reference=export_reference,
+                cleanup_complete=False,
+                diagnostic_code="CLEANUP_FAILED",
+            )
+            return RunOutcome(True, claim.job_id, reason="CLEANUP_FAILED")
+        if heartbeat.lost:
+            return RunOutcome(True, claim.job_id, reason="LEASE_LOST")
+        try:
+            self._retry_export_report(
+                claim,
+                success=True,
+                export_reference=export_reference,
+                cleanup_complete=True,
+            )
+        except Exception:
+            return RunOutcome(True, claim.job_id, reason="CLEANUP_CONFIRM_FAILED")
+        return RunOutcome(True, claim.job_id, completed=True)
+
     def _claim_with_retry(self) -> LeaseClaim | None:
         last_error: Exception | None = None
         for attempt in range(1, 4):
@@ -156,3 +238,52 @@ class WorkerRunner:
                     self.sleep(min(0.25 * (2 ** (attempt - 1)), 2.0))
         if last_error is not None:
             raise last_error
+
+    def _retry_export_report(
+        self,
+        claim: LeaseClaim,
+        *,
+        success: bool,
+        export_reference: str | None,
+        cleanup_complete: bool,
+        diagnostic_code: str | None = None,
+    ) -> None:
+        last_error: Exception | None = None
+        for attempt in range(1, 4):
+            try:
+                self.client.report_export(
+                    claim.job_id,
+                    self.worker_id,
+                    claim.lease_token,
+                    success=success,
+                    export_reference=export_reference,
+                    cleanup_complete=cleanup_complete,
+                    diagnostic_code=diagnostic_code,
+                )
+                return
+            except Exception as error:
+                last_error = error
+                if isinstance(error, ControlPlaneError) and not error.retryable:
+                    break
+                if attempt < 3:
+                    self.sleep(min(0.25 * (2 ** (attempt - 1)), 2.0))
+        if last_error is not None:
+            raise last_error
+
+    def _best_effort_export_report(
+        self,
+        claim: LeaseClaim,
+        *,
+        success: bool,
+        export_reference: str | None,
+        cleanup_complete: bool,
+        diagnostic_code: str,
+    ) -> None:
+        with suppress(Exception):
+            self._retry_export_report(
+                claim,
+                success=success,
+                export_reference=export_reference,
+                cleanup_complete=cleanup_complete,
+                diagnostic_code=diagnostic_code,
+            )
