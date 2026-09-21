@@ -286,6 +286,22 @@ describe("Summarizer Web V1 control plane", () => {
     );
     const exportLease = { worker_id: "finalizer-export", lease_token: exportClaim.lease.lease_token };
 
+    const exportManifest = await bodyOf<{ manifest: { kept_videos: unknown[] } }>(
+      await api(`/api/worker/jobs/${created.job.id}/export-manifest`, {
+        method: "POST",
+        headers: WORKER_HEADERS,
+        body: exportLease,
+      }),
+    );
+    expect(exportManifest.manifest.kept_videos).toEqual([]);
+    const discardedExportItem = await api(`/api/worker/jobs/${created.job.id}/export-items/${videoId}`, {
+      method: "POST",
+      headers: WORKER_HEADERS,
+      body: exportLease,
+    });
+    expect(discardedExportItem.status).toBe(404);
+    expect((await bodyOf<ErrorResponse>(discardedExportItem)).error.diagnostic_code).toBe("EXPORT_ITEM_NOT_FOUND");
+
     const prematureCleanup = await api(`/api/worker/jobs/${created.job.id}/export-result`, {
       method: "POST",
       headers: WORKER_HEADERS,

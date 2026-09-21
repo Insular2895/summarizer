@@ -831,6 +831,65 @@ export class Repository {
     return (await this.db.prepare("SELECT * FROM jobs WHERE id = ?").bind(jobId).first<JobRow>())!;
   }
 
+  async getExportManifest(jobId: string, workerId: string, leaseToken: string) {
+    const job = await this.requireLease(jobId, workerId, leaseToken);
+    if (job.finalize_state !== "EXPORTING" && job.finalize_state !== "EXPORTED") {
+      throw new ApiError(409, "EXPORT_NOT_REQUESTED", "L’export n’a pas été demandé.");
+    }
+    const source = await this.db.prepare("SELECT * FROM sources WHERE id = ?").bind(job.source_id).first<SourceRow>();
+    if (!source) throw new ApiError(500, "SOURCE_MISSING", "La source du traitement est introuvable.");
+    const kept = await this.db
+      .prepare(
+        `SELECT videos.id, videos.youtube_id, videos.playlist_index, videos.title
+         FROM videos
+         JOIN review_decisions ON review_decisions.video_id = videos.id
+         WHERE videos.job_id = ? AND videos.state = 'READY' AND review_decisions.decision = 'KEPT'
+         ORDER BY videos.playlist_index`,
+      )
+      .bind(jobId)
+      .all<{ id: string; youtube_id: string; playlist_index: number; title: string }>();
+    return {
+      job_id: job.id,
+      source: {
+        id: source.id,
+        title: source.title,
+        normalized_url: source.normalized_url,
+        source_kind: source.source_kind,
+        created_at: source.created_at,
+      },
+      kept_videos: kept.results,
+    };
+  }
+
+  async getExportItem(jobId: string, videoId: string, workerId: string, leaseToken: string) {
+    const job = await this.requireLease(jobId, workerId, leaseToken);
+    if (job.finalize_state !== "EXPORTING" && job.finalize_state !== "EXPORTED") {
+      throw new ApiError(409, "EXPORT_NOT_REQUESTED", "L’export n’a pas été demandé.");
+    }
+    const video = await this.db
+      .prepare(
+        `SELECT videos.* FROM videos
+         JOIN review_decisions ON review_decisions.video_id = videos.id
+         WHERE videos.job_id = ? AND videos.id = ? AND videos.state = 'READY'
+           AND review_decisions.decision = 'KEPT'`,
+      )
+      .bind(jobId, videoId)
+      .first<VideoRow>();
+    if (!video) {
+      throw new ApiError(404, "EXPORT_ITEM_NOT_FOUND", "Élément d’export introuvable.");
+    }
+    const [note, transcript] = await Promise.all([
+      this.db.prepare("SELECT * FROM notes WHERE video_id = ?").bind(videoId).first<NoteRow>(),
+      this.db
+        .prepare(
+          "SELECT block_index, start_ms, end_ms, text FROM transcript_blocks WHERE video_id = ? ORDER BY block_index",
+        )
+        .bind(videoId)
+        .all<TranscriptBlockInput>(),
+    ]);
+    return { video: videoView(video), note, transcript: transcript.results };
+  }
+
   private async getJobBySource(ownerId: string, sourceId: string) {
     const source = await this.db
       .prepare("SELECT * FROM sources WHERE id = ? AND owner_id = ?")

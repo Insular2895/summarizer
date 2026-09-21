@@ -21,6 +21,7 @@ from src.web_adapter import (
     VideoResult,
 )
 from src.worker.client import HttpControlPlaneClient
+from src.worker.graphipy_finalizer import GraphipyOutboxFinalizer
 from src.worker.runner import WorkerRunner
 from src.worker.spool import WorkerSpool
 
@@ -86,8 +87,9 @@ def test_single_video_crosses_real_local_http_and_d1_boundaries(tmp_path: Path) 
                 payload={"url": "https://www.youtube.com/watch?v=abcdefghijk"},
             )
 
+            control_client = HttpControlPlaneClient(base_url, "e2e-worker-token")
             outcome = WorkerRunner(
-                client=HttpControlPlaneClient(base_url, "e2e-worker-token"),
+                client=control_client,
                 spool=WorkerSpool(tmp_path / "spool"),
                 worker_id="e2e-worker",
                 pipeline=_fake_pipeline,
@@ -109,6 +111,57 @@ def test_single_video_crosses_real_local_http_and_d1_boundaries(tmp_path: Path) 
             assert detail["video"]["summary_markdown"] == "# Résumé E2E"
             assert detail["transcript"][0]["start_ms"] == 1_000
             assert receipt["job"]["id"] == outcome.job_id
+
+            _json_request(
+                f"{base_url}/api/videos/{video_id}/note",
+                method="PUT",
+                headers={"X-Summarizer-User": "e2e@example.test"},
+                payload={
+                    "body": "Note E2E",
+                    "excerpts": [{"text": "Contenu vérifiable.", "start_ms": 1_000}],
+                    "base_version": 1,
+                },
+            )
+            _json_request(
+                f"{base_url}/api/videos/{video_id}/decision",
+                method="PUT",
+                headers={"X-Summarizer-User": "e2e@example.test"},
+                payload={"decision": "KEPT", "base_version": 1},
+            )
+            _json_request(
+                f"{base_url}/api/jobs/{receipt['job']['id']}/finalize",
+                method="POST",
+                headers={
+                    "X-Summarizer-User": "e2e@example.test",
+                    "Idempotency-Key": "e2e-finalize-0001",
+                },
+                payload={},
+            )
+            export_root = tmp_path / "graphipy-ready"
+            finalized = WorkerRunner(
+                client=control_client,
+                spool=WorkerSpool(tmp_path / "finalize-spool"),
+                worker_id="e2e-finalizer",
+                finalizer=GraphipyOutboxFinalizer(
+                    control_client,
+                    "e2e-finalizer",
+                    export_root,
+                ),
+                sleep=lambda _seconds: None,
+            ).run_once()
+
+            assert finalized.completed is True
+            export_dir = export_root / receipt["job"]["id"]
+            exported_markdown = next(export_dir.glob("*.md")).read_text(encoding="utf-8")
+            assert "Note E2E" in exported_markdown
+            assert "[0:01]" in exported_markdown
+            assert 'decision: "KEPT"' in exported_markdown
+            assert (export_dir / "_export.json").is_file()
+            history = _json_request(
+                f"{base_url}/api/history",
+                headers={"X-Summarizer-User": "e2e@example.test"},
+            )
+            assert history["entries"][0]["kept_videos"] == 1
         finally:
             process.terminate()
             try:

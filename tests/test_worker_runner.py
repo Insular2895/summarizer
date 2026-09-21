@@ -98,6 +98,23 @@ class FakeControlPlane:
             raise ControlPlaneError(409, "JOB_INCOMPLETE", retryable=False)
         self.completed.append(job_id)
 
+    def fetch_export_manifest(
+        self,
+        _job_id: str,
+        _worker_id: str,
+        _lease_token: str,
+    ) -> dict[str, Any]:
+        raise AssertionError("The fake finalizer does not fetch export data.")
+
+    def fetch_export_item(
+        self,
+        _job_id: str,
+        _video_id: str,
+        _worker_id: str,
+        _lease_token: str,
+    ) -> dict[str, Any]:
+        raise AssertionError("The fake finalizer does not fetch export data.")
+
     def report_export(
         self,
         _job_id: str,

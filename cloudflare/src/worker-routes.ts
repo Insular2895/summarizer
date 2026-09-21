@@ -6,6 +6,7 @@ import { normalizeYouTubeUrl } from "./youtube";
 
 const JOB_ROUTE = /^\/api\/worker\/jobs\/(?<jobId>[A-Za-z0-9_-]+)(?<suffix>.*)$/;
 const VIDEO_SUFFIX = /^\/videos\/(?<videoId>[A-Za-z0-9_-]+)\/(?<action>result|error)$/;
+const EXPORT_ITEM_SUFFIX = /^\/export-items\/(?<videoId>[A-Za-z0-9_-]+)$/;
 
 interface LeaseBody {
   worker_id?: unknown;
@@ -182,6 +183,19 @@ export async function handleWorkerRoute(request: Request, env: Env, path: string
     const body = await readJson<LeaseBody>(request);
     const lease = parseLease(body);
     return json({ job: await repository.completeJob(jobId, lease.workerId, lease.leaseToken) });
+  }
+
+  if (request.method === "POST" && suffix === "/export-manifest") {
+    const body = await readJson<LeaseBody>(request);
+    const lease = parseLease(body);
+    return json({ manifest: await repository.getExportManifest(jobId, lease.workerId, lease.leaseToken) });
+  }
+
+  const exportItemMatch = EXPORT_ITEM_SUFFIX.exec(suffix)?.groups;
+  if (request.method === "POST" && exportItemMatch?.videoId) {
+    const body = await readJson<LeaseBody>(request);
+    const lease = parseLease(body);
+    return json({ item: await repository.getExportItem(jobId, exportItemMatch.videoId, lease.workerId, lease.leaseToken) });
   }
 
   if (request.method === "POST" && suffix === "/export-result") {

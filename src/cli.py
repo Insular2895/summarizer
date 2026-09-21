@@ -26,6 +26,7 @@ from src.storage.manifest import manifest_summary
 from src.storage.retention import cleanup_all_temp, cleanup_cache, cleanup_outputs_older_than
 from src.worker.client import HttpControlPlaneClient
 from src.worker.config import load_worker_config
+from src.worker.graphipy_finalizer import GraphipyOutboxFinalizer
 from src.worker.runner import WorkerRunner
 from src.worker.spool import WorkerSpool
 
@@ -42,11 +43,13 @@ def web_worker(
     """Run the outbound-only Web V1 worker (internal operations command)."""
     try:
         config = load_worker_config()
+        client = HttpControlPlaneClient(config.control_plane_url, config.worker_token)
         runner = WorkerRunner(
-            client=HttpControlPlaneClient(config.control_plane_url, config.worker_token),
+            client=client,
             spool=WorkerSpool(project_path("cache", "web_worker_spool")),
             worker_id=config.worker_id,
             lease_seconds=lease_seconds,
+            finalizer=GraphipyOutboxFinalizer(client, config.worker_id),
         )
         if once:
             console.print(runner.run_once())

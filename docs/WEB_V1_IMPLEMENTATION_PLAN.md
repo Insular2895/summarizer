@@ -83,7 +83,7 @@ Prochaine phase :
 | 9 | Transcript vers Note | Validation UX iOS reportée à la Phase 17 | Terminée et testée sur DOM desktop |
 | 10 | Review | Non | Terminée et testée localement |
 | 11 | Finalisation | Non | Terminée et testée localement |
-| 12 | Brain Vault | Oui si la frontière réelle diffère | À faire |
+| 12 | Brain Vault | Oui si la frontière réelle diffère | Terminée sur la frontière existante, testée localement |
 | 13 | Cleanup et History | Oui avant suppression nouvelle | À faire |
 | 14 | Prototypes A/B/C | Choix humain obligatoire | À faire |
 | 15 | Design final | Choix A/B/C requis | Bloquée par phase 14 |

@@ -66,6 +66,21 @@ class ControlPlaneClient(Protocol):
 
     def complete(self, job_id: str, worker_id: str, lease_token: str) -> None: ...
 
+    def fetch_export_manifest(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+    ) -> dict[str, Any]: ...
+
+    def fetch_export_item(
+        self,
+        job_id: str,
+        video_id: str,
+        worker_id: str,
+        lease_token: str,
+    ) -> dict[str, Any]: ...
+
     def report_export(
         self,
         job_id: str,
@@ -213,6 +228,33 @@ class HttpControlPlaneClient:
             f"/api/worker/jobs/{job_id}/complete",
             {"worker_id": worker_id, "lease_token": lease_token},
         )
+
+    def fetch_export_manifest(
+        self,
+        job_id: str,
+        worker_id: str,
+        lease_token: str,
+    ) -> dict[str, Any]:
+        _, response = self._request(
+            "POST",
+            f"/api/worker/jobs/{job_id}/export-manifest",
+            {"worker_id": worker_id, "lease_token": lease_token},
+        )
+        return _object(response, "manifest")
+
+    def fetch_export_item(
+        self,
+        job_id: str,
+        video_id: str,
+        worker_id: str,
+        lease_token: str,
+    ) -> dict[str, Any]:
+        _, response = self._request(
+            "POST",
+            f"/api/worker/jobs/{job_id}/export-items/{video_id}",
+            {"worker_id": worker_id, "lease_token": lease_token},
+        )
+        return _object(response, "item")
 
     def report_export(
         self,
