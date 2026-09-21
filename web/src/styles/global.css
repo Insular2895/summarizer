@@ -278,6 +278,60 @@ p {
   margin: 0.25rem 0 0;
 }
 
+.history-list {
+  padding: 0;
+  margin: 2.5rem 0 0;
+  border-top: 1px solid #e5e5e5;
+  list-style: none;
+}
+
+.history-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.history-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.history-title-row h2 {
+  margin-bottom: 0;
+}
+
+.history-meta,
+.history-counts {
+  margin: 0 0 0.35rem;
+  color: #626262;
+  font-size: 0.875rem;
+}
+
+.history-export-state {
+  flex: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  color: #166534;
+  background: #dcfce7;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.history-counts {
+  margin-top: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
 .processing-list p {
   color: #626262;
   font-size: 0.9rem;
@@ -805,6 +859,8 @@ p {
   .recent-section,
   .processing-list,
   .processing-list li,
+  .history-list,
+  .history-list li,
   .review-card,
   .review-actions,
   .review-actions button + button,
@@ -858,6 +914,11 @@ p {
 
   .review-caught-up p {
     color: #a3a3a3;
+  }
+
+  .history-export-state {
+    color: #86efac;
+    background: #15351f;
   }
 
   .review-summary-counts {

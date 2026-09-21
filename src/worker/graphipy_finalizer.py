@@ -5,6 +5,7 @@ from typing import Any
 
 from src.exporters.graphipy import export_web_job
 from src.paths import project_path
+from src.storage.retention import cleanup_web_job_spool
 from src.worker.client import ControlPlaneClient, LeaseClaim
 
 
@@ -16,10 +17,12 @@ class GraphipyOutboxFinalizer:
         client: ControlPlaneClient,
         worker_id: str,
         output_dir: Path | None = None,
+        spool_root: Path | None = None,
     ) -> None:
         self.client = client
         self.worker_id = worker_id
         self.output_dir = output_dir or project_path("output", "graphipy_ready")
+        self.spool_root = spool_root or project_path("cache", "web_worker_spool")
 
     def export(self, claim: LeaseClaim) -> str:
         manifest = self.client.fetch_export_manifest(
@@ -49,5 +52,4 @@ class GraphipyOutboxFinalizer:
         expected = f"output/graphipy_ready/{claim.job_id}"
         if export_reference != expected:
             raise ValueError("The confirmed export reference does not match the job.")
-        # Phase 12 authorizes no deletion category. The outbox remains intact;
-        # targeted retention is introduced separately in Phase 13.
+        cleanup_web_job_spool(claim.job_id, spool_root=self.spool_root)

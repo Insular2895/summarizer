@@ -95,6 +95,22 @@ export interface VideoDetail {
   transcript: TranscriptBlock[];
 }
 
+export interface HistoryEntry {
+  id: string;
+  source_id: string;
+  completed_at: string;
+  total_videos: number;
+  kept_videos: number;
+  discarded_videos: number;
+  failed_videos: number;
+  final_status: string;
+  export_status: string;
+  title: string | null;
+  normalized_url: string;
+  source_kind: SourceKind;
+  first_kept_video_id: string | null;
+}
+
 export interface SummarizerApi {
   createSource(url: string, signal?: AbortSignal): Promise<SourceReceipt>;
   getJob(jobId: string, signal?: AbortSignal): Promise<JobDetail>;
@@ -114,6 +130,7 @@ export interface SummarizerApi {
   ): Promise<DecisionRecord>;
   undoDecision(videoId: string, baseVersion: number): Promise<DecisionRecord>;
   finalizeJob(jobId: string): Promise<JobRecord>;
+  listHistory(signal?: AbortSignal): Promise<HistoryEntry[]>;
 }
 
 export class ApiError extends Error {
@@ -190,6 +207,10 @@ export const api: SummarizerApi = {
       },
     );
     return response.job;
+  },
+  listHistory: async (signal) => {
+    const response = await request<{ entries: HistoryEntry[] }>("/api/history", {}, signal);
+    return response.entries;
   },
 };
 

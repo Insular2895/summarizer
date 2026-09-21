@@ -397,6 +397,24 @@ describe("Summarizer Web V1 control plane", () => {
       await api("/api/history", { user: USER }),
     );
     expect(history.entries).toContainEqual(expect.objectContaining({ source_id: created.source.id, discarded_videos: 1 }));
+    expect(Object.keys(history.entries[0]).sort()).toEqual(
+      [
+        "completed_at",
+        "discarded_videos",
+        "export_status",
+        "failed_videos",
+        "final_status",
+        "first_kept_video_id",
+        "id",
+        "kept_videos",
+        "normalized_url",
+        "source_id",
+        "source_kind",
+        "title",
+        "total_videos",
+      ].sort(),
+    );
+    expect((await bodyOf<{ videos: unknown[] }>(await api("/api/review", { user: USER }))).videos).toEqual([]);
   });
 
   it("allows only one active lease and reclaims it after expiration", async () => {

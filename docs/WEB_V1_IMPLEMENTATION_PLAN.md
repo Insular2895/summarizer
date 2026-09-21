@@ -84,7 +84,7 @@ Prochaine phase :
 | 10 | Review | Non | Terminée et testée localement |
 | 11 | Finalisation | Non | Terminée et testée localement |
 | 12 | Brain Vault | Oui si la frontière réelle diffère | Terminée sur la frontière existante, testée localement |
-| 13 | Cleanup et History | Oui avant suppression nouvelle | À faire |
+| 13 | Cleanup et History | Oui avant suppression nouvelle | Terminée pour le spool job uniquement, testée localement |
 | 14 | Prototypes A/B/C | Choix humain obligatoire | À faire |
 | 15 | Design final | Choix A/B/C requis | Bloquée par phase 14 |
 | 16 | Revue motion | Non | À faire après design fonctionnel |

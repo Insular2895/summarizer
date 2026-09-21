@@ -306,7 +306,19 @@ export class Repository {
   async listHistory(ownerId: string) {
     const rows = await this.db
       .prepare(
-        `SELECT history_entries.*, sources.title, sources.normalized_url, sources.source_kind
+        `SELECT history_entries.id, history_entries.source_id, history_entries.completed_at,
+                history_entries.total_videos, history_entries.kept_videos,
+                history_entries.discarded_videos, history_entries.failed_videos,
+                history_entries.final_status, history_entries.export_status,
+                sources.title, sources.normalized_url, sources.source_kind,
+                (
+                  SELECT videos.id FROM videos
+                  JOIN review_decisions ON review_decisions.video_id = videos.id
+                  JOIN jobs ON jobs.id = videos.job_id
+                  WHERE jobs.source_id = history_entries.source_id
+                    AND review_decisions.decision = 'KEPT'
+                  ORDER BY videos.playlist_index LIMIT 1
+                ) AS first_kept_video_id
          FROM history_entries
          JOIN sources ON sources.id = history_entries.source_id
          WHERE history_entries.owner_id = ?

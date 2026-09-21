@@ -138,14 +138,16 @@ def test_single_video_crosses_real_local_http_and_d1_boundaries(tmp_path: Path) 
                 payload={},
             )
             export_root = tmp_path / "graphipy-ready"
+            finalize_spool_root = tmp_path / "finalize-spool"
             finalized = WorkerRunner(
                 client=control_client,
-                spool=WorkerSpool(tmp_path / "finalize-spool"),
+                spool=WorkerSpool(finalize_spool_root),
                 worker_id="e2e-finalizer",
                 finalizer=GraphipyOutboxFinalizer(
                     control_client,
                     "e2e-finalizer",
                     export_root,
+                    finalize_spool_root,
                 ),
                 sleep=lambda _seconds: None,
             ).run_once()

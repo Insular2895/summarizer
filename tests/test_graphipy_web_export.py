@@ -153,7 +153,16 @@ def test_finalizer_fetches_only_the_frozen_manifest_items(tmp_path: Path) -> Non
         work_kind="FINALIZE",
         finalize_state="EXPORTING",
     )
-    finalizer = GraphipyOutboxFinalizer(client, "worker-fixture", tmp_path / "outbox")  # type: ignore[arg-type]
+    spool_root = tmp_path / "spool"
+    stale_job_spool = spool_root / "job_web_fixture"
+    stale_job_spool.mkdir(parents=True)
+    (stale_job_spool / "completed.json").write_text("{}", encoding="utf-8")
+    finalizer = GraphipyOutboxFinalizer(  # type: ignore[arg-type]
+        client,
+        "worker-fixture",
+        tmp_path / "outbox",
+        spool_root,
+    )
 
     reference = finalizer.export(claim)
     finalizer.cleanup(claim, reference)
@@ -161,3 +170,4 @@ def test_finalizer_fetches_only_the_frozen_manifest_items(tmp_path: Path) -> Non
     assert reference == "output/graphipy_ready/job_web_fixture"
     assert client.requested_video_ids == ["video_fixture"]
     assert (tmp_path / "outbox" / "job_web_fixture" / "_export.json").is_file()
+    assert not stale_job_spool.exists()

@@ -30,7 +30,11 @@ describe("Summarizer application shell", () => {
   });
 
   it("navigates between the three primary destinations", async () => {
-    stubApi((path) => (path === "/api/review" ? { videos: [] } : {}));
+    stubApi((path) => {
+      if (path === "/api/review") return { videos: [] };
+      if (path === "/api/history") return { entries: [] };
+      return {};
+    });
     const user = userEvent.setup();
     renderApp();
 
@@ -113,6 +117,26 @@ describe("Summarizer application shell", () => {
     await user.click(screen.getByRole("button", { name: "Commencer" }));
 
     expect(screen.getByRole("status")).toHaveTextContent("Collez une URL YouTube pour commencer.");
+  });
+
+  it("renders a lightweight History entry with counters and a retained detail link", async () => {
+    stubApi((path) => {
+      if (path === "/api/history") return { entries: [historyEntry] };
+      return {};
+    });
+
+    renderApp("/history");
+
+    expect(await screen.findByRole("heading", { name: "Playlist finalisée" })).toBeInTheDocument();
+    expect(screen.getByText("3 analysées · 1 conservées · 1 écartées · 1 en erreur")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Ouvrir le premier contenu gardé" })).toHaveAttribute(
+      "href",
+      "/review/video-123",
+    );
+    expect(screen.getByRole("link", { name: "Voir la source" })).toHaveAttribute(
+      "href",
+      "https://www.youtube.com/playlist?list=PL1234567890",
+    );
   });
 });
 
@@ -202,4 +226,20 @@ const playlistDetail = {
       public_error: "Sous-titres indisponibles.",
     },
   ],
+};
+
+const historyEntry = {
+  id: "history-123",
+  source_id: "source-playlist",
+  completed_at: "2026-09-21T10:00:00.000Z",
+  total_videos: 3,
+  kept_videos: 1,
+  discarded_videos: 1,
+  failed_videos: 1,
+  final_status: "DONE",
+  export_status: "EXPORTED",
+  title: "Playlist finalisée",
+  normalized_url: "https://www.youtube.com/playlist?list=PL1234567890",
+  source_kind: "youtube_playlist",
+  first_kept_video_id: "video-123",
 };
