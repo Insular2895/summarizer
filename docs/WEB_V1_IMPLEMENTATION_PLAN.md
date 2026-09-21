@@ -79,7 +79,7 @@ Prochaine phase :
 | 5 | Worker | Non | Terminée et testée localement |
 | 6 | Vidéo unique | Non | Terminée et testée localement |
 | 7 | Playlist progressive | Non | Terminée et testée localement |
-| 8 | Note et autosave | Non | À faire |
+| 8 | Note et autosave | Non | Terminée et testée localement |
 | 9 | Transcript vers Note | Validation UX si conflit iOS | À faire |
 | 10 | Review | Non | À faire |
 | 11 | Finalisation | Non | À faire |

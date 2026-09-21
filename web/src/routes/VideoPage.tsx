@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 
 import { api, VideoDetail } from "../api/client";
+import { NoteEditor } from "../components/NoteEditor";
 
 export function VideoPage() {
   const { videoId } = useParams();
@@ -44,7 +45,7 @@ export function VideoPage() {
       </section>
       <section aria-labelledby="note-title">
         <h2 id="note-title">Note</h2>
-        <p>{detail.note?.body || "Aucune note pour le moment."}</p>
+        <NoteEditor key={detail.video.id} videoId={detail.video.id} note={detail.note} />
       </section>
       <section aria-labelledby="transcript-title">
         <h2 id="transcript-title">Transcript</h2>

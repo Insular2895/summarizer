@@ -52,6 +52,8 @@ describe("Summarizer application shell", () => {
     expect(screen.getByRole("heading", { name: "Résumé" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Résumé déterministe", level: 3 })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Note" })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "Note personnelle" })).toHaveValue("");
+    expect(screen.queryByRole("button", { name: "Enregistrer" })).not.toBeInTheDocument();
     expect(screen.getByText("Premier bloc")).toBeInTheDocument();
     expect(screen.getByText("0:01")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Garder" })).not.toBeInTheDocument();

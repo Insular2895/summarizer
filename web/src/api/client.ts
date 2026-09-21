@@ -44,6 +44,11 @@ export interface NoteRecord {
   updated_at: string;
 }
 
+export interface NoteExcerpt {
+  text: string;
+  start_ms: number;
+}
+
 export interface DecisionRecord {
   video_id: string;
   decision: "PENDING" | "KEPT" | "DISCARDED";
@@ -79,12 +84,21 @@ export interface SummarizerApi {
   getJob(jobId: string, signal?: AbortSignal): Promise<JobDetail>;
   listReview(signal?: AbortSignal): Promise<VideoRecord[]>;
   getVideo(videoId: string, signal?: AbortSignal): Promise<VideoDetail>;
+  saveNote(
+    videoId: string,
+    body: string,
+    excerpts: NoteExcerpt[],
+    baseVersion: number,
+    options?: { keepalive?: boolean },
+  ): Promise<NoteRecord>;
 }
 
 export class ApiError extends Error {
   constructor(
     message: string,
     readonly status: number,
+    readonly diagnosticCode?: string,
+    readonly details?: unknown,
   ) {
     super(message);
     this.name = "ApiError";
@@ -111,6 +125,17 @@ export const api: SummarizerApi = {
   },
   getVideo: (videoId, signal) =>
     request<VideoDetail>(`/api/videos/${encodeURIComponent(videoId)}`, {}, signal),
+  saveNote: async (videoId, body, excerpts, baseVersion, options) => {
+    const response = await request<{ note: NoteRecord }>(
+      `/api/videos/${encodeURIComponent(videoId)}/note`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ body, excerpts, base_version: baseVersion }),
+        keepalive: options?.keepalive,
+      },
+    );
+    return response.note;
+  },
 };
 
 async function request<T>(path: string, init: RequestInit, signal?: AbortSignal): Promise<T> {
@@ -136,13 +161,21 @@ async function request<T>(path: string, init: RequestInit, signal?: AbortSignal)
 
   if (!response.ok) {
     let message = "La demande n’a pas pu aboutir. Réessaie.";
+    let diagnosticCode: string | undefined;
+    let details: unknown;
     try {
-      const payload = (await response.json()) as { error?: { message?: unknown } };
+      const payload = (await response.json()) as {
+        error?: { message?: unknown; diagnostic_code?: unknown; details?: unknown };
+      };
       if (typeof payload.error?.message === "string") message = payload.error.message;
+      if (typeof payload.error?.diagnostic_code === "string") {
+        diagnosticCode = payload.error.diagnostic_code;
+      }
+      details = payload.error?.details;
     } catch {
       // The public fallback stays stable when an intermediary returns non-JSON.
     }
-    throw new ApiError(message, response.status);
+    throw new ApiError(message, response.status, diagnosticCode, details);
   }
   return response.json() as Promise<T>;
 }
