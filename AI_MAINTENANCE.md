@@ -196,3 +196,9 @@ git push origin main
 - Le README ou `COMMANDS.md` est mis a jour si la commande utilisateur change.
 - Le comportement playlist reste video par video.
 - Le comportement PDF garde plusieurs plans B.
+
+## Reprise Web V1 Et Codespaces
+
+Pour reprendre le frontend, le control plane ou les phases Web V1 depuis un environnement neuf,
+commencer par [docs/CODESPACES_HANDOFF.md](docs/CODESPACES_HANDOFF.md). Ce runbook fixe la branche,
+le choix design, la fixture Review, les commandes de validation et les étapes encore ouvertes.

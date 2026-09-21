@@ -227,6 +227,7 @@ export function ReviewPage() {
   const reviewedCount = sessionVideos.filter((video) => video.decision !== "PENDING").length;
   const keptCount = sessionVideos.filter((video) => video.decision === "KEPT").length;
   const discardedCount = sessionVideos.filter((video) => video.decision === "DISCARDED").length;
+  const sessionTotal = Math.max(sessionVideos[0]?.job_total_videos ?? 0, sessionVideos.length);
 
   return (
     <section className="review-screen" aria-labelledby="review-title">
@@ -235,9 +236,16 @@ export function ReviewPage() {
         <h1 id="review-title">Décider, une vidéo à la fois</h1>
         <p className="review-progress" role="status">
           {current
-            ? `${reviewedCount + 1} sur ${sessionVideos.length}`
+            ? `${reviewedCount + 1} sur ${sessionTotal}`
             : `${keptCount} conservées · ${discardedCount} écartées`}
         </p>
+        {current ? (
+          <div className="review-progress-track" aria-hidden="true">
+            <span
+              style={{ width: `${((reviewedCount + 1) / sessionTotal) * 100}%` }}
+            />
+          </div>
+        ) : null}
       </div>
 
       {loadError || actionError ? (
@@ -247,7 +255,7 @@ export function ReviewPage() {
       ) : null}
 
       {current ? (
-        <ReviewCard video={current} busy={busyId !== null} onDecision={decide} />
+        <ReviewCard key={current.id} video={current} busy={busyId !== null} onDecision={decide} />
       ) : (
         <FinalizeSummary
           videos={sessionVideos}

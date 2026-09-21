@@ -240,4 +240,5 @@ Ne commit jamais `.env`, une clé API, des cookies, des PDF ou des sorties perso
 
 Les commandes avancées et les détails de fonctionnement sont regroupés dans
 [COMMANDS.md](COMMANDS.md). Les règles de maintenance du projet sont dans
-[AI_MAINTENANCE.md](AI_MAINTENANCE.md).
+[AI_MAINTENANCE.md](AI_MAINTENANCE.md). La reprise du Web V1 dans GitHub Codespaces est décrite
+dans [docs/CODESPACES_HANDOFF.md](docs/CODESPACES_HANDOFF.md).

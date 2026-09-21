@@ -8,6 +8,13 @@ import { ReviewPage } from "./ReviewPage";
 afterEach(() => vi.unstubAllGlobals());
 
 describe("ReviewPage decisions", () => {
+  it("keeps progressive Review progress relative to the full playlist", async () => {
+    stubReviewApi({ records: [{ ...videos[0], job_total_videos: 18 }] });
+    renderReview();
+
+    expect(await screen.findByText("1 sur 18")).toBeInTheDocument();
+  });
+
   it("optimistically advances then restores the previous card with Undo", async () => {
     const requests = stubReviewApi();
     const user = userEvent.setup();

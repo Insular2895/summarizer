@@ -85,9 +85,9 @@ Prochaine phase :
 | 11 | Finalisation | Non | Terminée et testée localement |
 | 12 | Brain Vault | Oui si la frontière réelle diffère | Terminée sur la frontière existante, testée localement |
 | 13 | Cleanup et History | Oui avant suppression nouvelle | Terminée pour le spool job uniquement, testée localement |
-| 14 | Prototypes A/B/C | Choix humain obligatoire | À faire |
-| 15 | Design final | Choix A/B/C requis | Bloquée par phase 14 |
-| 16 | Revue motion | Non | À faire après design fonctionnel |
+| 14 | Prototypes A/B/C | Choix humain obligatoire | Terminée : option 3 modifiée choisie le 21/09/2026 |
+| 15 | Design final | Choix A/B/C requis | Implémenté, QA visuelle navigateur à terminer |
+| 16 | Revue motion | Non | Base implémentée, revue navigateur/appareil à faire |
 | 17 | QA mobile | Non | À faire |
 | 18 | QA sécurité | Non | À faire |
 | 19 | Suite de tests | Non | À faire |
@@ -883,6 +883,12 @@ Revue humaine obligatoire avant toute nouvelle catégorie de suppression physiqu
 
 ## PHASE 14 — Prototypes design A/B/C
 
+### Résultat du 21 septembre 2026
+
+Trois directions ont été présentées dans l'ordre Quiet Knowledge, Productivity Workspace et Fluid Knowledge. L'utilisateur a explicitement choisi la troisième, avec adaptation claire : inspiration Apple, liquid glass discret, blancs différenciés pour les cartes et boutons de décision bleu/blanc sans vert ni rouge.
+
+La référence finale corrigée est `docs/design/web-v1-review-fluid-light-reference.png`. Les décisions détaillées sont figées dans `docs/WEB_V1_DESIGN_DECISIONS.md`.
+
 ### Objectif
 
 Comparer les trois directions de [UI_UX_SPEC.md](UI_UX_SPEC.md) sans modifier les comportements ou le backend.
@@ -929,6 +935,12 @@ Comparer les trois directions de [UI_UX_SPEC.md](UI_UX_SPEC.md) sans modifier le
 Choix humain explicite A, B, C ou combinaison précisément décrite.
 
 ## PHASE 15 — Design final
+
+### Avancement du 21 septembre 2026
+
+La direction sélectionnée est implémentée dans le frontend de production : tokens clairs, header translucide, carte Review tactile, progression totale, actions bleu/blanc, responsive et reduced motion. Une fixture D1 publique et déterministe permet de reproduire l'état `4 sur 18` sans appel YouTube ou LLM.
+
+Les tests, le lint et le build frontend passent. La QA visuelle reste ouverte car aucun navigateur intégré n'était disponible dans la session ; `design-qa.md` documente le blocage et la procédure de reprise Codespaces.
 
 ### Objectif
 

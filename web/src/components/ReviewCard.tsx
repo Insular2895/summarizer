@@ -52,47 +52,72 @@ export function ReviewCard({ video, busy, onDecision }: ReviewCardProps) {
   const hintOpacity = Math.min(Math.abs(dragX) / 110, 1);
 
   return (
-    <article
-      className={`review-card${dragging ? " is-dragging" : ""}`}
-      data-swipe-intent={intent}
-      style={{ transform: `translate3d(${dragX}px, 0, 0)` }}
-      onPointerDown={startDrag}
-      onPointerMove={moveDrag}
-      onPointerUp={finishDrag}
-      onPointerCancel={cancelDrag}
-    >
-      <span className="swipe-hint swipe-hint-discard" style={{ opacity: dragX < 0 ? hintOpacity : 0 }} aria-hidden>
-        Écarter
-      </span>
-      <span className="swipe-hint swipe-hint-keep" style={{ opacity: dragX > 0 ? hintOpacity : 0 }} aria-hidden>
-        Garder
-      </span>
-      <img
-        className="review-thumbnail"
-        src={`https://i.ytimg.com/vi/${encodeURIComponent(video.youtube_id)}/hqdefault.jpg`}
-        alt=""
-        draggable={false}
-      />
-      <div className="review-card-copy">
-        <p className="review-meta">
-          {video.channel ? `${video.channel} · ` : ""}
-          {formatDuration(video.duration_seconds)}
-        </p>
-        <h2>{video.title}</h2>
-        <p>{summaryExcerpt(video.summary_markdown)}</p>
-        <Link className="secondary-link" to={`/review/${video.id}`}>
-          Ouvrir la fiche
-        </Link>
-      </div>
+    <div className="review-card-stage">
+      <article
+        className={`review-card${dragging ? " is-dragging" : ""}`}
+        data-swipe-intent={intent}
+        style={{ transform: `translate3d(${dragX}px, 0, 0)` }}
+        onPointerDown={startDrag}
+        onPointerMove={moveDrag}
+        onPointerUp={finishDrag}
+        onPointerCancel={cancelDrag}
+      >
+        <span
+          className="swipe-hint swipe-hint-discard"
+          style={{ opacity: dragX < 0 ? hintOpacity : 0 }}
+          aria-hidden
+        >
+          Écarter
+        </span>
+        <span
+          className="swipe-hint swipe-hint-keep"
+          style={{ opacity: dragX > 0 ? hintOpacity : 0 }}
+          aria-hidden
+        >
+          Garder
+        </span>
+        <div className="review-media">
+          <img
+            className="review-thumbnail"
+            src={`https://i.ytimg.com/vi/${encodeURIComponent(video.youtube_id)}/hqdefault.jpg`}
+            alt=""
+            draggable={false}
+          />
+          <span className="review-duration" aria-hidden>
+            {formatDuration(video.duration_seconds)}
+          </span>
+        </div>
+        <div className="review-card-copy">
+          <p className="review-meta">
+            {video.channel ? `${video.channel} · ` : ""}
+            {formatDuration(video.duration_seconds)}
+          </p>
+          <h2>{video.title}</h2>
+          <p>{summaryExcerpt(video.summary_markdown)}</p>
+          <Link className="secondary-link review-detail-link" to={`/review/${video.id}`}>
+            Ouvrir la fiche
+          </Link>
+        </div>
+      </article>
       <div className="review-actions" aria-label="Décision">
-        <button type="button" disabled={busy} onClick={() => onDecision("DISCARDED")}>
+        <button
+          className="review-action-discard"
+          type="button"
+          disabled={busy}
+          onClick={() => onDecision("DISCARDED")}
+        >
           Écarter <kbd>←</kbd>
         </button>
-        <button type="button" disabled={busy} onClick={() => onDecision("KEPT")}>
+        <button
+          className="review-action-keep"
+          type="button"
+          disabled={busy}
+          onClick={() => onDecision("KEPT")}
+        >
           Garder <kbd>→</kbd>
         </button>
       </div>
-    </article>
+    </div>
   );
 }
 
