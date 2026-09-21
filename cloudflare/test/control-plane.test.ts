@@ -173,6 +173,14 @@ describe("Summarizer Web V1 control plane", () => {
     });
     expect((await bodyOf<DecisionResponse>(repeatedKeep)).decision.version).toBe(2);
 
+    const staleDiscard = await api(`/api/videos/${videoId}/decision`, {
+      method: "PUT",
+      user: USER,
+      body: { decision: "DISCARDED", base_version: 1 },
+    });
+    expect(staleDiscard.status).toBe(409);
+    expect((await bodyOf<ErrorResponse>(staleDiscard)).error.diagnostic_code).toBe("DECISION_VERSION_CONFLICT");
+
     const undoResponse = await api(`/api/videos/${videoId}/decision/undo`, {
       method: "POST",
       user: USER,

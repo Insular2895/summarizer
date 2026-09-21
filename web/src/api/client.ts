@@ -36,6 +36,13 @@ export interface VideoRecord {
   provenance: Record<string, string>;
 }
 
+export interface ReviewVideoRecord extends VideoRecord {
+  note_body: string | null;
+  note_version: number | null;
+  decision: DecisionRecord["decision"];
+  decision_version: number;
+}
+
 export interface NoteRecord {
   video_id: string;
   body: string;
@@ -82,7 +89,7 @@ export interface VideoDetail {
 export interface SummarizerApi {
   createSource(url: string, signal?: AbortSignal): Promise<SourceReceipt>;
   getJob(jobId: string, signal?: AbortSignal): Promise<JobDetail>;
-  listReview(signal?: AbortSignal): Promise<VideoRecord[]>;
+  listReview(signal?: AbortSignal): Promise<ReviewVideoRecord[]>;
   getVideo(videoId: string, signal?: AbortSignal): Promise<VideoDetail>;
   saveNote(
     videoId: string,
@@ -91,6 +98,12 @@ export interface SummarizerApi {
     baseVersion: number,
     options?: { keepalive?: boolean },
   ): Promise<NoteRecord>;
+  setDecision(
+    videoId: string,
+    decision: "KEPT" | "DISCARDED",
+    baseVersion: number,
+  ): Promise<DecisionRecord>;
+  undoDecision(videoId: string, baseVersion: number): Promise<DecisionRecord>;
 }
 
 export class ApiError extends Error {
@@ -120,7 +133,7 @@ export const api: SummarizerApi = {
     ),
   getJob: (jobId, signal) => request<JobDetail>(`/api/jobs/${encodeURIComponent(jobId)}`, {}, signal),
   listReview: async (signal) => {
-    const response = await request<{ videos: VideoRecord[] }>("/api/review", {}, signal);
+    const response = await request<{ videos: ReviewVideoRecord[] }>("/api/review", {}, signal);
     return response.videos;
   },
   getVideo: (videoId, signal) =>
@@ -135,6 +148,27 @@ export const api: SummarizerApi = {
       },
     );
     return response.note;
+  },
+  setDecision: async (videoId, decision, baseVersion) => {
+    const response = await request<{ decision: DecisionRecord }>(
+      `/api/videos/${encodeURIComponent(videoId)}/decision`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ decision, base_version: baseVersion }),
+      },
+    );
+    return response.decision;
+  },
+  undoDecision: async (videoId, baseVersion) => {
+    const response = await request<{ decision: DecisionRecord }>(
+      `/api/videos/${encodeURIComponent(videoId)}/decision/undo`,
+      {
+        method: "POST",
+        headers: { "Idempotency-Key": crypto.randomUUID() },
+        body: JSON.stringify({ base_version: baseVersion }),
+      },
+    );
+    return response.decision;
   },
 };
 
