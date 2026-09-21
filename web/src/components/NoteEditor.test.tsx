@@ -1,8 +1,9 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
+import { createRef } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { NoteRecord } from "../api/client";
-import { NoteEditor } from "./NoteEditor";
+import { NoteEditor, NoteEditorHandle } from "./NoteEditor";
 
 const VIDEO_ID = "video-note-fixture";
 const DRAFT_KEY = `summarizer:note-draft:v1:${VIDEO_ID}`;
@@ -173,6 +174,29 @@ describe("NoteEditor autosave", () => {
       await pending.promise;
     });
     expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
+  });
+
+  it("keeps timestamped excerpts visible and local when remote saving fails", async () => {
+    vi.useFakeTimers();
+    const fetchMock = vi.fn<typeof fetch>().mockRejectedValue(new TypeError("offline"));
+    vi.stubGlobal("fetch", fetchMock);
+    const editorRef = createRef<NoteEditorHandle>();
+    render(<NoteEditor ref={editorRef} videoId={VIDEO_ID} note={note()} />);
+
+    act(() => {
+      editorRef.current?.addExcerpt({ text: "Passage important", start_ms: 65_000 });
+      editorRef.current?.addExcerpt({ text: "Passage important", start_ms: 65_000 });
+    });
+    await act(() => vi.advanceTimersByTimeAsync(1_950));
+
+    expect(screen.getAllByText("Passage important")).toHaveLength(2);
+    expect(screen.getAllByRole("button", { name: "1:05" })).toHaveLength(2);
+    expect(requestPayload(fetchMock, 0).excerpts).toEqual([
+      { text: "Passage important", start_ms: 65_000 },
+      { text: "Passage important", start_ms: 65_000 },
+    ]);
+    expect(JSON.parse(window.localStorage.getItem(DRAFT_KEY) ?? "{}").excerpts).toHaveLength(2);
+    expect(screen.getByRole("status")).toHaveTextContent("Synchronisation interrompue");
   });
 });
 

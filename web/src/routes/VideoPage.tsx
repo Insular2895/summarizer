@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 
 import { api, VideoDetail } from "../api/client";
-import { NoteEditor } from "../components/NoteEditor";
+import { NoteEditor, NoteEditorHandle } from "../components/NoteEditor";
+import { TranscriptSection } from "../components/TranscriptSection";
 
 export function VideoPage() {
   const { videoId } = useParams();
   const [detail, setDetail] = useState<VideoDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const noteEditorRef = useRef<NoteEditorHandle>(null);
 
   useEffect(() => {
     if (!videoId) return;
@@ -45,23 +47,12 @@ export function VideoPage() {
       </section>
       <section aria-labelledby="note-title">
         <h2 id="note-title">Note</h2>
-        <NoteEditor key={detail.video.id} videoId={detail.video.id} note={detail.note} />
+        <NoteEditor ref={noteEditorRef} key={detail.video.id} videoId={detail.video.id} note={detail.note} />
       </section>
-      <section aria-labelledby="transcript-title">
-        <h2 id="transcript-title">Transcript</h2>
-        {detail.transcript.length > 0 ? (
-          <ol className="transcript-list">
-            {detail.transcript.map((block) => (
-              <li key={block.block_index}>
-                <time>{formatTimestamp(block.start_ms)}</time>
-                <p>{block.text}</p>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p>Transcript indisponible.</p>
-        )}
-      </section>
+      <TranscriptSection
+        blocks={detail.transcript}
+        onAddExcerpt={(excerpt) => noteEditorRef.current?.addExcerpt(excerpt)}
+      />
     </article>
   );
 }
@@ -79,14 +70,4 @@ function VideoState({ title, message }: { title: string; message: string }) {
       </p>
     </section>
   );
-}
-
-function formatTimestamp(milliseconds: number): string {
-  const totalSeconds = Math.floor(milliseconds / 1_000);
-  const hours = Math.floor(totalSeconds / 3_600);
-  const minutes = Math.floor((totalSeconds % 3_600) / 60);
-  const seconds = totalSeconds % 60;
-  return hours > 0
-    ? `${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
-    : `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }

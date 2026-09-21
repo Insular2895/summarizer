@@ -147,6 +147,11 @@ describe("Summarizer Web V1 control plane", () => {
       },
     });
     expect((await bodyOf<{ note: { version: number } }>(noteResponse)).note.version).toBe(2);
+    const notedDetail = await bodyOf<{ note: { body: string; excerpts_json: string } }>(
+      await api(`/api/videos/${videoId}`, { user: USER }),
+    );
+    expect(notedDetail.note.body).toBe("Ma note");
+    expect(JSON.parse(notedDetail.note.excerpts_json)).toEqual([{ text: "Premier bloc", start_ms: 0 }]);
     const staleNote = await api(`/api/videos/${videoId}/note`, {
       method: "PUT",
       user: USER,

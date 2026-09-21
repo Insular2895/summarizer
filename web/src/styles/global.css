@@ -390,6 +390,41 @@ p {
   color: #b45309;
 }
 
+.note-excerpt-list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+
+.note-excerpt-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  padding-left: 0.75rem;
+  border-left: 2px solid #d4d4d4;
+}
+
+.note-excerpt-list blockquote {
+  margin: 0;
+  color: #525252;
+  line-height: 1.55;
+}
+
+.timestamp-button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
 .text-button {
   min-height: 2.75rem;
   padding: 0 0.25rem;
@@ -419,10 +454,58 @@ p {
   color: #6b7280;
   font-variant-numeric: tabular-nums;
   font-size: 0.8rem;
+  user-select: none;
 }
 
 .transcript-list p {
   margin: 0;
+}
+
+.selection-action {
+  position: fixed;
+  z-index: 20;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: max(1rem, env(safe-area-inset-left));
+  display: flex;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  margin-left: auto;
+  border: 1px solid #d4d4d4;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 12%);
+}
+
+.selection-action span {
+  overflow: hidden;
+  color: #626262;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selection-action button {
+  min-height: 2.75rem;
+  padding: 0 0.9rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #171717;
+  color: #ffffff;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.selection-feedback {
+  margin: 0.75rem 0 0;
+  color: #626262;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 40rem) {
@@ -491,6 +574,25 @@ p {
   .processing-list li,
   .review-list article {
     border-color: #2d2d2d;
+  }
+
+  .note-excerpt-list li {
+    border-color: #404040;
+  }
+
+  .note-excerpt-list blockquote {
+    color: #d4d4d4;
+  }
+
+  .selection-action {
+    border-color: #404040;
+    background: #191919;
+    box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 45%);
+  }
+
+  .selection-action button {
+    background: #f5f5f5;
+    color: #171717;
   }
 
   .review-list article {

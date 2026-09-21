@@ -80,7 +80,7 @@ Prochaine phase :
 | 6 | Vidéo unique | Non | Terminée et testée localement |
 | 7 | Playlist progressive | Non | Terminée et testée localement |
 | 8 | Note et autosave | Non | Terminée et testée localement |
-| 9 | Transcript vers Note | Validation UX si conflit iOS | À faire |
+| 9 | Transcript vers Note | Validation UX iOS reportée à la Phase 17 | Terminée et testée sur DOM desktop |
 | 10 | Review | Non | À faire |
 | 11 | Finalisation | Non | À faire |
 | 12 | Brain Vault | Oui si la frontière réelle diffère | À faire |
