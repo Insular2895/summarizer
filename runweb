@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="$SCRIPT_DIR/prototypes/fluid-knowledge-web"
+PORT="${TRANSCRIPT_WEB_PORT:-4175}"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Erreur : Node.js et npm sont requis pour lancer l'interface." >&2
+  exit 1
+fi
+
+if [[ ! -d "$APP_DIR/node_modules" ]]; then
+  echo "Dépendances absentes. Lance d'abord :" >&2
+  echo "  cd \"$APP_DIR\" && npm install" >&2
+  exit 1
+fi
+
+cd "$APP_DIR"
+echo "Transcript sera disponible sur http://127.0.0.1:$PORT/"
+exec npm run dev -- --host 127.0.0.1 --port "$PORT" --strictPort

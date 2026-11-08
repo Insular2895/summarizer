@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from collections.abc import Callable
 from pathlib import Path
+from typing import Any
 
 from rich.console import Console
 
@@ -16,7 +18,7 @@ from src.extractors.pdf_mineru import extract_pdf_with_mineru
 from src.extractors.pdf_ocrmypdf import extract_pdf_with_ocrmypdf
 from src.extractors.pdf_text import extract_pdf_with_pypdf
 from src.extractors.youtube import YouTubeExtractor, YouTubeVideo
-from src.llm.base import LLMError
+from src.llm.base import LLMError, LLMQuotaError
 from src.motion.schema import MotionOptions, reference_type_for_playlist_video
 from src.paths import project_path, safe_slug, youtube_library_path
 from src.pdf_evidence import TechnicalPdfEvidencePipeline
@@ -40,6 +42,7 @@ def run_video(
     dry_run: bool = False,
     mode: str = "summary",
     motion_options: MotionOptions | None = None,
+    summary_focus: str | None = None,
 ) -> VideoStatus:
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     info = extractor.get_video_info(url)
@@ -54,6 +57,7 @@ def run_video(
         dry_run=dry_run,
         mode=mode,
         motion_options=motion_options,
+        summary_focus=summary_focus,
     )
 
 
@@ -85,8 +89,12 @@ def run_playlist(
     motion_options: MotionOptions | None = None,
     tutorials_last: int = 0,
     mixed_indices: set[int] | None = None,
+    batch_size: int = 50,
+    progress_callback: Callable[[dict[str, Any]], None] | None = None,
     **kwargs: object,
 ) -> JobManifest:
+    if batch_size < 1:
+        raise ValueError("batch_size must be greater than zero")
     extractor = YouTubeExtractor(project_path("cache", "transcripts"))
     title, videos = extractor.list_playlist(url)
     if limit is not None:
@@ -98,54 +106,150 @@ def run_playlist(
     manifest_prefix = "motion" if mode == "motion-director" else "playlist"
     manifest_path = manifest_path_for_playlist(f"{manifest_prefix}-{title}")
     manifest = JobManifest.load_or_create(manifest_path, title) if resume else JobManifest(title)
+    _notify_playlist_progress(
+        progress_callback,
+        event="playlist_discovered",
+        title=title,
+        total=len(videos),
+        output_dir=str(output_dir),
+        manifest_path=str(manifest_path),
+        done=sum(1 for item in manifest.videos if item.status == "done"),
+        failed=sum(1 for item in manifest.videos if item.status == "failed"),
+    )
     duplicate_urls = {
         video_url
         for video_url, count in Counter(video.url for video in videos).items()
         if count > 1
     }
-    for index, video in enumerate(videos, start=1):
-        manifest_url = (
-            f"{video.url}#playlist-index={index}" if video.url in duplicate_urls else video.url
+    total_batches = (len(videos) + batch_size - 1) // batch_size
+    for batch_number, batch_start in enumerate(range(0, len(videos), batch_size), start=1):
+        batch = videos[batch_start : batch_start + batch_size]
+        batch_end = batch_start + len(batch)
+        batch_progress = {
+            "batch_number": batch_number,
+            "total_batches": total_batches,
+            "batch_start": batch_start + 1,
+            "batch_end": batch_end,
+            "batch_size": batch_size,
+        }
+        _notify_playlist_progress(
+            progress_callback,
+            event="batch_started",
+            title=title,
+            total=len(videos),
+            done=sum(1 for item in manifest.videos if item.status == "done"),
+            failed=sum(1 for item in manifest.videos if item.status == "failed"),
+            **batch_progress,
         )
-        existing = manifest.get(manifest_url)
-        if resume and existing and existing.status == "done":
-            console.print(f"[cyan]Skip already done:[/] {video.title}")
-            continue
-        output_slug = f"{index:03d}-{video.slug}"
-        per_video_motion_options = motion_options
-        if mode == "motion-director":
-            reference_type = reference_type_for_playlist_video(
-                index,
-                len(videos),
-                tutorials_last=tutorials_last,
-                mixed_indices=mixed_indices,
+        for index, video in enumerate(batch, start=batch_start + 1):
+            manifest_url = (
+                f"{video.url}#playlist-index={index}" if video.url in duplicate_urls else video.url
             )
-            per_video_motion_options = (motion_options or MotionOptions()).with_reference_type(
-                reference_type
+            existing = manifest.get(manifest_url)
+            if resume and existing and existing.status == "done":
+                console.print(f"[cyan]Skip already done:[/] {video.title}")
+                _notify_playlist_progress(
+                    progress_callback,
+                    event="video_skipped",
+                    index=index,
+                    total=len(videos),
+                    title=title,
+                    video_title=video.title,
+                    done=sum(1 for item in manifest.videos if item.status == "done"),
+                    failed=sum(1 for item in manifest.videos if item.status == "failed"),
+                    **batch_progress,
+                )
+                continue
+            output_slug = f"{index:03d}-{video.slug}"
+            per_video_motion_options = motion_options
+            if mode == "motion-director":
+                reference_type = reference_type_for_playlist_video(
+                    index,
+                    len(videos),
+                    tutorials_last=tutorials_last,
+                    mixed_indices=mixed_indices,
+                )
+                per_video_motion_options = (motion_options or MotionOptions()).with_reference_type(
+                    reference_type
+                )
+            try:
+                status = _process_video(
+                    video,
+                    extractor,
+                    output_slug=output_slug,
+                    output_dir=output_dir,
+                    graphipy_output_dir=graphipy_output_dir,
+                    mode=mode,
+                    motion_options=per_video_motion_options,
+                    **kwargs,
+                )
+                status.url = manifest_url
+            except LLMQuotaError:
+                status = VideoStatus(
+                    url=manifest_url,
+                    title=video.title,
+                    status="paused",
+                    error="quota_exhausted",
+                )
+                manifest.upsert_video(status)
+                manifest.save(manifest_path)
+                _notify_playlist_progress(
+                    progress_callback,
+                    event="quota_paused",
+                    index=index,
+                    total=len(videos),
+                    title=title,
+                    video_title=video.title,
+                    done=sum(1 for item in manifest.videos if item.status == "done"),
+                    failed=sum(1 for item in manifest.videos if item.status == "failed"),
+                    **batch_progress,
+                )
+                raise
+            except Exception as exc:
+                status = VideoStatus(
+                    url=manifest_url,
+                    title=video.title,
+                    status="failed",
+                    error=str(exc),
+                )
+                console.print(f"[red]Failed:[/] {video.title} - {exc}")
+            manifest.upsert_video(status)
+            manifest.save(manifest_path)
+            _notify_playlist_progress(
+                progress_callback,
+                event="video_finished",
+                index=index,
+                total=len(videos),
+                title=title,
+                video_title=video.title,
+                video_status=status.status,
+                done=sum(1 for item in manifest.videos if item.status == "done"),
+                failed=sum(1 for item in manifest.videos if item.status == "failed"),
+                **batch_progress,
             )
-        try:
-            status = _process_video(
-                video,
-                extractor,
-                output_slug=output_slug,
-                output_dir=output_dir,
-                graphipy_output_dir=graphipy_output_dir,
-                mode=mode,
-                motion_options=per_video_motion_options,
-                **kwargs,
-            )
-            status.url = manifest_url
-        except Exception as exc:
-            status = VideoStatus(
-                url=manifest_url,
-                title=video.title,
-                status="failed",
-                error=str(exc),
-            )
-            console.print(f"[red]Failed:[/] {video.title} - {exc}")
-        manifest.upsert_video(status)
-        manifest.save(manifest_path)
+        _notify_playlist_progress(
+            progress_callback,
+            event="batch_finished",
+            title=title,
+            total=len(videos),
+            done=sum(1 for item in manifest.videos if item.status == "done"),
+            failed=sum(1 for item in manifest.videos if item.status == "failed"),
+            **batch_progress,
+        )
     return manifest
+
+
+def _notify_playlist_progress(
+    callback: Callable[[dict[str, Any]], None] | None,
+    **event: Any,
+) -> None:
+    """Report progress without allowing an optional UI adapter to break the pipeline."""
+    if callback is None:
+        return
+    try:
+        callback(event)
+    except Exception:
+        return
 
 
 def run_local_playlist_dir(
@@ -157,6 +261,7 @@ def run_local_playlist_dir(
     overwrite: bool = False,
     dry_run: bool = False,
     limit: int | None = None,
+    summary_focus: str | None = None,
 ) -> JobManifest:
     playlist_slug = safe_slug(directory.name, "playlist")
     manifest_path = manifest_path_for_playlist(f"playlist-{playlist_slug}")
@@ -200,6 +305,7 @@ def run_local_playlist_dir(
                     str(transcript_path),
                     transcript,
                     output_path,
+                    summary_focus=summary_focus,
                 )
                 kept = keep_all or _confirm_keep(output_path, ask_each)
                 if not kept:
@@ -244,6 +350,7 @@ def run_youtube_source(
     motion_options: MotionOptions | None = None,
     tutorials_last: int = 0,
     mixed_indices: set[int] | None = None,
+    summary_focus: str | None = None,
 ) -> JobManifest | VideoStatus:
     path = Path(source).expanduser()
     if path.exists() and path.is_dir():
@@ -256,6 +363,7 @@ def run_youtube_source(
             overwrite=overwrite,
             dry_run=dry_run,
             limit=limit,
+            summary_focus=summary_focus,
         )
     if "playlist" in source or "list=" in source:
         return run_playlist(
@@ -272,6 +380,7 @@ def run_youtube_source(
             motion_options=motion_options,
             tutorials_last=tutorials_last,
             mixed_indices=mixed_indices,
+            summary_focus=summary_focus,
         )
     return run_video(
         source,
@@ -283,6 +392,7 @@ def run_youtube_source(
         dry_run=dry_run,
         mode=mode,
         motion_options=motion_options,
+        summary_focus=summary_focus,
     )
 
 
@@ -477,6 +587,7 @@ def _process_video(
     graphipy_output_dir: Path | None = None,
     mode: str = "summary",
     motion_options: MotionOptions | None = None,
+    summary_focus: str | None = None,
 ) -> VideoStatus:
     if mode not in {"summary", "motion-director"}:
         raise ValueError("mode must be summary or motion-director")
@@ -507,6 +618,7 @@ def _process_video(
             video.url,
             transcript,
             output_path,
+            summary_focus=summary_focus,
         )
     console.print(f"[4/5] Écriture Markdown: {output_path}")
     kept = keep_all or _confirm_keep(output_path, ask_each)

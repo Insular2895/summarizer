@@ -2,7 +2,9 @@
 
 ## Branches
 
-Le développement V1 se fait sur `feat/ai-pipeline-gemini-pdf-youtube`. `main` reste la branche stable.
+Le développement Web V1 se fait sur `feat/web-v1`. `main` reste la branche stable. Les travaux
+historiques du pipeline Python peuvent vivre sur leurs branches dédiées ; ils ne doivent pas être
+mélangés silencieusement avec les phases Web.
 
 Commandes Git destructrices à éviter sans validation explicite :
 

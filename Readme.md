@@ -63,17 +63,19 @@ cp .env.example .env
 ./summarizer
 ```
 
-Dans `.env`, remplis uniquement la clé du fournisseur que tu veux utiliser. Laisse les autres vides :
-elles ne seront pas activées.
+Sur macOS, ajoute la clé Gemini dans **Transcript > Clés API** : elle est enregistrée dans le
+Trousseau macOS, pas dans `.env`, et sa valeur n'est jamais renvoyée au navigateur. Une ancienne clé
+Gemini détectée dans `.env` peut être migrée depuis cette fenêtre ; elle n'est supprimée du fichier
+qu'après vérification de son écriture dans le Trousseau.
 
-```env
-GEMINI_API_KEY=ta_cle_api_gemini
-```
+Pour un serveur, un conteneur ou la CI, injecte la variable du fournisseur depuis le gestionnaire de
+secrets de la plateforme. Le fichier `.env` reste un fallback local/headless de compatibilité, jamais
+la méthode recommandée pour conserver une clé durablement.
 
 ## Quelle IA utiliser ?
 
-Le projet est aujourd'hui configuré et testé avec **Gemini**. Il suffit de renseigner
-`GEMINI_API_KEY` et de laisser les autres clés vides.
+Le projet est aujourd'hui configuré et testé avec **Gemini**. Sur macOS, la clé configurée dans
+**Transcript > Clés API** est détectée automatiquement par le pipeline Python.
 
 Gemini est recommandé pour commencer parce que Google propose généralement une offre gratuite avec
 des quotas adaptés à un usage personnel ou à des tests. Ce n'est pas une gratuité illimitée : les
@@ -147,6 +149,16 @@ Depuis le menu, choisis l'option YouTube et colle l'un ou l'autre lien :
 ./runyoutube "https://youtube.com/playlist?list=..."
 ```
 
+Pour orienter l'extraction vers un besoin précis :
+
+```bash
+./runyoutube "https://youtube.com/watch?v=..." \
+  --focus "Explique surtout les faits, le mécanisme et les exemples concrets."
+```
+
+Le focus reste facultatif. Sans focus, le résumé adapte automatiquement son angle à la nature de
+la vidéo et ne force pas de lecture business sur un contenu informatif.
+
 Les transcriptions sont conservées localement et réutilisées quand c'est possible. Cela évite de
 télécharger deux fois la même vidéo et permet de reprendre une playlist interrompue.
 
@@ -215,12 +227,16 @@ Les fichiers temporaires, les preuves et les détails techniques sont séparés 
 Le projet est conçu pour fonctionner localement. Tes PDF, transcriptions, caches et résultats restent
 sur ta machine et ne sont pas destinés à être publiés dans GitHub.
 
-Ne commit jamais `.env`, une clé API, des cookies, des PDF ou des sorties personnelles.
+Ne commit jamais `.env`, une clé API, des cookies, des PDF ou des sorties personnelles. Sur macOS,
+conserve les clés dans **Transcript > Clés API**. En CI ou sur serveur, utilise un coffre de secrets
+et injecte-les uniquement à l'exécution. Le prototype local écoute seulement sur `127.0.0.1` ;
+n'expose pas ses routes privées sur le réseau local.
 
 ## Commandes utiles
 
 | Besoin | Commande |
 |---|---|
+| Lancer l'interface locale | `./runweb` puis ouvrir `http://127.0.0.1:4175/` |
 | Ouvrir le menu | `./summarizer` |
 | Voir l'aide | `./runhelp` |
 | Résumer un PDF | `./runpdf "input/pdf/mon-livre.pdf"` |
@@ -231,3 +247,8 @@ Ne commit jamais `.env`, une clé API, des cookies, des PDF ou des sorties perso
 Les commandes avancées et les détails de fonctionnement sont regroupés dans
 [COMMANDS.md](COMMANDS.md). Les règles de maintenance du projet sont dans
 [AI_MAINTENANCE.md](AI_MAINTENANCE.md).
+
+Au premier lancement de l'interface, installer ses dépendances avec
+`cd prototypes/fluid-knowledge-web && npm install`, puis revenir à la racine et exécuter `./runweb`.
+Le plan complet, les prérequis de sécurité et les décisions restant à valider avant une publication
+sont documentés dans [docs/SAAS_DEPLOYMENT_PLAN.md](docs/SAAS_DEPLOYMENT_PLAN.md).

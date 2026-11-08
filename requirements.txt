@@ -4,7 +4,7 @@ pyyaml
 pydantic
 typer
 rich
-yt-dlp
+yt-dlp>=2026.10.26,<2027
 tiktoken
 beautifulsoup4
 markdownify

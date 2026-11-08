@@ -206,6 +206,17 @@ Vidéo :
 ./runyoutube "https://youtube.com/watch?v=..."
 ```
 
+Orienter la synthèse vers les informations recherchées :
+
+```bash
+./runyoutube "https://youtube.com/watch?v=..." \
+  --focus "Va droit aux faits, explique le mécanisme et conserve les chiffres précis."
+```
+
+`--focus` est facultatif. Il permet de prioriser un angle sans transformer une vidéo informative
+en analyse business. Sans cette option, le pipeline distingue automatiquement information,
+tutoriel, étude de cas, interview, opinion, promotion et contenu mixte.
+
 Playlist :
 
 ```bash
@@ -235,6 +246,9 @@ Reprendre un job :
 ```bash
 ./runyoutube "https://youtube.com/playlist?list=..." --resume
 ```
+
+Les playlists longues sont automatiquement découpées en lots de 50. Il n'y a pas de plafond
+applicatif : le manifeste conserve l'avancement global et `--resume` saute les vidéos déjà terminées.
 
 Créer des briefs et prompts Motion MCP sans modifier le mode résumé :
 
@@ -362,6 +376,25 @@ YOUTUBE_LIBRARY_DIR=/Volumes/MonSSD/youtube-library
 ```bash
 ./runhelp
 ```
+
+## Interface locale Transcript
+
+Première installation :
+
+```bash
+cd prototypes/fluid-knowledge-web
+npm install
+cd ../..
+```
+
+Lancement local :
+
+```bash
+./runweb
+```
+
+Ouvrir `http://127.0.0.1:4175/`. Le serveur écoute uniquement sur la boucle locale. Le plan de
+passage futur au SaaS est dans `docs/SAAS_DEPLOYMENT_PLAN.md`.
 
 ## Résultats
 

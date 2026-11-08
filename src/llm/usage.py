@@ -65,6 +65,11 @@ def record_gemini_usage(
     return event
 
 
+def record_llm_usage(*args: Any, **kwargs: Any) -> GeminiUsageEvent:
+    """Provider-neutral alias kept alongside the legacy Gemini function name."""
+    return record_gemini_usage(*args, **kwargs)
+
+
 def read_gemini_usage(log_path: Path | None = None) -> list[GeminiUsageEvent]:
     target = log_path or usage_log_path()
     if not target.exists():

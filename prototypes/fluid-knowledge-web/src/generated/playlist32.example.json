@@ -1,0 +1,50 @@
+[
+  {
+    "id": "demo-local-1",
+    "title": "Carte de démonstration 1",
+    "url": "https://www.youtube.com/",
+    "thumbnail": null,
+    "duration": null,
+    "source": "Démonstration locale",
+    "summary": "L'interface est prête. Ajoutez vos résumés locaux pour remplacer ces cartes neutres.",
+    "points": [
+      "Aucun transcript personnel n'est inclus dans GitHub.",
+      "Les résumés privés restent dans output/videos/playlist-32.",
+      "Les miniatures ne sont reprises que lorsqu'elles sont disponibles."
+    ],
+    "fullSummary": "## Données locales requises\n\nCette première carte permet de vérifier la lecture, les notes et l'approfondissement sans publier de contenu utilisateur.\n\n## Confidentialité locale\n\nLe jeu réel est généré depuis `output/videos/playlist-32/` et reste ignoré par Git.",
+    "sourceFile": "src/generated/playlist32.example.json"
+  },
+  {
+    "id": "demo-local-2",
+    "title": "Carte de démonstration 2",
+    "url": "https://www.youtube.com/",
+    "thumbnail": null,
+    "duration": null,
+    "source": "Démonstration locale",
+    "summary": "Les gestes garder et écarter fonctionnent avec ce jeu synthétique sans exposer une playlist réelle.",
+    "points": [
+      "Glissez à droite pour garder.",
+      "Glissez à gauche pour écarter.",
+      "Annulez pour revenir sur la dernière décision."
+    ],
+    "fullSummary": "## Revue par cartes\n\nCette deuxième carte sert uniquement à tester le passage d'une décision à la suivante.\n\n## Données synthétiques\n\nSon titre, son résumé et son identifiant ne viennent d'aucune vidéo réelle.",
+    "sourceFile": "src/generated/playlist32.example.json"
+  },
+  {
+    "id": "demo-local-3",
+    "title": "Carte de démonstration 3",
+    "url": "https://www.youtube.com/",
+    "thumbnail": null,
+    "duration": null,
+    "source": "Démonstration locale",
+    "summary": "La dernière carte permet de vérifier la fin de session, l'historique et les exports portables.",
+    "points": [
+      "La fin de session est explicite.",
+      "Les exports peuvent être testés sans données privées.",
+      "Maxi Brain reste un connecteur local réservé au propriétaire."
+    ],
+    "fullSummary": "## Fin de session\n\nCette troisième carte valide l'écran de fin et les reçus d'export.\n\n## Export portable\n\nLes autres utilisateurs recevront un ZIP Markdown ou un PDF propre lorsque le SaaS sera implémenté.",
+    "sourceFile": "src/generated/playlist32.example.json"
+  }
+]

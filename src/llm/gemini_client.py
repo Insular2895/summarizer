@@ -15,6 +15,7 @@ from src.config import ModelConfig
 from src.converters.token_counter import count_tokens
 from src.llm.base import LLMError, LLMInvalidJsonError, LLMQuotaError, effective_model_config
 from src.llm.rate_limiter import RateLimiter
+from src.llm.secret_store import get_macos_keychain_secret
 from src.llm.usage import record_gemini_usage
 from src.paths import project_path
 
@@ -34,16 +35,32 @@ class GeminiQuotaError(LLMQuotaError, GeminiError):
 @dataclass
 class GeminiClient:
     api_key: str | None = None
+    backup_api_key: str | None = None
     timeout_seconds: int = 120
     retries: int = 2
     rate_limiter: RateLimiter | None = None
 
     def __post_init__(self) -> None:
         load_dotenv(project_path(".env"))
-        key = self.api_key or os.getenv("GEMINI_API_KEY")
-        if not key:
-            raise GeminiError("GEMINI_API_KEY is missing. Create a local .env from .env.example.")
-        self._client = genai.Client(api_key=key)
+        primary_key = (
+            self.api_key
+            or os.getenv("GEMINI_API_KEY")
+            or get_macos_keychain_secret("geminiSummary")
+        )
+        backup_key = (
+            self.backup_api_key
+            or os.getenv("GEMINI_SUMMARY_BACKUP_API_KEY")
+            or get_macos_keychain_secret("geminiSummaryBackup")
+        )
+        if not primary_key and backup_key:
+            primary_key, backup_key = backup_key, None
+        if not primary_key:
+            raise GeminiError("Gemini API key is missing. Add it in Transcript > Clés API.")
+        keys = [primary_key]
+        if backup_key and backup_key != primary_key:
+            keys.append(backup_key)
+        self._clients = [genai.Client(api_key=key) for key in keys]
+        self._client = self._clients[0]
         self.rate_limiter = self.rate_limiter or RateLimiter()
 
     def generate(self, prompt: str, content: str, model_config: ModelConfig) -> str:
@@ -51,35 +68,39 @@ class GeminiClient:
         request = f"{prompt.strip()}\n\n---\n\nCONTENU A ANALYSER :\n\n{content.strip()}"
         input_tokens = count_tokens(request)
         last_error: Exception | None = None
-        for attempt in range(self.retries + 1):
-            try:
-                assert self.rate_limiter is not None
-                self.rate_limiter.wait()
-                response = self._client.models.generate_content(
-                    model=model_config.model,
-                    contents=request,
-                    config=types.GenerateContentConfig(
-                        temperature=model_config.temperature,
+        for client in self._clients:
+            self._client = client
+            for attempt in range(self.retries + 1):
+                try:
+                    assert self.rate_limiter is not None
+                    self.rate_limiter.wait()
+                    response = client.models.generate_content(
+                        model=model_config.model,
+                        contents=request,
+                        config=types.GenerateContentConfig(
+                            temperature=model_config.temperature,
+                            max_output_tokens=model_config.max_output_tokens,
+                        ),
+                    )
+                    text = (response.text or "").strip()
+                    if not text:
+                        raise GeminiError("Gemini returned an empty response.")
+                    _record_usage_safely(
+                        model=model_config.model,
+                        operation=model_config.name,
+                        input_tokens=input_tokens,
+                        output_tokens=count_tokens(text),
                         max_output_tokens=model_config.max_output_tokens,
-                    ),
-                )
-                text = (response.text or "").strip()
-                if not text:
-                    raise GeminiError("Gemini returned an empty response.")
-                _record_usage_safely(
-                    model=model_config.model,
-                    operation=model_config.name,
-                    input_tokens=input_tokens,
-                    output_tokens=count_tokens(text),
-                    max_output_tokens=model_config.max_output_tokens,
-                    status="success",
-                )
-                return text
-            except Exception as exc:  # pragma: no cover - network/API behavior
-                last_error = exc
-                if _is_quota_exhaustion(exc) or attempt >= self.retries:
-                    break
-                time.sleep(2**attempt)
+                        status="success",
+                    )
+                    return text
+                except Exception as exc:  # pragma: no cover - network/API behavior
+                    last_error = exc
+                    if _is_quota_exhaustion(exc) or attempt >= self.retries:
+                        break
+                    time.sleep(2**attempt)
+            if not _is_quota_exhaustion(last_error):
+                break
         _record_usage_safely(
             model=model_config.model,
             operation=model_config.name,
@@ -87,10 +108,15 @@ class GeminiClient:
             output_tokens=0,
             max_output_tokens=model_config.max_output_tokens,
             status="failed",
-            error=str(last_error),
+            error=_safe_error_label(last_error),
         )
         error_type = GeminiQuotaError if _is_quota_exhaustion(last_error) else GeminiError
-        raise error_type(f"Gemini request failed: {last_error}") from last_error
+        message = (
+            "Gemini quota is exhausted."
+            if error_type is GeminiQuotaError
+            else "Gemini request failed. Check the model, connection and credentials."
+        )
+        raise error_type(message) from None
 
     def generate_multimodal_json(
         self,
@@ -118,28 +144,32 @@ class GeminiClient:
         input_tokens = count_tokens(prompt + content) + image_bytes // 1024
         last_error: Exception | None = None
         response_text: str | None = None
-        for attempt in range(self.retries + 1):
-            try:
-                assert self.rate_limiter is not None
-                self.rate_limiter.wait()
-                response = self._client.models.generate_content(
-                    model=model_config.model,
-                    contents=[types.Content(role="user", parts=parts)],
-                    config=types.GenerateContentConfig(
-                        temperature=model_config.temperature,
-                        max_output_tokens=model_config.max_output_tokens,
-                        response_mime_type="application/json",
-                    ),
-                )
-                response_text = (response.text or "").strip()
-                if not response_text:
-                    raise GeminiError("Gemini returned an empty response.")
-                break
-            except Exception as exc:  # pragma: no cover - network/API behavior
-                last_error = exc
-                if _is_quota_exhaustion(exc) or attempt >= self.retries:
+        for client in self._clients:
+            self._client = client
+            for attempt in range(self.retries + 1):
+                try:
+                    assert self.rate_limiter is not None
+                    self.rate_limiter.wait()
+                    response = client.models.generate_content(
+                        model=model_config.model,
+                        contents=[types.Content(role="user", parts=parts)],
+                        config=types.GenerateContentConfig(
+                            temperature=model_config.temperature,
+                            max_output_tokens=model_config.max_output_tokens,
+                            response_mime_type="application/json",
+                        ),
+                    )
+                    response_text = (response.text or "").strip()
+                    if not response_text:
+                        raise GeminiError("Gemini returned an empty response.")
                     break
-                time.sleep(2**attempt)
+                except Exception as exc:  # pragma: no cover - network/API behavior
+                    last_error = exc
+                    if _is_quota_exhaustion(exc) or attempt >= self.retries:
+                        break
+                    time.sleep(2**attempt)
+            if response_text is not None or not _is_quota_exhaustion(last_error):
+                break
         if response_text is None:
             _record_usage_safely(
                 model=model_config.model,
@@ -148,10 +178,18 @@ class GeminiClient:
                 output_tokens=0,
                 max_output_tokens=model_config.max_output_tokens,
                 status="failed",
-                error=str(last_error),
+                error=_safe_error_label(last_error),
             )
             error_type = GeminiQuotaError if _is_quota_exhaustion(last_error) else GeminiError
-            raise error_type(f"Gemini multimodal request failed: {last_error}") from last_error
+            message = (
+                "Gemini quota is exhausted."
+                if error_type is GeminiQuotaError
+                else (
+                    "Gemini multimodal request failed. "
+                    "Check the model, connection and credentials."
+                )
+            )
+            raise error_type(message) from None
         try:
             value = _parse_json_object(response_text)
         except (GeminiError, json.JSONDecodeError) as exc:
@@ -219,3 +257,10 @@ def _is_quota_exhaustion(error: object) -> bool:
         or "quota metric" in message
         or "free_tier_requests" in message
     )
+
+
+def _safe_error_label(error: object) -> str:
+    """Return a stable diagnostic label without persisting provider messages or credentials."""
+    if _is_quota_exhaustion(error):
+        return "quota_exhausted"
+    return type(error).__name__ if error is not None else "unknown_error"

@@ -1,6 +1,6 @@
 from src.config import ModelConfig
 from src.llm.base import effective_model_config
-from src.llm.factory import create_llm_client
+from src.llm.factory import _detect_provider, create_llm_client
 
 
 def test_provider_specific_model_override(monkeypatch) -> None:
@@ -35,6 +35,19 @@ def test_auto_ignores_empty_keys_and_selects_configured_provider(monkeypatch) ->
     monkeypatch.setenv("GEMINI_API_KEY", "")
     monkeypatch.setenv("ANTHROPIC_API_KEY", "")
     monkeypatch.setenv("MISTRAL_API_KEY", "mistral-test-key")
+    monkeypatch.setattr("src.llm.factory.has_macos_keychain_secret", lambda *accounts: False)
     monkeypatch.setattr("src.llm.factory.OpenAICompatibleClient", lambda: sentinel)
 
     assert create_llm_client() is sentinel
+
+
+def test_auto_detects_gemini_from_macos_keychain(monkeypatch) -> None:
+    monkeypatch.setenv("GEMINI_API_KEY", "")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "")
+    monkeypatch.setenv("MISTRAL_API_KEY", "")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "")
+    monkeypatch.setenv("OPENAI_API_KEY", "")
+    monkeypatch.setenv("LLM_API_KEY", "")
+    monkeypatch.setattr("src.llm.factory.has_macos_keychain_secret", lambda *accounts: True)
+
+    assert _detect_provider() == "gemini"

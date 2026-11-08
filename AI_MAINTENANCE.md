@@ -27,7 +27,8 @@ Dossiers utilisateur :
 - `input/` : sources a traiter.
 - `output/` : resumes finaux.
 - `prompts/` : prompts Gemini modifiables.
-- `.env` : configuration locale privee.
+- `.env` : configuration locale non secrete ; les clés API n'y restent qu'en fallback legacy/headless.
+- Trousseau macOS : stockage local recommandé des clés saisies dans `Transcript > Clés API`.
 
 Dossiers techniques :
 
@@ -108,6 +109,10 @@ Modules importants :
 Regles obligatoires :
 
 - Une playlist se traite video par video.
+- Les longues playlists YouTube sont traitees par lots de 50, sans plafond artificiel. Le manifeste
+  reste global afin de reprendre au bon index sans retraiter les videos terminees.
+- Si `playlist_count` annonce plus d'elements que yt-dlp n'en extrait, ne jamais declarer le job
+  termine : mettre yt-dlp a jour et reprendre le manifeste.
 - Une transcription YouTube doit être stockée une seule fois par video ID dans `library/youtube/`.
 - Toujours réutiliser la bibliothèque avant de télécharger de nouveaux sous-titres.
 - Les fichiers sous `output/` sont des dérivés régénérables, pas la source canonique.
@@ -133,6 +138,7 @@ Commandes utiles :
 Modules importants :
 
 - `src/llm/gemini_client.py`
+- `src/llm/secret_store.py`
 - `src/llm/model_router.py`
 - `src/llm/rate_limiter.py`
 - `prompts/video_summary.md`
@@ -142,6 +148,15 @@ Regles :
 
 - Les tests ne doivent jamais appeler Gemini.
 - Ne pas afficher la cle API dans les logs.
+- Ne jamais renvoyer une valeur de clé à l'interface : seulement un booléen `configured`.
+- Sur macOS, lire Gemini depuis le Trousseau. Une migration `.env` doit écrire, relire et vérifier la
+  clé avant de supprimer les lignes legacy ; elle ne touche pas aux autres variables.
+- Ne pas transmettre une clé à un processus enfant dans ses arguments ou son environnement : utiliser
+  son entrée standard bornée lorsqu'un passage explicite est nécessaire.
+- Garder le prototype sur loopback. Les routes Clés API, Gemini et Maxi Brain doivent refuser les
+  clients non locaux et toute mutation sans origine navigateur correspondante.
+- En CI ou en production, injecter les clés depuis un gestionnaire de secrets ; ne pas créer un
+  fichier de clés local comme stockage durable.
 - En cas de quota ou timeout, sauvegarder l'etat du job si possible.
 - Ne pas envoyer un contenu vide ou manifestement mal extrait a Gemini.
 

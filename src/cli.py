@@ -47,6 +47,7 @@ def video(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    focus: str = "",
 ) -> None:
     _ = resume
     try:
@@ -58,6 +59,7 @@ def video(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            summary_focus=focus,
         )
     except Exception as exc:
         _fail(exc)
@@ -87,6 +89,7 @@ def run_youtube(
     tutorials_last: int = 0,
     mixed_indices: str = "",
     user_description: str = "",
+    focus: str = "",
 ) -> None:
     try:
         motion_options = _motion_options(
@@ -112,6 +115,7 @@ def run_youtube(
             motion_options=motion_options,
             tutorials_last=tutorials_last,
             mixed_indices=_parse_indices(mixed_indices),
+            summary_focus=focus,
         )
     except Exception as exc:
         _fail(exc)
@@ -131,6 +135,7 @@ def video_batch(
     overwrite: bool = False,
     resume: bool = False,
     dry_run: bool = False,
+    focus: str = "",
 ) -> None:
     _ = resume
     try:
@@ -142,6 +147,7 @@ def video_batch(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            summary_focus=focus,
         )
     except Exception as exc:
         _fail(exc)
@@ -159,6 +165,7 @@ def playlist(
     resume: bool = False,
     dry_run: bool = False,
     limit: int | None = None,
+    focus: str = "",
 ) -> None:
     try:
         manifest = run_playlist(
@@ -171,6 +178,7 @@ def playlist(
             delete_cache=delete_cache,
             overwrite=overwrite,
             dry_run=dry_run,
+            summary_focus=focus,
         )
     except Exception as exc:
         _fail(exc)

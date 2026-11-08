@@ -17,6 +17,19 @@ class YouTubeVideo:
     slug: str
 
 
+class IncompletePlaylistError(RuntimeError):
+    """Raised when YouTube advertises more entries than yt-dlp can enumerate."""
+
+    def __init__(self, reported_count: int, extracted_count: int) -> None:
+        super().__init__(
+            "YouTube playlist pagination is incomplete: "
+            f"{extracted_count} entries extracted out of {reported_count}. "
+            "Update yt-dlp before resuming this playlist."
+        )
+        self.reported_count = reported_count
+        self.extracted_count = extracted_count
+
+
 class YouTubeExtractor:
     def __init__(self, cache_dir: Path) -> None:
         self.cache_dir = ensure_dir(cache_dir)
@@ -45,6 +58,9 @@ class YouTubeExtractor:
             if not video_url:
                 continue
             videos.append(self._video_from_info(str(video_url), entry))
+        reported_count = _positive_int(info.get("playlist_count"))
+        if reported_count is not None and len(videos) < reported_count:
+            raise IncompletePlaylistError(reported_count, len(videos))
         return title, videos
 
     def download_subtitles(self, url: str, slug: str) -> Path:
@@ -108,3 +124,11 @@ class YouTubeExtractor:
 def _find_cookiefile() -> Path | None:
     candidates = [project_path("cookies.txt"), Path.home() / "cookies.txt"]
     return next((path for path in candidates if path.exists()), None)
+
+
+def _positive_int(value: Any) -> int | None:
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if parsed > 0 else None
