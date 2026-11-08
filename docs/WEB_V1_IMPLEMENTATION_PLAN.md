@@ -1,1403 +1,1213 @@
-Status: READY FOR PHASED EXECUTION
+# Summarizer Web V1 — Plan d'implémentation
 
-# Summarizer Web V1 — Plan d’implémentation
+> Baseline : 2026-11-01 sur la branche `feat/web-v1`.
+> Ce plan exécute [WEB_V1_ARCHITECTURE.md](WEB_V1_ARCHITECTURE.md) et
+> [UI_UX_SPEC.md](UI_UX_SPEC.md). Il ne remplace pas ces contrats.
 
-## 1. Objet
+## Règles d'exécution
 
-Ce plan transforme [WEB_V1_ARCHITECTURE.md](WEB_V1_ARCHITECTURE.md) en séquence d’exécution vérifiable. [UI_UX_SPEC.md](UI_UX_SPEC.md) reste autoritaire pour le comportement produit. Le pipeline local décrit par [ARCHITECTURE.md](ARCHITECTURE.md) et [PIPELINE.md](PIPELINE.md) doit rester fonctionnel pendant toute l’exécution.
+- Exécuter les phases dans l'ordre et ne franchir un gate qu'après réussite de ses critères.
+- Un échec préexistant est documenté séparément ; il n'est pas attribué à Web V1.
+- Garder les changements petits, réversibles et testés.
+- Ne jamais modifier le pipeline PDF pour faire avancer Web V1.
+- Ne jamais utiliser `stdout` comme API de progression.
+- Ne jamais exposer une variable secrète au bundle Vite.
+- Ne jamais supprimer de données gardées avant confirmation durable de l'export.
+- Ne pas créer de commit tant que les changements locaux antérieurs n'ont pas été séparés ou validés.
 
-Ce document permet à un nouvel agent de reprendre le travail sans redécouvrir l’architecture, sans développer sur `main` et sans intégrer les artefacts privés présents dans certains états locaux du dépôt.
+## Convention de structure cible
 
-## 2. Règles d’exécution
-
-### Ordre
-
-- Exécuter les phases dans l’ordre.
-- Ne passer à la phase suivante que lorsque les critères d’acceptation et les tests de la phase courante sont satisfaits.
-- Un échec préexistant peut être documenté et isolé ; un nouvel échec introduit par la phase doit être corrigé.
-- Ne pas attendre une validation humaine pour chaque micro-étape technique non destructive.
-- Demander une validation avant toute modification d’une décision Frozen, choix visuel A/B/C, opération destructive ou changement architectural majeur.
-
-### Git
-
-- Branche de travail cible : `feat/web-v1`, créée depuis `origin/main`.
-- Ne pas utiliser la branche locale divergente `bibliotheque-de-babbel` comme base du Web V1.
-- Ne jamais utiliser `git reset --hard`, `git clean -fd`, `git push --force` ou `git branch -D`.
-- Stager des chemins explicites.
-- Vérifier le diff et les secrets avant chaque commit.
-- Ne jamais committer `.env`, cookies, transcripts, PDF, outputs, caches ou playlists locales.
-
-### Commits
-
-Les commits restent petits et cohérents. Séquence recommandée :
-
-1. `docs: freeze web v1 architecture`
-2. `feat(web): add application shell`
-3. `feat(control-plane): add source and job lifecycle`
-4. `feat(pipeline): expose structured web events`
-5. `feat(worker): add claim and processing runner`
-6. `feat(web): support single youtube video`
-7. `feat(web): add progressive playlist processing`
-8. `feat(notes): add versioned autosave`
-9. `feat(notes): add timestamped transcript excerpts`
-10. `feat(review): add keep discard and undo`
-11. `feat(finalize): add safe export and cleanup`
-12. commits design et QA séparés après validation humaine.
-
-### Compte rendu de phase
-
-Après chaque phase importante, produire :
+La structure de travail prévue est :
 
 ```text
-PHASE TERMINÉE
-
-Fichiers modifiés :
-...
-
-Fonctionnel :
-...
-
-Tests :
-...
-
-Problèmes :
-...
-
-Prochaine phase :
-...
+web/                    frontend React + TypeScript + Vite
+control-plane/          API et persistance Cloudflare
+contracts/web-v1/       schemas échangés entre les composants
+src/web_adapter/        frontière Python autour du pipeline existant
+tests/web_adapter/      tests Python de cette frontière
 ```
 
-## 3. Matrice des phases
-
-| Phase | Objet | Validation humaine | Statut |
-| --- | --- | --- | --- |
-| 0 | Baseline | Non, sauf risque destructif | Terminée et documentée |
-| 1 | Docs et contrats | Si décision Frozen manquante | Terminée par les trois docs V1 |
-| 2 | Squelette Web | Non | Terminée et testée |
-| 3 | Control plane | Non, dans l’architecture figée | Terminée et testée localement |
-| 4 | Adaptateur Python | Non | Terminée et testée |
-| 5 | Worker | Non | Terminée et testée localement |
-| 6 | Vidéo unique | Non | Terminée et testée localement |
-| 7 | Playlist progressive | Non | Terminée et testée localement |
-| 8 | Note et autosave | Non | Terminée et testée localement |
-| 9 | Transcript vers Note | Validation UX iOS reportée à la Phase 17 | Terminée et testée sur DOM desktop |
-| 10 | Review | Non | Terminée et testée localement |
-| 11 | Finalisation | Non | Terminée et testée localement |
-| 12 | Brain Vault | Oui si la frontière réelle diffère | Terminée sur la frontière existante, testée localement |
-| 13 | Cleanup et History | Oui avant suppression nouvelle | Terminée pour le spool job uniquement, testée localement |
-| 14 | Prototypes A/B/C | Choix humain obligatoire | Terminée : option 3 modifiée choisie le 21/09/2026 |
-| 15 | Design final | Choix A/B/C requis | Implémenté, QA visuelle navigateur à terminer |
-| 16 | Revue motion | Non | Base implémentée, revue navigateur/appareil à faire |
-| 17 | QA mobile | Non | À faire |
-| 18 | QA sécurité | Non | À faire |
-| 19 | Suite de tests | Non | À faire |
-| 20 | Secret scan | Non | À faire |
-| 21 | Documentation opératoire | Non | À faire |
-| 22 | Validation finale | Oui pour promotion/merge si requis | À faire |
-
-## PHASE 0 — Baseline du dépôt
-
-### Objectif
-
-Comprendre l’état réel avant toute implémentation, identifier les risques préexistants et produire une base de comparaison reproductible.
-
-### Fichiers concernés
-
-- `AGENTS.md`
-- `AI_MAINTENANCE.md`
-- `docs/UI_UX_SPEC.md`
-- `docs/ARCHITECTURE.md`
-- `docs/PIPELINE.md`
-- `docs/SAFETY.md`
-- `Readme.md`
-- `.env.example`
-- `requirements.txt`
-- `pyproject.toml`
-- `.github/workflows/ci.yml`
-- `src/pipeline.py`
-- `src/menu.py`
-- `src/storage/manifest.py`
-- `src/extractors/`
-- `src/summarizers/`
-- `src/llm/`
-- `src/exporters/`
-- `config/`
-- `prompts/`
-- `tests/`
-
-### Dépendances
-
-- environnement Python local existant ;
-- aucun accès LLM nécessaire ;
-- aucun déploiement.
-
-### Changements
-
-Aucun changement de code. Inspection, tests et documentation uniquement.
-
-### Résultats observés le 20 septembre 2026
-
-- Branche courante initiale : `bibliotheque-de-babbel`.
-- Divergence avec `origin/main` : 9 commits de chaque côté.
-- Working tree déjà modifié avant la tâche.
-- `origin/main` ne contient aucun fichier sous `library/youtube/`.
-- La branche courante suit 1 792 fichiers sous `library/youtube/`, situation incompatible avec la politique de confidentialité et exclue de la branche Web V1.
-- Dans le checkout local déjà modifié : 103 tests passent, Black passe sur 74 fichiers, Ruff passe et Mypy échoue avec 20 erreurs préexistantes dans 9 fichiers.
-- Dans le worktree propre basé sur `origin/main`, utilisé pour la branche Web V1 : 87 tests passent, Black passe sur 62 fichiers, Ruff passe et Mypy échoue avec 17 erreurs préexistantes dans 9 fichiers.
-- L’aide `runyoutube` fonctionne.
-- Le scan global signale 638 chaînes hexadécimales à forte entropie : 637 dans des métadonnées locales de bibliothèque et une dans une fixture golden. Aucun de ces fichiers de bibliothèque ne doit entrer dans la nouvelle branche.
-- Aucun test YouTube ou LLM live n’a été lancé sans fixture publique dédiée et sans nécessité produit.
-
-### Critères d’acceptation
-
-- État Git compris et non détruit.
-- Base propre choisie pour le Web V1.
-- Pipeline réel et noms de fonctions vérifiés.
-- Tests, format, lint, typecheck et secret scan exécutés.
-- Échecs préexistants séparés des futurs changements.
-- Aucun fichier privé ajouté.
-
-### Tests
-
-- `python -m pytest -q` : 103 réussites dans le checkout local modifié ; 87 sur la base propre `origin/main`.
-- `python -m black --check src tests` : réussite dans les deux états.
-- `python -m ruff check src tests` : réussite dans les deux états.
-- `python -m mypy src` : 20 erreurs préexistantes dans le checkout local ; 17 sur la base propre `origin/main`.
-- `./runyoutube --help` : réussite.
-- `detect-secrets scan` sur les fichiers suivis ou non ignorés : findings de hashes documentés.
-
-### Risques
-
-- Embarquer accidentellement l’historique de la branche locale et ses transcripts.
-- Attribuer au Web V1 les erreurs Mypy déjà présentes.
-- Scanner ou afficher du contenu privé inutilement.
+La topologie Cloudflare historique doit être restituée en Phase 1. Si elle impose un packaging
+différent, seule cette convention de dossiers est ajustée ; les frontières fonctionnelles restent
+inchangées.
 
-### Condition de passage
+## Phase 0 — Baseline
 
-Créer ou utiliser `feat/web-v1` depuis `origin/main`, puis stager uniquement des chemins explicites. Cette condition est obligatoire avant tout commit ou push.
+**OBJECTIF**
 
-## PHASE 1 — Documentation et contrats conceptuels
+Établir un état de référence reproductible avant toute modification du code métier.
 
-### Objectif
+**FICHIERS CONCERNÉS**
 
-Figer l’UX, l’architecture et la séquence d’exécution avant toute modification du code métier.
+- `AGENTS.md`, `AI_MAINTENANCE.md`, `Readme.md` ;
+- `docs/ARCHITECTURE.md`, `docs/PIPELINE.md`, `docs/SAFETY.md` ;
+- `.env.example`, `.gitignore`, `pyproject.toml`, requirements et CI ;
+- `src/pipeline.py`, `src/storage/manifest.py`, extracteur YouTube, summarizer et LLM ;
+- tests existants.
 
-### Fichiers concernés
+**DÉPENDANCES**
 
-- `docs/UI_UX_SPEC.md`
-- `docs/WEB_V1_ARCHITECTURE.md`
-- `docs/WEB_V1_IMPLEMENTATION_PLAN.md`
+- dépôt local et environnement `.venv` Python 3.11 ;
+- aucune dépendance Web requise.
 
-### Dépendances
+**CHANGEMENTS**
 
-- Phase 0 terminée ;
-- brief UX autoritaire ;
-- décisions d’architecture fournies ;
-- inspection du code réel.
+- branche `feat/web-v1` créée, aucune branche Web V1 antérieure trouvée ;
+- aucune modification métier effectuée ;
+- état sale préexistant conservé et identifié ;
+- absence de `docs/UI_UX_SPEC.md` et des anciennes maquettes documentée ;
+- dette de confidentialité des fichiers `library/youtube/` déjà suivis documentée.
 
-### Changements
+Changements présents avant cette phase et à ne pas attribuer à Web V1 : `.gitignore`, `COMMANDS.md`,
+`Readme.md`, `input/youtube/urls.example.txt`, `prompts/video_summary.md`, `runyoutube`, `src/cli.py`,
+`src/llm/usage.py`, `src/pipeline.py`, `src/summarizers/video_summarizer.py`,
+`tests/test_playlist_logic.py`, plus trois fichiers non suivis de prompt/tests/bibliothèque.
 
-- Documenter la topologie Pages → Worker API → D1 ↔ worker Python.
-- Définir les responsabilités et interdits de chaque composant.
-- Définir Source, Job, Video, Note, ReviewDecision et HistoryEntry.
-- Définir le cycle QUEUED, PROCESSING, READY, DONE, FAILED.
-- Définir claim, lease, idempotence, autosave versionné, Undo et finalisation sûre.
-- Séparer décisions Frozen et détails ouverts.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- [x] branche distincte de `main` ;
+- [x] état Git compris sans écraser les changements existants ;
+- [x] pipeline et comportement playlist inspectés ;
+- [x] configuration secrets/retention inspectée ;
+- [x] baseline de tests enregistrée.
 
-- Les trois documents se lient sans se dupliquer.
-- Aucun détail UX Frozen n’est rediscuté.
-- Aucune fonction inexistante n’est présentée comme actuelle.
-- Les contradictions code/UX sont explicites.
-- Les choix non prouvés sont dans OPEN IMPLEMENTATION DETAILS.
-- Aucun code métier n’est modifié.
+**TESTS**
 
-### Tests
+- `pytest -q` : 103 réussis, 5 warnings SWIG ;
+- `black --check src tests` : réussi ;
+- `ruff check src tests` : réussi ;
+- `mypy src` : 20 erreurs dans 9 fichiers, préexistantes et non bloquantes dans la CI ;
+- `detect-secrets scan` : 638 alertes d'entropie, dont 637 sous `library/` et une fixture ;
+- recherche manuelle de signatures de clés connues : aucune correspondance ;
+- test YouTube live non exécuté : aucune fixture réseau stable, et le dry-run actuel crée un manifeste.
 
-- `git diff --check` sur les trois documents.
-- Vérification des liens Markdown locaux.
-- Vérification de la présence des sections Frozen et Open.
-- Scan de secrets limité au diff.
+**RISQUES**
 
-### Risques
+- 896 transcripts et 896 métadonnées YouTube sont déjà suivis par Git ;
+- la branche porte aussi des changements de travail antérieurs ;
+- le typage statique ne fournit pas encore une baseline verte.
 
-- Transformer une hypothèse de déploiement en décision.
-- Dupliquer `ARCHITECTURE.md`, `PIPELINE.md` ou `UI_UX_SPEC.md`.
-- Mélanger configuration Cloudflare et architecture fonctionnelle.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+Baseline consignée dans ce document et aucun changement antérieur perdu. Condition satisfaite.
 
-Documents relus, commités seuls sur la branche dédiée et poussés. Aucun squelette Web ne commence dans le même commit.
+## Phase 1 — Documentation et contrats
 
-## PHASE 2 — Squelette Web
+**OBJECTIF**
 
-### Objectif
+Geler les décisions récupérables et définir des contrats minimaux avant toute implémentation.
 
-Créer une application React + TypeScript + Vite minimale qui démarre et expose Home, Review et History sans logique métier dupliquée.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- `docs/UI_UX_SPEC.md` ;
+- `docs/WEB_V1_ARCHITECTURE.md` ;
+- `docs/WEB_V1_IMPLEMENTATION_PLAN.md` ;
+- `contracts/web-v1/*.schema.json` à créer après restitution de la topologie ;
+- fixtures de contrat sous `contracts/web-v1/examples/`.
 
-- `web/package.json`
-- `web/package-lock.json` ou lockfile retenu
-- `web/tsconfig*.json`
-- `web/vite.config.ts`
-- `web/index.html`
-- `web/src/main.tsx`
-- `web/src/App.tsx`
-- `web/src/routes/`
-- `web/src/styles/`
-- `.gitignore`
-- éventuelle configuration Codespaces existante, sans secret.
+**DÉPENDANCES**
 
-### Dépendances
+- Phase 0 ;
+- décision Cloudflare historique et anciennes maquettes si disponibles.
 
-- Phase 1 validée ;
-- version Node documentée ;
-- gestionnaire de paquets choisi une seule fois.
+**CHANGEMENTS**
 
-### Changements
+- documenter Source, Playlist, Video, Job, Progress, Note, ReviewDecision et Finalize ;
+- figer les transitions `QUEUED/PROCESSING/READY/DONE/FAILED` ;
+- ajouter des schemas JSON bornés sans générateur de code obligatoire ;
+- restituer précisément Pages/Static Assets, Worker(s), D1, Tunnel éventuel, routes, domaines et
+  Access ;
+- rapprocher les anciennes maquettes de la spécification fonctionnelle reconstruite.
 
-- Initialiser Vite React TypeScript dans `web/`.
-- Créer les routes Home, Review, History et fiche vidéo.
-- Ajouter un client API vide ou mocké derrière une interface.
-- Ajouter des états de chargement et d’erreur minimaux.
-- N’ajouter aucune clé privée ni logique YouTube.
-- Conserver le style volontairement neutre avant les prototypes.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- chaque donnée échangée possède propriétaire, identifiant, version et provenance ;
+- aucune décision ouverte n'est présentée comme figée ;
+- le statut `READY` d'une vidéo pendant un Job `PROCESSING` est représentable ;
+- Note et ReviewDecision ont une contrainte d'unicité par vidéo ;
+- l'ordre export → confirmation → cleanup est testable dans le contrat.
 
-- L’application démarre localement.
-- Les routes sont accessibles directement et par navigation.
-- Un refresh d’une route SPA fonctionne dans la configuration locale.
-- Aucun appel LLM ou pipeline depuis le navigateur.
-- Aucun composant visuel ne fige la direction A/B/C.
+**TESTS**
 
-### Tests
+- validation des exemples contre les schemas JSON ;
+- tests de transitions valides et invalides ;
+- vérification des liens Markdown et rendu Mermaid ;
+- revue manuelle de cohérence avec les trois docs sources.
 
-- commande de test réellement définie dans `web/package.json` ;
-- lint TypeScript ;
-- build Vite ;
-- test de navigation Home → Review → History ;
-- recherche de préfixes de secrets privés dans le bundle.
+**RISQUES**
 
-### Risques
+- inventer une ancienne décision absente ;
+- transformer le manifeste CLI en contrat Web sans clarifier la sémantique de `done` ;
+- figer des détails visuels avant récupération des maquettes.
 
-- Installer une bibliothèque lourde sans besoin.
-- Construire des données mock incompatibles avec les futurs contrats.
-- Commencer le polish visuel avant le fonctionnement.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+Topologie Cloudflare exacte et référence UI historique consignées, ou validation humaine explicite
+des éléments manquants. Aucun code Web ne commence avant ce gate.
 
-Build reproductible et routes vertes, sans warning de secret et sans logique métier dupliquée.
+## Phase 2 — Squelette Web
 
-## PHASE 3 — Control plane Cloudflare
+**OBJECTIF**
 
-### Objectif
+Démarrer l'application React/TypeScript/Vite avec Home, Review et History, sans logique métier
+dupliquée.
 
-Créer l’API minimale et la persistance D1 pour Sources, Jobs, Video, Note, ReviewDecision et HistoryEntry.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- `web/package.json`, `web/tsconfig*.json`, `web/vite.config.ts` ;
+- `web/src/main.tsx`, `web/src/app/router.tsx` ;
+- `web/src/pages/HomePage.tsx`, `ReviewPage.tsx`, `HistoryPage.tsx` ;
+- `web/src/lib/config.ts`, styles et tests de shell ;
+- CI pour install/lint/test/build frontend.
 
-- `cloudflare/package.json`
-- `cloudflare/wrangler.toml` ou configuration Wrangler retenue
-- `cloudflare/src/index.ts`
-- `cloudflare/src/routes/`
-- `cloudflare/src/domain/`
-- `cloudflare/src/db/`
-- `cloudflare/migrations/`
-- `cloudflare/test/`
-- schémas partagés sous `schemas/web-v1/`.
+**DÉPENDANCES**
 
-### Dépendances
+- Phase 1 validée ; runtime Node et package manager versions fixées.
 
-- Phase 2 ;
-- identifiants Cloudflare injectés hors Git ;
-- décisions de domaines et d’accès consignées avant déploiement distant.
+**CHANGEMENTS**
 
-### Changements
+- créer le shell et la navigation responsive ;
+- ajouter un client API typé mais mocké par contrats ;
+- allow-lister les seules variables publiques ;
+- afficher des états vides, chargement et erreur sans provider spécifique.
 
-- Créer Source et Job de façon idempotente.
-- Persister états, progression, Note versionnée et décisions.
-- Exposer les capacités API décrites dans l’architecture.
-- Séparer routes navigateur et routes worker.
-- Ajouter validation de schéma et limites de payload.
-- Créer des migrations non destructives.
-- Retourner message utilisateur et code diagnostic séparés.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- les trois routes se chargent directement et après refresh ;
+- aucune clé ni logique Python/LLM dans le bundle ;
+- build de production reproductible ;
+- navigation utilisable au clavier et sur viewport mobile.
 
-- Création répétée avec la même clé d’idempotence renvoie la même ressource.
-- Une sauvegarde de Note avec version obsolète est refusée sans perte.
-- Une décision répétée n’est pas dupliquée.
-- D1 local se reconstruit depuis zéro.
-- Aucune clé LLM ou cookie ne figure dans D1 ou dans le bundle.
+**TESTS**
 
-### Tests
+- test de rendu de chaque route ;
+- lint/typecheck/build ;
+- scan du bundle pour noms de secrets et clés ;
+- contrôle responsive local Chromium/Safari si disponible.
 
-- tests unitaires des handlers ;
-- tests de migrations D1 sur base vide ;
-- tests create/read/update/conflit ;
-- tests de taille et URL invalide ;
-- build et dry-run Wrangler si la commande existe dans le package.
+**RISQUES**
 
-### Risques
+- confondre mock d'interface et seconde logique métier ;
+- choisir des composants visuels définitifs avant la phase prototypes.
 
-- Confondre D1 avec le stockage de connaissance permanent.
-- Ajouter un ORM disproportionné.
-- Exposer les routes worker au navigateur.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+Shell vert en CI, aucun secret frontend, aucune dépendance au worker physique.
 
-API locale entièrement testée avec D1 local, migrations reproductibles et autorisations séparées.
+## Phase 3 — Control plane
 
-## PHASE 4 — Adaptateur Python
+**OBJECTIF**
 
-### Objectif
+Créer la couche Cloudflare minimale pour état, jobs, Review, Note et History.
 
-Exposer une frontière structurée entre les jobs Web et le pipeline actuel, sans réimplémenter le traitement YouTube.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- `control-plane/package.json`, configuration Cloudflare restituée ;
+- `control-plane/src/index.ts`, `routes/`, `domain/`, `storage/` ;
+- migrations D1 si D1 est confirmé ;
+- tests runtime et contrats ;
+- `contracts/web-v1/`.
 
-- `src/pipeline.py`
-- nouveau package `src/web_adapter/`
-- `src/storage/manifest.py` si extension compatible nécessaire
-- `src/converters/srt_to_text.py` ou nouveau convertisseur horodaté séparé
-- `schemas/web-v1/`
-- `tests/test_web_adapter.py`
-- tests existants du pipeline.
+**DÉPENDANCES**
 
-### Dépendances
+- topologie et auth Phase 1 ; schemas de contrat ; shell Phase 2.
 
-- contrats Phase 3 stabilisés ;
-- pipeline local vert ;
-- fixtures YouTube locales sans réseau.
+**CHANGEMENTS**
 
-### Changements
+- endpoints de création Source/Job et lecture progression ;
+- persistance Source, Playlist, Video, Job, Note, décision et HistoryEntry ;
+- transitions d'état centralisées ;
+- validation de schéma, autorisation ressource et erreurs publiques/diagnostics séparés ;
+- idempotency key sur créations et mutations importantes.
 
-- Ajouter un observateur optionnel au pipeline.
-- Émettre des événements structurés aux transitions réelles.
-- Produire un résultat vidéo avec résumé, provenance et transcript horodaté.
-- Préserver le transcript texte actuel et créer une représentation horodatée séparée.
-- Mapper les exceptions en codes stables sans masquer la cause dans les logs développeur.
-- Garder le CLI inchangé quand aucun observateur n’est fourni.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- une requête répétée ne duplique pas la Source ou le Job ;
+- toute ressource est autorisée côté serveur ;
+- état durable après redémarrage de l'isolate ;
+- aucune donnée critique uniquement en mémoire.
 
-- Aucun parsing de stdout.
-- Une fixture playlist émet un événement READY par vidéo dans l’ordre réel.
-- Une erreur vidéo émet FAILED puis la suivante continue.
-- Le pipeline PDF ne change pas.
-- Le CLI YouTube conserve ses sorties actuelles.
+**TESTS**
 
-### Tests
+- tests unitaires transitions/validation ;
+- tests d'intégration migrations et API ;
+- accès croisé refusé ;
+- requêtes concurrentes et idempotence.
 
-- tests unitaires de mapping des événements ;
-- tests de transcript horodaté SRT et VTT ;
-- tests playlist avec une vidéo en erreur ;
-- tests de compatibilité CLI ;
-- suite Python complète, Black et Ruff.
+**RISQUES**
 
-### Risques
+- ajouter un ORM lourd ;
+- dépendre de mémoire d'isolate ;
+- divergence entre schema TypeScript et Python.
 
-- Dépendre de `_process_video` comme API privée sans stabilisation.
-- Dupliquer la boucle playlist.
-- Perdre les timestamps lors de la conversion.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+API contractuelle testée localement, migrations non destructives et auth fail-closed.
 
-Le pipeline local produit des événements structurés optionnels avec tous les tests historiques verts.
+## Phase 4 — Adaptateur Python
 
-## PHASE 5 — Worker Python
+**OBJECTIF**
 
-### Objectif
+Traduire un Job Web en appel du pipeline Python existant et publier des événements structurés.
 
-Créer le runner qui réclame un job, renouvelle sa lease, appelle l’adaptateur et publie événements, résultats et erreurs.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- `src/web_adapter/contracts.py`, `events.py`, `youtube.py`, `artifacts.py` ;
+- points d'extension minimaux dans `src/pipeline.py` ;
+- `tests/web_adapter/` ;
+- aucun changement fonctionnel PDF.
 
-- nouveau package `src/worker/`
-- `src/cli.py` pour une commande worker explicite si approprié
-- `.env.example` pour noms de variables sans valeurs
-- `tests/test_worker_runner.py`
-- documentation opératoire ultérieure.
+**DÉPENDANCES**
 
-### Dépendances
+- contrats Phase 1 et API Phase 3.
 
-- Phases 3 et 4 ;
-- endpoint local du control plane ;
-- identité de service injectée hors Git.
+**CHANGEMENTS**
 
-### Changements
+- injecter un event sink optionnel dans les étapes YouTube ;
+- mapper les états CLI vers états Web ;
+- retourner références de transcript, résumé, modèle et provenance ;
+- préserver les fonctions CLI publiques et leur comportement par défaut.
 
-- Implémenter claim, heartbeat, publication et complete.
-- Ajouter backoff borné et arrêt propre.
-- Conserver localement un résultat non publié jusqu’à confirmation.
-- Vérifier la lease à chaque mutation distante.
-- Reprendre les vidéos non READY après interruption.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- aucun parsing de Rich/stdout ;
+- CLI sans event sink inchangé ;
+- une vidéo produit une séquence d'événements ordonnée ;
+- une exception devient un résultat structuré sans secret.
 
-- Deux workers ne traitent pas simultanément la même lease.
-- Un worker interrompu rend le job réclamable après expiration.
-- Une publication répétée ne duplique pas le résultat.
-- Les secrets ne sont ni loggués ni renvoyés.
-- Aucun port entrant n’est nécessaire.
+**TESTS**
 
-### Tests
+- tests unitaires de mapping et événements ;
+- régression complète Python ;
+- test de non-régression PDF ;
+- simulation extraction et LLM sans réseau.
 
-- tests avec faux control plane ;
-- tests d’expiration et renouvellement de lease ;
-- tests d’arrêt entre traitement et publication ;
-- test de duplicate event ;
-- suite Python complète.
+**RISQUES**
 
-### Risques
+- refactor massif du pipeline ;
+- double écriture artefact/manifeste ;
+- fuite du message provider brut.
 
-- Perdre un résultat entre écriture locale et publication.
-- Retry sans limite.
-- Heartbeat trop fréquent ou trop lent.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+Adaptateur vert, CLI préservé et événement `READY` produit sans dépendre du terminal.
 
-Runner local résilient contre interruption simulée, sans job traité deux fois simultanément.
+## Phase 5 — Worker
 
-## PHASE 6 — YouTube vidéo unique de bout en bout
+**OBJECTIF**
 
-### Objectif
+Relier un runner remplaçable au control plane avec claim, heartbeat et idempotence raisonnable.
 
-Valider le premier flux réel URL → Job → transcript → résumé → READY → fiche.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- `src/web_adapter/worker.py`, `control_plane_client.py` ;
+- scripts/configuration de lancement non secrets ;
+- tests worker et API claim.
 
-- frontend Home et fiche ;
-- routes Source/Job/Video du control plane ;
-- adaptateur et worker ;
-- tests end-to-end et fixtures.
+**DÉPENDANCES**
 
-### Dépendances
+- Phases 3 et 4 ; identité machine Cloudflare configurée.
 
-- Phases 2 à 5 ;
-- environnement de test LLM contrôlé ou client fake ;
-- source publique de test approuvée pour le test live facultatif.
+**CHANGEMENTS**
 
-### Changements
+- claim atomique avec expiration ;
+- heartbeat et abandon propre ;
+- publication d'événements avec sequence/event_id ;
+- retry borné ;
+- arrêt gracieux sans marquer un résultat fictif.
 
-- Brancher le collage d’URL.
-- Afficher le retour immédiat et la progression.
-- Publier et rendre la vidéo READY.
-- Afficher titre, résumé et transcript.
-- Mapper les erreurs utilisateur.
+**CRITÈRES D'ACCEPTATION**
 
-### Critères d’acceptation
+- deux workers ne traitent pas simultanément le même job ;
+- un worker mort libère le travail après expiration ;
+- un événement tardif d'un ancien claim est refusé ;
+- le worker ne reçoit que les secrets dont il a besoin.
 
-- Happy path complet avec fake déterministe.
-- URL invalide refusée proprement.
-- Transcript absent produit une erreur actionnable.
-- Échec extraction, LLM et publication sont distingués.
-- Retry ne duplique pas la fiche.
+**TESTS**
 
-### Tests
+- concurrence de claims ;
+- expiration/reprise ;
+- doublons et ordre d'événements ;
+- SIGTERM/arrêt simulé.
 
-- tests API et UI ;
-- test worker avec fake extractor/LLM ;
-- test end-to-end local ;
-- test live limité seulement si une source de test et les secrets sont disponibles.
+**RISQUES**
 
-### Risques
+- lease trop courte pendant un appel LLM ;
+- retry non borné ;
+- credentials machine trop larges.
 
-- Dépendre d’un test réseau instable.
-- Afficher une erreur interne brute.
-- Confondre READY et exporté.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Condition de passage
+Cycle claim → traitement simulé → résultat confirmé fonctionne deux fois sans duplication.
 
-Vidéo unique entièrement reviewable avec tests déterministes verts.
+## Phase 6 — YouTube vidéo unique
 
-## PHASE 7 — Playlist progressive
+**OBJECTIF**
 
-### Objectif
+Valider une URL vidéo de bout en bout avant la playlist.
 
-Traiter une playlist vidéo par vidéo et rendre la première vidéo READY avant la fin globale.
+**FICHIERS CONCERNÉS**
 
-### Fichiers concernés
+- intégration Home/API/worker/adaptateur ;
+- tests E2E vidéo ;
+- fixtures d'erreurs YouTube/LLM.
 
-- adaptateur pipeline ;
-- worker ;
-- modèle Job/Video D1 ;
-- écran de traitement ;
-- Review ;
+**DÉPENDANCES**
+
+- Phases 2 à 5 ; secrets worker disponibles dans un environnement de test autorisé.
+
+**CHANGEMENTS**
+
+- validation/canonicalisation URL ;
+- création Source/Job ;
+- extraction transcript et résumé ;
+- publication Video `READY` ;
+- retry ciblé.
+
+**CRITÈRES D'ACCEPTATION**
+
+- happy path URL → fiche consultable ;
+- URL invalide refusée ;
+- transcript absent, extraction et LLM échoués produisent des erreurs distinctes ;
+- retry ne duplique pas la vidéo.
+
+**TESTS**
+
+- tests déterministes mockés pour tous les échecs ;
+- un smoke test live contrôlé si cookies/quota le permettent ;
+- vérification provenance et modèle.
+
+**RISQUES**
+
+- dépendance réseau/flakiness ;
+- erreur provider exposée ;
+- URL avec playlist interprétée comme vidéo.
+
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
+
+Happy path et cinq scénarios d'échec passent, données récupérables après retry.
+
+## Phase 7 — Playlist
+
+**OBJECTIF**
+
+Étendre le flux à une playlist progressive sans régresser le séquentiel existant.
+
+**FICHIERS CONCERNÉS**
+
+- adaptateur playlist et orchestration worker ;
+- endpoints de progression/vidéos prêtes ;
+- Review progressive ;
 - tests playlist.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Phase 6 stable.
+- Phase 6.
 
-### Changements
+**CHANGEMENTS**
 
-- Créer les vidéos ordonnées dès que la playlist est connue.
-- Publier état et progression individuels.
-- Rendre chaque résultat visible immédiatement.
-- Continuer après une erreur locale.
-- Calculer progression agrégée sans masquer les erreurs.
+- découverte ordonnée ;
+- sous-état par vidéo ;
+- publication immédiate de chaque Video `READY` ;
+- poursuite après échec isolé ;
+- progression globale à compteurs.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- La première vidéo est ouverte pendant le traitement des suivantes.
-- L’ordre de la playlist est conservé, y compris les doublons.
-- Une vidéo FAILED n’arrête pas la boucle.
-- Reprise ne retraite pas les vidéos READY.
-- L’état global reste cohérent après interruption.
+- première vidéo reviewable avant la fin globale ;
+- ordre et occurrences dupliquées préservés ;
+- une erreur n'arrête pas les suivantes ;
+- reprise ignore uniquement les résultats réellement valides.
 
-### Tests
+**TESTS**
 
-- playlist de fixtures avec plusieurs délais ;
-- erreur sur vidéo intermédiaire ;
-- duplication d’une URL dans la playlist ;
-- interruption puis reprise ;
-- Review ouverte avant la fin.
+- playlist mixte succès/échec ;
+- doublon d'URL ;
+- interruption/reprise ;
+- état global avec total connu puis terminé.
 
-### Risques
+**RISQUES**
 
-- Attendre la fin du job avant d’écrire D1.
-- Écraser une occurrence dupliquée.
-- Progression globale trompeuse.
+- faire attendre Review jusqu'à la fin ;
+- confondre `READY` vidéo et `READY` Job ;
+- retraiter un succès après reprise.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Test end-to-end prouvant READY progressif et isolation des erreurs.
+Test progressif prouve qu'une première carte apparaît pendant `PROCESSING`.
 
-## PHASE 8 — Note et autosave
+## Phase 8 — Note et autosave
 
-### Objectif
+**OBJECTIF**
 
-Implémenter une Note unique par vidéo avec autosave fiable et protection contre l’écrasement.
+Implémenter une Note unique fiable par vidéo.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- modèle et route Note du control plane ;
-- composants Note du frontend ;
-- stockage local de brouillon ;
-- tests concurrence et navigation.
+- table/route Note du control plane ;
+- `web/src/features/note/` ;
+- migration et tests concurrence/réseau.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Phase 6 ;
-- contrat Note versionné.
+- vidéo `READY` Phase 6 ; contrat Note Phase 1.
 
-### Changements
+**CHANGEMENTS**
 
-- Charger ou créer la Note unique.
-- Sauvegarder avec version de base.
-- Ajouter debounce et retry borné.
-- Conserver un brouillon local lors des erreurs.
-- Afficher un état de sauvegarde discret.
+- éditeur de texte ;
+- debounce contrôlé ;
+- version optimiste serveur ;
+- file locale et brouillon de reprise ;
+- flush navigation/visibilité quand possible.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Une requête ancienne ne peut pas écraser une version récente.
-- Changement de route rapide ne perd pas la saisie.
-- Reconnexion reprend la sauvegarde.
-- Rechargement restaure la dernière version confirmée et le brouillon éventuel.
-- Aucun bouton Enregistrer.
+- contrainte unique `video_id` ;
+- ancienne requête incapable d'écraser la nouvelle ;
+- fermeture/reconnexion restaure le brouillon ;
+- état de sauvegarde visible.
 
-### Tests
+**TESTS**
 
-- réponses réseau volontairement réordonnées ;
-- offline puis online ;
-- fermeture/navigation simulée ;
-- une seule Note par vidéo ;
-- test clavier mobile ultérieur en Phase 17.
+- réponses réseau inversées ;
+- conflit 409/version ;
+- offline/reconnect ;
+- changement rapide de route et `pageshow`.
 
-### Risques
+**RISQUES**
 
-- Faux état « Enregistré ».
-- Conflit silencieux multi-onglets.
-- Debounce qui ne flush jamais.
+- double source de vérité local/serveur ;
+- `sendBeacon` considéré à tort comme garantie ;
+- perte silencieuse de brouillon.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Suite de concurrence verte et démonstration d’aucune perte de saisie.
+Suite de concurrence et reprise verte sur Chromium, puis contrôle Safari disponible.
 
-## PHASE 9 — Transcript vers Note
+## Phase 9 — Transcript vers Note
 
-### Objectif
+**OBJECTIF**
 
-Permettre sélection → Ajouter à la note avec texte et timestamp, sans créer de système de cartes.
+Ajouter une sélection transcript à la Note avec timestamp, sans créer de highlights.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- représentation transcript horodatée ;
-- fiche vidéo ;
-- contrôle contextuel de sélection ;
-- modèle Note ;
-- tests desktop et mobile.
+- `web/src/features/transcript/` ;
+- modèle interne de citation Note ;
+- tests desktop/mobile.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Phases 4 et 8 ;
-- timestamps disponibles dans le résultat worker.
+- Phase 8 ; transcript horodaté exploitable.
 
-### Changements
+**CHANGEMENTS**
 
-- Découper le transcript en blocs lisibles et ordonnés.
-- Préserver la sélection native desktop.
-- Ajouter l’action unique « Ajouter à la note ».
-- Ajouter l’extrait optimistement puis le sauvegarder.
-- Préserver copie et comportements iOS natifs.
+- sélection native desktop ;
+- action **Ajouter à la note** ;
+- insertion texte + timestamp ;
+- interaction mobile conforme à la maquette choisie.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Texte et timestamp exacts arrivent dans la Note.
-- Copier reste fonctionnel.
-- Une erreur de sauvegarde ne retire pas l’extrait.
-- Aucun menu multifonction.
-- Aucun conflit avec le swipe de Review, absent de la fiche.
+- provenance temporelle conservée ;
+- ajout idempotent pendant un double tap raisonnable ;
+- aucune entité Card/Highlight/Annotation supplémentaire.
 
-### Tests
+**TESTS**
 
-- sélection partielle et multibloc desktop ;
-- extrait en début et fin de vidéo ;
-- duplication volontaire ;
-- erreur réseau ;
-- essais réels iPhone/iPad en Phase 17.
+- sélection multi-segments et bornes ;
+- timestamp exact ;
+- autosave après insertion ;
+- Safari mobile manuel.
 
-### Risques
+**RISQUES**
 
-- Source SRT/VTT absente pour les anciens transcripts.
-- Menu natif iOS inaccessible.
-- Timestamp approximatif après sélection multibloc.
+- API Selection différente sur iOS ;
+- transcript sans timestamps structurés ;
+- duplication d'extrait.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Interaction desktop accessible et stratégie mobile testable sans régression de sélection native.
+Extrait et timestamp persistent après refresh et reconnexion.
 
-## PHASE 10 — Review, Garder, Écarter et Undo
+## Phase 9 bis — Approfondissement contextuel par IA
 
-### Objectif
+**OBJECTIF**
 
-Implémenter la décision rapide sur mobile et desktop sans suppression immédiate.
+Permettre une question Gemini à partir d'un passage sélectionné sans exposer la clé, altérer la
+source canonique ou créer une seconde application de chat.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- écran Review ;
-- modèle ReviewDecision ;
-- endpoints decision/undo ;
-- interactions clavier et swipe ;
-- tests accessibilité et concurrence.
+- panneau latéral/bottom sheet de la fiche sous `web/src/features/note/` ;
+- route authentifiée du control plane et service Python réutilisant `LLMClient`/`ModelRouter` ;
+- contrats et tests sécurité/coût.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Playlist progressive disponible ;
-- API de décision versionnée.
+- Phase 8 ; résumé `READY` ; Phase 9 pour le transcript horodaté ; auth et contrôle de ressource.
 
-### Changements
+**CHANGEMENTS**
 
-- Boutons visibles Garder et Écarter.
-- Flèches gauche/droite sur desktop hors champs de saisie.
-- Swipe gauche/droite sur mobile.
-- Undo temporaire.
-- Aucune suppression physique.
-- Aucun swipe décisionnel dans la fiche.
+- sélection native du résumé ou transcript et contexte de repli explicite ;
+- question libre bornée et action **Approfondir avec Gemini** ;
+- appel provider exclusivement côté serveur avec timeout, limite de fréquence et journal d'usage ;
+- réponse distincte de la source, provenance de modèle et action explicite **Ajouter à la Note** ;
+- fallback local **Copier et ouvrir ChatGPT** sans URL de préremplissage inventée.
+- réglage générique **Clés API**, onboarding au premier usage et récupération après quota épuisé ;
+- clés logiques distinctes pour résumés et approfondissements, jamais renvoyées au client.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Boutons et clavier produisent le même état.
-- Le swipe suit le doigt et peut être annulé avant seuil.
-- Undo restaure la décision précédente.
-- Une décision concurrente ne produit pas un état impossible.
-- Le geste n’est jamais obligatoire.
+- aucune clé ou configuration privée dans le bundle ou les réponses API ;
+- un utilisateur ne peut pas envoyer le résumé d'une vidéo qu'il n'est pas autorisé à lire ;
+- extrait, résumé, question et sortie ont des limites de taille ;
+- l'échec Gemini ne modifie ni la Note ni le résumé et laisse le copier/ouvrir disponible ;
+- une réponse IA n'est persistée et exportée qu'après ajout volontaire à la Note ;
+- instructions hostiles dans le contenu source ne déclenchent ni outil, ni décision, ni export.
+- une clé existante côté serveur évite l'onboarding ; une absence ouvre Clés API avant l'appel ;
+- le quota épuisé utilise un code produit stable et conserve Note, question et état du job.
 
-### Tests
+**TESTS**
 
-- clavier avec focus normal et dans la Note ;
-- swipe sous et au-dessus du seuil ;
-- reduced motion ;
-- décision répétée ;
-- Undo après Garder et après Écarter.
+- sélection → question → réponse simulée → ajout à la Note → refresh → export ;
+- origine étrangère, accès croisé, payload surdimensionné, quota et timeout refusés proprement ;
+- formulaire Clés API responsive, secrets absents des réponses et stockage local dans le Trousseau
+  macOS ; test d'intégration sur un service Trousseau isolé avec nettoyage systématique ;
+- migration `.env` testée avec écriture, relecture, vérification puis suppression atomique des seules
+  variables Gemini ; backend mémoire uniquement pour les tests UI ;
+- vérification du bundle et secret scan ;
+- panneau latéral desktop/tablette et bottom sheet mobile.
 
-### Risques
+**RISQUES**
 
-- Swipe trop sensible.
-- Raccourci déclenché pendant la saisie.
-- Suppression héritée du CLI appelée par erreur.
+- fuite de clé par appel direct frontend ;
+- prompt injection issue du transcript ou du résumé ;
+- coût sans limite, réponse présentée comme source et envoi implicite à un tiers ;
+- confusion entre prototype local et route de production authentifiée.
+- croire que le Trousseau local remplace le coffre chiffré par utilisateur/KMS requis en production.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Review entièrement utilisable sans geste et aucune suppression avant finalisation.
+Flux complet vert avec provider simulé, contrôles serveur en place et aucune mutation sans action
+explicite de l'utilisateur.
 
-## PHASE 11 — Finalisation sûre
+## Phase 10 — Review
 
-### Objectif
+**OBJECTIF**
 
-Implémenter Playlist terminée et Terminer avec ordre export → confirmation → cleanup.
+Implémenter Garder, Écarter et Undo sur boutons, clavier et swipe.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- endpoint finalize ;
-- état de finalisation D1 ;
-- worker export ;
-- écran de fin ;
-- tests de reprise.
+- `web/src/features/review/` ;
+- routes/mutations ReviewDecision ;
+- tests gestes/raccourcis/idempotence.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Toutes les vidéos terminales ou explicitement en erreur ;
-- décisions enregistrées ;
-- export local disponible.
+- Phase 7 ; direction d'interaction de `UI_UX_SPEC.md`.
 
-### Changements
+**CHANGEMENTS**
 
-- Geler la sélection.
-- Créer une commande d’export idempotente.
-- Enregistrer confirmation ou échec.
-- Interdire cleanup sans confirmation.
-- Afficher le bilan et le CTA Terminer.
+- file progressive ;
+- boutons accessibles ;
+- flèches desktop ;
+- swipe mobile uniquement dans Review ;
+- journal minimal de dernière décision pour Undo.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Double clic Terminer ne duplique pas l’export.
-- Échec export conserve toutes les données gardées.
-- Reprise après crash continue au bon stage.
-- Le job ne devient DONE qu’après les étapes requises.
+- même résultat via trois moyens d'entrée ;
+- fiche détaillée sans décision au swipe ;
+- Undo restaure serveur et UI ;
+- Écarter ne supprime aucun artefact.
 
-### Tests
+**TESTS**
 
-- échec avant export ;
-- échec après écriture avant confirmation ;
-- confirmation répétée ;
-- cleanup échoué ;
-- comptages du bilan.
+- clavier avec focus dans un champ ;
+- seuil/annulation swipe ;
+- double action concurrente ;
+- Undo après reconnexion.
 
-### Risques
+**RISQUES**
 
-- Cleanup lancé trop tôt.
-- Export partiel considéré complet.
-- Deux finalisations concurrentes.
+- décision accidentelle pendant scroll ;
+- raccourci actif dans l'éditeur ;
+- animation masquant un échec serveur.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Tests de panne prouvent qu’aucun contenu gardé n’est perdu.
+Décisions et Undo restent cohérents après refresh, offline court et navigation fiche/Review.
 
-## PHASE 12 — Brain Vault
+## Phase 11 — Finalize
 
-### Objectif
+**OBJECTIF**
 
-Brancher la finalisation sur l’outbox Graphipy réelle sans inventer l’organisation du Vault.
+Orchestrer une finalisation sûre à partir des décisions courantes.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- `src/exporters/graphipy.py`
-- éventuel adaptateur d’outbox sous `src/web_adapter/`
-- tests d’export ;
-- documentation de reprise.
+- domaine/route Finalize ;
+- écran **Playlist terminée** ;
+- tests machine d'état.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Phase 11 ;
-- validation du workflow réel d’ingestion Brain Vault ;
-- accès local approprié sur le worker.
+- toutes les vidéos traitables ont une décision ; Phase 10.
 
-### Changements
+**CHANGEMENTS**
 
-- Enrichir le format exporté avec Note, extraits, timestamps et provenance.
-- Écrire dans l’outbox existante.
-- Produire une preuve de succès exploitable par la finalisation.
-- Garder l’organisation Vault hors de Summarizer.
+- snapshot de sélection versionné ;
+- demande idempotente de finalisation ;
+- état export en cours/confirmé/échoué ;
+- reprise sans nouvelle sélection implicite.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Toutes les métadonnées minimales sont présentes.
-- Aucun élément DISCARDED n’est exporté.
-- Le même export rejoué ne crée pas de doublon incohérent.
-- Échec d’écriture empêche cleanup.
+- impossible de nettoyer avant confirmation ;
+- double clic ne crée pas deux exports ;
+- changement de décision concurrent détecté ;
+- erreur laisse les contenus gardés disponibles.
 
-### Tests
+**TESTS**
 
-- golden Markdown d’export ;
-- caractères spéciaux ;
-- timestamp et playlist ;
-- écriture interrompue ;
-- chemin d’outbox non disponible.
+- export réussi/échoué/timeout ;
+- double soumission ;
+- décision modifiée pendant finalisation ;
+- reprise après crash.
 
-### Risques
+**RISQUES**
 
-- Supposer une arborescence Vault inexistante.
-- Exposer un chemin local privé dans l’API.
-- Exporter le modèle complet de D1.
+- transaction trop large autour d'un appel externe ;
+- état `DONE` prématuré ;
+- snapshot et décisions divergents.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Workflow d’outbox validé explicitement si son mécanisme diffère du dépôt actuel.
+La machine d'état prouve qu'aucun chemin ne mène au cleanup avant confirmation.
 
-## PHASE 13 — Cleanup et History
+## Phase 12 — Exports universels et Brain Vault
 
-### Objectif
+**OBJECTIF**
 
-Nettoyer seulement les artefacts autorisés après export confirmé et produire un HistoryEntry léger.
+Exporter les contenus gardés dans un format portable, puis utiliser un connecteur Vault privé quand
+l'environnement l'autorise, sans réimplémenter son organisation.
 
-### Fichiers concernés
+**FICHIERS CONCERNÉS**
 
-- `src/storage/retention.py`
-- logique de cleanup worker ;
-- modèle History D1 ;
-- écran History ;
-- tests de périmètre de suppression.
+- frontière export/outbox ;
+- générateurs ZIP Markdown et PDF propre ;
+- extension ciblée de `src/exporters/graphipy.py` ou nouvel exporteur si justifié ;
+- schemas/fixtures de paquet ;
+- tests de confirmation.
 
-### Dépendances
+**DÉPENDANCES**
 
-- Confirmation d’export Phase 12.
+- Phase 11 ; chemin inbox/confirmation Brain Vault restitué.
 
-### Changements
+**CHANGEMENTS**
 
-- Calculer les cibles depuis l’identifiant de job.
-- Vérifier qu’elles restent sous les racines autorisées.
-- Conserver le transcript canonique.
-- Retirer la session active de Review.
-- Ajouter une ligne History avec compteurs et statut export.
+- paquet avec résumé, Note, transcript/référence, timestamps et provenance ;
+- ZIP Markdown universel avec README, manifeste et un fichier par vidéo gardée ;
+- PDF propre comme alternative de lecture ;
+- connecteur Maxi Brain visible uniquement si la capacité locale est disponible ;
+- dépôt Maxi Brain atomique dans `inbox/to_process/` avec statut `to_process` ;
+- écriture atomique ou API idempotente ;
+- reçu de confirmation durable ;
+- aucune connaissance des dossiers internes non validés.
 
-### Critères d’acceptation
+**CRITÈRES D'ACCEPTATION**
 
-- Aucun cleanup global.
-- Aucun input ou transcript canonique supprimé.
-- History ne duplique pas la connaissance.
-- Retry cleanup reste ciblé et idempotent.
+- toutes les vidéos `KEPT` et aucune `DISCARDED` exportées ;
+- ZIP et PDF téléchargeables sans dépendre d'Obsidian ;
+- absence du bouton Maxi Brain sur un hébergement sans connecteur ;
+- modèle/provenance conservés ;
+- retry ne duplique pas ;
+- confirmation vérifiable avant cleanup.
 
-### Tests
+**TESTS**
 
-- tentative de traversal refusée ;
-- chemins hors racine refusés ;
-- job A ne touche pas job B ;
-- export non confirmé bloque cleanup ;
-- History contient uniquement les champs prévus.
+- golden files Markdown/JSON ;
+- caractères spéciaux et gros transcript ;
+- échec partiel puis reprise ;
+- validation contre workflow Vault réel.
 
-### Risques
+**RISQUES**
 
-- Reprendre `cleanup_cache` global dans le flux Web.
-- Supprimer un output partagé.
-- Conserver indéfiniment les gros payloads D1.
+- inventer l'arborescence du vault ;
+- paquet incomplet ;
+- confirmation basée seulement sur absence d'erreur.
 
-### Condition de passage
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-Revue humaine obligatoire avant toute nouvelle catégorie de suppression physique.
+Un export test est confirmé par le consommateur réel et reste idempotent.
 
-## PHASE 14 — Prototypes design A/B/C
+## Phase 13 — Cleanup et History
 
-### Résultat du 21 septembre 2026
+**OBJECTIF**
 
-Trois directions ont été présentées dans l'ordre Quiet Knowledge, Productivity Workspace et Fluid Knowledge. L'utilisateur a explicitement choisi la troisième, avec adaptation claire : inspiration Apple, liquid glass discret, blancs différenciés pour les cartes et boutons de décision bleu/blanc sans vert ni rouge.
+Nettoyer uniquement le job confirmé et créer un historique léger.
 
-La référence finale corrigée est `docs/design/web-v1-review-fluid-light-reference.png`. Les décisions détaillées sont figées dans `docs/WEB_V1_DESIGN_DECISIONS.md`.
+**FICHIERS CONCERNÉS**
 
-### Objectif
+- registre d'artefacts et cleanup ;
+- `src/storage/retention.py` uniquement si extension nécessaire ;
+- routes/UI History ;
+- tests sécurité chemins.
 
-Comparer les trois directions de [UI_UX_SPEC.md](UI_UX_SPEC.md) sans modifier les comportements ou le backend.
+**DÉPENDANCES**
 
-### Fichiers concernés
+- reçu d'export Phase 12.
 
-- espace de prototypes isolé dans `web/` ;
-- fixtures communes ;
-- documentation de comparaison.
+**CHANGEMENTS**
 
-### Dépendances
+- allow-list des artefacts du job ;
+- cleanup idempotent par étape ;
+- retrait de la session Review ;
+- HistoryEntry sans artefacts lourds.
+- session active consultable et reprenable dans une section distincte ;
+- bilan terminé consultable en lecture seule ;
+- retrait d'une entrée History sans suppression des exports ou sources.
 
-- Parcours principal fonctionnel ;
-- données et comportements stables ;
-- lecture de `prototype/SKILL.md` depuis la ressource design imposée.
+**CRITÈRES D'ACCEPTATION**
 
-### Changements
+- aucune suppression globale ;
+- `input/` et bibliothèque canonique intacts ;
+- reprise d'un cleanup partiel ;
+- History affiche source/date/comptes/statuts.
+- une session active ne peut pas être supprimée depuis History ;
+- retirer un reçu ne supprime aucun fichier ;
 
-- Produire Quiet Knowledge, Productivity Workspace et Fluid Knowledge.
-- Utiliser les mêmes sept écrans, données et états.
-- Montrer iPhone, iPad et desktop lorsque le layout diffère.
-- Inclure focus, clavier, swipe, Undo, erreur et reduced motion.
+**TESTS**
 
-### Critères d’acceptation
+- traversal et chemin hors racine refusés ;
+- export non confirmé bloque ;
+- deux cleanups donnent le même résultat ;
+- History ne devient pas une bibliothèque.
 
-- Les variantes diffèrent visuellement, pas fonctionnellement.
-- Chaque direction montre ses compromis.
-- Aucun changement backend spécifique à une variante.
-- Prototypes en taille réelle.
+**RISQUES**
 
-### Tests
+- registre d'artefacts incomplet ;
+- suppression de transcript canonique ;
+- entrée History créée avant état stable.
 
-- revue UX contre la checklist Frozen ;
-- audit clavier et contraste préliminaire ;
-- comparaison sur appareils cibles.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Risques
+Test destructif isolé en répertoire temporaire prouve le ciblage exact.
 
-- Choisir implicitement une variante par niveau de finition.
-- Cacher un comportement difficile dans une seule direction.
+## Phase 14 — Prototypes design
 
-### Condition de passage
+> État au 2026-11-06 : prototype local créé dans `prototypes/fluid-knowledge/`. Build, runtime,
+> interactions et packaging passent. Le gate de fidélité visuelle reste bloqué car le navigateur
+> intégré Codex n'était pas disponible pour capturer et comparer le rendu à la maquette source.
+> Une adaptation Web/PC responsive existe aussi dans `prototypes/fluid-knowledge-web/` : navigation
+> latérale desktop, contexte adjacent, rail compact tablette et navigation basse mobile. Les 12 tests
+> responsive, le build et le packaging passent ; sa QA visuelle reste bloquée pour la même raison.
 
-Choix humain explicite A, B, C ou combinaison précisément décrite.
+**OBJECTIF**
 
-## PHASE 15 — Design final
+Transformer la direction C **Fluid Knowledge**, choisie par l'utilisateur le 2026-11-06, en
+prototype interactif fidèle utilisant le même backend et les mêmes contrats produit.
 
-### Avancement du 21 septembre 2026
+**FICHIERS CONCERNÉS**
 
-La direction sélectionnée est implémentée dans le frontend de production : tokens clairs, header translucide, carte Review tactile, progression totale, actions bleu/blanc, responsive et reduced motion. Une fixture D1 publique et déterministe permet de reproduire l'état `4 sur 18` sans appel YouTube ou LLM.
+- prototypes isolés du code métier ;
+- documentation/captures de comparaison ;
+- tokens visuels provisoires.
 
-Les tests, le lint et le build frontend passent. La QA visuelle reste ouverte car aucun navigateur intégré n'était disponible dans la session ; `design-qa.md` documente le blocage et la procédure de reprise Codespaces.
+**DÉPENDANCES**
 
-### Objectif
+- comportements Phases 2 à 13 fiables ; référence sélectionnée conservée dans
+  `docs/assets/web-v1-fluid-knowledge-review-mobile.png` ; skills pertinents de
+  `emilkowalski/skills` lus avant usage.
 
-Promouvoir la direction validée en interface de production sans altérer l’UX Frozen.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- une composition **Fluid Knowledge** sur les mêmes données et interactions ;
+- aucun fork d'API ou de logique Review ;
+- déclinaisons contrôlées iPhone, iPad et Mac à partir de la même direction.
 
-- composants et styles `web/` ;
-- tokens visuels ;
-- documentation UI minimale.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- parité fonctionnelle ;
+- responsive iPhone/iPad/Mac ;
+- fidélité à la référence approuvée sans masquer les actions ou états critiques.
 
-- Choix humain Phase 14 ;
-- lecture des skills design prévus : `emil-design-eng`, `apple-design`, `mobile-native`, `pick-ui-library`, `animate`.
+**TESTS**
 
-### Changements
+- comparaison référence/implémentation aux mêmes données et au même viewport mobile ;
+- parcours critique sur le prototype sélectionné ;
+- audit contraste/focus.
 
-- Définir typographie, palette, spacing, radii et composants.
-- Intégrer thèmes clair et sombre.
-- Finaliser responsive et états interactifs.
-- Documenter les décisions visuelles désormais closes.
+**RISQUES**
 
-### Critères d’acceptation
+- divergence fonctionnelle sous prétexte de fidélité visuelle ;
+- extrapolation arbitraire sur iPad/Mac ;
+- travail visuel avant fiabilité.
 
-- Fidélité au prototype choisi.
-- Aucun dashboard, cardification ou réglage technique ajouté.
-- Focus, contraste, reduced motion et alternatives aux gestes complets.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Tests
+Validation humaine du prototype interactif **Fluid Knowledge**. Le choix visuel C est déjà acquis ;
+la sensation du geste et les déclinaisons responsive restent obligatoirement à valider.
 
-- snapshots visuels ciblés ;
-- navigation clavier ;
-- light/dark ;
-- tailles iPhone, iPad, desktop.
+## Phase 15 — Design final
 
-### Risques
+**OBJECTIF**
 
-- Régression fonctionnelle pendant le polish.
-- Bibliothèque UI incompatible avec les besoins natifs mobile.
+Intégrer la direction choisie sans modifier les contrats produit.
 
-### Condition de passage
+**FICHIERS CONCERNÉS**
 
-Revue UX réussie contre `UI_UX_SPEC.md` et prototype validé.
+- composants/styles/tokens `web/` ;
+- tests visuels et accessibilité.
 
-## PHASE 16 — Revue motion
+**DÉPENDANCES**
 
-### Objectif
+- choix Phase 14 ; skills design prévus lus au moment de l'exécution.
 
-Vérifier que chaque animation sert feedback, état, continuité ou manipulation directe.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- consolidation composants et tokens ;
+- états responsive/erreur/chargement complets ;
+- suppression du code prototype non retenu.
 
-- styles et composants interactifs du frontend ;
-- tests reduced motion.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- direction choisie fidèle ;
+- aucun changement backend ;
+- boutons et états critiques restent visibles.
 
-- Design final fonctionnel.
+**TESTS**
 
-### Changements
+- régression visuelle ;
+- accessibilité automatisée et clavier ;
+- build production.
 
-- Appliquer `review-animations`.
-- Corriger avec `improve-animations`.
-- Chercher de nouvelles opportunités seulement ensuite avec `find-animation-opportunities`.
+**RISQUES**
 
-### Critères d’acceptation
+- régression UX sous effet du polish ;
+- CSS spécifique à un appareil.
 
-- Interactions fréquentes instantanées.
-- Swipe interrompable et lié au doigt.
-- Aucun mouvement gratuit.
-- Reduced motion conserve toute l’information.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Tests
+Parcours Phase 22 toujours vert avec le design final.
 
-- enregistrement ralenti des gestes critiques ;
-- interruption et changement de direction ;
-- profil reduced motion ;
-- vérification de fluidité sur appareil mobile.
+## Phase 16 — Motion review
 
-### Risques
+**OBJECTIF**
 
-- Ajouter du polish avant la fiabilité.
-- Masquer un changement d’état derrière une animation.
+Auditer puis améliorer les animations une fois les interactions fiables.
 
-### Condition de passage
+**FICHIERS CONCERNÉS**
 
-Aucun problème motion prioritaire dans la revue.
+- animations Review/navigation ;
+- tests reduced-motion et gestes.
 
-## PHASE 17 — QA mobile et navigateurs
+**DÉPENDANCES**
 
-### Objectif
+- Phase 15.
 
-Valider le produit sur iPhone Safari, iPad Safari et desktop Safari/Chromium.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- revue des animations existantes ;
+- amélioration ciblée ;
+- nouvelles opportunités seulement après audit.
 
-- frontend uniquement, sauf bug de contrat prouvé ;
-- checklist et éventuels tests end-to-end.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- animation ne masque ni attente réseau ni erreur ;
+- reduced motion respecté ;
+- swipe reste annulable et prévisible.
 
-- Parcours complet et design final.
+**TESTS**
 
-### Changements
+- timing lent/réseau échoué ;
+- `prefers-reduced-motion` ;
+- interruption d'animation.
 
-- Corriger safe areas, viewport, clavier, scroll et orientation.
-- Vérifier sélection transcript, autosave, swipe, Undo et retour navigateur.
-- Corriger les comportements hover/touch persistants.
+**RISQUES**
 
-### Critères d’acceptation
+- état visuel en avance sur état serveur ;
+- motion gênant lecture ou sélection.
 
-- Aucun contrôle masqué par le clavier ou une safe area.
-- Aucune décision accidentelle pendant le scroll.
-- Sélection et copie fonctionnent sur iOS.
-- Rotation et changement d’onglet ne perdent pas la Note.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Tests
+Review animation validée sans régression fonctionnelle ou accessibilité.
 
-- appareils réels autant que possible ;
-- matrices de viewport ;
-- clavier matériel et logiciel sur iPad ;
-- offline/reconnexion ;
-- retour arrière navigateur.
+## Phase 17 — Mobile QA
 
-### Risques
+**OBJECTIF**
 
-- Se fier uniquement à l’émulation desktop.
-- Corriger iPhone en dégradant iPad.
+Valider réellement iPhone Safari, iPad Safari et desktop Safari/Chromium.
 
-### Condition de passage
+**FICHIERS CONCERNÉS**
 
-Checklist réelle signée pour les trois familles de plateformes.
+- plan/rapport QA ;
+- correctifs frontend ciblés ;
+- tests E2E quand automatisables.
 
-## PHASE 18 — QA sécurité
+**DÉPENDANCES**
 
-### Objectif
+- design et motion finalisés.
 
-Vérifier les frontières de confiance, les permissions, les entrées et l’absence de secrets.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- contrôler safe area, clavier, viewport, scroll, sélection, autosave, swipe, Undo, orientation,
+  changement d'onglet et retour navigateur.
 
-- frontend ;
-- control plane ;
-- worker ;
-- configuration d’exemple ;
-- CI.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- aucun contenu/action critique masqué ;
+- pas de perte de Note ;
+- bfcache restaure un état interactif valide.
 
-- Flux complet disponible localement ou en preview privé.
+**TESTS**
 
-### Changements
+- matrice appareils réelle et simulations complémentaires ;
+- offline/reconnect ;
+- rotation avec clavier ;
+- navigation avant/arrière.
 
-- Corriger authN/authZ, validation, taille des payloads et erreurs.
-- Vérifier séparation utilisateur/worker.
-- Vérifier les dépendances et permissions minimales.
-- S’assurer que les logs ne contiennent aucun contenu privé inutile.
+**RISQUES**
 
-### Critères d’acceptation
+- croire l'émulation équivalente à Safari réel ;
+- bugs Selection/viewport propres à iOS.
 
-- Aucun endpoint privé sans authentification.
-- Un worker sans lease ne peut pas publier.
-- Aucun secret dans le bundle, D1, logs ou réponses.
-- URL et payloads invalides sont refusés.
-- Cookies YouTube uniquement sur le worker.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Tests
+Matrice critique verte ou limitations explicites acceptées.
 
-- accès anonyme ;
-- token expiré ou révoqué ;
-- worker usurpé ;
-- payload trop gros ;
-- injection et path traversal ;
-- audits de dépendances réellement configurés.
+## Phase 18 — Security QA
 
-### Risques
+**OBJECTIF**
 
-- Confondre authentification Cloudflare et autorisation métier.
-- Laisser un endpoint de debug déployé.
+Vérifier secrets, auth, autorisation, validation, données privées et erreurs.
 
-### Condition de passage
+**FICHIERS CONCERNÉS**
 
-Aucun problème de sévérité haute ou critique non résolu.
+- frontend, control plane, worker, CI, configs, docs sécurité.
 
-## PHASE 19 — Tests complets
+**DÉPENDANCES**
 
-### Objectif
+- flux complet déployable en environnement de test.
 
-Exécuter toutes les suites prévues par le dépôt et confirmer l’absence de régression Python/Web/Cloudflare.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- revue des boundaries et permissions ;
+- tests Access/CSRF/CORS/IDOR ;
+- redaction logs ;
+- plan de remédiation des 1 792 fichiers YouTube déjà suivis.
 
-- tests Python ;
-- tests Web ;
-- tests control plane ;
-- CI.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- aucune clé/cookie dans Git, bundle, DB, logs ou réponse ;
+- worker et humain ont des identités distinctes ;
+- inputs strictement validés ;
+- erreurs publiques neutres.
 
-- Phases fonctionnelles terminées.
+**TESTS**
 
-### Changements
+- accès croisé ;
+- mutation sans CSRF si cookies ;
+- token expiré/révoqué ;
+- inspection bundle et logs ;
+- secret scan complet sur checkout propre.
 
-- Ajouter uniquement les tests manquants révélés par la validation.
-- Aligner la CI avec les commandes réelles des packages.
-- Décider explicitement du traitement des erreurs Mypy préexistantes : correction ou baseline temporaire documentée.
+**RISQUES**
 
-### Critères d’acceptation
+- historique Git contenant déjà des données privées ;
+- politique Access permissive ;
+- diagnostic trop bavard.
 
-- Pytest, Black et Ruff passent.
-- Typecheck Python ne régresse pas et sa politique est explicite.
-- Tests, lint et build frontend passent.
-- Tests et migrations Cloudflare passent localement.
-- Happy path end-to-end déterministe passe.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Tests
+Aucun finding critique/haut ouvert ; remédiation historique décidée avant publication.
 
-- commandes définies dans `pyproject.toml`, `package.json` et la CI ;
-- aucun appel LLM réel dans les tests unitaires ;
-- fixtures sans données utilisateur.
+## Phase 19 — Tests complets
 
-### Risques
+**OBJECTIF**
 
-- Tests live instables dans la CI.
-- Masquer les échecs avec `|| true` sans suivi.
+Exécuter tous les contrôles réellement déclarés par les packages et la CI.
 
-### Condition de passage
+**FICHIERS CONCERNÉS**
 
-Rapport vert ou liste d’exceptions préexistantes explicitement acceptée, sans nouvelle régression.
+- `pyproject.toml`, package manifests, CI, suites Python/TypeScript/E2E.
 
-## PHASE 20 — Secret scan et revue de confidentialité
+**DÉPENDANCES**
 
-### Objectif
+- fonctionnalités terminées.
 
-Prouver que le diff et l’historique de la branche Web V1 n’ajoutent aucun secret ni artefact privé.
+**CHANGEMENTS**
 
-### Fichiers concernés
+- compléter la CI avec frontend/control plane ;
+- rendre le typecheck bloquant après correction de la baseline ;
+- documenter les tests live séparément des tests déterministes.
 
-- totalité du diff de la branche ;
-- `.gitignore` ;
-- fichiers suivis ;
-- bundle produit.
+**CRITÈRES D'ACCEPTATION**
 
-### Dépendances
+- format, lint, types, unitaires, intégration et build verts ;
+- tests réseau non nécessaires au succès déterministe ;
+- couverture des gates critiques.
+
+**TESTS**
+
+- Python : pytest, Black, Ruff, mypy ;
+- Web/control plane : commandes exactes déclarées dans leurs manifests ;
+- build production et E2E critique.
+
+**RISQUES**
+
+- laisser mypy non bloquant indéfiniment ;
+- faux vert par mocks trop larges.
+
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
+
+CI complète verte sur checkout propre.
+
+## Phase 20 — Secret scan
+
+**OBJECTIF**
+
+Vérifier le diff, le dépôt propre et les artefacts de build sans exposer de valeur.
+
+**FICHIERS CONCERNÉS**
+
+- tous fichiers suivis et bundle produit ; `.gitignore` ; CI.
+
+**DÉPENDANCES**
 
 - Phase 19.
 
-### Changements
+**CHANGEMENTS**
 
-- Corriger toute fuite réelle.
-- Ajouter des exclusions uniquement pour des faux positifs prouvés, jamais pour masquer une clé.
-- Vérifier explicitement `.env`, cookies, PDF, transcripts, outputs, caches et playlists.
-
-### Critères d’acceptation
-
-- Aucun secret réel détecté.
-- Aucun contenu utilisateur nouvellement suivi.
-- Le bundle frontend ne contient aucune clé privée.
-- L’historique de `feat/web-v1` part bien de `origin/main`, sans les 1 792 fichiers de la branche locale divergente.
-
-### Tests
-
-- `detect-secrets` selon `AI_MAINTENANCE.md` ;
-- `git diff --cached --name-only` ;
-- `git ls-files` sur les motifs privés ;
-- recherche de préfixes de clés et de variables Vite interdites ;
+- audit detect-secrets ;
+- revue des faux positifs sans allow-list large ;
+- recherche de `.env`, cookies, outputs, transcripts et URLs privées ;
 - revue manuelle du diff.
 
-### Risques
+**CRITÈRES D'ACCEPTATION**
 
-- Scanner sans classifier les faux positifs de hash.
-- Ajouter par inadvertance un fichier local via `git add .`.
+- zéro secret confirmé ;
+- aucun fichier utilisateur nouveau suivi ;
+- faux positifs expliqués par type, sans publier leur valeur.
 
-### Condition de passage
+**TESTS**
 
-Scan classifié et revue manuelle sans fuite.
+- secret scan de CI sur checkout propre ;
+- scan du bundle statique ;
+- `git diff --check` et inventaire des fichiers suivis sensibles.
 
-## PHASE 21 — Documentation opératoire
+**RISQUES**
 
-### Objectif
+- ignorer un secret parce que la bibliothèque produit beaucoup de faux positifs ;
+- scanner puis imprimer la valeur sensible dans les logs.
 
-Documenter le lancement, les environnements, le worker, la reprise et les limites sans transformer le README public en manuel exhaustif.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Fichiers concernés
+Scan vert et revue humaine du diff sensible.
 
-- `Readme.md` pour le parcours public minimal ;
-- `COMMANDS.md` si de nouvelles commandes sont publiques ;
-- `docs/WEB_V1_ARCHITECTURE.md` ;
-- nouveau runbook Web seulement si nécessaire ;
-- `.env.example` sans valeur.
+## Phase 21 — Documentation finale
 
-### Dépendances
+**OBJECTIF**
 
-- Architecture réellement implémentée.
+Documenter le lancement, les environnements et la reprise sans surcharger le README.
 
-### Changements
+**FICHIERS CONCERNÉS**
 
-- Documenter dev Web et control plane local.
-- Lister variables publiques et secrets par environnement sans valeur.
-- Documenter démarrage/arrêt worker et reprise de lease.
-- Documenter migrations, erreurs et limitations V1.
-- Réaffirmer PDF Web en V2.
+- `Readme.md`, `COMMANDS.md`, docs Web/architecture/sécurité ;
+- `.env.example` ou exemples séparés frontend/control plane/worker sans valeurs.
 
-### Critères d’acceptation
+**DÉPENDANCES**
 
-- Un nouvel agent peut lancer les tests et l’environnement local.
-- Aucun secret ou identifiant privé dans les exemples.
-- README reste concis.
-- Les documents ne contredisent ni UX ni architecture.
+- architecture réellement implémentée.
 
-### Tests
+**CHANGEMENTS**
 
-- exécuter les commandes documentées dans un environnement propre ;
-- vérifier liens et chemins ;
-- revue de secrets des exemples.
+- commandes développement ;
+- variables publiques et secrets par zone ;
+- workflow jobs/worker/retry ;
+- limitations V1 et frontière PDF V2 ;
+- procédure d'export/cleanup et diagnostics.
 
-### Risques
+**CRITÈRES D'ACCEPTATION**
 
-- Documenter une commande non testée.
-- Dupliquer les mêmes instructions dans plusieurs fichiers.
+- un nouvel agent peut lancer et diagnostiquer sans deviner ;
+- README reste orienté utilisateur ;
+- aucune valeur privée dans les exemples.
 
-### Condition de passage
+**TESTS**
 
-Runbook testé de bout en bout par une reprise à froid.
+- exécution des commandes documentées sur checkout propre ;
+- liens Markdown ;
+- revue croisée docs/config.
 
-## PHASE 22 — Validation finale V1
+**RISQUES**
 
-### Objectif
+- docs divergentes ;
+- exposer noms internes inutiles ou URL privée.
 
-Prouver la Definition of Done sur le parcours utilisateur complet et préparer la promotion sans action destructive implicite.
+**CONDITION POUR PASSER À LA PHASE SUIVANTE**
 
-### Fichiers concernés
+Runbook vérifié par une installation neuve ou équivalent CI.
 
-- aucun fichier spécifique ;
-- rapports de tests et documentation finale.
+## Phase 22 — Validation finale
 
-### Dépendances
+**OBJECTIF**
 
-- Phases 2 à 21 terminées ;
-- design A/B/C choisi ;
-- environnement de validation disponible.
+Prouver le happy path complet et la récupération des échecs essentiels.
 
-### Changements
+**FICHIERS CONCERNÉS**
 
-Corriger uniquement les défauts révélés par le parcours final. Toute modification architecturale ou UX Frozen retourne vers la validation correspondante.
+- tests E2E, rapport final, éventuels correctifs ciblés.
 
-### Parcours à valider
+**DÉPENDANCES**
 
-1. Ouvrir Home.
-2. Coller une URL de playlist.
-3. Observer le traitement.
-4. Ouvrir la première vidéo READY avant la fin globale.
-5. Lire Résumé et Transcript.
-6. Sélectionner un passage.
-7. Ajouter à la Note avec timestamp.
-8. Ajouter un texte personnel.
-9. Vérifier autosave et reprise.
-10. Revenir dans Review.
-11. Garder une vidéo.
-12. Écarter la suivante.
-13. Annuler.
-14. Terminer la playlist.
-15. Déclencher Terminer.
-16. Confirmer export avant cleanup.
-17. Vérifier History.
+- Phases 0 à 21 vertes.
 
-### Critères d’acceptation
+**CHANGEMENTS**
 
-- Application Web accessible dans l’environnement prévu.
-- Vidéo unique et playlist fonctionnent.
-- Review progressive prouvée.
-- Note unique, autosave, extrait et timestamp fiables.
-- Garder, Écarter, swipe, clavier et Undo conformes.
-- Export et cleanup sûrs.
-- History léger.
-- Mobile utilisable.
-- Aucun secret frontend.
-- Tests pertinents verts.
-- Documentation suffisante.
+- exécuter exactement le parcours défini dans `UI_UX_SPEC.md` ;
+- vérifier première vidéo prête avant fin ;
+- vérifier Note, extrait, Garder/Écarter, Undo, export, cleanup et History ;
+- contrôler diagnostics et reprise.
 
-### Tests
+**CRITÈRES D'ACCEPTATION**
 
-- parcours manuel réel ;
-- scénario end-to-end automatisé déterministe ;
-- reprise sur pannes critiques ;
-- matrice navigateurs et appareils ;
-- suite qualité et secret scan finaux.
+- tous les points de la Definition of Done V1 sont observés ;
+- aucun secret frontend ;
+- aucun contenu gardé perdu ;
+- mobile utilisable ;
+- documentation et CI vertes.
 
-### Risques
+**TESTS**
 
-- Valider uniquement le happy path.
-- Déployer une configuration différente de celle testée.
-- Confondre preview et production.
+- E2E happy path ;
+- export échoué puis reprise ;
+- worker interrompu ;
+- conflit autosave ;
+- vidéo playlist en échec isolé ;
+- contrôle manuel iPhone/iPad/Mac.
 
-### Condition de passage
+**RISQUES**
 
-Rapport final complet, validation humaine du produit et autorisation explicite avant merge ou promotion si le workflow du dépôt l’exige.
+- valider uniquement le happy path mocké ;
+- cleanup irréversible pendant une validation ;
+- confondre design choisi et UX complète.
 
-## 4. Dépendances critiques entre phases
+**CONDITION POUR PASSER À LA SUITE**
 
-```mermaid
-flowchart TD
-    P0[0 Baseline] --> P1[1 Docs et contrats]
-    P1 --> P2[2 Squelette Web]
-    P2 --> P3[3 Control plane]
-    P3 --> P4[4 Adaptateur Python]
-    P4 --> P5[5 Worker]
-    P5 --> P6[6 Vidéo unique]
-    P6 --> P7[7 Playlist]
-    P6 --> P8[8 Note]
-    P7 --> P10[10 Review]
-    P8 --> P9[9 Transcript vers Note]
-    P9 --> P10
-    P10 --> P11[11 Finalisation]
-    P11 --> P12[12 Brain Vault]
-    P12 --> P13[13 Cleanup et History]
-    P13 --> P14[14 Prototypes]
-    P14 --> H{Choix humain}
-    H --> P15[15 Design final]
-    P15 --> P16[16 Motion]
-    P16 --> P17[17 Mobile QA]
-    P17 --> P18[18 Security QA]
-    P18 --> P19[19 Tests]
-    P19 --> P20[20 Secret scan]
-    P20 --> P21[21 Documentation]
-    P21 --> P22[22 Validation finale]
-```
+Rapport de validation signé, merge final selon les règles du dépôt, puis déploiement distinctement
+autorisé. La phase documentaire actuelle n'autorise ni merge ni déploiement.
 
-## 5. Registre initial des risques
+## Prochaine action autorisée
 
-| Risque | Probabilité | Impact | Phase de maîtrise |
-| --- | --- | --- | --- |
-| Branche contaminée par des transcripts suivis | Élevée dans l’état local initial | Critique confidentialité | 0 et 20 |
-| Progression couplée aux logs | Moyenne | Élevé | 4 |
-| Perte des timestamps | Élevée avec le convertisseur actuel | Élevé UX | 4 et 9 |
-| Double traitement après interruption | Moyenne | Moyen/élevé coût | 3 et 5 |
-| Vieille sauvegarde écrase une Note récente | Moyenne | Élevé | 3 et 8 |
-| Écarter supprime immédiatement | Élevée si code CLI réutilisé tel quel | Critique UX | 10 |
-| Cleanup avant export confirmé | Moyenne | Critique données | 11 à 13 |
-| Codespace endormi bloque le produit | Élevée | Moyen | 5 et reprise par lease |
-| D1 reçoit un transcript trop gros | Faible à moyenne | Moyen | 3 et 4 |
-| Sélection iOS conflictuelle | Élevée | Moyen UX | 9 et 17 |
-| Sur-engineering cloud | Moyenne | Élevé délai | toutes, revue architecture |
-| Mypy préexistant masque une régression | Moyenne | Moyen | 19 |
+Rester en Phase 1 tant que le dernier élément d'architecture absent n'est pas récupéré ou revalidé :
 
-## 6. Definition of Ready pour commencer la Phase 2
+1. le détail exact de la topologie Cloudflare antérieure ;
 
-La Phase 2 peut commencer uniquement lorsque :
+La référence visuelle mobile n'est plus bloquante : **Fluid Knowledge** a été choisie le 2026-11-06
+et conservée dans `docs/assets/web-v1-fluid-knowledge-review-mobile.png`.
 
-- `docs/UI_UX_SPEC.md` est présent et Frozen ;
-- `docs/WEB_V1_ARCHITECTURE.md` est présent et Frozen ;
-- ce plan est relu ;
-- la branche `feat/web-v1` part de `origin/main` ;
-- les trois documents seuls constituent le commit de documentation ;
-- aucun transcript, output, cache, `.env` ou cookie n’est présent dans le diff ;
-- le push de la branche de documentation est confirmé ;
-- les paramètres Cloudflare encore ouverts ne sont pas inventés dans le squelette.
-
-Atteindre cette Definition of Ready ne donne pas l’autorisation de déployer en production. Elle autorise seulement le démarrage du squelette local de la Phase 2.
+En attendant, les documents fonctionnels peuvent être relus et les contrats JSON préparés, mais la
+Phase 2 ne doit pas commencer.

@@ -1,0 +1,1 @@
+"""Motion-director mode contracts."""

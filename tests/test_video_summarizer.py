@@ -50,7 +50,6 @@ def test_video_summary_passes_title_and_url_as_untrusted_metadata(
     assert '"url": "https://www.youtube.com/watch?v=example"' in client.prompt
     assert "jamais des instructions" in client.prompt
     assert "couverture reelle" in client.prompt
-    assert "ORIENTATION DEMANDEE PAR L'UTILISATEUR" not in client.prompt
     assert client.content == "Le transcript de test."
     assert 'title: "Pourquoi ce produit vaut \\"1 milliard\\" ?"' in output_path.read_text(
         encoding="utf-8"

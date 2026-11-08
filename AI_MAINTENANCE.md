@@ -27,7 +27,8 @@ Dossiers utilisateur :
 - `input/` : sources a traiter.
 - `output/` : resumes finaux.
 - `prompts/` : prompts Gemini modifiables.
-- `.env` : configuration locale privee.
+- `.env` : configuration locale non secrete ; les clés API n'y restent qu'en fallback legacy/headless.
+- Trousseau macOS : stockage local recommandé des clés saisies dans `Transcript > Clés API`.
 
 Dossiers techniques :
 
@@ -36,6 +37,7 @@ Dossiers techniques :
 - `config/` : configuration YAML.
 - `docs/` : documentation technique.
 - `cache/` : fichiers temporaires.
+- `library/youtube/` : source canonique locale des transcripts YouTube, indexée par video ID.
 
 ## Pipeline PDF
 
@@ -88,7 +90,8 @@ Flux attendu :
 URL ou playlist
   -> yt-dlp
   -> SRT/VTT
-  -> texte nettoye
+  -> bibliothèque canonique `library/youtube/<video_id>/`
+  -> texte réutilisé par les prompts
   -> Gemini
   -> output/videos/
   -> output/graphipy_ready/
@@ -106,6 +109,12 @@ Modules importants :
 Regles obligatoires :
 
 - Une playlist se traite video par video.
+- Une transcription YouTube doit être stockée une seule fois par video ID dans `library/youtube/`.
+- Toujours réutiliser la bibliothèque avant de télécharger de nouveaux sous-titres.
+- Les fichiers sous `output/` sont des dérivés régénérables, pas la source canonique.
+- `output/graphipy_ready/` est un export explicite temporaire et ne doit pas dupliquer durablement
+  `output/videos/`.
+- `YOUTUBE_LIBRARY_DIR` peut déplacer la bibliothèque canonique vers un SSD.
 - Une video qui echoue ne doit pas bloquer la suite.
 - Ne jamais supprimer globalement `output/videos/`.
 - Ne jamais supprimer les outputs deja valides.
@@ -125,6 +134,7 @@ Commandes utiles :
 Modules importants :
 
 - `src/llm/gemini_client.py`
+- `src/llm/secret_store.py`
 - `src/llm/model_router.py`
 - `src/llm/rate_limiter.py`
 - `prompts/video_summary.md`
@@ -134,6 +144,15 @@ Regles :
 
 - Les tests ne doivent jamais appeler Gemini.
 - Ne pas afficher la cle API dans les logs.
+- Ne jamais renvoyer une valeur de clé à l'interface : seulement un booléen `configured`.
+- Sur macOS, lire Gemini depuis le Trousseau. Une migration `.env` doit écrire, relire et vérifier la
+  clé avant de supprimer les lignes legacy ; elle ne touche pas aux autres variables.
+- Ne pas transmettre une clé à un processus enfant dans ses arguments ou son environnement : utiliser
+  son entrée standard bornée lorsqu'un passage explicite est nécessaire.
+- Garder le prototype sur loopback. Les routes Clés API, Gemini et Maxi Brain doivent refuser les
+  clients non locaux et toute mutation sans origine navigateur correspondante.
+- En CI ou en production, injecter les clés depuis un gestionnaire de secrets ; ne pas créer un
+  fichier de clés local comme stockage durable.
 - En cas de quota ou timeout, sauvegarder l'etat du job si possible.
 - Ne pas envoyer un contenu vide ou manifestement mal extrait a Gemini.
 

@@ -8,6 +8,7 @@ from src.llm.anthropic_client import AnthropicClient
 from src.llm.base import LLMClient, LLMError, effective_model_config
 from src.llm.gemini_client import GeminiClient
 from src.llm.openai_compatible_client import OpenAICompatibleClient
+from src.llm.secret_store import has_macos_keychain_secret
 from src.paths import project_path
 
 
@@ -39,7 +40,7 @@ def create_llm_client() -> LLMClient:
 
 def _detect_provider() -> str:
     """Select the first configured provider; empty keys never activate a provider."""
-    if _configured("GEMINI_API_KEY"):
+    if _configured("GEMINI_API_KEY") or has_macos_keychain_secret("geminiSummary"):
         return "gemini"
     if _configured("ANTHROPIC_API_KEY"):
         return "anthropic"

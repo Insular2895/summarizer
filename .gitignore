@@ -39,12 +39,21 @@ playlists/
 
 # Pipeline local
 cache/
+library/*
+!library/youtube/
+library/youtube/*
+# The canonical transcript library is local state. Keep the directory itself
+# in the repository, but never download or commit its generated contents.
+!library/youtube/.gitkeep
 input/pdf/*
 input/youtube/urls.txt
 
 output/videos/*
 output/books/*
 output/graphipy_ready/*
+output/motion/*
+!output/README.md
+!output/books/README.md
 
 *.srt
 *.vtt
@@ -56,6 +65,7 @@ output/graphipy_ready/*
 !output/videos/.gitkeep
 !output/books/.gitkeep
 !output/graphipy_ready/.gitkeep
+!output/motion/.gitkeep
 !requirements.txt
 !requirements-dev.txt
 !requirements-pdf.txt

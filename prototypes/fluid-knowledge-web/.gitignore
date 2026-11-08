@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+qa/
+src/generated/playlist32.json
+public/assets/playlist-32/
+public/assets/playlist-margin-collateral/
+public/assets/video-thumbnail-youtube.jpg

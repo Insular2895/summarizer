@@ -1,5 +1,10 @@
 # Architecture
 
+Pour la séparation frontend / control plane / worker de Web V1, voir
+[WEB_V1_ARCHITECTURE.md](WEB_V1_ARCHITECTURE.md). Le contrat d'expérience est dans
+[UI_UX_SPEC.md](UI_UX_SPEC.md) et l'ordre d'exécution dans
+[WEB_V1_IMPLEMENTATION_PLAN.md](WEB_V1_IMPLEMENTATION_PLAN.md).
+
 ## Dossiers
 
 - `input/` : sources utilisateur, comme `input/youtube/urls.txt` et les PDF dans `input/pdf/`.

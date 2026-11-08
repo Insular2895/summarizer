@@ -84,6 +84,14 @@ class YouTubeExtractor:
         return subtitle_files[0]
 
     def _options(self, options: dict[str, Any]) -> dict[str, Any]:
+        options = {
+            "remote_components": ["ejs:github"],
+            "sleep_interval_requests": 4,
+            "sleep_interval": 8,
+            "max_sleep_interval": 18,
+            "sleep_interval_subtitles": 4,
+            **options,
+        }
         cookiefile = _find_cookiefile()
         if cookiefile is not None:
             options = {**options, "cookiefile": str(cookiefile)}

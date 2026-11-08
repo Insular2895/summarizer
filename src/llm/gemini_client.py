@@ -15,6 +15,7 @@ from src.config import ModelConfig
 from src.converters.token_counter import count_tokens
 from src.llm.base import LLMError, LLMInvalidJsonError, LLMQuotaError, effective_model_config
 from src.llm.rate_limiter import RateLimiter
+from src.llm.secret_store import get_macos_keychain_secret
 from src.llm.usage import record_gemini_usage
 from src.paths import project_path
 
@@ -40,9 +41,13 @@ class GeminiClient:
 
     def __post_init__(self) -> None:
         load_dotenv(project_path(".env"))
-        key = self.api_key or os.getenv("GEMINI_API_KEY")
+        key = (
+            self.api_key
+            or os.getenv("GEMINI_API_KEY")
+            or get_macos_keychain_secret("geminiSummary")
+        )
         if not key:
-            raise GeminiError("GEMINI_API_KEY is missing. Create a local .env from .env.example.")
+            raise GeminiError("Gemini API key is missing. Add it in Transcript > Clés API.")
         self._client = genai.Client(api_key=key)
         self.rate_limiter = self.rate_limiter or RateLimiter()
 
@@ -87,10 +92,15 @@ class GeminiClient:
             output_tokens=0,
             max_output_tokens=model_config.max_output_tokens,
             status="failed",
-            error=str(last_error),
+            error=_safe_error_label(last_error),
         )
         error_type = GeminiQuotaError if _is_quota_exhaustion(last_error) else GeminiError
-        raise error_type(f"Gemini request failed: {last_error}") from last_error
+        message = (
+            "Gemini quota is exhausted."
+            if error_type is GeminiQuotaError
+            else "Gemini request failed. Check the model, connection and credentials."
+        )
+        raise error_type(message) from None
 
     def generate_multimodal_json(
         self,
@@ -148,10 +158,18 @@ class GeminiClient:
                 output_tokens=0,
                 max_output_tokens=model_config.max_output_tokens,
                 status="failed",
-                error=str(last_error),
+                error=_safe_error_label(last_error),
             )
             error_type = GeminiQuotaError if _is_quota_exhaustion(last_error) else GeminiError
-            raise error_type(f"Gemini multimodal request failed: {last_error}") from last_error
+            message = (
+                "Gemini quota is exhausted."
+                if error_type is GeminiQuotaError
+                else (
+                    "Gemini multimodal request failed. "
+                    "Check the model, connection and credentials."
+                )
+            )
+            raise error_type(message) from None
         try:
             value = _parse_json_object(response_text)
         except (GeminiError, json.JSONDecodeError) as exc:
@@ -219,3 +237,10 @@ def _is_quota_exhaustion(error: object) -> bool:
         or "quota metric" in message
         or "free_tier_requests" in message
     )
+
+
+def _safe_error_label(error: object) -> str:
+    """Return a stable diagnostic label without persisting provider messages or credentials."""
+    if _is_quota_exhaustion(error):
+        return "quota_exhausted"
+    return type(error).__name__ if error is not None else "unknown_error"
