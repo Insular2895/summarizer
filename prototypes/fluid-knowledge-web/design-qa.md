@@ -1,5 +1,30 @@
 # Fluid Knowledge Web/PC — Design QA
 
+## 2026-11-08 — Apple × Unslop refinement
+
+Direction approved by the user: preserve Fluid Knowledge and its Apple character while applying the
+light-slop polish method from [Unslop by Damir Sokolovsky](https://github.com/heydamir/unslop)
+(CC BY 4.0).
+
+- Product: review long YouTube knowledge cards quickly without losing the full source, notes or AI
+  follow-up.
+- Character: calm, exact, quietly editorial.
+- World: paper notes beside a video screen.
+- Moment: the genuine YouTube thumbnail carries the visual richness; the surrounding chrome stays
+  neutral.
+- Signature: the left/right review decision and its matching keyboard keycap.
+
+Implemented passes: 4px-based navigation rhythm; ink-neutral light ramp; blue limited to active
+navigation and primary actions; semantic green/red; system/SF-first typography with 500–600 weights;
+sentence-case meta labels; reduced shadows; 6–16px nested radii; flatter contextual panels; removal
+of loud marketing-style badge treatments; and `YouTube · synthèse` in place of technical local-copy.
+The existing icon family, section order, responsive layout, real thumbnails and swipe behavior were
+preserved.
+
+The in-app browser was unavailable during this pass. Build, Sites packaging and secret-boundary
+tests pass, but no new same-state screenshot was accepted. Visual comparison for this refinement is
+therefore still blocked and must not be inferred from the build alone.
+
 - Source visual truth: `/Users/insular/transcripts/docs/assets/web-v1-fluid-knowledge-review-mobile.png`
 - Implementation: `/Users/insular/transcripts/prototypes/fluid-knowledge-web/`
 - Local preview: `http://127.0.0.1:4175/`

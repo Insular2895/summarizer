@@ -193,7 +193,7 @@ for (const filename of filenames) {
     url,
     thumbnail,
     duration: null,
-    source: "YouTube · résumé local",
+    source: "YouTube · synthèse",
     summary: extractCardSummary(body),
     points: extractKeyPoints(body),
     fullSummary: normalizeMarkdown(body),

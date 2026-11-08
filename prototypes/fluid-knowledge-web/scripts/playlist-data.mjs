@@ -134,7 +134,7 @@ export async function readPlaylistCards(outputDir, repoDir) {
       url,
       thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
       duration: null,
-      source: "YouTube · résumé local",
+      source: "YouTube · synthèse",
       summary: extractCardSummary(body),
       points: extractKeyPoints(body),
       fullSummary: normalizeMarkdown(body),

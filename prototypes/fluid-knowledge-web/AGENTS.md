@@ -6,6 +6,10 @@
 - The user refined that direction on 2026-11-08: use restrained Apple-like corner radii instead of
   oversized generative-AI-style rounding. Outer windows/cards use about 18px, nested panels 12–16px
   and controls 8–10px; preserve circles and true pill-shaped status elements.
+- The user refined the direction again on 2026-11-08 using Damir Sokolovsky's Unslop method: keep
+  the Apple character, but use quieter chrome, a strict 4px rhythm, lighter type hierarchy, one blue
+  accent, semantic green/red only, flatter surfaces and the genuine video thumbnail as the single
+  rich visual moment. Preserve product structure and behavior; this is a polish pass, not a redesign.
 - Visual source of truth: `../../docs/assets/web-v1-fluid-knowledge-review-mobile.png`.
 - This project is the responsive Web/PC adaptation. Desktop uses a navigation rail, central review
   workspace and contextual side panel; mobile collapses to one column with bottom navigation.
