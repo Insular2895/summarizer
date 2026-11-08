@@ -1,0 +1,35 @@
+{
+  "name": "Summarizer Web V1",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "24"
+    }
+  },
+  "forwardPorts": [4173, 8787],
+  "portsAttributes": {
+    "4173": {
+      "label": "Summarizer Web",
+      "onAutoForward": "openPreview"
+    },
+    "8787": {
+      "label": "Summarizer Control Plane",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "python -m pip install --upgrade pip && python -m pip install -r requirements.txt -r requirements-dev.txt && npm ci --prefix web && npm ci --prefix cloudflare",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-python.black-formatter",
+        "ms-python.python"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}

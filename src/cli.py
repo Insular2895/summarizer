@@ -32,9 +32,39 @@ from src.storage.youtube_library_migration import (
     migrate_youtube_sources,
     repair_youtube_library_from_outputs,
 )
+from src.worker.client import HttpControlPlaneClient
+from src.worker.config import load_worker_config
+from src.worker.graphipy_finalizer import GraphipyOutboxFinalizer
+from src.worker.runner import WorkerRunner
+from src.worker.spool import WorkerSpool
 
 app = typer.Typer(no_args_is_help=True)
 console = Console()
+
+
+@app.command("web-worker")
+def web_worker(
+    once: bool = False,
+    poll_seconds: float = 5,
+    lease_seconds: int = 120,
+) -> None:
+    """Run the outbound-only Web V1 worker (internal operations command)."""
+    try:
+        config = load_worker_config()
+        client = HttpControlPlaneClient(config.control_plane_url, config.worker_token)
+        runner = WorkerRunner(
+            client=client,
+            spool=WorkerSpool(project_path("cache", "web_worker_spool")),
+            worker_id=config.worker_id,
+            lease_seconds=lease_seconds,
+            finalizer=GraphipyOutboxFinalizer(client, config.worker_id),
+        )
+        if once:
+            console.print(runner.run_once())
+        else:
+            runner.run_forever(poll_seconds=poll_seconds)
+    except Exception as exc:
+        _fail(exc)
 
 
 @app.command()

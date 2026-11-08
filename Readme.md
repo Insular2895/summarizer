@@ -252,3 +252,5 @@ Au premier lancement de l'interface, installer ses dépendances avec
 `cd prototypes/fluid-knowledge-web && npm install`, puis revenir à la racine et exécuter `./runweb`.
 Le plan complet, les prérequis de sécurité et les décisions restant à valider avant une publication
 sont documentés dans [docs/SAAS_DEPLOYMENT_PLAN.md](docs/SAAS_DEPLOYMENT_PLAN.md).
+La reprise du Web V1 dans GitHub Codespaces est décrite dans
+[docs/CODESPACES_HANDOFF.md](docs/CODESPACES_HANDOFF.md).
