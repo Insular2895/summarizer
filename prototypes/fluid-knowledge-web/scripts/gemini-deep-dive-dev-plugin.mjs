@@ -47,6 +47,19 @@ function validatePayload(payload) {
     result[key] = value.trim();
   }
   if (!result.url.startsWith("https://www.youtube.com/")) throw new Error("Source vidéo invalide.");
+  const history = payload?.history ?? [];
+  if (!Array.isArray(history) || history.length > 20) throw new Error("Historique de conversation invalide.");
+  let historySize = 0;
+  result.history = history.map((message) => {
+    const role = message?.role;
+    const content = message?.content;
+    if (!["user", "assistant"].includes(role) || typeof content !== "string" || !content.trim() || content.length > 12_000) {
+      throw new Error("Message de conversation invalide.");
+    }
+    historySize += content.length;
+    return { role, content: content.trim() };
+  });
+  if (historySize > 48_000) throw new Error("Historique de conversation trop long.");
   return result;
 }
 
@@ -128,8 +141,11 @@ export function geminiDeepDiveDevPlugin() {
               });
               return;
             }
+            const continuation = payload.history.length
+              ? "\n\n## Suite de la conversation\n\nLa conversation précédente a bien été transmise et cette réponse complète le raisonnement déjà engagé."
+              : "";
             sendJson(response, 200, {
-              answer: "## Réponse\n\nLe passage doit être relié aux mécanismes cités dans la source.\n\n## Limites / vérifications\n\n- Vérifier les affirmations avec une source primaire.",
+              answer: `## Réponse\n\nLe passage doit être relié aux mécanismes cités dans la source.${continuation}\n\n## Limites / vérifications\n\n- Vérifier les affirmations avec une source primaire.`,
               model: "Gemini · test local",
             });
             return;

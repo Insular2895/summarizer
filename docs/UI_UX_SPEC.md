@@ -15,6 +15,21 @@ Ce document fixe l'expérience Web V1 de Summarizer. Il complète
 Il fait autorité pour les comportements produit. **Fluid Knowledge** est la cible visuelle ; sa
 fidélité responsive, ses états et sa motion restent à valider sur un prototype interactif.
 
+### Fond ambiant
+
+- Le fond validé est la proposition 1 du 14 novembre 2026 : de grands rubans nacrés blanc perle,
+  argent bleuté et lavande froide traversent doucement toute la fenêtre.
+- Il reste visuellement blanc à 90–95 %, fixe derrière l'interface et non interactif. Les cartes et
+  le texte conservent toujours leur contraste propre, y compris au centre de l'écran.
+- L'animation reste entièrement locale : deux copies fixes de l'asset évoluent sur des cycles de 26
+  et 34 secondes en ne modifiant que `transform` et `opacity`. Le parallaxe souris est borné à 9 px
+  horizontalement et 6 px verticalement. Aucun runtime WebGL externe n'est chargé.
+- Sur mobile, le cadrage agrandi conserve la diagonale sans répéter la texture. Avec
+  `prefers-reduced-motion`, le plan principal reste statique et le plan secondaire est masqué.
+- La tentative Unicorn Studio du 15 novembre 2026 a été retirée après revue : le plan gratuit ajoutait
+  un filigrane répété et le mouvement publié était trop discret. Elle reste historique et ne constitue
+  plus l'implémentation cible.
+
 ## 2. Principes figés
 
 - V1 accepte uniquement une URL YouTube : vidéo ou playlist.
@@ -71,6 +86,18 @@ La composition de référence de la carte est donnée par la maquette **Fluid Kn
 Les champs exacts, les limites de contenu et les états responsive doivent encore être validés pendant
 la phase de prototype. Aucun champ décoratif supplémentaire ne doit être considéré comme figé.
 
+Un test desktop réversible réunit actuellement miniature, résumé et inspecteur dans une surface
+unique. L'inspecteur rend visibles, sans ouvrir la fiche :
+
+- **À retenir**, avec les apprentissages essentiels de la vidéo ;
+- **Actions possibles**, avec les actions concrètes extraites de la section homonyme du résumé long.
+  Ce bloc ne contient pas les commandes de Review. Si la fiche ne fournit aucune action explicite,
+  l'interface le signale sans en inventer.
+
+La progression existante `x sur y` et son pourcentage reste inchangée. Tablette et mobile conservent
+leur composition responsive précédente pendant l'évaluation du test. La variante desktop précédente
+reste accessible avec `?reviewLayout=legacy` ; ce mécanisme de comparaison ne change aucune donnée.
+
 ### Décisions
 
 Les deux actions visibles sont :
@@ -90,10 +117,29 @@ Après une décision :
 - une action **Undo** permet d'annuler la dernière décision ;
 - les données de la vidéo, sa Note et ses artefacts ne sont pas supprimés.
 
-### Interdiction dans la fiche
+### Décision depuis la fiche
 
-La fiche détaillée ne déclenche jamais Garder ou Écarter par swipe. Le geste horizontal dans cette
-vue ne doit pas pouvoir provoquer une décision accidentelle.
+La fiche détaillée accepte désormais le même geste horizontal que la carte : swipe droite pour
+Garder, swipe gauche pour Écarter. Cette décision validée remplace l'interdiction précédente.
+
+Le geste doit rester protégé :
+
+- un mouvement vertical conserve le scroll ;
+- un mouvement sous le seuil revient à sa position sans décision ;
+- le swipe peut démarrer depuis toute la fiche, y compris les boutons, liens, champs, Note & IA,
+  onglets et zones de texte ;
+- les clics simples et la saisie restent normaux. Sur du texte, une sélection native lente est
+  prioritaire ; seul un flick horizontal rapide ou un drag horizontal franc déclenche le swipe ;
+- l'intention est verrouillée pour toute la durée du geste : sélection, swipe horizontal ou scroll
+  vertical ne peuvent pas se remplacer en cours de mouvement ;
+- une fois le swipe verrouillé horizontalement, il prend la priorité sur le clic imbriqué et efface
+  seulement une éventuelle sélection accidentelle ;
+- après une décision, la fiche se ferme et la Review passe à la vidéo suivante ;
+- Undo reste disponible.
+
+Sur Review, la touche Entrée ouvre la fiche tant que le focus n'est pas dans un contrôle interactif.
+Dans la fiche, les flèches Haut et Bas font défiler le contenu interne avec répétition continue ;
+elles conservent leur comportement d'édition natif lorsque le focus est dans un champ ou la Note.
 
 ## 6. Fiche vidéo
 
@@ -146,9 +192,18 @@ sans introduire un système de highlights ou de cartes parallèle.
   doit être vérifiée.
 - Une réponse n'entre dans la Note qu'après l'action explicite **Ajouter à la Note**. Elle ne modifie
   jamais le résumé canonique.
+- Les questions suivantes appartiennent à la même conversation vidéo. Le backend reçoit un
+  historique borné de messages utilisateur/assistant afin que les références aux réponses
+  précédentes restent compréhensibles.
+- Le premier tour peut utiliser le résumé long borné ; les tours suivants utilisent le résumé court,
+  le passage de référence et l'historique récent afin de ne pas renvoyer inutilement tout le document.
+- Chaque tour est autosauvegardé avec la question, la réponse, le modèle, le passage et l'horodatage.
+  Une erreur laisse le fil intact et permet un nouvel envoi.
 - Le fallback ChatGPT copie le prompt borné dans le presse-papiers puis ouvre `chatgpt.com`. Il ne
   prétend pas préremplir automatiquement une conversation sans contrat officiel documenté.
-- L'interface ne propose pas de sélecteur de provider ou de modèle en V1.
+- L'interface ne propose pas encore de sélecteur de provider ou de modèle en V1. Elle indique sans
+  ambiguïté que Gemini est actif aujourd'hui et que les connecteurs OpenAI (GPT) et Anthropic
+  (Claude), déjà compatibles avec l'abstraction LLM interne, restent à activer côté Web.
 
 ### Clés API et quotas
 
@@ -168,8 +223,12 @@ sans introduire un système de highlights ou de cartes parallèle.
 - Le prototype local conserve les clés dans le Trousseau macOS. Une clé Gemini legacy trouvée dans
   `.env` déclenche une proposition de migration ; la ligne en clair n'est supprimée qu'après écriture
   et vérification dans le Trousseau.
-- Chaque emplacement configuré propose **Retirer**. L'interface ne journalise jamais la valeur et ne
-  connaît que son état `configured`.
+- Chaque champ se synchronise automatiquement après une saisie valide. Coller une nouvelle clé
+  remplace l'ancienne ; vider le champ la retire via la route serveur. Aucun bouton **Enregistrer**,
+  **Configurer** ou **Retirer** n'est affiché. Le navigateur ne reçoit qu'un masque local et l'état
+  `configured`, jamais la valeur du secret.
+- L'aide quota recommande deux projets Google AI Studio distincts pour séparer les usages ; elle
+  précise que deux clés créées dans le même projet partagent généralement le même quota.
 - La production multi-utilisateur exige un coffre chiffré par utilisateur et une autorisation stricte ;
   le Trousseau local ne constitue pas le stockage SaaS.
 
@@ -184,6 +243,12 @@ L'autosave est une fonction de fiabilité, pas seulement un debounce visuel.
 - Une sauvegarde est tentée avant un changement de route lorsque le navigateur le permet.
 - Le brouillon local peut couvrir une perte réseau, une fermeture Safari ou une reprise ultérieure.
 - La reconnexion resynchronise explicitement l'état local et l'état serveur.
+- La session sauvegarde aussi la carte courante. Au redémarrage, la dernière playlist non finalisée
+  reprend exactement à cette position, avec ses décisions, Notes et approfondissements ; elle ne
+  retombe sur la première carte sans décision que si aucune position durable n'existe.
+- Lorsqu'une ancienne carte est revue, la carte affiche explicitement la mémoire disponible :
+  **Gardée** ou **Écartée**, puis **Note enregistrée** et **IA enregistrée** lorsque ces contenus
+  existent. L'utilisateur peut ouvrir la fiche pour relire ou modifier les contenus sauvegardés.
 
 Les mécanismes navigateur de dernier recours ne remplacent pas le contrôle de version serveur.
 

@@ -112,13 +112,50 @@ Le worker est outbound-only. Une playlist est traitée vidéo par vidéo. Une vi
 
 ## 5. Choix design à ne pas redécouvrir
 
+La dernière révision premium du 13 novembre 2026 remplace les anciennes règles « accent bleu
+unique » et « décisions colorées en permanence » ci-dessous. La source autoritaire à jour reste
+`docs/WEB_V1_DESIGN_DECISIONS.md` :
+
+- Geist Sans et Geist Mono sont auto-hébergées ; la pile Apple reste le fallback ;
+- `Garder`, `Écarter` et Undo utilisent des rectangles Liquid Glass à rayon 10 px, sans stroke coloré ;
+- l'échelle des rayons est 12/10/8/6/5 px pour fenêtres/cartes/panneaux/contrôles/éléments imbriqués ;
+- le même matériau neutre, bleu ou rouge est réutilisé sur navigation, progression, formulaires,
+  History, modales, onglets et Note & IA ;
+- le bouton `Review` actif est la référence des contrôles : reflet blanc décentré, gradient froid,
+  bord inférieur discret et halo court, avec une teinte adaptée à la fonction ;
+- les cartes réutilisent ce matériau avec un reflet plus diffus : Review, contexte, Home, History,
+  exports, modales, champs API et Note & IA, sans filtrer les miniatures ;
+- la modale `Clés API` conserve trois cartes strictement égales, des champs de 44 px et des états de
+  synchronisation intégrés, avec le même matériau pour l'encart Google et les notes de sécurité ;
+- les champs API se synchronisent désormais seuls : coller remplace, vider retire, et aucun bouton
+  Configurer/Retirer/Enregistrer n'est rendu. Gemini reste le fournisseur Web actif ; GPT et Claude
+  sont présentés comme connecteurs compatibles à activer ultérieurement, pas comme options actives ;
+- le bleu est réservé à la navigation, au focus, à la progression et aux actions IA ;
+- pendant un swipe, un gradient noir vers vert ou rouge teinte directement la carte selon la
+  direction ; aucune sous-couche colorée n'apparaît derrière ;
+- la miniature réelle remplit l'ancien grand emplacement média, centrée sans zoom CSS supplémentaire ;
+  `maxresdefault` est préféré et `hqdefault` sert de fallback ;
+- toute la carte ouvre la fiche, sauf pendant un drag ou sur un contrôle imbriqué ;
+- Entrée ouvre aussi la carte active ; dans la fiche, un swipe horizontal peut démarrer partout,
+  y compris sur le texte et Note & IA. Le scroll vertical, les clics simples et la saisie restent
+  disponibles ; un drag horizontal délibéré garde ou écarte puis avance ;
+- `À retenir` et `Raccourcis` restent consultables sur mobile ; `Ensuite` est retiré pour conserver
+  une grille desktop uniforme ;
+- Note & IA conserve un fil Gemini multi-tours borné et persistant par vidéo.
+- la session Review persiste aussi la position courante et restaure la dernière playlist non
+  finalisée après une perte du pointeur navigateur, sans inclure le contenu des Notes dans la liste
+  générale des jobs.
+
+Les lignes suivantes décrivent la décision historique de septembre et ne priment pas sur cette
+révision :
+
 - Direction sélectionnée : option 3, **Fluid Knowledge**.
 - Adaptation demandée : interface blanche Apple-like, liquid glass discret.
 - Cartes : blancs différenciés, bordures froides, blur et ombres faibles.
 - Accent : bleu `#007aff`.
 - `Garder` : bleu plein / texte blanc.
 - `Écarter` : blanc / contour et texte bleus.
-- Aucun bouton de décision vert ou rouge.
+- Aucun bouton de décision vert ou rouge (historique, remplacé le 13 novembre 2026).
 - Pas de thème sombre pour le Web V1 actuel.
 - Référence : `docs/design/web-v1-review-fluid-light-reference.png`.
 - Document autoritaire : `docs/WEB_V1_DESIGN_DECISIONS.md`.

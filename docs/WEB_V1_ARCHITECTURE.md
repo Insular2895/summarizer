@@ -428,6 +428,11 @@ Review lit les vidéos `READY` et leur décision. Garder/Écarter sont des mutat
 versionnées. Undo restaure la décision précédente sans supprimer Note ou artefacts. Le serveur reste
 autoritaire en cas de double action ou de reconnexion.
 
+La session Review locale persiste également `currentIndex`. Si le navigateur ne connaît plus le job
+actif, l'API liste les jobs avec un résumé non sensible de leur session et le frontend restaure la
+dernière playlist non finalisée contenant des décisions, Notes ou approfondissements. Le contenu des
+Notes n'est jamais inclus dans cette liste : il n'est chargé que par la route de session ciblée.
+
 La fiche détaillée ne change pas de décision par swipe. Ce contrat appartient à
 [UI_UX_SPEC.md](UI_UX_SPEC.md), pas au worker.
 

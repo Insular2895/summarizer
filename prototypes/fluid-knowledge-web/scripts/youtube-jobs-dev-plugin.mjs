@@ -136,7 +136,8 @@ async function listJobs() {
   const jobs = [];
   for (const filename of filenames) {
     try {
-      jobs.push(await readJob(filename.replace(/\.json$/, "")));
+      const job = await readJob(filename.replace(/\.json$/, ""));
+      jobs.push({ ...job, reviewSession: await readReviewSessionSummary(job.id) });
     } catch {
       // Keep a damaged local state isolated from the other jobs.
     }
@@ -196,19 +197,64 @@ function sessionPath(sessionId) {
   return path.join(sessionsDir, `${sessionId}.json`);
 }
 
+async function readReviewSessionSummary(sessionId) {
+  try {
+    const session = JSON.parse(await fs.readFile(sessionPath(sessionId), "utf8"));
+    const decisions = Array.isArray(session.decisions) ? session.decisions : [];
+    const decisionByVideoId = session.decisionByVideoId && typeof session.decisionByVideoId === "object"
+      && !Array.isArray(session.decisionByVideoId)
+      ? session.decisionByVideoId
+      : {};
+    const notes = session.notes && typeof session.notes === "object" && !Array.isArray(session.notes) ? session.notes : {};
+    const deepDives = session.deepDives && typeof session.deepDives === "object" && !Array.isArray(session.deepDives) ? session.deepDives : {};
+    return {
+      finalized: Boolean(session.finalized),
+      currentIndex: Number.isInteger(session.currentIndex) ? session.currentIndex : null,
+      decidedCount: Object.keys(decisionByVideoId).length
+        || decisions.filter((value) => value === "keep" || value === "discard").length,
+      noteCount: Object.values(notes).filter((value) => typeof value === "string" && value.trim()).length,
+      deepDiveVideoCount: Object.values(deepDives).filter((entries) => Array.isArray(entries) && entries.length).length,
+      updatedAt: typeof session.updatedAt === "string" ? session.updatedAt : null,
+    };
+  } catch (error) {
+    if (error?.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
 function validateSession(payload) {
   if (!payload || typeof payload !== "object") throw new Error("Session invalide.");
   if (!Array.isArray(payload.decisions)) throw new Error("Décisions invalides.");
   const decisions = payload.decisions.map((value) => (value === "keep" || value === "discard" ? value : null));
+  const decisionByVideoId = validateDecisionRecord(payload.decisionByVideoId);
   const notes = validateTextRecord(payload.notes, 100_000);
   const deepDives = validateDeepDives(payload.deepDives);
+  const firstPending = decisions.findIndex((value) => !value);
+  const fallbackIndex = firstPending < 0 ? decisions.length : firstPending;
+  const currentIndex = Number.isInteger(payload.currentIndex)
+    && payload.currentIndex >= 0
+    && payload.currentIndex <= decisions.length
+    ? payload.currentIndex
+    : fallbackIndex;
   return {
     decisions,
+    decisionByVideoId,
     notes,
     deepDives,
+    currentIndex,
     finalized: Boolean(payload.finalized),
     updatedAt: new Date().toISOString(),
   };
+}
+
+function validateDecisionRecord(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const result = {};
+  for (const [key, decision] of Object.entries(value)) {
+    if (!/^[-a-zA-Z0-9_]{4,100}$/.test(key)) throw new Error("Décisions invalides.");
+    if (decision === "keep" || decision === "discard") result[key] = decision;
+  }
+  return result;
 }
 
 function validateTextRecord(value, maximumLength) {

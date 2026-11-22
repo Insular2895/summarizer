@@ -88,6 +88,41 @@ function extractKeyPoints(body) {
     .slice(0, 3);
 }
 
+export function extractActions(body) {
+  const section = extractSection(body, /^Actions possibles$/i);
+  if (!section) return [];
+
+  const lines = section
+    .split("\n")
+    .map((line) => cleanInlineMarkdown(line))
+    .filter(Boolean);
+  const explicitActions = lines
+    .map((line) => line.match(/^Action\s*:\s*(.+)$/i)?.[1]?.trim() ?? "")
+    .filter(Boolean)
+    .map((action) => truncateAtWord(action, 180));
+  if (explicitActions.length) return explicitActions.slice(0, 3);
+
+  const genericActions = section
+    .split("\n")
+    .filter((line) => /^[-*]\s+/.test(line))
+    .map((line) => cleanInlineMarkdown(line))
+    .filter((line) => line && !/^(?:Quand|Comment|Indicateur de r[ée]sultat|Risque ou limite|V[ée]rification avant action)\s*:/i.test(line))
+    .map((action) => truncateAtWord(action, 180));
+  if (genericActions.length) return genericActions.slice(0, 3);
+
+  const paragraph = section
+    .split(/\n\s*\n/)
+    .map((value) => cleanInlineMarkdown(value))
+    .find((value) => value && !value.startsWith("|"));
+  return paragraph ? [truncateAtWord(paragraph, 180)] : [];
+}
+
+export function stableCardId(videoId, filename, fallbackIndex = 0) {
+  const sourcePosition = filename.match(/^(\d+)-/)?.[1];
+  const suffix = sourcePosition || String(fallbackIndex + 1).padStart(3, "0");
+  return `${videoId}-${suffix}`;
+}
+
 function normalizeMarkdown(body) {
   return body
     .replace(/^#\s+[^\n]+\n+/, "")
@@ -128,15 +163,16 @@ export async function readPlaylistCards(outputDir, repoDir) {
     if (!title || !videoId) continue;
     const body = stripFrontmatter(raw);
     cards.push({
-      id: `${videoId}-${String(index + 1).padStart(3, "0")}`,
+      id: stableCardId(videoId, filename, index),
       videoId,
       title,
       url,
-      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+      thumbnail: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
       duration: null,
       source: "YouTube · synthèse",
       summary: extractCardSummary(body),
       points: extractKeyPoints(body),
+      actions: extractActions(body),
       fullSummary: normalizeMarkdown(body),
       sourceFile: path.relative(repoDir, path.join(resolvedOutput, filename)),
     });

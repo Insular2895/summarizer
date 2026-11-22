@@ -12,6 +12,9 @@
       "Les résumés privés restent dans output/videos/playlist-32.",
       "Les miniatures ne sont reprises que lorsqu'elles sont disponibles."
     ],
+    "actions": [
+      "Ajouter une source YouTube locale pour générer les premières fiches."
+    ],
     "fullSummary": "## Données locales requises\n\nCette première carte permet de vérifier la lecture, les notes et l'approfondissement sans publier de contenu utilisateur.\n\n## Confidentialité locale\n\nLe jeu réel est généré depuis `output/videos/playlist-32/` et reste ignoré par Git.",
     "sourceFile": "src/generated/playlist32.example.json"
   },
@@ -28,6 +31,9 @@
       "Glissez à gauche pour écarter.",
       "Annulez pour revenir sur la dernière décision."
     ],
+    "actions": [
+      "Tester une décision, puis utiliser Annuler pour vérifier la réversibilité."
+    ],
     "fullSummary": "## Revue par cartes\n\nCette deuxième carte sert uniquement à tester le passage d'une décision à la suivante.\n\n## Données synthétiques\n\nSon titre, son résumé et son identifiant ne viennent d'aucune vidéo réelle.",
     "sourceFile": "src/generated/playlist32.example.json"
   },
@@ -43,6 +49,9 @@
       "La fin de session est explicite.",
       "Les exports peuvent être testés sans données privées.",
       "Maxi Brain reste un connecteur local réservé au propriétaire."
+    ],
+    "actions": [
+      "Terminer la Review et vérifier le reçu dans History."
     ],
     "fullSummary": "## Fin de session\n\nCette troisième carte valide l'écran de fin et les reçus d'export.\n\n## Export portable\n\nLes autres utilisateurs recevront un ZIP Markdown ou un PDF propre lorsque le SaaS sera implémenté.",
     "sourceFile": "src/generated/playlist32.example.json"

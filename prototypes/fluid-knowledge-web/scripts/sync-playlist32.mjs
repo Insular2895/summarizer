@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { extractActions } from "./playlist-data.mjs";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const prototypeDir = path.resolve(scriptDir, "..");
@@ -196,6 +197,7 @@ for (const filename of filenames) {
     source: "YouTube · synthèse",
     summary: extractCardSummary(body),
     points: extractKeyPoints(body),
+    actions: extractActions(body),
     fullSummary: normalizeMarkdown(body),
     sourceFile: `output/videos/playlist-32/${filename}`,
   });

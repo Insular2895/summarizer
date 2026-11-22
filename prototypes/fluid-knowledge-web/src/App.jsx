@@ -3,8 +3,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
   ArrowLeftIcon,
-  ArrowRightIcon,
   ArchiveIcon,
+  BookmarkIcon,
   CardStackIcon,
   CheckIcon,
   CheckCircledIcon,
@@ -13,7 +13,6 @@ import {
   ClockIcon,
   CopyIcon,
   Cross1Icon,
-  Cross2Icon,
   CrossCircledIcon,
   DownloadIcon,
   ExclamationTriangleIcon,
@@ -22,9 +21,9 @@ import {
   FileTextIcon,
   GearIcon,
   HomeIcon,
-  KeyboardIcon,
+  InfoCircledIcon,
   LockClosedIcon,
-  MagicWandIcon,
+  LightningBoltIcon,
   MagnifyingGlassIcon,
   OpenInNewWindowIcon,
   PlusIcon,
@@ -41,6 +40,8 @@ import {
   useReducedMotion,
   useTransform,
 } from "motion/react";
+import { SiGooglegemini, SiYoutube } from "react-icons/si";
+import pearlRibbonsBackground from "./assets/summariz-pearl-ribbons.webp";
 import playlist32 from "./generated/playlist32.json";
 
 const INITIAL_PLAYLIST = {
@@ -58,6 +59,13 @@ const navigation = [
   { id: "history", label: "History", icon: ClockIcon },
 ];
 
+// Experimental Review surface selected on 2026-11-15. The query flag keeps the comparison
+// reversible without changing review state, gestures or persistence.
+const REVIEW_LAYOUT_VARIANT = typeof window !== "undefined"
+  && new URLSearchParams(window.location.search).get("reviewLayout") === "legacy"
+  ? "legacy"
+  : "integrated-card";
+
 const HISTORY_STORAGE_KEY = "fluid-knowledge-history";
 const ACTIVE_JOB_STORAGE_KEY = "fluid-knowledge-active-youtube-job";
 const EMPTY_DEEP_DIVES = [];
@@ -66,9 +74,11 @@ function storageKeysFor(playlistId) {
   const legacy = playlistId === "playlist-32";
   return {
     decisions: legacy ? "fluid-knowledge-playlist-32-decisions" : `fluid-knowledge-${playlistId}-decisions`,
+    decisionMap: legacy ? "fluid-knowledge-playlist-32-decision-map" : `fluid-knowledge-${playlistId}-decision-map`,
     finalized: legacy ? "fluid-knowledge-playlist-32-finalized" : `fluid-knowledge-${playlistId}-finalized`,
     notes: legacy ? "fluid-knowledge-playlist-32-notes" : `fluid-knowledge-${playlistId}-notes`,
     deepDives: `fluid-knowledge-${playlistId}-deep-dives`,
+    position: `fluid-knowledge-${playlistId}-position`,
   };
 }
 
@@ -134,8 +144,32 @@ function normalizeDecisions(stored, videoCount) {
   });
 }
 
-function loadDecisions(playlistId, videoCount) {
-  return normalizeDecisions(readStoredValue(storageKeysFor(playlistId).decisions, []), videoCount);
+function decisionMapFor(videos, decisions) {
+  return Object.fromEntries(videos
+    .map((video, index) => [video.videoId || video.id, decisions[index]])
+    .filter(([, decision]) => decision === "keep" || decision === "discard"));
+}
+
+function decisionsFromMap(videos, stored) {
+  if (!stored || typeof stored !== "object" || Array.isArray(stored)) return null;
+  return videos.map((video) => {
+    const decision = stored[video.videoId || video.id];
+    return decision === "keep" || decision === "discard" ? decision : null;
+  });
+}
+
+function restoreDecisions(videos, storedDecisions, storedMap) {
+  return decisionsFromMap(videos, storedMap) ?? normalizeDecisions(storedDecisions, videos.length);
+}
+
+function loadDecisions(playlistId, videos) {
+  const keys = storageKeysFor(playlistId);
+  const positional = normalizeDecisions(readStoredValue(keys.decisions, []), videos.length);
+  const mapped = decisionsFromMap(videos, readStoredValue(keys.decisionMap, null));
+  if (!mapped) return positional;
+  const mappedCount = mapped.filter(Boolean).length;
+  const positionalCount = positional.filter(Boolean).length;
+  return mappedCount >= positionalCount ? mapped : positional;
 }
 
 function deepDiveMarkdown(entries) {
@@ -159,7 +193,7 @@ function markdownToPlainText(markdown) {
 }
 
 export function App() {
-  const initialDecisions = loadDecisions(INITIAL_PLAYLIST.id, INITIAL_PLAYLIST.videos.length);
+  const initialDecisions = loadDecisions(INITIAL_PLAYLIST.id, INITIAL_PLAYLIST.videos);
   const [section, setSection] = useState("review");
   const [currentPlaylist, setCurrentPlaylist] = useState(INITIAL_PLAYLIST);
   const [decisions, setDecisions] = useState(initialDecisions);
@@ -190,13 +224,15 @@ export function App() {
   const [sessionHydrated, setSessionHydrated] = useState(true);
   const [sessionSaveState, setSessionSaveState] = useState("saved");
   const [exportState, setExportState] = useState({ status: "idle", message: "" });
+  const ambientBackgroundRef = useRef(null);
   const activePlaylistIdRef = useRef(INITIAL_PLAYLIST.id);
+  const currentPlaylistRef = useRef(INITIAL_PLAYLIST);
   const quotaSeenRef = useRef(new Set());
   const reducedMotion = useReducedMotion();
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-140, 0, 140], [-7, 0, 7]);
-  const keepOpacity = useTransform(x, [12, 62], [0, 1]);
-  const discardOpacity = useTransform(x, [-62, -12], [1, 0]);
+  const keepTintOpacity = useTransform(x, [8, 52, 160], [0, 0.24, 0.72]);
+  const discardTintOpacity = useTransform(x, [-160, -52, -8], [0.72, 0.24, 0]);
   const scale = useTransform(x, [-300, 0, 300], [0.985, 1, 0.985]);
   const playlist = currentPlaylist;
   const videos = currentPlaylist.videos;
@@ -229,10 +265,41 @@ export function App() {
     : historyEntries.find((entry) => entry.id === selectedHistoryId) ?? null;
 
   useEffect(() => saveStoredValue(storageKeysFor(playlist.id).decisions, decisions), [decisions, playlist.id]);
+  useEffect(() => saveStoredValue(storageKeysFor(playlist.id).decisionMap, decisionMapFor(videos, decisions)), [decisions, playlist.id, videos]);
   useEffect(() => saveStoredValue(HISTORY_STORAGE_KEY, historyEntries), [historyEntries]);
   useEffect(() => saveStoredValue(storageKeysFor(playlist.id).finalized, finalized), [finalized, playlist.id]);
   useEffect(() => saveStoredValue(storageKeysFor(playlist.id).notes, notes), [notes, playlist.id]);
   useEffect(() => saveStoredValue(storageKeysFor(playlist.id).deepDives, deepDives), [deepDives, playlist.id]);
+  useEffect(() => saveStoredValue(storageKeysFor(playlist.id).position, videoIndex), [playlist.id, videoIndex]);
+
+  useEffect(() => {
+    const background = ambientBackgroundRef.current;
+    if (!background || reducedMotion) return undefined;
+
+    let animationFrame = null;
+    const moveWithPointer = (event) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
+      const horizontal = ((event.clientX / Math.max(window.innerWidth, 1)) - 0.5) * 18;
+      const vertical = ((event.clientY / Math.max(window.innerHeight, 1)) - 0.5) * 12;
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        background.style.setProperty("--ambient-parallax-x", `${horizontal.toFixed(2)}px`);
+        background.style.setProperty("--ambient-parallax-y", `${vertical.toFixed(2)}px`);
+      });
+    };
+    const resetPointer = () => {
+      background.style.setProperty("--ambient-parallax-x", "0px");
+      background.style.setProperty("--ambient-parallax-y", "0px");
+    };
+
+    window.addEventListener("pointermove", moveWithPointer, { passive: true });
+    window.addEventListener("blur", resetPointer);
+    return () => {
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      window.removeEventListener("pointermove", moveWithPointer);
+      window.removeEventListener("blur", resetPointer);
+    };
+  }, [reducedMotion]);
 
   useEffect(() => {
     if (!sessionHydrated) return undefined;
@@ -241,7 +308,14 @@ export function App() {
       fetch(`/api/review-sessions/${encodeURIComponent(playlist.id)}`, {
         method: "POST",
         headers: { "content-type": "application/json", accept: "application/json" },
-        body: JSON.stringify({ decisions, notes, deepDives, finalized }),
+        body: JSON.stringify({
+          decisions,
+          decisionByVideoId: decisionMapFor(videos, decisions),
+          notes,
+          deepDives,
+          currentIndex: videoIndex,
+          finalized,
+        }),
       })
         .then((response) => {
           if (!response.ok) throw new Error("sync_failed");
@@ -250,7 +324,11 @@ export function App() {
         .catch(() => setSessionSaveState("local"));
     }, 400);
     return () => window.clearTimeout(timer);
-  }, [decisions, deepDives, finalized, notes, playlist.id, sessionHydrated]);
+  }, [decisions, deepDives, finalized, notes, playlist.id, sessionHydrated, videoIndex, videos]);
+
+  useEffect(() => {
+    currentPlaylistRef.current = currentPlaylist;
+  }, [currentPlaylist]);
 
   useEffect(() => {
     let cancelled = false;
@@ -326,8 +404,14 @@ export function App() {
     }
 
     if (activePlaylistIdRef.current === job.id) {
-      setCurrentPlaylist(playlistFromJob(job));
-      setDecisions((currentDecisions) => normalizeDecisions(currentDecisions, job.cards?.length || 0));
+      const nextPlaylist = playlistFromJob(job);
+      const previousVideos = currentPlaylistRef.current.videos;
+      setCurrentPlaylist(nextPlaylist);
+      setDecisions((currentDecisions) => restoreDecisions(
+        nextPlaylist.videos,
+        currentDecisions,
+        decisionMapFor(previousVideos, currentDecisions),
+      ));
       setVideoIndex((currentIndex) => Math.min(currentIndex, job.cards?.length || 0));
     }
   }, [playlistFromJob]);
@@ -335,7 +419,8 @@ export function App() {
   const activateJob = useCallback((job, { navigate = true } = {}) => {
     const nextPlaylist = playlistFromJob(job);
     const keys = storageKeysFor(job.id);
-    const localDecisions = loadDecisions(job.id, nextPlaylist.videos.length);
+    const localDecisions = loadDecisions(job.id, nextPlaylist.videos);
+    const storedPosition = readStoredValue(keys.position, null);
     activePlaylistIdRef.current = job.id;
     saveStoredValue(ACTIVE_JOB_STORAGE_KEY, job.id);
     setSessionHydrated(false);
@@ -346,7 +431,10 @@ export function App() {
     setDeepDives(readStoredValue(keys.deepDives, {}));
     setFinalized(readStoredValue(keys.finalized, false));
     const firstPending = localDecisions.findIndex((decision) => !decision);
-    setVideoIndex(firstPending < 0 ? nextPlaylist.videos.length : firstPending);
+    const fallbackPosition = firstPending < 0 ? nextPlaylist.videos.length : firstPending;
+    setVideoIndex(Number.isInteger(storedPosition) && storedPosition >= 0 && storedPosition <= nextPlaylist.videos.length
+      ? storedPosition
+      : fallbackPosition);
     setLastDecision(null);
     setReviewingSavedCards(false);
     setExportState({ status: "idle", message: "" });
@@ -357,10 +445,20 @@ export function App() {
       .then((response) => response.ok ? response.json() : null)
       .then((session) => {
         if (!session || activePlaylistIdRef.current !== job.id) return;
-        setDecisions(normalizeDecisions(session.decisions, nextPlaylist.videos.length));
+        const restoredDecisions = restoreDecisions(
+          nextPlaylist.videos,
+          session.decisions,
+          session.decisionByVideoId,
+        );
+        setDecisions(restoredDecisions);
         setNotes(session.notes && typeof session.notes === "object" ? session.notes : {});
         setDeepDives(session.deepDives && typeof session.deepDives === "object" ? session.deepDives : {});
         setFinalized(Boolean(session.finalized));
+        const firstPendingIndex = restoredDecisions.findIndex((decision) => !decision);
+        const fallbackIndex = firstPendingIndex < 0 ? nextPlaylist.videos.length : firstPendingIndex;
+        setVideoIndex(Number.isInteger(session.currentIndex) && session.currentIndex >= 0 && session.currentIndex <= nextPlaylist.videos.length
+          ? session.currentIndex
+          : fallbackIndex);
       })
       .catch(() => {})
       .finally(() => {
@@ -378,6 +476,9 @@ export function App() {
       .then((payload) => {
         const job = payload?.jobs
           ? payload.jobs.find((item) => ["queued", "running", "paused_quota", "paused_key"].includes(item.status))
+            ?? payload.jobs.find((item) => item.reviewSession
+              && !item.reviewSession.finalized
+              && (item.reviewSession.decidedCount > 0 || item.reviewSession.noteCount > 0 || item.reviewSession.deepDiveVideoCount > 0))
           : payload;
         if (!job) return;
         applyJobUpdate(job);
@@ -403,23 +504,25 @@ export function App() {
       x,
       0,
       reducedMotion
-        ? { duration: 0.12 }
-        : { type: "spring", stiffness: 420, damping: 36, mass: 0.74 },
+        ? { duration: 0.1 }
+        : { duration: 0.28, ease: [0.4, 0, 0.2, 1] },
     );
   }, [reducedMotion, x]);
 
-  const decide = useCallback(async (decision) => {
+  const decide = useCallback(async (decision, options = {}) => {
     if (!activeVideo || isDeciding || reviewComplete || finalized) return;
     setIsDeciding(true);
     const direction = decision === "keep" ? 1 : -1;
 
-    await animate(
-      x,
-      direction * 920,
-      reducedMotion
-        ? { duration: 0.14 }
-        : { type: "spring", bounce: 0.12, duration: 0.4 },
-    );
+    if (options.animateCard !== false) {
+      await animate(
+        x,
+        direction * 920,
+        reducedMotion
+          ? { duration: 0.12 }
+          : { duration: 0.34, ease: [0.4, 0, 0.2, 1] },
+      );
+    }
 
     setDecisions((current) => {
       const next = [...current];
@@ -466,8 +569,18 @@ export function App() {
         setSelectedHistoryId(null);
         return;
       }
-      if (section !== "review" || detailOpen || selectedHistoryId || isDeciding || reviewComplete || finalized) return;
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+      if (section !== "review" || selectedHistoryId || isDeciding || reviewComplete || finalized || !activeVideo) return;
+      const interactiveTarget = event.target instanceof Element
+        && event.target.closest("button, a, input, textarea, select, [contenteditable='true']");
+      if (interactiveTarget) return;
+      if (detailOpen) return;
+
+      if (event.key === "Enter") {
+        event.preventDefault();
+        setDetailTab("summary");
+        setDetailOpen(true);
+        return;
+      }
 
       if (event.key === "ArrowRight") {
         event.preventDefault();
@@ -483,7 +596,7 @@ export function App() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [decide, detailOpen, finalized, isDeciding, reviewComplete, section, selectedHistoryId, undo]);
+  }, [activeVideo, decide, detailOpen, finalized, isDeciding, reviewComplete, section, selectedHistoryId, undo]);
 
   const completeExport = useCallback(({ destination, exportStatus, receiptId, exportedAt }) => {
     const entry = {
@@ -644,6 +757,10 @@ export function App() {
 
   return (
     <div className="app-shell">
+      <div ref={ambientBackgroundRef} className="ambient-background" aria-hidden="true">
+        <img className="ambient-ribbon ambient-ribbon-primary" src={pearlRibbonsBackground} alt="" decoding="async" fetchPriority="low" draggable="false" />
+        <img className="ambient-ribbon ambient-ribbon-secondary" src={pearlRibbonsBackground} alt="" decoding="async" fetchPriority="low" draggable="false" />
+      </div>
       <aside className="sidebar" aria-label="Navigation principale">
         <div className="brand-lockup">
           <span className="brand-mark"><VideoIcon aria-hidden="true" /></span>
@@ -705,6 +822,9 @@ export function App() {
             <ReviewWorkspace
               activeVideo={activeVideo}
               videoIndex={videoIndex}
+              activeDecision={decisions[videoIndex]}
+              hasSavedNote={Boolean(notes[activeVideo.id]?.trim())}
+              hasSavedDeepDive={Boolean(deepDives[activeVideo.id]?.length)}
               totalVideos={totalVideos}
               playlistTitle={playlist.title}
               sourceLabel={playlist.sourceLabel}
@@ -712,8 +832,8 @@ export function App() {
               x={x}
               rotate={rotate}
               scale={scale}
-              keepOpacity={keepOpacity}
-              discardOpacity={discardOpacity}
+              keepTintOpacity={keepTintOpacity}
+              discardTintOpacity={discardTintOpacity}
               reducedMotion={reducedMotion}
               isDeciding={isDeciding}
               lastDecision={lastDecision}
@@ -721,7 +841,6 @@ export function App() {
               onDecide={decide}
               onUndo={undo}
               onOpenDetail={() => { setDetailTab("summary"); setDetailOpen(true); }}
-              nextVideo={videos[videoIndex + 1] || null}
             />
           )
         ) : section === "home" ? (
@@ -773,6 +892,12 @@ export function App() {
           onQuotaReached={() => setQuotaDialogOpen(true)}
           onAnnounce={setAnnouncement}
           onClose={() => setDetailOpen(false)}
+          onSwipeDecision={(decision) => {
+            setDetailOpen(false);
+            void decide(decision, { animateCard: false });
+          }}
+          isDeciding={isDeciding}
+          reducedMotion={reducedMotion}
         />
       ) : null}
 
@@ -812,6 +937,9 @@ export function App() {
 function ReviewWorkspace({
   activeVideo,
   videoIndex,
+  activeDecision,
+  hasSavedNote,
+  hasSavedDeepDive,
   totalVideos,
   playlistTitle,
   sourceLabel,
@@ -819,8 +947,8 @@ function ReviewWorkspace({
   x,
   rotate,
   scale,
-  keepOpacity,
-  discardOpacity,
+  keepTintOpacity,
+  discardTintOpacity,
   reducedMotion,
   isDeciding,
   lastDecision,
@@ -828,10 +956,34 @@ function ReviewWorkspace({
   onDecide,
   onUndo,
   onOpenDetail,
-  nextVideo,
 }) {
+  const blockThumbnailOpen = useRef(false);
+  const sourceActions = Array.isArray(activeVideo.actions)
+    ? activeVideo.actions.filter((action) => typeof action === "string" && action.trim()).slice(0, 3)
+    : [];
+
+  const handleCardDragEnd = (event, info) => {
+    onDragEnd(event, info);
+    window.setTimeout(() => {
+      blockThumbnailOpen.current = false;
+    }, 0);
+  };
+
+  const openDetailFromThumbnail = () => {
+    if (!blockThumbnailOpen.current) onOpenDetail();
+  };
+
+  const openDetailFromCard = (event) => {
+    if (blockThumbnailOpen.current || event.target.closest("button, a")) return;
+    onOpenDetail();
+  };
+
+  const decideFromButton = (decision) => {
+    void onDecide(decision);
+  };
+
   return (
-    <div className="review-page" data-testid="review-page">
+    <div className="review-page" data-testid="review-page" data-review-layout={REVIEW_LAYOUT_VARIANT}>
       <header className="page-heading">
         <div>
           <p className="eyebrow">{sourceLabel} · {playlistTitle}</p>
@@ -844,13 +996,6 @@ function ReviewWorkspace({
       <div className="review-layout">
         <section className="review-column" aria-label="Vidéo à examiner">
           <div className="desktop-card-deck">
-            <motion.div className="desktop-underlay discard-underlay" style={{ opacity: discardOpacity }} aria-hidden="true">
-              <Cross2Icon width="28" height="28" /><strong>Écarter</strong><span>Flèche gauche</span>
-            </motion.div>
-            <motion.div className="desktop-underlay keep-underlay" style={{ opacity: keepOpacity }} aria-hidden="true">
-              <CheckIcon width="28" height="28" /><strong>Garder</strong><span>Flèche droite</span>
-            </motion.div>
-
             <article className="desktop-review-card next-card" aria-hidden="true" />
             <motion.article
               key={activeVideo.id}
@@ -860,14 +1005,29 @@ function ReviewWorkspace({
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.42}
               dragMomentum={false}
-              onDragEnd={onDragEnd}
+              onDragStart={() => {
+                blockThumbnailOpen.current = true;
+              }}
+              onDragEnd={handleCardDragEnd}
+              onClick={openDetailFromCard}
               style={{ x, rotate: reducedMotion ? 0 : rotate, scale }}
+              initial={reducedMotion ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: reducedMotion ? 0 : 0.24, ease: [0.22, 1, 0.36, 1] }}
               whileTap={reducedMotion ? undefined : { scale: 0.994 }}
               aria-label={`${activeVideo.title}. Glisser à droite pour garder, à gauche pour écarter.`}
             >
-              <VideoThumbnail video={activeVideo} />
+              <VideoThumbnail video={activeVideo} onOpen={openDetailFromThumbnail} />
               <div className="card-copy">
-                <div className="source-line"><span className="language-chip">YT</span><span>{activeVideo.source}</span></div>
+                <div className="source-line"><SiYoutube className="source-logo" aria-hidden="true" /><span>{activeVideo.source}</span></div>
+                {activeDecision || hasSavedNote || hasSavedDeepDive ? (
+                  <div className="review-memory" aria-label="Mémoire sauvegardée pour cette vidéo">
+                    {activeDecision === "keep" ? <span data-kind="keep"><CheckCircledIcon aria-hidden="true" /> Gardée</span> : null}
+                    {activeDecision === "discard" ? <span data-kind="discard"><CrossCircledIcon aria-hidden="true" /> Écartée</span> : null}
+                    {hasSavedNote ? <span><FileTextIcon aria-hidden="true" /> Note enregistrée</span> : null}
+                    {hasSavedDeepDive ? <span><SiGooglegemini aria-hidden="true" /> IA enregistrée</span> : null}
+                  </div>
+                ) : null}
                 <h2>{activeVideo.title}</h2>
                 <p>{activeVideo.summary}</p>
                 <button className="detail-link" type="button" onClick={onOpenDetail}>
@@ -876,35 +1036,56 @@ function ReviewWorkspace({
                   <ChevronRightIcon width="19" height="19" aria-hidden="true" />
                 </button>
               </div>
+              <motion.div
+                className="card-swipe-layer discard-swipe-layer"
+                data-testid="discard-swipe-layer"
+                style={{ opacity: discardTintOpacity }}
+                aria-hidden="true"
+              />
+              <motion.div
+                className="card-swipe-layer keep-swipe-layer"
+                data-testid="keep-swipe-layer"
+                style={{ opacity: keepTintOpacity }}
+                aria-hidden="true"
+              />
             </motion.article>
           </div>
 
           <div className="decision-row" aria-label="Décider pour cette vidéo">
-            <button className="decision-button discard-button" type="button" onClick={() => void onDecide("discard")} disabled={isDeciding}>
-              <ArrowLeftIcon aria-hidden="true" /> Écarter <kbd>←</kbd>
+            <button
+              className="decision-button discard-button"
+              type="button"
+              onClick={() => decideFromButton("discard")}
+              disabled={isDeciding}
+            >
+              Écarter
             </button>
             <button className="undo-button" type="button" onClick={onUndo} disabled={!lastDecision || isDeciding}>
               <ReloadIcon aria-hidden="true" /> Annuler
             </button>
-            <button className="decision-button keep-button" type="button" onClick={() => void onDecide("keep")} disabled={isDeciding}>
-              Garder <ArrowRightIcon aria-hidden="true" /> <kbd>→</kbd>
+            <button
+              className="decision-button keep-button"
+              type="button"
+              onClick={() => decideFromButton("keep")}
+              disabled={isDeciding}
+            >
+              Garder
             </button>
           </div>
         </section>
 
         <aside className="context-panel" aria-label="Contexte de la vidéo">
           <section>
-            <div className="panel-heading"><FileTextIcon aria-hidden="true" /><h2>À retenir</h2></div>
+            <div className="panel-heading"><BookmarkIcon aria-hidden="true" /><h2>À retenir</h2></div>
             <ul>{activeVideo.points.map((point) => <li key={point}>{point}</li>)}</ul>
           </section>
-          <section>
-            <div className="panel-heading"><KeyboardIcon aria-hidden="true" /><h2>Raccourcis</h2></div>
-            <dl className="shortcut-list"><div><dt>Écarter</dt><dd>←</dd></div><div><dt>Garder</dt><dd>→</dd></div><div><dt>Annuler</dt><dd>⌘ Z</dd></div></dl>
-          </section>
-          <section className="queue-section">
-            <div className="panel-heading"><CardStackIcon aria-hidden="true" /><h2>Ensuite</h2></div>
-            <p>{nextVideo?.title || "La prochaine synthèse arrive automatiquement"}</p>
-            <span>{nextVideo ? "Prête à examiner" : "Traitement en arrière-plan"}</span>
+          <section className="source-actions-panel">
+            <div className="panel-heading"><LightningBoltIcon aria-hidden="true" /><h2>Actions possibles</h2></div>
+            {sourceActions.length ? (
+              <ul className="source-action-list">{sourceActions.map((action, index) => <li key={`${index}-${action}`}>{action}</li>)}</ul>
+            ) : (
+              <p className="empty-source-actions">Aucune action explicite dans cette fiche.</p>
+            )}
           </section>
         </aside>
       </div>
@@ -1032,31 +1213,46 @@ function FinalizedWorkspace({ onHistory, onHome }) {
   );
 }
 
-function VideoThumbnail({ video }) {
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => setFailed(false), [video.id, video.thumbnail]);
+function VideoThumbnail({ video, onOpen }) {
+  const thumbnailKey = `${video.id}:${video.thumbnail ?? ""}`;
+  const [thumbnailState, setThumbnailState] = useState({ key: "", source: null, failed: false });
+  const currentThumbnailState = thumbnailState.key === thumbnailKey
+    ? thumbnailState
+    : { source: video.thumbnail, failed: false };
 
   return (
-    <div className="thumbnail-wrap">
-      {video.thumbnail && !failed ? (
-        <>
-          <img className="thumbnail-backdrop" src={video.thumbnail} alt="" aria-hidden="true" />
+    <button
+      className="thumbnail-button"
+      type="button"
+      onClick={onOpen}
+      aria-label={`Ouvrir la fiche de ${video.title}`}
+      title="Ouvrir la fiche"
+    >
+      <div className="thumbnail-wrap">
+        {currentThumbnailState.source && !currentThumbnailState.failed ? (
           <img
             className="thumbnail-main"
-            src={video.thumbnail}
+            src={currentThumbnailState.source}
             alt={`Miniature YouTube de ${video.title}`}
-            onError={() => setFailed(true)}
+            draggable="false"
+            onError={() => {
+              const fallback = currentThumbnailState.source?.replace(/\/maxresdefault\.jpg$/i, "/hqdefault.jpg");
+              if (fallback && fallback !== currentThumbnailState.source) {
+                setThumbnailState({ key: thumbnailKey, source: fallback, failed: false });
+              } else {
+                setThumbnailState({ key: thumbnailKey, source: null, failed: true });
+              }
+            }}
           />
-        </>
-      ) : (
-        <div className="thumbnail-unavailable" role="img" aria-label="Miniature YouTube indisponible">
-          <VideoIcon width="30" height="30" aria-hidden="true" />
-          <span>Miniature indisponible</span>
-        </div>
-      )}
-      {video.duration ? <span className="duration">{video.duration}</span> : null}
-    </div>
+        ) : (
+          <div className="thumbnail-unavailable" role="img" aria-label="Miniature YouTube indisponible">
+            <VideoIcon width="30" height="30" aria-hidden="true" />
+            <span>Miniature indisponible</span>
+          </div>
+        )}
+        {video.duration ? <span className="duration">{video.duration}</span> : null}
+      </div>
+    </button>
   );
 }
 
@@ -1160,21 +1356,40 @@ function DetailDialog({
   onQuotaReached,
   onAnnounce,
   onClose,
+  onSwipeDecision,
+  isDeciding,
+  reducedMotion,
 }) {
+  const detailSwipe = useRef(null);
+  const detailSwipeTimer = useRef(null);
+  const detailScrollRef = useRef(null);
+  const suppressDetailClick = useRef(false);
   const [selectedExcerpt, setSelectedExcerpt] = useState("");
   const [question, setQuestion] = useState("");
   const [mobileNoteOpen, setMobileNoteOpen] = useState(false);
-  const [aiState, setAiState] = useState({ status: "idle", answer: "", model: "", error: "" });
+  const [conversation, setConversation] = useState(savedDeepDives);
+  const [aiState, setAiState] = useState({ status: "idle", error: "", pendingQuestion: "" });
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [swipeDirection, setSwipeDirection] = useState(null);
+  const [swipeDragging, setSwipeDragging] = useState(false);
 
   useEffect(() => {
-    const latest = savedDeepDives.at(-1);
     setSelectedExcerpt("");
     setQuestion("");
     setMobileNoteOpen(false);
-    setAiState(latest
-      ? { status: "success", answer: latest.answer, model: latest.model || "Gemini", error: "", saved: true }
-      : { status: "idle", answer: "", model: "", error: "", saved: false });
-  }, [savedDeepDives, video.id]);
+    setAiState({ status: "idle", error: "", pendingQuestion: "" });
+    detailSwipe.current = null;
+    suppressDetailClick.current = false;
+    setSwipeOffset(0);
+    setSwipeDirection(null);
+    setSwipeDragging(false);
+  }, [video.id]);
+
+  useEffect(() => () => window.clearTimeout(detailSwipeTimer.current), []);
+
+  useEffect(() => {
+    setConversation(savedDeepDives);
+  }, [savedDeepDives]);
 
   const captureSelection = (event) => {
     const selection = window.getSelection();
@@ -1186,18 +1401,37 @@ function DetailDialog({
   };
 
   const promptForExternalChat = () => {
-    const context = selectedExcerpt || video.summary;
-    const userQuestion = question.trim() || "Approfondis ce passage, explique les mécanismes et indique ce qui doit être vérifié.";
-    return `Je travaille sur cette vidéo : ${video.title}\nSource : ${video.url}\n\nPassage sélectionné :\n${context}\n\nQuestion :\n${userQuestion}\n\nRéponds en séparant les faits présents dans la source, tes inférences et les points qui nécessitent une vérification externe.`;
+    const context = selectedExcerpt || conversation.at(-1)?.excerpt || video.summary;
+    const userQuestion = question.trim() || (conversation.length
+      ? "Poursuis cette conversation et indique ce qui mérite une vérification supplémentaire."
+      : "Approfondis ce passage, explique les mécanismes et indique ce qui doit être vérifié.");
+    const existingConversation = conversation
+      .slice(-8)
+      .map((entry, index) => `Tour ${index + 1}\nUtilisateur : ${entry.question}\n${entry.model || "Gemini"} : ${entry.answer}`)
+      .join("\n\n")
+      .slice(0, 12_000);
+    const conversationContext = existingConversation
+      ? `\n\nConversation déjà menée avec Gemini :\n${existingConversation}\n\nReprends cette conversation, vérifie sa logique, complète ce qui manque et signale clairement tout désaccord.`
+      : "";
+    return `Je travaille sur cette vidéo : ${video.title}\nSource : ${video.url}\n\nPassage de référence :\n${context}\n\nNouvelle question :\n${userQuestion}${conversationContext}\n\nRéponds en séparant les faits présents dans la source, les éléments issus de la conversation IA, tes propres inférences et les points qui nécessitent une vérification externe.`;
   };
 
-  const askGemini = async () => {
+  const askGemini = async (event) => {
+    event?.preventDefault();
     if (!geminiAvailable || aiState.status === "loading") return;
     if (!geminiConfigured) {
       onOpenApiKeys("first-use");
       return;
     }
-    setAiState({ status: "loading", answer: "", model: "", error: "" });
+    const nextQuestion = question.trim() || (conversation.length
+      ? "Peux-tu préciser le point précédent et indiquer comment le vérifier ?"
+      : "Approfondis ce passage, explique les mécanismes et indique ce qui doit être vérifié.");
+    const excerpt = selectedExcerpt || conversation.at(-1)?.excerpt || video.summary;
+    const history = conversation.slice(-10).flatMap((entry) => [
+      { role: "user", content: entry.question },
+      { role: "assistant", content: entry.answer },
+    ]);
+    setAiState({ status: "loading", error: "", pendingQuestion: nextQuestion });
     try {
       const response = await fetch("/api/ai/deep-dive", {
         method: "POST",
@@ -1205,35 +1439,43 @@ function DetailDialog({
         body: JSON.stringify({
           title: video.title,
           url: video.url,
-          excerpt: selectedExcerpt || video.summary,
-          summary: video.fullSummary.slice(0, 40_000),
-          question: question.trim() || "Approfondis ce passage, explique les mécanismes et indique ce qui doit être vérifié.",
+          excerpt,
+          summary: conversation.length ? video.summary.slice(0, 6_000) : video.fullSummary.slice(0, 40_000),
+          question: nextQuestion,
+          history,
         }),
       });
       const payload = await response.json().catch(() => ({}));
       if (payload.code === "GEMINI_KEY_REQUIRED") {
         onOpenApiKeys("first-use");
-        setAiState({ status: "idle", answer: "", model: "", error: "" });
+        setAiState({ status: "idle", error: "", pendingQuestion: "" });
         return;
       }
       if (payload.code === "GEMINI_QUOTA_EXHAUSTED") {
         onQuotaReached();
-        setAiState({ status: "idle", answer: "", model: "", error: "" });
+        setAiState({ status: "idle", error: "", pendingQuestion: "" });
         return;
       }
       if (!response.ok) throw new Error(payload.error || "Gemini n'a pas pu répondre.");
       const savedEntry = {
         answer: payload.answer,
         model: payload.model || "Gemini",
-        question: question.trim() || "Approfondis ce passage, explique les mécanismes et indique ce qui doit être vérifié.",
-        excerpt: selectedExcerpt || video.summary,
+        question: nextQuestion,
+        excerpt,
         createdAt: new Date().toISOString(),
+        turn: conversation.length + 1,
       };
+      setConversation((current) => [...current, savedEntry].slice(-50));
       onDeepDiveSaved(savedEntry);
-      setAiState({ status: "success", answer: savedEntry.answer, model: savedEntry.model, error: "", saved: true });
-      onAnnounce("Approfondissement Gemini sauvegardé automatiquement.");
+      setQuestion("");
+      setAiState({ status: "success", error: "", pendingQuestion: "" });
+      onAnnounce("Réponse Gemini ajoutée à la conversation et sauvegardée automatiquement.");
     } catch (error) {
-      setAiState({ status: "error", answer: "", model: "", error: error instanceof Error ? error.message : "Gemini est indisponible." });
+      setAiState({
+        status: "error",
+        error: error instanceof Error ? error.message : "Gemini est indisponible.",
+        pendingQuestion: nextQuestion,
+      });
     }
   };
 
@@ -1248,66 +1490,262 @@ function DetailDialog({
     }
   };
 
-  const addAiToNote = () => {
-    if (!aiState.answer) return;
-    const quote = selectedExcerpt ? `> ${selectedExcerpt.replace(/\n/g, "\n> ")}\n\n` : "";
-    const block = `## Approfondissement IA\n\n${quote}${aiState.answer}\n\n_Source : ${aiState.model || "Gemini"} · à vérifier avant usage._`;
+  const addAiToNote = (entry) => {
+    if (!entry?.answer) return;
+    const quote = entry.excerpt ? `> ${entry.excerpt.replace(/\n/g, "\n> ")}\n\n` : "";
+    const block = `## Approfondissement IA\n\n**Question :** ${entry.question}\n\n${quote}${entry.answer}\n\n_Source : ${entry.model || "Gemini"} · à vérifier avant usage._`;
     onNoteChange([note.trim(), block].filter(Boolean).join("\n\n"));
     onAnnounce("Réponse IA ajoutée à la Note.");
   };
 
-  const copyAiAnswer = async () => {
+  const copyAiAnswer = async (answer) => {
     try {
-      await navigator.clipboard.writeText(aiState.answer);
+      await navigator.clipboard.writeText(answer);
       onAnnounce("Réponse IA copiée.");
     } catch {
       onAnnounce("La copie de la réponse IA a échoué.");
     }
   };
 
+  const commitDetailDecision = useCallback((decision) => {
+    if (isDeciding || detailSwipeTimer.current) return;
+    detailSwipe.current = null;
+    setSwipeDragging(false);
+    setSwipeDirection(decision);
+    setSwipeOffset((decision === "keep" ? 1 : -1) * Math.min(window.innerWidth * 0.72, 760));
+    onAnnounce(`${video.title} — ${decision === "keep" ? "gardée" : "écartée"} depuis la fiche.`);
+    detailSwipeTimer.current = window.setTimeout(() => {
+      detailSwipeTimer.current = null;
+      onSwipeDecision(decision);
+      setSwipeOffset(0);
+      setSwipeDirection(null);
+    }, reducedMotion ? 0 : 300);
+  }, [isDeciding, onAnnounce, onSwipeDecision, reducedMotion, video.title]);
+
+  useEffect(() => {
+    const handleDetailKeyDown = (event) => {
+      if (isDeciding || detailSwipeTimer.current) return;
+      const interactiveTarget = event.target instanceof Element
+        && event.target.closest("button, a, input, textarea, select, [contenteditable='true']");
+      if (interactiveTarget) return;
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        detailScrollRef.current?.scrollBy({
+          top: event.key === "ArrowDown" ? 72 : -72,
+          behavior: reducedMotion ? "auto" : "smooth",
+        });
+        return;
+      }
+      if (event.repeat) return;
+      if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        commitDetailDecision(event.key === "ArrowRight" ? "keep" : "discard");
+      }
+    };
+    window.addEventListener("keydown", handleDetailKeyDown);
+    return () => window.removeEventListener("keydown", handleDetailKeyDown);
+  }, [commitDetailDecision, isDeciding, reducedMotion]);
+
+  const startDetailSwipe = (event) => {
+    if (isDeciding || detailSwipeTimer.current || !event.isPrimary || event.button > 0) return;
+    const selection = window.getSelection();
+    const pointerTarget = event.target instanceof Element ? event.target : null;
+    const selectionTarget = pointerTarget && !pointerTarget.closest(".reading-dialog-scroll > header")
+      ? pointerTarget.closest("input, textarea, [contenteditable='true'], .selectable-summary, .transcript-placeholder, .chat-message, .selected-excerpt, p, li, blockquote, pre, code, h1, h2, h3, h4, td, th")
+      : null;
+    suppressDetailClick.current = false;
+    detailSwipe.current = {
+      pointerId: event.pointerId,
+      pointerType: event.pointerType,
+      startX: event.clientX,
+      startY: event.clientY,
+      startedAt: performance.now(),
+      selectionTarget,
+      initialSelection: selection?.toString() || "",
+      initialInputSelection: selectionTarget instanceof HTMLInputElement || selectionTarget instanceof HTMLTextAreaElement
+        ? `${selectionTarget.selectionStart}:${selectionTarget.selectionEnd}`
+        : null,
+      lock: "pending",
+    };
+  };
+
+  const selectionChangedDuringGesture = (swipe, root) => {
+    const target = swipe.selectionTarget;
+    if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+      return `${target.selectionStart}:${target.selectionEnd}` !== swipe.initialInputSelection
+        && target.selectionStart !== target.selectionEnd;
+    }
+    const selection = window.getSelection();
+    if (!selection || selection.isCollapsed || !selection.anchorNode) return false;
+    const selectionInsideDialog = root.contains(selection.anchorNode)
+      || (selection.focusNode ? root.contains(selection.focusNode) : false);
+    return selectionInsideDialog && selection.toString() !== swipe.initialSelection;
+  };
+
+  const lockDetailSelection = () => {
+    const swipe = detailSwipe.current;
+    if (!swipe || swipe.lock === "horizontal") return;
+    swipe.lock = "selection";
+    suppressDetailClick.current = false;
+    setSwipeOffset(0);
+    setSwipeDirection(null);
+    setSwipeDragging(false);
+  };
+
+  const noteDetailSelectionStart = () => {
+    const swipe = detailSwipe.current;
+    if (!swipe || swipe.lock === "horizontal") return;
+    swipe.selectionStarted = true;
+  };
+
+  const moveDetailSwipe = (event) => {
+    const swipe = detailSwipe.current;
+    if (!swipe || swipe.pointerId !== event.pointerId || swipe.lock === "vertical" || swipe.lock === "selection") return;
+    const deltaX = event.clientX - swipe.startX;
+    const deltaY = event.clientY - swipe.startY;
+    if (swipe.lock === "pending") {
+      if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < 10) return;
+      const absoluteX = Math.abs(deltaX);
+      const absoluteY = Math.abs(deltaY);
+      if (absoluteY >= absoluteX * 1.12) {
+        swipe.lock = "vertical";
+        return;
+      }
+
+      const elapsed = Math.max(performance.now() - swipe.startedAt, 1);
+      const horizontalIntent = absoluteX > absoluteY * 1.35;
+      const averageVelocity = absoluteX / elapsed;
+      const fastTextFlick = swipe.pointerType === "touch"
+        ? horizontalIntent && absoluteX >= 18 && elapsed <= 260
+        : horizontalIntent && absoluteX >= 34 && elapsed <= 180 && averageVelocity >= 0.62;
+
+      if (swipe.selectionTarget && !fastTextFlick) {
+        if (swipe.selectionStarted || selectionChangedDuringGesture(swipe, event.currentTarget)) {
+          lockDetailSelection();
+          return;
+        }
+        if (elapsed < 180 || absoluteX < 52) return;
+        if (!horizontalIntent) return;
+      }
+
+      swipe.lock = "horizontal";
+      suppressDetailClick.current = true;
+      window.getSelection()?.removeAllRanges();
+      setSwipeDragging(true);
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    }
+    event.preventDefault();
+    const maximum = Math.min(window.innerWidth * 0.42, 320);
+    setSwipeOffset(Math.max(-maximum, Math.min(maximum, deltaX)));
+    setSwipeDirection(deltaX > 0 ? "keep" : "discard");
+  };
+
+  const finishDetailSwipe = (event) => {
+    const swipe = detailSwipe.current;
+    if (!swipe || swipe.pointerId !== event.pointerId) return;
+    detailSwipe.current = null;
+    const deltaX = event.clientX - swipe.startX;
+    const deltaY = event.clientY - swipe.startY;
+    const threshold = Math.min(120, window.innerWidth * 0.22);
+    const shouldDecide = swipe.lock === "horizontal"
+      && Math.abs(deltaX) >= threshold
+      && Math.abs(deltaX) > Math.abs(deltaY) * 1.25;
+    setSwipeDragging(false);
+
+    if (!shouldDecide) {
+      setSwipeOffset(0);
+      setSwipeDirection(null);
+      return;
+    }
+
+    commitDetailDecision(deltaX > 0 ? "keep" : "discard");
+  };
+
+  const cancelDetailSwipe = () => {
+    detailSwipe.current = null;
+    suppressDetailClick.current = false;
+    setSwipeOffset(0);
+    setSwipeDirection(null);
+    setSwipeDragging(false);
+  };
+
+  const suppressClickAfterDetailSwipe = (event) => {
+    if (!suppressDetailClick.current) return;
+    suppressDetailClick.current = false;
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
+  const swipeRotation = Math.max(-7, Math.min(7, swipeOffset / 20));
+  const swipeTintOpacity = Math.min(0.72, Math.abs(swipeOffset) / 320 * 0.72);
+
   return (
     <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) onClose(); }}>
-      <section className="detail-dialog reading-dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-        <header><div><p className="eyebrow">Fiche vidéo</p><h2 id="detail-title">{video.title}</h2></div><button className="icon-button" type="button" onClick={onClose} aria-label="Fermer"><CrossCircledIcon width="23" height="23" /></button></header>
-        <div className="reading-layout">
-          <div className="reading-main">
-            <div className="detail-tabs" role="tablist" aria-label="Contenu de la vidéo">
-              {[{ id: "summary", label: "Résumé complet" }, { id: "transcript", label: "Transcript" }].map((item) => (
-                <button key={item.id} type="button" role="tab" aria-selected={tab === item.id} onClick={() => setTab(item.id)}>{item.label}</button>
-              ))}
+      <section
+        className="detail-dialog reading-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detail-title"
+        data-swiping={swipeDragging}
+        data-swipe-direction={swipeDirection || undefined}
+        style={{
+          "--detail-swipe-x": `${swipeOffset}px`,
+          "--detail-swipe-rotate": `${swipeRotation}deg`,
+        }}
+        onPointerDown={startDetailSwipe}
+        onPointerMove={moveDetailSwipe}
+        onPointerUp={finishDetailSwipe}
+        onPointerCancel={cancelDetailSwipe}
+        onSelectStart={noteDetailSelectionStart}
+        onClickCapture={suppressClickAfterDetailSwipe}
+      >
+        <div
+          className={`detail-swipe-layer${swipeDirection ? ` ${swipeDirection}` : ""}`}
+          style={{ opacity: swipeTintOpacity }}
+          aria-hidden="true"
+        />
+        <div className="reading-dialog-scroll" ref={detailScrollRef}>
+          <header><div><p className="eyebrow">Fiche vidéo</p><h2 id="detail-title">{video.title}</h2></div><button className="icon-button" type="button" onClick={onClose} aria-label="Fermer"><CrossCircledIcon width="23" height="23" /></button></header>
+          <div className="reading-layout">
+            <div className="reading-main">
+              <div className="detail-tabs" role="tablist" aria-label="Contenu de la vidéo">
+                {[{ id: "summary", label: "Résumé complet" }, { id: "transcript", label: "Transcript" }].map((item) => (
+                  <button key={item.id} type="button" role="tab" aria-selected={tab === item.id} onClick={() => setTab(item.id)}>{item.label}</button>
+                ))}
+              </div>
+              <div className="detail-content" role="tabpanel">
+                {tab === "summary" ? (
+                  <article className="long-summary selectable-summary" onMouseUp={captureSelection} onKeyUp={captureSelection}>
+                    <div className="summary-provenance"><FileTextIcon aria-hidden="true" /><span>Résumé long local · {video.sourceFile}</span></div>
+                    <div className="selection-hint"><SiGooglegemini className="gemini-brand-icon" aria-hidden="true" /> Sélectionne un passage pour l'approfondir avec l'IA.</div>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{video.fullSummary}</ReactMarkdown>
+                  </article>
+                ) : null}
+                {tab === "transcript" ? <><h3>Transcript</h3><p className="transcript-placeholder">L'extrait textuel n'est pas chargé dans ce prototype visuel. La version finale reprendra le transcript canonique local quand il est disponible.</p><a className="youtube-link" href={video.url} target="_blank" rel="noreferrer"><ExternalLinkIcon aria-hidden="true" /> Ouvrir la vidéo source</a></> : null}
+              </div>
             </div>
-            <div className="detail-content" role="tabpanel">
-              {tab === "summary" ? (
-                <article className="long-summary selectable-summary" onMouseUp={captureSelection} onKeyUp={captureSelection}>
-                  <div className="summary-provenance"><FileTextIcon aria-hidden="true" /><span>Résumé long local · {video.sourceFile}</span></div>
-                  <div className="selection-hint"><MagicWandIcon aria-hidden="true" /> Sélectionne un passage pour l'approfondir avec l'IA.</div>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{video.fullSummary}</ReactMarkdown>
-                </article>
-              ) : null}
-              {tab === "transcript" ? <><h3>Transcript</h3><p className="transcript-placeholder">L'extrait textuel n'est pas chargé dans ce prototype visuel. La version finale reprendra le transcript canonique local quand il est disponible.</p><a className="youtube-link" href={video.url} target="_blank" rel="noreferrer"><ExternalLinkIcon aria-hidden="true" /> Ouvrir la vidéo source</a></> : null}
-            </div>
-          </div>
 
-          <button className="mobile-note-toggle" type="button" onClick={() => setMobileNoteOpen(true)}><ChatBubbleIcon aria-hidden="true" /> Note & IA{note.trim() ? <span /> : null}</button>
-          <NoteAssistantPanel
-            note={note}
-            onNoteChange={onNoteChange}
-            saveState={saveState}
-            selectedExcerpt={selectedExcerpt}
-            onClearSelection={() => setSelectedExcerpt("")}
-            question={question}
-            onQuestionChange={setQuestion}
-            aiState={aiState}
-            savedCount={savedDeepDives.length}
-            geminiAvailable={geminiAvailable}
-            geminiConfigured={geminiConfigured}
-            onAskGemini={() => void askGemini()}
-            onOpenChatGpt={() => void openChatGpt()}
-            onAddAiToNote={addAiToNote}
-            onCopyAi={() => void copyAiAnswer()}
-            mobileOpen={mobileNoteOpen}
-            onMobileClose={() => setMobileNoteOpen(false)}
-          />
+            <button className="mobile-note-toggle" type="button" onClick={() => setMobileNoteOpen(true)}><ChatBubbleIcon aria-hidden="true" /> Note & IA{note.trim() ? <span /> : null}</button>
+            <NoteAssistantPanel
+              note={note}
+              onNoteChange={onNoteChange}
+              saveState={saveState}
+              selectedExcerpt={selectedExcerpt}
+              onClearSelection={() => setSelectedExcerpt("")}
+              question={question}
+              onQuestionChange={setQuestion}
+              aiState={aiState}
+              conversation={conversation}
+              geminiAvailable={geminiAvailable}
+              geminiConfigured={geminiConfigured}
+              onAskGemini={askGemini}
+              onOpenChatGpt={() => void openChatGpt()}
+              onAddAiToNote={addAiToNote}
+              onCopyAi={(answer) => void copyAiAnswer(answer)}
+              mobileOpen={mobileNoteOpen}
+              onMobileClose={() => setMobileNoteOpen(false)}
+            />
+          </div>
         </div>
       </section>
     </div>
@@ -1323,7 +1761,7 @@ function NoteAssistantPanel({
   question,
   onQuestionChange,
   aiState,
-  savedCount,
+  conversation,
   geminiAvailable,
   geminiConfigured,
   onAskGemini,
@@ -1342,39 +1780,67 @@ function NoteAssistantPanel({
 
       <label className="note-field-label" htmlFor="video-note">Note personnelle</label>
       <textarea id="video-note" aria-label="Note personnelle" value={note} onChange={(event) => onNoteChange(event.target.value)} placeholder="Copie un passage, ajoute une idée ou prépare une question…" />
-      <p className={`save-state ${saveState}`}><CheckIcon aria-hidden="true" /> {saveState === "saving" ? "Synchronisation automatique…" : saveState === "saved" ? "Enregistré automatiquement" : "Enregistré sur cet appareil"}</p>
+      <p className={`save-state ${saveState}`}>
+        {saveState === "saving" ? <ReloadIcon className="save-state-icon" aria-hidden="true" /> : <CheckCircledIcon className="save-state-icon" aria-hidden="true" />}
+        {saveState === "saving" ? "Synchronisation automatique…" : saveState === "saved" ? "Enregistré automatiquement" : "Enregistré sur cet appareil"}
+      </p>
 
-      <div className="ai-divider"><span>Approfondir</span></div>
+      <div className="ai-divider"><span className="ai-divider-label"><ChatBubbleIcon aria-hidden="true" /> Conversation IA</span><small>{conversation.length} échange{conversation.length > 1 ? "s" : ""}</small></div>
       {selectedExcerpt ? (
         <blockquote className="selected-excerpt"><button type="button" onClick={onClearSelection} aria-label="Effacer la sélection"><Cross1Icon aria-hidden="true" /></button>{selectedExcerpt}</blockquote>
       ) : (
-        <p className="ai-context-empty">Aucun passage sélectionné : l’IA utilisera le résumé courant comme contexte.</p>
+        <p className="ai-context-empty">{conversation.length ? "La prochaine question conserve le contexte des échanges précédents." : "Aucun passage sélectionné : l’IA utilisera le résumé courant comme contexte."}</p>
       )}
 
-      <label className="note-field-label" htmlFor="deep-dive-question">Question</label>
-      <textarea id="deep-dive-question" className="ai-question" value={question} onChange={(event) => onQuestionChange(event.target.value)} placeholder="Ex. Quelles affirmations faut-il vérifier ?" />
-
-      <div className="ai-actions">
-        {geminiAvailable ? <button className="gemini-action" type="button" onClick={onAskGemini} disabled={aiState.status === "loading"}><MagicWandIcon aria-hidden="true" /> {aiState.status === "loading" ? "Analyse…" : geminiConfigured ? "Approfondir avec Gemini" : "Configurer Gemini"}</button> : null}
-        <button className="chatgpt-action" type="button" onClick={onOpenChatGpt}><OpenInNewWindowIcon aria-hidden="true" /> Copier et ouvrir ChatGPT</button>
+      <div className="ai-conversation" role="log" aria-label="Conversation avec Gemini" aria-live="polite">
+        {conversation.length === 0 && aiState.status !== "loading" ? (
+          <div className="conversation-empty"><span className="gemini-empty-mark"><SiGooglegemini className="gemini-brand-icon" aria-hidden="true" /></span><p>Pose une première question, puis poursuis naturellement avec des questions complémentaires.</p></div>
+        ) : null}
+        {conversation.map((entry, index) => (
+          <div className="chat-turn" key={`${entry.createdAt || index}-${index}`}>
+            <div className="chat-message user-message"><span>Vous</span><p>{entry.question}</p></div>
+            <article className="chat-message assistant-message">
+              <header><span><SiGooglegemini className="gemini-brand-icon" aria-hidden="true" /> Gemini</span><small>{entry.model || "Gemini"}</small></header>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{entry.answer}</ReactMarkdown>
+              <footer>
+                <button type="button" onClick={() => onAddAiToNote(entry)}><PlusIcon aria-hidden="true" /> Ajouter à la Note</button>
+                <button type="button" onClick={() => onCopyAi(entry.answer)}><CopyIcon aria-hidden="true" /> Copier</button>
+              </footer>
+            </article>
+          </div>
+        ))}
+        {aiState.status === "loading" ? (
+          <div className="chat-turn pending-turn">
+            <div className="chat-message user-message"><span>Vous</span><p>{aiState.pendingQuestion}</p></div>
+            <div className="chat-message assistant-message ai-typing" aria-label="Gemini rédige une réponse"><i /><i /><i /><span>Gemini analyse le contexte…</span></div>
+          </div>
+        ) : null}
       </div>
 
-      {aiState.status === "error" ? <p className="ai-error" role="alert"><ExclamationTriangleIcon aria-hidden="true" /> {aiState.error}</p> : null}
-      {aiState.answer ? (
-        <article className="ai-answer">
-          <div><span><MagicWandIcon aria-hidden="true" /> Réponse IA</span><small>{aiState.saved ? `Sauvegardée automatiquement · ${savedCount}` : aiState.model}</small></div>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{aiState.answer}</ReactMarkdown>
-          <footer><button type="button" onClick={onAddAiToNote}><PlusIcon aria-hidden="true" /> Ajouter à la Note</button><button type="button" onClick={onCopyAi}><CopyIcon aria-hidden="true" /> Copier</button></footer>
-        </article>
-      ) : null}
+      {aiState.status === "error" ? <p className="ai-error" role="alert"><ExclamationTriangleIcon aria-hidden="true" /> {aiState.error} Tu peux réessayer sans perdre la conversation.</p> : null}
+
+      <form className="ai-composer" onSubmit={onAskGemini}>
+        <label className="note-field-label" htmlFor="deep-dive-question">Question</label>
+        <textarea
+          id="deep-dive-question"
+          className="ai-question"
+          value={question}
+          onChange={(event) => onQuestionChange(event.target.value)}
+          onKeyDown={(event) => {
+            if ((event.metaKey || event.ctrlKey) && event.key === "Enter") event.currentTarget.form?.requestSubmit();
+          }}
+          placeholder={conversation.length ? "Pose une question complémentaire…" : "Ex. Quelles affirmations faut-il vérifier ?"}
+        />
+        <div className="ai-actions">
+          {geminiAvailable ? <button className="gemini-action" type="submit" disabled={aiState.status === "loading"}><SiGooglegemini className="gemini-brand-icon" aria-hidden="true" /> {aiState.status === "loading" ? "Analyse…" : geminiConfigured ? aiState.status === "error" ? "Réessayer" : "Envoyer à Gemini" : "Configurer Gemini"}</button> : null}
+          <button className="chatgpt-action" type="button" onClick={onOpenChatGpt}><OpenInNewWindowIcon aria-hidden="true" /> Copier et ouvrir ChatGPT</button>
+        </div>
+      </form>
     </aside>
   );
 }
 
 function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
-  const [summaryKey, setSummaryKey] = useState("");
-  const [summaryBackupKey, setSummaryBackupKey] = useState("");
-  const [deepDiveKey, setDeepDiveKey] = useState("");
   const [saveState, setSaveState] = useState({ status: "idle", message: "" });
   const [securityInfo, setSecurityInfo] = useState({ storage: "unknown", legacyEnvironment: false });
 
@@ -1395,28 +1861,21 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
   }, [onConfigured]);
 
   const intro = reason === "first-use"
-    ? "Ajoute une clé pour utiliser Gemini. Cette étape n'apparaît pas lorsqu'une clé est déjà configurée."
+    ? "Transcript utilise Gemini dans cette version. Colle une clé Google AI Studio : elle sera chiffrée et synchronisée automatiquement."
     : reason === "quota"
-      ? "Le quota courant est atteint. Ajoute une clé de secours : le job en pause reprendra automatiquement."
-      : "Gère ici les clés utilisées par les fonctions d'intelligence artificielle.";
+      ? "Le quota Gemini courant est atteint. Colle une clé issue d'un autre projet Google : le job en pause reprendra automatiquement."
+      : "Gemini est actif aujourd'hui. Le moteur Transcript est aussi compatible avec OpenAI (GPT) et Anthropic (Claude) ; ces choix apparaîtront ici lorsque leurs connecteurs Web seront activés.";
 
-  const saveKeys = async (event) => {
-    event.preventDefault();
-    setSaveState({ status: "saving", message: "Enregistrement sécurisé…" });
+  const syncKey = useCallback(async (name, value) => {
+    setSaveState({ status: "saving", message: "Synchronisation sécurisée…" });
     try {
       const response = await fetch("/api/settings/api-keys", {
-        method: "POST",
+        method: value === null ? "DELETE" : "POST",
         headers: { "content-type": "application/json", accept: "application/json" },
-        body: JSON.stringify({
-          keys: {
-            geminiSummary: summaryKey.trim(),
-            geminiSummaryBackup: summaryBackupKey.trim(),
-            geminiDeepDive: deepDiveKey.trim(),
-          },
-        }),
+        body: JSON.stringify(value === null ? { name } : { keys: { [name]: value } }),
       });
       const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || "Enregistrement impossible.");
+      if (!response.ok) throw new Error(payload.error || "Synchronisation impossible.");
       onConfigured({
         geminiSummary: Boolean(payload.configured?.geminiSummary),
         geminiSummaryBackup: Boolean(payload.configured?.geminiSummaryBackup),
@@ -1426,14 +1885,14 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
         storage: payload.storage || securityInfo.storage,
         legacyEnvironment: Boolean(payload.legacyEnvironment),
       });
-      setSummaryKey("");
-      setSummaryBackupKey("");
-      setDeepDiveKey("");
-      setSaveState({ status: "success", message: "Clés enregistrées côté serveur." });
+      setSaveState({ status: "success", message: value === null ? "Clé retirée du coffre." : "Clé synchronisée dans le coffre." });
+      return payload;
     } catch (error) {
-      setSaveState({ status: "error", message: error instanceof Error ? error.message : "Enregistrement impossible." });
+      const message = error instanceof Error ? error.message : "Synchronisation impossible.";
+      setSaveState({ status: "error", message });
+      throw new Error(message);
     }
-  };
+  }, [onConfigured, securityInfo.storage]);
 
   const migrateLegacyKeys = async () => {
     setSaveState({ status: "saving", message: "Migration vers le coffre sécurisé…" });
@@ -1455,29 +1914,8 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
     }
   };
 
-  const removeKey = async (name) => {
-    setSaveState({ status: "saving", message: "Retrait de la clé…" });
-    try {
-      const response = await fetch("/api/settings/api-keys", {
-        method: "DELETE",
-        headers: { "content-type": "application/json", accept: "application/json" },
-        body: JSON.stringify({ name }),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || "Retrait impossible.");
-      onConfigured(payload.configured);
-      setSecurityInfo({
-        storage: payload.storage || securityInfo.storage,
-        legacyEnvironment: Boolean(payload.legacyEnvironment),
-      });
-      setSaveState({ status: "success", message: "Clé retirée du coffre local." });
-    } catch (error) {
-      setSaveState({ status: "error", message: error instanceof Error ? error.message : "Retrait impossible." });
-    }
-  };
-
   return (
-    <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) onClose(); }}>
+    <div className="dialog-backdrop" role="presentation" onClick={(event) => { if (event.currentTarget === event.target) onClose(); }}>
       <section className="detail-dialog api-key-dialog" role="dialog" aria-modal="true" aria-labelledby="api-key-title">
         <header>
           <div><p className="eyebrow">Paramètres</p><h2 id="api-key-title">Clés API</h2><p className="dialog-intro">{intro}</p></div>
@@ -1485,12 +1923,12 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
         </header>
 
         <div className="free-key-callout">
-          <span className="provider-mark"><MagicWandIcon width="19" height="19" aria-hidden="true" /></span>
-          <div><strong>Google fournit des clés Gemini gratuites</strong><p>L'accès gratuit est soumis aux quotas du projet Google.</p></div>
+          <span className="provider-mark"><SiGooglegemini className="gemini-provider-logo" aria-hidden="true" /></span>
+          <div><strong>Gemini est le fournisseur actif</strong><p>Google fournit des clés gratuites via AI Studio, avec un quota propre à chaque projet.</p></div>
           <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Créer une clé <ExternalLinkIcon aria-hidden="true" /></a>
         </div>
 
-        <form className="api-key-form" onSubmit={saveKeys}>
+        <div className="api-key-form">
           {securityInfo.legacyEnvironment ? (
             <div className="legacy-key-warning" role="status">
               <ExclamationTriangleIcon aria-hidden="true" />
@@ -1504,9 +1942,7 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
             label="Résumés vidéo"
             description="Utilisée pour produire les résumés des vidéos et playlists."
             configured={configured.geminiSummary}
-            value={summaryKey}
-            onChange={setSummaryKey}
-            onRemove={removeKey}
+            onSync={syncKey}
           />
           <ApiKeyField
             name="geminiDeepDive"
@@ -1514,9 +1950,7 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
             label="Approfondissements"
             description="Utilisée pour les questions posées depuis un passage sélectionné."
             configured={configured.geminiDeepDive}
-            value={deepDiveKey}
-            onChange={setDeepDiveKey}
-            onRemove={removeKey}
+            onSync={syncKey}
           />
           <ApiKeyField
             name="geminiSummaryBackup"
@@ -1524,30 +1958,108 @@ function ApiKeySettingsDialog({ reason, configured, onConfigured, onClose }) {
             label="Clé de secours · résumés"
             description="Essayée automatiquement si la clé principale atteint son quota. Le job reprend aussi après son renouvellement."
             configured={configured.geminiSummaryBackup}
-            value={summaryBackupKey}
-            onChange={setSummaryBackupKey}
-            onRemove={removeKey}
+            onSync={syncKey}
           />
 
           <div className="two-key-advice">
-            <MagicWandIcon aria-hidden="true" />
-            <p>Les cartes déjà prêtes, leurs notes et leurs approfondissements restent accessibles pendant une pause. Deux clés du même projet Google partagent toutefois généralement le même quota.</p>
+            <InfoCircledIcon aria-hidden="true" />
+            <p><strong>Astuce quota :</strong> crée deux projets Google AI Studio distincts si tu veux séparer Résumés et Approfondissements. Deux clés du même projet partagent généralement le même quota.</p>
           </div>
           <div className="key-security-note"><LockClosedIcon aria-hidden="true" /><span>{securityInfo.storage === "macos-keychain" ? "Sur ce Mac, les clés sont chiffrées dans le Trousseau macOS." : "Les clés sont confiées au coffre de secrets du serveur."} Leur valeur n'est jamais renvoyée au navigateur, affichée dans les paramètres ou écrite dans les logs.</span></div>
 
-          {saveState.status !== "idle" ? <p className={`key-save-feedback ${saveState.status}`} role="status">{saveState.message}</p> : null}
-          <footer className="dialog-actions"><button type="button" onClick={onClose}>Annuler</button><button className="primary-dialog-action" type="submit" disabled={saveState.status === "saving"}>{saveState.status === "saving" ? "Enregistrement…" : "Enregistrer"}</button></footer>
-        </form>
+          {saveState.status === "error" ? <p className="key-save-feedback error" role="alert">{saveState.message}</p> : null}
+        </div>
       </section>
     </div>
   );
 }
 
-function ApiKeyField({ name, id, label, description, configured, value, onChange, onRemove }) {
+const MASKED_API_KEY = "••••••••••••";
+
+function isValidApiKeyDraft(value) {
+  return value.length >= 20 && value.length <= 512 && !/\s/.test(value);
+}
+
+function ApiKeyField({ name, id, label, description, configured, onSync }) {
+  const [draft, setDraft] = useState(configured ? MASKED_API_KEY : "");
+  const [dirty, setDirty] = useState(false);
+  const [syncState, setSyncState] = useState(configured ? "saved" : "empty");
+  const inFlightValue = useRef(null);
+
+  useEffect(() => {
+    if (dirty || inFlightValue.current !== null) return;
+    setDraft(configured ? MASKED_API_KEY : "");
+    setSyncState(configured ? "saved" : "empty");
+  }, [configured, dirty]);
+
+  const commitDraft = useCallback(async (candidate) => {
+    const normalized = candidate.trim();
+    if (normalized === MASKED_API_KEY || inFlightValue.current === normalized) return;
+    if (normalized && !isValidApiKeyDraft(normalized)) {
+      setSyncState("incomplete");
+      return;
+    }
+    inFlightValue.current = normalized;
+    setSyncState("saving");
+    try {
+      await onSync(name, normalized || null);
+      setDraft(normalized ? MASKED_API_KEY : "");
+      setDirty(false);
+      setSyncState(normalized ? "saved" : "empty");
+    } catch {
+      setSyncState("error");
+    } finally {
+      if (inFlightValue.current === normalized) inFlightValue.current = null;
+    }
+  }, [name, onSync]);
+
+  useEffect(() => {
+    if (!dirty) return undefined;
+    const normalized = draft.trim();
+    if (normalized && normalized !== MASKED_API_KEY && !isValidApiKeyDraft(normalized)) {
+      setSyncState("incomplete");
+      return undefined;
+    }
+    setSyncState("pending");
+    const timer = window.setTimeout(() => void commitDraft(draft), 700);
+    return () => window.clearTimeout(timer);
+  }, [commitDraft, dirty, draft]);
+
+  const statusLabel = {
+    empty: "Ajoute une clé",
+    incomplete: "Saisie en cours",
+    pending: "Synchronisation…",
+    saving: "Synchronisation…",
+    saved: "Synchronisée",
+    error: "À vérifier",
+  }[syncState];
+
   return (
     <section className="api-key-field">
-      <div className="api-key-field-heading"><div><label htmlFor={id}>{label}</label><p>{description}</p></div><div className="key-field-status"><span data-configured={configured}>{configured ? "Configurée" : "À configurer"}</span>{configured ? <button type="button" onClick={() => void onRemove(name)}>Retirer</button> : null}</div></div>
-      <div className="secret-input-wrap"><LockClosedIcon aria-hidden="true" /><input id={id} type="password" value={value} onChange={(event) => onChange(event.target.value)} placeholder={configured ? "Laisser vide pour conserver la clé" : "Coller la clé API"} autoComplete="off" spellCheck="false" /></div>
+      <div className="api-key-field-heading">
+        <label htmlFor={id}>{label}</label>
+        <p>{description}</p>
+      </div>
+      <div className="secret-input-wrap" data-sync-state={syncState}>
+        <LockClosedIcon aria-hidden="true" />
+        <input
+          id={id}
+          type="password"
+          value={draft}
+          onChange={(event) => { setDraft(event.target.value); setDirty(true); }}
+          onFocus={(event) => { if (!dirty && configured) event.currentTarget.select(); }}
+          onBlur={() => { if (dirty) void commitDraft(draft); }}
+          placeholder="Coller la clé API"
+          aria-describedby={`${id}-sync`}
+          autoComplete="off"
+          spellCheck="false"
+        />
+        <span className="api-key-sync-state" id={`${id}-sync`} data-state={syncState}>
+          {syncState === "saved" ? <CheckIcon aria-hidden="true" /> : syncState === "saving" || syncState === "pending" ? <ReloadIcon aria-hidden="true" /> : null}
+          {statusLabel}
+        </span>
+      </div>
+      <small className="api-key-field-help">Colle une nouvelle clé pour la remplacer ; efface le champ pour la retirer. Aucun bouton Enregistrer n'est nécessaire.</small>
     </section>
   );
 }
